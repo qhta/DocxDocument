@@ -33,7 +33,7 @@ public static class ChartSpaceExtensionConverter
   
   private static bool CmpPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PivotOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.PivotOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PivotOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.PivotOptions>(), value, diffs, objName);
   }
   
   private static void SetPivotOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotOptions? value)
@@ -59,7 +59,7 @@ public static class ChartSpaceExtensionConverter
   
   private static bool CmpSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SketchOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.SketchOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SketchOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.SketchOptions>(), value, diffs, objName);
   }
   
   private static void SetSketchOptions(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.SketchOptions? value)
@@ -85,7 +85,7 @@ public static class ChartSpaceExtensionConverter
   
   private static bool CmpPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PivotSource3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.PivotSource>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PivotSource3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.PivotSource>(), value, diffs, objName);
   }
   
   private static void SetPivotSource(DXDrawCharts.ChartSpaceExtension openXmlElement, DMDrawsCharts.PivotSource3? value)

@@ -15,7 +15,7 @@ public static class ClassificationOutcomeConverter
   
   private static bool CmpClassificationOutcomeType(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcomeType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMDraws.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMDraws.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value, value, diffs, objName);
   }
   
   private static void SetClassificationOutcomeType(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcomeType? value)

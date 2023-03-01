@@ -71,7 +71,7 @@ public static class InsertedMathControlConverter
   
   private static bool CmpRunProperties(DXW.InsertedMathControl openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName);
   }
   
   private static void SetRunProperties(DXW.InsertedMathControl openXmlElement, DMW.RunProperties? value)
@@ -97,7 +97,7 @@ public static class InsertedMathControlConverter
   
   private static bool CmpDeletedMathControl(DXW.InsertedMathControl openXmlElement, DMW.DeletedMathControl? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DeletedMathControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedMathControl>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DeletedMathControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedMathControl>(), value, diffs, objName);
   }
   
   private static void SetDeletedMathControl(DXW.InsertedMathControl openXmlElement, DMW.DeletedMathControl? value)
@@ -113,11 +113,11 @@ public static class InsertedMathControlConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.InsertedMathControl? CreateModelElement(DXW.InsertedMathControl? openXmlElement)
+  public static DMW.InsertedMathControl? CreateModelElement(DXW.InsertedMathControl? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.InsertedMathControl();
+      var value = new DMW.InsertedMathControl();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

@@ -15,7 +15,7 @@ public static class WrapSquareConverter
   
   private static bool CmpWrapText(DXDrawW.WrapSquare openXmlElement, DMDrawsW.WrapTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName);
   }
   
   private static void SetWrapText(DXDrawW.WrapSquare openXmlElement, DMDrawsW.WrapTextKind? value)
@@ -116,7 +116,7 @@ public static class WrapSquareConverter
   
   private static bool CmpEffectExtent(DXDrawW.WrapSquare openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName);
   }
   
   private static void SetEffectExtent(DXDrawW.WrapSquare openXmlElement, DMDrawsW.EffectExtent? value)

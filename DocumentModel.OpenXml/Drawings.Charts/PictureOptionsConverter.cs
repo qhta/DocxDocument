@@ -108,7 +108,7 @@ public static class PictureOptionsConverter
   
   private static bool CmpPictureFormat(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetPictureFormat(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureFormatKind? value)

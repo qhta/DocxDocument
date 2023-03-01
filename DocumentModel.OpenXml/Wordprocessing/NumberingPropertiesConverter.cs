@@ -54,7 +54,7 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName);
   }
   
   private static void SetNumberingChange(DXW.NumberingProperties openXmlElement, DMW.NumberingChange? value)
@@ -83,7 +83,7 @@ public static class NumberingPropertiesConverter
   
   private static bool CmpInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName);
   }
   
   private static void SetInserted(DXW.NumberingProperties openXmlElement, DMW.TrackChangeType? value)
@@ -99,11 +99,11 @@ public static class NumberingPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.NumberingProperties? CreateModelElement(DXW.NumberingProperties? openXmlElement)
+  public static DMW.NumberingProperties? CreateModelElement(DXW.NumberingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.NumberingProperties();
+      var value = new DMW.NumberingProperties();
       value.NumberingLevelReference = GetNumberingLevelReference(openXmlElement);
       value.NumberingId = GetNumberingId(openXmlElement);
       value.NumberingChange = GetNumberingChange(openXmlElement);

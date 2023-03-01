@@ -1231,11 +1231,11 @@ public static class CompatibilityConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Compatibility? CreateModelElement(DXW.Compatibility? openXmlElement)
+  public static DMW.Compatibility? CreateModelElement(DXW.Compatibility? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Compatibility();
+      var value = new DMW.Compatibility();
       value.UseSingleBorderForContiguousCells = GetUseSingleBorderForContiguousCells(openXmlElement);
       value.WordPerfectJustification = GetWordPerfectJustification(openXmlElement);
       value.NoTabHangIndent = GetNoTabHangIndent(openXmlElement);

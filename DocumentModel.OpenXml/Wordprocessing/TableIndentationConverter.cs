@@ -35,7 +35,7 @@ public static class TableIndentationConverter
   
   private static bool CmpType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitKind? value)
@@ -43,11 +43,11 @@ public static class TableIndentationConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)
+  public static DMW.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableIndentation();
+      var value = new DMW.TableIndentation();
       value.Width = GetWidth(openXmlElement);
       value.Type = GetType(openXmlElement);
       return value;

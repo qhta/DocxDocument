@@ -15,7 +15,7 @@ public static class GradientStopListConverter
   
   private static bool CmpGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientStop>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientStop>(), value, diffs, objName);
   }
   
   private static void SetGradientStop(DXDraw.GradientStopList openXmlElement, DMDraws.GradientStop? value)

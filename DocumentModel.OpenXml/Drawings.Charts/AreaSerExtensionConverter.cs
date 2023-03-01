@@ -33,7 +33,7 @@ public static class AreaSerExtensionConverter
   
   private static bool CmpFilteredSeriesTitle(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName);
   }
   
   private static void SetFilteredSeriesTitle(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value)
@@ -59,7 +59,7 @@ public static class AreaSerExtensionConverter
   
   private static bool CmpFilteredCategoryTitle(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName);
   }
   
   private static void SetFilteredCategoryTitle(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value)
@@ -85,7 +85,7 @@ public static class AreaSerExtensionConverter
   
   private static bool CmpDataLabelsRange(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName);
   }
   
   private static void SetDataLabelsRange(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value)
@@ -111,7 +111,7 @@ public static class AreaSerExtensionConverter
   
   private static bool CmpCategoryFilterExceptions(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName);
   }
   
   private static void SetCategoryFilterExceptions(DXDrawCharts.AreaSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value)

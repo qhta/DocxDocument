@@ -33,7 +33,7 @@ public static class NaryPropertiesConverter
   
   private static bool CmpLimitLocation(DXMath.NaryProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.LimitLocation>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.LimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetLimitLocation(DXMath.NaryProperties openXmlElement, DMMath.LimitLocationKind? value)
@@ -61,7 +61,7 @@ public static class NaryPropertiesConverter
   
   private static bool CmpGrowOperators(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetGrowOperators(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
@@ -89,7 +89,7 @@ public static class NaryPropertiesConverter
   
   private static bool CmpHideSubArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSubArgument>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSubArgument>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHideSubArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
@@ -117,7 +117,7 @@ public static class NaryPropertiesConverter
   
   private static bool CmpHideSuperArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSuperArgument>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSuperArgument>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHideSuperArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
@@ -148,7 +148,7 @@ public static class NaryPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.NaryProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.NaryProperties openXmlElement, DMMath.ControlProperties? value)

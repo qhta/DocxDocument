@@ -15,7 +15,7 @@ public static class HeaderFooterReferenceTypeConverter
   
   private static bool CmpType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value)
@@ -41,11 +41,11 @@ public static class HeaderFooterReferenceTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.HeaderFooterReferenceType? CreateModelElement(DXW.HeaderFooterReferenceType? openXmlElement)
+  public static DMW.HeaderFooterReferenceType? CreateModelElement(DXW.HeaderFooterReferenceType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.HeaderFooterReferenceType();
+      var value = new DMW.HeaderFooterReferenceType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;

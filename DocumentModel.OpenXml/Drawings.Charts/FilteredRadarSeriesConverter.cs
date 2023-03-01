@@ -18,7 +18,7 @@ public static class FilteredRadarSeriesConverter
   
   private static bool CmpRadarChartSeries(DXO2013DrawChart.FilteredRadarSeries openXmlElement, DMDrawsCharts.RadarChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RadarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.RadarChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RadarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.RadarChartSeries>(), value, diffs, objName);
   }
   
   private static void SetRadarChartSeries(DXO2013DrawChart.FilteredRadarSeries openXmlElement, DMDrawsCharts.RadarChartSeries3? value)

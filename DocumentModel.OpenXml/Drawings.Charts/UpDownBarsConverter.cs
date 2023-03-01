@@ -36,7 +36,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName);
   }
   
   private static void SetUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value)
@@ -65,7 +65,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName);
   }
   
   private static void SetDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value)
@@ -94,7 +94,7 @@ public static class UpDownBarsConverter
   
   private static bool CmpExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value)

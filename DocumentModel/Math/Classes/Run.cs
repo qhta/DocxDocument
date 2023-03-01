@@ -19,13 +19,13 @@ public class Run
 
   public Wordprocessing.Break? Break { get; set; }
 
-  public TextType? Text { get; set; }
+  public DMW.TextType? Text { get; set; }
 
-  public TextType? DeletedText { get; set; }
+  public DMW.TextType? DeletedText { get; set; }
 
-  public TextType? FieldCode { get; set; }
+  public DMW.TextType? FieldCode { get; set; }
 
-  public TextType? DeletedFieldCode { get; set; }
+  public DMW.TextType? DeletedFieldCode { get; set; }
 
   public Boolean? NoBreakHyphen { get; set; }
 
@@ -69,9 +69,9 @@ public class Run
 
   public Ruby? Ruby { get; set; }
 
-  public FootnoteEndnoteReferenceType? FootnoteReference { get; set; }
+  public NoteReference? FootnoteReference { get; set; }
 
-  public FootnoteEndnoteReferenceType? EndnoteReference { get; set; }
+  public NoteReference? EndnoteReference { get; set; }
 
   public MarkupType? CommentReference { get; set; }
 

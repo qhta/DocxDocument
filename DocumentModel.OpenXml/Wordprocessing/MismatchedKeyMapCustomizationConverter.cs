@@ -61,11 +61,11 @@ public static class MismatchedKeyMapCustomizationConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.MismatchedKeyMapCustomization? CreateModelElement(DXOW.MismatchedKeyMapCustomization? openXmlElement)
+  public static DMW.MismatchedKeyMapCustomization? CreateModelElement(DXOW.MismatchedKeyMapCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.MismatchedKeyMapCustomization();
+      var value = new DMW.MismatchedKeyMapCustomization();
       value.KeyMapEntries = GetKeyMapEntries(openXmlElement);
       return value;
     }

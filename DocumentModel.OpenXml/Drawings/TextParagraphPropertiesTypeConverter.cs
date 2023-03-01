@@ -95,7 +95,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMDraws.TextAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues, DMDraws.TextAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextAlignmentKind? value)
@@ -179,7 +179,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpFontAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextFontAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMDraws.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues, DMDraws.TextFontAlignmentKind>(openXmlElement?.FontAlignment?.Value, value, diffs, objName);
   }
   
   private static void SetFontAlignment(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.TextFontAlignmentKind? value)
@@ -246,7 +246,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName);
   }
   
   private static void SetLineSpacing(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.LineSpacing? value)
@@ -275,7 +275,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName);
   }
   
   private static void SetSpaceBefore(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceBefore? value)
@@ -304,7 +304,7 @@ public static class TextParagraphPropertiesTypeConverter
   
   private static bool CmpSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName);
   }
   
   private static void SetSpaceAfter(DXDraw.TextParagraphPropertiesType openXmlElement, DMDraws.SpaceAfter? value)

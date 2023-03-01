@@ -15,7 +15,7 @@ public static class RelativeWidthConverter
   
   private static bool CmpObjectId(DXO2010WDraw.RelativeWidth openXmlElement, DMWDraws.SizeRelativeHorizontallyKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWDraws.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWDraws.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value, value, diffs, objName);
   }
   
   private static void SetObjectId(DXO2010WDraw.RelativeWidth openXmlElement, DMWDraws.SizeRelativeHorizontallyKind? value)
@@ -48,11 +48,11 @@ public static class RelativeWidthConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Drawings.RelativeWidth? CreateModelElement(DXO2010WDraw.RelativeWidth? openXmlElement)
+  public static DMW.Drawings.RelativeWidth? CreateModelElement(DXO2010WDraw.RelativeWidth? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Drawings.RelativeWidth();
+      var value = new DMW.Drawings.RelativeWidth();
       value.ObjectId = GetObjectId(openXmlElement);
       value.PercentageWidth = GetPercentageWidth(openXmlElement);
       return value;

@@ -18,7 +18,7 @@ public static class RunPropertiesDefaultConverter
   
   private static bool CmpRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName);
   }
   
   private static void SetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value)
@@ -34,11 +34,11 @@ public static class RunPropertiesDefaultConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.RunPropertiesDefault? CreateModelElement(DXW.RunPropertiesDefault? openXmlElement)
+  public static DMW.RunPropertiesDefault? CreateModelElement(DXW.RunPropertiesDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RunPropertiesDefault();
+      var value = new DMW.RunPropertiesDefault();
       value.RunPropertiesBaseStyle = GetRunPropertiesBaseStyle(openXmlElement);
       return value;
     }

@@ -255,7 +255,7 @@ public static class ReflectionConverter
   
   private static bool CmpAlignment(DXO2010W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXO2010W.Reflection openXmlElement, DMW.RectangleAlignmentKind? value)
@@ -263,11 +263,11 @@ public static class ReflectionConverter
     openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.Reflection? CreateModelElement(DXO2010W.Reflection? openXmlElement)
+  public static DMW.Reflection? CreateModelElement(DXO2010W.Reflection? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Reflection();
+      var value = new DMW.Reflection();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.StartingOpacity = GetStartingOpacity(openXmlElement);
       value.StartPosition = GetStartPosition(openXmlElement);

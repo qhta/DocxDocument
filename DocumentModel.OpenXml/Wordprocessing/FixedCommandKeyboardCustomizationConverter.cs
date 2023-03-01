@@ -79,11 +79,11 @@ public static class FixedCommandKeyboardCustomizationConverter
       openXmlElement.Argument = null;
   }
   
-  public static DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization? CreateModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement)
+  public static DMW.FixedCommandKeyboardCustomization? CreateModelElement(DXOW.FixedCommandKeyboardCustomization? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FixedCommandKeyboardCustomization();
+      var value = new DMW.FixedCommandKeyboardCustomization();
       value.CommandName = GetCommandName(openXmlElement);
       value.CommandIndex = GetCommandIndex(openXmlElement);
       value.Argument = GetArgument(openXmlElement);

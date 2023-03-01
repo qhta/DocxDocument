@@ -58,7 +58,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpVerticalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalOverflowKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMDraws.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalOverflowKind? value)
@@ -76,7 +76,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpHorizontalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextHorizontalOverflowKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMDraws.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value, value, diffs, objName);
   }
   
   private static void SetHorizontalOverflow(DXDraw.BodyProperties openXmlElement, DMDraws.TextHorizontalOverflowKind? value)
@@ -94,7 +94,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpVertical(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(openXmlElement?.Vertical?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMDraws.TextVerticalKind>(openXmlElement?.Vertical?.Value, value, diffs, objName);
   }
   
   private static void SetVertical(DXDraw.BodyProperties openXmlElement, DMDraws.TextVerticalKind? value)
@@ -112,7 +112,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpWrap(DXDraw.BodyProperties openXmlElement, DMDraws.TextWrappingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMDraws.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName);
   }
   
   private static void SetWrap(DXDraw.BodyProperties openXmlElement, DMDraws.TextWrappingKind? value)
@@ -296,7 +296,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpAnchor(DXDraw.BodyProperties openXmlElement, DMDraws.TextAnchoringKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(openXmlElement?.Anchor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMDraws.TextAnchoringKind>(openXmlElement?.Anchor?.Value, value, diffs, objName);
   }
   
   private static void SetAnchor(DXDraw.BodyProperties openXmlElement, DMDraws.TextAnchoringKind? value)
@@ -409,7 +409,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetTextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetTextWrap>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetTextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetTextWrap>(), value, diffs, objName);
   }
   
   private static void SetPresetTextWrap(DXDraw.BodyProperties openXmlElement, DMDraws.PresetTextWrap? value)
@@ -463,7 +463,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NormalAutoFitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NormalAutoFit>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.NormalAutoFitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NormalAutoFit>(), value, diffs, objName);
   }
   
   private static void SetNormalAutoFit(DXDraw.BodyProperties openXmlElement, DMDraws.NormalAutoFit? value)
@@ -517,7 +517,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName);
   }
   
   private static void SetScene3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Scene3DType? value)
@@ -543,7 +543,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
   }
   
   private static void SetShape3DType(DXDraw.BodyProperties openXmlElement, DMDraws.Shape3DType? value)
@@ -569,7 +569,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName);
   }
   
   private static void SetFlatText(DXDraw.BodyProperties openXmlElement, DMDraws.FlatText? value)
@@ -595,7 +595,7 @@ public static class BodyPropertiesConverter
   
   private static bool CmpExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDraw.BodyProperties openXmlElement, DMDraws.ExtensionList? value)

@@ -144,7 +144,7 @@ public static class InlineConverter
   
   private static bool CmpExtent(DXDrawW.Inline openXmlElement, DMDrawsW.Extent? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Extent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Extent>(), value, diffs, objName);
   }
   
   private static void SetExtent(DXDrawW.Inline openXmlElement, DMDrawsW.Extent? value)
@@ -173,7 +173,7 @@ public static class InlineConverter
   
   private static bool CmpEffectExtent(DXDrawW.Inline openXmlElement, DMDrawsW.EffectExtent? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.EffectExtent>(), value, diffs, objName);
   }
   
   private static void SetEffectExtent(DXDrawW.Inline openXmlElement, DMDrawsW.EffectExtent? value)
@@ -202,7 +202,7 @@ public static class InlineConverter
   
   private static bool CmpDocProperties(DXDrawW.Inline openXmlElement, DMDrawsW.DocProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.DocPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.DocProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.DocPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.DocProperties>(), value, diffs, objName);
   }
   
   private static void SetDocProperties(DXDrawW.Inline openXmlElement, DMDrawsW.DocProperties? value)
@@ -231,7 +231,7 @@ public static class InlineConverter
   
   private static bool CmpNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.NonVisualGraphicFrameDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.NonVisualGraphicFrameDrawingProperties>(), value, diffs, objName);
   }
   
   private static void SetNonVisualGraphicFrameDrawingProperties(DXDrawW.Inline openXmlElement, DMDrawsW.NonVisualGraphicFrameDrawingProperties? value)
@@ -260,7 +260,7 @@ public static class InlineConverter
   
   private static bool CmpGraphic(DXDrawW.Inline openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName);
   }
   
   private static void SetGraphic(DXDrawW.Inline openXmlElement, DMDraws.Graphic? value)

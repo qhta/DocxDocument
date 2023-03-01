@@ -15,7 +15,7 @@ public static class DocGridConverter
   
   private static bool CmpType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value)
@@ -63,11 +63,11 @@ public static class DocGridConverter
     openXmlElement.CharacterSpace = value;
   }
   
-  public static DocumentModel.Wordprocessing.DocGrid? CreateModelElement(DXW.DocGrid? openXmlElement)
+  public static DMW.DocGrid? CreateModelElement(DXW.DocGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.DocGrid();
+      var value = new DMW.DocGrid();
       value.Type = GetType(openXmlElement);
       value.LinePitch = GetLinePitch(openXmlElement);
       value.CharacterSpace = GetCharacterSpace(openXmlElement);

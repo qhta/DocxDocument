@@ -18,7 +18,7 @@ public static class MatrixColumnConverter
   
   private static bool CmpMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MatrixColumnPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MatrixColumnProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.MatrixColumnPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MatrixColumnProperties>(), value, diffs, objName);
   }
   
   private static void SetMatrixColumnProperties(DXMath.MatrixColumn openXmlElement, DMMath.MatrixColumnProperties? value)

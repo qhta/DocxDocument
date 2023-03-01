@@ -61,11 +61,11 @@ public static class StylisticSetsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.StylisticSets? CreateModelElement(DXO2010W.StylisticSets? openXmlElement)
+  public static DMW.StylisticSets? CreateModelElement(DXO2010W.StylisticSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StylisticSets();
+      var value = new DMW.StylisticSets();
       value.StyleSets = GetStyleSets(openXmlElement);
       return value;
     }

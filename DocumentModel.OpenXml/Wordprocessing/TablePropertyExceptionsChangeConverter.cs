@@ -74,7 +74,7 @@ public static class TablePropertyExceptionsChangeConverter
   
   private static bool CmpPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement, DMW.PreviousTablePropertyExceptions? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousTablePropertyExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTablePropertyExceptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousTablePropertyExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTablePropertyExceptions>(), value, diffs, objName);
   }
   
   private static void SetPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement, DMW.PreviousTablePropertyExceptions? value)
@@ -90,11 +90,11 @@ public static class TablePropertyExceptionsChangeConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TablePropertyExceptionsChange? CreateModelElement(DXW.TablePropertyExceptionsChange? openXmlElement)
+  public static DMW.TablePropertyExceptionsChange? CreateModelElement(DXW.TablePropertyExceptionsChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TablePropertyExceptionsChange();
+      var value = new DMW.TablePropertyExceptionsChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
       value.Id = GetId(openXmlElement);

@@ -15,7 +15,7 @@ public static class SystemColorConverter
   
   private static bool CmpVal(DXDraw.SystemColor openXmlElement, DMDraws.SystemColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMDraws.SystemColorKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMDraws.SystemColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXDraw.SystemColor openXmlElement, DMDraws.SystemColorKind? value)

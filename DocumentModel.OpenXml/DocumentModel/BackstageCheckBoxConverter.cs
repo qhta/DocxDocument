@@ -15,7 +15,7 @@ public static class BackstageCheckBoxConverter
   
   private static bool CmpExpand(DXO2010CustUI.BackstageCheckBox openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName);
   }
   
   private static void SetExpand(DXO2010CustUI.BackstageCheckBox openXmlElement, DM.ExpandKind? value)

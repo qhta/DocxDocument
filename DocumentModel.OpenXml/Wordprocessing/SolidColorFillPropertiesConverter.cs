@@ -18,7 +18,7 @@ public static class SolidColorFillPropertiesConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.SolidColorFillProperties openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXO2010W.SolidColorFillProperties openXmlElement, DMW.RgbColorModelHex? value)
@@ -47,7 +47,7 @@ public static class SolidColorFillPropertiesConverter
   
   private static bool CmpSchemeColor(DXO2010W.SolidColorFillProperties openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXO2010W.SolidColorFillProperties openXmlElement, DMW.SchemeColor? value)
@@ -63,11 +63,11 @@ public static class SolidColorFillPropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SolidColorFillProperties? CreateModelElement(DXO2010W.SolidColorFillProperties? openXmlElement)
+  public static DMW.SolidColorFillProperties? CreateModelElement(DXO2010W.SolidColorFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SolidColorFillProperties();
+      var value = new DMW.SolidColorFillProperties();
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);
       return value;

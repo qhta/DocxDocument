@@ -15,7 +15,7 @@ public static class WrapThroughConverter
   
   private static bool CmpWrapText(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName);
   }
   
   private static void SetWrapText(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapTextKind? value)
@@ -76,7 +76,7 @@ public static class WrapThroughConverter
   
   private static bool CmpWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.WrapPolygon>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.WrapPolygon>(), value, diffs, objName);
   }
   
   private static void SetWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value)

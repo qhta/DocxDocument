@@ -18,7 +18,7 @@ public static class FilteredBubbleSeriesConverter
   
   private static bool CmpBubbleChartSeries(DXO2013DrawChart.FilteredBubbleSeries openXmlElement, DMDrawsCharts.BubbleChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.BubbleChartSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BubbleChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.BubbleChartSeries>(), value, diffs, objName);
   }
   
   private static void SetBubbleChartSeries(DXO2013DrawChart.FilteredBubbleSeries openXmlElement, DMDrawsCharts.BubbleChartSeries3? value)

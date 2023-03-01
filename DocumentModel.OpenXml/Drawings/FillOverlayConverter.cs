@@ -15,7 +15,7 @@ public static class FillOverlayConverter
   
   private static bool CmpBlend(DXDraw.FillOverlay openXmlElement, DMDraws.BlendMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.Blend?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.Blend?.Value, value, diffs, objName);
   }
   
   private static void SetBlend(DXDraw.FillOverlay openXmlElement, DMDraws.BlendMode? value)
@@ -67,7 +67,7 @@ public static class FillOverlayConverter
   
   private static bool CmpSolidFill(DXDraw.FillOverlay openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
   }
   
   private static void SetSolidFill(DXDraw.FillOverlay openXmlElement, DMDraws.SolidFill? value)
@@ -96,7 +96,7 @@ public static class FillOverlayConverter
   
   private static bool CmpGradientFill(DXDraw.FillOverlay openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
   }
   
   private static void SetGradientFill(DXDraw.FillOverlay openXmlElement, DMDraws.GradientFill? value)
@@ -125,7 +125,7 @@ public static class FillOverlayConverter
   
   private static bool CmpBlipFill(DXDraw.FillOverlay openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
   }
   
   private static void SetBlipFill(DXDraw.FillOverlay openXmlElement, DMDraws.BlipFill? value)
@@ -154,7 +154,7 @@ public static class FillOverlayConverter
   
   private static bool CmpPatternFill(DXDraw.FillOverlay openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
   }
   
   private static void SetPatternFill(DXDraw.FillOverlay openXmlElement, DMDraws.PatternFill? value)

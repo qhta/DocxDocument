@@ -18,7 +18,7 @@ public static class PrimaryItemConverter
   
   private static bool CmpBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageRegularButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageRegularButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageRegularButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageRegularButton>(), value, diffs, objName);
   }
   
   private static void SetBackstageRegularButton(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstageRegularButton? value)
@@ -47,7 +47,7 @@ public static class PrimaryItemConverter
   
   private static bool CmpBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstagePrimaryMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstagePrimaryMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstagePrimaryMenu>(), value, diffs, objName);
   }
   
   private static void SetBackstagePrimaryMenu(DXO2010CustUI.PrimaryItem openXmlElement, DM.BackstagePrimaryMenu? value)

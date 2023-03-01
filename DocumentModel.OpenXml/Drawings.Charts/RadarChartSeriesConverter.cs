@@ -54,7 +54,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpSeriesText(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName);
   }
   
   private static void SetSeriesText(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
@@ -83,7 +83,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -112,7 +112,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpPictureOptions(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
   }
   
   private static void SetPictureOptions(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value)
@@ -141,7 +141,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpMarker(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.Marker? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Marker>(), value, diffs, objName);
   }
   
   private static void SetMarker(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.Marker? value)
@@ -223,7 +223,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpDataLabels(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -249,7 +249,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpCategoryAxisData(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.CategoryAxisDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CategoryAxisData>(), value, diffs, objName);
   }
   
   private static void SetCategoryAxisData(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.CategoryAxisData? value)
@@ -275,7 +275,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpValues(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.Values? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Values>(), value, diffs, objName);
   }
   
   private static void SetValues(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.Values? value)
@@ -301,7 +301,7 @@ public static class RadarChartSeriesConverter
   
   private static bool CmpRadarSerExtensionList(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.RadarSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RadarSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.RadarSerExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.RadarSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.RadarSerExtensionList>(), value, diffs, objName);
   }
   
   private static void SetRadarSerExtensionList(DXDrawCharts.RadarChartSeries openXmlElement, DMDrawsCharts.RadarSerExtensionList? value)

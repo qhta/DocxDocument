@@ -92,7 +92,7 @@ public static class TextBoxConverter
   
   private static bool CmpTextBoxContent(DXVml.TextBox openXmlElement, DMW.TextBoxContent? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TextBoxContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TextBoxContent>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TextBoxContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TextBoxContent>(), value, diffs, objName);
   }
   
   private static void SetTextBoxContent(DXVml.TextBox openXmlElement, DMW.TextBoxContent? value)

@@ -15,7 +15,7 @@ public static class ExtrusionConverter
   
   private static bool CmpExtension(DXVmlO.Extrusion openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
   private static void SetExtension(DXVmlO.Extrusion openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
@@ -56,7 +56,7 @@ public static class ExtrusionConverter
   
   private static bool CmpType(DXVmlO.Extrusion openXmlElement, DMVml.ExtrusionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionValues, DMVml.ExtrusionKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionValues, DMVml.ExtrusionKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVmlO.Extrusion openXmlElement, DMVml.ExtrusionKind? value)
@@ -74,7 +74,7 @@ public static class ExtrusionConverter
   
   private static bool CmpRender(DXVmlO.Extrusion openXmlElement, DMVml.ExtrusionRenderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues, DMVml.ExtrusionRenderKind>(openXmlElement?.Render?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues, DMVml.ExtrusionRenderKind>(openXmlElement?.Render?.Value, value, diffs, objName);
   }
   
   private static void SetRender(DXVmlO.Extrusion openXmlElement, DMVml.ExtrusionRenderKind? value)

@@ -54,7 +54,7 @@ public static class CustomXmlElementConverter
   
   private static bool CmpCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CustomXmlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.CustomXmlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CustomXmlProperties>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlProperties(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlProperties? value)
@@ -70,11 +70,11 @@ public static class CustomXmlElementConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CustomXmlElement? CreateModelElement(DXW.CustomXmlElement? openXmlElement)
+  public static DMW.CustomXmlElement? CreateModelElement(DXW.CustomXmlElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CustomXmlElement();
+      var value = new DMW.CustomXmlElement();
       value.Uri = GetUri(openXmlElement);
       value.Element = GetElement(openXmlElement);
       value.CustomXmlProperties = GetCustomXmlProperties(openXmlElement);

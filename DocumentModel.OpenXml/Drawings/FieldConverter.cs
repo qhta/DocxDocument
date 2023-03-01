@@ -54,7 +54,7 @@ public static class FieldConverter
   
   private static bool CmpRunProperties(DXDraw.Field openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RunProperties>(), value, diffs, objName);
   }
   
   private static void SetRunProperties(DXDraw.Field openXmlElement, DMDraws.RunProperties? value)
@@ -83,7 +83,7 @@ public static class FieldConverter
   
   private static bool CmpParagraphProperties(DXDraw.Field openXmlElement, DMDraws.ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>(), value, diffs, objName);
   }
   
   private static void SetParagraphProperties(DXDraw.Field openXmlElement, DMDraws.ParagraphProperties? value)

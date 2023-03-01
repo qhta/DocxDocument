@@ -61,11 +61,11 @@ public static class ExtensionListConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.ExtensionList? CreateModelElement(DXO2021WComtExt.ExtensionList? openXmlElement)
+  public static DMW.ExtensionList? CreateModelElement(DXO2021WComtExt.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ExtensionList();
+      var value = new DMW.ExtensionList();
       value.Extensions = GetExtensions(openXmlElement);
       return value;
     }

@@ -18,7 +18,7 @@ public static class SdtElementConverter
   
   private static bool CmpSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName);
   }
   
   private static void SetSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value)
@@ -47,7 +47,7 @@ public static class SdtElementConverter
   
   private static bool CmpSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName);
   }
   
   private static void SetSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value)
@@ -63,11 +63,11 @@ public static class SdtElementConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.SdtElement? CreateModelElement(DXW.SdtElement? openXmlElement)
+  public static DMW.SdtElement? CreateModelElement(DXW.SdtElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtElement();
+      var value = new DMW.SdtElement();
       value.SdtProperties = GetSdtProperties(openXmlElement);
       value.SdtEndCharProperties = GetSdtEndCharProperties(openXmlElement);
       return value;

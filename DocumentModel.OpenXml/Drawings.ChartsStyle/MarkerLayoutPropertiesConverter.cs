@@ -15,7 +15,7 @@ public static class MarkerLayoutPropertiesConverter
   
   private static bool CmpSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName);
   }
   
   private static void SetSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value)

@@ -54,11 +54,11 @@ public static class SingleDataSourceRecordConverter
     SimpleValueConverter.SetValue<DXOW.RecordHashCode,System.Int64>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.SingleDataSourceRecord? CreateModelElement(DXOW.SingleDataSourceRecord? openXmlElement)
+  public static DMW.SingleDataSourceRecord? CreateModelElement(DXOW.SingleDataSourceRecord? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SingleDataSourceRecord();
+      var value = new DMW.SingleDataSourceRecord();
       value.RecordIncluded = GetRecordIncluded(openXmlElement);
       value.RecordHashCode = GetRecordHashCode(openXmlElement);
       return value;

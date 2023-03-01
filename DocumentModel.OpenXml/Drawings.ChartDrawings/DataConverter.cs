@@ -35,7 +35,7 @@ public static class DataConverter
   
   private static bool CmpNumericDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.NumericDimension? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>(), value, diffs, objName);
   }
   
   private static void SetNumericDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.NumericDimension? value)
@@ -61,7 +61,7 @@ public static class DataConverter
   
   private static bool CmpStringDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.StringDimension? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringDimension>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringDimension>(), value, diffs, objName);
   }
   
   private static void SetStringDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.StringDimension? value)
@@ -87,7 +87,7 @@ public static class DataConverter
   
   private static bool CmpExtensionList(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.ExtensionList? value)

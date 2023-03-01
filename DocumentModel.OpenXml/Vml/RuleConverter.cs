@@ -33,7 +33,7 @@ public static class RuleConverter
   
   private static bool CmpType(DXVmlO.Rule openXmlElement, DMVml.RuleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMVml.RuleKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMVml.RuleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXVmlO.Rule openXmlElement, DMVml.RuleKind? value)
@@ -51,7 +51,7 @@ public static class RuleConverter
   
   private static bool CmpHow(DXVmlO.Rule openXmlElement, DMVml.AlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMVml.AlignmentKind>(openXmlElement?.How?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMVml.AlignmentKind>(openXmlElement?.How?.Value, value, diffs, objName);
   }
   
   private static void SetHow(DXVmlO.Rule openXmlElement, DMVml.AlignmentKind? value)

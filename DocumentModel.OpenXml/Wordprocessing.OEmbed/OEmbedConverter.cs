@@ -64,11 +64,11 @@ public static class OEmbedConverter
       openXmlElement.PicLocksAutoForOEmbed = null;
   }
   
-  public static DocumentModel.Wordprocessing.OEmbed.OEmbed? CreateModelElement(DXOWY2020OEmb.OEmbed? openXmlElement)
+  public static DMW.OEmbed.OEmbed? CreateModelElement(DXOWY2020OEmb.OEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.OEmbed.OEmbed();
+      var value = new DMW.OEmbed.OEmbed();
       value.OEmbedUrl = GetOEmbedUrl(openXmlElement);
       value.MediaType = GetMediaType(openXmlElement);
       value.PicLocksAutoForOEmbed = GetPicLocksAutoForOEmbed(openXmlElement);

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MarkupRangeType Class.
 /// </summary>
-public class MarkupRangeType
+public class MarkupRangeType: BodyElement, ParagraphElement
 {
   /// <summary>
   ///   displacedByCustomXml

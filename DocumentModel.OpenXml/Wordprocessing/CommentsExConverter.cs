@@ -61,11 +61,11 @@ public static class CommentsExConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.CommentsEx? CreateModelElement(DXO2013W.CommentsEx? openXmlElement)
+  public static DMW.CommentsEx? CreateModelElement(DXO2013W.CommentsEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CommentsEx();
+      var value = new DMW.CommentsEx();
       value.CommentExs = GetCommentExs(openXmlElement);
       return value;
     }

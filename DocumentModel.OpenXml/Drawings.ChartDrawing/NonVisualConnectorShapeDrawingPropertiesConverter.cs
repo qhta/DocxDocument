@@ -18,7 +18,7 @@ public static class NonVisualConnectorShapeDrawingPropertiesConverter
   
   private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualConnectorShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName);
   }
   
   private static void SetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualConnectorShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value)
@@ -47,7 +47,7 @@ public static class NonVisualConnectorShapeDrawingPropertiesConverter
   
   private static bool CmpNonVisualConnectionShapeProperties(DXDrawChartDraw.NonVisualConnectorShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualConnectionShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualConnectionShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualConnectionShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.NonVisualConnectionShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualConnectionShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetNonVisualConnectionShapeProperties(DXDrawChartDraw.NonVisualConnectorShapeDrawingProperties openXmlElement, DMDrawsChartDraw.NonVisualConnectionShapeProperties? value)

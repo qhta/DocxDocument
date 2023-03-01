@@ -15,7 +15,7 @@ public static class DocumentControlsQatItemsConverter
   
   private static bool CmpControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ControlCloneQat? value, DiffList? diffs, string? objName)
   {
-    return DMX.ControlCloneQatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneQat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ControlCloneQatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneQat>(), value, diffs, objName);
   }
   
   private static void SetControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ControlCloneQat? value)
@@ -41,7 +41,7 @@ public static class DocumentControlsQatItemsConverter
   
   private static bool CmpButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName);
   }
   
   private static void SetButtonRegular(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.ButtonRegular? value)
@@ -67,7 +67,7 @@ public static class DocumentControlsQatItemsConverter
   
   private static bool CmpSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
   {
-    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Separator>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Separator>(), value, diffs, objName);
   }
   
   private static void SetSeparator(DXO2010CustUI.DocumentControlsQatItems openXmlElement, DM.Separator? value)

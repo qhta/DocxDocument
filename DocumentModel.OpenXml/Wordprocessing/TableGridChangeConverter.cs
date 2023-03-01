@@ -36,7 +36,7 @@ public static class TableGridChangeConverter
   
   private static bool CmpPreviousTableGrid(DXW.TableGridChange openXmlElement, DMW.PreviousTableGrid? value, DiffList? diffs, string? objName)
   {
-    return DMXW.PreviousTableGridConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTableGrid>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.PreviousTableGridConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PreviousTableGrid>(), value, diffs, objName);
   }
   
   private static void SetPreviousTableGrid(DXW.TableGridChange openXmlElement, DMW.PreviousTableGrid? value)
@@ -52,11 +52,11 @@ public static class TableGridChangeConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.TableGridChange? CreateModelElement(DXW.TableGridChange? openXmlElement)
+  public static DMW.TableGridChange? CreateModelElement(DXW.TableGridChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableGridChange();
+      var value = new DMW.TableGridChange();
       value.Id = GetId(openXmlElement);
       value.PreviousTableGrid = GetPreviousTableGrid(openXmlElement);
       return value;

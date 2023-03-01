@@ -15,7 +15,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpLineReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.LineReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>(), value, diffs, objName);
   }
   
   private static void SetLineReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.LineReference? value)
@@ -63,7 +63,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpFillReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.FillReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>(), value, diffs, objName);
   }
   
   private static void SetFillReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.FillReference? value)
@@ -89,7 +89,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpEffectReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.EffectReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>(), value, diffs, objName);
   }
   
   private static void SetEffectReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.EffectReference? value)
@@ -115,7 +115,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpFontReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.FontReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>(), value, diffs, objName);
   }
   
   private static void SetFontReference(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.FontReference? value)
@@ -141,7 +141,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpShapeProperties(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.ShapeProperties? value)
@@ -167,7 +167,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpTextCharacterPropertiesType(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>(), value, diffs, objName);
   }
   
   private static void SetTextCharacterPropertiesType(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value)
@@ -193,7 +193,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpTextBodyProperties(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>(), value, diffs, objName);
   }
   
   private static void SetTextBodyProperties(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value)
@@ -219,7 +219,7 @@ public static class PlotArea3DConverter
   
   private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
   private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.PlotArea3D openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)

@@ -89,7 +89,7 @@ public static class MultiLevelStringCacheConverter
   
   private static bool CmpExtensionList(DXDrawCharts.MultiLevelStringCache openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.MultiLevelStringCache openXmlElement, DMDrawsCharts.ExtensionList? value)

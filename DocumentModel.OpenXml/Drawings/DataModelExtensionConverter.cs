@@ -33,7 +33,7 @@ public static class DataModelExtensionConverter
   
   private static bool CmpDataModelExtensionBlock(DXDraw.DataModelExtension openXmlElement, DMDrawsO.DataModelExtensionBlock? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.DataModelExtensionBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.DataModelExtensionBlock>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsO.DataModelExtensionBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.DataModelExtensionBlock>(), value, diffs, objName);
   }
   
   private static void SetDataModelExtensionBlock(DXDraw.DataModelExtension openXmlElement, DMDrawsO.DataModelExtensionBlock? value)

@@ -78,7 +78,7 @@ public static class RecipientDataConverter
   
   private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName);
   }
   
   private static void SetUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value)

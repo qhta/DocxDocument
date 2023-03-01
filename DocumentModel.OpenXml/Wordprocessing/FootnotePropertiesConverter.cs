@@ -15,7 +15,7 @@ public static class FootnotePropertiesConverter
   
   private static bool CmpFootnotePosition(DXW.FootnoteProperties openXmlElement, DMW.FootnotePositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DMW.FootnotePositionKind>(openXmlElement.GetFirstChild<DXW.FootnotePosition>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues, DMW.FootnotePositionKind>(openXmlElement.GetFirstChild<DXW.FootnotePosition>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetFootnotePosition(DXW.FootnoteProperties openXmlElement, DMW.FootnotePositionKind? value)
@@ -46,7 +46,7 @@ public static class FootnotePropertiesConverter
   
   private static bool CmpNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName);
   }
   
   private static void SetNumberingFormat(DXW.FootnoteProperties openXmlElement, DMW.NumberingFormat? value)
@@ -90,7 +90,7 @@ public static class FootnotePropertiesConverter
   
   private static bool CmpNumberingRestart(DXW.FootnoteProperties openXmlElement, DMW.RestartNumberKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNumberingRestart(DXW.FootnoteProperties openXmlElement, DMW.RestartNumberKind? value)
@@ -108,11 +108,11 @@ public static class FootnotePropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.FootnoteProperties? CreateModelElement(DXW.FootnoteProperties? openXmlElement)
+  public static DMW.FootnoteProperties? CreateModelElement(DXW.FootnoteProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FootnoteProperties();
+      var value = new DMW.FootnoteProperties();
       value.FootnotePosition = GetFootnotePosition(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);

@@ -15,7 +15,7 @@ public static class BorderTypeConverter
   
   private static bool CmpVal(DXW.BorderType openXmlElement, DMW.BorderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.BorderType openXmlElement, DMW.BorderKind? value)
@@ -51,7 +51,7 @@ public static class BorderTypeConverter
   
   private static bool CmpThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value)
@@ -171,11 +171,11 @@ public static class BorderTypeConverter
     openXmlElement.Frame = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.BorderType? CreateModelElement(DXW.BorderType? openXmlElement)
+  public static DMW.BorderType? CreateModelElement(DXW.BorderType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.BorderType();
+      var value = new DMW.BorderType();
       value.Val = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);

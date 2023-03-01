@@ -144,7 +144,7 @@ public static class DivConverter
   
   private static bool CmpDivBorder(DXW.Div openXmlElement, DMW.DivBorder? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DivBorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DivBorder>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DivBorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DivBorder>(), value, diffs, objName);
   }
   
   private static void SetDivBorder(DXW.Div openXmlElement, DMW.DivBorder? value)
@@ -216,11 +216,11 @@ public static class DivConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Div? CreateModelElement(DXW.Div? openXmlElement)
+  public static DMW.Div? CreateModelElement(DXW.Div? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Div();
+      var value = new DMW.Div();
       value.Id = GetId(openXmlElement);
       value.BlockQuote = GetBlockQuote(openXmlElement);
       value.BodyDiv = GetBodyDiv(openXmlElement);

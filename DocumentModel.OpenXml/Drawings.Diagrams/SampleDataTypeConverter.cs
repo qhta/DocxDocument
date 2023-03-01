@@ -41,7 +41,7 @@ public static class SampleDataTypeConverter
   
   private static bool CmpDataModel(DXDrawDgms.SampleDataType openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName);
   }
   
   private static void SetDataModel(DXDrawDgms.SampleDataType openXmlElement, DMDrawsDgms.DataModel? value)

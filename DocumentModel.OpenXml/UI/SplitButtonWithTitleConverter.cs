@@ -318,7 +318,7 @@ public static class SplitButtonWithTitleConverter
   
   private static bool CmpVisibleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName);
   }
   
   private static void SetVisibleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleButton? value)
@@ -344,7 +344,7 @@ public static class SplitButtonWithTitleConverter
   
   private static bool CmpVisibleToggleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName);
   }
   
   private static void SetVisibleToggleButton(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.VisibleToggleButton? value)
@@ -370,7 +370,7 @@ public static class SplitButtonWithTitleConverter
   
   private static bool CmpMenuWithTitle(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.MenuWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.MenuWithTitle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.MenuWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.MenuWithTitle>(), value, diffs, objName);
   }
   
   private static void SetMenuWithTitle(DXOCustUI.SplitButtonWithTitle openXmlElement, DMUI.MenuWithTitle? value)

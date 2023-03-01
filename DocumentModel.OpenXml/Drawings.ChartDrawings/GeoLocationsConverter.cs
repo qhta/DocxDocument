@@ -18,7 +18,7 @@ public static class GeoLocationsConverter
   
   private static bool CmpGeoLocation(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocation? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoLocationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.GeoLocationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocation>(), value, diffs, objName);
   }
   
   private static void SetGeoLocation(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocation? value)

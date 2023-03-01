@@ -30,7 +30,7 @@ public static class HyperlinkExtensionConverter
   
   private static bool CmpHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement, DMDraws.HyperlinkColorEnum? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMDraws.HyperlinkColorEnum>(openXmlElement.GetFirstChild<DXO2019DrawHLnkClr.HyperlinkColor>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHyperlinkColor(DXDraw.HyperlinkExtension openXmlElement, DMDraws.HyperlinkColorEnum? value)

@@ -99,7 +99,7 @@ public static class DataLabelsConverter
   
   private static bool CmpNumberingFormat(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberingFormat>(), value, diffs, objName);
   }
   
   private static void SetNumberingFormat(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.NumberingFormat? value)
@@ -125,7 +125,7 @@ public static class DataLabelsConverter
   
   private static bool CmpChartShapeProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -151,7 +151,7 @@ public static class DataLabelsConverter
   
   private static bool CmpTextProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
   }
   
   private static void SetTextProperties(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.TextProperties? value)
@@ -174,7 +174,7 @@ public static class DataLabelsConverter
   
   private static bool CmpDataLabelPosition(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DataLabelPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDrawsCharts.DataLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.DataLabelPosition>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDataLabelPosition(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DataLabelPositionKind? value)
@@ -420,7 +420,7 @@ public static class DataLabelsConverter
   
   private static bool CmpLeaderLines(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.LeaderLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LeaderLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.LeaderLines>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.LeaderLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.LeaderLines>(), value, diffs, objName);
   }
   
   private static void SetLeaderLines(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.LeaderLines? value)
@@ -446,7 +446,7 @@ public static class DataLabelsConverter
   
   private static bool CmpDLblsExtensionList(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DLblsExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DLblsExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DLblsExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DLblsExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DLblsExtensionList>(), value, diffs, objName);
   }
   
   private static void SetDLblsExtensionList(DXDrawCharts.DataLabels openXmlElement, DMDrawsCharts.DLblsExtensionList? value)

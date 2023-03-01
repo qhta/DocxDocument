@@ -573,7 +573,7 @@ public static class PropertySetConverter
   
   private static bool CmpPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PresentationLayoutVariables? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.PresentationLayoutVariablesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationLayoutVariables>(), value, diffs, objName);
   }
   
   private static void SetPresentationLayoutVariables(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.PresentationLayoutVariables? value)
@@ -602,7 +602,7 @@ public static class PropertySetConverter
   
   private static bool CmpStyle(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.Style? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName);
   }
   
   private static void SetStyle(DXDrawDgms.PropertySet openXmlElement, DMDrawsDgms.Style? value)

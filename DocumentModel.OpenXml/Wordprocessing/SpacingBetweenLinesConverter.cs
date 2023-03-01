@@ -145,7 +145,7 @@ public static class SpacingBetweenLinesConverter
   
   private static bool CmpLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value, value, diffs, objName);
   }
   
   private static void SetLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value)
@@ -153,11 +153,11 @@ public static class SpacingBetweenLinesConverter
     openXmlElement.LineRule = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.SpacingBetweenLines? CreateModelElement(DXW.SpacingBetweenLines? openXmlElement)
+  public static DMW.SpacingBetweenLines? CreateModelElement(DXW.SpacingBetweenLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SpacingBetweenLines();
+      var value = new DMW.SpacingBetweenLines();
       value.Before = GetBefore(openXmlElement);
       value.BeforeLines = GetBeforeLines(openXmlElement);
       value.BeforeAutoSpacing = GetBeforeAutoSpacing(openXmlElement);

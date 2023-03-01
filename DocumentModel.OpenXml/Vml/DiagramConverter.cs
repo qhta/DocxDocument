@@ -15,7 +15,7 @@ public static class DiagramConverter
   
   private static bool CmpExtension(DXVmlO.Diagram openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
   private static void SetExtension(DXVmlO.Diagram openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
@@ -223,7 +223,7 @@ public static class DiagramConverter
   
   private static bool CmpRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.RelationTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.RelationTable>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXVml.RelationTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.RelationTable>(), value, diffs, objName);
   }
   
   private static void SetRelationTable(DXVmlO.Diagram openXmlElement, DMVml.RelationTable? value)

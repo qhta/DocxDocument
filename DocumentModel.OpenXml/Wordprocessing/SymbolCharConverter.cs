@@ -51,11 +51,11 @@ public static class SymbolCharConverter
       openXmlElement.Char = null;
   }
   
-  public static DocumentModel.Wordprocessing.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
+  public static DMW.SymbolChar? CreateModelElement(DXW.SymbolChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SymbolChar();
+      var value = new DMW.SymbolChar();
       value.Font = GetFont(openXmlElement);
       value.Char = GetChar(openXmlElement);
       return value;
@@ -79,10 +79,9 @@ public static class SymbolCharConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SymbolChar value)
-    where OpenXmlElementType: DXW.SymbolChar, new()
+  public static DXW.SymbolChar CreateOpenXmlElement(DMW.SymbolChar value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.SymbolChar();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

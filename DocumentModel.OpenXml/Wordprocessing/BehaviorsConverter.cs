@@ -12,7 +12,7 @@ public static class BehaviorsConverter
   
   private static bool CmpBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value)
@@ -30,11 +30,11 @@ public static class BehaviorsConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>((DMW.DocPartBehaviorKind)value));
   }
   
-  public static DocumentModel.Wordprocessing.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
+  public static DMW.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Behaviors();
+      var value = new DMW.Behaviors();
       value.Behavior = GetBehavior(openXmlElement);
       return value;
     }

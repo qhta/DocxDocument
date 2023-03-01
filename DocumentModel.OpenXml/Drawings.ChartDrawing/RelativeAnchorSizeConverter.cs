@@ -18,7 +18,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.FromAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.FromAnchor>(), value, diffs, objName);
   }
   
   private static void SetFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value)
@@ -47,7 +47,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ToAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ToAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ToAnchor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.ToAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ToAnchor>(), value, diffs, objName);
   }
   
   private static void SetToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ToAnchor? value)
@@ -73,7 +73,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>(), value, diffs, objName);
   }
   
   private static void SetShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value)
@@ -99,7 +99,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>(), value, diffs, objName);
   }
   
   private static void SetGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value)
@@ -125,7 +125,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>(), value, diffs, objName);
   }
   
   private static void SetGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value)
@@ -151,7 +151,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>(), value, diffs, objName);
   }
   
   private static void SetConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value)
@@ -177,7 +177,7 @@ public static class RelativeAnchorSizeConverter
   
   private static bool CmpPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraw.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>(), value, diffs, objName);
   }
   
   private static void SetPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value)

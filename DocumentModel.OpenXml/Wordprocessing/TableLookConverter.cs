@@ -141,11 +141,11 @@ public static class TableLookConverter
     openXmlElement.NoVerticalBand = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
+  public static DMW.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableLook();
+      var value = new DMW.TableLook();
       value.Val = GetVal(openXmlElement);
       value.FirstRow = GetFirstRow(openXmlElement);
       value.LastRow = GetLastRow(openXmlElement);

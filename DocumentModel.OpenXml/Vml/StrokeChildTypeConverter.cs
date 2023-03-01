@@ -15,7 +15,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpExtension(DXVmlO.StrokeChildType openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
   private static void SetExtension(DXVmlO.StrokeChildType openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
@@ -128,7 +128,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpLineStyle(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeLineStyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeLineStyleValues, DMVml.StrokeLineStyleKind>(openXmlElement?.LineStyle?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeLineStyleValues, DMVml.StrokeLineStyleKind>(openXmlElement?.LineStyle?.Value, value, diffs, objName);
   }
   
   private static void SetLineStyle(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeLineStyleKind? value)
@@ -166,7 +166,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpJoinStyle(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeJoinStyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeJoinStyleValues, DMVml.StrokeJoinStyleKind>(openXmlElement?.JoinStyle?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeJoinStyleValues, DMVml.StrokeJoinStyleKind>(openXmlElement?.JoinStyle?.Value, value, diffs, objName);
   }
   
   private static void SetJoinStyle(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeJoinStyleKind? value)
@@ -184,7 +184,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpEndCap(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeEndCapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeEndCapValues, DMVml.StrokeEndCapKind>(openXmlElement?.EndCap?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeEndCapValues, DMVml.StrokeEndCapKind>(openXmlElement?.EndCap?.Value, value, diffs, objName);
   }
   
   private static void SetEndCap(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeEndCapKind? value)
@@ -243,7 +243,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpFillType(DXVmlO.StrokeChildType openXmlElement, DMVml.FillKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(openXmlElement?.FillType?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMVml.FillKind>(openXmlElement?.FillType?.Value, value, diffs, objName);
   }
   
   private static void SetFillType(DXVmlO.StrokeChildType openXmlElement, DMVml.FillKind? value)
@@ -279,7 +279,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpImageAspect(DXVmlO.StrokeChildType openXmlElement, DMVml.ImageAspectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(openXmlElement?.ImageAspect?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMVml.ImageAspectKind>(openXmlElement?.ImageAspect?.Value, value, diffs, objName);
   }
   
   private static void SetImageAspect(DXVmlO.StrokeChildType openXmlElement, DMVml.ImageAspectKind? value)
@@ -338,7 +338,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpStartArrow(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DMVml.StrokeArrowKind>(openXmlElement?.StartArrow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DMVml.StrokeArrowKind>(openXmlElement?.StartArrow?.Value, value, diffs, objName);
   }
   
   private static void SetStartArrow(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowKind? value)
@@ -356,7 +356,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpStartArrowWidth(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowWidthKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DMVml.StrokeArrowWidthKind>(openXmlElement?.StartArrowWidth?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DMVml.StrokeArrowWidthKind>(openXmlElement?.StartArrowWidth?.Value, value, diffs, objName);
   }
   
   private static void SetStartArrowWidth(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowWidthKind? value)
@@ -374,7 +374,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpStartArrowLength(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowLengthKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DMVml.StrokeArrowLengthKind>(openXmlElement?.StartArrowLength?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DMVml.StrokeArrowLengthKind>(openXmlElement?.StartArrowLength?.Value, value, diffs, objName);
   }
   
   private static void SetStartArrowLength(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowLengthKind? value)
@@ -392,7 +392,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpEndArrow(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DMVml.StrokeArrowKind>(openXmlElement?.EndArrow?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowValues, DMVml.StrokeArrowKind>(openXmlElement?.EndArrow?.Value, value, diffs, objName);
   }
   
   private static void SetEndArrow(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowKind? value)
@@ -410,7 +410,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpEndArrowWidth(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowWidthKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DMVml.StrokeArrowWidthKind>(openXmlElement?.EndArrowWidth?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues, DMVml.StrokeArrowWidthKind>(openXmlElement?.EndArrowWidth?.Value, value, diffs, objName);
   }
   
   private static void SetEndArrowWidth(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowWidthKind? value)
@@ -428,7 +428,7 @@ public static class StrokeChildTypeConverter
   
   private static bool CmpEndArrowLength(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowLengthKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DMVml.StrokeArrowLengthKind>(openXmlElement?.EndArrowLength?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues, DMVml.StrokeArrowLengthKind>(openXmlElement?.EndArrowLength?.Value, value, diffs, objName);
   }
   
   private static void SetEndArrowLength(DXVmlO.StrokeChildType openXmlElement, DMVml.StrokeArrowLengthKind? value)

@@ -15,7 +15,7 @@ public static class YValuesConverter
   
   private static bool CmpNumberReference(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName);
   }
   
   private static void SetNumberReference(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberReference? value)
@@ -41,7 +41,7 @@ public static class YValuesConverter
   
   private static bool CmpNumberLiteral(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName);
   }
   
   private static void SetNumberLiteral(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberLiteral? value)

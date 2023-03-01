@@ -55,7 +55,7 @@ public static class PageSizeConverter
   
   private static bool CmpOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName);
   }
   
   private static void SetOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value)
@@ -83,11 +83,11 @@ public static class PageSizeConverter
     openXmlElement.Code = value;
   }
   
-  public static DocumentModel.Wordprocessing.PageSize? CreateModelElement(DXW.PageSize? openXmlElement)
+  public static DMW.PageSize? CreateModelElement(DXW.PageSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PageSize();
+      var value = new DMW.PageSize();
       value.Width = GetWidth(openXmlElement);
       value.Height = GetHeight(openXmlElement);
       value.Orient = GetOrient(openXmlElement);

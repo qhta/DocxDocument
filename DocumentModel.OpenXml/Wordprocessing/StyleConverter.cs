@@ -15,7 +15,7 @@ public static class StyleConverter
   
   private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.Style openXmlElement, DMW.StyleKind? value)
@@ -378,7 +378,7 @@ public static class StyleConverter
   
   private static bool CmpStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleParagraphProperties>(), value, diffs, objName);
   }
   
   private static void SetStyleParagraphProperties(DXW.Style openXmlElement, DMW.StyleParagraphProperties? value)
@@ -407,7 +407,7 @@ public static class StyleConverter
   
   private static bool CmpStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleRunProperties>(), value, diffs, objName);
   }
   
   private static void SetStyleRunProperties(DXW.Style openXmlElement, DMW.StyleRunProperties? value)
@@ -436,7 +436,7 @@ public static class StyleConverter
   
   private static bool CmpStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableProperties>(), value, diffs, objName);
   }
   
   private static void SetStyleTableProperties(DXW.Style openXmlElement, DMW.StyleTableProperties? value)
@@ -465,7 +465,7 @@ public static class StyleConverter
   
   private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName);
   }
   
   private static void SetTableStyleConditionalFormattingTableRowProperties(DXW.Style openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value)
@@ -494,7 +494,7 @@ public static class StyleConverter
   
   private static bool CmpStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.StyleTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StyleTableCellProperties>(), value, diffs, objName);
   }
   
   private static void SetStyleTableCellProperties(DXW.Style openXmlElement, DMW.StyleTableCellProperties? value)
@@ -566,11 +566,11 @@ public static class StyleConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Style? CreateModelElement(DXW.Style? openXmlElement)
+  public static DMW.Style? CreateModelElement(DXW.Style? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Style();
+      var value = new DMW.Style();
       value.Type = GetType(openXmlElement);
       value.StyleId = GetStyleId(openXmlElement);
       value.IsDefault = GetIsDefault(openXmlElement);

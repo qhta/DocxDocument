@@ -33,7 +33,7 @@ public static class ValAxExtensionConverter
   
   private static bool CmpNumberingFormat(DXDrawCharts.ValAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.NumberingFormat>(), value, diffs, objName);
   }
   
   private static void SetNumberingFormat(DXDrawCharts.ValAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value)

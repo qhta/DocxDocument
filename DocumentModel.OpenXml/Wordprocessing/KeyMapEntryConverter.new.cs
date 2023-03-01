@@ -150,7 +150,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpFixedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.FixedCommandKeyboardCustomization? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FixedCommandKeyboardCustomizationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.FixedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FixedCommandKeyboardCustomizationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.FixedCommandKeyboardCustomization>(), value, diffs, objName);
   }
   
   private static void SetFixedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.FixedCommandKeyboardCustomization? value)
@@ -176,7 +176,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.MacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.MacroKeyboardCustomization>(), value, diffs, objName);
   }
   
   private static void SetMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value)
@@ -202,7 +202,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpAllocatedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.AcceleratorKeymapType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.AcceleratorKeymapTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.AllocatedCommandKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.AcceleratorKeymapTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.AllocatedCommandKeyboardCustomization>(), value, diffs, objName);
   }
   
   private static void SetAllocatedCommandKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.AcceleratorKeymapType? value)
@@ -228,7 +228,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpWllMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.WllMacroKeyboardCustomization>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.MacroWllTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.WllMacroKeyboardCustomization>(), value, diffs, objName);
   }
   
   private static void SetWllMacroKeyboardCustomization(DXOW.KeyMapEntry openXmlElement, DMW.MacroWllType? value)
@@ -254,7 +254,7 @@ public static class KeyMapEntryConverter
   
   private static bool CmpCharacterInsertion(DXOW.KeyMapEntry openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXOW.CharacterInsertion>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXOW.CharacterInsertion>(), value, diffs, objName);
   }
   
   private static void SetCharacterInsertion(DXOW.KeyMapEntry openXmlElement, HexBinary? value)

@@ -65,11 +65,11 @@ public static class CheckBoxConverter
     BooleanValueConverter.SetOnOffType<DXW.Checked>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
+  public static DMW.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CheckBox();
+      var value = new DMW.CheckBox();
       value.FormFieldSize = GetFormFieldSize(openXmlElement);
       value.AutomaticallySizeFormField = GetAutomaticallySizeFormField(openXmlElement);
       value.DefaultCheckBoxFormFieldState = GetDefaultCheckBoxFormFieldState(openXmlElement);

@@ -33,7 +33,7 @@ public static class SurfaceChartExtensionConverter
   
   private static bool CmpFilteredSurfaceSeries(DXDrawCharts.SurfaceChartExtension openXmlElement, DMDrawsCharts.FilteredSurfaceSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredSurfaceSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.FilteredSurfaceSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSurfaceSeries>(), value, diffs, objName);
   }
   
   private static void SetFilteredSurfaceSeries(DXDrawCharts.SurfaceChartExtension openXmlElement, DMDrawsCharts.FilteredSurfaceSeries? value)

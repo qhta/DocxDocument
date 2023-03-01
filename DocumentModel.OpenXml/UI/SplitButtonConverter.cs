@@ -15,7 +15,7 @@ public static class SplitButtonConverter
   
   private static bool CmpSize(DXOCustUI.SplitButton openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
   private static void SetSize(DXOCustUI.SplitButton openXmlElement, DMUI.SizeKind? value)
@@ -354,7 +354,7 @@ public static class SplitButtonConverter
   
   private static bool CmpVisibleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleButton>(), value, diffs, objName);
   }
   
   private static void SetVisibleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleButton? value)
@@ -380,7 +380,7 @@ public static class SplitButtonConverter
   
   private static bool CmpVisibleToggleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.VisibleToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VisibleToggleButton>(), value, diffs, objName);
   }
   
   private static void SetVisibleToggleButton(DXOCustUI.SplitButton openXmlElement, DMUI.VisibleToggleButton? value)
@@ -406,7 +406,7 @@ public static class SplitButtonConverter
   
   private static bool CmpUnsizedMenu(DXOCustUI.SplitButton openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName);
   }
   
   private static void SetUnsizedMenu(DXOCustUI.SplitButton openXmlElement, DMUI.UnsizedMenu? value)

@@ -18,7 +18,7 @@ public static class FilteredCategoryTitleConverter
   
   private static bool CmpAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.AxisDataSourceType3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>(), value, diffs, objName);
   }
   
   private static void SetAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.AxisDataSourceType3? value)

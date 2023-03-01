@@ -15,7 +15,7 @@ public static class EndnoteDocumentWidePropertiesConverter
   
   private static bool CmpEndnotePosition(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnotePositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues, DMW.EndnotePositionKind>(openXmlElement.GetFirstChild<DXW.EndnotePosition>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues, DMW.EndnotePositionKind>(openXmlElement.GetFirstChild<DXW.EndnotePosition>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetEndnotePosition(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnotePositionKind? value)
@@ -46,7 +46,7 @@ public static class EndnoteDocumentWidePropertiesConverter
   
   private static bool CmpNumberingFormat(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingFormat>(), value, diffs, objName);
   }
   
   private static void SetNumberingFormat(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.NumberingFormat? value)
@@ -90,7 +90,7 @@ public static class EndnoteDocumentWidePropertiesConverter
   
   private static bool CmpNumberingRestart(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.RestartNumberKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues, DMW.RestartNumberKind>(openXmlElement.GetFirstChild<DXW.NumberingRestart>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetNumberingRestart(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.RestartNumberKind? value)
@@ -164,11 +164,11 @@ public static class EndnoteDocumentWidePropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement)
+  public static DMW.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.EndnoteDocumentWideProperties();
+      var value = new DMW.EndnoteDocumentWideProperties();
       value.EndnotePosition = GetEndnotePosition(openXmlElement);
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);

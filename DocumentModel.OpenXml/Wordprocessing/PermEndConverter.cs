@@ -35,7 +35,7 @@ public static class PermEndConverter
   
   private static bool CmpDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -43,11 +43,11 @@ public static class PermEndConverter
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.PermEnd? CreateModelElement(DXW.PermEnd? openXmlElement)
+  public static DMW.PermEnd? CreateModelElement(DXW.PermEnd? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.PermEnd();
+      var value = new DMW.PermEnd();
       value.Id = GetId(openXmlElement);
       value.DisplacedByCustomXml = GetDisplacedByCustomXml(openXmlElement);
       return value;
@@ -71,10 +71,9 @@ public static class PermEndConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PermEnd value)
-    where OpenXmlElementType: DXW.PermEnd, new()
+  public static DXW.PermEnd CreateOpenXmlElement(DMW.PermEnd value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.PermEnd();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

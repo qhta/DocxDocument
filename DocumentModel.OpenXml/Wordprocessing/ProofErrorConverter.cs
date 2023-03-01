@@ -15,7 +15,7 @@ public static class ProofErrorConverter
   
   private static bool CmpType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value)
@@ -23,11 +23,11 @@ public static class ProofErrorConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)
+  public static DMW.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.ProofError();
+      var value = new DMW.ProofError();
       value.Type = GetType(openXmlElement);
       return value;
     }
@@ -48,10 +48,9 @@ public static class ProofErrorConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ProofError value)
-    where OpenXmlElementType: DXW.ProofError, new()
+  public static DXW.ProofError CreateOpenXmlElement(DMW.ProofError value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.ProofError();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

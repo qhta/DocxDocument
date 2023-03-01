@@ -18,7 +18,7 @@ public static class TextConverter
   
   private static bool CmpTextData(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.TextData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TextData>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TextData>(), value, diffs, objName);
   }
   
   private static void SetTextData(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.TextData? value)
@@ -47,7 +47,7 @@ public static class TextConverter
   
   private static bool CmpRichTextBody(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.RichTextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>(), value, diffs, objName);
   }
   
   private static void SetRichTextBody(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.RichTextBody? value)

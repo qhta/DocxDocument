@@ -18,7 +18,7 @@ public static class QuickAccessToolbarConverter
   
   private static bool CmpSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
   {
-    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>(), value, diffs, objName);
   }
   
   private static void SetSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value)
@@ -47,7 +47,7 @@ public static class QuickAccessToolbarConverter
   
   private static bool CmpDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs, string? objName)
   {
-    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>(), value, diffs, objName);
   }
   
   private static void SetDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value)

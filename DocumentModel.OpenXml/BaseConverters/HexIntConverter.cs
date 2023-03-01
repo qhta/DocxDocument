@@ -21,7 +21,7 @@ public static class HexIntConverter
       var val = HexIntConverter.GetValue(element.Value);
       if (val == value) return true;
     }
-    if (element == null && element?.Value == null && value == null) return true;
+    if (element?.Value == null && value == null) return true;
     diffs?.Add(objName, propName, element?.Value, value);
     return false;
   }

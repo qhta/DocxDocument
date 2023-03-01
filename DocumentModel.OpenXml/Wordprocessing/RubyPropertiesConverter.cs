@@ -15,7 +15,7 @@ public static class RubyPropertiesConverter
   
   private static bool CmpRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues, DMW.RubyAlignKind>(openXmlElement.GetFirstChild<DXW.RubyAlign>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetRubyAlign(DXW.RubyProperties openXmlElement, DMW.RubyAlignKind? value)
@@ -123,11 +123,11 @@ public static class RubyPropertiesConverter
     BooleanValueConverter.SetOnOffType<DXW.Dirty>(openXmlElement, value);
   }
   
-  public static DocumentModel.Wordprocessing.RubyProperties? CreateModelElement(DXW.RubyProperties? openXmlElement)
+  public static DMW.RubyProperties? CreateModelElement(DXW.RubyProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.RubyProperties();
+      var value = new DMW.RubyProperties();
       value.RubyAlign = GetRubyAlign(openXmlElement);
       value.PhoneticGuideTextFontSize = GetPhoneticGuideTextFontSize(openXmlElement);
       value.PhoneticGuideRaise = GetPhoneticGuideRaise(openXmlElement);

@@ -452,7 +452,7 @@ public static class BackstageTabConverter
   
   private static bool CmpBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.BackstageGroups? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroups>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.BackstageGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroups>(), value, diffs, objName);
   }
   
   private static void SetBackstageGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.BackstageGroups? value)
@@ -481,7 +481,7 @@ public static class BackstageTabConverter
   
   private static bool CmpSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.SimpleGroups? value, DiffList? diffs, string? objName)
   {
-    return DMX.SimpleGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SimpleGroups>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMX.SimpleGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SimpleGroups>(), value, diffs, objName);
   }
   
   private static void SetSimpleGroups(DXO2010CustUI.BackstageTab openXmlElement, DM.SimpleGroups? value)

@@ -61,11 +61,11 @@ public static class McdsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Mcds? CreateModelElement(DXOW.Mcds? openXmlElement)
+  public static DMW.Mcds? CreateModelElement(DXOW.Mcds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Mcds();
+      var value = new DMW.Mcds();
       value.Items = GetItems(openXmlElement);
       return value;
     }

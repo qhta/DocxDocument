@@ -18,7 +18,7 @@ public static class WebSettingsConverter
   
   private static bool CmpFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName);
   }
   
   private static void SetFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value)
@@ -47,7 +47,7 @@ public static class WebSettingsConverter
   
   private static bool CmpDivs(DXW.WebSettings openXmlElement, DMW.Divs? value, DiffList? diffs, string? objName)
   {
-    return DMXW.DivsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Divs>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.DivsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Divs>(), value, diffs, objName);
   }
   
   private static void SetDivs(DXW.WebSettings openXmlElement, DMW.Divs? value)
@@ -245,7 +245,7 @@ public static class WebSettingsConverter
   
   private static bool CmpTargetScreenSize(DXW.WebSettings openXmlElement, DMW.TargetScreenSizeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues, DMW.TargetScreenSizeKind>(openXmlElement.GetFirstChild<DXW.TargetScreenSize>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues, DMW.TargetScreenSizeKind>(openXmlElement.GetFirstChild<DXW.TargetScreenSize>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTargetScreenSize(DXW.WebSettings openXmlElement, DMW.TargetScreenSizeKind? value)

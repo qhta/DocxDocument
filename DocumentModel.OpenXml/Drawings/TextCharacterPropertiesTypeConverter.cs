@@ -183,7 +183,7 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpUnderline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextUnderlineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMDraws.TextUnderlineKind>(openXmlElement?.Underline?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMDraws.TextUnderlineKind>(openXmlElement?.Underline?.Value, value, diffs, objName);
   }
   
   private static void SetUnderline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextUnderlineKind? value)
@@ -201,7 +201,7 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpStrike(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextStrikeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMDraws.TextStrikeKind>(openXmlElement?.Strike?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMDraws.TextStrikeKind>(openXmlElement?.Strike?.Value, value, diffs, objName);
   }
   
   private static void SetStrike(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextStrikeKind? value)
@@ -239,7 +239,7 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpCapital(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextCapsKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMDraws.TextCapsKind>(openXmlElement?.Capital?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMDraws.TextCapsKind>(openXmlElement?.Capital?.Value, value, diffs, objName);
   }
   
   private static void SetCapital(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.TextCapsKind? value)
@@ -453,7 +453,7 @@ public static class TextCharacterPropertiesTypeConverter
   
   private static bool CmpOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
   }
   
   private static void SetOutline(DXDraw.TextCharacterPropertiesType openXmlElement, DMDraws.Outline? value)

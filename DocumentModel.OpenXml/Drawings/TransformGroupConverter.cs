@@ -84,7 +84,7 @@ public static class TransformGroupConverter
   
   private static bool CmpOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Offset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Offset>(), value, diffs, objName);
   }
   
   private static void SetOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value)
@@ -113,7 +113,7 @@ public static class TransformGroupConverter
   
   private static bool CmpExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Extents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Extents>(), value, diffs, objName);
   }
   
   private static void SetExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value)
@@ -142,7 +142,7 @@ public static class TransformGroupConverter
   
   private static bool CmpChildOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ChildOffset>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ChildOffset>(), value, diffs, objName);
   }
   
   private static void SetChildOffset(DXDraw.TransformGroup openXmlElement, DMDraws.Point2DType? value)
@@ -171,7 +171,7 @@ public static class TransformGroupConverter
   
   private static bool CmpChildExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ChildExtents>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PositiveSize2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ChildExtents>(), value, diffs, objName);
   }
   
   private static void SetChildExtents(DXDraw.TransformGroup openXmlElement, DMDraws.PositiveSize2DType? value)

@@ -15,7 +15,7 @@ public static class BarChartConverter
   
   private static bool CmpBarDirection(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBarDirection(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarDirectionKind? value)
@@ -43,7 +43,7 @@ public static class BarChartConverter
   
   private static bool CmpBarGrouping(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarGroupingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBarGrouping(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarGroupingKind? value)
@@ -158,7 +158,7 @@ public static class BarChartConverter
   
   private static bool CmpDataLabels(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
   }
   
   private static void SetDataLabels(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.DataLabels? value)
@@ -326,7 +326,7 @@ public static class BarChartConverter
   
   private static bool CmpBarChartExtensionList(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BarChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BarChartExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.BarChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BarChartExtensionList>(), value, diffs, objName);
   }
   
   private static void SetBarChartExtensionList(DXDrawCharts.BarChart openXmlElement, DMDrawsCharts.BarChartExtensionList? value)

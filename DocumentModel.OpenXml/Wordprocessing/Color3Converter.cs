@@ -33,7 +33,7 @@ public static class Color3Converter
   
   private static bool CmpThemeColor(DXO2013W.Color openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXO2013W.Color openXmlElement, DMW.ThemeColorKind? value)
@@ -77,11 +77,11 @@ public static class Color3Converter
     openXmlElement.ThemeShade = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
+  public static DMW.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Color3();
+      var value = new DMW.Color3();
       value.Val = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);

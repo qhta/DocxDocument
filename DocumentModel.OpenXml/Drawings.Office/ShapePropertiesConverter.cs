@@ -15,7 +15,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpBlackWhiteMode(DXODraw.ShapeProperties openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
   }
   
   private static void SetBlackWhiteMode(DXODraw.ShapeProperties openXmlElement, DMDraws.BlackWhiteMode? value)
@@ -36,7 +36,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpTransform2D(DXODraw.ShapeProperties openXmlElement, DMDraws.Transform2D? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Transform2D>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Transform2D>(), value, diffs, objName);
   }
   
   private static void SetTransform2D(DXODraw.ShapeProperties openXmlElement, DMDraws.Transform2D? value)
@@ -62,7 +62,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpCustomGeometry(DXODraw.ShapeProperties openXmlElement, DMDraws.CustomGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName);
   }
   
   private static void SetCustomGeometry(DXODraw.ShapeProperties openXmlElement, DMDraws.CustomGeometry? value)
@@ -88,7 +88,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpPresetGeometry(DXODraw.ShapeProperties openXmlElement, DMDraws.PresetGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName);
   }
   
   private static void SetPresetGeometry(DXODraw.ShapeProperties openXmlElement, DMDraws.PresetGeometry? value)
@@ -142,7 +142,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpSolidFill(DXODraw.ShapeProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
   }
   
   private static void SetSolidFill(DXODraw.ShapeProperties openXmlElement, DMDraws.SolidFill? value)
@@ -168,7 +168,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpGradientFill(DXODraw.ShapeProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
   }
   
   private static void SetGradientFill(DXODraw.ShapeProperties openXmlElement, DMDraws.GradientFill? value)
@@ -194,7 +194,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpBlipFill(DXODraw.ShapeProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
   }
   
   private static void SetBlipFill(DXODraw.ShapeProperties openXmlElement, DMDraws.BlipFill? value)
@@ -220,7 +220,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpPatternFill(DXODraw.ShapeProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
   }
   
   private static void SetPatternFill(DXODraw.ShapeProperties openXmlElement, DMDraws.PatternFill? value)
@@ -274,7 +274,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpOutline(DXODraw.ShapeProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
   }
   
   private static void SetOutline(DXODraw.ShapeProperties openXmlElement, DMDraws.Outline? value)
@@ -300,7 +300,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpEffectList(DXODraw.ShapeProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
   }
   
   private static void SetEffectList(DXODraw.ShapeProperties openXmlElement, DMDraws.EffectList? value)
@@ -326,7 +326,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpEffectDag(DXODraw.ShapeProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
   }
   
   private static void SetEffectDag(DXODraw.ShapeProperties openXmlElement, DMDraws.EffectDag? value)
@@ -352,7 +352,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpScene3DType(DXODraw.ShapeProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName);
   }
   
   private static void SetScene3DType(DXODraw.ShapeProperties openXmlElement, DMDraws.Scene3DType? value)
@@ -378,7 +378,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpShape3DType(DXODraw.ShapeProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
   }
   
   private static void SetShape3DType(DXODraw.ShapeProperties openXmlElement, DMDraws.Shape3DType? value)
@@ -404,7 +404,7 @@ public static class ShapePropertiesConverter
   
   private static bool CmpShapePropertiesExtensionList(DXODraw.ShapeProperties openXmlElement, DMDraws.ShapePropertiesExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapePropertiesExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ShapePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapePropertiesExtensionList>(), value, diffs, objName);
   }
   
   private static void SetShapePropertiesExtensionList(DXODraw.ShapeProperties openXmlElement, DMDraws.ShapePropertiesExtensionList? value)

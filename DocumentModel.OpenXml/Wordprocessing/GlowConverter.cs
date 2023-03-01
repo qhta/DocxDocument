@@ -38,7 +38,7 @@ public static class GlowConverter
   
   private static bool CmpRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXO2010W.Glow openXmlElement, DMW.RgbColorModelHex? value)
@@ -67,7 +67,7 @@ public static class GlowConverter
   
   private static bool CmpSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXO2010W.Glow openXmlElement, DMW.SchemeColor? value)
@@ -83,11 +83,11 @@ public static class GlowConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Glow? CreateModelElement(DXO2010W.Glow? openXmlElement)
+  public static DMW.Glow? CreateModelElement(DXO2010W.Glow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Glow();
+      var value = new DMW.Glow();
       value.GlowRadius = GetGlowRadius(openXmlElement);
       value.RgbColorModelHex = GetRgbColorModelHex(openXmlElement);
       value.SchemeColor = GetSchemeColor(openXmlElement);

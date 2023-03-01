@@ -15,7 +15,7 @@ public static class BlendConverter
   
   private static bool CmpBlendMode(DXDraw.Blend openXmlElement, DMDraws.BlendMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName);
   }
   
   private static void SetBlendMode(DXDraw.Blend openXmlElement, DMDraws.BlendMode? value)
@@ -36,7 +36,7 @@ public static class BlendConverter
   
   private static bool CmpEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName);
   }
   
   private static void SetEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value)

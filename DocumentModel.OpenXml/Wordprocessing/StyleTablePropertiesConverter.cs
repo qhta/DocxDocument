@@ -51,7 +51,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpTableJustification(DXW.StyleTableProperties openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetTableJustification(DXW.StyleTableProperties openXmlElement, DMW.TableRowAlignmentKind? value)
@@ -82,7 +82,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
   private static void SetTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value)
@@ -111,7 +111,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpTableIndentation(DXW.StyleTableProperties openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableIndentationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableIndentation>(), value, diffs, objName);
   }
   
   private static void SetTableIndentation(DXW.StyleTableProperties openXmlElement, DMW.TableIndentation? value)
@@ -140,7 +140,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpTableBorders(DXW.StyleTableProperties openXmlElement, DMW.TableBorders? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableBorders>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableBorders>(), value, diffs, objName);
   }
   
   private static void SetTableBorders(DXW.StyleTableProperties openXmlElement, DMW.TableBorders? value)
@@ -169,7 +169,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpShading(DXW.StyleTableProperties openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.ShadingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Shading>(), value, diffs, objName);
   }
   
   private static void SetShading(DXW.StyleTableProperties openXmlElement, DMW.Shading? value)
@@ -198,7 +198,7 @@ public static class StyleTablePropertiesConverter
   
   private static bool CmpTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
   
   private static void SetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
@@ -214,11 +214,11 @@ public static class StyleTablePropertiesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.StyleTableProperties? CreateModelElement(DXW.StyleTableProperties? openXmlElement)
+  public static DMW.StyleTableProperties? CreateModelElement(DXW.StyleTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.StyleTableProperties();
+      var value = new DMW.StyleTableProperties();
       value.TableStyleRowBandSize = GetTableStyleRowBandSize(openXmlElement);
       value.TableStyleColumnBandSize = GetTableStyleColumnBandSize(openXmlElement);
       value.TableJustification = GetTableJustification(openXmlElement);

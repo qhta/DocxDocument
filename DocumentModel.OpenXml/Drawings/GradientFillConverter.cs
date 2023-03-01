@@ -15,7 +15,7 @@ public static class GradientFillConverter
   
   private static bool CmpFlip(DXDraw.GradientFill openXmlElement, DMDraws.TileFlipKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName);
   }
   
   private static void SetFlip(DXDraw.GradientFill openXmlElement, DMDraws.TileFlipKind? value)
@@ -59,7 +59,7 @@ public static class GradientFillConverter
   
   private static bool CmpGradientStopList(DXDraw.GradientFill openXmlElement, DMDraws.GradientStopList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientStopList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientStopList>(), value, diffs, objName);
   }
   
   private static void SetGradientStopList(DXDraw.GradientFill openXmlElement, DMDraws.GradientStopList? value)
@@ -85,7 +85,7 @@ public static class GradientFillConverter
   
   private static bool CmpLinearGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.LinearGradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LinearGradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LinearGradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.LinearGradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LinearGradientFill>(), value, diffs, objName);
   }
   
   private static void SetLinearGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.LinearGradientFill? value)
@@ -111,7 +111,7 @@ public static class GradientFillConverter
   
   private static bool CmpPathGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.PathGradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PathGradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PathGradientFill>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.PathGradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PathGradientFill>(), value, diffs, objName);
   }
   
   private static void SetPathGradientFill(DXDraw.GradientFill openXmlElement, DMDraws.PathGradientFill? value)
@@ -137,7 +137,7 @@ public static class GradientFillConverter
   
   private static bool CmpTileRectangle(DXDraw.GradientFill openXmlElement, DMDraws.RelativeRectangleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TileRectangle>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TileRectangle>(), value, diffs, objName);
   }
   
   private static void SetTileRectangle(DXDraw.GradientFill openXmlElement, DMDraws.RelativeRectangleType? value)

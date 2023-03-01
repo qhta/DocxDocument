@@ -33,7 +33,7 @@ public static class ScalingConverter
   
   private static bool CmpOrientation(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.OrientationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDrawsCharts.OrientationKind>(openXmlElement.GetFirstChild<DXDrawCharts.Orientation>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDrawsCharts.OrientationKind>(openXmlElement.GetFirstChild<DXDrawCharts.Orientation>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetOrientation(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.OrientationKind? value)
@@ -100,7 +100,7 @@ public static class ScalingConverter
   
   private static bool CmpExtensionList(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXDrawCharts.Scaling openXmlElement, DMDrawsCharts.ExtensionList? value)

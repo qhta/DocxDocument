@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Shape Template.
 /// </summary>
-public class Shapetype
+public class Shapetype: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

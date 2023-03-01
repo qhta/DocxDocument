@@ -63,7 +63,7 @@ public static class AbstractNumConverter
   
   private static bool CmpMultiLevelType(DXW.AbstractNum openXmlElement, DMW.MultiLevelKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMultiLevelType(DXW.AbstractNum openXmlElement, DMW.MultiLevelKind? value)
@@ -219,11 +219,11 @@ public static class AbstractNumConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.AbstractNum? CreateModelElement(DXW.AbstractNum? openXmlElement)
+  public static DMW.AbstractNum? CreateModelElement(DXW.AbstractNum? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AbstractNum();
+      var value = new DMW.AbstractNum();
       value.AbstractNumberId = GetAbstractNumberId(openXmlElement);
       value.Nsid = GetNsid(openXmlElement);
       value.MultiLevelType = GetMultiLevelType(openXmlElement);

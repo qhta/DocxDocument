@@ -15,7 +15,7 @@ public static class Marker3Converter
   
   private static bool CmpSymbol(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.MarkerStyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.Symbol>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.Symbol>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetSymbol(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.MarkerStyleKind? value)
@@ -64,7 +64,7 @@ public static class Marker3Converter
   
   private static bool CmpChartShapeProperties(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetChartShapeProperties(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
@@ -93,7 +93,7 @@ public static class Marker3Converter
   
   private static bool CmpExtensionList(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ExtensionList? value)

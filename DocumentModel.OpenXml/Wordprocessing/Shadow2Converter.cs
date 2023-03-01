@@ -155,7 +155,7 @@ public static class Shadow2Converter
   
   private static bool CmpAlignment(DXO2010W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues, DMW.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
   private static void SetAlignment(DXO2010W.Shadow openXmlElement, DMW.RectangleAlignmentKind? value)
@@ -176,7 +176,7 @@ public static class Shadow2Converter
   
   private static bool CmpRgbColorModelHex(DXO2010W.Shadow openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
   }
   
   private static void SetRgbColorModelHex(DXO2010W.Shadow openXmlElement, DMW.RgbColorModelHex? value)
@@ -205,7 +205,7 @@ public static class Shadow2Converter
   
   private static bool CmpSchemeColor(DXO2010W.Shadow openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
   }
   
   private static void SetSchemeColor(DXO2010W.Shadow openXmlElement, DMW.SchemeColor? value)
@@ -221,11 +221,11 @@ public static class Shadow2Converter
     }
   }
   
-  public static DocumentModel.Wordprocessing.Shadow2? CreateModelElement(DXO2010W.Shadow? openXmlElement)
+  public static DMW.Shadow2? CreateModelElement(DXO2010W.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.Shadow2();
+      var value = new DMW.Shadow2();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.DistanceFromText = GetDistanceFromText(openXmlElement);
       value.DirectionAngle = GetDirectionAngle(openXmlElement);

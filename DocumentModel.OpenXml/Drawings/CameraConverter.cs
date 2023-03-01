@@ -15,7 +15,7 @@ public static class CameraConverter
   
   private static bool CmpPreset(DXDraw.Camera openXmlElement, DMDraws.PresetCameraKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMDraws.PresetCameraKind>(openXmlElement?.Preset?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetCameraValues, DMDraws.PresetCameraKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
   private static void SetPreset(DXDraw.Camera openXmlElement, DMDraws.PresetCameraKind? value)
@@ -76,7 +76,7 @@ public static class CameraConverter
   
   private static bool CmpRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RotationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Rotation>(), value, diffs, objName);
   }
   
   private static void SetRotation(DXDraw.Camera openXmlElement, DMDraws.Rotation? value)

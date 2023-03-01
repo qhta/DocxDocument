@@ -18,7 +18,7 @@ public static class BoxConverter
   
   private static bool CmpBoxProperties(DXMath.Box openXmlElement, DMMath.BoxProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BoxProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BoxProperties>(), value, diffs, objName);
   }
   
   private static void SetBoxProperties(DXMath.Box openXmlElement, DMMath.BoxProperties? value)
@@ -47,7 +47,7 @@ public static class BoxConverter
   
   private static bool CmpBase(DXMath.Box openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
   }
   
   private static void SetBase(DXMath.Box openXmlElement, DMMath.Base? value)

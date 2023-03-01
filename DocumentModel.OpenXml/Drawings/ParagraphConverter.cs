@@ -18,7 +18,7 @@ public static class ParagraphConverter
   
   private static bool CmpParagraphProperties(DXDraw.Paragraph openXmlElement, DMDraws.ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ParagraphProperties>(), value, diffs, objName);
   }
   
   private static void SetParagraphProperties(DXDraw.Paragraph openXmlElement, DMDraws.ParagraphProperties? value)
@@ -44,7 +44,7 @@ public static class ParagraphConverter
   
   private static bool CmpRun(DXDraw.Paragraph openXmlElement, DMDraws.Run? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Run>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Run>(), value, diffs, objName);
   }
   
   private static void SetRun(DXDraw.Paragraph openXmlElement, DMDraws.Run? value)
@@ -70,7 +70,7 @@ public static class ParagraphConverter
   
   private static bool CmpBreak(DXDraw.Paragraph openXmlElement, DMDraws.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Break>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Break>(), value, diffs, objName);
   }
   
   private static void SetBreak(DXDraw.Paragraph openXmlElement, DMDraws.Break? value)
@@ -96,7 +96,7 @@ public static class ParagraphConverter
   
   private static bool CmpField(DXDraw.Paragraph openXmlElement, DMDraws.Field? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FieldConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Field>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.FieldConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Field>(), value, diffs, objName);
   }
   
   private static void SetField(DXDraw.Paragraph openXmlElement, DMDraws.Field? value)
@@ -150,7 +150,7 @@ public static class ParagraphConverter
   
   private static bool CmpEndParagraphRunProperties(DXDraw.Paragraph openXmlElement, DMDraws.EndParagraphRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EndParagraphRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EndParagraphRunProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDraws.EndParagraphRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EndParagraphRunProperties>(), value, diffs, objName);
   }
   
   private static void SetEndParagraphRunProperties(DXDraw.Paragraph openXmlElement, DMDraws.EndParagraphRunProperties? value)

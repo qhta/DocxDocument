@@ -15,7 +15,7 @@ public static class TableLayoutConverter
   
   private static bool CmpType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value)
@@ -23,11 +23,11 @@ public static class TableLayoutConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(value);
   }
   
-  public static DocumentModel.Wordprocessing.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
+  public static DMW.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.TableLayout();
+      var value = new DMW.TableLayout();
       value.Type = GetType(openXmlElement);
       return value;
     }

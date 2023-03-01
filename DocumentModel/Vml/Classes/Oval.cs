@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Oval.
 /// </summary>
-public class Oval
+public class Oval: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

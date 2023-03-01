@@ -33,7 +33,7 @@ public static class DiagramConverter
   
   private static bool CmpBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName);
   }
   
   private static void SetBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value)

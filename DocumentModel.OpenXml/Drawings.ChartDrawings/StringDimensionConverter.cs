@@ -15,7 +15,7 @@ public static class StringDimensionConverter
   
   private static bool CmpType(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.StringDimensionType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DMDrawsChartDraws.StringDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DMDrawsChartDraws.StringDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.StringDimensionType? value)
@@ -33,7 +33,7 @@ public static class StringDimensionConverter
   
   private static bool CmpFormula(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName);
   }
   
   private static void SetFormula(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
@@ -59,7 +59,7 @@ public static class StringDimensionConverter
   
   private static bool CmpNfFormula(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NfFormula>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NfFormula>(), value, diffs, objName);
   }
   
   private static void SetNfFormula(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
@@ -141,7 +141,7 @@ public static class StringDimensionConverter
   
   private static bool CmpStringLevel(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.StringLevel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.StringLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringLevel>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsChartDraws.StringLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringLevel>(), value, diffs, objName);
   }
   
   private static void SetStringLevel(DXO2016DrawChartDraw.StringDimension openXmlElement, DMDrawsChartDraws.StringLevel? value)

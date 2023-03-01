@@ -33,7 +33,7 @@ public static class FontCharSetConverter
   
   private static bool CmpStrictCharacterSet(DXW.FontCharSet openXmlElement, DMW.StrictCharacterSet? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet, DMW.StrictCharacterSet>(openXmlElement?.StrictCharacterSet?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet, DMW.StrictCharacterSet>(openXmlElement?.StrictCharacterSet?.Value, value, diffs, objName);
   }
   
   private static void SetStrictCharacterSet(DXW.FontCharSet openXmlElement, DMW.StrictCharacterSet? value)
@@ -41,11 +41,11 @@ public static class FontCharSetConverter
     openXmlElement.StrictCharacterSet = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet, DMW.StrictCharacterSet>(value);
   }
   
-  public static DocumentModel.Wordprocessing.FontCharSet? CreateModelElement(DXW.FontCharSet? openXmlElement)
+  public static DMW.FontCharSet? CreateModelElement(DXW.FontCharSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.FontCharSet();
+      var value = new DMW.FontCharSet();
       value.Val = GetVal(openXmlElement);
       value.StrictCharacterSet = GetStrictCharacterSet(openXmlElement);
       return value;

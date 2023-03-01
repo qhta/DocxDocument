@@ -15,7 +15,7 @@ public static class RadicalPropertiesConverter
   
   private static bool CmpHideDegree(DXMath.RadicalProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideDegree>()?.Val?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideDegree>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetHideDegree(DXMath.RadicalProperties openXmlElement, DMMath.BooleanKind? value)
@@ -46,7 +46,7 @@ public static class RadicalPropertiesConverter
   
   private static bool CmpControlProperties(DXMath.RadicalProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
   }
   
   private static void SetControlProperties(DXMath.RadicalProperties openXmlElement, DMMath.ControlProperties? value)

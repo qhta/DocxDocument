@@ -18,7 +18,7 @@ public static class WordprocessingDocumentConverter
   private static bool CmpDocumentType(DXPack.WordprocessingDocument openXmlElement, DM.WordprocessingDocumentType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType, value, diffs, objName);
     if (openXmlElement?.DocumentType == null && value == null) return true;
     diffs?.Add(objName, "DocumentType", openXmlElement?.DocumentType, value);
     return false;

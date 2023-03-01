@@ -23,11 +23,11 @@ public static class SdtContentTextConverter
     openXmlElement.MultiLine = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.SdtContentText? CreateModelElement(DXW.SdtContentText? openXmlElement)
+  public static DMW.SdtContentText? CreateModelElement(DXW.SdtContentText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.SdtContentText();
+      var value = new DMW.SdtContentText();
       value.MultiLine = GetMultiLine(openXmlElement);
       return value;
     }

@@ -61,11 +61,11 @@ public static class AllocatedCommandsConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.AllocatedCommands? CreateModelElement(DXOW.AllocatedCommands? openXmlElement)
+  public static DMW.AllocatedCommands? CreateModelElement(DXOW.AllocatedCommands? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.AllocatedCommands();
+      var value = new DMW.AllocatedCommands();
       value.Items = GetItems(openXmlElement);
       return value;
     }

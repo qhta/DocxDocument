@@ -15,7 +15,7 @@ public static class CellMergeConverter
   
   private static bool CmpVerticalMerge(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalMerge(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
@@ -33,7 +33,7 @@ public static class CellMergeConverter
   
   private static bool CmpVerticalMergeOriginal(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalMergeOriginal(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
@@ -97,11 +97,11 @@ public static class CellMergeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Wordprocessing.CellMerge? CreateModelElement(DXW.CellMerge? openXmlElement)
+  public static DMW.CellMerge? CreateModelElement(DXW.CellMerge? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.CellMerge();
+      var value = new DMW.CellMerge();
       value.VerticalMerge = GetVerticalMerge(openXmlElement);
       value.VerticalMergeOriginal = GetVerticalMergeOriginal(openXmlElement);
       value.Author = GetAuthor(openXmlElement);

@@ -61,11 +61,11 @@ public static class PeopleConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.People? CreateModelElement(DXO2013W.People? openXmlElement)
+  public static DMW.People? CreateModelElement(DXO2013W.People? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.People();
+      var value = new DMW.People();
       value.Persons = GetPersons(openXmlElement);
       return value;
     }

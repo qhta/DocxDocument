@@ -15,7 +15,7 @@ public static class VerticalPositionConverter
   
   private static bool CmpRelativeFrom(DXDrawW.VerticalPosition openXmlElement, DMDrawsW.VerticalRelativePositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues, DMDrawsW.VerticalRelativePositionKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName);
   }
   
   private static void SetRelativeFrom(DXDrawW.VerticalPosition openXmlElement, DMDrawsW.VerticalRelativePositionKind? value)

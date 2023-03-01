@@ -1,9 +1,13 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Symbol Character.
+///  Represents a symbol character in the text run. 
+///  A symbol character is a special character which does not use any of the run fonts 
+///  specified in the font table (or by the style hierarchy).
+///  Instead, this character shall be determined by pulling the character with the hexadecimal value 
+///  specified in the char attribute from the font specified in the font attribute.
 /// </summary>
-public class SymbolChar
+public class SymbolChar: RunElement
 {
   /// <summary>
   ///   Symbol Character Font

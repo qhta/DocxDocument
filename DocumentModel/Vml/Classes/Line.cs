@@ -1,11 +1,13 @@
+using DocumentModel.Wordprocessing;
 using DocumentModel.Wordprocessing.Vml;
+using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
 
 /// <summary>
 ///   Line.
 /// </summary>
-public class Line
+public class Line: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

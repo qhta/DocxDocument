@@ -18,7 +18,7 @@ public static class InvertSolidFillFormatConverter
   
   private static bool CmpShapeProperties(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.ShapeProperties2? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapeProperties2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.ShapeProperties>(), value, diffs, objName?.Concat2(".",openXmlElement?.GetType().Name));
+    return DMXDrawsCharts.ShapeProperties2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.ShapeProperties>(), value, diffs, objName);
   }
   
   private static void SetShapeProperties(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.ShapeProperties2? value)

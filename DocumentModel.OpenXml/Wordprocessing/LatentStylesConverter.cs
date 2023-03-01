@@ -173,11 +173,11 @@ public static class LatentStylesConverter
     }
   }
   
-  public static DocumentModel.Wordprocessing.LatentStyles? CreateModelElement(DXW.LatentStyles? openXmlElement)
+  public static DMW.LatentStyles? CreateModelElement(DXW.LatentStyles? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Wordprocessing.LatentStyles();
+      var value = new DMW.LatentStyles();
       value.DefaultLockedState = GetDefaultLockedState(openXmlElement);
       value.DefaultUiPriority = GetDefaultUiPriority(openXmlElement);
       value.DefaultSemiHidden = GetDefaultSemiHidden(openXmlElement);
