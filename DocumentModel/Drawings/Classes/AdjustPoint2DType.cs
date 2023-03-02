@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the AdjustPoint2DType Class.
 /// </summary>
-public class AdjustPoint2DType
+public record AdjustPoint2DType
 {
   /// <summary>
   ///   X-Coordinate

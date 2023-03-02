@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Build Chart.
 /// </summary>
-public class BuildChart
+public record BuildChart
 {
   /// <summary>
   ///   Build

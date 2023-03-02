@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the StyleSet Class.
 /// </summary>
-public class StyleSet
+public record StyleSet
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

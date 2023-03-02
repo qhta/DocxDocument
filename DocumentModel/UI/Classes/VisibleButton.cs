@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the VisibleButton Class.
 /// </summary>
-public class VisibleButton
+public record VisibleButton
 {
   /// <summary>
   ///   onAction

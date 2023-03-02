@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtRunRuby Class.
 /// </summary>
-public class SdtRunRuby
+public record SdtRunRuby
 {
   /// <summary>
   ///   SdtContentRunRuby.

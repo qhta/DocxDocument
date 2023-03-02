@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NumberingProperties Class.
 /// </summary>
-public class NumberingProperties
+public record NumberingProperties
 {
   /// <summary>
   ///   Numbering Level Reference.

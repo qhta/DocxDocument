@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Office Math Paragraph Properties.
 /// </summary>
-public class ParagraphProperties
+public record ParagraphProperties
 {
   /// <summary>
   ///   Justification.

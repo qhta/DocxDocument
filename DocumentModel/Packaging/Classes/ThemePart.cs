@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemePart
 /// </summary>
-public class ThemePart
+public record ThemePart
 {
   public String? ContentType { get; set; }
 

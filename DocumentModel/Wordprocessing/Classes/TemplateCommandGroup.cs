@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TemplateCommandGroup Class.
 /// </summary>
-public class TemplateCommandGroup
+public record TemplateCommandGroup
 {
   public Collection<KeyMapCustomizations>? KeyMapCustomizations { get; set; }
 

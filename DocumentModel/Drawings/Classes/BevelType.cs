@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BevelType Class.
 /// </summary>
-public class BevelType
+public record BevelType
 {
   /// <summary>
   ///   Width

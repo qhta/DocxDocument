@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Associated Status Text.
 /// </summary>
-public class StatusText
+public record StatusText
 {
   /// <summary>
   ///   Status Text Type

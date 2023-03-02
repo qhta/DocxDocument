@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingPeoplePart
 /// </summary>
-public class WordprocessingPeoplePart
+public record WordprocessingPeoplePart
 {
   public String? ContentType { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Properties3D Class.
 /// </summary>
-public class Properties3D
+public record Properties3D
 {
   /// <summary>
   ///   extrusionH, this property is only available in Office 2010 and later.

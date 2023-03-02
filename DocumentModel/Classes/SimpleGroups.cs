@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SimpleGroups Class.
 /// </summary>
-public class SimpleGroups
+public record SimpleGroups
 {
   public BackstageGroup? BackstageGroup { get; set; }
 

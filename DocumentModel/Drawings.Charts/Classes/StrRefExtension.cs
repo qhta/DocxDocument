@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StrRefExtension Class.
 /// </summary>
-public class StrRefExtension
+public record StrRefExtension
 {
   /// <summary>
   ///   URI

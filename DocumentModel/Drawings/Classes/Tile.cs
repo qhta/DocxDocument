@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Tile.
 /// </summary>
-public class Tile
+public record Tile
 {
   /// <summary>
   ///   Horizontal Offset

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueAxisScaling Class.
 /// </summary>
-public class ValueAxisScaling
+public record ValueAxisScaling
 {
   /// <summary>
   ///   max, this property is only available in Office 2016 and later.

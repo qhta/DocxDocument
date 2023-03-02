@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentRunRuby Class.
 /// </summary>
-public class SdtContentRunRuby
+public record SdtContentRunRuby
 {
   public CustomXmlRuby? CustomXmlRuby { get; set; }
 

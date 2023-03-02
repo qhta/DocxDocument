@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the CategoryAxis Class.
 /// </summary>
-public class CategoryAxis
+public record CategoryAxis
 {
   public LineReference? LineReference { get; set; }
 

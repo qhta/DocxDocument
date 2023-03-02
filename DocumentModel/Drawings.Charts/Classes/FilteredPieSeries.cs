@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredPieSeries Class.
 /// </summary>
-public class FilteredPieSeries
+public record FilteredPieSeries
 {
   /// <summary>
   ///   PieChartSeries.

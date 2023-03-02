@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PrintSettings Class.
 /// </summary>
-public class PrintSettings
+public record PrintSettings
 {
   /// <summary>
   ///   Header and Footer.

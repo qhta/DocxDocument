@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the DiagramAutoBullet Class.
 /// </summary>
-public class DiagramAutoBullet
+public record DiagramAutoBullet
 {
   /// <summary>
   ///   prefix, this property is only available in Office 2019 and later.

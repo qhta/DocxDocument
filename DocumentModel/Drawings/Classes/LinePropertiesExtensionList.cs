@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Future extensions..
 /// </summary>
-public class LinePropertiesExtensionList
+public record LinePropertiesExtensionList
 {
   public Collection<LinePropertiesExtension>? LinePropertiesExtensions { get; set; }
 }

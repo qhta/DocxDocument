@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the OfficeMenu Class.
 /// </summary>
-public class OfficeMenu
+public record OfficeMenu
 {
   public UnsizedControlClone? UnsizedControlClone { get; set; }
 

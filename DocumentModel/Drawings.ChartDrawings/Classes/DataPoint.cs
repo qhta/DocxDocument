@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataPoint Class.
 /// </summary>
-public class DataPoint
+public record DataPoint
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Delimiter Properties.
 /// </summary>
-public class DelimiterProperties
+public record DelimiterProperties
 {
   /// <summary>
   ///   Delimiter Beginning Character.

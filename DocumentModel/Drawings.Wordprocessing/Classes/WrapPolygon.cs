@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Tight Wrapping Extents Polygon.
 /// </summary>
-public class WrapPolygon
+public record WrapPolygon
 {
   /// <summary>
   ///   Wrapping Points Modified

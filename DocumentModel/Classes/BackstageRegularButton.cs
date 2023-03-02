@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageRegularButton Class.
 /// </summary>
-public class BackstageRegularButton
+public record BackstageRegularButton
 {
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.

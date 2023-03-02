@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Reference.
 /// </summary>
-public class Proxy
+public record Proxy
 {
   /// <summary>
   ///   Start Point Connection Flag

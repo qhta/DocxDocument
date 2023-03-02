@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the MainDocumentPart
 /// </summary>
-public class MainDocumentPart
+public record MainDocumentPart
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the MainDocumentPart

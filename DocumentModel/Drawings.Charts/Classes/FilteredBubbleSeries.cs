@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredBubbleSeries Class.
 /// </summary>
-public class FilteredBubbleSeries
+public record FilteredBubbleSeries
 {
   /// <summary>
   ///   BubbleChartSeries.

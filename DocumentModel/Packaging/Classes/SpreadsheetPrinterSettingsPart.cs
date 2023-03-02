@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SpreadsheetPrinterSettingsPart
 /// </summary>
-public class SpreadsheetPrinterSettingsPart
+public record SpreadsheetPrinterSettingsPart
 {
   public String? ContentType { get; set; }
 

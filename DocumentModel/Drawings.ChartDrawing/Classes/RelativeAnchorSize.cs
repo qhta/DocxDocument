@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Relative Anchor Shape Size.
 /// </summary>
-public class RelativeAnchorSize
+public record RelativeAnchorSize
 {
   /// <summary>
   ///   Starting Anchor Point.

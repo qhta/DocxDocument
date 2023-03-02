@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the GradientFill Class.
 /// </summary>
-public class GradientFill
+public record GradientFill
 {
   /// <summary>
   ///   Tile Flip

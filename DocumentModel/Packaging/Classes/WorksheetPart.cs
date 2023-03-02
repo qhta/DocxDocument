@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WorksheetPart
 /// </summary>
-public class WorksheetPart
+public record WorksheetPart
 {
   public String? ContentType { get; set; }
 

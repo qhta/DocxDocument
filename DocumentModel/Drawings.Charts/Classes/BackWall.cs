@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D back wall formatting.
 /// </summary>
-public class BackWall
+public record BackWall
 {
   public Byte? Thickness { get; set; }
 

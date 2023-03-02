@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ButtonGroup Class.
 /// </summary>
-public class ButtonGroup
+public record ButtonGroup
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

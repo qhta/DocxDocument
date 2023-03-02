@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Display Units Label.
 /// </summary>
-public class DisplayUnitsLabel
+public record DisplayUnitsLabel
 {
   /// <summary>
   ///   Layout.

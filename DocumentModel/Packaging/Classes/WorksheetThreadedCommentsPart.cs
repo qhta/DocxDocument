@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WorksheetThreadedCommentsPart
 /// </summary>
-public class WorksheetThreadedCommentsPart
+public record WorksheetThreadedCommentsPart
 {
   public String? ContentType { get; set; }
 

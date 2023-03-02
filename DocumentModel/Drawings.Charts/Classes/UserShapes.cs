@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   User Shapes.
 /// </summary>
-public class UserShapes
+public record UserShapes
 {
   public RelativeAnchorSize? RelativeAnchorSize { get; set; }
 

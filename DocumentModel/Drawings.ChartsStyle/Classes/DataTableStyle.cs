@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataTableStyle Class.
 /// </summary>
-public class DataTableStyle
+public record DataTableStyle
 {
   public LineReference? LineReference { get; set; }
 

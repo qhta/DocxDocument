@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Shadow.
 /// </summary>
-public class PresetShadow
+public record PresetShadow
 {
   /// <summary>
   ///   Preset Shadow

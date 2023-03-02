@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SerAxExtension Class.
 /// </summary>
-public class SerAxExtension
+public record SerAxExtension
 {
   /// <summary>
   ///   URI

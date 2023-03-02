@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the CustomUI Class.
 /// </summary>
-public class CustomUI
+public record CustomUI
 {
   /// <summary>
   ///   onLoad, this property is only available in Office 2010 and later.

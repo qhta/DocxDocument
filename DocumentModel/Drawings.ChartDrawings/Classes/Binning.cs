@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Binning Class.
 /// </summary>
-public class Binning
+public record Binning
 {
   /// <summary>
   ///   intervalClosed, this property is only available in Office 2016 and later.

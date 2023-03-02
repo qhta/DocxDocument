@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FixedCommandKeyboardCustomization Class.
 /// </summary>
-public class FixedCommandKeyboardCustomization
+public record FixedCommandKeyboardCustomization
 {
   /// <summary>
   ///   fciName

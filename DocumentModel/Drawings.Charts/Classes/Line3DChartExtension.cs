@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Line3DChartExtension Class.
 /// </summary>
-public class Line3DChartExtension
+public record Line3DChartExtension
 {
   /// <summary>
   ///   URI

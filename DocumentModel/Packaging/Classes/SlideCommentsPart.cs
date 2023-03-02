@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlideCommentsPart
 /// </summary>
-public class SlideCommentsPart
+public record SlideCommentsPart
 {
   public String? ContentType { get; set; }
 

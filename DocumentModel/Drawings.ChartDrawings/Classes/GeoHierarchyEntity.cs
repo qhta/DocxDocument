@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoHierarchyEntity Class.
 /// </summary>
-public class GeoHierarchyEntity
+public record GeoHierarchyEntity
 {
   /// <summary>
   ///   entityName, this property is only available in Office 2016 and later.

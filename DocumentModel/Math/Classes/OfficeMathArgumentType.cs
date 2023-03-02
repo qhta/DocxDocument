@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the OfficeMathArgumentType Class.
 /// </summary>
-public class OfficeMathArgumentType
+public record OfficeMathArgumentType
 {
   /// <summary>
   ///   Argument Properties.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Matrix Column Properties.
 /// </summary>
-public class MatrixColumnProperties
+public record MatrixColumnProperties
 {
   /// <summary>
   ///   Matrix Column Count.

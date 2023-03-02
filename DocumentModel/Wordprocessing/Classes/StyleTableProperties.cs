@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Table Properties.
 /// </summary>
-public class StyleTableProperties
+public record StyleTableProperties
 {
   /// <summary>
   ///   TableStyleRowBandSize.

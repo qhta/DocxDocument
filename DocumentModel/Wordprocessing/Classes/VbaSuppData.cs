@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the VbaSuppData Class.
 /// </summary>
-public class VbaSuppData
+public record VbaSuppData
 {
   /// <summary>
   ///   DocEvents.

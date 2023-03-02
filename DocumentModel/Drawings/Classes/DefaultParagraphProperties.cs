@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Default Paragraph Style.
 /// </summary>
-public class DefaultParagraphProperties
+public record DefaultParagraphProperties
 {
   public LineSpacing? LineSpacing { get; set; }
 

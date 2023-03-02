@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlMoveToRangeEnd Class.
 /// </summary>
-public class CustomXmlMoveToRangeEnd: MarkupType
+public record CustomXmlMoveToRangeEnd: MarkupType
 {
 }

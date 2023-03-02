@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom XML Attribute.
 /// </summary>
-public class CustomXmlAttribute
+public record CustomXmlAttribute
 {
   /// <summary>
   ///   uri

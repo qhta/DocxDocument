@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Template.
 /// </summary>
-public class Shapetype: EmbeddedObjectElement
+public record Shapetype: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

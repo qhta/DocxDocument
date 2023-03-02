@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Space Before.
 /// </summary>
-public class SpaceBefore
+public record SpaceBefore
 {
   public Int32? SpacingPercent { get; set; }
 

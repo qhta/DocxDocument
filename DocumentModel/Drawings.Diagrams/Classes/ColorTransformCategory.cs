@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Transform Category.
 /// </summary>
-public class ColorTransformCategory
+public record ColorTransformCategory
 {
   /// <summary>
   ///   Category Type

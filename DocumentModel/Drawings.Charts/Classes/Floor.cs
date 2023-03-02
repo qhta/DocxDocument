@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D floor formatting.
 /// </summary>
-public class Floor
+public record Floor
 {
   public Byte? Thickness { get; set; }
 

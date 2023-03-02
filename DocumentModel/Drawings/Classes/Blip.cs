@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Blip Class.
 /// </summary>
-public class Blip
+public record Blip
 {
   /// <summary>
   ///   Embedded Picture Reference

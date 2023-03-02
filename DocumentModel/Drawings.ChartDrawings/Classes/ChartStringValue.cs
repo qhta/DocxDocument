@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ChartStringValue Class.
 /// </summary>
-public class ChartStringValue
+public record ChartStringValue
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.
