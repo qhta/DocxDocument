@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Set of Borders for HTML div.
 /// </summary>
-public class DivBorder
+public record DivBorder
 {
   /// <summary>
   ///   Top Border for HTML div.

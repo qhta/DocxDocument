@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BarChartSeries Class.
 /// </summary>
-public class BarChartSeries3
+public record BarChartSeries3
 {
   /// <summary>
   ///   Index.

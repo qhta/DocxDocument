@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Graphic Frame Locks.
 /// </summary>
-public class GraphicFrameLocks
+public record GraphicFrameLocks
 {
   /// <summary>
   ///   Disallow Shape Grouping

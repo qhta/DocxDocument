@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Category.
 /// </summary>
-public class StyleDisplayCategory
+public record StyleDisplayCategory
 {
   /// <summary>
   ///   Category Type

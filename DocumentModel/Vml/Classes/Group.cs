@@ -6,7 +6,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Group.
 /// </summary>
-public class Group: EmbeddedObjectElement
+public record Group: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionProperty Class.
 /// </summary>
-public class WebExtensionProperty
+public record WebExtensionProperty
 {
   /// <summary>
   ///   name, this property is only available in Office 2013 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Background Fill Style List.
 /// </summary>
-public class BackgroundFillStyleList
+public record BackgroundFillStyleList
 {
   [DefaultValue(false)]
   public Boolean NoFill { get; set; }

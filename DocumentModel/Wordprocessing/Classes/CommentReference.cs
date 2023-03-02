@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CommentReference Class.
 /// </summary>
-public class CommentReference: MarkupType, RunElement
+public record CommentReference: MarkupType, RunElement
 {
 }

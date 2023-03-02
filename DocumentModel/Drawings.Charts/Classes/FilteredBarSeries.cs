@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredBarSeries Class.
 /// </summary>
-public class FilteredBarSeries
+public record FilteredBarSeries
 {
   /// <summary>
   ///   BarChartSeries.

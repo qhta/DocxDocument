@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide Text Run.
 /// </summary>
-public class Run: Collection<RunElement>, ParagraphElement
+public class Run: ElementCollection<RunElement>, ParagraphElement
 {
   /// <summary>
   ///   Revision Identifier for Run Properties

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect Style.
 /// </summary>
-public class EffectStyle
+public record EffectStyle
 {
   public EffectList? EffectList { get; set; }
 

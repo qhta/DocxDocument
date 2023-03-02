@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorType Class.
 /// </summary>
-public class ColorType
+public record ColorType
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

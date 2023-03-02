@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TabSet Class.
 /// </summary>
-public class TabSet
+public record TabSet
 {
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.

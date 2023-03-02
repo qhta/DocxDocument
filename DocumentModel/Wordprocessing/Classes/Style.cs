@@ -1,11 +1,13 @@
 using System;
 
+using Qhta.TestHelper;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public partial class Style: IEquatable<Style>
+public partial class Style : IEquatable<Style>
 {
   /// <summary>
   ///   Style Type
@@ -139,15 +141,38 @@ public partial class Style: IEquatable<Style>
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
-  public Collection<TableStyleProperties>? TableStyleProperties { get; set; }
+  public TableStylePropertiesCollection? TableStyleProperties { get; set; }
 
   public bool Equals(Style? other)
   {
-    if (other == null)
-      return false;
-    if (this.Type!=other.Type) return false;
-    if (this.StyleId!=other.StyleId) return false;
-    if (this.StyleName!=other.StyleName) return false;
+    if (other == null)  return false;
+    if (this.Type != other.Type) return false;
+    if (this.StyleId != other.StyleId) return false;
+    if (this.StyleName != other.StyleName) return false;
+    if (this.IsDefault != other.IsDefault) return false;
+    if (this.IsCustom != other.IsCustom) return false;
+    if (this.BasedOn != other.BasedOn) return false;
+    if (this.NextParagraphStyle != other.NextParagraphStyle) return false;
+    if (this.LinkedStyle != other.LinkedStyle) return false;
+    if (this.IsAutoRedefined != other.IsAutoRedefined) return false;
+    if (this.IsHidden != other.IsHidden) return false;
+    if (this.IsSemiHidden != other.IsSemiHidden) return false;
+    if (this.IsUnhiddenWhenUsed != other.IsUnhiddenWhenUsed) return false;
+    if (this.UIPriority != other.UIPriority) return false;
+    if (this.IsPrimary != other.IsPrimary) return false;
+    if (this.IsLocked != other.IsLocked) return false;
+    if (this.IsPersonal != other.IsPersonal) return false;
+    if (this.IsPersonalCompose != other.IsPersonalCompose) return false;
+    if (this.IsPersonalReply != other.IsPersonalReply) return false;
+    if (this.Rsid != other.Rsid) return false;
+    if (this.StyleParagraphProperties != other.StyleParagraphProperties) return false;
+    if (this.StyleRunProperties != other.StyleRunProperties) return false;
+    if (this.StyleTableProperties != other.StyleTableProperties) return false;
+    if (this.TableStyleConditionalFormattingTableRowProperties != other.TableStyleConditionalFormattingTableRowProperties) return false;
+    if (this.StyleTableCellProperties != other.StyleTableCellProperties) return false;
+    if (StyleName == "Standardowa tabela")
+      TestTools.Stop();
+    if (this.TableStyleProperties?.Equals(other.TableStyleProperties) == false) return false;
     return true;
   }
 }

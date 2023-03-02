@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the SplitButton Class.
 /// </summary>
-public class SplitButton
+public record SplitButton
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

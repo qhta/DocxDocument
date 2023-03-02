@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Grid Column Definition.
 /// </summary>
-public class GridColumn
+public record GridColumn
 {
   /// <summary>
   ///   Grid Column Width

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the MenuSeparator Class.
 /// </summary>
-public class MenuSeparator
+public record MenuSeparator
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

@@ -5,7 +5,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the TextBox Class.
 /// </summary>
-public class TextBox
+public record TextBox
 {
   /// <summary>
   ///   Unique Identifier

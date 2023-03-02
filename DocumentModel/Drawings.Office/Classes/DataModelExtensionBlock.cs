@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the DataModelExtensionBlock Class.
 /// </summary>
-public class DataModelExtensionBlock
+public record DataModelExtensionBlock
 {
   /// <summary>
   ///   relId, this property is only available in Office 2010 and later.

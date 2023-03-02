@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public class RunProperties
+public record RunProperties
 {
   /// <summary>
   ///   Literal.

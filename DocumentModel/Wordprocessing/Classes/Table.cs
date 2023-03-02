@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Table Class.
 /// </summary>
-public class Table: BodyElement
+public record Table: BodyElement
 {
   public BookmarkStart? BookmarkStart { get; set; }
 

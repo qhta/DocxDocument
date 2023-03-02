@@ -2,7 +2,7 @@ using System.ComponentModel;
 
 namespace DocumentModel.Wordprocessing;
 
-public partial class LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPropertyChanging
+public partial record LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPropertyChanging
 {
   private ListOf<String>? _Aliases;
 

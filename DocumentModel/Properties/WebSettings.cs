@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Web Page Settings.
 /// </summary>
-public class WebSettings: KnownDocumentProperties
+public record WebSettings: KnownDocumentProperties
 {
     /// <summary>
     ///   Frameset.

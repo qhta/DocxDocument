@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 ///   Custom XML Schema Reference.
 /// </summary>
-public class Schema
+public record Schema
 {
   /// <summary>
   ///   Custom XML Schema Namespace

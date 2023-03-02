@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Ending Anchor Point.
 /// </summary>
-public class ToAnchor
+public record ToAnchor
 {
   public String? XPosition { get; set; }
 

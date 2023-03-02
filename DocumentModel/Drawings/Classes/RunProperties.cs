@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Run Properties.
 /// </summary>
-public class RunProperties
+public record RunProperties
 {
   public Outline? Outline { get; set; }
 

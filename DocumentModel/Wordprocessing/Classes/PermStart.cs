@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PermStart Class.
 /// </summary>
-public class PermStart: CommonElement
+public record PermStart: CommonElement
 {
   /// <summary>
   ///   edGrp

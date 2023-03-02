@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlicersPart
 /// </summary>
-public class SlicersPart
+public record SlicersPart
 {
   public String? ContentType { get; set; }
 

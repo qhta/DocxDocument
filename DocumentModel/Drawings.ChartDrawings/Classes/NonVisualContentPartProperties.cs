@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NonVisualContentPartProperties Class.
 /// </summary>
-public class NonVisualContentPartProperties
+public record NonVisualContentPartProperties
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

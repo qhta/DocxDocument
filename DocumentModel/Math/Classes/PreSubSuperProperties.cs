@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Pre-Sub-Superscript Properties.
 /// </summary>
-public class PreSubSuperProperties
+public record PreSubSuperProperties
 {
   /// <summary>
   ///   ControlProperties.

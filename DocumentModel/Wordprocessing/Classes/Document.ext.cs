@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document.
 /// </summary>
-public partial class Document
+public partial record Document
 {
   public DocumentProperties? Properties { get; set; }
 

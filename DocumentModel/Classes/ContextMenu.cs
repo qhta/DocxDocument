@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ContextMenu Class.
 /// </summary>
-public class ContextMenu
+public record ContextMenu
 {
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.

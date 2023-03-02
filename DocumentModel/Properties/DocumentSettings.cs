@@ -7,7 +7,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Document Settings.
 /// </summary>
-public class DocumentSettings: KnownDocumentProperties
+public record DocumentSettings: KnownDocumentProperties
 {
     /// <summary>
     ///   Write Protection.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumberingCache Class.
 /// </summary>
-public class NumberingCache
+public record NumberingCache
 {
   public String? FormatCode { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Grid.
 /// </summary>
-public class TableGrid
+public record TableGrid
 {
   public Collection<GridColumn>? GridColumns { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Math Properties.
 /// </summary>
-public class MathProperties
+public record MathProperties
 {
   /// <summary>
   ///   Math Font.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtDocPartType Class.
 /// </summary>
-public class SdtDocPartType
+public record SdtDocPartType
 {
   /// <summary>
   ///   Document Part Gallery Filter.

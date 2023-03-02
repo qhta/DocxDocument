@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlidePart
 /// </summary>
-public class SlidePart
+public record SlidePart
 {
   /// <summary>
   ///   Gets the ChartParts of the SlidePart

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AcceleratorKeymapType Class.
 /// </summary>
-public class AcceleratorKeymapType
+public record AcceleratorKeymapType
 {
   /// <summary>
   ///   acdName

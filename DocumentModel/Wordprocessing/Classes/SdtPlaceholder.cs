@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtPlaceholder Class.
 /// </summary>
-public class SdtPlaceholder
+public record SdtPlaceholder
 {
   /// <summary>
   ///   Document Part Reference.

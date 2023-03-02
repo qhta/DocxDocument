@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Properties for a Single Font.
 /// </summary>
-public class Font: IEquatable<Font>
+public record Font: IEquatable<Font>
 {
   /// <summary>
   ///   name
@@ -66,24 +66,24 @@ public class Font: IEquatable<Font>
   /// </summary>
   public FontRelationshipType? EmbedBoldItalicFont { get; set; }
 
-  public bool Equals(Font? other)
-  {
-    if (other != null)
-    {
-      if (!string.Equals(this.Name, other.Name)) return false;
-      if (!string.Equals(this.AltName, other.AltName)) return false;
-      if (this.Panose != other.Panose) return false;
-      if (this.FontCharSet != other.FontCharSet) return false;
-      if (this.FontFamily != other.FontFamily) return false;
-      if (this.NotTrueType != other.NotTrueType) return false;
-      if (this.Pitch != other.Pitch) return false;
-      if (this.FontSignature != other.FontSignature) return false;
-      if (this.EmbedRegularFont != other.EmbedRegularFont) return false;
-      if (this.EmbedBoldFont != other.EmbedBoldFont) return false;
-      if (this.EmbedItalicFont != other.EmbedItalicFont) return false;
-      if (this.EmbedBoldItalicFont != other.EmbedBoldItalicFont) return false;
-      return true;
-    }
-    return false;
-  }
+  //public override bool Equals(Font? other)
+  //{
+  //  if (other != null)
+  //  {
+  //    if (!string.Equals(this.Name, other.Name)) return false;
+  //    if (!string.Equals(this.AltName, other.AltName)) return false;
+  //    if (this.Panose != other.Panose) return false;
+  //    if (this.FontCharSet != other.FontCharSet) return false;
+  //    if (this.FontFamily != other.FontFamily) return false;
+  //    if (this.NotTrueType != other.NotTrueType) return false;
+  //    if (this.Pitch != other.Pitch) return false;
+  //    if (this.FontSignature != other.FontSignature) return false;
+  //    if (this.EmbedRegularFont != other.EmbedRegularFont) return false;
+  //    if (this.EmbedBoldFont != other.EmbedBoldFont) return false;
+  //    if (this.EmbedItalicFont != other.EmbedItalicFont) return false;
+  //    if (this.EmbedBoldItalicFont != other.EmbedBoldItalicFont) return false;
+  //    return true;
+  //  }
+  //  return false;
+  //}
 }

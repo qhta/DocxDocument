@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Fill.
 /// </summary>
-public class Fill
+public record Fill
 {
   /// <summary>
   ///   NoFill.

@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the RepurposedCommand Class.
 /// </summary>
-public class RepurposedCommand
+public record RepurposedCommand
 {
   /// <summary>
   ///   onAction

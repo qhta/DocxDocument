@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Drop-Down List Form Field Properties.
 /// </summary>
-public class DropDownListFormField
+public record DropDownListFormField
 {
   /// <summary>
   ///   Drop-Down List Selection.

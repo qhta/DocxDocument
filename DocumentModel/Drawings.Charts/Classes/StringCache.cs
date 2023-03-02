@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StringCache Class.
 /// </summary>
-public class StringCache
+public record StringCache
 {
   public UInt32? PointCount { get; set; }
 

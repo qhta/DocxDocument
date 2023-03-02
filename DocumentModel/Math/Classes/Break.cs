@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Break.
 /// </summary>
-public class Break
+public record Break
 {
   /// <summary>
   ///   Index of Operator to Align To

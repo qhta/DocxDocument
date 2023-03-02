@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DocumentTasksPart
 /// </summary>
-public class DocumentTasksPart
+public record DocumentTasksPart
 {
   public String? ContentType { get; set; }
 

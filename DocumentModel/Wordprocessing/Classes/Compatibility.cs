@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Compatibility Settings.
 /// </summary>
-public class Compatibility
+public record Compatibility
 {
   /// <summary>
   ///   Use Simplified Rules For Table Border Conflicts.
@@ -330,5 +330,5 @@ public class Compatibility
   /// </summary>
   public Boolean? CachedColumnBalance { get; set; }
 
-  public Collection<CompatibilitySetting>? CompatibilitySettings { get; set; }
+  public ElementCollection<CompatibilitySetting>? CompatibilitySettings { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Shape Text Body.
 /// </summary>
-public class TextBody
+public record TextBody
 {
   /// <summary>
   ///   Body Properties.

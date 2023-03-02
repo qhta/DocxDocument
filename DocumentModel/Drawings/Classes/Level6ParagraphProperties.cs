@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   List Level 6 Text Style.
 /// </summary>
-public class Level6ParagraphProperties
+public record Level6ParagraphProperties
 {
   public LineSpacing? LineSpacing { get; set; }
 

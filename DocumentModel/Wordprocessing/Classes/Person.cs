@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Person Class.
 /// </summary>
-public class Person
+public record Person
 {
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility

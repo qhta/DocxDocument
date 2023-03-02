@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rectangle.
 /// </summary>
-public class Rectangle: EmbeddedObjectElement
+public record Rectangle: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

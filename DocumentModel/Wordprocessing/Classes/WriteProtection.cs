@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Write Protection.
 /// </summary>
-public class WriteProtection
+public record WriteProtection
 {
   /// <summary>
   ///   Recommend Write Protection in User Interface

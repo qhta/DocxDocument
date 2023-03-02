@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the XmlSignaturePart
 /// </summary>
-public class XmlSignaturePart
+public record XmlSignaturePart
 {
   public String? ContentType { get; set; }
 

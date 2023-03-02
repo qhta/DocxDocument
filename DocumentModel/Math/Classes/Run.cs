@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the Run Class.
 /// </summary>
-public class Run
+public record Run
 {
   /// <summary>
   ///   Run Properties.

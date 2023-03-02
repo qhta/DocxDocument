@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ContentPart Class.
 /// </summary>
-public class ContentPart
+public record ContentPart
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

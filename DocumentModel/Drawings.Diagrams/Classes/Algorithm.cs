@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Algorithm.
 /// </summary>
-public class Algorithm
+public record Algorithm
 {
   /// <summary>
   ///   Algorithm Type

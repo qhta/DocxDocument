@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumberFormat Class.
 /// </summary>
-public class NumberFormat
+public record NumberFormat
 {
   /// <summary>
   ///   formatCode, this property is only available in Office 2016 and later.

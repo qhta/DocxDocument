@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Object Extents Including Effects.
 /// </summary>
-public class EffectExtent
+public record EffectExtent
 {
   /// <summary>
   ///   Additional Extent on Left Edge

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MinValueColorEndPosition Class.
 /// </summary>
-public class MinValueColorEndPosition
+public record MinValueColorEndPosition
 {
   public Boolean? ExtremeValueColorPosition { get; set; }
 

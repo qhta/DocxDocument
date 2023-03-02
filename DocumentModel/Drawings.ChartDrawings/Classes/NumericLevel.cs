@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericLevel Class.
 /// </summary>
-public class NumericLevel
+public record NumericLevel
 {
   /// <summary>
   ///   ptCount, this property is only available in Office 2016 and later.

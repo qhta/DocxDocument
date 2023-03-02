@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ConditionalFormatStyle Class.
 /// </summary>
-public class ConditionalFormatStyle
+public record ConditionalFormatStyle
 {
   /// <summary>
   ///   Conditional Formatting Bit Mask

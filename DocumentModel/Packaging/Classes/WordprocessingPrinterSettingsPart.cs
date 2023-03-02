@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingPrinterSettingsPart
 /// </summary>
-public class WordprocessingPrinterSettingsPart
+public record WordprocessingPrinterSettingsPart
 {
   public String? ContentType { get; set; }
 

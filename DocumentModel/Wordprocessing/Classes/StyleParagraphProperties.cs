@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Style Conditional Formatting Paragraph Properties.
 /// </summary>
-public class StyleParagraphProperties
+public record StyleParagraphProperties
 {
   /// <summary>
   ///   KeepNext.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Change Color To.
 /// </summary>
-public class ColorTo
+public record ColorTo
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 
