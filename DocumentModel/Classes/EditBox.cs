@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the EditBox Class.
 /// </summary>
-public class EditBox
+public record EditBox
 {
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.

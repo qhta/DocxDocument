@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlideSyncDataPart
 /// </summary>
-public class SlideSyncDataPart
+public record SlideSyncDataPart
 {
   public String? ContentType { get; set; }
 

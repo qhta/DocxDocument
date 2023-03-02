@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ConnectorLockingExtension Class.
 /// </summary>
-public class ConnectorLockingExtension
+public record ConnectorLockingExtension
 {
   /// <summary>
   ///   URI

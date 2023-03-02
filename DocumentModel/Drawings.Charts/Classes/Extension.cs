@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Extension.
 /// </summary>
-public class Extension
+public record Extension
 {
   /// <summary>
   ///   Uniform Resource Identifier

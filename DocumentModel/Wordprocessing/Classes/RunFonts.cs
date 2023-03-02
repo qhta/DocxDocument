@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunFonts Class.
 /// </summary>
-public class RunFonts
+public record RunFonts
 {
   /// <summary>
   ///   Font Content Type

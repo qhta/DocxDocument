@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredSeriesTitle Class.
 /// </summary>
-public class FilteredSeriesTitle
+public record FilteredSeriesTitle
 {
   /// <summary>
   ///   ChartText.

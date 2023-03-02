@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ImageEffect Class.
 /// </summary>
-public class ImageEffect
+public record ImageEffect
 {
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.

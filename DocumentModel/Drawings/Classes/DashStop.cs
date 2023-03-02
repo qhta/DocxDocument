@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Dash Stop.
 /// </summary>
-public class DashStop
+public record DashStop
 {
   /// <summary>
   ///   Dash Length

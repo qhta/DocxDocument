@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the HyperlinkRuby Class.
 /// </summary>
-public class HyperlinkRuby
+public record HyperlinkRuby
 {
   /// <summary>
   ///   tgtFrame

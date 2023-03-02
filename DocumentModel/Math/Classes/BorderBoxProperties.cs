@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Border Box Properties.
 /// </summary>
-public class BorderBoxProperties
+public record BorderBoxProperties
 {
   /// <summary>
   ///   Hide Top Edge.

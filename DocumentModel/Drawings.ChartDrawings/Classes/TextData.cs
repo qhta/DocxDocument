@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the TextData Class.
 /// </summary>
-public class TextData
+public record TextData
 {
   public OpenXmlFormulaElement? Formula { get; set; }
 

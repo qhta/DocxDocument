@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Style Conditional Formatting Table Row Properties.
 /// </summary>
-public class TableStyleConditionalFormattingTableRowProperties
+public record TableStyleConditionalFormattingTableRowProperties
 {
   public Boolean? Hidden { get; set; }
 

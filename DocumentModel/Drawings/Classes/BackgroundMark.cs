@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundMark Class.
 /// </summary>
-public class BackgroundMark
+public record BackgroundMark
 {
   /// <summary>
   ///   x1, this property is only available in Office 2010 and later.

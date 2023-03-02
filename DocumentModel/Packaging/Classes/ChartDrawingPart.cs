@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ChartDrawingPart
 /// </summary>
-public class ChartDrawingPart
+public record ChartDrawingPart
 {
   public String? ContentType { get; set; }
 

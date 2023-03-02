@@ -510,9 +510,9 @@ public static class StyleConverter
     }
   }
   
-  private static Collection<DMW.TableStyleProperties>? GetTableStyleProperties(DXW.Style openXmlElement)
+  private static DMW.TableStylePropertiesCollection? GetTableStyleProperties(DXW.Style openXmlElement)
   {
-    var collection = new Collection<DMW.TableStyleProperties>();
+    var collection = new DMW.TableStylePropertiesCollection();
     foreach (var item in openXmlElement.Elements<DXW.TableStyleProperties>())
     {
       var newItem = DMXW.TableStylePropertiesConverter.CreateModelElement(item);

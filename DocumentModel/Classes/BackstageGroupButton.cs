@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroupButton Class.
 /// </summary>
-public class BackstageGroupButton
+public record BackstageGroupButton
 {
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.

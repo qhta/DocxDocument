@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Parameter.
 /// </summary>
-public class Parameter
+public record Parameter
 {
   /// <summary>
   ///   Parameter Type

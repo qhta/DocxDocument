@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Choose Element.
 /// </summary>
-public class Choose
+public record Choose
 {
   /// <summary>
   ///   Name

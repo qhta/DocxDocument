@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorMappingType Class.
 /// </summary>
-public class ColorMappingType
+public record ColorMappingType
 {
   /// <summary>
   ///   Background 1

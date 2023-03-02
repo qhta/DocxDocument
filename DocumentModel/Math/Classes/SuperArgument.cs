@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper limit (n-ary).
 /// </summary>
-public class SuperArgument
+public record SuperArgument
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

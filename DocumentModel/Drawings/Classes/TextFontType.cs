@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TextFontType Class.
 /// </summary>
-public class TextFontType
+public record TextFontType
 {
   /// <summary>
   ///   Text Typeface

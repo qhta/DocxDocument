@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public class NonVisualInkContentPartProperties
+public record NonVisualInkContentPartProperties
 {
   /// <summary>
   ///   isComment, this property is only available in Office 2010 and later.

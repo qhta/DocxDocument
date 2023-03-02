@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the LineReference Class.
 /// </summary>
-public class LineReference
+public record LineReference
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

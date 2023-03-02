@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Transform Effect.
 /// </summary>
-public class TransformEffect
+public record TransformEffect
 {
   /// <summary>
   ///   Horizontal Ratio

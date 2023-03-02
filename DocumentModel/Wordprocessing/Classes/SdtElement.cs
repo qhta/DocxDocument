@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines SdtElement - the base class for the sdt elements.
 /// </summary>
-public class SdtElement
+public record SdtElement
 {
   /// <summary>
   ///   Gets or sets the SdtProperties.

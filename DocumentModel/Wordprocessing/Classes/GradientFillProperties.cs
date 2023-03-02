@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the GradientFillProperties Class.
 /// </summary>
-public class GradientFillProperties
+public record GradientFillProperties
 {
   /// <summary>
   ///   GradientStopList.

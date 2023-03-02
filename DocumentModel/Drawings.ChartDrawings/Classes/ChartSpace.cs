@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ChartSpace Class.
 /// </summary>
-public class ChartSpace
+public record ChartSpace
 {
   /// <summary>
   ///   ChartData.

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the LegacyDiagramTextPart
 /// </summary>
-public class LegacyDiagramTextPart
+public record LegacyDiagramTextPart
 {
   public String? ContentType { get; set; }
 

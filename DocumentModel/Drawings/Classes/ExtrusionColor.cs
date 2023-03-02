@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Extrusion Color.
 /// </summary>
-public class ExtrusionColor
+public record ExtrusionColor
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

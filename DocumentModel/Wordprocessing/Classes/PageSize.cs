@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageSize Class.
 /// </summary>
-public class PageSize
+public record PageSize
 {
   /// <summary>
   ///   Page Width

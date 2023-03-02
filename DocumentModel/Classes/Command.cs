@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Command Class.
 /// </summary>
-public class Command
+public record Command
 {
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Color Change Effect.
 /// </summary>
-public class ColorChange
+public record ColorChange
 {
   /// <summary>
   ///   Consider Alpha Values

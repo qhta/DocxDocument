@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredAreaSeries Class.
 /// </summary>
-public class FilteredAreaSeries
+public record FilteredAreaSeries
 {
   /// <summary>
   ///   AreaChartSeries.

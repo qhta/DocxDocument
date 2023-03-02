@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AllocatedCommandManifest Class.
 /// </summary>
-public class AllocatedCommandManifest
+public record AllocatedCommandManifest
 {
   public Collection<AcceleratorKeymapType>? AllocatedCommandManifestEntries { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageFastCommandButton Class.
 /// </summary>
-public class BackstageFastCommandButton
+public record BackstageFastCommandButton
 {
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.

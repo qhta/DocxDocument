@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 /// <summary>
 ///   Non-Visual Drawing Properties.
 /// </summary>
-public class NonVisualDrawingProperties
+public record NonVisualDrawingProperties
 {
   /// <summary>
   ///   Application defined unique identifier.

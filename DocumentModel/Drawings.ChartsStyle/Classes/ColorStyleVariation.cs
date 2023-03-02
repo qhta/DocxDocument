@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ColorStyleVariation Class.
 /// </summary>
-public class ColorStyleVariation
+public record ColorStyleVariation
 {
   public Int32? Tint { get; set; }
 

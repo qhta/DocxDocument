@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Information About Single HTML div Element.
 /// </summary>
-public class Div
+public record Div
 {
   /// <summary>
   ///   div Data ID

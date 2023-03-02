@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Axis Class.
 /// </summary>
-public class Axis
+public record Axis
 {
   /// <summary>
   ///   id, this property is only available in Office 2016 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MinorGridlinesGridlines Class.
 /// </summary>
-public class MinorGridlinesGridlines
+public record MinorGridlinesGridlines
 {
   public ShapeProperties? ShapeProperties { get; set; }
 

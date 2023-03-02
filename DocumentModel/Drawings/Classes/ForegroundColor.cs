@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Foreground color.
 /// </summary>
-public class ForegroundColor
+public record ForegroundColor
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

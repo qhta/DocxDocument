@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SurfaceType Class.
 /// </summary>
-public class SurfaceType
+public record SurfaceType
 {
   /// <summary>
   ///   Thickness.

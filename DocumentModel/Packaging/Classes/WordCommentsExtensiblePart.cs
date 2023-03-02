@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordCommentsExtensiblePart
 /// </summary>
-public class WordCommentsExtensiblePart
+public record WordCommentsExtensiblePart
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

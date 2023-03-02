@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Pattern Fill.
 /// </summary>
-public class PatternFill
+public record PatternFill
 {
   /// <summary>
   ///   Preset Pattern

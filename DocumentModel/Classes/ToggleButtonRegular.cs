@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ToggleButtonRegular Class.
 /// </summary>
-public class ToggleButtonRegular
+public record ToggleButtonRegular
 {
   /// <summary>
   ///   getPressed, this property is only available in Office 2010 and later.

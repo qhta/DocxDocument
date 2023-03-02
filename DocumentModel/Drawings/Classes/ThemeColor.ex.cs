@@ -1,6 +1,6 @@
 namespace DocumentModel.Drawings;
 
-public partial class ThemeColor: Color2Type, INamedObject
+public partial record ThemeColor: Color2Type, INamedObject
 {
   public string? Name { get; set; }
 

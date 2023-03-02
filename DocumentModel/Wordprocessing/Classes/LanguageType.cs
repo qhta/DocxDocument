@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LanguageType Class.
 /// </summary>
-public class LanguageType
+public record LanguageType
 {
   /// <summary>
   ///   Latin Language

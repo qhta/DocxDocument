@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the ShapeStyle Class.
 /// </summary>
-public class ShapeStyle
+public record ShapeStyle
 {
   /// <summary>
   ///   LineReference.

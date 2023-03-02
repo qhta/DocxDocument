@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Inline-Level Structured Document Tag Content.
 /// </summary>
-public class SdtContentRun
+public record SdtContentRun
 {
   public Math.Run? Run { get; set; }
 

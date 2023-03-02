@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Graphic Object Data.
 /// </summary>
-public class GraphicData
+public record GraphicData
 {
   /// <summary>
   ///   Uniform Resource Identifier

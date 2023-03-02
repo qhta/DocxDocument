@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the TimeLinePart
 /// </summary>
-public class TimeLinePart
+public record TimeLinePart
 {
   public String? ContentType { get; set; }
 

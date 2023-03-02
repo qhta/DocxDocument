@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   3D Extrusion.
 /// </summary>
-public class Extrusion
+public record Extrusion
 {
   /// <summary>
   ///   VML Extension Handling Behavior

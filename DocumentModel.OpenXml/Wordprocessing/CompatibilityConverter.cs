@@ -1175,9 +1175,9 @@ public static class CompatibilityConverter
     BooleanValueConverter.SetOnOffType<DXW.CachedColumnBalance>(openXmlElement, value);
   }
   
-  private static Collection<DMW.CompatibilitySetting>? GetCompatibilitySettings(DXW.Compatibility openXmlElement)
+  private static ElementCollection<DMW.CompatibilitySetting>? GetCompatibilitySettings(DXW.Compatibility openXmlElement)
   {
-    var collection = new Collection<DMW.CompatibilitySetting>();
+    var collection = new ElementCollection<DMW.CompatibilitySetting>();
     foreach (var item in openXmlElement.Elements<DXW.CompatibilitySetting>())
     {
       var newItem = DMXW.CompatibilitySettingConverter.CreateModelElement(item);

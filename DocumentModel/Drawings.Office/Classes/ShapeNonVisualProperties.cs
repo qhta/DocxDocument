@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the ShapeNonVisualProperties Class.
 /// </summary>
-public class ShapeNonVisualProperties
+public record ShapeNonVisualProperties
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

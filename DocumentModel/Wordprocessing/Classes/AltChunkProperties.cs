@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   External Content Import Properties.
 /// </summary>
-public class AltChunkProperties
+public record AltChunkProperties
 {
   /// <summary>
   ///   Keep Source Formatting on Import.

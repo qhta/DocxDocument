@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Font Table Root Element.
 /// </summary>
-public class Fonts : Collection<Font>
+public class Fonts : ElementCollection<Font>
 {
   public new Collection<Font>? Items
   {

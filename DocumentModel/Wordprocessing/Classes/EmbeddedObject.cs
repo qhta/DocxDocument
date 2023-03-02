@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The layout properties of this embedded object, as well as an optional static representation, 
 ///   are specified using the drawing element.
 /// </summary>
-public class EmbeddedObject: Collection<EmbeddedObjectElement>, RunElement
+public class EmbeddedObject: ElementCollection<EmbeddedObjectElement>, RunElement
 {
   /// <summary>
   ///   dxaOrig

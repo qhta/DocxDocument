@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PictureAttributionSourceURL Class.
 /// </summary>
-public class PictureAttributionSourceURL
+public record PictureAttributionSourceURL
 {
   /// <summary>
   ///   id, this property is only available in Office 2019 and later.

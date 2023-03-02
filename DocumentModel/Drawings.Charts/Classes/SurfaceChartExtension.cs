@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the SurfaceChartExtension Class.
 /// </summary>
-public class SurfaceChartExtension
+public record SurfaceChartExtension
 {
   /// <summary>
   ///   URI

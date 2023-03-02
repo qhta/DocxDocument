@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Entry Categorization.
 /// </summary>
-public class Category
+public record Category
 {
   /// <summary>
   ///   Category Associated With Entry.

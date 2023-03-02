@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Argument Properties.
 /// </summary>
-public class ArgumentProperties
+public record ArgumentProperties
 {
   /// <summary>
   ///   Argument Size.

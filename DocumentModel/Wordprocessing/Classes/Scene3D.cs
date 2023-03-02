@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Scene3D Class.
 /// </summary>
-public class Scene3D
+public record Scene3D
 {
   /// <summary>
   ///   Camera.

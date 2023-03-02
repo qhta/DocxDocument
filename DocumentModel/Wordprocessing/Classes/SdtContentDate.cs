@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentDate Class.
 /// </summary>
-public class SdtContentDate
+public record SdtContentDate
 {
   /// <summary>
   ///   Last Known Date in XML Schema DateTime Format

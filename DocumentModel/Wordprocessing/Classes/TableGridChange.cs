@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for Table Grid Column Definitions.
 /// </summary>
-public class TableGridChange
+public record TableGridChange
 {
   /// <summary>
   ///   Annotation Identifier

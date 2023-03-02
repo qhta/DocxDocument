@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the ImageData Class.
 /// </summary>
-public class ImageData
+public record ImageData
 {
   /// <summary>
   ///   Unique Identifier

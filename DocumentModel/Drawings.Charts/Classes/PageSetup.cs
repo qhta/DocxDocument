@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Page Setup.
 /// </summary>
-public class PageSetup
+public record PageSetup
 {
   /// <summary>
   ///   Page Size

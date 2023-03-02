@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Character Bullet.
 /// </summary>
-public class CharacterBullet
+public record CharacterBullet
 {
   /// <summary>
   ///   Bullet Character

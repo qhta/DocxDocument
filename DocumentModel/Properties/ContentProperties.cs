@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Application Specific File Properties.
 /// </summary>
-public partial class ContentProperties: KnownDocumentProperties
+public partial record ContentProperties: KnownDocumentProperties
 {
   /// <summary>
   ///   Name of Document Template.

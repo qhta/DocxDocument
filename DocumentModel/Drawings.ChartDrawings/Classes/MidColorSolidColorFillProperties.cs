@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MidColorSolidColorFillProperties Class.
 /// </summary>
-public class MidColorSolidColorFillProperties
+public record MidColorSolidColorFillProperties
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

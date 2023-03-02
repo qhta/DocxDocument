@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   DrawingML Object.
 /// </summary>
-public class Drawing: RunElement, EmbeddedObjectElement
+public record Drawing: RunElement, EmbeddedObjectElement
 {
   /// <summary>
   ///   Drawing Element Anchor.

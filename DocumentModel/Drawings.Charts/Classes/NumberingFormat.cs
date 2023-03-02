@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Number Format.
 /// </summary>
-public class NumberingFormat
+public record NumberingFormat
 {
   /// <summary>
   ///   Number Format Code

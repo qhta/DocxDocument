@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Row.
 /// </summary>
-public class TableRow
+public record TableRow
 {
   /// <summary>
   ///   Revision Identifier for Table Row Glyph Formatting

@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Hyperlink Class.
 /// </summary>
-public class Hyperlink: ParagraphElement
+public record Hyperlink: ParagraphElement
 {
   /// <summary>
   ///   Hyperlink Target Frame

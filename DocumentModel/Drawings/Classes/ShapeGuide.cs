@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Guide.
 /// </summary>
-public class ShapeGuide
+public record ShapeGuide
 {
   /// <summary>
   ///   Shape Guide Name

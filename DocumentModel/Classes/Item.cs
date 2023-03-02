@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Item Class.
 /// </summary>
-public class Item
+public record Item
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

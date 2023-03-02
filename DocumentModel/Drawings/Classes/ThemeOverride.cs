@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Theme Override.
 /// </summary>
-public class ThemeOverride
+public record ThemeOverride
 {
   /// <summary>
   ///   Color Scheme.

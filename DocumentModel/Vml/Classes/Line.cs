@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Line.
 /// </summary>
-public class Line: EmbeddedObjectElement
+public record Line: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

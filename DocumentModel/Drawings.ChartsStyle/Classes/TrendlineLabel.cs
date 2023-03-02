@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the TrendlineLabel Class.
 /// </summary>
-public class TrendlineLabel
+public record TrendlineLabel
 {
   public LineReference? LineReference { get; set; }
 

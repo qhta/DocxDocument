@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Properties.
 /// </summary>
-public class TextProperties
+public record TextProperties
 {
   /// <summary>
   ///   Apply 3D shape properties.

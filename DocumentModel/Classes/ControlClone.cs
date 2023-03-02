@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ControlClone Class.
 /// </summary>
-public class ControlClone
+public record ControlClone
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

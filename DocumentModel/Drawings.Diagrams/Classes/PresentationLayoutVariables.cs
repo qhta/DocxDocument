@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Presentation Layout Variables.
 /// </summary>
-public class PresentationLayoutVariables
+public record PresentationLayoutVariables
 {
   public Boolean? OrganizationChart { get; set; }
 

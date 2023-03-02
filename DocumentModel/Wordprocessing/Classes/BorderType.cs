@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public class BorderType
+public record BorderType
 {
   /// <summary>
   ///   Border Style

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Custom geometry.
 /// </summary>
-public class CustomGeometry
+public record CustomGeometry
 {
   /// <summary>
   ///   Adjust Value List.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the StyleColor Class.
 /// </summary>
-public class StyleColor
+public record StyleColor
 {
   /// <summary>
   ///   val, this property is only available in Office 2013 and later.

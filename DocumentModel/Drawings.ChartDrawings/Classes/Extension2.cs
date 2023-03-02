@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Extension2 Class.
 /// </summary>
-public class Extension2
+public record Extension2
 {
   /// <summary>
   ///   uri, this property is only available in Office 2016 and later.

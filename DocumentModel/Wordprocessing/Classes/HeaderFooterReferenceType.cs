@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the HeaderFooterReferenceType Class.
 /// </summary>
-public class HeaderFooterReferenceType
+public record HeaderFooterReferenceType
 {
   /// <summary>
   ///   type

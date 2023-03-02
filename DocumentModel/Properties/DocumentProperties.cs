@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public partial class DocumentProperties : ICollection<DocumentProperty>
+public partial record DocumentProperties : ICollection<DocumentProperty>
 {
   [XmlIgnore]
   public CoreProperties? CoreProperties { get; set; }

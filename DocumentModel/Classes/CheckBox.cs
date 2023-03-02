@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the CheckBox Class.
 /// </summary>
-public class CheckBox
+public record CheckBox
 {
   /// <summary>
   ///   getPressed, this property is only available in Office 2010 and later.

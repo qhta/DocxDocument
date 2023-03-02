@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Minor fonts.
 /// </summary>
-public class MinorFont
+public record MinorFont
 {
   public TextFontType? LatinFont { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HyperlinkOnMouseOver Class.
 /// </summary>
-public class HyperlinkOnMouseOver
+public record HyperlinkOnMouseOver
 {
   public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
 

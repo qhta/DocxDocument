@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Underline Stroke.
 /// </summary>
-public class Underline
+public record Underline
 {
   public Boolean? NoFill { get; set; }
 

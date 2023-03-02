@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   These footnote and endnote types define the footnote/endnote used to separate the contents of the main document story 
 ///   from the contents of footnotes or endnotes on that page.
 /// </summary>
-public class SeparatorMark : RunElement
+public record SeparatorMark : RunElement
 {
   /// <summary>
   /// Specifies whether the separator mark occurs in endnote or footnote.

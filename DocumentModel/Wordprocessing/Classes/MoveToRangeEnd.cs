@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveToRangeEnd Class.
 /// </summary>
-public class MoveToRangeEnd: MarkupRangeType
+public record MoveToRangeEnd: MarkupRangeType
 {
 
 }

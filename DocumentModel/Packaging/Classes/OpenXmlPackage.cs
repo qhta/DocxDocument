@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents a base class for strong typed Open XML document classes.
 /// </summary>
-public class OpenXmlPackage
+public record OpenXmlPackage
 {
   /// <summary>
   ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.

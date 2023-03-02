@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Locks.
 /// </summary>
-public class ShapeLocks
+public record ShapeLocks
 {
   /// <summary>
   ///   Disallow Shape Grouping

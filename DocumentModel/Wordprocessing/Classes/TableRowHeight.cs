@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableRowHeight Class.
 /// </summary>
-public class TableRowHeight
+public record TableRowHeight
 {
   /// <summary>
   ///   Table Row Height

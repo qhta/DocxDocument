@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Matrix Properties.
 /// </summary>
-public class MatrixProperties
+public record MatrixProperties
 {
   /// <summary>
   ///   Matrix Base Justification.

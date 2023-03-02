@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThumbnailPart
 /// </summary>
-public class ThumbnailPart
+public record ThumbnailPart
 {
   public String? RelationshipType { get; set; }
 }

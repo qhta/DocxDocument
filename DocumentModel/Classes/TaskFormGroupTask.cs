@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskFormGroupTask Class.
 /// </summary>
-public class TaskFormGroupTask
+public record TaskFormGroupTask
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

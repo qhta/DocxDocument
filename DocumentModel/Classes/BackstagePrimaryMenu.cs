@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstagePrimaryMenu Class.
 /// </summary>
-public class BackstagePrimaryMenu
+public record BackstagePrimaryMenu
 {
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.

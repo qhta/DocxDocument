@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Superscript Function.
 /// </summary>
-public class Superscript: DMW.ParagraphElement
+public record Superscript: DMW.ParagraphElement
 {
   /// <summary>
   ///   Superscript Properties.

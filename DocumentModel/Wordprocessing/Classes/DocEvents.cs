@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocEvents Class.
 /// </summary>
-public class DocEvents
+public record DocEvents
 {
   /// <summary>
   ///   EventDocNewXsdString.

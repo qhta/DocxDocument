@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Text Rectangle.
 /// </summary>
-public class Rectangle
+public record Rectangle
 {
   /// <summary>
   ///   Left

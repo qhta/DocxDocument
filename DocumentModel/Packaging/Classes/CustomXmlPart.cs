@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomXmlPart
 /// </summary>
-public class CustomXmlPart
+public record CustomXmlPart
 {
   public String? RelationshipType { get; set; }
 }

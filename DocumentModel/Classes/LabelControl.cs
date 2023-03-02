@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the LabelControl Class.
 /// </summary>
-public class LabelControl
+public record LabelControl
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ChartStyle Class.
 /// </summary>
-public class ChartStyle
+public record ChartStyle
 {
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.

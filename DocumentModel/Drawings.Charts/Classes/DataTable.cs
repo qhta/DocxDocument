@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Data Table.
 /// </summary>
-public class DataTable
+public record DataTable
 {
   /// <summary>
   ///   Show Horizontal Border.

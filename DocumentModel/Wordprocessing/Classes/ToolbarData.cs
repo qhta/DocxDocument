@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ToolbarData Class.
 /// </summary>
-public class ToolbarData
+public record ToolbarData
 {
   /// <summary>
   ///   id

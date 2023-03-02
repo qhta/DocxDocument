@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SlideMasterPart
 /// </summary>
-public class SlideMasterPart
+public record SlideMasterPart
 {
   /// <summary>
   ///   Gets the ChartParts of the SlideMasterPart

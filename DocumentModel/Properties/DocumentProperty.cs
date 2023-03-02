@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   Document Property.
 /// </summary>
 [XmlContentProperty(nameof(Value))]
-public partial class DocumentProperty : IEquatable<DocumentProperty>
+public partial record DocumentProperty : IEquatable<DocumentProperty>
 {
   public DocumentProperty() { }
 
@@ -38,33 +38,33 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     Value = other.Value;
   }
 
-  public bool Equals(DocumentProperty? other)
-  {
-    if (other == null) return false;
-    if (this.Name != other.Name)
-      return false;
-    if (this.Value != null)
-    {
-      var ok = this.Value.IsDeepEqual(other.Value);
-      //if (!ok)
-      //{
-      //  if (this.Value is IEnumerable collection1 && other.Value is IEnumerable collection2)
-      //  {
-      //    if (this.Value.GetType().GenericTypeArguments.FirstOrDefault()==other.Value.GetType().GenericTypeArguments.FirstOrDefault())
-      //    {
-      //      var methodInfo = typeof(Enumerable).GetMethod("SequenceEqual", BindingFlags.Public | BindingFlags.Static);
-      //      if (methodInfo != null)
-      //      {
-      //        methodInfo = methodInfo.MakeGenericMethod(this.Value.GetType().GenericTypeArguments.First());
-      //        ok =  (bool)(methodInfo.Invoke(null, new object[]{collection1, collection2 }) ?? false);
-      //      }
-      //    }
-      //  }
-      //}
-      return ok;
-    }
-    return false;
-  }
+  //public bool Equals(DocumentProperty? other)
+  //{
+  //  if (other == null) return false;
+  //  if (this.Name != other.Name)
+  //    return false;
+  //  if (this.Value != null)
+  //  {
+  //    var ok = this.Value.IsDeepEqual(other.Value);
+  //    //if (!ok)
+  //    //{
+  //    //  if (this.Value is IEnumerable collection1 && other.Value is IEnumerable collection2)
+  //    //  {
+  //    //    if (this.Value.GetType().GenericTypeArguments.FirstOrDefault()==other.Value.GetType().GenericTypeArguments.FirstOrDefault())
+  //    //    {
+  //    //      var methodInfo = typeof(Enumerable).GetMethod("SequenceEqual", BindingFlags.Public | BindingFlags.Static);
+  //    //      if (methodInfo != null)
+  //    //      {
+  //    //        methodInfo = methodInfo.MakeGenericMethod(this.Value.GetType().GenericTypeArguments.First());
+  //    //        ok =  (bool)(methodInfo.Invoke(null, new object[]{collection1, collection2 }) ?? false);
+  //    //      }
+  //    //    }
+  //    //  }
+  //    //}
+  //    return ok;
+  //  }
+  //  return false;
+  //}
 
   /// <summary>
   ///   Custom File Property Name
@@ -116,15 +116,15 @@ public partial class DocumentProperty : IEquatable<DocumentProperty>
     return $"{Name} = {Value}";
   }
 
-  public override bool Equals(object? obj)
-  {
-    if (obj is DocumentProperty other)
-      return Equals(other);
-    return base.Equals(obj);
-  }
+  //public override bool Equals(object? obj)
+  //{
+  //  if (obj is DocumentProperty other)
+  //    return Equals(other);
+  //  return base.Equals(obj);
+  //}
 
-  public override int GetHashCode()
-  {
-    return base.GetHashCode();
-  }
+  //public override int GetHashCode()
+  //{
+  //  return base.GetHashCode();
+  //}
 }

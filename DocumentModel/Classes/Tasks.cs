@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Tasks Class.
 /// </summary>
-public class Tasks
+public record Tasks
 {
   public Collection<Task>? Items { get; set; }
 

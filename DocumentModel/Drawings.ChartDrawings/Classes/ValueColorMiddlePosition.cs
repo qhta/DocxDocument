@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueColorMiddlePosition Class.
 /// </summary>
-public class ValueColorMiddlePosition
+public record ValueColorMiddlePosition
 {
   /// <summary>
   ///   NumberColorPosition.

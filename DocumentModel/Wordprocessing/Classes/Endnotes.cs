@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Endnotes.
 /// </summary>
-public class Endnotes
+public record Endnotes
 {
   public Endnote? Endnote { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LineNumberType Class.
 /// </summary>
-public class LineNumberType
+public record LineNumberType
 {
   /// <summary>
   ///   Line Number Increments to Display

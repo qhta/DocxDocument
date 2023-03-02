@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document-Wide Footnote Properties.
 /// </summary>
-public class FootnoteDocumentWideProperties
+public record FootnoteDocumentWideProperties
 {
   /// <summary>
   ///   Footnote Placement.

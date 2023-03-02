@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroup Class.
 /// </summary>
-public class BackstageGroup
+public record BackstageGroup
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

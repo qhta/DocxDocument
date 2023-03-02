@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ContentPartLocks Class.
 /// </summary>
-public class ContentPartLocks
+public record ContentPartLocks
 {
   /// <summary>
   ///   Disallow Shape Grouping
