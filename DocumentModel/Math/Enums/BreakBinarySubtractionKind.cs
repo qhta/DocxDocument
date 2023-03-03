@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the BreakBinarySubtractionValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BreakBinarySubtractionKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LevelSuffixValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LevelSuffixKind
 {
   /// <summary>

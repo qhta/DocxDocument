@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Vertical Anchor Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VerticalAnchorKind
 {
   /// <summary>

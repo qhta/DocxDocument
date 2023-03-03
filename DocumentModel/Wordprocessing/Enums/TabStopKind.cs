@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TabStopValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TabStopKind
 {
   /// <summary>

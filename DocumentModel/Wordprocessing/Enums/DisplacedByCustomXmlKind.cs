@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DisplacedByCustomXmlValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DisplacedByCustomXmlKind
 {
   /// <summary>

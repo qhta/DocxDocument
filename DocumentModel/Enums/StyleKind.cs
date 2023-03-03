@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the StyleValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StyleKind
 {
   /// <summary>

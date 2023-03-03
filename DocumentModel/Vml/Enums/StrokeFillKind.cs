@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the StrokeFillTypeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StrokeFillKind
 {
   /// <summary>

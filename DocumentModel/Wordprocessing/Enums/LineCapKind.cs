@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LineCapValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LineCapKind
 {
   /// <summary>

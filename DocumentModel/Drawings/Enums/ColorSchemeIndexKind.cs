@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Theme Color Reference
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ColorSchemeIndexKind
 {
   /// <summary>

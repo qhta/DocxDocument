@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MergedCellValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum MergedCellKind
 {
   /// <summary>

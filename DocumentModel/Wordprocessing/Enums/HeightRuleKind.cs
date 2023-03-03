@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the HeightRuleValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HeightRuleKind
 {
   /// <summary>

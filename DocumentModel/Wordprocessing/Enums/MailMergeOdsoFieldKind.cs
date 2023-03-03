@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MailMergeOdsoFieldValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum MailMergeOdsoFieldKind
 {
   /// <summary>

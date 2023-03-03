@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Grouping Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum EditAsKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Cross Between
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CrossBetweenKind
 {
   /// <summary>

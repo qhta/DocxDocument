@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Color Value
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetColorKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Legend Position
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LegendPositionKind
 {
   /// <summary>

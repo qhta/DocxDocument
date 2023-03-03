@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Line Dash Value
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetLineDashKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   System Color Value
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SystemColorKind
 {
   /// <summary>

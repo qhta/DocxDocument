@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocPartBehaviorValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DocPartBehaviorKind
 {
   /// <summary>

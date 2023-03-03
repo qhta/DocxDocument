@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Function Operator
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FunctionOperatorKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the BooleanValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BooleanKind
 {
   /// <summary>

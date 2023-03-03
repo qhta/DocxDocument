@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Axis Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AxisKind
 {
   /// <summary>

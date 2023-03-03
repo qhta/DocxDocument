@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines WordprocessingDocumentType - type of WordprocessingDocument.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum WordprocessingDocumentType
 {
   /// <summary>

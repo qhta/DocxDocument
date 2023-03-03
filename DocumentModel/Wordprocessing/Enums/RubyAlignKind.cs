@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RubyAlignValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RubyAlignKind
 {
   /// <summary>

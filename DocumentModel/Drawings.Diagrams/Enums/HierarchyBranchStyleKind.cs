@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Hierarchy Branch Style Definition
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HierarchyBranchStyleKind
 {
   /// <summary>

@@ -41,18 +41,25 @@ public static class HeaderFooterReferenceTypeConverter
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DMW.HeaderFooterReferenceType? CreateModelElement(DXW.HeaderFooterReferenceType? openXmlElement)
+  private static ElementType? CreateModelElement<ElementType>(DXW.HeaderFooterReferenceType? openXmlElement)
+    where ElementType: DMW.HeaderFooterReferenceType, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.HeaderFooterReferenceType();
+      var value = new ElementType();
       value.Type = GetType(openXmlElement);
       value.Id = GetId(openXmlElement);
       return value;
     }
     return null;
   }
+
+  public static DMW.HeaderReference? CreateModelElement(DXW.HeaderReference? openXmlElement)
+    => CreateModelElement<DMW.HeaderReference>(openXmlElement);
   
+  public static DMW.FooterReference? CreateModelElement(DXW.FooterReference? openXmlElement)
+    => CreateModelElement<DMW.FooterReference>(openXmlElement);
+
   public static bool CompareModelElement(DXW.HeaderFooterReferenceType? openXmlElement, DMW.HeaderFooterReferenceType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -69,7 +76,7 @@ public static class HeaderFooterReferenceTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.HeaderFooterReferenceType value)
+  private static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.HeaderFooterReferenceType value)
     where OpenXmlElementType: DXW.HeaderFooterReferenceType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -77,6 +84,12 @@ public static class HeaderFooterReferenceTypeConverter
     return openXmlElement;
   }
   
+  public static DXW.HeaderReference CreateOpenXmlElement(DMW.HeaderReference openXmlElement)
+    => CreateOpenXmlElement<DXW.HeaderReference>(openXmlElement);
+
+  public static DXW.FooterReference CreateOpenXmlElement(DMW.FooterReference openXmlElement)
+    => CreateOpenXmlElement<DXW.FooterReference>(openXmlElement);
+
   public static void UpdateOpenXmlElement(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterReferenceType value)
   {
     SetType(openXmlElement, value?.Type);

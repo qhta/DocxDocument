@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the HeaderFooterValues enumeration.
+///   Defines the Header/Footer kind enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HeaderFooterKind
 {
   /// <summary>

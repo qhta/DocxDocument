@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Vertical Text Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextVerticalKind
 {
   /// <summary>

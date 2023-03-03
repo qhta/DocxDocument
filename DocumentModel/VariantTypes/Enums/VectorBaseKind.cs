@@ -3,6 +3,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Vector Base Type Simple Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VectorBaseKind
 {
   /// <summary>

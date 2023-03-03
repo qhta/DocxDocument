@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   One by One Animation Value Definition
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AnimateOneByOneKind
 {
   /// <summary>

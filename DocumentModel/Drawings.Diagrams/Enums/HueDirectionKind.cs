@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Hue Direction
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HueDirectionKind
 {
   /// <summary>

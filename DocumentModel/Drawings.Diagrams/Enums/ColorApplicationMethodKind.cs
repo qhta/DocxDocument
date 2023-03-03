@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Application Method Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ColorApplicationMethodKind
 {
   /// <summary>

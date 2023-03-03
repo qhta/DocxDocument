@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ItemSizeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ItemSizeKind
 {
   /// <summary>

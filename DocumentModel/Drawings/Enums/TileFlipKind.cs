@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Tile Flip Mode
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TileFlipKind
 {
   /// <summary>

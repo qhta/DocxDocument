@@ -97,7 +97,7 @@ public static class SectionPropertiesConverter
       openXmlElement.RsidSect = null;
   }
   
-  private static DMW.HeaderFooterReferenceType? GetHeaderReference(DXW.SectionProperties openXmlElement)
+  private static DMW.HeaderReference? GetHeaderReference(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.HeaderReference>();
     if (element != null)
@@ -110,20 +110,20 @@ public static class SectionPropertiesConverter
     return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderReference>(), value, diffs, objName);
   }
   
-  private static void SetHeaderReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value)
+  private static void SetHeaderReference(DXW.SectionProperties openXmlElement, DMW.HeaderReference? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.HeaderReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DXW.HeaderReference>(value);
+      itemElement = DMXW.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMW.HeaderFooterReferenceType? GetFooterReference(DXW.SectionProperties openXmlElement)
+  private static DMW.FooterReference? GetFooterReference(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.FooterReference>();
     if (element != null)
@@ -136,14 +136,14 @@ public static class SectionPropertiesConverter
     return DMXW.HeaderFooterReferenceTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FooterReference>(), value, diffs, objName);
   }
   
-  private static void SetFooterReference(DXW.SectionProperties openXmlElement, DMW.HeaderFooterReferenceType? value)
+  private static void SetFooterReference(DXW.SectionProperties openXmlElement, DMW.FooterReference? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FooterReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement<DXW.FooterReference>(value);
+      itemElement = DMXW.HeaderFooterReferenceTypeConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

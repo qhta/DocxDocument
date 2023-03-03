@@ -5,9 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class Paragraph: Collection<ParagraphElement>, IEquatable<Paragraph>, BodyElement
+public partial class Paragraph: ICollection<ParagraphElement>, IEquatable<Paragraph>, BodyElement
 {
-
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
   /// </summary>
@@ -55,7 +54,7 @@ public partial class Paragraph: Collection<ParagraphElement>, IEquatable<Paragra
 
 
 
-  public bool Equals(Paragraph? other)
+  public virtual bool Equals(Paragraph? other)
   {
     if (other== null) return false; 
     if (this.ParagraphId != other.ParagraphId)
@@ -77,5 +76,10 @@ public partial class Paragraph: Collection<ParagraphElement>, IEquatable<Paragra
     if (this.ParagraphProperties != other.ParagraphProperties)
       return false;
     return true;
+  }
+
+  public override int GetHashCode()
+  {
+    return base.GetHashCode();
   }
 }

@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rule Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RuleKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Algorithm Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AlgorithmKind
 {
   /// <summary>

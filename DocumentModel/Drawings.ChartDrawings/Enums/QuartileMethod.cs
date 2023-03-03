@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the QuartileMethod enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum QuartileMethod
 {
   /// <summary>

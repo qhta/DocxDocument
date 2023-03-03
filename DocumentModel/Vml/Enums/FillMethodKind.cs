@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Gradient Fill Computation Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FillMethodKind
 {
   /// <summary>

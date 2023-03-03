@@ -9,7 +9,7 @@ internal class Program
   {
     //var ok = typeof(Fonts).IsCollection(out var itemType);
     //Console.WriteLine($"{ok} {itemType}");
-    RunTestStyles();
+    RunTestBody();
   }
 
   private static void RunTestBody()
@@ -18,6 +18,7 @@ internal class Program
     testInstance.Setup();
     testInstance.TestReadDocumentBody("Simple text paragraph.docx");
     testInstance.TestReadBodyXmlSerialization("Simple text paragraph.docx");
+    testInstance.TestReadBodyJsonSerialization("Simple text paragraph.docx");
     Console.WriteLine("\nTest passed");
   }
 

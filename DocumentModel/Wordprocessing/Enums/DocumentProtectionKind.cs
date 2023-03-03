@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocumentProtectionValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DocumentProtectionKind
 {
   /// <summary>

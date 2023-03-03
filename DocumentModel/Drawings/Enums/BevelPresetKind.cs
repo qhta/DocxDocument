@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Bevel Presets
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BevelPresetKind
 {
   /// <summary>

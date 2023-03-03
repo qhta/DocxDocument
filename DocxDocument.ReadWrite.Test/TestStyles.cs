@@ -74,7 +74,7 @@ public class TestStyles : TestBase
     var modelDefinedStyles = document.Styles.DefinedStyles;
     int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
-    int origDefinedStylesCount = origDefinedStyles?.Elements<Style>().Count() ?? 0;
+    int origDefinedStylesCount = origDefinedStyles?.Elements<DXW.Style>().Count() ?? 0;
     WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var diffs = new DiffList();
     if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))

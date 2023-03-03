@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Wrapping Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextWrappingKind
 {
   /// <summary>
