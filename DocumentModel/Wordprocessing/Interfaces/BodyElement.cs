@@ -1,5 +1,3 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>

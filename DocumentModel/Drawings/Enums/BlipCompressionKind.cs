@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Blip Compression Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BlipCompressionKind
 {
   /// <summary>

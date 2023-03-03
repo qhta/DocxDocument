@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Vertical Overflow
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextVerticalOverflowKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PresetMaterialTypeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetMaterialKind
 {
   /// <summary>

@@ -5,6 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Used in element <see cref="RunDate"/>
 /// </summary>
 [Flags]
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DatePart
 {
   /// <summary>

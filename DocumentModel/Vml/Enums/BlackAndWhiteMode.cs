@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Black And White Modes
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BlackAndWhiteMode
 {
   /// <summary>

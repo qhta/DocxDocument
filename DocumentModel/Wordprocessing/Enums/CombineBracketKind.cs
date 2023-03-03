@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CombineBracketValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CombineBracketKind
 {
   /// <summary>

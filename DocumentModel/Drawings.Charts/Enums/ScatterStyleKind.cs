@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Scatter Style
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ScatterStyleKind
 {
   /// <summary>

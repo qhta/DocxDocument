@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Scheme Color
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SchemeColorKind
 {
   /// <summary>

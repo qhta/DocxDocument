@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Horizontal Alignment Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LevelJustificationKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Axis Position
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AxisPositionKind
 {
   /// <summary>

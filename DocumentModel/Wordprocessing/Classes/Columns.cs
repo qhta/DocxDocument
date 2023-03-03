@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Columns Class.
+///   Represents the columns layout in a section.
 /// </summary>
-public record Columns
+public record Columns: SectionPropertiesElement
 {
   /// <summary>
   ///   Equal Column Widths

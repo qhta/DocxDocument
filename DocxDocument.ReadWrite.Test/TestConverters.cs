@@ -146,7 +146,7 @@ public class TestConverters : TestBase
   {
     //DocumentFormat.OpenXml.Wordprocessing.Style.Rsid
     //DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot
-    var origRsIds = wordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings.GetFirstChild<Rsids>();
+    var origRsIds = wordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings.GetFirstChild<DXW.Rsids>();
     if (origRsIds != null)
     {
       if (showDetails)

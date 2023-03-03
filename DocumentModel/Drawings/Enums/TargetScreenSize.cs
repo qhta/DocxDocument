@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TargetScreenSize enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TargetScreenSize
 {
   /// <summary>

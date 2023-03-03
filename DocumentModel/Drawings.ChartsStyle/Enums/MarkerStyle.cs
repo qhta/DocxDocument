@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the MarkerStyle enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum MarkerStyle
 {
   /// <summary>

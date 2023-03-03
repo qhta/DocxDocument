@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericDimensionType enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum NumericDimensionType
 {
   /// <summary>

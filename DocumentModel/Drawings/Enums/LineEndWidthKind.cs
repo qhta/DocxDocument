@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Line End Width
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LineEndWidthKind
 {
   /// <summary>

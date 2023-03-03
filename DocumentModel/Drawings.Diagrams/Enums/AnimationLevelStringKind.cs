@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Animation Level String Definition
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AnimationLevelStringKind
 {
   /// <summary>

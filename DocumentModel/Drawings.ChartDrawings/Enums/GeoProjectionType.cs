@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoProjectionType enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum GeoProjectionType
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the OnOffValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum OnOffKind
 {
   /// <summary>

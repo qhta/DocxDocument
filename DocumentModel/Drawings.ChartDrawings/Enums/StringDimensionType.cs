@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the StringDimensionType enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StringDimensionType
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the VerticalAlignmentValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VerticalAlignmentKind
 {
   /// <summary>

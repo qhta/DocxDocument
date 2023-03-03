@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Text Wrapping Side
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum WrapSideKind
 {
   /// <summary>

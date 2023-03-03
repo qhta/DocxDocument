@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PresetLineDashValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetLineDashKind
 {
   /// <summary>

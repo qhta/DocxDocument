@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CryptAlgorithmValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CryptAlgorithmKind
 {
   /// <summary>

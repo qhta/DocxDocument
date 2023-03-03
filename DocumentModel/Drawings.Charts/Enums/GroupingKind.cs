@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Grouping
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum GroupingKind
 {
   /// <summary>

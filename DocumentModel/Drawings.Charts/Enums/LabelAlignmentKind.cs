@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Label Alignment
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LabelAlignmentKind
 {
   /// <summary>

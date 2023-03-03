@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Office Open XML file format version.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FileFormatVersions
 {
   /// <summary>

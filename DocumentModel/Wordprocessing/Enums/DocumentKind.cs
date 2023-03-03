@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocumentTypeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DocumentKind
 {
   /// <summary>

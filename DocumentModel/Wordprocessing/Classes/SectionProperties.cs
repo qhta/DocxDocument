@@ -25,32 +25,44 @@ public record SectionProperties: BodyElement
   /// </summary>
   public HexInt? RsidSect { get; set; }
 
-  public HeaderFooterReferenceType? HeaderReference { get; set; }
-
-  public HeaderFooterReferenceType? FooterReference { get; set; }
-
-  public FootnoteProperties? FootnoteProperties { get; set; }
-
-  public EndnoteProperties? EndnoteProperties { get; set; }
-
   public SectionMarkKind? SectionType { get; set; }
 
+    [XmlAnyElement]
+  public HeaderReference? HeaderReference { get; set; }
+
+  [XmlAnyElement]
+  public FooterReference? FooterReference { get; set; }
+
+  [XmlAnyElement]
+  public FootnoteProperties? FootnoteProperties { get; set; }
+
+  [XmlAnyElement]
+  public EndnoteProperties? EndnoteProperties { get; set; }
+
+  [XmlAnyElement]
   public PageSize? PageSize { get; set; }
 
+  [XmlAnyElement]
   public PageMargin? PageMargin { get; set; }
 
+  [XmlAnyElement]
   public PaperSource? PaperSource { get; set; }
 
+  [XmlAnyElement]
   public PageBorders? PageBorders { get; set; }
 
+  [XmlAnyElement]
   public LineNumberType? LineNumberType { get; set; }
 
+  [XmlAnyElement]
   public PageNumberType? PageNumberType { get; set; }
 
+  [XmlAnyElement]
   public Columns? Columns { get; set; }
 
   public Boolean? FormProtection { get; set; }
 
+  [XmlAnyElement]
   public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
 
   public Boolean? NoEndnote { get; set; }
@@ -63,11 +75,14 @@ public record SectionProperties: BodyElement
 
   public Boolean? GutterOnRight { get; set; }
 
+  [XmlAnyElement]
   public DocGrid? DocGrid { get; set; }
 
+  [XmlAnyElement]
   public RelationshipType? PrinterSettingsReference { get; set; }
 
   public Int32? FootnoteColumns { get; set; }
 
+  [XmlAnyElement]
   public SectionPropertiesChange? SectionPropertiesChange { get; set; }
 }

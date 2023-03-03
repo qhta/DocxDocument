@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Callout Angles
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AngleKind
 {
   /// <summary>

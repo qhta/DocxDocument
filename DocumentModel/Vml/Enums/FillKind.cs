@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Fill Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FillKind
 {
   /// <summary>

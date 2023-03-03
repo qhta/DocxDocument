@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Connection Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ConnectionKind
 {
   /// <summary>

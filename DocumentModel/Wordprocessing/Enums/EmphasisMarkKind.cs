@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the EmphasisMarkValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum EmphasisMarkKind
 {
   /// <summary>

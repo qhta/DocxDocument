@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MailMergeDocumentValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum MailMergeDocumentKind
 {
   /// <summary>

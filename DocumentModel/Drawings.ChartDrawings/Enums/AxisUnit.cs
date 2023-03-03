@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the AxisUnit enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AxisUnit
 {
   /// <summary>

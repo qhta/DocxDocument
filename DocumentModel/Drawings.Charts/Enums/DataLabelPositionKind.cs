@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Data Label Position
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DataLabelPositionKind
 {
   /// <summary>

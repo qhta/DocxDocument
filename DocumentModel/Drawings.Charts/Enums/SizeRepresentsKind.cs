@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Size Represents
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SizeRepresentsKind
 {
   /// <summary>

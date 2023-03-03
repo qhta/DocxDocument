@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Diagram Direction Definition
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DirectionKind
 {
   /// <summary>

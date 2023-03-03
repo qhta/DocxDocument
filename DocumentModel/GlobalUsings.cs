@@ -18,6 +18,8 @@ global using Qhta.TypeUtils;
 global using Qhta.Xml;
 global using Qhta.Xml.Serialization;
 global using Newtonsoft.Json;
+global using Newtonsoft.Json.Converters;
+
 global using DM = DocumentModel;
 //global using DMBib = DocumentModel.Bibliography;
 global using DMCustXml = DocumentModel.CustomXml;

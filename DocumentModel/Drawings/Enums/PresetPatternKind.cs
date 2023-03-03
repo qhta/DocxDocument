@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Pattern Value
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetPatternKind
 {
   /// <summary>

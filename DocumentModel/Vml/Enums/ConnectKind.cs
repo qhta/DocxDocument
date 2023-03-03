@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Connection Locations Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ConnectKind
 {
   /// <summary>

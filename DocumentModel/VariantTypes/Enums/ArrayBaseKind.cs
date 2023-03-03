@@ -3,6 +3,7 @@ namespace DocumentModel.VariantTypes;
 /// <summary>
 ///   Array Base Type Simple Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ArrayBaseKind
 {
   /// <summary>

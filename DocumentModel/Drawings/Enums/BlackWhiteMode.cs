@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Black and White Mode
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BlackWhiteMode
 {
   /// <summary>

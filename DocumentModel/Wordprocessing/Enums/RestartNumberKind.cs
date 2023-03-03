@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RestartNumberValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RestartNumberKind
 {
   /// <summary>

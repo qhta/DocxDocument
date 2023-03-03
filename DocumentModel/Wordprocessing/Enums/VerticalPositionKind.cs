@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the VerticalPositionValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VerticalPositionKind
 {
   /// <summary>

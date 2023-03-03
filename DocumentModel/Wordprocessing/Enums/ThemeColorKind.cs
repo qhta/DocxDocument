@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ThemeColorValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ThemeColorKind
 {
   /// <summary>

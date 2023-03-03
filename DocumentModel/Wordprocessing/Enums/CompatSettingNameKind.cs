@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CompatSettingNameValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CompatSettingNameKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableOverlapValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TableOverlapKind
 {
   /// <summary>

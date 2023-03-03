@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Element Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ElementKind
 {
   /// <summary>

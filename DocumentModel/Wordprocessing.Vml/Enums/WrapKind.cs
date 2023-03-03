@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Text Wrapping Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum WrapKind
 {
   /// <summary>

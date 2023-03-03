@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Camera Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetCameraKind
 {
   /// <summary>

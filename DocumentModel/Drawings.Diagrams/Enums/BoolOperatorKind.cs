@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Boolean Constraint
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BoolOperatorKind
 {
   /// <summary>

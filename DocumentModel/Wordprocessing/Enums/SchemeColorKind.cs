@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SchemeColorValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SchemeColorKind
 {
   /// <summary>

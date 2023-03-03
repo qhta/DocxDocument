@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LigaturesValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LigaturesKind
 {
   /// <summary>

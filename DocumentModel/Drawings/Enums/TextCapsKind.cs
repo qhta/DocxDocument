@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Cap Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextCapsKind
 {
   /// <summary>

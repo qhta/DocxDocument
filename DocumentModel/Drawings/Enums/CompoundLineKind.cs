@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Compound Line Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CompoundLineKind
 {
   /// <summary>

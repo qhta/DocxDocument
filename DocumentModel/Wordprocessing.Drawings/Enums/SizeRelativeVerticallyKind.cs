@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Drawings;
 /// <summary>
 ///   Defines the SizeRelativeVerticallyValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SizeRelativeVerticallyKind
 {
   /// <summary>

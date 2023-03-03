@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Parameter Identifier
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ParameterIdKind
 {
   /// <summary>

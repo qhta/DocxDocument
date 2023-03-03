@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the VerticalAnchorValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VerticalAnchorKind
 {
   /// <summary>

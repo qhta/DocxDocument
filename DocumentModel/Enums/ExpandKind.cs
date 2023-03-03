@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ExpandValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ExpandKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AbsolutePositionTabAlignmentValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AbsolutePositionTabAlignmentKind
 {
   /// <summary>

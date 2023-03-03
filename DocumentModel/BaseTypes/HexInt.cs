@@ -1,9 +1,7 @@
-﻿using System.ComponentModel;
-using DocumentModel;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
 
 [TypeConverter(typeof(HexIntTypeXmlConverter))]
+[JsonConverter(typeof(HexIntTypeJsonConverter))]
 public struct HexInt : IConvertible
 {
   private readonly int Value;

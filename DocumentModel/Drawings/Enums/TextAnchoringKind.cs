@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Anchoring Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextAnchoringKind
 {
   /// <summary>

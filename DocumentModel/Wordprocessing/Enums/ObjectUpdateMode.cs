@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Linked Object Update Modes
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ObjectUpdateMode
 {
   /// <summary>

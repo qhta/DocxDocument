@@ -170,8 +170,8 @@ public partial class Style : IEquatable<Style>
     if (this.StyleTableProperties != other.StyleTableProperties) return false;
     if (this.TableStyleConditionalFormattingTableRowProperties != other.TableStyleConditionalFormattingTableRowProperties) return false;
     if (this.StyleTableCellProperties != other.StyleTableCellProperties) return false;
-    if (StyleName == "Standardowa tabela")
-      TestTools.Stop();
+    //if (StyleName == "Standardowa tabela")
+    //  TestTools.Stop();
     if (this.TableStyleProperties?.Equals(other.TableStyleProperties) == false) return false;
     return true;
   }

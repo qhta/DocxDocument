@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Underline Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextUnderlineKind
 {
   /// <summary>

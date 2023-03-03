@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Style2Values enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Style2Kind
 {
   /// <summary>

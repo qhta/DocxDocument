@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Image Scaling Behavior
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ImageAspectKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorderOffsetValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PageBorderOffsetKind
 {
   /// <summary>

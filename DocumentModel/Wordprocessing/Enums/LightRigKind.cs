@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LightRigTypeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LightRigKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Shape Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ShapeKind
 {
   /// <summary>

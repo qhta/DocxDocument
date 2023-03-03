@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Error Bar Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ErrorBarKind
 {
   /// <summary>

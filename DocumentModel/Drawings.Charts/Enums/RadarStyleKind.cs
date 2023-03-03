@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Radar Style
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RadarStyleKind
 {
   /// <summary>

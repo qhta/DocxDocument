@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Rectangle Alignments
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RectangleAlignmentKind
 {
   /// <summary>

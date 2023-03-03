@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Stroke Line Style
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StrokeLineStyleKind
 {
   /// <summary>

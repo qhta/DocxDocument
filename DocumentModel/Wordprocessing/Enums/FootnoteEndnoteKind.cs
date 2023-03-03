@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FootnoteEndnoteValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FootnoteEndnoteKind
 {
   /// <summary>

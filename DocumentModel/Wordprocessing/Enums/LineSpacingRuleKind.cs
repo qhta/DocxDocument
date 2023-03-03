@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LineSpacingRuleValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LineSpacingRuleKind
 {
   /// <summary>

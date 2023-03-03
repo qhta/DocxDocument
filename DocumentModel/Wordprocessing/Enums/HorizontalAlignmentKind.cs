@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the HorizontalAlignmentValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum HorizontalAlignmentKind
 {
   /// <summary>

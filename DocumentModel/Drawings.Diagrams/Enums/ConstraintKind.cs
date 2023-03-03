@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Constraint Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ConstraintKind
 {
   /// <summary>

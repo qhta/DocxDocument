@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MultiLevelValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum MultiLevelKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskSizesValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TaskSizesKind
 {
   /// <summary>

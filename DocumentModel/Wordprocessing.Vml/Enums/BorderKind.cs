@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing.Vml;
 /// <summary>
 ///   Border Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BorderKind
 {
   /// <summary>

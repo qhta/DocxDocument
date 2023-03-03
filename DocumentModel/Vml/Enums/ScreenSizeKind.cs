@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Screen Sizes Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ScreenSizeKind
 {
   /// <summary>

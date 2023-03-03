@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Crosses
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CrossesKind
 {
   /// <summary>

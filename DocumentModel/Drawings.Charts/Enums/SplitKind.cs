@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Split Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SplitKind
 {
   /// <summary>

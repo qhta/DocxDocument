@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ChapterSeparatorValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ChapterSeparatorKind
 {
   /// <summary>

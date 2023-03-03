@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FrameScrollbarVisibilityValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FrameScrollbarVisibilityKind
 {
   /// <summary>

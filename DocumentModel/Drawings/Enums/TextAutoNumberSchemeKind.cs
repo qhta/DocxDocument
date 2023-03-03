@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Auto-number Schemes
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextAutoNumberSchemeKind
 {
   /// <summary>

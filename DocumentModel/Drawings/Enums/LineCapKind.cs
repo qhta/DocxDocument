@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   End Line Cap
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LineCapKind
 {
   /// <summary>

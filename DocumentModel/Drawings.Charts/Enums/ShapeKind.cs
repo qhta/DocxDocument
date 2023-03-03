@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Shape
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ShapeKind
 {
   /// <summary>

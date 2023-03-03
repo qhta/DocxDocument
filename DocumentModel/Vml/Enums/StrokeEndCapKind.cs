@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Stroke End Cap Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StrokeEndCapKind
 {
   /// <summary>

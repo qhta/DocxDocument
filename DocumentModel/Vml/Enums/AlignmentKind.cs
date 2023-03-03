@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Alignment Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum AlignmentKind
 {
   /// <summary>
