@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RectangleAlignmentValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum RectangleAlignmentKind
 {
   /// <summary>

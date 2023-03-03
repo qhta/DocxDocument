@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Vertical Relative Positioning
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum VerticalRelativePositionKind
 {
   /// <summary>

@@ -54,8 +54,8 @@ internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
           return;
         }
       }
-      if (value.GetType()?.Name == "ShapeDefaults")
-        TestTools.Stop();
+      //if (value.GetType()?.Name == "ShapeDefaults")
+      //  TestTools.Stop();
       serializer?.WriteObject(context, value);
     }
   }
@@ -69,7 +69,7 @@ internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
       {
         if (expectedType.Name == "Variant")
         {
-          TestTools.Stop();
+          //TestTools.Stop();
           return new VariantTypeXmlConverter().ReadXml(context, reader, objectType, existingValue, serializer);
         }
         else

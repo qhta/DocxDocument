@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TextEffectValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextEffectKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FieldCharValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FieldCharKind
 {
   /// <summary>

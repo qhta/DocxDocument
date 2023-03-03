@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Tab Alignment Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextTabAlignmentKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoMappingLevel enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum GeoMappingLevel
 {
   /// <summary>

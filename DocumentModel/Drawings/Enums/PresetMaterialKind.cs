@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Material Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetMaterialKind
 {
   /// <summary>

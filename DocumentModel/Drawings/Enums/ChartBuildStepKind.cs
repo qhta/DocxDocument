@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Chart Animation Build Step
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ChartBuildStepKind
 {
   /// <summary>

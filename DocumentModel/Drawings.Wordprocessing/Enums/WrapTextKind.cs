@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Text Wrapping Location
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum WrapTextKind
 {
   /// <summary>

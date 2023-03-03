@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   VML Extension Handling Behaviors
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ExtensionHandlingBehaviorKind
 {
   /// <summary>

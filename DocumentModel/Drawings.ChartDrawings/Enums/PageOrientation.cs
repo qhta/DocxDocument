@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PageOrientation enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PageOrientation
 {
   /// <summary>

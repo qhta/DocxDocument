@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Horizontal Overflow Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextHorizontalOverflowKind
 {
   /// <summary>

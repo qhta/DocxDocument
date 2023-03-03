@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the LimitLocationValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LimitLocationKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Time Unit
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TimeUnitKind
 {
   /// <summary>

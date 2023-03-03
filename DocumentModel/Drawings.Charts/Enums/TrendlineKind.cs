@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Trendline Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TrendlineKind
 {
   /// <summary>

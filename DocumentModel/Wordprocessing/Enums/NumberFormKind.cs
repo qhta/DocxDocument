@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the NumberFormValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum NumberFormKind
 {
   /// <summary>

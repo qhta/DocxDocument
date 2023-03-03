@@ -1,9 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the EndnoteProperties Class.
+///   Represents properties of an endnote.
 /// </summary>
-public record EndnoteProperties
+public record EndnoteProperties: SectionPropertiesElement
 {
   /// <summary>
   ///   Endnote Placement.

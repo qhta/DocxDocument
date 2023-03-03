@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Stroke Arrowhead Width
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum StrokeArrowWidthKind
 {
   /// <summary>

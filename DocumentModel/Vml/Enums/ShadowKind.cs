@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shadow Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ShadowKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the FractionTypeValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FractionKind
 {
   /// <summary>

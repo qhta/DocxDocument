@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Path Fill Mode
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PathFillMode
 {
   /// <summary>

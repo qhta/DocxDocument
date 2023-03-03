@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Light Rig Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum LightRigKind
 {
   /// <summary>

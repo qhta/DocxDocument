@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ClassificationOutcomeType enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ClassificationOutcomeType
 {
   /// <summary>

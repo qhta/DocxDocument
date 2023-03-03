@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Point Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PointKind
 {
   /// <summary>

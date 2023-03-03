@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BreakTextRestartLocationValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum BreakTextRestartLocationKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Printed Page Orientation
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PageSetupOrientationKind
 {
   /// <summary>

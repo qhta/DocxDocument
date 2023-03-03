@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ShadingPatternValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ShadingPatternKind
 {
   /// <summary>

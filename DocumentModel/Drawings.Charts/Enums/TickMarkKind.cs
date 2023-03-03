@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Tick Mark
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TickMarkKind
 {
   /// <summary>

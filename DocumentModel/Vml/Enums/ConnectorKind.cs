@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Connector Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ConnectorKind
 {
   /// <summary>

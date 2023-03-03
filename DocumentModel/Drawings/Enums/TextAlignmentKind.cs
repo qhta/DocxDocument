@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Alignment Types
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextAlignmentKind
 {
   /// <summary>

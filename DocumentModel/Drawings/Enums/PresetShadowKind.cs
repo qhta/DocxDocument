@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Shadow Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PresetShadowKind
 {
   /// <summary>

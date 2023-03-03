@@ -3,6 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Extrusion Type
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum ExtrusionKind
 {
   /// <summary>

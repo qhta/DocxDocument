@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataLabelPos enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DataLabelPos
 {
   /// <summary>

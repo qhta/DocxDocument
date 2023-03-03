@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Font Collection Index
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum FontCollectionIndexKind
 {
   /// <summary>

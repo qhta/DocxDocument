@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SectionMarkValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum SectionMarkKind
 {
   /// <summary>

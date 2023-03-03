@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Automatic Caption Positioning Values
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum CaptionPositionKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Orientation
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum OrientationKind
 {
   /// <summary>

@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TextWrappingValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum TextWrappingKind
 {
   /// <summary>

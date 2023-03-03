@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the JustificationValues enumeration.
 /// </summary>
+[JsonConverter(typeof(StringEnumConverter))]
 public enum JustificationKind
 {
   /// <summary>
