@@ -1,5 +1,3 @@
-using DocumentModel.OpenXml.BaseConverters;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>

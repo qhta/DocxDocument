@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.Conversion\Qhta.Conversion.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj" />
   </ItemGroup>

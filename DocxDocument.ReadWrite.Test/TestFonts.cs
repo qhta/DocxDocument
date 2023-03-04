@@ -1,4 +1,3 @@
-using DocumentModel.OpenXml.BaseConverters;
 using DocumentModel.Wordprocessing;
 
 using Qhta.Xml.Serialization;
@@ -70,7 +69,7 @@ public class TestFonts : TestBase
     int modelFontsCount = modelFonts?.Count() ?? 0;
     var origFonts = reader.WordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts;
     int origFontsCount = origFonts?.Elements<DXW.Font>().Count() ?? 0;
-    var diffs = new DMX.DiffList();
+    var diffs = new DiffList();
     var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
     if (!ok && showDetails)
     {

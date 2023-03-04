@@ -1,5 +1,5 @@
 ﻿namespace DocumentModel;
-public class ElementCollection<T> : ModelElement, ICollection<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
+public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
   //where T: ModelElement
 {
 
@@ -97,6 +97,14 @@ public class ElementCollection<T> : ModelElement, ICollection<T>, INotifyCollect
     if (this.Count != other.Count) return false;
     return true;
   }
+
+  void ICollection.CopyTo(Array array, int index)
+  {
+    throw new NotImplementedException();
+  }
+
+  bool ICollection.IsSynchronized { get; }
+  object ICollection.SyncRoot { get; } = new object();
 
   //public override int GetHashCode()
   //{
