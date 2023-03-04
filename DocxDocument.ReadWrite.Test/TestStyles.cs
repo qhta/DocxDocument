@@ -246,7 +246,8 @@ public class TestStyles : TestBase
     {
       var oldStyle = oldStylesArray[i];
       var newStyle = newStylesArray[i];
-      Assert.That(newStyle, Is.EqualTo(oldStyle), $"Deserialized style \"{newStyle.Name}\" different for original");
+      newStyle.ShouldDeepEqual(oldStyle);
+      //Assert.That(newStyle, Is.EqualTo(oldStyle), $"Deserialized style \"{newStyle.Name}\" different for original");
     }
     Assert.That(newStylesCount, Is.EqualTo(oldStylesCount), $"Deserialized styles count different for original");
     CheckLatentStyleDefaults(newStyles.LatentStyles, oldStyles.LatentStyles);
