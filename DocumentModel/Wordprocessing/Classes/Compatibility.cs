@@ -330,5 +330,5 @@ public class Compatibility
   /// </summary>
   public Boolean? CachedColumnBalance { get; set; }
 
-  public ElementCollection<CompatibilitySetting>? CompatibilitySettings { get; set; }
+  public CompatibilitySettings? CompatibilitySettings { get; set; }
 }

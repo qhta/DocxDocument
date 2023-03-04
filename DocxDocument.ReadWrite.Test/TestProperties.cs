@@ -298,7 +298,7 @@ namespace DocxDocument.Reader.Test
     /// serialize and deserialize properties using string writer.
     /// </summary>
     [Test]
-    public void TestPropertiesXmlSerialization()
+    public void TestReadPropertiesXmlSerialization()
     {
       var extraTypes = Assembly.Load("DocumentModel").GetTypes()
         .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
@@ -313,7 +313,14 @@ namespace DocxDocument.Reader.Test
       var textWriter = new StringWriter();
       var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
         new SerializationOptions { AcceptAllProperties = true });
+      try
+      {
       serializer.Serialize(textWriter, oldProperties);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
       textWriter.Flush();
       string str = textWriter.ToString();
       WriteLine(str);

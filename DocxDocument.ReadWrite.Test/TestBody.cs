@@ -36,7 +36,7 @@ public class TestBody : TestBase
     int modelBodyCount = modelBody?.Count() ?? 0;
     var origBody = reader.WordprocessingDocument.MainDocumentPart?.Document?.Body;
     int origBodyCount = origBody?.Elements().Count() ?? 0;
-    var diffs = new DMX.DiffList();
+    var diffs = new DiffList();
     var ok = DMXW.BodyConverter.CompareModelElement(origBody, modelBody, diffs, null);
     if (!ok && showDetails)
     {
@@ -97,7 +97,8 @@ public class TestBody : TestBase
     {
       var oldItem = oldBodyArray[i];
       var newItem = newBodyArray[i];
-      newItem.ShouldDeepEqual(oldItem);
+      var diffs = new DiffList();
+      Assert.True(DeepComparer.IsEqual(oldItem, newItem, diffs), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
       //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
     }
     Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");

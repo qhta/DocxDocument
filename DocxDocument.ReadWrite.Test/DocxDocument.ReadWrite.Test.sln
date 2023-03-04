@@ -19,6 +19,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml", "..\..\MyLib\Qht
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Qhta.Xml.Reflection", "..\..\MyLib\Qhta.Xml.Reflection\Qhta.Xml.Reflection.csproj", "{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qhta.DeepCompare", "..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj", "{2398F47D-3872-4DBE-AB0A-50BAB130A37D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CFAA12D-C7CA-4D7B-8F4D-72A2053D8AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2398F47D-3872-4DBE-AB0A-50BAB130A37D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2398F47D-3872-4DBE-AB0A-50BAB130A37D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2398F47D-3872-4DBE-AB0A-50BAB130A37D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2398F47D-3872-4DBE-AB0A-50BAB130A37D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
