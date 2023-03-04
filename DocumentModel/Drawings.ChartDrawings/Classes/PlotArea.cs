@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PlotArea Class.
 /// </summary>
-public record PlotArea
+public class PlotArea
 {
   /// <summary>
   ///   PlotAreaRegion.

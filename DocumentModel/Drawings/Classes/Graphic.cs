@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Graphic Object.
 /// </summary>
-public record Graphic
+public class Graphic
 {
   /// <summary>
   ///   Graphic Object Data.

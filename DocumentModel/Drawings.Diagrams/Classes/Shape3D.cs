@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   3-D Shape Properties.
 /// </summary>
-public record Shape3D
+public class Shape3D
 {
   /// <summary>
   ///   Shape Depth

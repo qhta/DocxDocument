@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomizationPart
 /// </summary>
-public record CustomizationPart
+public class CustomizationPart
 {
   public String? ContentType { get; set; }
 

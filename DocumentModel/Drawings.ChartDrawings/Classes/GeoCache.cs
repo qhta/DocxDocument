@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoCache Class.
 /// </summary>
-public record GeoCache
+public class GeoCache
 {
   /// <summary>
   ///   provider, this property is only available in Office 2016 and later.

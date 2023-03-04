@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BookmarkStart Class.
 /// </summary>
-public record BookmarkStart: CommonElement
+public class BookmarkStart: CommonElement
 {
   /// <summary>
   ///   name

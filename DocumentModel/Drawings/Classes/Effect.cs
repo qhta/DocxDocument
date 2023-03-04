@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect.
 /// </summary>
-public record Effect
+public class Effect
 {
   /// <summary>
   ///   Reference

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Phantom Function.
 /// </summary>
-public record Phantom: DMW.ParagraphElement
+public class Phantom: DMW.ParagraphElement
 {
   /// <summary>
   ///   Phantom Properties.

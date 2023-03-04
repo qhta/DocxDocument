@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Equation Array Properties.
 /// </summary>
-public record EquationArrayProperties
+public class EquationArrayProperties
 {
   /// <summary>
   ///   Equation Array Base Justification.

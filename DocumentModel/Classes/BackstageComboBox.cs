@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageComboBox Class.
 /// </summary>
-public record BackstageComboBox
+public class BackstageComboBox
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

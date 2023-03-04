@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageCheckBox Class.
 /// </summary>
-public record BackstageCheckBox
+public class BackstageCheckBox
 {
   /// <summary>
   ///   expand, this property is only available in Office 2010 and later.

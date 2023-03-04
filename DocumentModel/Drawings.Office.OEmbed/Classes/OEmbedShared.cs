@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office.OEmbed;
 /// <summary>
 ///   Defines the OEmbedShared Class.
 /// </summary>
-public record OEmbedShared
+public class OEmbedShared
 {
   /// <summary>
   ///   srcUrl, this property is only available in Microsoft365 and later.

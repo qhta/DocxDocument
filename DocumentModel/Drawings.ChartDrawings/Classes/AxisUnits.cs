@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the AxisUnits Class.
 /// </summary>
-public record AxisUnits
+public class AxisUnits
 {
   /// <summary>
   ///   unit, this property is only available in Office 2016 and later.

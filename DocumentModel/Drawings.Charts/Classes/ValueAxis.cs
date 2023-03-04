@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Value Axis.
 /// </summary>
-public record ValueAxis
+public class ValueAxis
 {
   /// <summary>
   ///   Axis ID.

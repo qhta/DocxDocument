@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BiLevel Class.
 /// </summary>
-public record BiLevel
+public class BiLevel
 {
   /// <summary>
   ///   Threshold

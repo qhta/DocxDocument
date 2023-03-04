@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Hue, Saturation, Luminance Color Model.
 /// </summary>
-public record HslColor
+public class HslColor
 {
   /// <summary>
   ///   Hue

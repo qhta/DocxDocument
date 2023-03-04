@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FootnoteEndnoteSeparatorReferenceType Class.
 /// </summary>
-public record FootnoteEndnoteSeparatorReferenceType
+public class FootnoteEndnoteSeparatorReferenceType
 {
   /// <summary>
   ///   Footnote/Endnote ID

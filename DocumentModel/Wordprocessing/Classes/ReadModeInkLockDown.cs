@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Freeze Document Layout.
 /// </summary>
-public record ReadModeInkLockDown
+public class ReadModeInkLockDown
 {
   /// <summary>
   ///   Use Actual Pages, Not Virtual Pages

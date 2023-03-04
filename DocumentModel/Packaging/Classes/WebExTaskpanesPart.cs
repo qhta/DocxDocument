@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExTaskpanesPart
 /// </summary>
-public record WebExTaskpanesPart
+public class WebExTaskpanesPart
 {
   public String? ContentType { get; set; }
 

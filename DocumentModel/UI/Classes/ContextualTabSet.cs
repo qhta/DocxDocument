@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ContextualTabSet Class.
 /// </summary>
-public record ContextualTabSet
+public class ContextualTabSet
 {
   /// <summary>
   ///   idMso

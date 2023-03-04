@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageItemType Class.
 /// </summary>
-public record BackstageItemType
+public class BackstageItemType
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Group-Character Function.
 /// </summary>
-public record GroupChar: DMW.ParagraphElement
+public class GroupChar: DMW.ParagraphElement
 {
   /// <summary>
   ///   Group-Character Properties.

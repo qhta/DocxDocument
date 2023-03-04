@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public partial record CustomProperties : ICollection<DocumentProperty>
+public partial class CustomProperties : ICollection<DocumentProperty>
 {
   public Collection<DocumentProperty>? CustomDocumentProperties { get; set; }
 

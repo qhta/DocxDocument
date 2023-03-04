@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions.UI;
 /// <summary>
 ///   Defines the WebExtensionTaskpane Class.
 /// </summary>
-public record WebExtensionTaskpane
+public class WebExtensionTaskpane
 {
   /// <summary>
   ///   dockstate, this property is only available in Office 2013 and later.

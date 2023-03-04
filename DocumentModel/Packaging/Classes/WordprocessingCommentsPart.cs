@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordprocessingCommentsPart
 /// </summary>
-public record WordprocessingCommentsPart
+public class WordprocessingCommentsPart
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the WordprocessingCommentsPart

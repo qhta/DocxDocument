@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Rule.
 /// </summary>
-public record Rule
+public class Rule
 {
   /// <summary>
   ///   Rule ID

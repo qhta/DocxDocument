@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramDataPart
 /// </summary>
-public record DiagramDataPart
+public class DiagramDataPart
 {
   public String? ContentType { get; set; }
 

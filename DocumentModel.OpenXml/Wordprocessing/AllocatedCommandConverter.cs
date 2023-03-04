@@ -54,16 +54,16 @@ public static class AllocatedCommandConverter
   private static bool CmpCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CommandIndexBasedOn?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.CommandIndexBasedOn.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.CommandIndexBasedOn.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.CommandIndexBasedOn?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.CommandIndexBasedOn?.Value == null && value is null) return true;
     diffs?.Add(objName, "CommandIndexBasedOn", openXmlElement?.CommandIndexBasedOn?.Value, value);
     return false;
   }
   
   private static void SetCommandIndexBasedOn(DXOW.AllocatedCommand openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.CommandIndexBasedOn = value.ToString();
     else
       openXmlElement.CommandIndexBasedOn = null;

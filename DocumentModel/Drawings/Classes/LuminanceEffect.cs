@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Luminance.
 /// </summary>
-public record LuminanceEffect
+public class LuminanceEffect
 {
   /// <summary>
   ///   Brightness

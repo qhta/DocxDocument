@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomPropertyPart
 /// </summary>
-public record CustomPropertyPart
+public class CustomPropertyPart
 {
   public String? RelationshipType { get; set; }
 }

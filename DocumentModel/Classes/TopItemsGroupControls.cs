@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TopItemsGroupControls Class.
 /// </summary>
-public record TopItemsGroupControls
+public class TopItemsGroupControls
 {
   public BackstageGroupButton? BackstageGroupButton { get; set; }
 

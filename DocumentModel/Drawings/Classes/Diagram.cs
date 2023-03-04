@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Diagram to Animate.
 /// </summary>
-public record Diagram
+public class Diagram
 {
   /// <summary>
   ///   Identifier

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D side wall formatting.
 /// </summary>
-public record SideWall
+public class SideWall
 {
   public Byte? Thickness { get; set; }
 

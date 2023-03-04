@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BevelType Class.
 /// </summary>
-public record BevelType
+public class BevelType
 {
   /// <summary>
   ///   w, this property is only available in Office 2010 and later.

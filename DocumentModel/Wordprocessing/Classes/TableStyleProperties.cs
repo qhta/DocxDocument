@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Conditional Table Formatting Properties.
 /// </summary>
-public record TableStyleProperties
+public class TableStyleProperties
 {
   /// <summary>
   ///   Table Style Conditional Formatting Type

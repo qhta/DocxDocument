@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 [TypeConverter(typeof(HexBinaryTypeXmlConverter))]
-public record HexBinary: IEquatable<HexBinary>
+public class HexBinary: IEquatable<HexBinary>
 {
   private readonly byte[] value;
 

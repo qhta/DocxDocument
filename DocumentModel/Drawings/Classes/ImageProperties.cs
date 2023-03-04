@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ImageProperties Class.
 /// </summary>
-public record ImageProperties
+public class ImageProperties
 {
   /// <summary>
   ///   ImageLayer.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Camera.
 /// </summary>
-public record Camera
+public class Camera
 {
   /// <summary>
   ///   Preset Camera Type

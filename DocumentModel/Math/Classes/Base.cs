@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Base.
 /// </summary>
-public record Base
+public class Base
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

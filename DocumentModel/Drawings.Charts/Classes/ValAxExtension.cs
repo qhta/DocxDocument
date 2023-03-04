@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ValAxExtension Class.
 /// </summary>
-public record ValAxExtension
+public class ValAxExtension
 {
   /// <summary>
   ///   URI

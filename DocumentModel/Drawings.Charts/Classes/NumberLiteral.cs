@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Number Literal.
 /// </summary>
-public record NumberLiteral
+public class NumberLiteral
 {
   public String? FormatCode { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorTemperature Class.
 /// </summary>
-public record ColorTemperature
+public class ColorTemperature
 {
   /// <summary>
   ///   colorTemp, this property is only available in Office 2010 and later.

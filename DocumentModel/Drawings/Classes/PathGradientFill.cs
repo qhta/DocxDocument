@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Path Gradient.
 /// </summary>
-public record PathGradientFill
+public class PathGradientFill
 {
   /// <summary>
   ///   Gradient Fill Path

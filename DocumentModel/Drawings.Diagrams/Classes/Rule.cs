@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Rule.
 /// </summary>
-public record Rule
+public class Rule
 {
   /// <summary>
   ///   Constraint Type

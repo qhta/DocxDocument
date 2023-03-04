@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Inserted Run Content.
 /// </summary>
-public record InsertedRun: CommonElement
+public class InsertedRun: CommonElement
 {
   public SdtRun? SdtRun { get; set; }
 

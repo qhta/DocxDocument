@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Legend data and formatting.
 /// </summary>
-public record Legend
+public class Legend
 {
   /// <summary>
   ///   Legend Position.

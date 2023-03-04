@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Frameset Splitter Properties.
 /// </summary>
-public record FramesetSplitbar
+public class FramesetSplitbar
 {
   /// <summary>
   ///   Frameset Splitter Width.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Normal AutoFit.
 /// </summary>
-public record NormalAutoFit
+public class NormalAutoFit
 {
   /// <summary>
   ///   Font Scale

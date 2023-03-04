@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PtExtension Class.
 /// </summary>
-public record PtExtension
+public class PtExtension
 {
   /// <summary>
   ///   URI

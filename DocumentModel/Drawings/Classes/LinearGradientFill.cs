@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Linear Gradient Fill.
 /// </summary>
-public record LinearGradientFill
+public class LinearGradientFill
 {
   /// <summary>
   ///   Angle

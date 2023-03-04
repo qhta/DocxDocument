@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskAnchor Class.
 /// </summary>
-public record TaskAnchor
+public class TaskAnchor
 {
   /// <summary>
   ///   CommentAnchor.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Footnotes.
 /// </summary>
-public record Footnotes
+public class Footnotes
 {
   public Footnote? Footnote { get; set; }
 }

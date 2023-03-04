@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Connection Site.
 /// </summary>
-public record ConnectionSite
+public class ConnectionSite
 {
   /// <summary>
   ///   Connection Site Angle

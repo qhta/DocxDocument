@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCrisscrossEtching Class.
 /// </summary>
-public record ArtisticCrisscrossEtching
+public class ArtisticCrisscrossEtching
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

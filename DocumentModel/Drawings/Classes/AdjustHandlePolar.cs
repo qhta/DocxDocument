@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Polar Adjust Handle.
 /// </summary>
-public record AdjustHandlePolar
+public class AdjustHandlePolar
 {
   /// <summary>
   ///   Radial Adjustment Guide

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Pie of Pie or Bar of Pie Charts.
 /// </summary>
-public record OfPieChart
+public class OfPieChart
 {
   /// <summary>
   ///   Pie of Pie or Bar of Pie Type.

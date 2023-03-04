@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Protection Class.
 /// </summary>
-public record Protection
+public class Protection
 {
   /// <summary>
   ///   Chart Object.

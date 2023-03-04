@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the Floor Class.
 /// </summary>
-public record Floor
+public class Floor
 {
   public LineReference? LineReference { get; set; }
 

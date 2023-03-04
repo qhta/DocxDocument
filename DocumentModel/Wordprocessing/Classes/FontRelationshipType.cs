@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontRelationshipType Class.
 /// </summary>
-public record FontRelationshipType
+public class FontRelationshipType
 {
   /// <summary>
   ///   fontKey

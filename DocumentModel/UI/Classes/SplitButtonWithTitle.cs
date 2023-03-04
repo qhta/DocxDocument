@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the SplitButtonWithTitle Class.
 /// </summary>
-public record SplitButtonWithTitle
+public class SplitButtonWithTitle
 {
   /// <summary>
   ///   enabled

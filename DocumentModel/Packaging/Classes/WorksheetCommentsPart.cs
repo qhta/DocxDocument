@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WorksheetCommentsPart
 /// </summary>
-public record WorksheetCommentsPart
+public class WorksheetCommentsPart
 {
   public String? ContentType { get; set; }
 

@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ThemeOverridePart
 /// </summary>
-public record ThemeOverridePart
+public class ThemeOverridePart
 {
   public String? ContentType { get; set; }
 

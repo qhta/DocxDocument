@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BidirectionalEmbedding Class.
 /// </summary>
-public record BidirectionalEmbedding: DMW.ParagraphElement
+public class BidirectionalEmbedding: DMW.ParagraphElement
 {
   /// <summary>
   ///   val

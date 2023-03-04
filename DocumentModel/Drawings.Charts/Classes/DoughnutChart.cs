@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Doughnut Charts.
 /// </summary>
-public record DoughnutChart
+public class DoughnutChart
 {
   /// <summary>
   ///   VaryColors.

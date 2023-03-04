@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableCellBorders Class.
 /// </summary>
-public record TableCellBorders
+public class TableCellBorders
 {
   /// <summary>
   ///   Table Cell Top Border.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public record RunProperties
+public class RunProperties
 {
   /// <summary>
   ///   RunStyle.

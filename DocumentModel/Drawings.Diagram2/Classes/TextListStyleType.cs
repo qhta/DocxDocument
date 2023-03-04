@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram2;
 /// <summary>
 ///   Defines the TextListStyleType Class.
 /// </summary>
-public record TextListStyleType
+public class TextListStyleType
 {
   /// <summary>
   ///   Default Paragraph Style.

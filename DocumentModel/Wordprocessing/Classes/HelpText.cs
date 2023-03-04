@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Associated Help Text.
 /// </summary>
-public record HelpText
+public class HelpText
 {
   /// <summary>
   ///   Help Text Type

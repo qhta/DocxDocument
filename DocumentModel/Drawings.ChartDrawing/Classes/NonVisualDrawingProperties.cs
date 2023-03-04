@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Chart Non Visual Properties.
 /// </summary>
-public record NonVisualDrawingProperties
+public class NonVisualDrawingProperties
 {
   /// <summary>
   ///   Application defined unique identifier.

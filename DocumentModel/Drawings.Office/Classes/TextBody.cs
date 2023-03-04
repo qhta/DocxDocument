@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the TextBody Class.
 /// </summary>
-public record TextBody
+public class TextBody
 {
   /// <summary>
   ///   Body Properties.

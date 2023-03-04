@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Pie Charts.
 /// </summary>
-public record PieChart
+public class PieChart
 {
   /// <summary>
   ///   VaryColors.

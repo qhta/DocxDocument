@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Transform2D Class.
 /// </summary>
-public record Transform2D
+public class Transform2D
 {
   /// <summary>
   ///   Rotation

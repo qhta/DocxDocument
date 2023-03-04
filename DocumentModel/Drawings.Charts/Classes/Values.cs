@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Values Class.
 /// </summary>
-public record Values
+public class Values
 {
   public NumberReference? NumberReference { get; set; }
 

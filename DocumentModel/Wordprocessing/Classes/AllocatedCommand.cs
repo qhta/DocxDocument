@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AllocatedCommand Class.
 /// </summary>
-public record AllocatedCommand
+public class AllocatedCommand
 {
   /// <summary>
   ///   argValue

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Box Properties.
 /// </summary>
-public record BoxProperties
+public class BoxProperties
 {
   /// <summary>
   ///   Operator Emulator.

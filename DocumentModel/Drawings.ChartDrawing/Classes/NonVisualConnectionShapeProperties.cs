@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Non-Visual Connection Shape Drawing Properties.
 /// </summary>
-public record NonVisualConnectionShapeProperties
+public class NonVisualConnectionShapeProperties
 {
   /// <summary>
   ///   Connection Shape Locks.

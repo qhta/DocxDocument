@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ShapePropertiesExtensionList Class.
 /// </summary>
-public record ShapePropertiesExtensionList
+public class ShapePropertiesExtensionList
 {
   public Collection<ShapePropertiesExtension>? ShapePropertiesExtensions { get; set; }
 }

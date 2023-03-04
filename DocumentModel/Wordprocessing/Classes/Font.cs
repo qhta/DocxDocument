@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Properties for a Single Font.
 /// </summary>
-public record Font: IEquatable<Font>
+public class Font: ModelElement//IEquatable<Font>
 {
   /// <summary>
   ///   name

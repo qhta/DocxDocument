@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Definitions.
 /// </summary>
-public record Numbering
+public class Numbering
 {
   public Collection<NumberingPictureBullet>? NumberingPictureBullets { get; set; }
 

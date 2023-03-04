@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Properties.
 /// </summary>
-public record ShapeProperties
+public class ShapeProperties
 {
   /// <summary>
   ///   Black and White Mode

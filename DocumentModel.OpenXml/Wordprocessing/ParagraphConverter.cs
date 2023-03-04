@@ -211,6 +211,8 @@ public static class ParagraphConverter
   #region Paragraph elements conversion
   public static DMW.ParagraphElement? CreateParagraphElement(DX.OpenXmlElement? openXmlElement)
   {
+    if (openXmlElement is DXW.ParagraphProperties)
+      return null;
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
     if (openXmlElement is DXW.Hyperlink hyperlink)
@@ -469,7 +471,7 @@ public static class ParagraphConverter
       if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName))
         ok = false;
       var paraItems = value.ToArray();
-      var elements = openXmlElement.Elements().ToArray();
+      var elements = openXmlElement.Elements().Where(item => !(item is DXW.ParagraphProperties)).ToArray();
       for (int i = 0; i < System.Math.Min(paraItems.Count(), elements.Count()); i++)
       {
         var element = elements[i];

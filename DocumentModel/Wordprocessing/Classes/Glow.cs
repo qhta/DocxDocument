@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Glow Class.
 /// </summary>
-public record Glow
+public class Glow
 {
   /// <summary>
   ///   rad, this property is only available in Office 2010 and later.

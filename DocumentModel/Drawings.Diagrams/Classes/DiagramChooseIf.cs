@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   If.
 /// </summary>
-public record DiagramChooseIf
+public class DiagramChooseIf
 {
   /// <summary>
   ///   Name

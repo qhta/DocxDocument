@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Title.
 /// </summary>
-public record ColorDefinitionTitle
+public class ColorDefinitionTitle
 {
   /// <summary>
   ///   Language

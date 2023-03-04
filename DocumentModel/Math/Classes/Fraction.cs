@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Fraction Function.
 /// </summary>
-public record Fraction: DMW.ParagraphElement
+public class Fraction: DMW.ParagraphElement
 {
   /// <summary>
   ///   Fraction Properties.

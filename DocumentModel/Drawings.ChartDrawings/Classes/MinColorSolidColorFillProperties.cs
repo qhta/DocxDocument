@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MinColorSolidColorFillProperties Class.
 /// </summary>
-public record MinColorSolidColorFillProperties
+public class MinColorSolidColorFillProperties
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

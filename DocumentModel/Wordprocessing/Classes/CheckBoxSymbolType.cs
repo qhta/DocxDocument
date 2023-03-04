@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CheckBoxSymbolType Class.
 /// </summary>
-public record CheckBoxSymbolType
+public class CheckBoxSymbolType
 {
   /// <summary>
   ///   font, this property is only available in Office 2010 and later.

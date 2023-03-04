@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Control Properties.
 /// </summary>
-public record ControlProperties
+public class ControlProperties
 {
   public Wordprocessing.RunProperties? RunProperties { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Application Specific File Properties.
 /// </summary>
-public partial record StatisticProperties: KnownDocumentProperties
+public partial class StatisticProperties: KnownDocumentProperties
 {
   /// <summary>
   ///   Total Number of Pages.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape.
 /// </summary>
-public record Shape
+public class Shape
 {
   /// <summary>
   ///   Rotation

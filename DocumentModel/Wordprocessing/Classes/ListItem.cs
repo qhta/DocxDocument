@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Combo Box List Item.
 /// </summary>
-public record ListItem
+public class ListItem
 {
   /// <summary>
   ///   List Entry Display Text

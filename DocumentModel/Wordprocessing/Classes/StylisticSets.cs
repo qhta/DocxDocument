@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the StylisticSets Class.
 /// </summary>
-public record StylisticSets
+public class StylisticSets
 {
   public Collection<StyleSet>? StyleSets { get; set; }
 }

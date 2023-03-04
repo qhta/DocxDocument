@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Glow Effect.
 /// </summary>
-public record Glow
+public class Glow
 {
   /// <summary>
   ///   Radius

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BrightnessContrast Class.
 /// </summary>
-public record BrightnessContrast
+public class BrightnessContrast
 {
   /// <summary>
   ///   bright, this property is only available in Office 2010 and later.

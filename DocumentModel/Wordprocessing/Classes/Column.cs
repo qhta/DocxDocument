@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Column Definition.
 /// </summary>
-public record Column
+public class Column
 {
   /// <summary>
   ///   Column Width

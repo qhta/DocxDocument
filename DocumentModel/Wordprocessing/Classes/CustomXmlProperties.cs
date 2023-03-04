@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom XML Element Properties.
 /// </summary>
-public record CustomXmlProperties
+public class CustomXmlProperties
 {
   /// <summary>
   ///   Custom XML Element Placeholder Text.

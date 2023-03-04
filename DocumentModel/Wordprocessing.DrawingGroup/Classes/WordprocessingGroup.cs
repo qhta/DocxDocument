@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the WordprocessingGroup Class.
 /// </summary>
-public record WordprocessingGroup
+public class WordprocessingGroup
 {
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
 

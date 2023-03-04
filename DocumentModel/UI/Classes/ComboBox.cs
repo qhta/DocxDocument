@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ComboBox Class.
 /// </summary>
-public record ComboBox
+public class ComboBox
 {
   /// <summary>
   ///   showItemImage

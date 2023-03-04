@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the XValues Class.
 /// </summary>
-public record XValues
+public class XValues
 {
   public MultiLevelStringReference? MultiLevelStringReference { get; set; }
 

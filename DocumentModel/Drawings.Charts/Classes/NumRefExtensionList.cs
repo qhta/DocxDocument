@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the NumRefExtensionList Class.
 /// </summary>
-public record NumRefExtensionList
+public class NumRefExtensionList
 {
   public Collection<NumRefExtension>? NumRefExtensions { get; set; }
 }

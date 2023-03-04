@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CreationId Class.
 /// </summary>
-public record CreationId
+public class CreationId
 {
   /// <summary>
   ///   id, this property is only available in Office 2016 and later.

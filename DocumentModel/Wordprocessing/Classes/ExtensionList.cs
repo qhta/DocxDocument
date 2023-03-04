@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ExtensionList Class.
 /// </summary>
-public record ExtensionList
+public class ExtensionList
 {
   public Collection<Extension>? Extensions { get; set; }
 }

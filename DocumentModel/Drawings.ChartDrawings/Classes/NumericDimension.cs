@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NumericDimension Class.
 /// </summary>
-public record NumericDimension
+public class NumericDimension
 {
   /// <summary>
   ///   type, this property is only available in Office 2016 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionReferenceList Class.
 /// </summary>
-public record WebExtensionReferenceList
+public class WebExtensionReferenceList
 {
   public Collection<WebExtensionStoreReference>? WebExtensionStoreReferences { get; set; }
 }

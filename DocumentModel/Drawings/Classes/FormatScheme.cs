@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Format Scheme.
 /// </summary>
-public record FormatScheme
+public class FormatScheme
 {
   /// <summary>
   ///   Name

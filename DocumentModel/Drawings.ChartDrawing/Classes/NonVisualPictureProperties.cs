@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Non-Visual Picture Properties.
 /// </summary>
-public record NonVisualPictureProperties
+public class NonVisualPictureProperties
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

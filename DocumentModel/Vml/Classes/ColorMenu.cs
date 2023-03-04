@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   UI Default Colors.
 /// </summary>
-public record ColorMenu
+public class ColorMenu
 {
   /// <summary>
   ///   VML Extension Handling Behavior

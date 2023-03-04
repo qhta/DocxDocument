@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the MenuSeparator Class.
 /// </summary>
-public record MenuSeparator
+public class MenuSeparator
 {
   /// <summary>
   ///   id

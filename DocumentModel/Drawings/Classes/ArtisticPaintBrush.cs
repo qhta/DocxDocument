@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPaintBrush Class.
 /// </summary>
-public record ArtisticPaintBrush
+public class ArtisticPaintBrush
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

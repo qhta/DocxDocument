@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LinePropertiesExtension Class.
 /// </summary>
-public record LinePropertiesExtension
+public class LinePropertiesExtension
 {
   /// <summary>
   ///   URI

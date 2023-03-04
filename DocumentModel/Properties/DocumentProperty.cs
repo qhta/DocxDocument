@@ -8,7 +8,7 @@ namespace DocumentModel;
 ///   Document Property.
 /// </summary>
 [XmlContentProperty(nameof(Value))]
-public partial record DocumentProperty : IEquatable<DocumentProperty>
+public partial class DocumentProperty : ModelElement//IEquatable<DocumentProperty>
 {
   public DocumentProperty() { }
 

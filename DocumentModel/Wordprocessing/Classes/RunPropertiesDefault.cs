@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Run Properties.
 /// </summary>
-public record RunPropertiesDefault
+public class RunPropertiesDefault
 {
   /// <summary>
   ///   Run Properties.

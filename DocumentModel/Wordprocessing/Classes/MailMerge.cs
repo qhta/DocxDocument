@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Mail Merge Settings.
 /// </summary>
-public record MailMerge
+public class MailMerge
 {
   /// <summary>
   ///   Source Document Type.

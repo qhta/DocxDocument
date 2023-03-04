@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the PivotTableCacheRecordsPart
 /// </summary>
-public record PivotTableCacheRecordsPart
+public class PivotTableCacheRecordsPart
 {
   public String? ContentType { get; set; }
 

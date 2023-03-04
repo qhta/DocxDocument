@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Text Box Form Field Properties.
 /// </summary>
-public record TextInput
+public class TextInput
 {
   /// <summary>
   ///   Text Box Form Field Type.

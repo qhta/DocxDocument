@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HyperlinkType Class.
 /// </summary>
-public record HyperlinkType
+public class HyperlinkType
 {
   /// <summary>
   ///   relationship identifier to find target URI

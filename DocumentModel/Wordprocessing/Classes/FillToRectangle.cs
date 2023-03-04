@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FillToRectangle Class.
 /// </summary>
-public record FillToRectangle
+public class FillToRectangle
 {
   /// <summary>
   ///   l, this property is only available in Office 2010 and later.

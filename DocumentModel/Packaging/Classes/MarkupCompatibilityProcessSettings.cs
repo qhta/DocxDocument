@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents markup compatibility processing settings.
 /// </summary>
-public record MarkupCompatibilityProcessSettings
+public class MarkupCompatibilityProcessSettings
 {
   /// <summary>
   ///   Gets the markup compatibility process mode.

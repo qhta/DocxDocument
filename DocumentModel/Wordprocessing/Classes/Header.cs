@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Header.
 /// </summary>
-public record Header
+public class Header
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

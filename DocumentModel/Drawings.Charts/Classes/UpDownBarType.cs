@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the UpDownBarType Class.
 /// </summary>
-public record UpDownBarType
+public class UpDownBarType
 {
   /// <summary>
   ///   ChartShapeProperties.

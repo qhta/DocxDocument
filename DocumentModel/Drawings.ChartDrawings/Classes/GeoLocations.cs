@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoLocations Class.
 /// </summary>
-public record GeoLocations
+public class GeoLocations
 {
   /// <summary>
   ///   GeoLocation.

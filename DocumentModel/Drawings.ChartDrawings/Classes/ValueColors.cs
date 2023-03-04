@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueColors Class.
 /// </summary>
-public record ValueColors
+public class ValueColors
 {
   /// <summary>
   ///   MinColorSolidColorFillProperties.

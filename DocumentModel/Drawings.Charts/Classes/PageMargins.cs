@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Page Margins.
 /// </summary>
-public record PageMargins
+public class PageMargins
 {
   /// <summary>
   ///   Left

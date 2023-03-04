@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Scaling.
 /// </summary>
-public record Scaling
+public class Scaling
 {
   /// <summary>
   ///   Logarithmic Base.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Accent.
 /// </summary>
-public record Accent: DMW.ParagraphElement
+public class Accent: DMW.ParagraphElement
 {
   /// <summary>
   ///   Accent Properties.

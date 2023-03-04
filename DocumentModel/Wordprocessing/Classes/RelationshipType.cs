@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RelationshipType Class.
 /// </summary>
-public record RelationshipType
+public class RelationshipType
 {
   /// <summary>
   ///   Relationship to Part

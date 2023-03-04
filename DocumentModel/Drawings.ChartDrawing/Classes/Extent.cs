@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Shape Extent.
 /// </summary>
-public record Extent
+public class Extent
 {
   /// <summary>
   ///   Extent Length

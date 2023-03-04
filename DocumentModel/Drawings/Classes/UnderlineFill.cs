@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Underline Fill.
 /// </summary>
-public record UnderlineFill
+public class UnderlineFill
 {
   /// <summary>
   ///   NoFill.

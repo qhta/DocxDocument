@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 ///  then it and its contents should be treated as regular text. If this element is contained within a del element, 
 ///  then the document is non-conformant.
 /// </summary>
-public record FieldCode: TextType
+public class FieldCode: TextType
 {
 }

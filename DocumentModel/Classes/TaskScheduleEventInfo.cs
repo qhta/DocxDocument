@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskScheduleEventInfo Class.
 /// </summary>
-public record TaskScheduleEventInfo
+public class TaskScheduleEventInfo
 {
   /// <summary>
   ///   startDate, this property is only available in Office 2021 and later.

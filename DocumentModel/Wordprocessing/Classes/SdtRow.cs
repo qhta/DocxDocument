@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Row-Level Structured Document Tag.
 /// </summary>
-public record SdtRow
+public class SdtRow
 {
   /// <summary>
   ///   Row-Level Structured Document Tag Content.

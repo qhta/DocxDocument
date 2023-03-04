@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Group Class.
 /// </summary>
-public record Group
+public class Group
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

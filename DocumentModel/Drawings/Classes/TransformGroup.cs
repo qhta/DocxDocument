@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   2D Transform for Grouped Objects.
 /// </summary>
-public record TransformGroup
+public class TransformGroup
 {
   /// <summary>
   ///   Rotation

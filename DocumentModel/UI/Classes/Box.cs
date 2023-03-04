@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Box Class.
 /// </summary>
-public record Box
+public class Box
 {
   /// <summary>
   ///   id

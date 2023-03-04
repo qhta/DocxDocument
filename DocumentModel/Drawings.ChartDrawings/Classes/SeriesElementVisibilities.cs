@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the SeriesElementVisibilities Class.
 /// </summary>
-public record SeriesElementVisibilities
+public class SeriesElementVisibilities
 {
   /// <summary>
   ///   connectorLines, this property is only available in Office 2016 and later.

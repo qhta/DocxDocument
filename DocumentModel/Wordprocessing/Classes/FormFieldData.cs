@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Form Field Properties.
 /// </summary>
-public record FormFieldData
+public class FormFieldData
 {
   public String? FormFieldName { get; set; }
 

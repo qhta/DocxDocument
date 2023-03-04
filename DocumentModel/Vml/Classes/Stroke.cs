@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Stroke Class.
 /// </summary>
-public record Stroke
+public class Stroke
 {
   /// <summary>
   ///   Unique Identifier

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Area Charts.
 /// </summary>
-public record AreaChart
+public class AreaChart
 {
   /// <summary>
   ///   Grouping.

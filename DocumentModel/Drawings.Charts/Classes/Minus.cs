@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Minus.
 /// </summary>
-public record Minus
+public class Minus
 {
   public NumberReference? NumberReference { get; set; }
 

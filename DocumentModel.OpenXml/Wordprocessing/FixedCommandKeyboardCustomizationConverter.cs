@@ -36,16 +36,16 @@ public static class FixedCommandKeyboardCustomizationConverter
   private static bool CmpCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CommandIndex?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.CommandIndex.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.CommandIndex.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.CommandIndex?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.CommandIndex?.Value == null && value is null) return true;
     diffs?.Add(objName, "CommandIndex", openXmlElement?.CommandIndex?.Value, value);
     return false;
   }
   
   private static void SetCommandIndex(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.CommandIndex = value.ToString();
     else
       openXmlElement.CommandIndex = null;
@@ -64,16 +64,16 @@ public static class FixedCommandKeyboardCustomizationConverter
   private static bool CmpArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Argument?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.Argument.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Argument.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.Argument?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.Argument?.Value == null && value is null) return true;
     diffs?.Add(objName, "Argument", openXmlElement?.Argument?.Value, value);
     return false;
   }
   
   private static void SetArgument(DXOW.FixedCommandKeyboardCustomization openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.Argument = value.ToString();
     else
       openXmlElement.Argument = null;

@@ -1189,7 +1189,7 @@ public static class CompatibilityConverter
     return null;
   }
   
-  private static bool CmpCompatibilitySettings(DXW.Compatibility openXmlElement, Collection<DMW.CompatibilitySetting>? value, DiffList? diffs, string? objName)
+  private static bool CmpCompatibilitySettings(DXW.Compatibility openXmlElement, ICollection<DMW.CompatibilitySetting>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.CompatibilitySetting>();
     var origElementsCount = origElements.Count();
@@ -1217,7 +1217,7 @@ public static class CompatibilityConverter
     return false;
   }
   
-  private static void SetCompatibilitySettings(DXW.Compatibility openXmlElement, Collection<DMW.CompatibilitySetting>? value)
+  private static void SetCompatibilitySettings(DXW.Compatibility openXmlElement, ICollection<DMW.CompatibilitySetting>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.CompatibilitySetting>();
     if (value != null)

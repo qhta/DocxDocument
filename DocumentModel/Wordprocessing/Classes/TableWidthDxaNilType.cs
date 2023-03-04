@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableWidthDxaNilType Class.
 /// </summary>
-public record TableWidthDxaNilType
+public class TableWidthDxaNilType
 {
   /// <summary>
   ///   w

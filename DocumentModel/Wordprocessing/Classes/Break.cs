@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a break of line, column or page.
 /// </summary>
-public record Break: RunElement
+public class Break: RunElement
 {
   /// <summary>
   ///   Break type

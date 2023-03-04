@@ -2,7 +2,7 @@
 
 namespace DocumentModel;
 
-public record StringNum//: IEquatable<StringNum>
+public class StringNum//: IEquatable<StringNum>
 {
   [XmlAttribute]
   public string? Str { get; set; }

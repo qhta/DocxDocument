@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ImageControl Class.
 /// </summary>
-public record ImageControl
+public class ImageControl
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

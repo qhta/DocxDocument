@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Ribbon Class.
 /// </summary>
-public record Ribbon
+public class Ribbon
 {
   /// <summary>
   ///   startFromScratch

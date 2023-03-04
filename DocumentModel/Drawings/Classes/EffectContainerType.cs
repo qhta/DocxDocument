@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the EffectContainerType Class.
 /// </summary>
-public record EffectContainerType
+public class EffectContainerType
 {
   /// <summary>
   ///   Effect Container Type

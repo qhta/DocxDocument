@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Property Set.
 /// </summary>
-public record PropertySet
+public class PropertySet
 {
   /// <summary>
   ///   Presentation Element Identifier

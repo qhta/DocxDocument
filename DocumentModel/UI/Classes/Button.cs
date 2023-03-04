@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Button Class.
 /// </summary>
-public record Button
+public class Button
 {
   /// <summary>
   ///   size

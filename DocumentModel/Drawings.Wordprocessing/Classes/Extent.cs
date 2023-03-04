@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Inline Drawing Object Extents.
 /// </summary>
-public record Extent
+public class Extent
 {
   /// <summary>
   ///   Extent Length

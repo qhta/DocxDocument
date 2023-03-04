@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Category.
 /// </summary>
-public record Category
+public class Category
 {
   /// <summary>
   ///   Category Type

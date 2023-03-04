@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Text Paragraphs.
 /// </summary>
-public record Paragraph
+public class Paragraph
 {
   /// <summary>
   ///   Text Paragraph Properties.

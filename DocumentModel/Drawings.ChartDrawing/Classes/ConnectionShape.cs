@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Connection Shape.
 /// </summary>
-public record ConnectionShape
+public class ConnectionShape
 {
   /// <summary>
   ///   Reference to Custom Function

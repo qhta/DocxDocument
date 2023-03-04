@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingGroup;
 /// <summary>
 ///   Defines the GraphicFrame Class.
 /// </summary>
-public record GraphicFrame
+public class GraphicFrame
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

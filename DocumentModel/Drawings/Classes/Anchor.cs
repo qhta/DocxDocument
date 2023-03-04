@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Anchor Point.
 /// </summary>
-public record Anchor
+public class Anchor
 {
   /// <summary>
   ///   X-Coordinate in 3D

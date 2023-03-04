@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoLocation Class.
 /// </summary>
-public record GeoLocation
+public class GeoLocation
 {
   /// <summary>
   ///   latitude, this property is only available in Office 2016 and later.

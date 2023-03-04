@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the PowerPointCommentPart
 /// </summary>
-public record PowerPointCommentPart
+public class PowerPointCommentPart
 {
   public String? ContentType { get; set; }
 

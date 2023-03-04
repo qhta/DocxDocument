@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Relative Offset Effect.
 /// </summary>
-public record RelativeOffset
+public class RelativeOffset
 {
   /// <summary>
   ///   Offset X

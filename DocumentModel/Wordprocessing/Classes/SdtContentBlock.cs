@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Block-Level Structured Document Tag Content.
 /// </summary>
-public record SdtContentBlock
+public class SdtContentBlock
 {
   public CustomXmlBlock? CustomXmlBlock { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   System Color.
 /// </summary>
-public record SystemColor
+public class SystemColor
 {
   /// <summary>
   ///   Value

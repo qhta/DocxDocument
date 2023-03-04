@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MaxColorSolidColorFillProperties Class.
 /// </summary>
-public record MaxColorSolidColorFillProperties
+public class MaxColorSolidColorFillProperties
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

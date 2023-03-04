@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Scheme Color.
 /// </summary>
-public record SchemeColor
+public class SchemeColor
 {
   /// <summary>
   ///   Value

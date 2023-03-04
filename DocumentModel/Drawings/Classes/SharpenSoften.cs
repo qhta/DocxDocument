@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the SharpenSoften Class.
 /// </summary>
-public record SharpenSoften
+public class SharpenSoften
 {
   /// <summary>
   ///   amount, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LineEndPropertiesType Class.
 /// </summary>
-public record LineEndPropertiesType
+public class LineEndPropertiesType
 {
   /// <summary>
   ///   Line Head/End Type

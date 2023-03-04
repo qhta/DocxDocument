@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataPointWireframe Class.
 /// </summary>
-public record DataPointWireframe
+public class DataPointWireframe
 {
   public LineReference? LineReference { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskHistoryEvent Class.
 /// </summary>
-public record TaskHistoryEvent
+public class TaskHistoryEvent
 {
   /// <summary>
   ///   time, this property is only available in Office 2021 and later.

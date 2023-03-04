@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ObjectLink Class.
 /// </summary>
-public record ObjectLink: EmbeddedObjectElement
+public class ObjectLink: EmbeddedObjectElement
 {
   /// <summary>
   ///   updateMode

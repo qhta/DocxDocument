@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the NonVisualPicturePropertiesExtensionList Class.
 /// </summary>
-public record NonVisualPicturePropertiesExtensionList
+public class NonVisualPicturePropertiesExtensionList
 {
   public Collection<NonVisualPicturePropertiesExtension>? NonVisualPicturePropertiesExtensions { get; set; }
 }

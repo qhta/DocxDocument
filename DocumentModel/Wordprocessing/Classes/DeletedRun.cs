@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Deleted Run Content.
 /// </summary>
-public record DeletedRun: CommonElement
+public class DeletedRun: CommonElement
 {
   public SdtRun? SdtRun { get; set; }
 

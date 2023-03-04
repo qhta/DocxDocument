@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunTrackChangeType Class.
 /// </summary>
-public record RunTrackChangeType2
+public class RunTrackChangeType2
 {
   /// <summary>
   ///   author

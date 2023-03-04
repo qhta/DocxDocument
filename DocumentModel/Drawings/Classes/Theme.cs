@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Theme.
 /// </summary>
-public record Theme
+public class Theme
 {
   /// <summary>
   ///   name

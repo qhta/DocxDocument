@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Footnote Numbering Format.
 /// </summary>
-public record NumberingFormat
+public class NumberingFormat
 {
   /// <summary>
   ///   Numbering Format Type

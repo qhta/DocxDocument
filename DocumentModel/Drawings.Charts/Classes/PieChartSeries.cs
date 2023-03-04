@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Pie Chart Series.
 /// </summary>
-public record PieChartSeries
+public class PieChartSeries
 {
   /// <summary>
   ///   Index.

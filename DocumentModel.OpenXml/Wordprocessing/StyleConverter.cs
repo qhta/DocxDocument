@@ -524,7 +524,7 @@ public static class StyleConverter
     return null;
   }
   
-  private static bool CmpTableStyleProperties(DXW.Style openXmlElement, Collection<DMW.TableStyleProperties>? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleProperties(DXW.Style openXmlElement, ICollection<DMW.TableStyleProperties>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.TableStyleProperties>();
     var origElementsCount = origElements.Count();
@@ -552,7 +552,7 @@ public static class StyleConverter
     return false;
   }
   
-  private static void SetTableStyleProperties(DXW.Style openXmlElement, Collection<DMW.TableStyleProperties>? value)
+  private static void SetTableStyleProperties(DXW.Style openXmlElement, ICollection<DMW.TableStyleProperties>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.TableStyleProperties>();
     if (value != null)

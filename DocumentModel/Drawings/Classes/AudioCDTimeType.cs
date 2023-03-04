@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the AudioCDTimeType Class.
 /// </summary>
-public record AudioCDTimeType
+public class AudioCDTimeType
 {
   /// <summary>
   ///   Track

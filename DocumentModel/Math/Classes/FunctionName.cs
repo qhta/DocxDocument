@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Function Name.
 /// </summary>
-public record FunctionName
+public class FunctionName
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ImagePart
 /// </summary>
-public record ImagePart
+public class ImagePart
 {
   public String? RelationshipType { get; set; }
 }

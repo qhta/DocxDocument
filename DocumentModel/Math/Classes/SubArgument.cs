@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Lower limit (n-ary) .
 /// </summary>
-public record SubArgument
+public class SubArgument
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

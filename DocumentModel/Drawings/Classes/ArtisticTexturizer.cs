@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticTexturizer Class.
 /// </summary>
-public record ArtisticTexturizer
+public class ArtisticTexturizer
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

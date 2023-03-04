@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenScene3D Class.
 /// </summary>
-public record HiddenScene3D
+public class HiddenScene3D
 {
   /// <summary>
   ///   Camera.

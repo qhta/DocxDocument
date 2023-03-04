@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ColorType Class.
 /// </summary>
-public record ColorType
+public class ColorType
 {
   /// <summary>
   ///   RgbColorModelHex.

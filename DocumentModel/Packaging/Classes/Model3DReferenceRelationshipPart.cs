@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the Model3DReferenceRelationshipPart
 /// </summary>
-public record Model3DReferenceRelationshipPart
+public class Model3DReferenceRelationshipPart
 {
   public String? ContentType { get; set; }
 

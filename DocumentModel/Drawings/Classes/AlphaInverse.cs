@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Alpha Inverse Effect.
 /// </summary>
-public record AlphaInverse
+public class AlphaInverse
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

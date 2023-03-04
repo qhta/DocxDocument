@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Apply 3D shape properties.
 /// </summary>
-public record Shape3DType
+public class Shape3DType
 {
   /// <summary>
   ///   Shape Depth

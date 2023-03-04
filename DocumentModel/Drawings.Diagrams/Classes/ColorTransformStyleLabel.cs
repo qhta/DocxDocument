@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Style Label.
 /// </summary>
-public record ColorTransformStyleLabel
+public class ColorTransformStyleLabel
 {
   /// <summary>
   ///   Name

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Ribbon Class.
 /// </summary>
-public record Ribbon
+public class Ribbon
 {
   /// <summary>
   ///   startFromScratch, this property is only available in Office 2010 and later.

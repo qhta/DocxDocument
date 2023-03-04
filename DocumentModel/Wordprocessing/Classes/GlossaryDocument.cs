@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Glossary Document Root Element.
 /// </summary>
-public record GlossaryDocument
+public class GlossaryDocument
 {
   /// <summary>
   ///   Document Background.

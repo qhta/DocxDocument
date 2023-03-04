@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the QuickAccessToolbarCustomizationsPart
 /// </summary>
-public record QuickAccessToolbarCustomizationsPart
+public class QuickAccessToolbarCustomizationsPart
 {
   public String? ContentType { get; set; }
 

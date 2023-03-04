@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Vector3DType Class.
 /// </summary>
-public record Vector3DType
+public class Vector3DType
 {
   /// <summary>
   ///   Distance along X-axis in 3D

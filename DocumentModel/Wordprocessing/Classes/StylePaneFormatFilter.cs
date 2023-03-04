@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Suggested Filtering for List of Document Styles.
 /// </summary>
-public record StylePaneFormatFilter
+public class StylePaneFormatFilter
 {
   /// <summary>
   ///   val

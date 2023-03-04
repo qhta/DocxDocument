@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CustomFilePropertiesPart
 /// </summary>
-public record CustomFilePropertiesPart
+public class CustomFilePropertiesPart
 {
   public String? ContentType { get; set; }
 

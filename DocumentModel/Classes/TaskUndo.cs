@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskUndo Class.
 /// </summary>
-public record TaskUndo
+public class TaskUndo
 {
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.

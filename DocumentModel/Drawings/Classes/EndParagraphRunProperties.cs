@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   End Paragraph Run Properties.
 /// </summary>
-public record EndParagraphRunProperties
+public class EndParagraphRunProperties
 {
   public Outline? Outline { get; set; }
 

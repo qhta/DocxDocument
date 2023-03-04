@@ -35,6 +35,25 @@ public static class EnumValueConverter
     return false;
   }
 
+  public static bool CmpValue<ModelEnumType>(ModelEnumType value1, ModelEnumType? value2, 
+    DiffList? diffs = null, string? objName = null, string? propName = null)
+    where ModelEnumType : struct, IConvertible
+  {
+    if (value2!=null)
+    {
+      var n = (int)Convert.ChangeType(value1, typeof(int));
+      var m = (int)Convert.ChangeType(value2, typeof(int));
+      if (n == m)
+        return true;
+      diffs?.Add(objName, propName, value1, value2);
+      return false;
+    }
+    //if (element?.Value == null && value2 == null)
+    //  return true;
+    diffs?.Add(objName, propName, value1, value2);
+    return false;
+  }
+
   public static DX.EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible

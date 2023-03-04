@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office.ScriptLink;
 /// <summary>
 ///   Defines the ScriptLink Class.
 /// </summary>
-public record ScriptLink
+public class ScriptLink
 {
   /// <summary>
   ///   val, this property is only available in Microsoft365 and later.

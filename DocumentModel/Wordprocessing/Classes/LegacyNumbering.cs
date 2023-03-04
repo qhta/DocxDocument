@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Legacy Numbering Level Properties.
 /// </summary>
-public record LegacyNumbering
+public class LegacyNumbering
 {
   /// <summary>
   ///   Use Legacy Numbering Properties

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ProofError Class.
 /// </summary>
-public record ProofError: CommonElement
+public class ProofError: CommonElement
 {
   /// <summary>
   ///   Proofing Error Anchor Type

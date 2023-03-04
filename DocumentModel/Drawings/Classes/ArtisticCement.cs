@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCement Class.
 /// </summary>
-public record ArtisticCement
+public class ArtisticCement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ApplicationNonVisualDrawingProperties Class.
 /// </summary>
-public record ApplicationNonVisualDrawingProperties
+public class ApplicationNonVisualDrawingProperties
 {
   /// <summary>
   ///   macro, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the SingleCellTablePart
 /// </summary>
-public record SingleCellTablePart
+public class SingleCellTablePart
 {
   public String? ContentType { get; set; }
 

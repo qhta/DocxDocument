@@ -86,7 +86,7 @@ public static class BreakConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.BreakKind, DMW.BreakKind>(DMW.BreakKind.Page, value.Type, diffs, objName))
+      if (!EnumValueConverter.CmpValue<DMW.BreakKind>(DMW.BreakKind.Page, value.Type, diffs, objName, "Page"))
         ok = false;
       if (!BooleanValueConverter.CmpValue(true, value.IsLastRendered, diffs, objName))
         ok = false;

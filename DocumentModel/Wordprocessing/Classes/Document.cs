@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document.
 /// </summary>
-public partial record Document
+public partial class Document
 {
   /// <summary>
   ///   conformance

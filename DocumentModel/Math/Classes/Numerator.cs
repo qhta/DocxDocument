@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Numerator.
 /// </summary>
-public record Numerator
+public class Numerator
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

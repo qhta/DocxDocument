@@ -15,6 +15,6 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public record TabChar: RunElement
+public class TabChar: RunElement
 {
 }

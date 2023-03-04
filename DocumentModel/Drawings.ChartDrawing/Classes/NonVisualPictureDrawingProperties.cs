@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Non-Visual Picture Drawing Properties.
 /// </summary>
-public record NonVisualPictureDrawingProperties
+public class NonVisualPictureDrawingProperties
 {
   /// <summary>
   ///   preferRelativeResize

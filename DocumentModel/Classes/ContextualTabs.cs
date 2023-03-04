@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ContextualTabs Class.
 /// </summary>
-public record ContextualTabs
+public class ContextualTabs
 {
   public Collection<TabSet>? TabSets { get; set; }
 }

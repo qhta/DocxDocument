@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Group Shape.
 /// </summary>
-public record GroupShape
+public class GroupShape
 {
   /// <summary>
   ///   Non-Visual Group Shape Properties.

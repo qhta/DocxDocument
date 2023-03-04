@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Video from File.
 /// </summary>
-public record VideoFromFile
+public class VideoFromFile
 {
   /// <summary>
   ///   Linked Relationship ID

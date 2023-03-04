@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   For Each.
 /// </summary>
-public record ForEach
+public class ForEach
 {
   /// <summary>
   ///   Name

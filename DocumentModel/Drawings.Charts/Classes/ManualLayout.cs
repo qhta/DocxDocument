@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Manual Layout.
 /// </summary>
-public record ManualLayout
+public class ManualLayout
 {
   /// <summary>
   ///   Layout Target.

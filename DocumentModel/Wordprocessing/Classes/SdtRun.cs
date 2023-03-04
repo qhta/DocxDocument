@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtRun Class.
 /// </summary>
-public record SdtRun: ParagraphElement
+public class SdtRun: ParagraphElement
 {
   /// <summary>
   ///   Inline-Level Structured Document Tag Content.

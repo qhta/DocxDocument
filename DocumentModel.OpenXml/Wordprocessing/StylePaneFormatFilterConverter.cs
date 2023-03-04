@@ -18,16 +18,16 @@ public static class StylePaneFormatFilterConverter
   private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.Val.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.Val?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.Val?.Value == null && value is null) return true;
     diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
     return false;
   }
   
   private static void SetVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.Val = value.ToString();
     else
       openXmlElement.Val = null;

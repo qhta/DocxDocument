@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Cell-Level Custom XML Element.
 /// </summary>
-public record CustomXmlCell
+public class CustomXmlCell
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 

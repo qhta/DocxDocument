@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the SignatureLine Class.
 /// </summary>
-public record SignatureLine
+public class SignatureLine
 {
   /// <summary>
   ///   isSignatureLine, this property is only available in Office 2013 and later.

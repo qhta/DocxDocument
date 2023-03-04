@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DrawingsPart
 /// </summary>
-public record DrawingsPart
+public class DrawingsPart
 {
   /// <summary>
   ///   Gets the ChartParts of the DrawingsPart

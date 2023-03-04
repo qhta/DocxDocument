@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Custom Split.
 /// </summary>
-public record CustomSplit
+public class CustomSplit
 {
   public Collection<UInt32>? SecondPiePoints { get; set; }
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom XSL Transform To Use When Saving As XML File.
 /// </summary>
-public record SaveThroughXslt
+public class SaveThroughXslt
 {
   /// <summary>
   ///   XSL Transformation Location

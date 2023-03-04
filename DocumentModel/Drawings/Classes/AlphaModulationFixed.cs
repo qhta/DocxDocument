@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the AlphaModulationFixed Class.
 /// </summary>
-public record AlphaModulationFixed
+public class AlphaModulationFixed
 {
   /// <summary>
   ///   Amount

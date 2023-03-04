@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoLocationQueryResults Class.
 /// </summary>
-public record GeoLocationQueryResults
+public class GeoLocationQueryResults
 {
   public Collection<GeoLocationQueryResult>? Items { get; set; }
 }

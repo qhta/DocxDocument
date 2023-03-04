@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the StrokeChildType Class.
 /// </summary>
-public record StrokeChildType
+public class StrokeChildType
 {
   /// <summary>
   ///   VML Extension Handling Behavior

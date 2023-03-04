@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoPolygon Class.
 /// </summary>
-public record GeoPolygon
+public class GeoPolygon
 {
   /// <summary>
   ///   polygonId, this property is only available in Office 2016 and later.

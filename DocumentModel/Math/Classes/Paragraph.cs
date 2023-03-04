@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public record Paragraph: DMW.ParagraphElement
+public class Paragraph: DMW.ParagraphElement
 {
   /// <summary>
   ///   Office Math Paragraph Properties.

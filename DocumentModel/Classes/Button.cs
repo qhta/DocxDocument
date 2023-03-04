@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Button Class.
 /// </summary>
-public record Button
+public class Button
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

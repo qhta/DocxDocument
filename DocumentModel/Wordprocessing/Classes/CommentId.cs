@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CommentId Class.
 /// </summary>
-public record CommentId
+public class CommentId
 {
   /// <summary>
   ///   paraId, this property is only available in Office 2019 and later.

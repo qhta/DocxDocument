@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Whole E2O Formatting.
 /// </summary>
-public record Whole
+public class Whole
 {
   /// <summary>
   ///   Outline.

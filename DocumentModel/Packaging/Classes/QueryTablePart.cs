@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the QueryTablePart
 /// </summary>
-public record QueryTablePart
+public class QueryTablePart
 {
   public String? ContentType { get; set; }
 

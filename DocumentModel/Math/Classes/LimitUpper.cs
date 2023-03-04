@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper-Limit Function.
 /// </summary>
-public record LimitUpper: DMW.ParagraphElement
+public class LimitUpper: DMW.ParagraphElement
 {
   /// <summary>
   ///   Upper Limit Properties.
