@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Fill Style List.
 /// </summary>
-public record FillStyleList
+public class FillStyleList
 {
   public Boolean? NoFill { get; set; }
 

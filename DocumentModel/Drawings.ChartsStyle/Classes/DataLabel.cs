@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataLabel Class.
 /// </summary>
-public record DataLabel
+public class DataLabel
 {
   public LineReference? LineReference { get; set; }
 

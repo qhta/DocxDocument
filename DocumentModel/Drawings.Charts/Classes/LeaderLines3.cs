@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the LeaderLines Class.
 /// </summary>
-public record LeaderLines3
+public class LeaderLines3
 {
   /// <summary>
   ///   ChartShapeProperties.

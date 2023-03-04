@@ -12,32 +12,28 @@ public static class RsidsConverter
   {
     return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val);
   }
-  
+
   private static bool CmpRsidRoot(DXW.Rsids openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val, value, diffs, objName, "RsidRoot");
   }
-  
+
   private static void SetRsidRoot(DXW.Rsids openXmlElement, DM.HexInt? value)
   {
     HexIntConverter.SetValue<DXW.RsidRoot>(openXmlElement, value);
   }
-  
-  private static Collection<DM.HexInt>? GetItems(DXW.Rsids openXmlElement)
+
+  private static void GetItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt> collection)
   {
-    var collection = new Collection<DM.HexInt>();
     foreach (var item in openXmlElement.Elements<DXW.Rsid>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
         collection.Add((HexInt)newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
-  
-  private static bool CmpItems(DXW.Rsids openXmlElement, Collection<DM.HexInt>? value, DiffList? diffs, string? objName)
+
+  private static bool CmpItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.Rsid>();
     var origElementsCount = origElements.Count();
@@ -46,7 +42,7 @@ public static class RsidsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -64,8 +60,8 @@ public static class RsidsConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
-  private static void SetItems(DXW.Rsids openXmlElement, Collection<DM.HexInt>? value)
+
+  private static void SetItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Rsid>();
     if (value != null)
@@ -78,19 +74,21 @@ public static class RsidsConverter
       }
     }
   }
-  
+
   public static DMW.Rsids? CreateModelElement(DXW.Rsids? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.Rsids();
       value.RsidRoot = GetRsidRoot(openXmlElement);
-      value.Items = GetItems(openXmlElement);
+      GetItems(openXmlElement, value);
+      if (value.Count == 0)
+        return null;
       return value;
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXW.Rsids? openXmlElement, DMW.Rsids? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -98,7 +96,7 @@ public static class RsidsConverter
       var ok = true;
       if (!CmpRsidRoot(openXmlElement, value.RsidRoot, diffs, objName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -106,18 +104,18 @@ public static class RsidsConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Rsids value)
-    where OpenXmlElementType: DXW.Rsids, new()
+    where OpenXmlElementType : DXW.Rsids, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXW.Rsids openXmlElement, DMW.Rsids value)
   {
     SetRsidRoot(openXmlElement, value?.RsidRoot);
-    SetItems(openXmlElement, value?.Items);
+    SetItems(openXmlElement, value);
   }
 }

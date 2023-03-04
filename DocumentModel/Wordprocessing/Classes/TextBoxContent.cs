@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Rich Text Box Content Container.
 /// </summary>
-public record TextBoxContent
+public class TextBoxContent
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the GradientStop Class.
 /// </summary>
-public record GradientStop
+public class GradientStop
 {
   /// <summary>
   ///   pos, this property is only available in Office 2010 and later.

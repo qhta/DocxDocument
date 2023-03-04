@@ -97,8 +97,8 @@ public class TestBody : TestBase
     {
       var oldItem = oldBodyArray[i];
       var newItem = newBodyArray[i];
-      //newItem.ShouldDeepEqual(oldItem);
-      Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
+      newItem.ShouldDeepEqual(oldItem);
+      //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
     }
     Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
   }
@@ -157,8 +157,8 @@ public class TestBody : TestBase
     {
       var oldItem = oldBodyArray[i];
       var newItem = newBodyArray[i];
-      //newItem.ShouldDeepEqual(oldItem);
-      Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
+      newItem.ShouldDeepEqual(oldItem);
+      //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
     }
     Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
   }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Blur Class.
 /// </summary>
-public record Blur
+public class Blur
 {
   /// <summary>
   ///   Radius

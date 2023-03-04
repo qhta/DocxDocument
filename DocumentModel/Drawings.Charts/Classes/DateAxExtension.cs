@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DateAxExtension Class.
 /// </summary>
-public record DateAxExtension
+public class DateAxExtension
 {
   /// <summary>
   ///   URI

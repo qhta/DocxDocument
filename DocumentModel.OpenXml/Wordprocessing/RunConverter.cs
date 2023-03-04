@@ -1,3 +1,5 @@
+using DocumentModel.OpenXml.BaseConverters;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -102,6 +104,8 @@ public static class RunConverter
   #region Run elements of various types conversion
   public static DMW.RunElement? CreateRunElement(DX.OpenXmlElement? openXmlElement)
   {
+    if (openXmlElement is DXW.RunProperties)
+      return null;
     if (openXmlElement is DXW.Text text)
       return DMXW.TextTypeConverter.CreateModelElement(text);
     if (openXmlElement is DXW.DeletedText deletedText)
@@ -166,9 +170,11 @@ public static class RunConverter
       return DMXW.DrawingConverter.CreateModelElement(drawing);
     if (openXmlElement is DXW.Ruby ruby)
       return DMXW.RubyConverter.CreateModelElement(ruby);
+    if (openXmlElement is DX.AlternateContent alternateContent)
+      return AlternateContentConverter.CreateModelElement(alternateContent);
 
     if (openXmlElement != null)
-      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in Body.CreateModelElement method");
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in Run.CreateModelElement method");
     return null;
   }
 
@@ -291,7 +297,7 @@ public static class RunConverter
     if (value is DMW.Ruby ruby)
       return DMXW.RubyConverter.CreateOpenXmlElement(ruby);
 
-    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in RunConverter.CreateOpenXmlElement method");
+    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in Run.CreateOpenXmlElement method");
   }
   #endregion
 
@@ -331,7 +337,7 @@ public static class RunConverter
       if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
         ok = false;
       var runItems = value.ToArray();
-      var elements = openXmlElement.Elements().ToArray();
+      var elements = openXmlElement.Elements().Where(item => !(item is DXW.RunProperties)).ToArray();
       for (int i = 0; i < System.Math.Min(runItems.Count(), elements.Count()); i++)
       {
         var element = elements[i];

@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 ///   Custom XML Data Properties.
 /// </summary>
-public record DataStoreItem
+public class DataStoreItem
 {
   /// <summary>
   ///   Custom XML Data ID

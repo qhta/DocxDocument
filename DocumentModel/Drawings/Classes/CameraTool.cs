@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the CameraTool Class.
 /// </summary>
-public record CameraTool
+public class CameraTool
 {
   /// <summary>
   ///   cellRange, this property is only available in Office 2010 and later.

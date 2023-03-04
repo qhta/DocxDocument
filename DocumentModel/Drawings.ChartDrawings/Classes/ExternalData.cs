@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ExternalData Class.
 /// </summary>
-public record ExternalData
+public class ExternalData
 {
   /// <summary>
   ///   RelId of the relationship for the external data, this property is only available in Office 2016 and later.

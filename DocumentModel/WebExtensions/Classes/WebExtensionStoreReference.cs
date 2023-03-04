@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionStoreReference Class.
 /// </summary>
-public record WebExtensionStoreReference
+public class WebExtensionStoreReference
 {
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.

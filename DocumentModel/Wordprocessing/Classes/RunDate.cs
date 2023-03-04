@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a date element of text run.
 /// </summary>
-public record RunDate: RunElement
+public class RunDate: RunElement
 {
   /// <summary>
   /// Specifies, which part of date is presented

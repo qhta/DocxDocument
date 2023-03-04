@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper Limit Properties.
 /// </summary>
-public record LimitUpperProperties
+public class LimitUpperProperties
 {
   /// <summary>
   ///   ControlProperties.

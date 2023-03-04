@@ -3,7 +3,7 @@ namespace DocumentModel.CustomXml;
 /// <summary>
 ///   Associated XML Schema.
 /// </summary>
-public record SchemaReference
+public class SchemaReference
 {
   /// <summary>
   ///   Target Namespace of Associated XML Schema

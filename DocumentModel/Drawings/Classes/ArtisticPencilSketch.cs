@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPencilSketch Class.
 /// </summary>
-public record ArtisticPencilSketch
+public class ArtisticPencilSketch
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

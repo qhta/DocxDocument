@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the UnsizedSplitButton Class.
 /// </summary>
-public record UnsizedSplitButton
+public class UnsizedSplitButton
 {
   /// <summary>
   ///   enabled

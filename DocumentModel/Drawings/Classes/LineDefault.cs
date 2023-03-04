@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Line Default.
 /// </summary>
-public record LineDefault
+public class LineDefault
 {
   public ShapeProperties? ShapeProperties { get; set; }
 

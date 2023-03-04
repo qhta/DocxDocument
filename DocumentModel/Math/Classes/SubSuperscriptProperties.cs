@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Sub-Superscript Properties.
 /// </summary>
-public record SubSuperscriptProperties
+public class SubSuperscriptProperties
 {
   /// <summary>
   ///   Align Scripts.

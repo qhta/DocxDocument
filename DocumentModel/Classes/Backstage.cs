@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Backstage Class.
 /// </summary>
-public record Backstage
+public class Backstage
 {
   /// <summary>
   ///   onShow, this property is only available in Office 2010 and later.

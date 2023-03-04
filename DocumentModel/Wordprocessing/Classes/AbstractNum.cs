@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Abstract Numbering Definition.
 /// </summary>
-public record AbstractNum
+public class AbstractNum
 {
   /// <summary>
   ///   Abstract Numbering Definition ID

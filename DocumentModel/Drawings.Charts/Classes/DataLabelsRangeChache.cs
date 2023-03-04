@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabelsRangeChache Class.
 /// </summary>
-public record DataLabelsRangeChache
+public class DataLabelsRangeChache
 {
   public UInt32? PointCount { get; set; }
 

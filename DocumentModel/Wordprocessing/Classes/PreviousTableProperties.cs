@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Table Properties.
 /// </summary>
-public record PreviousTableProperties
+public class PreviousTableProperties
 {
   /// <summary>
   ///   TableStyle.

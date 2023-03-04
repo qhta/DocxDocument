@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Line Charts.
 /// </summary>
-public record LineChart
+public class LineChart
 {
   /// <summary>
   ///   Grouping.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ParagraphPropertiesChange Class.
 /// </summary>
-public record ParagraphPropertiesChange
+public class ParagraphPropertiesChange
 {
   /// <summary>
   ///   author

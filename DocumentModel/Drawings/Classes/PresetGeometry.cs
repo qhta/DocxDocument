@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset geometry.
 /// </summary>
-public record PresetGeometry
+public class PresetGeometry
 {
   /// <summary>
   ///   Preset Shape

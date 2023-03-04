@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the EmbeddedObjectPart
 /// </summary>
-public record EmbeddedObjectPart
+public class EmbeddedObjectPart
 {
   public String? RelationshipType { get; set; }
 }

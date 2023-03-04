@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Fill Class.
 /// </summary>
-public record Fill
+public class Fill
 {
   /// <summary>
   ///   Unique Identifier

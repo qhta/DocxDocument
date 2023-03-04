@@ -13,7 +13,7 @@ namespace DocumentModel.Wordprocessing;
 ///   These two items are separated by the optional separator character, which defines the end of the field codes and the beginning of the field contents. 
 ///   When the separator character is missing, it specifies that the field has no result.
 /// </summary>
-public record FieldChar: RunElement
+public class FieldChar: RunElement
 {
   /// <summary>
   ///   Field Character Type

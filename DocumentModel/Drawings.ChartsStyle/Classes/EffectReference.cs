@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the EffectReference Class.
 /// </summary>
-public record EffectReference
+public class EffectReference
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

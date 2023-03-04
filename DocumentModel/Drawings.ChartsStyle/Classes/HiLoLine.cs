@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the HiLoLine Class.
 /// </summary>
-public record HiLoLine
+public class HiLoLine
 {
   public LineReference? LineReference { get; set; }
 

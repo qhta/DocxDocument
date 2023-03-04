@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableLook Class.
 /// </summary>
-public record TableLook
+public class TableLook
 {
   /// <summary>
   ///   val

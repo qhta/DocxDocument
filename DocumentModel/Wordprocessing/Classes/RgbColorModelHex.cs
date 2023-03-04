@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RgbColorModelHex Class.
 /// </summary>
-public record RgbColorModelHex
+public class RgbColorModelHex
 {
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.

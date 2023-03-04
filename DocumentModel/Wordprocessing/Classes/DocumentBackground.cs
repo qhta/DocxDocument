@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Background.
 /// </summary>
-public record DocumentBackground
+public class DocumentBackground
 {
   /// <summary>
   ///   color

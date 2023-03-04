@@ -4,7 +4,7 @@ using DocumentModel;
 namespace DocumentModel;
 
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
-public record HexChar : IConvertible
+public struct HexChar : IConvertible
 {
   private readonly ushort Value;
 
@@ -166,7 +166,7 @@ public record HexChar : IConvertible
 
   public static implicit operator uint?(HexChar? val)
   {
-    return (val != null) ? (uint)val.Value : null;
+    return (val is not null) ? (uint)val.Value : null;
   }
 
   public static implicit operator ulong(HexChar val)
@@ -176,17 +176,21 @@ public record HexChar : IConvertible
 
   public static implicit operator HexChar(ushort val)
   {
-    return new HexChar((ulong)val);
+    return new HexChar((ushort)val);
   }
 
   public static implicit operator HexChar(uint val)
   {
-    return new HexChar((ulong)val);
+    if (val>ushort.MaxValue)
+      throw new InvalidCastException($"Value {val} out of range to cast to HexChar");
+    return new HexChar((ushort)val);
   }
 
   public static implicit operator HexChar(ulong val)
   {
-    return new HexChar(val);
+    if (val>ushort.MaxValue)
+      throw new InvalidCastException($"Value {val} out of range to cast to HexChar");
+    return new HexChar((ushort)val);
   }
 
   public override string ToString()

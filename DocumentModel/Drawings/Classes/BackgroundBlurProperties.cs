@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundBlurProperties Class.
 /// </summary>
-public record BackgroundBlurProperties
+public class BackgroundBlurProperties
 {
   /// <summary>
   ///   OfficeArtExtensionList.

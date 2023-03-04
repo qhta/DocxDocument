@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the StyleEntry Class.
 /// </summary>
-public record StyleEntry
+public class StyleEntry
 {
   /// <summary>
   ///   mods, this property is only available in Office 2013 and later.

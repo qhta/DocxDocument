@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Data Labels.
 /// </summary>
-public record DataLabels
+public class DataLabels
 {
   public Collection<DataLabel>? Items { get; set; }
 

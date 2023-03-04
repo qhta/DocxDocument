@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Properties for VML Objects in Main Document.
 /// </summary>
-public record ShapeDefaults
+public class ShapeDefaults
 {
   public DocumentModel.Vml.ShapeDefaults? ChildShapeDefaults { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the SharedQatControls Class.
 /// </summary>
-public record SharedQatControls
+public class SharedQatControls
 {
   public QuickAccessToolbarControlClone? QuickAccessToolbarControlClone { get; set; }
 

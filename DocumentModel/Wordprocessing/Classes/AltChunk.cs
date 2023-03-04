@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AltChunk Class.
 /// </summary>
-public record AltChunk: BodyElement
+public class AltChunk: BodyElement
 {
   /// <summary>
   ///   Relationship to Part

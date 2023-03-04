@@ -8,7 +8,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Arc Segment.
 /// </summary>
-public record Arc: EmbeddedObjectElement
+public class Arc: EmbeddedObjectElement
 {
   /// <summary>
   ///   Optional String

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Drawing Object Non-Visual Properties.
 /// </summary>
-public record DocProperties
+public class DocProperties
 {
   /// <summary>
   ///   Application defined unique identifier.

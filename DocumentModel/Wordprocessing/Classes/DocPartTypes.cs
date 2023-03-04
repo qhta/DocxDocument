@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Entry Types.
 /// </summary>
-public record DocPartTypes
+public class DocPartTypes
 {
   /// <summary>
   ///   Entry Is Of All Types

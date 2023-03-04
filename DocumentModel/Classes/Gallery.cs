@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Gallery Class.
 /// </summary>
-public record Gallery
+public class Gallery
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

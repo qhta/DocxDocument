@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LightRig Class.
 /// </summary>
-public record LightRig
+public class LightRig
 {
   /// <summary>
   ///   rig, this property is only available in Office 2010 and later.

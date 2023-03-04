@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Line Spacing.
 /// </summary>
-public record LineSpacing
+public class LineSpacing
 {
   public Int32? SpacingPercent { get; set; }
 

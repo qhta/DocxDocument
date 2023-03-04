@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Soft Edge Effect.
 /// </summary>
-public record SoftEdge
+public class SoftEdge
 {
   /// <summary>
   ///   Radius

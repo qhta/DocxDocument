@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SingleDataSourceRecord Class.
 /// </summary>
-public record SingleDataSourceRecord
+public class SingleDataSourceRecord
 {
   /// <summary>
   ///   RecordIncluded.

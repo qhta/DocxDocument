@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Description.
 /// </summary>
-public record ColorTransformDescription
+public class ColorTransformDescription
 {
   /// <summary>
   ///   Language

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Trendline Class.
 /// </summary>
-public record Trendline
+public class Trendline
 {
   /// <summary>
   ///   Trendline Name.

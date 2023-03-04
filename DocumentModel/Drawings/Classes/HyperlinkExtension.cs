@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HyperlinkExtension Class.
 /// </summary>
-public record HyperlinkExtension
+public class HyperlinkExtension
 {
   /// <summary>
   ///   URI

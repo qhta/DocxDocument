@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoData Class.
 /// </summary>
-public record GeoData
+public class GeoData
 {
   /// <summary>
   ///   entityName, this property is only available in Office 2016 and later.

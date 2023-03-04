@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MajorGridlinesGridlines Class.
 /// </summary>
-public record MajorGridlinesGridlines
+public class MajorGridlinesGridlines
 {
   public ShapeProperties? ShapeProperties { get; set; }
 

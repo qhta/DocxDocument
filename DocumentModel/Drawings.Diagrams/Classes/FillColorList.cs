@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Fill Color List.
 /// </summary>
-public record FillColorList
+public class FillColorList
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   3-D Scene.
 /// </summary>
-public record Scene3D
+public class Scene3D
 {
   /// <summary>
   ///   Camera.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StringDataType Class.
 /// </summary>
-public record StringDataType
+public class StringDataType
 {
   /// <summary>
   ///   PointCount.

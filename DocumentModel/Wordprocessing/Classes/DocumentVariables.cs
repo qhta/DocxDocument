@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Variables.
 /// </summary>
-public record DocumentVariables
+public class DocumentVariables
 {
   public Collection<DocumentVariable>? Items { get; set; }
 }

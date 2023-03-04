@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom Set of Characters Which Cannot End a Line.
 /// </summary>
-public record NoLineBreaksAfterKinsoku
+public class NoLineBreaksAfterKinsoku
 {
   /// <summary>
   ///   lang

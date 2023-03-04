@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticChalkSketch Class.
 /// </summary>
-public record ArtisticChalkSketch
+public class ArtisticChalkSketch
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

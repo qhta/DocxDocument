@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the NotesSlidePart
 /// </summary>
-public record NotesSlidePart
+public class NotesSlidePart
 {
   /// <summary>
   ///   Gets the ChartParts of the NotesSlidePart

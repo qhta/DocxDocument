@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide Text.
 /// </summary>
-public record RubyContent
+public class RubyContent
 {
   public CustomXmlRuby? CustomXmlRuby { get; set; }
 

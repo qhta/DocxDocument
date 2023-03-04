@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FitText Class.
 /// </summary>
-public record FitText
+public class FitText
 {
   /// <summary>
   ///   Value

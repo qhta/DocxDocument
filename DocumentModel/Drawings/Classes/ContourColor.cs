@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Contour Color.
 /// </summary>
-public record ContourColor
+public class ContourColor
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

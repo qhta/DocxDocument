@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WordAttachedToolbarsPart
 /// </summary>
-public record WordAttachedToolbarsPart
+public class WordAttachedToolbarsPart
 {
   public String? ContentType { get; set; }
 

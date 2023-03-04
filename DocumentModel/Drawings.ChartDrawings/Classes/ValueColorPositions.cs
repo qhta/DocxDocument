@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the ValueColorPositions Class.
 /// </summary>
-public record ValueColorPositions
+public class ValueColorPositions
 {
   /// <summary>
   ///   count, this property is only available in Office 2016 and later.

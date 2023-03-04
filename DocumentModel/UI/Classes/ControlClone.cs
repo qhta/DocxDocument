@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the ControlClone Class.
 /// </summary>
-public record ControlClone
+public class ControlClone
 {
   /// <summary>
   ///   size

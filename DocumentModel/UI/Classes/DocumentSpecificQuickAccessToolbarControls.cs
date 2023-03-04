@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the DocumentSpecificQuickAccessToolbarControls Class.
 /// </summary>
-public record DocumentSpecificQuickAccessToolbarControls
+public class DocumentSpecificQuickAccessToolbarControls
 {
   public QuickAccessToolbarControlClone? QuickAccessToolbarControlClone { get; set; }
 

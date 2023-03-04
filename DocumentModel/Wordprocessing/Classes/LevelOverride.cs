@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LevelOverride Class.
 /// </summary>
-public record LevelOverride
+public class LevelOverride
 {
   /// <summary>
   ///   Numbering Level ID

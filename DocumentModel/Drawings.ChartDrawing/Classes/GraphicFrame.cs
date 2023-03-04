@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Graphic Frame.
 /// </summary>
-public record GraphicFrame
+public class GraphicFrame
 {
   /// <summary>
   ///   Reference to Custom Function

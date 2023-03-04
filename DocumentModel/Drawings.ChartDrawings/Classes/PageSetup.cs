@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PageSetup Class.
 /// </summary>
-public record PageSetup
+public class PageSetup
 {
   /// <summary>
   ///   paperSize, this property is only available in Office 2016 and later.

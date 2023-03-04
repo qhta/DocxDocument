@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Mcd Class.
 /// </summary>
-public record Mcd
+public class Mcd
 {
   /// <summary>
   ///   macroName

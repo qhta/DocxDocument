@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public record StyleDefinition
+public class StyleDefinition
 {
   /// <summary>
   ///   Unique Style ID

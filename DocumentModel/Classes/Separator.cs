@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Separator Class.
 /// </summary>
-public record Separator
+public class Separator
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

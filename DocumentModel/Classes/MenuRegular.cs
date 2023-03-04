@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the MenuRegular Class.
 /// </summary>
-public record MenuRegular
+public class MenuRegular
 {
   /// <summary>
   ///   itemSize, this property is only available in Office 2010 and later.

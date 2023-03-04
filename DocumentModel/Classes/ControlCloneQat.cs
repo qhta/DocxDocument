@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ControlCloneQat Class.
 /// </summary>
-public record ControlCloneQat
+public class ControlCloneQat
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageDropDown Class.
 /// </summary>
-public record BackstageDropDown
+public class BackstageDropDown
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

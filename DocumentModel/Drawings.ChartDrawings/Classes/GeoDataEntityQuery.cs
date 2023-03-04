@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoDataEntityQuery Class.
 /// </summary>
-public record GeoDataEntityQuery
+public class GeoDataEntityQuery
 {
   /// <summary>
   ///   entityType, this property is only available in Office 2016 and later.

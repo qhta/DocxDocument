@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PivotOptions Class.
 /// </summary>
-public record PivotOptions
+public class PivotOptions
 {
   /// <summary>
   ///   DropZoneFilter.

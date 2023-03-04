@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MathControlMoveType Class.
 /// </summary>
-public record MathControlMoveType
+public class MathControlMoveType
 {
   /// <summary>
   ///   author

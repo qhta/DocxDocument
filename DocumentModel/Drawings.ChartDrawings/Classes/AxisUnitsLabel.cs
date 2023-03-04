@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the AxisUnitsLabel Class.
 /// </summary>
-public record AxisUnitsLabel
+public class AxisUnitsLabel
 {
   /// <summary>
   ///   Text.

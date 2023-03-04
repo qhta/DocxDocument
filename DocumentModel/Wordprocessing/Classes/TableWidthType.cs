@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableWidthType Class.
 /// </summary>
-public record TableWidthType
+public class TableWidthType
 {
   /// <summary>
   ///   Table Width Value

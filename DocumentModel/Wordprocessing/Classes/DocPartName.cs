@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Entry Name.
 /// </summary>
-public record DocPartName
+public class DocPartName
 {
   /// <summary>
   ///   Name Value

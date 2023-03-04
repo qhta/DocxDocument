@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DigitalSignatureOriginPart
 /// </summary>
-public record DigitalSignatureOriginPart
+public class DigitalSignatureOriginPart
 {
   public String? ContentType { get; set; }
 

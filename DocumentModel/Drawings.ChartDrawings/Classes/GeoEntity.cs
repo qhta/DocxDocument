@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoEntity Class.
 /// </summary>
-public record GeoEntity
+public class GeoEntity
 {
   /// <summary>
   ///   entityName, this property is only available in Office 2016 and later.

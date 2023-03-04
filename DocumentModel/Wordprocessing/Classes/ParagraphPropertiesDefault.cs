@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Paragraph Properties.
 /// </summary>
-public record ParagraphPropertiesDefault
+public class ParagraphPropertiesDefault
 {
   /// <summary>
   ///   Paragraph Properties.

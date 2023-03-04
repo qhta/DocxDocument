@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtBlock Class.
 /// </summary>
-public record SdtBlock: BodyElement
+public class SdtBlock: BodyElement
 {
   /// <summary>
   ///   Block-Level Structured Document Tag Content.

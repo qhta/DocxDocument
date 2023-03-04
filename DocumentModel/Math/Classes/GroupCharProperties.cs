@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Group-Character Properties.
 /// </summary>
-public record GroupCharProperties
+public class GroupCharProperties
 {
   /// <summary>
   ///   Group Character (Grouping Character).

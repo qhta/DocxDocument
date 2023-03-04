@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   n-ary Properties.
 /// </summary>
-public record NaryProperties
+public class NaryProperties
 {
   /// <summary>
   ///   n-ary Operator Character.

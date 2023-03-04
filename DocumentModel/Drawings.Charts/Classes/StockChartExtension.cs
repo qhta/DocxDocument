@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StockChartExtension Class.
 /// </summary>
-public record StockChartExtension
+public class StockChartExtension
 {
   /// <summary>
   ///   URI

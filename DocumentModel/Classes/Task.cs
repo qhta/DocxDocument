@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Task Class.
 /// </summary>
-public record Task
+public class Task
 {
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.

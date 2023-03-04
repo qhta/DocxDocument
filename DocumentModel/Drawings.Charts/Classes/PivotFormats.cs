@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   pivot chart format persistence data.
 /// </summary>
-public record PivotFormats
+public class PivotFormats
 {
   public Collection<PivotFormat>? Items { get; set; }
 }

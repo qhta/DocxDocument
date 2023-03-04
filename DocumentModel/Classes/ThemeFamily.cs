@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ThemeFamily Class.
 /// </summary>
-public record ThemeFamily
+public class ThemeFamily
 {
   /// <summary>
   ///   name, this property is only available in Office 2013 and later.

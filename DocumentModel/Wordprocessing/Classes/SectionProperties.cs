@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Section Properties.
 /// </summary>
-public record SectionProperties: BodyElement
+public partial class SectionProperties : BodyElement
 {
   /// <summary>
   ///   Physical Section Mark Character Revision ID
@@ -27,11 +27,11 @@ public record SectionProperties: BodyElement
 
   public SectionMarkKind? SectionType { get; set; }
 
-    [XmlAnyElement]
-  public HeaderReference? HeaderReference { get; set; }
+  [XmlAnyElement]
+  public HeaderReferences? HeaderReferences { get; set; }
 
   [XmlAnyElement]
-  public FooterReference? FooterReference { get; set; }
+  public FooterReferences? FooterReferences { get; set; }
 
   [XmlAnyElement]
   public FootnoteProperties? FootnoteProperties { get; set; }
@@ -85,4 +85,5 @@ public record SectionProperties: BodyElement
 
   [XmlAnyElement]
   public SectionPropertiesChange? SectionPropertiesChange { get; set; }
+
 }

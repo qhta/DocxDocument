@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the CoreFilePropertiesPart
 /// </summary>
-public record CoreFilePropertiesPart
+public class CoreFilePropertiesPart
 {
   public String? ContentType { get; set; }
 

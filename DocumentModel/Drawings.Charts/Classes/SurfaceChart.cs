@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Surface Charts.
 /// </summary>
-public record SurfaceChart
+public class SurfaceChart
 {
   /// <summary>
   ///   Wireframe.

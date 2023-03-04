@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Date Axis.
 /// </summary>
-public record DateAxis
+public class DateAxis
 {
   /// <summary>
   ///   Axis ID.

@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   List of Glossary Document Entries.
 /// </summary>
-public record DocParts
+public class DocParts
 {
 }

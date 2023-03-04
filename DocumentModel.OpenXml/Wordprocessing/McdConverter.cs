@@ -72,16 +72,16 @@ public static class McdConverter
   private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.BEncrypt?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.BEncrypt.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.BEncrypt.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.BEncrypt?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.BEncrypt?.Value == null && value is null) return true;
     diffs?.Add(objName, "BEncrypt", openXmlElement?.BEncrypt?.Value, value);
     return false;
   }
   
   private static void SetBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.BEncrypt = value.ToString();
     else
       openXmlElement.BEncrypt = null;
@@ -100,16 +100,16 @@ public static class McdConverter
   private static bool CmpCmg(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Cmg?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.Cmg.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Cmg.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.Cmg?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.Cmg?.Value == null && value is null) return true;
     diffs?.Add(objName, "Cmg", openXmlElement?.Cmg?.Value, value);
     return false;
   }
   
   private static void SetCmg(DXOW.Mcd openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.Cmg = value.ToString();
     else
       openXmlElement.Cmg = null;

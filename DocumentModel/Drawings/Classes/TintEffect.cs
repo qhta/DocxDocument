@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TintEffect Class.
 /// </summary>
-public record TintEffect
+public class TintEffect
 {
   /// <summary>
   ///   Hue

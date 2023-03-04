@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the VmlDrawingPart
 /// </summary>
-public record VmlDrawingPart
+public class VmlDrawingPart
 {
   public String? ContentType { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   External Data Source to Merge Field Mapping.
 /// </summary>
-public record FieldMapData
+public class FieldMapData
 {
   /// <summary>
   ///   Merge Field Mapping.

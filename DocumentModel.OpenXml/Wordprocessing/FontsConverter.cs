@@ -5,21 +5,17 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class FontsConverter
 {
-  private static Collection<DMW.Font>? GetItems(DXW.Fonts openXmlElement)
+  private static void GetItems(DXW.Fonts openXmlElement, ICollection<DMW.Font> collection)
   {
-    var collection = new Collection<DMW.Font>();
     foreach (var item in openXmlElement.Elements<DXW.Font>())
     {
       var newItem = DMXW.FontConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Fonts openXmlElement, ICollection<DMW.Font>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.Font>();
     var origElementsCount = origElements.Count();
@@ -47,7 +43,7 @@ public static class FontsConverter
     return false;
   }
   
-  private static void SetItems(DXW.Fonts openXmlElement, Collection<DMW.Font>? value)
+  private static void SetItems(DXW.Fonts openXmlElement, ICollection<DMW.Font>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Font>();
     if (value != null)
@@ -66,7 +62,8 @@ public static class FontsConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Fonts();
-      value.Items = GetItems(openXmlElement);
+      GetItems(openXmlElement, value);
+      if (value.Count == 0) return null;
       return value;
     }
     return null;
@@ -77,7 +74,7 @@ public static class FontsConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -96,6 +93,6 @@ public static class FontsConverter
   
   public static void UpdateOpenXmlElement(DXW.Fonts openXmlElement, DMW.Fonts value)
   {
-    SetItems(openXmlElement, value?.Items);
+    SetItems(openXmlElement, value);
   }
 }
