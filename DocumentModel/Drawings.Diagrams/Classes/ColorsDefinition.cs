@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Color Transform Definitions.
 /// </summary>
-public record ColorsDefinition
+public class ColorsDefinition
 {
   /// <summary>
   ///   Unique ID

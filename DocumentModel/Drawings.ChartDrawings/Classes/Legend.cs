@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Legend Class.
 /// </summary>
-public record Legend
+public class Legend
 {
   /// <summary>
   ///   pos, this property is only available in Office 2016 and later.

@@ -7,17 +7,17 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class Fonts : ElementCollection<Font>
 {
-  public new Collection<Font>? Items
-  {
-    get => this;
-    set
-    {
-      if (value!=null)
-      {
-        Clear();
-        foreach (var item in value)
-          Add(item);
-      }
-    }
-  }
+  //public new Collection<Font>? Items
+  //{
+  //  get => this;
+  //  set
+  //  {
+  //    if (value!=null)
+  //    {
+  //      Clear();
+  //      foreach (var item in value)
+  //        Add(item);
+  //    }
+  //  }
+  //}
 }

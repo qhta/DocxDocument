@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the OpenXmlSolidColorFillPropertiesElement Class.
 /// </summary>
-public record OpenXmlSolidColorFillPropertiesElement
+public class OpenXmlSolidColorFillPropertiesElement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

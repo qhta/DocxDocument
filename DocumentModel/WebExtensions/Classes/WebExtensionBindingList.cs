@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionBindingList Class.
 /// </summary>
-public record WebExtensionBindingList
+public class WebExtensionBindingList
 {
   public Collection<WebExtensionBinding>? WebExtensionBindings { get; set; }
 }

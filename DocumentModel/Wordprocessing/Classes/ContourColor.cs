@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ContourColor Class.
 /// </summary>
-public record ContourColor
+public class ContourColor
 {
   public RgbColorModelHex? RgbColorModelHex { get; set; }
 

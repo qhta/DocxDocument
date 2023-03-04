@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the VisibleButton Class.
 /// </summary>
-public record VisibleButton
+public class VisibleButton
 {
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.

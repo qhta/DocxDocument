@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the WordNonVisualContentPartShapeProperties Class.
 /// </summary>
-public record WordNonVisualContentPartShapeProperties
+public class WordNonVisualContentPartShapeProperties
 {
   /// <summary>
   ///   NonVisualDrawingProperties.

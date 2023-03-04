@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the EastAsianLayout Class.
 /// </summary>
-public record EastAsianLayout
+public class EastAsianLayout
 {
   /// <summary>
   ///   East Asian Typography Run ID

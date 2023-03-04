@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Pictures;
 /// <summary>
 ///   Non-Visual Picture Properties.
 /// </summary>
-public record NonVisualPictureProperties
+public class NonVisualPictureProperties
 {
   /// <summary>
   ///   Non-Visual Drawing Properties.

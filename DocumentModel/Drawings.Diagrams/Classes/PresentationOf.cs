@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Presentation Of.
 /// </summary>
-public record PresentationOf
+public class PresentationOf
 {
   /// <summary>
   ///   Axis

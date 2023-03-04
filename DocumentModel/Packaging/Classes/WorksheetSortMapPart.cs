@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WorksheetSortMapPart
 /// </summary>
-public record WorksheetSortMapPart
+public class WorksheetSortMapPart
 {
   public String? ContentType { get; set; }
 

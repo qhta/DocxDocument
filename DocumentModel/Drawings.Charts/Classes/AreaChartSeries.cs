@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Area Chart Series.
 /// </summary>
-public record AreaChartSeries
+public class AreaChartSeries
 {
   /// <summary>
   ///   Index.

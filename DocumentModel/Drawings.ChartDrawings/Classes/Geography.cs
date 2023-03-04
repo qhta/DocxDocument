@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Geography Class.
 /// </summary>
-public record Geography
+public class Geography
 {
   /// <summary>
   ///   projectionType, this property is only available in Office 2016 and later.

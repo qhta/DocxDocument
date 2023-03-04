@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Duotone Effect.
 /// </summary>
-public record Duotone
+public class Duotone
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

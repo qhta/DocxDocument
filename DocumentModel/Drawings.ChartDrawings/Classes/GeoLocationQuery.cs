@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the GeoLocationQuery Class.
 /// </summary>
-public record GeoLocationQuery
+public class GeoLocationQuery
 {
   /// <summary>
   ///   countryRegion, this property is only available in Office 2016 and later.

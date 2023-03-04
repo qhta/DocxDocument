@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Alpha Inset/Outset Effect.
 /// </summary>
-public record AlphaOutset
+public class AlphaOutset
 {
   /// <summary>
   ///   Radius

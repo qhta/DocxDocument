@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ChartShapeProperties Class.
 /// </summary>
-public record ChartShapeProperties
+public class ChartShapeProperties
 {
   /// <summary>
   ///   Black and White Mode

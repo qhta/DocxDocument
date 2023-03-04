@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableCellMargin Class.
 /// </summary>
-public record TableCellMargin
+public class TableCellMargin
 {
   /// <summary>
   ///   Table Cell Top Margin Exception.

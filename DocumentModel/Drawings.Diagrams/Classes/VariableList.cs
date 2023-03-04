@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Variable List.
 /// </summary>
-public record VariableList
+public class VariableList
 {
   public Boolean? OrganizationChart { get; set; }
 

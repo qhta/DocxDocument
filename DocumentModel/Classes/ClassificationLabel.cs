@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ClassificationLabel Class.
 /// </summary>
-public record ClassificationLabel
+public class ClassificationLabel
 {
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.

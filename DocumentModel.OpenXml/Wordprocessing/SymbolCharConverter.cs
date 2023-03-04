@@ -36,16 +36,16 @@ public static class SymbolCharConverter
   private static bool CmpChar(DXW.SymbolChar openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Char?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.Char.Value) == value)
+      if (HexCharConverter.GetValue(openXmlElement.Char.Value).Equals(value))
         return true;
-    if (openXmlElement == null && openXmlElement?.Char?.Value == null && value == null) return true;
+    if (openXmlElement == null && openXmlElement?.Char?.Value == null && value is null) return true;
     diffs?.Add(objName, "Char", openXmlElement?.Char?.Value, value);
     return false;
   }
   
   private static void SetChar(DXW.SymbolChar openXmlElement, DM.HexChar? value)
   {
-    if (value != null)
+    if (value is not null)
       openXmlElement.Char = value.ToString();
     else
       openXmlElement.Char = null;

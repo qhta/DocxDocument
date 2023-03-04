@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the UpDownBars Class.
 /// </summary>
-public record UpDownBars
+public class UpDownBars
 {
   /// <summary>
   ///   Gap Width.

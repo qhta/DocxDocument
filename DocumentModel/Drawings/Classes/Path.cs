@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Shape Path.
 /// </summary>
-public record Path
+public class Path
 {
   /// <summary>
   ///   Path Width

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom Set Of Characters Which Cannot Begin A Line.
 /// </summary>
-public record NoLineBreaksBeforeKinsoku
+public class NoLineBreaksBeforeKinsoku
 {
   /// <summary>
   ///   lang

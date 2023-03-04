@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   VML Object.
 /// </summary>
-public record Picture: RunElement
+public class Picture: RunElement
 {
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.

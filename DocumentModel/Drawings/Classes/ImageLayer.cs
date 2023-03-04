@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ImageLayer Class.
 /// </summary>
-public record ImageLayer
+public class ImageLayer
 {
   /// <summary>
   ///   embed, this property is only available in Office 2010 and later.

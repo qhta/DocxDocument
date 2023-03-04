@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   MoveTo track change marker
 /// </summary>
-public record MoveTo: TrackChangeType
+public class MoveTo: TrackChangeType
 {
 }

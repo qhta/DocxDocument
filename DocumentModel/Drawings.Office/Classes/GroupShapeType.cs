@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the GroupShapeType Class.
 /// </summary>
-public record GroupShapeType
+public class GroupShapeType
 {
   /// <summary>
   ///   GroupShapeNonVisualProperties.

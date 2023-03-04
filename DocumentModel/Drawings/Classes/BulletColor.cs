@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Color Specified.
 /// </summary>
-public record BulletColor
+public class BulletColor
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

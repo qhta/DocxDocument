@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlConflictInsertionRangeStart Class.
 /// </summary>
-public record CustomXmlConflictInsertionRangeStart: TrackChangeType2
+public class CustomXmlConflictInsertionRangeStart: TrackChangeType2
 {
 }

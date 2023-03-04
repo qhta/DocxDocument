@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticGlass Class.
 /// </summary>
-public record ArtisticGlass
+public class ArtisticGlass
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Commands Class.
 /// </summary>
-public record Commands
+public class Commands
 {
   public Collection<Command>? Items { get; set; }
 }

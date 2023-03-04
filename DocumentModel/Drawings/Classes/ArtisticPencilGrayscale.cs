@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPencilGrayscale Class.
 /// </summary>
-public record ArtisticPencilGrayscale
+public class ArtisticPencilGrayscale
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

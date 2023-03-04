@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Table Row Properties.
 /// </summary>
-public record PreviousTableRowProperties
+public class PreviousTableRowProperties
 {
   public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
 

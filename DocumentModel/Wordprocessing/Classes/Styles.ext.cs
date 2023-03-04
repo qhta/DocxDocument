@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial record Styles //: ICollection<Style>, IDictionary<string, Style>
+public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
 {
   [XmlIgnore]
   public IDictionary<string, Style> StyleIndex => DefinedStyles.StyleIndex;

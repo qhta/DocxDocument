@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   List of Shape Connection Sites.
 /// </summary>
-public record ConnectionSiteList
+public class ConnectionSiteList
 {
   public Collection<ConnectionSite>? ConnectionSites { get; set; }
 }

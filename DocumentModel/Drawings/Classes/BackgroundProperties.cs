@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundProperties Class.
 /// </summary>
-public record BackgroundProperties
+public class BackgroundProperties
 {
   /// <summary>
   ///   bwMode, this property is only available in Office 2013 and later.

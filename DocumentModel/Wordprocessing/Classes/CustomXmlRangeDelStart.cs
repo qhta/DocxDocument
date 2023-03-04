@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlDelRangeStart Class.
 /// </summary>
-public record CustomXmlDelRangeStart: TrackChangeType
+public class CustomXmlDelRangeStart: TrackChangeType
 {
 }

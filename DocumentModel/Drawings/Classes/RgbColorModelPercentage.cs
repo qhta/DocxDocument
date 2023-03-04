@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   RGB Color Model - Percentage Variant.
 /// </summary>
-public record RgbColorModelPercentage
+public class RgbColorModelPercentage
 {
   /// <summary>
   ///   Red

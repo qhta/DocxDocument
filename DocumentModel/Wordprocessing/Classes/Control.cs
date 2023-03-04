@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Control Class.
 /// </summary>
-public record Control: EmbeddedObjectElement
+public class Control: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Name for Embedded Control

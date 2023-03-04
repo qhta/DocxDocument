@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LinePropertiesType Class.
 /// </summary>
-public record LinePropertiesType
+public class LinePropertiesType
 {
   /// <summary>
   ///   line width

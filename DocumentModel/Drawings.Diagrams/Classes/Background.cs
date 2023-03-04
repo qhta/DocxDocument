@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Background Formatting.
 /// </summary>
-public record Background
+public class Background
 {
   public Boolean? NoFill { get; set; }
 

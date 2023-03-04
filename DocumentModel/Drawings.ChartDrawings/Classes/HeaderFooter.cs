@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the HeaderFooter Class.
 /// </summary>
-public record HeaderFooter
+public class HeaderFooter
 {
   /// <summary>
   ///   alignWithMargins, this property is only available in Office 2016 and later.

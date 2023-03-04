@@ -33,7 +33,7 @@ public static class HexCharConverter
     public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexChar? value, DiffList? diffs, string? objName)
   {
     var valProperty = element?.GetType().GetProperty("Val");
-    if (valProperty != null && value != null)
+    if (valProperty != null && value is not null)
     {
       var valStr = (string?)valProperty.GetValue(element);
       var valueStr = value.ToString();
@@ -41,21 +41,21 @@ public static class HexCharConverter
       diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
       return false;
     }
-    if (valProperty == null && value == null) return true;
+    if (valProperty == null && value is null) return true;
     diffs?.Add(objName, element?.GetType().ToString(), element, value);
     return false;
   }
 
   public static DX.HexBinaryValue? CreateHexBinaryValue(HexChar? value)
   {
-    if (value != null) return new DX.HexBinaryValue(value);
+    if (value is not null) return new DX.HexBinaryValue(value);
     return null;
   }
 
   public static HexBinaryType? CreateValue<HexBinaryType>(HexChar? value)
     where HexBinaryType : DXW.LongHexNumberType, new()
   {
-    if (value != null)
+    if (value is not null)
     {
       var element = new HexBinaryType();
       element.Val = new DX.HexBinaryValue(value);

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageEditBox Class.
 /// </summary>
-public record BackstageEditBox
+public class BackstageEditBox
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

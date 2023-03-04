@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Extra Color Scheme.
 /// </summary>
-public record ExtraColorScheme
+public class ExtraColorScheme
 {
   /// <summary>
   ///   ColorScheme.

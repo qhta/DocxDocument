@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SimpleFieldRuby Class.
 /// </summary>
-public record SimpleFieldRuby
+public class SimpleFieldRuby
 {
   /// <summary>
   ///   instr

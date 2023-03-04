@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Major Font.
 /// </summary>
-public record MajorFont
+public class MajorFont
 {
   public TextFontType? LatinFont { get; set; }
 

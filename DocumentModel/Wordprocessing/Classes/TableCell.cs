@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Cell.
 /// </summary>
-public record TableCell
+public class TableCell
 {
   /// <summary>
   ///   Table Cell Properties.

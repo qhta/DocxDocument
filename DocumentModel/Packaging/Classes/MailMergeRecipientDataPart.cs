@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines MailMergeRecipientDataPart.
 /// </summary>
-public record MailMergeRecipientDataPart
+public class MailMergeRecipientDataPart
 {
   /// <summary>
   ///   Gets or sets the part's root element when the part's content type is

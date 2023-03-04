@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ForegroundMark Class.
 /// </summary>
-public record ForegroundMark
+public class ForegroundMark
 {
   /// <summary>
   ///   x1, this property is only available in Office 2010 and later.

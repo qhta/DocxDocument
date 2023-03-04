@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   XY Adjust Handle.
 /// </summary>
-public record AdjustHandleXY
+public class AdjustHandleXY
 {
   /// <summary>
   ///   Horizontal Adjustment Guide

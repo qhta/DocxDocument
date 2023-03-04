@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the Wall Class.
 /// </summary>
-public record Wall
+public class Wall
 {
   public LineReference? LineReference { get; set; }
 

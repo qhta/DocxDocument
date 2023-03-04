@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingCanvas;
 /// <summary>
 ///   Defines the BackgroundFormatting Class.
 /// </summary>
-public record BackgroundFormatting
+public class BackgroundFormatting
 {
   public Boolean? NoFill { get; set; }
 

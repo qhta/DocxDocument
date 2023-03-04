@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredLineSeriesExtension Class.
 /// </summary>
-public record FilteredLineSeriesExtension
+public class FilteredLineSeriesExtension
 {
   /// <summary>
   ///   LineChartSeries.

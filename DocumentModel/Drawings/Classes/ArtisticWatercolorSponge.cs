@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticWatercolorSponge Class.
 /// </summary>
-public record ArtisticWatercolorSponge
+public class ArtisticWatercolorSponge
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

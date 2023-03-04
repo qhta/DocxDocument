@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Series Text.
 /// </summary>
-public record SeriesText
+public class SeriesText
 {
   /// <summary>
   ///   StringReference.

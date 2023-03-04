@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Paragraph Properties.
 /// </summary>
-public record ParagraphPropertiesExtended
+public class ParagraphPropertiesExtended
 {
   /// <summary>
   ///   ParagraphStyleId.

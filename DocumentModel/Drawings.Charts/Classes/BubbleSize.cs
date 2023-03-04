@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BubbleSize Class.
 /// </summary>
-public record BubbleSize
+public class BubbleSize
 {
   public NumberReference? NumberReference { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Layout Definition.
 /// </summary>
-public record LayoutDefinition
+public class LayoutDefinition
 {
   /// <summary>
   ///   uniqueId

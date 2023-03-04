@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlConflictDeletionRangeStart Class.
 /// </summary>
-public record CustomXmlConflictDeletionRangeStart: TrackChangeType2
+public class CustomXmlConflictDeletionRangeStart: TrackChangeType2
 {
 }

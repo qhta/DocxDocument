@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Diagram Relationship Table.
 /// </summary>
-public record RelationTable
+public class RelationTable
 {
   /// <summary>
   ///   VML Extension Handling Behavior

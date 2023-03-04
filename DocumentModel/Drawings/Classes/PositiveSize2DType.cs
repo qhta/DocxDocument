@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PositiveSize2DType Class.
 /// </summary>
-public record PositiveSize2DType
+public class PositiveSize2DType
 {
   /// <summary>
   ///   Extent Length

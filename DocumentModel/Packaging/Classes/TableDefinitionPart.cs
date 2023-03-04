@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the TableDefinitionPart
 /// </summary>
-public record TableDefinitionPart
+public class TableDefinitionPart
 {
   public String? ContentType { get; set; }
 

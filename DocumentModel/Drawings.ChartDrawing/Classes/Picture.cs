@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Defines the Picture Class.
 /// </summary>
-public record Picture
+public class Picture
 {
   /// <summary>
   ///   Reference to Custom Function

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the OfficeArtExtensionList Class.
 /// </summary>
-public record OfficeArtExtensionList
+public class OfficeArtExtensionList
 {
   public Collection<Extension>? Extensions { get; set; }
 }

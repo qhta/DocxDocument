@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BodyProperties Class.
 /// </summary>
-public record BodyProperties
+public class BodyProperties
 {
   /// <summary>
   ///   Rotation

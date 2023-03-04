@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Draw Line To.
 /// </summary>
-public record LineTo
+public class LineTo
 {
   /// <summary>
   ///   Line end point.

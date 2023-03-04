@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SphereCoordinates Class.
 /// </summary>
-public record SphereCoordinates
+public class SphereCoordinates
 {
   /// <summary>
   ///   lat, this property is only available in Office 2010 and later.

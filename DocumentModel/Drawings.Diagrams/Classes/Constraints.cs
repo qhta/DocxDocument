@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Constraint List.
 /// </summary>
-public record Constraints
+public class Constraints
 {
   public Collection<Constraint>? Items { get; set; }
 }

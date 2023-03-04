@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Number Reference.
 /// </summary>
-public record NumberReference
+public class NumberReference
 {
   /// <summary>
   ///   Formula.

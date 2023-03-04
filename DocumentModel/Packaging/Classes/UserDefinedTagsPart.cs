@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the UserDefinedTagsPart
 /// </summary>
-public record UserDefinedTagsPart
+public class UserDefinedTagsPart
 {
   public String? ContentType { get; set; }
 

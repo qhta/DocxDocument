@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Font.
 /// </summary>
-public record SupplementalFont
+public class SupplementalFont
 {
   /// <summary>
   ///   Script

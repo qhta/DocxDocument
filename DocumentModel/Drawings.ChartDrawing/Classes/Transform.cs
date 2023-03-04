@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Graphic Frame Transform.
 /// </summary>
-public record Transform
+public class Transform
 {
   /// <summary>
   ///   Rotation

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Endnote Content.
 /// </summary>
-public record Endnote
+public class Endnote
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

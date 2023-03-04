@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the GroupBox Class.
 /// </summary>
-public record GroupBox
+public class GroupBox
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

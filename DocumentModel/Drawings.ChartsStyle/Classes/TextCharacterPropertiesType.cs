@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the TextCharacterPropertiesType Class.
 /// </summary>
-public record TextCharacterPropertiesType
+public class TextCharacterPropertiesType
 {
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PictureOptions Class.
 /// </summary>
-public record PictureOptions
+public class PictureOptions
 {
   /// <summary>
   ///   Apply To Front.

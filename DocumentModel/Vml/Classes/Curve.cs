@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Bezier Curve.
 /// </summary>
-public record Curve: EmbeddedObjectElement
+public class Curve: EmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

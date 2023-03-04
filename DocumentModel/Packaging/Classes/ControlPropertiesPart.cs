@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ControlPropertiesPart
 /// </summary>
-public record ControlPropertiesPart
+public class ControlPropertiesPart
 {
   public String? ContentType { get; set; }
 

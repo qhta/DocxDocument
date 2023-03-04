@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FootnoteEndnoteType Class.
 /// </summary>
-public record FootnoteEndnoteType
+public class FootnoteEndnoteType
 {
   /// <summary>
   ///   Footnote/Endnote Type

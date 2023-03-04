@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DiagramPersistLayoutPart
 /// </summary>
-public record DiagramPersistLayoutPart
+public class DiagramPersistLayoutPart
 {
   public String? ContentType { get; set; }
 

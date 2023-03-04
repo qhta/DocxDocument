@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Underline Class.
 /// </summary>
-public record Underline
+public class Underline
 {
   /// <summary>
   ///   Underline Style

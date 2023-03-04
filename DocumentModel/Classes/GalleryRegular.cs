@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the GalleryRegular Class.
 /// </summary>
-public record GalleryRegular
+public class GalleryRegular
 {
   /// <summary>
   ///   description, this property is only available in Office 2010 and later.

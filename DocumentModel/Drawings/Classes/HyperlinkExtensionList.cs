@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Future extensions..
 /// </summary>
-public record HyperlinkExtensionList
+public class HyperlinkExtensionList
 {
   public Collection<HyperlinkExtension>? HyperlinkExtensions { get; set; }
 }

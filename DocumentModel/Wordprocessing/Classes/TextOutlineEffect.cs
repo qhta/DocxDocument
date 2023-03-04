@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TextOutlineEffect Class.
 /// </summary>
-public record TextOutlineEffect
+public class TextOutlineEffect
 {
   /// <summary>
   ///   w, this property is only available in Office 2010 and later.

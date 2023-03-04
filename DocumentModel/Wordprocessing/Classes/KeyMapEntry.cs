@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the KeyMapEntry Class.
 /// </summary>
-public record KeyMapEntry
+public class KeyMapEntry
 {
   /// <summary>
   ///   chmPrimary

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Tight Wrapping.
 /// </summary>
-public record WrapTight
+public class WrapTight
 {
   /// <summary>
   ///   Text Wrapping Location

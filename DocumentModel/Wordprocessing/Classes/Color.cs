@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Color Class.
 /// </summary>
-public record Color
+public class Color
 {
   /// <summary>
   ///   Run Content Color

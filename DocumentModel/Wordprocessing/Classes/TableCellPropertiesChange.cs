@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for Table Cell Properties.
 /// </summary>
-public record TableCellPropertiesChange
+public class TableCellPropertiesChange
 {
   /// <summary>
   ///   author

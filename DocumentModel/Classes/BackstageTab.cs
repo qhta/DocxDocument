@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageTab Class.
 /// </summary>
-public record BackstageTab
+public class BackstageTab
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

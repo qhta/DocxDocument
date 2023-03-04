@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Automatic Captioning Setting.
 /// </summary>
-public record AutoCaption
+public class AutoCaption
 {
   /// <summary>
   ///   Identifier of Object to be Automatically Captioned

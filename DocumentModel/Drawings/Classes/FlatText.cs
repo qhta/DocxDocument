@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   No text in 3D scene.
 /// </summary>
-public record FlatText
+public class FlatText
 {
   /// <summary>
   ///   Z Coordinate

@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebExtensionPart
 /// </summary>
-public record WebExtensionPart
+public class WebExtensionPart
 {
   public String? ContentType { get; set; }
 

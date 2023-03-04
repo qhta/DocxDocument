@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the PivotTablePart
 /// </summary>
-public record PivotTablePart
+public class PivotTablePart
 {
   public String? ContentType { get; set; }
 

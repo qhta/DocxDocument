@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorScheme Class.
 /// </summary>
-public partial record ColorScheme
+public partial class ColorScheme
 {
   /// <summary>
   ///   Name

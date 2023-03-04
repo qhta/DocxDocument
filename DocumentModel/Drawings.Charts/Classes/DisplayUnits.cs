@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DisplayUnits Class.
 /// </summary>
-public record DisplayUnits
+public class DisplayUnits
 {
   public Double? CustomDisplayUnit { get; set; }
 

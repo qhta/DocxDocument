@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Picture Fill.
 /// </summary>
-public record BlipFill
+public class BlipFill
 {
   /// <summary>
   ///   DPI Setting

@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public record KnownDocumentProperties : ICollection<DocumentProperty>
+public class KnownDocumentProperties : ICollection<DocumentProperty>
 {
 
   private Dictionary<string, PropertyInfo> _properties = null!;

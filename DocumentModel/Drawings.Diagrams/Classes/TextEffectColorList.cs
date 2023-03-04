@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Text Effect Color List.
 /// </summary>
-public record TextEffectColorList
+public class TextEffectColorList
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

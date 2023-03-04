@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Caption Type Definition.
 /// </summary>
-public record Caption
+public class Caption
 {
   /// <summary>
   ///   Caption Type Name

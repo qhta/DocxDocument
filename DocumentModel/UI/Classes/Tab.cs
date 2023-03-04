@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the Tab Class.
 /// </summary>
-public record Tab
+public class Tab
 {
   /// <summary>
   ///   id

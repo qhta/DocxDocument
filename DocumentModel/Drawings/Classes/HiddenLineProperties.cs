@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenLineProperties Class.
 /// </summary>
-public record HiddenLineProperties
+public class HiddenLineProperties
 {
   /// <summary>
   ///   line width

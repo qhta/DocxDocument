@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the BarChartExtension Class.
 /// </summary>
-public record BarChartExtension
+public class BarChartExtension
 {
   /// <summary>
   ///   URI

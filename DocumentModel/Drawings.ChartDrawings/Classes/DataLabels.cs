@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataLabels Class.
 /// </summary>
-public record DataLabels
+public class DataLabels
 {
   /// <summary>
   ///   pos, this property is only available in Office 2016 and later.

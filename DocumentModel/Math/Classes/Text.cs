@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Text.
 /// </summary>
-public record Text
+public class Text
 {
   /// <summary>
   ///   space

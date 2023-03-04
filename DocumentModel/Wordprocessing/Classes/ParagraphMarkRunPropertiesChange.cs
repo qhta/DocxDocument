@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for Run Properties on the Paragraph Mark.
 /// </summary>
-public record ParagraphMarkRunPropertiesChange
+public class ParagraphMarkRunPropertiesChange
 {
   /// <summary>
   ///   author

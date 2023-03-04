@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenFillProperties Class.
 /// </summary>
-public record HiddenFillProperties
+public class HiddenFillProperties
 {
   /// <summary>
   ///   NoFill.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the NonVisualInkContentPartProperties Class.
 /// </summary>
-public record NonVisualInkContentPartProperties
+public class NonVisualInkContentPartProperties
 {
   /// <summary>
   ///   isComment, this property is only available in Office 2010 and later.

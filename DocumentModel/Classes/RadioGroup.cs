@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the RadioGroup Class.
 /// </summary>
-public record RadioGroup
+public class RadioGroup
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

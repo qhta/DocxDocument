@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Light Rig.
 /// </summary>
-public record LightRig
+public class LightRig
 {
   /// <summary>
   ///   Rig Preset

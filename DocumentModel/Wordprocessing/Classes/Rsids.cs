@@ -10,17 +10,17 @@ public class Rsids : ElementCollection<HexInt>
   /// </summary>
   public HexInt? RsidRoot { get; set; }
 
-  public new Collection<HexInt>? Items
-  {
-    get => this;
-    set
-    {
-      if (value != null)
-      {
-        Clear();
-        foreach (var item in value)
-          Add(item);
-      }
-    }
-  }
+  //public new Collection<HexInt>? Items
+  //{
+  //  get => this;
+  //  set
+  //  {
+  //    if (value != null)
+  //    {
+  //      Clear();
+  //      foreach (var item in value)
+  //        Add(item);
+  //    }
+  //  }
+  //}
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the NonVisualPicturePropertiesExtension Class.
 /// </summary>
-public record NonVisualPicturePropertiesExtension
+public class NonVisualPicturePropertiesExtension
 {
   /// <summary>
   ///   URI

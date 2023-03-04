@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Category List.
 /// </summary>
-public record StyleDisplayCategories
+public class StyleDisplayCategories
 {
   public Collection<StyleDisplayCategory>? Items { get; set; }
 }

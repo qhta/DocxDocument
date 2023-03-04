@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Radical Properties.
 /// </summary>
-public record RadicalProperties
+public class RadicalProperties
 {
   /// <summary>
   ///   Hide Degree.

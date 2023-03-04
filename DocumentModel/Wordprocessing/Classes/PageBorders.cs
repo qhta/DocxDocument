@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageBorders Class.
 /// </summary>
-public record PageBorders: SectionPropertiesElement
+public class PageBorders: SectionPropertiesElement
 {
   /// <summary>
   ///   Z-Ordering of Page Border
