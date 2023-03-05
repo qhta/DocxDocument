@@ -49,7 +49,7 @@ public class Table: BodyElement
 
   public TableGrid? TableGrid { get; set; }
 
-  public Collection<TableRow>? TableRows { get; set; }
+  public ElementCollection<TableRow>? TableRows { get; set; }
 
   public CustomXmlRow? CustomXmlRow { get; set; }
 
