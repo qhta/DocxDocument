@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml.Spreadsheet;
+
 namespace DocxDocument.Reader.Test;
 
 /// <summary>
@@ -71,6 +73,7 @@ public class TestBody : TestBase
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
     filename = Path.Combine(TestPath, filename);
+    WriteLine(filename);
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     var oldBody = document.Body ?? new();
@@ -88,20 +91,9 @@ public class TestBody : TestBase
 
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
-    Assert.IsNotNull(newBody, $"Deserialized body are null");
-    var oldBodyCount = oldBody.Count;
-    var newBodyCount = newBody.Count();
-    var newBodyArray = newBody.ToArray();
-    var oldBodyArray = oldBody.ToArray();
-    for (int i = 0; i < Math.Min(oldBodyCount, newBodyCount); i++)
-    {
-      var oldItem = oldBodyArray[i];
-      var newItem = newBodyArray[i];
-      var diffs = new DiffList();
-      Assert.True(DeepComparer.IsEqual(oldItem, newItem, diffs), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
-      //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
-    }
-    Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
+    Assert.IsNotNull(newBody, $"Deserialized body is null");
+    var diffs = new DiffList();
+    Assert.That(DeepComparer.IsEqual(oldBody, newBody, diffs), $"Deserialized {diffs.AssertMessage}");
   }
 
   /// <summary>

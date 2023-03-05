@@ -5,9 +5,9 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SdtContentRowConverter
 {
-  private static Collection<DMW.TableRow>? GetTableRows(DXW.SdtContentRow openXmlElement)
+  private static ElementCollection<DMW.TableRow>? GetTableRows(DXW.SdtContentRow openXmlElement)
   {
-    var collection = new Collection<DMW.TableRow>();
+    var collection = new ElementCollection<DMW.TableRow>();
     foreach (var item in openXmlElement.Elements<DXW.TableRow>())
     {
       var newItem = DMXW.TableRowConverter.CreateModelElement(item);
@@ -19,7 +19,7 @@ public static class SdtContentRowConverter
     return null;
   }
   
-  private static bool CmpTableRows(DXW.SdtContentRow openXmlElement, Collection<DMW.TableRow>? value, DiffList? diffs, string? objName)
+  private static bool CmpTableRows(DXW.SdtContentRow openXmlElement, ICollection<DMW.TableRow>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.TableRow>();
     var origElementsCount = origElements.Count();
@@ -47,7 +47,7 @@ public static class SdtContentRowConverter
     return false;
   }
   
-  private static void SetTableRows(DXW.SdtContentRow openXmlElement, Collection<DMW.TableRow>? value)
+  private static void SetTableRows(DXW.SdtContentRow openXmlElement, ICollection<DMW.TableRow>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.TableRow>();
     if (value != null)

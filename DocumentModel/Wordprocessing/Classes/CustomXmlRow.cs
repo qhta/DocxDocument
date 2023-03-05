@@ -7,7 +7,7 @@ public class CustomXmlRow
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 
-  public Collection<TableRow>? TableRows { get; set; }
+  public ElementCollection<TableRow>? TableRows { get; set; }
 
   public CustomXmlRow? ChildCustomXmlRow { get; set; }
 

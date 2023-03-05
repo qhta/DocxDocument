@@ -16,9 +16,9 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    testInstance.TestReadDocumentBody();
-    testInstance.TestReadBodyXmlSerialization(/*"Simple text paragraph.docx"*/);
-    testInstance.TestReadBodyJsonSerialization(/*"Simple text paragraph.docx"*/);
+    //testInstance.TestReadDocumentBody();
+    testInstance.TestReadBodyXmlSerialization("SDT.docx");
+    //testInstance.TestReadBodyJsonSerialization(/*"Simple text paragraph.docx"*/);
     Console.WriteLine("\nTest passed");
   }
 
