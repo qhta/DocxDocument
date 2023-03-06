@@ -1110,7 +1110,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       var val = ConvertValue(variant.VariantType, value);
       return val;
     }
-    return null;
+    return value;
   }
 
   public override int GetHashCode()

@@ -66,13 +66,18 @@ public static class CustomDocumentPropertyConverter
   /// <summary>
   ///   Variant Value
   /// </summary>
-  public static Variant? GetValue(CustomDocumentProperty openXmlElement)
+  public static object? GetValue(CustomDocumentProperty openXmlElement)
   {
     if (openXmlElement != null)
     {
       var valueElement = openXmlElement.Elements().FirstOrDefault(item => item.GetType().Name.StartsWith("VT"));
       if (valueElement != null)
-        return VariantConverter.GetVariant(valueElement);
+      {
+        var result = VariantConverter.GetVariant(valueElement);
+        if (result.Type!=null)
+          return Convert.ChangeType(result, result.Type);
+        return result;
+      }
     }
     return null;
   }
@@ -102,6 +107,8 @@ public static class CustomDocumentPropertyConverter
       value.PropertyId = GetPropertyId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.LinkTarget = GetLinkTarget(openXmlElement);
+      //if (value.Name=="Ukończono")
+      //  TestTools.Stop();
       value.Value = GetValue(openXmlElement);
     }
     return value;

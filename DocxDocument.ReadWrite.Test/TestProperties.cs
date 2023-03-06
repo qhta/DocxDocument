@@ -304,6 +304,7 @@ namespace DocxDocument.Reader.Test
         .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
       var filename = Path.Combine(TestPath, "CustomProperties.docx");
+      WriteLine($"Testing properties of: {filename}");
       var reader = new DocxReader(filename);
       var document = reader.ReadDocument(Parts.AllDocumentProperties);
       var oldProperties = document.Properties;//TestReadProperties(filename, true);
@@ -315,7 +316,7 @@ namespace DocxDocument.Reader.Test
         new SerializationOptions { AcceptAllProperties = true });
       try
       {
-      serializer.Serialize(textWriter, oldProperties);
+        serializer.Serialize(textWriter, oldProperties);
       }
       catch (Exception ex)
       {
@@ -329,17 +330,12 @@ namespace DocxDocument.Reader.Test
       var textReader = new StringReader(str);
       var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-      var oldPropertiesCount = oldProperties.Count();
-      var newPropertiesCount = newProperties.Count();
-      var newPropArray = newProperties.ToArray();
-      var oldPropArray = oldProperties.ToArray();
-      for (int i = 0; i < Math.Min(oldPropertiesCount, newPropertiesCount); i++)
-      {
-        if (newPropArray[i].Name == "HeadingPairs")
-          Debug.Assert(true);
-        Assert.That(newPropArray[i], Is.EqualTo(oldPropArray[i]), $"Deserialized property \"{newPropArray[i].Name}\" different for original");
-      }
-      Assert.That(newPropertiesCount, Is.EqualTo(oldPropertiesCount), $"Deserialized properties count different for original");
+      var diffs = new DiffList();
+      var ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
+      if (!ok)
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
     }
 
     //[Test]
