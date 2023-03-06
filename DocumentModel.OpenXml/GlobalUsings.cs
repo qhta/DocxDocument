@@ -11,8 +11,9 @@ global using DocumentFormat.OpenXml;
 global using DocumentFormat.OpenXml.VariantTypes;
 global using Qhta.Collections;
 global using Qhta.DeepCompare;
-global using Qhta.TypeUtils;
+global using Qhta.TestHelper;
 global using Qhta.TextUtils;
+global using Qhta.TypeUtils;
 global using Qhta.Xml.Serialization;
 
 global using DX = DocumentFormat.OpenXml;
