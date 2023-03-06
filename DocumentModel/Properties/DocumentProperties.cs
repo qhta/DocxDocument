@@ -41,7 +41,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
         yield return property;
     if (CustomProperties != null)
       foreach (var property in CustomProperties)
-        yield return property;  }
+        yield return property;  
+    }
 
   IEnumerator IEnumerable.GetEnumerator()
   {

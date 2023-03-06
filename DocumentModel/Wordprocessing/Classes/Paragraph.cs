@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class Paragraph: ICollection<ParagraphElement>, IEquatable<Paragraph>, BodyElement
+public partial class Paragraph: ICollection<ParagraphElement>, BodyElement
 {
   /// <summary>
   ///   paraId, this property is only available in Office 2010 and later.
@@ -52,34 +52,32 @@ public partial class Paragraph: ICollection<ParagraphElement>, IEquatable<Paragr
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 
+  //public virtual bool Equals(Paragraph? other)
+  //{
+  //  if (other== null) return false; 
+  //  if (this.ParagraphId != other.ParagraphId)
+  //    return false;
+  //  if (this.TextId != other.TextId)
+  //    return false;
+  //  if (this.RsidParagraphAddition != other.RsidParagraphAddition)
+  //    return false;
+  //  if (this.RsidParagraphDeletion != other.RsidParagraphDeletion)
+  //    return false;
+  //  if (this.RsidRunAdditionDefault != other.RsidRunAdditionDefault)
+  //    return false;
+  //  if (this.RsidParagraphMarkRevision != other.RsidParagraphMarkRevision)
+  //    return false;
+  //  if (this.RsidParagraphProperties != other.RsidParagraphProperties)
+  //    return false;
+  //  if (this.NoSpellError != other.NoSpellError)
+  //    return false;
+  //  if (this.ParagraphProperties != other.ParagraphProperties)
+  //    return false;
+  //  return true;
+  //}
 
-
-  public virtual bool Equals(Paragraph? other)
-  {
-    if (other== null) return false; 
-    if (this.ParagraphId != other.ParagraphId)
-      return false;
-    if (this.TextId != other.TextId)
-      return false;
-    if (this.RsidParagraphAddition != other.RsidParagraphAddition)
-      return false;
-    if (this.RsidParagraphDeletion != other.RsidParagraphDeletion)
-      return false;
-    if (this.RsidRunAdditionDefault != other.RsidRunAdditionDefault)
-      return false;
-    if (this.RsidParagraphMarkRevision != other.RsidParagraphMarkRevision)
-      return false;
-    if (this.RsidParagraphProperties != other.RsidParagraphProperties)
-      return false;
-    if (this.NoSpellError != other.NoSpellError)
-      return false;
-    if (this.ParagraphProperties != other.ParagraphProperties)
-      return false;
-    return true;
-  }
-
-  public override int GetHashCode()
-  {
-    return base.GetHashCode();
-  }
+  //public override int GetHashCode()
+  //{
+  //  return base.GetHashCode();
+  //}
 }

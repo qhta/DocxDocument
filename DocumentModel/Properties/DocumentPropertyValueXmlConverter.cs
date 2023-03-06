@@ -11,7 +11,7 @@ using Qhta.TestHelper;
 
 namespace DocumentModel;
 
-internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
+internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
@@ -27,8 +27,11 @@ internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
   {
     if (context?.Instance is DocumentProperty documentProperty)
     {
-      if (ExpectedType == null)
-        ExpectedType = documentProperty.Type;
+      //if (documentProperty.Name=="Ukończono")
+      //  TestTools.Stop();
+      //if (documentProperty.Name=="Ile")
+      //  TestTools.Stop();
+      ExpectedType = documentProperty.Type;
     }
     return base.ConvertFrom(context, Culture, value);
   }
@@ -43,7 +46,7 @@ internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
     {
       var valueType = value.GetType();
       if (!valueType.IsSimple())
-        Debug.Assert(true);
+        TestTools.Stop();
       var valueTypeConverter = new ValueTypeConverter(valueType);
       if (valueTypeConverter.CanConvertTo(typeof(string)))
       {
@@ -64,12 +67,14 @@ internal class DocumentPropertyXmlConverter : ValueTypeConverter, IXmlConverter
   {
     if (context is DocumentProperty documentProperty)
     {
+      //Debug.WriteLine($"ReadDocumentProperty({documentProperty.Name})");
+      //if (documentProperty.Name == "Przeznaczenie")
+      //  TestTools.Stop();
       var expectedType = documentProperty.Type;
       if (expectedType != null)
       {
         if (expectedType.Name == "Variant")
         {
-          //TestTools.Stop();
           return new VariantTypeXmlConverter().ReadXml(context, reader, objectType, existingValue, serializer);
         }
         else

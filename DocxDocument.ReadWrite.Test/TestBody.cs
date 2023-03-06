@@ -73,7 +73,7 @@ public class TestBody : TestBase
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
     filename = Path.Combine(TestPath, filename);
-    WriteLine(filename);
+    WriteLine($"Testing body of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     var oldBody = document.Body ?? new();
@@ -93,7 +93,11 @@ public class TestBody : TestBase
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newBody, $"Deserialized body is null");
     var diffs = new DiffList();
-    Assert.That(DeepComparer.IsEqual(oldBody, newBody, diffs), $"Deserialized {diffs.AssertMessage}");
+    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs); 
+    if (!ok)
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
   }
 
   /// <summary>

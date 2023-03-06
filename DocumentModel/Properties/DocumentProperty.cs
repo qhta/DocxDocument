@@ -76,7 +76,7 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
   ///   Value of the property
   /// </summary>
   //[TypeConverter(typeof(VariantTypeXmlConverter))]
-  [TypeConverter(typeof(DocumentPropertyXmlConverter))]
+  [TypeConverter(typeof(DocumentPropertyValueXmlConverter))]
   public object? Value
   {
     get => _value;
