@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Structured Document Tag Properties.
 /// </summary>
-public class SdtProperties : BodyElement
+public class SdtProperties : IBodyElement
 {
   public RunProperties? RunProperties { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide.
 /// </summary>
-public class Ruby: RunElement
+public class Ruby: IRunElement
 {
   /// <summary>
   ///   Phonetic Guide Properties.

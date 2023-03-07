@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BidirectionalOverride Class.
 /// </summary>
-public class BidirectionalOverride: DMW.ParagraphElement
+public class BidirectionalOverride: DMW.IParagraphElement
 {
   /// <summary>
   ///   val

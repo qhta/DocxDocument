@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a hyphen in a text run.
 /// </summary>
-public class Hyphen : RunElement
+public class Hyphen : IRunElement
 {
   /// <summary>
   /// Encoded char value of the hyphen.
