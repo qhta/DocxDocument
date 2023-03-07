@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Image File.
 /// </summary>
-public class ImageFile: EmbeddedObjectElement
+public class ImageFile: IEmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier

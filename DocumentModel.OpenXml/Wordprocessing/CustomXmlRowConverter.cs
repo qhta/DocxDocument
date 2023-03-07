@@ -80,7 +80,7 @@ public static class CustomXmlRowConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.TableRowConverter.CreateOpenXmlElement<DXW.TableRow>(item);
+        var newItem = DMXW.TableRowConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -107,7 +107,7 @@ public static class CustomXmlRowConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlRowConverter.CreateOpenXmlElement<DXW.CustomXmlRow>(value);
+      itemElement = DMXW.CustomXmlRowConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -133,7 +133,7 @@ public static class CustomXmlRowConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtRowConverter.CreateOpenXmlElement<DXW.SdtRow>(value);
+      itemElement = DMXW.SdtRowConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1014,10 +1014,9 @@ public static class CustomXmlRowConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlRow value)
-    where OpenXmlElementType: DXW.CustomXmlRow, new()
+  public static DXW.CustomXmlRow CreateOpenXmlElement(DMW.CustomXmlRow value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.CustomXmlRow();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

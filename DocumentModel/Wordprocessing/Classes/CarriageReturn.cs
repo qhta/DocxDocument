@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// The behavior of a carriage return in run content shall be identical to a break character with null type and clear attributes, 
 /// which shall end the current line and find the next available line on which to continue.
 /// </summary>
-public class CarriageReturn: RunElement
+public class CarriageReturn: IRunElement
 {
 }

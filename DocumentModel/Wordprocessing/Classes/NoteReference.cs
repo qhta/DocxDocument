@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///  and inherits the footnote/endnote reference mark's numbering.
 ///  If an footnote/endnote reference is specified within a footnote or endnote, then the document shall be considered non-conformant.
 /// </summary>
-public class NoteReference: RunElement
+public class NoteReference: IRunElement
 {
   /// <summary>
   /// Specifies, what class is a target of this reference.

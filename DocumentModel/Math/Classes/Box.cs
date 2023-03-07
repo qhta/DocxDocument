@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Box Function.
 /// </summary>
-public class Box: DMW.ParagraphElement
+public class Box: DMW.IParagraphElement
 {
   /// <summary>
   ///   Box Properties.

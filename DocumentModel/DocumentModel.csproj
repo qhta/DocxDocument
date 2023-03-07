@@ -27,6 +27,7 @@
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
+    <Compile Remove="Wordprocessing\Classes\Paragraph.ext.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -54,7 +54,7 @@ public static class SdtContentCellConverter
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.TableCellConverter.CreateOpenXmlElement<DXW.TableCell>(item);
+        var newItem = DMXW.TableCellConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -81,7 +81,7 @@ public static class SdtContentCellConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlCellConverter.CreateOpenXmlElement<DXW.CustomXmlCell>(value);
+      itemElement = DMXW.CustomXmlCellConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -107,7 +107,7 @@ public static class SdtContentCellConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtCellConverter.CreateOpenXmlElement<DXW.SdtCell>(value);
+      itemElement = DMXW.SdtCellConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

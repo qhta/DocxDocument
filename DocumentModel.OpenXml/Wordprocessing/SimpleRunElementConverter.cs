@@ -56,7 +56,7 @@ public static class SimpleRunElementConverter
   public static bool CompareModelElement(DXW.TabChar? openXmlElement, DMW.TabChar? value, DiffList? diffs, string? objName)
     => CheckModelElement<DMW.TabChar>(openXmlElement, value, diffs, objName);
 
-  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.RunElement value)
+  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.IRunElement value)
   {
     if (value is DMW.PageNumber)
         return new DXW.PageNumber();

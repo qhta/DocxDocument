@@ -1,19 +1,29 @@
+using System.ComponentModel;
+using System.Reflection.Metadata;
+
 using DocumentModel.Math;
+
+using static System.Collections.Specialized.BitVector32;
 
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class Paragraph: ICollection<ParagraphElement>, BodyElement
+public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyElement, ITableCellElement
 {
   /// <summary>
-  ///   paraId, this property is only available in Office 2010 and later.
+  ///   Specifies an identifier for a paragraph that is unique within the document part, 
+  ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
+  ///   Values MUST be greater than 0 and less than 0x80000000. 
   /// </summary>
   public HexInt? ParagraphId { get; set; }
 
   /// <summary>
-  ///   textId, this property is only available in Office 2010 and later.
+  ///   Specifies a version identifier for a paragraph. Values MUST be greater than 0 and less than 0x80000000. 
+  ///   Any element having this attribute MUST also have the <see cref="ParagraphId"/> attribute.
+  ///   If two documents have the same docId, then if two paragraphs within the same respective document part 
+  ///   that have the same <see cref="ParagraphId"/> and <see cref="TextId"/> SHOULD contain identical text, although formatting could differ. 
   /// </summary>
   public HexInt? TextId { get; set; }
 
@@ -43,7 +53,7 @@ public partial class Paragraph: ICollection<ParagraphElement>, BodyElement
   public HexInt? RsidRunAdditionDefault { get; set; }
   
   /// <summary>
-  ///   noSpellErr, this property is only available in Office 2010 and later.
+  ///   Specifies whether the text of that paragraph is free of detected spelling errors. 
   /// </summary>
   public Boolean? NoSpellError { get; set; }
   
@@ -52,32 +62,4 @@ public partial class Paragraph: ICollection<ParagraphElement>, BodyElement
   /// </summary>
   public ParagraphProperties? ParagraphProperties { get; set; }
 
-  //public virtual bool Equals(Paragraph? other)
-  //{
-  //  if (other== null) return false; 
-  //  if (this.ParagraphId != other.ParagraphId)
-  //    return false;
-  //  if (this.TextId != other.TextId)
-  //    return false;
-  //  if (this.RsidParagraphAddition != other.RsidParagraphAddition)
-  //    return false;
-  //  if (this.RsidParagraphDeletion != other.RsidParagraphDeletion)
-  //    return false;
-  //  if (this.RsidRunAdditionDefault != other.RsidRunAdditionDefault)
-  //    return false;
-  //  if (this.RsidParagraphMarkRevision != other.RsidParagraphMarkRevision)
-  //    return false;
-  //  if (this.RsidParagraphProperties != other.RsidParagraphProperties)
-  //    return false;
-  //  if (this.NoSpellError != other.NoSpellError)
-  //    return false;
-  //  if (this.ParagraphProperties != other.ParagraphProperties)
-  //    return false;
-  //  return true;
-  //}
-
-  //public override int GetHashCode()
-  //{
-  //  return base.GetHashCode();
-  //}
 }

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Delimiter Function.
 /// </summary>
-public class Delimiter: DMW.ParagraphElement
+public class Delimiter: DMW.IParagraphElement
 {
   /// <summary>
   ///   Delimiter Properties.

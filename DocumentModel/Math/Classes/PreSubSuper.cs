@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Pre-Sub-Superscript Function.
 /// </summary>
-public class PreSubSuper: DMW.ParagraphElement
+public class PreSubSuper: DMW.IParagraphElement
 {
   /// <summary>
   ///   Pre-Sub-Superscript Properties.

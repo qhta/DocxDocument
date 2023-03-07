@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a reference to section header or footer.
 /// </summary>
-public class HeaderFooterReferenceType: SectionPropertiesElement
+public class HeaderFooterReferenceType: ISectionPropertiesElement
 {
   /// <summary>
   ///   Specifies which header or footer (even, default, first) is referred.

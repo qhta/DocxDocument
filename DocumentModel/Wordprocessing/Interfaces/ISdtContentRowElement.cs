@@ -1,0 +1,8 @@
+namespace DocumentModel.Wordprocessing;
+
+/// <summary>
+///   Interface for elements that can be included in document <see cref="SdtContentRow"/> element.
+/// </summary>
+public interface ISdtContentRowElement
+{
+}

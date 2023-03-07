@@ -219,7 +219,7 @@ public static class CommentConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.ParagraphConverter.CompareParagraphElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.ParagraphConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
