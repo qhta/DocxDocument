@@ -99,8 +99,8 @@ public static class RunConverter
   }
   #endregion
 
-  #region Run elements of various types conversion
-  public static DMW.RunElement? CreateRunElement(DX.OpenXmlElement? openXmlElement)
+  #region Run elements conversion
+  public static DMW.IRunElement? CreateRunElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.RunProperties)
       return null;
@@ -176,7 +176,7 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CompareRunElement(DX.OpenXmlElement? openXmlElement, DMW.RunElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareRunElement(DX.OpenXmlElement? openXmlElement, DMW.IRunElement? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -254,7 +254,7 @@ public static class RunConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.RunElement value)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IRunElement value)
   {
     if (value is DMW.Text text)
       return DMXW.TextTypeConverter.CreateOpenXmlElement(text);
@@ -299,7 +299,7 @@ public static class RunConverter
   }
   #endregion
 
-  #region Run element conversion
+  #region Run conversion
   public static DMW.Run? CreateModelElement(DXW.Run? openXmlElement)
   {
     if (openXmlElement != null)
@@ -343,7 +343,7 @@ public static class RunConverter
         if (!CompareRunElement(element, item, diffs, objName))
           ok = false;
       }
-      if (!Int32ValueConverter.CmpValue(elements.Count(), runItems.Count(), diffs, objName, "RunItems.Count"))
+      if (!Int32ValueConverter.CmpValue(elements.Count(), runItems.Count(), diffs, objName, "Run.Items.Count"))
         ok = false;
       return ok;
     }

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageNumberType Class.
 /// </summary>
-public class PageNumberType: SectionPropertiesElement
+public class PageNumberType: ISectionPropertiesElement
 {
   /// <summary>
   ///   Page Number Format

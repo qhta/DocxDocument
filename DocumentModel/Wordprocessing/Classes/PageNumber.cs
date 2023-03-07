@@ -9,6 +9,6 @@ namespace DocumentModel.Wordprocessing;
 ///  A page number block shall be displayed using ascending decimal numbers, 
 ///  regardless of the languages specified in the parent run’s lang property .
 /// </summary>
-public class PageNumber: RunElement
+public class PageNumber: IRunElement
 {
 }

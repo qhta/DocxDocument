@@ -9,7 +9,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ParagraphConverter
 {
-  #region Revision Identifier for Paragraph Glyph Formatting
+  #region Revision Identifier for Paragraph Glyph Formatting formatting
   private static DM.HexInt? GetRsidParagraphMarkRevision(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphMarkRevision?.Value != null)
@@ -31,7 +31,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Revision Identifier for Paragraph
+  #region Revision Identifier for Paragraph conversion
   private static DM.HexInt? GetRsidParagraphAddition(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphAddition?.Value != null)
@@ -53,7 +53,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Revision Identifier for Paragraph Deletion
+  #region Revision Identifier for Paragraph Deletion conversion
   private static DM.HexInt? GetRsidParagraphDeletion(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphDeletion?.Value != null)
@@ -75,7 +75,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Revision Identifier for Paragraph Properties
+  #region Revision Identifier for Paragraph Properties conversion
   private static DM.HexInt? GetRsidParagraphProperties(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidParagraphProperties?.Value != null)
@@ -97,7 +97,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Default Revision Identifier for Runs
+  #region Default Revision Identifier for Runs conversion
   private static DM.HexInt? GetRsidRunAdditionDefault(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.RsidRunAdditionDefault?.Value != null)
@@ -119,7 +119,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Paragraph Id, this property is only available in Office 2010 and later.
+  #region ParagraphId conversion
   private static DM.HexInt? GetParagraphId(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.ParagraphId?.Value != null)
@@ -141,7 +141,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Text Id, this property is only available in Office 2010 and later.
+  #region TextId conversion
   private static DM.HexInt? GetTextId(DXW.Paragraph openXmlElement)
   {
     if (openXmlElement?.TextId?.Value != null)
@@ -163,7 +163,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Paragraph Properties
+  #region ParagraphProperties conversion
   private static DMW.ParagraphProperties? GetParagraphProperties(DXW.Paragraph openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ParagraphProperties>();
@@ -191,7 +191,7 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region NoSpellErr, this property is only available in Office 2010 and later.
+  #region NoSpellErr conversion
   private static Boolean? GetNoSpellError(DXW.Paragraph openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.NoSpellError);
@@ -209,7 +209,7 @@ public static class ParagraphConverter
   #endregion
 
   #region Paragraph elements conversion
-  public static DMW.ParagraphElement? CreateParagraphElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IParagraphElement? CreateParagraphElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.ParagraphProperties)
       return null;
@@ -281,7 +281,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  public static bool CompareParagraphElement(DX.OpenXmlElement? openXmlElement, DMW.ParagraphElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareParagraphElement(DX.OpenXmlElement? openXmlElement, DMW.IParagraphElement? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -345,14 +345,14 @@ public static class ParagraphConverter
       if (openXmlElement is DXMath.Superscript superscript)
         return DMXMath.SuperscriptConverter.CompareModelElement(superscript, value as DMMath.Superscript, diffs, objName);
 
-      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.CommonElement, diffs, objName);
+      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.ICommonElement, diffs, objName);
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.ParagraphElement value)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IParagraphElement value)
   {
     if (value is DMW.Run run)
       return DMXW.RunConverter.CreateOpenXmlElement(run);
@@ -414,7 +414,7 @@ public static class ParagraphConverter
     if (value is DMMath.Superscript superscript)
       return DMXMath.SuperscriptConverter.CreateOpenXmlElement(superscript);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.CommonElement);
+    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
     if (result != null) return result;
     throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in ParagraphConverter.CreateOpenXmlElement method");
   }
@@ -439,6 +439,8 @@ public static class ParagraphConverter
       foreach (var element in elements)
       {
         var item = CreateParagraphElement(element);
+        if (item is DXW.ParagraphProperties)
+          continue;
         if (item != null)
           value.Add(item);
       }
@@ -447,7 +449,7 @@ public static class ParagraphConverter
     return null;
   }
 
-  public static bool CompareParagraphElement(DXW.Paragraph? openXmlElement, DMW.Paragraph? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Paragraph? openXmlElement, DMW.Paragraph? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -479,7 +481,7 @@ public static class ParagraphConverter
         if (!CompareParagraphElement(element, item, diffs, objName))
           ok = false;
       }
-      if (!Int32ValueConverter.CmpValue(elements.Count(), paraItems.Count(), diffs, objName, "ParagraphItems.Count"))
+      if (!Int32ValueConverter.CmpValue(elements.Count(), paraItems.Count(), diffs, objName, "Paragraph.Items.Count"))
         ok = false;
       return ok;
     }

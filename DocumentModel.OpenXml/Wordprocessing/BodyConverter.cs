@@ -5,7 +5,8 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class BodyConverter
 {
-  public static DMW.BodyElement? CreateBodyElement(DX.OpenXmlElement? openXmlElement)
+  #region Body elements conversion
+  public static DMW.IBodyElement? CreateBodyElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -83,13 +84,13 @@ public static class BodyConverter
     return null;
   }
 
-  public static bool CompareBodyElement(DX.OpenXmlElement? openXmlElement, DMW.BodyElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareBodyElement(DX.OpenXmlElement? openXmlElement, DMW.IBodyElement? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
       if (openXmlElement is DXW.Paragraph paragraph)
-        return DMXW.ParagraphConverter.CompareParagraphElement(paragraph, value as DMW.Paragraph, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, value as DMW.Paragraph, diffs, objName);
       if (openXmlElement is DXW.Table table)
         return DMXW.TableConverter.CompareModelElement(table, value as DMW.Table, diffs, objName);
       if (openXmlElement is DXW.SectionProperties sectionProperties)
@@ -164,8 +165,10 @@ public static class BodyConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
+  #endregion
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.BodyElement value)
+  #region Body conversion
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IBodyElement value)
   {
     if (value is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -306,4 +309,5 @@ public static class BodyConverter
       }
     }
   }
+  #endregion
 }

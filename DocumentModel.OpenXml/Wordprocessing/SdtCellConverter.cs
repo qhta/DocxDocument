@@ -697,10 +697,9 @@ public static class SdtCellConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtCell value)
-    where OpenXmlElementType: DXW.SdtCell, new()
+  public static DXW.SdtCell CreateOpenXmlElement(DMW.SdtCell value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.SdtCell();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

@@ -5,6 +5,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class SubDocumentReference: RelationshipType, ParagraphElement
+public partial class SubDocumentReference: RelationshipType, IParagraphElement
 {
 }

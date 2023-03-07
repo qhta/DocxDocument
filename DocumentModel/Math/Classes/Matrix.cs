@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Matrix Function.
 /// </summary>
-public class Matrix: DMW.ParagraphElement
+public class Matrix: DMW.IParagraphElement
 {
   /// <summary>
   ///   Matrix Properties.

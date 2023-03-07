@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Bar.
 /// </summary>
-public class Bar: DMW.ParagraphElement
+public class Bar: DMW.IParagraphElement
 {
   /// <summary>
   ///   Bar Properties.

@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Move Destination Run Content.
 /// </summary>
-public class MoveToRun: CommonElement
+public class MoveToRun: ICommonElement
 {
   public SdtRun? SdtRun { get; set; }
 
