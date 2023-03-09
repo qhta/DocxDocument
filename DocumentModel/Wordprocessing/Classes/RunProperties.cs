@@ -13,7 +13,7 @@ public class RunProperties
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  [XmlAnyElement] public RunFonts? RunFonts { get; set; }
+  [XmlContentElement] public RunFonts? RunFonts { get; set; }
 
   /// <summary>
   ///   Bold.
@@ -98,7 +98,7 @@ public class RunProperties
   /// <summary>
   ///   Color.
   /// </summary>
-  [XmlAnyElement] public Color? Color { get; set; }
+  [XmlContentElement] public Color? Color { get; set; }
 
   /// <summary>
   ///   Spacing.
@@ -133,7 +133,7 @@ public class RunProperties
   /// <summary>
   ///   Highlight.
   /// </summary>
-  [XmlAnyElement] public HighlightColorKind? Highlight { get; set; }
+  [XmlContentElement] public HighlightColorKind? Highlight { get; set; }
 
   /// <summary>
   ///   Underline.
@@ -148,17 +148,17 @@ public class RunProperties
   /// <summary>
   ///   Border.
   /// </summary>
-  [XmlAnyElement] public BorderType? Border { get; set; }
+  [XmlContentElement] public BorderType? Border { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  [XmlAnyElement] public Shading? Shading { get; set; }
+  [XmlContentElement] public Shading? Shading { get; set; }
 
   /// <summary>
   ///   FitText.
   /// </summary>
-  [XmlAnyElement] public FitText? FitText { get; set; }
+  [XmlContentElement] public FitText? FitText { get; set; }
 
   /// <summary>
   ///   VerticalTextAlignment.
@@ -183,12 +183,12 @@ public class RunProperties
   /// <summary>
   ///   Languages.
   /// </summary>
-  [XmlAnyElement] public LanguageType? Languages { get; set; }
+  [XmlContentElement] public LanguageType? Languages { get; set; }
 
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  [XmlAnyElement] public EastAsianLayout? EastAsianLayout { get; set; }
+  [XmlContentElement] public EastAsianLayout? EastAsianLayout { get; set; }
 
   /// <summary>
   ///   SpecVanish.
@@ -213,7 +213,7 @@ public class RunProperties
   /// <summary>
   ///   TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlAnyElement] public TextOutlineEffect? TextOutlineEffect { get; set; }
+  [XmlContentElement] public TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
   ///   FillTextEffect, this property is only available in Office 2010 and later..
@@ -223,12 +223,12 @@ public class RunProperties
   /// <summary>
   ///   Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlAnyElement] public Scene3D? Scene3D { get; set; }
+  [XmlContentElement] public Scene3D? Scene3D { get; set; }
 
   /// <summary>
   ///   Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlAnyElement] public Properties3D? Properties3D { get; set; }
+  [XmlContentElement] public Properties3D? Properties3D { get; set; }
 
   /// <summary>
   ///   Ligatures, this property is only available in Office 2010 and later..
@@ -248,7 +248,7 @@ public class RunProperties
   /// <summary>
   ///   StylisticSets, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlAnyElement] public StylisticSets? StylisticSets { get; set; }
+  [XmlContentElement] public StylisticSets? StylisticSets { get; set; }
 
   /// <summary>
   ///   ContextualAlternatives, this property is only available in Office 2010 and later..
@@ -258,5 +258,5 @@ public class RunProperties
   /// <summary>
   ///   RunPropertiesChange.
   /// </summary>
-  [XmlAnyElement] public RunPropertiesChange? RunPropertiesChange { get; set; }
+  [XmlContentElement] public RunPropertiesChange? RunPropertiesChange { get; set; }
 }

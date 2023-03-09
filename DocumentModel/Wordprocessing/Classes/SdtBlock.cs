@@ -5,10 +5,10 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class SdtBlock: IBodyElement, ITableCellElement, ISdtContentBlockElement
 {
-  [XmlAnyElement] public SdtProperties? SdtProperties { get; set; }
+  [XmlContentElement] public SdtProperties? SdtProperties { get; set; }
 
-  [XmlAnyElement] public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  [XmlContentElement] public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 
-  [XmlAnyElement] public SdtContentBlock? SdtContentBlock { get; set; }
+  [XmlContentElement] public SdtContentBlock? SdtContentBlock { get; set; }
 
 }
