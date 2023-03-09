@@ -16,60 +16,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="BaseConverters\UInt16ValueConverter.cs" />
-    <Compile Remove="BaseTypes\VariantImpl.cs" />
-    <Compile Remove="BaseTypes\VariantReader.cs" />
-    <Compile Remove="BaseTypes\VariantWriter.cs" />
-    <Compile Remove="BaseTypes\VTArrayImpl.cs" />
-    <Compile Remove="BaseTypes\VTArrayReader.cs" />
-    <Compile Remove="BaseTypes\VTArrayWriter.cs" />
-    <Compile Remove="BaseTypes\VTVectorImpl.cs" />
-    <Compile Remove="BaseTypes\VTVectorReader.cs" />
-    <Compile Remove="BaseTypes\VTVectorWriter.cs" />
-    <Compile Remove="Drawings\Accent1ColorConverter.cs" />
-    <Compile Remove="Drawings\Accent2ColorConverter.cs" />
-    <Compile Remove="Drawings\Accent3ColorConverter.cs" />
-    <Compile Remove="Drawings\Accent4ColorConverter.cs" />
-    <Compile Remove="Drawings\Accent5ColorConverter.cs" />
-    <Compile Remove="Drawings\Accent6ColorConverter.cs" />
-    <Compile Remove="Drawings\BevelTypeConverter - Copy.cs" />
-    <Compile Remove="Drawings\Dark1ColorConverter.cs" />
-    <Compile Remove="Drawings\Dark2ColorConverter.cs" />
-    <Compile Remove="Drawings\FollowedHyperlinkColorConverter.cs" />
-    <Compile Remove="Drawings\HyperlinkConverter.cs" />
-    <Compile Remove="Drawings\Light1ColorConverter.cs" />
-    <Compile Remove="Drawings\Light2ColorConverter.cs" />
-    <Compile Remove="Packaging\CustomizationPartConverter.cs" />
-    <Compile Remove="Packaging\DocumentSettingsPartConverter.cs" />
-    <Compile Remove="Packaging\ExtendedFilePropertiesPartConverter.cs" />
-    <Compile Remove="Properties\CoreProperties.cs" />
-    <Compile Remove="Properties\CustomDocumentProperty.cs" />
-    <Compile Remove="Properties\CustomProperties.cs" />
-    <Compile Remove="Properties\CustomPropertiesConverter - Copy.cs" />
-    <Compile Remove="Properties\ExtendedProperties.cs" />
-    <Compile Remove="Properties\HeadingPairs.cs" />
-    <Compile Remove="Properties\VectorVariantTypeConverter.cs" />
-    <Compile Remove="Wordprocessing\AcceleratorKeymapTypeConverter.cs" />
-    <Compile Remove="Wordprocessing\AllocatedCommandConverter.cs" />
-    <Compile Remove="Wordprocessing\AllocatedCommandManifestConverter.cs" />
-    <Compile Remove="Wordprocessing\AllocatedCommandsConverter.cs" />
-    <Compile Remove="Wordprocessing\CategoryConverter - Copy.cs" />
-    <Compile Remove="Wordprocessing\FontsConverter.old.cs" />
-    <Compile Remove="Wordprocessing\FontSignatureConverter.new.cs" />
-    <Compile Remove="Wordprocessing\KeyMapCustomizationsConverter.cs" />
-    <Compile Remove="Wordprocessing\KeyMapEntryConverter.new.cs" />
-    <Compile Remove="Wordprocessing\LatentStylesConverter.old.cs" />
-    <Compile Remove="Wordprocessing\MismatchedKeyMapCustomizationConverter.cs" />
-    <Compile Remove="Wordprocessing\SettingsConverter.cs" />
-    <Compile Remove="Wordprocessing\StyleConverter.old.cs" />
-    <Compile Remove="Wordprocessing\StylesConverter.old.cs" />
-    <Compile Remove="Wordprocessing\TemplateCommandGroupConverter.cs" />
-    <Compile Remove="Wordprocessing\ToolbarDataConverter.cs" />
-    <Compile Remove="Wordprocessing\ToolbarsConverter.cs" />
-    <Compile Remove="Wordprocessing\WebSettingsConverter.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
   </ItemGroup>
 
