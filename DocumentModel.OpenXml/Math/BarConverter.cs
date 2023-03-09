@@ -63,11 +63,11 @@ public static class BarConverter
     }
   }
   
-  public static DocumentModel.Math.Bar? CreateModelElement(DXMath.Bar? openXmlElement)
+  public static DMMath.Bar? CreateModelElement(DXMath.Bar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Bar();
+      var value = new DMMath.Bar();
       value.BarProperties = GetBarProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

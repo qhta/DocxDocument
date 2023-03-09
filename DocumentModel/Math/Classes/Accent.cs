@@ -1,9 +1,11 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.Math;
 
 /// <summary>
 ///   Accent.
 /// </summary>
-public class Accent: DMW.IParagraphElement
+public class Accent: ICommonMathElement
 {
   /// <summary>
   ///   Accent Properties.

@@ -90,11 +90,11 @@ public static class MatrixConverter
     }
   }
   
-  public static DocumentModel.Math.Matrix? CreateModelElement(DXMath.Matrix? openXmlElement)
+  public static DMMath.Matrix? CreateModelElement(DXMath.Matrix? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Matrix();
+      var value = new DMMath.Matrix();
       value.MatrixProperties = GetMatrixProperties(openXmlElement);
       value.MatrixRows = GetMatrixRows(openXmlElement);
       return value;

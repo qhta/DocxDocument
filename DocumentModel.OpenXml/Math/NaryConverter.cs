@@ -121,11 +121,11 @@ public static class NaryConverter
     }
   }
   
-  public static DocumentModel.Math.Nary? CreateModelElement(DXMath.Nary? openXmlElement)
+  public static DMMath.Nary? CreateModelElement(DXMath.Nary? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Nary();
+      var value = new DMMath.Nary();
       value.NaryProperties = GetNaryProperties(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

@@ -33,11 +33,11 @@ public static class ParagraphPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>((DMMath.JustificationKind)value));
   }
   
-  public static DocumentModel.Math.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
+  public static DMMath.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.ParagraphProperties();
+      var value = new DMMath.ParagraphProperties();
       value.Justification = GetJustification(openXmlElement);
       return value;
     }

@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlRun Class.
 /// </summary>
-public class CustomXmlRun: IParagraphElement, ITableElement
+public class CustomXmlRun: ICommonRunElement, ITableElement
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 

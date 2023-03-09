@@ -85,14 +85,21 @@ public static class TableConverter
   {
     if (openXmlElement != null && value != null)
     {
-      if (openXmlElement is DXW.TableRow tableRow)
-        return DMXW.TableRowConverter.CompareModelElement(tableRow, value as DMW.TableRow, diffs, objName);
-      if (openXmlElement is DXW.SdtRow sdtRow)
-        return DMXW.SdtRowConverter.CompareModelElement(sdtRow, value as DMW.SdtRow, diffs, objName);
-      if (openXmlElement is DXW.CustomXmlRow customXmlRow)
-        return DMXW.CustomXmlRowConverter.CompareModelElement(customXmlRow, value as DMW.CustomXmlRow, diffs, objName);
+      if (openXmlElement is DXW.TableRow tableRow && value is DMW.TableRow tableRowModel)
+        return DMXW.TableRowConverter.CompareModelElement(tableRow, tableRowModel, diffs, objName);
+      if (openXmlElement is DXW.SdtRow sdtRow && value is DMW.SdtRow sdtRowModel)
+        return DMXW.SdtRowConverter.CompareModelElement(sdtRow, sdtRowModel, diffs, objName);
+      if (openXmlElement is DXW.CustomXmlRow customXmlRow && value is DMW.CustomXmlRow customXmlRowModel)
+        return DMXW.CustomXmlRowConverter.CompareModelElement(customXmlRow, customXmlRowModel, diffs, objName);
 
-      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.ICommonElement, diffs, objName);
+      if (value is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
+      return false;
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);

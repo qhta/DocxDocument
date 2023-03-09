@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Lower-Limit Function.
 /// </summary>
-public class LimitLower: DMW.IParagraphElement
+public class LimitLower: ICommonMathElement
 {
   /// <summary>
   ///   Lower Limit Properties.

@@ -51,11 +51,11 @@ public static class MatrixColumnPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>((DMMath.HorizontalAlignmentKind)value));
   }
   
-  public static DocumentModel.Math.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
+  public static DMMath.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixColumnProperties();
+      var value = new DMMath.MatrixColumnProperties();
       value.MatrixColumnCount = GetMatrixColumnCount(openXmlElement);
       value.MatrixColumnJustification = GetMatrixColumnJustification(openXmlElement);
       return value;

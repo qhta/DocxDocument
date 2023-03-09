@@ -63,11 +63,11 @@ public static class GroupCharConverter
     }
   }
   
-  public static DocumentModel.Math.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
+  public static DMMath.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.GroupChar();
+      var value = new DMMath.GroupChar();
       value.GroupCharProperties = GetGroupCharProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

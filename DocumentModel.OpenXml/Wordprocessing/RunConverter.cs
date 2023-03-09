@@ -1,3 +1,5 @@
+using DocumentFormat.OpenXml;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -180,74 +182,79 @@ public static class RunConverter
   {
     if (openXmlElement != null && value != null)
     {
-      var ok = true;
+      if (openXmlElement is DXW.Text text && value is DMW.Text textModel)
+        return DMXW.TextTypeConverter.CompareModelElement(text, textModel, diffs, objName);
+      if (openXmlElement is DXW.DeletedText deletedText && value is DMW.Text deletedTextModel)
+        return DMXW.TextTypeConverter.CompareModelElement(deletedText, deletedTextModel, diffs, objName);
+      if (openXmlElement is DXW.FieldCode fieldCode && value is DMW.FieldCode fieldCodeModel)
+        return DMXW.TextTypeConverter.CompareModelElement(fieldCode, fieldCodeModel, diffs, objName);
+      if (openXmlElement is DXW.DeletedFieldCode deletedFieldCode && value is DMW.FieldCode deletedFieldCodeModel)
+        return DMXW.TextTypeConverter.CompareModelElement(deletedFieldCode, deletedFieldCodeModel, diffs, objName);
+      if (openXmlElement is DXW.FieldChar fieldChar && value is DMW.FieldChar fieldCharModel)
+        return DMXW.FieldCharConverter.CompareModelElement(fieldChar, fieldCharModel, diffs, objName);
+      if (openXmlElement is DXW.Break brk && value is DMW.Break brkModel)
+        return DMXW.BreakConverter.CompareModelElement(brk, brkModel, diffs, objName);
+      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && value is DMW.Break lastRenderedPageBreakModel)
+        return DMXW.BreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName);
+      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && value is DMW.Hyphen noBreakHyphenModel)
+        return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, noBreakHyphenModel, diffs, objName);
+      if (openXmlElement is DXW.FootnoteReference footnoteReference && value is DMW.NoteReference footnoteReferenceModel)
+        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(footnoteReference, footnoteReferenceModel, diffs, objName);
+      if (openXmlElement is DXW.EndnoteReference endnoteReference && value is DMW.NoteReference endnoteReferenceModel)
+        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(endnoteReference, endnoteReferenceModel, diffs, objName);
+      if (openXmlElement is DXW.CommentReference commentReference && value is DMW.CommentReference commentReferenceModel)
+        return DMXW.MarkupTypeConverter.CompareModelElement(commentReference, commentReferenceModel, diffs, objName);
+      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && value is DMW.NoteReferenceMark footnoteReferenceMarkModel)
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(footnoteReferenceMark, footnoteReferenceMarkModel, diffs, objName);
+      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && value is DMW.NoteReferenceMark endnoteReferenceMarkModel)
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(endnoteReferenceMark, endnoteReferenceMarkModel, diffs, objName);
+      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && value is DMW.NoteReferenceMark annotationReferenceMarkModel)
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(annotationReferenceMark, annotationReferenceMarkModel, diffs, objName);
+      if (openXmlElement is DXW.SeparatorMark separatorMark && value is DMW.SeparatorMark separatorMarkModel)
+        return DMXW.SeparatorMarkConverter.CompareModelElement(separatorMark, separatorMarkModel, diffs, objName);
+      if (openXmlElement is DXW.ContinuationSeparatorMark continuationSeparatorMark && value is DMW.SeparatorMark continuationSeparatorMarkModel)
+        return DMXW.SeparatorMarkConverter.CompareModelElement(continuationSeparatorMark, continuationSeparatorMarkModel, diffs, objName);
+      if (openXmlElement is DXW.SymbolChar symbolChar && value is DMW.SymbolChar symbolCharModel)
+        return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, symbolCharModel, diffs, objName);
+      if (openXmlElement is DXW.PageNumber pageNumber && value is DMW.PageNumber pageNumberModel)
+        return DMXW.SimpleRunElementConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName);
+      if (openXmlElement is DXW.CarriageReturn carriageReturn && value is DMW.CarriageReturn carriageReturnModel)
+        return DMXW.SimpleRunElementConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName);
+      if (openXmlElement is DXW.TabChar tabChar && value is DMW.TabChar tabCharModel)
+        return DMXW.SimpleRunElementConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
+      if (openXmlElement is DXW.PositionalTab positionalTab && value is DMW.PositionalTab positionalTabModel)
+        return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, positionalTabModel, diffs, objName);
+      if (openXmlElement is DXW.SoftHyphen softHyphen && value is DMW.Hyphen softHyphenModel)
+        return DMXW.HyphenConverter.CompareModelElement(softHyphen, softHyphenModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort dayShort && value is DMW.RunDate dayShortModel)
+        return DMXW.RunDateConverter.CompareModelElement(dayShort, dayShortModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort dayLong && value is DMW.RunDate dayLongModel)
+        return DMXW.RunDateConverter.CompareModelElement(dayLong, dayLongModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort monthShort && value is DMW.RunDate monthShortModel)
+        return DMXW.RunDateConverter.CompareModelElement(monthShort, monthShortModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort monthLong && value is DMW.RunDate monthLongModel)
+        return DMXW.RunDateConverter.CompareModelElement(monthLong, monthLongModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort yearShort && value is DMW.RunDate yearShortModel)
+        return DMXW.RunDateConverter.CompareModelElement(yearShort, yearShortModel, diffs, objName);
+      if (openXmlElement is DXW.DayShort yearLong && value is DMW.RunDate yearLongModel)
+        return DMXW.RunDateConverter.CompareModelElement(yearLong, yearLongModel, diffs, objName);
+      if (openXmlElement is DXW.EmbeddedObject embeddedObject && value is DMW.EmbeddedObject embeddedObjectModel)
+        return DMXW.EmbeddedObjectConverter.CompareModelElement(embeddedObject, embeddedObjectModel, diffs, objName);
+      if (openXmlElement is DXW.Picture picture && value is DMW.Picture pictureModel)
+        return DMXW.PictureConverter.CompareModelElement(picture, pictureModel, diffs, objName);
+      if (openXmlElement is DXW.Drawing drawing && value is DMW.Drawing drawingModel)
+        return DMXW.DrawingConverter.CompareModelElement(drawing, drawingModel, diffs, objName);
+      if (openXmlElement is DXW.Ruby ruby && value is DMW.Ruby rubyModel)
+        return DMXW.RubyConverter.CompareModelElement(ruby, rubyModel, diffs, objName);
 
-      if (openXmlElement is DXW.Text text)
-        return DMXW.TextTypeConverter.CompareModelElement(text, value as DMW.Text, diffs, objName);
-      if (openXmlElement is DXW.DeletedText deletedText)
-        return DMXW.TextTypeConverter.CompareModelElement(deletedText, value as DMW.Text, diffs, objName);
-      if (openXmlElement is DXW.FieldCode fieldCode)
-        return DMXW.TextTypeConverter.CompareModelElement(fieldCode, value as DMW.FieldCode, diffs, objName);
-      if (openXmlElement is DXW.DeletedFieldCode deletedFieldCode)
-        return DMXW.TextTypeConverter.CompareModelElement(deletedFieldCode, value as DMW.FieldCode, diffs, objName);
-      if (openXmlElement is DXW.FieldChar fieldChar)
-        return DMXW.FieldCharConverter.CompareModelElement(fieldChar, value as DMW.FieldChar, diffs, objName);
-      if (openXmlElement is DXW.Break brk)
-        return DMXW.BreakConverter.CompareModelElement(brk, value as DMW.Break, diffs, objName);
-      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak)
-        return DMXW.BreakConverter.CompareModelElement(lastRenderedPageBreak, value as DMW.Break, diffs, objName);
-      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen)
-        return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, value as DMW.Hyphen, diffs, objName);
-      if (openXmlElement is DXW.FootnoteReference footnoteReference)
-        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(footnoteReference, value as DMW.NoteReference, diffs, objName);
-      if (openXmlElement is DXW.EndnoteReference endnoteReference)
-        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(endnoteReference, value as DMW.NoteReference, diffs, objName);
-      if (openXmlElement is DXW.CommentReference commentReference)
-        return DMXW.MarkupTypeConverter.CompareModelElement(commentReference, value as DMW.CommentReference, diffs, objName);
-      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(footnoteReferenceMark, value as DMW.NoteReferenceMark, diffs, objName);
-      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(endnoteReferenceMark, value as DMW.NoteReferenceMark, diffs, objName);
-      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(annotationReferenceMark, value as DMW.NoteReferenceMark, diffs, objName);
-      if (openXmlElement is DXW.SeparatorMark separatorMark)
-        return DMXW.SeparatorMarkConverter.CompareModelElement(separatorMark, value as DMW.SeparatorMark, diffs, objName);
-      if (openXmlElement is DXW.ContinuationSeparatorMark continuationSeparatorMark)
-        return DMXW.SeparatorMarkConverter.CompareModelElement(continuationSeparatorMark, value as DMW.SeparatorMark, diffs, objName);
-      if (openXmlElement is DXW.SymbolChar symbolChar)
-        return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, value as DMW.SymbolChar, diffs, objName);
-      if (openXmlElement is DXW.PageNumber pageNumber)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(pageNumber, value as DMW.PageNumber, diffs, objName);
-      if (openXmlElement is DXW.CarriageReturn carriageReturn)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(carriageReturn, value as DMW.CarriageReturn, diffs, objName);
-      if (openXmlElement is DXW.TabChar tabChar)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(tabChar, value as DMW.TabChar, diffs, objName);
-      if (openXmlElement is DXW.PositionalTab positionalTab)
-        return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, value as DMW.PositionalTab, diffs, objName);
-      if (openXmlElement is DXW.SoftHyphen softHyphen)
-        return DMXW.HyphenConverter.CompareModelElement(softHyphen, value as DMW.Hyphen, diffs, objName);
-      if (openXmlElement is DXW.DayShort dayShort)
-        return DMXW.RunDateConverter.CompareModelElement(dayShort, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.DayShort dayLong)
-        return DMXW.RunDateConverter.CompareModelElement(dayLong, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.DayShort monthShort)
-        return DMXW.RunDateConverter.CompareModelElement(monthShort, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.DayShort monthLong)
-        return DMXW.RunDateConverter.CompareModelElement(monthLong, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.DayShort yearShort)
-        return DMXW.RunDateConverter.CompareModelElement(yearShort, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.DayShort yearLong)
-        return DMXW.RunDateConverter.CompareModelElement(yearLong, value as DMW.RunDate, diffs, objName);
-      if (openXmlElement is DXW.EmbeddedObject embeddedObject)
-        return DMXW.EmbeddedObjectConverter.CompareModelElement(embeddedObject, value as DMW.EmbeddedObject, diffs, objName);
-      if (openXmlElement is DXW.Picture picture)
-        return DMXW.PictureConverter.CompareModelElement(picture, value as DMW.Picture, diffs, objName);
-      if (openXmlElement is DXW.Drawing drawing)
-        return DMXW.DrawingConverter.CompareModelElement(drawing, value as DMW.Drawing, diffs, objName);
-      if (openXmlElement is DXW.Ruby ruby)
-        return DMXW.RubyConverter.CompareModelElement(ruby, value as DMW.Ruby, diffs, objName);
-
-      return ok;
+      if (value is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
+      return false;
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
@@ -294,6 +301,13 @@ public static class RunConverter
       return DMXW.DrawingConverter.CreateOpenXmlElement(drawing);
     if (value is DMW.Ruby ruby)
       return DMXW.RubyConverter.CreateOpenXmlElement(ruby);
+
+     if (value is DMW.ICommonElement commonElementModel)
+     {
+        var result = CommonMarkersConverter.CreateOpenXmlElement(commonElementModel);
+        if (result != null)
+          return result;
+      }
 
     throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in Run.CreateOpenXmlElement method");
   }

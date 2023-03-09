@@ -1517,11 +1517,11 @@ public static class DenominatorConverter
     }
   }
   
-  public static DocumentModel.Math.Denominator? CreateModelElement(DXMath.Denominator? openXmlElement)
+  public static DMMath.Denominator? CreateModelElement(DXMath.Denominator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Denominator();
+      var value = new DMMath.Denominator();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

@@ -3,54 +3,21 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtRun Class.
 /// </summary>
-public class SdtRun: IParagraphElement
+public class SdtRun: ElementCollection<ISdtRunElement>, ICommonRunElement
 {
-  /// <summary>
-  ///   Inline-Level Structured Document Tag Content.
-  /// </summary>
-  public SdtContentRun? SdtContentRun { get; set; }
+  ///// <summary>
+  /////   Inline-Level Structured Document Tag Content.
+  ///// </summary>
+  //public SdtContentRun? SdtContentRun { get; set; }
 
+  /// <summary>
+  /// Properties of structured document tag.
+  /// </summary>
   public SdtProperties? SdtProperties { get; set; }
 
+  /// <summary>
+  /// Properties which shall be applied to the physical character which delimits the end of a structured document tag.
+  /// </summary>
   public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
-
-  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
-
-  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
-
-  public MoveToRangeStart? MoveToRangeStart { get; set; }
-
-  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
-
-  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
-
-  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
-
-  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
-
-  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
-
-  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
-
-  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
-
-  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
-
-  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
-
-  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
-
-  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
-
-  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
-
-  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
 }

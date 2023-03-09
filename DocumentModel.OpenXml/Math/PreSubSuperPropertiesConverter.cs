@@ -34,11 +34,11 @@ public static class PreSubSuperPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.PreSubSuperProperties? CreateModelElement(DXMath.PreSubSuperProperties? openXmlElement)
+  public static DMMath.PreSubSuperProperties? CreateModelElement(DXMath.PreSubSuperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.PreSubSuperProperties();
+      var value = new DMMath.PreSubSuperProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

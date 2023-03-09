@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlInsRangeStart Class.
 /// </summary>
-public class CustomXmlInsRangeStart: TrackChangeType
+public class CustomXmlInsRangeStart: TrackChangeType, IRangeMarkupElement
 {
 }

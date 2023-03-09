@@ -23,11 +23,11 @@ public static class ArgumentPropertiesConverter
     SimpleValueConverter.SetValue<DXMath.ArgumentSize,System.Int64>(openXmlElement, value);
   }
   
-  public static DocumentModel.Math.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
+  public static DMMath.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.ArgumentProperties();
+      var value = new DMMath.ArgumentProperties();
       value.ArgumentSize = GetArgumentSize(openXmlElement);
       return value;
     }

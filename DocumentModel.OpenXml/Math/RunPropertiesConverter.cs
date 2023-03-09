@@ -159,11 +159,11 @@ public static class RunPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
   }
   
-  public static DocumentModel.Math.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
+  public static DMMath.RunProperties? CreateModelElement(DXMath.RunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.RunProperties();
+      var value = new DMMath.RunProperties();
       value.Literal = GetLiteral(openXmlElement);
       value.NormalText = GetNormalText(openXmlElement);
       value.Script = GetScript(openXmlElement);

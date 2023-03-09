@@ -92,11 +92,11 @@ public static class SubscriptConverter
     }
   }
   
-  public static DocumentModel.Math.Subscript? CreateModelElement(DXMath.Subscript? openXmlElement)
+  public static DMMath.Subscript? CreateModelElement(DXMath.Subscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Subscript();
+      var value = new DMMath.Subscript();
       value.SubscriptProperties = GetSubscriptProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);

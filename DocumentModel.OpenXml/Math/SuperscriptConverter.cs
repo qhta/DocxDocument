@@ -92,11 +92,11 @@ public static class SuperscriptConverter
     }
   }
   
-  public static DocumentModel.Math.Superscript? CreateModelElement(DXMath.Superscript? openXmlElement)
+  public static DMMath.Superscript? CreateModelElement(DXMath.Superscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Superscript();
+      var value = new DMMath.Superscript();
       value.SuperscriptProperties = GetSuperscriptProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

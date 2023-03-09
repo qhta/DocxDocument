@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SimpleField Class.
 /// </summary>
-public class SimpleField: IParagraphElement
+public class SimpleField: ICommonRunElement
 {
   /// <summary>
   ///   Field Codes

@@ -34,11 +34,11 @@ public static class LimitLowerPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.LimitLowerProperties? CreateModelElement(DXMath.LimitLowerProperties? openXmlElement)
+  public static DMMath.LimitLowerProperties? CreateModelElement(DXMath.LimitLowerProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.LimitLowerProperties();
+      var value = new DMMath.LimitLowerProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }
