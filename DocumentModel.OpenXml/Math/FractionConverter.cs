@@ -92,11 +92,11 @@ public static class FractionConverter
     }
   }
   
-  public static DocumentModel.Math.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
+  public static DMMath.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Fraction();
+      var value = new DMMath.Fraction();
       value.FractionProperties = GetFractionProperties(openXmlElement);
       value.Numerator = GetNumerator(openXmlElement);
       value.Denominator = GetDenominator(openXmlElement);

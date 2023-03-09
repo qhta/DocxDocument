@@ -174,11 +174,11 @@ public static class PhantomPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.PhantomProperties? CreateModelElement(DXMath.PhantomProperties? openXmlElement)
+  public static DMMath.PhantomProperties? CreateModelElement(DXMath.PhantomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.PhantomProperties();
+      var value = new DMMath.PhantomProperties();
       value.ShowPhantom = GetShowPhantom(openXmlElement);
       value.ZeroWidth = GetZeroWidth(openXmlElement);
       value.ZeroAscent = GetZeroAscent(openXmlElement);

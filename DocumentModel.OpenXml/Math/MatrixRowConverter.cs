@@ -61,11 +61,11 @@ public static class MatrixRowConverter
     }
   }
   
-  public static DocumentModel.Math.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
+  public static DMMath.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixRow();
+      var value = new DMMath.MatrixRow();
       value.Bases = GetBases(openXmlElement);
       return value;
     }

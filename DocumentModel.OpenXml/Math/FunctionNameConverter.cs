@@ -1517,11 +1517,11 @@ public static class FunctionNameConverter
     }
   }
   
-  public static DocumentModel.Math.FunctionName? CreateModelElement(DXMath.FunctionName? openXmlElement)
+  public static DMMath.FunctionName? CreateModelElement(DXMath.FunctionName? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.FunctionName();
+      var value = new DMMath.FunctionName();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

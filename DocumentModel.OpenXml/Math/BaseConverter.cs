@@ -1517,11 +1517,11 @@ public static class BaseConverter
     }
   }
   
-  public static DocumentModel.Math.Base? CreateModelElement(DXMath.Base? openXmlElement)
+  public static DMMath.Base? CreateModelElement(DXMath.Base? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Base();
+      var value = new DMMath.Base();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

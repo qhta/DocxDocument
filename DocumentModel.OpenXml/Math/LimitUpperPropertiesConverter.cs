@@ -34,11 +34,11 @@ public static class LimitUpperPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.LimitUpperProperties? CreateModelElement(DXMath.LimitUpperProperties? openXmlElement)
+  public static DMMath.LimitUpperProperties? CreateModelElement(DXMath.LimitUpperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.LimitUpperProperties();
+      var value = new DMMath.LimitUpperProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

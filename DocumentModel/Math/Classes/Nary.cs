@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   n-ary Operator Function.
 /// </summary>
-public class Nary: DMW.IParagraphElement
+public class Nary: ICommonMathElement
 {
   /// <summary>
   ///   n-ary Properties.

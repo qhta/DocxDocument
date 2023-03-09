@@ -34,11 +34,11 @@ public static class SuperscriptPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.SuperscriptProperties? CreateModelElement(DXMath.SuperscriptProperties? openXmlElement)
+  public static DMMath.SuperscriptProperties? CreateModelElement(DXMath.SuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SuperscriptProperties();
+      var value = new DMMath.SuperscriptProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

@@ -63,11 +63,11 @@ public static class PhantomConverter
     }
   }
   
-  public static DocumentModel.Math.Phantom? CreateModelElement(DXMath.Phantom? openXmlElement)
+  public static DMMath.Phantom? CreateModelElement(DXMath.Phantom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Phantom();
+      var value = new DMMath.Phantom();
       value.PhantomProperties = GetPhantomProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

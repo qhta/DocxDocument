@@ -963,11 +963,11 @@ public static class RunConverter
     }
   }
   
-  public static DocumentModel.Math.Run? CreateModelElement(DXMath.Run? openXmlElement)
+  public static DMMath.Run? CreateModelElement(DXMath.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Run();
+      var value = new DMMath.Run();
       value.MathRunProperties = GetMathRunProperties(openXmlElement);
       value.RunProperties = GetRunProperties(openXmlElement);
       value.Break = GetBreak(openXmlElement);

@@ -52,11 +52,11 @@ public static class AccentPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.AccentProperties? CreateModelElement(DXMath.AccentProperties? openXmlElement)
+  public static DMMath.AccentProperties? CreateModelElement(DXMath.AccentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.AccentProperties();
+      var value = new DMMath.AccentProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

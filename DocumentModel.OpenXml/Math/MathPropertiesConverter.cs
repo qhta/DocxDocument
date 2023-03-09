@@ -361,11 +361,11 @@ public static class MathPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
   }
   
-  public static DocumentModel.Math.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
+  public static DMMath.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MathProperties();
+      var value = new DMMath.MathProperties();
       value.MathFont = GetMathFont(openXmlElement);
       value.BreakBinary = GetBreakBinary(openXmlElement);
       value.BreakBinarySubtraction = GetBreakBinarySubtraction(openXmlElement);

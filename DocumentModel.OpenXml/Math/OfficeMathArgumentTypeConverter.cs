@@ -34,11 +34,11 @@ public static class OfficeMathArgumentTypeConverter
     }
   }
   
-  public static DocumentModel.Math.OfficeMathArgumentType? CreateModelElement(DXMath.OfficeMathArgumentType? openXmlElement)
+  public static DMMath.OfficeMathArgumentType? CreateModelElement(DXMath.OfficeMathArgumentType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.OfficeMathArgumentType();
+      var value = new DMMath.OfficeMathArgumentType();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       return value;
     }

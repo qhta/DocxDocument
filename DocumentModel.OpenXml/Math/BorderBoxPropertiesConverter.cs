@@ -258,11 +258,11 @@ public static class BorderBoxPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.BorderBoxProperties? CreateModelElement(DXMath.BorderBoxProperties? openXmlElement)
+  public static DMMath.BorderBoxProperties? CreateModelElement(DXMath.BorderBoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.BorderBoxProperties();
+      var value = new DMMath.BorderBoxProperties();
       value.HideTop = GetHideTop(openXmlElement);
       value.HideBottom = GetHideBottom(openXmlElement);
       value.HideLeft = GetHideLeft(openXmlElement);

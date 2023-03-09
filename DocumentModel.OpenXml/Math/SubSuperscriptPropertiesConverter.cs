@@ -62,11 +62,11 @@ public static class SubSuperscriptPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.SubSuperscriptProperties? CreateModelElement(DXMath.SubSuperscriptProperties? openXmlElement)
+  public static DMMath.SubSuperscriptProperties? CreateModelElement(DXMath.SubSuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SubSuperscriptProperties();
+      var value = new DMMath.SubSuperscriptProperties();
       value.AlignScripts = GetAlignScripts(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

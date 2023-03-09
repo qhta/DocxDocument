@@ -92,11 +92,11 @@ public static class LimitLowerConverter
     }
   }
   
-  public static DocumentModel.Math.LimitLower? CreateModelElement(DXMath.LimitLower? openXmlElement)
+  public static DMMath.LimitLower? CreateModelElement(DXMath.LimitLower? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.LimitLower();
+      var value = new DMMath.LimitLower();
       value.LimitLowerProperties = GetLimitLowerProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.Limit = GetLimit(openXmlElement);

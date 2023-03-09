@@ -1517,11 +1517,11 @@ public static class NumeratorConverter
     }
   }
   
-  public static DocumentModel.Math.Numerator? CreateModelElement(DXMath.Numerator? openXmlElement)
+  public static DMMath.Numerator? CreateModelElement(DXMath.Numerator? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Numerator();
+      var value = new DMMath.Numerator();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

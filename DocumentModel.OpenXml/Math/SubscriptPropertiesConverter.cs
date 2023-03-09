@@ -34,11 +34,11 @@ public static class SubscriptPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.SubscriptProperties? CreateModelElement(DXMath.SubscriptProperties? openXmlElement)
+  public static DMMath.SubscriptProperties? CreateModelElement(DXMath.SubscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SubscriptProperties();
+      var value = new DMMath.SubscriptProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

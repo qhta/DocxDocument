@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Function Apply Function.
 /// </summary>
-public class MathFunction: DMW.IParagraphElement
+public class MathFunction: ICommonMathElement
 {
   /// <summary>
   ///   Function Properties.
