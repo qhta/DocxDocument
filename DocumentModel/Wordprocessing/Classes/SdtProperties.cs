@@ -5,17 +5,17 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class SdtProperties : IBodyElement
 {
-  [XmlAnyElement] public RunProperties? RunProperties { get; set; }
+  [XmlContentElement] public RunProperties? RunProperties { get; set; }
 
   public String? SdtAlias { get; set; }
 
   public LockingKind? Lock { get; set; }
 
-  [XmlAnyElement] public SdtPlaceholder? SdtPlaceholder { get; set; }
+  [XmlContentElement] public SdtPlaceholder? SdtPlaceholder { get; set; }
 
   public Boolean? ShowingPlaceholder { get; set; }
 
-  [XmlAnyElement] public DataBinding? DataBinding { get; set; }
+  [XmlContentElement] public DataBinding? DataBinding { get; set; }
 
   public Boolean? TemporarySdt { get; set; }
 
@@ -23,9 +23,9 @@ public class SdtProperties : IBodyElement
 
   public String? Tag { get; set; }
 
-  [XmlAnyElement] public Color3? Color { get; set; }
+  [XmlContentElement] public Color3? Color { get; set; }
 
-  [XmlAnyElement] public SdtAppearance? Appearance { get; set; }
+  [XmlContentElement] public SdtAppearance? Appearance { get; set; }
 
   public Boolean? WebExtensionLinked { get; set; }
 
@@ -33,21 +33,21 @@ public class SdtProperties : IBodyElement
 
   public Boolean? SdtContentEquation { get; set; }
 
-  [XmlAnyElement] public SdtContentComboBox? SdtContentComboBox { get; set; }
+  [XmlContentElement] public SdtContentComboBox? SdtContentComboBox { get; set; }
 
   public SdtContentDate? SdtContentDate { get; set; }
 
-  [XmlAnyElement] public SdtContentDocPartObject? SdtContentDocPartObject { get; set; }
+  [XmlContentElement] public SdtContentDocPartObject? SdtContentDocPartObject { get; set; }
 
-  [XmlAnyElement] public SdtContentDocPartList? SdtContentDocPartList { get; set; }
+  [XmlContentElement] public SdtContentDocPartList? SdtContentDocPartList { get; set; }
 
-  [XmlAnyElement] public SdtContentDropDownList? SdtContentDropDownList { get; set; }
+  [XmlContentElement] public SdtContentDropDownList? SdtContentDropDownList { get; set; }
 
   public Boolean? SdtContentPicture { get; set; }
 
   public Boolean? SdtContentRichText { get; set; }
 
-  [XmlAnyElement] public SdtContentText? SdtContentText { get; set; }
+  [XmlContentElement] public SdtContentText? SdtContentText { get; set; }
 
   public Boolean? SdtContentCitation { get; set; }
 
@@ -57,9 +57,9 @@ public class SdtProperties : IBodyElement
 
   public Boolean? EntityPickerEmpty { get; set; }
 
-  [XmlAnyElement] public SdtContentCheckBox? SdtContentCheckBox { get; set; }
+  [XmlContentElement] public SdtContentCheckBox? SdtContentCheckBox { get; set; }
 
-  [XmlAnyElement] public SdtRepeatedSection? SdtRepeatedSection { get; set; }
+  [XmlContentElement] public SdtRepeatedSection? SdtRepeatedSection { get; set; }
 
   public Boolean? SdtRepeatedSectionItem { get; set; }
 }
