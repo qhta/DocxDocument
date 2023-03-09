@@ -23,6 +23,6 @@ public class Run: ElementCollection<IRunElement>, ICommonRunElement
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  [XmlAnyElement] public RunProperties? RunProperties { get; set; }
+  [XmlContentElement] public RunProperties? RunProperties { get; set; }
 
 }

@@ -27,42 +27,42 @@ public partial class SectionProperties : IBodyElement
 
   public SectionMarkKind? SectionType { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public HeaderReferences? HeaderReferences { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public FooterReferences? FooterReferences { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public FootnoteProperties? FootnoteProperties { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public EndnoteProperties? EndnoteProperties { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public PageSize? PageSize { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public PageMargin? PageMargin { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public PaperSource? PaperSource { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public PageBorders? PageBorders { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public LineNumberType? LineNumberType { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public PageNumberType? PageNumberType { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public Columns? Columns { get; set; }
 
   public Boolean? FormProtection { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
 
   public Boolean? NoEndnote { get; set; }
@@ -75,15 +75,15 @@ public partial class SectionProperties : IBodyElement
 
   public Boolean? GutterOnRight { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public DocGrid? DocGrid { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public RelationshipType? PrinterSettingsReference { get; set; }
 
   public Int32? FootnoteColumns { get; set; }
 
-  [XmlAnyElement]
+  [XmlContentElement]
   public SectionPropertiesChange? SectionPropertiesChange { get; set; }
 
 }

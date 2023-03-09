@@ -74,7 +74,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 
@@ -90,6 +89,9 @@
     </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.DeepCompare">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.DeepCompare.dll</HintPath>
     </Reference>
   </ItemGroup>
 
