@@ -63,11 +63,11 @@ public static class BoxConverter
     }
   }
   
-  public static DocumentModel.Math.Box? CreateModelElement(DXMath.Box? openXmlElement)
+  public static DMMath.Box? CreateModelElement(DXMath.Box? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Box();
+      var value = new DMMath.Box();
       value.BoxProperties = GetBoxProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

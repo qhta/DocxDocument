@@ -1517,11 +1517,11 @@ public static class LimitConverter
     }
   }
   
-  public static DocumentModel.Math.Limit? CreateModelElement(DXMath.Limit? openXmlElement)
+  public static DMMath.Limit? CreateModelElement(DXMath.Limit? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Limit();
+      var value = new DMMath.Limit();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

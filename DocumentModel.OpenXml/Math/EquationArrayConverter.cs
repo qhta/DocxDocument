@@ -90,11 +90,11 @@ public static class EquationArrayConverter
     }
   }
   
-  public static DocumentModel.Math.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
+  public static DMMath.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.EquationArray();
+      var value = new DMMath.EquationArray();
       value.EquationArrayProperties = GetEquationArrayProperties(openXmlElement);
       value.Bases = GetBases(openXmlElement);
       return value;

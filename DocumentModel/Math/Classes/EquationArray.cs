@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Equation-Array Function.
 /// </summary>
-public class EquationArray: DMW.IParagraphElement
+public class EquationArray: ICommonMathElement
 {
   /// <summary>
   ///   Equation Array Properties.

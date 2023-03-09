@@ -63,11 +63,11 @@ public static class AccentConverter
     }
   }
   
-  public static DocumentModel.Math.Accent? CreateModelElement(DXMath.Accent? openXmlElement)
+  public static DMMath.Accent? CreateModelElement(DXMath.Accent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Accent();
+      var value = new DMMath.Accent();
       value.AccentProperties = GetAccentProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

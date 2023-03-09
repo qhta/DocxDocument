@@ -209,11 +209,11 @@ public static class MatrixPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.MatrixProperties? CreateModelElement(DXMath.MatrixProperties? openXmlElement)
+  public static DMMath.MatrixProperties? CreateModelElement(DXMath.MatrixProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixProperties();
+      var value = new DMMath.MatrixProperties();
       value.BaseJustification = GetBaseJustification(openXmlElement);
       value.HidePlaceholder = GetHidePlaceholder(openXmlElement);
       value.RowSpacingRule = GetRowSpacingRule(openXmlElement);

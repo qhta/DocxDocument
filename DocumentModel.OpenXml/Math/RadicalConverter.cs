@@ -92,11 +92,11 @@ public static class RadicalConverter
     }
   }
   
-  public static DocumentModel.Math.Radical? CreateModelElement(DXMath.Radical? openXmlElement)
+  public static DMMath.Radical? CreateModelElement(DXMath.Radical? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Radical();
+      var value = new DMMath.Radical();
       value.RadicalProperties = GetRadicalProperties(openXmlElement);
       value.Degree = GetDegree(openXmlElement);
       value.Base = GetBase(openXmlElement);

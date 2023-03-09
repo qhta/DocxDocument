@@ -135,11 +135,11 @@ public static class ControlPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.ControlProperties? CreateModelElement(DXMath.ControlProperties? openXmlElement)
+  public static DMMath.ControlProperties? CreateModelElement(DXMath.ControlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.ControlProperties();
+      var value = new DMMath.ControlProperties();
       value.RunProperties = GetRunProperties(openXmlElement);
       value.InsertedMathControl = GetInsertedMathControl(openXmlElement);
       value.DeletedMathControl = GetDeletedMathControl(openXmlElement);

@@ -1517,11 +1517,11 @@ public static class DegreeConverter
     }
   }
   
-  public static DocumentModel.Math.Degree? CreateModelElement(DXMath.Degree? openXmlElement)
+  public static DMMath.Degree? CreateModelElement(DXMath.Degree? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Degree();
+      var value = new DMMath.Degree();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

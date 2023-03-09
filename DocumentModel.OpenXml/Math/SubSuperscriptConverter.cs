@@ -121,11 +121,11 @@ public static class SubSuperscriptConverter
     }
   }
   
-  public static DocumentModel.Math.SubSuperscript? CreateModelElement(DXMath.SubSuperscript? openXmlElement)
+  public static DMMath.SubSuperscript? CreateModelElement(DXMath.SubSuperscript? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SubSuperscript();
+      var value = new DMMath.SubSuperscript();
       value.SubSuperscriptProperties = GetSubSuperscriptProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);

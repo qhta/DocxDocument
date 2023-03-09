@@ -108,11 +108,11 @@ public static class GroupCharPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
+  public static DMMath.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.GroupCharProperties();
+      var value = new DMMath.GroupCharProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.VerticalJustification = GetVerticalJustification(openXmlElement);

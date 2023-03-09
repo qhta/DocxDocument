@@ -92,11 +92,11 @@ public static class MathFunctionConverter
     }
   }
   
-  public static DocumentModel.Math.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
+  public static DMMath.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MathFunction();
+      var value = new DMMath.MathFunction();
       value.FunctionProperties = GetFunctionProperties(openXmlElement);
       value.FunctionName = GetFunctionName(openXmlElement);
       value.Base = GetBase(openXmlElement);

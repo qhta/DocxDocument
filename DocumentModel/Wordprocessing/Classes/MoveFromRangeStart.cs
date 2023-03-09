@@ -3,6 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveFromRange Class.
 /// </summary>
-public class MoveFromRangeStart: MoveBookmarkType
+public class MoveFromRangeStart: MoveBookmarkType, IRangeMarkupElement
 {
 }

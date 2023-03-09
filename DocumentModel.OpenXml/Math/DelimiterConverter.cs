@@ -90,11 +90,11 @@ public static class DelimiterConverter
     }
   }
   
-  public static DocumentModel.Math.Delimiter? CreateModelElement(DXMath.Delimiter? openXmlElement)
+  public static DMMath.Delimiter? CreateModelElement(DXMath.Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Delimiter();
+      var value = new DMMath.Delimiter();
       value.DelimiterProperties = GetDelimiterProperties(openXmlElement);
       value.Bases = GetBases(openXmlElement);
       return value;

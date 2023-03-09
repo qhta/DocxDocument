@@ -164,11 +164,11 @@ public static class NaryPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.NaryProperties? CreateModelElement(DXMath.NaryProperties? openXmlElement)
+  public static DMMath.NaryProperties? CreateModelElement(DXMath.NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.NaryProperties();
+      var value = new DMMath.NaryProperties();
       value.AccentChar = GetAccentChar(openXmlElement);
       value.LimitLocation = GetLimitLocation(openXmlElement);
       value.GrowOperators = GetGrowOperators(openXmlElement);

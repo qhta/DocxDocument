@@ -163,9 +163,12 @@ public static class SdtPropertiesConverter
     BooleanValueConverter.SetOnOffType<DXW.TemporarySdt>(openXmlElement, value);
   }
   
-  private static Int32? GetSdtId(DXW.SdtProperties openXmlElement)
+  private static HexInt? GetSdtId(DXW.SdtProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.SdtId>()?.Val);
+    var val = SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.SdtId>()?.Val);
+    if (val is int intVal)
+      return new HexInt(intVal);
+    return null;
   }
   
   private static bool CmpSdtId(DXW.SdtProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)

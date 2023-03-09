@@ -62,11 +62,11 @@ public static class RadicalPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.RadicalProperties? CreateModelElement(DXMath.RadicalProperties? openXmlElement)
+  public static DMMath.RadicalProperties? CreateModelElement(DXMath.RadicalProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.RadicalProperties();
+      var value = new DMMath.RadicalProperties();
       value.HideDegree = GetHideDegree(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

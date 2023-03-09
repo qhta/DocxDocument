@@ -34,11 +34,11 @@ public static class FunctionPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
+  public static DMMath.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.FunctionProperties();
+      var value = new DMMath.FunctionProperties();
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
     }

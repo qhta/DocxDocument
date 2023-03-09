@@ -154,11 +154,11 @@ public static class EquationArrayPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.EquationArrayProperties? CreateModelElement(DXMath.EquationArrayProperties? openXmlElement)
+  public static DMMath.EquationArrayProperties? CreateModelElement(DXMath.EquationArrayProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.EquationArrayProperties();
+      var value = new DMMath.EquationArrayProperties();
       value.BaseJustification = GetBaseJustification(openXmlElement);
       value.MaxDistribution = GetMaxDistribution(openXmlElement);
       value.ObjectDistribution = GetObjectDistribution(openXmlElement);

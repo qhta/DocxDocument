@@ -1517,11 +1517,11 @@ public static class SubArgumentConverter
     }
   }
   
-  public static DocumentModel.Math.SubArgument? CreateModelElement(DXMath.SubArgument? openXmlElement)
+  public static DMMath.SubArgument? CreateModelElement(DXMath.SubArgument? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SubArgument();
+      var value = new DMMath.SubArgument();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

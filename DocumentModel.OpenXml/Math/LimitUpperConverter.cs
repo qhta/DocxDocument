@@ -92,11 +92,11 @@ public static class LimitUpperConverter
     }
   }
   
-  public static DocumentModel.Math.LimitUpper? CreateModelElement(DXMath.LimitUpper? openXmlElement)
+  public static DMMath.LimitUpper? CreateModelElement(DXMath.LimitUpper? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.LimitUpper();
+      var value = new DMMath.LimitUpper();
       value.LimitUpperProperties = GetLimitUpperProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       value.Limit = GetLimit(openXmlElement);

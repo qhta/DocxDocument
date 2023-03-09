@@ -1,5 +1,3 @@
-using DocumentFormat.OpenXml;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -73,7 +71,7 @@ public static class SdtRowConverter
     if (result != null)
       return result;
     if (openXmlElement != null)
-      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in TableRowConverter.CreateModelElement method");
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in SdtRowConverter.CreateModelElement method");
     return null;
   }
 
@@ -81,10 +79,17 @@ public static class SdtRowConverter
   {
     if (openXmlElement != null && value != null)
     {
-      if (openXmlElement is DXW.SdtContentRow sdtContentRow)
-        return DMXW.SdtContentRowConverter.CompareModelElement(sdtContentRow, value as DMW.SdtContentRow, diffs, objName);
+      if (openXmlElement is DXW.SdtContentRow sdtContentRow && value is DMW.SdtContentRow sdtContentRowModel)
+        return DMXW.SdtContentRowConverter.CompareModelElement(sdtContentRow, sdtContentRowModel, diffs, objName);
 
-      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.ICommonElement, diffs, objName);
+      if (value is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
+      return false;
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
@@ -98,7 +103,7 @@ public static class SdtRowConverter
 
     var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
     if (result != null) return result;
-    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in TableRowConverter.CreateOpenXmlElement method");
+    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in SdtRowConverter.CreateOpenXmlElement method");
   }
   #endregion
 

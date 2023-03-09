@@ -840,11 +840,11 @@ public static class ParagraphConverter
     }
   }
   
-  public static DocumentModel.Math.Paragraph? CreateModelElement(DXMath.Paragraph? openXmlElement)
+  public static DMMath.Paragraph? CreateModelElement(DXMath.Paragraph? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.Paragraph();
+      var value = new DMMath.Paragraph();
       value.ParagraphProperties = GetParagraphProperties(openXmlElement);
       value.OfficeMath = GetOfficeMath(openXmlElement);
       value.Run = GetRun(openXmlElement);

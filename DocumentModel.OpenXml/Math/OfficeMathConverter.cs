@@ -1465,11 +1465,11 @@ public static class OfficeMathConverter
     }
   }
   
-  public static DocumentModel.Math.OfficeMath? CreateModelElement(DXMath.OfficeMath? openXmlElement)
+  public static DMMath.OfficeMath? CreateModelElement(DXMath.OfficeMath? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.OfficeMath();
+      var value = new DMMath.OfficeMath();
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);
       value.Box = GetBox(openXmlElement);

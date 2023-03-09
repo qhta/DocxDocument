@@ -1517,11 +1517,11 @@ public static class SuperArgumentConverter
     }
   }
   
-  public static DocumentModel.Math.SuperArgument? CreateModelElement(DXMath.SuperArgument? openXmlElement)
+  public static DMMath.SuperArgument? CreateModelElement(DXMath.SuperArgument? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.SuperArgument();
+      var value = new DMMath.SuperArgument();
       value.ArgumentProperties = GetArgumentProperties(openXmlElement);
       value.Accent = GetAccent(openXmlElement);
       value.Bar = GetBar(openXmlElement);

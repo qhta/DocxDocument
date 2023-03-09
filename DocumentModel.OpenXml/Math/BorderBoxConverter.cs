@@ -63,11 +63,11 @@ public static class BorderBoxConverter
     }
   }
   
-  public static DocumentModel.Math.BorderBox? CreateModelElement(DXMath.BorderBox? openXmlElement)
+  public static DMMath.BorderBox? CreateModelElement(DXMath.BorderBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.BorderBox();
+      var value = new DMMath.BorderBox();
       value.BorderBoxProperties = GetBorderBoxProperties(openXmlElement);
       value.Base = GetBase(openXmlElement);
       return value;

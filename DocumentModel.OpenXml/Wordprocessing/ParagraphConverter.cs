@@ -230,52 +230,14 @@ public static class ParagraphConverter
     if (openXmlElement is DXW.SubDocumentReference subDocumentReference)
       return DMXW.RelationshipTypeConverter.CreateModelElement(subDocumentReference);
 
-    if (openXmlElement is DXMath.Paragraph paragraph)
-      return DMXMath.ParagraphConverter.CreateModelElement(paragraph);
-    if (openXmlElement is DXMath.OfficeMath officeMath)
-      return DMXMath.OfficeMathConverter.CreateModelElement(officeMath);
-    if (openXmlElement is DXMath.Accent accent)
-      return DMXMath.AccentConverter.CreateModelElement(accent);
-    if (openXmlElement is DXMath.Bar bar)
-      return DMXMath.BarConverter.CreateModelElement(bar);
-    if (openXmlElement is DXMath.Box box)
-      return DMXMath.BoxConverter.CreateModelElement(box);
-    if (openXmlElement is DXMath.BorderBox borderBox)
-      return DMXMath.BorderBoxConverter.CreateModelElement(borderBox);
-    if (openXmlElement is DXMath.Delimiter delimiter)
-      return DMXMath.DelimiterConverter.CreateModelElement(delimiter);
-    if (openXmlElement is DXMath.EquationArray equationArray)
-      return DMXMath.EquationArrayConverter.CreateModelElement(equationArray);
-    if (openXmlElement is DXMath.Fraction fraction)
-      return DMXMath.FractionConverter.CreateModelElement(fraction);
-    if (openXmlElement is DXMath.MathFunction mathFunction)
-      return DMXMath.MathFunctionConverter.CreateModelElement(mathFunction);
-    if (openXmlElement is DXMath.GroupChar groupChar)
-      return DMXMath.GroupCharConverter.CreateModelElement(groupChar);
-    if (openXmlElement is DXMath.LimitLower limitLower)
-      return DMXMath.LimitLowerConverter.CreateModelElement(limitLower);
-    if (openXmlElement is DXMath.LimitUpper limitUpper)
-      return DMXMath.LimitUpperConverter.CreateModelElement(limitUpper);
-    if (openXmlElement is DXMath.Matrix matrix)
-      return DMXMath.MatrixConverter.CreateModelElement(matrix);
-    if (openXmlElement is DXMath.Nary nary)
-      return DMXMath.NaryConverter.CreateModelElement(nary);
-    if (openXmlElement is DXMath.Phantom phantom)
-      return DMXMath.PhantomConverter.CreateModelElement(phantom);
-    if (openXmlElement is DXMath.Radical radical)
-      return DMXMath.RadicalConverter.CreateModelElement(radical);
-    if (openXmlElement is DXMath.PreSubSuper preSubSuper)
-      return DMXMath.PreSubSuperConverter.CreateModelElement(preSubSuper);
-    if (openXmlElement is DXMath.Subscript subscript)
-      return DMXMath.SubscriptConverter.CreateModelElement(subscript);
-    if (openXmlElement is DXMath.SubSuperscript subSuperscript)
-      return DMXMath.SubSuperscriptConverter.CreateModelElement(subSuperscript);
-    if (openXmlElement is DXMath.Superscript superscript)
-      return DMXMath.SuperscriptConverter.CreateModelElement(superscript);
+    var commonMarker = CommonMarkersConverter.CreateModelElement(openXmlElement);
+    if (commonMarker != null)
+      return commonMarker;
 
-    var result = CommonMarkersConverter.CreateModelElement(openXmlElement);
-    if (result != null)
-      return result;
+    var commonMathElement = CommonMathConverter.CreateModelElement(openXmlElement);
+    if (commonMathElement != null)
+      return commonMathElement;
+
     if (openXmlElement != null)
       throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in ParagraphConverter.CreateModelElement method");
     return null;
@@ -285,67 +247,38 @@ public static class ParagraphConverter
   {
     if (openXmlElement != null && value != null)
     {
-      if (openXmlElement is DXW.Run run)
-        return DMXW.RunConverter.CompareModelElement(run, value as DMW.Run, diffs, objName);
-      if (openXmlElement is DXW.Hyperlink hyperlink)
-        return DMXW.HyperlinkConverter.CompareModelElement(hyperlink, value as DMW.Hyperlink, diffs, objName);
-      if (openXmlElement is DXW.CustomXmlRun customXmlRun)
-        return DMXW.CustomXmlRunConverter.CompareModelElement(customXmlRun, value as DMW.CustomXmlRun, diffs, objName);
-      if (openXmlElement is DXW.SimpleField simpleField)
-        return DMXW.SimpleFieldConverter.CompareModelElement(simpleField, value as DMW.SimpleField, diffs, objName);
-      if (openXmlElement is DXW.SdtRun sdtRun)
-        return DMXW.SdtRunConverter.CompareModelElement(sdtRun, value as DMW.SdtRun, diffs, objName);
-      if (openXmlElement is DXW.BidirectionalOverride bidirectionalOverride)
-        return DMXW.BidirectionalOverrideConverter.CompareModelElement(bidirectionalOverride, value as DMW.BidirectionalOverride, diffs, objName);
-      if (openXmlElement is DXW.BidirectionalEmbedding bidirectionalEmbedding)
-        return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(bidirectionalEmbedding, value as DMW.BidirectionalEmbedding, diffs, objName);
-      if (openXmlElement is DXW.SubDocumentReference subDocumentReference)
-        return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, value as DMW.RelationshipType, diffs, objName);
+      if (openXmlElement is DXW.Run run && value is DMW.Run runModel)
+        return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+      if (openXmlElement is DXW.Hyperlink hyperlink && value is DMW.Hyperlink hyperlinkModel)
+        return DMXW.HyperlinkConverter.CompareModelElement(hyperlink, hyperlinkModel, diffs, objName);
+      if (openXmlElement is DXW.CustomXmlRun customXmlRun && value is DMW.CustomXmlRun customXmlRunModel)
+        return DMXW.CustomXmlRunConverter.CompareModelElement(customXmlRun, customXmlRunModel, diffs, objName);
+      if (openXmlElement is DXW.SimpleField simpleField && value is DMW.SimpleField simpleFieldModel)
+        return DMXW.SimpleFieldConverter.CompareModelElement(simpleField, simpleFieldModel, diffs, objName);
+      if (openXmlElement is DXW.SdtRun sdtRun && value is DMW.SdtRun sdtRunModel)
+        return DMXW.SdtRunConverter.CompareModelElement(sdtRun, sdtRunModel, diffs, objName);
+      if (openXmlElement is DXW.BidirectionalOverride bidirectionalOverride && value is DMW.BidirectionalOverride bidirectionalOverrideModel)
+        return DMXW.BidirectionalOverrideConverter.CompareModelElement(bidirectionalOverride, bidirectionalOverrideModel, diffs, objName);
+      if (openXmlElement is DXW.BidirectionalEmbedding bidirectionalEmbedding && value is DMW.BidirectionalEmbedding bidirectionalEmbeddingModel)
+        return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(bidirectionalEmbedding, bidirectionalEmbeddingModel, diffs, objName);
+      if (openXmlElement is DXW.SubDocumentReference subDocumentReference && value is DMW.SubDocumentReference subDocumentReferenceModel)
+        return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, subDocumentReferenceModel, diffs, objName);
 
-      if (openXmlElement is DXMath.Paragraph paragraph)
-        return DMXMath.ParagraphConverter.CompareModelElement(paragraph, value as DMMath.Paragraph, diffs, objName);
-      if (openXmlElement is DXMath.OfficeMath officeMath)
-        return DMXMath.OfficeMathConverter.CompareModelElement(officeMath, value as DMMath.OfficeMath, diffs, objName);
-      if (openXmlElement is DXMath.Accent accent)
-        return DMXMath.AccentConverter.CompareModelElement(accent, value as DMMath.Accent, diffs, objName);
-      if (openXmlElement is DXMath.Bar bar)
-        return DMXMath.BarConverter.CompareModelElement(bar, value as DMMath.Bar, diffs, objName);
-      if (openXmlElement is DXMath.Box box)
-        return DMXMath.BoxConverter.CompareModelElement(box, value as DMMath.Box, diffs, objName);
-      if (openXmlElement is DXMath.BorderBox borderBox)
-        return DMXMath.BorderBoxConverter.CompareModelElement(borderBox, value as DMMath.BorderBox, diffs, objName);
-      if (openXmlElement is DXMath.Delimiter delimiter)
-        return DMXMath.DelimiterConverter.CompareModelElement(delimiter, value as DMMath.Delimiter, diffs, objName);
-      if (openXmlElement is DXMath.EquationArray equationArray)
-        return DMXMath.EquationArrayConverter.CompareModelElement(equationArray, value as DMMath.EquationArray, diffs, objName);
-      if (openXmlElement is DXMath.Fraction fraction)
-        return DMXMath.FractionConverter.CompareModelElement(fraction, value as DMMath.Fraction, diffs, objName);
-      if (openXmlElement is DXMath.MathFunction mathFunction)
-        return DMXMath.MathFunctionConverter.CompareModelElement(mathFunction, value as DMMath.MathFunction, diffs, objName);
-      if (openXmlElement is DXMath.GroupChar groupChar)
-        return DMXMath.GroupCharConverter.CompareModelElement(groupChar, value as DMMath.GroupChar, diffs, objName);
-      if (openXmlElement is DXMath.LimitLower limitLower)
-        return DMXMath.LimitLowerConverter.CompareModelElement(limitLower, value as DMMath.LimitLower, diffs, objName);
-      if (openXmlElement is DXMath.LimitUpper limitUpper)
-        return DMXMath.LimitUpperConverter.CompareModelElement(limitUpper, value as DMMath.LimitUpper, diffs, objName);
-      if (openXmlElement is DXMath.Matrix matrix)
-        return DMXMath.MatrixConverter.CompareModelElement(matrix, value as DMMath.Matrix, diffs, objName);
-      if (openXmlElement is DXMath.Nary nary)
-        return DMXMath.NaryConverter.CompareModelElement(nary, value as DMMath.Nary, diffs, objName);
-      if (openXmlElement is DXMath.Phantom phantom)
-        return DMXMath.PhantomConverter.CompareModelElement(phantom, value as DMMath.Phantom, diffs, objName);
-      if (openXmlElement is DXMath.Radical radical)
-        return DMXMath.RadicalConverter.CompareModelElement(radical, value as DMMath.Radical, diffs, objName);
-      if (openXmlElement is DXMath.PreSubSuper preSubSuper)
-        return DMXMath.PreSubSuperConverter.CompareModelElement(preSubSuper, value as DMMath.PreSubSuper, diffs, objName);
-      if (openXmlElement is DXMath.Subscript subscript)
-        return DMXMath.SubscriptConverter.CompareModelElement(subscript, value as DMMath.Subscript, diffs, objName);
-      if (openXmlElement is DXMath.SubSuperscript subSuperscript)
-        return DMXMath.SubSuperscriptConverter.CompareModelElement(subSuperscript, value as DMMath.SubSuperscript, diffs, objName);
-      if (openXmlElement is DXMath.Superscript superscript)
-        return DMXMath.SuperscriptConverter.CompareModelElement(superscript, value as DMMath.Superscript, diffs, objName);
+      if (value is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      if (value is DMMath.ICommonMathElement commonMathModel)
+      {
+        var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
+      return false;
 
-      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.ICommonElement, diffs, objName);
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
@@ -371,51 +304,12 @@ public static class ParagraphConverter
     if (value is DMW.SubDocumentReference subDocumentReference)
       return DMXW.RelationshipTypeConverter.CreateOpenXmlElement(subDocumentReference);
 
-    if (value is DMMath.Paragraph paragraph)
-      return DMXMath.ParagraphConverter.CreateOpenXmlElement(paragraph);
-    if (value is DMMath.OfficeMath officeMath)
-      return DMXMath.OfficeMathConverter.CreateOpenXmlElement(officeMath);
-    if (value is DMMath.Accent accent)
-      return DMXMath.AccentConverter.CreateOpenXmlElement(accent);
-    if (value is DMMath.Bar bar)
-      return DMXMath.BarConverter.CreateOpenXmlElement(bar);
-    if (value is DMMath.Box box)
-      return DMXMath.BoxConverter.CreateOpenXmlElement(box);
-    if (value is DMMath.BorderBox borderBox)
-      return DMXMath.BorderBoxConverter.CreateOpenXmlElement(borderBox);
-    if (value is DMMath.Delimiter delimiter)
-      return DMXMath.DelimiterConverter.CreateOpenXmlElement(delimiter);
-    if (value is DMMath.EquationArray equationArray)
-      return DMXMath.EquationArrayConverter.CreateOpenXmlElement(equationArray);
-    if (value is DMMath.Fraction fraction)
-      return DMXMath.FractionConverter.CreateOpenXmlElement(fraction);
-    if (value is DMMath.MathFunction mathFunction)
-      return DMXMath.MathFunctionConverter.CreateOpenXmlElement(mathFunction);
-    if (value is DMMath.GroupChar groupChar)
-      return DMXMath.GroupCharConverter.CreateOpenXmlElement(groupChar);
-    if (value is DMMath.LimitLower limitLower)
-      return DMXMath.LimitLowerConverter.CreateOpenXmlElement(limitLower);
-    if (value is DMMath.LimitUpper limitUpper)
-      return DMXMath.LimitUpperConverter.CreateOpenXmlElement(limitUpper);
-    if (value is DMMath.Matrix matrix)
-      return DMXMath.MatrixConverter.CreateOpenXmlElement(matrix);
-    if (value is DMMath.Nary nary)
-      return DMXMath.NaryConverter.CreateOpenXmlElement(nary);
-    if (value is DMMath.Phantom phantom)
-      return DMXMath.PhantomConverter.CreateOpenXmlElement(phantom);
-    if (value is DMMath.Radical radical)
-      return DMXMath.RadicalConverter.CreateOpenXmlElement(radical);
-    if (value is DMMath.PreSubSuper preSubSuper)
-      return DMXMath.PreSubSuperConverter.CreateOpenXmlElement(preSubSuper);
-    if (value is DMMath.Subscript subscript)
-      return DMXMath.SubscriptConverter.CreateOpenXmlElement(subscript);
-    if (value is DMMath.SubSuperscript subSuperscript)
-      return DMXMath.SubSuperscriptConverter.CreateOpenXmlElement(subSuperscript);
-    if (value is DMMath.Superscript superscript)
-      return DMXMath.SuperscriptConverter.CreateOpenXmlElement(superscript);
+    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
+    if (commonMarker != null) return commonMarker;
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
-    if (result != null) return result;
+    var commonMathElement = CommonMathConverter.CreateOpenXmlElement(value as DMMath.ICommonMathElement);
+    if (commonMathElement != null) return commonMathElement;
+
     throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in ParagraphConverter.CreateOpenXmlElement method");
   }
   #endregion

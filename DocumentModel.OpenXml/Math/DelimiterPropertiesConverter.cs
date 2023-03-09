@@ -144,11 +144,11 @@ public static class DelimiterPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
+  public static DMMath.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.DelimiterProperties();
+      var value = new DMMath.DelimiterProperties();
       value.BeginChar = GetBeginChar(openXmlElement);
       value.SeparatorChar = GetSeparatorChar(openXmlElement);
       value.EndChar = GetEndChar(openXmlElement);

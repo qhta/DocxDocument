@@ -121,11 +121,11 @@ public static class PreSubSuperConverter
     }
   }
   
-  public static DocumentModel.Math.PreSubSuper? CreateModelElement(DXMath.PreSubSuper? openXmlElement)
+  public static DMMath.PreSubSuper? CreateModelElement(DXMath.PreSubSuper? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.PreSubSuper();
+      var value = new DMMath.PreSubSuper();
       value.PreSubSuperProperties = GetPreSubSuperProperties(openXmlElement);
       value.SubArgument = GetSubArgument(openXmlElement);
       value.SuperArgument = GetSuperArgument(openXmlElement);

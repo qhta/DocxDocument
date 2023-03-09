@@ -61,11 +61,11 @@ public static class MatrixColumnsConverter
     }
   }
   
-  public static DocumentModel.Math.MatrixColumns? CreateModelElement(DXMath.MatrixColumns? openXmlElement)
+  public static DMMath.MatrixColumns? CreateModelElement(DXMath.MatrixColumns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.MatrixColumns();
+      var value = new DMMath.MatrixColumns();
       value.Items = GetItems(openXmlElement);
       return value;
     }

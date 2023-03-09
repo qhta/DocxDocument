@@ -59,18 +59,25 @@ public static class TableCellConverter
   {
     if (openXmlElement != null && value != null)
     {
-      if (openXmlElement is DXW.Paragraph paragraph)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, value as DMW.Paragraph, diffs, objName);
-      if (openXmlElement is DXW.Table table)
-        return DMXW.TableConverter.CompareModelElement(table, value as DMW.Table, diffs, objName);
-      if (openXmlElement is DXW.SdtBlock sdtBlock)
-        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, value as DMW.SdtBlock, diffs, objName);
-      if (openXmlElement is DXW.CustomXmlBlock customXmlBlock)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, value as DMW.CustomXmlBlock, diffs, objName);
-      if (openXmlElement is DXW.AltChunk altChunk)
-        return DMXW.AltChunkConverter.CompareModelElement(altChunk, value as DMW.AltChunk, diffs, objName);
+      if (openXmlElement is DXW.Paragraph paragraph && value is DMW.Paragraph paragraphModel)
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+      if (openXmlElement is DXW.Table table && value is DMW.Table tableModel)
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+      if (openXmlElement is DXW.SdtBlock sdtBlock && value is DMW.SdtBlock sdtBlockModel)
+        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName);
+      if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && value is DMW.CustomXmlBlock customXmlBlockModel)
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+      if (openXmlElement is DXW.AltChunk altChunk && value is DMW.AltChunk altChunkModel)
+        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
 
-      return CommonMarkersConverter.CompareModelElement(openXmlElement, value as DMW.ICommonElement, diffs, objName);
+      if (value is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
+      return false;
     }
     if (openXmlElement == null && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);

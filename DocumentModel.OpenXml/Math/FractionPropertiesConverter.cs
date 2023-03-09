@@ -62,11 +62,11 @@ public static class FractionPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.FractionProperties? CreateModelElement(DXMath.FractionProperties? openXmlElement)
+  public static DMMath.FractionProperties? CreateModelElement(DXMath.FractionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.FractionProperties();
+      var value = new DMMath.FractionProperties();
       value.FractionType = GetFractionType(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;

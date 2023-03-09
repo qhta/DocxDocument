@@ -175,11 +175,11 @@ public static class BoxPropertiesConverter
     }
   }
   
-  public static DocumentModel.Math.BoxProperties? CreateModelElement(DXMath.BoxProperties? openXmlElement)
+  public static DMMath.BoxProperties? CreateModelElement(DXMath.BoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Math.BoxProperties();
+      var value = new DMMath.BoxProperties();
       value.OperatorEmulator = GetOperatorEmulator(openXmlElement);
       value.NoBreak = GetNoBreak(openXmlElement);
       value.Differential = GetDifferential(openXmlElement);
