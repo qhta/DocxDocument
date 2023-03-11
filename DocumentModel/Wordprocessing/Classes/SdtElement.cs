@@ -3,15 +3,15 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines SdtElement - the base class for the sdt elements.
 /// </summary>
-public class SdtElement
+public class SdtElement: ModelElement
 {
   /// <summary>
-  ///   Gets or sets the SdtProperties.
+  ///  Specifies the set of properties which shall be applied to this structured document tag.
   /// </summary>
-  public SdtProperties? SdtProperties { get; set; }
+  [XmlContentElement] public SdtProperties? SdtProperties { get; set; }
 
   /// <summary>
-  ///   Gets or sets the SdtEndCharProperties.
+  /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
   /// </summary>
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  [XmlContentElement] public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 }

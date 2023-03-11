@@ -3,6 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentDate Class.
 /// </summary>
+[XmlObject]
 public class SdtContentDate
 {
   /// <summary>

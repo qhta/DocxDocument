@@ -232,29 +232,29 @@ public static class SdtPropertiesConverter
     }
   }
   
-  private static DMW.SdtAppearance? GetAppearance(DXW.SdtProperties openXmlElement)
+  private static DMW.AppearanceKind? GetAppearance(DXW.SdtProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value);
   }
   
-  private static bool CmpAppearance(DXW.SdtProperties openXmlElement, DMW.SdtAppearance? value, DiffList? diffs, string? objName)
+  private static bool CmpAppearance(DXW.SdtProperties openXmlElement, DMW.AppearanceKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetAppearance(DXW.SdtProperties openXmlElement, DMW.SdtAppearance? value)
+  private static void SetAppearance(DXW.SdtProperties openXmlElement, DMW.AppearanceKind? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2013W.Appearance>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>(itemElement, (DMW.SdtAppearance)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(itemElement, (DMW.AppearanceKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2013W.Appearance, DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.SdtAppearance>((DMW.SdtAppearance)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2013W.Appearance, DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>((DMW.AppearanceKind)value));
   }
   
   private static Boolean? GetWebExtensionLinked(DXW.SdtProperties openXmlElement)
@@ -790,7 +790,7 @@ public static class SdtPropertiesConverter
       value.EntityPickerEmpty = GetEntityPickerEmpty(openXmlElement);
       value.SdtContentCheckBox = GetSdtContentCheckBox(openXmlElement);
       value.SdtRepeatedSection = GetSdtRepeatedSection(openXmlElement);
-      value.SdtRepeatedSectionItem = GetSdtRepeatedSectionItem(openXmlElement);
+      value.IsRepeatedSectionItem = GetSdtRepeatedSectionItem(openXmlElement);
       return value;
     }
     return null;
@@ -857,7 +857,7 @@ public static class SdtPropertiesConverter
         ok = false;
       if (!CmpSdtRepeatedSection(openXmlElement, value.SdtRepeatedSection, diffs, objName))
         ok = false;
-      if (!CmpSdtRepeatedSectionItem(openXmlElement, value.SdtRepeatedSectionItem, diffs, objName))
+      if (!CmpSdtRepeatedSectionItem(openXmlElement, value.IsRepeatedSectionItem, diffs, objName))
         ok = false;
       return ok;
     }
@@ -904,6 +904,6 @@ public static class SdtPropertiesConverter
     SetEntityPickerEmpty(openXmlElement, value?.EntityPickerEmpty);
     SetSdtContentCheckBox(openXmlElement, value?.SdtContentCheckBox);
     SetSdtRepeatedSection(openXmlElement, value?.SdtRepeatedSection);
-    SetSdtRepeatedSectionItem(openXmlElement, value?.SdtRepeatedSectionItem);
+    SetSdtRepeatedSectionItem(openXmlElement, value?.IsRepeatedSectionItem);
   }
 }

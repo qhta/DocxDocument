@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the SdtAppearance enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum SdtAppearance
+public enum AppearanceKind
 {
   /// <summary>
   ///   boundingBox.
