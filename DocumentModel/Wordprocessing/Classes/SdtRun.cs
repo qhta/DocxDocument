@@ -1,23 +1,26 @@
+using System.Collections.Generic;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the SdtRun Class.
 /// </summary>
-public class SdtRun: ElementCollection<ISdtRunElement>, ICommonRunElement
+public class SdtRun: SdtElement, ICommonRunElement
 {
-  ///// <summary>
-  /////   Inline-Level Structured Document Tag Content.
-  ///// </summary>
-  //public SdtContentRun? SdtContentRun { get; set; }
-
   /// <summary>
-  /// Properties of structured document tag.
-  /// </summary>
-  public SdtProperties? SdtProperties { get; set; }
-
-  /// <summary>
-  /// Properties which shall be applied to the physical character which delimits the end of a structured document tag.
-  /// </summary>
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  /// Specifies the last known contents of a structured document tag around one or more inline-level structures 
+  /// (runs, DrawingML objects, fields, etc.). This element's contents shall be treated as a cache 
+  /// of the contents to be displayed in the structured document tag for the following reasons:
+  /// <list type="bullet">
+  ///   <item>
+  ///     If the structured document tag specifies an XML mapping via the dataBinding element, 
+  ///     changes to the custom XML data part shall be reflected in the structured document tag as needed.
+  ///   </item>
+  ///   <item>
+  ///     If the contents of the structured document tag are placeholder text via the showingPlcHdr element, 
+  ///     then this content can be updated with the placeholder text stored in the Glossary Document part.
+  ///   </item>
+  /// </list>
+  public SdtContentRun? SdtContentRun { get; set; }
 
 }

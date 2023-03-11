@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlBlock Class.
 /// </summary>
-public class CustomXmlBlock: IBodyElement, ITableCellElement, ISdtContentBlockElement
+public class CustomXmlBlock: ModelElement, IBodyElement, ITableCellElement, ISdtContentBlockElement
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 

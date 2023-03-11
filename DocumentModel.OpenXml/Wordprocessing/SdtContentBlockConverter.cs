@@ -112,10 +112,9 @@ public static class SdtContentBlockConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentBlock value)
-    where OpenXmlElementType: DXW.SdtContentBlock, new()
+  public static DXW.SdtContentBlock CreateOpenXmlElement(DMW.SdtContentBlock value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.SdtContentBlock();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

@@ -5,4 +5,5 @@ namespace DocumentModel;
 /// </summary>
 public interface IModelElement
 {
+  public ModelElement? Parent { get; set; }
 }

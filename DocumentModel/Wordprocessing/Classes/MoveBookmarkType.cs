@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveBookmarkType Class.
 /// </summary>
-public class MoveBookmarkType: ICommonElement
+public class MoveBookmarkType: ModelElement, ICommonElement
 {
   /// <summary>
   ///   author

@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunConflictInsertion Class.
 /// </summary>
-public class RunConflictInsertion: ICommonElement
+public class RunConflictInsertion: ModelElement, ICommonElement
 {
   public SdtRun? SdtRun { get; set; }
 

@@ -1,18 +1,16 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Row-Level Structured Document Tag.
+///   Specifies the presence of a structured document tag around a single table row..
 /// </summary>
-public class SdtRow: ElementCollection<ISdtRowElement>, ITableElement, ISdtContentRowElement
+public class SdtRow: SdtElement, ITableElement, ISdtContentRowElement
 {
   /// <summary>
-  /// Properties of structured document tag.
+  /// Specifies the last known contents of a structured document tag around a single table row.
   /// </summary>
-  public SdtProperties? SdtProperties { get; set; }
-  
-  /// <summary>
-  /// Properties which shall be applied to the physical character which delimits the end of a structured document tag.
-  /// </summary>
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
+  /// <remarks>
+  /// Unlike other types of structured document tags, this type of structure document tag cannot show placeholder text or have mapped XML data, therefore it is never a cache.
+  /// </remarks>
+  [XmlContentElement] public SdtContentRow? SdtContentRow { get; set; }
 
 }

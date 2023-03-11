@@ -5,127 +5,44 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SdtRunConverter
 {
-  #region SdtProperties conversion
-  private static DMW.SdtProperties? GetSdtProperties(DXW.SdtRun openXmlElement)
+  /// <summary>
+  /// Run-Level Structured Document Tag Content.
+  /// </summary>
+  private static DMW.SdtContentRun? GetSdtContentRun(DXW.SdtRun openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXW.SdtProperties>();
+    var element = openXmlElement?.GetFirstChild<DXW.SdtContentRun>();
     if (element != null)
-      return DMXW.SdtPropertiesConverter.CreateModelElement(element);
+      return DMXW.SdtContentRunConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSdtProperties(DXW.SdtRun openXmlElement, DMW.SdtProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpSdtContentRun(DXW.SdtRun openXmlElement, DMW.SdtContentRun? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName);
+    return DMXW.SdtContentRunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtContentRun>(), value, diffs, objName);
   }
   
-  private static void SetSdtProperties(DXW.SdtRun openXmlElement, DMW.SdtProperties? value)
+  private static void SetSdtContentRun(DXW.SdtRun openXmlElement, DMW.SdtContentRun? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentRun>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtPropertiesConverter.CreateOpenXmlElement<DXW.SdtProperties>(value);
+      itemElement = DMXW.SdtContentRunConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  #endregion
 
-  #region SdtEndCharProperties conversion
-  private static DMW.SdtEndCharProperties? GetSdtEndCharProperties(DXW.SdtRun openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXW.SdtEndCharProperties>();
-    if (element != null)
-      return DMXW.SdtEndCharPropertiesConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpSdtEndCharProperties(DXW.SdtRun openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs, string? objName)
-  {
-    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName);
-  }
-  
-  private static void SetSdtEndCharProperties(DXW.SdtRun openXmlElement, DMW.SdtEndCharProperties? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXW.SdtEndCharPropertiesConverter.CreateOpenXmlElement<DXW.SdtEndCharProperties>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
-    }
-  }
-  #endregion
-
-  #region SdtRun elements conversion
-  public static DMW.ISdtRunElement? CreateSdtRunElement(DX.OpenXmlElement? openXmlElement)
-  {
-    if (openXmlElement is DXW.SdtContentRun sdtContentRun)
-      return DMXW.SdtContentRunConverter.CreateModelElement(sdtContentRun);
-
-    var result = CommonMarkersConverter.CreateModelElement(openXmlElement);
-    if (result != null)
-      return result;
-    if (openXmlElement != null)
-      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in SdtRunConverter.CreateModelElement method");
-    return null;
-  }
-
-  public static bool CompareSdtRunElement(DX.OpenXmlElement? openXmlElement, DMW.ISdtRunElement? value, DiffList? diffs = null, string? objName = null)
-  {
-    if (openXmlElement != null && value != null)
-    {
-      if (openXmlElement is DXW.SdtContentRun sdtContentRun && value is DMW.SdtContentRun sdtContentRunModel)
-        return DMXW.SdtContentRunConverter.CompareModelElement(sdtContentRun, sdtContentRunModel, diffs, objName);
-
-      if (value is DMW.ICommonElement commonElementModel)
-      {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
-        if (result != null)
-          return (bool)result;
-      }
-      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, value.GetType().Name);
-      return false;
-    }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
-    return false;
-  }
-
-  public static OpenXmlElement CreateOpenXmlElement(DMW.ISdtRunElement value)
-  {
-    if (value is DMW.SdtContentRun sdtContentRun)
-      return DMXW.SdtContentRunConverter.CreateOpenXmlElement(sdtContentRun);
-
-    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
-    if (result != null) return result;
-    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlElement method");
-  }
-  #endregion
-
-  #region SdtRun conversion
+  #region StdRun conversion
   public static DMW.SdtRun? CreateModelElement(DXW.SdtRun? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.SdtRun();
-      value.SdtProperties = GetSdtProperties(openXmlElement);
-      value.SdtEndCharProperties = GetSdtEndCharProperties(openXmlElement);
-      var elements = openXmlElement.Elements().ToArray();
-      foreach (var element in elements)
-      {
-        if (element is DXW.SdtProperties)
-          continue;
-        if (element is DXW.SdtEndCharProperties)
-          continue;
-        var item = CreateSdtRunElement(element);
-        if (item != null)
-          value.Add(item);
-      }
+      value.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
+      value.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
+      value.SdtContentRun = GetSdtContentRun(openXmlElement);
       return value;
     }
     return null;
@@ -136,22 +53,12 @@ public static class SdtRunConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSdtProperties(openXmlElement, value.SdtProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, value.SdtProperties, diffs, objName))
         ok = false;
-      if (!CmpSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties, diffs, objName))
         ok = false;
-      var sdtRunItems = value.ToArray();
-      var elements = openXmlElement.Elements().Where(item => !(item is DXW.SdtProperties) && !(item is DXW.SdtEndCharProperties)).ToArray();
-      for (int i = 0; i < System.Math.Min(sdtRunItems.Count(), elements.Count()); i++)
-      {
-        var element = elements[i];
-        var item = sdtRunItems[i];
-        if (!CompareSdtRunElement(element, item, diffs, objName))
-          ok = false;
-      }
-      if (!Int32ValueConverter.CmpValue(elements.Count(), sdtRunItems.Count(), diffs, objName, "TableRun.Items.Count"))
+      if (!CmpSdtContentRun(openXmlElement, value.SdtContentRun, diffs, objName))
         ok = false;
-
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
@@ -168,22 +75,9 @@ public static class SdtRunConverter
   
   public static void UpdateOpenXmlElement(DXW.SdtRun openXmlElement, DMW.SdtRun value)
   {
-    SetSdtProperties(openXmlElement, value.SdtProperties);
-    SetSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties);
-    var sdtRunItems = value.ToArray();
-    var elements = openXmlElement.Elements();
-    var elementsEnumerator = elements.GetEnumerator();
-    for (int i = 0; i < sdtRunItems.Count(); i++)
-    {
-      var item = sdtRunItems[i];
-      OpenXmlElement? element = elementsEnumerator.MoveNext() ? elementsEnumerator.Current : null;
-      if (element == null)
-      {
-        element = CreateOpenXmlElement(item);
-        openXmlElement.AddChild(element);
-      }
-    }
+    SdtElementConverter.SetSdtProperties(openXmlElement, value?.SdtProperties);
+    SdtElementConverter.SetSdtEndCharProperties(openXmlElement, value?.SdtEndCharProperties);
+    SetSdtContentRun(openXmlElement, value?.SdtContentRun);
   }
   #endregion
-
 }
