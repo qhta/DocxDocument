@@ -10,7 +10,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyElement, ITableCellElement, ISdtContentBlockElement
+public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyElement, ITableCellElement, ISdtBlockElement
 {
   /// <summary>
   ///   Specifies an identifier for a paragraph that is unique within the document part, 

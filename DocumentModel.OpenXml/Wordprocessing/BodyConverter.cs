@@ -95,6 +95,8 @@ public static class BodyConverter
         var item = CreateBodyElement(element);
         if (item != null)
           value.Add(item);
+        if (element is DXW.SectionProperties)
+          break;
       }
       return value;
     }

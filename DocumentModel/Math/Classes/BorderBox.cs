@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Border-Box Function.
 /// </summary>
-public class BorderBox: ICommonMathElement
+public class BorderBox: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Border Box Properties.

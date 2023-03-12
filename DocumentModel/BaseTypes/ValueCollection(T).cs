@@ -1,12 +1,11 @@
 ﻿namespace DocumentModel;
-public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
-  where T: IModelElement
+public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ValueCollection<T>>
 {
 
-  public ElementCollection(){ }
+  public ValueCollection(){ }
 
-  public ElementCollection(ElementCollection<T> other)
-  {
+  public ValueCollection(ValueCollection<T> other)
+  { 
     foreach (var item in other)
       Add(item);
   }
@@ -17,7 +16,6 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   public void Add(T item)
   {
     ((ICollection<T>)Items).Add(item);
-    item.Parent = Parent ?? this;
   }
 
   public void Clear()
@@ -77,11 +75,11 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   #endregion
 
   #region IEquatable implementation
-  //protected virtual Type EqualityContract => typeof(ElementCollection<T>);
+  //protected virtual Type EqualityContract => typeof(ValueCollection<T>);
 
-  public override bool Equals(ModelElement? obj) => Equals(obj as ElementCollection<T>);
+  public override bool Equals(ModelElement? obj) => Equals(obj as ValueCollection<T>);
 
-  public virtual bool Equals(ElementCollection<T>? other)
+  public virtual bool Equals(ValueCollection<T>? other)
   {
     if (other is null /*|| EqualityContract != other.EqualityContract*/) return false;
     var thisEnumerator = other.GetEnumerator();

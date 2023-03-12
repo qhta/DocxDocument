@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   If a reference mark is specified within a run which is not part of an endnote, footnote or annotation, 
 ///   then that reference mark can be ignored.
 /// </summary>
-public class NoteReferenceMark : IRunElement
+public class NoteReferenceMark : ModelElement, IRunElement
 {
   /// <summary>
   /// Annotation, endnote or footnote.

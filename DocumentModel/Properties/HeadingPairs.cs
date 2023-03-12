@@ -5,7 +5,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Heading Pairs.
 /// </summary>
-public class HeadingPairs : ElementCollection<StringNum>, IEquatable<HeadingPairs>
+public class HeadingPairs : ValueCollection<StringNum>, IEquatable<HeadingPairs>
 {
   public override bool Equals(object? obj)
   {

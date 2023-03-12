@@ -7,7 +7,7 @@ public static class SdtContentRowConverter
 {
  
   #region SdtContentRow elements conversion
-  public static DMW.ISdtContentRowElement? CreateSdtContentRowElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtRowElement? CreateSdtContentRowElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.TableRow tableRow)
       return DMXW.TableRowConverter.CreateModelElement(tableRow);
@@ -24,7 +24,7 @@ public static class SdtContentRowConverter
     return null;
   }
 
-  public static bool CompareSdtContentRowElement(DX.OpenXmlElement? openXmlElement, DMW.ISdtContentRowElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareSdtContentRowElement(DX.OpenXmlElement? openXmlElement, DMW.ISdtRowElement? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,7 +49,7 @@ public static class SdtContentRowConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.ISdtContentRowElement value)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.ISdtRowElement value)
   {
     if (value is DMW.TableRow tableRow)
       return DMXW.TableRowConverter.CreateOpenXmlElement(tableRow);
@@ -65,11 +65,10 @@ public static class SdtContentRowConverter
   #endregion
 
   #region SdtContentRow conversion
-  public static DMW.SdtContentRow? CreateModelElement(DXW.SdtContentRow? openXmlElement)
+  public static void FillModelElement(DXW.SdtContentRow? openXmlElement, ElementCollection<DMW.ISdtRowElement> value)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SdtContentRow();
       var elements = openXmlElement.Elements().ToArray();
       foreach (var element in elements)
       {
@@ -77,12 +76,10 @@ public static class SdtContentRowConverter
         if (item != null)
           value.Add(item);
       }
-      return value;
     }
-    return null;
   }
-  
-  public static bool CompareModelElement(DXW.SdtContentRow? openXmlElement, DMW.SdtContentRow? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXW.SdtContentRow? openXmlElement, ElementCollection<DMW.ISdtRowElement>? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -105,15 +102,15 @@ public static class SdtContentRowConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
-  public static DXW.SdtContentRow CreateOpenXmlElement(DMW.SdtContentRow value)
+
+  public static DXW.SdtContentRow CreateSdtContentRow(ElementCollection<DMW.ISdtRowElement> value)
   {
     var openXmlElement = new DXW.SdtContentRow();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXW.SdtContentRow openXmlElement, DMW.SdtContentRow value)
+
+  public static void UpdateOpenXmlElement(DXW.SdtContentRow openXmlElement, ElementCollection<DMW.ISdtRowElement> value)
   {
     var sdtContentRowItems = value.ToArray();
     var elements = openXmlElement.Elements();

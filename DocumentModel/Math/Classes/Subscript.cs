@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Subscript Function.
 /// </summary>
-public class Subscript: ICommonMathElement
+public class Subscript: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Subscript Properties.

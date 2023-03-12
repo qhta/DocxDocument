@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Group-Character Function.
 /// </summary>
-public class GroupChar: ICommonMathElement
+public class GroupChar: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Group-Character Properties.

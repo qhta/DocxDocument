@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the presence of a structured document tag around one or more block-level structures (paragraphs, tables, etc.).
 /// </summary>
-public class SdtBlock: SdtElement, IBodyElement, ITableCellElement, ISdtContentBlockElement
+public class SdtBlock: SdtElement, IBodyElement, ITableCellElement, ISdtBlockElement
 {
   /// <summary>
   /// Specifies the last known contents of a structured document tag around one or more block-level structures (paragraphs, tables, etc.). 

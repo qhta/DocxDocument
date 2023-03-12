@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a break of line, column or page.
 /// </summary>
-public class Break: IRunElement
+public class Break: ModelElement, IRunElement
 {
   /// <summary>
   ///   Break type

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Box Function.
 /// </summary>
-public class Box: ICommonMathElement
+public class Box: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Box Properties.

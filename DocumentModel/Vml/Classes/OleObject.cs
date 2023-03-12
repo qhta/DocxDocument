@@ -5,7 +5,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Embedded OLE Object.
 /// </summary>
-public class OleObject: IEmbeddedObjectElement
+public class OleObject: ModelElement, IEmbeddedObjectElement
 {
   /// <summary>
   ///   OLE Object Type

@@ -244,7 +244,7 @@ public static class SdtContentRunConverter
   }
 
   #region SdtContentRun elements conversion
-  public static DMW.ISdtContentRunElement? CreateSdtContentRunElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtRunElement? CreateSdtContentRunElement(DX.OpenXmlElement? openXmlElement)
   {
     var commonRunElement = CommonRunConverter.CreateModelElement(openXmlElement);
     if (commonRunElement != null)

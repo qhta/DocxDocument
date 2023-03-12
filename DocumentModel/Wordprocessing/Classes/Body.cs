@@ -5,5 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class Body : ElementCollection<IBodyElement>
 {
-
+   public Body() 
+   { 
+     Parent = this;
+   }
 }

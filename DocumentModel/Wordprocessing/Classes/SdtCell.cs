@@ -3,16 +3,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Cell-Level Structured Document Tag.
 /// </summary>
-public class SdtCell: ITableRowElement
+public class SdtCell: SdtElement, ITableRowElement
 {
   /// <summary>
   ///   Cell-Level Structured Document Tag Content.
   /// </summary>
   public SdtContentCell? SdtContentCell { get; set; }
-
-  public SdtProperties? SdtProperties { get; set; }
-
-  public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 
   public BookmarkStart? BookmarkStart { get; set; }
 

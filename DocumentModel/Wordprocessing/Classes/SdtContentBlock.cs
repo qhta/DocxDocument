@@ -4,6 +4,6 @@ namespace DocumentModel.Wordprocessing;
 ///   Block-Level Structured Document Tag Content.
 /// </summary>
 [XmlObject]
-public class SdtContentBlock: ElementCollection<ISdtContentBlockElement>, ICommonRunElement
+public class SdtContentBlock: ElementCollection<ISdtBlockElement>, ICommonRunElement
 {
 }

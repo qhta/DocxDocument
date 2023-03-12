@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the SdtRun Class.
+///   Specifies the presence of a structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph. 
 /// </summary>
 public class SdtRun: SdtElement, ICommonRunElement
 {

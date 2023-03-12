@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Bar.
 /// </summary>
-public class Bar: ICommonMathElement
+public class Bar: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Bar Properties.

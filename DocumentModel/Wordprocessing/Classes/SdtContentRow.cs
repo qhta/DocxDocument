@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Row-Level Structured Document Tag Content.
 /// </summary>
 [XmlObject]
-public class SdtContentRow: ElementCollection<ISdtContentRowElement>, ISdtRowElement
+public class SdtContentRow: ElementCollection<ISdtRowElement>, ISdtRowElement
 {
 
 }

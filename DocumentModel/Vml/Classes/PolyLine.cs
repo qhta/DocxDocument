@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Multiple Path Line.
 /// </summary>
-public class PolyLine: IEmbeddedObjectElement
+public class PolyLine: ModelElement, IEmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier
