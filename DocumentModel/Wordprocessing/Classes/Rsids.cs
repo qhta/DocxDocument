@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Listing of All Revision Save ID Values.
 /// </summary>
-public class Rsids : ElementCollection<HexInt>
+public class Rsids : ValueCollection<HexInt>
 {
   /// <summary>
   ///   Original Document Revision Save ID.

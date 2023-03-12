@@ -7,7 +7,7 @@ namespace DocumentModel.OpenXml;
 /// Uses type reflection to dispatch to specific converter.
 /// </summary>
 public static class ElementCollectionConverter<T>
-//  where T: ModelElement, new()
+  where T: ModelElement
 {
   public static ElementType? CreateModelElement<ElementType>(DX.OpenXmlCompositeElement? openXmlElement)
     where ElementType : ElementCollection<T>, new()

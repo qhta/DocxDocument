@@ -15,6 +15,6 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public class TabChar: IRunElement
+public class TabChar: ModelElement, IRunElement
 {
 }

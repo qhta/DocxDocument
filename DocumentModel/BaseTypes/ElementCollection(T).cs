@@ -1,12 +1,12 @@
 ﻿namespace DocumentModel;
 public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
-  //where T: ModelElement
+  where T: IModelElement
 {
 
   public ElementCollection(){ }
 
   public ElementCollection(ElementCollection<T> other)
-  { 
+  {
     foreach (var item in other)
       Add(item);
   }
@@ -17,6 +17,7 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   public void Add(T item)
   {
     ((ICollection<T>)Items).Add(item);
+    item.Parent = Parent ?? this;
   }
 
   public void Clear()

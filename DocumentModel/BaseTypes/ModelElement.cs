@@ -6,10 +6,16 @@ namespace DocumentModel;
 /// Base class for all model elements. 
 /// Defines <see cref="Parent"/> property and <see cref="Equals"/> method.
 /// </summary>
-public class ModelElement: IEquatable<ModelElement>
+public class ModelElement: IEquatable<ModelElement>, IModelElement
 {
 
-  [XmlIgnore] public ModelElement? Parent { get; set; }
+  [XmlIgnore] 
+  [NonComparable]
+  public virtual ModelElement? Parent { get => _Parent; set => _Parent = value; }
+  protected ModelElement? _Parent;
+
+  [XmlAttribute("Parent")]
+  public string? ParentName { get => Parent?.GetType().Name; set { } }
 
   public virtual bool Equals(ModelElement? other)
   {
