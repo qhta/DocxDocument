@@ -5,7 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Inline-Level Structured Document Tag Content.
 /// </summary>
-public class SdtContentRun: ElementCollection<ISdtContentRunElement>, ISdtRunElement
+[XmlObject]
+public class SdtContentRun: ElementCollection<ISdtRunElement>, ISdtRunElement
 {
   public Math.Run? Run { get; set; }
 

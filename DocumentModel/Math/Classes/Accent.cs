@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Accent.
 /// </summary>
-public class Accent: ICommonMathElement
+public class Accent: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Accent Properties.

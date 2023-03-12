@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Matrix Function.
 /// </summary>
-public class Matrix: ICommonMathElement
+public class Matrix: ModelElement, ICommonMathElement
 {
   /// <summary>
   ///   Matrix Properties.

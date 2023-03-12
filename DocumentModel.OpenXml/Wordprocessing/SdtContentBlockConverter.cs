@@ -7,7 +7,7 @@ public static class SdtContentBlockConverter
 {
 
   #region SdtContentBlock elements conversion
-  public static DMW.ISdtContentBlockElement? CreateSdtContentBlockElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtBlockElement? CreateSdtContentBlockElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -26,7 +26,7 @@ public static class SdtContentBlockConverter
     return null;
   }
 
-  public static bool CompareSdtContentBlockElement(DX.OpenXmlElement? openXmlElement, DMW.ISdtContentBlockElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareSdtContentBlockElement(DX.OpenXmlElement? openXmlElement, DMW.ISdtBlockElement? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -53,7 +53,7 @@ public static class SdtContentBlockConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.ISdtContentBlockElement value)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.ISdtBlockElement value)
   {
     if (value is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);

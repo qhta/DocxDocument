@@ -7,7 +7,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Oval.
 /// </summary>
-public class Oval: IEmbeddedObjectElement
+public class Oval: ModelElement, IEmbeddedObjectElement
 {
   /// <summary>
   ///   Unique Identifier
