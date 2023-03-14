@@ -96,17 +96,8 @@ public static class SdtBlockConverter
       var model = new DMW.SdtBlock();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      var contentElement = openXmlElement.SdtContentBlock;
-      if (contentElement != null)
-      {
-        var elements = contentElement.Elements().ToArray();
-        foreach (var element in elements)
-        {
-          var item = CreateSdtContentBlockModelElement(element);
-          if (item != null)
-            model.Add(item);
-        }
-      }
+      ElementCollectionConverter<DMW.ISdtBlockElement>.FillModelElementCollection(openXmlElement.SdtContentBlock, model, 
+        (CreateModelElementMethod)CreateSdtContentBlockModelElement);
       return model;
     }
     return null;
