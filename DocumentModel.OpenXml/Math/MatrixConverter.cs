@@ -125,9 +125,10 @@ public static class MatrixConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Matrix openXmlElement, DMMath.Matrix value)
+  public static bool UpdateOpenXmlElement(DXMath.Matrix openXmlElement, DMMath.Matrix value)
   {
     SetMatrixProperties(openXmlElement, value?.MatrixProperties);
     SetMatrixRows(openXmlElement, value?.MatrixRows);
+    return true;
   }
 }

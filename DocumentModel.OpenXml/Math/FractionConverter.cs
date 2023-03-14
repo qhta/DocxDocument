@@ -130,10 +130,11 @@ public static class FractionConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Fraction openXmlElement, DMMath.Fraction value)
+  public static bool UpdateOpenXmlElement(DXMath.Fraction openXmlElement, DMMath.Fraction value)
   {
     SetFractionProperties(openXmlElement, value?.FractionProperties);
     SetNumerator(openXmlElement, value?.Numerator);
     SetDenominator(openXmlElement, value?.Denominator);
+    return true;
   }
 }

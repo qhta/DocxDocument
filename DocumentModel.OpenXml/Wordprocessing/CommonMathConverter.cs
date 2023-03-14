@@ -160,4 +160,54 @@ public static class CommonMathConverter
     return null;
   }
 
+    public static bool? UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DMMath.ICommonMathElement? value)
+  {
+    if (openXmlElement != null && value != null)
+    {
+      if (openXmlElement is DXMath.Paragraph paragraph && value is DMMath.Paragraph paragraphModel)
+        return DMXMath.ParagraphConverter.UpdateOpenXmlElement(paragraph, paragraphModel);
+      if (openXmlElement is DXMath.OfficeMath officeMath && value is DMMath.OfficeMath officeMathModel)
+        return DMXMath.OfficeMathConverter.UpdateOpenXmlElement(officeMath, officeMathModel);
+      if (openXmlElement is DXMath.Accent accent && value is DMMath.Accent accentModel)
+        return DMXMath.AccentConverter.UpdateOpenXmlElement(accent, accentModel);
+      if (openXmlElement is DXMath.Bar bar && value is DMMath.Bar barModel)
+        return DMXMath.BarConverter.UpdateOpenXmlElement(bar, barModel);
+      if (openXmlElement is DXMath.Box box && value is DMMath.Box boxModel)
+        return DMXMath.BoxConverter.UpdateOpenXmlElement(box, boxModel);
+      if (openXmlElement is DXMath.BorderBox borderBox && value is DMMath.BorderBox borderBoxModel)
+        return DMXMath.BorderBoxConverter.UpdateOpenXmlElement(borderBox, borderBoxModel);
+      if (openXmlElement is DXMath.Delimiter delimiter && value is DMMath.Delimiter delimiterModel)
+        return DMXMath.DelimiterConverter.UpdateOpenXmlElement(delimiter, delimiterModel);
+      if (openXmlElement is DXMath.EquationArray equationArray && value is DMMath.EquationArray equationArrayModel)
+        return DMXMath.EquationArrayConverter.UpdateOpenXmlElement(equationArray, equationArrayModel);
+      if (openXmlElement is DXMath.Fraction fraction && value is DMMath.Fraction fractionModel)
+        return DMXMath.FractionConverter.UpdateOpenXmlElement(fraction, fractionModel);
+      if (openXmlElement is DXMath.MathFunction mathFunction && value is DMMath.MathFunction mathFunctionModel)
+        return DMXMath.MathFunctionConverter.UpdateOpenXmlElement(mathFunction, mathFunctionModel);
+      if (openXmlElement is DXMath.GroupChar groupChar && value is DMMath.GroupChar groupCharModel)
+        return DMXMath.GroupCharConverter.UpdateOpenXmlElement(groupChar, groupCharModel);
+      if (openXmlElement is DXMath.LimitLower limitLower && value is DMMath.LimitLower limitLowerModel)
+        return DMXMath.LimitLowerConverter.UpdateOpenXmlElement(limitLower, limitLowerModel);
+      if (openXmlElement is DXMath.LimitUpper limitUpper && value is DMMath.LimitUpper limitUpperModel)
+        return DMXMath.LimitUpperConverter.UpdateOpenXmlElement(limitUpper, limitUpperModel);
+      if (openXmlElement is DXMath.Matrix matrix && value is DMMath.Matrix matrixModel)
+        return DMXMath.MatrixConverter.UpdateOpenXmlElement(matrix, matrixModel);
+      if (openXmlElement is DXMath.Nary nary && value is DMMath.Nary naryModel)
+        return DMXMath.NaryConverter.UpdateOpenXmlElement(nary, naryModel);
+      if (openXmlElement is DXMath.Phantom phantom && value is DMMath.Phantom phantomModel)
+        return DMXMath.PhantomConverter.UpdateOpenXmlElement(phantom, phantomModel);
+      if (openXmlElement is DXMath.Radical radical && value is DMMath.Radical radicalModel)
+        return DMXMath.RadicalConverter.UpdateOpenXmlElement(radical, radicalModel);
+      if (openXmlElement is DXMath.PreSubSuper preSubSuper && value is DMMath.PreSubSuper preSubSuperModel)
+        return DMXMath.PreSubSuperConverter.UpdateOpenXmlElement(preSubSuper, preSubSuperModel);
+      if (openXmlElement is DXMath.Subscript subscript && value is DMMath.Subscript subscriptModel)
+        return DMXMath.SubscriptConverter.UpdateOpenXmlElement(subscript, subscriptModel);
+      if (openXmlElement is DXMath.SubSuperscript subSuperscript && value is DMMath.SubSuperscript subSuperscriptModel)
+        return DMXMath.SubSuperscriptConverter.UpdateOpenXmlElement(subSuperscript, subSuperscriptModel);
+      if (openXmlElement is DXMath.Superscript superscript && value is DMMath.Superscript superscriptModel)
+        return DMXMath.SuperscriptConverter.UpdateOpenXmlElement(superscript, superscriptModel);
+    }
+    return false;
+  }
+
 }

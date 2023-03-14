@@ -35,9 +35,14 @@ public static class SdtRunConverter
     if (openXmlElement is DXW.SubDocumentReference subDocumentReference)
       return DMXW.RelationshipTypeConverter.CreateModelElement(subDocumentReference);
 
-    var model = CommonMarkersConverter.CreateModelElement(openXmlElement);
+   var model = CommonMarkersConverter.CreateModelElement(openXmlElement);
     if (model != null)
       return model;
+
+    var mathModel = CommonMathConverter.CreateModelElement(openXmlElement);
+     if (mathModel != null)
+      return mathModel;
+
     if (openXmlElement != null)
       throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in SdtRunConverter.CreateModelElement method");
     return null;
@@ -78,6 +83,12 @@ public static class SdtRunConverter
         if (result != null)
           return (bool)result;
       }
+      if (model is DMMath.ICommonMathElement commonMathModel)
+      {
+        var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
       diffs?.Add(objName, "@Type", openXmlElement.GetType().Name, model.GetType().Name);
       return false;
     }
@@ -112,6 +123,10 @@ public static class SdtRunConverter
 
     var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
     if (result != null) return result;
+
+    var mathResult = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathElement);
+    if (mathResult != null) return mathResult;
+
     throw new InvalidOperationException($"Value of type \"{model.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlElement method");
   }
 
@@ -131,6 +146,30 @@ public static class SdtRunConverter
       return DMXW.SdtRunConverter.UpdateOpenXmlElement(sdtRun, sdtRunModel);
     if (openXmlElement is DXW.CustomXmlRun customXmlRun && model is DMW.CustomXmlRun customXmlRunModel)
       return DMXW.CustomXmlRunConverter.UpdateOpenXmlElement(customXmlRun, customXmlRunModel);
+      if (openXmlElement is DXW.SimpleField simpleField && model is DMW.SimpleField simpleFieldModel)
+        return DMXW.SimpleFieldConverter.UpdateOpenXmlElement(simpleField, simpleFieldModel);
+      if (openXmlElement is DXW.Hyperlink hyperlink && model is DMW.Hyperlink hyperlinkModel)
+        return DMXW.HyperlinkConverter.UpdateOpenXmlElement(hyperlink, hyperlinkModel);
+      if (openXmlElement is DXW.BidirectionalOverride bidirectionalOverride && model is DMW.BidirectionalOverride bidirectionalOverrideModel)
+        return DMXW.BidirectionalOverrideConverter.UpdateOpenXmlElement(bidirectionalOverride, bidirectionalOverrideModel);
+      if (openXmlElement is DXW.BidirectionalEmbedding bidirectionalEmbedding && model is DMW.BidirectionalEmbedding bidirectionalEmbeddingModel)
+        return DMXW.BidirectionalEmbeddingConverter.UpdateOpenXmlElement(bidirectionalEmbedding, bidirectionalEmbeddingModel);
+      if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
+        return DMXW.RelationshipTypeConverter.UpdateOpenXmlElement(subDocumentReference, subDocumentReferenceModel);
+
+      if (model is DMW.ICommonElement commonElementModel)
+      {
+        var result = CommonMarkersConverter.UpdateOpenXmlElement(openXmlElement, commonElementModel);
+        if (result != null)
+          return (bool)result;
+      }
+      if (model is DMMath.ICommonMathElement commonMathModel)
+      {
+        var result = CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
+        if (result != null)
+          return (bool)result;
+      }
+
     return false;
   }
 

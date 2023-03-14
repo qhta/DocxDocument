@@ -130,10 +130,11 @@ public static class RadicalConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Radical openXmlElement, DMMath.Radical value)
+  public static bool UpdateOpenXmlElement(DXMath.Radical openXmlElement, DMMath.Radical value)
   {
     SetRadicalProperties(openXmlElement, value?.RadicalProperties);
     SetDegree(openXmlElement, value?.Degree);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

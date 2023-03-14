@@ -162,11 +162,12 @@ public static class NaryConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Nary openXmlElement, DMMath.Nary value)
+  public static bool UpdateOpenXmlElement(DXMath.Nary openXmlElement, DMMath.Nary value)
   {
     SetNaryProperties(openXmlElement, value?.NaryProperties);
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

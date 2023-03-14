@@ -130,10 +130,11 @@ public static class LimitUpperConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.LimitUpper openXmlElement, DMMath.LimitUpper value)
+  public static bool UpdateOpenXmlElement(DXMath.LimitUpper openXmlElement, DMMath.LimitUpper value)
   {
     SetLimitUpperProperties(openXmlElement, value?.LimitUpperProperties);
     SetBase(openXmlElement, value?.Base);
     SetLimit(openXmlElement, value?.Limit);
+    return true;
   }
 }

@@ -162,11 +162,12 @@ public static class SubSuperscriptConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.SubSuperscript openXmlElement, DMMath.SubSuperscript value)
+  public static bool UpdateOpenXmlElement(DXMath.SubSuperscript openXmlElement, DMMath.SubSuperscript value)
   {
     SetSubSuperscriptProperties(openXmlElement, value?.SubSuperscriptProperties);
     SetBase(openXmlElement, value?.Base);
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
+    return true;
   }
 }

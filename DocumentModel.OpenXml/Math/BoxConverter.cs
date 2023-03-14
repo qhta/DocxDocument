@@ -98,9 +98,10 @@ public static class BoxConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Box openXmlElement, DMMath.Box value)
+  public static bool UpdateOpenXmlElement(DXMath.Box openXmlElement, DMMath.Box value)
   {
     SetBoxProperties(openXmlElement, value?.BoxProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

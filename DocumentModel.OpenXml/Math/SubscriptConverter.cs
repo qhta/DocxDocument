@@ -130,10 +130,11 @@ public static class SubscriptConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Subscript openXmlElement, DMMath.Subscript value)
+  public static bool UpdateOpenXmlElement(DXMath.Subscript openXmlElement, DMMath.Subscript value)
   {
     SetSubscriptProperties(openXmlElement, value?.SubscriptProperties);
     SetBase(openXmlElement, value?.Base);
     SetSubArgument(openXmlElement, value?.SubArgument);
+    return true;
   }
 }

@@ -98,9 +98,10 @@ public static class PhantomConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Phantom openXmlElement, DMMath.Phantom value)
+  public static bool UpdateOpenXmlElement(DXMath.Phantom openXmlElement, DMMath.Phantom value)
   {
     SetPhantomProperties(openXmlElement, value?.PhantomProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

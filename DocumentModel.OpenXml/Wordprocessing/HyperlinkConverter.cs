@@ -1872,7 +1872,7 @@ public static class HyperlinkConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Hyperlink openXmlElement, DMW.Hyperlink value)
+  public static bool UpdateOpenXmlElement(DXW.Hyperlink openXmlElement, DMW.Hyperlink value)
   {
     SetTargetFrame(openXmlElement, value?.TargetFrame);
     SetTooltip(openXmlElement, value?.Tooltip);
@@ -1938,5 +1938,6 @@ public static class HyperlinkConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    return true;
   }
 }

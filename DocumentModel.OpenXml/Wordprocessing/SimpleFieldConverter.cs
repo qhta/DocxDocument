@@ -1837,7 +1837,7 @@ public static class SimpleFieldConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.SimpleField openXmlElement, DMW.SimpleField value)
+  public static bool UpdateOpenXmlElement(DXW.SimpleField openXmlElement, DMW.SimpleField value)
   {
     SetInstruction(openXmlElement, value?.Instruction);
     SetFieldLock(openXmlElement, value?.FieldLock);
@@ -1901,5 +1901,6 @@ public static class SimpleFieldConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    return true;
   }
 }

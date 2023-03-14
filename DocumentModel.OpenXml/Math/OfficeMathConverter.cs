@@ -1659,7 +1659,7 @@ public static class OfficeMathConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.OfficeMath openXmlElement, DMMath.OfficeMath value)
+  public static bool UpdateOpenXmlElement(DXMath.OfficeMath openXmlElement, DMMath.OfficeMath value)
   {
     SetAccent(openXmlElement, value?.Accent);
     SetBar(openXmlElement, value?.Bar);
@@ -1716,5 +1716,6 @@ public static class OfficeMathConverter
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
     SetParagraph(openXmlElement, value?.Paragraph);
     SetChildOfficeMath(openXmlElement, value?.ChildOfficeMath);
+    return true;
   }
 }
