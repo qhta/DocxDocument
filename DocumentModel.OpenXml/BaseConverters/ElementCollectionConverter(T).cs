@@ -8,7 +8,7 @@ namespace DocumentModel.OpenXml;
 /// Used in collection object conversion methods to pass a specific method to create a model element from an openXml element.
 /// </summary>
 /// <param name="openXmlElement">OpenXml element read from DocumentFormat.OpenXml document.</param>
-/// <returns>Newly created model element (or null if openXmlElement is not recognized)</returns>
+/// <returns>Newly created model element (or <c>null</c> if openXmlElement is not recognized)</returns>
 public delegate DM.IModelElement? CreateModelElementMethod(DX.OpenXmlElement openXmlElement);
 
 /// <summary>
@@ -63,7 +63,7 @@ public static class ElementCollectionConverter<T>
   /// </summary>
   /// <typeparam name="ElementType">Generic model element collection.</typeparam>
   /// <param name="compositeElement">Composite OpenXmlElement read from DocumentFormat.OpenXml document.</param>
-  /// <returns>Newly created model element collection (or null if openXmlElement contains no recognized elements)</returns>
+  /// <returns>Newly created model element collection (or <c>null</c> if openXmlElement contains no recognized elements)</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CreateModelElement method not found.</exception>
   public static ElementType? CreateModelElement<ElementType>(DX.OpenXmlCompositeElement? compositeElement)
     where ElementType : ElementCollection<T>, new()

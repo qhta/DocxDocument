@@ -1021,7 +1021,7 @@ public static class CustomXmlRowConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.CustomXmlRow openXmlElement, DMW.CustomXmlRow value)
+  public static bool UpdateOpenXmlElement(DXW.CustomXmlRow openXmlElement, DMW.CustomXmlRow value)
   {
     SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
     SetTableRows(openXmlElement, value?.TableRows);
@@ -1056,5 +1056,6 @@ public static class CustomXmlRowConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    return true;
   }
 }
