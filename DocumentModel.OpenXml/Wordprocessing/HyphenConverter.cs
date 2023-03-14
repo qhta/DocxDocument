@@ -9,8 +9,8 @@ public static class HyphenConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Hyphen{ Value = DMW.HyphenKind.NoBreakHyphen };
-      return value;
+      var model = new DMW.Hyphen{ Value = DMW.HyphenKind.NoBreakHyphen };
+      return model;
     }
     return null;
   }
@@ -19,43 +19,48 @@ public static class HyphenConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Hyphen{ Value = DMW.HyphenKind.SoftHyphen };
-      return value;
+      var model = new DMW.Hyphen{ Value = DMW.HyphenKind.SoftHyphen };
+      return model;
     }
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.Hyphen? value, DMW.HyphenKind kind, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.Hyphen? model, DMW.HyphenKind kind, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.HyphenKind, DMW.HyphenKind>(kind, value.Value, diffs, objName, "Value"))
+      if (!EnumValueConverter.CmpValue<DMW.HyphenKind, DMW.HyphenKind>(kind, model.Value, diffs, objName, "Value"))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static bool CompareModelElement(DXW.NoBreakHyphen? openXmlElement, DMW.Hyphen? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, DMW.HyphenKind.NoBreakHyphen, diffs, objName);
+  public static bool CompareModelElement(DXW.NoBreakHyphen? openXmlElement, DMW.Hyphen? model, DiffList? diffs, string? objName)
+    => CheckModelElement(openXmlElement, model, DMW.HyphenKind.NoBreakHyphen, diffs, objName);
 
-  public static bool CompareModelElement(DXW.SoftHyphen? openXmlElement, DMW.Hyphen? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, DMW.HyphenKind.SoftHyphen, diffs, objName);
+  public static bool CompareModelElement(DXW.SoftHyphen? openXmlElement, DMW.Hyphen? model, DiffList? diffs, string? objName)
+    => CheckModelElement(openXmlElement, model, DMW.HyphenKind.SoftHyphen, diffs, objName);
 
 
-  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.Hyphen value)
+  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.Hyphen model)
   {
-    switch (value.Value)
+    switch (model.Value)
     {
       case DMW.HyphenKind.NoBreakHyphen:
         return new DXW.NoBreakHyphen();
       case DMW.HyphenKind.SoftHyphen:
         return new DXW.SoftHyphen();
     }
-    throw new InvalidOperationException($"Not supported hyphen value {value.Value} in HyphenConverter.CreateOpenXmlElement");
+    throw new InvalidOperationException($"Not supported hyphen model {model.Value} in HyphenConverter.CreateOpenXmlElement");
   }
 
+    public static bool UpdateOpenXmlElement(DXW.NoBreakHyphen openXmlElement, DMW.Hyphen model)
+     => true;
+
+  public static bool UpdateOpenXmlElement(DXW.SoftHyphen openXmlElement, DMW.Hyphen model)
+     => true;
 }

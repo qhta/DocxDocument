@@ -98,9 +98,10 @@ public static class DrawingConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Drawing openXmlElement, DMW.Drawing value)
+  public static bool UpdateOpenXmlElement(DXW.Drawing openXmlElement, DMW.Drawing value)
   {
     SetAnchor(openXmlElement, value?.Anchor);
     SetInline(openXmlElement, value?.Inline);
+    return true;
   }
 }

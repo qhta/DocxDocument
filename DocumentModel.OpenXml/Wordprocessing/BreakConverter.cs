@@ -22,6 +22,7 @@ public static class BreakConverter
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DMW.BreakKind>(value);
   }
+
   #endregion
 
   #region BreakTextStartLocationKind conversion
@@ -116,9 +117,15 @@ public static class BreakConverter
     }
   }
 
-  public static void UpdateOpenXmlElement(DXW.Break openXmlElement, DMW.Break value)
+  public static bool UpdateOpenXmlElement(DXW.Break openXmlElement, DMW.Break value)
   {
-    SetType(openXmlElement, value?.Type);
-    SetClear(openXmlElement, value?.Clear);
+    SetType(openXmlElement, value.Type);
+    SetClear(openXmlElement, value.Clear);
+    return true;
+  }
+
+    public static bool UpdateOpenXmlElement(DXW.LastRenderedPageBreak openXmlElement, DMW.Break value)
+  {
+    return true;
   }
 }

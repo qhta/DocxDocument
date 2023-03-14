@@ -86,9 +86,10 @@ public static class SymbolCharConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.SymbolChar openXmlElement, DMW.SymbolChar value)
+  public static bool UpdateOpenXmlElement(DXW.SymbolChar openXmlElement, DMW.SymbolChar value)
   {
     SetFont(openXmlElement, value?.Font);
     SetChar(openXmlElement, value?.Char);
+    return true;
   }
 }
