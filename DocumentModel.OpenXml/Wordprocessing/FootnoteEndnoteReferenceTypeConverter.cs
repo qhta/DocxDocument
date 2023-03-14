@@ -97,9 +97,10 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteReferenceType openXmlElement, DMW.NoteReference value)
+  public static bool UpdateOpenXmlElement(DXW.FootnoteEndnoteReferenceType openXmlElement, DMW.NoteReference value)
   {
     SetCustomMarkFollows(openXmlElement, value?.CustomMarkFollows);
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

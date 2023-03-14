@@ -9,8 +9,8 @@ public static class NoteReferenceMarkConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Footnote };
-      return value;
+      var model = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Footnote };
+      return model;
     }
     return null;
   }
@@ -19,8 +19,8 @@ public static class NoteReferenceMarkConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Endnote };
-      return value;
+      var model = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Endnote };
+      return model;
     }
     return null;
   }
@@ -29,38 +29,38 @@ public static class NoteReferenceMarkConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Annotation };
-      return value;
+      var model = new DMW.NoteReferenceMark{ Type = DMW.NoteReferenceKind.Annotation };
+      return model;
     }
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.NoteReferenceMark? value, DMW.NoteReferenceKind kind, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.NoteReferenceMark? model, DMW.NoteReferenceKind kind, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.NoteReferenceKind, DMW.NoteReferenceKind>(kind, value.Type, diffs, objName, "Type"))
+      if (!EnumValueConverter.CmpValue<DMW.NoteReferenceKind, DMW.NoteReferenceKind>(kind, model.Type, diffs, objName, "Type"))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static bool CompareModelElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, DMW.NoteReferenceKind.Footnote, diffs, objName);
+  public static bool CompareModelElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Footnote, diffs, objName);
 
-  public static bool CompareModelElement(DXW.EndnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, DMW.NoteReferenceKind.Endnote, diffs, objName);
+  public static bool CompareModelElement(DXW.EndnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Endnote, diffs, objName);
 
-  public static bool CompareModelElement(DXW.AnnotationReferenceMark? openXmlElement, DMW.NoteReferenceMark? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, DMW.NoteReferenceKind.Annotation, diffs, objName);
+  public static bool CompareModelElement(DXW.AnnotationReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Annotation, diffs, objName);
 
-  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.NoteReferenceMark value)
+  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.NoteReferenceMark model)
   {
-    switch (value.Type)
+    switch (model.Type)
     {
       case DMW.NoteReferenceKind.Footnote:
         return new DXW.FootnoteReferenceMark();
@@ -69,6 +69,16 @@ public static class NoteReferenceMarkConverter
       case DMW.NoteReferenceKind.Annotation:
         return new DXW.AnnotationReferenceMark();
     }
-    throw new InvalidOperationException($"Not supported type {value.Type} in NoteReferenceMarkConverter.CreateOpenXmlElement");
+    throw new InvalidOperationException($"Not supported type {model.Type} in NoteReferenceMarkConverter.CreateOpenXmlElement");
   }
+
+  public static bool UpdateOpenXmlElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model)
+    => true;
+
+  public static bool UpdateOpenXmlElement(DXW.EndnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model)
+    => true;
+
+  public static bool UpdateOpenXmlElement(DXW.AnnotationReferenceMark? openXmlElement, DMW.NoteReferenceMark? model)
+    => true;
+
 }

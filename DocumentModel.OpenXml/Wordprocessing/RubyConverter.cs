@@ -130,10 +130,11 @@ public static class RubyConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Ruby openXmlElement, DMW.Ruby value)
+  public static bool UpdateOpenXmlElement(DXW.Ruby openXmlElement, DMW.Ruby value)
   {
     SetRubyProperties(openXmlElement, value?.RubyProperties);
     SetRubyContent(openXmlElement, value?.RubyContent);
     SetRubyBase(openXmlElement, value?.RubyBase);
+    return true;
   }
 }

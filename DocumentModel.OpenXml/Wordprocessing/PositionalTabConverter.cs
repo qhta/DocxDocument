@@ -97,10 +97,11 @@ public static class PositionalTabConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PositionalTab openXmlElement, DMW.PositionalTab value)
+  public static bool UpdateOpenXmlElement(DXW.PositionalTab openXmlElement, DMW.PositionalTab value)
   {
     SetAlignment(openXmlElement, value?.Alignment);
     SetRelativeTo(openXmlElement, value?.RelativeTo);
     SetLeader(openXmlElement, value?.Leader);
+    return true;
   }
 }
