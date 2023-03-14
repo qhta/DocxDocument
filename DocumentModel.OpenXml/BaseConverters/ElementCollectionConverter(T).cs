@@ -1,14 +1,27 @@
+using System.Xml.Linq;
+
 using DocumentFormat.OpenXml;
 
+using DocumentModel.OpenXml.Wordprocessing;
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml;
+
+public delegate bool CompareOpenXmlElementMethod(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null);
+
+public delegate bool UpdateOpenXmlElementMethod(DX.OpenXmlElement openXmlElement, DM.IModelElement value);
+
+public delegate OpenXmlElement CreateOpenXmlElementMethod(DM.IModelElement value);
+
 
 /// <summary>
 /// Universal model element converter. 
 /// Uses type reflection to dispatch to specific converter.
 /// </summary>
 public static class ElementCollectionConverter<T>
-  where T: ModelElement
+  where T : IModelElement
 {
+  #region collection object conversion
   public static ElementType? CreateModelElement<ElementType>(DX.OpenXmlCompositeElement? openXmlElement)
     where ElementType : ElementCollection<T>, new()
   {
@@ -76,7 +89,7 @@ public static class ElementCollectionConverter<T>
     throw new InvalidOperationException($"Method \"CreateOpenXmlElement\" in type {typeName} must return OpenXmlElement result");
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlElement openXmlElement, DM.ModelElement value)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlElement openXmlElement, DM.ModelElement value)
   {
     var nspace = openXmlElement.GetType().Namespace ?? "";
     nspace = nspace.Replace("DocumentFormat.OpenXml", "DocumentModel.OpenXml");
@@ -88,5 +101,83 @@ public static class ElementCollectionConverter<T>
     if (converterMethod == null)
       throw new InvalidOperationException($"Method \"UpdateOpenXmlElement\" not found in type {typeName}");
     converterMethod.Invoke(null, new object[] { openXmlElement, value });
+    return true;
   }
+  #endregion
+
+  #region collection items conversion
+  public static bool UpdateOpenXmlElementCollection(DX.OpenXmlCompositeElement contentElement, DM.ElementCollection<T> modelElementCollection,
+    CompareOpenXmlElementMethod compareElementMethod, UpdateOpenXmlElementMethod updateElementMethod, CreateOpenXmlElementMethod createElementMethod)
+  {
+    var elements = contentElement.Elements();
+    var elementsEnumerator = elements.GetEnumerator();
+    var modelEnumerator = modelElementCollection.GetEnumerator();
+    while (elementsEnumerator.MoveNext() && modelEnumerator.MoveNext())
+    {
+      var modelElement = modelEnumerator.Current;
+      OpenXmlElement? openXmlElement = elementsEnumerator.Current;
+      if (openXmlElement != null && modelElement != null)
+      {
+        var diffs = new DiffList();
+        if (!compareElementMethod(openXmlElement, modelElement, diffs, "Item"))
+        {
+          var diff = diffs.FirstOrDefault();
+          if (diff != null && diff.ObjectName == "Item")
+          {
+            if (diff.PropertyName != "@Type" && diff.PropertyName?.EndsWith("Id") != true)
+            {
+              updateElementMethod(openXmlElement, modelElement);
+              continue;
+            }
+          }
+        }
+        contentElement.AddChild(createElementMethod(modelElement));
+      }
+    }
+    return true;
+  }
+
+  public static bool CompareOpenXmlElementCollection(DX.OpenXmlCompositeElement? contentElement, DM.ElementCollection<T> modelElementCollection,
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  {
+    if (contentElement != null)
+    {
+      var elements = contentElement.Elements();
+      if (modelElementCollection.Any())
+      {
+        var elementsEnumerator = elements.GetEnumerator();
+        var modelEnumerator = modelElementCollection.GetEnumerator();
+        var ok = true;
+        int i = 0;
+        while (elementsEnumerator.MoveNext() && modelEnumerator.MoveNext())
+        {
+          var modelElement = modelEnumerator.Current;
+          OpenXmlElement? openXmlElement = elementsEnumerator.Current;
+          if (openXmlElement != null && modelElement != null)
+          {
+            if (!compareElementMethod(openXmlElement, modelElement, diffs, $"Item[{i}]"))
+              ok = false;
+          }
+        }
+        if (!Int32ValueConverter.CmpValue(elements.Count(), modelElementCollection.Count(), diffs, objName))
+          ok = false;
+        return ok;
+      }
+      else
+      {
+        diffs?.Add(objName,"Count", elements.Count(), 0);
+        return false;
+      }
+    }
+    else
+    {
+      if (modelElementCollection.Any())
+      {
+        diffs?.Add(objName,"Count", 0, modelElementCollection.Count());
+        return false;
+      }
+    }
+    return true;
+  }
+  #endregion
 }

@@ -391,7 +391,7 @@ public static class ParagraphConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.Paragraph openXmlElement, DMW.Paragraph value)
+  public static bool UpdateOpenXmlElement(DXW.Paragraph openXmlElement, DMW.Paragraph value)
   {
     SetRsidParagraphMarkRevision(openXmlElement, value.RsidParagraphMarkRevision);
     SetRsidParagraphAddition(openXmlElement, value.RsidParagraphAddition);
@@ -415,6 +415,7 @@ public static class ParagraphConverter
         openXmlElement.AddChild(element);
       }
     }
+    return true;
   }
   #endregion
 

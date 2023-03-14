@@ -334,7 +334,7 @@ public static class TableCellPropertiesConverter
     BooleanValueConverter.SetOnOffOnlyType<DXW.HideMark>(openXmlElement, value);
   }
   
-  private static DMW.TrackChangeType? GetCellInsertion(DXW.TableCellProperties openXmlElement)
+  private static DMW.CellInsertion? GetCellInsertion(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CellInsertion>();
     if (element != null)
@@ -360,7 +360,7 @@ public static class TableCellPropertiesConverter
     }
   }
   
-  private static DMW.TrackChangeType? GetCellDeletion(DXW.TableCellProperties openXmlElement)
+  private static DMW.CellDeletion? GetCellDeletion(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CellDeletion>();
     if (element != null)

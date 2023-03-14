@@ -179,7 +179,7 @@ public static class TableConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.Table openXmlElement, DMW.Table value)
+  public static bool UpdateOpenXmlElement(DXW.Table openXmlElement, DMW.Table value)
   {
     SetTableProperties(openXmlElement, value.TableProperties);
     SetTableGrid(openXmlElement, value.TableGrid);
@@ -196,6 +196,7 @@ public static class TableConverter
         openXmlElement.AddChild(element);
       }
     }
+    return true;
   }
   #endregion
 
