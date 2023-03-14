@@ -1080,7 +1080,7 @@ public static class CustomXmlBlockConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.CustomXmlBlock openXmlElement, DMW.CustomXmlBlock value)
+  public static bool UpdateOpenXmlElement(DXW.CustomXmlBlock openXmlElement, DMW.CustomXmlBlock value)
   {
     SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
     SetChildCustomXmlBlock(openXmlElement, value?.ChildCustomXmlBlock);
@@ -1116,5 +1116,6 @@ public static class CustomXmlBlockConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    return true;
   }
 }

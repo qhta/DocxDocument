@@ -36,6 +36,7 @@
     <Compile Remove="Wordprocessing\Classes\KeyMapEntry.cs" />
     <Compile Remove="Wordprocessing\Classes\MismatchedKeyMapCustomization.cs" />
     <Compile Remove="Wordprocessing\Classes\Paragraph.ext.cs" />
+    <Compile Remove="Wordprocessing\Classes\SdtContentBlock.cs" />
     <Compile Remove="Wordprocessing\Classes\SdtContentRow.cs" />
     <Compile Remove="Wordprocessing\Classes\TemplateCommandGroup.cs" />
     <Compile Remove="Wordprocessing\Classes\ToolbarData.cs" />

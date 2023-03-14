@@ -8,7 +8,7 @@ public class TableCell: ElementCollection<ITableCellElement>, ITableRowElement
   /// <summary>
   ///   Table Cell Properties.
   /// </summary>
-  public TableCellProperties? TableCellProperties { get; set; }
+  [XmlContentElement] public TableCellProperties? TableCellProperties { get; set; }
 
   public Collection<AltChunk>? AltChunks { get; set; }
 
