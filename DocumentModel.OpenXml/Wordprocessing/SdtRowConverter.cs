@@ -5,35 +5,6 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SdtRowConverter
 {
-  ///// <summary>
-  ///// Row-Level Structured Document Tag Content.
-  ///// </summary>
-  //private static DMW.SdtContentRow? GetSdtContentRow(DXW.SdtRow openXmlElement)
-  //{
-  //  var element = openXmlElement?.GetFirstChild<DXW.SdtContentRow>();
-  //  if (element != null)
-  //    return DMXW.SdtContentRowConverter.CreateModelElement(element);
-  //  return null;
-  //}
-
-  //private static bool CmpSdtContentRow(DXW.SdtRow openXmlElement, DMW.SdtContentRow? value, DiffList? diffs, string? objName)
-  //{
-  //  return DMXW.SdtContentRowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtContentRow>(), value, diffs, objName);
-  //}
-
-  //private static void SetSdtContentRow(DXW.SdtRow openXmlElement, DMW.SdtContentRow? value)
-  //{
-  //  var itemElement = openXmlElement.GetFirstChild<DXW.SdtContentRow>();
-  //  if (itemElement != null)
-  //    itemElement.Remove();
-  //  if (value != null)
-  //  {
-  //    itemElement = DMXW.SdtContentRowConverter.CreateOpenXmlElement(value);
-  //    if (itemElement != null)
-  //      openXmlElement.AddChild(itemElement);
-  //  }
-  //}
-
   #region StdRow conversion
   public static DMW.SdtRow? CreateModelElement(DXW.SdtRow? openXmlElement)
   {
