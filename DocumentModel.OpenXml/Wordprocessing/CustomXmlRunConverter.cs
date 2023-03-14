@@ -1775,7 +1775,7 @@ public static class CustomXmlRunConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.CustomXmlRun openXmlElement, DMW.CustomXmlRun value)
+  public static bool UpdateOpenXmlElement(DXW.CustomXmlRun openXmlElement, DMW.CustomXmlRun value)
   {
     SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
     SetChildCustomXmlRun(openXmlElement, value?.ChildCustomXmlRun);
@@ -1836,5 +1836,6 @@ public static class CustomXmlRunConverter
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    return true;
   }
 }
