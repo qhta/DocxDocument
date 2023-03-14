@@ -14,8 +14,8 @@ public class ModelElement: IEquatable<ModelElement>, IModelElement
   public virtual ModelElement? Parent { get => _Parent; set => _Parent = value; }
   protected ModelElement? _Parent;
 
-  [XmlAttribute("Parent")]
-  public string? ParentName { get => Parent?.GetType().Name; set { } }
+  //[XmlAttribute("Parent")]
+  //public string? ParentName { get => Parent?.GetType().Name; set { } }
 
   public virtual bool Equals(ModelElement? other)
   {

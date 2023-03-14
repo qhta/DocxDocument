@@ -13,7 +13,7 @@ public static class ModelElementConverter
   /// Creates a model element from an openXml element using its specific converter method.
   /// </summary>
   /// <param name="openXmlElement">An openXml element read from DocumentFormat.OpenXml document</param>
-  /// <returns>Newly created model element (or null if conversion failed)</returns>
+  /// <returns>Newly created model element (or <c>null</c> if conversion failed)</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CreateModelElement method not found.</exception>
   public static DM.ModelElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)
   {
@@ -42,7 +42,7 @@ public static class ModelElementConverter
   /// <param name="model">A model element created from the openXml element.</param>
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
-  /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
+  /// <returns><c>True</c> if the model element is equivalent to openXml element, <c>false</c> otherwise</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CompareModelElement method not found.</exception>
   public static bool CompareModelElement(DX.OpenXmlElement? openXmlElement, DM.ModelElement? model, DiffList? diffs, string? objName)
   {
@@ -70,7 +70,7 @@ public static class ModelElementConverter
   }
 
   /// <summary>
-  /// Creates an openXml element based on a model element collection.
+  /// Creates an openXml element based on a model element.
   /// </summary>
   /// <param name="model">A model element with valid content.</param>
   /// <returns>Newly created openXml element</returns>
@@ -96,7 +96,7 @@ public static class ModelElementConverter
   }
 
   /// <summary>
-  /// Updates an openXml element based on a model element collection.
+  /// Updates an openXml element based on a model element.
   /// </summary>
   /// <param name="openXmlElement">An openXml element to update.</param>
   /// <param name="model">A model element with valid content.</param>
