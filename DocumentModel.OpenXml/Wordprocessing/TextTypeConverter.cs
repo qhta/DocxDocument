@@ -97,8 +97,9 @@ public static class TextTypeConverter
       return CreateOpenXmlElement<DXW.DeletedFieldCode>(value);
   }
 
-  public static void UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
+  public static bool UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
   {
     SetText(openXmlElement, value.Text);
+    return true;
   }
 }

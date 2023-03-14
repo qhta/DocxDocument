@@ -67,4 +67,14 @@ public static class SimpleRunElementConverter
     throw new InvalidOperationException($"Not supported type {value.GetType()} in SimpleRunElementConverter.CreateOpenXmlElement");
   }
 
+  public static bool UpdateOpenXmlElement(DXW.PageNumber? openXmlElement, DMW.PageNumber? value)
+    => true;
+
+  public static bool UpdateOpenXmlElement(DXW.CarriageReturn? openXmlElement, DMW.CarriageReturn? value)
+    => true;
+
+  public static bool UpdateOpenXmlElement(DXW.TabChar? openXmlElement, DMW.TabChar? value)
+    => true;
+
+
 }

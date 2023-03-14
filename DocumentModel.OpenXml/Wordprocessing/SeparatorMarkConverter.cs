@@ -53,4 +53,10 @@ public static class SeparatorMarkConverter
       return new DXW.SeparatorMark();
   }
 
+  public static bool UpdateOpenXmlElement(DXW.SeparatorMark? openXmlElement, DMW.SeparatorMark? value)
+    => true;
+
+  public static bool UpdateOpenXmlElement(DXW.ContinuationSeparatorMark? openXmlElement, DMW.SeparatorMark? value)
+    => true;
+
 }

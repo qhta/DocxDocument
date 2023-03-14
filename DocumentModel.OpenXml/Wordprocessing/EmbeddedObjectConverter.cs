@@ -566,7 +566,7 @@ public static class EmbeddedObjectConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.EmbeddedObject openXmlElement, DMW.EmbeddedObject value)
+  public static bool UpdateOpenXmlElement(DXW.EmbeddedObject openXmlElement, DMW.EmbeddedObject value)
   {
     SetDxaOriginal(openXmlElement, value?.DxaOriginal);
     SetDyaOriginal(openXmlElement, value?.DyaOriginal);
@@ -587,5 +587,6 @@ public static class EmbeddedObjectConverter
     SetControl(openXmlElement, value?.Control);
     SetObjectEmbed(openXmlElement, value?.ObjectEmbed);
     SetObjectLink(openXmlElement, value?.ObjectLink);
+    return true;
   }
 }

@@ -193,7 +193,7 @@ public static class FieldCharConverter
   public static DXW.FieldChar CreateOpenXmlElement(DMW.FieldChar value)
     => CreateOpenXmlElement<DXW.FieldChar>(value);
 
-  public static void UpdateOpenXmlElement(DXW.FieldChar openXmlElement, DMW.FieldChar value)
+  public static bool UpdateOpenXmlElement(DXW.FieldChar openXmlElement, DMW.FieldChar value)
   {
     SetFieldCharType(openXmlElement, value?.FieldCharType);
     SetFieldLock(openXmlElement, value?.FieldLock);
@@ -201,5 +201,6 @@ public static class FieldCharConverter
     SetFieldData(openXmlElement, value?.FieldData);
     SetFormFieldData(openXmlElement, value?.FormFieldData);
     SetNumberingChange(openXmlElement, value?.NumberingChange);
+    return true;
   }
 }

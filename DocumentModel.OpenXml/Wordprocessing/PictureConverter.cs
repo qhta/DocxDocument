@@ -466,7 +466,7 @@ public static class PictureConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Picture openXmlElement, DMW.Picture value)
+  public static bool UpdateOpenXmlElement(DXW.Picture openXmlElement, DMW.Picture value)
   {
     SetAnchorId(openXmlElement, value?.AnchorId);
     SetGroup(openXmlElement, value?.Group);
@@ -483,5 +483,6 @@ public static class PictureConverter
     SetOleObject(openXmlElement, value?.OleObject);
     SetMovieReference(openXmlElement, value?.MovieReference);
     SetControl(openXmlElement, value?.Control);
+    return true;
   }
 }
