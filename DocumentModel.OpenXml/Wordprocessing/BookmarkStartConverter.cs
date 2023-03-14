@@ -143,12 +143,13 @@ public static class BookmarkStartConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.BookmarkStart openXmlElement, DMW.BookmarkStart value)
+  public static bool UpdateOpenXmlElement(DXW.BookmarkStart openXmlElement, DMW.BookmarkStart value)
   {
     SetName(openXmlElement, value?.Name);
     SetColumnFirst(openXmlElement, value?.ColumnFirst);
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

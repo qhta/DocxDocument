@@ -1601,7 +1601,7 @@ public static class RunConflictDeletionConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.RunConflictDeletion openXmlElement, DMW.RunConflictDeletion value)
+  public static bool UpdateOpenXmlElement(DXO2010W.RunConflictDeletion openXmlElement, DMW.RunConflictDeletion value)
   {
     SetSdtRun(openXmlElement, value?.SdtRun);
     SetProofError(openXmlElement, value?.ProofError);
@@ -1657,5 +1657,6 @@ public static class RunConflictDeletionConverter
     SetRun(openXmlElement, value?.Run);
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    return true;
   }
 }

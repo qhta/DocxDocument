@@ -98,9 +98,10 @@ public static class AccentConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Accent openXmlElement, DMMath.Accent value)
+  public static bool UpdateOpenXmlElement(DXMath.Accent openXmlElement, DMMath.Accent value)
   {
     SetAccentProperties(openXmlElement, value?.AccentProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

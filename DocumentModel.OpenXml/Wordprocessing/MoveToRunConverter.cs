@@ -1601,7 +1601,7 @@ public static class MoveToRunConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.MoveToRun openXmlElement, DMW.MoveToRun value)
+  public static bool UpdateOpenXmlElement(DXW.MoveToRun openXmlElement, DMW.MoveToRun value)
   {
     SetSdtRun(openXmlElement, value?.SdtRun);
     SetProofError(openXmlElement, value?.ProofError);
@@ -1657,5 +1657,6 @@ public static class MoveToRunConverter
     SetRun(openXmlElement, value?.Run);
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    return true;
   }
 }

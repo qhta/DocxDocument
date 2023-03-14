@@ -118,9 +118,10 @@ public static class MarkupRangeTypeConverter
   public static DXW.MoveToRangeEnd CreateOpenXmlElement(DMW.MoveToRangeEnd value)
     => CreateOpenXmlElement<DXW.MoveToRangeEnd>(value);
 
-  public static void UpdateOpenXmlElement(DXW.MarkupRangeType openXmlElement, DMW.MarkupRangeType value)
+  public static bool UpdateOpenXmlElement(DXW.MarkupRangeType openXmlElement, DMW.MarkupRangeType value)
   {
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

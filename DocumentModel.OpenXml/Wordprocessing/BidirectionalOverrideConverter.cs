@@ -1767,7 +1767,7 @@ public static class BidirectionalOverrideConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.BidirectionalOverride openXmlElement, DMW.BidirectionalOverride value)
+  public static bool UpdateOpenXmlElement(DXW.BidirectionalOverride openXmlElement, DMW.BidirectionalOverride value)
   {
     SetVal(openXmlElement, value?.Val);
     SetCustomXmlRun(openXmlElement, value?.CustomXmlRun);
@@ -1828,5 +1828,6 @@ public static class BidirectionalOverrideConverter
     SetChildBidirectionalOverride(openXmlElement, value?.ChildBidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
     SetSubDocumentReference(openXmlElement, value?.SubDocumentReference);
+    return true;
   }
 }

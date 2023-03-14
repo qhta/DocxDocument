@@ -98,9 +98,10 @@ public static class BarConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Bar openXmlElement, DMMath.Bar value)
+  public static bool UpdateOpenXmlElement(DXMath.Bar openXmlElement, DMMath.Bar value)
   {
     SetBarProperties(openXmlElement, value?.BarProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }
