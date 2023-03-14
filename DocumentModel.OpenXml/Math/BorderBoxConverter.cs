@@ -98,9 +98,10 @@ public static class BorderBoxConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.BorderBox openXmlElement, DMMath.BorderBox value)
+  public static bool UpdateOpenXmlElement(DXMath.BorderBox openXmlElement, DMMath.BorderBox value)
   {
     SetBorderBoxProperties(openXmlElement, value?.BorderBoxProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

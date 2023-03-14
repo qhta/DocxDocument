@@ -965,7 +965,7 @@ public static class ParagraphConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Paragraph openXmlElement, DMMath.Paragraph value)
+  public static bool UpdateOpenXmlElement(DXMath.Paragraph openXmlElement, DMMath.Paragraph value)
   {
     SetParagraphProperties(openXmlElement, value?.ParagraphProperties);
     SetOfficeMath(openXmlElement, value?.OfficeMath);
@@ -999,5 +999,6 @@ public static class ParagraphConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    return true;
   }
 }

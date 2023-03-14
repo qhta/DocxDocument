@@ -87,8 +87,9 @@ public static class MarkupTypeConverter
   public static DXW.CommentReference CreateOpenXmlElement(DMW.CommentReference value)
     => CreateOpenXmlElement<DXW.CommentReference>(value);
 
-  public static void UpdateOpenXmlElement(DXW.MarkupType openXmlElement, DMW.MarkupType value)
+  public static bool UpdateOpenXmlElement(DXW.MarkupType openXmlElement, DMW.MarkupType value)
   {
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

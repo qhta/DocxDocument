@@ -98,9 +98,10 @@ public static class GroupCharConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.GroupChar openXmlElement, DMMath.GroupChar value)
+  public static bool UpdateOpenXmlElement(DXMath.GroupChar openXmlElement, DMMath.GroupChar value)
   {
     SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

@@ -88,8 +88,9 @@ public static class RelationshipTypeConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.RelationshipType openXmlElement, DMW.RelationshipType value)
+  public static bool UpdateOpenXmlElement(DXW.RelationshipType openXmlElement, DMW.RelationshipType value)
   {
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

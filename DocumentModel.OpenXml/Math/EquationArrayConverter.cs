@@ -125,9 +125,10 @@ public static class EquationArrayConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.EquationArray openXmlElement, DMMath.EquationArray value)
+  public static bool UpdateOpenXmlElement(DXMath.EquationArray openXmlElement, DMMath.EquationArray value)
   {
     SetEquationArrayProperties(openXmlElement, value?.EquationArrayProperties);
     SetBases(openXmlElement, value?.Bases);
+    return true;
   }
 }

@@ -12,17 +12,17 @@ public static class TrackChangeType2Converter
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
   }
-  
+
   private static bool CmpAuthor(DXO2010W.TrackChangeType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
-  
+
   private static void SetAuthor(DXO2010W.TrackChangeType openXmlElement, String? value)
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
+
   /// <summary>
   /// date
   /// </summary>
@@ -30,19 +30,19 @@ public static class TrackChangeType2Converter
   {
     return openXmlElement?.Date?.Value;
   }
-  
+
   private static bool CmpDate(DXO2010W.TrackChangeType openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Date?.Value == value) return true;
     diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
     return false;
   }
-  
+
   private static void SetDate(DXO2010W.TrackChangeType openXmlElement, DateTime? value)
   {
     openXmlElement.Date = value;
   }
-  
+
   /// <summary>
   /// Annotation Identifier
   /// </summary>
@@ -50,17 +50,17 @@ public static class TrackChangeType2Converter
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
-  
+
   private static bool CmpId(DXO2010W.TrackChangeType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
-  
+
   private static void SetId(DXO2010W.TrackChangeType openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
+
   public static ElementType? CreateModelElement<ElementType>(DXO2010W.TrackChangeType? openXmlElement)
     where ElementType : DMW.TrackChangeType2, new()
   {
@@ -74,7 +74,7 @@ public static class TrackChangeType2Converter
     }
     return null;
   }
-  
+
   public static DMW.CustomXmlConflictInsertionRangeStart? CreateModelElement(DXO2010W.CustomXmlConflictInsertionRangeStart? openXmlElement)
     => CreateModelElement<DMW.CustomXmlConflictInsertionRangeStart>(openXmlElement);
 
@@ -104,19 +104,20 @@ public static class TrackChangeType2Converter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TrackChangeType2 value)
-    where OpenXmlElementType: DXO2010W.TrackChangeType, new()
+    where OpenXmlElementType : DXO2010W.TrackChangeType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXO2010W.TrackChangeType openXmlElement, DMW.TrackChangeType2 value)
+
+  public static bool UpdateOpenXmlElement(DXO2010W.TrackChangeType openXmlElement, DMW.TrackChangeType2 value)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetAuthor(openXmlElement, value.Author);
+    SetDate(openXmlElement, value.Date);
+    SetId(openXmlElement, value.Id);
+    return true;
   }
 }

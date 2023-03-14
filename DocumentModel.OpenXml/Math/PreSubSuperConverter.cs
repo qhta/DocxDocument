@@ -162,11 +162,12 @@ public static class PreSubSuperConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuper value)
+  public static bool UpdateOpenXmlElement(DXMath.PreSubSuper openXmlElement, DMMath.PreSubSuper value)
   {
     SetPreSubSuperProperties(openXmlElement, value?.PreSubSuperProperties);
     SetSubArgument(openXmlElement, value?.SubArgument);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

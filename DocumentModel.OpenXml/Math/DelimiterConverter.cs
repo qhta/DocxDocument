@@ -125,9 +125,10 @@ public static class DelimiterConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Delimiter openXmlElement, DMMath.Delimiter value)
+  public static bool UpdateOpenXmlElement(DXMath.Delimiter openXmlElement, DMMath.Delimiter value)
   {
     SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
     SetBases(openXmlElement, value?.Bases);
+    return true;
   }
 }

@@ -14,13 +14,4 @@ public class SdtRow: ElementCollection<ISdtRowElement>, ITableElement, ISdtRowEl
   /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
   /// </summary>
   [XmlContentElement] public SdtEndCharProperties? SdtEndCharProperties { get; set; }
-
-  ///// <summary>
-  ///// Specifies the last known contents of a structured document tag around a single table row.
-  ///// </summary>
-  ///// <remarks>
-  ///// Unlike other types of structured document tags, this type of structure document tag cannot show placeholder text or have mapped XML data, therefore it is never a cache.
-  ///// </remarks>
-  //[XmlContentElement] public SdtContentRow? SdtContentRow { get; set; }
-
 }

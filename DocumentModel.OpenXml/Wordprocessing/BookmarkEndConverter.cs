@@ -34,7 +34,8 @@ public static class BookmarkEndConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.BookmarkEnd openXmlElement, DMW.BookmarkEnd value)
+  public static bool UpdateOpenXmlElement(DXW.BookmarkEnd openXmlElement, DMW.BookmarkEnd value)
   {
+    return true;
   }
 }

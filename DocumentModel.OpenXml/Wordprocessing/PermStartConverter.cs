@@ -166,7 +166,7 @@ public static class PermStartConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PermStart openXmlElement, DMW.PermStart value)
+  public static bool UpdateOpenXmlElement(DXW.PermStart openXmlElement, DMW.PermStart value)
   {
     SetEditorGroup(openXmlElement, value?.EditorGroup);
     SetEd(openXmlElement, value?.Ed);
@@ -174,5 +174,6 @@ public static class PermStartConverter
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetId(openXmlElement, value?.Id);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+    return true;
   }
 }

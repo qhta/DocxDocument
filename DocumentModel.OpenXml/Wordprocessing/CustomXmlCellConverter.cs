@@ -1021,7 +1021,7 @@ public static class CustomXmlCellConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.CustomXmlCell openXmlElement, DMW.CustomXmlCell value)
+  public static bool UpdateOpenXmlElement(DXW.CustomXmlCell openXmlElement, DMW.CustomXmlCell value)
   {
     SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
     SetTableCells(openXmlElement, value?.TableCells);
@@ -1056,5 +1056,6 @@ public static class CustomXmlCellConverter
     SetMoveToRun(openXmlElement, value?.MoveToRun);
     SetRunConflictInsertion(openXmlElement, value?.RunConflictInsertion);
     SetRunConflictDeletion(openXmlElement, value?.RunConflictDeletion);
+    return true;
   }
 }

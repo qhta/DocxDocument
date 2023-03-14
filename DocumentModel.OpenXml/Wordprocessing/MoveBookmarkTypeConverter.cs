@@ -206,7 +206,7 @@ public static class MoveBookmarkTypeConverter
     => CreateOpenXmlElement<DXW.MoveToRangeStart>(value);
 
 
-  public static void UpdateOpenXmlElement(DXW.MoveBookmarkType openXmlElement, DMW.MoveBookmarkType value)
+  public static bool UpdateOpenXmlElement(DXW.MoveBookmarkType openXmlElement, DMW.MoveBookmarkType value)
   {
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
@@ -215,5 +215,6 @@ public static class MoveBookmarkTypeConverter
     SetColumnLast(openXmlElement, value?.ColumnLast);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

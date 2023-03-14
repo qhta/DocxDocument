@@ -130,10 +130,11 @@ public static class MathFunctionConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.MathFunction openXmlElement, DMMath.MathFunction value)
+  public static bool UpdateOpenXmlElement(DXMath.MathFunction openXmlElement, DMMath.MathFunction value)
   {
     SetFunctionProperties(openXmlElement, value?.FunctionProperties);
     SetFunctionName(openXmlElement, value?.FunctionName);
     SetBase(openXmlElement, value?.Base);
+    return true;
   }
 }

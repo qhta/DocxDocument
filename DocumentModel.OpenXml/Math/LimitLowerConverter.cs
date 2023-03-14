@@ -130,10 +130,11 @@ public static class LimitLowerConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.LimitLower openXmlElement, DMMath.LimitLower value)
+  public static bool UpdateOpenXmlElement(DXMath.LimitLower openXmlElement, DMMath.LimitLower value)
   {
     SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
     SetBase(openXmlElement, value?.Base);
     SetLimit(openXmlElement, value?.Limit);
+    return true;
   }
 }

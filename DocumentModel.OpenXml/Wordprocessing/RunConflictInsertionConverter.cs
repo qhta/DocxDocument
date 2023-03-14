@@ -1601,7 +1601,7 @@ public static class RunConflictInsertionConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.RunConflictInsertion openXmlElement, DMW.RunConflictInsertion value)
+  public static bool UpdateOpenXmlElement(DXO2010W.RunConflictInsertion openXmlElement, DMW.RunConflictInsertion value)
   {
     SetSdtRun(openXmlElement, value?.SdtRun);
     SetProofError(openXmlElement, value?.ProofError);
@@ -1657,5 +1657,6 @@ public static class RunConflictInsertionConverter
     SetRun(openXmlElement, value?.Run);
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    return true;
   }
 }

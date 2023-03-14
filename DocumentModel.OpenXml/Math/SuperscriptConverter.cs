@@ -130,10 +130,11 @@ public static class SuperscriptConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Superscript openXmlElement, DMMath.Superscript value)
+  public static bool UpdateOpenXmlElement(DXMath.Superscript openXmlElement, DMMath.Superscript value)
   {
     SetSuperscriptProperties(openXmlElement, value?.SuperscriptProperties);
     SetBase(openXmlElement, value?.Base);
     SetSuperArgument(openXmlElement, value?.SuperArgument);
+    return true;
   }
 }

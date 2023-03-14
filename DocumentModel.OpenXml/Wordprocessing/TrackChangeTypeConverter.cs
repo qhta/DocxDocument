@@ -151,10 +151,11 @@ public static class TrackChangeTypeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TrackChangeType openXmlElement, DMW.TrackChangeType value)
+  public static bool UpdateOpenXmlElement(DXW.TrackChangeType openXmlElement, DMW.TrackChangeType value)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetAuthor(openXmlElement, value.Author);
+    SetDate(openXmlElement, value.Date);
+    SetId(openXmlElement, value.Id);
+    return true;
   }
 }

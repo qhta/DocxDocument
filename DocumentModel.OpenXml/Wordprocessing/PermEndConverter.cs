@@ -78,9 +78,10 @@ public static class PermEndConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PermEnd openXmlElement, DMW.PermEnd value)
+  public static bool UpdateOpenXmlElement(DXW.PermEnd openXmlElement, DMW.PermEnd value)
   {
     SetId(openXmlElement, value?.Id);
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
+    return true;
   }
 }

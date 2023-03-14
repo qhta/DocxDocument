@@ -1601,7 +1601,7 @@ public static class InsertedRunConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.InsertedRun openXmlElement, DMW.InsertedRun value)
+  public static bool UpdateOpenXmlElement(DXW.InsertedRun openXmlElement, DMW.InsertedRun value)
   {
     SetSdtRun(openXmlElement, value?.SdtRun);
     SetProofError(openXmlElement, value?.ProofError);
@@ -1657,5 +1657,6 @@ public static class InsertedRunConverter
     SetRun(openXmlElement, value?.Run);
     SetBidirectionalOverride(openXmlElement, value?.BidirectionalOverride);
     SetBidirectionalEmbedding(openXmlElement, value?.BidirectionalEmbedding);
+    return true;
   }
 }
