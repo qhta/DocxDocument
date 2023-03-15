@@ -24,8 +24,7 @@ public class TestBody : TestBase
   /// </summary>
   /// <param name="filename">The filename of the document to read.</param>
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
-  /// <returns>Fonts read</returns>
-  public virtual DMW.Body TestReadDocumentBody(string filename, bool showDetails = false)
+  public virtual void TestReadDocumentBody(string filename, bool showDetails = false)
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
@@ -48,8 +47,6 @@ public class TestBody : TestBase
     }
     if (!ok)
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
-
-    return document.Body;
   }
 
   /// <summary>

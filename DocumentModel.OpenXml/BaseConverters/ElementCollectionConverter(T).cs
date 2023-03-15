@@ -193,8 +193,6 @@ public static class ElementCollectionConverter<T>
         var item = createElementMethod(element);
         if (item is T modelElement)
           modelElementCollection.Add(modelElement);
-        else
-          return false;
       }
     }
     return true;
@@ -215,11 +213,30 @@ public static class ElementCollectionConverter<T>
     if (compositeElement != null)
     {
       var elements = compositeElement.Elements();
-      if (modelElementCollection.Any())
+      return CompareOpenXmlElementCollection(elements, modelElementCollection, compareElementMethod, diffs, objName);
+    }
+    return false;
+  }
+
+  /// <summary>
+  /// Compares all elements contained in an openXml element collection with model elements contained in model element collection.
+  /// </summary>
+  /// <param name="elements">Collection of openXml element read from DocumentFormat.OpenXml document.</param>
+  /// <param name="models">A model element collection with items created from openXml elements.</param>
+  /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
+  /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
+  /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
+  public static bool CompareOpenXmlElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<T> models,
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  {
+    if (elements != null)
+    {
+      var ok = true;
+      if (elements.Any() && models.Any())
       {
         var elementsEnumerator = elements.GetEnumerator();
-        var modelEnumerator = modelElementCollection.GetEnumerator();
-        var ok = true;
+        var modelEnumerator = models.GetEnumerator();
         int i = 0;
         while (elementsEnumerator.MoveNext() && modelEnumerator.MoveNext())
         {
@@ -231,23 +248,16 @@ public static class ElementCollectionConverter<T>
               ok = false;
           }
         }
-        if (!Int32ValueConverter.CmpValue(elements.Count(), modelElementCollection.Count(), diffs, objName))
+        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, objName))
           ok = false;
         return ok;
       }
       else
       {
-        diffs?.Add(objName, "Count", elements.Count(), 0);
-        return false;
-      }
-    }
-    else
-    {
-      if (modelElementCollection.Any())
-      {
-        diffs?.Add(objName, "Count", 0, modelElementCollection.Count());
-        return false;
-      }
+        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, "Count"))
+          ok = false;
+        return ok;
+       }
     }
     return true;
   }

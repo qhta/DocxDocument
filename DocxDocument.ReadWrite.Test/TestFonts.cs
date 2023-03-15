@@ -57,8 +57,7 @@ public class TestFonts : TestBase
   /// </summary>
   /// <param name="filename">The filename of the document to read.</param>
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
-  /// <returns>Fonts read</returns>
-  public virtual DMW.Fonts TestReadFonts(string filename, bool showDetails = false)
+  public virtual void TestReadFonts(string filename, bool showDetails = false)
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
@@ -79,8 +78,6 @@ public class TestFonts : TestBase
     }
     if (!ok)
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
-
-    return document.Fonts;
   }
 
   /// <summary>
