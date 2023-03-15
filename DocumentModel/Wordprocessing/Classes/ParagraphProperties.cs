@@ -28,7 +28,7 @@ public class ParagraphProperties
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  public FrameProperties? FrameProperties { get; set; }
+  [XmlContentElement] public FrameProperties? FrameProperties { get; set; }
 
   /// <summary>
   ///   WidowControl.
@@ -38,7 +38,7 @@ public class ParagraphProperties
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  public NumberingProperties? NumberingProperties { get; set; }
+  [XmlContentElement] public NumberingProperties? NumberingProperties { get; set; }
 
   /// <summary>
   ///   SuppressLineNumbers.
@@ -48,7 +48,7 @@ public class ParagraphProperties
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  public ParagraphBorders? ParagraphBorders { get; set; }
+  [XmlContentElement] public ParagraphBorders? ParagraphBorders { get; set; }
 
   /// <summary>
   ///   Shading.
@@ -113,7 +113,7 @@ public class ParagraphProperties
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  public SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  [XmlContentElement] public SpacingBetweenLines? SpacingBetweenLines { get; set; }
 
   /// <summary>
   ///   Indentation.
@@ -168,20 +168,20 @@ public class ParagraphProperties
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  [XmlContentElement] public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
 
   /// <summary>
   ///   Run Properties for the Paragraph Mark.
   /// </summary>
-  public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
+  [XmlContentElement] public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
 
   /// <summary>
   ///   Section Properties.
   /// </summary>
-  public SectionProperties? SectionProperties { get; set; }
+  [XmlContentElement] public SectionProperties? SectionProperties { get; set; }
 
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>
-  public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
+  [XmlContentElement] public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
 }

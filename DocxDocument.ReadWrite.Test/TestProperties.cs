@@ -81,8 +81,7 @@ namespace DocxDocument.Reader.Test
     /// </summary>
     /// <param name="filename">The filename.</param>
     /// <param name="showDetails">Specifies if test details should be shown.</param>
-    /// <returns>Read properties</returns>
-    public virtual DocumentModel.DocumentProperties TestReadProperties(string filename, bool showDetails = false)
+    public virtual void TestReadProperties(string filename, bool showDetails = false)
     {
       WriteLine(filename);
       var reader = new DocxReader(filename);
@@ -101,8 +100,6 @@ namespace DocxDocument.Reader.Test
       CheckReadDocumentSettings(document, reader.WordprocessingDocument, showDetails);
 
       CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails);
-
-      return document.Properties;
     }
 
     /// <summary>

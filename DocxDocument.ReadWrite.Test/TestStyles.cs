@@ -62,8 +62,7 @@ public class TestStyles : TestBase
   /// </summary>
   /// <param name="filename">The filename of the document to read.</param>
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
-  /// <returns>Styles read</returns>
-  public virtual DMW.Styles TestReadStyles(string filename, bool showDetails = false)
+  public virtual void TestReadStyles(string filename, bool showDetails = false)
   {
     WriteLine(filename);
     var reader = new DocxReader(filename);
@@ -136,8 +135,6 @@ public class TestStyles : TestBase
 
     CheckReadDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);
     TestLatentStyleDefaults(document.Styles.LatentStyles, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles);
-
-    return document.Styles;
   }
 
   /// <summary>
