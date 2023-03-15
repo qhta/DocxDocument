@@ -55,7 +55,7 @@ public static class HyphenConverter
       case DMW.HyphenKind.SoftHyphen:
         return new DXW.SoftHyphen();
     }
-    throw new InvalidOperationException($"Not supported hyphen model {model.Value} in HyphenConverter.CreateOpenXmlElement");
+    throw new InvalidOperationException($"Not supported hyphen model {model.Value} in HyphenConverter.CreateOpenXmlParagraphElement");
   }
 
     public static bool UpdateOpenXmlElement(DXW.NoBreakHyphen openXmlElement, DMW.Hyphen model)

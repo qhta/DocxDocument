@@ -64,7 +64,7 @@ public static class SimpleRunElementConverter
         return new DXW.CarriageReturn();
     if (value is DMW.TabChar)
         return new DXW.TabChar();
-    throw new InvalidOperationException($"Not supported type {value.GetType()} in SimpleRunElementConverter.CreateOpenXmlElement");
+    throw new InvalidOperationException($"Not supported type {value.GetType()} in SimpleRunElementConverter.CreateOpenXmlParagraphElement");
   }
 
   public static bool UpdateOpenXmlElement(DXW.PageNumber? openXmlElement, DMW.PageNumber? value)

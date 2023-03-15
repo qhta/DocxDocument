@@ -69,7 +69,7 @@ public static class NoteReferenceMarkConverter
       case DMW.NoteReferenceKind.Annotation:
         return new DXW.AnnotationReferenceMark();
     }
-    throw new InvalidOperationException($"Not supported type {model.Type} in NoteReferenceMarkConverter.CreateOpenXmlElement");
+    throw new InvalidOperationException($"Not supported type {model.Type} in NoteReferenceMarkConverter.CreateOpenXmlParagraphElement");
   }
 
   public static bool UpdateOpenXmlElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model)

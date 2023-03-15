@@ -16,7 +16,7 @@ public class Break: ModelElement, IRunElement
   public BreakTextRestartLocationKind? Clear { get; set; }
 
   /// <summary>
-  ///   Specifies whether this element represents the position of last rendere page break.
+  ///   Specifies whether this element represents the position of last rendered page break.
   /// </summary>
   public bool IsLastRendered {get; set; }
 }

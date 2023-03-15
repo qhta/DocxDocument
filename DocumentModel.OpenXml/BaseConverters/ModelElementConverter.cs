@@ -86,13 +86,13 @@ public static class ModelElementConverter
     var elementConverterType = Type.GetType(typeName);
     if (elementConverterType == null)
       throw new InvalidOperationException($"Converter of type {typeName} not found");
-    var converterMethod = elementConverterType.GetMethod("CreateOpenXmlElement", BindingFlags.Public | BindingFlags.Static);
+    var converterMethod = elementConverterType.GetMethod("CreateOpenXmlParagraphElement", BindingFlags.Public | BindingFlags.Static);
     if (converterMethod == null)
-      throw new InvalidOperationException($"Method \"CreateOpenXmlElement\" not found in type {typeName}");
+      throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphElement\" not found in type {typeName}");
     var openXmlElement = converterMethod.Invoke(null, new object[] { model });
     if (openXmlElement is DX.OpenXmlElement result)
       return result;
-    throw new InvalidOperationException($"Method \"CreateOpenXmlElement\" in type {typeName} must return OpenXmlElement result");
+    throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphElement\" in type {typeName} must return OpenXmlElement result");
   }
 
   /// <summary>
