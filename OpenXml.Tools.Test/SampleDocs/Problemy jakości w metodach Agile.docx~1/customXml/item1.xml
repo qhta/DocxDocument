@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><b:Sources xmlns:b="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" xmlns="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" SelectedStyle="\IEEE2006OfficeOnline.xsl" StyleName="IEEE" Version="2006">
+<b:Source>
+		<b:Tag>Wel99</b:Tag>
+		<b:SourceType>DocumentFromInternetSite</b:SourceType>
+		<b:Guid>{21F1E2C6-2750-413E-8A4C-8205FD6B7FB4}</b:Guid>
+		<b:Title>Extreme Programming: A gentle introduction</b:Title>
+		<b:Year>1999</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:YearAccessed>2019</b:YearAccessed>
+		<b:MonthAccessed>12</b:MonthAccessed>
+		<b:DayAccessed>18</b:DayAccessed>
+		<b:URL>http://www.extremeprogramming.org/</b:URL>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Wells</b:Last>
+						<b:First>Don</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>6</b:RefOrder></b:Source>
+	
+	
+	
+	
+	
+	
+	<b:Source>
+		<b:Tag>Sut</b:Tag>
+		<b:SourceType>DocumentFromInternetSite</b:SourceType>
+		<b:Guid>{2507D47B-B6BC-4655-BA5C-2B24173D249B}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Title>The Scrum Papers. Nuts, Bolts and Origins of an Agile Process</b:Title>
+		<b:JournalName>Nuts, Bolts and Origins</b:JournalName>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Sutherland</b:Last>
+						<b:First>Jeff</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Schwaber</b:Last>
+						<b:First>Ken</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:URL>https://www.qagile.pl/wp-content/uploads/2018/11/scrum-papers.pdf</b:URL>
+		<b:RefOrder>8</b:RefOrder></b:Source>
+	
+	<b:Source>
+		<b:Tag>Sut11</b:Tag>
+		<b:SourceType>DocumentFromInternetSite</b:SourceType>
+		<b:Guid>{7F424E87-5B65-4203-9E08-EFDDCD055F84}</b:Guid>
+		<b:Title>The Scrum Guide</b:Title>
+		<b:Year>2011</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Sutherland</b:Last>
+						<b:First>Jeffrey</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Schwaber</b:Last>
+						<b:First>Ken</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:URL>https://www.scrum.org/resources/scrum-guide</b:URL>
+		<b:RefOrder>7</b:RefOrder></b:Source>
+<b:Source>
+		<b:Tag>Coc001</b:Tag>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Guid>{94E3CE1B-D4EA-457D-B8C3-7DB8CA722D2A}</b:Guid>
+		<b:Title>Selecting a project's methodology</b:Title>
+		<b:Year>2000</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:JournalName>IEEE software</b:JournalName>
+		<b:Pages>64-71</b:Pages>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Cockburn</b:Last>
+						<b:First>Alistair</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Volume>17</b:Volume>
+		<b:Issue>4</b:Issue>
+		<b:RefOrder>22</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Coc04</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{82D90A08-FD2E-43C9-B52D-6C70E709D8DE}</b:Guid>
+		<b:Title>Crystal clear: a human-powered methodology for small teams</b:Title>
+		<b:Year>2004</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:Publisher>Pearson Education</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Cockburn</b:Last>
+						<b:First>Alistair</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>23</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Pop03</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{F7317303-1014-42D1-847D-9972DDDF01E1}</b:Guid>
+		<b:Title>Lean Software Development: An Agile Toolkit</b:Title>
+		<b:Year>2003</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:Publisher>Addison-Wesley</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Poppendieck</b:Last>
+						<b:First>Mary</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Poppendieck</b:Last>
+						<b:First>Tom</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>21</b:RefOrder></b:Source>
+
+<b:Source>
+		<b:Tag>IEE91</b:Tag>
+		<b:SourceType>Report</b:SourceType>
+		<b:Guid>{7FB2C9A2-5B22-41C2-832B-D0741B01616F}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Author>
+			<b:Author>
+				<b:Corporate>IEEE Std. 610.12-1990</b:Corporate>
+			</b:Author>
+		</b:Author>
+		<b:Title>IEEE Standard Glossary of Software Engineering Terminology</b:Title>
+		<b:Year>1991</b:Year>
+		<b:RefOrder>1</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Kan84</b:Tag>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Guid>{3EE2BFE2-534B-4FCF-A065-74D85DD33078}</b:Guid>
+		<b:Title>Attractive Quality and Must-Be Quality (in Japanese)</b:Title>
+		<b:Year>1984</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:JournalName>Journal of the Japanese Society for Quality Control</b:JournalName>
+		<b:Pages>39-48</b:Pages>
+		<b:Volume>14</b:Volume>
+		<b:Issue>2</b:Issue>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Kano</b:Last>
+						<b:First>Noriaki</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Seraku</b:Last>
+						<b:First>Nobushiko</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Tkahashi</b:Last>
+						<b:First>Fumio</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Tsuji</b:Last>
+						<b:First>Shin-ichi</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>2</b:RefOrder></b:Source>
+	
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+<b:Source>
+		<b:Tag>Sta07</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{C080A7A6-8DD1-4C73-AC40-D64C89E74C25}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Title>Agile Software Development Quality Assurance</b:Title>
+		<b:Year>2007</b:Year>
+		<b:Publisher>Information Science Reference (Idea Group)</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Stamelos</b:Last>
+						<b:Middle>G.</b:Middle>
+						<b:First>Ioannis</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Sfetsos</b:Last>
+						<b:First>Panagiotis</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>4</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Mnk07</b:Tag>
+		<b:SourceType>BookSection</b:SourceType>
+		<b:Guid>{7E11C300-9F38-4972-ADA3-663921D8268D}</b:Guid>
+		<b:Title>Agile Software Methods: State-of-the-Art</b:Title>
+		<b:Year>2007</b:Year>
+		<b:Publisher>Information Science Reference (Idea Group)</b:Publisher>
+		<b:LCID>en-US</b:LCID>
+		<b:BookTitle>Agile Software Development Quality Assurance</b:BookTitle>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Mnkandla</b:Last>
+						<b:First>Ernest</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Dwolatzky</b:Last>
+						<b:First>Barry</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+			<b:BookAuthor>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Stamelos</b:Last>
+						<b:Middle>G.</b:Middle>
+						<b:First>Ioannis</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Sfetsos</b:Last>
+						<b:First>Panagiotis</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:BookAuthor>
+		</b:Author>
+		<b:RefOrder>5</b:RefOrder></b:Source>
+<b:Source>
+		<b:Tag>Ahm10</b:Tag>
+		<b:SourceType>ConferenceProceedings</b:SourceType>
+		<b:Guid>{6D250AA9-3D95-4B4E-BB95-FF0BD61F3A4B}</b:Guid>
+		<b:Title>Agile Software Development: Impact on Productivity and Quality</b:Title>
+		<b:Year>2010</b:Year>
+		<b:Pages>287-291</b:Pages>
+		<b:LCID>en-US</b:LCID>
+		<b:ConferenceName>2010 IEEE International Conference on Management of Innovation &amp; Technology</b:ConferenceName>
+		<b:Publisher>IEEE</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Ahmed</b:Last>
+						<b:First>A.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Ahmad</b:Last>
+						<b:First>S.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Ehsan</b:Last>
+						<b:First>N.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Mirza</b:Last>
+						<b:First>E.</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Sarwar</b:Last>
+						<b:Middle>Z.</b:Middle>
+						<b:First>S.</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>9</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Moh13</b:Tag>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Guid>{C6331A67-AAF0-444F-8687-F493BDE5FD5F}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Title>Agile Software Methodologies: Strength and Weakness</b:Title>
+		<b:JournalName>International Journal of Engineering Science and Technology</b:JournalName>
+		<b:Year>2013</b:Year>
+		<b:Pages>455-459</b:Pages>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Mohammad</b:Last>
+						<b:Middle>Hamdan</b:Middle>
+						<b:First>Adek</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Alwad'n</b:Last>
+						<b:First>Tariq</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Ababneh</b:Last>
+						<b:First>Jafar</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Volume>5</b:Volume>
+		<b:Issue>3</b:Issue>
+		<b:RefOrder>10</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Hod11</b:Tag>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Guid>{0B3576F4-CE81-498D-90DB-1AEED692A730}</b:Guid>
+		<b:Title>The impact of inadequate customer collaboration on self-organizing Agile teams</b:Title>
+		<b:Pages>521-534</b:Pages>
+		<b:Year>2011</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:JournalName>Information and Software Technology</b:JournalName>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Hoda</b:Last>
+						<b:First>Rashina</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Noble</b:Last>
+						<b:First>James</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Marshall</b:Last>
+						<b:First>Stuart</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Volume>53</b:Volume>
+		<b:Issue>5</b:Issue>
+		<b:RefOrder>24</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>van13</b:Tag>
+		<b:SourceType>JournalArticle</b:SourceType>
+		<b:Guid>{236141CC-4DFF-4727-955F-9220016ABA3A}</b:Guid>
+		<b:LCID>en-GB</b:LCID>
+		<b:Title>When agile meets the enterprise</b:Title>
+		<b:JournalName>Information and Software Technology</b:JournalName>
+		<b:Year>2013</b:Year>
+		<b:Pages>2154-2171</b:Pages>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>van Waardenburg</b:Last>
+						<b:First>Guus</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>van Vliet</b:Last>
+						<b:First>Hans</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Volume>55</b:Volume>
+		<b:Issue>12</b:Issue>
+		<b:RefOrder>25</b:RefOrder></b:Source>
+<b:Source>
+		<b:Tag>Cle94</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{6B4102F8-7FAF-4ED6-ACD5-B5925102215F}</b:Guid>
+		<b:Title>Case method fast-track: a RAD approach</b:Title>
+		<b:Year>1994</b:Year>
+		<b:LCID>en-US</b:LCID>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Clegg</b:Last>
+						<b:First>Dai</b:First>
+					</b:Person>
+					<b:Person>
+						<b:Last>Barker</b:Last>
+						<b:First>Richard</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:Publisher>Addison-Wesley Longman Publishing</b:Publisher>
+		<b:RefOrder>28</b:RefOrder></b:Source>
+	<b:Source><b:Tag>Alt18</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{E6349469-FEA0-4B05-91DB-2275AA2CA061}</b:Guid><b:Title>25 Scrum Process Best Practices that Set Your Agile Workflow for Efficiency</b:Title><b:Year>2018</b:Year><b:Author><b:Author><b:Corporate>AltexSoft</b:Corporate></b:Author></b:Author><b:Month>06</b:Month><b:Day>13</b:Day><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>03</b:MonthAccessed><b:DayAccessed>31</b:DayAccessed><b:URL>https://www.altexsoft.com/blog/business/25-scrum-process-best-practices-that-set-your-agile-workflow-for-efficiency/</b:URL><b:RefOrder>26</b:RefOrder></b:Source><b:Source><b:Tag>Agi21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{69578A3B-4E26-436C-A1D4-D400523837A8}</b:Guid><b:Author><b:Author><b:Corporate>Agile Aliance</b:Corporate></b:Author></b:Author><b:Title>Minimum Viable Product (MVP)</b:Title><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>03</b:MonthAccessed><b:DayAccessed>31</b:DayAccessed><b:URL>https://www.agilealliance.org/glossary/mvp/</b:URL><b:RefOrder>27</b:RefOrder></b:Source><b:Source><b:Tag>Mar</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{16132E47-D29C-415C-A82A-87276688B093}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Thorn</b:Last><b:First>Mary</b:First></b:Person><b:Person><b:Last>Galen</b:Last><b:First>Bob</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>How to create and lead high-performing agile teams: 8 secrets</b:Title><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>04</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://techbeacon.com/app-dev-testing/how-create-lead-high-performing-agile-teams-8-secrets</b:URL><b:RefOrder>18</b:RefOrder></b:Source><b:Source><b:Tag>Agn</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{32BE0095-F29C-4624-81EF-4FAEAD4171DF}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Pawlicka</b:Last><b:First>Agnieszka</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>How To Build High-Performance Agile Teams</b:Title><b:Year>2020</b:Year><b:Month>04</b:Month><b:Day>15</b:Day><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>04</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://selleo.com/blog/how-to-build-high-performance-agile-teams</b:URL><b:RefOrder>19</b:RefOrder></b:Source><b:Source><b:Tag>Hig21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{112075B3-22F4-4BB9-BF38-DD96C9ECE56C}</b:Guid><b:Author><b:Author><b:Corporate>High5Test</b:Corporate></b:Author></b:Author><b:Title>The Best Way to Motivate Employees: 5 Excellent Team Building Techniques</b:Title><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>04</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://high5test.com/team-building-techniques-to-motivate-employees/</b:URL><b:RefOrder>20</b:RefOrder></b:Source><b:Source><b:Tag>Ras11</b:Tag><b:SourceType>Report</b:SourceType><b:Guid>{15B768DE-B5E1-4ED8-B497-55A0F824077A}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Hoda</b:Last><b:First>Rashina</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>Self-Organizing Agile Teams: A Grounded Theory (PhD thesis)</b:Title><b:Year>2011</b:Year><b:Publisher>Victoria University of Welligton</b:Publisher><b:RefOrder>17</b:RefOrder></b:Source><b:Source><b:Tag>Jim</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{5DCDCBC5-1CF7-43C7-AD22-BA94C23306FF}</b:Guid><b:Title>History: The Agile Manifesto</b:Title><b:Author><b:Author><b:NameList><b:Person><b:Last>Highsmith</b:Last><b:First>Jim</b:First></b:Person></b:NameList></b:Author></b:Author><b:URL>https://agilemanifesto.org/history.html</b:URL><b:RefOrder>11</b:RefOrder></b:Source><b:Source>
+		<b:Tag>Dem86</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{11D79F06-5943-4344-8E35-36EF4E31BC0E}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Title>Out of the Crisis</b:Title>
+		<b:Year>1986</b:Year>
+		<b:Publisher>MIT Press</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Deming</b:Last>
+						<b:Middle>Edwards</b:Middle>
+						<b:First>William</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>12</b:RefOrder></b:Source>
+	<b:Source>
+		<b:Tag>Dru54</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{D0647595-7C78-46FB-9845-573BDE026A46}</b:Guid>
+		<b:LCID>en-US</b:LCID>
+		<b:Title> The Practice of Management</b:Title>
+		<b:Year>1954</b:Year>
+		<b:City>New York</b:City>
+		<b:Publisher>Harper</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Drucker</b:Last>
+						<b:First>Peter</b:First>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:RefOrder>13</b:RefOrder></b:Source>
+	
+<b:Source><b:Tag>Cru17</b:Tag><b:SourceType>ArticleInAPeriodical</b:SourceType><b:Guid>{003D6B6A-9212-4ABD-8873-4DBECE75F537}</b:Guid><b:Title>How is Security Testing Done in Agile Teams? A Cross-Case Analysis of Four Software Teams</b:Title><b:Year>2017</b:Year><b:Publisher>Springer, Cham</b:Publisher><b:Author><b:Author><b:NameList><b:Person><b:Last>Cruzes D.S.</b:Last><b:First>Felderer</b:First><b:Middle>M., Oyetoyan T.D., Gander M., Pekaric I.</b:Middle></b:Person></b:NameList></b:Author><b:Editor><b:NameList><b:Person><b:Last>Baumeister H.</b:Last><b:First>Lichter</b:First><b:Middle>H., Riebisch M.</b:Middle></b:Person></b:NameList></b:Editor></b:Author><b:PeriodicalTitle>Agile Processes in Software Engineering and Extreme Programming. XP 2017. Lecture Notes in Business Information Processing</b:PeriodicalTitle><b:Volume>283</b:Volume><b:RefOrder>38</b:RefOrder></b:Source><b:Source><b:Tag>Ken02</b:Tag><b:SourceType>Book</b:SourceType><b:Guid>{2480F092-9791-4B38-994B-D773C6DD48F0}</b:Guid><b:Title>Test-Driven Development by Example</b:Title><b:Year>2003</b:Year><b:Author><b:Author><b:NameList><b:Person><b:Last>Beck</b:Last><b:First>Kent</b:First></b:Person></b:NameList></b:Author></b:Author><b:Publisher>Addison-Wesley Professional</b:Publisher><b:RefOrder>30</b:RefOrder></b:Source><b:Source><b:Tag>Dav03</b:Tag><b:SourceType>Book</b:SourceType><b:Guid>{867280D7-6E99-4BA4-9738-8D6C03D972AE}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Astels</b:Last><b:First>Dave</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>Test Driven Development: A Practical Guide</b:Title><b:Year>2003</b:Year><b:Publisher>Prentice Hall Professional Technical Reference</b:Publisher><b:RefOrder>31</b:RefOrder></b:Source><b:Source><b:Tag>Jan08</b:Tag><b:SourceType>ArticleInAPeriodical</b:SourceType><b:Guid>{B6E56FCA-5C61-45F5-AB89-89180495A034}</b:Guid><b:Title>Does test-driven development really improve software design quality?</b:Title><b:Year>2008</b:Year><b:Author><b:Author><b:NameList><b:Person><b:Last>Janzen</b:Last><b:First>David</b:First></b:Person><b:Person><b:Last>Saiedian</b:Last><b:First>Hossein</b:First></b:Person></b:NameList></b:Author></b:Author><b:PeriodicalTitle>IEEE Software</b:PeriodicalTitle><b:Pages>77-84</b:Pages><b:Volume>25</b:Volume><b:Issue>2</b:Issue><b:RefOrder>32</b:RefOrder></b:Source><b:Source><b:Tag>For10</b:Tag><b:SourceType>ArticleInAPeriodical</b:SourceType><b:Guid>{D444D56E-78B2-498C-BCFA-F8C73DEE0D84}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Forrest Shull</b:Last><b:First>Grigori</b:First><b:Middle>Melnik, Burak Turhan, Lucas Layman, Madeline Diep, Hakan Edrogmus</b:Middle></b:Person></b:NameList></b:Author></b:Author><b:Title>What Do We Know about Test-Driven Development?</b:Title><b:PeriodicalTitle>IEEE Software</b:PeriodicalTitle><b:Year>2010</b:Year><b:Pages>16-19</b:Pages><b:Volume>27</b:Volume><b:Issue>6</b:Issue><b:RefOrder>33</b:RefOrder></b:Source>
+	<b:Source><b:Tag>Dan21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{608CAE07-9B7D-45A4-A405-5E56889A4441}</b:Guid><b:Title>Bringing in a ringer (or, "How to work with specialists") </b:Title><b:Author><b:Author><b:NameList><b:Person><b:Last>Radigan</b:Last><b:First>Dan</b:First></b:Person></b:NameList></b:Author></b:Author><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.atlassian.com/agile/teams/working-with-specialists</b:URL><b:RefOrder>14</b:RefOrder></b:Source><b:Source><b:Tag>Dav19</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{2774077D-4399-430A-82E5-0F02BD944EFB}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>West</b:Last><b:First>Dave</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>Balancing Generalists and Specialists– Building Successful Agile Teams </b:Title><b:Year>2019</b:Year><b:Month>08</b:Month><b:Day>16</b:Day><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.infoq.com/articles/balancing-generalists-specialists/</b:URL><b:RefOrder>15</b:RefOrder></b:Source><b:Source><b:Tag>Row21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{51B061F1-5EA5-4749-A23B-870CBF263667}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Bunning</b:Last><b:First>Rowan</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>Busting the “No Specialists on the Team” Myth</b:Title><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.scrumwithstyle.com/busting-no-specialists-team-myth/</b:URL><b:RefOrder>16</b:RefOrder></b:Source><b:Source><b:Tag>Wha21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{DABC4E24-7B6E-4438-9EC0-30B46C940C40}</b:Guid><b:Title>What is Selenium? Introduction to Selenium Automation Testing</b:Title><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.guru99.com/introduction-to-selenium.html</b:URL><b:RefOrder>34</b:RefOrder></b:Source><b:Source><b:Tag>Ave20</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{16ABB183-E0F2-4253-92C2-A39F9DE730AF}</b:Guid><b:Author><b:Author><b:Corporate>Avendi</b:Corporate></b:Author></b:Author><b:Title>BPNM - podstawowe informacje</b:Title><b:Year>2020</b:Year><b:Month>02</b:Month><b:Day>11</b:Day><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://avendi.edu.pl/analiza-i-modelowanie/bpmn/bpmn-podstawowe-informacje/</b:URL><b:RefOrder>35</b:RefOrder></b:Source><b:Source><b:Tag>Pra15</b:Tag><b:SourceType>ConferenceProceedings</b:SourceType><b:Guid>{454EADE8-0B51-43AA-A0E6-42C4FBE6DD27}</b:Guid><b:Author><b:Author><b:NameList><b:Person><b:Last>Moura</b:Last><b:First>Jessica</b:First><b:Middle>Lasch de</b:Middle></b:Person><b:Person><b:Last>Charão</b:Last><b:First>A.</b:First></b:Person></b:NameList></b:Author></b:Author><b:Title>Test case generation from BPMN models for automated testing of Web-based BPM applications</b:Title><b:Year>2017</b:Year><b:Month>03</b:Month><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.researchgate.net/publication/283659784_Design_of_a_tool_for_generating_test_cases_from_BPMN</b:URL><b:ConferenceName>17th International Conference on Computational Science and Its Applications (ICCSA</b:ConferenceName><b:Publisher>IEEE</b:Publisher><b:RefOrder>36</b:RefOrder></b:Source><b:Source><b:Tag>Amb07</b:Tag><b:SourceType>ArticleInAPeriodical</b:SourceType><b:Guid>{802ACF8B-93E6-464E-97F3-47F1605E2A64}</b:Guid><b:Title>Agile Model driven development</b:Title><b:Year>2007</b:Year><b:Author><b:Author><b:NameList><b:Person><b:Last>Ambler</b:Last><b:First>Scott</b:First><b:Middle>W.</b:Middle></b:Person></b:NameList></b:Author></b:Author><b:Publisher>John Wiley &amp; Sons</b:Publisher><b:PeriodicalTitle>XOOTIC Magazine</b:PeriodicalTitle><b:Month>02</b:Month><b:RefOrder>37</b:RefOrder></b:Source><b:Source><b:Tag>Sea21</b:Tag><b:SourceType>DocumentFromInternetSite</b:SourceType><b:Guid>{9E723FFA-31EA-4598-AEB9-EE0B7890AFA0}</b:Guid><b:Title>Regression Testing in Agile: Concepts, Challeges and Stratiegies</b:Title><b:Author><b:Author><b:Corporate>SeaLights</b:Corporate></b:Author></b:Author><b:YearAccessed>2021</b:YearAccessed><b:MonthAccessed>05</b:MonthAccessed><b:DayAccessed>01</b:DayAccessed><b:URL>https://www.sealights.io/regression-testing/regression-testing-in-agile-concepts-challenges-and-strategies/</b:URL><b:RefOrder>39</b:RefOrder></b:Source><b:Source>
+		<b:Tag>Pre92</b:Tag>
+		<b:SourceType>Book</b:SourceType>
+		<b:Guid>{018A0209-0B2E-4B57-BDCC-725C6D1BF9F3}</b:Guid>
+		<b:Title>Software Engineering. A Practitioner's Approach</b:Title>
+		<b:Year>1992</b:Year>
+		<b:Publisher>McGraw-Hill</b:Publisher>
+		<b:Author>
+			<b:Author>
+				<b:NameList>
+					<b:Person>
+						<b:Last>Pressman</b:Last>
+						<b:First>Roger</b:First>
+						<b:Middle>S.</b:Middle>
+					</b:Person>
+				</b:NameList>
+			</b:Author>
+		</b:Author>
+		<b:LCID>en-US</b:LCID>
+		<b:Edition>3</b:Edition>
+		<b:RefOrder>29</b:RefOrder></b:Source>
+<b:Source><b:Tag>Jar</b:Tag><b:SourceType>Book</b:SourceType><b:Guid>{F0AA2969-4747-4456-8A75-0B2DB776A37B}</b:Guid><b:Title>Współczesne metody zapewniania jakości oprogramowania. Od klasyki do zwinności</b:Title><b:Author><b:Author><b:NameList><b:Person><b:Last>Kuchta</b:Last><b:First>Jarosław</b:First></b:Person></b:NameList></b:Author></b:Author><b:Year>2020</b:Year><b:Publisher>PWN</b:Publisher><b:RefOrder>3</b:RefOrder></b:Source></b:Sources>

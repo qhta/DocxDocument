@@ -1,9 +1,9 @@
 ﻿namespace DocumentModel;
-public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
-  where T: IModelElement
+public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, IList<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
+  where T : IModelElement
 {
 
-  public ElementCollection(){ }
+  public ElementCollection() { }
 
   public ElementCollection(ElementCollection<T> other)
   {
@@ -12,52 +12,92 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   }
 
   #region ICollection implementation
-  private ObservableCollection<T> Items = new();
+  private List<T> Items = new();
 
   public void Add(T item)
   {
-    ((ICollection<T>)Items).Add(item);
+    Items.Add(item);
     item.Parent = Parent ?? this;
+    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item, null, Items.Count - 1));
   }
 
   public void Clear()
   {
-    ((ICollection<T>)Items).Clear();
+    Items.Clear();
+    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
   }
 
   public bool Contains(T item)
   {
-    return ((ICollection<T>)Items).Contains(item);
+    return Items.Contains(item);
   }
 
   public void CopyTo(T[] array, int arrayIndex)
   {
-    ((ICollection<T>)Items).CopyTo(array, arrayIndex);
+    Items.CopyTo(array, arrayIndex);
   }
 
   public bool Remove(T item)
   {
-    return ((ICollection<T>)Items).Remove(item);
+    var index = Items.IndexOf(item);
+    if (index < 0)
+      return false;
+    var ok = Items.Remove(item);
+    if (ok)
+      OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item, index));
+    return ok;
   }
 
   [XmlIgnore]
   [JsonIgnore]
-  public int Count => ((ICollection<T>)Items).Count;
+  public int Count => Items.Count;
 
   [XmlIgnore]
   [JsonIgnore]
-  public bool IsReadOnly => ((ICollection<T>)Items).IsReadOnly;
+  public bool IsReadOnly => false;
 
   public IEnumerator<T> GetEnumerator()
   {
-    return ((IEnumerable<T>)Items).GetEnumerator();
+    return Items.GetEnumerator();
   }
 
   IEnumerator IEnumerable.GetEnumerator()
   {
-    return ((IEnumerable)Items).GetEnumerator();
+    return Items.GetEnumerator();
   }
 
+  #endregion
+
+  #region IList implementation
+  void ICollection.CopyTo(Array array, int index)
+  {
+    throw new NotImplementedException();
+  }
+
+  bool ICollection.IsSynchronized { get; }
+
+  object ICollection.SyncRoot { get; } = new object();
+
+  public int IndexOf(T item)
+  {
+    return Items.IndexOf(item);
+  }
+
+  public void Insert(int index, T item)
+  {
+    Items.Insert(index, item);
+    item.Parent = Parent ?? this;
+    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item, null, index));
+  }
+
+  public void RemoveAt(int index)
+  {
+    var item = Items[index];
+    Items.RemoveAt(index);
+    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Remove, null, item, index));
+  }
+
+  public T this[int index] { get => Items[index]; set => Items[index] = value; }
   #endregion
 
   #region INotifyCollectionChangedEvent implementation
@@ -66,14 +106,16 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   {
     add
     {
-      ((INotifyCollectionChanged)Items).CollectionChanged += value;
+      OnCollectionChanged += value;
     }
 
     remove
     {
-      ((INotifyCollectionChanged)Items).CollectionChanged -= value;
+      OnCollectionChanged -= value;
     }
   }
+
+  protected NotifyCollectionChangedEventHandler? OnCollectionChanged;
   #endregion
 
   #region IEquatable implementation
@@ -92,20 +134,12 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
       var otherItem = otherEnumerator.Current;
       if (thisItem is ModelElement && otherItem is ModelElement)
         if (!thisItem.Equals(otherItem)) return false;
-      else
+        else
         if (!EqualityComparer<T>.Default.Equals(thisItem, otherItem)) return false;
     }
     if (this.Count != other.Count) return false;
     return true;
   }
-
-  void ICollection.CopyTo(Array array, int index)
-  {
-    throw new NotImplementedException();
-  }
-
-  bool ICollection.IsSynchronized { get; }
-  object ICollection.SyncRoot { get; } = new object();
 
   //public override int GetHashCode()
   //{

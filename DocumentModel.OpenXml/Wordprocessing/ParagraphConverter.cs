@@ -400,7 +400,8 @@ public static class ParagraphConverter
         ok = false;
       if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<IParagraphElement>.CompareOpenXmlElementCollection(openXmlElement, model, 
+      if (!ElementCollectionConverter<IParagraphElement>.CompareOpenXmlElementCollection(
+        openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model, 
         (CompareOpenXmlElementMethod)CompareParagraphElement, diffs, objName))
         ok = false;
       return ok;

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dmw:Body xmlns:dmw="DocumentModel.Wordprocessing">
+  <dmw:Paragraph ParagraphId="7818F3D4" TextId="5CA1319A" RsidParagraphAddition="007D6C6C" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="00D80381">
+    <ParagraphProperties>
+      <dmw:ParagraphProperties Justification="Right" />
+    </ParagraphProperties>
+    <dmw:Run>
+      <dmw:Text>Data</dmw:Text>
+    </dmw:Run>
+    <dmw:Run RsidRunAddition="001073ED">
+      <dmw:Text xml:space="preserve"> rezygnacji</dmw:Text>
+    </dmw:Run>
+    <dmw:Run>
+      <dmw:Text xml:space="preserve">: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Data" SdtId="DADB6EB0" Tag="Date" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="98DE0EF594374F649146179E4FB82B2F" />
+          <SdtContentDate>
+            <dmw:SdtContentDate FullDate="2022-07-26 00:00:00" DateFormat="dd.MM.yyyy" LanguageId="pl-PL" SdtDateMappingType="DateTime" Calendar="Gregorian" />
+          </SdtContentDate>
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="664D60C5" TextId="64CFA3E1" RsidParagraphAddition="00D80381" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="00D80381">
+    <dmw:Run>
+      <dmw:Text xml:space="preserve">Imię i nazwisko: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Imię i nazwisko" SdtId="DE932A77" Tag="Name" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="FD6BB5D1C4D047BABB02CFE662FD5891" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="6B2A47E5" TextId="3FFDB222" RsidParagraphAddition="001073ED" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="001073ED">
+    <dmw:Run>
+      <dmw:Text xml:space="preserve">Adres: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Adres1" ShowingPlaceholder="True" SdtId="888F3CF4" Tag="Address1" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="8FF54F13419F411C98C0205C9A257963" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="2EAC82EC" TextId="7C88750B" RsidParagraphAddition="001073ED" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="001073ED">
+    <dmw:Run>
+      <dmw:Text>Adres cd:</dmw:Text>
+    </dmw:Run>
+    <dmw:Run RsidRunAddition="0095292A">
+      <dmw:Text xml:space="preserve"> </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Adres2" ShowingPlaceholder="True" SdtId="6E7BBCB3" Tag="Address2" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="131602FABC124887BB89040B0AE8D6E5" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="6FA683EE" TextId="206E0562" RsidParagraphAddition="0095292A" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="0095292A">
+    <ParagraphProperties>
+      <dmw:ParagraphProperties>
+        <ParagraphMarkRunProperties>
+          <dmw:ParagraphMarkRunProperties NoProof="True" />
+        </ParagraphMarkRunProperties>
+      </dmw:ParagraphProperties>
+    </ParagraphProperties>
+    <dmw:Run>
+      <dmw:Text xml:space="preserve">Kod pocztowy: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Kod" ShowingPlaceholder="True" SdtId="791B62BA" Tag="ZipCode" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="567710BA15A64E718C467EE6FB56B6C0" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+    <dmw:Run>
+      <dmw:TabChar />
+      <dmw:Text xml:space="preserve">Miejscowość: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Miejscowość" ShowingPlaceholder="True" SdtId="7368C342" Tag="City" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:RunProperties NoProof="True" />
+          <dmw:SdtPlaceholder DocPartReference="898A56B66393452195217FE911540D7C" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="15571438" TextId="19249E6C" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+    <ParagraphProperties>
+      <dmw:ParagraphProperties>
+        <ParagraphMarkRunProperties>
+          <dmw:ParagraphMarkRunProperties NoProof="True" />
+        </ParagraphMarkRunProperties>
+      </dmw:ParagraphProperties>
+    </ParagraphProperties>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="2C1949A6" TextId="7EA2B7BD" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+    <dmw:Run>
+      <dmw:Text xml:space="preserve">Dotyczy zamówienia: </dmw:Text>
+    </dmw:Run>
+    <dmw:SdtRun>
+      <SdtProperties>
+        <dmw:SdtProperties SdtAlias="Nr zamówienia" ShowingPlaceholder="True" SdtId="E564962F" Tag="OrderNumber" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtPlaceholder DocPartReference="04E426434942407EA28CEB42E7EF7154" />
+          <dmw:SdtContentText />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRun />
+    </dmw:SdtRun>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="48F95D16" TextId="77777777" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+  <dmw:Paragraph ParagraphId="2CDE5C6B" TextId="1069E385" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+    <dmw:Run>
+      <dmw:Text>Oświadczam, że rezygnuję z zakupu następujących towarów:</dmw:Text>
+    </dmw:Run>
+  </dmw:Paragraph>
+  <dmw:Paragraph ParagraphId="494A1199" TextId="399201D5" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+  <dmw:Table>
+    <TableProperties>
+      <dmw:TableProperties TableStyle="Tabela-Siatka" BiDiVisual="False">
+        <TableWidth>
+          <dmw:TableWidthType Width="0" Type="Auto" />
+        </TableWidth>
+        <TableLook>
+          <dmw:TableLook Val="04A0" FirstRow="True" LastRow="False" FirstColumn="True" LastColumn="False" NoHorizontalBand="False" NoVerticalBand="True" />
+        </TableLook>
+      </dmw:TableProperties>
+    </TableProperties>
+    <TableGrid>
+      <dmw:TableGrid>
+        <GridColumns>
+          <dmw:GridColumn Width="603" />
+          <dmw:GridColumn Width="5175" />
+          <dmw:GridColumn Width="850" />
+          <dmw:GridColumn Width="850" />
+          <dmw:GridColumn Width="1277" />
+        </GridColumns>
+      </dmw:TableGrid>
+    </TableGrid>
+    <dmw:TableRow RsidTableRowAddition="002D1D83" RsidTableRowProperties="00750B94" ParagraphId="74CA2B97" TextId="2D2977EF">
+      <dmw:TableCell>
+        <TableCellProperties>
+          <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+            <TableCellWidth>
+              <dmw:TableWidthType Width="603" Type="Dxa" />
+            </TableCellWidth>
+          </dmw:TableCellProperties>
+        </TableCellProperties>
+        <dmw:Paragraph ParagraphId="06C089B4" TextId="7676D9D9" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+          <dmw:Run>
+            <dmw:Text>L.p.</dmw:Text>
+          </dmw:Run>
+        </dmw:Paragraph>
+      </dmw:TableCell>
+      <dmw:TableCell>
+        <TableCellProperties>
+          <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+            <TableCellWidth>
+              <dmw:TableWidthType Width="5175" Type="Dxa" />
+            </TableCellWidth>
+          </dmw:TableCellProperties>
+        </TableCellProperties>
+        <dmw:Paragraph ParagraphId="236F7E9B" TextId="239BF897" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+          <dmw:Run>
+            <dmw:Text>Nazwa towaru</dmw:Text>
+          </dmw:Run>
+        </dmw:Paragraph>
+      </dmw:TableCell>
+      <dmw:TableCell>
+        <TableCellProperties>
+          <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+            <TableCellWidth>
+              <dmw:TableWidthType Width="850" Type="Dxa" />
+            </TableCellWidth>
+          </dmw:TableCellProperties>
+        </TableCellProperties>
+        <dmw:Paragraph ParagraphId="0758CD57" TextId="5FD17F96" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+          <dmw:Run>
+            <dmw:Text>Ilość</dmw:Text>
+          </dmw:Run>
+        </dmw:Paragraph>
+      </dmw:TableCell>
+      <dmw:TableCell>
+        <TableCellProperties>
+          <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+            <TableCellWidth>
+              <dmw:TableWidthType Width="850" Type="Dxa" />
+            </TableCellWidth>
+          </dmw:TableCellProperties>
+        </TableCellProperties>
+        <dmw:Paragraph ParagraphId="0BDB25AA" TextId="3A6AED91" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+          <dmw:Run>
+            <dmw:Text>Cena</dmw:Text>
+          </dmw:Run>
+        </dmw:Paragraph>
+      </dmw:TableCell>
+      <dmw:TableCell>
+        <TableCellProperties>
+          <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+            <TableCellWidth>
+              <dmw:TableWidthType Width="1277" Type="Dxa" />
+            </TableCellWidth>
+          </dmw:TableCellProperties>
+        </TableCellProperties>
+        <dmw:Paragraph ParagraphId="2AEAC8F8" TextId="70D69A8E" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83">
+          <dmw:Run>
+            <dmw:Text>Wartość</dmw:Text>
+          </dmw:Run>
+        </dmw:Paragraph>
+      </dmw:TableCell>
+    </dmw:TableRow>
+    <dmw:SdtRow>
+      <SdtProperties>
+        <dmw:SdtProperties SdtId="721972F8" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+          <dmw:SdtRepeatedSection DoNotAllowInsertDeleteSection="False" />
+        </dmw:SdtProperties>
+      </SdtProperties>
+      <dmw:SdtContentRow>
+        <dmw:SdtRow>
+          <SdtProperties>
+            <dmw:SdtProperties SdtId="F421F5E8" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="True">
+              <dmw:SdtPlaceholder DocPartReference="DefaultPlaceholder_-1854013435" />
+            </dmw:SdtProperties>
+          </SdtProperties>
+          <dmw:SdtContentRow>
+            <dmw:TableRow RsidTableRowAddition="002D1D83" RsidTableRowProperties="00750B94" ParagraphId="56E3F4F7" TextId="0C2C8DF7">
+              <dmw:TableCell>
+                <TableCellProperties>
+                  <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+                    <TableCellWidth>
+                      <dmw:TableWidthType Width="603" Type="Dxa" />
+                    </TableCellWidth>
+                  </dmw:TableCellProperties>
+                </TableCellProperties>
+                <dmw:Paragraph ParagraphId="0AF72769" TextId="510146FA" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+              </dmw:TableCell>
+              <dmw:TableCell>
+                <TableCellProperties>
+                  <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+                    <TableCellWidth>
+                      <dmw:TableWidthType Width="5175" Type="Dxa" />
+                    </TableCellWidth>
+                  </dmw:TableCellProperties>
+                </TableCellProperties>
+                <dmw:Paragraph ParagraphId="46AF9BD2" TextId="77777777" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+              </dmw:TableCell>
+              <dmw:TableCell>
+                <TableCellProperties>
+                  <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+                    <TableCellWidth>
+                      <dmw:TableWidthType Width="850" Type="Dxa" />
+                    </TableCellWidth>
+                  </dmw:TableCellProperties>
+                </TableCellProperties>
+                <dmw:Paragraph ParagraphId="59F9955D" TextId="77777777" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+              </dmw:TableCell>
+              <dmw:TableCell>
+                <TableCellProperties>
+                  <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+                    <TableCellWidth>
+                      <dmw:TableWidthType Width="850" Type="Dxa" />
+                    </TableCellWidth>
+                  </dmw:TableCellProperties>
+                </TableCellProperties>
+                <dmw:Paragraph ParagraphId="5975D946" TextId="77777777" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+              </dmw:TableCell>
+              <dmw:TableCell>
+                <TableCellProperties>
+                  <dmw:TableCellProperties NoWrap="False" TableCellFitText="False" HideMark="False">
+                    <TableCellWidth>
+                      <dmw:TableWidthType Width="1277" Type="Dxa" />
+                    </TableCellWidth>
+                  </dmw:TableCellProperties>
+                </TableCellProperties>
+                <dmw:Paragraph ParagraphId="244EF53A" TextId="11219943" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+              </dmw:TableCell>
+            </dmw:TableRow>
+          </dmw:SdtContentRow>
+        </dmw:SdtRow>
+      </dmw:SdtContentRow>
+    </dmw:SdtRow>
+  </dmw:Table>
+  <dmw:Paragraph ParagraphId="315D2DC2" TextId="4C291C82" RsidParagraphAddition="002D1D83" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="002D1D83" />
+  <dmw:Paragraph ParagraphId="603796CB" TextId="4FA0D558" RsidParagraphAddition="00E13D42" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="00E13D42" />
+  <dmw:SdtBlock>
+    <dmw:SdtProperties SdtAlias="Firma" ShowingPlaceholder="True" SdtId="E9D280FD" Tag="Company" WebExtensionLinked="False" WebExtensionCreated="False" EntityPickerEmpty="False" SdtRepeatedSectionItem="False">
+      <dmw:SdtPlaceholder DocPartReference="DefaultPlaceholder_-1854013440" />
+      <dmw:DataBinding PrefixMappings="xmlns:ns0='http://schemas.openxmlformats.org/officeDocument/2006/extended-properties' " XPath="/ns0:Properties[1]/ns0:Company[1]" StoreItemId="{6668398D-A668-4E3E-A5EB-62B293D839F1}" />
+      <dmw:SdtContentText />
+    </dmw:SdtProperties>
+    <dmw:Paragraph ParagraphId="68256483" TextId="6A6C672A" RsidParagraphMarkRevision="00C0491F" RsidParagraphAddition="00E13D42" RsidParagraphProperties="00D80381" RsidRunAdditionDefault="00D7379F">
+      <dmw:Run RsidRunProperties="00EE05CC">
+        <dmw:RunProperties RunStyle="Tekstzastpczy" />
+        <dmw:Text>Kliknij lub naciśnij tutaj, aby wprowadzić tekst.</dmw:Text>
+      </dmw:Run>
+    </dmw:Paragraph>
+  </dmw:SdtBlock>
+  <dmw:SectionProperties RsidRPr="00C0491F" RsidR="00E13D42" RsidSect="00CE4405">
+    <dmw:PageSize Width="11906" Height="16838" />
+    <dmw:PageMargin Top="1417" Right="1417" Bottom="1417" Left="1417" Header="708" Footer="708" Gutter="0" />
+    <dmw:Columns Space="708" />
+    <dmw:DocGrid LinePitch="360" />
+  </dmw:SectionProperties>
+</dmw:Body>

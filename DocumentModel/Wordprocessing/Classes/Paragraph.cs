@@ -1,15 +1,9 @@
-using System.ComponentModel;
-using System.Reflection.Metadata;
-
-using DocumentModel.Math;
-
-using static System.Collections.Specialized.BitVector32;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
+[DebuggerDisplay("Paragraph Id={ParagraphId}")]
 public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyElement, ITableCellElement, ISdtBlockElement
 {
   /// <summary>
@@ -60,6 +54,6 @@ public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyEleme
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  public ParagraphProperties? ParagraphProperties { get; set; }
+  [XmlContentElement] public ParagraphProperties? ParagraphProperties { get; set; }
 
 }
