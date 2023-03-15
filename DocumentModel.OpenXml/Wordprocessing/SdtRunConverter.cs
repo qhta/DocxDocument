@@ -127,7 +127,7 @@ public static class SdtRunConverter
     var mathResult = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathElement);
     if (mathResult != null) return mathResult;
 
-    throw new InvalidOperationException($"Value of type \"{model.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlElement method");
+    throw new InvalidOperationException($"Value of type \"{model.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlParagraphElement method");
   }
 
   /// <summary>
