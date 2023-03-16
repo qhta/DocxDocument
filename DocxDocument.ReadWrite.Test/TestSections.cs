@@ -32,11 +32,20 @@ public class TestSections : TestBase
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Body, "No document body read");
     var modelBody = document.Body;
-    int modelBodyCount = modelBody?.Count() ?? 0;
+    var modelSections = modelBody?.Sections?.ToArray();
+    int modelSectionsCount = modelSections?.Count() ?? 0;
     var origBody = reader.WordprocessingDocument.MainDocumentPart?.Document?.Body;
-    int origBodyCount = origBody?.Elements().Count() ?? 0;
+    var origSectionProperties = origBody?.Descendants<DXW.SectionProperties>().ToArray();
+    int origSectionPropertiesCount = origSectionProperties?.Count() ?? 0;
     var diffs = new DiffList();
-    var ok = DMXW.BodyConverter.CompareModelElement(origBody, modelBody, diffs, null);
+    var ok = DMX.Int32ValueConverter.CmpValue(origSectionPropertiesCount,modelSectionsCount, diffs, "Count");
+    if (modelSections!=null && origSectionProperties!=null)
+    for (int i=0; i<Math.Min(modelSectionsCount, origSectionPropertiesCount); i++)
+    {
+      var modelSectionsProperties = modelSections[i].Properties;
+      var origSectionPropertiesElement = origSectionProperties[i];
+      if (!DMXW.SectionPropertiesConverter.CompareModelElement(origSectionPropertiesElement, modelSectionsProperties, diffs, $"SectionProperties[{i}]"));
+    }
     if (!ok && showDetails)
     {
       WriteLine("Read body differences found:");
@@ -96,7 +105,7 @@ public class TestSections : TestBase
   }
 
   /// <summary>
-  /// Tests sections Json serialization by reading all docx files in folder specified by test path.,
+  /// Tests sections Json serialization by reading all docx files in folder specified by test path,
   /// serialize and deserialize body using string writer.
   /// </summary>
   [Test]

@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.Conversion\Qhta.Conversion.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj" />
   </ItemGroup>
@@ -49,9 +50,6 @@
     </Reference>
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
-    </Reference>
-    <Reference Include="Qhta.DeepCompare">
-      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.DeepCompare.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>
