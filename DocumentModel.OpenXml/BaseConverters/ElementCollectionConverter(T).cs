@@ -202,19 +202,22 @@ public static class ElementCollectionConverter<T>
   /// Compares all elements contained in a composite openXml element with model elements contained in model element collection.
   /// </summary>
   /// <param name="compositeElement">Composite openXml element read from DocumentFormat.OpenXml document.</param>
-  /// <param name="modelElementCollection">A model element collection with items created from openXml elements.</param>
+  /// <param name="collection">A model element collection with items created from openXml elements.</param>
   /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
-  public static bool CompareOpenXmlElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T> modelElementCollection,
+  public static bool CompareOpenXmlElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T>? collection,
   CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
   {
-    if (compositeElement != null)
+    if (compositeElement != null && collection!=null)
     {
       var elements = compositeElement.Elements();
-      return CompareOpenXmlElementCollection(elements, modelElementCollection, compareElementMethod, diffs, objName);
+      return CompareOpenXmlElementCollection(elements, collection, compareElementMethod, diffs, objName);
     }
+    if (compositeElement ==null && collection == null)
+      return true;
+    diffs?.Add(objName, compositeElement?.GetType().Name, compositeElement, collection);
     return false;
   }
 
@@ -244,7 +247,7 @@ public static class ElementCollectionConverter<T>
           OpenXmlElement? openXmlElement = elementsEnumerator.Current;
           if (openXmlElement != null && modelElement != null)
           {
-            if (!compareElementMethod(openXmlElement, modelElement, diffs, $"Item[{i}]"))
+            if (!compareElementMethod(openXmlElement, modelElement, diffs, (objName!=null) ? $"{objName}[{i}]" : $"Item[{i}]"))
               ok = false;
           }
         }
