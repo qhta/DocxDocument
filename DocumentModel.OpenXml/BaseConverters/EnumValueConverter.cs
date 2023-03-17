@@ -54,6 +54,18 @@ public static class EnumValueConverter
     return false;
   }
 
+  public static ModelEnumType? CreateValue<ModelEnumType>(UInt16? value)
+    where ModelEnumType : struct, IConvertible
+  {
+    if (value != null)
+    {
+      var n = (int)Convert.ChangeType(value, typeof(int));
+      var val = (ModelEnumType)Enum.ToObject(typeof(ModelEnumType), n);
+      return val;
+    }
+    return null;
+  }
+
   public static DX.EnumValue<OpenXmlEnumType>? CreateEnumValue<OpenXmlEnumType, ModelEnumType>(ModelEnumType? value)
     where OpenXmlEnumType : struct, IConvertible
     where ModelEnumType : struct, IConvertible
