@@ -17,7 +17,7 @@ public class SectionsCollection : LinkedList<Section>
       section.Properties = lastSectionProperties;
       var index = section.FillBackward(aBody, aBody.Count() - 1);
       sections.AddFirst(section);
-      while (index > 0)
+      while (index >= 0)
       {
         section = new Section();
         var aParagraph = aBody[index] as Paragraph;
@@ -26,8 +26,11 @@ public class SectionsCollection : LinkedList<Section>
           section.Properties = aParagraph.ParagraphProperties?.SectionProperties;
           section.AddLast(aParagraph);
         }
-        index = section.FillBackward(aBody, index - 1);
         sections.AddFirst(section);
+        if (index>0)
+          index = section.FillBackward(aBody, index - 1);
+        else
+          break;
       }
     }
     return sections;

@@ -24,4 +24,13 @@ public class PageSize: ISectionPropertiesElement
   ///   Printer Paper Code
   /// </summary>
   public UInt16? Code { get; set; }
+
+  /// <summary>
+  ///   Printer Paper Code
+  /// </summary>
+  public PaperSize? PaperSize 
+    { get => (PaperSize?)Code;
+      set => Code = (UInt16?)value; 
+    }
+
 }

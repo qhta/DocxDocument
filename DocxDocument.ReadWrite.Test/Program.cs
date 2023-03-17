@@ -16,8 +16,10 @@ internal class Program
   {
     var testInstance = new TestSections();
     testInstance.Setup();
-    testInstance.TestReadSections("Sections.docx");
-    testInstance.TestReadSectionsXmlSerialization("Sections.docx");
+    //testInstance.TestReadSections("Sections.docx");
+    //testInstance.TestReadSectionsXmlSerialization("Sections.docx");
+    testInstance.TestReadSections("PageSizes.docx");
+    testInstance.TestReadSectionsXmlSerialization("PageSizes.docx");
     //testInstance.TestReadSectionsJsonSerialization();
     Console.WriteLine("\nTest passed");
   }
