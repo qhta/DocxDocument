@@ -38,7 +38,7 @@ public class TestSections : TestBase
     var origSectionProperties = origBody?.Descendants<DXW.SectionProperties>().ToArray();
     int origSectionPropertiesCount = origSectionProperties?.Count() ?? 0;
     var diffs = new DiffList();
-    var ok = DMX.Int32ValueConverter.CmpValue(origSectionPropertiesCount,modelSectionsCount, diffs, "Count");
+    var ok = DMX.Int32ValueConverter.CmpValue(origSectionPropertiesCount,modelSectionsCount, diffs, "Sections.Count");
     if (modelSections!=null && origSectionProperties!=null)
     for (int i=0; i<Math.Min(modelSectionsCount, origSectionPropertiesCount); i++)
     {
