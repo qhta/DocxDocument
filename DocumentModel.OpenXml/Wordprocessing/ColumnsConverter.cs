@@ -44,21 +44,21 @@ public static class ColumnsConverter
   /// <summary>
   /// Number of Equal Width Columns
   /// </summary>
-  private static Int16? GetColumnCount(DXW.Columns openXmlElement)
+  private static int? GetColumnCount(DXW.Columns openXmlElement)
   {
     return openXmlElement?.ColumnCount?.Value;
   }
   
-  private static bool CmpColumnCount(DXW.Columns openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnCount(DXW.Columns openXmlElement, int? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ColumnCount?.Value == value) return true;
     diffs?.Add(objName, "ColumnCount", openXmlElement?.ColumnCount?.Value, value);
     return false;
   }
   
-  private static void SetColumnCount(DXW.Columns openXmlElement, Int16? value)
+  private static void SetColumnCount(DXW.Columns openXmlElement, int? value)
   {
-    openXmlElement.ColumnCount = value;
+    openXmlElement.ColumnCount = (Int16?)value;
   }
   
   /// <summary>
