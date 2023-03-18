@@ -34,6 +34,18 @@ public static class RelationshipTypeConverter
     return null;
   }
   
+  public static ElementType? CreateModelElement<ElementType>(DXW.RelationshipType? openXmlElement)
+    where ElementType : DMW.RelationshipType, new()
+  {
+    if (openXmlElement != null)
+    {
+      var value = new ElementType();
+      value.Id = GetId(openXmlElement);
+      return value;
+    }
+    return null;
+  }
+
   public static DMW.SubDocumentReference? CreateModelElement(DXW.SubDocumentReference? openXmlElement)
   {
     if (openXmlElement != null)

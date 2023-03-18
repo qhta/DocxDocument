@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReadElementWithKnownTypeInfo context="" ReaderName="DocumentModel.Wordprocessing:Body">
+  <ReadObject context="DocumentModel.Wordprocessing.Body" ReaderName="DocumentModel.Wordprocessing:Body">
+    <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Body" ReaderName="DocumentModel.Wordprocessing:Paragraph">
+      <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Body" ReaderName="DocumentModel.Wordprocessing:Paragraph">
+        <ReadObject context="DocumentModel.Wordprocessing.Paragraph" ReaderName="DocumentModel.Wordprocessing:Paragraph">
+          <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+            <ReadElementAsMember context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+              <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+                <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+                  <Return result="void" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+                </ReadMemberObjectInterior>
+                <Return result="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadMemberWithKnownTypeAndMemberInfo>
+              <Return result="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementAsMember>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+              <ReadObject context="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:BookmarkStart">
+                <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:Run"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.BookmarkStart" ReaderName="DocumentModel.Wordprocessing:Run"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:Run">
+              <ReadObject context="DocumentModel.Wordprocessing.Run" ReaderName="DocumentModel.Wordprocessing:Run">
+                <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Run" ReaderName="DocumentModel.Wordprocessing:RunProperties">
+                  <ReadElementAsMember context="DocumentModel.Wordprocessing.Run" ReaderName="DocumentModel.Wordprocessing:RunProperties">
+                    <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.Run" ReaderName="DocumentModel.Wordprocessing:RunProperties">
+                      <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.RunProperties" ReaderName="DocumentModel.Wordprocessing:RunProperties">
+                        <Return result="void" ReaderName="DocumentModel.Wordprocessing:Drawing"/>
+                      </ReadMemberObjectInterior>
+                      <Return result="DocumentModel.Wordprocessing.RunProperties" ReaderName="DocumentModel.Wordprocessing:Drawing"/>
+                    </ReadMemberWithKnownTypeAndMemberInfo>
+                    <Return result="DocumentModel.Wordprocessing.RunProperties" ReaderName="DocumentModel.Wordprocessing:Drawing"/>
+                  </ReadElementAsMember>
+                  <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Run" ReaderName="DocumentModel.Wordprocessing:Drawing">
+                    <ReadObject context="DocumentModel.Wordprocessing.Drawing" ReaderName="DocumentModel.Wordprocessing:Drawing">
+                      <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Drawing" ReaderName="Inline">
+                        <ReadElementAsMember context="DocumentModel.Wordprocessing.Drawing" ReaderName="Inline">
+                          <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.Drawing" ReaderName="Inline">
+                            <ReadMemberObjectInterior context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="DocumentModel.Drawings.Wordprocessing:Inline">
+                              <ReadPropertiesAsElements context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="Extent">
+                                <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="Extent">
+                                  <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="Extent">
+                                    <ReadMemberObjectInterior context="DocumentModel.Drawings.Wordprocessing.Extent" ReaderName="DocumentModel.Drawings.Wordprocessing:Extent">
+                                      <Return result="void" ReaderName="/Extent"/>
+                                    </ReadMemberObjectInterior>
+                                    <Return result="DocumentModel.Drawings.Wordprocessing.Extent" ReaderName="EffectExtent"/>
+                                  </ReadMemberWithKnownTypeAndMemberInfo>
+                                  <Return result="DocumentModel.Drawings.Wordprocessing.Extent" ReaderName="EffectExtent"/>
+                                </ReadElementAsMember>
+                                <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="EffectExtent">
+                                  <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="EffectExtent">
+                                    <ReadMemberObjectInterior context="DocumentModel.Drawings.Wordprocessing.EffectExtent" ReaderName="DocumentModel.Drawings.Wordprocessing:EffectExtent">
+                                      <Return result="void" ReaderName="/EffectExtent"/>
+                                    </ReadMemberObjectInterior>
+                                    <Return result="DocumentModel.Drawings.Wordprocessing.EffectExtent" ReaderName="DocProperties"/>
+                                  </ReadMemberWithKnownTypeAndMemberInfo>
+                                  <Return result="DocumentModel.Drawings.Wordprocessing.EffectExtent" ReaderName="DocProperties"/>
+                                </ReadElementAsMember>
+                                <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="DocProperties">
+                                  <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="DocProperties">
+                                    <ReadMemberObjectInterior context="DocumentModel.Drawings.Wordprocessing.DocProperties" ReaderName="DocumentModel.Drawings.Wordprocessing:DocProperties">
+                                      <Return result="void" ReaderName="/DocProperties"/>
+                                    </ReadMemberObjectInterior>
+                                    <Return result="DocumentModel.Drawings.Wordprocessing.DocProperties" ReaderName="NonVisualGraphicFrameDrawingProperties"/>
+                                  </ReadMemberWithKnownTypeAndMemberInfo>
+                                  <Return result="DocumentModel.Drawings.Wordprocessing.DocProperties" ReaderName="NonVisualGraphicFrameDrawingProperties"/>
+                                </ReadElementAsMember>
+                                <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="NonVisualGraphicFrameDrawingProperties">
+                                  <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="NonVisualGraphicFrameDrawingProperties">
+                                    <ReadMemberObjectInterior context="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="DocumentModel.Drawings.Wordprocessing:NonVisualGraphicFrameDrawingProperties">
+                                      <ReadPropertiesAsElements context="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="GraphicFrameLocks">
+                                        <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="GraphicFrameLocks">
+                                          <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="GraphicFrameLocks">
+                                            <ReadMemberObjectInterior context="DocumentModel.Drawings.GraphicFrameLocks" ReaderName="DocumentModel.Drawings:GraphicFrameLocks">
+                                              <Return result="void" ReaderName="/GraphicFrameLocks"/>
+                                            </ReadMemberObjectInterior>
+                                            <Return result="DocumentModel.Drawings.GraphicFrameLocks" ReaderName="/DocumentModel.Drawings.Wordprocessing:NonVisualGraphicFrameDrawingProperties"/>
+                                          </ReadMemberWithKnownTypeAndMemberInfo>
+                                          <Return result="DocumentModel.Drawings.GraphicFrameLocks" ReaderName="/DocumentModel.Drawings.Wordprocessing:NonVisualGraphicFrameDrawingProperties"/>
+                                        </ReadElementAsMember>
+                                        <Return result="1" ReaderName="/DocumentModel.Drawings.Wordprocessing:NonVisualGraphicFrameDrawingProperties"/>
+                                      </ReadPropertiesAsElements>
+                                      <Return result="void" ReaderName="/NonVisualGraphicFrameDrawingProperties"/>
+                                    </ReadMemberObjectInterior>
+                                    <Return result="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="Graphic"/>
+                                  </ReadMemberWithKnownTypeAndMemberInfo>
+                                  <Return result="DocumentModel.Drawings.Wordprocessing.NonVisualGraphicFrameDrawingProperties" ReaderName="Graphic"/>
+                                </ReadElementAsMember>
+                                <ReadElementAsMember context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="Graphic">
+                                  <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="Graphic">
+                                    <ReadMemberObjectInterior context="DocumentModel.Drawings.Graphic" ReaderName="DocumentModel.Drawings:Graphic">
+                                      <ReadPropertiesAsElements context="DocumentModel.Drawings.Graphic" ReaderName="GraphicData">
+                                        <ReadElementAsMember context="DocumentModel.Drawings.Graphic" ReaderName="GraphicData">
+                                          <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Drawings.Graphic" ReaderName="GraphicData">
+                                            <ReadMemberObjectInterior context="DocumentModel.Drawings.GraphicData" ReaderName="DocumentModel.Drawings:GraphicData">
+                                              <Return result="void" ReaderName="/GraphicData"/>
+                                            </ReadMemberObjectInterior>
+                                            <Return result="DocumentModel.Drawings.GraphicData" ReaderName="/DocumentModel.Drawings:Graphic"/>
+                                          </ReadMemberWithKnownTypeAndMemberInfo>
+                                          <Return result="DocumentModel.Drawings.GraphicData" ReaderName="/DocumentModel.Drawings:Graphic"/>
+                                        </ReadElementAsMember>
+                                        <Return result="1" ReaderName="/DocumentModel.Drawings:Graphic"/>
+                                      </ReadPropertiesAsElements>
+                                      <Return result="void" ReaderName="/Graphic"/>
+                                    </ReadMemberObjectInterior>
+                                    <Return result="DocumentModel.Drawings.Graphic" ReaderName="/DocumentModel.Drawings.Wordprocessing:Inline"/>
+                                  </ReadMemberWithKnownTypeAndMemberInfo>
+                                  <Return result="DocumentModel.Drawings.Graphic" ReaderName="/DocumentModel.Drawings.Wordprocessing:Inline"/>
+                                </ReadElementAsMember>
+                                <Return result="5" ReaderName="/DocumentModel.Drawings.Wordprocessing:Inline"/>
+                              </ReadPropertiesAsElements>
+                              <Return result="void" ReaderName="/Inline"/>
+                            </ReadMemberObjectInterior>
+                            <Return result="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="/DocumentModel.Wordprocessing:Drawing"/>
+                          </ReadMemberWithKnownTypeAndMemberInfo>
+                          <Return result="DocumentModel.Drawings.Wordprocessing.Inline" ReaderName="/DocumentModel.Wordprocessing:Drawing"/>
+                        </ReadElementAsMember>
+                        <Return result="1" ReaderName="/DocumentModel.Wordprocessing:Drawing"/>
+                      </ReadPropertiesAsElements>
+                      <Return result="DocumentModel.Wordprocessing.Drawing" ReaderName="/DocumentModel.Wordprocessing:Run"/>
+                    </ReadObject>
+                    <Return result="DocumentModel.Wordprocessing.Drawing" ReaderName="/DocumentModel.Wordprocessing:Run"/>
+                  </ReadElementWithKnownItemInfo>
+                  <Return result="2" ReaderName="/DocumentModel.Wordprocessing:Run"/>
+                </ReadPropertiesAsElements>
+                <Return result="DocumentModel.Wordprocessing.Run" ReaderName="/DocumentModel.Wordprocessing:Paragraph"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.Run" ReaderName="/DocumentModel.Wordprocessing:Paragraph"/>
+            </ReadElementWithKnownItemInfo>
+            <Return result="8" ReaderName="/DocumentModel.Wordprocessing:Paragraph"/>
+          </ReadPropertiesAsElements>
+          <Return result="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:Paragraph"/>
+        </ReadObject>
+        <Return result="DocumentModel.Wordprocessing.Paragraph ParagraphId=5E94A66C" ReaderName="DocumentModel.Wordprocessing:Paragraph"/>
+      </ReadElementWithKnownItemInfo>
+      <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Body" ReaderName="DocumentModel.Wordprocessing:Paragraph">
+        <ReadObject context="DocumentModel.Wordprocessing.Paragraph" ReaderName="DocumentModel.Wordprocessing:Paragraph">
+          <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+            <ReadElementAsMember context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+              <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+                <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:ParagraphProperties">
+                  <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="Tabs">
+                    <ReadElementAsMember context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="Tabs">
+                      <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="Tabs">
+                        <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.Tabs" ReaderName="DocumentModel.Wordprocessing:Tabs">
+                          <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.Tabs" ReaderName="TabStop">
+                            <ReadElementAsMember context="DocumentModel.Wordprocessing.Tabs" ReaderName="TabStop">
+                              <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.Tabs" ReaderName="TabStop">
+                                <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.TabStop" ReaderName="DocumentModel.Wordprocessing:TabStop">
+                                  <Return result="void" ReaderName="/TabStop"/>
+                                </ReadMemberObjectInterior>
+                                <Return result="DocumentModel.Wordprocessing.TabStop" ReaderName="/DocumentModel.Wordprocessing:Tabs"/>
+                              </ReadMemberWithKnownTypeAndMemberInfo>
+                              <Return result="DocumentModel.Wordprocessing.TabStop" ReaderName="/DocumentModel.Wordprocessing:Tabs"/>
+                            </ReadElementAsMember>
+                            <Return result="1" ReaderName="/DocumentModel.Wordprocessing:Tabs"/>
+                          </ReadPropertiesAsElements>
+                          <Return result="void" ReaderName="/Tabs"/>
+                        </ReadMemberObjectInterior>
+                        <Return result="DocumentModel.Wordprocessing.Tabs" ReaderName="DocumentModel.Wordprocessing:ParagraphMarkRunProperties"/>
+                      </ReadMemberWithKnownTypeAndMemberInfo>
+                      <Return result="DocumentModel.Wordprocessing.Tabs" ReaderName="DocumentModel.Wordprocessing:ParagraphMarkRunProperties"/>
+                    </ReadElementAsMember>
+                    <ReadElementAsMember context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:ParagraphMarkRunProperties">
+                      <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:ParagraphMarkRunProperties">
+                        <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="DocumentModel.Wordprocessing:ParagraphMarkRunProperties">
+                          <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="Languages">
+                            <ReadElementAsMember context="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="Languages">
+                              <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="Languages">
+                                <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.LanguageType" ReaderName="DocumentModel.Wordprocessing:LanguageType">
+                                  <Return result="void" ReaderName="/Languages"/>
+                                </ReadMemberObjectInterior>
+                                <Return result="DocumentModel.Wordprocessing.LanguageType" ReaderName="/DocumentModel.Wordprocessing:ParagraphMarkRunProperties"/>
+                              </ReadMemberWithKnownTypeAndMemberInfo>
+                              <Return result="DocumentModel.Wordprocessing.LanguageType" ReaderName="/DocumentModel.Wordprocessing:ParagraphMarkRunProperties"/>
+                            </ReadElementAsMember>
+                            <Return result="1" ReaderName="/DocumentModel.Wordprocessing:ParagraphMarkRunProperties"/>
+                          </ReadPropertiesAsElements>
+                          <Return result="void" ReaderName="DocumentModel.Wordprocessing:SectionProperties"/>
+                        </ReadMemberObjectInterior>
+                        <Return result="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="DocumentModel.Wordprocessing:SectionProperties"/>
+                      </ReadMemberWithKnownTypeAndMemberInfo>
+                      <Return result="DocumentModel.Wordprocessing.ParagraphMarkRunProperties" ReaderName="DocumentModel.Wordprocessing:SectionProperties"/>
+                    </ReadElementAsMember>
+                    <ReadElementAsMember context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:SectionProperties">
+                      <ReadMemberWithKnownTypeAndMemberInfo context="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:SectionProperties">
+                        <ReadMemberObjectInterior context="DocumentModel.Wordprocessing.SectionProperties" ReaderName="DocumentModel.Wordprocessing:SectionProperties">
+                          <ReadPropertiesAsElements context="DocumentModel.Wordprocessing.SectionProperties" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+                            <Return result="0" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                          </ReadPropertiesAsElements>
+                          <Return result="void" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                        </ReadMemberObjectInterior>
+                        <Return result="DocumentModel.Wordprocessing.SectionProperties" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                      </ReadMemberWithKnownTypeAndMemberInfo>
+                      <Return result="DocumentModel.Wordprocessing.SectionProperties" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                    </ReadElementAsMember>
+                    <Return result="3" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                  </ReadPropertiesAsElements>
+                  <Return result="void" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+                </ReadMemberObjectInterior>
+                <Return result="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+              </ReadMemberWithKnownTypeAndMemberInfo>
+              <Return result="DocumentModel.Wordprocessing.ParagraphProperties" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+            </ReadElementAsMember>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+              <ReadObject context="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+                <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+              <ReadObject context="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+                <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+              <ReadObject context="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:FooterReference">
+                <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:PageSize"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.FooterReference" ReaderName="DocumentModel.Wordprocessing:PageSize"/>
+            </ReadElementWithKnownItemInfo>
+            <ReadElementWithKnownItemInfo context="DocumentModel.Wordprocessing.Paragraph ParagraphId=59AFF392" ReaderName="DocumentModel.Wordprocessing:PageSize">
+              <ReadObject context="DocumentModel.Wordprocessing.PageSize" ReaderName="DocumentModel.Wordprocessing:PageSize">
+                <Return result="DocumentModel.Wordprocessing.PageSize" ReaderName="DocumentModel.Wordprocessing:PageMargin"/>
+              </ReadObject>
+              <Return result="DocumentModel.Wordprocessing.PageSize" ReaderName="DocumentModel.Wordprocessing:PageMargin"/>
+            </ReadElementWithKnownItemInfo>

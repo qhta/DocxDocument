@@ -3,17 +3,17 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageSize Class.
 /// </summary>
-public class PageSize: ISectionPropertiesElement
+public class PageSize: ModelElement, ISectionPropertiesElement
 {
   /// <summary>
   ///   Page Width
   /// </summary>
-  public UInt32? Width { get; set; }
+  public DXA? Width { get; set; }
 
   /// <summary>
   ///   Page Height
   /// </summary>
-  public UInt32? Height { get; set; }
+  public DXA? Height { get; set; }
 
   /// <summary>
   ///   Page Orientation

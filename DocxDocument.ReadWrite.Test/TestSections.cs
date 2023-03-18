@@ -77,7 +77,7 @@ public class TestSections : TestBase
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
     filename = Path.Combine(TestPath, filename);
-    WriteLine($"Testing body of: {filename}");
+    WriteLine($"Testing sections of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     var oldBody = document.Body ?? new();
@@ -90,14 +90,14 @@ public class TestSections : TestBase
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+    //WriteLine(str);
+    WriteLine("=============SerializationEnd=============");
 
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newBody, $"Deserialized body is null");
     var diffs = new DiffList();
-    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs); 
+    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
     if (!ok)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());

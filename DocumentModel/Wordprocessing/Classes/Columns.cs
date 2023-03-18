@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents the columns layout in a section.
 /// </summary>
-public class Columns: ISectionPropertiesElement
+public class Columns: ModelElement, ISectionPropertiesElement
 {
   /// <summary>
   ///   Equal Column Widths
@@ -13,12 +13,12 @@ public class Columns: ISectionPropertiesElement
   /// <summary>
   ///   Spacing Between Equal Width Columns
   /// </summary>
-  public String? Space { get; set; }
+  public DXA? Space { get; set; }
 
   /// <summary>
   ///   Number of Equal Width Columns
   /// </summary>
-  public Int16? ColumnCount { get; set; }
+  public int? ColumnCount { get; set; }
 
   /// <summary>
   ///   Draw Line Between Columns

@@ -1,7 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Section Properties.
+///   Defines the section properties for a section of the document.
+///   If it occurs as the last body element, then it specifies the properties of the last section of the document.
+///   For any other section the properties are stored as a child element of the paragraph element 
+///   corresponding to the last paragraph in the given section.
 /// </summary>
 public partial class SectionProperties : ModelElement, IBodyElement
 {
@@ -27,10 +30,24 @@ public partial class SectionProperties : ModelElement, IBodyElement
 
   public SectionMarkKind? SectionType { get; set; }
 
-  [XmlContentElement]
+  public Boolean? FormProtection { get; set; }
+
+  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
+
+  public Boolean? NoEndnote { get; set; }
+
+  public Boolean? TitlePage { get; set; }
+
+  public TextDirectionKind? TextDirection { get; set; }
+
+  public Boolean? BiDi { get; set; }
+
+  public Boolean? GutterOnRight { get; set; }
+
+  public Int32? FootnoteColumns { get; set; }
+
   public HeaderReferences? HeaderReferences { get; set; }
 
-  [XmlContentElement]
   public FooterReferences? FooterReferences { get; set; }
 
   [XmlContentElement]
@@ -60,28 +77,11 @@ public partial class SectionProperties : ModelElement, IBodyElement
   [XmlContentElement]
   public Columns? Columns { get; set; }
 
-  public Boolean? FormProtection { get; set; }
-
-  [XmlContentElement]
-  public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
-
-  public Boolean? NoEndnote { get; set; }
-
-  public Boolean? TitlePage { get; set; }
-
-  public TextDirectionKind? TextDirection { get; set; }
-
-  public Boolean? BiDi { get; set; }
-
-  public Boolean? GutterOnRight { get; set; }
-
   [XmlContentElement]
   public DocGrid? DocGrid { get; set; }
 
   [XmlContentElement]
-  public RelationshipType? PrinterSettingsReference { get; set; }
-
-  public Int32? FootnoteColumns { get; set; }
+  public PrinterSettingsReference? PrinterSettingsReference { get; set; }
 
   [XmlContentElement]
   public SectionPropertiesChange? SectionPropertiesChange { get; set; }

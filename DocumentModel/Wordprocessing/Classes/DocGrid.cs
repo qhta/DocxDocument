@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocGrid Class.
 /// </summary>
-public class DocGrid
+public class DocGrid: ModelElement, ISectionPropertiesElement
 {
   /// <summary>
   ///   Document Grid Type
@@ -13,10 +13,10 @@ public class DocGrid
   /// <summary>
   ///   Document Grid Line Pitch
   /// </summary>
-  public Int32? LinePitch { get; set; }
+  public DXA? LinePitch { get; set; }
 
   /// <summary>
   ///   Document Grid Character Pitch
   /// </summary>
-  public Int32? CharacterSpace { get; set; }
+  public DXA? CharacterSpace { get; set; }
 }
