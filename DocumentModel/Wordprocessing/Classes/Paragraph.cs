@@ -3,7 +3,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Paragraph Class.
 /// </summary>
-[DebuggerDisplay("Paragraph Id={ParagraphId}")]
 public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyElement, ITableCellElement, ISdtBlockElement
 {
   /// <summary>
@@ -56,4 +55,11 @@ public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyEleme
   /// </summary>
   [XmlContentElement] public ParagraphProperties? ParagraphProperties { get; set; }
 
+  public override string ToString()
+  {
+    var result = this.GetType().ToString();
+    if (ParagraphId!=null)
+      result +=$" ParagraphId={ParagraphId}";
+    return result;
+  }
 }

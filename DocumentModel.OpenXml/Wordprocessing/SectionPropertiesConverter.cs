@@ -9,9 +9,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SectionPropertiesConverter
 {
-  /// <summary>
-  /// Physical Section Mark Character Revision ID
-  /// </summary>
+  #region Physical Section Mark Character Revision ID conversion
   private static DM.HexInt? GetRsidRPr(DXW.SectionProperties openXmlElement)
   {
     if (openXmlElement?.RsidRPr?.Value != null)
@@ -31,10 +29,9 @@ public static class SectionPropertiesConverter
     else
       openXmlElement.RsidRPr = null;
   }
+  #endregion
 
-  /// <summary>
-  /// Section Deletion Revision ID
-  /// </summary>
+  #region Section Deletion Revision ID conversion
   private static DM.HexInt? GetRsidDel(DXW.SectionProperties openXmlElement)
   {
     if (openXmlElement?.RsidDel?.Value != null)
@@ -54,10 +51,9 @@ public static class SectionPropertiesConverter
     else
       openXmlElement.RsidDel = null;
   }
+  #endregion
 
-  /// <summary>
-  /// Section Addition Revision ID
-  /// </summary>
+  #region Section Addition Revision ID conversion
   private static DM.HexInt? GetRsidR(DXW.SectionProperties openXmlElement)
   {
     if (openXmlElement?.RsidR?.Value != null)
@@ -77,10 +73,9 @@ public static class SectionPropertiesConverter
     else
       openXmlElement.RsidR = null;
   }
+  #endregion
 
-  /// <summary>
-  /// Section Properties Revision ID
-  /// </summary>
+  #region Section Properties Revision ID conversion
   private static DM.HexInt? GetRsidSect(DXW.SectionProperties openXmlElement)
   {
     if (openXmlElement?.RsidSect?.Value != null)
@@ -100,7 +95,9 @@ public static class SectionPropertiesConverter
     else
       openXmlElement.RsidSect = null;
   }
+  #endregion
 
+  #region HeaderReferences conversion
   private static DMW.HeaderReferences? GetHeaderReference(DXW.SectionProperties openXmlElement)
   {
     var elements = openXmlElement.Elements<DXW.HeaderReference>();
@@ -117,7 +114,6 @@ public static class SectionPropertiesConverter
     }
     return null;
   }
-
   private static bool CmpHeaderReferences(DXW.SectionProperties openXmlElement, DMW.HeaderReferences? value, DiffList? diffs, string? objName)
   {
     var elements = openXmlElement.Elements<DXW.HeaderReference>().ToArray();
@@ -152,7 +148,9 @@ public static class SectionPropertiesConverter
       }
     }
   }
+  #endregion
 
+  #region FooterReferences conversion
   private static DMW.FooterReferences? GetFooterReference(DXW.SectionProperties openXmlElement)
   {
     var elements = openXmlElement.Elements<DXW.FooterReference>();
@@ -204,7 +202,9 @@ public static class SectionPropertiesConverter
       }
     }
   }
+  #endregion
 
+  #region FootnoteProperties conversion
   private static DMW.FootnoteProperties? GetFootnoteProperties(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.FootnoteProperties>();
@@ -230,7 +230,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region EndnoteProperties conversion
   private static DMW.EndnoteProperties? GetEndnoteProperties(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.EndnoteProperties>();
@@ -256,7 +258,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region SectionType conversion
   private static DMW.SectionMarkKind? GetSectionType(DXW.SectionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>(openXmlElement.GetFirstChild<DXW.SectionType>()?.Val?.Value);
@@ -281,7 +285,9 @@ public static class SectionPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.SectionType, DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues, DMW.SectionMarkKind>((DMW.SectionMarkKind)value));
   }
+  #endregion
 
+  #region PageSize conversion
   private static DMW.PageSize? GetPageSize(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PageSize>();
@@ -307,7 +313,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region PageMarginConversion
   private static DMW.PageMargin? GetPageMargin(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PageMargin>();
@@ -333,7 +341,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region PaperSource conversion
   private static DMW.PaperSource? GetPaperSource(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PaperSource>();
@@ -359,7 +369,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region PageBorders conversion
   private static DMW.PageBorders? GetPageBorders(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PageBorders>();
@@ -385,7 +397,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region LineNumberType conversion
   private static DMW.LineNumberType? GetLineNumberType(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LineNumberType>();
@@ -411,7 +425,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region PageNumberType conversion
   private static DMW.PageNumberType? GetPageNumberType(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PageNumberType>();
@@ -437,7 +453,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region Columns conversion
   private static DMW.Columns? GetColumns(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Columns>();
@@ -463,7 +481,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region FormProtection conversion
   private static Boolean? GetFormProtection(DXW.SectionProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FormProtection>());
@@ -478,7 +498,9 @@ public static class SectionPropertiesConverter
   {
     BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value);
   }
+  #endregion
 
+  #region VerticalTextAlignmentOnPage conversion
   private static DMW.VerticalJustificationKind? GetVerticalTextAlignmentOnPage(DXW.SectionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>()?.Val?.Value);
@@ -503,7 +525,9 @@ public static class SectionPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignmentOnPage, DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues, DMW.VerticalJustificationKind>((DMW.VerticalJustificationKind)value));
   }
+  #endregion
 
+  #region NoEndnote conversion
   private static Boolean? GetNoEndnote(DXW.SectionProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoEndnote>());
@@ -518,7 +542,9 @@ public static class SectionPropertiesConverter
   {
     BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value);
   }
+  #endregion
 
+  #region TitlePage conversion
   private static Boolean? GetTitlePage(DXW.SectionProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TitlePage>());
@@ -533,7 +559,9 @@ public static class SectionPropertiesConverter
   {
     BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value);
   }
+  #endregion
 
+  #region TextDirection conversion
   private static DMW.TextDirectionKind? GetTextDirection(DXW.SectionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
@@ -558,7 +586,9 @@ public static class SectionPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
+  #endregion
 
+  #region BiDi conversion
   private static Boolean? GetBiDi(DXW.SectionProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BiDi>());
@@ -573,7 +603,9 @@ public static class SectionPropertiesConverter
   {
     BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value);
   }
+  #endregion
 
+  #region GutterOnRight conversion
   private static Boolean? GetGutterOnRight(DXW.SectionProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>());
@@ -588,7 +620,9 @@ public static class SectionPropertiesConverter
   {
     BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value);
   }
+  #endregion
 
+  #region DocGrid conversion
   private static DMW.DocGrid? GetDocGrid(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.DocGrid>();
@@ -614,12 +648,14 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
-  private static DMW.RelationshipType? GetPrinterSettingsReference(DXW.SectionProperties openXmlElement)
+  #region PrinterSettingsReference conversion
+  private static DMW.PrinterSettingsReference? GetPrinterSettingsReference(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PrinterSettingsReference>();
     if (element != null)
-      return DMXW.RelationshipTypeConverter.CreateModelElement(element);
+      return DMXW.RelationshipTypeConverter.CreateModelElement<DMW.PrinterSettingsReference>(element);
     return null;
   }
 
@@ -640,7 +676,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region FootnoteColumns conversion
   private static Int32? GetFootnoteColumns(DXW.SectionProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val);
@@ -655,7 +693,9 @@ public static class SectionPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXO2013W.FootnoteColumns, System.Int32>(openXmlElement, value);
   }
+  #endregion
 
+  #region SectionPropertiesChange conversion
   private static DMW.SectionPropertiesChange? GetSectionPropertiesChange(DXW.SectionProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.SectionPropertiesChange>();
@@ -681,7 +721,9 @@ public static class SectionPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
+  #endregion
 
+  #region Main SectionProperties conversion
   public static DMW.SectionProperties? CreateModelElement(DXW.SectionProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -822,4 +864,5 @@ public static class SectionPropertiesConverter
     SetFootnoteColumns(openXmlElement, value?.FootnoteColumns);
     SetSectionPropertiesChange(openXmlElement, value?.SectionPropertiesChange);
   }
+  #endregion
 }
