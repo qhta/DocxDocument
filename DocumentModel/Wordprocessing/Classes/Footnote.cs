@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Footnote Content.
 /// </summary>
-public class Footnote
+public class Footnote: ModelElement
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Layout Node.
 /// </summary>
-public class LayoutNode
+public class LayoutNode: ModelElement
 {
   /// <summary>
   ///   Name

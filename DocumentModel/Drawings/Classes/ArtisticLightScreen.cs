@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticLightScreen Class.
 /// </summary>
-public class ArtisticLightScreen
+public class ArtisticLightScreen: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

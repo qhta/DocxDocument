@@ -8,7 +8,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BlipExtension Class.
 /// </summary>
-public class BlipExtension
+public class BlipExtension: ModelElement
 {
   /// <summary>
   ///   URI

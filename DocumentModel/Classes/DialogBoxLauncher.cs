@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the DialogBoxLauncher Class.
 /// </summary>
-public class DialogBoxLauncher
+public class DialogBoxLauncher: ModelElement
 {
   /// <summary>
   ///   ButtonRegular.

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ToggleButton Class.
 /// </summary>
-public class ToggleButton
+public class ToggleButton: ModelElement
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

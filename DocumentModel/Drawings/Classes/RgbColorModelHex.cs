@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   RGB Color Model - Hex Variant.
 /// </summary>
-public class RgbColorModelHex
+public class RgbColorModelHex: ModelElement
 {
   /// <summary>
   ///   Value

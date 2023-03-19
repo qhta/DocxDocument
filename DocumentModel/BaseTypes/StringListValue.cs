@@ -5,7 +5,7 @@ namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
-public class StringListValue : ICollection<string>, IEnumerable
+public class StringListValue : ICollection<string>, IEnumerable, IEquatable<StringListValue>
 {
   private const string _listSeparator = " ";
   private ObservableCollection<string>? _list;
@@ -160,5 +160,28 @@ public class StringListValue : ICollection<string>, IEnumerable
   private void CollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
   {
     TextValue = null;
+  }
+
+  public bool Equals(StringListValue? other)
+  {
+    if (other == null) return false;
+    if (this._list == null && other._list == null) return true;
+    if (this._list != null && other._list != null)
+    {
+      if (this.Count != other.Count) return false;
+      for (int i = 0; i < this.Count; i++)
+        if (!String.Equals(this._list[i], other._list[i])) return false;
+      return true;
+    }
+    return false;
+  }
+
+  public override int GetHashCode()
+  {
+    var result = Count;
+    if (_list != null)
+      foreach (var item in _list)
+        result = HashCode.Combine(result, item.GetHashCode());
+    return result;
   }
 }

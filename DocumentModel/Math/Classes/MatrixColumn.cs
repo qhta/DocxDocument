@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Matrix Column.
 /// </summary>
-public class MatrixColumn
+public class MatrixColumn: ModelElement
 {
   /// <summary>
   ///   Matrix Column Properties.

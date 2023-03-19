@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ColorMapOverride Class.
 /// </summary>
-public class ColorMapOverride
+public class ColorMapOverride: ModelElement
 {
   /// <summary>
   ///   Background 1

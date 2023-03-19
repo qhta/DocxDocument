@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the RadarChartExtension Class.
 /// </summary>
-public class RadarChartExtension
+public class RadarChartExtension: ModelElement
 {
   /// <summary>
   ///   URI

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LineSketchStyleProperties Class.
 /// </summary>
-public class LineSketchStyleProperties
+public class LineSketchStyleProperties: ModelElement
 {
   /// <summary>
   ///   sd, this property is only available in Office 2021 and later.

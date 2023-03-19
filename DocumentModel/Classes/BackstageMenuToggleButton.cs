@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageMenuToggleButton Class.
 /// </summary>
-public class BackstageMenuToggleButton
+public class BackstageMenuToggleButton: ModelElement
 {
   /// <summary>
   ///   image, this property is only available in Office 2010 and later.

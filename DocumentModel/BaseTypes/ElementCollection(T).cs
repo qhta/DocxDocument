@@ -141,24 +141,17 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
     return true;
   }
 
-  //public override int GetHashCode()
-  //{
-  //  var thisHashCode = EqualityComparer<Type>.Default.GetHashCode(EqualityContract);
-  //  foreach (var item in this)
-  //  {
-  //    if (item!=null)
-  //      thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
-  //  }
-  //  return thisHashCode;
-  //}
-
-  //protected virtual bool PrintMembers(StringBuilder builder)
-  //{
-  //  foreach (var item in this)
-  //    if (item!=null)
-  //      builder.AppendLine(item.ToString());
-  //  return true;
-  //}
+  public override int GetHashCode()
+  {
+    var thisHashCode = 0; //EqualityComparer<Type>.Default.GetHashCode(this.GetType());
+    foreach (var item in this)
+    {
+      if (item!=null)
+        //thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
+        thisHashCode = HashCode.Combine(thisHashCode, item.GetHashCode());
+    }
+    return thisHashCode;
+  }
 
   #endregion
 }

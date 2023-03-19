@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Control Properties.
 /// </summary>
-public class ControlProperties
+public class ControlProperties: ModelElement
 {
   public Wordprocessing.RunProperties? RunProperties { get; set; }
 
@@ -16,4 +16,5 @@ public class ControlProperties
   public MoveFromMathControl? MoveFromMathControl { get; set; }
 
   public MoveToMathControl? MoveToMathControl { get; set; }
+
 }

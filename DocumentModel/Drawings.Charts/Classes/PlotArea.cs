@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Plot data and formatting.
 /// </summary>
-public class PlotArea
+public class PlotArea: ModelElement
 {
   /// <summary>
   ///   Layout.

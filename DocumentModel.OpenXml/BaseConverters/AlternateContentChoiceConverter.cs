@@ -1,3 +1,5 @@
+using DocumentModel;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
@@ -9,7 +11,7 @@ public static class AlternateContentChoiceConverter
   {
     if (openXmlElement != null)
     {
-      var result = ElementCollectionConverter<ModelElement>.CreateModelElement<DM.AlternateContentChoice>(openXmlElement);
+      var result = ElementCollectionConverter<ModelElement>.CreateModelElement<AlternateContentChoice>(openXmlElement);
       if (result != null)
         result.Requires = StringValueConverter.GetValue(openXmlElement.Requires);
       return result;
@@ -17,7 +19,7 @@ public static class AlternateContentChoiceConverter
     return null;
   }
 
-  public static bool CompareModelElement(DX.AlternateContentChoice? openXmlElement, DM.AlternateContentChoice? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.AlternateContentChoice? openXmlElement, AlternateContentChoice? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -31,14 +33,14 @@ public static class AlternateContentChoiceConverter
     return false;
   }
 
-  public static DX.AlternateContentChoice CreateOpenXmlElement(DM.AlternateContentChoice value)
+  public static DX.AlternateContentChoice CreateOpenXmlElement(AlternateContentChoice value)
   {
     var openXmlElement = new DX.AlternateContentChoice();
     ElementCollectionConverter<ModelElement>.UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DX.AlternateContentChoice openXmlElement, DM.AlternateContentChoice value)
+  public static void UpdateOpenXmlElement(DX.AlternateContentChoice openXmlElement, AlternateContentChoice value)
   {
     ElementCollectionConverter<ModelElement>.UpdateOpenXmlElement(openXmlElement, value);
     if (value.Requires != null)

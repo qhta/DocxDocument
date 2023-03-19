@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DeletedMathControl Class.
 /// </summary>
-public class DeletedMathControl
+public class DeletedMathControl: ModelElement
 {
   /// <summary>
   ///   author

@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Base.
 /// </summary>
-public class Base
+public class Base: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 
@@ -120,4 +120,5 @@ public class Base
   public OfficeMath? OfficeMath { get; set; }
 
   public ControlProperties? ControlProperties { get; set; }
+
 }

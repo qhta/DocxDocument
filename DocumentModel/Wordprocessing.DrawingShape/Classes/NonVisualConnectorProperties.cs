@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the NonVisualConnectorProperties Class.
 /// </summary>
-public class NonVisualConnectorProperties
+public class NonVisualConnectorProperties: ModelElement
 {
   /// <summary>
   ///   Connection Shape Locks.

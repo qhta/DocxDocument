@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the OpenXmlTaskUserElement Class.
 /// </summary>
-public class OpenXmlTaskUserElement
+public class OpenXmlTaskUserElement: ModelElement
 {
   /// <summary>
   ///   userId, this property is only available in Office 2021 and later.

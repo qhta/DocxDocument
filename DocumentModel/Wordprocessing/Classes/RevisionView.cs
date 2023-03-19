@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Visibility of Annotation Types.
 /// </summary>
-public class RevisionView
+public class RevisionView: ModelElement
 {
   /// <summary>
   ///   Display Visual Indicator Of Markup Area

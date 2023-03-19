@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticCutout Class.
 /// </summary>
-public class ArtisticCutout
+public class ArtisticCutout: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

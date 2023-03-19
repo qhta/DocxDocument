@@ -5,7 +5,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the DataModelExtension Class.
 /// </summary>
-public class DataModelExtension
+public class DataModelExtension: ModelElement
 {
   /// <summary>
   ///   URI

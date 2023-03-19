@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Menu Class.
 /// </summary>
-public class Menu
+public class Menu: ModelElement
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the FillReference Class.
 /// </summary>
-public class FillReference
+public class FillReference: ModelElement
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the DynamicMenu Class.
 /// </summary>
-public class DynamicMenu
+public class DynamicMenu: ModelElement
 {
   /// <summary>
   ///   size, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel;
 
 /// <summary>Represents the list of string
 [TypeConverter(typeof(StringListTypeConverter))]
-public class StringList : ICollection<string>, IEnumerable
+public class StringList : ICollection<string>, IEnumerable, IEquatable<StringList>
 {
   private readonly List<string> _list = new();
 
@@ -62,16 +62,21 @@ public class StringList : ICollection<string>, IEnumerable
     return false;
   }
 
-  public bool Equals(StringList other)
+  public bool Equals(StringList? other)
   {
+    if (other == null) return false;
     if (this.Count != other.Count) return false;
-    for (int i=0; i<this.Count; i++)
+    for (int i = 0; i < this.Count; i++)
       if (!this._list[i].Equals(other._list[i])) return false;
     return true;
   }
 
   public override int GetHashCode()
   {
-    return base.GetHashCode();
+    var result = 0;
+    foreach (var item in _list)
+      result = HashCode.Combine(result, item.GetHashCode());
+    return result;
   }
+
 }

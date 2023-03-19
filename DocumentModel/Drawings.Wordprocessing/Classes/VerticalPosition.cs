@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Vertical Positioning.
 /// </summary>
-public class VerticalPosition
+public class VerticalPosition: ModelElement
 {
   /// <summary>
   ///   Vertical Position Relative Base

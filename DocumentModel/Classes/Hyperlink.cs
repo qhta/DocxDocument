@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Hyperlink Class.
 /// </summary>
-public class Hyperlink
+public class Hyperlink: ModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

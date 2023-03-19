@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the CategoryAxisData Class.
 /// </summary>
-public class CategoryAxisData
+public class CategoryAxisData: ModelElement
 {
   public MultiLevelStringReference? MultiLevelStringReference { get; set; }
 

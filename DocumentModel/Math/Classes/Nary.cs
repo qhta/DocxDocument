@@ -24,4 +24,13 @@ public class Nary: ModelElement, ICommonMathElement
   ///   Base (Argument).
   /// </summary>
   public Base? Base { get; set; }
+
+  //public override int GetHashCode()
+  //{
+  //  Debug.Indent();
+  //  var hashCode = base.GetHashCode();
+  //  Debug.WriteLine($"{this}.HashCode={hashCode}");
+  //  Debug.Unindent();
+  //  return hashCode;
+  //}
 }

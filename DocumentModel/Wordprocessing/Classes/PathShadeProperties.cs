@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PathShadeProperties Class.
 /// </summary>
-public class PathShadeProperties
+public class PathShadeProperties: ModelElement
 {
   /// <summary>
   ///   path, this property is only available in Office 2010 and later.

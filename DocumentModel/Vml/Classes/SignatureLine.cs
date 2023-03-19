@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Digital Signature Line.
 /// </summary>
-public class SignatureLine
+public class SignatureLine: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

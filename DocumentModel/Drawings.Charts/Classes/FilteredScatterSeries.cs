@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the FilteredScatterSeries Class.
 /// </summary>
-public class FilteredScatterSeries
+public class FilteredScatterSeries: ModelElement
 {
   /// <summary>
   ///   ScatterChartSeries.

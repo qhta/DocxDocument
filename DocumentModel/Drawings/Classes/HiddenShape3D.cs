@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HiddenShape3D Class.
 /// </summary>
-public class HiddenShape3D
+public class HiddenShape3D: ModelElement
 {
   /// <summary>
   ///   Shape Depth

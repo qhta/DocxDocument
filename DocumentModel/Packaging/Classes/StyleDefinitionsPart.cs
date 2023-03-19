@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the StyleDefinitionsPart
 /// </summary>
-public class StyleDefinitionsPart
+public class StyleDefinitionsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

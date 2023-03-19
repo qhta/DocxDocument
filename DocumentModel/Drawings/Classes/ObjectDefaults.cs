@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ObjectDefaults Class.
 /// </summary>
-public class ObjectDefaults
+public class ObjectDefaults: ModelElement
 {
   /// <summary>
   ///   Shape Default.

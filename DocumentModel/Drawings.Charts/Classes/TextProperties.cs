@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the TextProperties Class.
 /// </summary>
-public class TextProperties
+public class TextProperties: ModelElement
 {
   public BodyProperties? BodyProperties { get; set; }
 

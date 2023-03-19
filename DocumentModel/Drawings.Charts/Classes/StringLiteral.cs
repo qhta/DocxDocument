@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   String Literal.
 /// </summary>
-public class StringLiteral
+public class StringLiteral: ModelElement
 {
   public UInt32? PointCount { get; set; }
 

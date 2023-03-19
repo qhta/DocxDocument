@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Stock Charts.
 /// </summary>
-public class StockChart
+public class StockChart: ModelElement
 {
   public Collection<LineChartSeries>? LineChartSeries { get; set; }
 

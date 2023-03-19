@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Office;
 /// <summary>
 ///   Defines the Shape Class.
 /// </summary>
-public class Shape
+public class Shape: ModelElement
 {
   /// <summary>
   ///   modelId, this property is only available in Office 2010 and later.

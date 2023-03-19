@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the NamedSheetViewsPart
 /// </summary>
-public class NamedSheetViewsPart
+public class NamedSheetViewsPart: ModelElement
 {
   public String? ContentType { get; set; }
 
