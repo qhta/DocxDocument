@@ -5,6 +5,8 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 using DocumentModel;
 
+using DocxDocument.Reader;
+
 using Newtonsoft.Json;
 
 using Qhta.Xml.Serialization;
@@ -12,12 +14,12 @@ using Qhta.Xml.Serialization;
 using Formatting = Newtonsoft.Json.Formatting;
 using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
-namespace DocxDocument.Reader.Test
+namespace DocxDocument.ReadWrite.Test
 {
   /// <summary>
   /// Test of the document properties.
   /// </summary>
-  /// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+  /// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
   public class TestProperties : TestBase
   {
     /// <summary>

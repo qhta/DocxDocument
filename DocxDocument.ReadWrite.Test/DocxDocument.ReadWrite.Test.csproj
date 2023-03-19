@@ -9,13 +9,13 @@
     <GenerateProgramFile>false</GenerateProgramFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="TestNumberlingDefinitions.cs" />
-    <Compile Remove="TestPropertiesWrite.cs" />
-    <Compile Remove="TestReader - Copy.cs" />
-    <Compile Remove="TestReader.cs" />
-    <Compile Remove="TestSerialization.cs" />
-    <Compile Remove="TestSettings.cs" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);QXmlSerializer</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="!$(DefineConstants.Contains('ExtendedXmlSerializer'))">
+    <Compile Remove="DXAXmlConverter.cs" />
+    <Compile Remove="HexIntXmlConverter.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,8 +37,15 @@
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.Conversion\Qhta.Conversion.csproj" />
     <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
-    <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
     <ProjectReference Include="..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(DefineConstants.Contains('QXmlSerializer'))">
+    <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="$(DefineConstants.Contains('ExtendedXmlSerializer'))">
+    <PackageReference Include="ExtendedXmlSerializer" Version="3.7.11" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,4 +59,6 @@
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
     </Reference>
   </ItemGroup>
+  
+  
 </Project>
