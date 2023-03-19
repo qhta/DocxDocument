@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the FormatOverride Class.
 /// </summary>
-public class FormatOverride
+public class FormatOverride: ModelElement
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Superscript Properties.
 /// </summary>
-public class SuperscriptProperties
+public class SuperscriptProperties: ModelElement
 {
   /// <summary>
   ///   ControlProperties.

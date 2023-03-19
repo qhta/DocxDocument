@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ObjectProperties Class.
 /// </summary>
-public class ObjectProperties
+public class ObjectProperties: ModelElement
 {
   /// <summary>
   ///   objectId, this property is only available in Office 2013 and later.

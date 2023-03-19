@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Format Scheme.
 /// </summary>
-public class FormatScheme
+public class FormatScheme: ModelElement
 {
   /// <summary>
   ///   Name

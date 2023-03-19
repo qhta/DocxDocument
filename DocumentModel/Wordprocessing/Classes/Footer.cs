@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Footer.
 /// </summary>
-public class Footer
+public class Footer: ModelElement
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

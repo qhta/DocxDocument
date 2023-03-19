@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Frame Properties.
 /// </summary>
-public class Frame
+public class Frame: ModelElement
 {
   /// <summary>
   ///   Frame Size.

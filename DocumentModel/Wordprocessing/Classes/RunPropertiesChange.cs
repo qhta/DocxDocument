@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunPropertiesChange Class.
 /// </summary>
-public class RunPropertiesChange
+public class RunPropertiesChange: ModelElement
 {
   /// <summary>
   ///   author

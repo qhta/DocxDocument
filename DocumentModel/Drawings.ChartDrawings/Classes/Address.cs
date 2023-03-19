@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Address Class.
 /// </summary>
-public class Address
+public class Address: ModelElement
 {
   /// <summary>
   ///   address1, this property is only available in Office 2016 and later.

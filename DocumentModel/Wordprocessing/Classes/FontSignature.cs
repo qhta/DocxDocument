@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontSignature Class.
 /// </summary>
-public class FontSignature
+public class FontSignature: ModelElement
 {
   /// <summary>
   ///   First 32 Bits of Unicode Subset Bitfield

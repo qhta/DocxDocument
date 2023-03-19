@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Represents an abstract base class for all OpenXml parts.
 /// </summary>
-public class OpenXmlPart
+public class OpenXmlPart: ModelElement
 {
   /// <summary>
   ///   Gets the internal part path in the package.

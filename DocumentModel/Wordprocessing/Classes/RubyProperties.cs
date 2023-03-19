@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide Properties.
 /// </summary>
-public class RubyProperties
+public class RubyProperties: ModelElement
 {
   /// <summary>
   ///   Phonetic Guide Text Alignment.

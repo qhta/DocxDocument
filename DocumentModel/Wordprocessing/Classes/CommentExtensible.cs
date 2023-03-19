@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CommentExtensible Class.
 /// </summary>
-public class CommentExtensible
+public class CommentExtensible: ModelElement
 {
   /// <summary>
   ///   durableId, this property is only available in Office 2021 and later.

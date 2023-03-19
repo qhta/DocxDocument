@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the MaxValueColorEndPosition Class.
 /// </summary>
-public class MaxValueColorEndPosition
+public class MaxValueColorEndPosition: ModelElement
 {
   public Boolean? ExtremeValueColorPosition { get; set; }
 

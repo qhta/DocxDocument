@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Group Shape Properties.
 /// </summary>
-public class GroupShapeProperties
+public class GroupShapeProperties: ModelElement
 {
   /// <summary>
   ///   Black and White Mode

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataLabelVisibilities Class.
 /// </summary>
-public class DataLabelVisibilities
+public class DataLabelVisibilities: ModelElement
 {
   /// <summary>
   ///   seriesName, this property is only available in Office 2016 and later.

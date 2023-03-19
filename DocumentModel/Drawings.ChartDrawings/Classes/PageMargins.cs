@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PageMargins Class.
 /// </summary>
-public class PageMargins
+public class PageMargins: ModelElement
 {
   /// <summary>
   ///   l, this property is only available in Office 2016 and later.

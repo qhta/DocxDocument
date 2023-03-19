@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Radical Properties.
 /// </summary>
-public class RadicalProperties
+public class RadicalProperties: ModelElement
 {
   /// <summary>
   ///   Hide Degree.

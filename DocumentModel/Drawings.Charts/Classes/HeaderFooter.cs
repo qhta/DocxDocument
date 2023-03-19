@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Header and Footer.
 /// </summary>
-public class HeaderFooter
+public class HeaderFooter: ModelElement
 {
   /// <summary>
   ///   Align With Margins

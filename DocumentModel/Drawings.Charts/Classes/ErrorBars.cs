@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ErrorBars Class.
 /// </summary>
-public class ErrorBars
+public class ErrorBars: ModelElement
 {
   /// <summary>
   ///   Error Bar Direction.

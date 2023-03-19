@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Run Properties.
 /// </summary>
-public class PreviousRunProperties
+public class PreviousRunProperties: ModelElement
 {
   public String? RunStyle { get; set; }
 

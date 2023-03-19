@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Shape Definition.
 /// </summary>
-public class Shape
+public class Shape: ModelElement
 {
   /// <summary>
   ///   Reference to Custom Function

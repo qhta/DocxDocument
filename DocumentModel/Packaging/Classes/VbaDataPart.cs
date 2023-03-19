@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the VbaDataPart
 /// </summary>
-public class VbaDataPart
+public class VbaDataPart: ModelElement
 {
   public String? ContentType { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataLabelHidden Class.
 /// </summary>
-public class DataLabelHidden
+public class DataLabelHidden: ModelElement
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.

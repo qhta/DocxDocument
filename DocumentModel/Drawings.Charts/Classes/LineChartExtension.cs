@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the LineChartExtension Class.
 /// </summary>
-public class LineChartExtension
+public class LineChartExtension: ModelElement
 {
   /// <summary>
   ///   URI

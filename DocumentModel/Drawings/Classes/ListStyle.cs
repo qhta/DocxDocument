@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ListStyle Class.
 /// </summary>
-public class ListStyle
+public class ListStyle: ModelElement
 {
   /// <summary>
   ///   Default Paragraph Style.

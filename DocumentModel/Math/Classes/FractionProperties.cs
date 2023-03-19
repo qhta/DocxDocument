@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Fraction Properties.
 /// </summary>
-public class FractionProperties
+public class FractionProperties: ModelElement
 {
   /// <summary>
   ///   Fraction type.

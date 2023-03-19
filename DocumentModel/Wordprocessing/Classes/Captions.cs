@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Caption Settings.
 /// </summary>
-public class Captions
+public class Captions: ModelElement
 {
   public Caption? Caption { get; set; }
 

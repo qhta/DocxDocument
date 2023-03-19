@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the ExtendedFilePropertiesPart
 /// </summary>
-public class ExtendedFilePropertiesPart
+public class ExtendedFilePropertiesPart: ModelElement
 {
   public String? ContentType { get; set; }
 

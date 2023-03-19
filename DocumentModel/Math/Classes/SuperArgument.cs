@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper limit (n-ary).
 /// </summary>
-public class SuperArgument
+public class SuperArgument: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 
@@ -120,4 +120,5 @@ public class SuperArgument
   public OfficeMath? OfficeMath { get; set; }
 
   public ControlProperties? ControlProperties { get; set; }
+
 }

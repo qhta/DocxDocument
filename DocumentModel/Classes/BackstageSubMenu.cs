@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageSubMenu Class.
 /// </summary>
-public class BackstageSubMenu
+public class BackstageSubMenu: ModelElement
 {
   /// <summary>
   ///   description, this property is only available in Office 2010 and later.

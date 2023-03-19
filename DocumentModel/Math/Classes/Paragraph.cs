@@ -73,4 +73,5 @@ public class Paragraph: ModelElement, ICommonMathElement
   public RunConflictInsertion? RunConflictInsertion { get; set; }
 
   public RunConflictDeletion? RunConflictDeletion { get; set; }
+
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Magnification Setting.
 /// </summary>
 [TypeConverter(typeof(ZoomTypeConverter))]
-public class Zoom
+public class Zoom: ModelElement
 {
   /// <summary>
   ///   Zoom Type

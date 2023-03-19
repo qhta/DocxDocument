@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the StringReference Class.
 /// </summary>
-public class StringReference
+public class StringReference: ModelElement
 {
   /// <summary>
   ///   Formula.

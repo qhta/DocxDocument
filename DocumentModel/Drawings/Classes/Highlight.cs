@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Highlight Class.
 /// </summary>
-public class Highlight
+public class Highlight: ModelElement
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

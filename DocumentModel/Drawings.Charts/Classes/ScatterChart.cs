@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Scatter Charts.
 /// </summary>
-public class ScatterChart
+public class ScatterChart: ModelElement
 {
   /// <summary>
   ///   ScatterStyle.

@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the GlossaryDocumentPart
 /// </summary>
-public class GlossaryDocumentPart
+public class GlossaryDocumentPart: ModelElement
 {
   /// <summary>
   ///   Gets the AlternativeFormatImportParts of the GlossaryDocumentPart

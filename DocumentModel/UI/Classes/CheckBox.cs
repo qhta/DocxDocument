@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the CheckBox Class.
 /// </summary>
-public class CheckBox
+public class CheckBox: ModelElement
 {
   /// <summary>
   ///   getPressed

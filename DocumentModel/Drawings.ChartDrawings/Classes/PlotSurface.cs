@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the PlotSurface Class.
 /// </summary>
-public class PlotSurface
+public class PlotSurface: ModelElement
 {
   /// <summary>
   ///   ShapeProperties.

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Paragraph Properties.
 /// </summary>
-public class ParagraphPropertiesBaseStyle
+public class ParagraphPropertiesBaseStyle: ModelElement
 {
   /// <summary>
   ///   KeepNext.

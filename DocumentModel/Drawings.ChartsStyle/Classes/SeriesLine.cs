@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the SeriesLine Class.
 /// </summary>
-public class SeriesLine
+public class SeriesLine: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

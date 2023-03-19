@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageLabelControl Class.
 /// </summary>
-public class BackstageLabelControl
+public class BackstageLabelControl: ModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

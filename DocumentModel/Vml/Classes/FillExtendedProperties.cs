@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Fill Extended Properties.
 /// </summary>
-public class FillExtendedProperties
+public class FillExtendedProperties: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

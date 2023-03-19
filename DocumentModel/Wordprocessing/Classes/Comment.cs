@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Comment Content.
 /// </summary>
-public class Comment
+public class Comment: ModelElement
 {
   /// <summary>
   ///   initials

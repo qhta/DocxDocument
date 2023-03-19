@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Limit (Lower).
 /// </summary>
-public class Limit
+public class Limit: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.SVG;
 /// <summary>
 ///   Defines the SVGBlip Class.
 /// </summary>
-public class SVGBlip
+public class SVGBlip: ModelElement
 {
   /// <summary>
   ///   Embedded Picture Reference

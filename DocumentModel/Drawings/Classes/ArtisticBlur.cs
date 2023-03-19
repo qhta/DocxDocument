@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticBlur Class.
 /// </summary>
-public class ArtisticBlur
+public class ArtisticBlur: ModelElement
 {
   /// <summary>
   ///   radius, this property is only available in Office 2010 and later.

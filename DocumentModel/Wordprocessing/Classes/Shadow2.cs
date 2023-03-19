@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Shadow Class.
 /// </summary>
-public class Shadow2
+public class Shadow2: ModelElement
 {
   /// <summary>
   ///   blurRad, this property is only available in Office 2010 and later.

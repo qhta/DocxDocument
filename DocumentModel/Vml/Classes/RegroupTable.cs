@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Grouping History.
 /// </summary>
-public class RegroupTable
+public class RegroupTable: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

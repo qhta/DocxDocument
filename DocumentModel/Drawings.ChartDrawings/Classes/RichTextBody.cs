@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the RichTextBody Class.
 /// </summary>
-public class RichTextBody
+public class RichTextBody: ModelElement
 {
   public BodyProperties? BodyProperties { get; set; }
 

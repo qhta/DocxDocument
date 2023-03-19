@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the AxisTitle Class.
 /// </summary>
-public class AxisTitle
+public class AxisTitle: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the LegendStyle Class.
 /// </summary>
-public class LegendStyle
+public class LegendStyle: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

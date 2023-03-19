@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the Text Class.
 /// </summary>
-public class Text
+public class Text: ModelElement
 {
   /// <summary>
   ///   TextData.

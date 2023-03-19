@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Handle.
 /// </summary>
-public class ShapeHandle
+public class ShapeHandle: ModelElement
 {
   /// <summary>
   ///   Handle Position

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Level Text.
 /// </summary>
-public class LevelText
+public class LevelText: ModelElement
 {
   /// <summary>
   ///   Level Text

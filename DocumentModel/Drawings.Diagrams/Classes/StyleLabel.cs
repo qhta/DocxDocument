@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Style Label.
 /// </summary>
-public class StyleLabel
+public class StyleLabel: ModelElement
 {
   /// <summary>
   ///   Style Name

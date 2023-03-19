@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ContentPart Class.
 /// </summary>
-public class ContentPart
+public class ContentPart: ModelElement
 {
   /// <summary>
   ///   id

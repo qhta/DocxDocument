@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Alpha Replace Effect.
 /// </summary>
-public class AlphaReplace
+public class AlphaReplace: ModelElement
 {
   /// <summary>
   ///   Alpha

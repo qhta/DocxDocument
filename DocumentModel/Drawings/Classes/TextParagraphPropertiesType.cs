@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the TextParagraphPropertiesType Class.
 /// </summary>
-public class TextParagraphPropertiesType
+public class TextParagraphPropertiesType: ModelElement
 {
   /// <summary>
   ///   Left Margin

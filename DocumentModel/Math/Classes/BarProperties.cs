@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Bar Properties.
 /// </summary>
-public class BarProperties
+public class BarProperties: ModelElement
 {
   /// <summary>
   ///   Position (Bar).

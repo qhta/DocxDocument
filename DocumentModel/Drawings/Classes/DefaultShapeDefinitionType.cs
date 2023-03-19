@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the DefaultShapeDefinitionType Class.
 /// </summary>
-public class DefaultShapeDefinitionType
+public class DefaultShapeDefinitionType: ModelElement
 {
   /// <summary>
   ///   Visual Properties.

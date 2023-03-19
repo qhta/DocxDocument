@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BottomItemsGroupControls Class.
 /// </summary>
-public class BottomItemsGroupControls
+public class BottomItemsGroupControls: ModelElement
 {
   public BackstageGroupButton? BackstageGroupButton { get; set; }
 

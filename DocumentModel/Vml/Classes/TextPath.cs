@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the TextPath Class.
 /// </summary>
-public class TextPath
+public class TextPath: ModelElement
 {
   /// <summary>
   ///   Unique Identifier

@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the RibbonAndBackstageCustomizationsPart
 /// </summary>
-public class RibbonAndBackstageCustomizationsPart
+public class RibbonAndBackstageCustomizationsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

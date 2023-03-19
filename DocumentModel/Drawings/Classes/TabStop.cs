@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Tab Stop.
 /// </summary>
-public class TabStop
+public class TabStop: ModelElement
 {
   /// <summary>
   ///   Tab Position

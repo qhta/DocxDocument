@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Single Formula.
 /// </summary>
-public class Formula
+public class Formula: ModelElement
 {
   /// <summary>
   ///   Equation

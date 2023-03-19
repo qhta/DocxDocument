@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the LeaderLine Class.
 /// </summary>
-public class LeaderLine
+public class LeaderLine: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

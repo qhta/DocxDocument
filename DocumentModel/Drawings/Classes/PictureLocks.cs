@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the PictureLocks Class.
 /// </summary>
-public class PictureLocks
+public class PictureLocks: ModelElement
 {
   /// <summary>
   ///   Disallow Shape Grouping

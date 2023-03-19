@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the FontCharSet Class.
 /// </summary>
-public class FontCharSet
+public class FontCharSet: ModelElement
 {
   /// <summary>
   ///   val

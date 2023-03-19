@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the DocumentSettingsPart
 /// </summary>
-public class DocumentSettingsPart
+public class DocumentSettingsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

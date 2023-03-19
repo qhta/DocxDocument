@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Font Scheme.
 /// </summary>
-public class FontScheme
+public class FontScheme: ModelElement
 {
   /// <summary>
   ///   Name

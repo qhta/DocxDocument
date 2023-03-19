@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Indentation Class.
 /// </summary>
-public class Indentation
+public class Indentation: ModelElement
 {
   /// <summary>
   ///   Left Indentation

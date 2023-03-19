@@ -8,7 +8,7 @@ namespace DocumentModel;
 [XmlRoot("Vector")]
 [TypeConverter(typeof(VectorTypeXmlConverter))]
 [JsonConverter(typeof(VectorJsonConverter))]
-public class VectorVariant : Variant, IList<object?>
+public class VectorVariant : Variant, IList<object?>, IEquatable<VectorVariant>
 {
 
 #pragma warning disable CS8600

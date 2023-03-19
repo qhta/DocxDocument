@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticGlowDiffused Class.
 /// </summary>
-public class ArtisticGlowDiffused
+public class ArtisticGlowDiffused: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

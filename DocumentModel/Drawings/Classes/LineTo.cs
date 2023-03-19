@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Draw Line To.
 /// </summary>
-public class LineTo
+public class LineTo: ModelElement
 {
   /// <summary>
   ///   Line end point.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPhotocopy Class.
 /// </summary>
-public class ArtisticPhotocopy
+public class ArtisticPhotocopy: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

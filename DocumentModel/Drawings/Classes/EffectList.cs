@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Effect Container.
 /// </summary>
-public class EffectList
+public class EffectList: ModelElement
 {
   /// <summary>
   ///   Blur Effect.

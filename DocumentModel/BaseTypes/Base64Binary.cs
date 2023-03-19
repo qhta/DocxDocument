@@ -1,6 +1,6 @@
 ﻿namespace DocumentModel;
 
-public struct Base64Binary
+public struct Base64Binary: IEquatable<Base64Binary>
 {
   private byte[] value;
 
@@ -22,5 +22,18 @@ public struct Base64Binary
   public static implicit operator Base64Binary(byte[] val)
   {
     return new() { value = val };
+  }
+
+  public bool Equals(Base64Binary other)
+  {
+    return Enumerable.SequenceEqual(value, other.value);
+  }
+
+  public override int GetHashCode()
+  {
+    var result = value.Length;
+    foreach (var item in value)
+      result = HashCode.Combine(result, item);
+    return result;
   }
 }

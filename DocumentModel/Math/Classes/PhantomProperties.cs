@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Phantom Properties.
 /// </summary>
-public class PhantomProperties
+public class PhantomProperties: ModelElement
 {
   /// <summary>
   ///   Phantom Show.

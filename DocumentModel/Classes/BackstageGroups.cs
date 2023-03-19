@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageGroups Class.
 /// </summary>
-public class BackstageGroups
+public class BackstageGroups: ModelElement
 {
   public TaskFormGroup? TaskFormGroup { get; set; }
 

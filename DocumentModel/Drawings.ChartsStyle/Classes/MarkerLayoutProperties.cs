@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the MarkerLayoutProperties Class.
 /// </summary>
-public class MarkerLayoutProperties
+public class MarkerLayoutProperties: ModelElement
 {
   /// <summary>
   ///   symbol, this property is only available in Office 2013 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataPointLine Class.
 /// </summary>
-public class DataPointLine
+public class DataPointLine: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

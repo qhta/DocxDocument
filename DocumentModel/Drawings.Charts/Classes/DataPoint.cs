@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataPoint Class.
 /// </summary>
-public class DataPoint
+public class DataPoint: ModelElement
 {
   /// <summary>
   ///   Index.

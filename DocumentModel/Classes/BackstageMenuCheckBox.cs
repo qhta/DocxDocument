@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the BackstageMenuCheckBox Class.
 /// </summary>
-public class BackstageMenuCheckBox
+public class BackstageMenuCheckBox: ModelElement
 {
   /// <summary>
   ///   description, this property is only available in Office 2010 and later.

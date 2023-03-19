@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ErrorBar Class.
 /// </summary>
-public class ErrorBar
+public class ErrorBar: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

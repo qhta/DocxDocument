@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Shading Class.
 /// </summary>
-public class Shading
+public class Shading: ModelElement
 {
   /// <summary>
   ///   Shading Pattern

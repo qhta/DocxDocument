@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the OpenXmlFormulaElement Class.
 /// </summary>
-public class OpenXmlFormulaElement
+public class OpenXmlFormulaElement: ModelElement
 {
   /// <summary>
   ///   dir, this property is only available in Office 2016 and later.

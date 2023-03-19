@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Numeric Point.
 /// </summary>
-public class NumericPoint
+public class NumericPoint: ModelElement
 {
   /// <summary>
   ///   Index

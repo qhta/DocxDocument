@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Preset Text Warp.
 /// </summary>
-public class PresetTextWrap
+public class PresetTextWrap: ModelElement
 {
   /// <summary>
   ///   Preset Warp Shape

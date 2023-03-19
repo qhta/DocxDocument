@@ -3,7 +3,7 @@ namespace DocumentModel.UI;
 /// <summary>
 ///   Defines the DropDown Class.
 /// </summary>
-public class DropDown
+public class DropDown: ModelElement
 {
   /// <summary>
   ///   onAction

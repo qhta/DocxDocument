@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the StylesWithEffectsPart
 /// </summary>
-public class StylesWithEffectsPart
+public class StylesWithEffectsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

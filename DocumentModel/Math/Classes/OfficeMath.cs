@@ -116,4 +116,5 @@ public class OfficeMath: ModelElement, ICommonMathElement
   public Paragraph? Paragraph { get; set; }
 
   public OfficeMath? ChildOfficeMath { get; set; }
+
 }

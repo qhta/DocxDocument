@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   3D view settings.
 /// </summary>
-public class View3D
+public class View3D: ModelElement
 {
   /// <summary>
   ///   X Rotation.

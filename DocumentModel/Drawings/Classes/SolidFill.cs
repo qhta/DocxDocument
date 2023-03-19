@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the SolidFill Class.
 /// </summary>
-public class SolidFill
+public class SolidFill: ModelElement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

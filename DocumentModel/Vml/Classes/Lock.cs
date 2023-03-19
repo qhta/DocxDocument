@@ -3,7 +3,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Defines the Lock Class.
 /// </summary>
-public class Lock
+public class Lock: ModelElement
 {
   /// <summary>
   ///   VML Extension Handling Behavior

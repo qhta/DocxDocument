@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Subscript Properties.
 /// </summary>
-public class SubscriptProperties
+public class SubscriptProperties: ModelElement
 {
   /// <summary>
   ///   ControlProperties.

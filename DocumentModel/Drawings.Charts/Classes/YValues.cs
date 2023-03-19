@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the YValues Class.
 /// </summary>
-public class YValues
+public class YValues: ModelElement
 {
   public NumberReference? NumberReference { get; set; }
 

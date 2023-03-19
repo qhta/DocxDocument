@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Table Cell Properties.
 /// </summary>
-public class StyleTableCellProperties
+public class StyleTableCellProperties: ModelElement
 {
   /// <summary>
   ///   Shading.

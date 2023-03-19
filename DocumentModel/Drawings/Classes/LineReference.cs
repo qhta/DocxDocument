@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LineReference Class.
 /// </summary>
-public class LineReference
+public class LineReference: ModelElement
 {
   public RgbColorModelPercentage? RgbColorModelPercentage { get; set; }
 

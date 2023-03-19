@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the FontCollectionType Class.
 /// </summary>
-public class FontCollectionType
+public class FontCollectionType: ModelElement
 {
   /// <summary>
   ///   Latin Font.

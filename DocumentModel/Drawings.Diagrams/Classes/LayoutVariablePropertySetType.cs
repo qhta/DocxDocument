@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the LayoutVariablePropertySetType Class.
 /// </summary>
-public class LayoutVariablePropertySetType
+public class LayoutVariablePropertySetType: ModelElement
 {
   /// <summary>
   ///   Show Organization Chart User Interface.

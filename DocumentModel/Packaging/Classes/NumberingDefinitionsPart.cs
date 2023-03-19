@@ -5,7 +5,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the NumberingDefinitionsPart
 /// </summary>
-public class NumberingDefinitionsPart
+public class NumberingDefinitionsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

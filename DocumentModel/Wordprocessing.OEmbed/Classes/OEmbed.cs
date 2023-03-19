@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.OEmbed;
 /// <summary>
 ///   Defines the OEmbed Class.
 /// </summary>
-public class OEmbed
+public class OEmbed: ModelElement
 {
   /// <summary>
   ///   oEmbedUrl, this property is only available in Microsoft365 and later.

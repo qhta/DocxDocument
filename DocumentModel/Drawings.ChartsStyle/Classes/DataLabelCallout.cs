@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataLabelCallout Class.
 /// </summary>
-public class DataLabelCallout
+public class DataLabelCallout: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

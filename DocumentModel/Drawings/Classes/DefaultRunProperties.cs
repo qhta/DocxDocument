@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Default Text Run Properties.
 /// </summary>
-public class DefaultRunProperties
+public class DefaultRunProperties: ModelElement
 {
   public Outline? Outline { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CommentEx Class.
 /// </summary>
-public class CommentEx
+public class CommentEx: ModelElement
 {
   /// <summary>
   ///   paraId, this property is only available in Office 2013 and later.

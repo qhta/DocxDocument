@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Draw Arc To.
 /// </summary>
-public class ArcTo
+public class ArcTo: ModelElement
 {
   /// <summary>
   ///   Shape Arc Width Radius

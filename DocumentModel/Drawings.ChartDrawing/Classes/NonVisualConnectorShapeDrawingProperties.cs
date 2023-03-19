@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Connector Non Visual Properties.
 /// </summary>
-public class NonVisualConnectorShapeDrawingProperties
+public class NonVisualConnectorShapeDrawingProperties: ModelElement
 {
   /// <summary>
   ///   Chart Non Visual Properties.

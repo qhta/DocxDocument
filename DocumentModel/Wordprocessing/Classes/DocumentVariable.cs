@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Single Document Variable.
 /// </summary>
-public class DocumentVariable
+public class DocumentVariable: ModelElement
 {
   /// <summary>
   ///   Document Variable Name

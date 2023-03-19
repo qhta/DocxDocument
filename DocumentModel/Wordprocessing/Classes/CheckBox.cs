@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Checkbox Form Field Properties.
 /// </summary>
-public class CheckBox
+public class CheckBox: ModelElement
 {
   public String? FormFieldSize { get; set; }
 

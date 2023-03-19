@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing.DrawingShape;
 /// <summary>
 ///   Defines the OfficeArtExtensionList Class.
 /// </summary>
-public class OfficeArtExtensionList
+public class OfficeArtExtensionList: ModelElement
 {
   public Collection<DocumentModel.Drawings.Extension>? Extensions { get; set; }
 }

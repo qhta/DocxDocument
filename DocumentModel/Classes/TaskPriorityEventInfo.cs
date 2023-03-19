@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the TaskPriorityEventInfo Class.
 /// </summary>
-public class TaskPriorityEventInfo
+public class TaskPriorityEventInfo: ModelElement
 {
   /// <summary>
   ///   value, this property is only available in Office 2021 and later.

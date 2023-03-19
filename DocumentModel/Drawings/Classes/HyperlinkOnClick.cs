@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the HyperlinkOnClick Class.
 /// </summary>
-public class HyperlinkOnClick
+public class HyperlinkOnClick: ModelElement
 {
   public EmbeddedWavAudioFileType? HyperlinkSound { get; set; }
 

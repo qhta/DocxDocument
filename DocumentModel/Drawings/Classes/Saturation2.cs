@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Saturation Class.
 /// </summary>
-public class Saturation2
+public class Saturation2: ModelElement
 {
   /// <summary>
   ///   sat, this property is only available in Office 2010 and later.

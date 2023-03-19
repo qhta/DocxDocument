@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the BackgroundRemoval Class.
 /// </summary>
-public class BackgroundRemoval
+public class BackgroundRemoval: ModelElement
 {
   /// <summary>
   ///   t, this property is only available in Office 2010 and later.

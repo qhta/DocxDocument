@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Function Name.
 /// </summary>
-public class FunctionName
+public class FunctionName: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

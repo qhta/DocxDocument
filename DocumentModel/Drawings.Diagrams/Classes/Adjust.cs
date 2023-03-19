@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Shape Adjust.
 /// </summary>
-public class Adjust
+public class Adjust: ModelElement
 {
   /// <summary>
   ///   Adjust Handle Index

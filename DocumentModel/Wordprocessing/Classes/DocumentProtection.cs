@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document Editing Restrictions.
 /// </summary>
-public class DocumentProtection
+public class DocumentProtection: ModelElement
 {
   /// <summary>
   ///   Document Editing Restrictions

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Outline Class.
 /// </summary>
-public class Outline
+public class Outline: ModelElement
 {
   [DefaultValue(false)]
   public Boolean NoFill { get; set; }

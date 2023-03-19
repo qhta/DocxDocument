@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ColorReplacement Class.
 /// </summary>
-public class ColorReplacement
+public class ColorReplacement: ModelElement
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

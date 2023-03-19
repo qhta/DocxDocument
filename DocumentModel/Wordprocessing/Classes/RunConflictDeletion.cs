@@ -114,4 +114,5 @@ public class RunConflictDeletion: ModelElement, ICommonElement
   public BidirectionalOverride? BidirectionalOverride { get; set; }
 
   public BidirectionalEmbedding? BidirectionalEmbedding { get; set; }
+
 }

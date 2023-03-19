@@ -1,3 +1,5 @@
+using DocumentModel;
+
 namespace DocumentModel.OpenXml;
 
 /// <summary>
@@ -16,7 +18,7 @@ public static class AlternateContentConverter
     return AlternateContentChoiceConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentChoice>(), value, diffs, objName);
   }
 
-  private static void SetAlternateContentChoice(DX.AlternateContent openXmlElement, DM.AlternateContentChoice? value)
+  private static void SetAlternateContentChoice(DX.AlternateContent openXmlElement, AlternateContentChoice? value)
   {
     var element = openXmlElement.GetFirstChild<DX.AlternateContentChoice>();
     if (element != null && value != null)
@@ -41,12 +43,12 @@ public static class AlternateContentConverter
     return AlternateContentFallbackConverter.CreateModelElement(openXmlElement.GetFirstChild<DX.AlternateContentFallback>());
   }
 
-  private static bool CmpAlternateContentFallback(DX.AlternateContent openXmlElement, DM.AlternateContentFallback? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternateContentFallback(DX.AlternateContent openXmlElement, AlternateContentFallback? value, DiffList? diffs, string? objName)
   {
     return AlternateContentFallbackConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentFallback>(), value, diffs, objName);
   }
 
-  private static void SetAlternateContentFallback(DX.AlternateContent openXmlElement, DM.AlternateContentFallback? value)
+  private static void SetAlternateContentFallback(DX.AlternateContent openXmlElement, AlternateContentFallback? value)
   {
     var element = openXmlElement.GetFirstChild<DX.AlternateContentFallback>();
     if (element != null && value != null)
@@ -66,7 +68,7 @@ public static class AlternateContentConverter
   #endregion
 
   #region AlternateContent element conversion
-  public static DM.AlternateContent? CreateModelElement(DX.AlternateContent? openXmlElement)
+  public static AlternateContent? CreateModelElement(DX.AlternateContent? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,7 +80,7 @@ public static class AlternateContentConverter
     return null;
   }
 
-  public static bool CompareModelElement(DX.AlternateContent? openXmlElement, DM.AlternateContent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.AlternateContent? openXmlElement, AlternateContent? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -92,14 +94,14 @@ public static class AlternateContentConverter
     return false;
   }
 
-  public static DX.AlternateContent CreateOpenXmlElement(DM.AlternateContent value)
+  public static DX.AlternateContent CreateOpenXmlElement(AlternateContent value)
   {
     var openXmlElement = new DX.AlternateContent();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DX.AlternateContent openXmlElement, DM.AlternateContent value)
+  public static void UpdateOpenXmlElement(DX.AlternateContent openXmlElement, AlternateContent value)
   {
     SetAlternateContentChoice(openXmlElement, value.Choice);
   }
