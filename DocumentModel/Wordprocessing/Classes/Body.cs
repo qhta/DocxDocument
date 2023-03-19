@@ -11,6 +11,8 @@ public class Body : ElementCollection<IBodyElement>
   {
     Parent = this;
   }
+
+  [NonComparable]
   [XmlIgnore] public SectionsCollection? Sections
   {
     get 

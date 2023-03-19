@@ -2,13 +2,7 @@ using System.Data;
 using System.Xml;
 
 using DocxDocument.Reader;
-#if QXmlSerializer
 using Qhta.Xml.Serialization;
-#elif ExtendedXmlSerializer
-using ExtendedXmlSerializer;
-using ExtendedXmlSerializer.Configuration;
-using ExtendedXmlSerializer.ExtensionModel.Content;
-#endif
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -90,56 +84,35 @@ public class TestBody : TestBase
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
       return;
-#if QXmlSerializer
     var textWriter = new StringWriter();
     var serializer = new QXmlSerializer(typeof(DMW.Body), extraTypes.ToArray(),
           new SerializationOptions { AcceptAllProperties = true });
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
-#elif ExtendedXmlSerializer
-    IExtendedXmlSerializer serializer = new ConfigurationContainer()
-      .UseOptimizedNamespaces()
-      .UseAutoFormatting()
-      .Register(HexIntXmlConverter.Default)
-      .Register(DXAXmlConverter.Default)
-      .Create();
-    string str = serializer.Serialize(new XmlWriterSettings {Indent = true}, oldBody);
-#else
-    var textWriter = new StringWriter();
-    var serializer = new System.Xml.Serialization.XmlSerializer(typeof(DMW.Body), extraTypes.ToArray());
-    //      new SerializationOptions { AcceptAllProperties = true });
-    serializer.Serialize(textWriter, oldBody);
-    textWriter.Flush();
-    string str = textWriter.ToString();
-#endif
     var t2 = DateTime.Now;
-    WriteLine($"Serialization time = {(t2-t1).TotalSeconds} s");
     WriteLine(str);
     WriteLine();
+    WriteLine($"Serialization time = {(t2-t1).TotalSeconds} s");
 
     var t3 = DateTime.Now;
-#if QXmlSerializer
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
-#elif ExtendedXmlSerializer
-    var newBody = serializer.Deserialize<DMW.Body>(new XmlReaderSettings{IgnoreWhitespace = false}, str);
-#else
-    var textReader = new StringReader(str);
-    var newBody = (DMW.Body?)serializer.Deserialize(textReader);
-#endif
     var t4 = DateTime.Now;
     WriteLine($"Deserialization time = {(t4-t3).TotalSeconds} s");
 
     Assert.IsNotNull(newBody, $"Deserialized body is null");
     var diffs = new DiffList();
     var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
+    var t5 = DateTime.Now;
     if (!ok)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-    var t5 = DateTime.Now;
     WriteLine($"DeepCompare time = {(t5-t4).TotalSeconds}");
+    WriteLine($"DeepCompare KnownProperties.Count = {DeepComparer.KnownProperties.Count}");
+    WriteLine($"DeepCompare KnownCompareFunctions.Count = {DeepComparer.KnownCompareFunctions.Count}");
+    WriteLine($"DeepCompare ComparedProperties.Count = {DeepComparer.ComparedProperties.Count}");
   }
 
   /// <summary>

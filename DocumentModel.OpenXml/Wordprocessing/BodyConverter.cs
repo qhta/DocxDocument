@@ -155,63 +155,63 @@ public static class BodyConverter
   {
      return ElementCollectionConverter<IBodyElement>.CompareOpenXmlElementCollection
         (openXmlElement, model, (CompareOpenXmlElementMethod)CompareBodyElement, diffs, objName);
-    if (openXmlElement != null && model != null)
-    {
-      var ok = true;
-      var modelEnumerator = model.GetEnumerator();
-      var openXmlEnumerator = openXmlElement.GetEnumerator();
-      int elementIndex = 0;
-      int sectionIndex = 0;
-      DMW.Section? lastSection = null;
-      while (modelEnumerator.MoveNext() && openXmlEnumerator.MoveNext())
-      {
-        lastSection = modelEnumerator.Current as DMW.Section;
-        if (modelEnumerator.Current is DMW.Section section)
-        {
-          var sectionEnumerator = section.GetEnumerator();
-          if (sectionEnumerator.MoveNext())
-          {
-            do
-            {
-              var sectionItem = sectionEnumerator.Current;
-              var openXmlItem = openXmlEnumerator.Current;
-              if (openXmlItem is DXW.Paragraph paragraph && paragraph.Descendants<DXW.SectionProperties>().Any()
-                && sectionItem is DMW.Paragraph paragraphModel && paragraphModel.ParagraphProperties != null)
-              {
-                paragraphModel.ParagraphProperties.SectionProperties = section.Properties;
-                if (!ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName))
-                  ok = false;
-                paragraphModel.ParagraphProperties.SectionProperties = null;
-              }
-              else
-              if (!CompareBodyElement(openXmlItem, sectionItem, diffs, $"Section[{sectionIndex}].Element[{elementIndex}]"))
-                ok = false;
-              elementIndex++;
-            } while (sectionEnumerator.MoveNext() && openXmlEnumerator.MoveNext());
-          }
-        }
-        else
-        {
-          var modelItem = modelEnumerator.Current;
-          var openXmlItem = openXmlEnumerator.Current;
-          if (!CompareBodyElement(openXmlItem, modelItem, diffs, $"Element[{elementIndex}]"))
-            ok = false;
-          elementIndex++;
-        }
-      }
-      openXmlEnumerator.MoveNext();
-      var lastSectionProperties = openXmlEnumerator.Current as DXW.SectionProperties;
-      if (lastSectionProperties != null)
-      {
-        if (!SectionPropertiesConverter.CompareModelElement(lastSectionProperties,
-          lastSection?.Properties, diffs, $"Section[{sectionIndex}].Element[{elementIndex}]"))
-          ok = false;
-      }
-      return ok;
-    }
-    if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
-    return false;
+    //if (openXmlElement != null && model != null)
+    //{
+    //  var ok = true;
+    //  var modelEnumerator = model.GetEnumerator();
+    //  var openXmlEnumerator = openXmlElement.GetEnumerator();
+    //  int elementIndex = 0;
+    //  int sectionIndex = 0;
+    //  DMW.Section? lastSection = null;
+    //  while (modelEnumerator.MoveNext() && openXmlEnumerator.MoveNext())
+    //  {
+    //    lastSection = modelEnumerator.Current as DMW.Section;
+    //    if (modelEnumerator.Current is DMW.Section section)
+    //    {
+    //      var sectionEnumerator = section.GetEnumerator();
+    //      if (sectionEnumerator.MoveNext())
+    //      {
+    //        do
+    //        {
+    //          var sectionItem = sectionEnumerator.Current;
+    //          var openXmlItem = openXmlEnumerator.Current;
+    //          if (openXmlItem is DXW.Paragraph paragraph && paragraph.Descendants<DXW.SectionProperties>().Any()
+    //            && sectionItem is DMW.Paragraph paragraphModel && paragraphModel.ParagraphProperties != null)
+    //          {
+    //            paragraphModel.ParagraphProperties.SectionProperties = section.Properties;
+    //            if (!ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName))
+    //              ok = false;
+    //            paragraphModel.ParagraphProperties.SectionProperties = null;
+    //          }
+    //          else
+    //          if (!CompareBodyElement(openXmlItem, sectionItem, diffs, $"Section[{sectionIndex}].Element[{elementIndex}]"))
+    //            ok = false;
+    //          elementIndex++;
+    //        } while (sectionEnumerator.MoveNext() && openXmlEnumerator.MoveNext());
+    //      }
+    //    }
+    //    else
+    //    {
+    //      var modelItem = modelEnumerator.Current;
+    //      var openXmlItem = openXmlEnumerator.Current;
+    //      if (!CompareBodyElement(openXmlItem, modelItem, diffs, $"Element[{elementIndex}]"))
+    //        ok = false;
+    //      elementIndex++;
+    //    }
+    //  }
+    //  openXmlEnumerator.MoveNext();
+    //  var lastSectionProperties = openXmlEnumerator.Current as DXW.SectionProperties;
+    //  if (lastSectionProperties != null)
+    //  {
+    //    if (!SectionPropertiesConverter.CompareModelElement(lastSectionProperties,
+    //      lastSection?.Properties, diffs, $"Section[{sectionIndex}].Element[{elementIndex}]"))
+    //      ok = false;
+    //  }
+    //  return ok;
+    //}
+    //if (openXmlElement == null && model == null) return true;
+    //diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    //return false;
   }
 
   public static DXW.Body CreateOpenXmlElement(DMW.Body value)

@@ -46,7 +46,7 @@ public class TestSections : TestBase
     {
       var modelSectionsProperties = modelSections[i].Properties;
       var origSectionPropertiesElement = origSectionProperties[i];
-      if (!DMXW.SectionPropertiesConverter.CompareModelElement(origSectionPropertiesElement, modelSectionsProperties, diffs, $"SectionProperties[{i}]"));
+      DMXW.SectionPropertiesConverter.CompareModelElement(origSectionPropertiesElement, modelSectionsProperties, diffs, $"SectionProperties[{i}]");
     }
     if (!ok && showDetails)
     {
