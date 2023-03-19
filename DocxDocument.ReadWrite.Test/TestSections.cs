@@ -1,9 +1,11 @@
-namespace DocxDocument.Reader.Test;
+using DocxDocument.Reader;
+
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Test class for document sections.
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestSections : TestBase
 {
 
@@ -104,64 +106,64 @@ public class TestSections : TestBase
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
   }
 
-  /// <summary>
-  /// Tests sections Json serialization by reading all docx files in folder specified by test path,
-  /// serialize and deserialize body using string writer.
-  /// </summary>
-  [Test]
-  public void TestReadSectionsJsonSerialization()
-  {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestReadSectionsJsonSerialization(filename);
-  }
+  ///// <summary>
+  ///// Tests sections Json serialization by reading all docx files in folder specified by test path,
+  ///// serialize and deserialize body using string writer.
+  ///// </summary>
+  //[Test]
+  //public void TestReadSectionsJsonSerialization()
+  //{
+  //  foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+  //    TestReadSectionsJsonSerialization(filename);
+  //}
 
-  /// <summary>
-  /// Tests sections Json serialization by reading specifed docx file,
-  /// serialize and deserialize body using string writer.
-  /// </summary>
-  public void TestReadSectionsJsonSerialization(string filename)
-  {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+  ///// <summary>
+  ///// Tests sections Json serialization by reading specifed docx file,
+  ///// serialize and deserialize body using string writer.
+  ///// </summary>
+  //public void TestReadSectionsJsonSerialization(string filename)
+  //{
+  //  var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+  //    .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
 
-    filename = Path.Combine(TestPath, filename);
-    var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Body);
-    var oldBody = document.Body ?? new();
-    Assert.IsNotNull(oldBody, "No document body read");
-    if (oldBody == null)
-      return;
-    var textWriter = new StringWriter();
-    var serializer = JsonSerializer.Create(
-    new JsonSerializerSettings
-    {
-      NullValueHandling = NullValueHandling.Ignore,
-      Formatting = Formatting.Indented,
-      TypeNameHandling = TypeNameHandling.All, 
-      DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
-    });
-    serializer.Serialize(textWriter, oldBody);
-    textWriter.Flush();
-    string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+  //  filename = Path.Combine(TestPath, filename);
+  //  var reader = new DocxReader(filename);
+  //  var document = reader.ReadDocument(Parts.Body);
+  //  var oldBody = document.Body ?? new();
+  //  Assert.IsNotNull(oldBody, "No document body read");
+  //  if (oldBody == null)
+  //    return;
+  //  var textWriter = new StringWriter();
+  //  var serializer = JsonSerializer.Create(
+  //  new JsonSerializerSettings
+  //  {
+  //    NullValueHandling = NullValueHandling.Ignore,
+  //    Formatting = Formatting.Indented,
+  //    TypeNameHandling = TypeNameHandling.All, 
+  //    DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
+  //  });
+  //  serializer.Serialize(textWriter, oldBody);
+  //  textWriter.Flush();
+  //  string str = textWriter.ToString();
+  //  WriteLine(str);
+  //  WriteLine();
 
-    var textReader = new StringReader(str);
-    var jsonReader = new JsonTextReader(textReader);
-    var newBody = (DMW.Body?)serializer.Deserialize<DMW.Body>(jsonReader);
-    Assert.IsNotNull(newBody, $"Deserialized body are null");
-    var oldBodyCount = oldBody.Count;
-    var newBodyCount = newBody.Count();
-    var newBodyArray = newBody.ToArray();
-    var oldBodyArray = oldBody.ToArray();
-    for (int i = 0; i < Math.Min(oldBodyCount, newBodyCount); i++)
-    {
-      var oldItem = oldBodyArray[i];
-      var newItem = newBodyArray[i];
-      newItem.ShouldDeepEqual(oldItem);
-      //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
-    }
-    Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
-  }
+  //  var textReader = new StringReader(str);
+  //  var jsonReader = new JsonTextReader(textReader);
+  //  var newBody = (DMW.Body?)serializer.Deserialize<DMW.Body>(jsonReader);
+  //  Assert.IsNotNull(newBody, $"Deserialized body are null");
+  //  var oldBodyCount = oldBody.Count;
+  //  var newBodyCount = newBody.Count();
+  //  var newBodyArray = newBody.ToArray();
+  //  var oldBodyArray = oldBody.ToArray();
+  //  for (int i = 0; i < Math.Min(oldBodyCount, newBodyCount); i++)
+  //  {
+  //    var oldItem = oldBodyArray[i];
+  //    var newItem = newBodyArray[i];
+  //    newItem.ShouldDeepEqual(oldItem);
+  //    //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
+  //  }
+  //  Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
+  //}
 
 }

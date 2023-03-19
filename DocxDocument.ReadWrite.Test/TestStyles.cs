@@ -8,12 +8,12 @@ using DocumentModel.OpenXml.Wordprocessing;
 
 using Qhta.Xml.Serialization;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Test class for document style definition part.
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestStyles : TestBase
 {
 

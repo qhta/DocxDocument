@@ -9,7 +9,7 @@ using Qhta.Xml.Serialization;
 using Variant = DocumentModel.Variant;
 using VariantType = DocumentModel.VariantType;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// TestNumbers for variants
@@ -173,7 +173,7 @@ public class RGBTypeConverter : TypeConverter
 /// <summary>
 /// Test class for variants
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestVariants : TestBase
 {
 

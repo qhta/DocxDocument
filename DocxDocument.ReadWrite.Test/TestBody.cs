@@ -1,11 +1,21 @@
-using DocumentFormat.OpenXml.Spreadsheet;
+using System.Data;
+using System.Xml;
 
-namespace DocxDocument.Reader.Test;
+using DocxDocument.Reader;
+#if QXmlSerializer
+using Qhta.Xml.Serialization;
+#elif ExtendedXmlSerializer
+using ExtendedXmlSerializer;
+using ExtendedXmlSerializer.Configuration;
+using ExtendedXmlSerializer.ExtensionModel.Content;
+#endif
+
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Test class for document paragraphs.
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestBody : TestBase
 {
 
@@ -72,29 +82,64 @@ public class TestBody : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing body of: {filename}");
     var reader = new DocxReader(filename);
+    var t0 = DateTime.Now;
     var document = reader.ReadDocument(Parts.Body);
+    var t1 = DateTime.Now;
+    WriteLine($"ReadDocument time = {(t1-t0).TotalSeconds} s");
     var oldBody = document.Body ?? new();
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
       return;
+#if QXmlSerializer
     var textWriter = new StringWriter();
     var serializer = new QXmlSerializer(typeof(DMW.Body), extraTypes.ToArray(),
-      new SerializationOptions { AcceptAllProperties = true });
+          new SerializationOptions { AcceptAllProperties = true });
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
+#elif ExtendedXmlSerializer
+    IExtendedXmlSerializer serializer = new ConfigurationContainer()
+      .UseOptimizedNamespaces()
+      .UseAutoFormatting()
+      .Register(HexIntXmlConverter.Default)
+      .Register(DXAXmlConverter.Default)
+      .Create();
+    string str = serializer.Serialize(new XmlWriterSettings {Indent = true}, oldBody);
+#else
+    var textWriter = new StringWriter();
+    var serializer = new System.Xml.Serialization.XmlSerializer(typeof(DMW.Body), extraTypes.ToArray());
+    //      new SerializationOptions { AcceptAllProperties = true });
+    serializer.Serialize(textWriter, oldBody);
+    textWriter.Flush();
+    string str = textWriter.ToString();
+#endif
+    var t2 = DateTime.Now;
+    WriteLine($"Serialization time = {(t2-t1).TotalSeconds} s");
     WriteLine(str);
     WriteLine();
 
+    var t3 = DateTime.Now;
+#if QXmlSerializer
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
+#elif ExtendedXmlSerializer
+    var newBody = serializer.Deserialize<DMW.Body>(new XmlReaderSettings{IgnoreWhitespace = false}, str);
+#else
+    var textReader = new StringReader(str);
+    var newBody = (DMW.Body?)serializer.Deserialize(textReader);
+#endif
+    var t4 = DateTime.Now;
+    WriteLine($"Deserialization time = {(t4-t3).TotalSeconds} s");
+
     Assert.IsNotNull(newBody, $"Deserialized body is null");
     var diffs = new DiffList();
-    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs); 
+    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
     if (!ok)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
+    var t5 = DateTime.Now;
+    WriteLine($"DeepCompare time = {(t5-t4).TotalSeconds}");
   }
 
   /// <summary>
@@ -124,37 +169,42 @@ public class TestBody : TestBase
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
       return;
+#if NET7_0_OR_GREATER
+    var str = JsonSerializer.Serialize(oldBody, oldBody.GetType(),
+      new JsonSerializerOptions
+      {
+      });
+#else
     var textWriter = new StringWriter();
     var serializer = JsonSerializer.Create(
     new JsonSerializerSettings
     {
       NullValueHandling = NullValueHandling.Ignore,
-      Formatting = Formatting.Indented,
-      TypeNameHandling = TypeNameHandling.All, 
+      Formatting = Newtonsoft.Json.Formatting.Indented,
+      TypeNameHandling = TypeNameHandling.All,
       DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate,
     });
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
+#endif
     WriteLine(str);
     WriteLine();
 
+#if NET7_0_OR_GREATER
+    var newBody = (DMW.Body?)JsonSerializer.Deserialize<DMW.Body>(str);
+#else
     var textReader = new StringReader(str);
     var jsonReader = new JsonTextReader(textReader);
     var newBody = (DMW.Body?)serializer.Deserialize<DMW.Body>(jsonReader);
+#endif
     Assert.IsNotNull(newBody, $"Deserialized body are null");
-    var oldBodyCount = oldBody.Count;
-    var newBodyCount = newBody.Count();
-    var newBodyArray = newBody.ToArray();
-    var oldBodyArray = oldBody.ToArray();
-    for (int i = 0; i < Math.Min(oldBodyCount, newBodyCount); i++)
-    {
-      var oldItem = oldBodyArray[i];
-      var newItem = newBodyArray[i];
-      newItem.ShouldDeepEqual(oldItem);
-      //Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized body element \"{oldItem.GetType().Name}\" is different from original");
-    }
-    Assert.That(newBodyCount, Is.EqualTo(oldBodyCount), $"Deserialized Body count is different from original");
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
+    if (!ok)
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
   }
 
 }

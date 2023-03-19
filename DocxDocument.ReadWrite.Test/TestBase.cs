@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Serialization;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Base class for all test.
