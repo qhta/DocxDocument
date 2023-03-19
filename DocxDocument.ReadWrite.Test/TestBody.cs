@@ -112,7 +112,7 @@ public class TestBody : TestBase
     WriteLine($"DeepCompare time = {(t5-t4).TotalSeconds}");
     WriteLine($"DeepCompare KnownProperties.Count = {DeepComparer.KnownProperties.Count}");
     WriteLine($"DeepCompare KnownCompareFunctions.Count = {DeepComparer.KnownCompareFunctions.Count}");
-    WriteLine($"DeepCompare ComparedProperties.Count = {DeepComparer.ComparedProperties.Count}");
+    //WriteLine($"DeepCompare ComparedProperties.Count = {DeepComparer.ComparedProperties.Count}");
   }
 
   /// <summary>
