@@ -13,11 +13,6 @@
     <DefineConstants>$(DefineConstants);QXmlSerializer</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition="!$(DefineConstants.Contains('ExtendedXmlSerializer'))">
-    <Compile Remove="DXAXmlConverter.cs" />
-    <Compile Remove="HexIntXmlConverter.cs" />
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="DeepEqual" Version="4.2.1" />
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
@@ -40,13 +35,11 @@
     <ProjectReference Include="..\DocxDocument.ReadWrite\DocxDocument.ReadWrite.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(DefineConstants.Contains('QXmlSerializer'))">
+  <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.Serialization\Qhta.Xml.Serialization.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="$(DefineConstants.Contains('ExtendedXmlSerializer'))">
-    <PackageReference Include="ExtendedXmlSerializer" Version="3.7.11" />
-  </ItemGroup>
+
 
   <ItemGroup>
     <Reference Include="Qhta.SystemUtils">
