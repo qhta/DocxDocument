@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Title.
 /// </summary>
-public class StyleDefinitionTitle
+public class StyleDefinitionTitle: ModelElement
 {
   /// <summary>
   ///   Natural Language

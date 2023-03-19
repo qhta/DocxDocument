@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ConnectionType Class.
 /// </summary>
-public class ConnectionType
+public class ConnectionType: ModelElement
 {
   /// <summary>
   ///   Identifier

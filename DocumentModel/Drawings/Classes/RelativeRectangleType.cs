@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the RelativeRectangleType Class.
 /// </summary>
-public class RelativeRectangleType
+public class RelativeRectangleType: ModelElement
 {
   /// <summary>
   ///   Left Offset

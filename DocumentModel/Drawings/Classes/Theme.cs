@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Theme.
 /// </summary>
-public class Theme
+public class Theme: ModelElement
 {
   /// <summary>
   ///   name

@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Contents of Glossary Document Entry.
 /// </summary>
-public class DocPartBody
+public class DocPartBody: ModelElement
 {
   public Collection<AltChunk>? AltChunks { get; set; }
 

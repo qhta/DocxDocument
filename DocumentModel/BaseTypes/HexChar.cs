@@ -4,7 +4,7 @@ using DocumentModel;
 namespace DocumentModel;
 
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
-public struct HexChar : IConvertible
+public struct HexChar : IConvertible, IEquatable<HexChar>
 {
   private readonly ushort Value;
 
@@ -198,5 +198,15 @@ public struct HexChar : IConvertible
     if (Value > 255)
       return Value.ToString("X4");
     return Value.ToString("X2");
+  }
+
+  public bool Equals(HexChar other)
+  {
+    return Value == other.Value;
+  }
+
+  public override int GetHashCode()
+  {
+    return Value;
   }
 }

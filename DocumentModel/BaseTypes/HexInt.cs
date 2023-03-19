@@ -2,7 +2,7 @@
 
 [TypeConverter(typeof(HexIntTypeXmlConverter))]
 [JsonConverter(typeof(HexIntTypeJsonConverter))]
-public struct HexInt : IConvertible
+public struct HexInt : IConvertible, IEquatable<HexInt>
 {
   private readonly int Value;
 
@@ -192,5 +192,15 @@ public struct HexInt : IConvertible
     //if (Value > uint.MaxValue)
     //  return Value.ToString("X16");
     return Value.ToString("X8");
+  }
+
+    public bool Equals(HexInt other)
+  {
+    return Value == other.Value;
+  }
+
+  public override int GetHashCode()
+  {
+    return Value;
   }
 }

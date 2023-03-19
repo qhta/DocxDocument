@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Degree.
 /// </summary>
-public class Degree
+public class Degree: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 

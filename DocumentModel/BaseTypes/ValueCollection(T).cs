@@ -105,16 +105,16 @@ public class ValueCollection<T> : ModelElement, ICollection, ICollection<T>, INo
   bool ICollection.IsSynchronized { get; }
   object ICollection.SyncRoot { get; } = new object();
 
-  //public override int GetHashCode()
-  //{
-  //  var thisHashCode = EqualityComparer<Type>.Default.GetHashCode(EqualityContract);
-  //  foreach (var item in this)
-  //  {
-  //    if (item!=null)
-  //      thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
-  //  }
-  //  return thisHashCode;
-  //}
+  public override int GetHashCode()
+  {
+    var thisHashCode = 0;//EqualityComparer<Type>.Default.GetHashCode(EqualityContract);
+    foreach (var item in this)
+    {
+      if (item != null)
+        thisHashCode = HashCode.Combine(thisHashCode, EqualityComparer<T>.Default.GetHashCode(item));
+    }
+    return thisHashCode;
+  }
 
   //protected virtual bool PrintMembers(StringBuilder builder)
   //{

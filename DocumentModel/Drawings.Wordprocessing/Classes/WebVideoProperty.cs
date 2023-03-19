@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Defines the WebVideoProperty Class.
 /// </summary>
-public class WebVideoProperty
+public class WebVideoProperty: ModelElement
 {
   /// <summary>
   ///   embeddedHtml, this property is only available in Office 2013 and later.

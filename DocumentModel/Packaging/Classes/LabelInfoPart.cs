@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the LabelInfoPart
 /// </summary>
-public class LabelInfoPart
+public class LabelInfoPart: ModelElement
 {
   /// <summary>
   ///   Gets or sets the root element of this part.

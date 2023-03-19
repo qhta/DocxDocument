@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Section Properties.
 /// </summary>
-public class PreviousSectionProperties
+public class PreviousSectionProperties: ModelElement
 {
   /// <summary>
   ///   Physical Section Mark Character Revision ID

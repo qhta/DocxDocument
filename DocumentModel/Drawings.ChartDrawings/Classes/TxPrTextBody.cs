@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the TxPrTextBody Class.
 /// </summary>
-public class TxPrTextBody
+public class TxPrTextBody: ModelElement
 {
   public BodyProperties? BodyProperties { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Rich Text.
 /// </summary>
-public class RichText
+public class RichText: ModelElement
 {
   public BodyProperties? BodyProperties { get; set; }
 

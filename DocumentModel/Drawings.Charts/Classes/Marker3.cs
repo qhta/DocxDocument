@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the Marker Class.
 /// </summary>
-public class Marker3
+public class Marker3: ModelElement
 {
   /// <summary>
   ///   Symbol.

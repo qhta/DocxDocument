@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the ChartText Class.
 /// </summary>
-public class ChartText3
+public class ChartText3: ModelElement
 {
   /// <summary>
   ///   String Reference.

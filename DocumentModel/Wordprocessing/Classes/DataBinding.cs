@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DataBinding Class.
 /// </summary>
-public class DataBinding
+public class DataBinding: ModelElement
 {
   /// <summary>
   ///   XML Namespace Prefix Mappings

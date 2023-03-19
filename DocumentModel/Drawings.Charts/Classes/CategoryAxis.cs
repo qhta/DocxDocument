@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Category Axis Data.
 /// </summary>
-public class CategoryAxis
+public class CategoryAxis: ModelElement
 {
   /// <summary>
   ///   Axis ID.

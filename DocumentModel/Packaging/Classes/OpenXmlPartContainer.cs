@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the base class for OpenXmlPackage and OpenXmlPart.
 /// </summary>
-public class OpenXmlPartContainer
+public class OpenXmlPartContainer: ModelElement
 {
   /// <summary>
   ///   Gets all external relationships.

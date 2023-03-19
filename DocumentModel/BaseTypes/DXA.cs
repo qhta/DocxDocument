@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 
 [TypeConverter(typeof(DXATypeConverter))]
-public struct DXA
+public struct DXA: IComparable<DXA>
 {
   const double dxaMM = 56.695238095238095238095238095238; // 1440/25.4 = 56,692913385826771653543307086614
   const double dxaInch = 1440;
@@ -92,4 +92,14 @@ public struct DXA
   public static implicit operator Int32(DXA value) { return (Int32)value.Value; }
   public static implicit operator DXA(UInt32 value) { return new DXA(value); }
   public static implicit operator UInt32(DXA value) { return (UInt32)value.Value; }
+
+  public int CompareTo(DXA other)
+  {
+    return Value.CompareTo(other.Value);
+  }
+
+  public override int GetHashCode()
+  {
+    return Value.GetHashCode();
+  }
 }

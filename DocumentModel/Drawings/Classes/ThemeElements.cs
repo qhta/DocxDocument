@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ThemeElements Class.
 /// </summary>
-public class ThemeElements
+public class ThemeElements: ModelElement
 {
   /// <summary>
   ///   ColorScheme.

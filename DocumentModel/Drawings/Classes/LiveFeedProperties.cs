@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the LiveFeedProperties Class.
 /// </summary>
-public class LiveFeedProperties
+public class LiveFeedProperties: ModelElement
 {
   /// <summary>
   ///   LiveFeedBackgroundProperties.

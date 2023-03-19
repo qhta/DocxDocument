@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the AxisDataSourceType Class.
 /// </summary>
-public class AxisDataSourceType3
+public class AxisDataSourceType3: ModelElement
 {
   /// <summary>
   ///   Multi Level String Reference.

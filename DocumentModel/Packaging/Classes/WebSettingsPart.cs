@@ -3,7 +3,7 @@ namespace DocumentModel.Packaging;
 /// <summary>
 ///   Defines the WebSettingsPart
 /// </summary>
-public class WebSettingsPart
+public class WebSettingsPart: ModelElement
 {
   public String? ContentType { get; set; }
 

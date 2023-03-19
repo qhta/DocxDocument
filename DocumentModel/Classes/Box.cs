@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the Box Class.
 /// </summary>
-public class Box
+public class Box: ModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.

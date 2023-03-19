@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticPlasticWrap Class.
 /// </summary>
-public class ArtisticPlasticWrap
+public class ArtisticPlasticWrap: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

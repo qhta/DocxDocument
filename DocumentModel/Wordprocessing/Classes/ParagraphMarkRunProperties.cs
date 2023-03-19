@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties for the Paragraph Mark.
 /// </summary>
-public class ParagraphMarkRunProperties
+public class ParagraphMarkRunProperties: ModelElement
 {
   /// <summary>
   ///   Inserted Paragraph.

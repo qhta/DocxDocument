@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Definition Instance.
 /// </summary>
-public class NumberingInstance
+public class NumberingInstance: ModelElement
 {
   /// <summary>
   ///   numId

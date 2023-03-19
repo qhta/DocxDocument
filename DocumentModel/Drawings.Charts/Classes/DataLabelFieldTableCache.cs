@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the DataLabelFieldTableCache Class.
 /// </summary>
-public class DataLabelFieldTableCache
+public class DataLabelFieldTableCache: ModelElement
 {
   public UInt32? PointCount { get; set; }
 

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Layout.
 /// </summary>
-public class Layout
+public class Layout: ModelElement
 {
   /// <summary>
   ///   Manual Layout.

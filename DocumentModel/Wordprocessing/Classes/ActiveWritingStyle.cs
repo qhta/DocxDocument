@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Grammar Checking Settings.
 /// </summary>
-public class ActiveWritingStyle
+public class ActiveWritingStyle: ModelElement
 {
   /// <summary>
   ///   Writing Style Language

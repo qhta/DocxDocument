@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ClassificationLabelList Class.
 /// </summary>
-public class ClassificationLabelList
+public class ClassificationLabelList: ModelElement
 {
   public Collection<ClassificationLabel>? ClassificationLabels { get; set; }
 

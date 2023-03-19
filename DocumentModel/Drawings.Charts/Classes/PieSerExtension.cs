@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Defines the PieSerExtension Class.
 /// </summary>
-public class PieSerExtension
+public class PieSerExtension: ModelElement
 {
   /// <summary>
   ///   URI

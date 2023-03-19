@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the CommentAnchor Class.
 /// </summary>
-public class CommentAnchor
+public class CommentAnchor: ModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.

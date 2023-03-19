@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Previous Table-Level Property Exceptions.
 /// </summary>
-public class PreviousTablePropertyExceptions
+public class PreviousTablePropertyExceptions: ModelElement
 {
   /// <summary>
   ///   Preferred Table Width Exception.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Stretch.
 /// </summary>
-public class Stretch
+public class Stretch: ModelElement
 {
   /// <summary>
   ///   Fill Rectangle.

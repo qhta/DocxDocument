@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Defines the SampleDataType Class.
 /// </summary>
-public class SampleDataType
+public class SampleDataType: ModelElement
 {
   /// <summary>
   ///   Use Default

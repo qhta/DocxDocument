@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Charts;
 /// <summary>
 ///   Bar Charts.
 /// </summary>
-public class BarChart
+public class BarChart: ModelElement
 {
   /// <summary>
   ///   Bar Direction.

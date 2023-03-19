@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Wordprocessing;
 /// <summary>
 ///   Top and Bottom Wrapping.
 /// </summary>
-public class WrapTopBottom
+public class WrapTopBottom: ModelElement
 {
   /// <summary>
   ///   Distance From Text on Top Edge

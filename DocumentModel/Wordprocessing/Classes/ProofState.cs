@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Spelling and Grammatical Checking State.
 /// </summary>
-public class ProofState
+public class ProofState: ModelElement
 {
   /// <summary>
   ///   Spell Checking State

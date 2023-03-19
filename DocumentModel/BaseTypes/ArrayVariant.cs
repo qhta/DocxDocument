@@ -1,5 +1,7 @@
 using DocumentModel;
 
+using Qhta.Xml.Reflection;
+
 namespace DocumentModel;
 
 /// <summary>
@@ -7,7 +9,7 @@ namespace DocumentModel;
 /// </summary>
 [XmlRoot("Array")]
 [TypeConverter(typeof(ArrayXmlTypeConverter))]
-public class ArrayVariant : Variant, ICollection<object?>
+public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVariant>
 {
   private VariantType _baseType;
 
@@ -207,5 +209,41 @@ public class ArrayVariant : Variant, ICollection<object?>
       ItemType = newItemType;
       _fillCount = 0;
     }
+  }
+
+  public bool Equals(ArrayVariant? other)
+  {
+    if (other == null)
+      return false;
+    var result =
+      _VariantType == other._VariantType
+      && _lowerBounds == other._lowerBounds 
+      && _upperBounds == other._upperBounds
+      && _items?.Length == other._items?.Length;
+    if (result && _items!=null && other._items!=null)
+      for (int i = 0; i < _items.Length; i++)
+      {
+        var item = _items.GetValue(i);
+        var otherItem = other._items.GetValue(i);
+        if (item != otherItem)
+          return false;
+      }
+    return true;
+  }
+
+  public override int GetHashCode()
+  {
+    var result =
+      HashCode.Combine(_VariantType.GetHashCode(),
+       _lowerBounds.GetHashCode(),
+       _upperBounds.GetHashCode(),
+       _items?.Length.GetHashCode() ?? 0);
+    if (_items!=null)
+      for (int i = 0; i < _items.Length; i++)
+      {
+        var item = _items.GetValue(i);
+        result = HashCode.Combine(item?.GetHashCode());
+      }
+    return result;
   }
 }

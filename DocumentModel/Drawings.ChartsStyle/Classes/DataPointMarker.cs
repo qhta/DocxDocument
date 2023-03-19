@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the DataPointMarker Class.
 /// </summary>
-public class DataPointMarker
+public class DataPointMarker: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

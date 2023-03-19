@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the SdtContentComboBox Class.
 /// </summary>
 [XmlObject]
-public class SdtContentComboBox
+public class SdtContentComboBox: ModelElement
 {
   /// <summary>
   ///   Combo Box Last Saved Value

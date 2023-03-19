@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the ContentPart Class.
 /// </summary>
-public class ContentPart2
+public class ContentPart2: ModelElement
 {
   /// <summary>
   ///   bwMode, this property is only available in Office 2010 and later.

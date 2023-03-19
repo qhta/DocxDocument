@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the ArtisticMosaicBubbles Class.
 /// </summary>
-public class ArtisticMosaicBubbles
+public class ArtisticMosaicBubbles: ModelElement
 {
   /// <summary>
   ///   trans, this property is only available in Office 2010 and later.

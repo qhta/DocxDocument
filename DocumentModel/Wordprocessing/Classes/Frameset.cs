@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Nested Frameset Definition.
 /// </summary>
-public class Frameset
+public class Frameset: ModelElement
 {
   /// <summary>
   ///   Nested Frameset Size.

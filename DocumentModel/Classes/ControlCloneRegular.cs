@@ -3,7 +3,7 @@ namespace DocumentModel;
 /// <summary>
 ///   Defines the ControlCloneRegular Class.
 /// </summary>
-public class ControlCloneRegular
+public class ControlCloneRegular: ModelElement
 {
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the FontReference Class.
 /// </summary>
-public class FontReference
+public class FontReference: ModelElement
 {
   /// <summary>
   ///   Identifier

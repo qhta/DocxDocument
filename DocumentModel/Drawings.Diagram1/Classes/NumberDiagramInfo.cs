@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagram1;
 /// <summary>
 ///   Defines the NumberDiagramInfo Class.
 /// </summary>
-public class NumberDiagramInfo
+public class NumberDiagramInfo: ModelElement
 {
   /// <summary>
   ///   lvl, this property is only available in Office 2019 and later.

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Function Properties.
 /// </summary>
-public class FunctionProperties
+public class FunctionProperties: ModelElement
 {
   /// <summary>
   ///   ControlProperties.

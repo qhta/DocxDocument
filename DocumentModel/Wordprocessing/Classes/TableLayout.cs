@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the TableLayout Class.
 /// </summary>
-public class TableLayout
+public class TableLayout: ModelElement
 {
   /// <summary>
   ///   Table Layout Setting

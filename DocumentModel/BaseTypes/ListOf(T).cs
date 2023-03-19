@@ -4,7 +4,7 @@ namespace DocumentModel;
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
-public class ListOf<T> : ICollection<T>
+public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   where T : IConvertible
 {
   private char[] _listSeparators = new char[] {' '};
@@ -194,5 +194,20 @@ public class ListOf<T> : ICollection<T>
   public static implicit operator string?(ListOf<T>? value)
   {
     return value?.ToString();
+  }
+
+  public bool Equals(ListOf<T>? other)
+  {
+    if (other == null)
+      return false;
+    return Enumerable.SequenceEqual<T>(this._list, other._list);
+  }
+
+  public override int GetHashCode()
+  {
+    var result = _list.Count();
+    foreach (var item in _list)
+      result = HashCode.Combine(result, item.GetHashCode());
+    return result;
   }
 }

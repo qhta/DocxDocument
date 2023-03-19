@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Numbering Symbol Run Properties.
 /// </summary>
-public class NumberingSymbolRunProperties
+public class NumberingSymbolRunProperties: ModelElement
 {
   /// <summary>
   ///   RunFonts.

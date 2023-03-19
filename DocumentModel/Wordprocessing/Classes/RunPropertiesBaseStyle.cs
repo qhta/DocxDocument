@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public class RunPropertiesBaseStyle
+public class RunPropertiesBaseStyle: ModelElement
 {
   /// <summary>
   ///   RunFonts.

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartsStyle;
 /// <summary>
 ///   Defines the ValueAxis Class.
 /// </summary>
-public class ValueAxis
+public class ValueAxis: ModelElement
 {
   public LineReference? LineReference { get; set; }
 

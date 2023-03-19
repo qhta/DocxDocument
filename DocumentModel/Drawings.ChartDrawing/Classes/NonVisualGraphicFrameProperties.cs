@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// <summary>
 ///   Non-Visual Graphic Frame Properties.
 /// </summary>
-public class NonVisualGraphicFrameProperties
+public class NonVisualGraphicFrameProperties: ModelElement
 {
   /// <summary>
   ///   Non-Visual Drawing Properties.

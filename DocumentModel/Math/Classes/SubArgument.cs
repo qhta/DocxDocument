@@ -5,7 +5,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Lower limit (n-ary) .
 /// </summary>
-public class SubArgument
+public class SubArgument: ModelElement
 {
   public ArgumentProperties? ArgumentProperties { get; set; }
 
@@ -120,4 +120,5 @@ public class SubArgument
   public OfficeMath? OfficeMath { get; set; }
 
   public ControlProperties? ControlProperties { get; set; }
+
 }

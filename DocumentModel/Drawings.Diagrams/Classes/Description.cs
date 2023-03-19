@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// <summary>
 ///   Description.
 /// </summary>
-public class Description
+public class Description: ModelElement
 {
   /// <summary>
   ///   Language

@@ -3,7 +3,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Accent Properties.
 /// </summary>
-public class AccentProperties
+public class AccentProperties: ModelElement
 {
   /// <summary>
   ///   Accent Character.

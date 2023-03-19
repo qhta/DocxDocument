@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings.ChartDrawings;
 /// <summary>
 ///   Defines the DataLabel Class.
 /// </summary>
-public class DataLabel
+public class DataLabel: ModelElement
 {
   /// <summary>
   ///   idx, this property is only available in Office 2016 and later.

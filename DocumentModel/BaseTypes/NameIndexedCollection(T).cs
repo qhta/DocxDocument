@@ -6,7 +6,8 @@ using Qhta.TestHelper;
 
 namespace DocumentModel;
 
-public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, /*IDictionary<string, T>,*/ INotifyCollectionChanged where T : class, INamedObject
+public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
+  where T : class, INamedObject, IEquatable<T>
 {
   private readonly SortedDictionary<string, T> _dictionary = null!;
 
@@ -210,11 +211,28 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
     throw new NotImplementedException();
   }
 
+  [NonComparable]
   public bool IsSynchronized { get; set; }
+  [NonComparable]
   public object SyncRoot { get; } = new object();
 
   //IEnumerator<KeyValuePair<string, T>> IEnumerable<KeyValuePair<string, T>>.GetEnumerator()
   //{
   //  return ((IEnumerable<KeyValuePair<string, T>>)_dictionary).GetEnumerator();
   //}
+
+    public bool Equals(NameIndexedCollection<T>? other)
+  {
+    if (other == null)
+      return false;
+    return Enumerable.SequenceEqual<KeyValuePair<string, T>>(this._dictionary, other._dictionary);
+  }
+
+  public override int GetHashCode()
+  {
+    var result = _dictionary.Count();
+    foreach (var item in _dictionary)
+      result = HashCode.Combine(result, item.GetHashCode());
+    return result;
+  }
 }

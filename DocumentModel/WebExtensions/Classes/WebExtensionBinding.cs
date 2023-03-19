@@ -3,7 +3,7 @@ namespace DocumentModel.WebExtensions;
 /// <summary>
 ///   Defines the WebExtensionBinding Class.
 /// </summary>
-public class WebExtensionBinding
+public class WebExtensionBinding: ModelElement
 {
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
