@@ -26,9 +26,9 @@ public static class ColumnsConverter
   /// <summary>
   /// Spacing Between Equal Width Columns
   /// </summary>
-  private static String? GetSpace(DXW.Columns? openXmlElement)
+  private static Int32? GetSpace(DXW.Columns? openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Space);
+    return Int32ValueConverter.GetValue(openXmlElement?.Space);
   }
   
   private static bool CmpSpace(DXW.Columns openXmlElement, String? value, DiffList? diffs, string? objName)

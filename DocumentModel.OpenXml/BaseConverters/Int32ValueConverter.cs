@@ -13,7 +13,7 @@ public static class Int32ValueConverter
   /// <summary>
   /// Converts text content of LeafTextElement to Int32.
   /// </summary>
-  /// <param name="element">LeafTextElement to convert,</param>
+  /// <param name="element">LeafTextElement to convert.</param>
   /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
   public static Int32? GetValue(OpenXmlLeafTextElement? element)
   {
@@ -25,6 +25,20 @@ public static class Int32ValueConverter
     return null;
   }
 
+  /// <summary>
+  /// Converts StringValue to Int32.
+  /// </summary>
+  /// <param name="stringValue">StringValue to Convert</param>
+  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  public static Int32? GetValue(StringValue? stringValue)
+  {
+    if (stringValue?.Value != null)
+    {
+      if (Int32.TryParse(stringValue.Value, out var value)) 
+       return value;
+    }
+    return null;
+  }
   /// <summary>
   /// Compares a value get from text content of LeafTextElement to Int32 value.
   /// </summary>
