@@ -9,15 +9,16 @@ using DocumentFormat.OpenXml.Wordprocessing;
 using DocumentModel;
 using DocumentModel.OpenXml;
 
+using DocxDocument.Reader;
 
 using Qhta.TypeUtils;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Test class for DocxDocument.OpenXml base converters.
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestConverters : TestBase
 {
   /// <summary>

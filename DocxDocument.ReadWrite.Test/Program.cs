@@ -1,7 +1,7 @@
 ﻿using DocumentModel;
 using DocumentModel.Wordprocessing;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 internal class Program
 {
@@ -9,7 +9,7 @@ internal class Program
   {
     //var ok = typeof(Fonts).IsCollection(out var itemType);
     //Console.WriteLine($"{ok} {itemType}");
-    RunTestSections();
+    RunTestBody();
   }
 
   private static void RunTestSections()
@@ -26,9 +26,9 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    //testInstance.TestReadDocumentBody();
-    testInstance.TestReadBodyXmlSerialization(/*"SDT.docx"*/);
-    //testInstance.TestReadBodyJsonSerialization();
+    //testInstance.TestReadDocumentBody("Simple text paragraph.docx");
+    testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx");
+    //testInstance.TestReadBodyJsonSerialization("Simple text paragraph.docx");
     Console.WriteLine("\nTest passed");
   }
 

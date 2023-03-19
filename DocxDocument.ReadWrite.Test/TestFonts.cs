@@ -3,12 +3,12 @@ using DocumentModel.Wordprocessing;
 using Qhta.Xml.Serialization;
 using System.Reflection;
 
-namespace DocxDocument.Reader.Test;
+namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
 /// Test class for document font table.
 /// </summary>
-/// <seealso cref="DocxDocument.Reader.Test.TestBase" />
+/// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestFonts : TestBase
 {
 

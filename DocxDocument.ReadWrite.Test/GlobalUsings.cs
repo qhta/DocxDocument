@@ -8,7 +8,13 @@ global using System.Reflection;
 global using Qhta.DeepCompare;
 global using Qhta.TypeUtils;
 global using Qhta.Xml.Serialization;
-global using Newtonsoft.Json;
+#if NET7_0_OR_GREATER
+  global using System.Text.Json;
+//  global using System.Text.Json.Serialization;
+#else
+  global using Newtonsoft.Json;
+#endif
+global using DocxDocument.Reader;
 global using NUnit.Framework;
 global using DeepEqual.Syntax;
 
