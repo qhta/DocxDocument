@@ -69,7 +69,7 @@ public class TestBody : TestBase
   /// Tests body Xml serialization by reading specifed docx file,
   /// serialize and deserialize body using string writer.
   /// </summary>
-  public void TestReadBodyXmlSerialization(string filename, bool compareDeserializedResult = false)
+  public void TestReadBodyXmlSerialization(string filename, bool showDetails = false)
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
@@ -80,7 +80,8 @@ public class TestBody : TestBase
     var t0 = DateTime.Now;
     var document = reader.ReadDocument(Parts.Body);
     var t1 = DateTime.Now;
-    WriteLine($"ReadDocument time = {(t1 - t0).TotalSeconds} s");
+    if (showDetails)
+      WriteLine($"ReadDocument time = {(t1 - t0).TotalSeconds} s");
     var oldBody = document.Body ?? new();
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
@@ -92,39 +93,39 @@ public class TestBody : TestBase
     textWriter.Flush();
     string str = textWriter.ToString();
     var t2 = DateTime.Now;
-    //WriteLine(str);
-    //WriteLine();
-    WriteLine($"Serialization time = {(t2 - t1).TotalSeconds} s");
+    WriteLine(str);
+    WriteLine();
+    if (showDetails)
+      WriteLine($"Serialization time = {(t2 - t1).TotalSeconds} s");
 
     var t3 = DateTime.Now;
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
     var t4 = DateTime.Now;
-    WriteLine($"Deserialization time = {(t4 - t3).TotalSeconds} s");
+    if (showDetails)
+      WriteLine($"Deserialization time = {(t4 - t3).TotalSeconds} s");
     Assert.IsNotNull(newBody, $"Deserialized body is null");
 
 
 
-    if (compareDeserializedResult)
-    {
-      var diffs = new DiffList();
-      var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
-      var t5 = DateTime.Now;
-      if (!ok)
-        foreach (var diff in diffs)
-          WriteLine(diff.ToString());
-      Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-      //WriteLine($"DeepCompare KnownCompareFunctions.Count = {DeepComparer.KnownCompareFunctions.Count}");
-      //WriteLine($"DeepCompare KnownProperties.Count = {DeepComparer.KnownProperties.Count}");
-      //foreach (var item in DeepComparer.KnownProperties)
-      //{
-      //  var itemType = item.Key;
-      //  var properties = item.Value;
-      //  foreach (var property in properties)
-      //    WriteLine($"{itemType.Name}.{property.Property.Name} checked {property.Count} times");
-      //}
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
+    var t5 = DateTime.Now;
+    if (!ok)
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
+    //WriteLine($"DeepCompare KnownCompareFunctions.Count = {DeepComparer.KnownCompareFunctions.Count}");
+    //WriteLine($"DeepCompare KnownProperties.Count = {DeepComparer.KnownProperties.Count}");
+    //foreach (var item in DeepComparer.KnownProperties)
+    //{
+    //  var itemType = item.Key;
+    //  var properties = item.Value;
+    //  foreach (var property in properties)
+    //    WriteLine($"{itemType.Name}.{property.Property.Name} checked {property.Count} times");
+    //}
+    if (showDetails)
       WriteLine($"DeepCompare time = {(t5 - t4).TotalSeconds}");
-    }
   }
 
   /// <summary>

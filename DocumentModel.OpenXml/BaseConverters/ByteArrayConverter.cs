@@ -4,7 +4,7 @@ public static class ByteArrayConverter
 {
   public static byte[]? GetValue(DX.TypedOpenXmlLeafElement? element)
   {
-    var valProperty = element?.GetType().GetProperty("Val");
+    var valProperty = element?.GetType().GetProperty("Normal");
     if (valProperty != null)
     {
       var value = (string?)valProperty.GetValue(element);
@@ -33,7 +33,7 @@ public static class ByteArrayConverter
     if (value != null)
     {
       var element = new OpenXmlElementType();
-      var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+      var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
       if (valProperty != null)
       {
         if (valProperty.PropertyType == typeof(DX.HexBinaryValue))

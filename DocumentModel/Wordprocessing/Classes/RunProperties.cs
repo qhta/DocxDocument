@@ -183,7 +183,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Languages.
   /// </summary>
-  [XmlContentElement] public LanguageType? Languages { get; set; }
+  public Language? Language { get; set; }
 
   /// <summary>
   ///   EastAsianLayout.

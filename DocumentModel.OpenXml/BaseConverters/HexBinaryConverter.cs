@@ -7,7 +7,7 @@ public static class HexBinaryConverter
 {
   public static HexBinary? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
     if (valProperty != null)
     {
       var valPropertyValue = valProperty.GetValue(openXmlElement);
@@ -21,7 +21,7 @@ public static class HexBinaryConverter
 
   public static bool CmpValue(DX.TypedOpenXmlLeafElement? openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
     if (valProperty != null && value != null)
     {
       var valPropertyValue = valProperty.GetValue(openXmlElement);
@@ -67,7 +67,7 @@ public static class HexBinaryConverter
       var element = new OpenXmlElementType();
       if (((HexBinary)value).Length > 0)
       {
-        var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+        var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
         if (valProperty != null)
           valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
       }

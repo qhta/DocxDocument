@@ -18,7 +18,7 @@ public static class HexCharConverter
 
     public static HexChar? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
     if (valProperty != null)
     {
       var value = valProperty.GetValue(openXmlElement);
@@ -32,7 +32,7 @@ public static class HexCharConverter
 
     public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexChar? value, DiffList? diffs, string? objName)
   {
-    var valProperty = element?.GetType().GetProperty("Val");
+    var valProperty = element?.GetType().GetProperty("Normal");
     if (valProperty != null && value is not null)
     {
       var valStr = (string?)valProperty.GetValue(element);
@@ -69,7 +69,7 @@ public static class HexCharConverter
   {
     var newValue = new DX.HexBinaryValue(value);
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
     if (valProperty != null)
       valProperty.SetValue(element, newValue);
     return element;

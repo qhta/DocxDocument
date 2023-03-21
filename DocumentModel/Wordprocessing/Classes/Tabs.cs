@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Tabs Class.
 /// </summary>
-public class Tabs: ModelElement
+[XmlObject]
+public class Tabs: ElementCollection<TabStop>
 {
-  public TabStop? TabStop { get; set; }
 }

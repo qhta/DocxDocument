@@ -51,7 +51,7 @@ public static class CompatibilitySettingConverter
   
   private static bool CmpVal(DXW.CompatibilitySetting openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
   }
   
   private static void SetVal(DXW.CompatibilitySetting openXmlElement, String? value)

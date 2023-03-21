@@ -18,7 +18,7 @@ public static class HexRGBConverter
 
     public static RGB? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Val");
+    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
     if (valProperty != null)
     {
       var value = valProperty.GetValue(openXmlElement);
@@ -32,7 +32,7 @@ public static class HexRGBConverter
 
     public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, RGB? value, DiffList? diffs, string? objName)
   {
-    var valProperty = element?.GetType().GetProperty("Val");
+    var valProperty = element?.GetType().GetProperty("Normal");
     if (valProperty != null && value != null)
     {
       var valStr = (string?)valProperty.GetValue(element);
@@ -69,7 +69,7 @@ public static class HexRGBConverter
   {
     var newValue = new DX.HexBinaryValue(value.ToString());
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
     if (valProperty != null)
       valProperty.SetValue(element, newValue);
     return element;

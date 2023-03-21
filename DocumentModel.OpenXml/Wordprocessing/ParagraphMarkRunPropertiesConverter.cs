@@ -804,7 +804,7 @@ public static class ParagraphMarkRunPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
   }
   
-  private static DMW.LanguageType? GetLanguages(DXW.ParagraphMarkRunProperties openXmlElement)
+  private static DMW.Language? GetLanguages(DXW.ParagraphMarkRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Languages>();
     if (element != null)
@@ -812,12 +812,12 @@ public static class ParagraphMarkRunPropertiesConverter
     return null;
   }
   
-  private static bool CmpLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
   {
     return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
-  private static void SetLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.LanguageType? value)
+  private static void SetLanguages(DXW.ParagraphMarkRunProperties openXmlElement, DMW.Language? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Languages>();
     if (itemElement != null)
@@ -1240,7 +1240,7 @@ public static class ParagraphMarkRunPropertiesConverter
       value.RightToLeftText = GetRightToLeftText(openXmlElement);
       value.ComplexScript = GetComplexScript(openXmlElement);
       value.Emphasis = GetEmphasis(openXmlElement);
-      value.Languages = GetLanguages(openXmlElement);
+      value.Language = GetLanguages(openXmlElement);
       value.EastAsianLayout = GetEastAsianLayout(openXmlElement);
       value.SpecVanish = GetSpecVanish(openXmlElement);
       value.Glow = GetGlow(openXmlElement);
@@ -1348,7 +1348,7 @@ public static class ParagraphMarkRunPropertiesConverter
         ok = false;
       if (!CmpEmphasis(openXmlElement, value.Emphasis, diffs, objName))
         ok = false;
-      if (!CmpLanguages(openXmlElement, value.Languages, diffs, objName))
+      if (!CmpLanguages(openXmlElement, value.Language, diffs, objName))
         ok = false;
       if (!CmpEastAsianLayout(openXmlElement, value.EastAsianLayout, diffs, objName))
         ok = false;
@@ -1397,62 +1397,62 @@ public static class ParagraphMarkRunPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunProperties value)
   {
-    SetInserted(openXmlElement, value?.Inserted);
-    SetDeleted(openXmlElement, value?.Deleted);
-    SetMoveFrom(openXmlElement, value?.MoveFrom);
-    SetMoveTo(openXmlElement, value?.MoveTo);
-    SetConflictInsertion(openXmlElement, value?.ConflictInsertion);
-    SetConflictDeletion(openXmlElement, value?.ConflictDeletion);
-    SetRunStyle(openXmlElement, value?.RunStyle);
-    SetRunFonts(openXmlElement, value?.RunFonts);
-    SetBold(openXmlElement, value?.Bold);
-    SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
-    SetItalic(openXmlElement, value?.Italic);
-    SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
-    SetCaps(openXmlElement, value?.Caps);
-    SetSmallCaps(openXmlElement, value?.SmallCaps);
-    SetStrike(openXmlElement, value?.Strike);
-    SetDoubleStrike(openXmlElement, value?.DoubleStrike);
-    SetOutline(openXmlElement, value?.Outline);
-    SetShadow(openXmlElement, value?.Shadow);
-    SetEmboss(openXmlElement, value?.Emboss);
-    SetImprint(openXmlElement, value?.Imprint);
-    SetNoProof(openXmlElement, value?.NoProof);
-    SetSnapToGrid(openXmlElement, value?.SnapToGrid);
-    SetVanish(openXmlElement, value?.Vanish);
-    SetWebHidden(openXmlElement, value?.WebHidden);
-    SetColor(openXmlElement, value?.Color);
-    SetSpacing(openXmlElement, value?.Spacing);
-    SetCharacterScale(openXmlElement, value?.CharacterScale);
-    SetKern(openXmlElement, value?.Kern);
-    SetPosition(openXmlElement, value?.Position);
-    SetFontSize(openXmlElement, value?.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
-    SetHighlight(openXmlElement, value?.Highlight);
-    SetUnderline(openXmlElement, value?.Underline);
-    SetTextEffect(openXmlElement, value?.TextEffect);
-    SetBorder(openXmlElement, value?.Border);
-    SetShading(openXmlElement, value?.Shading);
-    SetFitText(openXmlElement, value?.FitText);
-    SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
-    SetRightToLeftText(openXmlElement, value?.RightToLeftText);
-    SetComplexScript(openXmlElement, value?.ComplexScript);
-    SetEmphasis(openXmlElement, value?.Emphasis);
-    SetLanguages(openXmlElement, value?.Languages);
-    SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
-    SetSpecVanish(openXmlElement, value?.SpecVanish);
-    SetGlow(openXmlElement, value?.Glow);
-    SetReflection(openXmlElement, value?.Reflection);
-    SetTextOutlineEffect(openXmlElement, value?.TextOutlineEffect);
-    SetFillTextEffect(openXmlElement, value?.FillTextEffect);
-    SetScene3D(openXmlElement, value?.Scene3D);
-    SetProperties3D(openXmlElement, value?.Properties3D);
-    SetLigatures(openXmlElement, value?.Ligatures);
-    SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-    SetNumberSpacing(openXmlElement, value?.NumberSpacing);
-    SetStylisticSets(openXmlElement, value?.StylisticSets);
-    SetContextualAlternatives(openXmlElement, value?.ContextualAlternatives);
-    SetOfficeMath(openXmlElement, value?.OfficeMath);
-    SetParagraphMarkRunPropertiesChange(openXmlElement, value?.ParagraphMarkRunPropertiesChange);
+    SetInserted(openXmlElement, value.Inserted);
+    SetDeleted(openXmlElement, value.Deleted);
+    SetMoveFrom(openXmlElement, value.MoveFrom);
+    SetMoveTo(openXmlElement, value.MoveTo);
+    SetConflictInsertion(openXmlElement, value.ConflictInsertion);
+    SetConflictDeletion(openXmlElement, value.ConflictDeletion);
+    SetRunStyle(openXmlElement, value.RunStyle);
+    SetRunFonts(openXmlElement, value.RunFonts);
+    SetBold(openXmlElement, value.Bold);
+    SetBoldComplexScript(openXmlElement, value.BoldComplexScript);
+    SetItalic(openXmlElement, value.Italic);
+    SetItalicComplexScript(openXmlElement, value.ItalicComplexScript);
+    SetCaps(openXmlElement, value.Caps);
+    SetSmallCaps(openXmlElement, value.SmallCaps);
+    SetStrike(openXmlElement, value.Strike);
+    SetDoubleStrike(openXmlElement, value.DoubleStrike);
+    SetOutline(openXmlElement, value.Outline);
+    SetShadow(openXmlElement, value.Shadow);
+    SetEmboss(openXmlElement, value.Emboss);
+    SetImprint(openXmlElement, value.Imprint);
+    SetNoProof(openXmlElement, value.NoProof);
+    SetSnapToGrid(openXmlElement, value.SnapToGrid);
+    SetVanish(openXmlElement, value.Vanish);
+    SetWebHidden(openXmlElement, value.WebHidden);
+    SetColor(openXmlElement, value.Color);
+    SetSpacing(openXmlElement, value.Spacing);
+    SetCharacterScale(openXmlElement, value.CharacterScale);
+    SetKern(openXmlElement, value.Kern);
+    SetPosition(openXmlElement, value.Position);
+    SetFontSize(openXmlElement, value.FontSize);
+    SetFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript);
+    SetHighlight(openXmlElement, value.Highlight);
+    SetUnderline(openXmlElement, value.Underline);
+    SetTextEffect(openXmlElement, value.TextEffect);
+    SetBorder(openXmlElement, value.Border);
+    SetShading(openXmlElement, value.Shading);
+    SetFitText(openXmlElement, value.FitText);
+    SetVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment);
+    SetRightToLeftText(openXmlElement, value.RightToLeftText);
+    SetComplexScript(openXmlElement, value.ComplexScript);
+    SetEmphasis(openXmlElement, value.Emphasis);
+    SetLanguages(openXmlElement, value.Language);
+    SetEastAsianLayout(openXmlElement, value.EastAsianLayout);
+    SetSpecVanish(openXmlElement, value.SpecVanish);
+    SetGlow(openXmlElement, value.Glow);
+    SetReflection(openXmlElement, value.Reflection);
+    SetTextOutlineEffect(openXmlElement, value.TextOutlineEffect);
+    SetFillTextEffect(openXmlElement, value.FillTextEffect);
+    SetScene3D(openXmlElement, value.Scene3D);
+    SetProperties3D(openXmlElement, value.Properties3D);
+    SetLigatures(openXmlElement, value.Ligatures);
+    SetNumberingFormat(openXmlElement, value.NumberingFormat);
+    SetNumberSpacing(openXmlElement, value.NumberSpacing);
+    SetStylisticSets(openXmlElement, value.StylisticSets);
+    SetContextualAlternatives(openXmlElement, value.ContextualAlternatives);
+    SetOfficeMath(openXmlElement, value.OfficeMath);
+    SetParagraphMarkRunPropertiesChange(openXmlElement, value.ParagraphMarkRunPropertiesChange);
   }
 }

@@ -33,7 +33,7 @@ public static class StatusTextConverter
   
   private static bool CmpVal(DXW.StatusText openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
   }
   
   private static void SetVal(DXW.StatusText openXmlElement, String? value)

@@ -16,7 +16,7 @@ public static class TableRowHeightConverter
   private static bool CmpVal(DXW.TableRowHeight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    diffs?.Add(objName, "Normal", openXmlElement?.Val?.Value, value);
     return false;
   }
   

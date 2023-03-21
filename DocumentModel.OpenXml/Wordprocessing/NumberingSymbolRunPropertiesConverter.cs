@@ -698,7 +698,7 @@ public static class NumberingSymbolRunPropertiesConverter
   /// <summary>
   /// Languages.
   /// </summary>
-  private static DMW.LanguageType? GetLanguages(DXW.NumberingSymbolRunProperties openXmlElement)
+  private static DMW.Language? GetLanguages(DXW.NumberingSymbolRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Languages>();
     if (element != null)
@@ -706,12 +706,12 @@ public static class NumberingSymbolRunPropertiesConverter
     return null;
   }
   
-  private static bool CmpLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.LanguageType? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
   {
     return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
-  private static void SetLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.LanguageType? value)
+  private static void SetLanguages(DXW.NumberingSymbolRunProperties openXmlElement, DMW.Language? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Languages>();
     if (itemElement != null)
@@ -809,7 +809,7 @@ public static class NumberingSymbolRunPropertiesConverter
       value.RightToLeftText = GetRightToLeftText(openXmlElement);
       value.ComplexScript = GetComplexScript(openXmlElement);
       value.Emphasis = GetEmphasis(openXmlElement);
-      value.Languages = GetLanguages(openXmlElement);
+      value.Language = GetLanguages(openXmlElement);
       value.EastAsianLayout = GetEastAsianLayout(openXmlElement);
       value.SpecVanish = GetSpecVanish(openXmlElement);
       return value;
@@ -888,7 +888,7 @@ public static class NumberingSymbolRunPropertiesConverter
         ok = false;
       if (!CmpEmphasis(openXmlElement, value.Emphasis, diffs, objName))
         ok = false;
-      if (!CmpLanguages(openXmlElement, value.Languages, diffs, objName))
+      if (!CmpLanguages(openXmlElement, value.Language, diffs, objName))
         ok = false;
       if (!CmpEastAsianLayout(openXmlElement, value.EastAsianLayout, diffs, objName))
         ok = false;
@@ -911,41 +911,41 @@ public static class NumberingSymbolRunPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties value)
   {
-    SetRunFonts(openXmlElement, value?.RunFonts);
-    SetBold(openXmlElement, value?.Bold);
-    SetBoldComplexScript(openXmlElement, value?.BoldComplexScript);
-    SetItalic(openXmlElement, value?.Italic);
-    SetItalicComplexScript(openXmlElement, value?.ItalicComplexScript);
-    SetCaps(openXmlElement, value?.Caps);
-    SetSmallCaps(openXmlElement, value?.SmallCaps);
-    SetStrike(openXmlElement, value?.Strike);
-    SetDoubleStrike(openXmlElement, value?.DoubleStrike);
-    SetOutline(openXmlElement, value?.Outline);
-    SetShadow(openXmlElement, value?.Shadow);
-    SetEmboss(openXmlElement, value?.Emboss);
-    SetImprint(openXmlElement, value?.Imprint);
-    SetNoProof(openXmlElement, value?.NoProof);
-    SetSnapToGrid(openXmlElement, value?.SnapToGrid);
-    SetVanish(openXmlElement, value?.Vanish);
-    SetWebHidden(openXmlElement, value?.WebHidden);
-    SetColor(openXmlElement, value?.Color);
-    SetSpacing(openXmlElement, value?.Spacing);
-    SetCharacterScale(openXmlElement, value?.CharacterScale);
-    SetKern(openXmlElement, value?.Kern);
-    SetPosition(openXmlElement, value?.Position);
-    SetFontSize(openXmlElement, value?.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value?.FontSizeComplexScript);
-    SetUnderline(openXmlElement, value?.Underline);
-    SetTextEffect(openXmlElement, value?.TextEffect);
-    SetBorder(openXmlElement, value?.Border);
-    SetShading(openXmlElement, value?.Shading);
-    SetFitText(openXmlElement, value?.FitText);
-    SetVerticalTextAlignment(openXmlElement, value?.VerticalTextAlignment);
-    SetRightToLeftText(openXmlElement, value?.RightToLeftText);
-    SetComplexScript(openXmlElement, value?.ComplexScript);
-    SetEmphasis(openXmlElement, value?.Emphasis);
-    SetLanguages(openXmlElement, value?.Languages);
-    SetEastAsianLayout(openXmlElement, value?.EastAsianLayout);
-    SetSpecVanish(openXmlElement, value?.SpecVanish);
+    SetRunFonts(openXmlElement, value.RunFonts);
+    SetBold(openXmlElement, value.Bold);
+    SetBoldComplexScript(openXmlElement, value.BoldComplexScript);
+    SetItalic(openXmlElement, value.Italic);
+    SetItalicComplexScript(openXmlElement, value.ItalicComplexScript);
+    SetCaps(openXmlElement, value.Caps);
+    SetSmallCaps(openXmlElement, value.SmallCaps);
+    SetStrike(openXmlElement, value.Strike);
+    SetDoubleStrike(openXmlElement, value.DoubleStrike);
+    SetOutline(openXmlElement, value.Outline);
+    SetShadow(openXmlElement, value.Shadow);
+    SetEmboss(openXmlElement, value.Emboss);
+    SetImprint(openXmlElement, value.Imprint);
+    SetNoProof(openXmlElement, value.NoProof);
+    SetSnapToGrid(openXmlElement, value.SnapToGrid);
+    SetVanish(openXmlElement, value.Vanish);
+    SetWebHidden(openXmlElement, value.WebHidden);
+    SetColor(openXmlElement, value.Color);
+    SetSpacing(openXmlElement, value.Spacing);
+    SetCharacterScale(openXmlElement, value.CharacterScale);
+    SetKern(openXmlElement, value.Kern);
+    SetPosition(openXmlElement, value.Position);
+    SetFontSize(openXmlElement, value.FontSize);
+    SetFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript);
+    SetUnderline(openXmlElement, value.Underline);
+    SetTextEffect(openXmlElement, value.TextEffect);
+    SetBorder(openXmlElement, value.Border);
+    SetShading(openXmlElement, value.Shading);
+    SetFitText(openXmlElement, value.FitText);
+    SetVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment);
+    SetRightToLeftText(openXmlElement, value.RightToLeftText);
+    SetComplexScript(openXmlElement, value.ComplexScript);
+    SetEmphasis(openXmlElement, value.Emphasis);
+    SetLanguages(openXmlElement, value.Language);
+    SetEastAsianLayout(openXmlElement, value.EastAsianLayout);
+    SetSpecVanish(openXmlElement, value.SpecVanish);
   }
 }
