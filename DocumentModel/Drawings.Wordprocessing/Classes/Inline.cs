@@ -43,7 +43,7 @@ public class Inline: ModelElement
   /// <summary>
   ///   Inline Wrapping Extent.
   /// </summary>
-  public EffectExtent? EffectExtent { get; set; }
+  [XmlContentElement] public EffectExtent? EffectExtent { get; set; }
 
   /// <summary>
   ///   Drawing Object Non-Visual Properties.
