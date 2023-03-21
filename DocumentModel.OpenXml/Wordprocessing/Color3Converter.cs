@@ -15,7 +15,7 @@ public static class Color3Converter
   
   private static bool CmpVal(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Val");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
   }
   
   private static void SetVal(DXO2013W.Color openXmlElement, String? value)

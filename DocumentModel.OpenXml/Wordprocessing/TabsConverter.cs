@@ -5,49 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TabsConverter
 {
-  private static DMW.TabStop? GetTabStop(DXW.Tabs openXmlElement)
+  private static DMW.TabStop? GetTabStop(DXW.TabStop? openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXW.TabStop>();
-    if (element != null)
-      return DMXW.TabStopConverter.CreateModelElement(element);
+    if (openXmlElement != null)
+      return DMXW.TabStopConverter.CreateModelElement(openXmlElement);
     return null;
   }
-  
-  private static bool CmpTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
+
+  private static bool CmpTabStop(DXW.TabStop openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName, string? propName)
   {
-    return DMXW.TabStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TabStop>(), value, diffs, objName);
+    return DMXW.TabStopConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName);
   }
-  
-  private static void SetTabStop(DXW.Tabs openXmlElement, DMW.TabStop? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXW.TabStop>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXW.TabStopConverter.CreateOpenXmlElement<DXW.TabStop>(value);
-      if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
-    }
-  }
-  
+
+  //private static void SetTabStop(DXW.TabStop openXmlElement, DMW.TabStop? value)
+  //{
+  //    itemElement = DMXW.TabStopConverter.CreateOpenXmlElement<DXW.TabStop>(value);
+  //    if (itemElement != null)
+  //      openXmlElement.AddChild(itemElement);
+  //  }
+  //}
+
   public static DMW.Tabs? CreateModelElement(DXW.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.Tabs();
-      value.TabStop = GetTabStop(openXmlElement);
+      foreach (var element in openXmlElement.Elements<DXW.TabStop>())
+      {
+        var tabStop = GetTabStop(element);
+        if (tabStop != null)
+          value.Add(tabStop);
+      }
       return value;
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXW.Tabs? openXmlElement, DMW.Tabs? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTabStop(openXmlElement, value.TabStop, diffs, objName))
+      var openXmlTabStops = openXmlElement.Elements<DXW.TabStop>().ToArray();
+      var modelTabStops = value.ToArray();
+      for (int i = 0; i < System.Math.Min(openXmlTabStops.Length, modelTabStops.Length); i++)
+        if (!CmpTabStop(openXmlTabStops[i], modelTabStops[i], diffs, objName, $"[{i}]"))
+          ok = false;
+      if (!Int32ValueConverter.CmpValue(openXmlTabStops.Length, modelTabStops.Length, diffs, objName, "Count"))
         ok = false;
       return ok;
     }
@@ -55,17 +59,17 @@ public static class TabsConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Tabs value)
-    where OpenXmlElementType: DXW.Tabs, new()
+    where OpenXmlElementType : DXW.Tabs, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXW.Tabs openXmlElement, DMW.Tabs value)
   {
-    SetTabStop(openXmlElement, value?.TabStop);
+
   }
 }

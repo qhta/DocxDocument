@@ -21,7 +21,7 @@ public static class StylePaneFormatFilterConverter
       if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(value))
         return true;
     if (openXmlElement == null && openXmlElement?.Val?.Value == null && value is null) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Val?.Value, value);
+    diffs?.Add(objName, "Normal", openXmlElement?.Val?.Value, value);
     return false;
   }
   

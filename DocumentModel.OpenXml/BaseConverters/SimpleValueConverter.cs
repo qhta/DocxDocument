@@ -29,7 +29,7 @@ public static class SimpleValueConverter
     where ElementType: OpenXmlElement, new()
      where T : struct, IComparable, IComparable<T>, IEquatable<T>
   {
-    var valProperty = typeof(ElementType).GetProperty("Val");
+    var valProperty = typeof(ElementType).GetProperty("Normal");
     Debug.Assert(valProperty!=null);
     var itemElement = openXmlElement.GetFirstChild<ElementType>();
     if (itemElement != null)

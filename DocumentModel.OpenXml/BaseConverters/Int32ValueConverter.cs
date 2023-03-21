@@ -81,7 +81,7 @@ public static class Int32ValueConverter
     where OpenXmlElementType : OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
+    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
     if (valProperty != null)
       valProperty.SetValue(element, value);
     else if (element is OpenXmlLeafTextElement textElement)

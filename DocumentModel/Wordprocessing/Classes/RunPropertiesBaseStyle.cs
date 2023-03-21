@@ -163,7 +163,7 @@ public class RunPropertiesBaseStyle: ModelElement
   /// <summary>
   ///   Languages.
   /// </summary>
-  public LanguageType? Languages { get; set; }
+  public Language? Language { get; set; }
 
   /// <summary>
   ///   EastAsianLayout.
