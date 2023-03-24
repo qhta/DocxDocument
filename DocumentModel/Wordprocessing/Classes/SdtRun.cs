@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Specifies the presence of a structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph. 

@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing.DrawingShape;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the WordprocessingShape Class.

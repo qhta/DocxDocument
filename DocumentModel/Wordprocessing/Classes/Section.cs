@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   This class does not exists in wordprocessing document. 
@@ -14,9 +15,6 @@ public class Section : LinkedList<IBodyElement>
   /// Inserts body elements from specified index backward to this section.
   /// Iterates until a paragraph with SectionProperties is found.
   /// </summary>
-  /// <param name="section"></param>
-  /// <param name="aBody"></param>
-  /// <param name="fromIndex"></param>
   /// <returns></returns>
   public int FillBackward(Body aBody, int index)
   {

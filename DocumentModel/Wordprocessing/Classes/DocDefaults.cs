@@ -1,4 +1,5 @@
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Document Default Paragraph and Run Properties.

@@ -1,7 +1,10 @@
 ﻿#nullable enable
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-/// <summary>Represents the list of string
+/// <summary>
+/// Represents the list of string
+/// </summary>
 [TypeConverter(typeof(StringListTypeConverter))]
 public class StringList : ICollection<string>, IEnumerable, IEquatable<StringList>
 {

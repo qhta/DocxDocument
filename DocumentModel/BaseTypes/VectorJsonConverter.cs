@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 internal class VectorJsonConverter : JsonConverter
 {
   public override bool CanConvert(Type objectType)

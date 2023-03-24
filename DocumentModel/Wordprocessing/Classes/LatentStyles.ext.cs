@@ -4,6 +4,7 @@ using System.Diagnostics.CodeAnalysis;
 using Qhta.Xml;
 
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines Styles.

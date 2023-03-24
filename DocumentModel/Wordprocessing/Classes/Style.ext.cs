@@ -3,6 +3,7 @@ using System.ComponentModel;
 using DocumentModel.UI;
 
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, INamedObject, IAliasedObject
 {

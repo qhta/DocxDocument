@@ -10,6 +10,7 @@ using Qhta.Conversion;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Variant implementation. Value is of any type.

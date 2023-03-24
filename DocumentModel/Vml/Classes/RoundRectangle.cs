@@ -3,6 +3,7 @@ using DocumentModel.Wordprocessing.Vml;
 using BorderType = DocumentModel.Wordprocessing.Vml.BorderType;
 
 namespace DocumentModel.Vml;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Rounded Rectangle.
