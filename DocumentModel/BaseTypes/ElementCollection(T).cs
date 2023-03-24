@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, IList<T>, INotifyCollectionChanged, IEquatable<ElementCollection<T>>
   where T : IModelElement
 {

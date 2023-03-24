@@ -1,6 +1,7 @@
 using DocumentModel.Vml;
 
 namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Represents an inline embedded object in text run. 

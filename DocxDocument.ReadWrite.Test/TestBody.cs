@@ -115,15 +115,6 @@ public class TestBody : TestBase
       foreach (var diff in diffs)
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-    //WriteLine($"DeepCompare KnownCompareFunctions.Count = {DeepComparer.KnownCompareFunctions.Count}");
-    //WriteLine($"DeepCompare KnownProperties.Count = {DeepComparer.KnownProperties.Count}");
-    //foreach (var item in DeepComparer.KnownProperties)
-    //{
-    //  var itemType = item.Key;
-    //  var properties = item.Value;
-    //  foreach (var property in properties)
-    //    WriteLine($"{itemType.Name}.{property.Property.Name} checked {property.Count} times");
-    //}
     if (showDetails)
       WriteLine($"DeepCompare time = {(t5 - t4).TotalSeconds}");
   }

@@ -1,6 +1,5 @@
-﻿using System.Diagnostics;
-
-namespace DocumentModel;
+﻿namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
@@ -14,7 +13,6 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   /// <summary>
   ///   Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.
   /// </summary>
-  /// <param name="list">The list of the values.</param>
   public ListOf()
   {
     if (typeof(T)==typeof(string))
@@ -46,10 +44,9 @@ public class ListOf<T> : ICollection<T>, IEquatable<ListOf<T>>
   }
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class by deep copying the
-  ///   supplied <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.
+  ///   Initializes a new instance of the <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class 
+  ///   by separating str with comma or semicolon.
   /// </summary>
-  /// <param name="list">The source <see cref="T:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
   public ListOf(string str)
   {
     if (typeof(T) == typeof(string))

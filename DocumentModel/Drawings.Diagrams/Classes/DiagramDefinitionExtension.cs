@@ -2,6 +2,7 @@ using DocumentModel.Drawings.Diagram1;
 using DocumentModel.Drawings.Diagram2;
 
 namespace DocumentModel.Drawings.Diagrams;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the DiagramDefinitionExtension Class.

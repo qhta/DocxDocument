@@ -2,6 +2,7 @@
 using DocumentModel;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 [TypeConverter(typeof(HexCharTypeXmlConverter))]
 public struct HexChar : IConvertible, IEquatable<HexChar>

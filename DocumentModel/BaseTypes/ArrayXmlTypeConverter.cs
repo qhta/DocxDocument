@@ -4,6 +4,7 @@ using System.Xml;
 using Qhta.TypeUtils;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 internal class ArrayXmlTypeConverter : VariantTypeConverter, IXmlConverter
 {
