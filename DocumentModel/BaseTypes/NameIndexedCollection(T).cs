@@ -5,6 +5,7 @@ using System.Diagnostics.CodeAnalysis;
 using Qhta.TestHelper;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable<T>, INotifyCollectionChanged, IEquatable<NameIndexedCollection<T>> 
   where T : class, INamedObject, IEquatable<T>

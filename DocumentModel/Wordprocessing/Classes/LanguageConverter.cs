@@ -1,4 +1,5 @@
 ﻿namespace DocumentModel.Wordprocessing;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 public class LanguageConverter: TypeConverter
 {
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)

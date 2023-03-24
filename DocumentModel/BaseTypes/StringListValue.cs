@@ -2,6 +2,7 @@
 using System.Diagnostics;
 
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>Represents the list value attributes (xsd:list).</summary>
 [DebuggerDisplay("{InnerText}")]
@@ -12,8 +13,7 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
   private string? TextValue;
 
   /// <summary>
-  ///   Initializes a new instance of the <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class using the supplied
-  ///   list of values.
+  ///   Initializes a new instance of the class using the supplied list of values.
   /// </summary>
   /// <param name="list">The list of the values.</param>
   public StringListValue(IEnumerable<string> list)
@@ -25,15 +25,6 @@ public class StringListValue : ICollection<string>, IEnumerable, IEquatable<Stri
     foreach (var obj in list)
       _list.Add(obj);
   }
-
-  ///// <summary>
-  ///// Initializes a new instance of the <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class by deep copying the supplied <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class.
-  ///// </summary>
-  ///// <param name="list">The source <see cref="string:DocumentFormat.OpenXml.ListValue`1" /> class.</param>
-  //public StringListValue(ListValue<string> list)
-  //  : this(list.Items)
-  //{
-  //}
 
   /// <summary>Gets the values.</summary>
   public ICollection<string> Items

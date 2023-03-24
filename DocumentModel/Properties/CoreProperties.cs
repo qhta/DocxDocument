@@ -1,4 +1,5 @@
 namespace DocumentModel;
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   This class provides access to the "core properties", such as Title and
