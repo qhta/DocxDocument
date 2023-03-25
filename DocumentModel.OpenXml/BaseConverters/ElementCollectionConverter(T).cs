@@ -106,7 +106,9 @@ public static class ElementCollectionConverter<T>
     if (compositeElement != null && modelElementCollection != null)
     {
       var nspace = typeof(T).Namespace ?? "";
-      nspace = nspace.Replace("DocumentFormat.OpenXml", "DocumentModel.OpenXml");
+      nspace = nspace.Replace("DocumentFormat", "DocumentModel");
+      if (nspace == "DocumentModel")
+        nspace = "DocumentModel.OpenXml";
       var typeName = nspace + "." + typeof(T).Name + "Converter";
       var elementConverterType = Type.GetType(typeName);
       if (elementConverterType == null)
@@ -114,10 +116,22 @@ public static class ElementCollectionConverter<T>
       var converterMethod = elementConverterType.GetMethod("CompareModelElement", BindingFlags.Public | BindingFlags.Static);
       if (converterMethod == null)
         throw new InvalidOperationException($"Method \"CompareModelElement\" not found in type {typeName}");
-      var ok = converterMethod.Invoke(null, new object?[] { compositeElement, modelElementCollection, diffs, objName });
-      if (ok is bool result)
-        return result;
-      return false;
+      var openXmlEnumerator = compositeElement.GetEnumerator();
+      var modelElementEnumerator = modelElementCollection.GetEnumerator();
+      var ok = true;
+      while (openXmlEnumerator.MoveNext() && modelElementEnumerator.MoveNext())
+      {
+        var openXmlItem = openXmlEnumerator.Current;
+        var modelItem = modelElementEnumerator.Current;
+        var ok1 = converterMethod.Invoke(null, new object?[] { openXmlItem, modelItem, diffs, objName });
+       if (ok1 is bool bv && bv==false)
+         ok = false;
+      }
+      var openXmlItemCount = compositeElement.Count();
+      var modelItemCount = modelElementCollection.Count();
+      if (!Int32ValueConverter.CmpValue(openXmlItemCount, modelItemCount))
+        ok = false;
+      return ok;
     }
     if (compositeElement == null && modelElementCollection == null) return true;
     diffs?.Add(objName, compositeElement?.GetType().Name, compositeElement, modelElementCollection);

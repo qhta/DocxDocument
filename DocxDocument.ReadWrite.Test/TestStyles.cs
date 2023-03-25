@@ -236,17 +236,15 @@ public class TestStyles : TestBase
     Assert.IsNotNull(newStyles, $"Deserialized styles are null");
 
     var newStylesArray = newStyles.DefinedStyles.ToArray();
-    var newStylesCount = newStylesArray.Count();
+    //var newStylesCount = newStylesArray.Count();
     var oldStylesArray = oldStyles.DefinedStyles.ToArray();
-    var oldStylesCount = oldStylesArray.Count();
-    for (int i = 0; i < Math.Min(oldStylesCount, newStylesCount); i++)
-    {
-      var oldStyle = oldStylesArray[i];
-      var newStyle = newStylesArray[i];
-      newStyle.ShouldDeepEqual(oldStyle);
-      //Assert.That(newStyle, Is.EqualTo(oldStyle), $"Deserialized style \"{newStyle.Name}\" different for original");
-    }
-    Assert.That(newStylesCount, Is.EqualTo(oldStylesCount), $"Deserialized styles count different for original");
+    //var oldStylesCount = oldStylesArray.Count();
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldStylesArray, newStylesArray, diffs);
+    if (!ok)
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
     CheckLatentStyleDefaults(newStyles.LatentStyles, oldStyles.LatentStyles);
   }
 
