@@ -1,13 +1,10 @@
-﻿using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.VariantTypes;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class HexBinaryConverter
 {
   public static HexBinary? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
+    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null)
     {
       var valPropertyValue = valProperty.GetValue(openXmlElement);
@@ -21,7 +18,7 @@ public static class HexBinaryConverter
 
   public static bool CmpValue(DX.TypedOpenXmlLeafElement? openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
+    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null && value != null)
     {
       var valPropertyValue = valProperty.GetValue(openXmlElement);
@@ -67,7 +64,7 @@ public static class HexBinaryConverter
       var element = new OpenXmlElementType();
       if (((HexBinary)value).Length > 0)
       {
-        var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
+        var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
         if (valProperty != null)
           valProperty.SetValue(element, CreateValue<DX.HexBinaryValue>(value));
       }

@@ -216,6 +216,7 @@ public static class SdtRunConverter
         ok = false;
       if (!ElementCollectionConverter<DMW.ISdtRunElement>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRun, model,
         (CompareOpenXmlElementMethod)CompareSdtContentRunElement, diffs, objName))
+        ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;

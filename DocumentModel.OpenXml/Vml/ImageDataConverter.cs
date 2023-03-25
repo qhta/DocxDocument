@@ -177,7 +177,7 @@ public static class ImageDataConverter
   
   private static bool CmpGrayscale(DXVml.ImageData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Grayscale?.Value == value) return true;
+    if (openXmlElement?.Grayscale?.Value == null) return true;
     diffs?.Add(objName, "Grayscale", openXmlElement?.Grayscale?.Value, value);
     return false;
   }

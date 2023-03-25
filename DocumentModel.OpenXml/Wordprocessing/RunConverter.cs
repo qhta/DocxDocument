@@ -250,6 +250,8 @@ public static class RunConverter
         return DMXW.DrawingConverter.CompareModelElement(drawing, drawingModel, diffs, objName);
       if (openXmlElement is DXW.Ruby ruby && model is DMW.Ruby rubyModel)
         return DMXW.RubyConverter.CompareModelElement(ruby, rubyModel, diffs, objName);
+      if (openXmlElement is DX.AlternateContent alternateContent && model is DM.AlternateContent alternateContentModel)
+        return AlternateContentConverter.CompareModelElement(alternateContent, alternateContentModel, diffs, objName);
 
       if (model is DMW.ICommonElement commonElementModel)
       {
@@ -305,6 +307,8 @@ public static class RunConverter
       return DMXW.DrawingConverter.CreateOpenXmlElement(drawing);
     if (model is DMW.Ruby ruby)
       return DMXW.RubyConverter.CreateOpenXmlElement(ruby);
+    if (model is DM.AlternateContent alternateContent)
+      return DMX.AlternateContentConverter.CreateOpenXmlElement(alternateContent);
 
     if (model is DMW.ICommonElement commonElementModel)
     {
@@ -428,7 +432,8 @@ public static class RunConverter
         ok = false;
       if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<IRunElement>.CompareOpenXmlElementCollection(openXmlElement, model,
+      if (!ElementCollectionConverter<IRunElement>.CompareOpenXmlElementCollection(
+        openXmlElement.Where(item => item is not DXW.RunProperties), model,
         (CompareOpenXmlElementMethod)CompareRunElement, diffs, objName))
         ok = false;
       return ok;

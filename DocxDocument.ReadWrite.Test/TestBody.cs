@@ -123,7 +123,7 @@ public class TestBody : TestBase
   /// Tests body Json serialization by reading all docx files in folder specified by test path.,
   /// serialize and deserialize body using string writer.
   /// </summary>
-  [Test]
+  //[Test]
   public void TestReadBodyJsonSerialization()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))

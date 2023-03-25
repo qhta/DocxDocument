@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestFonts();
   }
 
   private static void RunTestSections()
@@ -24,7 +24,7 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    //testInstance.TestReadDocumentBody("Simple text paragraph.docx");
+    testInstance.TestReadDocumentBody("_Jakość oprogramowania.docx", true);
     testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
     //testInstance.TestReadBodyJsonSerialization("Simple text paragraph.docx");
     Console.WriteLine("\nTest passed");
@@ -70,7 +70,7 @@ internal class Program
   {
     var testInstance = new TestConverters();
     testInstance.Setup();
-    testInstance.TestHexBinaryConverter(true);
+    testInstance.TestHexIntConverter();
     Console.WriteLine("\nTest passed");
   }
 

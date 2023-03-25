@@ -143,10 +143,6 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
     return new HexInt(val);
   }
 
-  //public static implicit operator string?(HexInt? val)
-  //{
-  //  return val?.ToString();
-  //}
 
   public static implicit operator ushort(HexInt val)
   {
@@ -158,10 +154,10 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
     return (uint)val.Value;
   }
 
-  //public static implicit operator uint?(HexInt? val)
-  //{
-  //  return (val != null) ? (uint)val.Value : null;
-  //}
+  public static implicit operator Int32(HexInt val)
+  {
+    return val.Value;
+  }
 
   public static implicit operator ulong(HexInt val)
   {
@@ -174,6 +170,11 @@ public struct HexInt : IConvertible, IEquatable<HexInt>
   }
 
   public static implicit operator HexInt(uint val)
+  {
+    return new HexInt((ulong)val);
+  }
+
+  public static implicit operator HexInt(Int32 val)
   {
     return new HexInt((ulong)val);
   }

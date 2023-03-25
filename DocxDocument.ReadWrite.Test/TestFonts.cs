@@ -65,9 +65,7 @@ public class TestFonts : TestBase
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     var modelFonts = document.Fonts;
-    int modelFontsCount = modelFonts?.Count() ?? 0;
     var origFonts = reader.WordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts;
-    int origFontsCount = origFonts?.Elements<DXW.Font>().Count() ?? 0;
     var diffs = new DiffList();
     var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
     if (!ok && showDetails)
@@ -85,7 +83,13 @@ public class TestFonts : TestBase
   /// serialize and deserialize fonts using string writer.
   /// </summary>
   [Test]
-  public void TestReadFontsXmlSerialization()
+  public void TestReadFontsXmlSerialization() => TestReadFontsXmlSerialization(false);
+
+  /// <summary>
+  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
+  /// serialize and deserialize fonts using string writer.
+  /// </summary>
+  public void TestReadFontsXmlSerialization(bool showDetails = false)
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
@@ -109,17 +113,19 @@ public class TestFonts : TestBase
     var textReader = new StringReader(str);
     var newFonts = (Fonts?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newFonts, $"Deserialized fonts are null");
-    var oldFontsCount = oldFonts.Count;
-    var newFontsCount = newFonts.Count();
     var newFontsArray = newFonts.ToArray();
     var oldFontsArray = oldFonts.ToArray();
-    for (int i = 0; i < Math.Min(oldFontsCount, newFontsCount); i++)
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldFontsArray, newFontsArray, diffs);
+    if (!ok && showDetails)
     {
-      var oldItem = oldFontsArray[i];
-      var newItem = newFontsArray[i];
-      Assert.That(newItem, Is.EqualTo(oldItem), $"Deserialized font \"{newItem.Name}\" is different from original");
+      WriteLine("Read fonts differences found:");
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
     }
-    Assert.That(newFontsCount, Is.EqualTo(oldFontsCount), $"Deserialized fonts count is different from original");
+    if (!ok)
+      Assert.Fail(diffs.FirstOrDefault()?.ToString());
   }
+
 
 }
