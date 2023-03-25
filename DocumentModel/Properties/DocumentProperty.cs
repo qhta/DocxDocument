@@ -1,7 +1,3 @@
-using DeepEqual.Syntax;
-
-using DocumentModel;
-
 namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -21,16 +17,9 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
       var typeName = type.Name;
       if (typeName.StartsWith("Nullable`"))
         type = type.GenericTypeArguments[0];
-      Type = type;//(VariantType?)(new VariantTypeNameConverter().ConvertFrom(typeName));
+      Type = type;
     }
     Value = value;
-    //if (value != null)
-    //{
-    //  if (value is Variant variant)
-    //    Value = variant;
-    //  else
-    //    Value = new Variant(value);
-    //}
   }
 
   public DocumentProperty(DocumentProperty other)
@@ -71,12 +60,15 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
   ///   Custom File Property Name
   /// </summary>
   [XmlAttribute]
-  public string? Name { get; set; }
+  public string? Name
+  {
+    get;
+    set;
+  }
 
   /// <summary>
   ///   Value of the property
   /// </summary>
-  //[TypeConverter(typeof(VariantTypeXmlConverter))]
   [TypeConverter(typeof(DocumentPropertyValueXmlConverter))]
   public object? Value
   {
@@ -112,9 +104,9 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
 
   public override string ToString()
   {
-    if (Type != null)
-      return $"{Name} ({Type}) = {Value}";
-    return $"{Name} = {Value}";
+    //if (Type != null)
+    //  return $"{Name} ({Type}) = {Value}";
+    return $"DocumentProperty({Name} = {Value})";
   }
 
   //public override bool Equals(object? obj)

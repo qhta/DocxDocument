@@ -28,10 +28,6 @@ internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConve
   {
     if (context?.Instance is DocumentProperty documentProperty)
     {
-      //if (documentProperty.Name=="Ukończono")
-      //  TestTools.Stop();
-      //if (documentProperty.Name=="Ile")
-      //  TestTools.Stop();
       ExpectedType = documentProperty.Type;
     }
     return base.ConvertFrom(context, Culture, value);
@@ -58,8 +54,6 @@ internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConve
           return;
         }
       }
-      //if (value.GetType()?.Name == "ShapeDefaults")
-      //  TestTools.Stop();
       serializer?.WriteObject(context, value);
     }
   }
@@ -68,9 +62,6 @@ internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConve
   {
     if (context is DocumentProperty documentProperty)
     {
-      //Debug.WriteLine($"ReadDocumentProperty({documentProperty.Name})");
-      //if (documentProperty.Name == "Przeznaczenie")
-      //  TestTools.Stop();
       var expectedType = documentProperty.Type;
       if (expectedType != null)
       {
