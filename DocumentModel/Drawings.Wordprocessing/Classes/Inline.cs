@@ -9,22 +9,22 @@ public class Inline: ModelElement
   /// <summary>
   ///   Distance From Text on Top Edge
   /// </summary>
-  public UInt32? DistanceFromTop { get; set; }
+  public EMU? DistanceFromTop { get; set; }
 
   /// <summary>
   ///   Distance From Text on Bottom Edge
   /// </summary>
-  public UInt32? DistanceFromBottom { get; set; }
+  public EMU? DistanceFromBottom { get; set; }
 
   /// <summary>
   ///   Distance From Text on Left Edge
   /// </summary>
-  public UInt32? DistanceFromLeft { get; set; }
+  public EMU? DistanceFromLeft { get; set; }
 
   /// <summary>
   ///   Distance From Text on Right Edge
   /// </summary>
-  public UInt32? DistanceFromRight { get; set; }
+  public EMU? DistanceFromRight { get; set; }
 
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.
@@ -44,7 +44,7 @@ public class Inline: ModelElement
   /// <summary>
   ///   Inline Wrapping Extent.
   /// </summary>
-  [XmlContentElement] public EffectExtent? EffectExtent { get; set; }
+  public EffectExtent? EffectExtent { get; set; }
 
   /// <summary>
   ///   Drawing Object Non-Visual Properties.
