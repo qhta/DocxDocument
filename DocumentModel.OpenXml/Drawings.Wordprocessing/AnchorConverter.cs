@@ -379,7 +379,7 @@ public static class AnchorConverter
   /// <summary>
   /// Inline Drawing Object Extents.
   /// </summary>
-  private static DMDrawsW.Extent? GetExtent(DXDrawW.Anchor openXmlElement)
+  private static DMDraws.Extent? GetExtent(DXDrawW.Anchor openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXDrawW.Extent>();
     if (element != null)
@@ -387,12 +387,12 @@ public static class AnchorConverter
     return null;
   }
   
-  private static bool CmpExtent(DXDrawW.Anchor openXmlElement, DMDrawsW.Extent? value, DiffList? diffs, string? objName)
+  private static bool CmpExtent(DXDrawW.Anchor openXmlElement, DMDraws.Extent? value, DiffList? diffs, string? objName)
   {
     return DMXDrawsW.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.Extent>(), value, diffs, objName);
   }
   
-  private static void SetExtent(DXDrawW.Anchor openXmlElement, DMDrawsW.Extent? value)
+  private static void SetExtent(DXDrawW.Anchor openXmlElement, DMDraws.Extent? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawW.Extent>();
     if (itemElement != null)

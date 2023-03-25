@@ -15,7 +15,7 @@ public static class AdjustPoint2DTypeConverter
   
   private static bool CmpX(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "X");
+    return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "Cx");
   }
   
   private static void SetX(DXDraw.AdjustPoint2DType openXmlElement, String? value)
@@ -33,7 +33,7 @@ public static class AdjustPoint2DTypeConverter
   
   private static bool CmpY(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Y");
+    return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Cy");
   }
   
   private static void SetY(DXDraw.AdjustPoint2DType openXmlElement, String? value)

@@ -8,9 +8,9 @@ public static class EffectExtentConverter
   /// <summary>
   /// Additional Extent on Left Edge
   /// </summary>
-  private static Int64? GetLeftEdge(DXDrawW.EffectExtent openXmlElement)
+  private static Int64 GetLeftEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement?.LeftEdge?.Value;
+    return openXmlElement?.LeftEdge?.Value ?? 0;
   }
   
   private static bool CmpLeftEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
@@ -28,9 +28,9 @@ public static class EffectExtentConverter
   /// <summary>
   /// Additional Extent on Top Edge
   /// </summary>
-  private static Int64? GetTopEdge(DXDrawW.EffectExtent openXmlElement)
+  private static Int64 GetTopEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement?.TopEdge?.Value;
+    return openXmlElement?.TopEdge?.Value ?? 0;
   }
   
   private static bool CmpTopEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
@@ -48,9 +48,9 @@ public static class EffectExtentConverter
   /// <summary>
   /// Additional Extent on Right Edge
   /// </summary>
-  private static Int64? GetRightEdge(DXDrawW.EffectExtent openXmlElement)
+  private static Int64 GetRightEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement?.RightEdge?.Value;
+    return openXmlElement?.RightEdge?.Value ?? 0;
   }
   
   private static bool CmpRightEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)
@@ -68,9 +68,9 @@ public static class EffectExtentConverter
   /// <summary>
   /// Additional Extent on Bottom Edge
   /// </summary>
-  private static Int64? GetBottomEdge(DXDrawW.EffectExtent openXmlElement)
+  private static Int64 GetBottomEdge(DXDrawW.EffectExtent openXmlElement)
   {
-    return openXmlElement?.BottomEdge?.Value;
+    return openXmlElement?.BottomEdge?.Value ?? 0;
   }
   
   private static bool CmpBottomEdge(DXDrawW.EffectExtent openXmlElement, Int64? value, DiffList? diffs, string? objName)

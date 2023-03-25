@@ -8,9 +8,9 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Length
   /// </summary>
-  private static Int64? GetCx(DXDrawW.Extent openXmlElement)
+  private static Int64 GetCx(DXDrawW.Extent openXmlElement)
   {
-    return openXmlElement?.Cx?.Value;
+    return openXmlElement?.Cx?.Value ?? 0;
   }
   
   private static bool CmpCx(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
@@ -28,9 +28,9 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Width
   /// </summary>
-  private static Int64? GetCy(DXDrawW.Extent openXmlElement)
+  private static Int64 GetCy(DXDrawW.Extent openXmlElement)
   {
-    return openXmlElement?.Cy?.Value;
+    return openXmlElement?.Cy?.Value ?? 0;
   }
   
   private static bool CmpCy(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
@@ -45,11 +45,11 @@ public static class ExtentConverter
     openXmlElement.Cy = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
+  public static DocumentModel.Drawings.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.Drawings.Wordprocessing.Extent();
+      var value = new DocumentModel.Drawings.Extent();
       value.Cx = GetCx(openXmlElement);
       value.Cy = GetCy(openXmlElement);
       return value;
@@ -57,7 +57,7 @@ public static class ExtentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawW.Extent? openXmlElement, DMDrawsW.Extent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDrawW.Extent? openXmlElement, DMDraws.Extent? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,7 +73,7 @@ public static class ExtentConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Extent value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Extent value)
     where OpenXmlElementType: DXDrawW.Extent, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -81,7 +81,7 @@ public static class ExtentConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawW.Extent openXmlElement, DMDrawsW.Extent value)
+  public static void UpdateOpenXmlElement(DXDrawW.Extent openXmlElement, DMDraws.Extent value)
   {
     SetCx(openXmlElement, value?.Cx);
     SetCy(openXmlElement, value?.Cy);
