@@ -1,3 +1,5 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
@@ -37,7 +39,7 @@ public static class AbsoluteAnchorSizeConverter
   /// <summary>
   /// Shape Extent.
   /// </summary>
-  private static DMDrawsChartDraw.Extent? GetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
+  private static Extent? GetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Extent>();
     if (element != null)
@@ -45,19 +47,19 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Extent? value, DiffList? diffs, string? objName)
+  private static bool CmpExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, Extent? value, DiffList? diffs, string? objName)
   {
     return DMXDrawsChartDraw.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Extent>(), value, diffs, objName);
   }
   
-  private static void SetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, DMDrawsChartDraw.Extent? value)
+  private static void SetExtent(DXDrawChartDraw.AbsoluteAnchorSize openXmlElement, Extent? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Extent>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ExtentConverter.CreateOpenXmlElement<DXDrawChartDraw.Extent>(value);
+      itemElement = DMXDrawsChartDraw.ExtentConverter.CreateOpenXmlElement<DXDrawChartDraw.Extent>((Extent)value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

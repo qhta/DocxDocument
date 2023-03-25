@@ -16,7 +16,7 @@ public static class AnchorConverter
   private static bool CmpX(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.X?.Value == value) return true;
-    diffs?.Add(objName, "X", openXmlElement?.X?.Value, value);
+    diffs?.Add(objName, "Cx", openXmlElement?.X?.Value, value);
     return false;
   }
   
@@ -36,7 +36,7 @@ public static class AnchorConverter
   private static bool CmpY(DXDraw.Anchor openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Y?.Value == value) return true;
-    diffs?.Add(objName, "Y", openXmlElement?.Y?.Value, value);
+    diffs?.Add(objName, "Cy", openXmlElement?.Y?.Value, value);
     return false;
   }
   

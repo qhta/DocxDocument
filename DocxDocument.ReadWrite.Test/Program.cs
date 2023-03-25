@@ -7,9 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    //var ok = typeof(Fonts).IsCollection(out var itemType);
-    //Console.WriteLine($"{ok} {itemType}");
-    RunTestProperties();
+    RunTestBody();
   }
 
   private static void RunTestSections()

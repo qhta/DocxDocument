@@ -181,7 +181,7 @@ public static class FramePropertiesConverter
   
   private static bool CmpX(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "X");
+    return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "Cx");
   }
   
   private static void SetX(DXW.FrameProperties openXmlElement, String? value)
@@ -217,7 +217,7 @@ public static class FramePropertiesConverter
   
   private static bool CmpY(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Y");
+    return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Cy");
   }
   
   private static void SetY(DXW.FrameProperties openXmlElement, String? value)
