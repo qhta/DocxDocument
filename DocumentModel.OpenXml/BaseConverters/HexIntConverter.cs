@@ -58,7 +58,7 @@ public static class HexIntConverter
 
     public static HexInt? GetValue(DX.TypedOpenXmlLeafElement? openXmlElement)
   {
-    var valProperty = openXmlElement?.GetType().GetProperty("Normal");
+    var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null)
     {
       var value = valProperty.GetValue(openXmlElement);
@@ -72,7 +72,7 @@ public static class HexIntConverter
 
     public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexInt? value, DiffList? diffs, string? objName)
   {
-    var valProperty = element?.GetType().GetProperty("Normal");
+    var valProperty = element?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null && value != null)
     {
       var valStr = (string?)valProperty.GetValue(element);
@@ -109,7 +109,7 @@ public static class HexIntConverter
   {
     var newValue = new DX.HexBinaryValue(value.ToString());
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
+    var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null)
       valProperty.SetValue(element, newValue);
     return element;

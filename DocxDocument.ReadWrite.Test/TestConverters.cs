@@ -121,7 +121,7 @@ public class TestConverters : TestBase
   /// Tests all docx files in the folder specified by test path.
   /// </summary>
   [Test]
-  public void TestHexiIntConverter()
+  public void TestHexIntConverter()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
       TestHexIntConverter(filename);

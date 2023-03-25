@@ -1,8 +1,7 @@
 namespace DocumentModel.Drawings.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Object Extents Including Effects.
+///   Additional extent for object effects.
 /// </summary>
 [TypeConverter(typeof(EffectExtentTypeConverter))]
 public class EffectExtent: ModelElement
