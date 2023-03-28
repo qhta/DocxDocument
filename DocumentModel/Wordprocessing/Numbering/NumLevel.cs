@@ -105,7 +105,8 @@ public class NumLevel: ModelElement
   public HexInt? TemplateCode { get; set; }
 
   /// <summary>
-  ///   Legacy Numbering Level Properties.
+  ///   Specifies that a given numbering level is from an earlier word processing application 
+  ///   which did not support the full richness of the numbering properties supported by WordprocessingML.
   /// </summary>
   public LegacyNumbering? LegacyNumbering { get; set; }
 

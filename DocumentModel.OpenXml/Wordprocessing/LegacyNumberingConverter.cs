@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Legacy Numbering Level Properties.
+/// Legacy Numbering Level Properties converter from/to OpenXML.
 /// </summary>
 public static class LegacyNumberingConverter
 {
-  /// <summary>
-  /// Use Legacy Numbering Properties
-  /// </summary>
+  #region Use Legacy Numbering Properties
   private static Boolean? GetLegacy(DXW.LegacyNumbering openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Legacy);
@@ -22,13 +20,14 @@ public static class LegacyNumberingConverter
   {
     openXmlElement.Legacy = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// Legacy Spacing
-  /// </summary>
-  private static String? GetLegacySpace(DXW.LegacyNumbering openXmlElement)
+  #endregion
+
+  #region Legacy Spacing
+  private static DXA? GetLegacySpace(DXW.LegacyNumbering openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.LegacySpace);
+    if (openXmlElement?.LegacySpace!=null)
+      return Int32ValueConverter.GetValue(openXmlElement.LegacySpace);
+    return null;
   }
   
   private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
@@ -40,15 +39,16 @@ public static class LegacyNumberingConverter
   {
     openXmlElement.LegacySpace = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Legacy Indent
-  /// </summary>
-  private static String? GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
+  #endregion
+
+  #region Legacy Indent
+  private static DXA? GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.LegacyIndent);
+    if (openXmlElement?.LegacyIndent!=null)
+      return Int32ValueConverter.GetValue(openXmlElement.LegacyIndent);
+    return null;
   }
-  
+
   private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LegacyIndent, value, diffs, objName, "LegacyIndent");
@@ -58,7 +58,9 @@ public static class LegacyNumberingConverter
   {
     openXmlElement.LegacyIndent = StringValueConverter.CreateStringValue(value);
   }
-  
+  #endregion
+
+  #region LegacyNumbering model conversion
   public static DMW.LegacyNumbering? CreateModelElement(DXW.LegacyNumbering? openXmlElement)
   {
     if (openXmlElement != null)
@@ -104,4 +106,5 @@ public static class LegacyNumberingConverter
     SetLegacySpace(openXmlElement, value?.LegacySpace);
     SetLegacyIndent(openXmlElement, value?.LegacyIndent);
   }
+  #endregion
 }

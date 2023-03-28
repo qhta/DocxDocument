@@ -3,7 +3,7 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Text.
+/// Numbering Level Text converter
 /// </summary>
 public static class LevelTextConverter
 {
