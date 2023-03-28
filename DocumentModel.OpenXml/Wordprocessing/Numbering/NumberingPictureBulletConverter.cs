@@ -1,13 +1,12 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Picture Numbering Symbol Definition.
-/// </summary>
+
 public static class NumberingPictureBulletConverter
 {
-  /// <summary>
-  /// numPicBulletId
-  /// </summary>
+
+  #region numPicBulletId
   private static Int32? GetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement)
   {
     return openXmlElement?.NumberingPictureBulletId?.Value;
@@ -24,10 +23,9 @@ public static class NumberingPictureBulletConverter
   {
     openXmlElement.NumberingPictureBulletId = value;
   }
-  
-  /// <summary>
-  /// PictureBulletBase.
-  /// </summary>
+#endregion
+
+  #region PictureBulletBase.
   private static DMW.PictureBulletBase? GetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PictureBulletBase>();
@@ -53,10 +51,9 @@ public static class NumberingPictureBulletConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Drawing.
-  /// </summary>
+#endregion
+
+  #region Drawing.
   private static DMW.Drawing? GetDrawing(DXW.NumberingPictureBullet openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Drawing>();
@@ -128,4 +125,5 @@ public static class NumberingPictureBulletConverter
     SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
     SetDrawing(openXmlElement, value?.Drawing);
   }
+#endregion
 }

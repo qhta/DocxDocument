@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Defines the LevelOverride Class.
-/// </summary>
+
 public static class LevelOverrideConverter
 {
-  /// <summary>
-  /// Numbering Level ID
-  /// </summary>
+  #region Numbering Level ID
   private static Int32? GetLevelIndex(DXW.LevelOverride openXmlElement)
   {
     return openXmlElement?.LevelIndex?.Value;
@@ -24,10 +22,9 @@ public static class LevelOverrideConverter
   {
     openXmlElement.LevelIndex = value;
   }
-  
-  /// <summary>
-  /// Numbering Level Starting Value Override.
-  /// </summary>
+#endregion
+
+  #region Numbering Level Starting Value Override.
   private static Int32? GetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val);
@@ -42,10 +39,9 @@ public static class LevelOverrideConverter
   {
     SimpleValueConverter.SetValue<DXW.StartOverrideNumberingValue,System.Int32>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// Numbering Level Override Definition.
-  /// </summary>
+#endregion
+
+  #region Numbering Level Override Definition.
   private static DMW.NumLevel? GetLevel(DXW.LevelOverride openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Level>();
@@ -71,7 +67,9 @@ public static class LevelOverrideConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region NumLevelOverride model conversion
   public static DMW.NumLevelOverride? CreateModelElement(DXW.LevelOverride? openXmlElement)
   {
     if (openXmlElement != null)
@@ -117,4 +115,6 @@ public static class LevelOverrideConverter
     SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
     SetLevel(openXmlElement, value?.Level);
   }
+  #endregion
+
 }
