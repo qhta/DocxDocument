@@ -18,7 +18,7 @@ public class AbstractNum : ModelElement
   public Int32? AbstractNumberId { get; set; }
 
   /// <summary>
-  ///   Associates a unique hexadecimal ID to the parent abstract numbering definition. 
+  ///   Associates a unique hexadecimal ID to the abstract numbering definition. 
   ///   This number shall be identical for two abstract numbering definitions that are based from the same initial numbering definition 
   ///   - if a document is repurposed and the underlying numbering definition is changed, it shall maintain its original nsid.
   /// </summary>
@@ -61,5 +61,5 @@ public class AbstractNum : ModelElement
   /// <summary>
   ///   Definitions of abstract numbering levels.
   /// </summary>
-  public Collection<NumLevel>? Levels { get; set; }
+  [XmlContentElement] public NumLevels? Levels { get; set; }
 }

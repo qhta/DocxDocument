@@ -1,12 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Reflection.Metadata;
-using System.Xml.Linq;
-
-using DocumentModel.Drawings.ChartsStyle;
-using DocumentModel.UI;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -118,10 +109,10 @@ public class NumLevel: ModelElement
   /// <summary>
   ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+  [XmlContentElement] public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
 
   /// <summary>
   ///   Numbering Symbol Run Properties.
   /// </summary>
-  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
+  [XmlContentElement] public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
 }
