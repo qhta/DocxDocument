@@ -1,13 +1,12 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Numbering Definition Instance.
-/// </summary>
+
 public static class NumberingInstanceConverter
 {
-  /// <summary>
-  /// numId
-  /// </summary>
+
+  #region numId
   private static Int32? GetNumberID(DXW.NumberingInstance openXmlElement)
   {
     return openXmlElement?.NumberID?.Value;
@@ -24,10 +23,9 @@ public static class NumberingInstanceConverter
   {
     openXmlElement.NumberID = value;
   }
-  
-  /// <summary>
-  /// durableId
-  /// </summary>
+#endregion
+
+  #region durableId
   private static Int32? GetDurableId(DXW.NumberingInstance openXmlElement)
   {
     return openXmlElement?.DurableId?.Value;
@@ -44,10 +42,9 @@ public static class NumberingInstanceConverter
   {
     openXmlElement.DurableId = value;
   }
-  
-  /// <summary>
-  /// AbstractNumId.
-  /// </summary>
+#endregion
+
+  #region AbstractNumId.
   private static Int32? GetAbstractNumId(DXW.NumberingInstance openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val);
@@ -168,4 +165,5 @@ public static class NumberingInstanceConverter
     SetAbstractNumId(openXmlElement, value?.AbstractNumId);
     SetLevelOverrides(openXmlElement, value?.LevelOverrides);
   }
+#endregion
 }
