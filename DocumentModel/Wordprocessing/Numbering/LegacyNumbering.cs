@@ -1,9 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Legacy Numbering Level Properties.
+///   Specifies that a given numbering level is from an earlier word processing application 
+///   which did not support the full richness of the numbering properties supported by WordprocessingML.
 /// </summary>
-public class LegacyNumbering: ModelElement
+public class LegacyNumbering : ModelElement
 {
   /// <summary>
   ///   Use Legacy Numbering Properties
@@ -13,10 +14,10 @@ public class LegacyNumbering: ModelElement
   /// <summary>
   ///   Legacy Spacing
   /// </summary>
-  public String? LegacySpace { get; set; }
+  public DXA? LegacySpace { get; set; }
 
   /// <summary>
   ///   Legacy Indent
   /// </summary>
-  public String? LegacyIndent { get; set; }
+  public DXA? LegacyIndent { get; set; }
 }
