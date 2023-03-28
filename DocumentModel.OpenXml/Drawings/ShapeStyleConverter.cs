@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Style.
-/// </summary>
+/// Style converter from/to OpenXml.
+///</summary>
 public static class ShapeStyleConverter
 {
   /// <summary>

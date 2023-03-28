@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ContentPartLocks Class.
-/// </summary>
+/// Defines the ContentPartLocks Class converter from/to OpenXml.
+///</summary>
 public static class ContentPartLocksConverter
 {
   /// <summary>

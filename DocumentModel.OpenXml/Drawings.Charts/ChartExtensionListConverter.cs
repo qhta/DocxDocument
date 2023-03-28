@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Extensibility container.
-/// </summary>
+/// Extensibility container converter from/to OpenXml.
+///</summary>
 public static class ChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.DataDisplayOptions16>? GetDataDisplayOptions16s(DXDrawCharts.ChartExtensionList openXmlElement)

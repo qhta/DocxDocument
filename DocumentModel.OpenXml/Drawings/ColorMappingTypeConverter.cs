@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ColorMappingType Class.
-/// </summary>
+/// Defines the ColorMappingType Class converter from/to OpenXml.
+///</summary>
 public static class ColorMappingTypeConverter
 {
   /// <summary>

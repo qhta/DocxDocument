@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MacroWllType Class.
-/// </summary>
+/// Defines the MacroWllType Class converter from/to OpenXml.
+///</summary>
 public static class MacroWllTypeConverter
 {
   /// <summary>

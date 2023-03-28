@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ProofError Class.
-/// </summary>
+/// Defines the ProofError Class converter from/to OpenXml.
+///</summary>
 public static class ProofErrorConverter
 {
   /// <summary>

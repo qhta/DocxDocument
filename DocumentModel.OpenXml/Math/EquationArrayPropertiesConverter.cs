@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Equation Array Properties.
-/// </summary>
+/// Equation Array Properties converter from/to OpenXml.
+///</summary>
 public static class EquationArrayPropertiesConverter
 {
   /// <summary>

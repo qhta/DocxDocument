@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.SVG;
 
 /// <summary>
-/// Defines the SVGBlip Class.
-/// </summary>
+/// Defines the SVGBlip Class converter from/to OpenXml.
+///</summary>
 public static class SVGBlipConverter
 {
   /// <summary>

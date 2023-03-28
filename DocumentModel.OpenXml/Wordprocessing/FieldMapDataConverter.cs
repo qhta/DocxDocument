@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// External Data Source to Merge Field Mapping.
-/// </summary>
+/// External Data Source to Merge Field Mapping converter from/to OpenXml.
+///</summary>
 public static class FieldMapDataConverter
 {
   /// <summary>

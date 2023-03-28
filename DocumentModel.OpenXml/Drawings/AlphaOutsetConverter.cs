@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Inset/Outset Effect.
-/// </summary>
+/// Alpha Inset/Outset Effect converter from/to OpenXml.
+///</summary>
 public static class AlphaOutsetConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskTitleEventInfo Class.
-/// </summary>
+/// Defines the TaskTitleEventInfo Class converter from/to OpenXml.
+///</summary>
 public static class TaskTitleEventInfoConverter
 {
   /// <summary>

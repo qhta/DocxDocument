@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the HeaderPart
-/// </summary>
+/// Defines the HeaderPar converter from/to OpenXml.
+///</summary>
 public static class HeaderPartConverter
 {
   /// <summary>

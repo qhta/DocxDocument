@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Break converter
-/// </summary>
+/// Break converte converter from/to OpenXml.
+///</summary>
 public static class BreakConverter
 {
   #region BreakKind conversion

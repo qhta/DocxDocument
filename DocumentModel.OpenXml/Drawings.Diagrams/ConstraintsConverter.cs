@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint List.
-/// </summary>
+/// Constraint List converter from/to OpenXml.
+///</summary>
 public static class ConstraintsConverter
 {
   private static Collection<DMDrawsDgms.Constraint>? GetItems(DXDrawDgms.Constraints openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingCommentsIdsPart
-/// </summary>
+/// Defines the WordprocessingCommentsIdsPar converter from/to OpenXml.
+///</summary>
 public static class WordprocessingCommentsIdsPartConverter
 {
   /// <summary>

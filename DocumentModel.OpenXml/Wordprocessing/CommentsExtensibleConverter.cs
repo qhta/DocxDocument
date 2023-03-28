@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsExtensible Class.
-/// </summary>
+/// Defines the CommentsExtensible Class converter from/to OpenXml.
+///</summary>
 public static class CommentsExtensibleConverter
 {
   private static Collection<DMW.CommentExtensible>? GetCommentExtensibles(DXO2021WComtExt.CommentsExtensible openXmlElement)

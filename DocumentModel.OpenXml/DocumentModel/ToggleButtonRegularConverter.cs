@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ToggleButtonRegular Class.
-/// </summary>
+/// Defines the ToggleButtonRegular Class converter from/to OpenXml.
+///</summary>
 public static class ToggleButtonRegularConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D view settings.
-/// </summary>
+/// 3D view settings converter from/to OpenXml.
+///</summary>
 public static class View3DConverter
 {
   /// <summary>

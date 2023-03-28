@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Paragraph Numbering Properties.
-/// </summary>
+/// Previous Paragraph Numbering Properties converter from/to OpenXml.
+///</summary>
 public static class NumberingChangeConverter
 {
   /// <summary>

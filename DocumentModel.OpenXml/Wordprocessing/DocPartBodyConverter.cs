@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Contents of Glossary Document Entry.
-/// </summary>
+/// Contents of Glossary Document Entry converter from/to OpenXml.
+///</summary>
 public static class DocPartBodyConverter
 {
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.DocPartBody openXmlElement)

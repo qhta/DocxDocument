@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceType Class.
-/// </summary>
+/// Defines the SurfaceType Class converter from/to OpenXml.
+///</summary>
 public static class SurfaceTypeConverter
 {
   /// <summary>

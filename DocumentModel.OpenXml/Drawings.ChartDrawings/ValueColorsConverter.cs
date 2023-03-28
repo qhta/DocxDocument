@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueColors Class.
-/// </summary>
+/// Defines the ValueColors Class converter from/to OpenXml.
+///</summary>
 public static class ValueColorsConverter
 {
   /// <summary>

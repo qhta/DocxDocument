@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// RGB Color Model - Percentage Variant.
-/// </summary>
+/// RGB Color Model - Percentage Variant converter from/to OpenXml.
+///</summary>
 public static class RgbColorModelPercentageConverter
 {
   /// <summary>

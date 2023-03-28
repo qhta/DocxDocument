@@ -5,8 +5,8 @@ using DocumentFormat.OpenXml.Spreadsheet;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Section Properties.
-/// </summary>
+/// Section Properties converter from/to OpenXml.
+///</summary>
 public static class SectionPropertiesConverter
 {
   #region Physical Section Mark Character Revision ID conversion

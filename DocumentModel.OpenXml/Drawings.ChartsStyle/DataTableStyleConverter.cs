@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DataTableStyle Class.
-/// </summary>
+/// Defines the DataTableStyle Class converter from/to OpenXml.
+///</summary>
 public static class DataTableStyleConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataTableStyle openXmlElement)

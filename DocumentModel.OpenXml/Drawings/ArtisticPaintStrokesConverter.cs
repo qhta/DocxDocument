@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPaintStrokes Class.
-/// </summary>
+/// Defines the ArtisticPaintStrokes Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticPaintStrokesConverter
 {
   /// <summary>

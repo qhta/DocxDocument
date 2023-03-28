@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the MainDocumentPart
-/// </summary>
+/// Defines the MainDocumentPar converter from/to OpenXml.
+///</summary>
 public static class MainDocumentPartConverter
 {
   /// <summary>

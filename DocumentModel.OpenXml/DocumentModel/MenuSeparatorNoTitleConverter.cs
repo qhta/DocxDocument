@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the MenuSeparatorNoTitle Class.
-/// </summary>
+/// Defines the MenuSeparatorNoTitle Class converter from/to OpenXml.
+///</summary>
 public static class MenuSeparatorNoTitleConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Definition.
-/// </summary>
+/// Numbering Level Definition converter from/to OpenXml.
+///</summary>
 public static class LevelConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the AlternativeFormatImportPart
-/// </summary>
+/// Defines the AlternativeFormatImportPar converter from/to OpenXml.
+///</summary>
 public static class AlternativeFormatImportPartConverter
 {
   private static String? GetRelationshipType(DXPack.AlternativeFormatImportPart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Defines the Paragraph Class.
-/// </summary>
+/// Defines the Paragraph Class converter from/to OpenXml.
+///</summary>
 public static class ParagraphConverter
 {
   /// <summary>

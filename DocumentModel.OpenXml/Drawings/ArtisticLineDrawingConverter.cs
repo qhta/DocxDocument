@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticLineDrawing Class.
-/// </summary>
+/// Defines the ArtisticLineDrawing Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticLineDrawingConverter
 {
   /// <summary>

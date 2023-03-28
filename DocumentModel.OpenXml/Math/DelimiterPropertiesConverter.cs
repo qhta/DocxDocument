@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Delimiter Properties.
-/// </summary>
+/// Delimiter Properties converter from/to OpenXml.
+///</summary>
 public static class DelimiterPropertiesConverter
 {
   /// <summary>

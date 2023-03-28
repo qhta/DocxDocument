@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Editing Restrictions.
-/// </summary>
+/// Document Editing Restrictions converter from/to OpenXml.
+///</summary>
 public static class DocumentProtectionConverter
 {
   /// <summary>

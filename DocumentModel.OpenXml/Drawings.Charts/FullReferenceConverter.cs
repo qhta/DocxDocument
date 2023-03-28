@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FullReference Class.
-/// </summary>
+/// Defines the FullReference Class converter from/to OpenXml.
+///</summary>
 public static class FullReferenceConverter
 {
   /// <summary>

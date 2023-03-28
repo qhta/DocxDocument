@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Picture Fill.
-/// </summary>
+/// Picture Fill converter from/to OpenXml.
+///</summary>
 public static class BlipFillConverter
 {
   /// <summary>

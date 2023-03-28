@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SphereCoordinates Class.
-/// </summary>
+/// Defines the SphereCoordinates Class converter from/to OpenXml.
+///</summary>
 public static class SphereCoordinatesConverter
 {
   /// <summary>

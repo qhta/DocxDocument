@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the SplitButtonWithTitle Class.
-/// </summary>
+/// Defines the SplitButtonWithTitle Class converter from/to OpenXml.
+///</summary>
 public static class SplitButtonWithTitleConverter
 {
   /// <summary>

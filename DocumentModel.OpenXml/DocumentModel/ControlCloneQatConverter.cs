@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ControlCloneQat Class.
-/// </summary>
+/// Defines the ControlCloneQat Class converter from/to OpenXml.
+///</summary>
 public static class ControlCloneQatConverter
 {
   /// <summary>

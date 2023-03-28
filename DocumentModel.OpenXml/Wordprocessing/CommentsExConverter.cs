@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsEx Class.
-/// </summary>
+/// Defines the CommentsEx Class converter from/to OpenXml.
+///</summary>
 public static class CommentsExConverter
 {
   private static Collection<DMW.CommentEx>? GetCommentExs(DXO2013W.CommentsEx openXmlElement)

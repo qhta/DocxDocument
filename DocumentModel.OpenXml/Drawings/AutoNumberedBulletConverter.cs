@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Auto-Numbered Bullet.
-/// </summary>
+/// Auto-Numbered Bullet converter from/to OpenXml.
+///</summary>
 public static class AutoNumberedBulletConverter
 {
   /// <summary>

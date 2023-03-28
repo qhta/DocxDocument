@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines CustomUI.
-/// </summary>
+/// Defines CustomUI converter from/to OpenXml.
+///</summary>
 public static class CustomUIConverter
 {
   /// <summary>

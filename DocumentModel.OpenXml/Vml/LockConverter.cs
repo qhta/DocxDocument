@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Lock Class.
-/// </summary>
+/// Defines the Lock Class converter from/to OpenXml.
+///</summary>
 public static class LockConverter
 {
   /// <summary>

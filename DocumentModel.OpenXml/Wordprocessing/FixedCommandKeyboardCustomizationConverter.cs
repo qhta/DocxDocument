@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FixedCommandKeyboardCustomization Class.
-/// </summary>
+/// Defines the FixedCommandKeyboardCustomization Class converter from/to OpenXml.
+///</summary>
 public static class FixedCommandKeyboardCustomizationConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the EmbeddedWavAudioFileType Class.
-/// </summary>
+/// Defines the EmbeddedWavAudioFileType Class converter from/to OpenXml.
+///</summary>
 public static class EmbeddedWavAudioFileTypeConverter
 {
   /// <summary>

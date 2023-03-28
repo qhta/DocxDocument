@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Line Charts.
-/// </summary>
+/// Line Charts converter from/to OpenXml.
+///</summary>
 public static class LineChartConverter
 {
   /// <summary>

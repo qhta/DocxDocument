@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Point.
-/// </summary>
+/// Point converter from/to OpenXml.
+///</summary>
 public static class PointConverter
 {
   /// <summary>

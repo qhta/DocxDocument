@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ParagraphPropertiesChange Class.
-/// </summary>
+/// Defines the ParagraphPropertiesChange Class converter from/to OpenXml.
+///</summary>
 public static class ParagraphPropertiesChangeConverter
 {
   /// <summary>

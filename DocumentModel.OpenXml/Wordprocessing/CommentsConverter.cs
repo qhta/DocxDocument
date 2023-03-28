@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Comments Collection.
-/// </summary>
+/// Comments Collection converter from/to OpenXml.
+///</summary>
 public static class CommentsConverter
 {
   private static Collection<DMW.Comment>? GetItems(DXW.Comments openXmlElement)

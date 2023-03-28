@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the StringLevel Class.
-/// </summary>
+/// Defines the StringLevel Class converter from/to OpenXml.
+///</summary>
 public static class StringLevelConverter
 {
   /// <summary>

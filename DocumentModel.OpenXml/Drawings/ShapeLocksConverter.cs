@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Locks.
-/// </summary>
+/// Shape Locks converter from/to OpenXml.
+///</summary>
 public static class ShapeLocksConverter
 {
   /// <summary>

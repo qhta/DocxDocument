@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the SignatureLine Class.
-/// </summary>
+/// Defines the SignatureLine Class converter from/to OpenXml.
+///</summary>
 public static class SignatureLineConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PivotSource Class.
-/// </summary>
+/// Defines the PivotSource Class converter from/to OpenXml.
+///</summary>
 public static class PivotSource3Converter
 {
   /// <summary>

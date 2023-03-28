@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Underline Class.
-/// </summary>
+/// Defines the Underline Class converter from/to OpenXml.
+///</summary>
 public static class UnderlineConverter
 {
   /// <summary>

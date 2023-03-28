@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentComboBox Class.
-/// </summary>
+/// Defines the SdtContentComboBox Class converter from/to OpenXml.
+///</summary>
 public static class SdtContentComboBoxConverter
 {
   /// <summary>

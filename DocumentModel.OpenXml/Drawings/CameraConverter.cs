@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Camera.
-/// </summary>
+/// Camera converter from/to OpenXml.
+///</summary>
 public static class CameraConverter
 {
   /// <summary>

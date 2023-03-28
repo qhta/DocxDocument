@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents markup compatibility processing settings.
-/// </summary>
+/// Represents markup compatibility processing settings converter from/to OpenXml.
+///</summary>
 public static class MarkupCompatibilityProcessSettingsConverter
 {
   /// <summary>

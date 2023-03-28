@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Function Properties.
-/// </summary>
+/// Function Properties converter from/to OpenXml.
+///</summary>
 public static class FunctionPropertiesConverter
 {
   /// <summary>

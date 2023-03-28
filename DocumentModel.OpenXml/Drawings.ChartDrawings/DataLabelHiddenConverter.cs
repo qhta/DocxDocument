@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabelHidden Class.
-/// </summary>
+/// Defines the DataLabelHidden Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelHiddenConverter
 {
   /// <summary>

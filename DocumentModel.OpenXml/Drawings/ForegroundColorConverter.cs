@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Foreground color.
-/// </summary>
+/// Foreground color converter from/to OpenXml.
+///</summary>
 public static class ForegroundColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.ForegroundColor openXmlElement)

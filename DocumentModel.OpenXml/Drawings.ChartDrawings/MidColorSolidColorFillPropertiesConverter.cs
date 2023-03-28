@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MidColorSolidColorFillProperties Class.
-/// </summary>
+/// Defines the MidColorSolidColorFillProperties Class converter from/to OpenXml.
+///</summary>
 public static class MidColorSolidColorFillPropertiesConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2016DrawChartDraw.MidColorSolidColorFillProperties openXmlElement)

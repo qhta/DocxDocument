@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Defines the OfficeMath Class.
-/// </summary>
+/// Defines the OfficeMath Class converter from/to OpenXml.
+///</summary>
 public static class OfficeMathConverter
 {
   private static DMMath.Accent? GetAccent(DXMath.OfficeMath openXmlElement)

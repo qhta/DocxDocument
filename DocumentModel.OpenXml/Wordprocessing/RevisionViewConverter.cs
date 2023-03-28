@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Visibility of Annotation Types.
-/// </summary>
+/// Visibility of Annotation Types converter from/to OpenXml.
+///</summary>
 public static class RevisionViewConverter
 {
   /// <summary>

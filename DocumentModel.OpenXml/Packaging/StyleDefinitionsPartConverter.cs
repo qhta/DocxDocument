@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the StyleDefinitionsPart
-/// </summary>
+/// Defines the StyleDefinitionsPar converter from/to OpenXml.
+///</summary>
 public static class StyleDefinitionsPartConverter
 {
   private static String? GetContentType(DXPack.StyleDefinitionsPart openXmlElement)

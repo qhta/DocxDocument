@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Latent Style Exception.
-/// </summary>
+/// Latent Style Exception converter from/to OpenXml.
+///</summary>
 public static class LatentStyleExceptionInfoConverter
 {
   /// <summary>

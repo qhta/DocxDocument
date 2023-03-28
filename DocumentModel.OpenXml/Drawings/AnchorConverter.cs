@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Anchor Point.
-/// </summary>
+/// Anchor Point converter from/to OpenXml.
+///</summary>
 public static class AnchorConverter
 {
   /// <summary>

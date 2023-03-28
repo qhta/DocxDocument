@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Object Extents Including Effects.
-/// </summary>
+/// Object Extents Including Effects converter from/to OpenXml.
+///</summary>
 public static class EffectExtentConverter
 {
   /// <summary>

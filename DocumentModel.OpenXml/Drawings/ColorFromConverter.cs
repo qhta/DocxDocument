@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Change Color From.
-/// </summary>
+/// Change Color From converter from/to OpenXml.
+///</summary>
 public static class ColorFromConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.ColorFrom openXmlElement)

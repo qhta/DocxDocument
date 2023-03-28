@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Extrusion Color.
-/// </summary>
+/// Extrusion Color converter from/to OpenXml.
+///</summary>
 public static class ExtrusionColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.ExtrusionColor openXmlElement)

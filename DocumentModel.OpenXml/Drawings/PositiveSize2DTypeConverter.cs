@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PositiveSize2DType Class.
-/// </summary>
+/// Defines the PositiveSize2DType Class converter from/to OpenXml.
+///</summary>
 public static class PositiveSize2DTypeConverter
 {
   /// <summary>

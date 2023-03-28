@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing.Drawings;
 
 /// <summary>
-/// Defines the RelativeHeight Class.
-/// </summary>
+/// Defines the RelativeHeight Class converter from/to OpenXml.
+///</summary>
 public static class RelativeHeightConverter
 {
   /// <summary>

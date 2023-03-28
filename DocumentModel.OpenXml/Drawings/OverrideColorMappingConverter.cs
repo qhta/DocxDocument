@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Override Color Mapping.
-/// </summary>
+/// Override Color Mapping converter from/to OpenXml.
+///</summary>
 public static class OverrideColorMappingConverter
 {
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.OverrideColorMapping openXmlElement)

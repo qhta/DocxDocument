@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// For Each.
-/// </summary>
+/// For Each converter from/to OpenXml.
+///</summary>
 public static class ForEachConverter
 {
   /// <summary>

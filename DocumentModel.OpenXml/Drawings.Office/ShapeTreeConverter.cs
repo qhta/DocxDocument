@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the ShapeTree Class.
-/// </summary>
+/// Defines the ShapeTree Class converter from/to OpenXml.
+///</summary>
 public static class ShapeTreeConverter
 {
   private static DMDrawsO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXODraw.ShapeTree openXmlElement)

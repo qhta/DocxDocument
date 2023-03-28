@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Value Axis.
-/// </summary>
+/// Value Axis converter from/to OpenXml.
+///</summary>
 public static class ValueAxisConverter
 {
   /// <summary>

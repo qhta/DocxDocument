@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunConflictDeletion Class.
-/// </summary>
+/// Defines the RunConflictDeletion Class converter from/to OpenXml.
+///</summary>
 public static class RunConflictDeletionConverter
 {
   private static DMW.SdtRun? GetSdtRun(DXO2010W.RunConflictDeletion openXmlElement)

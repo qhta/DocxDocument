@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Area Chart Series.
-/// </summary>
+/// Area Chart Series converter from/to OpenXml.
+///</summary>
 public static class AreaChartSeriesConverter
 {
   /// <summary>

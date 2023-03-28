@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office.OEmbed;
 
 /// <summary>
-/// Defines the OEmbedShared Class.
-/// </summary>
+/// Defines the OEmbedShared Class converter from/to OpenXml.
+///</summary>
 public static class OEmbedSharedConverter
 {
   /// <summary>

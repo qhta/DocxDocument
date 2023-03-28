@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Text Class.
-/// </summary>
+/// Defines the Text Class converter from/to OpenXml.
+///</summary>
 public static class TextConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontCharSet Class.
-/// </summary>
+/// Defines the FontCharSet Class converter from/to OpenXml.
+///</summary>
 public static class FontCharSetConverter
 {
   /// <summary>

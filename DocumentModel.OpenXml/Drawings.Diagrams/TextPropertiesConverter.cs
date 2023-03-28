@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Text Properties.
-/// </summary>
+/// Text Properties converter from/to OpenXml.
+///</summary>
 public static class TextPropertiesConverter
 {
   /// <summary>

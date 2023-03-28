@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Header and Footer.
-/// </summary>
+/// Header and Footer converter from/to OpenXml.
+///</summary>
 public static class HeaderFooterConverter
 {
   /// <summary>

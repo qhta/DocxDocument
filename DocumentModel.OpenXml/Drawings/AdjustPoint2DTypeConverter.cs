@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the AdjustPoint2DType Class.
-/// </summary>
+/// Defines the AdjustPoint2DType Class converter from/to OpenXml.
+///</summary>
 public static class AdjustPoint2DTypeConverter
 {
   /// <summary>

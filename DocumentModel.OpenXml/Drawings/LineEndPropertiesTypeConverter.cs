@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LineEndPropertiesType Class.
-/// </summary>
+/// Defines the LineEndPropertiesType Class converter from/to OpenXml.
+///</summary>
 public static class LineEndPropertiesTypeConverter
 {
   /// <summary>

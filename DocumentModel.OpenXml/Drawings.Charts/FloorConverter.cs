@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D floor formatting.
-/// </summary>
+/// 3D floor formatting converter from/to OpenXml.
+///</summary>
 public static class FloorConverter
 {
   private static Byte? GetThickness(DXDrawCharts.Floor openXmlElement)

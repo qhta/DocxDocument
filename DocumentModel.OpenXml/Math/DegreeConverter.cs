@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Degree.
-/// </summary>
+/// Degree converter from/to OpenXml.
+///</summary>
 public static class DegreeConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.Degree openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ThemeOverridePart
-/// </summary>
+/// Defines the ThemeOverridePar converter from/to OpenXml.
+///</summary>
 public static class ThemeOverridePartConverter
 {
   private static String? GetContentType(DXPack.ThemeOverridePart openXmlElement)

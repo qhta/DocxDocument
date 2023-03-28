@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Single Formula.
-/// </summary>
+/// Single Formula converter from/to OpenXml.
+///</summary>
 public static class FormulaConverter
 {
   /// <summary>

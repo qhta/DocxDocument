@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DropLine Class.
-/// </summary>
+/// Defines the DropLine Class converter from/to OpenXml.
+///</summary>
 public static class DropLineConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DropLine openXmlElement)

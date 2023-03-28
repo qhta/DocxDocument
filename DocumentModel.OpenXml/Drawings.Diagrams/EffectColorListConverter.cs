@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Effect Color List.
-/// </summary>
+/// Effect Color List converter from/to OpenXml.
+///</summary>
 public static class EffectColorListConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDrawDgms.EffectColorList openXmlElement)

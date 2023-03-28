@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the FootnotesPart
-/// </summary>
+/// Defines the FootnotesPar converter from/to OpenXml.
+///</summary>
 public static class FootnotesPartConverter
 {
   /// <summary>

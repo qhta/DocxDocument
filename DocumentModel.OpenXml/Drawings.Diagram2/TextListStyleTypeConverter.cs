@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagram2;
 
 /// <summary>
-/// Defines the TextListStyleType Class.
-/// </summary>
+/// Defines the TextListStyleType Class converter from/to OpenXml.
+///</summary>
 public static class TextListStyleTypeConverter
 {
   /// <summary>

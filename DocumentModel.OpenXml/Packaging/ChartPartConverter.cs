@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ChartPart
-/// </summary>
+/// Defines the ChartPar converter from/to OpenXml.
+///</summary>
 public static class ChartPartConverter
 {
   /// <summary>

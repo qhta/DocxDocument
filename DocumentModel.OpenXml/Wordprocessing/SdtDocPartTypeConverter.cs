@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtDocPartType Class.
-/// </summary>
+/// Defines the SdtDocPartType Class converter from/to OpenXml.
+///</summary>
 public static class SdtDocPartTypeConverter
 {
   /// <summary>

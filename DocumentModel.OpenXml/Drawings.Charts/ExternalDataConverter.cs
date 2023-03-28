@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ExternalData Class.
-/// </summary>
+/// Defines the ExternalData Class converter from/to OpenXml.
+///</summary>
 public static class ExternalDataConverter
 {
   /// <summary>

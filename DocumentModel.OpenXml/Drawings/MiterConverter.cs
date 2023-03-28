@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Miter Line Join.
-/// </summary>
+/// Miter Line Join converter from/to OpenXml.
+///</summary>
 public static class MiterConverter
 {
   /// <summary>

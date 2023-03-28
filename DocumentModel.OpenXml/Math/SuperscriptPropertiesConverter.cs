@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Superscript Properties.
-/// </summary>
+/// Superscript Properties converter from/to OpenXml.
+///</summary>
 public static class SuperscriptPropertiesConverter
 {
   /// <summary>

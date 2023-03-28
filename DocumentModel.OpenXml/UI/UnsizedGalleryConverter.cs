@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the UnsizedGallery Class.
-/// </summary>
+/// Defines the UnsizedGallery Class converter from/to OpenXml.
+///</summary>
 public static class UnsizedGalleryConverter
 {
   /// <summary>

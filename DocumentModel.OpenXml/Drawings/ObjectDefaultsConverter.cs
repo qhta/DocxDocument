@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ObjectDefaults Class.
-/// </summary>
+/// Defines the ObjectDefaults Class converter from/to OpenXml.
+///</summary>
 public static class ObjectDefaultsConverter
 {
   /// <summary>

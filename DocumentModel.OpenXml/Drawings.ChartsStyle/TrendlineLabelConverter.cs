@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the TrendlineLabel Class.
-/// </summary>
+/// Defines the TrendlineLabel Class converter from/to OpenXml.
+///</summary>
 public static class TrendlineLabelConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.TrendlineLabel openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Listing of All Revision Save ID Values.
-/// </summary>
+/// Listing of All Revision Save ID Values converter from/to OpenXml.
+///</summary>
 public static class RsidsConverter
 {
   /// <summary>

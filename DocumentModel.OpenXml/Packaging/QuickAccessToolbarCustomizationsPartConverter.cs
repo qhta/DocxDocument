@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the QuickAccessToolbarCustomizationsPart
-/// </summary>
+/// Defines the QuickAccessToolbarCustomizationsPar converter from/to OpenXml.
+///</summary>
 public static class QuickAccessToolbarCustomizationsPartConverter
 {
   private static String? GetContentType(DXPack.QuickAccessToolbarCustomizationsPart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticMarker Class.
-/// </summary>
+/// Defines the ArtisticMarker Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticMarkerConverter
 {
   /// <summary>

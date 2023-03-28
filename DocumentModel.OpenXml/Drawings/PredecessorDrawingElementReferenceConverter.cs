@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PredecessorDrawingElementReference Class.
-/// </summary>
+/// Defines the PredecessorDrawingElementReference Class converter from/to OpenXml.
+///</summary>
 public static class PredecessorDrawingElementReferenceConverter
 {
   /// <summary>

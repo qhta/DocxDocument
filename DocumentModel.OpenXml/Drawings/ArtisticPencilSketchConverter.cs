@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPencilSketch Class.
-/// </summary>
+/// Defines the ArtisticPencilSketch Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticPencilSketchConverter
 {
   /// <summary>

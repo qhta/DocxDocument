@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoEntity Class.
-/// </summary>
+/// Defines the GeoEntity Class converter from/to OpenXml.
+///</summary>
 public static class GeoEntityConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Endnote Content.
-/// </summary>
+/// Endnote Content converter from/to OpenXml.
+///</summary>
 public static class EndnoteConverter
 {
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.Endnote openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Group-Character Properties.
-/// </summary>
+/// Group-Character Properties converter from/to OpenXml.
+///</summary>
 public static class GroupCharPropertiesConverter
 {
   /// <summary>

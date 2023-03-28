@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the TimeLinePart
-/// </summary>
+/// Defines the TimeLinePar converter from/to OpenXml.
+///</summary>
 public static class TimeLinePartConverter
 {
   private static String? GetContentType(DXPack.TimeLinePart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DisplayUnits Class.
-/// </summary>
+/// Defines the DisplayUnits Class converter from/to OpenXml.
+///</summary>
 public static class DisplayUnitsConverter
 {
   private static Double? GetCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement)

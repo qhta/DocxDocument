@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the CatAxExtensionList Class.
-/// </summary>
+/// Defines the CatAxExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class CatAxExtensionListConverter
 {
   private static Collection<DMDrawsCharts.CatAxExtension>? GetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement)

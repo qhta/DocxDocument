@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Upper limit (n-ary).
-/// </summary>
+/// Upper limit (n-ary) converter from/to OpenXml.
+///</summary>
 public static class SuperArgumentConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.SuperArgument openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentId Class.
-/// </summary>
+/// Defines the CommentId Class converter from/to OpenXml.
+///</summary>
 public static class CommentIdConverter
 {
   /// <summary>

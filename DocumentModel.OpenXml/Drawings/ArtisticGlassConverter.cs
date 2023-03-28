@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticGlass Class.
-/// </summary>
+/// Defines the ArtisticGlass Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticGlassConverter
 {
   /// <summary>

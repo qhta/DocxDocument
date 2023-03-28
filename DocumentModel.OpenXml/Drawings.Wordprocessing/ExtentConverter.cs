@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Inline Drawing Object Extents.
-/// </summary>
+/// Inline Drawing Object Extents converter from/to OpenXml.
+///</summary>
 public static class ExtentConverter
 {
   /// <summary>

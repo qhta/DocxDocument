@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredRadarSeries Class.
-/// </summary>
+/// Defines the FilteredRadarSeries Class converter from/to OpenXml.
+///</summary>
 public static class FilteredRadarSeriesConverter
 {
   /// <summary>

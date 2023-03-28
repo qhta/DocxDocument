@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml.Packaging;
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents an abstract base class for all OpenXml parts.
-/// </summary>
+///   Represents an abstract base class for all OpenXml parts converter from/to OpenXml.
+///</summary>
 public static class OpenXmlPartConverter
 {
   /// <summary>

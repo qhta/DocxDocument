@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Future extensions..
-/// </summary>
+/// Future extensions. converter from/to OpenXml.
+///</summary>
 public static class LinePropertiesExtensionListConverter
 {
   private static Collection<DMDraws.LinePropertiesExtension>? GetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement)

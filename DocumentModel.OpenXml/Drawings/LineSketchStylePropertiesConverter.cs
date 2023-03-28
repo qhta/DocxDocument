@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LineSketchStyleProperties Class.
-/// </summary>
+/// Defines the LineSketchStyleProperties Class converter from/to OpenXml.
+///</summary>
 public static class LineSketchStylePropertiesConverter
 {
   /// <summary>

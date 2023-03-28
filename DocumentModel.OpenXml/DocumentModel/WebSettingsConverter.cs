@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Web Page Settings.
-/// </summary>
+/// Web Page Settings converter from/to OpenXml.
+///</summary>
 public static class WebSettingsConverter
 {
   /// <summary>

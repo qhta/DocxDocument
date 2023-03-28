@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LiveFeedProperties Class.
-/// </summary>
+/// Defines the LiveFeedProperties Class converter from/to OpenXml.
+///</summary>
 public static class LiveFeedPropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Checkbox Form Field Properties.
-/// </summary>
+/// Checkbox Form Field Properties converter from/to OpenXml.
+///</summary>
 public static class CheckBoxConverter
 {
   private static String? GetFormFieldSize(DXW.CheckBox openXmlElement)

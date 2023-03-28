@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PictureBulletBase Class.
-/// </summary>
+/// Defines the PictureBulletBase Class converter from/to OpenXml.
+///</summary>
 public static class PictureBulletBaseConverter
 {
   private static DMVml.Group? GetGroup(DXW.PictureBulletBase openXmlElement)

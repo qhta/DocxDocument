@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the OpenXmlValueColorEndPositionElement Class.
-/// </summary>
+/// Defines the OpenXmlValueColorEndPositionElement Class converter from/to OpenXml.
+///</summary>
 public static class OpenXmlValueColorEndPositionElementConverter
 {
   /// <summary>

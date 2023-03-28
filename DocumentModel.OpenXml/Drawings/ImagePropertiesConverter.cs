@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ImageProperties Class.
-/// </summary>
+/// Defines the ImageProperties Class converter from/to OpenXml.
+///</summary>
 public static class ImagePropertiesConverter
 {
   /// <summary>

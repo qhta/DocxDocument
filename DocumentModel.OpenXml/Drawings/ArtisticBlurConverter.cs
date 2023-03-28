@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticBlur Class.
-/// </summary>
+/// Defines the ArtisticBlur Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticBlurConverter
 {
   /// <summary>

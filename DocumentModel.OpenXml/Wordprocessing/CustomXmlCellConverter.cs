@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Cell-Level Custom XML Element.
-/// </summary>
+/// Cell-Level Custom XML Element converter from/to OpenXml.
+///</summary>
 public static class CustomXmlCellConverter
 {
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlCell openXmlElement)

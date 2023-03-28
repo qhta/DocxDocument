@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MoveToMathControl Class.
-/// </summary>
+/// Defines the MoveToMathControl Class converter from/to OpenXml.
+///</summary>
 public static class MoveToMathControlConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXW.MoveToMathControl openXmlElement)

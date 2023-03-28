@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Tile.
-/// </summary>
+/// Tile converter from/to OpenXml.
+///</summary>
 public static class TileConverter
 {
   /// <summary>

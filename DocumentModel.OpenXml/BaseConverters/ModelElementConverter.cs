@@ -4,8 +4,8 @@ namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Generic model element converter. 
-/// Uses type reflection to dispatch a generic method to specific converter searched by an openXml element type name (+"Converter" suffix).
-/// </summary>
+/// Uses type reflection to dispatch a generic method to specific converter searched by an openXml element type name (+"Converter" suffix) converter from/to OpenXml.
+///</summary>
 public static class ModelElementConverter
 {
 

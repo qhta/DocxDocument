@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Reflection Effect.
-/// </summary>
+/// Reflection Effect converter from/to OpenXml.
+///</summary>
 public static class ReflectionConverter
 {
   /// <summary>

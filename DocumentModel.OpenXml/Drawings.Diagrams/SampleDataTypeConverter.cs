@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the SampleDataType Class.
-/// </summary>
+/// Defines the SampleDataType Class converter from/to OpenXml.
+///</summary>
 public static class SampleDataTypeConverter
 {
   /// <summary>

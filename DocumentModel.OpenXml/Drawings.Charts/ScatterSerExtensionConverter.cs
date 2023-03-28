@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterSerExtension Class.
-/// </summary>
+/// Defines the ScatterSerExtension Class converter from/to OpenXml.
+///</summary>
 public static class ScatterSerExtensionConverter
 {
   /// <summary>

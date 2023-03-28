@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the DocEvents Class.
-/// </summary>
+/// Defines the DocEvents Class converter from/to OpenXml.
+///</summary>
 public static class DocEventsConverter
 {
   /// <summary>
