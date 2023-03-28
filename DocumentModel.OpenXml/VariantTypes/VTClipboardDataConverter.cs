@@ -16,7 +16,7 @@ public static class VTClipboardDataConverter
   private static bool CmpFormat(DXVT.VTClipboardData openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Format?.Value == value) return true;
-    diffs?.Add(objName, "Format", openXmlElement?.Format?.Value, value);
+    diffs?.Add(objName, "Custom", openXmlElement?.Format?.Value, value);
     return false;
   }
   

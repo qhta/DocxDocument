@@ -9,17 +9,17 @@ public class NumberingInstance: ModelElement
   /// <summary>
   ///   numId
   /// </summary>
-  public Int32? NumberID { get; set; }
+  public HexInt? NumberID { get; set; }
 
   /// <summary>
   ///   durableId
   /// </summary>
-  public Int32? DurableId { get; set; }
+  public HexInt? DurableId { get; set; }
 
   /// <summary>
   ///   AbstractNumId.
   /// </summary>
-  public Int32? AbstractNumId { get; set; }
+  public HexInt? AbstractNumId { get; set; }
 
-  public Collection<LevelOverride>? LevelOverrides { get; set; }
+  public Collection<NumLevelOverride>? LevelOverrides { get; set; }
 }
