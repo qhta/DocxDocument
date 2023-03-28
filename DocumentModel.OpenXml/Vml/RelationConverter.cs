@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Diagram Relationship converter from/to OpenXml.
-///</summary>
+/// Diagram Relationship.
+/// </summary>
 public static class RelationConverter
 {
   /// <summary>

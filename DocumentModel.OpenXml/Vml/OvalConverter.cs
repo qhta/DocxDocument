@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Oval converter from/to OpenXml.
-///</summary>
+/// Oval.
+/// </summary>
 public static class OvalConverter
 {
   /// <summary>

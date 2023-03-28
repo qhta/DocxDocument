@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Chart Class converter from/to OpenXml.
-///</summary>
+/// Defines the Chart Class.
+/// </summary>
 public static class ChartConverter
 {
   /// <summary>

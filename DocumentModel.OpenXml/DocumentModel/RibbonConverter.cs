@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Ribbon Class converter from/to OpenXml.
-///</summary>
+/// Defines the Ribbon Class.
+/// </summary>
 public static class RibbonConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MathControlMoveType Class converter from/to OpenXml.
-///</summary>
+/// Defines the MathControlMoveType Class.
+/// </summary>
 public static class MathControlMoveTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Freeze Document Layout converter from/to OpenXml.
-///</summary>
+/// Freeze Document Layout.
+/// </summary>
 public static class ReadModeInkLockDownConverter
 {
   /// <summary>

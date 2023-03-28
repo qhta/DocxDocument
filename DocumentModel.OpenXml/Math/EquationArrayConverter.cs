@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Equation-Array Function converter from/to OpenXml.
-///</summary>
+/// Equation-Array Function.
+/// </summary>
 public static class EquationArrayConverter
 {
   /// <summary>

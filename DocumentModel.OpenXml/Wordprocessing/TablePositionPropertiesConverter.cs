@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TablePositionProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the TablePositionProperties Class.
+/// </summary>
 public static class TablePositionPropertiesConverter
 {
   /// <summary>

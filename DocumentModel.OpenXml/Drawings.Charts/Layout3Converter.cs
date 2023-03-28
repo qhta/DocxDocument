@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Layout Class converter from/to OpenXml.
-///</summary>
+/// Defines the Layout Class.
+/// </summary>
 public static class Layout3Converter
 {
   /// <summary>

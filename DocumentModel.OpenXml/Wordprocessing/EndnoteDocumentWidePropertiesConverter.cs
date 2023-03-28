@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document-Wide Endnote Properties converter from/to OpenXml.
-///</summary>
+/// Document-Wide Endnote Properties.
+/// </summary>
 public static class EndnoteDocumentWidePropertiesConverter
 {
   /// <summary>

@@ -6,8 +6,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents a base class for strong typed Open XML document classes converter from/to OpenXml.
-///</summary>
+///   Represents a base class for strong typed Open XML document classes.
+/// </summary>
 public static class OpenXmlPackageConverter
 {
   /// <summary>

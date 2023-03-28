@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Single Caption Type Definition converter from/to OpenXml.
-///</summary>
+/// Single Caption Type Definition.
+/// </summary>
 public static class CaptionConverter
 {
   /// <summary>

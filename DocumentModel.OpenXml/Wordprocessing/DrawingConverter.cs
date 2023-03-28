@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// DrawingML Object converter from/to OpenXml.
-///</summary>
+/// DrawingML Object.
+/// </summary>
 public static class DrawingConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the FormatOverrides Class converter from/to OpenXml.
-///</summary>
+/// Defines the FormatOverrides Class.
+/// </summary>
 public static class FormatOverridesConverter
 {
   private static Collection<DMDrawsChartDraws.FormatOverride>? GetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement)

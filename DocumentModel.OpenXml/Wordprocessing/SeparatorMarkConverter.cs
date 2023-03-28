@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ReferenceMark element converter from/to OpenXml.
-///</summary>
+/// ReferenceMark element converter.
+/// </summary>
 public static class SeparatorMarkConverter
 {
   public static DMW.SeparatorMark? CreateModelElement(DXW.SeparatorMark? openXmlElement)

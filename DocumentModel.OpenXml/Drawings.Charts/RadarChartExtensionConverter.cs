@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the RadarChartExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the RadarChartExtension Class.
+/// </summary>
 public static class RadarChartExtensionConverter
 {
   /// <summary>

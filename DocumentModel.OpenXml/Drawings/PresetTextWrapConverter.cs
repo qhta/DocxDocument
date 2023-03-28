@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Preset Text Warp converter from/to OpenXml.
-///</summary>
+/// Preset Text Warp.
+/// </summary>
 public static class PresetTextWrapConverter
 {
   /// <summary>

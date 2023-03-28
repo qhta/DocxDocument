@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Rule Set converter from/to OpenXml.
-///</summary>
+/// Rule Set.
+/// </summary>
 public static class RulesConverter
 {
   /// <summary>

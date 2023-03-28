@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the SplitButtonRegular Class converter from/to OpenXml.
-///</summary>
+/// Defines the SplitButtonRegular Class.
+/// </summary>
 public static class SplitButtonRegularConverter
 {
   /// <summary>

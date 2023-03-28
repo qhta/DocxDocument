@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Table-Level Property Exceptions converter from/to OpenXml.
-///</summary>
+/// Previous Table-Level Property Exceptions.
+/// </summary>
 public static class PreviousTablePropertyExceptionsConverter
 {
   /// <summary>

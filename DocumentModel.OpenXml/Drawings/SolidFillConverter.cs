@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the SolidFill Class converter from/to OpenXml.
-///</summary>
+/// Defines the SolidFill Class.
+/// </summary>
 public static class SolidFillConverter
 {
   /// <summary>

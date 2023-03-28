@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Series Text converter from/to OpenXml.
-///</summary>
+/// Series Text.
+/// </summary>
 public static class SeriesTextConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Algorithm converter from/to OpenXml.
-///</summary>
+/// Algorithm.
+/// </summary>
 public static class AlgorithmConverter
 {
   /// <summary>

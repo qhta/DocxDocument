@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents an internal reference relationship to a DataPart element converter from/to OpenXml.
-///</summary>
+/// Represents an internal reference relationship to a DataPart element.
+/// </summary>
 public static class DataPartReferenceRelationshipConverter
 {
   public static DocumentModel.Packaging.DataPartReferenceRelationship? CreateModelElement(DXPack.DataPartReferenceRelationship? openXmlElement)

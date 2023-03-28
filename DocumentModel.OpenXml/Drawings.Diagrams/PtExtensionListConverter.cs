@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the PtExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the PtExtensionList Class.
+/// </summary>
 public static class PtExtensionListConverter
 {
   private static Collection<DMDraws.PtExtension>? GetPtExtensions(DXDrawDgms.PtExtensionList openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Title converter from/to OpenXml.
-///</summary>
+/// Title.
+/// </summary>
 public static class TitleConverter
 {
   /// <summary>

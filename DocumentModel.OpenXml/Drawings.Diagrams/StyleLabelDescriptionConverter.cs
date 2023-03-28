@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Style Label Description converter from/to OpenXml.
-///</summary>
+/// Style Label Description.
+/// </summary>
 public static class StyleLabelDescriptionConverter
 {
   /// <summary>

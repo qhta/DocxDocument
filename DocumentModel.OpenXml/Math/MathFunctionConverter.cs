@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Function Apply Function converter from/to OpenXml.
-///</summary>
+/// Function Apply Function.
+/// </summary>
 public static class MathFunctionConverter
 {
   /// <summary>

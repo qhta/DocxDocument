@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// String Point converter from/to OpenXml.
-///</summary>
+/// String Point.
+/// </summary>
 public static class StringPointConverter
 {
   /// <summary>

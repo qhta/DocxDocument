@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Level converter from/to OpenXml.
-///</summary>
+/// Level.
+/// </summary>
 public static class LevelConverter
 {
   private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.Level openXmlElement)

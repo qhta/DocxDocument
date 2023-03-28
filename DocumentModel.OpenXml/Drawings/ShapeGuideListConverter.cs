@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List of Shape Guides converter from/to OpenXml.
-///</summary>
+/// List of Shape Guides.
+/// </summary>
 public static class ShapeGuideListConverter
 {
   private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.ShapeGuideList openXmlElement)

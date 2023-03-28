@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the MarkerLayoutProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the MarkerLayoutProperties Class.
+/// </summary>
 public static class MarkerLayoutPropertiesConverter
 {
   /// <summary>

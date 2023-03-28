@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the CommentAnchor Class converter from/to OpenXml.
-///</summary>
+/// Defines the CommentAnchor Class.
+/// </summary>
 public static class CommentAnchorConverter
 {
   /// <summary>

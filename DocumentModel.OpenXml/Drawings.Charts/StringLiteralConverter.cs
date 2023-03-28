@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// String Literal converter from/to OpenXml.
-///</summary>
+/// String Literal.
+/// </summary>
 public static class StringLiteralConverter
 {
   private static UInt32? GetPointCount(DXDrawCharts.StringLiteral openXmlElement)

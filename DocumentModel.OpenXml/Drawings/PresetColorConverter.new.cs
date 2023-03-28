@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Preset Color converter from/to OpenXml.
-///</summary>
+/// Preset Color.
+/// </summary>
 public static class PresetColorConverter
 {
   /// <summary>

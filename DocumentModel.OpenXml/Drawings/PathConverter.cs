@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Path converter from/to OpenXml.
-///</summary>
+/// Shape Path.
+/// </summary>
 public static class PathConverter
 {
   /// <summary>

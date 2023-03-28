@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Scaling converter from/to OpenXml.
-///</summary>
+/// Scaling.
+/// </summary>
 public static class ScalingConverter
 {
   /// <summary>

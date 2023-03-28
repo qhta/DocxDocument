@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Office Data Source Object Settings converter from/to OpenXml.
-///</summary>
+/// Office Data Source Object Settings.
+/// </summary>
 public static class DataSourceObjectConverter
 {
   /// <summary>

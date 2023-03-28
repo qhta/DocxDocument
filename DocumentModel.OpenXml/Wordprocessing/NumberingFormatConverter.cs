@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Footnote Numbering Format converter from/to OpenXml.
-///</summary>
+/// Footnote Numbering Format.
+/// </summary>
 public static class NumberingFormatConverter
 {
   /// <summary>

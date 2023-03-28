@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Ending Anchor Point converter from/to OpenXml.
-///</summary>
+/// Ending Anchor Point.
+/// </summary>
 public static class ToAnchorConverter
 {
   private static String? GetXPosition(DXDrawChartDraw.ToAnchor openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Indentation Class converter from/to OpenXml.
-///</summary>
+/// Defines the Indentation Class.
+/// </summary>
 public static class IndentationConverter
 {
   /// <summary>

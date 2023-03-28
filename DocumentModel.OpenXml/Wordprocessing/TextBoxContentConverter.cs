@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Rich Text Box Content Container converter from/to OpenXml.
-///</summary>
+/// Rich Text Box Content Container.
+/// </summary>
 public static class TextBoxContentConverter
 {
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.TextBoxContent openXmlElement)

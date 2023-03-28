@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the ExtensionList Class.
+/// </summary>
 public static class ExtensionListConverter
 {
   private static Collection<DMW.Extension>? GetExtensions(DXO2021WComtExt.ExtensionList openXmlElement)

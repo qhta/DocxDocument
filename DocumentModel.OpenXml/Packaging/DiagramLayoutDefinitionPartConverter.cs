@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramLayoutDefinitionPar converter from/to OpenXml.
-///</summary>
+/// Defines the DiagramLayoutDefinitionPart
+/// </summary>
 public static class DiagramLayoutDefinitionPartConverter
 {
   private static String? GetContentType(DXPack.DiagramLayoutDefinitionPart openXmlElement)

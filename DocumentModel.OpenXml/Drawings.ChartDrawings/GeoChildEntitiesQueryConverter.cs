@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildEntitiesQuery Class converter from/to OpenXml.
-///</summary>
+/// Defines the GeoChildEntitiesQuery Class.
+/// </summary>
 public static class GeoChildEntitiesQueryConverter
 {
   /// <summary>

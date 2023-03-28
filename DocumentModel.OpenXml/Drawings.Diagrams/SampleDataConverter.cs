@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the SampleData Class converter from/to OpenXml.
-///</summary>
+/// Defines the SampleData Class.
+/// </summary>
 public static class SampleDataConverter
 {
   private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.SampleData openXmlElement)

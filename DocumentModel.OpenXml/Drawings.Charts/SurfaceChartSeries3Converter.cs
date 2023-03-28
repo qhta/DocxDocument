@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceChartSeries Class converter from/to OpenXml.
-///</summary>
+/// Defines the SurfaceChartSeries Class.
+/// </summary>
 public static class SurfaceChartSeries3Converter
 {
   /// <summary>

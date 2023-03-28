@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartShapeProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the ChartShapeProperties Class.
+/// </summary>
 public static class ChartShapePropertiesConverter
 {
   /// <summary>

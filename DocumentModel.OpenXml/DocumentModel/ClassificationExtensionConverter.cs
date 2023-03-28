@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ClassificationExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the ClassificationExtension Class.
+/// </summary>
 public static class ClassificationExtensionConverter
 {
   /// <summary>

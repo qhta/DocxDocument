@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Extension converter from/to OpenXml.
-///</summary>
+/// Extension.
+/// </summary>
 public static class ExtensionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines Styles converter from/to OpenXml.
-///</summary>
+/// Defines Styles.
+/// </summary>
 public static class StylesConverter
 {
   /// <summary>

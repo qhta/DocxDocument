@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Paragraphs converter from/to OpenXml.
-///</summary>
+/// Text Paragraphs.
+/// </summary>
 public static class ParagraphConverter
 {
   /// <summary>

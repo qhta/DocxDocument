@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PathShadeProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the PathShadeProperties Class.
+/// </summary>
 public static class PathShadePropertiesConverter
 {
   /// <summary>

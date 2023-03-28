@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the ErrorBar Class converter from/to OpenXml.
-///</summary>
+/// Defines the ErrorBar Class.
+/// </summary>
 public static class ErrorBarConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.ErrorBar openXmlElement)

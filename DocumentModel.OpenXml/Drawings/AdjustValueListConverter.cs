@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List of Shape Adjust Values converter from/to OpenXml.
-///</summary>
+/// List of Shape Adjust Values.
+/// </summary>
 public static class AdjustValueListConverter
 {
   private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.AdjustValueList openXmlElement)

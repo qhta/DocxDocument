@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the HeaderFooterReferenceType Class converter from/to OpenXml.
-///</summary>
+/// Defines the HeaderFooterReferenceType Class.
+/// </summary>
 public static class HeaderFooterReferenceTypeConverter
 {
   /// <summary>

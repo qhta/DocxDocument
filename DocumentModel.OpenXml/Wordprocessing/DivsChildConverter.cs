@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Child div Elements Contained within Current div converter from/to OpenXml.
-///</summary>
+/// Child div Elements Contained within Current div.
+/// </summary>
 public static class DivsChildConverter
 {
   private static DMW.Div? GetDiv(DXW.DivsChild openXmlElement)

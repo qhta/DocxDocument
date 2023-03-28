@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Chart to Animate converter from/to OpenXml.
-///</summary>
+/// Chart to Animate.
+/// </summary>
 public static class ChartConverter
 {
   /// <summary>

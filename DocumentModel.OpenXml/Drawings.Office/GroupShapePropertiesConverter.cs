@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the GroupShapeProperties Class.
+/// </summary>
 public static class GroupShapePropertiesConverter
 {
   /// <summary>

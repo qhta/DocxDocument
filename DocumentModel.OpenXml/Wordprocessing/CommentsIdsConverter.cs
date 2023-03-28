@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsIds Class converter from/to OpenXml.
-///</summary>
+/// Defines the CommentsIds Class.
+/// </summary>
 public static class CommentsIdsConverter
 {
   private static Collection<DMW.CommentId>? GetCommentIds(DXO2019WCid.CommentsIds openXmlElement)

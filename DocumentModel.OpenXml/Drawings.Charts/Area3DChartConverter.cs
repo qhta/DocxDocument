@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D Area Charts converter from/to OpenXml.
-///</summary>
+/// 3D Area Charts.
+/// </summary>
 public static class Area3DChartConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Line Color List converter from/to OpenXml.
-///</summary>
+/// Line Color List.
+/// </summary>
 public static class LineColorListConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDrawDgms.LineColorList openXmlElement)

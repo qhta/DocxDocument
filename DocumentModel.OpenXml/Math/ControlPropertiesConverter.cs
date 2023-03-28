@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Control Properties converter from/to OpenXml.
-///</summary>
+/// Control Properties.
+/// </summary>
 public static class ControlPropertiesConverter
 {
   private static DMW.RunProperties? GetRunProperties(DXMath.ControlProperties openXmlElement)

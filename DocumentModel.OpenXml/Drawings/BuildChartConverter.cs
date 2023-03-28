@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Build Chart converter from/to OpenXml.
-///</summary>
+/// Build Chart.
+/// </summary>
 public static class BuildChartConverter
 {
   /// <summary>

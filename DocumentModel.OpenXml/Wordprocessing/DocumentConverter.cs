@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document converter from/to OpenXml.
-///</summary>
+/// Document.
+/// </summary>
 public static class DocumentConverter
 {
   /// <summary>

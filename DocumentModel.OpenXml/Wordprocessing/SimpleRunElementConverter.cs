@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Simple run element converte converter from/to OpenXml.
-///</summary>
+/// Simple run element converter
+/// </summary>
 public static class SimpleRunElementConverter
 {
   public static DMW.PageNumber? CreateModelElement(DXW.PageNumber? openXmlElement)

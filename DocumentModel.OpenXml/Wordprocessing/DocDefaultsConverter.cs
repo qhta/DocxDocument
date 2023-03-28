@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Default Paragraph and Run Properties converter from/to OpenXml.
-///</summary>
+/// Document Default Paragraph and Run Properties.
+/// </summary>
 public static class DocDefaultsConverter
 {
   /// <summary>

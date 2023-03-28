@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Inline Embedded Object converter from/to OpenXml.
-///</summary>
+/// Inline Embedded Object.
+/// </summary>
 public static class EmbeddedObjectConverter
 {
   /// <summary>

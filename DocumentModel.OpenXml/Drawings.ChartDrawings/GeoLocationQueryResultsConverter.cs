@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocationQueryResults Class converter from/to OpenXml.
-///</summary>
+/// Defines the GeoLocationQueryResults Class.
+/// </summary>
 public static class GeoLocationQueryResultsConverter
 {
   private static Collection<DMDrawsChartDraws.GeoLocationQueryResult>? GetItems(DXO2016DrawChartDraw.GeoLocationQueryResults openXmlElement)

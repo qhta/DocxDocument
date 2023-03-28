@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Space After converter from/to OpenXml.
-///</summary>
+/// Space After.
+/// </summary>
 public static class SpaceAfterConverter
 {
   private static Int32? GetSpacingPercent(DXDraw.SpaceAfter openXmlElement)

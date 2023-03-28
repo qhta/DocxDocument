@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the StylisticSets Class converter from/to OpenXml.
-///</summary>
+/// Defines the StylisticSets Class.
+/// </summary>
 public static class StylisticSetsConverter
 {
   private static Collection<DMW.StyleSet>? GetStyleSets(DXO2010W.StylisticSets openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Magnification Setting converter from/to OpenXml.
-///</summary>
+/// Magnification Setting.
+/// </summary>
 public static class ZoomConverter
 {
   /// <summary>

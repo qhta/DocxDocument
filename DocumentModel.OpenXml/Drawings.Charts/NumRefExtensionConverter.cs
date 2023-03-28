@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumRefExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the NumRefExtension Class.
+/// </summary>
 public static class NumRefExtensionConverter
 {
   /// <summary>

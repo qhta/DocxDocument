@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Handle converter from/to OpenXml.
-///</summary>
+/// Shape Handle.
+/// </summary>
 public static class ShapeHandleConverter
 {
   /// <summary>

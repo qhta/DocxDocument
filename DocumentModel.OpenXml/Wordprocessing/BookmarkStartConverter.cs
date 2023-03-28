@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BookmarkStart Class converter from/to OpenXml.
-///</summary>
+/// Defines the BookmarkStart Class.
+/// </summary>
 public static class BookmarkStartConverter
 {
   /// <summary>

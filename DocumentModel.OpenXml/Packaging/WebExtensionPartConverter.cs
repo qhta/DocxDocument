@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WebExtensionPar converter from/to OpenXml.
-///</summary>
+/// Defines the WebExtensionPart
+/// </summary>
 public static class WebExtensionPartConverter
 {
   private static String? GetContentType(DXPack.WebExtensionPart openXmlElement)

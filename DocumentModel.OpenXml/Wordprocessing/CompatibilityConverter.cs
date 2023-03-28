@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Compatibility Settings converter from/to OpenXml.
-///</summary>
+/// Compatibility Settings.
+/// </summary>
 public static class CompatibilityConverter
 {
   /// <summary>

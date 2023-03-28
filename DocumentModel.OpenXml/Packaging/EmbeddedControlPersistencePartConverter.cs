@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the EmbeddedControlPersistencePar converter from/to OpenXml.
-///</summary>
+/// Defines the EmbeddedControlPersistencePart
+/// </summary>
 public static class EmbeddedControlPersistencePartConverter
 {
   /// <summary>

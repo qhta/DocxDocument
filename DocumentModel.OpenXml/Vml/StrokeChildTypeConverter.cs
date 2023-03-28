@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the StrokeChildType Class converter from/to OpenXml.
-///</summary>
+/// Defines the StrokeChildType Class.
+/// </summary>
 public static class StrokeChildTypeConverter
 {
   /// <summary>

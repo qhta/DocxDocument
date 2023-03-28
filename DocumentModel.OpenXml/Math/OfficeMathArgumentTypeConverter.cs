@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Defines the OfficeMathArgumentType Class converter from/to OpenXml.
-///</summary>
+/// Defines the OfficeMathArgumentType Class.
+/// </summary>
 public static class OfficeMathArgumentTypeConverter
 {
   /// <summary>

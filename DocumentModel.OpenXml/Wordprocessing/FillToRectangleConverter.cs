@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FillToRectangle Class converter from/to OpenXml.
-///</summary>
+/// Defines the FillToRectangle Class.
+/// </summary>
 public static class FillToRectangleConverter
 {
   /// <summary>

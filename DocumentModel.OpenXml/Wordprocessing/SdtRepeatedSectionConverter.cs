@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtRepeatedSection Class converter from/to OpenXml.
-///</summary>
+/// Defines the SdtRepeatedSection Class.
+/// </summary>
 public static class SdtRepeatedSectionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the Highlight Class converter from/to OpenXml.
-///</summary>
+/// Defines the Highlight Class.
+/// </summary>
 public static class HighlightConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Highlight openXmlElement)

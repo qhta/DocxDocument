@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DataLabelCallout Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataLabelCallout Class.
+/// </summary>
 public static class DataLabelCalloutConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataLabelCallout openXmlElement)

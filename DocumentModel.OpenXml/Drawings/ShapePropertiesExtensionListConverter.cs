@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ShapePropertiesExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the ShapePropertiesExtensionList Class.
+/// </summary>
 public static class ShapePropertiesExtensionListConverter
 {
   private static Collection<DMDraws.ShapePropertiesExtension>? GetShapePropertiesExtensions(DXDraw.ShapePropertiesExtensionList openXmlElement)

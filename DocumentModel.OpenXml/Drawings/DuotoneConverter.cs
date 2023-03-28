@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Duotone Effect converter from/to OpenXml.
-///</summary>
+/// Duotone Effect.
+/// </summary>
 public static class DuotoneConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.Duotone openXmlElement)

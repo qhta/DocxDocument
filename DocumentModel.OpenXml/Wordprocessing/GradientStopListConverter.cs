@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientStopList Class converter from/to OpenXml.
-///</summary>
+/// Defines the GradientStopList Class.
+/// </summary>
 public static class GradientStopListConverter
 {
   private static Collection<DMW.GradientStop>? GetGradientStops(DXO2010W.GradientStopList openXmlElement)

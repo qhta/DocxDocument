@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CustomXmlRun Class converter from/to OpenXml.
-///</summary>
+/// Defines the CustomXmlRun Class.
+/// </summary>
 public static class CustomXmlRunConverter
 {
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlRun openXmlElement)

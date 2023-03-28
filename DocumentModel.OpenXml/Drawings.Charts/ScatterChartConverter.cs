@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Scatter Charts converter from/to OpenXml.
-///</summary>
+/// Scatter Charts.
+/// </summary>
 public static class ScatterChartConverter
 {
   /// <summary>

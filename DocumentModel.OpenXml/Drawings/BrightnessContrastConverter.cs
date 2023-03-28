@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BrightnessContrast Class converter from/to OpenXml.
-///</summary>
+/// Defines the BrightnessContrast Class.
+/// </summary>
 public static class BrightnessContrastConverter
 {
   /// <summary>

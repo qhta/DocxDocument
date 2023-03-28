@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Relative Offset Effect converter from/to OpenXml.
-///</summary>
+/// Relative Offset Effect.
+/// </summary>
 public static class RelativeOffsetConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines MailMergeRecipients converter from/to OpenXml.
-///</summary>
+/// Defines MailMergeRecipients.
+/// </summary>
 public static class MailMergeRecipientsConverter
 {
   private static DMW.SingleDataSourceRecord? GetSingleDataSourceRecord(DXOW.MailMergeRecipients openXmlElement)

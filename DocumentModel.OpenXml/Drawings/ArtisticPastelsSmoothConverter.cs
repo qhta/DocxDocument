@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPastelsSmooth Class converter from/to OpenXml.
-///</summary>
+/// Defines the ArtisticPastelsSmooth Class.
+/// </summary>
 public static class ArtisticPastelsSmoothConverter
 {
   /// <summary>

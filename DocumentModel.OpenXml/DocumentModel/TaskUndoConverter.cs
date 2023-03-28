@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskUndo Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskUndo Class.
+/// </summary>
 public static class TaskUndoConverter
 {
   /// <summary>

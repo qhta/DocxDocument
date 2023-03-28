@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Glow Effect converter from/to OpenXml.
-///</summary>
+/// Glow Effect.
+/// </summary>
 public static class GlowConverter
 {
   /// <summary>

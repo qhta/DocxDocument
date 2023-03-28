@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Cell-Level Structured Document Tag converter from/to OpenXml.
-///</summary>
+/// Cell-Level Structured Document Tag.
+/// </summary>
 public static class SdtCellConverter
 {
   #region SdtContentCell elements conversion

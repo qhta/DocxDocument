@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the SharpenSoften Class converter from/to OpenXml.
-///</summary>
+/// Defines the SharpenSoften Class.
+/// </summary>
 public static class SharpenSoftenConverter
 {
   /// <summary>

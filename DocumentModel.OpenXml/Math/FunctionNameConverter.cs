@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Function Name converter from/to OpenXml.
-///</summary>
+/// Function Name.
+/// </summary>
 public static class FunctionNameConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.FunctionName openXmlElement)

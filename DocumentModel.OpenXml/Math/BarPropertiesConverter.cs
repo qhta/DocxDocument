@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Bar Properties converter from/to OpenXml.
-///</summary>
+/// Bar Properties.
+/// </summary>
 public static class BarPropertiesConverter
 {
   /// <summary>

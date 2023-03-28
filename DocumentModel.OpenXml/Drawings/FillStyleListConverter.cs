@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Fill Style List converter from/to OpenXml.
-///</summary>
+/// Fill Style List.
+/// </summary>
 public static class FillStyleListConverter
 {
   private static Boolean? GetNoFill(DXDraw.FillStyleList openXmlElement)

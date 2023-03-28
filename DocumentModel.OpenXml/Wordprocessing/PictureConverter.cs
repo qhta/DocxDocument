@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// VML Object converter from/to OpenXml.
-///</summary>
+/// VML Object.
+/// </summary>
 public static class PictureConverter
 {
   /// <summary>

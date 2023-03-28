@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the StylesWithEffectsPar converter from/to OpenXml.
-///</summary>
+/// Defines the StylesWithEffectsPart
+/// </summary>
 public static class StylesWithEffectsPartConverter
 {
   private static String? GetContentType(DXPack.StylesWithEffectsPart openXmlElement)

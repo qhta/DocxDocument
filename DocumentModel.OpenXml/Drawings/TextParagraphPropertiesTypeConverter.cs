@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextParagraphPropertiesType Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextParagraphPropertiesType Class.
+/// </summary>
 public static class TextParagraphPropertiesTypeConverter
 {
   /// <summary>

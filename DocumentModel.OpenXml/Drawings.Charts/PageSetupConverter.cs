@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Page Setup converter from/to OpenXml.
-///</summary>
+/// Page Setup.
+/// </summary>
 public static class PageSetupConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Phonetic Guide Properties converter from/to OpenXml.
-///</summary>
+/// Phonetic Guide Properties.
+/// </summary>
 public static class RubyPropertiesConverter
 {
   /// <summary>

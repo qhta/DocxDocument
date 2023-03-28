@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PermEnd Class converter from/to OpenXml.
-///</summary>
+/// Defines the PermEnd Class.
+/// </summary>
 public static class PermEndConverter
 {
   /// <summary>

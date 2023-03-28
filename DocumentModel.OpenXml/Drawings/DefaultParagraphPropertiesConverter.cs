@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Default Paragraph Style converter from/to OpenXml.
-///</summary>
+/// Default Paragraph Style.
+/// </summary>
 public static class DefaultParagraphPropertiesConverter
 {
   private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.DefaultParagraphProperties openXmlElement)

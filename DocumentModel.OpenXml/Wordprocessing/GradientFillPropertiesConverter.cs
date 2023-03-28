@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientFillProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the GradientFillProperties Class.
+/// </summary>
 public static class GradientFillPropertiesConverter
 {
   /// <summary>

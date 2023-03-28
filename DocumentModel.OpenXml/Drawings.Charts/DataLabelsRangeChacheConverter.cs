@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelsRangeChache Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataLabelsRangeChache Class.
+/// </summary>
 public static class DataLabelsRangeChacheConverter
 {
   private static UInt32? GetPointCount(DXO2013DrawChart.DataLabelsRangeChache openXmlElement)

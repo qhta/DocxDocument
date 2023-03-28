@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleChartExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the BubbleChartExtensionList Class.
+/// </summary>
 public static class BubbleChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.BubbleChartExtension>? GetBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement)

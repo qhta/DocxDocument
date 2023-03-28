@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Color Transform Definitions converter from/to OpenXml.
-///</summary>
+/// Color Transform Definitions.
+/// </summary>
 public static class ColorsDefinitionConverter
 {
   /// <summary>

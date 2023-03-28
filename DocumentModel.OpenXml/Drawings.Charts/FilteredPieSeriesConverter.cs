@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredPieSeries Class converter from/to OpenXml.
-///</summary>
+/// Defines the FilteredPieSeries Class.
+/// </summary>
 public static class FilteredPieSeriesConverter
 {
   /// <summary>

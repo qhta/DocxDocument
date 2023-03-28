@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Control Class converter from/to OpenXml.
-///</summary>
+/// Defines the Control Class.
+/// </summary>
 public static class ControlConverter
 {
   /// <summary>

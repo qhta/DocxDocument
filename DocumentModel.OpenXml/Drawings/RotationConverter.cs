@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Rotation converter from/to OpenXml.
-///</summary>
+/// Rotation.
+/// </summary>
 public static class RotationConverter
 {
   /// <summary>

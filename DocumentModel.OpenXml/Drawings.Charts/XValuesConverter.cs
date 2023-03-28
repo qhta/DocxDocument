@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the XValues Class converter from/to OpenXml.
-///</summary>
+/// Defines the XValues Class.
+/// </summary>
 public static class XValuesConverter
 {
   private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement)

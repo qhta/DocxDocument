@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkOnMouseOver Class converter from/to OpenXml.
-///</summary>
+/// Defines the HyperlinkOnMouseOver Class.
+/// </summary>
 public static class HyperlinkOnMouseOverConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnMouseOver openXmlElement)

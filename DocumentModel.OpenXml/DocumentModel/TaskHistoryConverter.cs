@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskHistory Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskHistory Class.
+/// </summary>
 public static class TaskHistoryConverter
 {
   private static Collection<DM.TaskHistoryEvent>? GetTaskHistoryEvents(DXO2021DocTasks.TaskHistory openXmlElement)

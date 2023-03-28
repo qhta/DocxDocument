@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the ValueAxis Class converter from/to OpenXml.
-///</summary>
+/// Defines the ValueAxis Class.
+/// </summary>
 public static class ValueAxisConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.ValueAxis openXmlElement)

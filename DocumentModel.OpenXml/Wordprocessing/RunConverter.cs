@@ -6,8 +6,8 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Text run element converte converter from/to OpenXml.
-///</summary>
+/// Text run element converter
+/// </summary>
 public static class RunConverter
 {
   #region Revision Identifier for Run conversion

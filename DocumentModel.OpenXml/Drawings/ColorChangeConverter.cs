@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Color Change Effect converter from/to OpenXml.
-///</summary>
+/// Color Change Effect.
+/// </summary>
 public static class ColorChangeConverter
 {
   /// <summary>

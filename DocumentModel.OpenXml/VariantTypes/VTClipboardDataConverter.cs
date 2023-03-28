@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.VariantTypes;
 
 /// <summary>
-/// Clipboard Data converter from/to OpenXml.
-///</summary>
+/// Clipboard Data.
+/// </summary>
 public static class VTClipboardDataConverter
 {
   /// <summary>

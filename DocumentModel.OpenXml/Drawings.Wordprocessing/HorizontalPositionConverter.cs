@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Horizontal Positioning converter from/to OpenXml.
-///</summary>
+/// Horizontal Positioning.
+/// </summary>
 public static class HorizontalPositionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Break converter from/to OpenXml.
-///</summary>
+/// Break.
+/// </summary>
 public static class BreakConverter
 {
   /// <summary>

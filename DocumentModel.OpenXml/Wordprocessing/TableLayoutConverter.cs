@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableLayout Class converter from/to OpenXml.
-///</summary>
+/// Defines the TableLayout Class.
+/// </summary>
 public static class TableLayoutConverter
 {
   /// <summary>

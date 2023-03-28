@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the VerticalSeparator Class converter from/to OpenXml.
-///</summary>
+/// Defines the VerticalSeparator Class.
+/// </summary>
 public static class VerticalSeparatorConverter
 {
   /// <summary>

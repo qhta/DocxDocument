@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Hyperlink Class converter from/to OpenXml.
-///</summary>
+/// Defines the Hyperlink Class.
+/// </summary>
 public static class HyperlinkConverter
 {
   /// <summary>

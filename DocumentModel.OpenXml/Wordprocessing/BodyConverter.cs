@@ -7,8 +7,8 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Body class conversion method converter from/to OpenXml.
-///</summary>
+/// Defines the Body class conversion methods
+/// </summary>
 public static class BodyConverter
 {
   #region Body elements conversion

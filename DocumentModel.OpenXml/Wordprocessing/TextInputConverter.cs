@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Text Box Form Field Properties converter from/to OpenXml.
-///</summary>
+/// Text Box Form Field Properties.
+/// </summary>
 public static class TextInputConverter
 {
   /// <summary>

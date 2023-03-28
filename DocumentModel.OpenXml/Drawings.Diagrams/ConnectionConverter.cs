@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Connection converter from/to OpenXml.
-///</summary>
+/// Connection.
+/// </summary>
 public static class ConnectionConverter
 {
   /// <summary>

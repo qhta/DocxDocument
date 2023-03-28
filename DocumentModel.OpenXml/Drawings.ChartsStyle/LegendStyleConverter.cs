@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the LegendStyle Class converter from/to OpenXml.
-///</summary>
+/// Defines the LegendStyle Class.
+/// </summary>
 public static class LegendStyleConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.LegendStyle openXmlElement)

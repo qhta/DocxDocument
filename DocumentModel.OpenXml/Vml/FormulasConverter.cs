@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Formulas Class converter from/to OpenXml.
-///</summary>
+/// Defines the Formulas Class.
+/// </summary>
 public static class FormulasConverter
 {
   private static Collection<DMVml.Formula>? GetItems(DXVml.Formulas openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the StockChartExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the StockChartExtensionList Class.
+/// </summary>
 public static class StockChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.StockChartExtension>? GetStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableIndentation Class converter from/to OpenXml.
-///</summary>
+/// Defines the TableIndentation Class.
+/// </summary>
 public static class TableIndentationConverter
 {
   /// <summary>

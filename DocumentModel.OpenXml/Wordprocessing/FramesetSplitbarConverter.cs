@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Frameset Splitter Properties converter from/to OpenXml.
-///</summary>
+/// Frameset Splitter Properties.
+/// </summary>
 public static class FramesetSplitbarConverter
 {
   /// <summary>

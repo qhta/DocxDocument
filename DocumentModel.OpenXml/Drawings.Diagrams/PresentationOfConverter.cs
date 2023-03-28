@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Presentation Of converter from/to OpenXml.
-///</summary>
+/// Presentation Of.
+/// </summary>
 public static class PresentationOfConverter
 {
   /// <summary>

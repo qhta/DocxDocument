@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the ContextualTabSets Class converter from/to OpenXml.
-///</summary>
+/// Defines the ContextualTabSets Class.
+/// </summary>
 public static class ContextualTabSetsConverter
 {
   private static Collection<DMUI.ContextualTabSet>? GetItems(DXOCustUI.ContextualTabSets openXmlElement)

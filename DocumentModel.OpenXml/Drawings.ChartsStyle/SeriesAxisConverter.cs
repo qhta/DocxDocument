@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the SeriesAxis Class converter from/to OpenXml.
-///</summary>
+/// Defines the SeriesAxis Class.
+/// </summary>
 public static class SeriesAxisConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.SeriesAxis openXmlElement)

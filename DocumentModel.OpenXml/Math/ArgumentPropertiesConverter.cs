@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Argument Properties converter from/to OpenXml.
-///</summary>
+/// Argument Properties.
+/// </summary>
 public static class ArgumentPropertiesConverter
 {
   /// <summary>

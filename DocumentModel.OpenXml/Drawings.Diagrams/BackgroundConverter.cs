@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Background Formatting converter from/to OpenXml.
-///</summary>
+/// Background Formatting.
+/// </summary>
 public static class BackgroundConverter
 {
   private static Boolean? GetNoFill(DXDrawDgms.Background openXmlElement)

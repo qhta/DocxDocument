@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the PivotTablePar converter from/to OpenXml.
-///</summary>
+/// Defines the PivotTablePart
+/// </summary>
 public static class PivotTablePartConverter
 {
   private static String? GetContentType(DXPack.PivotTablePart openXmlElement)

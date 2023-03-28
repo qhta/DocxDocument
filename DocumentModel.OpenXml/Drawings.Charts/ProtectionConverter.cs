@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Protection Class converter from/to OpenXml.
-///</summary>
+/// Defines the Protection Class.
+/// </summary>
 public static class ProtectionConverter
 {
   /// <summary>

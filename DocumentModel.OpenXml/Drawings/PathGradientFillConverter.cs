@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Path Gradient converter from/to OpenXml.
-///</summary>
+/// Path Gradient.
+/// </summary>
 public static class PathGradientFillConverter
 {
   /// <summary>

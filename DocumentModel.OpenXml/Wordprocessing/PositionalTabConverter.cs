@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Absolute Position Tab Character converter from/to OpenXml.
-///</summary>
+/// Absolute Position Tab Character.
+/// </summary>
 public static class PositionalTabConverter
 {
   /// <summary>

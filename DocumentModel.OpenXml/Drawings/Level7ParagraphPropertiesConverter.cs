@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List Level 7 Text Style converter from/to OpenXml.
-///</summary>
+/// List Level 7 Text Style.
+/// </summary>
 public static class Level7ParagraphPropertiesConverter
 {
   private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.Level7ParagraphProperties openXmlElement)

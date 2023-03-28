@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the LightRig Class converter from/to OpenXml.
-///</summary>
+/// Defines the LightRig Class.
+/// </summary>
 public static class LightRigConverter
 {
   /// <summary>

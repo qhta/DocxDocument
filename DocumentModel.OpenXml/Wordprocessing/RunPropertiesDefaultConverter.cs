@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Run Properties converter from/to OpenXml.
-///</summary>
+/// Default Run Properties.
+/// </summary>
 public static class RunPropertiesDefaultConverter
 {
   /// <summary>

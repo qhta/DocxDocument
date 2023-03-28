@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the SeriesLayoutProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the SeriesLayoutProperties Class.
+/// </summary>
 public static class SeriesLayoutPropertiesConverter
 {
   /// <summary>

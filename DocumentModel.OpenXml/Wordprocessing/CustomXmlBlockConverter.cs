@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CustomXmlBlock Class converter from/to OpenXml.
-///</summary>
+/// Defines the CustomXmlBlock Class.
+/// </summary>
 public static class CustomXmlBlockConverter
 {
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlBlock openXmlElement)

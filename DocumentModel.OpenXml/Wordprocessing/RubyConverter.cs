@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Phonetic Guide converter from/to OpenXml.
-///</summary>
+/// Phonetic Guide.
+/// </summary>
 public static class RubyConverter
 {
   /// <summary>

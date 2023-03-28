@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ExtrusionColor Class converter from/to OpenXml.
-///</summary>
+/// Defines the ExtrusionColor Class.
+/// </summary>
 public static class ExtrusionColorConverter
 {
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ExtrusionColor openXmlElement)

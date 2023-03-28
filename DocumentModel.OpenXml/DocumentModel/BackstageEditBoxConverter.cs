@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageEditBox Class converter from/to OpenXml.
-///</summary>
+/// Defines the BackstageEditBox Class.
+/// </summary>
 public static class BackstageEditBoxConverter
 {
   /// <summary>

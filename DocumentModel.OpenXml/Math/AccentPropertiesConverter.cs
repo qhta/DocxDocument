@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Accent Properties converter from/to OpenXml.
-///</summary>
+/// Accent Properties.
+/// </summary>
 public static class AccentPropertiesConverter
 {
   /// <summary>

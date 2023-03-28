@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Through Wrapping converter from/to OpenXml.
-///</summary>
+/// Through Wrapping.
+/// </summary>
 public static class WrapThroughConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Run Properties for the Paragraph Mark converter from/to OpenXml.
-///</summary>
+/// Run Properties for the Paragraph Mark.
+/// </summary>
 public static class ParagraphMarkRunPropertiesConverter
 {
   /// <summary>

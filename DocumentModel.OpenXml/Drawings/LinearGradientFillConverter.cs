@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Linear Gradient Fill converter from/to OpenXml.
-///</summary>
+/// Linear Gradient Fill.
+/// </summary>
 public static class LinearGradientFillConverter
 {
   /// <summary>

@@ -51,8 +51,8 @@ public delegate bool UpdateOpenXmlElementMethod(DX.OpenXmlElement openXmlElement
 ///      Second set contains methods used when an item conversion is handled in methods contained in same collection converters.
 ///      You must pass specific method delegates.
 /// </item>
-/// </list converter from/to OpenXml.
-///</summary>
+/// </list>
+/// </summary>
 public static class ElementCollectionConverter<T>
   where T : IModelElement
 {

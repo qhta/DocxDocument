@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines SdtElement - the base class for the sdt elements converter from/to OpenXml.
-///</summary>
+/// Defines SdtElement - the base class for the sdt elements.
+/// </summary>
 public static class SdtElementConverter
 {
   #region SdtProperties conversion

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SeriesLines Class converter from/to OpenXml.
-///</summary>
+/// Defines the SeriesLines Class.
+/// </summary>
 public static class SeriesLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.SeriesLines openXmlElement)

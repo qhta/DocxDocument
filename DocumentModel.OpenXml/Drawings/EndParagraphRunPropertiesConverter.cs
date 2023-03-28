@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// End Paragraph Run Properties converter from/to OpenXml.
-///</summary>
+/// End Paragraph Run Properties.
+/// </summary>
 public static class EndParagraphRunPropertiesConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.EndParagraphRunProperties openXmlElement)

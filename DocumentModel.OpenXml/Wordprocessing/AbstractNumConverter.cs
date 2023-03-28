@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Abstract Numbering Definition converter from/to OpenXml.
-///</summary>
+/// Abstract Numbering Definition.
+/// </summary>
 public static class AbstractNumConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Document Settings converter from/to OpenXml.
-///</summary>
+/// Document Settings.
+/// </summary>
 public static class DocumentSettingsConverter
 {
   /// <summary>

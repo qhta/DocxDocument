@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Legend data and formatting converter from/to OpenXml.
-///</summary>
+/// Legend data and formatting.
+/// </summary>
 public static class LegendConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Line Break converter from/to OpenXml.
-///</summary>
+/// Text Line Break.
+/// </summary>
 public static class BreakConverter
 {
   /// <summary>

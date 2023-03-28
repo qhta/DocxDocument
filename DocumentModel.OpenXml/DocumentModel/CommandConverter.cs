@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Command Class converter from/to OpenXml.
-///</summary>
+/// Defines the Command Class.
+/// </summary>
 public static class CommandConverter
 {
   /// <summary>

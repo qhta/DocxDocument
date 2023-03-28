@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BookmarkElement Class converter from/to OpenXml.
-///</summary>
+/// Defines the BookmarkElement Class.
+/// </summary>
 public static class BookmarkEndConverter
 {
   public static DMW.BookmarkEnd? CreateModelElement(DXW.BookmarkEnd? openXmlElement)

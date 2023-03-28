@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Data Model converter from/to OpenXml.
-///</summary>
+/// Data Model.
+/// </summary>
 public static class DataModelConverter
 {
   /// <summary>

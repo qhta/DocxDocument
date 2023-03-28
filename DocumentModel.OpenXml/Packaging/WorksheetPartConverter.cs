@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WorksheetPar converter from/to OpenXml.
-///</summary>
+/// Defines the WorksheetPart
+/// </summary>
 public static class WorksheetPartConverter
 {
   private static String? GetContentType(DXPack.WorksheetPart openXmlElement)

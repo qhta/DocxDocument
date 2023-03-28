@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundRemovedProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the BackgroundRemovedProperties Class.
+/// </summary>
 public static class BackgroundRemovedPropertiesConverter
 {
   /// <summary>

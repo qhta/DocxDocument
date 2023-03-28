@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Line Style List converter from/to OpenXml.
-///</summary>
+/// Line Style List.
+/// </summary>
 public static class LineStyleListConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.LineStyleList openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Marker Class converter from/to OpenXml.
-///</summary>
+/// Defines the Marker Class.
+/// </summary>
 public static class Marker3Converter
 {
   /// <summary>

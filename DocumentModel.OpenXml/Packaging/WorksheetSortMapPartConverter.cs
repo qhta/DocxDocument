@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WorksheetSortMapPar converter from/to OpenXml.
-///</summary>
+/// Defines the WorksheetSortMapPart
+/// </summary>
 public static class WorksheetSortMapPartConverter
 {
   private static String? GetContentType(DXPack.WorksheetSortMapPart openXmlElement)

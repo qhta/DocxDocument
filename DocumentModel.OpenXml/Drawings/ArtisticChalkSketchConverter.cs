@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticChalkSketch Class converter from/to OpenXml.
-///</summary>
+/// Defines the ArtisticChalkSketch Class.
+/// </summary>
 public static class ArtisticChalkSketchConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the DropDown Class converter from/to OpenXml.
-///</summary>
+/// Defines the DropDown Class.
+/// </summary>
 public static class DropDownConverter
 {
   /// <summary>

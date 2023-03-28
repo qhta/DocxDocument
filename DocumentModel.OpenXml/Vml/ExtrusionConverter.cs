@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// 3D Extrusion converter from/to OpenXml.
-///</summary>
+/// 3D Extrusion.
+/// </summary>
 public static class ExtrusionConverter
 {
   /// <summary>

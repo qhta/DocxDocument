@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Fraction Properties converter from/to OpenXml.
-///</summary>
+/// Fraction Properties.
+/// </summary>
 public static class FractionPropertiesConverter
 {
   /// <summary>

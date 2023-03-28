@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the TextBody Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextBody Class.
+/// </summary>
 public static class TextBodyConverter
 {
   /// <summary>

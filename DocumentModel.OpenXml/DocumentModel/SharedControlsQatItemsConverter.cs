@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the SharedControlsQatItems Class converter from/to OpenXml.
-///</summary>
+/// Defines the SharedControlsQatItems Class.
+/// </summary>
 public static class SharedControlsQatItemsConverter
 {
   private static DM.ControlCloneQat? GetControlCloneQat(DXO2010CustUI.SharedControlsQatItems openXmlElement)

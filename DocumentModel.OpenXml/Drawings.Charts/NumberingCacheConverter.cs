@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberingCache Class converter from/to OpenXml.
-///</summary>
+/// Defines the NumberingCache Class.
+/// </summary>
 public static class NumberingCacheConverter
 {
   private static String? GetFormatCode(DXDrawCharts.NumberingCache openXmlElement)

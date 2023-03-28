@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartSpaceExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the ChartSpaceExtension Class.
+/// </summary>
 public static class ChartSpaceExtensionConverter
 {
   /// <summary>

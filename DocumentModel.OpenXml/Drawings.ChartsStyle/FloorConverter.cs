@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the Floor Class converter from/to OpenXml.
-///</summary>
+/// Defines the Floor Class.
+/// </summary>
 public static class FloorConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.Floor openXmlElement)

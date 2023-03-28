@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Custom color converter from/to OpenXml.
-///</summary>
+/// Custom color.
+/// </summary>
 public static class CustomColorConverter
 {
   /// <summary>

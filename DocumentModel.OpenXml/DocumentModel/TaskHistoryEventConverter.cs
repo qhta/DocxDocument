@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskHistoryEvent Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskHistoryEvent Class.
+/// </summary>
 public static class TaskHistoryEventConverter
 {
   /// <summary>

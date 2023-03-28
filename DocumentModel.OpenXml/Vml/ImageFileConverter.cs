@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Image File converter from/to OpenXml.
-///</summary>
+/// Image File.
+/// </summary>
 public static class ImageFileConverter
 {
   /// <summary>

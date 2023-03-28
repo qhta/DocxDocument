@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentDate Class converter from/to OpenXml.
-///</summary>
+/// Defines the SdtContentDate Class.
+/// </summary>
 public static class SdtContentDateConverter
 {
   /// <summary>

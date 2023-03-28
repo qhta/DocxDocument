@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the LabelInfoPar converter from/to OpenXml.
-///</summary>
+/// Defines the LabelInfoPart
+/// </summary>
 public static class LabelInfoPartConverter
 {
   /// <summary>

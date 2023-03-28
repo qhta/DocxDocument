@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Commands Class converter from/to OpenXml.
-///</summary>
+/// Defines the Commands Class.
+/// </summary>
 public static class CommandsConverter
 {
   private static Collection<DM.Command>? GetItems(DXO2010CustUI.Commands openXmlElement)

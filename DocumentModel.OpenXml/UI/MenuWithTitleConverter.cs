@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the MenuWithTitle Class converter from/to OpenXml.
-///</summary>
+/// Defines the MenuWithTitle Class.
+/// </summary>
 public static class MenuWithTitleConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the XmlSignaturePar converter from/to OpenXml.
-///</summary>
+/// Defines the XmlSignaturePart
+/// </summary>
 public static class XmlSignaturePartConverter
 {
   private static String? GetContentType(DXPack.XmlSignaturePart openXmlElement)

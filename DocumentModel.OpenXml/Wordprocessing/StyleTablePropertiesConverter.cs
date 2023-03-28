@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Style Table Properties converter from/to OpenXml.
-///</summary>
+/// Style Table Properties.
+/// </summary>
 public static class StyleTablePropertiesConverter
 {
   /// <summary>

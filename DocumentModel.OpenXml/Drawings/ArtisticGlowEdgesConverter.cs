@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticGlowEdges Class converter from/to OpenXml.
-///</summary>
+/// Defines the ArtisticGlowEdges Class.
+/// </summary>
 public static class ArtisticGlowEdgesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PivotOptions Class converter from/to OpenXml.
-///</summary>
+/// Defines the PivotOptions Class.
+/// </summary>
 public static class PivotOptionsConverter
 {
   /// <summary>

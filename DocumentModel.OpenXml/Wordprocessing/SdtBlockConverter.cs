@@ -5,8 +5,8 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtBlock Class converter from/to OpenXml.
-///</summary>
+/// Defines the SdtBlock Class.
+/// </summary>
 public static class SdtBlockConverter
 {
 

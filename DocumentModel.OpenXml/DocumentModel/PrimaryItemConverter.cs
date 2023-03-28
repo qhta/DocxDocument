@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the PrimaryItem Class converter from/to OpenXml.
-///</summary>
+/// Defines the PrimaryItem Class.
+/// </summary>
 public static class PrimaryItemConverter
 {
   /// <summary>

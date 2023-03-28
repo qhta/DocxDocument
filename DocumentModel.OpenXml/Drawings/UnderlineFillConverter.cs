@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Underline Fill converter from/to OpenXml.
-///</summary>
+/// Underline Fill.
+/// </summary>
 public static class UnderlineFillConverter
 {
   /// <summary>

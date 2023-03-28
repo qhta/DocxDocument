@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Camera Class converter from/to OpenXml.
-///</summary>
+/// Defines the Camera Class.
+/// </summary>
 public static class CameraConverter
 {
   /// <summary>

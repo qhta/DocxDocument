@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the FillReference Class converter from/to OpenXml.
-///</summary>
+/// Defines the FillReference Class.
+/// </summary>
 public static class FillReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.FillReference openXmlElement)

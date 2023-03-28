@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ContextMenus Class converter from/to OpenXml.
-///</summary>
+/// Defines the ContextMenus Class.
+/// </summary>
 public static class ContextMenusConverter
 {
   private static Collection<DM.ContextMenu>? GetItems(DXO2010CustUI.ContextMenus openXmlElement)

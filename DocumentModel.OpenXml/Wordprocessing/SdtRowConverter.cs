@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml.EMMA;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Row-Level Structured Document Tag converter from/to OpenXml.
-///</summary>
+/// Row-Level Structured Document Tag.
+/// </summary>
 public static class SdtRowConverter
 {
   #region SdtContentRow elements conversion

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the RadioGroup Class converter from/to OpenXml.
-///</summary>
+/// Defines the RadioGroup Class.
+/// </summary>
 public static class RadioGroupConverter
 {
   /// <summary>
