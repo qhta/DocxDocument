@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the AlphaModulationFixed Class.
-/// </summary>
+/// Defines the AlphaModulationFixed Class converter from/to OpenXml.
+///</summary>
 public static class AlphaModulationFixedConverter
 {
   /// <summary>

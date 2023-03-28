@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the InsertedMathControl Class.
-/// </summary>
+/// Defines the InsertedMathControl Class converter from/to OpenXml.
+///</summary>
 public static class InsertedMathControlConverter
 {
   /// <summary>

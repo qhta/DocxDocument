@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PlotArea Class.
-/// </summary>
+/// Defines the PlotArea Class converter from/to OpenXml.
+///</summary>
 public static class PlotAreaConverter
 {
   /// <summary>

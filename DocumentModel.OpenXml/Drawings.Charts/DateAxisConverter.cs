@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Date Axis.
-/// </summary>
+/// Date Axis converter from/to OpenXml.
+///</summary>
 public static class DateAxisConverter
 {
   /// <summary>

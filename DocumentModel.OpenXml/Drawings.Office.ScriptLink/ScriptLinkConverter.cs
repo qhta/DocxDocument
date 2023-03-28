@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office.ScriptLink;
 
 /// <summary>
-/// Defines the ScriptLink Class.
-/// </summary>
+/// Defines the ScriptLink Class converter from/to OpenXml.
+///</summary>
 public static class ScriptLinkConverter
 {
   /// <summary>

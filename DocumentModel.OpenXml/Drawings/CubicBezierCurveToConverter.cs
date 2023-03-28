@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Draw Cubic Bezier Curve To.
-/// </summary>
+/// Draw Cubic Bezier Curve To converter from/to OpenXml.
+///</summary>
 public static class CubicBezierCurveToConverter
 {
   private static Collection<DMDraws.AdjustPoint2DType>? GetPoints(DXDraw.CubicBezierCurveTo openXmlElement)

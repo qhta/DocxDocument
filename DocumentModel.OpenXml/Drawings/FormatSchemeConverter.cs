@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Format Scheme.
-/// </summary>
+/// Format Scheme converter from/to OpenXml.
+///</summary>
 public static class FormatSchemeConverter
 {
   /// <summary>

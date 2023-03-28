@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Plot data and formatting.
-/// </summary>
+/// Plot data and formatting converter from/to OpenXml.
+///</summary>
 public static class PlotAreaConverter
 {
   /// <summary>

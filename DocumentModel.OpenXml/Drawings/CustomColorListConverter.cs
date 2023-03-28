@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the CustomColorList Class.
-/// </summary>
+/// Defines the CustomColorList Class converter from/to OpenXml.
+///</summary>
 public static class CustomColorListConverter
 {
   private static Collection<DMDraws.CustomColor>? GetCustomColors(DXDraw.CustomColorList openXmlElement)

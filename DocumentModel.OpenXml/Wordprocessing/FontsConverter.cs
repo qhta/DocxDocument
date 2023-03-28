@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Font Table Root Element.
-/// </summary>
+/// Font Table Root Element converter from/to OpenXml.
+///</summary>
 public static class FontsConverter
 {
   private static void GetItems(DXW.Fonts openXmlElement, ICollection<DMW.Font> collection)

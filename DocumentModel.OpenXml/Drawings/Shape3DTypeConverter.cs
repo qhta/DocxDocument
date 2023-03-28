@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Apply 3D shape properties.
-/// </summary>
+/// Apply 3D shape properties converter from/to OpenXml.
+///</summary>
 public static class Shape3DTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Theme.
-/// </summary>
+/// Theme converter from/to OpenXml.
+///</summary>
 public static class ThemeConverter
 {
   /// <summary>

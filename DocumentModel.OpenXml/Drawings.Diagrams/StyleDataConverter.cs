@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the StyleData Class.
-/// </summary>
+/// Defines the StyleData Class converter from/to OpenXml.
+///</summary>
 public static class StyleDataConverter
 {
   private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.StyleData openXmlElement)

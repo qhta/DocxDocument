@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Binning Class.
-/// </summary>
+/// Defines the Binning Class converter from/to OpenXml.
+///</summary>
 public static class BinningConverter
 {
   /// <summary>

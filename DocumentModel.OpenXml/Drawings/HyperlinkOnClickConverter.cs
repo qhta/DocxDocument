@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkOnClick Class.
-/// </summary>
+/// Defines the HyperlinkOnClick Class converter from/to OpenXml.
+///</summary>
 public static class HyperlinkOnClickConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnClick openXmlElement)

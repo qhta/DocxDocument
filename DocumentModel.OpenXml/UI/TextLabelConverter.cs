@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the TextLabel Class.
-/// </summary>
+/// Defines the TextLabel Class converter from/to OpenXml.
+///</summary>
 public static class TextLabelConverter
 {
   /// <summary>

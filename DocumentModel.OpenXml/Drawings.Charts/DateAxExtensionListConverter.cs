@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DateAxExtensionList Class.
-/// </summary>
+/// Defines the DateAxExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class DateAxExtensionListConverter
 {
   private static Collection<DMDrawsCharts.DateAxExtension>? GetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement)

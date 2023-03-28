@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Custom XML Schema Reference.
-/// </summary>
+/// Custom XML Schema Reference converter from/to OpenXml.
+///</summary>
 public static class SchemaConverter
 {
   /// <summary>

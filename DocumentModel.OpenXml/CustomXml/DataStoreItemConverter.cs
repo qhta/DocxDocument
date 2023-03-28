@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Custom XML Data Properties.
-/// </summary>
+/// Custom XML Data Properties converter from/to OpenXml.
+///</summary>
 public static class DataStoreItemConverter
 {
   /// <summary>

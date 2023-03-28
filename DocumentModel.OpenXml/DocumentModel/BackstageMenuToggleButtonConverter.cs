@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageMenuToggleButton Class.
-/// </summary>
+/// Defines the BackstageMenuToggleButton Class converter from/to OpenXml.
+///</summary>
 public static class BackstageMenuToggleButtonConverter
 {
   /// <summary>

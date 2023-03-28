@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Inserted Run Content.
-/// </summary>
+/// Inserted Run Content converter from/to OpenXml.
+///</summary>
 public static class InsertedRunConverter
 {
   private static DMW.SdtRun? GetSdtRun(DXW.InsertedRun openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines conversion method for content block content.
-/// </summary>
+/// Defines conversion method for content block content converter from/to OpenXml.
+///</summary>
 public static class ContentBlockContentConverter
 {
   public static DM.IModelElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)

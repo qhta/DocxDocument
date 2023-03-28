@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Digital Signature.
-/// </summary>
+///   Digital Signature converter from/to OpenXml.
+///</summary>
 public static class DigitalSignatureConverter
 {
   /// <summary>

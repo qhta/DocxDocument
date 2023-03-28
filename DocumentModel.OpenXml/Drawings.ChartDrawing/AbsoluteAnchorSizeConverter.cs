@@ -3,8 +3,8 @@ using DocumentModel.Drawings;
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Absolute Anchor Shape Size.
-/// </summary>
+/// Absolute Anchor Shape Size converter from/to OpenXml.
+///</summary>
 public static class AbsoluteAnchorSizeConverter
 {
   /// <summary>

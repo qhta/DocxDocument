@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredCategoryTitle Class.
-/// </summary>
+/// Defines the FilteredCategoryTitle Class converter from/to OpenXml.
+///</summary>
 public static class FilteredCategoryTitleConverter
 {
   /// <summary>

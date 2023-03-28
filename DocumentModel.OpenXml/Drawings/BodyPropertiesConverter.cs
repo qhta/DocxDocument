@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BodyProperties Class.
-/// </summary>
+/// Defines the BodyProperties Class converter from/to OpenXml.
+///</summary>
 public static class BodyPropertiesConverter
 {
   /// <summary>

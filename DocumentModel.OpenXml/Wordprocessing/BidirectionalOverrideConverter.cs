@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BidirectionalOverride Class.
-/// </summary>
+/// Defines the BidirectionalOverride Class converter from/to OpenXml.
+///</summary>
 public static class BidirectionalOverrideConverter
 {
   /// <summary>

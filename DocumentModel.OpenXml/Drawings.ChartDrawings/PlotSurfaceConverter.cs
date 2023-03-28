@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PlotSurface Class.
-/// </summary>
+/// Defines the PlotSurface Class converter from/to OpenXml.
+///</summary>
 public static class PlotSurfaceConverter
 {
   /// <summary>

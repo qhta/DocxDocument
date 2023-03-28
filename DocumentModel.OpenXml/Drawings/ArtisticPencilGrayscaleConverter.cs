@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPencilGrayscale Class.
-/// </summary>
+/// Defines the ArtisticPencilGrayscale Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticPencilGrayscaleConverter
 {
   /// <summary>

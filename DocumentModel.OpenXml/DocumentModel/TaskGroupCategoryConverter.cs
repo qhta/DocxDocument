@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskGroupCategory Class.
-/// </summary>
+/// Defines the TaskGroupCategory Class converter from/to OpenXml.
+///</summary>
 public static class TaskGroupCategoryConverter
 {
   /// <summary>

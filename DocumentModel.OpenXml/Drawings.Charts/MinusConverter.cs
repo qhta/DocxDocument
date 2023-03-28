@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Minus.
-/// </summary>
+/// Minus converter from/to OpenXml.
+///</summary>
 public static class MinusConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.Minus openXmlElement)

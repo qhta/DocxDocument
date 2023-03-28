@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionReferenceList Class.
-/// </summary>
+/// Defines the WebExtensionReferenceList Class converter from/to OpenXml.
+///</summary>
 public static class WebExtensionReferenceListConverter
 {
   private static Collection<DMWebExt.WebExtensionStoreReference>? GetWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement)

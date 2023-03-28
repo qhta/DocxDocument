@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ExtensionList Class.
-/// </summary>
+/// Defines the ExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class ExtensionListConverter
 {
   private static Collection<DM.Extension>? GetExtensions(DXO2021DocTasks.ExtensionList openXmlElement)

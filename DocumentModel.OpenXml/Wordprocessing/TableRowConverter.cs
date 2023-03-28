@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Row.
-/// </summary>
+/// Table Row converter from/to OpenXml.
+///</summary>
 public static class TableRowConverter
 {
   #region Revision Identifier for Table Row Glyph Formatting conversion

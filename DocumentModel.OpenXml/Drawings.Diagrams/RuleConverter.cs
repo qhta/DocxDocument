@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Rule.
-/// </summary>
+/// Rule converter from/to OpenXml.
+///</summary>
 public static class RuleConverter
 {
   /// <summary>

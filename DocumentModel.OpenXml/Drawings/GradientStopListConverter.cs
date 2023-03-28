@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Gradient Stop List.
-/// </summary>
+/// Gradient Stop List converter from/to OpenXml.
+///</summary>
 public static class GradientStopListConverter
 {
   private static DMDraws.GradientStop? GetGradientStop(DXDraw.GradientStopList openXmlElement)

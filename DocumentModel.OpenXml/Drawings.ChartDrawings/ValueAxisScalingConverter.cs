@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueAxisScaling Class.
-/// </summary>
+/// Defines the ValueAxisScaling Class converter from/to OpenXml.
+///</summary>
 public static class ValueAxisScalingConverter
 {
   /// <summary>

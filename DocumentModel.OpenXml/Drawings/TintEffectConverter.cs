@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TintEffect Class.
-/// </summary>
+/// Defines the TintEffect Class converter from/to OpenXml.
+///</summary>
 public static class TintEffectConverter
 {
   /// <summary>

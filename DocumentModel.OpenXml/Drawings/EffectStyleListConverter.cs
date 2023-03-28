@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect Style List.
-/// </summary>
+/// Effect Style List converter from/to OpenXml.
+///</summary>
 public static class EffectStyleListConverter
 {
   private static DMDraws.EffectStyle? GetEffectStyle(DXDraw.EffectStyleList openXmlElement)

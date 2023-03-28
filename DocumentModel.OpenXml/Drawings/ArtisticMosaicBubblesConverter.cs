@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticMosaicBubbles Class.
-/// </summary>
+/// Defines the ArtisticMosaicBubbles Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticMosaicBubblesConverter
 {
   /// <summary>

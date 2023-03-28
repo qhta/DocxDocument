@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FillTextEffect Class.
-/// </summary>
+/// Defines the FillTextEffect Class converter from/to OpenXml.
+///</summary>
 public static class FillTextEffectConverter
 {
   /// <summary>

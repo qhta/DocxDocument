@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Mcd Class.
-/// </summary>
+/// Defines the Mcd Class converter from/to OpenXml.
+///</summary>
 public static class McdConverter
 {
   /// <summary>

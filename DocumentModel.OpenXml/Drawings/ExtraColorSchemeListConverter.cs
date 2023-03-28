@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ExtraColorSchemeList Class.
-/// </summary>
+/// Defines the ExtraColorSchemeList Class converter from/to OpenXml.
+///</summary>
 public static class ExtraColorSchemeListConverter
 {
   private static Collection<DMDraws.ExtraColorScheme>? GetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement)

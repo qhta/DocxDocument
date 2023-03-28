@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the NumberingProperties Class.
-/// </summary>
+/// Defines the NumberingProperties Class converter from/to OpenXml.
+///</summary>
 public static class NumberingPropertiesConverter
 {
   /// <summary>

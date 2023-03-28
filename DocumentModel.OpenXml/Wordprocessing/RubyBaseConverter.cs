@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Phonetic Guide Base Text.
-/// </summary>
+/// Phonetic Guide Base Text converter from/to OpenXml.
+///</summary>
 public static class RubyBaseConverter
 {
   private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.RubyBase openXmlElement)

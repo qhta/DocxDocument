@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Definition Instance.
-/// </summary>
+/// Numbering Definition Instance converter from/to OpenXml.
+///</summary>
 public static class NumberingInstanceConverter
 {
   /// <summary>

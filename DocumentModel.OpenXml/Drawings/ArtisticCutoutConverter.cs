@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticCutout Class.
-/// </summary>
+/// Defines the ArtisticCutout Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticCutoutConverter
 {
   /// <summary>

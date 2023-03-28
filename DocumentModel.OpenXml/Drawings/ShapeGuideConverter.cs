@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Guide.
-/// </summary>
+/// Shape Guide converter from/to OpenXml.
+///</summary>
 public static class ShapeGuideConverter
 {
   /// <summary>

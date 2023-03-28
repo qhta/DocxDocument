@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ImagePart
-/// </summary>
+/// Defines the ImagePar converter from/to OpenXml.
+///</summary>
 public static class ImagePartConverter
 {
   private static String? GetRelationshipType(DXPack.ImagePart openXmlElement)

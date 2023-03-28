@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PtExtension Class.
-/// </summary>
+/// Defines the PtExtension Class converter from/to OpenXml.
+///</summary>
 public static class PtExtensionConverter
 {
   /// <summary>

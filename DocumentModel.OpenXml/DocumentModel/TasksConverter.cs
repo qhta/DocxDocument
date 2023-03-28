@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Tasks Class.
-/// </summary>
+/// Defines the Tasks Class converter from/to OpenXml.
+///</summary>
 public static class TasksConverter
 {
   private static Collection<DM.Task>? GetItems(DXO2021DocTasks.Tasks openXmlElement)

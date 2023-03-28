@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Trendline Class.
-/// </summary>
+/// Defines the Trendline Class converter from/to OpenXml.
+///</summary>
 public static class TrendlineConverter
 {
   /// <summary>

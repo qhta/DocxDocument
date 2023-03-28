@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ObjectLink Class.
-/// </summary>
+/// Defines the ObjectLink Class converter from/to OpenXml.
+///</summary>
 public static class ObjectLinkConverter
 {
   /// <summary>

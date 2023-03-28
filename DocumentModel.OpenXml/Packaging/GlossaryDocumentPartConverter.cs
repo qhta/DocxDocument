@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the GlossaryDocumentPart
-/// </summary>
+/// Defines the GlossaryDocumentPar converter from/to OpenXml.
+///</summary>
 public static class GlossaryDocumentPartConverter
 {
   /// <summary>

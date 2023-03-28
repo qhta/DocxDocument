@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BlipFill Class.
-/// </summary>
+/// Defines the BlipFill Class converter from/to OpenXml.
+///</summary>
 public static class BlipFillConverter
 {
   /// <summary>

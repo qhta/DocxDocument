@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Relative Anchor Shape Size.
-/// </summary>
+/// Relative Anchor Shape Size converter from/to OpenXml.
+///</summary>
 public static class RelativeAnchorSizeConverter
 {
   /// <summary>

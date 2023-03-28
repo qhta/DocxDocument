@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Multiple Path Line.
-/// </summary>
+/// Multiple Path Line converter from/to OpenXml.
+///</summary>
 public static class PolyLineConverter
 {
   /// <summary>

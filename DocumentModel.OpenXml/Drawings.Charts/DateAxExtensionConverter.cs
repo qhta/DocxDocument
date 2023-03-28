@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DateAxExtension Class.
-/// </summary>
+/// Defines the DateAxExtension Class converter from/to OpenXml.
+///</summary>
 public static class DateAxExtensionConverter
 {
   /// <summary>

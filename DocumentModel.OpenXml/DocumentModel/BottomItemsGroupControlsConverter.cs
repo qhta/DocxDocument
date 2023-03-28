@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BottomItemsGroupControls Class.
-/// </summary>
+/// Defines the BottomItemsGroupControls Class converter from/to OpenXml.
+///</summary>
 public static class BottomItemsGroupControlsConverter
 {
   private static DM.BackstageGroupButton? GetBackstageGroupButton(DXO2010CustUI.BottomItemsGroupControls openXmlElement)

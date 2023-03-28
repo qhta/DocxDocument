@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Vertically Merged/Split Table Cells.
-/// </summary>
+/// Vertically Merged/Split Table Cells converter from/to OpenXml.
+///</summary>
 public static class CellMergeConverter
 {
   /// <summary>

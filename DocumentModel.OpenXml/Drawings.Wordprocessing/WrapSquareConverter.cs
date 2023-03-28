@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Square Wrapping.
-/// </summary>
+/// Square Wrapping converter from/to OpenXml.
+///</summary>
 public static class WrapSquareConverter
 {
   /// <summary>

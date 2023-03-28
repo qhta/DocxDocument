@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Row.
-/// </summary>
+/// Matrix Row converter from/to OpenXml.
+///</summary>
 public static class MatrixRowConverter
 {
   private static Collection<DMMath.Base>? GetBases(DXMath.MatrixRow openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Underline Stroke.
-/// </summary>
+/// Underline Stroke converter from/to OpenXml.
+///</summary>
 public static class UnderlineConverter
 {
   private static Boolean? GetNoFill(DXDraw.Underline openXmlElement)

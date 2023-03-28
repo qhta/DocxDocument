@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Drop-Down List Form Field Properties.
-/// </summary>
+/// Drop-Down List Form Field Properties converter from/to OpenXml.
+///</summary>
 public static class DropDownListFormFieldConverter
 {
   /// <summary>

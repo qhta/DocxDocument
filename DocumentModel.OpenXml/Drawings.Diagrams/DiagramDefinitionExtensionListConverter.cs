@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// List of extensions to the CT_DiagramDefintions type..
-/// </summary>
+/// List of extensions to the CT_DiagramDefintions type. converter from/to OpenXml.
+///</summary>
 public static class DiagramDefinitionExtensionListConverter
 {
   private static Collection<DMDrawsDgms.DiagramDefinitionExtension>? GetDiagramDefinitionExtensions(DXDrawDgms.DiagramDefinitionExtensionList openXmlElement)

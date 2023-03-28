@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the NumberDiagramInfoList Class.
-/// </summary>
+/// Defines the NumberDiagramInfoList Class converter from/to OpenXml.
+///</summary>
 public static class NumberDiagramInfoListConverter
 {
   private static Collection<DMDrawsDgm1.NumberDiagramInfo>? GetNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement)

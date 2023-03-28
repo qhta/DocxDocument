@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the RichTextBody Class.
-/// </summary>
+/// Defines the RichTextBody Class converter from/to OpenXml.
+///</summary>
 public static class RichTextBodyConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXO2016DrawChartDraw.RichTextBody openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Endnotes.
-/// </summary>
+/// Document Endnotes converter from/to OpenXml.
+///</summary>
 public static class EndnotesConverter
 {
   private static DMW.Endnote? GetEndnote(DXW.Endnotes openXmlElement)

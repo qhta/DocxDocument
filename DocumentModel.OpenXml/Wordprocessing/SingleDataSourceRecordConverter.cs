@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SingleDataSourceRecord Class.
-/// </summary>
+/// Defines the SingleDataSourceRecord Class converter from/to OpenXml.
+///</summary>
 public static class SingleDataSourceRecordConverter
 {
   /// <summary>

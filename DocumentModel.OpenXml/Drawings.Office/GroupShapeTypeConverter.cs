@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeType Class.
-/// </summary>
+/// Defines the GroupShapeType Class converter from/to OpenXml.
+///</summary>
 public static class GroupShapeTypeConverter
 {
   /// <summary>

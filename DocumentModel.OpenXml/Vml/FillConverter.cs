@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Fill Class.
-/// </summary>
+/// Defines the Fill Class converter from/to OpenXml.
+///</summary>
 public static class FillConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Glossary Document Entry.
-/// </summary>
+/// Glossary Document Entry converter from/to OpenXml.
+///</summary>
 public static class DocPartConverter
 {
   /// <summary>

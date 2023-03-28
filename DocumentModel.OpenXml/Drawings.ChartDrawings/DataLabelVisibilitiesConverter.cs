@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabelVisibilities Class.
-/// </summary>
+/// Defines the DataLabelVisibilities Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelVisibilitiesConverter
 {
   /// <summary>

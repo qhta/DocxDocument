@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Cell Properties.
-/// </summary>
+/// Table Style Conditional Formatting Table Cell Properties converter from/to OpenXml.
+///</summary>
 public static class TableStyleConditionalFormattingTableCellPropertiesConverter
 {
   /// <summary>

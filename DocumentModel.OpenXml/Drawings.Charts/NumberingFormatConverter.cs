@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Number Format.
-/// </summary>
+/// Number Format converter from/to OpenXml.
+///</summary>
 public static class NumberingFormatConverter
 {
   /// <summary>

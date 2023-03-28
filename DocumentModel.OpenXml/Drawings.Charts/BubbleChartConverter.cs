@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Bubble Charts.
-/// </summary>
+/// Bubble Charts converter from/to OpenXml.
+///</summary>
 public static class BubbleChartConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramDataPart
-/// </summary>
+/// Defines the DiagramDataPar converter from/to OpenXml.
+///</summary>
 public static class DiagramDataPartConverter
 {
   private static String? GetContentType(DXPack.DiagramDataPart openXmlElement)

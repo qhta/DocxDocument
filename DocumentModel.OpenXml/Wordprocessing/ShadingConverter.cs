@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Shading Class.
-/// </summary>
+/// Defines the Shading Class converter from/to OpenXml.
+///</summary>
 public static class ShadingConverter
 {
   /// <summary>

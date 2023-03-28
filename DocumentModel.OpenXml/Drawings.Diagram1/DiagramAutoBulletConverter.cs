@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the DiagramAutoBullet Class.
-/// </summary>
+/// Defines the DiagramAutoBullet Class converter from/to OpenXml.
+///</summary>
 public static class DiagramAutoBulletConverter
 {
   /// <summary>

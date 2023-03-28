@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Visual Properties.
-/// </summary>
+/// Visual Properties converter from/to OpenXml.
+///</summary>
 public static class ShapePropertiesConverter
 {
   /// <summary>

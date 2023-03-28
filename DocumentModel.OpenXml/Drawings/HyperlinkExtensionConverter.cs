@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkExtension Class.
-/// </summary>
+/// Defines the HyperlinkExtension Class converter from/to OpenXml.
+///</summary>
 public static class HyperlinkExtensionConverter
 {
   /// <summary>

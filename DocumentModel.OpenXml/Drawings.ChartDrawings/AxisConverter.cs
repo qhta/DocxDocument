@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Axis Class.
-/// </summary>
+/// Defines the Axis Class converter from/to OpenXml.
+///</summary>
 public static class AxisConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableCellMarginDefault Class.
-/// </summary>
+/// Defines the TableCellMarginDefault Class converter from/to OpenXml.
+///</summary>
 public static class TableCellMarginDefaultConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Form Field Properties.
-/// </summary>
+/// Form Field Properties converter from/to OpenXml.
+///</summary>
 public static class FormFieldDataConverter
 {
   private static String? GetFormFieldName(DXW.FormFieldData openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PrintSettings Class.
-/// </summary>
+/// Defines the PrintSettings Class converter from/to OpenXml.
+///</summary>
 public static class PrintSettingsConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Mail Merge Settings.
-/// </summary>
+/// Mail Merge Settings converter from/to OpenXml.
+///</summary>
 public static class MailMergeConverter
 {
   /// <summary>

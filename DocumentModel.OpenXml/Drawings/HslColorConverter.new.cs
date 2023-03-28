@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Hue, Saturation, Luminance Color Model.
-/// </summary>
+/// Hue, Saturation, Luminance Color Model converter from/to OpenXml.
+///</summary>
 public static class HslColorConverter
 {
   /// <summary>

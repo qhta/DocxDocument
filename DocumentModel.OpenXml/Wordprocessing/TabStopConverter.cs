@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Custom Tab Stop.
-/// </summary>
+/// Custom Tab Stop converter from/to OpenXml.
+///</summary>
 public static class TabStopConverter
 {
   /// <summary>

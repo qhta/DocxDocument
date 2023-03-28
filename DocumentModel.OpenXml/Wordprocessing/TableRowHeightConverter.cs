@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableRowHeight Class.
-/// </summary>
+/// Defines the TableRowHeight Class converter from/to OpenXml.
+///</summary>
 public static class TableRowHeightConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticCement Class.
-/// </summary>
+/// Defines the ArtisticCement Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticCementConverter
 {
   /// <summary>

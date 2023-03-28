@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// List of Glossary Document Entries.
-/// </summary>
+/// List of Glossary Document Entries converter from/to OpenXml.
+///</summary>
 public static class DocPartsConverter
 {
   public static DMW.DocParts? CreateModelElement(DXW.DocParts? openXmlElement)

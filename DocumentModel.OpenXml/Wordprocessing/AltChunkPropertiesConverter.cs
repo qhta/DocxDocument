@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// External Content Import Properties.
-/// </summary>
+/// External Content Import Properties converter from/to OpenXml.
+///</summary>
 public static class AltChunkPropertiesConverter
 {
   /// <summary>

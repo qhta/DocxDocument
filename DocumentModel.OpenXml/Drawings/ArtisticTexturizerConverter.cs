@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticTexturizer Class.
-/// </summary>
+/// Defines the ArtisticTexturizer Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticTexturizerConverter
 {
   /// <summary>

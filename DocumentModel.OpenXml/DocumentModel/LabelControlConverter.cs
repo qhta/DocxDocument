@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the LabelControl Class.
-/// </summary>
+/// Defines the LabelControl Class converter from/to OpenXml.
+///</summary>
 public static class LabelControlConverter
 {
   /// <summary>

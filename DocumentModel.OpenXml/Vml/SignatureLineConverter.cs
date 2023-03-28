@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Digital Signature Line.
-/// </summary>
+/// Digital Signature Line converter from/to OpenXml.
+///</summary>
 public static class SignatureLineConverter
 {
   /// <summary>

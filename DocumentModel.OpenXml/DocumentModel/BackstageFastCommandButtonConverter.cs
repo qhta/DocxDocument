@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageFastCommandButton Class.
-/// </summary>
+/// Defines the BackstageFastCommandButton Class converter from/to OpenXml.
+///</summary>
 public static class BackstageFastCommandButtonConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Table Row Properties.
-/// </summary>
+/// Previous Table Row Properties converter from/to OpenXml.
+///</summary>
 public static class PreviousTableRowPropertiesConverter
 {
   private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DXW.PreviousTableRowProperties openXmlElement)

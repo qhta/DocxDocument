@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoParentEntitiesQueryResults Class.
-/// </summary>
+/// Defines the GeoParentEntitiesQueryResults Class converter from/to OpenXml.
+///</summary>
 public static class GeoParentEntitiesQueryResultsConverter
 {
   private static Collection<DMDrawsChartDraws.GeoParentEntitiesQueryResult>? GetItems(DXO2016DrawChartDraw.GeoParentEntitiesQueryResults openXmlElement)

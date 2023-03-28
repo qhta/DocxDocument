@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Defines the WebVideoProperty Class.
-/// </summary>
+/// Defines the WebVideoProperty Class converter from/to OpenXml.
+///</summary>
 public static class WebVideoPropertyConverter
 {
   /// <summary>

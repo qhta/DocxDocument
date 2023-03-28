@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// pivot chart format persistence data.
-/// </summary>
+/// pivot chart format persistence data converter from/to OpenXml.
+///</summary>
 public static class PivotFormatsConverter
 {
   private static Collection<DMDrawsCharts.PivotFormat>? GetItems(DXDrawCharts.PivotFormats openXmlElement)

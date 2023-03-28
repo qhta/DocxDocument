@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Rich Text.
-/// </summary>
+/// Rich Text converter from/to OpenXml.
+///</summary>
 public static class RichTextConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.RichText openXmlElement)

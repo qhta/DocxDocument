@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Run.
-/// </summary>
+/// Text Run converter from/to OpenXml.
+///</summary>
 public static class RunConverter
 {
   /// <summary>

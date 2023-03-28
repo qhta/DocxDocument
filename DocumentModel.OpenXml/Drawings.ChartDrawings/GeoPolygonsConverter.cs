@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoPolygons Class.
-/// </summary>
+/// Defines the GeoPolygons Class converter from/to OpenXml.
+///</summary>
 public static class GeoPolygonsConverter
 {
   private static Collection<DMDrawsChartDraws.GeoPolygon>? GetItems(DXO2016DrawChartDraw.GeoPolygons openXmlElement)

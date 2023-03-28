@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Limit (Lower).
-/// </summary>
+/// Limit (Lower) converter from/to OpenXml.
+///</summary>
 public static class LimitConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.Limit openXmlElement)

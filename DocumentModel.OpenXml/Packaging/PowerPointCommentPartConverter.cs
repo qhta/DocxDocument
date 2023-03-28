@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the PowerPointCommentPart
-/// </summary>
+/// Defines the PowerPointCommentPar converter from/to OpenXml.
+///</summary>
 public static class PowerPointCommentPartConverter
 {
   private static String? GetContentType(DXPack.PowerPointCommentPart openXmlElement)

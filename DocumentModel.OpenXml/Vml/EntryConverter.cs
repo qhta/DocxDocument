@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Regroup Entry.
-/// </summary>
+/// Regroup Entry converter from/to OpenXml.
+///</summary>
 public static class EntryConverter
 {
   /// <summary>

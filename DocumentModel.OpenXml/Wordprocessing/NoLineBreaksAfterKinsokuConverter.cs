@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Custom Set of Characters Which Cannot End a Line.
-/// </summary>
+/// Custom Set of Characters Which Cannot End a Line converter from/to OpenXml.
+///</summary>
 public static class NoLineBreaksAfterKinsokuConverter
 {
   /// <summary>

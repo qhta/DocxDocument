@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberingFormat Class.
-/// </summary>
+/// Defines the NumberingFormat Class converter from/to OpenXml.
+///</summary>
 public static class NumberingFormat3Converter
 {
   /// <summary>

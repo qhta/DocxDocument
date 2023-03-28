@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List of Shape Connection Sites.
-/// </summary>
+/// List of Shape Connection Sites converter from/to OpenXml.
+///</summary>
 public static class ConnectionSiteListConverter
 {
   private static Collection<DMDraws.ConnectionSite>? GetConnectionSites(DXDraw.ConnectionSiteList openXmlElement)

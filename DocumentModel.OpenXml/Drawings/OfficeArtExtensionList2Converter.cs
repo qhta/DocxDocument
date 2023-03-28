@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the OfficeArtExtensionList Class.
-/// </summary>
+/// Defines the OfficeArtExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class OfficeArtExtensionList2Converter
 {
   private static Collection<DMDraws.Extension>? GetExtensions(DXO2010Draw.OfficeArtExtensionList openXmlElement)

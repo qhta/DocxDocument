@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Transform Effect.
-/// </summary>
+/// Transform Effect converter from/to OpenXml.
+///</summary>
 public static class TransformEffectConverter
 {
   /// <summary>

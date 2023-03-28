@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PictureOptions Class.
-/// </summary>
+/// Defines the PictureOptions Class converter from/to OpenXml.
+///</summary>
 public static class PictureOptionsConverter
 {
   /// <summary>

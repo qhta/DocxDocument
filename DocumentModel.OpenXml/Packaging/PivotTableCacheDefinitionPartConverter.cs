@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the PivotTableCacheDefinitionPart
-/// </summary>
+/// Defines the PivotTableCacheDefinitionPar converter from/to OpenXml.
+///</summary>
 public static class PivotTableCacheDefinitionPartConverter
 {
   private static String? GetContentType(DXPack.PivotTableCacheDefinitionPart openXmlElement)

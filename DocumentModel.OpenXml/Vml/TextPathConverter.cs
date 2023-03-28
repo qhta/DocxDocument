@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the TextPath Class.
-/// </summary>
+/// Defines the TextPath Class converter from/to OpenXml.
+///</summary>
 public static class TextPathConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Soft Edge Effect.
-/// </summary>
+/// Soft Edge Effect converter from/to OpenXml.
+///</summary>
 public static class SoftEdgeConverter
 {
   /// <summary>

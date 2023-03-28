@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SingleCellTablePart
-/// </summary>
+/// Defines the SingleCellTablePar converter from/to OpenXml.
+///</summary>
 public static class SingleCellTablePartConverter
 {
   private static String? GetContentType(DXPack.SingleCellTablePart openXmlElement)

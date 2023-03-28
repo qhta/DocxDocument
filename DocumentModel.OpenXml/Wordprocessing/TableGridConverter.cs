@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Grid.
-/// </summary>
+/// Table Grid converter from/to OpenXml.
+///</summary>
 public static class TableGridConverter
 {
   private static Collection<DMW.GridColumn>? GetGridColumns(DXW.TableGrid openXmlElement)

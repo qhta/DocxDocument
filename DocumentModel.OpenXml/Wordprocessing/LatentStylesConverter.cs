@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Latent Style Information.
-/// </summary>
+/// Latent Style Information converter from/to OpenXml.
+///</summary>
 public static class LatentStylesConverter
 {
   /// <summary>

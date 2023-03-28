@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticLightScreen Class.
-/// </summary>
+/// Defines the ArtisticLightScreen Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticLightScreenConverter
 {
   /// <summary>

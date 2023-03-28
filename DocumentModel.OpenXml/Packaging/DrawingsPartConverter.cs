@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DrawingsPart
-/// </summary>
+/// Defines the DrawingsPar converter from/to OpenXml.
+///</summary>
 public static class DrawingsPartConverter
 {
   /// <summary>

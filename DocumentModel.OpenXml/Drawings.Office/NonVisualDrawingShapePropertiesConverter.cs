@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the NonVisualDrawingShapeProperties Class.
-/// </summary>
+/// Defines the NonVisualDrawingShapeProperties Class converter from/to OpenXml.
+///</summary>
 public static class NonVisualDrawingShapePropertiesConverter
 {
   /// <summary>

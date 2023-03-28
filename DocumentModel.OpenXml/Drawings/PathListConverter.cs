@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// List of Shape Paths.
-/// </summary>
+/// List of Shape Paths converter from/to OpenXml.
+///</summary>
 public static class PathListConverter
 {
   private static Collection<DMDraws.Path>? GetPaths(DXDraw.PathList openXmlElement)

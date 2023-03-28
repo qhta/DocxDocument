@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordAttachedToolbarsPart
-/// </summary>
+/// Defines the WordAttachedToolbarsPar converter from/to OpenXml.
+///</summary>
 public static class WordAttachedToolbarsPartConverter
 {
   private static String? GetContentType(DXPack.WordAttachedToolbarsPart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoLocations Class.
-/// </summary>
+/// Defines the GeoLocations Class converter from/to OpenXml.
+///</summary>
 public static class GeoLocationsConverter
 {
   /// <summary>

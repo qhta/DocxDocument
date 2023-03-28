@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Nested Frameset Definition.
-/// </summary>
+/// Nested Frameset Definition converter from/to OpenXml.
+///</summary>
 public static class FramesetConverter
 {
   /// <summary>

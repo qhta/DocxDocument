@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the Group Class.
-/// </summary>
+/// Defines the Group Class converter from/to OpenXml.
+///</summary>
 public static class GroupConverter
 {
   /// <summary>

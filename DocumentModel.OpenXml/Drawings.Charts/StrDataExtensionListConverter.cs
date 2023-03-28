@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the StrDataExtensionList Class.
-/// </summary>
+/// Defines the StrDataExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class StrDataExtensionListConverter
 {
   private static Collection<DMDrawsCharts.StrDataExtension>? GetStrDataExtensions(DXDrawCharts.StrDataExtensionList openXmlElement)

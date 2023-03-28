@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Dash Stop.
-/// </summary>
+/// Dash Stop converter from/to OpenXml.
+///</summary>
 public static class DashStopConverter
 {
   /// <summary>

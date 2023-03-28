@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelFieldTableEntry Class.
-/// </summary>
+/// Defines the DataLabelFieldTableEntry Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelFieldTableEntryConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartExtension Class.
-/// </summary>
+/// Defines the ScatterChartExtension Class converter from/to OpenXml.
+///</summary>
 public static class ScatterChartExtensionConverter
 {
   /// <summary>

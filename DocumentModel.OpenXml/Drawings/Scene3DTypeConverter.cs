@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// 3D Scene Properties.
-/// </summary>
+/// 3D Scene Properties converter from/to OpenXml.
+///</summary>
 public static class Scene3DTypeConverter
 {
   /// <summary>

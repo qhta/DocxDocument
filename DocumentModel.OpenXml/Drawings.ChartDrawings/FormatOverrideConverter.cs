@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the FormatOverride Class.
-/// </summary>
+/// Defines the FormatOverride Class converter from/to OpenXml.
+///</summary>
 public static class FormatOverrideConverter
 {
   /// <summary>

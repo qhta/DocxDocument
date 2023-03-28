@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the FontTablePart
-/// </summary>
+/// Defines the FontTablePar converter from/to OpenXml.
+///</summary>
 public static class FontTablePartConverter
 {
   private static String? GetContentType(DXPack.FontTablePart openXmlElement)

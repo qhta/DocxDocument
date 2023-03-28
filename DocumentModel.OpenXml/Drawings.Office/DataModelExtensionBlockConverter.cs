@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the DataModelExtensionBlock Class.
-/// </summary>
+/// Defines the DataModelExtensionBlock Class converter from/to OpenXml.
+///</summary>
 public static class DataModelExtensionBlockConverter
 {
   /// <summary>

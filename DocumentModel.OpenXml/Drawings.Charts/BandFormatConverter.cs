@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Band Format.
-/// </summary>
+/// Band Format converter from/to OpenXml.
+///</summary>
 public static class BandFormatConverter
 {
   /// <summary>

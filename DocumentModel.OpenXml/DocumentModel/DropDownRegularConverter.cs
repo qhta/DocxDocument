@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the DropDownRegular Class.
-/// </summary>
+/// Defines the DropDownRegular Class converter from/to OpenXml.
+///</summary>
 public static class DropDownRegularConverter
 {
   /// <summary>

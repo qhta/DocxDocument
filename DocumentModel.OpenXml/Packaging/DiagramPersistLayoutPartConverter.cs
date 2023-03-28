@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramPersistLayoutPart
-/// </summary>
+/// Defines the DiagramPersistLayoutPar converter from/to OpenXml.
+///</summary>
 public static class DiagramPersistLayoutPartConverter
 {
   private static String? GetContentType(DXPack.DiagramPersistLayoutPart openXmlElement)

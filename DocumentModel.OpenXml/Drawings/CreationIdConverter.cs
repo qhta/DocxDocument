@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the CreationId Class.
-/// </summary>
+/// Defines the CreationId Class converter from/to OpenXml.
+///</summary>
 public static class CreationIdConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Light Rig.
-/// </summary>
+/// Light Rig converter from/to OpenXml.
+///</summary>
 public static class LightRigConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the SeriesElementVisibilities Class.
-/// </summary>
+/// Defines the SeriesElementVisibilities Class converter from/to OpenXml.
+///</summary>
 public static class SeriesElementVisibilitiesConverter
 {
   /// <summary>

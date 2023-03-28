@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the LineReference Class.
-/// </summary>
+/// Defines the LineReference Class converter from/to OpenXml.
+///</summary>
 public static class LineReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.LineReference openXmlElement)

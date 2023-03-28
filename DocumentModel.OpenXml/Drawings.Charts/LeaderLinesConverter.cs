@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Leader Lines.
-/// </summary>
+/// Leader Lines converter from/to OpenXml.
+///</summary>
 public static class LeaderLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.LeaderLines openXmlElement)

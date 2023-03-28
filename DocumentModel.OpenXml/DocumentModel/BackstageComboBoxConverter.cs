@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageComboBox Class.
-/// </summary>
+/// Defines the BackstageComboBox Class converter from/to OpenXml.
+///</summary>
 public static class BackstageComboBoxConverter
 {
   /// <summary>

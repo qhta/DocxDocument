@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Properties for VML Objects in Header and Footer.
-/// </summary>
+/// Default Properties for VML Objects in Header and Footer converter from/to OpenXml.
+///</summary>
 public static class HeaderShapeDefaultsConverter
 {
   private static DMVml.ShapeDefaults? GetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement)

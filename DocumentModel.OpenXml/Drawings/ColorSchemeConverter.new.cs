@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ColorScheme Class.
-/// </summary>
+/// Defines the ColorScheme Class converter from/to OpenXml.
+///</summary>
 public static class ColorSchemeConverter
 {
   /// <summary>

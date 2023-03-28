@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Data Labels.
-/// </summary>
+/// Data Labels converter from/to OpenXml.
+///</summary>
 public static class DataLabelsConverter
 {
   private static Collection<DMDrawsCharts.DataLabel>? GetItems(DXDrawCharts.DataLabels openXmlElement)

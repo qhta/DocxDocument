@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Text Body.
-/// </summary>
+/// Text Body converter from/to OpenXml.
+///</summary>
 public static class TextBodyConverter
 {
   /// <summary>

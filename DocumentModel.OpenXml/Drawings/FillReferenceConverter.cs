@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Fill Reference.
-/// </summary>
+/// Fill Reference converter from/to OpenXml.
+///</summary>
 public static class FillReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.FillReference openXmlElement)

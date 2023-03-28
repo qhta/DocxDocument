@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// New Shape Defaults.
-/// </summary>
+/// New Shape Defaults converter from/to OpenXml.
+///</summary>
 public static class ShapeDefaultsConverter
 {
   /// <summary>

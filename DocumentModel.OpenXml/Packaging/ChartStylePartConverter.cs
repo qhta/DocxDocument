@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ChartStylePart
-/// </summary>
+/// Defines the ChartStylePar converter from/to OpenXml.
+///</summary>
 public static class ChartStylePartConverter
 {
   /// <summary>

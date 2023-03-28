@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextCharacterPropertiesType Class.
-/// </summary>
+/// Defines the TextCharacterPropertiesType Class converter from/to OpenXml.
+///</summary>
 public static class TextCharacterPropertiesTypeConverter
 {
   /// <summary>

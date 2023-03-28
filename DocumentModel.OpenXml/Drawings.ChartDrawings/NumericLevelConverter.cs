@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the NumericLevel Class.
-/// </summary>
+/// Defines the NumericLevel Class converter from/to OpenXml.
+///</summary>
 public static class NumericLevelConverter
 {
   /// <summary>

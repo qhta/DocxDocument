@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ImageControl Class.
-/// </summary>
+/// Defines the ImageControl Class converter from/to OpenXml.
+///</summary>
 public static class ImageControlConverter
 {
   /// <summary>

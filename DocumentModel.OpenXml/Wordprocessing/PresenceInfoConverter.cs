@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PresenceInfo Class.
-/// </summary>
+/// Defines the PresenceInfo Class converter from/to OpenXml.
+///</summary>
 public static class PresenceInfoConverter
 {
   /// <summary>

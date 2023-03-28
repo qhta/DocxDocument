@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageGroups Class.
-/// </summary>
+/// Defines the BackstageGroups Class converter from/to OpenXml.
+///</summary>
 public static class BackstageGroupsConverter
 {
   private static DM.TaskFormGroup? GetTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement)
