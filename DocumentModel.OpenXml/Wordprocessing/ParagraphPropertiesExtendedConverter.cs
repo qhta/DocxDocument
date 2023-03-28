@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Paragraph Properties converter from/to OpenXml.
-///</summary>
+/// Previous Paragraph Properties.
+/// </summary>
 public static class ParagraphPropertiesExtendedConverter
 {
   /// <summary>

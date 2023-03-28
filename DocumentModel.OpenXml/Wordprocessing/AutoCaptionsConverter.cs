@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Automatic Captioning Settings converter from/to OpenXml.
-///</summary>
+/// Automatic Captioning Settings.
+/// </summary>
 public static class AutoCaptionsConverter
 {
   private static DMW.AutoCaption? GetAutoCaption(DXW.AutoCaptions openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Pie of Pie or Bar of Pie Charts converter from/to OpenXml.
-///</summary>
+/// Pie of Pie or Bar of Pie Charts.
+/// </summary>
 public static class OfPieChartConverter
 {
   /// <summary>

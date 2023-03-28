@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the MultiLvlStrRefExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the MultiLvlStrRefExtensionList Class.
+/// </summary>
 public static class MultiLvlStrRefExtensionListConverter
 {
   private static Collection<DMDrawsCharts.MultiLvlStrRefExtension>? GetMultiLvlStrRefExtensions(DXDrawCharts.MultiLvlStrRefExtensionList openXmlElement)

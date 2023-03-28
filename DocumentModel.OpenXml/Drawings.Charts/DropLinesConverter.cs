@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Drop Lines converter from/to OpenXml.
-///</summary>
+/// Drop Lines.
+/// </summary>
 public static class DropLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DropLines openXmlElement)

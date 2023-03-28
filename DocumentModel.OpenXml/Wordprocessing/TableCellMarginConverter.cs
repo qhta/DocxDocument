@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableCellMargin Class converter from/to OpenXml.
-///</summary>
+/// Defines the TableCellMargin Class.
+/// </summary>
 public static class TableCellMarginConverter
 {
   /// <summary>

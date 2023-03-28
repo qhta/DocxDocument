@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Cell converter from/to OpenXml.
-///</summary>
+/// Table Cell.
+/// </summary>
 public static class TableCellConverter
 {
   #region Table Cell Properties conversion

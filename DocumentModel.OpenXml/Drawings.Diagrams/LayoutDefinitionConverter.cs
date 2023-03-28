@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Layout Definition converter from/to OpenXml.
-///</summary>
+/// Layout Definition.
+/// </summary>
 public static class LayoutDefinitionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Hyphen element converter from/to OpenXml.
-///</summary>
+/// Hyphen element converter.
+/// </summary>
 public static class HyphenConverter
 {
   public static DMW.Hyphen? CreateModelElement(DXW.NoBreakHyphen? openXmlElement)

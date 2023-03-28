@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Gallery Class converter from/to OpenXml.
-///</summary>
+/// Defines the Gallery Class.
+/// </summary>
 public static class GalleryConverter
 {
   /// <summary>

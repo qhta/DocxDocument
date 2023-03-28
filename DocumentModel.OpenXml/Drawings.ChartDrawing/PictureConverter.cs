@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Defines the Picture Class converter from/to OpenXml.
-///</summary>
+/// Defines the Picture Class.
+/// </summary>
 public static class PictureConverter
 {
   /// <summary>

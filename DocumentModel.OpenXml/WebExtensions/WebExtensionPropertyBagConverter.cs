@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionPropertyBag Class converter from/to OpenXml.
-///</summary>
+/// Defines the WebExtensionPropertyBag Class.
+/// </summary>
 public static class WebExtensionPropertyBagConverter
 {
   private static Collection<DMWebExt.WebExtensionProperty>? GetWebExtensionProperties(DXO2013WebExt.WebExtensionPropertyBag openXmlElement)

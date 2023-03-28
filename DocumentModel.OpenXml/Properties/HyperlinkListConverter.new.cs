@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Hyperlink List converter from/to OpenXml.
-///</summary>
+///   Hyperlink List.
+/// </summary>
 public static class HyperlinkListConverter
 {
   public static VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HyperlinkList? openXmlElement)

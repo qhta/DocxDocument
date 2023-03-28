@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the AltChunk Class converter from/to OpenXml.
-///</summary>
+/// Defines the AltChunk Class.
+/// </summary>
 public static class AltChunkConverter
 {
   /// <summary>

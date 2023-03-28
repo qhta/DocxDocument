@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieSerExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the PieSerExtensionList Class.
+/// </summary>
 public static class PieSerExtensionListConverter
 {
   private static Collection<DMDrawsCharts.PieSerExtension>? GetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement)

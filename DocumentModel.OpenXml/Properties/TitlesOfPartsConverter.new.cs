@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Part Titles converter from/to OpenXml.
-///</summary>
+///   Part Titles.
+/// </summary>
 public static class TitlesOfPartsConverter
 {
   public static VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.TitlesOfParts? openXmlElement)

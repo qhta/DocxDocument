@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DiagramColorsPar converter from/to OpenXml.
-///</summary>
+/// Defines the DiagramColorsPart
+/// </summary>
 public static class DiagramColorsPartConverter
 {
   /// <summary>

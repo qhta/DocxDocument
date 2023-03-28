@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Table Properties converter from/to OpenXml.
-///</summary>
+/// Previous Table Properties.
+/// </summary>
 public static class PreviousTablePropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Properties for a Single Font converter from/to OpenXml.
-///</summary>
+/// Properties for a Single Font.
+/// </summary>
 public static class FontConverter
 {
   /// <summary>

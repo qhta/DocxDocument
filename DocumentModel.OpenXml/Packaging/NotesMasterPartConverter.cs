@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the NotesMasterPar converter from/to OpenXml.
-///</summary>
+/// Defines the NotesMasterPart
+/// </summary>
 public static class NotesMasterPartConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the OfficeStyleSheetExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the OfficeStyleSheetExtensionList Class.
+/// </summary>
 public static class OfficeStyleSheetExtensionListConverter
 {
   private static Collection<DMDraws.OfficeStyleSheetExtension>? GetOfficeStyleSheetExtensions(DXDraw.OfficeStyleSheetExtensionList openXmlElement)

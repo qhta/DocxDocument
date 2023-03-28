@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BarSerExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the BarSerExtensionList Class.
+/// </summary>
 public static class BarSerExtensionListConverter
 {
   private static Collection<DMDrawsCharts.BarSerExtension>? GetBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement)

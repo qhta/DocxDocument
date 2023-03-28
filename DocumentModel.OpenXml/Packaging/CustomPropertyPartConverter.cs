@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the CustomPropertyPar converter from/to OpenXml.
-///</summary>
+/// Defines the CustomPropertyPart
+/// </summary>
 public static class CustomPropertyPartConverter
 {
   private static String? GetRelationshipType(DXPack.CustomPropertyPart openXmlElement)

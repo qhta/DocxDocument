@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Bezier Curve converter from/to OpenXml.
-///</summary>
+/// Bezier Curve.
+/// </summary>
 public static class CurveConverter
 {
   /// <summary>

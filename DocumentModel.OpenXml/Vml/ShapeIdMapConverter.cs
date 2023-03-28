@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape ID Map converter from/to OpenXml.
-///</summary>
+/// Shape ID Map.
+/// </summary>
 public static class ShapeIdMapConverter
 {
   /// <summary>

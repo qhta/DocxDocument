@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Base converter from/to OpenXml.
-///</summary>
+/// Base.
+/// </summary>
 public static class BaseConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.Base openXmlElement)

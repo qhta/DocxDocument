@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Reference converter from/to OpenXml.
-///</summary>
+/// Shape Reference.
+/// </summary>
 public static class ProxyConverter
 {
   /// <summary>

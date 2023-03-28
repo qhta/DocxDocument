@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WebExTaskpanesPar converter from/to OpenXml.
-///</summary>
+/// Defines the WebExTaskpanesPart
+/// </summary>
 public static class WebExTaskpanesPartConverter
 {
   private static String? GetContentType(DXPack.WebExTaskpanesPart openXmlElement)

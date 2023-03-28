@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TabSet Class converter from/to OpenXml.
-///</summary>
+/// Defines the TabSet Class.
+/// </summary>
 public static class TabSetConverter
 {
   /// <summary>

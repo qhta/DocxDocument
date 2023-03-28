@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Inverse Effect converter from/to OpenXml.
-///</summary>
+/// Alpha Inverse Effect.
+/// </summary>
 public static class AlphaInverseConverter
 {
   /// <summary>

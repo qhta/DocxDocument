@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Border-Box Function converter from/to OpenXml.
-///</summary>
+/// Border-Box Function.
+/// </summary>
 public static class BorderBoxConverter
 {
   /// <summary>

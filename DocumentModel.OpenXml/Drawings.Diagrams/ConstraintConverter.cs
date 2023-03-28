@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Constraint converter from/to OpenXml.
-///</summary>
+/// Constraint.
+/// </summary>
 public static class ConstraintConverter
 {
   /// <summary>

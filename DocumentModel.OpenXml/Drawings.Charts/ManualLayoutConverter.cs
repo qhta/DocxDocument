@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Manual Layout converter from/to OpenXml.
-///</summary>
+/// Manual Layout.
+/// </summary>
 public static class ManualLayoutConverter
 {
   /// <summary>

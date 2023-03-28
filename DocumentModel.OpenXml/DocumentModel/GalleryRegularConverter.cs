@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the GalleryRegular Class converter from/to OpenXml.
-///</summary>
+/// Defines the GalleryRegular Class.
+/// </summary>
 public static class GalleryRegularConverter
 {
   /// <summary>

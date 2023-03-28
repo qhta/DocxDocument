@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenLineProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the HiddenLineProperties Class.
+/// </summary>
 public static class HiddenLinePropertiesConverter
 {
   /// <summary>

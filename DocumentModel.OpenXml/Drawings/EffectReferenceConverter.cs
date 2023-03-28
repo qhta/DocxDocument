@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect Reference converter from/to OpenXml.
-///</summary>
+/// Effect Reference.
+/// </summary>
 public static class EffectReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.EffectReference openXmlElement)

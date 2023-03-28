@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the PieChartSeries Class converter from/to OpenXml.
-///</summary>
+/// Defines the PieChartSeries Class.
+/// </summary>
 public static class PieChartSeries3Converter
 {
   /// <summary>

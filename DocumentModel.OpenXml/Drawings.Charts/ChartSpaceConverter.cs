@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Chart Space converter from/to OpenXml.
-///</summary>
+/// Chart Space.
+/// </summary>
 public static class ChartSpaceConverter
 {
   /// <summary>

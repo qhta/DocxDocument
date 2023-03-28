@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Extension Class converter from/to OpenXml.
-///</summary>
+/// Defines the Extension Class.
+/// </summary>
 public static class ExtensionConverter
 {
   /// <summary>

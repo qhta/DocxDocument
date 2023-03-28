@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LineReference Class converter from/to OpenXml.
-///</summary>
+/// Defines the LineReference Class.
+/// </summary>
 public static class LineReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.LineReference openXmlElement)

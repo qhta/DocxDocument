@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ButtonRegular Class converter from/to OpenXml.
-///</summary>
+/// Defines the ButtonRegular Class.
+/// </summary>
 public static class ButtonRegularConverter
 {
   /// <summary>

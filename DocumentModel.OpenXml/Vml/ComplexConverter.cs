@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Complex converter from/to OpenXml.
-///</summary>
+/// Complex.
+/// </summary>
 public static class ComplexConverter
 {
   /// <summary>

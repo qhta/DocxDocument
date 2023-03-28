@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ButtonGroup Class converter from/to OpenXml.
-///</summary>
+/// Defines the ButtonGroup Class.
+/// </summary>
 public static class ButtonGroupConverter
 {
   /// <summary>

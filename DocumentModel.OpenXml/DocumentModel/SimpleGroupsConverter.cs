@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the SimpleGroups Class converter from/to OpenXml.
-///</summary>
+/// Defines the SimpleGroups Class.
+/// </summary>
 public static class SimpleGroupsConverter
 {
   private static DM.BackstageGroup? GetBackstageGroup(DXO2010CustUI.SimpleGroups openXmlElement)

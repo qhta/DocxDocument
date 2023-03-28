@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Definitions converter from/to OpenXml.
-///</summary>
+/// Numbering Definitions.
+/// </summary>
 public static class NumberingConverter
 {
   private static Collection<DMW.NumberingPictureBullet>? GetNumberingPictureBullets(DXW.Numbering openXmlElement)

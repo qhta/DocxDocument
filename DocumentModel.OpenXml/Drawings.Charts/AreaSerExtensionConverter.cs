@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaSerExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the AreaSerExtension Class.
+/// </summary>
 public static class AreaSerExtensionConverter
 {
   /// <summary>

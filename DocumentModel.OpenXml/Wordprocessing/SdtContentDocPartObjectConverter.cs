@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentDocPartObject Class converter from/to OpenXml.
-///</summary>
+/// Defines the SdtContentDocPartObject Class.
+/// </summary>
 public static class SdtContentDocPartObjectConverter
 {
   private static String? GetDocPartGallery(DXW.SdtContentDocPartObject openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Draw Line To converter from/to OpenXml.
-///</summary>
+/// Draw Line To.
+/// </summary>
 public static class LineToConverter
 {
   /// <summary>

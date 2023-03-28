@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the DynamicMenu Class converter from/to OpenXml.
-///</summary>
+/// Defines the DynamicMenu Class.
+/// </summary>
 public static class DynamicMenuConverter
 {
   /// <summary>

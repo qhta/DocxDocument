@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RelationshipType Class converter from/to OpenXml.
-///</summary>
+/// Defines the RelationshipType Class.
+/// </summary>
 public static class RelationshipTypeConverter
 {
   /// <summary>

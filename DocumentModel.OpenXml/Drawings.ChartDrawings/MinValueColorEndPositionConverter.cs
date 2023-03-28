@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MinValueColorEndPosition Class converter from/to OpenXml.
-///</summary>
+/// Defines the MinValueColorEndPosition Class.
+/// </summary>
 public static class MinValueColorEndPositionConverter
 {
   private static Boolean? GetExtremeValueColorPosition(DXO2016DrawChartDraw.MinValueColorEndPosition openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Normal AutoFit converter from/to OpenXml.
-///</summary>
+/// Normal AutoFit.
+/// </summary>
 public static class NormalAutoFitConverter
 {
   /// <summary>

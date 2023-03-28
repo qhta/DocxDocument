@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BorderType Class converter from/to OpenXml.
-///</summary>
+/// Defines the BorderType Class.
+/// </summary>
 public static class BorderTypeConverter
 {
   /// <summary>

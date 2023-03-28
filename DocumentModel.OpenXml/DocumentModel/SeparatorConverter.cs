@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Separator Class converter from/to OpenXml.
-///</summary>
+/// Defines the Separator Class.
+/// </summary>
 public static class SeparatorConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredLineSeriesExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the FilteredLineSeriesExtension Class.
+/// </summary>
 public static class FilteredLineSeriesExtensionConverter
 {
   /// <summary>

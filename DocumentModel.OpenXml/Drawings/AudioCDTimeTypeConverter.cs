@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the AudioCDTimeType Class converter from/to OpenXml.
-///</summary>
+/// Defines the AudioCDTimeType Class.
+/// </summary>
 public static class AudioCDTimeTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Math Properties converter from/to OpenXml.
-///</summary>
+/// Math Properties.
+/// </summary>
 public static class MathPropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticGlowDiffused Class converter from/to OpenXml.
-///</summary>
+/// Defines the ArtisticGlowDiffused Class.
+/// </summary>
 public static class ArtisticGlowDiffusedConverter
 {
   /// <summary>

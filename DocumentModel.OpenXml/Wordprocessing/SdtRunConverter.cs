@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Run-Level Structured Document Tag converter from/to OpenXml.
-///</summary>
+/// Run-Level Structured Document Tag.
+/// </summary>
 public static class SdtRunConverter
 {
 

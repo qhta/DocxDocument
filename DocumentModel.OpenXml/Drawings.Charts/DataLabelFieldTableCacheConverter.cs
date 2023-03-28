@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelFieldTableCache Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataLabelFieldTableCache Class.
+/// </summary>
 public static class DataLabelFieldTableCacheConverter
 {
   private static UInt32? GetPointCount(DXO2013DrawChart.DataLabelFieldTableCache openXmlElement)

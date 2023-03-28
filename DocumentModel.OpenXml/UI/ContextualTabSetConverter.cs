@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the ContextualTabSet Class converter from/to OpenXml.
-///</summary>
+/// Defines the ContextualTabSet Class.
+/// </summary>
 public static class ContextualTabSetConverter
 {
   /// <summary>

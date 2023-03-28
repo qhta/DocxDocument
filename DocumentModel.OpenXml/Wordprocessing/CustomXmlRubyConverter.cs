@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CustomXmlRuby Class converter from/to OpenXml.
-///</summary>
+/// Defines the CustomXmlRuby Class.
+/// </summary>
 public static class CustomXmlRubyConverter
 {
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlRuby openXmlElement)

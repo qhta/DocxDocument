@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Entry Categorization converter from/to OpenXml.
-///</summary>
+/// Entry Categorization.
+/// </summary>
 public static class CategoryConverter
 {
   /// <summary>

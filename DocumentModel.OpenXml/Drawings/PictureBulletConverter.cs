@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Picture Bullet converter from/to OpenXml.
-///</summary>
+/// Picture Bullet.
+/// </summary>
 public static class PictureBulletConverter
 {
   /// <summary>

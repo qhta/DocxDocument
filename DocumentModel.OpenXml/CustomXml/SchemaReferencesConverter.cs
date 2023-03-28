@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Set of Associated XML Schemas converter from/to OpenXml.
-///</summary>
+/// Set of Associated XML Schemas.
+/// </summary>
 public static class SchemaReferencesConverter
 {
   private static Collection<DMCustXml.SchemaReference>? GetItems(DXCustXmlDataProps.SchemaReferences openXmlElement)

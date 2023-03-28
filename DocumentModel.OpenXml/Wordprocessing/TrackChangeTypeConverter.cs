@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TrackChangeType Class converter from/to OpenXml.
-///</summary>
+/// Defines the TrackChangeType Class.
+/// </summary>
 public static class TrackChangeTypeConverter
 {
   /// <summary>

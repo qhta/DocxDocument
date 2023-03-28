@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Area3DChartExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the Area3DChartExtensionList Class.
+/// </summary>
 public static class Area3DChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.Area3DChartExtension>? GetArea3DChartExtensions(DXDrawCharts.Area3DChartExtensionList openXmlElement)

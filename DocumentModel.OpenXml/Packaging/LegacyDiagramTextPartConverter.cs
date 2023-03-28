@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the LegacyDiagramTextPar converter from/to OpenXml.
-///</summary>
+/// Defines the LegacyDiagramTextPart
+/// </summary>
 public static class LegacyDiagramTextPartConverter
 {
   private static String? GetContentType(DXPack.LegacyDiagramTextPart openXmlElement)

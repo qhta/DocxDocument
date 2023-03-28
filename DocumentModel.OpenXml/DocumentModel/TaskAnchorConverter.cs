@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskAnchor Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskAnchor Class.
+/// </summary>
 public static class TaskAnchorConverter
 {
   /// <summary>

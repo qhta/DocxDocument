@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Minor fonts converter from/to OpenXml.
-///</summary>
+/// Minor fonts.
+/// </summary>
 public static class MinorFontConverter
 {
   private static DMDraws.TextFontType? GetLatinFont(DXDraw.MinorFont openXmlElement)

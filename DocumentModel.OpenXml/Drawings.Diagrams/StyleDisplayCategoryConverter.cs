@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Category converter from/to OpenXml.
-///</summary>
+/// Category.
+/// </summary>
 public static class StyleDisplayCategoryConverter
 {
   /// <summary>

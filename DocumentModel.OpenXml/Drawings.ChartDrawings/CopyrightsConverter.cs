@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Copyrights Class converter from/to OpenXml.
-///</summary>
+/// Defines the Copyrights Class.
+/// </summary>
 public static class CopyrightsConverter
 {
   private static Collection<String>? GetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement)

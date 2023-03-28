@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Backstage Class converter from/to OpenXml.
-///</summary>
+/// Defines the Backstage Class.
+/// </summary>
 public static class BackstageConverter
 {
   /// <summary>

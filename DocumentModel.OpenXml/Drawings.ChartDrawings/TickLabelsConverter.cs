@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TickLabels Class converter from/to OpenXml.
-///</summary>
+/// Defines the TickLabels Class.
+/// </summary>
 public static class TickLabelsConverter
 {
   /// <summary>

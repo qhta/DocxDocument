@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Color Specified converter from/to OpenXml.
-///</summary>
+/// Color Specified.
+/// </summary>
 public static class BulletColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.BulletColor openXmlElement)

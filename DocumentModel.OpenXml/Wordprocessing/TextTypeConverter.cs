@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TextType Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextType Class.
+/// </summary>
 public static class TextTypeConverter
 {
 

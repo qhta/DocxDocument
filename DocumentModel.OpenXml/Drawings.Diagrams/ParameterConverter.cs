@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Parameter converter from/to OpenXml.
-///</summary>
+/// Parameter.
+/// </summary>
 public static class ParameterConverter
 {
   /// <summary>

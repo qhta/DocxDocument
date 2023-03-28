@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SlidePar converter from/to OpenXml.
-///</summary>
+/// Defines the SlidePart
+/// </summary>
 public static class SlidePartConverter
 {
   /// <summary>

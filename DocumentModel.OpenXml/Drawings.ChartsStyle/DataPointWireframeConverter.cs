@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DataPointWireframe Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataPointWireframe Class.
+/// </summary>
 public static class DataPointWireframeConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataPointWireframe openXmlElement)

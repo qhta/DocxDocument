@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Gradient stops converter from/to OpenXml.
-///</summary>
+/// Gradient stops.
+/// </summary>
 public static class GradientStopConverter
 {
   /// <summary>

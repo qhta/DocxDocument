@@ -3,8 +3,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// AlternateContentChoice element converte converter from/to OpenXml.
-///</summary>
+/// AlternateContentChoice element converter
+/// </summary>
 public static class AlternateContentChoiceConverter
 {
   public static AlternateContentChoice? CreateModelElement(DX.AlternateContentChoice? openXmlElement)

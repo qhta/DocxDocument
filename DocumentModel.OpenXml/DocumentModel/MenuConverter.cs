@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Menu Class converter from/to OpenXml.
-///</summary>
+/// Defines the Menu Class.
+/// </summary>
 public static class MenuConverter
 {
   /// <summary>

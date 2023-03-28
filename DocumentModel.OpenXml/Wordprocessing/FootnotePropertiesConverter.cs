@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the FootnoteProperties Class.
+/// </summary>
 public static class FootnotePropertiesConverter
 {
   /// <summary>

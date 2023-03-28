@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Polar Adjust Handle converter from/to OpenXml.
-///</summary>
+/// Polar Adjust Handle.
+/// </summary>
 public static class AdjustHandlePolarConverter
 {
   /// <summary>

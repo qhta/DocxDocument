@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ThemeElements Class converter from/to OpenXml.
-///</summary>
+/// Defines the ThemeElements Class.
+/// </summary>
 public static class ThemeElementsConverter
 {
   /// <summary>

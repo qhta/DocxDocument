@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Line Spacing converter from/to OpenXml.
-///</summary>
+/// Line Spacing.
+/// </summary>
 public static class LineSpacingConverter
 {
   private static Int32? GetSpacingPercent(DXDraw.LineSpacing openXmlElement)

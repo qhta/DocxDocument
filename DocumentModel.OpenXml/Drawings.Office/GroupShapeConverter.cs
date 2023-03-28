@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShape Class converter from/to OpenXml.
-///</summary>
+/// Defines the GroupShape Class.
+/// </summary>
 public static class GroupShapeConverter
 {
   private static DMDrawsO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXODraw.GroupShape openXmlElement)

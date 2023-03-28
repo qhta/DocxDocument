@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the PlotArea Class converter from/to OpenXml.
-///</summary>
+/// Defines the PlotArea Class.
+/// </summary>
 public static class PlotAreaConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.PlotArea openXmlElement)

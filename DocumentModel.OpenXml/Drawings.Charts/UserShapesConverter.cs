@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// User Shapes converter from/to OpenXml.
-///</summary>
+/// User Shapes.
+/// </summary>
 public static class UserShapesConverter
 {
   private static DMDrawsChartDraw.RelativeAnchorSize? GetRelativeAnchorSize(DXDrawCharts.UserShapes openXmlElement)

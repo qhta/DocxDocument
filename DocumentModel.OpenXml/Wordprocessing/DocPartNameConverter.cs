@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Entry Name converter from/to OpenXml.
-///</summary>
+/// Entry Name.
+/// </summary>
 public static class DocPartNameConverter
 {
   /// <summary>

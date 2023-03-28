@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// NoteReferenceMark element converter from/to OpenXml.
-///</summary>
+/// NoteReferenceMark element converter.
+/// </summary>
 public static class NoteReferenceMarkConverter
 {
   public static DMW.NoteReferenceMark? CreateModelElement(DXW.FootnoteReferenceMark? openXmlElement)

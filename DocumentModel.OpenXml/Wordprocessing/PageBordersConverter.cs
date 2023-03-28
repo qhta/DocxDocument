@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PageBorders Class converter from/to OpenXml.
-///</summary>
+/// Defines the PageBorders Class.
+/// </summary>
 public static class PageBordersConverter
 {
   /// <summary>

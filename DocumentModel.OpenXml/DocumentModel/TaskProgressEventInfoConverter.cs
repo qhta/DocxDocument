@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskProgressEventInfo Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskProgressEventInfo Class.
+/// </summary>
 public static class TaskProgressEventInfoConverter
 {
   /// <summary>

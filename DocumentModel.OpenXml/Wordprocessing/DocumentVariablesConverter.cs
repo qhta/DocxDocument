@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Variables converter from/to OpenXml.
-///</summary>
+/// Document Variables.
+/// </summary>
 public static class DocumentVariablesConverter
 {
   private static Collection<DMW.DocumentVariable>? GetItems(DXW.DocumentVariables openXmlElement)

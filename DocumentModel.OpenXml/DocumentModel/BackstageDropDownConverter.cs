@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageDropDown Class converter from/to OpenXml.
-///</summary>
+/// Defines the BackstageDropDown Class.
+/// </summary>
 public static class BackstageDropDownConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Character Bullet converter from/to OpenXml.
-///</summary>
+/// Character Bullet.
+/// </summary>
 public static class CharacterBulletConverter
 {
   /// <summary>

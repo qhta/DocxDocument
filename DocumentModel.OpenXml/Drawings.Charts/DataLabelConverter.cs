@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Data Label converter from/to OpenXml.
-///</summary>
+/// Data Label.
+/// </summary>
 public static class DataLabelConverter
 {
   /// <summary>

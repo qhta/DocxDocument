@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TxPrTextBody Class converter from/to OpenXml.
-///</summary>
+/// Defines the TxPrTextBody Class.
+/// </summary>
 public static class TxPrTextBodyConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXO2016DrawChartDraw.TxPrTextBody openXmlElement)

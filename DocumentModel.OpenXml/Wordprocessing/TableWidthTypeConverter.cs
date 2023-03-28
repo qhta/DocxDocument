@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthType Class converter from/to OpenXml.
-///</summary>
+/// Defines the TableWidthType Class.
+/// </summary>
 public static class TableWidthTypeConverter
 {
   /// <summary>

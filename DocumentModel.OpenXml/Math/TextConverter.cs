@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Text converter from/to OpenXml.
-///</summary>
+/// Text.
+/// </summary>
 public static class TextConverter
 {
   /// <summary>

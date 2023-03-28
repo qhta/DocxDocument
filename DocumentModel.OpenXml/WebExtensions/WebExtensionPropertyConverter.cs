@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionProperty Class converter from/to OpenXml.
-///</summary>
+/// Defines the WebExtensionProperty Class.
+/// </summary>
 public static class WebExtensionPropertyConverter
 {
   /// <summary>

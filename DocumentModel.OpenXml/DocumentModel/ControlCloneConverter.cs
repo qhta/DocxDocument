@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ControlClone Class converter from/to OpenXml.
-///</summary>
+/// Defines the ControlClone Class.
+/// </summary>
 public static class ControlCloneConverter
 {
   /// <summary>

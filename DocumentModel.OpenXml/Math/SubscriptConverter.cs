@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Subscript Function converter from/to OpenXml.
-///</summary>
+/// Subscript Function.
+/// </summary>
 public static class SubscriptConverter
 {
   /// <summary>

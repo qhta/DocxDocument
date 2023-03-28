@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ColorMapOverride Class converter from/to OpenXml.
-///</summary>
+/// Defines the ColorMapOverride Class.
+/// </summary>
 public static class ColorMapOverrideConverter
 {
   /// <summary>

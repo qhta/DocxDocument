@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DocumentTasksPar converter from/to OpenXml.
-///</summary>
+/// Defines the DocumentTasksPart
+/// </summary>
 public static class DocumentTasksPartConverter
 {
   private static String? GetContentType(DXPack.DocumentTasksPart openXmlElement)

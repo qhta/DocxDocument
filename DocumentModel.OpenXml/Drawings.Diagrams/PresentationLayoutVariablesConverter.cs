@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Presentation Layout Variables converter from/to OpenXml.
-///</summary>
+/// Presentation Layout Variables.
+/// </summary>
 public static class PresentationLayoutVariablesConverter
 {
   private static Boolean? GetOrganizationChart(DXDrawDgms.PresentationLayoutVariables openXmlElement)

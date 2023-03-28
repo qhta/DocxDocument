@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Numeric Point converter from/to OpenXml.
-///</summary>
+/// Numeric Point.
+/// </summary>
 public static class NumericPointConverter
 {
   /// <summary>
