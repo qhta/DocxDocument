@@ -33,7 +33,7 @@ public static class NumberingFormatConverter
   
   private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Format, value, diffs, objName, "Format");
+    return StringValueConverter.CmpValue(openXmlElement?.Format, value, diffs, objName, "Custom");
   }
   
   private static void SetFormat(DXW.NumberingFormat openXmlElement, String? value)
@@ -46,8 +46,8 @@ public static class NumberingFormatConverter
     if (openXmlElement != null)
     {
       var value = new DMW.NumberingFormat();
-      value.Val = GetVal(openXmlElement);
-      value.Format = GetFormat(openXmlElement);
+      value.Type = GetVal(openXmlElement);
+      value.Custom = GetFormat(openXmlElement);
       return value;
     }
     return null;
@@ -58,9 +58,9 @@ public static class NumberingFormatConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Type, diffs, objName))
         ok = false;
-      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+      if (!CmpFormat(openXmlElement, value.Custom, diffs, objName))
         ok = false;
       return ok;
     }
@@ -79,7 +79,7 @@ public static class NumberingFormatConverter
   
   public static void UpdateOpenXmlElement(DXW.NumberingFormat openXmlElement, DMW.NumberingFormat value)
   {
-    SetVal(openXmlElement, value?.Val);
-    SetFormat(openXmlElement, value?.Format);
+    SetVal(openXmlElement, value?.Type);
+    SetFormat(openXmlElement, value?.Custom);
   }
 }

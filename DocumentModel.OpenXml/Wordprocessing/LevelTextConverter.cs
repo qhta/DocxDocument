@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -13,9 +15,9 @@ public static class LevelTextConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXW.LevelText openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.LevelText openXmlElement, string? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Text");
   }
   
   private static void SetVal(DXW.LevelText openXmlElement, String? value)
@@ -26,9 +28,9 @@ public static class LevelTextConverter
   /// <summary>
   /// Level Text Is Null Character
   /// </summary>
-  private static Boolean? GetNull(DXW.LevelText openXmlElement)
+  private static Boolean GetNull(DXW.LevelText openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement?.Null);
+    return BooleanValueConverter.GetValue(openXmlElement?.Null) ?? false;
   }
   
   private static bool CmpNull(DXW.LevelText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -41,26 +43,26 @@ public static class LevelTextConverter
     openXmlElement.Null = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DMW.LevelText? CreateModelElement(DXW.LevelText? openXmlElement)
+  public static DMW.NumLevelText? CreateModelElement(DXW.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LevelText();
-      value.Val = GetVal(openXmlElement);
-      value.Null = GetNull(openXmlElement);
+      var value = new DMW.NumLevelText();
+      value.Text = GetVal(openXmlElement);
+      value.IsNull = GetNull(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LevelText? openXmlElement, DMW.LevelText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LevelText? openXmlElement, DMW.NumLevelText? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Text, diffs, objName))
         ok = false;
-      if (!CmpNull(openXmlElement, value.Null, diffs, objName))
+      if (!CmpNull(openXmlElement, value.IsNull, diffs, objName))
         ok = false;
       return ok;
     }
@@ -69,7 +71,7 @@ public static class LevelTextConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LevelText value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevelText value)
     where OpenXmlElementType: DXW.LevelText, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -77,9 +79,9 @@ public static class LevelTextConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.LevelText openXmlElement, DMW.LevelText value)
+  public static void UpdateOpenXmlElement(DXW.LevelText openXmlElement, DMW.NumLevelText value)
   {
-    SetVal(openXmlElement, value?.Val);
-    SetNull(openXmlElement, value?.Null);
+    SetVal(openXmlElement, value?.Text);
+    SetNull(openXmlElement, value?.IsNull);
   }
 }

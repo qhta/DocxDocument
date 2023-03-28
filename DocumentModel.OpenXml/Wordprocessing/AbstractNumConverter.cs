@@ -163,9 +163,9 @@ public static class AbstractNumConverter
     StringValueConverter.SetValue<DXW.NumberingStyleLink>(openXmlElement, value);
   }
   
-  private static Collection<DMW.Level>? GetLevels(DXW.AbstractNum openXmlElement)
+  private static DMW.AbstractNumLevels? GetLevels(DXW.AbstractNum openXmlElement)
   {
-    var collection = new Collection<DMW.Level>();
+    var collection = new DMW.AbstractNumLevels();
     foreach (var item in openXmlElement.Elements<DXW.Level>())
     {
       var newItem = DMXW.LevelConverter.CreateModelElement(item);
@@ -177,7 +177,7 @@ public static class AbstractNumConverter
     return null;
   }
   
-  private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value, DiffList? diffs, string? objName)
+  private static bool CmpLevels(DXW.AbstractNum openXmlElement, Collection<DMW.NumLevel>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.Level>();
     var origElementsCount = origElements.Count();
@@ -205,7 +205,7 @@ public static class AbstractNumConverter
     return false;
   }
   
-  private static void SetLevels(DXW.AbstractNum openXmlElement, Collection<DMW.Level>? value)
+  private static void SetLevels(DXW.AbstractNum openXmlElement, Collection<DMW.NumLevel>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Level>();
     if (value != null)

@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestFonts();
+    RunTestNumbering();
   }
 
   private static void RunTestSections()
@@ -27,6 +27,15 @@ internal class Program
     testInstance.TestReadDocumentBody("_Jakość oprogramowania.docx", true);
     testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
     //testInstance.TestReadBodyJsonSerialization("Simple text paragraph.docx");
+    Console.WriteLine("\nTest passed");
+  }
+
+  private static void RunTestNumbering()
+  {
+    var testInstance = new TestNumbering();
+    testInstance.Setup();
+    //testInstance.TestReadNumbering();
+    testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 

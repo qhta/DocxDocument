@@ -89,6 +89,8 @@ public partial class DocxReader
       document.Properties = ReadDocumentProperties(parts);
     if (parts.HasFlag(Parts.StyleDefinitions))
       document.Styles = ReadStyles();
+    if (parts.HasFlag(Parts.NumberingDefinitions))
+      document.Numbering = ReadNumbering();
     if (parts.HasFlag(Parts.Theme))
       document.Theme = ReadTheme();
     if (parts.HasFlag(Parts.FontTable))
@@ -134,6 +136,17 @@ public partial class DocxReader
     else
       styleDefinitions = new();
     return styleDefinitions;
+  }
+
+  private DMW.Numbering ReadNumbering()
+  {
+    DMW.Numbering numbering;
+    var numberingOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<NumberingDefinitionsPart>()?.FirstOrDefault()?.Numbering;
+    if (numberingOpenXmlElement != null)
+      numbering = DMXW.NumberingConverter.CreateModelElement(numberingOpenXmlElement) ?? new();
+    else
+      numbering = new();
+    return numbering;
   }
 
   private DMDraws.Theme ReadTheme()

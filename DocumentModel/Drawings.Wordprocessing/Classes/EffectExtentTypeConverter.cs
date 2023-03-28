@@ -1,6 +1,4 @@
-﻿using System.Net.Http.Headers;
-
-namespace DocumentModel.Drawings.Wordprocessing;
+﻿namespace DocumentModel.Drawings.Wordprocessing;
 
 /// <summary>
 /// Type converter for EffectExtent type.

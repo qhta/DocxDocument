@@ -79,7 +79,7 @@ public static class TextInputConverter
   
   private static bool CmpFormat(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val, value, diffs, objName, "Format");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val, value, diffs, objName, "Custom");
   }
   
   private static void SetFormat(DXW.TextInput openXmlElement, String? value)

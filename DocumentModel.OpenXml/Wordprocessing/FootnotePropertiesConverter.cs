@@ -56,7 +56,7 @@ public static class FootnotePropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
+      itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>((DMW.NumberingFormat)value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
