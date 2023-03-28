@@ -163,9 +163,9 @@ public static class AbstractNumConverter
     StringValueConverter.SetValue<DXW.NumberingStyleLink>(openXmlElement, value);
   }
   
-  private static DMW.AbstractNumLevels? GetLevels(DXW.AbstractNum openXmlElement)
+  private static DMW.NumLevels? GetLevels(DXW.AbstractNum openXmlElement)
   {
-    var collection = new DMW.AbstractNumLevels();
+    var collection = new DMW.NumLevels();
     foreach (var item in openXmlElement.Elements<DXW.Level>())
     {
       var newItem = DMXW.LevelConverter.CreateModelElement(item);

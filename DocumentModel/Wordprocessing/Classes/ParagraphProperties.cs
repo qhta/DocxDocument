@@ -54,12 +54,12 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  [XmlContentElement] public Shading? Shading { get; set; }
 
   /// <summary>
   ///   Tabs.
   /// </summary>
-  public Tabs? Tabs { get; set; }
+  [XmlContentElement] public Tabs? Tabs { get; set; }
 
   /// <summary>
   ///   SuppressAutoHyphens.
@@ -119,7 +119,7 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   Indentation.
   /// </summary>
-  public Indentation? Indentation { get; set; }
+  [XmlContentElement] public Indentation? Indentation { get; set; }
 
   /// <summary>
   ///   ContextualSpacing.
