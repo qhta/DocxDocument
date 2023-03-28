@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// n-ary Properties converter from/to OpenXml.
-///</summary>
+/// n-ary Properties.
+/// </summary>
 public static class NaryPropertiesConverter
 {
   /// <summary>

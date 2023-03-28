@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Subscript Properties converter from/to OpenXml.
-///</summary>
+/// Subscript Properties.
+/// </summary>
 public static class SubscriptPropertiesConverter
 {
   /// <summary>

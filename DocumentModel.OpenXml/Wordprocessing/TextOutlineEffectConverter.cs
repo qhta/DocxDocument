@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TextOutlineEffect Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextOutlineEffect Class.
+/// </summary>
 public static class TextOutlineEffectConverter
 {
   /// <summary>

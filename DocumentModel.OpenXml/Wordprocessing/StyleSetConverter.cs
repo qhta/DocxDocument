@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the StyleSet Class converter from/to OpenXml.
-///</summary>
+/// Defines the StyleSet Class.
+/// </summary>
 public static class StyleSetConverter
 {
   /// <summary>

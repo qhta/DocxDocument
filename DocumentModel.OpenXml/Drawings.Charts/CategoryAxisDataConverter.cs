@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the CategoryAxisData Class converter from/to OpenXml.
-///</summary>
+/// Defines the CategoryAxisData Class.
+/// </summary>
 public static class CategoryAxisDataConverter
 {
   private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.CategoryAxisData openXmlElement)

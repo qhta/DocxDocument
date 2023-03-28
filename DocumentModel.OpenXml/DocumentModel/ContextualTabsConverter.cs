@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ContextualTabs Class converter from/to OpenXml.
-///</summary>
+/// Defines the ContextualTabs Class.
+/// </summary>
 public static class ContextualTabsConverter
 {
   private static Collection<DM.TabSet>? GetTabSets(DXO2010CustUI.ContextualTabs openXmlElement)

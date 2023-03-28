@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the CustomFilePropertiesPar converter from/to OpenXml.
-///</summary>
+/// Defines the CustomFilePropertiesPart
+/// </summary>
 public static class CustomFilePropertiesPartConverter
 {
   private static String? GetContentType(DXPack.CustomFilePropertiesPart openXmlElement)

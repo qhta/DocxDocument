@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Video from File converter from/to OpenXml.
-///</summary>
+/// Video from File.
+/// </summary>
 public static class VideoFromFileConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunFonts Class converter from/to OpenXml.
-///</summary>
+/// Defines the RunFonts Class.
+/// </summary>
 public static class RunFontsConverter
 {
   /// <summary>

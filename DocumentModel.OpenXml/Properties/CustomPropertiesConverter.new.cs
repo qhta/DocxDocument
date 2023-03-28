@@ -3,8 +3,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Custom File Properties converter from/to OpenXml.
-///</summary>
+///   Custom File Properties.
+/// </summary>
 public static class CustomPropertiesConverter
 {
   public static Collection<DocumentProperty>? GetCustomDocumentProperties(DocumentFormat.OpenXml.CustomProperties.Properties? openXmlElement)

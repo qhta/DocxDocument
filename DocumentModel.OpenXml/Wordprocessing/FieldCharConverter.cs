@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Complex Field Character converter from/to OpenXml.
-///</summary>
+/// Complex Field Character.
+/// </summary>
 public static class FieldCharConverter
 {
   /// <summary>

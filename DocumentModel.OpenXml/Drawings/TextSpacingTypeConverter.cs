@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextSpacingType Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextSpacingType Class.
+/// </summary>
 public static class TextSpacingTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the HiLoLine Class converter from/to OpenXml.
-///</summary>
+/// Defines the HiLoLine Class.
+/// </summary>
 public static class HiLoLineConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.HiLoLine openXmlElement)

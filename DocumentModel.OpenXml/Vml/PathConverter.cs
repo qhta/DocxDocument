@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Path Class converter from/to OpenXml.
-///</summary>
+/// Defines the Path Class.
+/// </summary>
 public static class PathConverter
 {
   /// <summary>

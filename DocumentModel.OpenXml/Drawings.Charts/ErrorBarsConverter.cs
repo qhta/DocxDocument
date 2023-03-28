@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ErrorBars Class converter from/to OpenXml.
-///</summary>
+/// Defines the ErrorBars Class.
+/// </summary>
 public static class ErrorBarsConverter
 {
   /// <summary>

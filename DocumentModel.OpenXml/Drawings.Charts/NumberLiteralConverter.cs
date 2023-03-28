@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Number Literal converter from/to OpenXml.
-///</summary>
+/// Number Literal.
+/// </summary>
 public static class NumberLiteralConverter
 {
   private static String? GetFormatCode(DXDrawCharts.NumberLiteral openXmlElement)

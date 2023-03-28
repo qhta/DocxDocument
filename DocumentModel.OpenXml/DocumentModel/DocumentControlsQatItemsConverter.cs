@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the DocumentControlsQatItems Class converter from/to OpenXml.
-///</summary>
+/// Defines the DocumentControlsQatItems Class.
+/// </summary>
 public static class DocumentControlsQatItemsConverter
 {
   private static DM.ControlCloneQat? GetControlCloneQat(DXO2010CustUI.DocumentControlsQatItems openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Footer converter from/to OpenXml.
-///</summary>
+/// Footer.
+/// </summary>
 public static class FooterConverter
 {
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.Footer openXmlElement)

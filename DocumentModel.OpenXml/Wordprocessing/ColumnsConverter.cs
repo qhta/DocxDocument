@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Columns Class converter from/to OpenXml.
-///</summary>
+/// Defines the Columns Class.
+/// </summary>
 public static class ColumnsConverter
 {
   /// <summary>

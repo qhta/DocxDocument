@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Symbol Run Properties converter from/to OpenXml.
-///</summary>
+/// Numbering Symbol Run Properties.
+/// </summary>
 public static class NumberingSymbolRunPropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Skew Transform converter from/to OpenXml.
-///</summary>
+/// Skew Transform.
+/// </summary>
 public static class SkewConverter
 {
   /// <summary>

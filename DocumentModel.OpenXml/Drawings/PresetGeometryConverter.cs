@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Preset geometry converter from/to OpenXml.
-///</summary>
+/// Preset geometry.
+/// </summary>
 public static class PresetGeometryConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the FooterPar converter from/to OpenXml.
-///</summary>
+/// Defines the FooterPart
+/// </summary>
 public static class FooterPartConverter
 {
   /// <summary>

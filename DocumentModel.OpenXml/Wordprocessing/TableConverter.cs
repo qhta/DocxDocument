@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Table Class converter from/to OpenXml.
-///</summary>
+/// Defines the Table Class.
+/// </summary>
 public static class TableConverter
 {
   #region TableProperties conversion

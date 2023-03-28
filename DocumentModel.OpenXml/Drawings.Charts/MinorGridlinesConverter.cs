@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Minor Gridlines converter from/to OpenXml.
-///</summary>
+/// Minor Gridlines.
+/// </summary>
 public static class MinorGridlinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.MinorGridlines openXmlElement)

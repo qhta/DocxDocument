@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the DataBinding Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataBinding Class.
+/// </summary>
 public static class DataBindingConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the TextBodyProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextBodyProperties Class.
+/// </summary>
 public static class TextBodyPropertiesConverter
 {
   /// <summary>

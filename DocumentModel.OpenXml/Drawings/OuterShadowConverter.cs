@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Outer Shadow Effect converter from/to OpenXml.
-///</summary>
+/// Outer Shadow Effect.
+/// </summary>
 public static class OuterShadowConverter
 {
   /// <summary>

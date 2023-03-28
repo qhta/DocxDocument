@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the ComboBox Class converter from/to OpenXml.
-///</summary>
+/// Defines the ComboBox Class.
+/// </summary>
 public static class ComboBoxConverter
 {
   /// <summary>

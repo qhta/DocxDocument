@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the TextProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextProperties Class.
+/// </summary>
 public static class TextPropertiesConverter
 {
   private static DMDraws.BodyProperties? GetBodyProperties(DXDrawCharts.TextProperties openXmlElement)

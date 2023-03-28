@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect Container converter from/to OpenXml.
-///</summary>
+/// Effect Container.
+/// </summary>
 public static class EffectDagConverter
 {
   private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.EffectDag openXmlElement)

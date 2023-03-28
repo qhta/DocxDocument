@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the OfficeMenu Class converter from/to OpenXml.
-///</summary>
+/// Defines the OfficeMenu Class.
+/// </summary>
 public static class OfficeMenuConverter
 {
   private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCustUI.OfficeMenu openXmlElement)

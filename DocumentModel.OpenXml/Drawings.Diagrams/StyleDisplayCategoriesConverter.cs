@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Category List converter from/to OpenXml.
-///</summary>
+/// Category List.
+/// </summary>
 public static class StyleDisplayCategoriesConverter
 {
   private static Collection<DMDrawsDgms.StyleDisplayCategory>? GetItems(DXDrawDgms.StyleDisplayCategories openXmlElement)

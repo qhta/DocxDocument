@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the GridlineMajor Class converter from/to OpenXml.
-///</summary>
+/// Defines the GridlineMajor Class.
+/// </summary>
 public static class GridlineMajorConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.GridlineMajor openXmlElement)

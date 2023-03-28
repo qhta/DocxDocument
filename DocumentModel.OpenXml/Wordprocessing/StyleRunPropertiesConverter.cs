@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Run Properties converter from/to OpenXml.
-///</summary>
+/// Run Properties.
+/// </summary>
 public static class StyleRunPropertiesConverter
 {
   /// <summary>

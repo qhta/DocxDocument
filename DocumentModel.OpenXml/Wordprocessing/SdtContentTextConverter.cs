@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentText Class converter from/to OpenXml.
-///</summary>
+/// Defines the SdtContentText Class.
+/// </summary>
 public static class SdtContentTextConverter
 {
   /// <summary>

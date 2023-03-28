@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the UpDownBarType Class converter from/to OpenXml.
-///</summary>
+/// Defines the UpDownBarType Class.
+/// </summary>
 public static class UpDownBarTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableLook Class converter from/to OpenXml.
-///</summary>
+/// Defines the TableLook Class.
+/// </summary>
 public static class TableLookConverter
 {
   /// <summary>

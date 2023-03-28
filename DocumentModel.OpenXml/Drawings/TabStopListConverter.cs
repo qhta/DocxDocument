@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Tab List converter from/to OpenXml.
-///</summary>
+/// Tab List.
+/// </summary>
 public static class TabStopListConverter
 {
   private static Collection<DMDraws.TabStop>? GetTabStops(DXDraw.TabStopList openXmlElement)

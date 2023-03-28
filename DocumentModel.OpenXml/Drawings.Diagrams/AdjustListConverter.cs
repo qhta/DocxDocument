@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Shape Adjust List converter from/to OpenXml.
-///</summary>
+/// Shape Adjust List.
+/// </summary>
 public static class AdjustListConverter
 {
   private static Collection<DMDrawsDgms.Adjust>? GetAdjusts(DXDrawDgms.AdjustList openXmlElement)

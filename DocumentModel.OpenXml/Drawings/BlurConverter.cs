@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the Blur Class converter from/to OpenXml.
-///</summary>
+/// Defines the Blur Class.
+/// </summary>
 public static class BlurConverter
 {
   /// <summary>

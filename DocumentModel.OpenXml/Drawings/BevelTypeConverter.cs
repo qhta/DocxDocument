@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BevelType Class converter from/to OpenXml.
-///</summary>
+/// Defines the BevelType Class.
+/// </summary>
 public static class BevelTypeConverter
 {
   /// <summary>

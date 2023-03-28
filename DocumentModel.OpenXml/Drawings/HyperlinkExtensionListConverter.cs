@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Future extensions. converter from/to OpenXml.
-///</summary>
+/// Future extensions..
+/// </summary>
 public static class HyperlinkExtensionListConverter
 {
   private static Collection<DMDraws.HyperlinkExtension>? GetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement)

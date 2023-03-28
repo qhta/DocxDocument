@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the OpenXmlTaskUserElement Class converter from/to OpenXml.
-///</summary>
+/// Defines the OpenXmlTaskUserElement Class.
+/// </summary>
 public static class OpenXmlTaskUserElementConverter
 {
   /// <summary>

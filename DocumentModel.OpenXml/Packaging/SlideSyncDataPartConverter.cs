@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SlideSyncDataPar converter from/to OpenXml.
-///</summary>
+/// Defines the SlideSyncDataPart
+/// </summary>
 public static class SlideSyncDataPartConverter
 {
   private static String? GetContentType(DXPack.SlideSyncDataPart openXmlElement)

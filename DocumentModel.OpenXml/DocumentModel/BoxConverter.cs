@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Box Class converter from/to OpenXml.
-///</summary>
+/// Defines the Box Class.
+/// </summary>
 public static class BoxConverter
 {
   /// <summary>

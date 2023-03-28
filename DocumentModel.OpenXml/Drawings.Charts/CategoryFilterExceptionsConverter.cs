@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the CategoryFilterExceptions Class converter from/to OpenXml.
-///</summary>
+/// Defines the CategoryFilterExceptions Class.
+/// </summary>
 public static class CategoryFilterExceptionsConverter
 {
   private static DMDrawsCharts.CategoryFilterException? GetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement)

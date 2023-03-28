@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Phantom Properties converter from/to OpenXml.
-///</summary>
+/// Phantom Properties.
+/// </summary>
 public static class PhantomPropertiesConverter
 {
   /// <summary>

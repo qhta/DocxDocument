@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ConditionalFormatStyle Class converter from/to OpenXml.
-///</summary>
+/// Defines the ConditionalFormatStyle Class.
+/// </summary>
 public static class ConditionalFormatStyleConverter
 {
   /// <summary>

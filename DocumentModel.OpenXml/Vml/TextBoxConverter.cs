@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the TextBox Class converter from/to OpenXml.
-///</summary>
+/// Defines the TextBox Class.
+/// </summary>
 public static class TextBoxConverter
 {
   /// <summary>

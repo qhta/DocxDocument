@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the DataModelExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the DataModelExtensionList Class.
+/// </summary>
 public static class DataModelExtensionListConverter
 {
   private static Collection<DMDraws.DataModelExtension>? GetDataModelExtensions(DXDrawDgms.DataModelExtensionList openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Heading Pairs converter from/to OpenXml.
-///</summary>
+///   Heading Pairs.
+/// </summary>
 public static class HeadingPairsConverter
 {
   public static VectorVariant? GetVTVector(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)

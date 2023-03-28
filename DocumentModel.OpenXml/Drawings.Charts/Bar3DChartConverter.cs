@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D Bar Charts converter from/to OpenXml.
-///</summary>
+/// 3D Bar Charts.
+/// </summary>
 public static class Bar3DChartConverter
 {
   /// <summary>

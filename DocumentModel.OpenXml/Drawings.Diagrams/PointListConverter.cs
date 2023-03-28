@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Point List converter from/to OpenXml.
-///</summary>
+/// Point List.
+/// </summary>
 public static class PointListConverter
 {
   private static Collection<DMDrawsDgms.Point>? GetPoints(DXDrawDgms.PointList openXmlElement)

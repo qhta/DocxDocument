@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D back wall formatting converter from/to OpenXml.
-///</summary>
+/// 3D back wall formatting.
+/// </summary>
 public static class BackWallConverter
 {
   private static Byte? GetThickness(DXDrawCharts.BackWall openXmlElement)

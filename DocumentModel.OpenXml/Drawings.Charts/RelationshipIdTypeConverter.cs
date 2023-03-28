@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the RelationshipIdType Class converter from/to OpenXml.
-///</summary>
+/// Defines the RelationshipIdType Class.
+/// </summary>
 public static class RelationshipIdTypeConverter
 {
   /// <summary>

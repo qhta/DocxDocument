@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Series Axis converter from/to OpenXml.
-///</summary>
+/// Series Axis.
+/// </summary>
 public static class SeriesAxisConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskPriorityEventInfo Class converter from/to OpenXml.
-///</summary>
+/// Defines the TaskPriorityEventInfo Class.
+/// </summary>
 public static class TaskPriorityEventInfoConverter
 {
   /// <summary>

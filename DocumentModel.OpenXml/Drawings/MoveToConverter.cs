@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Move Path To converter from/to OpenXml.
-///</summary>
+/// Move Path To.
+/// </summary>
 public static class MoveToConverter
 {
   /// <summary>

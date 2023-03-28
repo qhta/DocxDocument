@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Column Properties converter from/to OpenXml.
-///</summary>
+/// Matrix Column Properties.
+/// </summary>
 public static class MatrixColumnPropertiesConverter
 {
   /// <summary>

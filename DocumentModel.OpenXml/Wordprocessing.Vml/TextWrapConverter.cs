@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing.Vml;
 
 /// <summary>
-/// Text Wrapping converter from/to OpenXml.
-///</summary>
+/// Text Wrapping.
+/// </summary>
 public static class TextWrapConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D side wall formatting converter from/to OpenXml.
-///</summary>
+/// 3D side wall formatting.
+/// </summary>
 public static class SideWallConverter
 {
   private static Byte? GetThickness(DXDrawCharts.SideWall openXmlElement)

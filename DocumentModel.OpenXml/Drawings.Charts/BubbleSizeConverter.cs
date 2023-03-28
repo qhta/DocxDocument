@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleSize Class converter from/to OpenXml.
-///</summary>
+/// Defines the BubbleSize Class.
+/// </summary>
 public static class BubbleSizeConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.BubbleSize openXmlElement)

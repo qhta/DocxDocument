@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Custom XML Element Properties converter from/to OpenXml.
-///</summary>
+/// Custom XML Element Properties.
+/// </summary>
 public static class CustomXmlPropertiesConverter
 {
   /// <summary>

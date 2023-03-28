@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Backdrop Plane converter from/to OpenXml.
-///</summary>
+/// Backdrop Plane.
+/// </summary>
 public static class BackdropConverter
 {
   /// <summary>

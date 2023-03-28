@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents an external relationship converter from/to OpenXml.
-///</summary>
+/// Represents an external relationship.
+/// </summary>
 public static class ExternalRelationshipConverter
 {
   public static DocumentModel.Packaging.ExternalRelationship? CreateModelElement(DXPack.ExternalRelationship? openXmlElement)

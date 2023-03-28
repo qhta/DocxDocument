@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Future extensions. converter from/to OpenXml.
-///</summary>
+/// Future extensions..
+/// </summary>
 public static class BlipExtensionListConverter
 {
   private static Collection<DMDraws.BlipExtension>? GetBlipExtensions(DXDraw.BlipExtensionList openXmlElement)

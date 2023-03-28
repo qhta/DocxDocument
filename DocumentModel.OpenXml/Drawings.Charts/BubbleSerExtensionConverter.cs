@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BubbleSerExtension Class converter from/to OpenXml.
-///</summary>
+/// Defines the BubbleSerExtension Class.
+/// </summary>
 public static class BubbleSerExtensionConverter
 {
   /// <summary>

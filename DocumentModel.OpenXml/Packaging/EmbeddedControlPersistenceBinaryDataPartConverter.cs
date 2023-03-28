@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the EmbeddedControlPersistenceBinaryDataPar converter from/to OpenXml.
-///</summary>
+/// Defines the EmbeddedControlPersistenceBinaryDataPart
+/// </summary>
 public static class EmbeddedControlPersistenceBinaryDataPartConverter
 {
   private static String? GetRelationshipType(DXPack.EmbeddedControlPersistenceBinaryDataPart openXmlElement)

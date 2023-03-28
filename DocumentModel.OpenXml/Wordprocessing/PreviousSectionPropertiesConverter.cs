@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Section Properties converter from/to OpenXml.
-///</summary>
+/// Previous Section Properties.
+/// </summary>
 public static class PreviousSectionPropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ControlPropertiesPar converter from/to OpenXml.
-///</summary>
+/// Defines the ControlPropertiesPart
+/// </summary>
 public static class ControlPropertiesPartConverter
 {
   private static String? GetContentType(DXPack.ControlPropertiesPart openXmlElement)

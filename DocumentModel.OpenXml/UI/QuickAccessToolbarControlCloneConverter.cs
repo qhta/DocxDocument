@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the QuickAccessToolbarControlClone Class converter from/to OpenXml.
-///</summary>
+/// Defines the QuickAccessToolbarControlClone Class.
+/// </summary>
 public static class QuickAccessToolbarControlCloneConverter
 {
   /// <summary>

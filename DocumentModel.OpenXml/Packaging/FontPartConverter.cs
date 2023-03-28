@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the FontPar converter from/to OpenXml.
-///</summary>
+/// Defines the FontPart
+/// </summary>
 public static class FontPartConverter
 {
   private static String? GetRelationshipType(DXPack.FontPart openXmlElement)

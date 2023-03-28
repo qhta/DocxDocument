@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Paragraph Properties converter from/to OpenXml.
-///</summary>
+/// Table Style Conditional Formatting Paragraph Properties.
+/// </summary>
 public static class StyleParagraphPropertiesConverter
 {
   /// <summary>

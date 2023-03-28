@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the People Class converter from/to OpenXml.
-///</summary>
+/// Defines the People Class.
+/// </summary>
 public static class PeopleConverter
 {
   private static Collection<DMW.Person>? GetPersons(DXO2013W.People openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Clipping Path converter from/to OpenXml.
-///</summary>
+/// Shape Clipping Path.
+/// </summary>
 public static class ClipPathConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MaxColorSolidColorFillProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the MaxColorSolidColorFillProperties Class.
+/// </summary>
 public static class MaxColorSolidColorFillPropertiesConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2016DrawChartDraw.MaxColorSolidColorFillProperties openXmlElement)

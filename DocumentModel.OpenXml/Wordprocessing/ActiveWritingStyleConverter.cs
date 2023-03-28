@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Grammar Checking Settings converter from/to OpenXml.
-///</summary>
+/// Grammar Checking Settings.
+/// </summary>
 public static class ActiveWritingStyleConverter
 {
   /// <summary>

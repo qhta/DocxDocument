@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FormulaReference Class converter from/to OpenXml.
-///</summary>
+/// Defines the FormulaReference Class.
+/// </summary>
 public static class FormulaReferenceConverter
 {
   /// <summary>

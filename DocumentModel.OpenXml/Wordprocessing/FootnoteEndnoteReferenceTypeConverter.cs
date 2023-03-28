@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteEndnoteReferenceType Class converter from/to OpenXml.
-///</summary>
+/// Defines the FootnoteEndnoteReferenceType Class.
+/// </summary>
 public static class FootnoteEndnoteReferenceTypeConverter
 {
   /// <summary>

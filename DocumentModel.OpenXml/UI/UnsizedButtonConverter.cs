@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the UnsizedButton Class converter from/to OpenXml.
-///</summary>
+/// Defines the UnsizedButton Class.
+/// </summary>
 public static class UnsizedButtonConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the Wall Class converter from/to OpenXml.
-///</summary>
+/// Defines the Wall Class.
+/// </summary>
 public static class WallConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.Wall openXmlElement)

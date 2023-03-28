@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Theme Color Mappings converter from/to OpenXml.
-///</summary>
+/// Theme Color Mappings.
+/// </summary>
 public static class ColorSchemeMappingConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the GroupBox Class converter from/to OpenXml.
-///</summary>
+/// Defines the GroupBox Class.
+/// </summary>
 public static class GroupBoxConverter
 {
   /// <summary>

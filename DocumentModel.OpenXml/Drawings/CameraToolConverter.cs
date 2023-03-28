@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the CameraTool Class converter from/to OpenXml.
-///</summary>
+/// Defines the CameraTool Class.
+/// </summary>
 public static class CameraToolConverter
 {
   /// <summary>

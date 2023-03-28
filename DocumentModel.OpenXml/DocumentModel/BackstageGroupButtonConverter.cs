@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageGroupButton Class converter from/to OpenXml.
-///</summary>
+/// Defines the BackstageGroupButton Class.
+/// </summary>
 public static class BackstageGroupButtonConverter
 {
   /// <summary>

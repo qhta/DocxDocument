@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the LinearShadeProperties Class converter from/to OpenXml.
-///</summary>
+/// Defines the LinearShadeProperties Class.
+/// </summary>
 public static class LinearShadePropertiesConverter
 {
   /// <summary>

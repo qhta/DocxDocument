@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Move Destination Run Content converter from/to OpenXml.
-///</summary>
+/// Move Destination Run Content.
+/// </summary>
 public static class MoveToRunConverter
 {
   private static DMW.SdtRun? GetSdtRun(DXW.MoveToRun openXmlElement)

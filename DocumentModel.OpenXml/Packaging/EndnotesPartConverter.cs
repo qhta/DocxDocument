@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the EndnotesPar converter from/to OpenXml.
-///</summary>
+/// Defines the EndnotesPart
+/// </summary>
 public static class EndnotesPartConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Legacy Numbering Level Properties converter from/to OpenXML converter from/to OpenXml.
-///</summary>
+/// Legacy Numbering Level Properties converter from/to OpenXML.
+/// </summary>
 public static class LegacyNumberingConverter
 {
   #region Use Legacy Numbering Properties

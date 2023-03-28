@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BiLevel Class converter from/to OpenXml.
-///</summary>
+/// Defines the BiLevel Class.
+/// </summary>
 public static class BiLevelConverter
 {
   /// <summary>

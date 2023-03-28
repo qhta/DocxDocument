@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ExtensionList Class converter from/to OpenXml.
-///</summary>
+/// Defines the ExtensionList Class.
+/// </summary>
 public static class ExtensionListConverter
 {
   private static Collection<DMDrawsCharts.Extension>? GetExtensions(DXDrawCharts.ExtensionList openXmlElement)

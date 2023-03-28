@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Draw Arc To converter from/to OpenXml.
-///</summary>
+/// Draw Arc To.
+/// </summary>
 public static class ArcToConverter
 {
   /// <summary>

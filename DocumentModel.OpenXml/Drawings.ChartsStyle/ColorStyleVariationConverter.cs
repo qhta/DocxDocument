@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the ColorStyleVariation Class converter from/to OpenXml.
-///</summary>
+/// Defines the ColorStyleVariation Class.
+/// </summary>
 public static class ColorStyleVariationConverter
 {
   private static Int32? GetTint(DXO2013DrawChartStyle.ColorStyleVariation openXmlElement)

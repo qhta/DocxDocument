@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingPrinterSettingsPar converter from/to OpenXml.
-///</summary>
+/// Defines the WordprocessingPrinterSettingsPart
+/// </summary>
 public static class WordprocessingPrinterSettingsPartConverter
 {
   private static String? GetContentType(DXPack.WordprocessingPrinterSettingsPart openXmlElement)

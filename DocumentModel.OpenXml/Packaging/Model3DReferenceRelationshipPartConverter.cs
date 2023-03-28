@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the Model3DReferenceRelationshipPar converter from/to OpenXml.
-///</summary>
+/// Defines the Model3DReferenceRelationshipPart
+/// </summary>
 public static class Model3DReferenceRelationshipPartConverter
 {
   private static String? GetContentType(DXPack.Model3DReferenceRelationshipPart openXmlElement)

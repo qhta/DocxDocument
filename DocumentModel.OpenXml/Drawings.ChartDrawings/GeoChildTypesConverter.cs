@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildTypes Class converter from/to OpenXml.
-///</summary>
+/// Defines the GeoChildTypes Class.
+/// </summary>
 public static class GeoChildTypesConverter
 {
   private static Collection<String>? GetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement)

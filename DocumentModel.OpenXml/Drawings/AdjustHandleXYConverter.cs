@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// XY Adjust Handle converter from/to OpenXml.
-///</summary>
+/// XY Adjust Handle.
+/// </summary>
 public static class AdjustHandleXYConverter
 {
   /// <summary>

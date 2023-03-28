@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Choose Element converter from/to OpenXml.
-///</summary>
+/// Choose Element.
+/// </summary>
 public static class ChooseConverter
 {
   /// <summary>

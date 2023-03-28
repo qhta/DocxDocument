@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Divs Class converter from/to OpenXml.
-///</summary>
+/// Defines the Divs Class.
+/// </summary>
 public static class DivsConverter
 {
   private static DMW.Div? GetDiv(DXW.Divs openXmlElement)

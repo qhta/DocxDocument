@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the EmbeddedObjectPar converter from/to OpenXml.
-///</summary>
+/// Defines the EmbeddedObjectPart
+/// </summary>
 public static class EmbeddedObjectPartConverter
 {
   private static String? GetRelationshipType(DXPack.EmbeddedObjectPart openXmlElement)

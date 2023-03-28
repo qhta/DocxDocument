@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleColor Class converter from/to OpenXml.
-///</summary>
+/// Defines the StyleColor Class.
+/// </summary>
 public static class StyleColorConverter
 {
   /// <summary>

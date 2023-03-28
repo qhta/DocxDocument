@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.CustomXml;
 
 /// <summary>
-/// Embedded Custom XML Schema Supplementary Data converter from/to OpenXml.
-///</summary>
+/// Embedded Custom XML Schema Supplementary Data.
+/// </summary>
 public static class SchemaLibraryConverter
 {
   private static Collection<DMCustXml.Schema>? GetSchemas(DXCustXmlSchRefs.SchemaLibrary openXmlElement)

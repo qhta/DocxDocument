@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingCommentsExPar converter from/to OpenXml.
-///</summary>
+/// Defines the WordprocessingCommentsExPart
+/// </summary>
 public static class WordprocessingCommentsExPartConverter
 {
   /// <summary>
