@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Grouping History.
-/// </summary>
+/// Shape Grouping History converter from/to OpenXml.
+///</summary>
 public static class RegroupTableConverter
 {
   /// <summary>

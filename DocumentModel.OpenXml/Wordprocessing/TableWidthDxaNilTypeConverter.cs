@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthDxaNilType Class.
-/// </summary>
+/// Defines the TableWidthDxaNilType Class converter from/to OpenXml.
+///</summary>
 public static class TableWidthDxaNilTypeConverter
 {
   /// <summary>

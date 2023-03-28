@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Font.
-/// </summary>
+/// Font converter from/to OpenXml.
+///</summary>
 public static class SupplementalFontConverter
 {
   /// <summary>

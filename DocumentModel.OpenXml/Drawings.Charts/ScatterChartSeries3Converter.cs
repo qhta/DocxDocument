@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ScatterChartSeries Class.
-/// </summary>
+/// Defines the ScatterChartSeries Class converter from/to OpenXml.
+///</summary>
 public static class ScatterChartSeries3Converter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SchemeColor Class.
-/// </summary>
+/// Defines the SchemeColor Class converter from/to OpenXml.
+///</summary>
 public static class SchemeColorConverter
 {
   /// <summary>

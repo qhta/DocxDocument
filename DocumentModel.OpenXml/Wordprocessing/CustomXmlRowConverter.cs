@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Row-Level Custom XML Element.
-/// </summary>
+/// Row-Level Custom XML Element converter from/to OpenXml.
+///</summary>
 public static class CustomXmlRowConverter
 {
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlRow openXmlElement)

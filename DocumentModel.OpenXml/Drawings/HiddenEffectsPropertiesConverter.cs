@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenEffectsProperties Class.
-/// </summary>
+/// Defines the HiddenEffectsProperties Class converter from/to OpenXml.
+///</summary>
 public static class HiddenEffectsPropertiesConverter
 {
   /// <summary>

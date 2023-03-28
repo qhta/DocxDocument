@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Grid Column Definition.
-/// </summary>
+/// Grid Column Definition converter from/to OpenXml.
+///</summary>
 public static class GridColumnConverter
 {
   /// <summary>

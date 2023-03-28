@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the RibbonAndBackstageCustomizationsPart
-/// </summary>
+/// Defines the RibbonAndBackstageCustomizationsPar converter from/to OpenXml.
+///</summary>
 public static class RibbonAndBackstageCustomizationsPartConverter
 {
   private static String? GetContentType(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)

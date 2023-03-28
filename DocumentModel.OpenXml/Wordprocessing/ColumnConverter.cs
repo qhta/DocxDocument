@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Single Column Definition.
-/// </summary>
+/// Single Column Definition converter from/to OpenXml.
+///</summary>
 public static class ColumnConverter
 {
   /// <summary>

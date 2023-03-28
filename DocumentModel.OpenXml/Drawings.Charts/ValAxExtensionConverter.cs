@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ValAxExtension Class.
-/// </summary>
+/// Defines the ValAxExtension Class converter from/to OpenXml.
+///</summary>
 public static class ValAxExtensionConverter
 {
   /// <summary>

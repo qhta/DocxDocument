@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Arc Segment.
-/// </summary>
+/// Arc Segment converter from/to OpenXml.
+///</summary>
 public static class ArcConverter
 {
   /// <summary>

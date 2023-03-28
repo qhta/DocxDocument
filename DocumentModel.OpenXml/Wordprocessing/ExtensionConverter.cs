@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Extension Class.
-/// </summary>
+/// Defines the Extension Class converter from/to OpenXml.
+///</summary>
 public static class ExtensionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AreaSerExtensionList Class.
-/// </summary>
+/// Defines the AreaSerExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class AreaSerExtensionListConverter
 {
   private static Collection<DMDrawsCharts.AreaSerExtension>? GetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement)

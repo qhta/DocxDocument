@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the ShapeHandles Class.
-/// </summary>
+/// Defines the ShapeHandles Class converter from/to OpenXml.
+///</summary>
 public static class ShapeHandlesConverter
 {
   private static Collection<DMVml.ShapeHandle>? GetItems(DXVml.ShapeHandles openXmlElement)

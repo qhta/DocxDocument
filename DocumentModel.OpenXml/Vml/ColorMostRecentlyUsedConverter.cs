@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Most Recently Used Colors.
-/// </summary>
+/// Most Recently Used Colors converter from/to OpenXml.
+///</summary>
 public static class ColorMostRecentlyUsedConverter
 {
   /// <summary>

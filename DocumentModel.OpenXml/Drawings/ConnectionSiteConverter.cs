@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Shape Connection Site.
-/// </summary>
+/// Shape Connection Site converter from/to OpenXml.
+///</summary>
 public static class ConnectionSiteConverter
 {
   /// <summary>

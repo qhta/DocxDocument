@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Data About Single Data Source Record.
-/// </summary>
+/// Data About Single Data Source Record converter from/to OpenXml.
+///</summary>
 public static class RecipientDataConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ThumbnailPart
-/// </summary>
+/// Defines the ThumbnailPar converter from/to OpenXml.
+///</summary>
 public static class ThumbnailPartConverter
 {
   private static String? GetRelationshipType(DXPack.ThumbnailPart openXmlElement)

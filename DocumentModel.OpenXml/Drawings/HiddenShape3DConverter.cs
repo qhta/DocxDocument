@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HiddenShape3D Class.
-/// </summary>
+/// Defines the HiddenShape3D Class converter from/to OpenXml.
+///</summary>
 public static class HiddenShape3DConverter
 {
   /// <summary>

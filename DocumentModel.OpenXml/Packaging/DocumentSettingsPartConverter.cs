@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DocumentSettingsPart
-/// </summary>
+/// Defines the DocumentSettingsPar converter from/to OpenXml.
+///</summary>
 public static class DocumentSettingsPartConverter
 {
   private static String? GetContentType(DXPack.DocumentSettingsPart openXmlElement)

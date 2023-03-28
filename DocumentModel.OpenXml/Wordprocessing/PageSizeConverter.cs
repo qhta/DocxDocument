@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PageSize Class.
-/// </summary>
+/// Defines the PageSize Class converter from/to OpenXml.
+///</summary>
 public static class PageSizeConverter
 {
   /// <summary>

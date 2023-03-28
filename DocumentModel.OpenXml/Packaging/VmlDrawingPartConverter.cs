@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the VmlDrawingPart
-/// </summary>
+/// Defines the VmlDrawingPar converter from/to OpenXml.
+///</summary>
 public static class VmlDrawingPartConverter
 {
   private static String? GetContentType(DXPack.VmlDrawingPart openXmlElement)

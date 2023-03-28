@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Color Transform Category List.
-/// </summary>
+/// Color Transform Category List converter from/to OpenXml.
+///</summary>
 public static class ColorTransformCategoriesConverter
 {
   private static Collection<DMDrawsDgms.ColorTransformCategory>? GetItems(DXDrawDgms.ColorTransformCategories openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Default Text Run Properties.
-/// </summary>
+/// Default Text Run Properties converter from/to OpenXml.
+///</summary>
 public static class DefaultRunPropertiesConverter
 {
   private static DMDraws.Outline? GetOutline(DXDraw.DefaultRunProperties openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the Tabs Class.
-/// </summary>
+/// Defines the Tabs Class converter from/to OpenXml.
+///</summary>
 public static class TabsConverter
 {
   private static Collection<DMUI.Tab>? GetItems(DXOCustUI.Tabs openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoDataPointToEntityQuery Class.
-/// </summary>
+/// Defines the GeoDataPointToEntityQuery Class converter from/to OpenXml.
+///</summary>
 public static class GeoDataPointToEntityQueryConverter
 {
   /// <summary>

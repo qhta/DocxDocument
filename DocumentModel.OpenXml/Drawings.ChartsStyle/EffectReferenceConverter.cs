@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the EffectReference Class.
-/// </summary>
+/// Defines the EffectReference Class converter from/to OpenXml.
+///</summary>
 public static class EffectReferenceConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.EffectReference openXmlElement)

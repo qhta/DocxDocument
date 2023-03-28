@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ParagraphBorders Class.
-/// </summary>
+/// Defines the ParagraphBorders Class converter from/to OpenXml.
+///</summary>
 public static class ParagraphBordersConverter
 {
   /// <summary>

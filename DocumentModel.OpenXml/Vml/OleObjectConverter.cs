@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Embedded OLE Object.
-/// </summary>
+/// Embedded OLE Object converter from/to OpenXml.
+///</summary>
 public static class OleObjectConverter
 {
   /// <summary>

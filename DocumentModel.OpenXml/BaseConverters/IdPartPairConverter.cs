@@ -3,8 +3,8 @@ using DocumentFormat.OpenXml.Packaging;
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-///   Represents a (RelationshipId, OpenXmlPart) pair.
-/// </summary>
+///   Represents a (RelationshipId, OpenXmlPart) pair converter from/to OpenXml.
+///</summary>
 public static class IdPartPairConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the PageMargin Class.
-/// </summary>
+/// Defines the PageMargin Class converter from/to OpenXml.
+///</summary>
 public static class PageMarginConverter
 {
   /// <summary>

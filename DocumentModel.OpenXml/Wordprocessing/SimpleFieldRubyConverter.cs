@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SimpleFieldRuby Class.
-/// </summary>
+/// Defines the SimpleFieldRuby Class converter from/to OpenXml.
+///</summary>
 public static class SimpleFieldRubyConverter
 {
   /// <summary>

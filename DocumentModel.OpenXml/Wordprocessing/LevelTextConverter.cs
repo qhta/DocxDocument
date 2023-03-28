@@ -3,8 +3,8 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Level Text converter
-/// </summary>
+/// Numbering Level Text converter from/to OpenXml
+///</summary>
 public static class LevelTextConverter
 {
   /// <summary>

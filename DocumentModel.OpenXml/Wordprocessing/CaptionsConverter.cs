@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Caption Settings.
-/// </summary>
+/// Caption Settings converter from/to OpenXml.
+///</summary>
 public static class CaptionsConverter
 {
   private static DMW.Caption? GetCaption(DXW.Captions openXmlElement)

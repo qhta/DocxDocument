@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the NamedSheetViewsPart
-/// </summary>
+/// Defines the NamedSheetViewsPar converter from/to OpenXml.
+///</summary>
 public static class NamedSheetViewsPartConverter
 {
   private static String? GetContentType(DXPack.NamedSheetViewsPart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Spelling and Grammatical Checking State.
-/// </summary>
+/// Spelling and Grammatical Checking State converter from/to OpenXml.
+///</summary>
 public static class ProofStateConverter
 {
   /// <summary>

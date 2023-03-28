@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Custom Split.
-/// </summary>
+/// Custom Split converter from/to OpenXml.
+///</summary>
 public static class CustomSplitConverter
 {
   private static Collection<UInt32>? GetSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement)

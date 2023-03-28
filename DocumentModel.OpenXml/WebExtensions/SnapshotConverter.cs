@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the Snapshot Class.
-/// </summary>
+/// Defines the Snapshot Class converter from/to OpenXml.
+///</summary>
 public static class SnapshotConverter
 {
   /// <summary>

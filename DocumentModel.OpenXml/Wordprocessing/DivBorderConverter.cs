@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Set of Borders for HTML div.
-/// </summary>
+/// Set of Borders for HTML div converter from/to OpenXml.
+///</summary>
 public static class DivBorderConverter
 {
   /// <summary>

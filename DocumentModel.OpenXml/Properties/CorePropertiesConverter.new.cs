@@ -4,8 +4,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   This class provides access to the "core properties", such as Title and
-/// </summary>
+///   This class provides access to the "core properties", such as Title an converter from/to OpenXml.
+///</summary>
 public static class CorePropertiesConverter
 {
   /// <summary>

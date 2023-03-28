@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentEx Class.
-/// </summary>
+/// Defines the CommentEx Class converter from/to OpenXml.
+///</summary>
 public static class CommentExConverter
 {
   /// <summary>

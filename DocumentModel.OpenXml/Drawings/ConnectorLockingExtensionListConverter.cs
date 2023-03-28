@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ConnectorLockingExtensionList Class.
-/// </summary>
+/// Defines the ConnectorLockingExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class ConnectorLockingExtensionListConverter
 {
   private static Collection<DMDraws.ConnectorLockingExtension>? GetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement)

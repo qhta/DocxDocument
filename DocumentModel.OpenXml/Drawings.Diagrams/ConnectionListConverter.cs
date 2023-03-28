@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Connection List.
-/// </summary>
+/// Connection List converter from/to OpenXml.
+///</summary>
 public static class ConnectionListConverter
 {
   private static Collection<DMDrawsDgms.Connection>? GetConnections(DXDrawDgms.ConnectionList openXmlElement)

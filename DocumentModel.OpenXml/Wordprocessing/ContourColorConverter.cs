@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the ContourColor Class.
-/// </summary>
+/// Defines the ContourColor Class converter from/to OpenXml.
+///</summary>
 public static class ContourColorConverter
 {
   private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ContourColor openXmlElement)

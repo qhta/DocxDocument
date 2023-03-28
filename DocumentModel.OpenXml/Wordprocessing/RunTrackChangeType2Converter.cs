@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunTrackChangeType Class.
-/// </summary>
+/// Defines the RunTrackChangeType Class converter from/to OpenXml.
+///</summary>
 public static class RunTrackChangeType2Converter
 {
   /// <summary>

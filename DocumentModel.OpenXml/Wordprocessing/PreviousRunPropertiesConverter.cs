@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Run Properties.
-/// </summary>
+/// Previous Run Properties converter from/to OpenXml.
+///</summary>
 public static class PreviousRunPropertiesConverter
 {
   private static String? GetRunStyle(DXW.PreviousRunProperties openXmlElement)

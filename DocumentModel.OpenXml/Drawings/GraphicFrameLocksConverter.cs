@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Graphic Frame Locks.
-/// </summary>
+/// Graphic Frame Locks converter from/to OpenXml.
+///</summary>
 public static class GraphicFrameLocksConverter
 {
   /// <summary>

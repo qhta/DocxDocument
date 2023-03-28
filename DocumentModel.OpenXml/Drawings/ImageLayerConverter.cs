@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ImageLayer Class.
-/// </summary>
+/// Defines the ImageLayer Class converter from/to OpenXml.
+///</summary>
 public static class ImageLayerConverter
 {
   /// <summary>

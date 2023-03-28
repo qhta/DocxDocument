@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Lower limit (n-ary) .
-/// </summary>
+/// Lower limit (n-ary)  converter from/to OpenXml.
+///</summary>
 public static class SubArgumentConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.SubArgument openXmlElement)

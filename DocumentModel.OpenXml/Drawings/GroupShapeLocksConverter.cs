@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the GroupShapeLocks Class.
-/// </summary>
+/// Defines the GroupShapeLocks Class converter from/to OpenXml.
+///</summary>
 public static class GroupShapeLocksConverter
 {
   /// <summary>

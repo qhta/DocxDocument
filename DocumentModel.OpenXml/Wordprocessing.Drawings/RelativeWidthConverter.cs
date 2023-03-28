@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing.Drawings;
 
 /// <summary>
-/// Defines the RelativeWidth Class.
-/// </summary>
+/// Defines the RelativeWidth Class converter from/to OpenXml.
+///</summary>
 public static class RelativeWidthConverter
 {
   /// <summary>

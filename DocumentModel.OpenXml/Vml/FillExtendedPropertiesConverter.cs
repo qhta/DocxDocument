@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Fill Extended Properties.
-/// </summary>
+/// Shape Fill Extended Properties converter from/to OpenXml.
+///</summary>
 public static class FillExtendedPropertiesConverter
 {
   /// <summary>

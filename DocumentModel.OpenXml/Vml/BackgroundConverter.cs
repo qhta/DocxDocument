@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Document Background.
-/// </summary>
+/// Document Background converter from/to OpenXml.
+///</summary>
 public static class BackgroundConverter
 {
   /// <summary>

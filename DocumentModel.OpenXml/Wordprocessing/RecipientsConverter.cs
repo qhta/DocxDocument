@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines Recipients.
-/// </summary>
+/// Defines Recipients converter from/to OpenXml.
+///</summary>
 public static class RecipientsConverter
 {
   private static DMW.RecipientData? GetRecipientData(DXW.Recipients openXmlElement)

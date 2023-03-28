@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumRefExtensionList Class.
-/// </summary>
+/// Defines the NumRefExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class NumRefExtensionListConverter
 {
   private static Collection<DMDrawsCharts.NumRefExtension>? GetNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement)

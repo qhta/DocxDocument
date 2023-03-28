@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Header.
-/// </summary>
+/// Header converter from/to OpenXml.
+///</summary>
 public static class HeaderConverter
 {
   private static Collection<DMW.AltChunk>? GetAltChunks(DXW.Header openXmlElement)

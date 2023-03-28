@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Build Diagram.
-/// </summary>
+/// Build Diagram converter from/to OpenXml.
+///</summary>
 public static class BuildDiagramConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the DocumentSpecificQuickAccessToolbarControls Class.
-/// </summary>
+/// Defines the DocumentSpecificQuickAccessToolbarControls Class converter from/to OpenXml.
+///</summary>
 public static class DocumentSpecificQuickAccessToolbarControlsConverter
 {
   private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)

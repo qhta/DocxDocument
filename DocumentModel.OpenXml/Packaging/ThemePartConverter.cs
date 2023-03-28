@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ThemePart
-/// </summary>
+/// Defines the ThemePar converter from/to OpenXml.
+///</summary>
 public static class ThemePartConverter
 {
   private static String? GetContentType(DXPack.ThemePart openXmlElement)

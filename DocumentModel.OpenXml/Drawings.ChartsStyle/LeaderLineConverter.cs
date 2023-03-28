@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the LeaderLine Class.
-/// </summary>
+/// Defines the LeaderLine Class converter from/to OpenXml.
+///</summary>
 public static class LeaderLineConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.LeaderLine openXmlElement)

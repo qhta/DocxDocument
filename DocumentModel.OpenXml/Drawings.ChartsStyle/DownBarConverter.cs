@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DownBar Class.
-/// </summary>
+/// Defines the DownBar Class converter from/to OpenXml.
+///</summary>
 public static class DownBarConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DownBar openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WordprocessingPeoplePart
-/// </summary>
+/// Defines the WordprocessingPeoplePar converter from/to OpenXml.
+///</summary>
 public static class WordprocessingPeoplePartConverter
 {
   private static String? GetContentType(DXPack.WordprocessingPeoplePart openXmlElement)

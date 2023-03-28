@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoChildEntities Class.
-/// </summary>
+/// Defines the GeoChildEntities Class converter from/to OpenXml.
+///</summary>
 public static class GeoChildEntitiesConverter
 {
   private static Collection<DMDrawsChartDraws.GeoHierarchyEntity>? GetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement)

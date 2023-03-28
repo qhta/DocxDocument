@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Graphic Frame.
-/// </summary>
+/// Graphic Frame converter from/to OpenXml.
+///</summary>
 public static class GraphicFrameConverter
 {
   /// <summary>

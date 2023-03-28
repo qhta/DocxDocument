@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the AxisDataSourceType Class.
-/// </summary>
+/// Defines the AxisDataSourceType Class converter from/to OpenXml.
+///</summary>
 public static class AxisDataSourceTypeConverter
 {
   /// <summary>

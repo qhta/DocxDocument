@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Task Class.
-/// </summary>
+/// Defines the Task Class converter from/to OpenXml.
+///</summary>
 public static class TaskConverter
 {
   /// <summary>

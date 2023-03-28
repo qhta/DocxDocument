@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the LayoutVariablePropertySetType Class.
-/// </summary>
+/// Defines the LayoutVariablePropertySetType Class converter from/to OpenXml.
+///</summary>
 public static class LayoutVariablePropertySetTypeConverter
 {
   /// <summary>

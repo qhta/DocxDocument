@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the RibbonExtensibilityPart
-/// </summary>
+/// Defines the RibbonExtensibilityPar converter from/to OpenXml.
+///</summary>
 public static class RibbonExtensibilityPartConverter
 {
   private static String? GetContentType(DXPack.RibbonExtensibilityPart openXmlElement)

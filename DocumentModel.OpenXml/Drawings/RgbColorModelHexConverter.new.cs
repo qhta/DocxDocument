@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// RGB Color Model - Hex Variant.
-/// </summary>
+/// RGB Color Model - Hex Variant converter from/to OpenXml.
+///</summary>
 public static class RgbColorModelHexConverter
 {
   /// <summary>

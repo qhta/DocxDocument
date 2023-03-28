@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Scene3D Class.
-/// </summary>
+/// Defines the Scene3D Class converter from/to OpenXml.
+///</summary>
 public static class Scene3DConverter
 {
   /// <summary>

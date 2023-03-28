@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Footnotes.
-/// </summary>
+/// Document Footnotes converter from/to OpenXml.
+///</summary>
 public static class FootnotesConverter
 {
   private static DMW.Footnote? GetFootnote(DXW.Footnotes openXmlElement)

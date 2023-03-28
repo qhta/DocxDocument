@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the StyleEntry Class.
-/// </summary>
+/// Defines the StyleEntry Class converter from/to OpenXml.
+///</summary>
 public static class StyleEntryConverter
 {
   /// <summary>

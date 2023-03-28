@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the UserDefinedTagsPart
-/// </summary>
+/// Defines the UserDefinedTagsPar converter from/to OpenXml.
+///</summary>
 public static class UserDefinedTagsPartConverter
 {
   private static String? GetContentType(DXPack.UserDefinedTagsPart openXmlElement)

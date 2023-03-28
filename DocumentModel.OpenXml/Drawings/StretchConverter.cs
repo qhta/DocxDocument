@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Stretch.
-/// </summary>
+/// Stretch converter from/to OpenXml.
+///</summary>
 public static class StretchConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the ImageData Class.
-/// </summary>
+/// Defines the ImageData Class converter from/to OpenXml.
+///</summary>
 public static class ImageDataConverter
 {
   /// <summary>

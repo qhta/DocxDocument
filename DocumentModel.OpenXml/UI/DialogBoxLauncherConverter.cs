@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the DialogBoxLauncher Class.
-/// </summary>
+/// Defines the DialogBoxLauncher Class converter from/to OpenXml.
+///</summary>
 public static class DialogBoxLauncherConverter
 {
   /// <summary>

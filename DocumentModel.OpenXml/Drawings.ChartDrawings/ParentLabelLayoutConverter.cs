@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ParentLabelLayout Class.
-/// </summary>
+/// Defines the ParentLabelLayout Class converter from/to OpenXml.
+///</summary>
 public static class ParentLabelLayoutConverter
 {
   /// <summary>

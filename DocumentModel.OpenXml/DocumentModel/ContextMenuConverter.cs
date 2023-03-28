@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ContextMenu Class.
-/// </summary>
+/// Defines the ContextMenu Class converter from/to OpenXml.
+///</summary>
 public static class ContextMenuConverter
 {
   /// <summary>

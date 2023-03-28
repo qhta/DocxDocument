@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the ValueColorPositions Class.
-/// </summary>
+/// Defines the ValueColorPositions Class converter from/to OpenXml.
+///</summary>
 public static class ValueColorPositionsConverter
 {
   /// <summary>

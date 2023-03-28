@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FrameProperties Class.
-/// </summary>
+/// Defines the FrameProperties Class converter from/to OpenXml.
+///</summary>
 public static class FramePropertiesConverter
 {
   /// <summary>

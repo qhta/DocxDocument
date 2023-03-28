@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ClassificationExtensionList Class.
-/// </summary>
+/// Defines the ClassificationExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class ClassificationExtensionListConverter
 {
   private static Collection<DM.ClassificationExtension>? GetClassificationExtensions(DXO2021MipLabelMeta.ClassificationExtensionList openXmlElement)

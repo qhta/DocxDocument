@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Line.
-/// </summary>
+/// Line converter from/to OpenXml.
+///</summary>
 public static class LineConverter
 {
   /// <summary>

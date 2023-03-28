@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Defines the NonVisualGraphicFrameDrawingProperties Class.
-/// </summary>
+/// Defines the NonVisualGraphicFrameDrawingProperties Class converter from/to OpenXml.
+///</summary>
 public static class NonVisualGraphicFrameDrawingPropertiesConverter
 {
   /// <summary>

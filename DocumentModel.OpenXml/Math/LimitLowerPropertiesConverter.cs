@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Lower Limit Properties.
-/// </summary>
+/// Lower Limit Properties converter from/to OpenXml.
+///</summary>
 public static class LimitLowerPropertiesConverter
 {
   /// <summary>

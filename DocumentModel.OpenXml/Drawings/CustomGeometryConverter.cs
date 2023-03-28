@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Custom geometry.
-/// </summary>
+/// Custom geometry converter from/to OpenXml.
+///</summary>
 public static class CustomGeometryConverter
 {
   /// <summary>

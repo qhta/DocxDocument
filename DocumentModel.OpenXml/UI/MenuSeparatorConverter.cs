@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the MenuSeparator Class.
-/// </summary>
+/// Defines the MenuSeparator Class converter from/to OpenXml.
+///</summary>
 public static class MenuSeparatorConverter
 {
   /// <summary>

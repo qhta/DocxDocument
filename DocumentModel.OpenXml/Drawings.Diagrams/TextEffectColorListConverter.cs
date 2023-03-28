@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Text Effect Color List.
-/// </summary>
+/// Text Effect Color List converter from/to OpenXml.
+///</summary>
 public static class TextEffectColorListConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDrawDgms.TextEffectColorList openXmlElement)

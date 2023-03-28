@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Vertical Positioning.
-/// </summary>
+/// Vertical Positioning converter from/to OpenXml.
+///</summary>
 public static class VerticalPositionConverter
 {
   /// <summary>

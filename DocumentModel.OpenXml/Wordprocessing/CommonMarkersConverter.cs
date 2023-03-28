@@ -7,8 +7,8 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// CustomXmlInsRangeStart/CustomXmlInsRangeEnd, CustomXmlDelRangeStart/CustomXmlDelRangeEnd,
 /// CustomXmMoveFromStart/CustomXmMoveFromEnd, CustomXmMoveToStart/CustomXmMoveToEnd, 
 /// CustomXmConflictInsertionStart/CustomXmConflictInsertionEnd, CustomXmConflictDeletionStart/CustomXmConflictDeletionEnd, 
-/// InsertedRun, DeletedRun, MoveFromRun, MoveToRun, RunConflictInsertion, RunConflictDeletion.
-/// </summary>
+/// InsertedRun, DeletedRun, MoveFromRun, MoveToRun, RunConflictInsertion, RunConflictDeletion converter from/to OpenXml.
+///</summary>
 public static class CommonMarkersConverter
 {
   public static DMW.ICommonElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)

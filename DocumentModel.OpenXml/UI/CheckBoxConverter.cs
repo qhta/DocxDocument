@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the CheckBox Class.
-/// </summary>
+/// Defines the CheckBox Class converter from/to OpenXml.
+///</summary>
 public static class CheckBoxConverter
 {
   /// <summary>

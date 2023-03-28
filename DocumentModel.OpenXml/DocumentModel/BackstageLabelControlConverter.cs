@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageLabelControl Class.
-/// </summary>
+/// Defines the BackstageLabelControl Class converter from/to OpenXml.
+///</summary>
 public static class BackstageLabelControlConverter
 {
   /// <summary>

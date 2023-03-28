@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Surface3DChartExtensionList Class.
-/// </summary>
+/// Defines the Surface3DChartExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class Surface3DChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.Surface3DChartExtension>? GetSurface3DChartExtensions(DXDrawCharts.Surface3DChartExtensionList openXmlElement)

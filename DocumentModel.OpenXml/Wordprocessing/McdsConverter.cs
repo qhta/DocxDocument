@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Mcds Class.
-/// </summary>
+/// Defines the Mcds Class converter from/to OpenXml.
+///</summary>
 public static class McdsConverter
 {
   private static Collection<DMW.Mcd>? GetItems(DXOW.Mcds openXmlElement)

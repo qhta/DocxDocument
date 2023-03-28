@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the TextData Class.
-/// </summary>
+/// Defines the TextData Class converter from/to OpenXml.
+///</summary>
 public static class TextDataConverter
 {
   private static DMDrawsChartDraws.OpenXmlFormulaElement? GetFormula(DXO2016DrawChartDraw.TextData openXmlElement)

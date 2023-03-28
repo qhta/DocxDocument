@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Layout Properties.
-/// </summary>
+/// Shape Layout Properties converter from/to OpenXml.
+///</summary>
 public static class ShapeLayoutConverter
 {
   /// <summary>

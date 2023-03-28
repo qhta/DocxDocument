@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the NonVisualGroupDrawingShapePropsExtension Class.
-/// </summary>
+/// Defines the NonVisualGroupDrawingShapePropsExtension Class converter from/to OpenXml.
+///</summary>
 public static class NonVisualGroupDrawingShapePropsExtensionConverter
 {
   /// <summary>

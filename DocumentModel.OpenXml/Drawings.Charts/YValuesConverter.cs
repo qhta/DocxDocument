@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the YValues Class.
-/// </summary>
+/// Defines the YValues Class converter from/to OpenXml.
+///</summary>
 public static class YValuesConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.YValues openXmlElement)

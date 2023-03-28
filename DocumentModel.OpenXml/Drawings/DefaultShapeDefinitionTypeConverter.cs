@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the DefaultShapeDefinitionType Class.
-/// </summary>
+/// Defines the DefaultShapeDefinitionType Class converter from/to OpenXml.
+///</summary>
 public static class DefaultShapeDefinitionTypeConverter
 {
   /// <summary>

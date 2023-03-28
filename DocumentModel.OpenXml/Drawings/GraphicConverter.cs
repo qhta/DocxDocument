@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Graphic Object.
-/// </summary>
+/// Graphic Object converter from/to OpenXml.
+///</summary>
 public static class GraphicConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SimpleField Class.
-/// </summary>
+/// Defines the SimpleField Class converter from/to OpenXml.
+///</summary>
 public static class SimpleFieldConverter
 {
   /// <summary>

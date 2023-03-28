@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPhotocopy Class.
-/// </summary>
+/// Defines the ArtisticPhotocopy Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticPhotocopyConverter
 {
   /// <summary>

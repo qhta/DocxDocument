@@ -7,8 +7,8 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Paragraph class converter.
-/// </summary>
+/// Defines the Paragraph class converter from/to OpenXml.
+///</summary>
 public static class ParagraphConverter
 {
   #region Revision Identifier for Paragraph Glyph Formatting formatting

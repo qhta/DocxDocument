@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines CustomXmlElement - the base class for the customXml elements.
-/// </summary>
+/// Defines CustomXmlElement - the base class for the customXml elements converter from/to OpenXml.
+///</summary>
 public static class CustomXmlElementConverter
 {
   /// <summary>

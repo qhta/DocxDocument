@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the MenuRegular Class.
-/// </summary>
+/// Defines the MenuRegular Class converter from/to OpenXml.
+///</summary>
 public static class MenuRegularConverter
 {
   /// <summary>

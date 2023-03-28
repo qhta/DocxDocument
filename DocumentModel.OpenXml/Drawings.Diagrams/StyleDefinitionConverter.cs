@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Style Definition.
-/// </summary>
+/// Style Definition converter from/to OpenXml.
+///</summary>
 public static class StyleDefinitionConverter
 {
   /// <summary>

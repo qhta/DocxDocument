@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Pattern Fill.
-/// </summary>
+/// Pattern Fill converter from/to OpenXml.
+///</summary>
 public static class PatternFillConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing.OEmbed;
 
 /// <summary>
-/// Defines the OEmbed Class.
-/// </summary>
+/// Defines the OEmbed Class converter from/to OpenXml.
+///</summary>
 public static class OEmbedConverter
 {
   /// <summary>

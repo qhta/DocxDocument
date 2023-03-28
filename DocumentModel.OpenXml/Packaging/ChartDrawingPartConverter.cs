@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ChartDrawingPart
-/// </summary>
+/// Defines the ChartDrawingPar converter from/to OpenXml.
+///</summary>
 public static class ChartDrawingPartConverter
 {
   private static String? GetContentType(DXPack.ChartDrawingPart openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Write Protection.
-/// </summary>
+/// Write Protection converter from/to OpenXml.
+///</summary>
 public static class WriteProtectionConverter
 {
   /// <summary>

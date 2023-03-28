@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table Row Properties.
-/// </summary>
+/// Revision Information for Table Row Properties converter from/to OpenXml.
+///</summary>
 public static class TableRowPropertiesChangeConverter
 {
   /// <summary>

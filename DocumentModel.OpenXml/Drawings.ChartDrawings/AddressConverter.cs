@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Address Class.
-/// </summary>
+/// Defines the Address Class converter from/to OpenXml.
+///</summary>
 public static class AddressConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Up Bars.
-/// </summary>
+/// Up Bars converter from/to OpenXml.
+///</summary>
 public static class UpBarsConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.UpBars openXmlElement)

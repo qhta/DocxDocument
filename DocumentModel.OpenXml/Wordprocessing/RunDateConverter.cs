@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// RunDate element converter.
-/// </summary>
+/// RunDate element converter from/to OpenXml.
+///</summary>
 public static class RunDateConverter
 {
   public static DMW.RunDate? CreateModelElement(DXW.DayShort? openXmlElement)

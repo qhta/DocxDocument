@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions.UI;
 
 /// <summary>
-/// Defines the WebExtensionTaskpane Class.
-/// </summary>
+/// Defines the WebExtensionTaskpane Class converter from/to OpenXml.
+///</summary>
 public static class WebExtensionTaskpaneConverter
 {
   /// <summary>

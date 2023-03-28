@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentCheckBox Class.
-/// </summary>
+/// Defines the SdtContentCheckBox Class converter from/to OpenXml.
+///</summary>
 public static class SdtContentCheckBoxConverter
 {
   /// <summary>

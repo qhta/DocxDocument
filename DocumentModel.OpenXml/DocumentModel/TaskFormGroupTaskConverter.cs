@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskFormGroupTask Class.
-/// </summary>
+/// Defines the TaskFormGroupTask Class converter from/to OpenXml.
+///</summary>
 public static class TaskFormGroupTaskConverter
 {
   /// <summary>

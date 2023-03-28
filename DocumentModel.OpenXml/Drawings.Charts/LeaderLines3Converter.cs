@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the LeaderLines Class.
-/// </summary>
+/// Defines the LeaderLines Class converter from/to OpenXml.
+///</summary>
 public static class LeaderLines3Converter
 {
   /// <summary>

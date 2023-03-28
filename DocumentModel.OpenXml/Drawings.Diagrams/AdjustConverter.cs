@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Shape Adjust.
-/// </summary>
+/// Shape Adjust converter from/to OpenXml.
+///</summary>
 public static class AdjustConverter
 {
   /// <summary>

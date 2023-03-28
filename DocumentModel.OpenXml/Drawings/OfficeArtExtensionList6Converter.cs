@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the OfficeArtExtensionList Class.
-/// </summary>
+/// Defines the OfficeArtExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class OfficeArtExtensionList6Converter
 {
   private static Collection<DMDraws.Extension>? GetExtensions(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement)

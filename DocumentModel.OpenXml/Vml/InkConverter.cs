@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Ink.
-/// </summary>
+/// Ink converter from/to OpenXml.
+///</summary>
 public static class InkConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the VisibleButton Class.
-/// </summary>
+/// Defines the VisibleButton Class converter from/to OpenXml.
+///</summary>
 public static class VisibleButtonConverter
 {
   /// <summary>

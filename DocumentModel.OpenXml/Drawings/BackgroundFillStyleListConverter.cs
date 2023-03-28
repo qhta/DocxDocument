@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Background Fill Style List.
-/// </summary>
+/// Background Fill Style List converter from/to OpenXml.
+///</summary>
 public static class BackgroundFillStyleListConverter
 {
   private static Boolean GetNoFill(DXDraw.BackgroundFillStyleList openXmlElement)

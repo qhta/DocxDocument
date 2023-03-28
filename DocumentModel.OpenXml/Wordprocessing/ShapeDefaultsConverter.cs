@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Properties for VML Objects in Main Document.
-/// </summary>
+/// Default Properties for VML Objects in Main Document converter from/to OpenXml.
+///</summary>
 public static class ShapeDefaultsConverter
 {
   private static DMVml.ShapeDefaults? GetChildShapeDefaults(DXW.ShapeDefaults openXmlElement)

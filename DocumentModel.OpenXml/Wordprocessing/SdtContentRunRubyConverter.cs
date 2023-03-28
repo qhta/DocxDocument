@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentRunRuby Class.
-/// </summary>
+/// Defines the SdtContentRunRuby Class converter from/to OpenXml.
+///</summary>
 public static class SdtContentRunRubyConverter
 {
   private static DMW.CustomXmlRuby? GetCustomXmlRuby(DXW.SdtContentRunRuby openXmlElement)

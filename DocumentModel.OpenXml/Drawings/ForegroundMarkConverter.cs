@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ForegroundMark Class.
-/// </summary>
+/// Defines the ForegroundMark Class converter from/to OpenXml.
+///</summary>
 public static class ForegroundMarkConverter
 {
   /// <summary>

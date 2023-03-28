@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// If.
-/// </summary>
+/// If converter from/to OpenXml.
+///</summary>
 public static class DiagramChooseIfConverter
 {
   /// <summary>

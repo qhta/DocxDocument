@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the DeletedMathControl Class.
-/// </summary>
+/// Defines the DeletedMathControl Class converter from/to OpenXml.
+///</summary>
 public static class DeletedMathControlConverter
 {
   /// <summary>

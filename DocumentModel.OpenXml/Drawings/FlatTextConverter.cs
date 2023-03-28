@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// No text in 3D scene.
-/// </summary>
+/// No text in 3D scene converter from/to OpenXml.
+///</summary>
 public static class FlatTextConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the ChartSpaceExtensionList Class.
-/// </summary>
+/// Defines the ChartSpaceExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class ChartSpaceExtensionListConverter
 {
   private static Collection<DMDrawsCharts.ChartSpaceExtension>? GetChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement)

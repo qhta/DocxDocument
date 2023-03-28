@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Group Shape.
-/// </summary>
+/// Group Shape converter from/to OpenXml.
+///</summary>
 public static class GroupShapeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Custom Dash.
-/// </summary>
+/// Custom Dash converter from/to OpenXml.
+///</summary>
 public static class CustomDashConverter
 {
   private static Collection<DMDraws.DashStop>? GetDashStops(DXDraw.CustomDash openXmlElement)

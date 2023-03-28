@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MajorTickMarksTickMarks Class.
-/// </summary>
+/// Defines the MajorTickMarksTickMarks Class converter from/to OpenXml.
+///</summary>
 public static class MajorTickMarksTickMarksConverter
 {
   private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.MajorTickMarksTickMarks openXmlElement)

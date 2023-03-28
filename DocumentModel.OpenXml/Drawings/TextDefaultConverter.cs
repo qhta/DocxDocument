@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Default.
-/// </summary>
+/// Text Default converter from/to OpenXml.
+///</summary>
 public static class TextDefaultConverter
 {
   private static DMDraws.ShapeProperties? GetShapeProperties(DXDraw.TextDefault openXmlElement)

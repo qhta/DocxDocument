@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Connector Non Visual Properties.
-/// </summary>
+/// Connector Non Visual Properties converter from/to OpenXml.
+///</summary>
 public static class NonVisualConnectorShapeDrawingPropertiesConverter
 {
   /// <summary>

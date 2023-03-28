@@ -3,8 +3,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// AlternateContentFallback element converter
-/// </summary>
+/// AlternateContentFallback element converte converter from/to OpenXml.
+///</summary>
 public static class AlternateContentFallbackConverter
 {
   public static AlternateContentFallback? CreateModelElement(DX.AlternateContentFallback? openXmlElement)

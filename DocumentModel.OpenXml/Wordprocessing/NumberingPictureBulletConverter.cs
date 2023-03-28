@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Picture Numbering Symbol Definition.
-/// </summary>
+/// Picture Numbering Symbol Definition converter from/to OpenXml.
+///</summary>
 public static class NumberingPictureBulletConverter
 {
   /// <summary>

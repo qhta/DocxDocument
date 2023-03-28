@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Tight Wrapping.
-/// </summary>
+/// Tight Wrapping converter from/to OpenXml.
+///</summary>
 public static class WrapTightConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the DigitalSignatureOriginPart
-/// </summary>
+/// Defines the DigitalSignatureOriginPar converter from/to OpenXml.
+///</summary>
 public static class DigitalSignatureOriginPartConverter
 {
   private static String? GetContentType(DXPack.DigitalSignatureOriginPart openXmlElement)

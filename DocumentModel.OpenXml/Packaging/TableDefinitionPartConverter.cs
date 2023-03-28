@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the TableDefinitionPart
-/// </summary>
+/// Defines the TableDefinitionPar converter from/to OpenXml.
+///</summary>
 public static class TableDefinitionPartConverter
 {
   private static String? GetContentType(DXPack.TableDefinitionPart openXmlElement)

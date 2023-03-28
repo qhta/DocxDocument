@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SurfaceChartExtension Class.
-/// </summary>
+/// Defines the SurfaceChartExtension Class converter from/to OpenXml.
+///</summary>
 public static class SurfaceChartExtensionConverter
 {
   /// <summary>

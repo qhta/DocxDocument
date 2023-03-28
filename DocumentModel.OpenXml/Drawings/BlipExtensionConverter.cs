@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BlipExtension Class.
-/// </summary>
+/// Defines the BlipExtension Class converter from/to OpenXml.
+///</summary>
 public static class BlipExtensionConverter
 {
   /// <summary>

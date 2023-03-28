@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LiveFeedBackgroundProperties Class.
-/// </summary>
+/// Defines the LiveFeedBackgroundProperties Class converter from/to OpenXml.
+///</summary>
 public static class LiveFeedBackgroundPropertiesConverter
 {
   private static DMDraws.BackgroundNormalProperties? GetBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)

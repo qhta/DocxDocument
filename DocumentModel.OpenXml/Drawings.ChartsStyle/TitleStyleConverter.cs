@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the TitleStyle Class.
-/// </summary>
+/// Defines the TitleStyle Class converter from/to OpenXml.
+///</summary>
 public static class TitleStyleConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.TitleStyle openXmlElement)

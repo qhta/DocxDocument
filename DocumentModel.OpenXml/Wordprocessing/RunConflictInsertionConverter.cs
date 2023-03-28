@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunConflictInsertion Class.
-/// </summary>
+/// Defines the RunConflictInsertion Class converter from/to OpenXml.
+///</summary>
 public static class RunConflictInsertionConverter
 {
   private static DMW.SdtRun? GetSdtRun(DXO2010W.RunConflictInsertion openXmlElement)

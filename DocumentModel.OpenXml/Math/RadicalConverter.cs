@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Radical Function.
-/// </summary>
+/// Radical Function converter from/to OpenXml.
+///</summary>
 public static class RadicalConverter
 {
   /// <summary>

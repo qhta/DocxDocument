@@ -3,8 +3,8 @@ using DocumentModel.Drawings;
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Shape Extent.
-/// </summary>
+/// Shape Extent converter from/to OpenXml.
+///</summary>
 public static class ExtentConverter
 {
   /// <summary>

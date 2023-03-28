@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Blend Effect.
-/// </summary>
+/// Blend Effect converter from/to OpenXml.
+///</summary>
 public static class BlendConverter
 {
   /// <summary>

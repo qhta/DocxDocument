@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundMark Class.
-/// </summary>
+/// Defines the BackgroundMark Class converter from/to OpenXml.
+///</summary>
 public static class BackgroundMarkConverter
 {
   /// <summary>

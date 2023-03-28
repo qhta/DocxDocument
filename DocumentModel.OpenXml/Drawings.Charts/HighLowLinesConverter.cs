@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the HighLowLines Class.
-/// </summary>
+/// Defines the HighLowLines Class converter from/to OpenXml.
+///</summary>
 public static class HighLowLinesConverter
 {
   private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.HighLowLines openXmlElement)

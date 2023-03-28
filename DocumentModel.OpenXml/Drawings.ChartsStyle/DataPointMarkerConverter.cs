@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DataPointMarker Class.
-/// </summary>
+/// Defines the DataPointMarker Class converter from/to OpenXml.
+///</summary>
 public static class DataPointMarkerConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataPointMarker openXmlElement)

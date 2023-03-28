@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Comment Content.
-/// </summary>
+/// Comment Content converter from/to OpenXml.
+///</summary>
 public static class CommentConverter
 {
   /// <summary>

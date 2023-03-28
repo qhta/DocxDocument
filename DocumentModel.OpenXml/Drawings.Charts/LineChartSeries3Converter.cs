@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the LineChartSeries Class.
-/// </summary>
+/// Defines the LineChartSeries Class converter from/to OpenXml.
+///</summary>
 public static class LineChartSeries3Converter
 {
   /// <summary>

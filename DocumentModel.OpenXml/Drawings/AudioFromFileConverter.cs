@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Audio from File.
-/// </summary>
+/// Audio from File converter from/to OpenXml.
+///</summary>
 public static class AudioFromFileConverter
 {
   /// <summary>

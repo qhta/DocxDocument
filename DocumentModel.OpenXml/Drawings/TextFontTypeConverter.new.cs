@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the TextFontType Class.
-/// </summary>
+/// Defines the TextFontType Class converter from/to OpenXml.
+///</summary>
 public static class TextFontTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Else.
-/// </summary>
+/// Else converter from/to OpenXml.
+///</summary>
 public static class DiagramChooseElseConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BarChartExtensionList Class.
-/// </summary>
+/// Defines the BarChartExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class BarChartExtensionListConverter
 {
   private static Collection<DMDrawsCharts.BarChartExtension>? GetBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement)

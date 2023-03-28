@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents a hyperlink relationship.
-/// </summary>
+/// Represents a hyperlink relationship converter from/to OpenXml.
+///</summary>
 public static class HyperlinkRelationshipConverter
 {
   /// <summary>

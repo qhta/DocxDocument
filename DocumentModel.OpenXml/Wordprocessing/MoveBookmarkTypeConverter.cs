@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the MoveBookmarkType Class.
-/// </summary>
+/// Defines the MoveBookmarkType Class converter from/to OpenXml.
+///</summary>
 public static class MoveBookmarkTypeConverter
 {
   /// <summary>

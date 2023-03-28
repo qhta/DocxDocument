@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office.OEmbed;
 
 /// <summary>
-/// Defines the OfficeArtExtensionList Class.
-/// </summary>
+/// Defines the OfficeArtExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class OfficeArtExtensionListConverter
 {
   private static Collection<DMDraws.Extension>? GetExtensions(DXODrawY2021OEmb.OfficeArtExtensionList openXmlElement)

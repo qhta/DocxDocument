@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the UpBar Class.
-/// </summary>
+/// Defines the UpBar Class converter from/to OpenXml.
+///</summary>
 public static class UpBarConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.UpBar openXmlElement)

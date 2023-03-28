@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Background.
-/// </summary>
+/// Document Background converter from/to OpenXml.
+///</summary>
 public static class DocumentBackgroundConverter
 {
   /// <summary>

@@ -3,8 +3,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// AlternateContent element converter
-/// </summary>
+/// AlternateContent element converte converter from/to OpenXml.
+///</summary>
 public static class AlternateContentConverter
 {
   #region AlternateContentChoice

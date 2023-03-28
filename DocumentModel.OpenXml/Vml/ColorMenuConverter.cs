@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// UI Default Colors.
-/// </summary>
+/// UI Default Colors converter from/to OpenXml.
+///</summary>
 public static class ColorMenuConverter
 {
   /// <summary>

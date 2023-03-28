@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Represents the type of part referenced by a .
-/// </summary>
+/// Represents the type of part referenced by a  converter from/to OpenXml.
+///</summary>
 public static class DataPartConverter
 {
   /// <summary>

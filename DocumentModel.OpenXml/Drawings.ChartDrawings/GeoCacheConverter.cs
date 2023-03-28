@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoCache Class.
-/// </summary>
+/// Defines the GeoCache Class converter from/to OpenXml.
+///</summary>
 public static class GeoCacheConverter
 {
   /// <summary>

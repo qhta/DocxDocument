@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PictureLocks Class.
-/// </summary>
+/// Defines the PictureLocks Class converter from/to OpenXml.
+///</summary>
 public static class PictureLocksConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Radical Properties.
-/// </summary>
+/// Radical Properties converter from/to OpenXml.
+///</summary>
 public static class RadicalPropertiesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagram1;
 
 /// <summary>
-/// Defines the NumberDiagramInfo Class.
-/// </summary>
+/// Defines the NumberDiagramInfo Class converter from/to OpenXml.
+///</summary>
 public static class NumberDiagramInfoConverter
 {
   /// <summary>

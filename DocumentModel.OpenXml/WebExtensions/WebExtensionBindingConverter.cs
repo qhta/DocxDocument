@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionBinding Class.
-/// </summary>
+/// Defines the WebExtensionBinding Class converter from/to OpenXml.
+///</summary>
 public static class WebExtensionBindingConverter
 {
   /// <summary>

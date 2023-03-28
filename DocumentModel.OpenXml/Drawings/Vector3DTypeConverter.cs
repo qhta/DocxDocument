@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the Vector3DType Class.
-/// </summary>
+/// Defines the Vector3DType Class converter from/to OpenXml.
+///</summary>
 public static class Vector3DTypeConverter
 {
   /// <summary>

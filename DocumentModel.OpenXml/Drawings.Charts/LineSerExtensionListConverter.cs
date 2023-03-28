@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the LineSerExtensionList Class.
-/// </summary>
+/// Defines the LineSerExtensionList Class converter from/to OpenXml.
+///</summary>
 public static class LineSerExtensionListConverter
 {
   private static Collection<DMDrawsCharts.LineSerExtension>? GetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Office Math Paragraph Properties.
-/// </summary>
+/// Office Math Paragraph Properties converter from/to OpenXml.
+///</summary>
 public static class ParagraphPropertiesConverter
 {
   /// <summary>

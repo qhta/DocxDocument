@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Major Font.
-/// </summary>
+/// Major Font converter from/to OpenXml.
+///</summary>
 public static class MajorFontConverter
 {
   private static DMDraws.TextFontType? GetLatinFont(DXDraw.MajorFont openXmlElement)

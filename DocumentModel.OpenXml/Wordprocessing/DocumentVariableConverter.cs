@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Single Document Variable.
-/// </summary>
+/// Single Document Variable converter from/to OpenXml.
+///</summary>
 public static class DocumentVariableConverter
 {
   /// <summary>

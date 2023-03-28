@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Effect Container.
-/// </summary>
+/// Effect Container converter from/to OpenXml.
+///</summary>
 public static class EffectListConverter
 {
   /// <summary>

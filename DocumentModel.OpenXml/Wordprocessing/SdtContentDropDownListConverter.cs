@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the SdtContentDropDownList Class.
-/// </summary>
+/// Defines the SdtContentDropDownList Class converter from/to OpenXml.
+///</summary>
 public static class SdtContentDropDownListConverter
 {
   /// <summary>

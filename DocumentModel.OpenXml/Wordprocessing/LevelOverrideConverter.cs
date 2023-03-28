@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the LevelOverride Class.
-/// </summary>
+/// Defines the LevelOverride Class converter from/to OpenXml.
+///</summary>
 public static class LevelOverrideConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataLabelsRange Class.
-/// </summary>
+/// Defines the DataLabelsRange Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelsRangeConverter
 {
   /// <summary>

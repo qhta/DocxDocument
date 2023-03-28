@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Shape Group.
-/// </summary>
+/// Shape Group converter from/to OpenXml.
+///</summary>
 public static class GroupConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Preset Shadow.
-/// </summary>
+/// Preset Shadow converter from/to OpenXml.
+///</summary>
 public static class PresetShadowConverter
 {
   /// <summary>

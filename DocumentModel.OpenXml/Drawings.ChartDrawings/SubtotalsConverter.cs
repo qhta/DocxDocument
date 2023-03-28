@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Subtotals Class.
-/// </summary>
+/// Defines the Subtotals Class converter from/to OpenXml.
+///</summary>
 public static class SubtotalsConverter
 {
   private static Collection<UInt32>? GetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement)

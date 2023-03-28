@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Modulate Effect.
-/// </summary>
+/// Alpha Modulate Effect converter from/to OpenXml.
+///</summary>
 public static class AlphaModulationEffectConverter
 {
   /// <summary>

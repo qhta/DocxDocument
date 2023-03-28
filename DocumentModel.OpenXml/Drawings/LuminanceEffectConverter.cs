@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Luminance.
-/// </summary>
+/// Luminance converter from/to OpenXml.
+///</summary>
 public static class LuminanceEffectConverter
 {
   /// <summary>

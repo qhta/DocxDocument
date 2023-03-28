@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Shape.
-/// </summary>
+/// Shape converter from/to OpenXml.
+///</summary>
 public static class ShapeConverter
 {
   /// <summary>

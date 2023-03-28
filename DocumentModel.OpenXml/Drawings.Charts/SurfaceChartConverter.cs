@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Surface Charts.
-/// </summary>
+/// Surface Charts converter from/to OpenXml.
+///</summary>
 public static class SurfaceChartConverter
 {
   /// <summary>

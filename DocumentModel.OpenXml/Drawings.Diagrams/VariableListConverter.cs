@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Variable List.
-/// </summary>
+/// Variable List converter from/to OpenXml.
+///</summary>
 public static class VariableListConverter
 {
   private static Boolean? GetOrganizationChart(DXDrawDgms.VariableList openXmlElement)

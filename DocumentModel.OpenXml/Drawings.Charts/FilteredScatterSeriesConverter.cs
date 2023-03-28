@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the FilteredScatterSeries Class.
-/// </summary>
+/// Defines the FilteredScatterSeries Class converter from/to OpenXml.
+///</summary>
 public static class FilteredScatterSeriesConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the VbaDataPart
-/// </summary>
+/// Defines the VbaDataPar converter from/to OpenXml.
+///</summary>
 public static class VbaDataPartConverter
 {
   private static String? GetContentType(DXPack.VbaDataPart openXmlElement)

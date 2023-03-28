@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the StringCache Class.
-/// </summary>
+/// Defines the StringCache Class converter from/to OpenXml.
+///</summary>
 public static class StringCacheConverter
 {
   private static UInt32? GetPointCount(DXDrawCharts.StringCache openXmlElement)

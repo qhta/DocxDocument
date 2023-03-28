@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Pivot Format.
-/// </summary>
+/// Pivot Format converter from/to OpenXml.
+///</summary>
 public static class PivotFormatConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Associated Status Text.
-/// </summary>
+/// Associated Status Text converter from/to OpenXml.
+///</summary>
 public static class StatusTextConverter
 {
   /// <summary>

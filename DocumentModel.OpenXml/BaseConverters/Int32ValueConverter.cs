@@ -3,8 +3,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Converter of Int32 values
-/// </summary>
+/// Converter of Int32 value converter from/to OpenXml.
+///</summary>
 public static class Int32ValueConverter
 {
 

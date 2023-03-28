@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the ChartColorStylePart
-/// </summary>
+/// Defines the ChartColorStylePar converter from/to OpenXml.
+///</summary>
 public static class ChartColorStylePartConverter
 {
   /// <summary>

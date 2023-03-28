@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the PageMargins Class.
-/// </summary>
+/// Defines the PageMargins Class converter from/to OpenXml.
+///</summary>
 public static class PageMarginsConverter
 {
   /// <summary>

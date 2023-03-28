@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Entry Insertion Behaviors.
-/// </summary>
+/// Entry Insertion Behaviors converter from/to OpenXml.
+///</summary>
 public static class BehaviorsConverter
 {
   private static DMW.DocPartBehaviorKind? GetBehavior(DXW.Behaviors openXmlElement)

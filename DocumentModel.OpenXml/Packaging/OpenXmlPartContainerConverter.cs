@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the base class for OpenXmlPackage and OpenXmlPart.
-/// </summary>
+/// Defines the base class for OpenXmlPackage and OpenXmlPart converter from/to OpenXml.
+///</summary>
 public static class OpenXmlPartContainerConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Alpha Replace Effect.
-/// </summary>
+/// Alpha Replace Effect converter from/to OpenXml.
+///</summary>
 public static class AlphaReplaceConverter
 {
   /// <summary>

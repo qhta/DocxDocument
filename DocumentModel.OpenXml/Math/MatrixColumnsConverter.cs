@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Columns.
-/// </summary>
+/// Matrix Columns converter from/to OpenXml.
+///</summary>
 public static class MatrixColumnsConverter
 {
   private static Collection<DMMath.MatrixColumn>? GetItems(DXMath.MatrixColumns openXmlElement)

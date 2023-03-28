@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ThemeFamily Class.
-/// </summary>
+/// Defines the ThemeFamily Class converter from/to OpenXml.
+///</summary>
 public static class ThemeFamilyConverter
 {
   /// <summary>

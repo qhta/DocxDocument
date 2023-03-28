@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Wordprocessing;
 
 /// <summary>
-/// Tight Wrapping Extents Polygon.
-/// </summary>
+/// Tight Wrapping Extents Polygon converter from/to OpenXml.
+///</summary>
 public static class WrapPolygonConverter
 {
   /// <summary>

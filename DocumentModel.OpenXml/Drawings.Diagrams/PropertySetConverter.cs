@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Property Set.
-/// </summary>
+/// Property Set converter from/to OpenXml.
+///</summary>
 public static class PropertySetConverter
 {
   /// <summary>

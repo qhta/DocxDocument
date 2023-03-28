@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Defines the Run Class.
-/// </summary>
+/// Defines the Run Class converter from/to OpenXml.
+///</summary>
 public static class RunConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// 3D Pie Charts.
-/// </summary>
+/// 3D Pie Charts converter from/to OpenXml.
+///</summary>
 public static class Pie3DChartConverter
 {
   /// <summary>

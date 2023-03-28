@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundProperties Class.
-/// </summary>
+/// Defines the BackgroundProperties Class converter from/to OpenXml.
+///</summary>
 public static class BackgroundPropertiesConverter
 {
   /// <summary>

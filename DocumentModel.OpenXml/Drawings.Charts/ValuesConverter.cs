@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the Values Class.
-/// </summary>
+/// Defines the Values Class converter from/to OpenXml.
+///</summary>
 public static class ValuesConverter
 {
   private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.Values openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the StyleMatrixReferenceType Class.
-/// </summary>
+/// Defines the StyleMatrixReferenceType Class converter from/to OpenXml.
+///</summary>
 public static class StyleMatrixReferenceTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Single Automatic Captioning Setting.
-/// </summary>
+/// Single Automatic Captioning Setting converter from/to OpenXml.
+///</summary>
 public static class AutoCaptionConverter
 {
   /// <summary>

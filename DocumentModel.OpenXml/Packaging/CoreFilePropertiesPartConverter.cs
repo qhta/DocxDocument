@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the CoreFilePropertiesPart
-/// </summary>
+/// Defines the CoreFilePropertiesPar converter from/to OpenXml.
+///</summary>
 public static class CoreFilePropertiesPartConverter
 {
   private static String? GetContentType(DXPack.CoreFilePropertiesPart openXmlElement)

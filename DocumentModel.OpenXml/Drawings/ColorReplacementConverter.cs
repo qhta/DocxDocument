@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ColorReplacement Class.
-/// </summary>
+/// Defines the ColorReplacement Class converter from/to OpenXml.
+///</summary>
 public static class ColorReplacementConverter
 {
   /// <summary>

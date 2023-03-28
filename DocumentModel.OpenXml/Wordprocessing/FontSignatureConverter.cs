@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontSignature Class.
-/// </summary>
+/// Defines the FontSignature Class converter from/to OpenXml.
+///</summary>
 public static class FontSignatureConverter
 {
   /// <summary>

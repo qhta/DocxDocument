@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.UI;
 
 /// <summary>
-/// Defines the SharedQatControls Class.
-/// </summary>
+/// Defines the SharedQatControls Class converter from/to OpenXml.
+///</summary>
 public static class SharedQatControlsConverter
 {
   private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.SharedQatControls openXmlElement)

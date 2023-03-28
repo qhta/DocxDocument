@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Color Class.
-/// </summary>
+/// Defines the Color Class converter from/to OpenXml.
+///</summary>
 public static class Color3Converter
 {
   /// <summary>

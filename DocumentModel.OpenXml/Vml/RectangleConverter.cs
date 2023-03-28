@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Rectangle.
-/// </summary>
+/// Rectangle converter from/to OpenXml.
+///</summary>
 public static class RectangleConverter
 {
   /// <summary>

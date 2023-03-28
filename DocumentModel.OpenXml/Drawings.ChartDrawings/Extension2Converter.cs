@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Extension2 Class.
-/// </summary>
+/// Defines the Extension2 Class converter from/to OpenXml.
+///</summary>
 public static class Extension2Converter
 {
   /// <summary>

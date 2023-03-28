@@ -7,8 +7,8 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// CustomXmlInsRangeStart/CustomXmlInsRangeEnd, CustomXmlDelRangeStart/CustomXmlDelRangeEnd,
 /// CustomXmMoveFromStart/CustomXmMoveFromEnd, CustomXmMoveToStart/CustomXmMoveToEnd, 
 /// CustomXmConflictInsertionStart/CustomXmConflictInsertionEnd, CustomXmConflictDeletionStart/CustomXmConflictDeletionEnd, 
-/// InsertedRun, DeletedRun, MoveFromRun, MoveToRun, RunConflictInsertion, RunConflictDeletion.
-/// </summary>
+/// InsertedRun, DeletedRun, MoveFromRun, MoveToRun, RunConflictInsertion, RunConflictDeletion converter from/to OpenXml.
+///</summary>
 public static class CommonRunConverter
 {
   public static DMW.ICommonRunElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)

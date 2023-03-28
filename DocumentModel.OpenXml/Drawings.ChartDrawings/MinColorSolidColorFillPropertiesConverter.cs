@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MinColorSolidColorFillProperties Class.
-/// </summary>
+/// Defines the MinColorSolidColorFillProperties Class converter from/to OpenXml.
+///</summary>
 public static class MinColorSolidColorFillPropertiesConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2016DrawChartDraw.MinColorSolidColorFillProperties openXmlElement)

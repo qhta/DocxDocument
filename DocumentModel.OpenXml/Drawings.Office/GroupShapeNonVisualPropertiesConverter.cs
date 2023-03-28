@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Office;
 
 /// <summary>
-/// Defines the GroupShapeNonVisualProperties Class.
-/// </summary>
+/// Defines the GroupShapeNonVisualProperties Class converter from/to OpenXml.
+///</summary>
 public static class GroupShapeNonVisualPropertiesConverter
 {
   /// <summary>

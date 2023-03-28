@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the QueryTablePart
-/// </summary>
+/// Defines the QueryTablePar converter from/to OpenXml.
+///</summary>
 public static class QueryTablePartConverter
 {
   private static String? GetContentType(DXPack.QueryTablePart openXmlElement)

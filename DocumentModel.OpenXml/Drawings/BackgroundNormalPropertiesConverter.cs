@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the BackgroundNormalProperties Class.
-/// </summary>
+/// Defines the BackgroundNormalProperties Class converter from/to OpenXml.
+///</summary>
 public static class BackgroundNormalPropertiesConverter
 {
   /// <summary>

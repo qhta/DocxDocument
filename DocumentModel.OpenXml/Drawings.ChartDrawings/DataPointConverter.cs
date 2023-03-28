@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataPoint Class.
-/// </summary>
+/// Defines the DataPoint Class converter from/to OpenXml.
+///</summary>
 public static class DataPointConverter
 {
   /// <summary>

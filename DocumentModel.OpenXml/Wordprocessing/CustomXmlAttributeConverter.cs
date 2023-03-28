@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Custom XML Attribute.
-/// </summary>
+/// Custom XML Attribute converter from/to OpenXml.
+///</summary>
 public static class CustomXmlAttributeConverter
 {
   /// <summary>

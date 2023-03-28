@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the Outline Class.
-/// </summary>
+/// Defines the Outline Class converter from/to OpenXml.
+///</summary>
 public static class OutlineConverter
 {
   private static Boolean GetNoFill(DXDraw.Outline openXmlElement)

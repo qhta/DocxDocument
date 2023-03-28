@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Symbol Character.
-/// </summary>
+/// Symbol Character converter from/to OpenXml.
+///</summary>
 public static class SymbolCharConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the GradientStop Class.
-/// </summary>
+/// Defines the GradientStop Class converter from/to OpenXml.
+///</summary>
 public static class GradientStopConverter
 {
   /// <summary>

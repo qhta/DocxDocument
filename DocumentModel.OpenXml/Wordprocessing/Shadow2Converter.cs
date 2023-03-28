@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Shadow Class.
-/// </summary>
+/// Defines the Shadow Class converter from/to OpenXml.
+///</summary>
 public static class Shadow2Converter
 {
   /// <summary>

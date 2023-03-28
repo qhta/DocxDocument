@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the FontReference Class.
-/// </summary>
+/// Defines the FontReference Class converter from/to OpenXml.
+///</summary>
 public static class FontReferenceConverter
 {
   /// <summary>

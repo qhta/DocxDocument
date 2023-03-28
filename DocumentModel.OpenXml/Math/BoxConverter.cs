@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Box Function.
-/// </summary>
+/// Box Function converter from/to OpenXml.
+///</summary>
 public static class BoxConverter
 {
   /// <summary>

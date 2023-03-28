@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Clear Class.
-/// </summary>
+/// Defines the Clear Class converter from/to OpenXml.
+///</summary>
 public static class ClearConverter
 {
   /// <summary>

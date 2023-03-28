@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// Defines the Callout Class.
-/// </summary>
+/// Defines the Callout Class converter from/to OpenXml.
+///</summary>
 public static class CalloutConverter
 {
   /// <summary>

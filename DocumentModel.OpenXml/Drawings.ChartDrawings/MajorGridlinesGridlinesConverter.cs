@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MajorGridlinesGridlines Class.
-/// </summary>
+/// Defines the MajorGridlinesGridlines Class converter from/to OpenXml.
+///</summary>
 public static class MajorGridlinesGridlinesConverter
 {
   private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.MajorGridlinesGridlines openXmlElement)

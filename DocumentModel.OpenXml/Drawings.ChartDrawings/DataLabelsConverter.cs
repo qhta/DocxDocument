@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the DataLabels Class.
-/// </summary>
+/// Defines the DataLabels Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelsConverter
 {
   /// <summary>

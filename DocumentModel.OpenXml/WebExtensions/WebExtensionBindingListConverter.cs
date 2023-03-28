@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.WebExtensions;
 
 /// <summary>
-/// Defines the WebExtensionBindingList Class.
-/// </summary>
+/// Defines the WebExtensionBindingList Class converter from/to OpenXml.
+///</summary>
 public static class WebExtensionBindingListConverter
 {
   private static Collection<DMWebExt.WebExtensionBinding>? GetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement)

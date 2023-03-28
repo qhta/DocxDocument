@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the AxisUnitsLabel Class.
-/// </summary>
+/// Defines the AxisUnitsLabel Class converter from/to OpenXml.
+///</summary>
 public static class AxisUnitsLabelConverter
 {
   /// <summary>

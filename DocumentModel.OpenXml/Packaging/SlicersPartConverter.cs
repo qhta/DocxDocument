@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SlicersPart
-/// </summary>
+/// Defines the SlicersPar converter from/to OpenXml.
+///</summary>
 public static class SlicersPartConverter
 {
   private static String? GetContentType(DXPack.SlicersPart openXmlElement)

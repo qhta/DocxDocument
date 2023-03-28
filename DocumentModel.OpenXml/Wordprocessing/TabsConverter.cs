@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Tabs Class.
-/// </summary>
+/// Defines the Tabs Class converter from/to OpenXml.
+///</summary>
 public static class TabsConverter
 {
   private static DMW.TabStop? GetTabStop(DXW.TabStop? openXmlElement)

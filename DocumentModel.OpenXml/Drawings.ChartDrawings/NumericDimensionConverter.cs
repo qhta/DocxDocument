@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the NumericDimension Class.
-/// </summary>
+/// Defines the NumericDimension Class converter from/to OpenXml.
+///</summary>
 public static class NumericDimensionConverter
 {
   /// <summary>

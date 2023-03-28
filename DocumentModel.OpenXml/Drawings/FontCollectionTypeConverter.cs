@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the FontCollectionType Class.
-/// </summary>
+/// Defines the FontCollectionType Class converter from/to OpenXml.
+///</summary>
 public static class FontCollectionTypeConverter
 {
   /// <summary>

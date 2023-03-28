@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageTab Class.
-/// </summary>
+/// Defines the BackstageTab Class converter from/to OpenXml.
+///</summary>
 public static class BackstageTabConverter
 {
   /// <summary>

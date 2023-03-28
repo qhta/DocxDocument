@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the NotesSlidePart
-/// </summary>
+/// Defines the NotesSlidePar converter from/to OpenXml.
+///</summary>
 public static class NotesSlidePartConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the ClassificationLabel Class.
-/// </summary>
+/// Defines the ClassificationLabel Class converter from/to OpenXml.
+///</summary>
 public static class ClassificationLabelConverter
 {
   /// <summary>

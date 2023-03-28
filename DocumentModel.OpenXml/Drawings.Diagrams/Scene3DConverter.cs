@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// 3-D Scene.
-/// </summary>
+/// 3-D Scene converter from/to OpenXml.
+///</summary>
 public static class Scene3DConverter
 {
   /// <summary>

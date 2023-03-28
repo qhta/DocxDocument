@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the NumberDataType Class.
-/// </summary>
+/// Defines the NumberDataType Class converter from/to OpenXml.
+///</summary>
 public static class NumberDataTypeConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the WorksheetThreadedCommentsPart
-/// </summary>
+/// Defines the WorksheetThreadedCommentsPar converter from/to OpenXml.
+///</summary>
 public static class WorksheetThreadedCommentsPartConverter
 {
   private static String? GetContentType(DXPack.WorksheetThreadedCommentsPart openXmlElement)

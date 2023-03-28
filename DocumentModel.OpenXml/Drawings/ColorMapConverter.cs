@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ColorMap Class.
-/// </summary>
+/// Defines the ColorMap Class converter from/to OpenXml.
+///</summary>
 public static class ColorMapConverter
 {
   private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ColorMap openXmlElement)

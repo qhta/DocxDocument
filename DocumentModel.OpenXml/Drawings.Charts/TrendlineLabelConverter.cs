@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Trendline Label.
-/// </summary>
+/// Trendline Label converter from/to OpenXml.
+///</summary>
 public static class TrendlineLabelConverter
 {
   /// <summary>

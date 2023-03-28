@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Shape Style.
-/// </summary>
+/// Shape Style converter from/to OpenXml.
+///</summary>
 public static class StyleConverter
 {
   /// <summary>

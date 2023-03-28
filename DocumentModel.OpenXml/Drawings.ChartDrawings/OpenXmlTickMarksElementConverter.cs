@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the OpenXmlTickMarksElement Class.
-/// </summary>
+/// Defines the OpenXmlTickMarksElement Class converter from/to OpenXml.
+///</summary>
 public static class OpenXmlTickMarksElementConverter
 {
   /// <summary>

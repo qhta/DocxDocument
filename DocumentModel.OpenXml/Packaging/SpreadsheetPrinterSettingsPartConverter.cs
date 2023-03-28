@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SpreadsheetPrinterSettingsPart
-/// </summary>
+/// Defines the SpreadsheetPrinterSettingsPar converter from/to OpenXml.
+///</summary>
 public static class SpreadsheetPrinterSettingsPartConverter
 {
   private static String? GetContentType(DXPack.SpreadsheetPrinterSettingsPart openXmlElement)

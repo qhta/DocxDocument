@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Category Axis Data.
-/// </summary>
+/// Category Axis Data converter from/to OpenXml.
+///</summary>
 public static class CategoryAxisConverter
 {
   /// <summary>

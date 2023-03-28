@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Vml;
 
 /// <summary>
-/// VML Diagram.
-/// </summary>
+/// VML Diagram converter from/to OpenXml.
+///</summary>
 public static class DiagramConverter
 {
   /// <summary>

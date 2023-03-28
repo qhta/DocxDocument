@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 
 /// <summary>
-/// Non-Visual Group Shape Properties.
-/// </summary>
+/// Non-Visual Group Shape Properties converter from/to OpenXml.
+///</summary>
 public static class NonVisualGroupShapePropertiesConverter
 {
   /// <summary>

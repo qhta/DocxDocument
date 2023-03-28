@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the SlideCommentsPart
-/// </summary>
+/// Defines the SlideCommentsPar converter from/to OpenXml.
+///</summary>
 public static class SlideCommentsPartConverter
 {
   private static String? GetContentType(DXPack.SlideCommentsPart openXmlElement)

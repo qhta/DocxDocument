@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 
 /// <summary>
-/// Defines the DataLabel Class.
-/// </summary>
+/// Defines the DataLabel Class converter from/to OpenXml.
+///</summary>
 public static class DataLabelConverter
 {
   private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.DataLabel openXmlElement)

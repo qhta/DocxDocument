@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ArtisticPlasticWrap Class.
-/// </summary>
+/// Defines the ArtisticPlasticWrap Class converter from/to OpenXml.
+///</summary>
 public static class ArtisticPlasticWrapConverter
 {
   /// <summary>

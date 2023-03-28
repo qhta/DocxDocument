@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the HyperlinkOnHover Class.
-/// </summary>
+/// Defines the HyperlinkOnHover Class converter from/to OpenXml.
+///</summary>
 public static class HyperlinkOnHoverConverter
 {
   private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement)

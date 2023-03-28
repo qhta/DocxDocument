@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the BackstageMenuCheckBox Class.
-/// </summary>
+/// Defines the BackstageMenuCheckBox Class converter from/to OpenXml.
+///</summary>
 public static class BackstageMenuCheckBoxConverter
 {
   /// <summary>

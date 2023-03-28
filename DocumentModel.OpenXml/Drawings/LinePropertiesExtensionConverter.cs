@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the LinePropertiesExtension Class.
-/// </summary>
+/// Defines the LinePropertiesExtension Class converter from/to OpenXml.
+///</summary>
 public static class LinePropertiesExtensionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Number Reference.
-/// </summary>
+/// Number Reference converter from/to OpenXml.
+///</summary>
 public static class NumberReferenceConverter
 {
   /// <summary>

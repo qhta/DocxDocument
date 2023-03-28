@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the TaskScheduleEventInfo Class.
-/// </summary>
+/// Defines the TaskScheduleEventInfo Class converter from/to OpenXml.
+///</summary>
 public static class TaskScheduleEventInfoConverter
 {
   /// <summary>

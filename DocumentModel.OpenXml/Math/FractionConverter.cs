@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Fraction Function.
-/// </summary>
+/// Fraction Function converter from/to OpenXml.
+///</summary>
 public static class FractionConverter
 {
   /// <summary>

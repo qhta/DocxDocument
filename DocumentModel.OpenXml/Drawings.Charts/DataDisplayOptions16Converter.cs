@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the DataDisplayOptions16 Class.
-/// </summary>
+/// Defines the DataDisplayOptions16 Class converter from/to OpenXml.
+///</summary>
 public static class DataDisplayOptions16Converter
 {
   /// <summary>

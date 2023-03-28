@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the Item Class.
-/// </summary>
+/// Defines the Item Class converter from/to OpenXml.
+///</summary>
 public static class ItemConverter
 {
   /// <summary>

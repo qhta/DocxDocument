@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the MaxValueColorEndPosition Class.
-/// </summary>
+/// Defines the MaxValueColorEndPosition Class converter from/to OpenXml.
+///</summary>
 public static class MaxValueColorEndPositionConverter
 {
   private static Boolean? GetExtremeValueColorPosition(DXO2016DrawChartDraw.MaxValueColorEndPosition openXmlElement)

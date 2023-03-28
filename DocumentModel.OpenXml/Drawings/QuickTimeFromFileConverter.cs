@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// QuickTime from File.
-/// </summary>
+/// QuickTime from File converter from/to OpenXml.
+///</summary>
 public static class QuickTimeFromFileConverter
 {
   /// <summary>

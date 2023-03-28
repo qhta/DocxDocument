@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Scheme Color.
-/// </summary>
+/// Scheme Color converter from/to OpenXml.
+///</summary>
 public static class SchemeColorConverter
 {
   /// <summary>

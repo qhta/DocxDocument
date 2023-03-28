@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Called from constructors of derived parts to initialize the IFixedContentTypePart interface. All derived parts must be parts that have fixed content type.
-/// </summary>
+/// Called from constructors of derived parts to initialize the IFixedContentTypePart interface. All derived parts must be parts that have fixed content type converter from/to OpenXml.
+///</summary>
 public static class IFixedContentTypePartConverter
 {
   public static DocumentModel.Packaging.IFixedContentTypePart? CreateModelElement(DXPack.IFixedContentTypePart? openXmlElement)

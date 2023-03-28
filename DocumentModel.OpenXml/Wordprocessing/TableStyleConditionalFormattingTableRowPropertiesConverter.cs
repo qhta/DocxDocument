@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Row Properties.
-/// </summary>
+/// Table Style Conditional Formatting Table Row Properties converter from/to OpenXml.
+///</summary>
 public static class TableStyleConditionalFormattingTableRowPropertiesConverter
 {
   private static Boolean? GetHidden(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement)

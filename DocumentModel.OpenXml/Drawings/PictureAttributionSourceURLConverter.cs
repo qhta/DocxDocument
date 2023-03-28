@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the PictureAttributionSourceURL Class.
-/// </summary>
+/// Defines the PictureAttributionSourceURL Class converter from/to OpenXml.
+///</summary>
 public static class PictureAttributionSourceURLConverter
 {
   /// <summary>

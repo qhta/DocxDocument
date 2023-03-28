@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableBorders Class.
-/// </summary>
+/// Defines the TableBorders Class converter from/to OpenXml.
+///</summary>
 public static class TableBordersConverter
 {
   /// <summary>

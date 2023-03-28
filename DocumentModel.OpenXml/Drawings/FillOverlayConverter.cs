@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Fill Overlay Effect.
-/// </summary>
+/// Fill Overlay Effect converter from/to OpenXml.
+///</summary>
 public static class FillOverlayConverter
 {
   /// <summary>

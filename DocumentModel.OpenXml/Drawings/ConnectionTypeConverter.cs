@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the ConnectionType Class.
-/// </summary>
+/// Defines the ConnectionType Class converter from/to OpenXml.
+///</summary>
 public static class ConnectionTypeConverter
 {
   /// <summary>

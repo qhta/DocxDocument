@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines the NumberingDefinitionsPart
-/// </summary>
+/// Defines the NumberingDefinitionsPar converter from/to OpenXml.
+///</summary>
 public static class NumberingDefinitionsPartConverter
 {
   private static String? GetContentType(DXPack.NumberingDefinitionsPart openXmlElement)

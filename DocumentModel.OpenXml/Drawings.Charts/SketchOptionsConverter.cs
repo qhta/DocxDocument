@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SketchOptions Class.
-/// </summary>
+/// Defines the SketchOptions Class converter from/to OpenXml.
+///</summary>
 public static class SketchOptionsConverter
 {
   /// <summary>

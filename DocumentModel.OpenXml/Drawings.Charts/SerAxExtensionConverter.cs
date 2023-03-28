@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the SerAxExtension Class.
-/// </summary>
+/// Defines the SerAxExtension Class converter from/to OpenXml.
+///</summary>
 public static class SerAxExtensionConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Defines the BarChartSeries Class.
-/// </summary>
+/// Defines the BarChartSeries Class converter from/to OpenXml.
+///</summary>
 public static class BarChartSeries3Converter
 {
   /// <summary>

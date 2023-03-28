@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the VbaSuppData Class.
-/// </summary>
+/// Defines the VbaSuppData Class converter from/to OpenXml.
+///</summary>
 public static class VbaSuppDataConverter
 {
   /// <summary>

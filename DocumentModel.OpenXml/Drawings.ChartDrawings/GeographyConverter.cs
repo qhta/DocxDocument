@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the Geography Class.
-/// </summary>
+/// Defines the Geography Class converter from/to OpenXml.
+///</summary>
 public static class GeographyConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// System Color.
-/// </summary>
+/// System Color converter from/to OpenXml.
+///</summary>
 public static class SystemColorConverter
 {
   /// <summary>

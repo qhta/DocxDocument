@@ -3,8 +3,8 @@ using DocumentModel;
 namespace DocumentModel.OpenXml.Properties;
 
 /// <summary>
-///   Application Specific File Properties.
-/// </summary>
+///   Application Specific File Properties converter from/to OpenXml.
+///</summary>
 public static class ExtendedPropertiesConverter
 {
   /// <summary>

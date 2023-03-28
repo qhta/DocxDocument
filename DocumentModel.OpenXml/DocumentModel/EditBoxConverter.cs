@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml;
 
 /// <summary>
-/// Defines the EditBox Class.
-/// </summary>
+/// Defines the EditBox Class converter from/to OpenXml.
+///</summary>
 public static class EditBoxConverter
 {
   /// <summary>

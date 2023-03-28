@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Charts;
 
 /// <summary>
-/// Band Formats.
-/// </summary>
+/// Band Formats converter from/to OpenXml.
+///</summary>
 public static class BandFormatsConverter
 {
   private static Collection<DMDrawsCharts.BandFormat>? GetItems(DXDrawCharts.BandFormats openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Packaging;
 
 /// <summary>
-/// Defines MailMergeRecipientDataPart.
-/// </summary>
+/// Defines MailMergeRecipientDataPart converter from/to OpenXml.
+///</summary>
 public static class MailMergeRecipientDataPartConverter
 {
   /// <summary>

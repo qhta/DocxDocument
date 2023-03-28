@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Defines the GradientFill Class.
-/// </summary>
+/// Defines the GradientFill Class converter from/to OpenXml.
+///</summary>
 public static class GradientFillConverter
 {
   /// <summary>

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Upper Limit Properties.
-/// </summary>
+/// Upper Limit Properties converter from/to OpenXml.
+///</summary>
 public static class LimitUpperPropertiesConverter
 {
   /// <summary>

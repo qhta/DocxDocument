@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 
 /// <summary>
-/// Defines the GeoData Class.
-/// </summary>
+/// Defines the GeoData Class converter from/to OpenXml.
+///</summary>
 public static class GeoDataConverter
 {
   /// <summary>

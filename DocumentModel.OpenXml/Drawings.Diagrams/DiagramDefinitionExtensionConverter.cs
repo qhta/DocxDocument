@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the DiagramDefinitionExtension Class.
-/// </summary>
+/// Defines the DiagramDefinitionExtension Class converter from/to OpenXml.
+///</summary>
 public static class DiagramDefinitionExtensionConverter
 {
   /// <summary>

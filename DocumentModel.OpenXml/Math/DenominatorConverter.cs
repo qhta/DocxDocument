@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Denominator.
-/// </summary>
+/// Denominator converter from/to OpenXml.
+///</summary>
 public static class DenominatorConverter
 {
   private static DMMath.ArgumentProperties? GetArgumentProperties(DXMath.Denominator openXmlElement)

@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// n-ary Operator Function.
-/// </summary>
+/// n-ary Operator Function converter from/to OpenXml.
+///</summary>
 public static class NaryConverter
 {
   /// <summary>

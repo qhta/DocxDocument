@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings.Diagrams;
 
 /// <summary>
-/// Defines the ColorsType Class.
-/// </summary>
+/// Defines the ColorsType Class converter from/to OpenXml.
+///</summary>
 public static class ColorsTypeConverter
 {
   /// <summary>

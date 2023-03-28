@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Text Field.
-/// </summary>
+/// Text Field converter from/to OpenXml.
+///</summary>
 public static class FieldConverter
 {
   /// <summary>

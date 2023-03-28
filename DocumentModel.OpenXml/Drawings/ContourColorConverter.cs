@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Drawings;
 
 /// <summary>
-/// Contour Color.
-/// </summary>
+/// Contour Color converter from/to OpenXml.
+///</summary>
 public static class ContourColorConverter
 {
   private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.ContourColor openXmlElement)
