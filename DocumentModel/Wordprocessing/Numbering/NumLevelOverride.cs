@@ -1,8 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the LevelOverride Class.
+///   Specifies an optional override which shall be applied in place of zero or more levels 
+///   from the abstract numbering definition for a given numbering definition instance. 
+///   Each instance of this element is used to override the appearance and behavior 
+///   of a given numbering level definition within the given abstract numbering definition. 
 /// </summary>
 public class NumLevelOverride: ModelElement
 {

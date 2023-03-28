@@ -5,9 +5,9 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class NumberingConverter
 {
-  private static Collection<DMW.NumberingPictureBullet>? GetNumberingPictureBullets(DXW.Numbering openXmlElement)
+  private static DMW.NumberingPictureBullets? GetNumberingPictureBullets(DXW.Numbering openXmlElement)
   {
-    var collection = new Collection<DMW.NumberingPictureBullet>();
+    var collection = new DMW.NumberingPictureBullets();
     foreach (var item in openXmlElement.Elements<DXW.NumberingPictureBullet>())
     {
       var newItem = DMXW.NumberingPictureBulletConverter.CreateModelElement(item);
@@ -61,9 +61,9 @@ public static class NumberingConverter
     }
   }
   
-  private static Collection<DMW.AbstractNum>? GetAbstractNums(DXW.Numbering openXmlElement)
+  private static DMW.AbstractNums? GetAbstractNums(DXW.Numbering openXmlElement)
   {
-    var collection = new Collection<DMW.AbstractNum>();
+    var collection = new DMW.AbstractNums();
     foreach (var item in openXmlElement.Elements<DXW.AbstractNum>())
     {
       var newItem = DMXW.AbstractNumConverter.CreateModelElement(item);
@@ -117,9 +117,9 @@ public static class NumberingConverter
     }
   }
   
-  private static Collection<DMW.NumberingInstance>? GetNumberingInstances(DXW.Numbering openXmlElement)
+  private static DMW.NumberingInstances? GetNumberingInstances(DXW.Numbering openXmlElement)
   {
-    var collection = new Collection<DMW.NumberingInstance>();
+    var collection = new DMW.NumberingInstances();
     foreach (var item in openXmlElement.Elements<DXW.NumberingInstance>())
     {
       var newItem = DMXW.NumberingInstanceConverter.CreateModelElement(item);

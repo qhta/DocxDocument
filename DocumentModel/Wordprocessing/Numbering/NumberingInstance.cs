@@ -1,25 +1,31 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Numbering Definition Instance.
+///   Specifies a unique instance of numbering information that can be referenced by zero or more paragraphs 
+///   within the parent WordprocessingML document.
 /// </summary>
 public class NumberingInstance: ModelElement
 {
   /// <summary>
-  ///   numId
+  ///   A value of 0 for NumberId shall never be used to point to a numbering definition instance,
+  ///   and shall instead only be used to designate the removal of numbering properties 
+  ///   at a particular level in the style hierarchy (typically via direct formatting). 
   /// </summary>
-  public HexInt? NumberID { get; set; }
+  public Int32? NumberID { get; set; }
 
   /// <summary>
-  ///   durableId
+  ///   Associates a unique hexadecimal ID to the numbering definition instance.
   /// </summary>
   public HexInt? DurableId { get; set; }
 
   /// <summary>
-  ///   AbstractNumId.
+  ///   Specifies the abstract numbering definition information 
+  ///   whose properties shall be inherited by the parent numbering definition instance.
   /// </summary>
-  public HexInt? AbstractNumId { get; set; }
+  public Int32? AbstractNumId { get; set; }
 
-  public Collection<NumLevelOverride>? LevelOverrides { get; set; }
+  /// <summary>
+  ///  Collection of NumLevelOverride elements
+  /// </summary>
+  [XmlContentElement] public NumLevelOverrides? LevelOverrides { get; set; }
 }

@@ -63,9 +63,9 @@ public static class NumberingInstanceConverter
     SimpleValueConverter.SetValue<DXW.AbstractNumId,System.Int32>(openXmlElement, value);
   }
   
-  private static Collection<DMW.NumLevelOverride>? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
+  private static DMW.NumLevelOverrides? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
   {
-    var collection = new Collection<DMW.NumLevelOverride>();
+    var collection = new DMW.NumLevelOverrides();
     foreach (var item in openXmlElement.Elements<DXW.LevelOverride>())
     {
       var newItem = DMXW.LevelOverrideConverter.CreateModelElement(item);
