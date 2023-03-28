@@ -1,10 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Numbering Definitions.
-/// </summary>
+
 public static class NumberingConverter
 {
+  #region NumberingPictureBullets
   private static DMW.NumberingPictureBullets? GetNumberingPictureBullets(DXW.Numbering openXmlElement)
   {
     var collection = new DMW.NumberingPictureBullets();
@@ -14,11 +15,11 @@ public static class NumberingConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
+    if (collection.Count > 0)
       return collection;
     return null;
   }
-  
+
   private static bool CmpNumberingPictureBullets(DXW.Numbering openXmlElement, Collection<DMW.NumberingPictureBullet>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.NumberingPictureBullet>();
@@ -28,7 +29,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -46,7 +47,7 @@ public static class NumberingConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   private static void SetNumberingPictureBullets(DXW.Numbering openXmlElement, Collection<DMW.NumberingPictureBullet>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.NumberingPictureBullet>();
@@ -60,7 +61,9 @@ public static class NumberingConverter
       }
     }
   }
-  
+  #endregion
+
+  #region AbstractNums 
   private static DMW.AbstractNums? GetAbstractNums(DXW.Numbering openXmlElement)
   {
     var collection = new DMW.AbstractNums();
@@ -70,11 +73,11 @@ public static class NumberingConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
+    if (collection.Count > 0)
       return collection;
     return null;
   }
-  
+
   private static bool CmpAbstractNums(DXW.Numbering openXmlElement, Collection<DMW.AbstractNum>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.AbstractNum>();
@@ -84,7 +87,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -102,7 +105,7 @@ public static class NumberingConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   private static void SetAbstractNums(DXW.Numbering openXmlElement, Collection<DMW.AbstractNum>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.AbstractNum>();
@@ -116,7 +119,9 @@ public static class NumberingConverter
       }
     }
   }
-  
+  #endregion
+
+  #region NumberingInstances 
   private static DMW.NumberingInstances? GetNumberingInstances(DXW.Numbering openXmlElement)
   {
     var collection = new DMW.NumberingInstances();
@@ -126,11 +131,11 @@ public static class NumberingConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
+    if (collection.Count > 0)
       return collection;
     return null;
   }
-  
+
   private static bool CmpNumberingInstances(DXW.Numbering openXmlElement, Collection<DMW.NumberingInstance>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.NumberingInstance>();
@@ -140,7 +145,7 @@ public static class NumberingConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -158,7 +163,7 @@ public static class NumberingConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   private static void SetNumberingInstances(DXW.Numbering openXmlElement, Collection<DMW.NumberingInstance>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.NumberingInstance>();
@@ -172,22 +177,26 @@ public static class NumberingConverter
       }
     }
   }
-  
+  #endregion
+
+  #region NumberingIdMacAtCleanup 
   private static Int32? GetNumberingIdMacAtCleanup(DXW.Numbering openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingIdMacAtCleanup>()?.Val);
   }
-  
+
   private static bool CmpNumberingIdMacAtCleanup(DXW.Numbering openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.NumberingIdMacAtCleanup>()?.Val, value, diffs, objName, "NumberingIdMacAtCleanup");
   }
-  
+
   private static void SetNumberingIdMacAtCleanup(DXW.Numbering openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXW.NumberingIdMacAtCleanup,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXW.NumberingIdMacAtCleanup, System.Int32>(openXmlElement, value);
   }
-  
+  #endregion
+
+  #region Numbering 
   public static DMW.Numbering? CreateModelElement(DXW.Numbering? openXmlElement)
   {
     if (openXmlElement != null)
@@ -201,7 +210,7 @@ public static class NumberingConverter
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXW.Numbering? openXmlElement, DMW.Numbering? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -221,15 +230,15 @@ public static class NumberingConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Numbering value)
-    where OpenXmlElementType: DXW.Numbering, new()
+    where OpenXmlElementType : DXW.Numbering, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXW.Numbering openXmlElement, DMW.Numbering value)
   {
     SetNumberingPictureBullets(openXmlElement, value?.NumberingPictureBullets);
@@ -237,4 +246,5 @@ public static class NumberingConverter
     SetNumberingInstances(openXmlElement, value?.NumberingInstances);
     SetNumberingIdMacAtCleanup(openXmlElement, value?.NumberingIdMacAtCleanup);
   }
+  #endregion
 }

@@ -1,46 +1,45 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
+
 /// <summary>
 /// Numbering Level Text converter from/to OpenXml
-///</summary>
+/// </summary>
 public static class LevelTextConverter
 {
-  /// <summary>
-  /// Level Text
-  /// </summary>
+
+  #region Level Text
   private static String? GetVal(DXW.LevelText openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
-  
+
   private static bool CmpVal(DXW.LevelText openXmlElement, string? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Text");
   }
-  
+
   private static void SetVal(DXW.LevelText openXmlElement, String? value)
   {
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Level Text Is Null Character
-  /// </summary>
+  #endregion
+
+  #region Level Text Is Null Character
   private static Boolean GetNull(DXW.LevelText openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Null) ?? false;
   }
-  
+
   private static bool CmpNull(DXW.LevelText openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement?.Null, value, diffs, objName, "Null");
+    return BooleanValueConverter.CmpValue(openXmlElement?.Null ?? false, value, diffs, objName, "Null");
   }
-  
+
   private static void SetNull(DXW.LevelText openXmlElement, Boolean? value)
   {
     openXmlElement.Null = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
+
   public static DMW.NumLevelText? CreateModelElement(DXW.LevelText? openXmlElement)
   {
     if (openXmlElement != null)
@@ -52,7 +51,7 @@ public static class LevelTextConverter
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXW.LevelText? openXmlElement, DMW.NumLevelText? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -68,18 +67,19 @@ public static class LevelTextConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevelText value)
-    where OpenXmlElementType: DXW.LevelText, new()
+    where OpenXmlElementType : DXW.LevelText, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXW.LevelText openXmlElement, DMW.NumLevelText value)
   {
     SetVal(openXmlElement, value?.Text);
     SetNull(openXmlElement, value?.IsNull);
   }
+  #endregion
 }

@@ -34,8 +34,8 @@ internal class Program
   {
     var testInstance = new TestNumbering();
     testInstance.Setup();
-    //testInstance.TestReadNumbering();
-    testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
+    testInstance.TestReadNumbering();
+    //testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 

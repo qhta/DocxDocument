@@ -1,13 +1,12 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Footnote Numbering Format.
-/// </summary>
+
 public static class NumberingFormatConverter
 {
-  /// <summary>
-  /// Numbering Format Type
-  /// </summary>
+
+  #region Numbering Format Type
   private static DMW.NumberFormatKind? GetVal(DXW.NumberingFormat openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value);
@@ -22,10 +21,9 @@ public static class NumberingFormatConverter
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
   }
-  
-  /// <summary>
-  /// format, this property is only available in Office 2010 and later.
-  /// </summary>
+#endregion
+
+  #region format, this property is only available in Office 2010 and later.
   private static String? GetFormat(DXW.NumberingFormat openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Format);
@@ -82,4 +80,5 @@ public static class NumberingFormatConverter
     SetVal(openXmlElement, value?.Type);
     SetFormat(openXmlElement, value?.Custom);
   }
+#endregion
 }

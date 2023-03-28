@@ -1,13 +1,12 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-/// <summary>
+
 /// Defines the NumberingProperties Class.
-/// </summary>
+
 public static class NumberingPropertiesConverter
 {
-  /// <summary>
-  /// Numbering Level Reference.
-  /// </summary>
+
+  #region Numbering Level Reference.
   private static Int32? GetNumberingLevelReference(DXW.NumberingProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val);
@@ -22,10 +21,9 @@ public static class NumberingPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// Numbering Definition Instance Reference.
-  /// </summary>
+#endregion
+
+  #region Numbering Definition Instance Reference.
   private static Int32? GetNumberingId(DXW.NumberingProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val);
@@ -40,10 +38,9 @@ public static class NumberingPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXW.NumberingId,System.Int32>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// Previous Paragraph Numbering Properties.
-  /// </summary>
+#endregion
+
+  #region Previous Paragraph Numbering Properties.
   private static DMW.NumberingChange? GetNumberingChange(DXW.NumberingProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
@@ -69,10 +66,9 @@ public static class NumberingPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Inserted Numbering Properties.
-  /// </summary>
+#endregion
+
+  #region Inserted Numbering Properties.
   private static DMW.TrackChangeType? GetInserted(DXW.NumberingProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Inserted>();
@@ -148,4 +144,5 @@ public static class NumberingPropertiesConverter
     SetNumberingChange(openXmlElement, value?.NumberingChange);
     SetInserted(openXmlElement, value?.Inserted);
   }
+#endregion
 }
