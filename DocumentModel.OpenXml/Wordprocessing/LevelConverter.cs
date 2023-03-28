@@ -198,7 +198,7 @@ public static class LevelConverter
   /// <summary>
   /// Numbering Level Text.
   /// </summary>
-  private static DMW.LevelText? GetLevelText(DXW.Level openXmlElement)
+  private static DMW.NumLevelText? GetLevelText(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LevelText>();
     if (element != null)
@@ -206,12 +206,12 @@ public static class LevelConverter
     return null;
   }
   
-  private static bool CmpLevelText(DXW.Level openXmlElement, DMW.LevelText? value, DiffList? diffs, string? objName)
+  private static bool CmpLevelText(DXW.Level openXmlElement, DMW.NumLevelText? value, DiffList? diffs, string? objName)
   {
     return DMXW.LevelTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LevelText>(), value, diffs, objName);
   }
   
-  private static void SetLevelText(DXW.Level openXmlElement, DMW.LevelText? value)
+  private static void SetLevelText(DXW.Level openXmlElement, DMW.NumLevelText? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.LevelText>();
     if (itemElement != null)
@@ -357,11 +357,11 @@ public static class LevelConverter
     }
   }
   
-  public static DMW.Level? CreateModelElement(DXW.Level? openXmlElement)
+  public static DMW.NumLevel? CreateModelElement(DXW.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Level();
+      var value = new DMW.NumLevel();
       value.LevelIndex = GetLevelIndex(openXmlElement);
       value.TemplateCode = GetTemplateCode(openXmlElement);
       value.Tentative = GetTentative(openXmlElement);
@@ -382,7 +382,7 @@ public static class LevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Level? openXmlElement, DMW.Level? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Level? openXmlElement, DMW.NumLevel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -424,7 +424,7 @@ public static class LevelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Level value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevel value)
     where OpenXmlElementType: DXW.Level, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -432,7 +432,7 @@ public static class LevelConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Level openXmlElement, DMW.Level value)
+  public static void UpdateOpenXmlElement(DXW.Level openXmlElement, DMW.NumLevel value)
   {
     SetLevelIndex(openXmlElement, value?.LevelIndex);
     SetTemplateCode(openXmlElement, value?.TemplateCode);

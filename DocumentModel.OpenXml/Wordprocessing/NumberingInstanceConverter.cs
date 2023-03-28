@@ -63,9 +63,9 @@ public static class NumberingInstanceConverter
     SimpleValueConverter.SetValue<DXW.AbstractNumId,System.Int32>(openXmlElement, value);
   }
   
-  private static Collection<DMW.LevelOverride>? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
+  private static Collection<DMW.NumLevelOverride>? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
   {
-    var collection = new Collection<DMW.LevelOverride>();
+    var collection = new Collection<DMW.NumLevelOverride>();
     foreach (var item in openXmlElement.Elements<DXW.LevelOverride>())
     {
       var newItem = DMXW.LevelOverrideConverter.CreateModelElement(item);
@@ -77,7 +77,7 @@ public static class NumberingInstanceConverter
     return null;
   }
   
-  private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value, DiffList? diffs, string? objName)
+  private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.LevelOverride>();
     var origElementsCount = origElements.Count();
@@ -105,7 +105,7 @@ public static class NumberingInstanceConverter
     return false;
   }
   
-  private static void SetLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.LevelOverride>? value)
+  private static void SetLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.LevelOverride>();
     if (value != null)

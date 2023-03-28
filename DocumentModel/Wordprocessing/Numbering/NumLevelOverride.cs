@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the LevelOverride Class.
 /// </summary>
-public class LevelOverride: ModelElement
+public class NumLevelOverride: ModelElement
 {
   /// <summary>
   ///   Numbering Level ID
@@ -19,5 +19,5 @@ public class LevelOverride: ModelElement
   /// <summary>
   ///   Numbering Level Override Definition.
   /// </summary>
-  public Level? Level { get; set; }
+  public NumLevel? Level { get; set; }
 }
