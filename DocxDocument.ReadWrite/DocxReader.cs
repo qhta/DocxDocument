@@ -5,27 +5,21 @@ namespace DocxDocument.Reader;
 [Flags]
 public enum Parts : Int64
 {
-  CoreFileProperties            = 0x0001,
-  ExtendedFileProperties        = 0x0002,
-  CustomFileProperties          = 0x0004,
-  DocumentSettings              = 0x0008,
-  AllDocumentProperties         = 0x000F,
+  CoreFileProperties = 0x0001,
+  ExtendedFileProperties = 0x0002,
+  CustomFileProperties = 0x0004,
+  DocumentSettings = 0x0008,
+  AllDocumentProperties = 0x000F,
 
-  //MainDocument                = 0x08,
+  NumberingDefinitions = 0x0100,
+  StyleDefinitions = 0x0200,
+  Theme = 0x0400,
+  FontTable = 0x0800,
+  EmbedFonts = 0x1800,
+  Stylistics = 0x1F00,
 
-  //WebSettings                 = 0x20,
-  //PrinterSettings             = 0x40,
-  //AllDocumentSettings         = 0x70,
-  //Glossary                    = 0x80,
-
-  NumberingDefinitions          = 0x0100,
-  StyleDefinitions              = 0x0200,
-  Theme                         = 0x0400,
-  FontTable                     = 0x0800,
-  Stylistics                    = 0x0F00,
-
-  Paragraphs                    = 0x1000,
-  Body                          = 0xF000,
+  Paragraphs = 0x10000,
+  Body = 0xF0000,
 
   //HeadersAndFooters           = 0x1000,
   //FootnotesAndEndNotes        = 0x2000,
@@ -95,6 +89,8 @@ public partial class DocxReader
       document.Theme = ReadTheme();
     if (parts.HasFlag(Parts.FontTable))
       document.Fonts = ReadFonts();
+    if (parts.HasFlag(Parts.EmbedFonts))
+      document.EmbeddedFonts = ReadEmbedFonts();
     if (parts.HasFlag(Parts.Body))
       document.Body = ReadBody(parts);
     return document;
@@ -163,15 +159,40 @@ public partial class DocxReader
   private DMW.Fonts ReadFonts()
   {
     DMW.Fonts fonts;
-    var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<FontTablePart>()?.FirstOrDefault()?.Fonts;
-    if (themeOpenXmlElement != null)
-      fonts = DMXW.FontsConverter.CreateModelElement(themeOpenXmlElement) ?? new();
+    var fontsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts;
+    if (fontsOpenXmlElement != null)
+      fonts = DMXW.FontsConverter.CreateModelElement(fontsOpenXmlElement) ?? new();
     else
       fonts = new();
     return fonts;
   }
 
-    private DMW.Body ReadBody(Parts parts)
+  private DMW.FontDataDictionary? ReadEmbedFonts()
+  {
+    var fontsParts = WordprocessingDocument.MainDocumentPart?.FontTablePart?.FontParts;
+    if (fontsParts != null)
+    {
+      var embeddedFonts = new DMW.FontDataDictionary();
+      foreach (var fontPart in fontsParts)
+      {
+        var fontPartId = WordprocessingDocument.MainDocumentPart?.FontTablePart?.GetIdOfPart(fontPart);
+        if (fontPartId != null)
+        {
+          using (var stream = fontPart.GetStream())
+          {
+            var bytes = new byte[stream.Length];
+            stream.Read(bytes, 0, bytes.Length);
+            embeddedFonts.Add(fontPartId, bytes);
+          }
+        }
+      }
+      if (embeddedFonts.Count>0)
+        return embeddedFonts;
+    }
+    return null;
+  }
+
+  private DMW.Body ReadBody(Parts parts)
   {
     DMW.Body body;
     var bodyOpenXmlElement = WordprocessingDocument.MainDocumentPart?.Document.Body;

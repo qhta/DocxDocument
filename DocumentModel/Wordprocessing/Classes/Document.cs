@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Document.
 /// </summary>
-public partial class Document
+public partial class Document: ModelElement
 {
   /// <summary>
   ///   conformance

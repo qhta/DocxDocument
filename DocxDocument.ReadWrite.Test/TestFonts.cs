@@ -1,7 +1,4 @@
-using DocumentModel.Wordprocessing;
-
-using Qhta.Xml.Serialization;
-using System.Reflection;
+using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -46,7 +43,7 @@ public class TestFonts : TestBase
   /// Tests the fonts read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
-  public void TestReadSampleDocsFonts()
+  public void TestReadFonts()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
       TestReadFonts(filename);
@@ -59,7 +56,8 @@ public class TestFonts : TestBase
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
   public virtual void TestReadFonts(string filename, bool showDetails = false)
   {
-    WriteLine(filename);
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing read fonts of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.FontTable);
     Assert.IsNotNull(document, "No document read");
@@ -79,22 +77,72 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
-  /// serialize and deserialize fonts using string writer.
+  /// Tests the fonts read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
-  public void TestReadFontsXmlSerialization() => TestReadFontsXmlSerialization(false);
+  public void TestReadEmbedFonts()
+  {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadEmbedFonts(filename);
+  }
+
+  /// <summary>
+  /// Tests the fonts read from the specified docx file.
+  /// </summary>
+  /// <param name="filename">The filename of the document to read.</param>
+  /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+  public virtual void TestReadEmbedFonts(string filename, bool showDetails = false)
+  {
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing read fonts of: {filename}");
+    var reader = new DocxReader(filename);
+    var document = reader.ReadDocument(Parts.FontTable|Parts.EmbedFonts);
+    Assert.IsNotNull(document, "No document read");
+    Assert.IsNotNull(document.Fonts, "No document fonts read");
+    var modelFonts = document.EmbeddedFonts;
+    var origFonts = reader.WordprocessingDocument.MainDocumentPart?.FontTablePart?.Parts;
+    var diffs = new DiffList();
+    var ok = DMX.Int32ValueConverter.CmpValue(origFonts?.Count() ?? 0, modelFonts?.Count() ?? 0, diffs, null);
+    if (!ok && showDetails)
+    {
+      WriteLine("Read fonts differences found:");
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    }
+    if (!ok)
+      Assert.Fail(diffs.FirstOrDefault()?.ToString());
+    if (showDetails)
+    {
+      foreach (var font in document.Fonts)
+      {
+        WriteLine($"Font: {font.Name}");
+        if (font.EmbedRegularFont != null)
+          WriteLine($"  EmbedRegularFont id={font.EmbedRegularFont.Id} size={font.EmbedRegularFont.GetEmbedFont()?.Length}");
+      }
+    }
+  }
 
   /// <summary>
   /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
   /// serialize and deserialize fonts using string writer.
   /// </summary>
-  public void TestReadFontsXmlSerialization(bool showDetails = false)
+  [Test]
+  public void TestReadFontsXmlSerialization()
+  {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadFontsXmlSerialization(filename);
+  }
+
+  /// <summary>
+  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
+  /// serialize and deserialize fonts using string writer.
+  /// </summary>
+  public void TestReadFontsXmlSerialization(string filename, bool showDetails = false)
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing fonts serialization of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.FontTable);
     var oldFonts = document.Fonts ?? new();
@@ -111,7 +159,7 @@ public class TestFonts : TestBase
     WriteLine();
 
     var textReader = new StringReader(str);
-    var newFonts = (Fonts?)serializer.Deserialize(textReader);
+    var newFonts = (DMW.Fonts?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newFonts, $"Deserialized fonts are null");
     var newFontsArray = newFonts.ToArray();
     var oldFontsArray = oldFonts.ToArray();

@@ -12,7 +12,19 @@ public partial class Document
 
   public DMDraws.Theme? Theme { get; set; }
 
-  public Fonts? Fonts { get; set; }
+  public Fonts? Fonts 
+  { 
+    get => _Fonts; 
+    set
+    {
+      _Fonts = value;
+      if (_Fonts != null)
+        _Fonts.Parent = this;
+    }
+  }
+  private Fonts? _Fonts;
+
+  public FontDataDictionary? EmbeddedFonts { get; set; }
 
   public Numbering? Numbering { get; set; }
 

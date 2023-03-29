@@ -58,7 +58,6 @@ public class TestNumbering : TestBase
   {
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read numbering of: {filename}");
-
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.NumberingDefinitions);
     Assert.IsNotNull(document, "No document read");
