@@ -1,13 +1,12 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontRelationshipType Class.
+/// FontRelationshipType from/
 /// </summary>
 public static class FontRelationshipTypeConverter
 {
-  /// <summary>
-  /// fontKey
-  /// </summary>
+
+  #region FontKey conversion
   private static String? GetFontKey(DXW.FontRelationshipType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.FontKey);
@@ -22,13 +21,12 @@ public static class FontRelationshipTypeConverter
   {
     openXmlElement.FontKey = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// subsetted
-  /// </summary>
+  #endregion
+
+  #region Subsetted conversion
   private static Boolean? GetSubsetted(DXW.FontRelationshipType openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement?.Subsetted);
+    return BooleanValueConverter.GetValue(openXmlElement?.Subsetted)/* ?? true*/;
   }
   
   private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
@@ -40,10 +38,9 @@ public static class FontRelationshipTypeConverter
   {
     openXmlElement.Subsetted = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// Relationship to Part
-  /// </summary>
+  #endregion
+
+  #region Id conversion
   private static String? GetId(DXW.FontRelationshipType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -58,12 +55,14 @@ public static class FontRelationshipTypeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  public static DMW.FontRelationshipType? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
+  #endregion
+
+  #region FontRelationshipType conversion
+  public static DMW.EmbeddedFont? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FontRelationshipType();
+      var value = new DMW.EmbeddedFont();
       value.FontKey = GetFontKey(openXmlElement);
       value.Subsetted = GetSubsetted(openXmlElement);
       value.Id = GetId(openXmlElement);
@@ -72,7 +71,7 @@ public static class FontRelationshipTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.FontRelationshipType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -90,7 +89,7 @@ public static class FontRelationshipTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FontRelationshipType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedFont value)
     where OpenXmlElementType: DXW.FontRelationshipType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -98,10 +97,11 @@ public static class FontRelationshipTypeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FontRelationshipType openXmlElement, DMW.FontRelationshipType value)
+  public static void UpdateOpenXmlElement(DXW.FontRelationshipType openXmlElement, DMW.EmbeddedFont value)
   {
     SetFontKey(openXmlElement, value?.FontKey);
     SetSubsetted(openXmlElement, value?.Subsetted);
     SetId(openXmlElement, value?.Id);
   }
+  #endregion
 }

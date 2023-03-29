@@ -12,6 +12,13 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
       Add(item);
   }
 
+  protected override void SetParent(ModelElement? parent)
+  {
+    base.SetParent(parent);
+    foreach (var item in this)
+      item.Parent = parent;
+  }
+
   #region ICollection implementation
   private List<T> Items = new();
 

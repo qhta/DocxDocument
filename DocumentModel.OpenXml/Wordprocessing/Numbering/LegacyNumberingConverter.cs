@@ -6,14 +6,14 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class LegacyNumberingConverter
 {
   #region Use Legacy Numbering Properties
-  private static Boolean? GetLegacy(DXW.LegacyNumbering openXmlElement)
+  private static Boolean GetLegacy(DXW.LegacyNumbering openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement?.Legacy);
+    return BooleanValueConverter.GetValue(openXmlElement?.Legacy) ?? true;
   }
   
   private static bool CmpLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement?.Legacy, value, diffs, objName, "Legacy");
+    return BooleanValueConverter.CmpValue(openXmlElement?.Legacy, value, diffs, objName, "Use");
   }
   
   private static void SetLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value)
@@ -23,16 +23,16 @@ public static class LegacyNumberingConverter
   #endregion
 
   #region Legacy Spacing
-  private static DXA? GetLegacySpace(DXW.LegacyNumbering openXmlElement)
+  private static DXA GetLegacySpace(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacySpace!=null)
-      return Int32ValueConverter.GetValue(openXmlElement.LegacySpace);
-    return null;
+      return Int32ValueConverter.GetValue(openXmlElement.LegacySpace) ?? 0;
+    return 0;
   }
   
   private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.LegacySpace, value, diffs, objName, "LegacySpace");
+    return StringValueConverter.CmpValue(openXmlElement?.LegacySpace, value, diffs, objName, "Space");
   }
   
   private static void SetLegacySpace(DXW.LegacyNumbering openXmlElement, String? value)
@@ -42,16 +42,16 @@ public static class LegacyNumberingConverter
   #endregion
 
   #region Legacy Indent
-  private static DXA? GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
+  private static DXA GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacyIndent!=null)
-      return Int32ValueConverter.GetValue(openXmlElement.LegacyIndent);
-    return null;
+      return Int32ValueConverter.GetValue(openXmlElement.LegacyIndent) ?? 0;
+    return 0;
   }
 
   private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.LegacyIndent, value, diffs, objName, "LegacyIndent");
+    return StringValueConverter.CmpValue(openXmlElement?.LegacyIndent, value, diffs, objName, "Indent");
   }
   
   private static void SetLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value)
@@ -66,9 +66,9 @@ public static class LegacyNumberingConverter
     if (openXmlElement != null)
     {
       var value = new DMW.LegacyNumbering();
-      value.Legacy = GetLegacy(openXmlElement);
-      value.LegacySpace = GetLegacySpace(openXmlElement);
-      value.LegacyIndent = GetLegacyIndent(openXmlElement);
+      value.Use = GetLegacy(openXmlElement);
+      value.Space = GetLegacySpace(openXmlElement);
+      value.Indent = GetLegacyIndent(openXmlElement);
       return value;
     }
     return null;
@@ -79,11 +79,11 @@ public static class LegacyNumberingConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLegacy(openXmlElement, value.Legacy, diffs, objName))
+      if (!CmpLegacy(openXmlElement, value.Use, diffs, objName))
         ok = false;
-      if (!CmpLegacySpace(openXmlElement, value.LegacySpace, diffs, objName))
+      if (!CmpLegacySpace(openXmlElement, value.Space, diffs, objName))
         ok = false;
-      if (!CmpLegacyIndent(openXmlElement, value.LegacyIndent, diffs, objName))
+      if (!CmpLegacyIndent(openXmlElement, value.Indent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -102,9 +102,9 @@ public static class LegacyNumberingConverter
   
   public static void UpdateOpenXmlElement(DXW.LegacyNumbering openXmlElement, DMW.LegacyNumbering value)
   {
-    SetLegacy(openXmlElement, value?.Legacy);
-    SetLegacySpace(openXmlElement, value?.LegacySpace);
-    SetLegacyIndent(openXmlElement, value?.LegacyIndent);
+    SetLegacy(openXmlElement, value?.Use);
+    SetLegacySpace(openXmlElement, value?.Space);
+    SetLegacyIndent(openXmlElement, value?.Indent);
   }
   #endregion
 }
