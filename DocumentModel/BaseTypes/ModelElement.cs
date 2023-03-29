@@ -1,5 +1,7 @@
 ﻿using DeepEqual.Syntax;
 
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
@@ -12,9 +14,31 @@ public class ModelElement : IEquatable<ModelElement>, IModelElement
 
   [XmlIgnore]
   [NonComparable]
-  public virtual ModelElement? Parent { get => _Parent; set => _Parent = value; }
+  public ModelElement? Parent 
+  { 
+    get => _Parent; 
+    set => SetParent(value); 
+  }
+
+  protected virtual void SetParent(ModelElement? parent)
+    => _Parent = parent;
+
   protected ModelElement? _Parent;
 
+  [XmlIgnore]
+  [NonComparable]
+  public virtual Document? ParentDocument 
+  { 
+    get
+    {
+      if (Parent is Document document)
+        return document;
+      if (Parent != null)
+        return Parent.ParentDocument;
+      return null;
+    }
+  }
+  
   //[XmlAttribute("Parent")]
   //public string? ParentName { get => Parent?.GetType().Name; set { } }
 

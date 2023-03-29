@@ -1,10 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Font Table Root Element.
+/// Font Table Root Element converter
 /// </summary>
 public static class FontsConverter
 {
+  #region Fonts Items conversion.
   private static void GetItems(DXW.Fonts openXmlElement, ICollection<DMW.Font> collection)
   {
     foreach (var item in openXmlElement.Elements<DXW.Font>())
@@ -56,7 +57,9 @@ public static class FontsConverter
       }
     }
   }
-  
+  #endregion
+
+  #region Fonts model conversion
   public static DMW.Fonts? CreateModelElement(DXW.Fonts? openXmlElement)
   {
     if (openXmlElement != null)
@@ -95,4 +98,5 @@ public static class FontsConverter
   {
     SetItems(openXmlElement, value);
   }
+  #endregion
 }

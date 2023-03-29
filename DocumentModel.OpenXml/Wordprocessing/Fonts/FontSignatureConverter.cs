@@ -8,11 +8,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// First 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  private static DM.HexInt? GetUnicodeSignature0(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetUnicodeSignature0(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature0?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature0.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature0.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpUnicodeSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
@@ -31,11 +31,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// Second 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  private static DM.HexInt? GetUnicodeSignature1(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetUnicodeSignature1(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature1?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature1.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature1.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpUnicodeSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
@@ -54,11 +54,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// Third 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  private static DM.HexInt? GetUnicodeSignature2(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetUnicodeSignature2(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature2?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature2.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature2.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpUnicodeSignature2(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
@@ -77,11 +77,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// Fourth 32 Bits of Unicode Subset Bitfield
   /// </summary>
-  private static DM.HexInt? GetUnicodeSignature3(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetUnicodeSignature3(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature3?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature3.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.UnicodeSignature3.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpUnicodeSignature3(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
@@ -100,11 +100,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// Lower 32 Bits of Code Page Bit Field
   /// </summary>
-  private static DM.HexInt? GetCodePageSignature0(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetCodePageSignature0(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.CodePageSignature0?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.CodePageSignature0.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.CodePageSignature0.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpCodePageSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
@@ -123,11 +123,11 @@ public static class FontSignatureConverter
   /// <summary>
   /// Upper 32 Bits of Code Page Bit Field
   /// </summary>
-  private static DM.HexInt? GetCodePageSignature1(DXW.FontSignature openXmlElement)
+  private static DM.HexInt GetCodePageSignature1(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.CodePageSignature1?.Value != null)
-      return HexIntConverter.GetValue(openXmlElement.CodePageSignature1.Value);
-    return null;
+      return HexIntConverter.GetValue(openXmlElement.CodePageSignature1.Value) ?? 0;
+    return 0;
   }
   
   private static bool CmpCodePageSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)

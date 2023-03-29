@@ -4,20 +4,20 @@ namespace DocumentModel.Wordprocessing;
 ///   Specifies that a given numbering level is from an earlier word processing application 
 ///   which did not support the full richness of the numbering properties supported by WordprocessingML.
 /// </summary>
-public class LegacyNumbering : ModelElement
+public record LegacyNumbering
 {
   /// <summary>
   ///   Use Legacy Numbering Properties
   /// </summary>
-  public Boolean? Legacy { get; set; }
+  public Boolean Use { get; set; }
 
   /// <summary>
   ///   Legacy Spacing
   /// </summary>
-  public DXA? LegacySpace { get; set; }
+  public DXA Space { get; set; }
 
   /// <summary>
   ///   Legacy Indent
   /// </summary>
-  public DXA? LegacyIndent { get; set; }
+  public DXA Indent { get; set; }
 }

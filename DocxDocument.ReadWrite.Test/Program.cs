@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestNumbering();
+    RunTestFonts();
   }
 
   private static void RunTestSections()
@@ -34,8 +34,8 @@ internal class Program
   {
     var testInstance = new TestNumbering();
     testInstance.Setup();
-    testInstance.TestReadNumbering();
-    //testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
+    //testInstance.TestReadNumbering();
+    testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -43,8 +43,9 @@ internal class Program
   {
     var testInstance = new TestFonts();
     testInstance.Setup();
-    testInstance.TestReadDocumentFonts();
-    testInstance.TestReadFontsXmlSerialization();
+    //testInstance.TestReadDocumentFonts();
+    testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
+    testInstance.TestReadEmbedFonts("Font embedding.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
