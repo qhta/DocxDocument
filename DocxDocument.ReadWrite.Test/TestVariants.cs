@@ -14,12 +14,12 @@ namespace DocxDocument.ReadWrite.Test;
 /// <summary>
 /// TestNumbers for variants
 /// </summary>
-public enum Numbers: UInt64
+public enum Numbers : UInt64
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   One = 1,
   MaxUInt32 = UInt32.MaxValue,
-  MaxUInt64 =UInt64.MaxValue,
+  MaxUInt64 = UInt64.MaxValue,
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
 }
 
@@ -28,7 +28,7 @@ public enum Numbers: UInt64
 /// </summary>
 /// <seealso cref="System.IConvertible" />
 [TypeConverter(typeof(RGBTypeConverter))]
-public struct RGB: IConvertible
+public struct RGB : IConvertible
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   [XmlIgnore] public Byte R { get; set; }
@@ -1362,7 +1362,7 @@ public class TestVariants : TestBase
   {
     Variant variant;
 
-    variant = new Variant(VariantType.Object, new RGB{ R=16,G=32, B=48 });
+    variant = new Variant(VariantType.Object, new RGB { R = 16, G = 32, B = 48 });
     Assert.That((UInt32)variant, Is.EqualTo(0x102030), "Object set/ UInt32 get");
   }
 
@@ -1509,24 +1509,40 @@ public class TestVariants : TestBase
   }
 
   /// <summary>
+  /// Test of the variant XML serialization. Tests all variant types with optional details.
+  /// Dummy parameter is needed to make test function similar to TestVectorXmlSerialization
+  /// </summary>
+  public void TestVariantXmlSerialization(VariantType? dummy, bool showDetails = false)
+  {
+    foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
+    {
+      TestVariantXmlSerialization(variantType, showDetails);
+    }
+  }
+
+  /// <summary>
   /// Test of the variant XML serialization. Tests the specified variant type.
   /// </summary>
-  public void TestVariantXmlSerialization(VariantType variantType)
+  public void TestVariantXmlSerialization(VariantType variantType, bool showDetails = false)
   {
     if (TestVariantValues.TryGetValue(variantType, out var val))
     {
       var valStr = "null";
       if (val != null)
         valStr = $" {val} ({val.GetType().Name})";
-      WriteLine($"Testing variant type {variantType} = {valStr}");
+      if (showDetails)
+        WriteLine($"Testing variant type {variantType} = {valStr}");
       var variant = new Variant(variantType, val);
       var textWriter = new StringWriter();
-      var serializer = new QXmlSerializer(typeof(Variant), new Type[]{typeof(Numbers), typeof(RGB)});
+      var serializer = new QXmlSerializer(typeof(Variant), new Type[] { typeof(Numbers), typeof(RGB) });
       serializer.Serialize(textWriter, variant);
       textWriter.Flush();
       string str = textWriter.ToString();
-      WriteLine(str);
-      WriteLine();
+      if (showDetails)
+      {
+        WriteLine(str);
+        WriteLine();
+      }
 
       var textReader = new StringReader(str);
       var newVariant = (Variant?)serializer.Deserialize(textReader);
@@ -1551,7 +1567,7 @@ public class TestVariants : TestBase
   /// <summary>
   /// Test of the vector variant XML serialization. Tests the specified variant type.
   /// </summary>
-  public void TestVectorXmlSerialization(VariantType? itemType)
+  public void TestVectorXmlSerialization(VariantType? itemType, bool showDetails = false)
   {
     var oldVectorVariant = new VectorVariant();
     foreach (var variantType in typeof(VariantType).GetEnumValues().Cast<VariantType>())
@@ -1569,12 +1585,15 @@ public class TestVariants : TestBase
       }
     }
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(VectorVariant), new Type[]{typeof(Numbers), typeof(RGB)});
+    var serializer = new QXmlSerializer(typeof(VectorVariant), new Type[] { typeof(Numbers), typeof(RGB) });
     serializer.Serialize(textWriter, oldVectorVariant);
     textWriter.Flush();
     string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
 
     var textReader = new StringReader(str);
     var newVariant = (Variant?)serializer.Deserialize(textReader);

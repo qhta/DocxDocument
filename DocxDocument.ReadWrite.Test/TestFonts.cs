@@ -77,7 +77,7 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests the fonts read from all docx files in folder specified by test path.
+  /// Tests embed fonts read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
   public void TestReadEmbedFonts()
@@ -87,7 +87,7 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests the fonts read from the specified docx file.
+  /// Tests embed fonts read from the specified docx file.
   /// </summary>
   /// <param name="filename">The filename of the document to read.</param>
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
@@ -96,7 +96,7 @@ public class TestFonts : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read fonts of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.FontTable|Parts.EmbedFonts);
+    var document = reader.ReadDocument(Parts.FontTable | Parts.EmbeddedFonts);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     var modelFonts = document.EmbeddedFonts;
@@ -123,7 +123,7 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests fonts Xml serialization by reading files,
   /// serialize and deserialize fonts using string writer.
   /// </summary>
   [Test]
@@ -134,15 +134,15 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests fonts Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests fonts Xml serialization by reading file,
   /// serialize and deserialize fonts using string writer.
   /// </summary>
   public void TestReadFontsXmlSerialization(string filename, bool showDetails = false)
   {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing fonts serialization of: {filename}");
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.FontTable);
     var oldFonts = document.Fonts ?? new();
@@ -155,8 +155,11 @@ public class TestFonts : TestBase
     serializer.Serialize(textWriter, oldFonts);
     textWriter.Flush();
     string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
 
     var textReader = new StringReader(str);
     var newFonts = (DMW.Fonts?)serializer.Deserialize(textReader);
@@ -175,5 +178,59 @@ public class TestFonts : TestBase
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
   }
 
+  /// <summary>
+  /// Tests embed fonts Xml serialization by reading files,
+  /// serialize and deserialize fonts using string writer.
+  /// </summary>
+  [Test]
+  public void TestReadEmbedFontsXmlSerialization()
+  {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadEmbedFontsXmlSerialization(filename);
+  }
+
+  /// <summary>
+  /// Tests fonts Xml serialization by reading file,
+  /// serialize and deserialize fonts using string writer.
+  /// </summary>
+  public void TestReadEmbedFontsXmlSerialization(string filename, bool showDetails = false)
+  {
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing embedded fonts serialization of: {filename}");
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+    var reader = new DocxReader(filename);
+    var document = reader.ReadDocument(Parts.EmbeddedFonts);
+    var oldFonts = document.EmbeddedFonts ?? new();
+    if (oldFonts == null)
+      return;
+    var textWriter = new StringWriter();
+    var serializer = new QXmlSerializer(typeof(DMW.EmbeddedFonts), extraTypes.ToArray(),
+      new SerializationOptions { AcceptAllProperties = true });
+    serializer.Serialize(textWriter, oldFonts);
+    textWriter.Flush();
+    string str = textWriter.ToString();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
+
+    var textReader = new StringReader(str);
+    var newFonts = (DMW.EmbedFontData?)serializer.Deserialize(textReader);
+    Assert.IsNotNull(newFonts, $"Deserialized fonts are null");
+    var newFontsArray = newFonts.ToArray();
+    var oldFontsArray = oldFonts.ToArray();
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldFontsArray, newFontsArray, diffs);
+    if (!ok && showDetails)
+    {
+      WriteLine("Read fonts differences found:");
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    }
+    if (!ok)
+      Assert.Fail(diffs.FirstOrDefault()?.ToString());
+  }
 
 }

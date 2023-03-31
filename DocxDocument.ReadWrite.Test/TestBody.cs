@@ -93,8 +93,11 @@ public class TestBody : TestBase
     textWriter.Flush();
     string str = textWriter.ToString();
     var t2 = DateTime.Now;
-    WriteLine(str);
-    WriteLine();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
     if (showDetails)
       WriteLine($"Serialization time = {(t2 - t1).TotalSeconds} s");
 

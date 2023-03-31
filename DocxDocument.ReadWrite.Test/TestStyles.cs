@@ -51,7 +51,7 @@ public class TestStyles : TestBase
   /// Tests the style definitions read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
-  public void TestReadSampleDocsStyles()
+  public void TestReadStyles()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
       TestReadStyles(filename);
@@ -64,7 +64,8 @@ public class TestStyles : TestBase
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
   public virtual void TestReadStyles(string filename, bool showDetails = false)
   {
-    WriteLine(filename);
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing read styles of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.StyleDefinitions);
     Assert.IsNotNull(document, "No document read");
@@ -206,16 +207,26 @@ public class TestStyles : TestBase
   }
 
   /// <summary>
-  /// Tests styles Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests styles Xml serialization by reading files,
   /// serialize and deserialize styles using string writer.
   /// </summary>
   [Test]
   public void TestReadStylesXmlSerialization()
   {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadStylesXmlSerialization(filename);
+  }
+
+  /// <summary>
+  /// Tests styles Xml serialization by reading file,
+  /// serialize and deserialize numbering using string writer.
+  /// </summary>
+  public void TestReadStylesXmlSerialization(string filename, bool showDetails = false)
+  {
+    filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing styles serialization of: {filename}");
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.StyleDefinitions);
     DMW.Styles oldStyles = document.Styles ?? new DMW.Styles();//TestReadProperties(filename, true);
@@ -228,8 +239,11 @@ public class TestStyles : TestBase
     serializer.Serialize(textWriter, oldStyles);
     textWriter.Flush();
     string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
 
     var textReader = new StringReader(str);
     var newStyles = (DMW.Styles?)serializer.Deserialize(textReader);

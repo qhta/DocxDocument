@@ -77,7 +77,7 @@ public class TestNumbering : TestBase
   }
 
   /// <summary>
-  /// Tests numbering Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests numbering Xml serialization by reading files,
   /// serialize and deserialize numbering using string writer.
   /// </summary>
   [Test]
@@ -88,15 +88,15 @@ public class TestNumbering : TestBase
   }
 
   /// <summary>
-  /// Tests numbering Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests numbering Xml serialization by reading file,
   /// serialize and deserialize numbering using string writer.
   /// </summary>
   public void TestReadNumberingXmlSerialization(string filename, bool showDetails = false)
   {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing numbering serialization of: {filename}");
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.NumberingDefinitions);
     var oldNumbering = document.Numbering ?? new();
@@ -109,8 +109,11 @@ public class TestNumbering : TestBase
     serializer.Serialize(textWriter, oldNumbering);
     textWriter.Flush();
     string str = textWriter.ToString();
-    WriteLine(str);
-    WriteLine();
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
 
     var textReader = new StringReader(str);
     var newNumbering = (Numbering?)serializer.Deserialize(textReader);
