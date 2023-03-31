@@ -15,7 +15,7 @@ public static class ActiveWritingStyleConverter
   
   private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
   private static void SetLanguage(DXW.ActiveWritingStyle openXmlElement, String? value)

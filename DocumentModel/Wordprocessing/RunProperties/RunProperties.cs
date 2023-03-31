@@ -14,7 +14,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  public RunFonts? RunFonts { get; set; }
+  [XmlContentElement] public RunFonts? RunFonts { get; set; }
 
   /// <summary>
   ///   Bold.
@@ -24,7 +24,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   BoldComplexScript.
   /// </summary>
-  public Boolean? BoldComplexScript { get; set; }
+  public Boolean? BoldCS { get; set; }
 
   /// <summary>
   ///   Italic.
@@ -34,7 +34,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   ItalicComplexScript.
   /// </summary>
-  public Boolean? ItalicComplexScript { get; set; }
+  public Boolean? ItalicCS { get; set; }
 
   /// <summary>
   ///   Caps.
@@ -129,7 +129,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   FontSizeComplexScript.
   /// </summary>
-  public String? FontSizeComplexScript { get; set; }
+  public String? FontSizeCS { get; set; }
 
   /// <summary>
   ///   Highlight.
@@ -149,17 +149,17 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Border.
   /// </summary>
-  public BorderType? Border { get; set; }
+  [XmlContentElement] public BorderType? Border { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  [XmlContentElement] public Shading? Shading { get; set; }
 
   /// <summary>
   ///   FitText.
   /// </summary>
-  public FitText? FitText { get; set; }
+  [XmlContentElement] public FitText? FitText { get; set; }
 
   /// <summary>
   ///   VerticalTextAlignment.
@@ -184,12 +184,12 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Languages.
   /// </summary>
-  public Language? Language { get; set; }
+  [XmlContentElement] public Languages? Language { get; set; }
 
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  public EastAsianLayout? EastAsianLayout { get; set; }
+  [XmlContentElement] public EastAsianLayout? EastAsianLayout { get; set; }
 
   /// <summary>
   ///   SpecVanish.
@@ -199,37 +199,37 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  public Glow? Glow { get; set; }
+  [XmlContentElement] public Glow? Glow { get; set; }
 
   /// <summary>
   ///   Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  public Shadow2? Shadow14 { get; set; }
+  [XmlContentElement] public Shadow2? Shadow14 { get; set; }
 
   /// <summary>
   ///   Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  public Reflection? Reflection { get; set; }
+  [XmlContentElement] public Reflection? Reflection { get; set; }
 
   /// <summary>
   ///   TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public TextOutlineEffect? TextOutlineEffect { get; set; }
+  [XmlContentElement] public TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
   ///   FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  public FillTextEffect? FillTextEffect { get; set; }
+  [XmlContentElement] public FillTextEffect? FillTextEffect { get; set; }
 
   /// <summary>
   ///   Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public Scene3D? Scene3D { get; set; }
+  [XmlContentElement] public Scene3D? Scene3D { get; set; }
 
   /// <summary>
   ///   Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  public Properties3D? Properties3D { get; set; }
+  [XmlContentElement] public Properties3D? Properties3D { get; set; }
 
   /// <summary>
   ///   Ligatures, this property is only available in Office 2010 and later..

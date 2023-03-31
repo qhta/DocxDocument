@@ -1638,7 +1638,7 @@ public static class DocumentSettingsConverter
     }
   }
   
-  private static DMW.Language? GetThemeFontLanguages(DXW.Settings openXmlElement)
+  private static DMW.Languages? GetThemeFontLanguages(DXW.Settings openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ThemeFontLanguages>();
     if (element != null)
@@ -1646,12 +1646,12 @@ public static class DocumentSettingsConverter
     return null;
   }
   
-  private static bool CmpThemeFontLanguages(DXW.Settings openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeFontLanguages(DXW.Settings openXmlElement, DMW.Languages? value, DiffList? diffs, string? objName)
   {
     return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ThemeFontLanguages>(), value, diffs, objName);
   }
   
-  private static void SetThemeFontLanguages(DXW.Settings openXmlElement, DMW.Language? value)
+  private static void SetThemeFontLanguages(DXW.Settings openXmlElement, DMW.Languages? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ThemeFontLanguages>();
     if (itemElement != null)

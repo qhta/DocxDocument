@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestVariants();
+    RunTestStyles();
   }
 
   private static void RunTestSections()
@@ -25,7 +25,7 @@ internal class Program
     var testInstance = new TestBody();
     testInstance.Setup();
     //testInstance.TestReadDocumentBody(/*"_Jakość oprogramowania.docx", true*/);
-    testInstance.TestReadBodyXmlSerialization("Frame.docx", true);
+    testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -88,8 +88,8 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    //testInstance.TestEnumVariantType();
-    //testInstance.TestVariantXmlSerialization(null, true);
+    testInstance.TestEnumVariantType();
+    testInstance.TestVariantXmlSerialization(null, true);
     testInstance.TestVectorXmlSerialization(null,true);
     Console.WriteLine("Test passed");
   }

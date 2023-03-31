@@ -394,7 +394,7 @@ public static class PreviousRunPropertiesConverter
   
   private static bool CmpFontSizeComplexScript(DXW.PreviousRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeComplexScript");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeCS");
   }
   
   private static void SetFontSizeComplexScript(DXW.PreviousRunProperties openXmlElement, String? value)
@@ -636,7 +636,7 @@ public static class PreviousRunPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
   }
   
-  private static DMW.Language? GetLanguages(DXW.PreviousRunProperties openXmlElement)
+  private static DMW.Languages? GetLanguages(DXW.PreviousRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Languages>();
     if (element != null)
@@ -644,12 +644,12 @@ public static class PreviousRunPropertiesConverter
     return null;
   }
   
-  private static bool CmpLanguages(DXW.PreviousRunProperties openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguages(DXW.PreviousRunProperties openXmlElement, DMW.Languages? value, DiffList? diffs, string? objName)
   {
     return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
-  private static void SetLanguages(DXW.PreviousRunProperties openXmlElement, DMW.Language? value)
+  private static void SetLanguages(DXW.PreviousRunProperties openXmlElement, DMW.Languages? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Languages>();
     if (itemElement != null)
