@@ -9,14 +9,12 @@ public class TableCellProperties: ModelElement
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  [XmlContentElement]
-  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+   public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
 
   /// <summary>
   ///   TableCellWidth.
   /// </summary>
-  [XmlContentElement]
-  public TableWidthType? TableCellWidth { get; set; }
+   public TableWidthType? TableCellWidth { get; set; }
 
   /// <summary>
   ///   GridSpan.
@@ -36,14 +34,12 @@ public class TableCellProperties: ModelElement
   /// <summary>
   ///   TableCellBorders.
   /// </summary>
-  [XmlContentElement]
-  public TableCellBorders? TableCellBorders { get; set; }
+   public TableCellBorders? TableCellBorders { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  [XmlContentElement]
-  public Shading? Shading { get; set; }
+   public Shading? Shading { get; set; }
 
   /// <summary>
   ///   NoWrap.
@@ -53,8 +49,7 @@ public class TableCellProperties: ModelElement
   /// <summary>
   ///   TableCellMargin.
   /// </summary>
-  [XmlContentElement]
-  public TableCellMargin? TableCellMargin { get; set; }
+   public TableCellMargin? TableCellMargin { get; set; }
 
   /// <summary>
   ///   TextDirection.
@@ -76,15 +71,11 @@ public class TableCellProperties: ModelElement
   /// </summary>
   public Boolean? HideMark { get; set; }
 
-  [XmlContentElement]
-  public CellInsertion? CellInsertion { get; set; }
+   public CellInsertion? CellInsertion { get; set; }
 
-  [XmlContentElement]
-  public CellDeletion? CellDeletion { get; set; }
+   public CellDeletion? CellDeletion { get; set; }
 
-  [XmlContentElement]
-  public CellMerge? CellMerge { get; set; }
+   public CellMerge? CellMerge { get; set; }
 
-  [XmlContentElement]
-  public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
+   public TableCellPropertiesChange? TableCellPropertiesChange { get; set; }
 }

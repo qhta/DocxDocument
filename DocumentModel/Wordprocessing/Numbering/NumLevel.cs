@@ -109,10 +109,10 @@ public class NumLevel: ModelElement
   /// <summary>
   ///   Numbering Level Associated Paragraph Properties.
   /// </summary>
-  [XmlContentElement] public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
+  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
 
   /// <summary>
   ///   Numbering Symbol Run Properties.
   /// </summary>
-  [XmlContentElement] public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
+  public NumberingSymbolRunProperties? NumberingSymbolRunProperties { get; set; }
 }

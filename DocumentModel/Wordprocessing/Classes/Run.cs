@@ -9,21 +9,21 @@ public class Run: ElementCollection<IRunElement>, ICommonRunElement
   /// <summary>
   ///   Revision Identifier for Run Properties
   /// </summary>
-  [XmlAttribute] public HexInt? RsidRunProperties { get; set; }
+  public HexInt? RsidRunProperties { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Run Deletion
   /// </summary>
-  [XmlAttribute] public HexInt? RsidRunDeletion { get; set; }
+  public HexInt? RsidRunDeletion { get; set; }
 
   /// <summary>
   ///   Revision Identifier for Run
   /// </summary>
-  [XmlAttribute] public HexInt? RsidRunAddition { get; set; }
+  public HexInt? RsidRunAddition { get; set; }
 
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  [XmlContentElement] public RunProperties? RunProperties { get; set; }
+  public RunProperties? RunProperties { get; set; }
 
 }

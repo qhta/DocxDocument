@@ -51,40 +51,28 @@ public partial class SectionProperties : ModelElement, IBodyElement
 
   public FooterReferences? FooterReferences { get; set; }
 
-  [XmlContentElement]
-  public FootnoteProperties? FootnoteProperties { get; set; }
+   public FootnoteProperties? FootnoteProperties { get; set; }
 
-  [XmlContentElement]
-  public EndnoteProperties? EndnoteProperties { get; set; }
+   public EndnoteProperties? EndnoteProperties { get; set; }
 
-  [XmlContentElement]
-  public PageSize? PageSize { get; set; }
+   public PageSize? PageSize { get; set; }
 
-  [XmlContentElement]
-  public PageMargin? PageMargin { get; set; }
+   public PageMargin? PageMargin { get; set; }
 
-  [XmlContentElement]
-  public PaperSource? PaperSource { get; set; }
+   public PaperSource? PaperSource { get; set; }
 
-  [XmlContentElement]
-  public PageBorders? PageBorders { get; set; }
+   public PageBorders? PageBorders { get; set; }
 
-  [XmlContentElement]
-  public LineNumberType? LineNumberType { get; set; }
+   public LineNumberType? LineNumberType { get; set; }
 
-  [XmlContentElement]
-  public PageNumberType? PageNumberType { get; set; }
+   public PageNumberType? PageNumberType { get; set; }
 
-  [XmlContentElement]
-  public Columns? Columns { get; set; }
+   public Columns? Columns { get; set; }
 
-  [XmlContentElement]
-  public DocGrid? DocGrid { get; set; }
+   public DocGrid? DocGrid { get; set; }
 
-  [XmlContentElement]
-  public PrinterSettingsReference? PrinterSettingsReference { get; set; }
+   public PrinterSettingsReference? PrinterSettingsReference { get; set; }
 
-  [XmlContentElement]
-  public SectionPropertiesChange? SectionPropertiesChange { get; set; }
+   public SectionPropertiesChange? SectionPropertiesChange { get; set; }
 
 }

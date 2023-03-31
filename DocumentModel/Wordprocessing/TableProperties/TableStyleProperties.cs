@@ -14,25 +14,25 @@ public class TableStyleProperties: ModelElement
   /// <summary>
   ///   Table Style Conditional Formatting Paragraph Properties.
   /// </summary>
-  [XmlContentElement] public StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Run Properties.
   /// </summary>
-  [XmlContentElement] public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Table Properties.
   /// </summary>
-  [XmlContentElement] public TableStyleConditionalTableProperties? TableStyleConditionalTableProperties { get; set; }
+  public TableStyleConditionalTableProperties? TableStyleConditionalTableProperties { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  [XmlContentElement] public TableStyleConditionalRowProperties? TableStyleConditionalRowProperties { get; set; }
+  public TableStyleConditionalRowProperties? TableStyleConditionalRowProperties { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Table Cell Properties.
   /// </summary>
-  [XmlContentElement] public TableStyleConditionalCellProperties? TableStyleConditionalCellProperties { get; set; }
+  public TableStyleConditionalCellProperties? TableStyleConditionalCellProperties { get; set; }
 }

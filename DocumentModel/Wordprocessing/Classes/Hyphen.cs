@@ -9,8 +9,7 @@ public class Hyphen : ModelElement, IRunElement
   /// <summary>
   /// Encoded char value of the hyphen.
   /// </summary>
-  [XmlAttribute]
-  public HyphenKind? Value
+   public HyphenKind? Value
   {
     get => _Value;
     set
@@ -29,8 +28,7 @@ public class Hyphen : ModelElement, IRunElement
   /// <summary>
   /// Visual text value.
   /// </summary>
-  [XmlAttribute]
-  public string Text
+   public string Text
   {
     get => _Text;
     set

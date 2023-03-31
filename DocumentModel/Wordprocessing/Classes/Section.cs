@@ -9,7 +9,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class Section : LinkedList<IBodyElement>
 {
-  [XmlContentElement] public SectionProperties? Properties { get; set; }
+  public SectionProperties? Properties { get; set; }
 
   /// <summary>
   /// Inserts body elements from specified index backward to this section.

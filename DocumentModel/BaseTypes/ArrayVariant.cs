@@ -41,8 +41,7 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   ///   Array Base Type
   /// </summary>
-  [XmlAttribute]
-  public VariantType BaseType
+   public VariantType BaseType
   {
     get => _baseType;
     set
@@ -60,8 +59,7 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   ///   <para>Array Lower Bounds Attribute</para>
   /// </summary>
-  [XmlAttribute]
-  public int LowerBounds
+   public int LowerBounds
   {
     get => _lowerBounds;
     set
@@ -73,8 +71,7 @@ public class ArrayVariant : Variant, ICollection<object?>, IEquatable<ArrayVaria
   /// <summary>
   ///   <para>Array Upper Bounds Attribute</para>
   /// </summary>
-  [XmlAttribute]
-  public int UpperBounds
+   public int UpperBounds
   {
     get => _upperBounds;
     set

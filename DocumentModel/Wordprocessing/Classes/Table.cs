@@ -7,8 +7,8 @@ namespace DocumentModel.Wordprocessing;
 public class Table: ElementCollection<ITableElement>, IBodyElement, ITableCellElement, ISdtBlockElement
 {
 
-  [XmlContentElement] public TableProperties? TableProperties { get; set; }
+  public TableProperties? TableProperties { get; set; }
 
-  [XmlContentElement] public TableGrid? TableGrid { get; set; }
+  public TableGrid? TableGrid { get; set; }
 
 }

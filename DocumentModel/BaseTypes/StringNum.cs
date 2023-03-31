@@ -5,10 +5,8 @@ namespace DocumentModel;
 
 public class StringNum: IEquatable<StringNum>
 {
-  [XmlAttribute]
-  public string? Str { get; set; }
-  [XmlAttribute]
-  public int? Num { get; set; }
+   public string? Str { get; set; }
+   public int? Num { get; set; }
 
   public bool Equals(StringNum? other)
   {

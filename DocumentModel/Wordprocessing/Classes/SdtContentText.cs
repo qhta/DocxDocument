@@ -4,7 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentText Class.
 /// </summary>
-[XmlObject]
 public class SdtContentText: ModelElement
 {
   /// <summary>

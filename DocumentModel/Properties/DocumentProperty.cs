@@ -59,8 +59,7 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
   /// <summary>
   ///   Custom File Property Name
   /// </summary>
-  [XmlAttribute]
-  public string? Name
+   public string? Name
   {
     get;
     set;
@@ -87,20 +86,17 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
   /// <summary>
   ///   Expected value type name
   /// </summary>
-  [XmlAttribute]
-  public Type? Type { get; set; }
+   public Type? Type { get; set; }
 
   /// <summary>
   ///   Property ID
   /// </summary>
-  [XmlAttribute]
-  public Int32? PropertyId { get; set; }
+   public Int32? PropertyId { get; set; }
 
   /// <summary>
   ///   Bookmark Link Target
   /// </summary>
-  [XmlAttribute]
-  public String? LinkTarget { get; set; }
+   public String? LinkTarget { get; set; }
 
   public override string ToString()
   {

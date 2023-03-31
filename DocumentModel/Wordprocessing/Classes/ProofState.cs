@@ -9,10 +9,10 @@ public class ProofState: ModelElement
   /// <summary>
   ///   Spell Checking State
   /// </summary>
-  [XmlAttribute] public ProofingStateKind? Spelling { get; set; }
+  public ProofingStateKind? Spelling { get; set; }
 
   /// <summary>
   ///   Grammatical Checking State
   /// </summary>
-  [XmlAttribute] public ProofingStateKind? Grammar { get; set; }
+  public ProofingStateKind? Grammar { get; set; }
 }

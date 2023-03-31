@@ -38,8 +38,7 @@ public class Font: ModelElement
   ///   This information is determined by querying the font when present 
   ///   and shall not be modified when the font is not available.
   /// </summary>
-  [XmlAttribute]
-  public HexBinary? Panose { get; set; }
+   public HexBinary? Panose { get; set; }
 
   /// <summary>
   ///   Specifies the character set which is supported by the parent font. 
@@ -68,7 +67,7 @@ public class Font: ModelElement
   /// <summary>
   ///   FontSignature.
   /// </summary>
-  [XmlAttribute] public FontSignature? FontSignature { get; set; }
+  public FontSignature? FontSignature { get; set; }
 
   /// <summary>
   ///   EmbedRegularFont.

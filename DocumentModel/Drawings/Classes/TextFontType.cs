@@ -14,8 +14,7 @@ public class TextFontType: ModelElement
   /// <summary>
   ///   Panose Setting
   /// </summary>
-  [XmlAttribute]
-  public HexBinary? Panose { get; set; }
+   public HexBinary? Panose { get; set; }
 
   /// <summary>
   ///   Similar Font Family

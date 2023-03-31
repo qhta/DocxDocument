@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestStyles();
+    RunTestFonts();
   }
 
   private static void RunTestSections()
@@ -43,9 +43,9 @@ internal class Program
     var testInstance = new TestFonts();
     testInstance.Setup();
     //testInstance.TestReadDocumentFonts();
-    //testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
+    testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
     //testInstance.TestReadEmbedFonts("Font embedding.docx", true);
-    testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
+    //testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
     Console.WriteLine("\nTest passed");
   }
 

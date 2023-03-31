@@ -9,5 +9,5 @@ public class RunPropertiesDefault: ModelElement
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  [XmlContentElement] public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
 }

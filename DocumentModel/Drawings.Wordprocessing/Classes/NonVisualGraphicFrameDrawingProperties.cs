@@ -9,10 +9,10 @@ public class NonVisualGraphicFrameDrawingProperties: ModelElement
   /// <summary>
   ///   Graphic Frame Locks.
   /// </summary>
-  [XmlContentElement] public GraphicFrameLocks? GraphicFrameLocks { get; set; }
+  public GraphicFrameLocks? GraphicFrameLocks { get; set; }
 
   /// <summary>
   ///   ExtensionList.
   /// </summary>
-  [XmlContentElement] public ExtensionList? ExtensionList { get; set; }
+  public ExtensionList? ExtensionList { get; set; }
 }

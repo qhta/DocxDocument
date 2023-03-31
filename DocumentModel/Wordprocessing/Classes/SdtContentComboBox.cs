@@ -4,7 +4,6 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SdtContentComboBox Class.
 /// </summary>
-[XmlObject]
 public class SdtContentComboBox: ModelElement
 {
   /// <summary>
