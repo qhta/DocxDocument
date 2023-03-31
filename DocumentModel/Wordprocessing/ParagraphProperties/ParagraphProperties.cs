@@ -29,7 +29,7 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   FrameProperties.
   /// </summary>
-  [XmlContentElement] public FrameProperties? FrameProperties { get; set; }
+  public FrameProperties? FrameProperties { get; set; }
 
   /// <summary>
   ///   WidowControl.
@@ -39,7 +39,7 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   NumberingProperties.
   /// </summary>
-  [XmlContentElement] public NumberingProperties? NumberingProperties { get; set; }
+  public NumberingProperties? NumberingProperties { get; set; }
 
   /// <summary>
   ///   SuppressLineNumbers.
@@ -49,17 +49,17 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   ParagraphBorders.
   /// </summary>
-  [XmlContentElement] public ParagraphBorders? ParagraphBorders { get; set; }
+  public ParagraphBorders? ParagraphBorders { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  [XmlContentElement] public Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
 
   /// <summary>
   ///   Tabs.
   /// </summary>
-  [XmlContentElement] public Tabs? Tabs { get; set; }
+  public Tabs? Tabs { get; set; }
 
   /// <summary>
   ///   SuppressAutoHyphens.
@@ -114,12 +114,12 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   SpacingBetweenLines.
   /// </summary>
-  [XmlContentElement] public SpacingBetweenLines? SpacingBetweenLines { get; set; }
+  public SpacingBetweenLines? SpacingBetweenLines { get; set; }
 
   /// <summary>
   ///   Indentation.
   /// </summary>
-  [XmlContentElement] public Indentation? Indentation { get; set; }
+  public Indentation? Indentation { get; set; }
 
   /// <summary>
   ///   ContextualSpacing.
@@ -169,20 +169,20 @@ public class ParagraphProperties: ModelElement
   /// <summary>
   ///   ConditionalFormatStyle.
   /// </summary>
-  [XmlContentElement] public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
 
   /// <summary>
   ///   Run Properties for the Paragraph Mark.
   /// </summary>
-  [XmlContentElement] public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
+  public ParagraphMarkRunProperties? ParagraphMarkRunProperties { get; set; }
 
   /// <summary>
   ///   Section Properties.
   /// </summary>
-  [XmlContentElement] public SectionProperties? SectionProperties { get; set; }
+  public SectionProperties? SectionProperties { get; set; }
 
   /// <summary>
   ///   ParagraphPropertiesChange.
   /// </summary>
-  [XmlContentElement] public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
+  public ParagraphPropertiesChange? ParagraphPropertiesChange { get; set; }
 }

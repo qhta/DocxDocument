@@ -14,7 +14,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   RunFonts.
   /// </summary>
-  [XmlContentElement] public RunFonts? RunFonts { get; set; }
+  public RunFonts? RunFonts { get; set; }
 
   /// <summary>
   ///   Bold.
@@ -149,17 +149,17 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Border.
   /// </summary>
-  [XmlContentElement] public BorderType? Border { get; set; }
+  public BorderType? Border { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  [XmlContentElement] public Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
 
   /// <summary>
   ///   FitText.
   /// </summary>
-  [XmlContentElement] public FitText? FitText { get; set; }
+  public FitText? FitText { get; set; }
 
   /// <summary>
   ///   VerticalTextAlignment.
@@ -184,12 +184,12 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Languages.
   /// </summary>
-  [XmlContentElement] public Languages? Language { get; set; }
+  public Languages? Language { get; set; }
 
   /// <summary>
   ///   EastAsianLayout.
   /// </summary>
-  [XmlContentElement] public EastAsianLayout? EastAsianLayout { get; set; }
+  public EastAsianLayout? EastAsianLayout { get; set; }
 
   /// <summary>
   ///   SpecVanish.
@@ -199,37 +199,37 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Glow, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public Glow? Glow { get; set; }
+  public Glow? Glow { get; set; }
 
   /// <summary>
   ///   Shadow14, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public Shadow2? Shadow14 { get; set; }
+  public Shadow2? Shadow14 { get; set; }
 
   /// <summary>
   ///   Reflection, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public Reflection? Reflection { get; set; }
+  public Reflection? Reflection { get; set; }
 
   /// <summary>
   ///   TextOutlineEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public TextOutlineEffect? TextOutlineEffect { get; set; }
+  public TextOutlineEffect? TextOutlineEffect { get; set; }
 
   /// <summary>
   ///   FillTextEffect, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public FillTextEffect? FillTextEffect { get; set; }
+  public FillTextEffect? FillTextEffect { get; set; }
 
   /// <summary>
   ///   Scene3D, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public Scene3D? Scene3D { get; set; }
+  public Scene3D? Scene3D { get; set; }
 
   /// <summary>
   ///   Properties3D, this property is only available in Office 2010 and later..
   /// </summary>
-  [XmlContentElement] public Properties3D? Properties3D { get; set; }
+  public Properties3D? Properties3D { get; set; }
 
   /// <summary>
   ///   Ligatures, this property is only available in Office 2010 and later..

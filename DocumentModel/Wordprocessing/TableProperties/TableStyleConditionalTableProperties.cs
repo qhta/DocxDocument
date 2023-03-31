@@ -9,30 +9,30 @@ public class TableStyleConditionalTableProperties: ModelElement
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  [XmlContentElement] public TableRowAlignmentKind? TableJustification { get; set; }
+  public TableRowAlignmentKind? TableJustification { get; set; }
 
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  [XmlContentElement] public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidthType? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  [XmlContentElement] public TableIndentation? TableIndentation { get; set; }
+  public TableIndentation? TableIndentation { get; set; }
 
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  [XmlContentElement] public TableBorders? TableBorders { get; set; }
+  public TableBorders? TableBorders { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  [XmlContentElement] public Shading? Shading { get; set; }
+  public Shading? Shading { get; set; }
 
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  [XmlContentElement] public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
 }

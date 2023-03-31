@@ -27,5 +27,5 @@ public class NumberingInstance: ModelElement
   /// <summary>
   ///  Collection of NumLevelOverride elements
   /// </summary>
-  [XmlContentElement] public NumLevelOverrides? LevelOverrides { get; set; }
+  public NumLevelOverrides? LevelOverrides { get; set; }
 }

@@ -109,38 +109,37 @@ public partial class Style : IEquatable<Style>
   /// <summary>
   ///   Revision Identifier for Style Definition.
   /// </summary>
-  [XmlAttribute]
-  public HexInt? Rsid { get; set; }
+   public HexInt? Rsid { get; set; }
 
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>
-  [XmlContentElement] public StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
 
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  [XmlContentElement] public StyleRunProperties? StyleRunProperties { get; set; }
+  public StyleRunProperties? StyleRunProperties { get; set; }
 
   /// <summary>
   ///   Style Table Properties.
   /// </summary>
-  [XmlContentElement] public StyleTableProperties? StyleTableProperties { get; set; }
+  public StyleTableProperties? StyleTableProperties { get; set; }
 
   /// <summary>
   ///   Style Table Row Properties.
   /// </summary>
-  [XmlContentElement] public TableStyleConditionalRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  public TableStyleConditionalRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
 
   /// <summary>
   ///   Style Table Cell Properties.
   /// </summary>
-  [XmlContentElement] public StyleTableCellProperties? StyleTableCellProperties { get; set; }
+  public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
   /// <summary>
   ///   Table Style Properties
   /// </summary>
-  [XmlContentElement] public TableStyleConditionalProperties? TableStyleConditionalProperties { get; set; }
+  public TableStyleConditionalProperties? TableStyleConditionalProperties { get; set; }
 
   /// <summary>
   /// Compare equality with other style definition.

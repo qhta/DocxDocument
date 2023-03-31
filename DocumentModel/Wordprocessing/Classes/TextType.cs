@@ -10,7 +10,7 @@ public abstract class TextType: ModelElement, IRunElement
   ///   Indicates whether this element is deleted.
   /// </summary>
   [DefaultValue(false)]
-  [XmlAttribute] public bool IsDeleted {get; set; }
+  public bool IsDeleted {get; set; }
 
   /// <summary>
   /// Represents the text itself.

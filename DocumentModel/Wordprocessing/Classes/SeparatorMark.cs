@@ -13,13 +13,11 @@ public class SeparatorMark : ModelElement, IRunElement
   /// <summary>
   /// Specifies whether the separator mark occurs in endnote or footnote.
   /// </summary>
-  [XmlAttribute]
-  public NoteReferenceKind? Value { get; set;}
+   public NoteReferenceKind? Value { get; set;}
 
   /// <summary>
   /// Specifies whether this instance is continuation separator mark.
   /// </summary>
-  [XmlAttribute]
-  public bool IsContinuation { get; set;}
+   public bool IsContinuation { get; set;}
 
 }

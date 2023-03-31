@@ -61,5 +61,5 @@ public class AbstractNum : ModelElement
   /// <summary>
   ///   Definitions of abstract numbering levels.
   /// </summary>
-  [XmlContentElement] public NumLevels? Levels { get; set; }
+  public NumLevels? Levels { get; set; }
 }
