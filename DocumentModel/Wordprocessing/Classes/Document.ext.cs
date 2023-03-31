@@ -24,7 +24,7 @@ public partial class Document
   }
   private Fonts? _Fonts;
 
-  public FontDataDictionary? EmbeddedFonts { get; set; }
+  public EmbedFontData? EmbeddedFonts { get; set; }
 
   public Numbering? Numbering { get; set; }
 

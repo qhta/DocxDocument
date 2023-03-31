@@ -142,6 +142,9 @@ public partial class Style : IEquatable<Style>
   /// </summary>
   public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
+  /// <summary>
+  ///   Table Style Properties
+  /// </summary>
   public TableStylePropertiesCollection? TableStyleProperties { get; set; }
 
   public bool Equals(Style? other)

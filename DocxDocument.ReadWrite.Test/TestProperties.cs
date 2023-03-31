@@ -72,7 +72,7 @@ namespace DocxDocument.ReadWrite.Test
     /// Tests the document properties read from all docx files in folder specified by test path.
     /// </summary>
     [Test]
-    public void TestReadSampleDocsProperties()
+    public void TestReadProperties()
     {
       foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
         TestReadProperties(filename);
@@ -293,16 +293,24 @@ namespace DocxDocument.ReadWrite.Test
     }
 
     /// <summary>
-    /// Tests properties Xml serialization by reading "CustomProperties.docx" file,
+    /// Tests properties Xml serialization by reading files,
     /// serialize and deserialize properties using string writer.
     /// </summary>
     [Test]
     public void TestReadPropertiesXmlSerialization()
     {
+    }
+
+    /// <summary>
+    /// Tests properties Xml serialization by reading file,
+    /// serialize and deserialize properties using string writer.
+    /// </summary>
+    public void TestReadPropertiesXmlSerialization(string filename, bool showDetails = false)
+    {
+      filename = Path.Combine(TestPath, filename);
+      WriteLine($"Testing numbering serialization of: {filename}");
       var extraTypes = Assembly.Load("DocumentModel").GetTypes()
         .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-
-      var filename = Path.Combine(TestPath, "CustomProperties.docx");
       WriteLine($"Testing properties of: {filename}");
       var reader = new DocxReader(filename);
       var document = reader.ReadDocument(Parts.AllDocumentProperties);
@@ -323,8 +331,11 @@ namespace DocxDocument.ReadWrite.Test
       }
       textWriter.Flush();
       string str = textWriter.ToString();
-      WriteLine(str);
-      WriteLine();
+      if (showDetails)
+      {
+        WriteLine(str);
+        WriteLine();
+      }
 
       var textReader = new StringReader(str);
       var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);

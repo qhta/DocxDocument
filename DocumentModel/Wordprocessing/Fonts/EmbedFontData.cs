@@ -3,6 +3,7 @@
 /// <summary>
 /// Embedded fonts stored in the document.
 /// </summary>
-public class FontDataDictionary: Dictionary<string, byte[]>
+[XmlObject]
+public class EmbedFontData: Dictionary<string, byte[]>
 {
 }
