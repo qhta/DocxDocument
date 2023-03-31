@@ -10,12 +10,12 @@ public class SdtProperties : ModelElement, IBodyElement
   /// specifies a unique numerical ID for the nearest ancestor structured document tag. 
   /// This ID shall be persisted through multiple sessions (i.e. shall not be changed once specified).
   /// </summary>
-  [XmlAttribute] public HexInt? SdtId { get; set; }
+  public HexInt? SdtId { get; set; }
 
   /// <summary>
   /// Run properties of text runs in the structured document tag.
   /// </summary>
-  [XmlContentElement] public RunProperties? RunProperties { get; set; }
+  public RunProperties? RunProperties { get; set; }
 
   /// <summary>
   /// Specifies the friendly name associated with the current structured document tag.
@@ -34,7 +34,7 @@ public class SdtProperties : ModelElement, IBodyElement
   /// or the showingPlcHdr element is set in the structured document tag's properties. 
   /// The placeholder text which shall be shown is itself specified via the child element docPart.
   /// </summary>
-  [XmlContentElement] public SdtPlaceholder? SdtPlaceholder { get; set; }
+  public SdtPlaceholder? SdtPlaceholder { get; set; }
 
   /// <summary>
   /// Specifies whether the content of the SdtContent element for the parent structured document tag 
@@ -48,7 +48,7 @@ public class SdtProperties : ModelElement, IBodyElement
   /// Specifies the information that shall be used to establish a mapping between the parent structured document tag 
   /// and an XML element stored within a Custom XML Data part in the current WordprocessingML document. 
   /// </summary>
-  [XmlContentElement] public DataBinding? DataBinding { get; set; }
+  public DataBinding? DataBinding { get; set; }
 
   /// <summary>
   /// Specifies whether the parent structured document tag shall be removed from the WordprocessingML document 
@@ -64,7 +64,7 @@ public class SdtProperties : ModelElement, IBodyElement
   /// </summary>
   public String? Tag { get; set; }
 
-  [XmlContentElement] public Color3? Color { get; set; }
+  public Color3? Color { get; set; }
 
   public AppearanceKind? Appearance { get; set; }
 
@@ -88,19 +88,19 @@ public class SdtProperties : ModelElement, IBodyElement
 
   public Boolean? IsRepeatedSectionItem { get; set; }
 
-  [XmlContentElement] public SdtContentText? SdtContentText { get; set; }
+  public SdtContentText? SdtContentText { get; set; }
 
-  [XmlContentElement] public SdtContentCheckBox? SdtContentCheckBox { get; set; }
+  public SdtContentCheckBox? SdtContentCheckBox { get; set; }
 
-  [XmlContentElement] public SdtContentComboBox? SdtContentComboBox { get; set; }
+  public SdtContentComboBox? SdtContentComboBox { get; set; }
 
-  [XmlContentElement] public SdtContentDate? SdtContentDate { get; set; }
+  public SdtContentDate? SdtContentDate { get; set; }
 
   public SdtContentDocPartObject? SdtContentDocPartObject { get; set; }
 
-  [XmlContentElement] public SdtContentDocPartList? SdtContentDocPartList { get; set; }
+  public SdtContentDocPartList? SdtContentDocPartList { get; set; }
 
-  [XmlContentElement] public SdtContentDropDownList? SdtContentDropDownList { get; set; }
+  public SdtContentDropDownList? SdtContentDropDownList { get; set; }
 
-  [XmlContentElement] public SdtRepeatedSection? SdtRepeatedSection { get; set; }
+  public SdtRepeatedSection? SdtRepeatedSection { get; set; }
 }

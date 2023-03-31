@@ -13,7 +13,6 @@ public class NoteReferenceMark : ModelElement, IRunElement
   /// <summary>
   /// Annotation, endnote or footnote.
   /// </summary>
-  [XmlAttribute]
-  public NoteReferenceKind? Type { get; set;}
+   public NoteReferenceKind? Type { get; set;}
 
 }

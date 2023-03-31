@@ -54,7 +54,7 @@ public partial class Paragraph: ElementCollection<IParagraphElement>, IBodyEleme
   /// <summary>
   ///   Paragraph Properties.
   /// </summary>
-  [XmlContentElement] public ParagraphProperties? ParagraphProperties { get; set; }
+  public ParagraphProperties? ParagraphProperties { get; set; }
 
   public override string ToString()
   {

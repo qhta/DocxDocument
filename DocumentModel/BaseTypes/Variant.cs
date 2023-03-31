@@ -133,8 +133,7 @@ public class Variant : IConvertible, IEquatable<Variant>
     }
   }
 
-  [XmlAttribute]
-  public virtual string TypeName
+   public virtual string TypeName
   {
     get
     {

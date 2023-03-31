@@ -12,8 +12,7 @@ public class NoteReference: ModelElement, IRunElement
   /// <summary>
   /// Specifies, what class is a target of this reference.
   /// </summary>
-  [XmlAttribute]
-  public NoteReferenceKind Kind { get; set; }
+   public NoteReferenceKind Kind { get; set; }
 
   /// <summary>
   ///   Suppress Footnote/Endnote Reference Mark
