@@ -15,7 +15,7 @@ public enum Parts : Int64
   StyleDefinitions = 0x0200,
   Theme = 0x0400,
   FontTable = 0x0800,
-  EmbedFonts = 0x1800,
+  EmbeddedFonts = 0x1800,
   Stylistics = 0x1F00,
 
   Paragraphs = 0x10000,
@@ -89,7 +89,7 @@ public partial class DocxReader
       document.Theme = ReadTheme();
     if (parts.HasFlag(Parts.FontTable))
       document.Fonts = ReadFonts();
-    if (parts.HasFlag(Parts.EmbedFonts))
+    if (parts.HasFlag(Parts.EmbeddedFonts))
       document.EmbeddedFonts = ReadEmbedFonts();
     if (parts.HasFlag(Parts.Body))
       document.Body = ReadBody(parts);
@@ -167,12 +167,12 @@ public partial class DocxReader
     return fonts;
   }
 
-  private DMW.FontDataDictionary? ReadEmbedFonts()
+  private DMW.EmbedFontData? ReadEmbedFonts()
   {
     var fontsParts = WordprocessingDocument.MainDocumentPart?.FontTablePart?.FontParts;
     if (fontsParts != null)
     {
-      var embeddedFonts = new DMW.FontDataDictionary();
+      var embeddedFonts = new DMW.EmbedFontData();
       foreach (var fontPart in fontsParts)
       {
         var fontPartId = WordprocessingDocument.MainDocumentPart?.FontTablePart?.GetIdOfPart(fontPart);

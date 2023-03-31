@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestFonts();
+    RunTestVariants();
   }
 
   private static void RunTestSections()
@@ -24,9 +24,8 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    testInstance.TestReadDocumentBody("_Jakość oprogramowania.docx", true);
-    testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
-    //testInstance.TestReadBodyJsonSerialization("Simple text paragraph.docx");
+    //testInstance.TestReadDocumentBody(/*"_Jakość oprogramowania.docx", true*/);
+    testInstance.TestReadBodyXmlSerialization("Frame.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -44,8 +43,9 @@ internal class Program
     var testInstance = new TestFonts();
     testInstance.Setup();
     //testInstance.TestReadDocumentFonts();
-    testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
-    testInstance.TestReadEmbedFonts("Font embedding.docx", true);
+    //testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
+    //testInstance.TestReadEmbedFonts("Font embedding.docx", true);
+    testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -62,8 +62,8 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestReadDocumentStyles();
-    testInstance.TestReadStylesXmlSerialization();
+    //testInstance.TestReadDocumentStyles();
+    testInstance.TestReadStylesXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -89,8 +89,8 @@ internal class Program
     var testInstance = new TestVariants();
     testInstance.Setup();
     //testInstance.TestEnumVariantType();
-    testInstance.TestVariantXmlSerialization();
-    testInstance.TestVectorXmlSerialization();
+    //testInstance.TestVariantXmlSerialization(null, true);
+    testInstance.TestVectorXmlSerialization(null,true);
     Console.WriteLine("Test passed");
   }
 }
