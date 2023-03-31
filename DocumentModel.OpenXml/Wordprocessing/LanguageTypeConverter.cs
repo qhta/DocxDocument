@@ -59,11 +59,11 @@ public static class LanguageTypeConverter
     openXmlElement.Bidi = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DMW.Language? CreateModelElement(DXW.LanguageType? openXmlElement)
+  public static DMW.Languages? CreateModelElement(DXW.LanguageType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Language();
+      var value = new DMW.Languages();
       value.Normal = GetVal(openXmlElement);
       value.EastAsia = GetEastAsia(openXmlElement);
       value.Bidi = GetBidi(openXmlElement);
@@ -72,7 +72,7 @@ public static class LanguageTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LanguageType? openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LanguageType? openXmlElement, DMW.Languages? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -90,7 +90,7 @@ public static class LanguageTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Language value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Languages value)
     where OpenXmlElementType: DXW.LanguageType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -98,7 +98,7 @@ public static class LanguageTypeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.LanguageType openXmlElement, DMW.Language value)
+  public static void UpdateOpenXmlElement(DXW.LanguageType openXmlElement, DMW.Languages value)
   {
     SetVal(openXmlElement, value?.Normal);
     SetEastAsia(openXmlElement, value?.EastAsia);

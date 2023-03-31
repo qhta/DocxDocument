@@ -29,7 +29,7 @@ public class Font: ModelElement
   ///   This set of alternative names is stored in a comma-delimited list, with all adjacent commas ignored 
   ///   (i.e. a value of Name A, Name B is equivalent to Name A,,,,,,,,, Name B). 
   /// </summary>
-  public String? AltName { get; set; }
+  public StringList? Aliases { get; set; }
 
   /// <summary>
   ///   Specifies the Panose-1 classification number shown in §5.2.7.17 of ISO/IEC 14496-22. 
