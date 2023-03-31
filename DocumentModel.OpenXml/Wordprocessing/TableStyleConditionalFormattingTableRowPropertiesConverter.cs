@@ -101,11 +101,11 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
   
-  public static DMW.TableStyleConditionalFormattingTableRowProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
+  public static DMW.TableStyleConditionalRowProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalFormattingTableRowProperties();
+      var value = new DMW.TableStyleConditionalRowProperties();
       value.Hidden = GetHidden(openXmlElement);
       value.CantSplit = GetCantSplit(openXmlElement);
       value.TableHeader = GetTableHeader(openXmlElement);
@@ -116,7 +116,7 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableRowProperties? openXmlElement, DMW.TableStyleConditionalRowProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -138,7 +138,7 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableRowProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalRowProperties value)
     where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableRowProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -146,7 +146,7 @@ public static class TableStyleConditionalFormattingTableRowPropertiesConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties value)
+  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableRowProperties openXmlElement, DMW.TableStyleConditionalRowProperties value)
   {
     SetHidden(openXmlElement, value?.Hidden);
     SetCantSplit(openXmlElement, value?.CantSplit);

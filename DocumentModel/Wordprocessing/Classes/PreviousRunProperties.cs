@@ -76,7 +76,7 @@ public class PreviousRunProperties: ModelElement
 
   public EmphasisMarkKind? Emphasis { get; set; }
 
-  public Language? Language { get; set; }
+  public Languages? Language { get; set; }
 
   public EastAsianLayout? EastAsianLayout { get; set; }
 

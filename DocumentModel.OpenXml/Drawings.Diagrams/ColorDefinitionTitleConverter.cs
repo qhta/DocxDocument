@@ -15,7 +15,7 @@ public static class ColorDefinitionTitleConverter
   
   private static bool CmpLanguage(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
   private static void SetLanguage(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value)

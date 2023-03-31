@@ -451,7 +451,7 @@ public static class StyleRunPropertiesConverter
   
   private static bool CmpFontSizeComplexScript(DXW.StyleRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeComplexScript");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeCS");
   }
   
   private static void SetFontSizeComplexScript(DXW.StyleRunProperties openXmlElement, String? value)
@@ -662,7 +662,7 @@ public static class StyleRunPropertiesConverter
   /// <summary>
   /// Languages.
   /// </summary>
-  private static DMW.Language? GetLanguages(DXW.StyleRunProperties openXmlElement)
+  private static DMW.Languages? GetLanguages(DXW.StyleRunProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Languages>();
     if (element != null)
@@ -670,12 +670,12 @@ public static class StyleRunPropertiesConverter
     return null;
   }
   
-  private static bool CmpLanguages(DXW.StyleRunProperties openXmlElement, DMW.Language? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguages(DXW.StyleRunProperties openXmlElement, DMW.Languages? value, DiffList? diffs, string? objName)
   {
     return DMXW.LanguageTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Languages>(), value, diffs, objName);
   }
   
-  private static void SetLanguages(DXW.StyleRunProperties openXmlElement, DMW.Language? value)
+  private static void SetLanguages(DXW.StyleRunProperties openXmlElement, DMW.Languages? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Languages>();
     if (itemElement != null)
@@ -771,9 +771,9 @@ public static class StyleRunPropertiesConverter
       var value = new DMW.StyleRunProperties();
       value.RunFonts = GetRunFonts(openXmlElement);
       value.Bold = GetBold(openXmlElement);
-      value.BoldComplexScript = GetBoldComplexScript(openXmlElement);
+      value.BoldCS = GetBoldComplexScript(openXmlElement);
       value.Italic = GetItalic(openXmlElement);
-      value.ItalicComplexScript = GetItalicComplexScript(openXmlElement);
+      value.ItalicCS = GetItalicComplexScript(openXmlElement);
       value.Caps = GetCaps(openXmlElement);
       value.SmallCaps = GetSmallCaps(openXmlElement);
       value.Strike = GetStrike(openXmlElement);
@@ -792,7 +792,7 @@ public static class StyleRunPropertiesConverter
       value.Kern = GetKern(openXmlElement);
       value.Position = GetPosition(openXmlElement);
       value.FontSize = GetFontSize(openXmlElement);
-      value.FontSizeComplexScript = GetFontSizeComplexScript(openXmlElement);
+      value.FontSizeCS = GetFontSizeComplexScript(openXmlElement);
       value.Underline = GetUnderline(openXmlElement);
       value.TextEffect = GetTextEffect(openXmlElement);
       value.Border = GetBorder(openXmlElement);
@@ -818,11 +818,11 @@ public static class StyleRunPropertiesConverter
         ok = false;
       if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
         ok = false;
-      if (!CmpBoldComplexScript(openXmlElement, value.BoldComplexScript, diffs, objName))
+      if (!CmpBoldComplexScript(openXmlElement, value.BoldCS, diffs, objName))
         ok = false;
       if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
         ok = false;
-      if (!CmpItalicComplexScript(openXmlElement, value.ItalicComplexScript, diffs, objName))
+      if (!CmpItalicComplexScript(openXmlElement, value.ItalicCS, diffs, objName))
         ok = false;
       if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
         ok = false;
@@ -860,7 +860,7 @@ public static class StyleRunPropertiesConverter
         ok = false;
       if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
         ok = false;
-      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript, diffs, objName))
+      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeCS, diffs, objName))
         ok = false;
       if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
         ok = false;
@@ -903,9 +903,9 @@ public static class StyleRunPropertiesConverter
   {
     SetRunFonts(openXmlElement, value.RunFonts);
     SetBold(openXmlElement, value.Bold);
-    SetBoldComplexScript(openXmlElement, value.BoldComplexScript);
+    SetBoldComplexScript(openXmlElement, value.BoldCS);
     SetItalic(openXmlElement, value.Italic);
-    SetItalicComplexScript(openXmlElement, value.ItalicComplexScript);
+    SetItalicComplexScript(openXmlElement, value.ItalicCS);
     SetCaps(openXmlElement, value.Caps);
     SetSmallCaps(openXmlElement, value.SmallCaps);
     SetStrike(openXmlElement, value.Strike);
@@ -924,7 +924,7 @@ public static class StyleRunPropertiesConverter
     SetKern(openXmlElement, value.Kern);
     SetPosition(openXmlElement, value.Position);
     SetFontSize(openXmlElement, value.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript);
+    SetFontSizeComplexScript(openXmlElement, value.FontSizeCS);
     SetUnderline(openXmlElement, value.Underline);
     SetTextEffect(openXmlElement, value.TextEffect);
     SetBorder(openXmlElement, value.Border);

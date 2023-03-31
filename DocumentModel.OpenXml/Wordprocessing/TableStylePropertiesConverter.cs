@@ -84,7 +84,7 @@ public static class TableStylePropertiesConverter
   /// <summary>
   /// Table Style Conditional Formatting Table Properties.
   /// </summary>
-  private static DMW.TableStyleConditionalFormattingTableProperties? GetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement)
+  private static DMW.TableStyleConditionalTableProperties? GetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
     if (element != null)
@@ -92,12 +92,12 @@ public static class TableStylePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalTableProperties? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableStyleConditionalFormattingTablePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>(), value, diffs, objName);
   }
   
-  private static void SetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableProperties? value)
+  private static void SetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalTableProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
     if (itemElement != null)
@@ -113,7 +113,7 @@ public static class TableStylePropertiesConverter
   /// <summary>
   /// Table Style Conditional Formatting Table Row Properties.
   /// </summary>
-  private static DMW.TableStyleConditionalFormattingTableRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement)
+  private static DMW.TableStyleConditionalRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
     if (element != null)
@@ -121,12 +121,12 @@ public static class TableStylePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalRowProperties? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>(), value, diffs, objName);
   }
   
-  private static void SetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableRowProperties? value)
+  private static void SetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalRowProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
     if (itemElement != null)
@@ -142,7 +142,7 @@ public static class TableStylePropertiesConverter
   /// <summary>
   /// Table Style Conditional Formatting Table Cell Properties.
   /// </summary>
-  private static DMW.TableStyleConditionalFormattingTableCellProperties? GetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement)
+  private static DMW.TableStyleConditionalCellProperties? GetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
     if (element != null)
@@ -150,12 +150,12 @@ public static class TableStylePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableCellProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalCellProperties? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableStyleConditionalFormattingTableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>(), value, diffs, objName);
   }
   
-  private static void SetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalFormattingTableCellProperties? value)
+  private static void SetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement, DMW.TableStyleConditionalCellProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
     if (itemElement != null)
@@ -176,9 +176,9 @@ public static class TableStylePropertiesConverter
       value.Type = GetType(openXmlElement);
       value.StyleParagraphProperties = GetStyleParagraphProperties(openXmlElement);
       value.RunPropertiesBaseStyle = GetRunPropertiesBaseStyle(openXmlElement);
-      value.TableStyleConditionalFormattingTableProperties = GetTableStyleConditionalFormattingTableProperties(openXmlElement);
-      value.TableStyleConditionalFormattingTableRowProperties = GetTableStyleConditionalFormattingTableRowProperties(openXmlElement);
-      value.TableStyleConditionalFormattingTableCellProperties = GetTableStyleConditionalFormattingTableCellProperties(openXmlElement);
+      value.TableStyleConditionalTableProperties = GetTableStyleConditionalFormattingTableProperties(openXmlElement);
+      value.TableStyleConditionalRowProperties = GetTableStyleConditionalFormattingTableRowProperties(openXmlElement);
+      value.TableStyleConditionalCellProperties = GetTableStyleConditionalFormattingTableCellProperties(openXmlElement);
       return value;
     }
     return null;
@@ -195,11 +195,11 @@ public static class TableStylePropertiesConverter
         ok = false;
       if (!CmpRunPropertiesBaseStyle(openXmlElement, value.RunPropertiesBaseStyle, diffs, objName))
         ok = false;
-      if (!CmpTableStyleConditionalFormattingTableProperties(openXmlElement, value.TableStyleConditionalFormattingTableProperties, diffs, objName))
+      if (!CmpTableStyleConditionalFormattingTableProperties(openXmlElement, value.TableStyleConditionalTableProperties, diffs, objName))
         ok = false;
-      if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value.TableStyleConditionalFormattingTableRowProperties, diffs, objName))
+      if (!CmpTableStyleConditionalFormattingTableRowProperties(openXmlElement, value.TableStyleConditionalRowProperties, diffs, objName))
         ok = false;
-      if (!CmpTableStyleConditionalFormattingTableCellProperties(openXmlElement, value.TableStyleConditionalFormattingTableCellProperties, diffs, objName))
+      if (!CmpTableStyleConditionalFormattingTableCellProperties(openXmlElement, value.TableStyleConditionalCellProperties, diffs, objName))
         ok = false;
       return ok;
     }
@@ -221,8 +221,8 @@ public static class TableStylePropertiesConverter
     SetType(openXmlElement, value?.Type);
     SetStyleParagraphProperties(openXmlElement, value?.StyleParagraphProperties);
     SetRunPropertiesBaseStyle(openXmlElement, value?.RunPropertiesBaseStyle);
-    SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalFormattingTableProperties);
-    SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalFormattingTableRowProperties);
-    SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalFormattingTableCellProperties);
+    SetTableStyleConditionalFormattingTableProperties(openXmlElement, value?.TableStyleConditionalTableProperties);
+    SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalRowProperties);
+    SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalCellProperties);
   }
 }

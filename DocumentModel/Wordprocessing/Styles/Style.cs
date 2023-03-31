@@ -1,9 +1,4 @@
-using System;
-
-using Qhta.TestHelper;
-
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Style Definition.
@@ -120,33 +115,36 @@ public partial class Style : IEquatable<Style>
   /// <summary>
   ///   Style Paragraph Properties.
   /// </summary>
-  public StyleParagraphProperties? StyleParagraphProperties { get; set; }
+  [XmlContentElement] public StyleParagraphProperties? StyleParagraphProperties { get; set; }
 
   /// <summary>
   ///   Run Properties.
   /// </summary>
-  public StyleRunProperties? StyleRunProperties { get; set; }
+  [XmlContentElement] public StyleRunProperties? StyleRunProperties { get; set; }
 
   /// <summary>
   ///   Style Table Properties.
   /// </summary>
-  public StyleTableProperties? StyleTableProperties { get; set; }
+  [XmlContentElement] public StyleTableProperties? StyleTableProperties { get; set; }
 
   /// <summary>
   ///   Style Table Row Properties.
   /// </summary>
-  public TableStyleConditionalFormattingTableRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
+  [XmlContentElement] public TableStyleConditionalRowProperties? TableStyleConditionalFormattingTableRowProperties { get; set; }
 
   /// <summary>
   ///   Style Table Cell Properties.
   /// </summary>
-  public StyleTableCellProperties? StyleTableCellProperties { get; set; }
+  [XmlContentElement] public StyleTableCellProperties? StyleTableCellProperties { get; set; }
 
   /// <summary>
   ///   Table Style Properties
   /// </summary>
-  public TableStylePropertiesCollection? TableStyleProperties { get; set; }
+  [XmlContentElement] public TableStyleConditionalProperties? TableStyleConditionalProperties { get; set; }
 
+  /// <summary>
+  /// Compare equality with other style definition.
+  /// </summary>
   public bool Equals(Style? other)
   {
     if (other == null)  return false;
@@ -176,7 +174,7 @@ public partial class Style : IEquatable<Style>
     if (this.StyleTableCellProperties != other.StyleTableCellProperties) return false;
     //if (StyleName == "Standardowa tabela")
     //  TestTools.Stop();
-    if (this.TableStyleProperties?.Equals(other.TableStyleProperties) == false) return false;
+    if (this.TableStyleConditionalProperties?.Equals(other.TableStyleConditionalProperties) == false) return false;
     return true;
   }
 }

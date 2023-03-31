@@ -1,14 +1,28 @@
-﻿#nullable enable
-namespace DocumentModel;
+﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 /// Represents the list of string
 /// </summary>
 [TypeConverter(typeof(StringListTypeConverter))]
-public class StringList : ICollection<string>, IEnumerable, IEquatable<StringList>
+public class StringList : ICollection, ICollection<string>, IEnumerable, IEquatable<StringList>
 {
   private readonly List<string> _list = new();
+
+  /// <summary>
+  /// Default constructor
+  /// </summary>
+  public StringList() { }
+
+  public StringList(string? str)
+  {
+    if (str != null)
+    {
+      var ss = str.Split(',');
+      foreach (var s in ss)
+      { _list.Add(s); }
+    }
+  }
 
   /// <inheritdoc />
   public IEnumerator<string> GetEnumerator()
@@ -55,6 +69,10 @@ public class StringList : ICollection<string>, IEnumerable, IEquatable<StringLis
     return String.Join(", ", _list.ToArray());
   }
 
+  public static implicit operator StringList?(string? str) => (str!=null) ? new StringList(str) : null;
+
+  public static implicit operator string? (StringList? value) => value?.ToString();
+
   public override bool Equals(object? obj)
   {
     if (obj == null) return false;
@@ -82,4 +100,12 @@ public class StringList : ICollection<string>, IEnumerable, IEquatable<StringLis
     return result;
   }
 
+  void ICollection.CopyTo(Array array, int index)
+  {
+    if (array is string[] ss)
+      _list.CopyTo(ss, index);
+  }
+
+  bool ICollection.IsSynchronized { get; }
+  object ICollection.SyncRoot { get; } = new object();
 }

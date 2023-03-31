@@ -32,7 +32,7 @@ public static class FontConverter
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.AltName>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "AltName", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "Aliases", itemElement?.Val?.Value, value);
     return false;
   }
   
@@ -323,7 +323,7 @@ public static class FontConverter
     {
       var value = new DMW.Font();
       value.Name = GetName(openXmlElement);
-      value.AltName = GetAltName(openXmlElement);
+      value.Aliases = GetAltName(openXmlElement);
       value.Panose = GetPanose(openXmlElement);
       value.FontCharSet = GetFontCharSet(openXmlElement);
       value.FontFamily = GetFontFamily(openXmlElement);
@@ -346,7 +346,7 @@ public static class FontConverter
       var ok = true;
       if (!CmpName(openXmlElement, value.Name, diffs, objName))
         ok = false;
-      if (!CmpAltName(openXmlElement, value.AltName, diffs, objName))
+      if (!CmpAltName(openXmlElement, value.Aliases, diffs, objName))
         ok = false;
       if (!CmpPanose(openXmlElement, value.Panose, diffs, objName))
         ok = false;
@@ -386,7 +386,7 @@ public static class FontConverter
   public static void UpdateOpenXmlElement(DXW.Font openXmlElement, DMW.Font value)
   {
     SetName(openXmlElement, value?.Name);
-    SetAltName(openXmlElement, value?.AltName);
+    SetAltName(openXmlElement, value?.Aliases);
     SetPanose(openXmlElement, value?.Panose);
     SetFontCharSet(openXmlElement, value?.FontCharSet);
     SetFontFamily(openXmlElement, value?.FontFamily);

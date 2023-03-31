@@ -9,7 +9,7 @@ public class BorderType: ModelElement
   /// <summary>
   ///   Border Style
   /// </summary>
-  public BorderKind? Val { get; set; }
+  public BorderKind? Type { get; set; }
 
   /// <summary>
   ///   Border Color

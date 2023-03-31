@@ -4,35 +4,35 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Style Conditional Formatting Table Properties.
 /// </summary>
-public class TableStyleConditionalFormattingTableProperties: ModelElement
+public class TableStyleConditionalTableProperties: ModelElement
 {
   /// <summary>
   ///   TableJustification.
   /// </summary>
-  public TableRowAlignmentKind? TableJustification { get; set; }
+  [XmlContentElement] public TableRowAlignmentKind? TableJustification { get; set; }
 
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  [XmlContentElement] public TableWidthType? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   TableIndentation.
   /// </summary>
-  public TableIndentation? TableIndentation { get; set; }
+  [XmlContentElement] public TableIndentation? TableIndentation { get; set; }
 
   /// <summary>
   ///   TableBorders.
   /// </summary>
-  public TableBorders? TableBorders { get; set; }
+  [XmlContentElement] public TableBorders? TableBorders { get; set; }
 
   /// <summary>
   ///   Shading.
   /// </summary>
-  public Shading? Shading { get; set; }
+  [XmlContentElement] public Shading? Shading { get; set; }
 
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  [XmlContentElement] public TableCellMarginDefault? TableCellMarginDefault { get; set; }
 }

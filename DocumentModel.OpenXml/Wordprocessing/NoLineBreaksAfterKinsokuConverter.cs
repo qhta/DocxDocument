@@ -15,7 +15,7 @@ public static class NoLineBreaksAfterKinsokuConverter
   
   private static bool CmpLanguage(DXW.NoLineBreaksAfterKinsoku openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
   private static void SetLanguage(DXW.NoLineBreaksAfterKinsoku openXmlElement, String? value)

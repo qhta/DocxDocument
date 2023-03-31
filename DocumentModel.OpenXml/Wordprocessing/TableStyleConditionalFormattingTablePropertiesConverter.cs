@@ -178,11 +178,11 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     }
   }
   
-  public static DMW.TableStyleConditionalFormattingTableProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement)
+  public static DMW.TableStyleConditionalTableProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalFormattingTableProperties();
+      var value = new DMW.TableStyleConditionalTableProperties();
       value.TableJustification = GetTableJustification(openXmlElement);
       value.TableCellSpacing = GetTableCellSpacing(openXmlElement);
       value.TableIndentation = GetTableIndentation(openXmlElement);
@@ -194,7 +194,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement, DMW.TableStyleConditionalFormattingTableProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement, DMW.TableStyleConditionalTableProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -218,7 +218,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalFormattingTableProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalTableProperties value)
     where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -226,7 +226,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableStyleConditionalFormattingTableProperties value)
+  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableStyleConditionalTableProperties value)
   {
     SetTableJustification(openXmlElement, value?.TableJustification);
     SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);

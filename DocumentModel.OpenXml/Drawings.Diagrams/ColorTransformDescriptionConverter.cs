@@ -15,7 +15,7 @@ public static class ColorTransformDescriptionConverter
   
   private static bool CmpLanguage(DXDrawDgms.ColorTransformDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Language");
+    return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
   private static void SetLanguage(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)

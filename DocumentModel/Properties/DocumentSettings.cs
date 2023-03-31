@@ -241,7 +241,7 @@ public class DocumentSettings: KnownDocumentProperties
 
     public Collection<string>? AttachedSchemas { get; set; }
 
-    public Language? ThemeFontLanguages { get; set; }
+    public Languages? ThemeFontLanguages { get; set; }
 
     public ColorSchemeMapping? ColorSchemeMapping { get; set; }
 

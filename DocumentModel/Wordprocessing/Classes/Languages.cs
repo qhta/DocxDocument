@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines languages for three script types: Normal, EastAsia, and Bidi.
 /// </summary>
 //[TypeConverter(typeof(LanguageConverter))]
-public class Language: ModelElement
+public class Languages: ModelElement
 {
   /// <summary>
   ///   Language for all european scripts.
