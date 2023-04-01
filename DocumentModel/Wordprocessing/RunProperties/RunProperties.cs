@@ -19,22 +19,22 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   Bold.
   /// </summary>
-  public Boolean? Bold { get; set; }
+  public DualBoolean? Bold { get; set; }
 
-  /// <summary>
-  ///   BoldComplexScript.
-  /// </summary>
-  public Boolean? BoldCS { get; set; }
+  ///// <summary>
+  /////   BoldComplexScript.
+  ///// </summary>
+  //public Boolean? BoldCS { get; set; }
 
   /// <summary>
   ///   Italic.
   /// </summary>
-  public Boolean? Italic { get; set; }
+  public DualBoolean? Italic { get; set; }
 
-  /// <summary>
-  ///   ItalicComplexScript.
-  /// </summary>
-  public Boolean? ItalicCS { get; set; }
+  ///// <summary>
+  /////   ItalicComplexScript.
+  ///// </summary>
+  //public Boolean? ItalicCS { get; set; }
 
   /// <summary>
   ///   Caps.
@@ -124,12 +124,7 @@ public class RunProperties: ModelElement
   /// <summary>
   ///   FontSize.
   /// </summary>
-  public String? FontSize { get; set; }
-
-  /// <summary>
-  ///   FontSizeComplexScript.
-  /// </summary>
-  public String? FontSizeCS { get; set; }
+  public DualHPS? FontSize { get; set; }
 
   /// <summary>
   ///   Highlight.
@@ -197,7 +192,7 @@ public class RunProperties: ModelElement
   public Boolean? SpecVanish { get; set; }
 
   /// <summary>
-  ///   Glow, this property is only available in Office 2010 and later..
+  ///   Glow, this property is only available in Office 2010 and later.
   /// </summary>
   public Glow? Glow { get; set; }
 

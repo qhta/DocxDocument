@@ -34,74 +34,6 @@ public static class NumberingSymbolRunPropertiesConverter
   }
   #endregion
 
-  #region Bold.
-  private static Boolean? GetBold(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Bold>());
-  }
-
-  private static bool CmpBold(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Bold>(), value, diffs, objName);
-  }
-
-  private static void SetBold(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value);
-  }
-  #endregion
-
-  #region BoldComplexScript.
-  private static Boolean? GetBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>());
-  }
-
-  private static bool CmpBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>(), value, diffs, objName);
-  }
-
-  private static void SetBoldComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value);
-  }
-  #endregion
-
-  #region Italic.
-  private static Boolean? GetItalic(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Italic>());
-  }
-
-  private static bool CmpItalic(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Italic>(), value, diffs, objName);
-  }
-
-  private static void SetItalic(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value);
-  }
-  #endregion
-
-  #region ItalicComplexScript.
-  private static Boolean? GetItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>());
-  }
-
-  private static bool CmpItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>(), value, diffs, objName);
-  }
-
-  private static void SetItalicComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value);
-  }
-  #endregion
-
   #region Caps.
   private static Boolean? GetCaps(DXW.NumberingSymbolRunProperties openXmlElement)
   {
@@ -399,40 +331,6 @@ public static class NumberingSymbolRunPropertiesConverter
   private static void SetPosition(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
   {
     StringValueConverter.SetValue<DXW.Position>(openXmlElement, value);
-  }
-  #endregion
-
-  #region FontSize.
-  private static String? GetFontSize(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
-  }
-
-  private static bool CmpFontSize(DXW.NumberingSymbolRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val, value, diffs, objName, "FontSize");
-  }
-
-  private static void SetFontSize(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSize>(openXmlElement, value);
-  }
-  #endregion
-
-  #region FontSizeComplexScript.
-  private static String? GetFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
-  }
-
-  private static bool CmpFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeCS");
-  }
-
-  private static void SetFontSizeComplexScript(DXW.NumberingSymbolRunProperties openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSizeComplexScript>(openXmlElement, value);
   }
   #endregion
 
@@ -743,10 +641,9 @@ public static class NumberingSymbolRunPropertiesConverter
     {
       var value = new DMW.NumberingSymbolRunProperties();
       value.RunFonts = GetRunFonts(openXmlElement);
-      value.Bold = GetBold(openXmlElement);
-      value.BoldCS = GetBoldComplexScript(openXmlElement);
-      value.Italic = GetItalic(openXmlElement);
-      value.ItalicCS = GetItalicComplexScript(openXmlElement);
+      value.Bold = RunPropertiesConverter.GetBold(openXmlElement);
+      value.Italic = RunPropertiesConverter.GetItalic(openXmlElement);
+      value.FontSize = RunPropertiesConverter.GetFontSize(openXmlElement);
       value.Caps = GetCaps(openXmlElement);
       value.SmallCaps = GetSmallCaps(openXmlElement);
       value.Strike = GetStrike(openXmlElement);
@@ -764,8 +661,6 @@ public static class NumberingSymbolRunPropertiesConverter
       value.CharacterScale = GetCharacterScale(openXmlElement);
       value.Kern = GetKern(openXmlElement);
       value.Position = GetPosition(openXmlElement);
-      value.FontSize = GetFontSize(openXmlElement);
-      value.FontSizeCS = GetFontSizeComplexScript(openXmlElement);
       value.Underline = GetUnderline(openXmlElement);
       value.TextEffect = GetTextEffect(openXmlElement);
       value.Border = GetBorder(openXmlElement);
@@ -790,13 +685,11 @@ public static class NumberingSymbolRunPropertiesConverter
       var ok = true;
       if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
         ok = false;
-      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+      if (!RunPropertiesConverter.CmpBold(openXmlElement, value.Bold, diffs, objName))
         ok = false;
-      if (!CmpBoldComplexScript(openXmlElement, value.BoldCS, diffs, objName))
+      if (!RunPropertiesConverter.CmpItalic(openXmlElement, value.Italic, diffs, objName))
         ok = false;
-      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
-        ok = false;
-      if (!CmpItalicComplexScript(openXmlElement, value.ItalicCS, diffs, objName))
+      if (!RunPropertiesConverter.CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
         ok = false;
       if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
         ok = false;
@@ -831,10 +724,6 @@ public static class NumberingSymbolRunPropertiesConverter
       if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
         ok = false;
       if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
-        ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
-        ok = false;
-      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeCS, diffs, objName))
         ok = false;
       if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
         ok = false;
@@ -878,10 +767,9 @@ public static class NumberingSymbolRunPropertiesConverter
   public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties value)
   {
     SetRunFonts(openXmlElement, value.RunFonts);
-    SetBold(openXmlElement, value.Bold);
-    SetBoldComplexScript(openXmlElement, value.BoldCS);
-    SetItalic(openXmlElement, value.Italic);
-    SetItalicComplexScript(openXmlElement, value.ItalicCS);
+    RunPropertiesConverter.SetBold(openXmlElement, value.Bold);
+    RunPropertiesConverter.SetItalic(openXmlElement, value.Italic);
+    RunPropertiesConverter.SetFontSize(openXmlElement, value.FontSize);
     SetCaps(openXmlElement, value.Caps);
     SetSmallCaps(openXmlElement, value.SmallCaps);
     SetStrike(openXmlElement, value.Strike);
@@ -899,8 +787,6 @@ public static class NumberingSymbolRunPropertiesConverter
     SetCharacterScale(openXmlElement, value.CharacterScale);
     SetKern(openXmlElement, value.Kern);
     SetPosition(openXmlElement, value.Position);
-    SetFontSize(openXmlElement, value.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value.FontSizeCS);
     SetUnderline(openXmlElement, value.Underline);
     SetTextEffect(openXmlElement, value.TextEffect);
     SetBorder(openXmlElement, value.Border);

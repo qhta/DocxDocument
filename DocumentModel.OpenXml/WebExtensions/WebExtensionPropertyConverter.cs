@@ -33,7 +33,7 @@ public static class WebExtensionPropertyConverter
   
   private static bool CmpValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Value");
+    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Val");
   }
   
   private static void SetValue(DXO2013WebExt.WebExtensionProperty openXmlElement, String? value)

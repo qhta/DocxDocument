@@ -312,7 +312,7 @@ public static class ParagraphConverter
     var commonMathElement = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathElement);
     if (commonMathElement != null) return commonMathElement;
 
-    throw new InvalidOperationException($"Value of type \"{model.GetType()}\" not supported in ParagraphConverter.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Val of type \"{model.GetType()}\" not supported in ParagraphConverter.CreateOpenXmlParagraphElement method");
   }
 
   public static bool UpdateOpenXmlParagraphElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)

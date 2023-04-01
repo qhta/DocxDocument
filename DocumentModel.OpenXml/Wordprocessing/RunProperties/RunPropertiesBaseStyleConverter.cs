@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class RunPropertiesBaseStyleConverter
 {
-  /// <summary>
-  /// RunFonts.
-  /// </summary>
+  #region RunFonts.
   private static DMW.RunFonts? GetRunFonts(DXW.RunPropertiesBaseStyle openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunFonts>();
@@ -33,78 +31,7 @@ public static class RunPropertiesBaseStyleConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Bold.
-  /// </summary>
-  private static Boolean? GetBold(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Bold>());
-  }
-  
-  private static bool CmpBold(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Bold>(), value, diffs, objName);
-  }
-  
-  private static void SetBold(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// BoldComplexScript.
-  /// </summary>
-  private static Boolean? GetBoldComplexScript(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>());
-  }
-  
-  private static bool CmpBoldComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>(), value, diffs, objName);
-  }
-  
-  private static void SetBoldComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// Italic.
-  /// </summary>
-  private static Boolean? GetItalic(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Italic>());
-  }
-  
-  private static bool CmpItalic(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Italic>(), value, diffs, objName);
-  }
-  
-  private static void SetItalic(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// ItalicComplexScript.
-  /// </summary>
-  private static Boolean? GetItalicComplexScript(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>());
-  }
-  
-  private static bool CmpItalicComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>(), value, diffs, objName);
-  }
-  
-  private static void SetItalicComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value);
-  }
+  #endregion
   
   /// <summary>
   /// Caps.
@@ -424,42 +351,6 @@ public static class RunPropertiesBaseStyleConverter
   }
   
   /// <summary>
-  /// FontSize.
-  /// </summary>
-  private static String? GetFontSize(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
-  }
-  
-  private static bool CmpFontSize(DXW.RunPropertiesBaseStyle openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val, value, diffs, objName, "FontSize");
-  }
-  
-  private static void SetFontSize(DXW.RunPropertiesBaseStyle openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSize>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// FontSizeComplexScript.
-  /// </summary>
-  private static String? GetFontSizeComplexScript(DXW.RunPropertiesBaseStyle openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
-  }
-  
-  private static bool CmpFontSizeComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeCS");
-  }
-  
-  private static void SetFontSizeComplexScript(DXW.RunPropertiesBaseStyle openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSizeComplexScript>(openXmlElement, value);
-  }
-  
-  /// <summary>
   /// Underline.
   /// </summary>
   private static DMW.Underline? GetUnderline(DXW.RunPropertiesBaseStyle openXmlElement)
@@ -741,10 +632,9 @@ public static class RunPropertiesBaseStyleConverter
     {
       var value = new DMW.RunPropertiesBaseStyle();
       value.RunFonts = GetRunFonts(openXmlElement);
-      value.Bold = GetBold(openXmlElement);
-      value.BoldCS = GetBoldComplexScript(openXmlElement);
-      value.Italic = GetItalic(openXmlElement);
-      value.ItalicCS = GetItalicComplexScript(openXmlElement);
+      value.Bold = RunPropertiesConverter.GetBold(openXmlElement);
+      value.Italic = RunPropertiesConverter.GetItalic(openXmlElement);
+      value.FontSize = RunPropertiesConverter.GetFontSize(openXmlElement);
       value.Caps = GetCaps(openXmlElement);
       value.SmallCaps = GetSmallCaps(openXmlElement);
       value.Strike = GetStrike(openXmlElement);
@@ -762,8 +652,6 @@ public static class RunPropertiesBaseStyleConverter
       value.CharacterScale = GetCharacterScale(openXmlElement);
       value.Kern = GetKern(openXmlElement);
       value.Position = GetPosition(openXmlElement);
-      value.FontSize = GetFontSize(openXmlElement);
-      value.FontSizeCS = GetFontSizeComplexScript(openXmlElement);
       value.Underline = GetUnderline(openXmlElement);
       value.TextEffect = GetTextEffect(openXmlElement);
       value.Border = GetBorder(openXmlElement);
@@ -786,13 +674,11 @@ public static class RunPropertiesBaseStyleConverter
       var ok = true;
       if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
         ok = false;
-      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+      if (!RunPropertiesConverter.CmpBold(openXmlElement, value.Bold, diffs, objName))
         ok = false;
-      if (!CmpBoldComplexScript(openXmlElement, value.BoldCS, diffs, objName))
+      if (!RunPropertiesConverter.CmpItalic(openXmlElement, value.Italic, diffs, objName))
         ok = false;
-      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
-        ok = false;
-      if (!CmpItalicComplexScript(openXmlElement, value.ItalicCS, diffs, objName))
+      if (!RunPropertiesConverter.CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
         ok = false;
       if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
         ok = false;
@@ -827,10 +713,6 @@ public static class RunPropertiesBaseStyleConverter
       if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
         ok = false;
       if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
-        ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
-        ok = false;
-      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeCS, diffs, objName))
         ok = false;
       if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
         ok = false;
@@ -870,10 +752,9 @@ public static class RunPropertiesBaseStyleConverter
   public static void UpdateOpenXmlElement(DXW.RunPropertiesBaseStyle openXmlElement, DMW.RunPropertiesBaseStyle value)
   {
     SetRunFonts(openXmlElement, value.RunFonts);
-    SetBold(openXmlElement, value.Bold);
-    SetBoldComplexScript(openXmlElement, value.BoldCS);
-    SetItalic(openXmlElement, value.Italic);
-    SetItalicComplexScript(openXmlElement, value.ItalicCS);
+    RunPropertiesConverter.SetBold(openXmlElement, value.Bold);
+    RunPropertiesConverter.SetItalic(openXmlElement, value.Italic);
+    RunPropertiesConverter.SetFontSize(openXmlElement, value.FontSize);
     SetCaps(openXmlElement, value.Caps);
     SetSmallCaps(openXmlElement, value.SmallCaps);
     SetStrike(openXmlElement, value.Strike);
@@ -891,8 +772,6 @@ public static class RunPropertiesBaseStyleConverter
     SetCharacterScale(openXmlElement, value.CharacterScale);
     SetKern(openXmlElement, value.Kern);
     SetPosition(openXmlElement, value.Position);
-    SetFontSize(openXmlElement, value.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value.FontSizeCS);
     SetUnderline(openXmlElement, value.Underline);
     SetTextEffect(openXmlElement, value.TextEffect);
     SetBorder(openXmlElement, value.Border);

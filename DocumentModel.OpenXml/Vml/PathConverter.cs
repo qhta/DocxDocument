@@ -33,7 +33,7 @@ public static class PathConverter
   
   private static bool CmpValue(DXVml.Path openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Value");
+    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Val");
   }
   
   private static void SetValue(DXVml.Path openXmlElement, String? value)
