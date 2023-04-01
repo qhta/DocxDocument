@@ -88,7 +88,7 @@ public class TestConverters : TestBase
                             if (convEnumValue != null)
                             {
                               Assert.That(convEnumValue.GetType, Is.EqualTo(origEnumValue.GetType()));
-                              var convEnumVal = convEnumValue.GetType()?.GetProperty("Value")?.GetValue(convEnumValue);
+                              var convEnumVal = convEnumValue.GetType()?.GetProperty("Val")?.GetValue(convEnumValue);
                               Assert.That(convEnumVal, Is.Not.Null);
                               if (convEnumVal != null) Assert.That(convEnumVal, Is.EqualTo(origEnumVal));
                             }

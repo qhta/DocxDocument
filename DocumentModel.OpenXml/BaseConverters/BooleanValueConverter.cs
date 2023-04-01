@@ -63,7 +63,7 @@ public static class BooleanValueConverter
     return null;
   }
 
-  public static Boolean CmpValue(OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null)
+  public static Boolean CmpValue(OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null && value != null)
     {
@@ -71,14 +71,14 @@ public static class BooleanValueConverter
         return true;
       if (openXmlElement.Val.Value == false && value == false)
         return true;
-      diffs?.Add(objName, openXmlElement.GetType().Name, openXmlElement.Val.Value, value);
+      diffs?.Add(objName, propName ?? openXmlElement.GetType().Name, openXmlElement.Val.Value, value);
       return false;
     }
     if (openXmlElement?.Val?.Value == null && value == null)
       return true;
     if (openXmlElement != null && value == true)
       return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement?.Val?.Value, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Val?.Value, value);
     return false;
   }
 
@@ -110,7 +110,7 @@ public static class BooleanValueConverter
     return openXmlElement != null;
   }
 
-  public static Boolean CmpValue(OnOffOnlyType? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null)
+  public static Boolean CmpValue(OnOffOnlyType? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null && value != null)
     {
@@ -118,7 +118,7 @@ public static class BooleanValueConverter
         return true;
       if (openXmlElement.Val.Value == OnOffOnlyValues.Off && value == false)
         return true;
-      diffs?.Add(objName, openXmlElement.GetType().Name, openXmlElement.Val.Value == OnOffOnlyValues.On, value);
+      diffs?.Add(objName, propName ?? openXmlElement.GetType().Name, openXmlElement.Val.Value == OnOffOnlyValues.On, value);
       return false;
     }
     if (openXmlElement?.Val?.Value == null && value == null)
@@ -127,7 +127,7 @@ public static class BooleanValueConverter
       return true;
     if (openXmlElement == null && value == false)
       return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement?.Val?.Value == OnOffOnlyValues.On, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Val?.Value == OnOffOnlyValues.On, value);
     return false;
   }
 
@@ -168,11 +168,11 @@ public static class BooleanValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, bool? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, bool? value, DiffList? diffs, string? objName, string? propName = null)
   {
     if (GetValue(element) == value)
       return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Text, value);
     return false;
   }
 

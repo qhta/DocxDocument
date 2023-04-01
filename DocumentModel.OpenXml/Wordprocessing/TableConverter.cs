@@ -117,7 +117,7 @@ public static class TableConverter
 
     var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
     if (result != null) return result;
-    throw new InvalidOperationException($"Value of type \"{value.GetType()}\" not supported in TableConverter.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Val of type \"{value.GetType()}\" not supported in TableConverter.CreateOpenXmlParagraphElement method");
   }
   #endregion
 
