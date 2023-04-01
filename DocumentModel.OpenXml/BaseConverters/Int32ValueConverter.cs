@@ -19,12 +19,102 @@ public static class Int32ValueConverter
   {
     if (element?.Text != null)
     {
-      if (Int32.TryParse(element.Text, out var value)) 
-       return value;
+      if (Int32.TryParse(element.Text, out var value))
+        return value;
     }
     return null;
   }
 
+  /// <summary>
+  /// Compares a value get from LeafTextElement to Int32 value.
+  /// </summary>
+  /// <param name="element">LeafTextElement to compare.</param>
+  /// <param name="value">Int32 value to compare (can be null)</param>
+  /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
+  /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
+  public static bool CmpValue(OpenXmlLeafTextElement element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (GetValue(element) == value) return true;
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Text, value);
+    return false;
+  }
+
+  /// <summary>
+  /// Creates a specific OpenXmlLeafText element based on Int32 value.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">Can be any OpenXmlLeadTextElement type</typeparam>
+  /// <param name="value">value to convert</param>
+  /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
+    where OpenXmlElementType : OpenXmlLeafTextElement, new()
+  {
+    var element = new OpenXmlElementType();
+    if (value != null)
+      element.Text = ((Int32)value).ToString();
+    return element;
+  }
+  #endregion
+
+  #region HpsMeasureType.
+  /// <summary>
+  /// Converts HpsMeasureType to Int32.
+  /// </summary>
+  /// <param name="hpsValue">HpsMeasureType to Convert</param>
+  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  public static Int32? GetValue(HpsMeasureType? hpsValue)
+  {
+    if (hpsValue?.Val != null)
+    {
+      if (Int32.TryParse(hpsValue.Val, out var value))
+        return value;
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Compares a value get from OpenXml HpsMeasureType to Int32 value.
+  /// </summary>
+  /// <param name="element">LeafTextElement to compare.</param>
+  /// <param name="value">Int32 value to compare (can be null)</param>
+  /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
+  /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
+  public static bool CmpValue(HpsMeasureType? element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (GetValue(element) == value) return true;
+    diffs?.Add(objName, propName ?? element?.GetType().ToString() ?? "HpsMeasureType", element?.Val, value);
+    return false;
+  }
+
+  /// <summary>
+  /// Creates a specific OpenXml HpsMeasureType element based on Int32 value.
+  /// </summary>
+  /// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
+  /// <param name="value">value to convert</param>
+  /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement parent, Int32? value)
+    where OpenXmlElementType : HpsMeasureType, new()
+  {
+    var element = parent.GetFirstChild<OpenXmlElementType>();
+    if (element!=null && value!=null)
+    {
+      element.Val = ((Int32)value).ToString();
+    }
+    else if (element==null && value!=null)
+    {
+      element = new OpenXmlElementType();
+      element.Val = ((Int32)value).ToString();
+      parent.AddChild(element);
+    }
+    else if (element!=null && value==null)
+    {
+      element.Remove();
+    }
+  }
+  #endregion
+
+  #region StringValue
   /// <summary>
   /// Converts StringValue to Int32.
   /// </summary>
@@ -34,26 +124,44 @@ public static class Int32ValueConverter
   {
     if (stringValue?.Value != null)
     {
-      if (Int32.TryParse(stringValue.Value, out var value)) 
-       return value;
+      if (Int32.TryParse(stringValue.Value, out var value))
+        return value;
     }
     return null;
   }
+
   /// <summary>
-  /// Compares a value get from text content of LeafTextElement to Int32 value.
+  /// Compares a value get from OpenXml StringValue to Int32 value.
   /// </summary>
-  /// <param name="element">LeafTextElement to compare.</param>
+  /// <param name="element">StringValue to compare.</param>
   /// <param name="value">Int32 value to compare (can be null)</param>
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
-  public static bool CmpValue(OpenXmlLeafTextElement element, Int32? value, DiffList? diffs = null, string? objName = null)
+  public static bool CmpValue(StringValue element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (GetValue(element) == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Value, value);
     return false;
   }
 
+  ///// <summary>
+  ///// Creates a specific OpenXml StringValue based on Int32 value.
+  ///// </summary>
+  ///// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
+  ///// <param name="value">value to convert</param>
+  ///// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  //public static OpenXmlElementType? SetValue<OpenXmlElementType>(Int32? value)
+  //  where OpenXmlElementType : StringValue, new()
+  //{
+  //  var element = new OpenXmlElementType();
+  //  if (value != null)
+  //    element.Value = ((Int32)value).ToString();
+  //  return element;
+  //}
+  #endregion
+
+  #region Two Int32 values
   /// <summary>
   /// Compares two Int32 values.
   /// </summary>
@@ -68,26 +176,26 @@ public static class Int32ValueConverter
     diffs?.Add(objName, propName, origValue, value);
     return false;
   }
-
-  /// <summary>
-  /// Creates a specific OpenXml element based on Int32 value.
-  /// If a specified OpenXmlElement type contains a "Val" property, then it is filled with input value.
-  /// Otherwise a string representation of input value is inserted to LeafTextElement content of the result.
-  /// </summary>
-  /// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
-  /// <param name="value">value to convert</param>
-  /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
-    where OpenXmlElementType : OpenXmlElement, new()
-  {
-    var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
-    if (valProperty != null)
-      valProperty.SetValue(element, value);
-    else if (element is OpenXmlLeafTextElement textElement)
-      if (value!=null)
-        textElement.Text = ((Int32)value).ToString();
-    return element;
-  }
   #endregion
+
+  //#region Common OpenXml element creation
+  ///// <summary>
+  ///// Creates a specific OpenXml element based on Int32 value.
+  ///// If a specified OpenXmlElement type contains a "Val" property, then it is filled with input value.
+  ///// Otherwise a string representation of input value is inserted to LeafTextElement content of the result.
+  ///// </summary>
+  ///// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
+  ///// <param name="value">value to convert</param>
+  ///// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
+  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
+  //  where OpenXmlElementType : OpenXmlElement, new()
+  //{
+  //  if (typeof(OpenXmlElementType).IsEqualOrSubclassOf(typeof(OpenXmlLeafTextElement)))
+  //  {
+  //    var method = typeof(Int32ValueConverter).GetMethod(
+  //    return CreateOpenXmlLeafTextElement<OpenXmlElementType>(value));
+  //  }
+  //  return null;
+  //}
+  //#endregion
 }

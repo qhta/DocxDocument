@@ -214,66 +214,6 @@ public static class ParagraphMarkRunPropertiesConverter
     }
   }
   
-  private static Boolean? GetBold(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Bold>());
-  }
-  
-  private static bool CmpBold(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Bold>(), value, diffs, objName);
-  }
-  
-  private static void SetBold(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value);
-  }
-  
-  private static Boolean? GetBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>());
-  }
-  
-  private static bool CmpBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>(), value, diffs, objName);
-  }
-  
-  private static void SetBoldComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value);
-  }
-  
-  private static Boolean? GetItalic(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Italic>());
-  }
-  
-  private static bool CmpItalic(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Italic>(), value, diffs, objName);
-  }
-  
-  private static void SetItalic(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value);
-  }
-  
-  private static Boolean? GetItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>());
-  }
-  
-  private static bool CmpItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
-  {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>(), value, diffs, objName);
-  }
-  
-  private static void SetItalicComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, Boolean? value)
-  {
-    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value);
-  }
-  
   private static Boolean? GetCaps(DXW.ParagraphMarkRunProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Caps>());
@@ -538,36 +478,6 @@ public static class ParagraphMarkRunPropertiesConverter
   private static void SetPosition(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
   {
     StringValueConverter.SetValue<DXW.Position>(openXmlElement, value);
-  }
-  
-  private static String? GetFontSize(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
-  }
-  
-  private static bool CmpFontSize(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val, value, diffs, objName, "FontSize");
-  }
-  
-  private static void SetFontSize(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSize>(openXmlElement, value);
-  }
-  
-  private static String? GetFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
-  }
-  
-  private static bool CmpFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val, value, diffs, objName, "FontSizeCS");
-  }
-  
-  private static void SetFontSizeComplexScript(DXW.ParagraphMarkRunProperties openXmlElement, String? value)
-  {
-    StringValueConverter.SetValue<DXW.FontSizeComplexScript>(openXmlElement, value);
   }
   
   private static DMW.HighlightColorKind? GetHighlight(DXW.ParagraphMarkRunProperties openXmlElement)
@@ -1207,10 +1117,9 @@ public static class ParagraphMarkRunPropertiesConverter
       value.ConflictDeletion = GetConflictDeletion(openXmlElement);
       value.RunStyle = GetRunStyle(openXmlElement);
       value.RunFonts = GetRunFonts(openXmlElement);
-      value.Bold = GetBold(openXmlElement);
-      value.BoldComplexScript = GetBoldComplexScript(openXmlElement);
-      value.Italic = GetItalic(openXmlElement);
-      value.ItalicComplexScript = GetItalicComplexScript(openXmlElement);
+      value.Bold = RunPropertiesConverter.GetBold(openXmlElement);
+      value.Italic = RunPropertiesConverter.GetItalic(openXmlElement);
+      value.FontSize = RunPropertiesConverter.GetFontSize(openXmlElement);
       value.Caps = GetCaps(openXmlElement);
       value.SmallCaps = GetSmallCaps(openXmlElement);
       value.Strike = GetStrike(openXmlElement);
@@ -1228,8 +1137,6 @@ public static class ParagraphMarkRunPropertiesConverter
       value.CharacterScale = GetCharacterScale(openXmlElement);
       value.Kern = GetKern(openXmlElement);
       value.Position = GetPosition(openXmlElement);
-      value.FontSize = GetFontSize(openXmlElement);
-      value.FontSizeComplexScript = GetFontSizeComplexScript(openXmlElement);
       value.Highlight = GetHighlight(openXmlElement);
       value.Underline = GetUnderline(openXmlElement);
       value.TextEffect = GetTextEffect(openXmlElement);
@@ -1282,13 +1189,11 @@ public static class ParagraphMarkRunPropertiesConverter
         ok = false;
       if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
         ok = false;
-      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+      if (!RunPropertiesConverter.CmpBold(openXmlElement, value.Bold, diffs, objName))
         ok = false;
-      if (!CmpBoldComplexScript(openXmlElement, value.BoldComplexScript, diffs, objName))
+      if (!RunPropertiesConverter.CmpItalic(openXmlElement, value.Italic, diffs, objName))
         ok = false;
-      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
-        ok = false;
-      if (!CmpItalicComplexScript(openXmlElement, value.ItalicComplexScript, diffs, objName))
+      if (!RunPropertiesConverter.CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
         ok = false;
       if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
         ok = false;
@@ -1323,10 +1228,6 @@ public static class ParagraphMarkRunPropertiesConverter
       if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
         ok = false;
       if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
-        ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
-        ok = false;
-      if (!CmpFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript, diffs, objName))
         ok = false;
       if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName))
         ok = false;
@@ -1405,10 +1306,9 @@ public static class ParagraphMarkRunPropertiesConverter
     SetConflictDeletion(openXmlElement, value.ConflictDeletion);
     SetRunStyle(openXmlElement, value.RunStyle);
     SetRunFonts(openXmlElement, value.RunFonts);
-    SetBold(openXmlElement, value.Bold);
-    SetBoldComplexScript(openXmlElement, value.BoldComplexScript);
-    SetItalic(openXmlElement, value.Italic);
-    SetItalicComplexScript(openXmlElement, value.ItalicComplexScript);
+    RunPropertiesConverter.SetBold(openXmlElement, value.Bold);
+    RunPropertiesConverter.SetItalic(openXmlElement, value.Italic);
+    RunPropertiesConverter.SetFontSize(openXmlElement, value.FontSize);
     SetCaps(openXmlElement, value.Caps);
     SetSmallCaps(openXmlElement, value.SmallCaps);
     SetStrike(openXmlElement, value.Strike);
@@ -1426,8 +1326,6 @@ public static class ParagraphMarkRunPropertiesConverter
     SetCharacterScale(openXmlElement, value.CharacterScale);
     SetKern(openXmlElement, value.Kern);
     SetPosition(openXmlElement, value.Position);
-    SetFontSize(openXmlElement, value.FontSize);
-    SetFontSizeComplexScript(openXmlElement, value.FontSizeComplexScript);
     SetHighlight(openXmlElement, value.Highlight);
     SetUnderline(openXmlElement, value.Underline);
     SetTextEffect(openXmlElement, value.TextEffect);

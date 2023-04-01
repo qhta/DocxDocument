@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestFonts();
+    RunTestStyles();
   }
 
   private static void RunTestSections()

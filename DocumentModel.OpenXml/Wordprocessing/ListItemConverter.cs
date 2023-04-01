@@ -33,7 +33,7 @@ public static class ListItemConverter
   
   private static bool CmpValue(DXW.ListItem openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Value");
+    return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Val");
   }
   
   private static void SetValue(DXW.ListItem openXmlElement, String? value)
