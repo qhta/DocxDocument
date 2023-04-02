@@ -30,7 +30,7 @@ public static class HyphenConverter
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.HyphenKind>(kind, model.Value, diffs, objName, "Val"))
+      if (!EnumValueConverter.CmpValue<DMW.HyphenKind>(kind, model.Value, diffs, objName, "Type"))
         ok = false;
       return ok;
     }

@@ -36,7 +36,7 @@ public static class AdjustConverter
   private static bool CmpVal(DXDrawDgms.Adjust openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Normal", openXmlElement?.Val?.Value, value);
+    diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value);
     return false;
   }
   

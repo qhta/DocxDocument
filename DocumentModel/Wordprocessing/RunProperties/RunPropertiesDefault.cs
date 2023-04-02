@@ -4,10 +4,10 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Run Properties.
 /// </summary>
-public class RunPropertiesDefault: ModelElement
+public class RunPropertiesDefault: RunPropertiesBaseStyle
 {
-  /// <summary>
-  ///   Run Properties.
-  /// </summary>
-  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  ///// <summary>
+  /////   Run Properties.
+  ///// </summary>
+  //public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
 }

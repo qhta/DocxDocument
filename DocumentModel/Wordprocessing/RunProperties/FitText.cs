@@ -6,13 +6,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class FitText: ModelElement
 {
-  /// <summary>
-  ///   Value
-  /// </summary>
-  public UInt32? Val { get; set; }
 
   /// <summary>
   ///   Fit Text Run ID
   /// </summary>
   public Int32? Id { get; set; }
+
+  /// <summary>
+  ///   Value
+  /// </summary>
+  public DXA? Value { get; set; }
+
 }

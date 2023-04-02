@@ -29,7 +29,7 @@ public static class HexIntConverter
   public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, HexInt? value)
     where ElementType : OpenXmlElement, new()
   {
-    var valProperty = typeof(ElementType).GetProperty("Normal");
+    var valProperty = typeof(ElementType).GetProperty("Value");
     Debug.Assert(valProperty!=null);
     var itemElement = openXmlElement.GetFirstChild<ElementType>();
     if (itemElement != null)

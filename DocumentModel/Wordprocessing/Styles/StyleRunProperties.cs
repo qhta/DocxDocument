@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public class StyleRunProperties: RunProperties
+public class StyleRunProperties: RunPropertiesBase
 {
   ///// <summary>
   /////   RunFonts.

@@ -1,8 +1,7 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the RunPropertiesChange Class.
+///   RunPropertiesChange Class used in <see cref="RunProperties"/>.
 /// </summary>
 public class RunPropertiesChange: ModelElement
 {

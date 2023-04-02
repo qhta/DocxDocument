@@ -182,7 +182,7 @@ public static class BooleanValueConverter
     if (value != null)
     {
       var element = new OpenXmlElementType();
-      var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
+      var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
       if (valProperty != null)
         valProperty.SetValue(element, (bool)value ? OnOffOnlyValues.On : OnOffOnlyValues.Off);
       else if (element is DX.TypedOpenXmlLeafTextElement textElement)

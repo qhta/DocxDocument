@@ -16,7 +16,7 @@ public static class TaskPriorityEventInfoConverter
   private static bool CmpValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Value?.Value == value) return true;
-    diffs?.Add(objName, "Val", openXmlElement?.Value?.Value, value);
+    diffs?.Add(objName, "Type", openXmlElement?.Value?.Value, value);
     return false;
   }
   
