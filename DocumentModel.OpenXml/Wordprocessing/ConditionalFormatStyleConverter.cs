@@ -15,7 +15,7 @@ public static class ConditionalFormatStyleConverter
   
   private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXW.ConditionalFormatStyle openXmlElement, String? value)

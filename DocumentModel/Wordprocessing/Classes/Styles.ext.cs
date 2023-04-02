@@ -17,7 +17,7 @@ public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
 
   public static List<(string name, StyleKind kind, string? alias)> BuiltInStyleStubs = new()
   {
-    ( "Normal", StyleKind.Paragraph, null ),
+    ( "Value", StyleKind.Paragraph, null ),
     ( "Heading 1", StyleKind.Paragraph, null ),
     ( "Heading 2", StyleKind.Paragraph, null ),
     ( "Heading 3", StyleKind.Paragraph, null ),
@@ -45,7 +45,7 @@ public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
     ( "TOC 7", StyleKind.Paragraph, null ),
     ( "TOC 8", StyleKind.Paragraph, null ),
     ( "TOC 9", StyleKind.Paragraph, null ),
-    ( "Normal Indent", StyleKind.Paragraph, null ),
+    ( "Value Indent", StyleKind.Paragraph, null ),
     ( "Footnote Text", StyleKind.Paragraph, null ),
     ( "Comment Text", StyleKind.Paragraph, null ),
     ( "Header", StyleKind.Paragraph, null ),
@@ -111,7 +111,7 @@ public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
     ( "E-mail Signature", StyleKind.Paragraph, null ),
     ( "z-Top of Form", StyleKind.Paragraph, null ),
     ( "z-Bottom of Form", StyleKind.Paragraph, null ),
-    ( "Html Normal", StyleKind.Paragraph, "Normal (Web)" ),
+    ( "Html Value", StyleKind.Paragraph, "Value (Web)" ),
     ( "HTML Acronym", StyleKind.Character, null ),
     ( "HTML Address", StyleKind.Paragraph, null ),
     ( "HTML Cite", StyleKind.Character, null ),
@@ -122,7 +122,7 @@ public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
     ( "HTML Sample", StyleKind.Character, null ),
     ( "HTML Typewriter", StyleKind.Character, null ),
     ( "HTML Variable", StyleKind.Character, null ),
-    ( "Table Normal", StyleKind.Table, "Normal Table" ),
+    ( "Table Value", StyleKind.Table, "Value Table" ),
     ( "Comment Subject", StyleKind.Paragraph, null ),
     ( "No List", StyleKind.Numbering, null ),
     ( "Outline List 2", StyleKind.Numbering, null ),

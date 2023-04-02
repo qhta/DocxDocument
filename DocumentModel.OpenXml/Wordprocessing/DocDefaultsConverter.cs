@@ -28,7 +28,7 @@ public static class DocDefaultsConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RunPropertiesDefaultConverter.CreateOpenXmlElement<DXW.RunPropertiesDefault>(value);
+      itemElement = DMXW.RunPropertiesDefaultConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

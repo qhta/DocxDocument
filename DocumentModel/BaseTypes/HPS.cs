@@ -17,7 +17,8 @@ public struct HPS: IComparable<HPS>
   private Int64 Value;
 
   /// <summary>
-  /// Constructor converting from string. Units can be determined with a suffix "mm" or "in" or "in."
+  /// Constructor converting from string.
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public HPS(string str)
   {
@@ -114,7 +115,7 @@ public struct HPS: IComparable<HPS>
 
   /// <summary>
   /// Converts double value to string using unit.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in"
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(string unit)
   {
@@ -134,7 +135,7 @@ public struct HPS: IComparable<HPS>
   /// Converts double value to string using unit, specific precision (fractional digits count),
   /// and format provider to determine digits separator.
   /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in"
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string unit)
   {

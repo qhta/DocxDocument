@@ -33,7 +33,7 @@ public static class ColorTransformDescriptionConverter
   
   private static bool CmpVal(DXDrawDgms.ColorTransformDescription openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXDrawDgms.ColorTransformDescription openXmlElement, String? value)

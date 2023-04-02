@@ -75,7 +75,7 @@ public static class TableStylePropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.RunPropertiesBaseStyle>(value);
+      itemElement = DMXW.RunPropertiesBaseStyleConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

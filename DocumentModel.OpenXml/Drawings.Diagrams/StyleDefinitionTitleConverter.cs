@@ -33,7 +33,7 @@ public static class StyleDefinitionTitleConverter
   
   private static bool CmpVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXDrawDgms.StyleDefinitionTitle openXmlElement, String? value)

@@ -15,7 +15,7 @@ public class TestFonts : TestBase
   [Test]
   public void TestNormalTemplateFonts()
   {
-    var filename = Path.Combine(TestPath, "Normal.dotm");
+    var filename = Path.Combine(TestPath, "Value.dotm");
     TestReadFonts(filename, true);
   }
 

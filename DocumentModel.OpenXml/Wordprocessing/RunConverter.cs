@@ -97,7 +97,7 @@ public static class RunConverter
       itemElement.Remove();
     if (model != null)
     {
-      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(model);
+      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(model);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -317,7 +317,7 @@ public static class RunConverter
         return result;
     }
 
-    throw new InvalidOperationException($"Val of type \"{model.GetType()}\" not supported in Run.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in Run.CreateOpenXmlParagraphElement method");
   }
 
   public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)

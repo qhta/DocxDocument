@@ -51,7 +51,7 @@ public static class CustomXmlAttributeConverter
   
   private static bool CmpVal(DXW.CustomXmlAttribute openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXW.CustomXmlAttribute openXmlElement, String? value)

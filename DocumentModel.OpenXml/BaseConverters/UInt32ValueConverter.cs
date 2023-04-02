@@ -57,7 +57,7 @@ public static class UInt32ValueConverter
     where OpenXmlElementType : OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Normal");
+    var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
     if (valProperty != null)
       valProperty.SetValue(element, value);
     return element;

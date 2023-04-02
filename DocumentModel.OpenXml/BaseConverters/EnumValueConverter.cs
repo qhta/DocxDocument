@@ -97,9 +97,9 @@ public static class EnumValueConverter
   {
     var n = (int)Convert.ChangeType(value, typeof(int));
     var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
-    var valueProperty = element.GetType().GetProperty("Val");
+    var valueProperty = element.GetType().GetProperty("Type");
     if (valueProperty == null)
-      valueProperty = element.GetType().GetProperty("Normal");
+      valueProperty = element.GetType().GetProperty("Value");
     if (valueProperty == null)
       valueProperty = element.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(OpenXmlEnumType));
     if (valueProperty == null || valueProperty.PropertyType != typeof(OpenXmlEnumType))

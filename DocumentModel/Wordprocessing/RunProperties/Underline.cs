@@ -9,7 +9,7 @@ public class Underline: ModelElement
   /// <summary>
   ///   Underline Style
   /// </summary>
-  public UnderlineKind? Val { get; set; }
+  public UnderlineKind? Type { get; set; }
 
   /// <summary>
   ///   Underline Color

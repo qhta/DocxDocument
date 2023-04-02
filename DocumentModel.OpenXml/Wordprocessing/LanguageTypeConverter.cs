@@ -15,7 +15,7 @@ public static class LanguageTypeConverter
   
   private static bool CmpVal(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXW.LanguageType openXmlElement, String? value)
@@ -51,7 +51,7 @@ public static class LanguageTypeConverter
   
   private static bool CmpBidi(DXW.LanguageType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Bidi, value, diffs, objName, "Bidi");
+    return StringValueConverter.CmpValue(openXmlElement?.Bidi, value, diffs, objName, "ComplexScript");
   }
   
   private static void SetBidi(DXW.LanguageType openXmlElement, String? value)
@@ -64,9 +64,9 @@ public static class LanguageTypeConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Languages();
-      value.Normal = GetVal(openXmlElement);
+      value.Regular = GetVal(openXmlElement);
       value.EastAsia = GetEastAsia(openXmlElement);
-      value.Bidi = GetBidi(openXmlElement);
+      value.ComplexScript = GetBidi(openXmlElement);
       return value;
     }
     return null;
@@ -77,11 +77,11 @@ public static class LanguageTypeConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Normal, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Regular, diffs, objName))
         ok = false;
       if (!CmpEastAsia(openXmlElement, value.EastAsia, diffs, objName))
         ok = false;
-      if (!CmpBidi(openXmlElement, value.Bidi, diffs, objName))
+      if (!CmpBidi(openXmlElement, value.ComplexScript, diffs, objName))
         ok = false;
       return ok;
     }
@@ -100,8 +100,8 @@ public static class LanguageTypeConverter
   
   public static void UpdateOpenXmlElement(DXW.LanguageType openXmlElement, DMW.Languages value)
   {
-    SetVal(openXmlElement, value?.Normal);
+    SetVal(openXmlElement, value?.Regular);
     SetEastAsia(openXmlElement, value?.EastAsia);
-    SetBidi(openXmlElement, value?.Bidi);
+    SetBidi(openXmlElement, value?.ComplexScript);
   }
 }
