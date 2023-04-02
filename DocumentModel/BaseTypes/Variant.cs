@@ -412,7 +412,7 @@ public class Variant : IConvertible, IEquatable<Variant>
       return Enum.Parse<EnumType>(str);
     if (Value!=null)
       return (EnumType)Enum.ToObject(typeof(EnumType), Value);
-    throw new InvalidOperationException($"Val is null when converting variant to Enum");
+    throw new InvalidOperationException($"Type is null when converting variant to Enum");
   }
 
   public override bool Equals(object? obj)

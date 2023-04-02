@@ -1,24 +1,24 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines languages for three script types: Normal, EastAsia, and Bidi.
 /// </summary>
-//[TypeConverter(typeof(LanguageConverter))]
+//[TypeConverter(typeof(LanguagesTypeConverter))]
 public class Languages: ModelElement
 {
   /// <summary>
-  ///   Language for all european scripts.
+  ///   Language for all regular scripts.
   /// </summary>
-  public String? Normal { get; set; }
+  public String? Regular { get; set; }
+
+  /// <summary>
+  ///   Language for complex (bidirectional) scripts
+  /// </summary>
+  public String? ComplexScript { get; set; }
 
   /// <summary>
   ///   Language for east-asian scripts.
   /// </summary>
   public String? EastAsia { get; set; }
 
-  /// <summary>
-  ///   Language for complex (bidirectional) scripts
-  /// </summary>
-  public String? Bidi { get; set; }
 }

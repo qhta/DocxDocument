@@ -25,7 +25,7 @@ public static class RgbColorModelHexConverter
       if (UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == (UInt32?)value)
         return true;
     if (openXmlElement?.Val?.Value == null && value == null) return true;
-    diffs?.Add(objName, "Normal", openXmlElement?.Val?.Value, value?.ToString());
+    diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value?.ToString());
     return false;
   }
   

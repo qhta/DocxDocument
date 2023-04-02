@@ -93,10 +93,10 @@ public static class Int32ValueConverter
   /// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
   /// <param name="value">value to convert</param>
   /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
-  public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement parent, Int32? value)
+  public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
     where OpenXmlElementType : HpsMeasureType, new()
   {
-    var element = parent.GetFirstChild<OpenXmlElementType>();
+    var element = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (element!=null && value!=null)
     {
       element.Val = ((Int32)value).ToString();
@@ -105,7 +105,7 @@ public static class Int32ValueConverter
     {
       element = new OpenXmlElementType();
       element.Val = ((Int32)value).ToString();
-      parent.AddChild(element);
+      openXmlElement.AddChild(element);
     }
     else if (element!=null && value==null)
     {
@@ -138,27 +138,12 @@ public static class Int32ValueConverter
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
-  public static bool CmpValue(StringValue element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CmpValue(StringValue? element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (GetValue(element) == value) return true;
-    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Value, value);
+    diffs?.Add(objName, propName ?? element?.GetType().ToString(), element?.Value, value);
     return false;
   }
-
-  ///// <summary>
-  ///// Creates a specific OpenXml StringValue based on Int32 value.
-  ///// </summary>
-  ///// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
-  ///// <param name="value">value to convert</param>
-  ///// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
-  //public static OpenXmlElementType? SetValue<OpenXmlElementType>(Int32? value)
-  //  where OpenXmlElementType : StringValue, new()
-  //{
-  //  var element = new OpenXmlElementType();
-  //  if (value != null)
-  //    element.Value = ((Int32)value).ToString();
-  //  return element;
-  //}
   #endregion
 
   #region Two Int32 values

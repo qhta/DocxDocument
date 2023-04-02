@@ -81,7 +81,7 @@ public static class DeletedMathControlConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement<DXW.RunProperties>(value);
+      itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

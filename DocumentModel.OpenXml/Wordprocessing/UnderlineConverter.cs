@@ -100,7 +100,7 @@ public static class UnderlineConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Underline();
-      value.Val = GetVal(openXmlElement);
+      value.Type = GetVal(openXmlElement);
       value.Color = GetColor(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
@@ -115,7 +115,7 @@ public static class UnderlineConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Type, diffs, objName))
         ok = false;
       if (!CmpColor(openXmlElement, value.Color, diffs, objName))
         ok = false;
@@ -142,7 +142,7 @@ public static class UnderlineConverter
   
   public static void UpdateOpenXmlElement(DXW.Underline openXmlElement, DMW.Underline value)
   {
-    SetVal(openXmlElement, value?.Val);
+    SetVal(openXmlElement, value?.Type);
     SetColor(openXmlElement, value?.Color);
     SetThemeColor(openXmlElement, value?.ThemeColor);
     SetThemeTint(openXmlElement, value?.ThemeTint);

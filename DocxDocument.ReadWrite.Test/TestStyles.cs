@@ -23,7 +23,7 @@ public class TestStyles : TestBase
   [Test]
   public void TestReadNormalTemplateStyles()
   {
-    var filename = Path.Combine(TestPath, "Normal.dotm");
+    var filename = Path.Combine(TestPath, "Value.dotm");
     TestReadStyles(filename, true);
   }
 
@@ -250,11 +250,9 @@ public class TestStyles : TestBase
     Assert.IsNotNull(newStyles, $"Deserialized styles are null");
 
     var newStylesArray = newStyles.DefinedStyles.ToArray();
-    //var newStylesCount = newStylesArray.Count();
     var oldStylesArray = oldStyles.DefinedStyles.ToArray();
-    //var oldStylesCount = oldStylesArray.Count();
     var diffs = new DiffList();
-    var ok = DeepComparer.IsEqual(oldStylesArray, newStylesArray, diffs);
+    var ok = DeepComparer.IsEqual(oldStylesArray, newStylesArray, diffs, "Styles");
     if (!ok)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());

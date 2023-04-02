@@ -15,7 +15,7 @@ public static class StyleColorConverter
   
   private static bool CmpVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Normal");
+    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value)
