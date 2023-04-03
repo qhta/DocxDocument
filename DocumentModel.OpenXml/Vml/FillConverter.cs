@@ -182,7 +182,7 @@ public static class FillConverter
   
   private static bool CmpSize(DXVml.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Size, value, diffs, objName, "Size");
+    return StringValueConverter.CmpValue(openXmlElement?.Size, value, diffs, objName, "Width");
   }
   
   private static void SetSize(DXVml.Fill openXmlElement, String? value)

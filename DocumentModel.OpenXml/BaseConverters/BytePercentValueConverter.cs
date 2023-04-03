@@ -5,7 +5,7 @@ public static class BytePercentValueConverter
   public static BytePercent? GetValue(DX.StringValue? element)
   {
     if (element?.Value != null)
-      return uint.Parse(element.Value, NumberStyles.HexNumber);
+      return BytePercent.FromHexString(element.Value);
     return null;
   }
 
@@ -15,7 +15,7 @@ public static class BytePercentValueConverter
     if (valProperty != null && value is not null)
     {
       var valStr = (string?)valProperty.GetValue(element);
-      var valueStr = value.ToString();
+      var valueStr = ((BytePercent)value).ToString();
       if (valStr == valueStr) return true;
       diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
       return false;
@@ -27,18 +27,22 @@ public static class BytePercentValueConverter
 
   public static DX.StringValue? CreateStringValue(BytePercent? value)
   {
-    if (value is not null) return new DX.StringValue(value.ToString());
+    if (value is not null) return new DX.StringValue(((BytePercent)value).ToHexString());
     return null;
   }
 
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BytePercent? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
-    var newValue = new DX.StringValue(value.ToString());
-    var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
-    if (valProperty != null)
-      valProperty.SetValue(element, newValue);
-    return element;
+    if (value is not null)
+    {
+      var newValue = new DX.StringValue(((BytePercent)value).ToHexString());
+      var element = new OpenXmlElementType();
+      var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
+      if (valProperty != null)
+        valProperty.SetValue(element, newValue);
+      return element;
+    }
+    return null;
   }
 }
