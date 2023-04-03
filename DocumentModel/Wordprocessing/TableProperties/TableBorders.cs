@@ -9,40 +9,40 @@ public class TableBorders: ModelElement
   /// <summary>
   ///   Table Top Border.
   /// </summary>
-  public BorderType? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
 
   /// <summary>
   ///   Table Left Border.
   /// </summary>
-  public BorderType? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
 
   /// <summary>
   ///   StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public BorderType? StartBorder { get; set; }
+  public Border? StartBorder { get; set; }
 
   /// <summary>
   ///   Table Bottom Border.
   /// </summary>
-  public BorderType? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
 
   /// <summary>
   ///   Table Right Border.
   /// </summary>
-  public BorderType? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
 
   /// <summary>
   ///   EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  public BorderType? EndBorder { get; set; }
+  public Border? EndBorder { get; set; }
 
   /// <summary>
   ///   Table Inside Horizontal Edges Border.
   /// </summary>
-  public BorderType? InsideHorizontalBorder { get; set; }
+  public Border? InsideHorizontalBorder { get; set; }
 
   /// <summary>
   ///   Table Inside Vertical Edges Border.
   /// </summary>
-  public BorderType? InsideVerticalBorder { get; set; }
+  public Border? InsideVerticalBorder { get; set; }
 }

@@ -39,6 +39,7 @@
     <Compile Remove="Wordprocessing\Classes\AllocatedCommand.cs" />
     <Compile Remove="Wordprocessing\Classes\AllocatedCommandManifest.cs" />
     <Compile Remove="Wordprocessing\Classes\AllocatedCommands.cs" />
+    <Compile Remove="Wordprocessing\Classes\Color3.cs" />
     <Compile Remove="Wordprocessing\Classes\KeyMapCustomizations.cs" />
     <Compile Remove="Wordprocessing\Classes\KeyMapEntry.cs" />
     <Compile Remove="Wordprocessing\Classes\MismatchedKeyMapCustomization.cs" />

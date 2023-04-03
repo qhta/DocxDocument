@@ -8,7 +8,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Border.
   /// </summary>
-  private static DMW.BorderType? GetTopBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetTopBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopBorder>();
     if (element != null)
@@ -16,12 +16,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetTopBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
@@ -37,7 +37,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Left Border.
   /// </summary>
-  private static DMW.BorderType? GetLeftBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetLeftBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
     if (element != null)
@@ -45,12 +45,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
   }
   
-  private static void SetLeftBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetLeftBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
@@ -66,7 +66,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// StartBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  private static DMW.BorderType? GetStartBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetStartBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.StartBorder>();
     if (element != null)
@@ -74,12 +74,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpStartBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpStartBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.StartBorder>(), value, diffs, objName);
   }
   
-  private static void SetStartBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetStartBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.StartBorder>();
     if (itemElement != null)
@@ -95,7 +95,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Bottom Border.
   /// </summary>
-  private static DMW.BorderType? GetBottomBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetBottomBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
     if (element != null)
@@ -103,12 +103,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
   }
   
-  private static void SetBottomBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetBottomBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
@@ -124,7 +124,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Right Border.
   /// </summary>
-  private static DMW.BorderType? GetRightBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetRightBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RightBorder>();
     if (element != null)
@@ -132,12 +132,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
   }
   
-  private static void SetRightBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetRightBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
@@ -153,7 +153,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// EndBorder, this property is only available in Office 2010 and later..
   /// </summary>
-  private static DMW.BorderType? GetEndBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetEndBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.EndBorder>();
     if (element != null)
@@ -161,12 +161,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpEndBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpEndBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndBorder>(), value, diffs, objName);
   }
   
-  private static void SetEndBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetEndBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.EndBorder>();
     if (itemElement != null)
@@ -182,7 +182,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Inside Horizontal Edges Border.
   /// </summary>
-  private static DMW.BorderType? GetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.InsideHorizontalBorder>();
     if (element != null)
@@ -190,12 +190,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideHorizontalBorder>(), value, diffs, objName);
   }
   
-  private static void SetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetInsideHorizontalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.InsideHorizontalBorder>();
     if (itemElement != null)
@@ -211,7 +211,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Inside Vertical Edges Border.
   /// </summary>
-  private static DMW.BorderType? GetInsideVerticalBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetInsideVerticalBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.InsideVerticalBorder>();
     if (element != null)
@@ -219,12 +219,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.InsideVerticalBorder>(), value, diffs, objName);
   }
   
-  private static void SetInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetInsideVerticalBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.InsideVerticalBorder>();
     if (itemElement != null)
@@ -240,7 +240,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Left to Bottom Right Diagonal Border.
   /// </summary>
-  private static DMW.BorderType? GetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>();
     if (element != null)
@@ -248,12 +248,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetTopLeftToBottomRightCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TopLeftToBottomRightCellBorder>();
     if (itemElement != null)
@@ -269,7 +269,7 @@ public static class TableCellBordersConverter
   /// <summary>
   /// Table Cell Top Right to Bottom Left Diagonal Border.
   /// </summary>
-  private static DMW.BorderType? GetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement)
+  private static DMW.Border? GetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>();
     if (element != null)
@@ -277,12 +277,12 @@ public static class TableCellBordersConverter
     return null;
   }
   
-  private static bool CmpTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.BorderType? value)
+  private static void SetTopRightToBottomLeftCellBorder(DXW.TableCellBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TopRightToBottomLeftCellBorder>();
     if (itemElement != null)

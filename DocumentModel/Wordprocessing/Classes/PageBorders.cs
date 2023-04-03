@@ -24,20 +24,20 @@ public class PageBorders: ModelElement, ISectionPropertiesElement
   /// <summary>
   ///   Top Border.
   /// </summary>
-  public BorderType? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
 
   /// <summary>
   ///   Left Border.
   /// </summary>
-  public BorderType? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
 
   /// <summary>
   ///   Bottom Border.
   /// </summary>
-  public BorderType? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
 
   /// <summary>
   ///   Right Border.
   /// </summary>
-  public BorderType? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
 }

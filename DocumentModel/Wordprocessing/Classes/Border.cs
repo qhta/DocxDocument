@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BorderType Class.
 /// </summary>
-public class BorderType: ModelElement
+public class Border: ModelElement
 {
   /// <summary>
   ///   Border Style
@@ -14,32 +14,17 @@ public class BorderType: ModelElement
   /// <summary>
   ///   Border Color
   /// </summary>
-  public String? Color { get; set; }
-
-  /// <summary>
-  ///   Border Theme Color
-  /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
-
-  /// <summary>
-  ///   Border Theme Color Tint
-  /// </summary>
-  public String? ThemeTint { get; set; }
-
-  /// <summary>
-  ///   Border Theme Color Shade
-  /// </summary>
-  public String? ThemeShade { get; set; }
+  public Color? Color { get; set; }
 
   /// <summary>
   ///   Border Width
   /// </summary>
-  public UInt32? Size { get; set; }
+  public EighthPoints? Size { get; set; }
 
   /// <summary>
   ///   Border Spacing Measurement
   /// </summary>
-  public UInt32? Space { get; set; }
+  public Points? Space { get; set; }
 
   /// <summary>
   ///   Border Shadow

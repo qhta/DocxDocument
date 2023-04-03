@@ -62,7 +62,7 @@ public static class PageBordersConverter
   /// <summary>
   /// Top Border.
   /// </summary>
-  private static DMW.BorderType? GetTopBorder(DXW.PageBorders openXmlElement)
+  private static DMW.Border? GetTopBorder(DXW.PageBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopBorder>();
     if (element != null)
@@ -70,12 +70,12 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value)
+  private static void SetTopBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
@@ -91,7 +91,7 @@ public static class PageBordersConverter
   /// <summary>
   /// Left Border.
   /// </summary>
-  private static DMW.BorderType? GetLeftBorder(DXW.PageBorders openXmlElement)
+  private static DMW.Border? GetLeftBorder(DXW.PageBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
     if (element != null)
@@ -99,12 +99,12 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
   }
   
-  private static void SetLeftBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value)
+  private static void SetLeftBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
@@ -120,7 +120,7 @@ public static class PageBordersConverter
   /// <summary>
   /// Bottom Border.
   /// </summary>
-  private static DMW.BorderType? GetBottomBorder(DXW.PageBorders openXmlElement)
+  private static DMW.Border? GetBottomBorder(DXW.PageBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
     if (element != null)
@@ -128,12 +128,12 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
   }
   
-  private static void SetBottomBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value)
+  private static void SetBottomBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
@@ -149,7 +149,7 @@ public static class PageBordersConverter
   /// <summary>
   /// Right Border.
   /// </summary>
-  private static DMW.BorderType? GetRightBorder(DXW.PageBorders openXmlElement)
+  private static DMW.Border? GetRightBorder(DXW.PageBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RightBorder>();
     if (element != null)
@@ -157,12 +157,12 @@ public static class PageBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.PageBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
   }
   
-  private static void SetRightBorder(DXW.PageBorders openXmlElement, DMW.BorderType? value)
+  private static void SetRightBorder(DXW.PageBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)

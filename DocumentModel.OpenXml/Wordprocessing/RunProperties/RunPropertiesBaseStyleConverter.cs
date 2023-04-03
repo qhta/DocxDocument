@@ -473,7 +473,7 @@ public static class RunPropertiesBaseStyleConverter
   #endregion
 
   #region Border conversion.
-  public static DMW.BorderType? GetBorder(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.Border? GetBorder(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Border>();
     if (element != null)
@@ -481,12 +481,12 @@ public static class RunPropertiesBaseStyleConverter
     return null;
   }
 
-  public static bool CmpBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  public static bool CmpBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName);
   }
 
-  public static void SetBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.BorderType? value)
+  public static void SetBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Border>();
     if (itemElement != null)

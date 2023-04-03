@@ -9,10 +9,10 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// There is a small difference between real and nominal factors
   /// </summary>
-  const double valMM = 1440/25.4; //56,695238095238095238095238095238;
-  const double valCM = valMM/10.0;
-  const double valInch = 1440;
-  const double valPoint = 20;
+  const double TwipsInMM = 1440/25.4; //56,695238095238095238095238095238;
+  const double TwipsInCM = TwipsInMM/10.0;
+  const double TwipsInInch = 1440;
+  const double TwipsInPoint = 20;
 
   private Int64 Value;
 
@@ -25,25 +25,25 @@ public struct Twips: IComparable<Twips>
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*valMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*valCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInCM;
       Value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*valInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*TwipsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*valPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInPoint;
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -85,25 +85,25 @@ public struct Twips: IComparable<Twips>
   /// Converts value to millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
-    => Value/valMM;
+    => Value/TwipsInMM;
 
   /// <summary>
   /// Converts value to centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
-    => Value/valCM;
+    => Value/TwipsInCM;
 
   /// <summary>
   /// Converts value to inches. Result is a double number.
   /// </summary>
   public double ToInch()
-    => Value/valInch;
+    => Value/TwipsInInch;
 
   /// <summary>
   /// Converts value to points. Result is a double number.
   /// </summary>
   public double ToPoints()
-    => Value/valPoint;
+    => Value/TwipsInPoint;
 
   /// <summary>
   /// Converts integer value to string.
@@ -141,13 +141,13 @@ public struct Twips: IComparable<Twips>
   {
     string format=$"F{precision}";
     if (unit.EndsWith("mm"))
-      return (Value/valMM).ToString(format, provider)+unit;
+      return (Value/TwipsInMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/valCM).ToString(format, provider)+unit;
+      return (Value/TwipsInCM).ToString(format, provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/valInch).ToString(format, provider)+unit;
+      return (Value/TwipsInInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/valPoint).ToString(format, provider)+unit;
+      return (Value/TwipsInPoint).ToString(format, provider)+unit;
     return Value.ToString();
   }
 
@@ -159,13 +159,13 @@ public struct Twips: IComparable<Twips>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
-      return (Value/valMM).ToString(provider)+unit;
+      return (Value/TwipsInMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/valCM).ToString(provider)+unit;
+      return (Value/TwipsInCM).ToString(provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/valInch).ToString(provider)+unit;
+      return (Value/TwipsInInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/valPoint).ToString(provider)+unit;
+      return (Value/TwipsInPoint).ToString(provider)+unit;
     return Value.ToString();
   }
 
