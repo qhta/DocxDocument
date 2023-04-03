@@ -4,7 +4,7 @@
 /// BytePercent unit.
 /// </summary>
 [TypeConverter(typeof(BytePercentTypeConverter))]
-public struct BytePercent: IComparable<BytePercent>
+public struct BytePercent : IComparable<BytePercent>
 {
   private Byte Value;
 
@@ -17,9 +17,9 @@ public struct BytePercent: IComparable<BytePercent>
     if (str.EndsWith("%"))
     {
       str = str.Substring(0, str.Length - 1);
+    }
       var val = Byte.Parse(str);
       Value = val;
-    }
   }
 
   /// <summary>
@@ -52,7 +52,7 @@ public struct BytePercent: IComparable<BytePercent>
   public static BytePercent FromHexString(string str)
   {
     var val = Byte.Parse(str, NumberStyles.HexNumber);
-    val = (Byte)(System.Math.Round(val*100/255.0));
+    val = (Byte)(System.Math.Round(val * 100 / 255.0));
     return new BytePercent(val);
   }
 
@@ -77,7 +77,7 @@ public struct BytePercent: IComparable<BytePercent>
   /// Converts double value to string using unit.
   /// Unit can be determined as suffix "%"
   /// </summary>
-  public string ToString(string unit)
+  public string ToString(string? unit)
   {
     return ToString(System.Globalization.CultureInfo.InvariantCulture, unit);
   }
@@ -86,7 +86,7 @@ public struct BytePercent: IComparable<BytePercent>
   /// Converts double value to string using unit and specific precision (fractional digits count).
   /// Unit can be determined as suffix "%"
   /// </summary>
-  public string ToString(int precision, string unit)
+  public string ToString(int precision, string? unit)
   {
     return ToString(precision, System.Globalization.CultureInfo.InvariantCulture, unit);
   }
@@ -97,11 +97,14 @@ public struct BytePercent: IComparable<BytePercent>
   /// Fixed format is used.
   /// Unit can be determined as suffix "%"
   /// </summary>
-  public string ToString(int precision, IFormatProvider provider, string unit)
+  public string ToString(int precision, IFormatProvider provider, string? unit)
   {
-    string format=$"F{precision}";
-    if (unit.EndsWith("%"))
-      return (Value).ToString(format, provider)+unit;
+    string format = $"F{precision}";
+    if (unit != null)
+    {
+      if (unit.EndsWith("%"))
+        return (Value).ToString(format, provider) + unit;
+    }
     return Value.ToString(provider);
   }
 
@@ -110,14 +113,17 @@ public struct BytePercent: IComparable<BytePercent>
   /// and format provider to determine digits separator.
   /// Unit can be determined as suffix "%".
   /// </summary>
-  public string ToString(IFormatProvider provider, string unit)
+  public string ToString(IFormatProvider provider, string? unit)
   {
-    if (unit.EndsWith("%"))
-      return (Value).ToString(provider)+unit;
+    if (unit != null)
+    {
+      if (unit.EndsWith("%"))
+        return (Value).ToString(provider) + unit;
+    }
     return Value.ToString(provider);
   }
 
-  #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public static implicit operator BytePercent(string value) { return new BytePercent(value); }
   public static implicit operator string(BytePercent value) { return value.Value.ToString(); }
   public static implicit operator BytePercent(Int16 value) { return new BytePercent(value); }

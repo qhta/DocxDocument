@@ -1429,7 +1429,7 @@ public class TestVariants : TestBase
     arrayVariant[3] = 9;
     Assert.That(arrayVariant.BaseType, Is.EqualTo(VariantType.Integer), "ArrayVariant BaseType");
     Assert.That(arrayVariant.ItemType, Is.EqualTo(typeof(Decimal)), "ArrayVariant ItemType");
-    Assert.That(arrayVariant.Size, Is.EqualTo(3), "ArrayVariant Size");
+    Assert.That(arrayVariant.Size, Is.EqualTo(3), "ArrayVariant Width");
     Assert.That(arrayVariant[1], Is.EqualTo(5), "ArrayVariant element 1");
     Assert.That(arrayVariant[2], Is.EqualTo(7), "ArrayVariant element 2");
     Assert.That(arrayVariant[3], Is.EqualTo(9), "ArrayVariant element 3");

@@ -36,7 +36,7 @@ public static class ArtisticMarkerConverter
   private static bool CmpSize(DXO2010Draw.ArtisticMarker openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Size?.Value == value) return true;
-    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    diffs?.Add(objName, "Width", openXmlElement?.Size?.Value, value);
     return false;
   }
   

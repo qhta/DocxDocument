@@ -81,25 +81,25 @@ public static class RunPropertiesBaseStyleConverter
   #endregion
 
   #region FontSize & FontSizeCS child elements conversion.
-  public static DualHPS? GetFontSize(DX.OpenXmlCompositeElement openXmlElement)
+  public static FontSizes? GetFontSize(DX.OpenXmlCompositeElement openXmlElement)
   {
     var val = Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
     var valCS = Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
     if (val != null || valCS != null)
-      return new DualHPS(val, valCS);
+      return new FontSizes(val*10, valCS*10);
     return null;
   }
 
-  public static bool CmpFontSize(DX.OpenXmlCompositeElement openXmlElement, DualHPS? value, DiffList? diffs, string? objName)
+  public static bool CmpFontSize(DX.OpenXmlCompositeElement openXmlElement, FontSizes? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>(), value?.Val, diffs, objName, "FontSize")
-      && Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>(), value?.ValCS, diffs, objName, "FontSizeCS");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSize>(), value?.Val/10, diffs, objName, "FontSize")
+      && Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>(), value?.ValCS/10, diffs, objName, "FontSizeCS");
   }
 
-  public static void SetFontSize(DX.OpenXmlCompositeElement openXmlElement, DualHPS? value)
+  public static void SetFontSize(DX.OpenXmlCompositeElement openXmlElement, FontSizes? value)
   {
-    Int32ValueConverter.SetHpsMeasureType<DXW.FontSize>(openXmlElement, value?.Val);
-    Int32ValueConverter.SetHpsMeasureType<DXW.FontSizeComplexScript>(openXmlElement, value?.ValCS);
+    Int32ValueConverter.SetHpsMeasureType<DXW.FontSize>(openXmlElement, value?.Val/10);
+    Int32ValueConverter.SetHpsMeasureType<DXW.FontSizeComplexScript>(openXmlElement, value?.ValCS/10);
   }
   #endregion
 
@@ -370,31 +370,31 @@ public static class RunPropertiesBaseStyleConverter
   #endregion
 
   #region Kern conversion.
-  public static UInt32? GetKern(DX.OpenXmlCompositeElement openXmlElement)
+  public static Twips? GetKern(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val)*10;
   }
 
   public static bool CmpKern(DX.OpenXmlCompositeElement openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val, value, diffs, objName, "Kern");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Kern>()?.Val, value/10, diffs, objName, "Kern");
   }
 
   public static void SetKern(DX.OpenXmlCompositeElement openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXW.Kern, System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXW.Kern, System.UInt32>(openXmlElement, value/10);
   }
   #endregion
 
   #region Position conversion.
   public static Int32? GetPosition(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val)*10;
   }
 
   public static bool CmpPosition(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val, value, diffs, objName, "Position");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Position>()?.Val, value/10, diffs, objName, "Position");
   }
 
   public static void SetPosition(DX.OpenXmlCompositeElement openXmlElement, Int32? value)
@@ -407,7 +407,7 @@ public static class RunPropertiesBaseStyleConverter
     else if (element==null && value!=null)
     {
       element = new DXW.Position();
-      element.Val = ((Int32)value).ToString();
+      element.Val = ((Int32)value/10).ToString();
       openXmlElement.AddChild(element);
     }
     else if (element!=null && value==null)
