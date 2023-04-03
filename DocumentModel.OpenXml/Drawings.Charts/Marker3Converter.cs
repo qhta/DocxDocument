@@ -43,7 +43,7 @@ public static class Marker3Converter
   
   private static bool CmpSize(DXO2013DrawChart.Marker openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val, value, diffs, objName, "Size");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val, value, diffs, objName, "Width");
   }
   
   private static void SetSize(DXO2013DrawChart.Marker openXmlElement, Byte? value)

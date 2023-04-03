@@ -98,41 +98,51 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border Width
   /// </summary>
-  private static UInt32? GetSize(DXW.BorderType openXmlElement)
+  private static Twips? GetSize(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.Size?.Value;
+    if (openXmlElement?.Size?.Value!=null)
+      return new Twips(openXmlElement.Size.Value*5);
+    return null;
   }
   
-  private static bool CmpSize(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXW.BorderType openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Size?.Value == value) return true;
-    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    if (openXmlElement?.Size?.Value == value/5) return true;
+    diffs?.Add(objName, "Width", openXmlElement?.Size?.Value, value);
     return false;
   }
   
-  private static void SetSize(DXW.BorderType openXmlElement, UInt32? value)
+  private static void SetSize(DXW.BorderType openXmlElement, Twips? value)
   {
-    openXmlElement.Size = value;
+    if (value is not null)
+      openXmlElement.Size = ((uint)value)/5;
+    else
+      openXmlElement.Size = null;
   }
   
   /// <summary>
   /// Border Spacing Measurement
   /// </summary>
-  private static UInt32? GetSpace(DXW.BorderType openXmlElement)
+  private static Twips? GetSpace(DXW.BorderType openXmlElement)
   {
-    return openXmlElement?.Space?.Value;
+    if (openXmlElement?.Space?.Value!=null)
+      return new Twips(openXmlElement.Space.Value*5);
+    return null;
   }
   
   private static bool CmpSpace(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Space?.Value == value) return true;
+    if (openXmlElement?.Space?.Value == value/5) return true;
     diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
     return false;
   }
   
   private static void SetSpace(DXW.BorderType openXmlElement, UInt32? value)
   {
-    openXmlElement.Space = value;
+    if (value is not null)
+      openXmlElement.Space = ((uint)value)/5;
+    else
+      openXmlElement.Space = null;
   }
   
   /// <summary>
@@ -184,7 +194,7 @@ public static class BorderTypeConverter
       color.ThemeShade = GetThemeShade(openXmlElement);
       if (!color.IsEmpty())
         value.Color = color;
-      value.Size = GetSize(openXmlElement);
+      value.Width = GetSize(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       value.Shadow = GetShadow(openXmlElement);
       value.Frame = GetFrame(openXmlElement);
@@ -208,7 +218,7 @@ public static class BorderTypeConverter
         ok = false;
       if (!CmpThemeShade(openXmlElement, value.Color?.ThemeShade, diffs, objName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Width, diffs, objName))
         ok = false;
       if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
         ok = false;
@@ -238,7 +248,7 @@ public static class BorderTypeConverter
     SetThemeColor(openXmlElement, value?.Color?.ThemeColor);
     SetThemeTint(openXmlElement, value?.Color?.ThemeTint);
     SetThemeShade(openXmlElement, value?.Color?.ThemeShade);
-    SetSize(openXmlElement, value?.Size);
+    SetSize(openXmlElement, value?.Width);
     SetSpace(openXmlElement, value?.Space);
     SetShadow(openXmlElement, value?.Shadow);
     SetFrame(openXmlElement, value?.Frame);

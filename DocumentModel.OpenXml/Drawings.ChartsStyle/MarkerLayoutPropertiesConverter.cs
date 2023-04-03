@@ -34,7 +34,7 @@ public static class MarkerLayoutPropertiesConverter
   private static bool CmpSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Size?.Value == value) return true;
-    diffs?.Add(objName, "Size", openXmlElement?.Size?.Value, value);
+    diffs?.Add(objName, "Width", openXmlElement?.Size?.Value, value);
     return false;
   }
   

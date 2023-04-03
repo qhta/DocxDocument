@@ -69,7 +69,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public DualHPS? FontSize { get; set; }
+  public FontSizes? FontSize { get; set; }
 
   /// <summary>
   ///   Specifies that any lowercase characters in this text run 
@@ -135,7 +135,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   The Value specifies the smallest font size which shall have its kerning automatically adjusted if this setting is specified. 
   ///   If the font size in the sz element (§17.3.2.38) is smaller than this value, then no font kerning shall be performed. 
   /// </summary>
-  public HalfPoints? Kern { get; set; }
+  public Twips? Kern { get; set; }
 
   /// <summary>
   ///   Specifies whether the current run should use the document grid characters per line settings defined in the docGrid element 
@@ -160,7 +160,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   If the value is negative, then the parent run shall be lowered below the baseline 
   ///   of the surrounding text by the specified number of half-points. 
   /// </summary>
-  public HalfPoints? Position { get; set; }
+  public Twips? Position { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run should be displayed as if they have an outline, 

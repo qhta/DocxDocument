@@ -19,12 +19,12 @@ public class Border: ModelElement
   /// <summary>
   ///   Border Width
   /// </summary>
-  public EighthPoints? Size { get; set; }
+  public Twips? Width { get; set; }
 
   /// <summary>
   ///   Border Spacing Measurement
   /// </summary>
-  public Points? Space { get; set; }
+  public Twips? Space { get; set; }
 
   /// <summary>
   ///   Border Shadow
