@@ -5,27 +5,24 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class Color3Converter
 {
-  /// <summary>
-  /// Run Content Color
-  /// </summary>
-  private static String? GetVal(DXO2013W.Color openXmlElement)
+  #region RGB Color conversion.
+  private static RGB? GetVal(DXO2013W.Color openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Val);
+    return ColorValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO2013W.Color openXmlElement, RGB? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
+    return ColorValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXO2013W.Color openXmlElement, String? value)
+  private static void SetVal(DXO2013W.Color openXmlElement, RGB? value)
   {
-    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
+    openXmlElement.Val = ColorValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Run Content Theme Color
-  /// </summary>
+  #endregion
+
+  #region ThemeColor conversion.
   private static DMW.ThemeColorKind? GetThemeColor(DXO2013W.Color openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
@@ -40,49 +37,49 @@ public static class Color3Converter
   {
     openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
-  
-  /// <summary>
-  /// Run Content Theme Color Tint
-  /// </summary>
-  private static String? GetThemeTint(DXO2013W.Color openXmlElement)
+  #endregion
+
+  #region ThemeTint conversion
+  private static BytePercent? GetThemeTint(DXO2013W.Color openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.ThemeTint);
+    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
-  private static bool CmpThemeTint(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeTint(DXO2013W.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
+    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
-  private static void SetThemeTint(DXO2013W.Color openXmlElement, String? value)
+  private static void SetThemeTint(DXO2013W.Color openXmlElement, BytePercent? value)
   {
-    openXmlElement.ThemeTint = StringValueConverter.CreateStringValue(value);
+    openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
+  }
+  #endregion
+
+  #region ThemeShade conversion
+  private static BytePercent? GetThemeShade(DXO2013W.Color openXmlElement)
+  {
+    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
-  /// <summary>
-  /// Run Content Theme Color Shade
-  /// </summary>
-  private static String? GetThemeShade(DXO2013W.Color openXmlElement)
+  private static bool CmpThemeShade(DXO2013W.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.GetValue(openXmlElement?.ThemeShade);
+    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
-  private static bool CmpThemeShade(DXO2013W.Color openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static void SetThemeShade(DXO2013W.Color openXmlElement, BytePercent? value)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
+    openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
   }
-  
-  private static void SetThemeShade(DXO2013W.Color openXmlElement, String? value)
-  {
-    openXmlElement.ThemeShade = StringValueConverter.CreateStringValue(value);
-  }
-  
-  public static DMW.Color3? CreateModelElement(DXO2013W.Color? openXmlElement)
+  #endregion
+
+  #region Color model conversion.
+  public static DMW.Color? CreateModelElement(DXO2013W.Color? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Color3();
-      value.Val = GetVal(openXmlElement);
+      var value = new DMW.Color();
+      value.RGB = GetVal(openXmlElement);
       value.ThemeColor = GetThemeColor(openXmlElement);
       value.ThemeTint = GetThemeTint(openXmlElement);
       value.ThemeShade = GetThemeShade(openXmlElement);
@@ -91,12 +88,12 @@ public static class Color3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013W.Color? openXmlElement, DMW.Color3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO2013W.Color? openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.RGB, diffs, objName))
         ok = false;
       if (!CmpThemeColor(openXmlElement, value.ThemeColor, diffs, objName))
         ok = false;
@@ -111,7 +108,7 @@ public static class Color3Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Color3 value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Color value)
     where OpenXmlElementType: DXO2013W.Color, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -119,11 +116,12 @@ public static class Color3Converter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013W.Color openXmlElement, DMW.Color3 value)
+  public static void UpdateOpenXmlElement(DXO2013W.Color openXmlElement, DMW.Color value)
   {
-    SetVal(openXmlElement, value?.Val);
+    SetVal(openXmlElement, value?.RGB);
     SetThemeColor(openXmlElement, value?.ThemeColor);
     SetThemeTint(openXmlElement, value?.ThemeTint);
     SetThemeShade(openXmlElement, value?.ThemeShade);
   }
+  #endregion
 }

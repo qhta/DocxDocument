@@ -135,7 +135,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   The Value specifies the smallest font size which shall have its kerning automatically adjusted if this setting is specified. 
   ///   If the font size in the sz element (§17.3.2.38) is smaller than this value, then no font kerning shall be performed. 
   /// </summary>
-  public Hps? Kern { get; set; }
+  public HalfPoints? Kern { get; set; }
 
   /// <summary>
   ///   Specifies whether the current run should use the document grid characters per line settings defined in the docGrid element 
@@ -160,7 +160,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   If the value is negative, then the parent run shall be lowered below the baseline 
   ///   of the surrounding text by the specified number of half-points. 
   /// </summary>
-  public Hps? Position { get; set; }
+  public HalfPoints? Position { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run should be displayed as if they have an outline, 
@@ -238,7 +238,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///  then those two runs shall be considered to be part of the same run border group and rendered 
   ///  within the same set of borders in the document.
   /// </summary>
-  public BorderType? Border { get; set; }
+  public Border? Border { get; set; }
 
   /// <summary>
   ///   Specifies an animated text effect which should be displayed when rendering the contents of this run. 

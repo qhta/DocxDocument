@@ -9,30 +9,30 @@ public class ParagraphBorders: ModelElement
   /// <summary>
   ///   Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  public BorderType? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
 
   /// <summary>
   ///   Left Paragraph Border.
   /// </summary>
-  public BorderType? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
 
   /// <summary>
   ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
 
   /// <summary>
   ///   Right Paragraph Border.
   /// </summary>
-  public BorderType? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
 
   /// <summary>
   ///   Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  public BorderType? BetweenBorder { get; set; }
+  public Border? BetweenBorder { get; set; }
 
   /// <summary>
   ///   Paragraph Border Between Facing Pages.
   /// </summary>
-  public BorderType? BarBorder { get; set; }
+  public Border? BarBorder { get; set; }
 }
