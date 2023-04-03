@@ -45,11 +45,11 @@ public struct Percent: IComparable<Percent>
   }
 
   /// <summary>
-  /// Converts integer value to string.
+  /// Converts value to string with "%" suffix
   /// </summary>
   public override string ToString()
   {
-    return Value.ToString("%");
+    return ToString("%");
   }
 
   /// <summary>

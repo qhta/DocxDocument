@@ -14,10 +14,10 @@ public record LegacyNumbering
   /// <summary>
   ///   Legacy Spacing
   /// </summary>
-  public DXA Space { get; set; }
+  public Twips Space { get; set; }
 
   /// <summary>
   ///   Legacy Indent
   /// </summary>
-  public DXA Indent { get; set; }
+  public Twips Indent { get; set; }
 }

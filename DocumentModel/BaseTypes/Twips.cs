@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// DXA unit. 1 DXA = 1/1440 inch.
+/// Twips unit. 1 twip = 1/1440 inch.
 /// </summary>
-[TypeConverter(typeof(DXATypeConverter))]
-public struct DXA: IComparable<DXA>
+[TypeConverter(typeof(TwipsTypeConverter))]
+public struct Twips: IComparable<Twips>
 {
   /// <summary>
   /// There is a small difference between real and nominal factors
   /// </summary>
-  const double dxaMM = 1440/25.4; //56.695238095238095238095238095238;
-  const double dxaCM = dxaMM/10.0;
-  const double dxaInch = 1440;
-  const double dxaPoint = 20;
+  const double valMM = 1440/25.4; //56,695238095238095238095238095238;
+  const double valCM = valMM/10.0;
+  const double valInch = 1440;
+  const double valPoint = 20;
 
   private Int64 Value;
 
@@ -20,30 +20,30 @@ public struct DXA: IComparable<DXA>
   /// Constructor converting from string. 
   /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
-  public DXA(string str)
+  public Twips(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*dxaMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*valMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*dxaCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*valCM;
       Value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*dxaInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*valInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*dxaPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*valPoint;
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -52,7 +52,7 @@ public struct DXA: IComparable<DXA>
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public DXA(UInt32 value)
+  public Twips(UInt32 value)
   {
     Value = value;
   }
@@ -60,7 +60,7 @@ public struct DXA: IComparable<DXA>
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public DXA(Int32 value)
+  public Twips(Int32 value)
   {
     Value = value;
   }
@@ -68,7 +68,7 @@ public struct DXA: IComparable<DXA>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public DXA(UInt64 value)
+  public Twips(UInt64 value)
   {
     Value = (Int64)value;
   }
@@ -76,7 +76,7 @@ public struct DXA: IComparable<DXA>
   /// <summary>
   /// Converting constructor from Int64 value.
   /// </summary>
-  public DXA(Int64 value)
+  public Twips(Int64 value)
   {
     Value = value;
   }
@@ -85,25 +85,25 @@ public struct DXA: IComparable<DXA>
   /// Converts value to millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
-    => Value/dxaMM;
+    => Value/valMM;
 
   /// <summary>
   /// Converts value to centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
-    => Value/dxaCM;
+    => Value/valCM;
 
   /// <summary>
   /// Converts value to inches. Result is a double number.
   /// </summary>
   public double ToInch()
-    => Value/dxaInch;
+    => Value/valInch;
 
   /// <summary>
   /// Converts value to points. Result is a double number.
   /// </summary>
   public double ToPoints()
-    => Value/dxaPoint;
+    => Value/valPoint;
 
   /// <summary>
   /// Converts integer value to string.
@@ -141,13 +141,13 @@ public struct DXA: IComparable<DXA>
   {
     string format=$"F{precision}";
     if (unit.EndsWith("mm"))
-      return (Value/dxaMM).ToString(format, provider)+unit;
+      return (Value/valMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/dxaCM).ToString(format, provider)+unit;
+      return (Value/valCM).ToString(format, provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/dxaInch).ToString(format, provider)+unit;
+      return (Value/valInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/dxaPoint).ToString(format, provider)+unit;
+      return (Value/valPoint).ToString(format, provider)+unit;
     return Value.ToString();
   }
 
@@ -159,33 +159,33 @@ public struct DXA: IComparable<DXA>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
-      return (Value/dxaMM).ToString(provider)+unit;
+      return (Value/valMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/dxaCM).ToString(provider)+unit;
+      return (Value/valCM).ToString(provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/dxaInch).ToString(provider)+unit;
+      return (Value/valInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/dxaPoint).ToString(provider)+unit;
+      return (Value/valPoint).ToString(provider)+unit;
     return Value.ToString();
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator DXA(string value) { return new DXA(value); }
-  public static implicit operator string(DXA value) { return value.Value.ToString(); }
-  public static implicit operator DXA(Int16 value) { return new DXA(value); }
-  public static implicit operator Int16(DXA value) { return (Int16)value.Value; }
-  public static implicit operator DXA(UInt16 value) { return new DXA(value); }
-  public static implicit operator UInt16(DXA value) { return (UInt16)value.Value; }
-  public static implicit operator DXA(Int32 value) { return new DXA(value); }
-  public static implicit operator Int32(DXA value) { return (Int32)value.Value; }
-  public static implicit operator DXA(UInt32 value) { return new DXA(value); }
-  public static implicit operator UInt32(DXA value) { return (UInt32)value.Value; }
-  public static implicit operator DXA(Int64 value) { return new DXA(value); }
-  public static implicit operator Int64(DXA value) { return (Int64)value.Value; }
-  public static implicit operator DXA(UInt64 value) { return new DXA(value); }
-  public static implicit operator UInt64(DXA value) { return (UInt64)value.Value; }
+  public static implicit operator Twips(string value) { return new Twips(value); }
+  public static implicit operator string(Twips value) { return value.Value.ToString(); }
+  public static implicit operator Twips(Int16 value) { return new Twips(value); }
+  public static implicit operator Int16(Twips value) { return (Int16)value.Value; }
+  public static implicit operator Twips(UInt16 value) { return new Twips(value); }
+  public static implicit operator UInt16(Twips value) { return (UInt16)value.Value; }
+  public static implicit operator Twips(Int32 value) { return new Twips(value); }
+  public static implicit operator Int32(Twips value) { return (Int32)value.Value; }
+  public static implicit operator Twips(UInt32 value) { return new Twips(value); }
+  public static implicit operator UInt32(Twips value) { return (UInt32)value.Value; }
+  public static implicit operator Twips(Int64 value) { return new Twips(value); }
+  public static implicit operator Int64(Twips value) { return (Int64)value.Value; }
+  public static implicit operator Twips(UInt64 value) { return new Twips(value); }
+  public static implicit operator UInt64(Twips value) { return (UInt64)value.Value; }
 
-  public int CompareTo(DXA other)
+  public int CompareTo(Twips other)
   {
     return Value.CompareTo(other.Value);
   }

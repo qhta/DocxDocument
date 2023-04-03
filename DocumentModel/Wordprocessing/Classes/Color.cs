@@ -1,15 +1,14 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the Color Class.
+///   Color class.
 /// </summary>
 public class Color: ModelElement
 {
   /// <summary>
   ///   Run Content Color
   /// </summary>
-  public String? Val { get; set; }
+  public RGB? RGB { get; set; }
 
   /// <summary>
   ///   Run Content Theme Color
@@ -19,10 +18,16 @@ public class Color: ModelElement
   /// <summary>
   ///   Run Content Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get; set; }
+  public BytePercent? ThemeTint { get; set; }
 
   /// <summary>
   ///   Run Content Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get; set; }
+  public BytePercent? ThemeShade { get; set; }
+
+  /// <summary>
+  /// Determines all properties are null.
+  /// </summary>
+  public bool IsEmpty()
+   => RGB == null && ThemeColor == null && ThemeTint is null && ThemeShade is null;
 }
