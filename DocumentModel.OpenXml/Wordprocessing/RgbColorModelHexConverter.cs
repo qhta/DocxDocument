@@ -188,7 +188,7 @@ public static class RgbColorModelHexConverter
     if (openXmlElement != null)
     {
       var value = new DMW.RgbColorModelHex();
-      value.Val = GetVal(openXmlElement);
+      value.RGB = GetVal(openXmlElement);
       value.Tint = GetTint(openXmlElement);
       value.Shade = GetShade(openXmlElement);
       value.Alpha = GetAlpha(openXmlElement);
@@ -209,7 +209,7 @@ public static class RgbColorModelHexConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.RGB, diffs, objName))
         ok = false;
       if (!CmpTint(openXmlElement, value.Tint, diffs, objName))
         ok = false;
@@ -248,7 +248,7 @@ public static class RgbColorModelHexConverter
   
   public static void UpdateOpenXmlElement(DXO2010W.RgbColorModelHex openXmlElement, DMW.RgbColorModelHex value)
   {
-    SetVal(openXmlElement, value?.Val);
+    SetVal(openXmlElement, value?.RGB);
     SetTint(openXmlElement, value?.Tint);
     SetShade(openXmlElement, value?.Shade);
     SetAlpha(openXmlElement, value?.Alpha);

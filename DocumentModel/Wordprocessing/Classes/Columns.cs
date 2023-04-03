@@ -14,7 +14,7 @@ public class Columns: ModelElement, ISectionPropertiesElement
   /// <summary>
   ///   Spacing Between Equal Width Columns
   /// </summary>
-  public DXA? Space { get; set; }
+  public Twips? Space { get; set; }
 
   /// <summary>
   ///   Number of Equal Width Columns

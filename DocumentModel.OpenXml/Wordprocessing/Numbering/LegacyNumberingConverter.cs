@@ -23,7 +23,7 @@ public static class LegacyNumberingConverter
   #endregion
 
   #region Legacy Spacing
-  private static DXA GetLegacySpace(DXW.LegacyNumbering openXmlElement)
+  private static Twips GetLegacySpace(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacySpace!=null)
       return Int32ValueConverter.GetValue(openXmlElement.LegacySpace) ?? 0;
@@ -42,7 +42,7 @@ public static class LegacyNumberingConverter
   #endregion
 
   #region Legacy Indent
-  private static DXA GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
+  private static Twips GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacyIndent!=null)
       return Int32ValueConverter.GetValue(openXmlElement.LegacyIndent) ?? 0;

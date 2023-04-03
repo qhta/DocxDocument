@@ -3,8 +3,8 @@
 /// <summary>
 /// HalfPoints unit. 1 HalfPoints = 1/144 inch.
 /// </summary>
-[TypeConverter(typeof(HPSTypeConverter))]
-public struct HPS: IComparable<HPS>
+[TypeConverter(typeof(HpsTypeConverter))]
+public struct Hps: IComparable<Hps>
 {
   /// <summary>
   /// There is a small difference between real and nominal factors
@@ -20,7 +20,7 @@ public struct HPS: IComparable<HPS>
   /// Constructor converting from string.
   /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
-  public HPS(string str)
+  public Hps(string str)
   {
     if (str.EndsWith("mm"))
     {
@@ -52,7 +52,7 @@ public struct HPS: IComparable<HPS>
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public HPS(UInt32 value)
+  public Hps(UInt32 value)
   {
     Value = value;
   }
@@ -60,7 +60,7 @@ public struct HPS: IComparable<HPS>
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public HPS(Int32 value)
+  public Hps(Int32 value)
   {
     Value = value;
   }
@@ -68,7 +68,7 @@ public struct HPS: IComparable<HPS>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public HPS(UInt64 value)
+  public Hps(UInt64 value)
   {
     Value = (Int64)value;
   }
@@ -76,7 +76,7 @@ public struct HPS: IComparable<HPS>
   /// <summary>
   /// Converting constructor from Int64 value.
   /// </summary>
-  public HPS(Int64 value)
+  public Hps(Int64 value)
   {
     Value = value;
   }
@@ -170,22 +170,22 @@ public struct HPS: IComparable<HPS>
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator HPS(string value) { return new HPS(value); }
-  public static implicit operator string(HPS value) { return value.Value.ToString(); }
-  public static implicit operator HPS(Int16 value) { return new HPS(value); }
-  public static implicit operator Int16(HPS value) { return (Int16)value.Value; }
-  public static implicit operator HPS(UInt16 value) { return new HPS(value); }
-  public static implicit operator UInt16(HPS value) { return (UInt16)value.Value; }
-  public static implicit operator HPS(Int32 value) { return new HPS(value); }
-  public static implicit operator Int32(HPS value) { return (Int32)value.Value; }
-  public static implicit operator HPS(UInt32 value) { return new HPS(value); }
-  public static implicit operator UInt32(HPS value) { return (UInt32)value.Value; }
-  public static implicit operator HPS(Int64 value) { return new HPS(value); }
-  public static implicit operator Int64(HPS value) { return (Int64)value.Value; }
-  public static implicit operator HPS(UInt64 value) { return new HPS(value); }
-  public static implicit operator UInt64(HPS value) { return (UInt64)value.Value; }
+  public static implicit operator Hps(string value) { return new Hps(value); }
+  public static implicit operator string(Hps value) { return value.Value.ToString(); }
+  public static implicit operator Hps(Int16 value) { return new Hps(value); }
+  public static implicit operator Int16(Hps value) { return (Int16)value.Value; }
+  public static implicit operator Hps(UInt16 value) { return new Hps(value); }
+  public static implicit operator UInt16(Hps value) { return (UInt16)value.Value; }
+  public static implicit operator Hps(Int32 value) { return new Hps(value); }
+  public static implicit operator Int32(Hps value) { return (Int32)value.Value; }
+  public static implicit operator Hps(UInt32 value) { return new Hps(value); }
+  public static implicit operator UInt32(Hps value) { return (UInt32)value.Value; }
+  public static implicit operator Hps(Int64 value) { return new Hps(value); }
+  public static implicit operator Int64(Hps value) { return (Int64)value.Value; }
+  public static implicit operator Hps(UInt64 value) { return new Hps(value); }
+  public static implicit operator UInt64(Hps value) { return (UInt64)value.Value; }
 
-  public int CompareTo(HPS other)
+  public int CompareTo(Hps other)
   {
     return Value.CompareTo(other.Value);
   }
