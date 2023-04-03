@@ -1,18 +1,17 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Twips unit. 1 twip = 1/1440 inch.
+/// Points unit. 1 point = 1/72 inch.
 /// </summary>
-[TypeConverter(typeof(TwipsTypeConverter))]
-public struct Twips: IComparable<Twips>
+[TypeConverter(typeof(PointsTypeConverter))]
+public struct Points: IComparable<Points>
 {
   /// <summary>
   /// There is a small difference between real and nominal factors
   /// </summary>
-  const double TwipsInMM = 1440/25.4; //56,695238095238095238095238095238;
-  const double TwipsInCM = TwipsInMM/10.0;
-  const double TwipsInInch = 1440;
-  const double TwipsInPoint = 20;
+  const double PointsInMM = 72/25.4; //56,695238095238095238095238095238;
+  const double PointsInCM = PointsInMM/10.0;
+  const double PointsInInch = 72;
 
   private Int64 Value;
 
@@ -20,30 +19,30 @@ public struct Twips: IComparable<Twips>
   /// Constructor converting from string. 
   /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
-  public Twips(string str)
+  public Points(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*PointsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*PointsInCM;
       Value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*TwipsInInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*PointsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture);
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -52,7 +51,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public Twips(UInt32 value)
+  public Points(UInt32 value)
   {
     Value = value;
   }
@@ -60,7 +59,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public Twips(Int32 value)
+  public Points(Int32 value)
   {
     Value = value;
   }
@@ -68,7 +67,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public Twips(UInt64 value)
+  public Points(UInt64 value)
   {
     Value = (Int64)value;
   }
@@ -76,7 +75,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from Int64 value.
   /// </summary>
-  public Twips(Int64 value)
+  public Points(Int64 value)
   {
     Value = value;
   }
@@ -85,25 +84,25 @@ public struct Twips: IComparable<Twips>
   /// Converts value to millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
-    => Value/TwipsInMM;
+    => Value/PointsInMM;
 
   /// <summary>
   /// Converts value to centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
-    => Value/TwipsInCM;
+    => Value/PointsInCM;
 
   /// <summary>
   /// Converts value to inches. Result is a double number.
   /// </summary>
   public double ToInch()
-    => Value/TwipsInInch;
+    => Value/PointsInInch;
 
   /// <summary>
   /// Converts value to points. Result is a double number.
   /// </summary>
   public double ToPoints()
-    => Value/TwipsInPoint;
+    => Value;
 
   /// <summary>
   /// Converts integer value to string.
@@ -141,13 +140,13 @@ public struct Twips: IComparable<Twips>
   {
     string format=$"F{precision}";
     if (unit.EndsWith("mm"))
-      return (Value/TwipsInMM).ToString(format, provider)+unit;
+      return (Value/PointsInMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/TwipsInCM).ToString(format, provider)+unit;
+      return (Value/PointsInCM).ToString(format, provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/TwipsInInch).ToString(format, provider)+unit;
+      return (Value/PointsInInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/TwipsInPoint).ToString(format, provider)+unit;
+      return (Value).ToString(format, provider)+unit;
     return Value.ToString();
   }
 
@@ -159,33 +158,33 @@ public struct Twips: IComparable<Twips>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
-      return (Value/TwipsInMM).ToString(provider)+unit;
+      return (Value/PointsInMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/TwipsInCM).ToString(provider)+unit;
+      return (Value/PointsInCM).ToString(provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/TwipsInInch).ToString(provider)+unit;
+      return (Value/PointsInInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/TwipsInPoint).ToString(provider)+unit;
+      return (Value).ToString(provider)+unit;
     return Value.ToString();
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator Twips(string value) { return new Twips(value); }
-  public static implicit operator string(Twips value) { return value.Value.ToString(); }
-  public static implicit operator Twips(Int16 value) { return new Twips(value); }
-  public static implicit operator Int16(Twips value) { return (Int16)value.Value; }
-  public static implicit operator Twips(UInt16 value) { return new Twips(value); }
-  public static implicit operator UInt16(Twips value) { return (UInt16)value.Value; }
-  public static implicit operator Twips(Int32 value) { return new Twips(value); }
-  public static implicit operator Int32(Twips value) { return (Int32)value.Value; }
-  public static implicit operator Twips(UInt32 value) { return new Twips(value); }
-  public static implicit operator UInt32(Twips value) { return (UInt32)value.Value; }
-  public static implicit operator Twips(Int64 value) { return new Twips(value); }
-  public static implicit operator Int64(Twips value) { return (Int64)value.Value; }
-  public static implicit operator Twips(UInt64 value) { return new Twips(value); }
-  public static implicit operator UInt64(Twips value) { return (UInt64)value.Value; }
+  public static implicit operator Points(string value) { return new Points(value); }
+  public static implicit operator string(Points value) { return value.Value.ToString(); }
+  public static implicit operator Points(Int16 value) { return new Points(value); }
+  public static implicit operator Int16(Points value) { return (Int16)value.Value; }
+  public static implicit operator Points(UInt16 value) { return new Points(value); }
+  public static implicit operator UInt16(Points value) { return (UInt16)value.Value; }
+  public static implicit operator Points(Int32 value) { return new Points(value); }
+  public static implicit operator Int32(Points value) { return (Int32)value.Value; }
+  public static implicit operator Points(UInt32 value) { return new Points(value); }
+  public static implicit operator UInt32(Points value) { return (UInt32)value.Value; }
+  public static implicit operator Points(Int64 value) { return new Points(value); }
+  public static implicit operator Int64(Points value) { return (Int64)value.Value; }
+  public static implicit operator Points(UInt64 value) { return new Points(value); }
+  public static implicit operator UInt64(Points value) { return (UInt64)value.Value; }
 
-  public int CompareTo(Twips other)
+  public int CompareTo(Points other)
   {
     return Value.CompareTo(other.Value);
   }

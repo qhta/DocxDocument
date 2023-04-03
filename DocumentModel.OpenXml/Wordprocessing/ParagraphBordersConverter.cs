@@ -8,7 +8,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Above Identical Paragraphs.
   /// </summary>
-  private static DMW.BorderType? GetTopBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetTopBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopBorder>();
     if (element != null)
@@ -16,12 +16,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetTopBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TopBorder>();
     if (itemElement != null)
@@ -37,7 +37,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Left Paragraph Border.
   /// </summary>
-  private static DMW.BorderType? GetLeftBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetLeftBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LeftBorder>();
     if (element != null)
@@ -45,12 +45,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
   }
   
-  private static void SetLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.LeftBorder>();
     if (itemElement != null)
@@ -66,7 +66,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  private static DMW.BorderType? GetBottomBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetBottomBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BottomBorder>();
     if (element != null)
@@ -74,12 +74,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
   }
   
-  private static void SetBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BottomBorder>();
     if (itemElement != null)
@@ -95,7 +95,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Right Paragraph Border.
   /// </summary>
-  private static DMW.BorderType? GetRightBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetRightBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RightBorder>();
     if (element != null)
@@ -103,12 +103,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
   }
   
-  private static void SetRightBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetRightBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.RightBorder>();
     if (itemElement != null)
@@ -124,7 +124,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Identical Paragraphs.
   /// </summary>
-  private static DMW.BorderType? GetBetweenBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetBetweenBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BetweenBorder>();
     if (element != null)
@@ -132,12 +132,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BetweenBorder>(), value, diffs, objName);
   }
   
-  private static void SetBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BetweenBorder>();
     if (itemElement != null)
@@ -153,7 +153,7 @@ public static class ParagraphBordersConverter
   /// <summary>
   /// Paragraph Border Between Facing Pages.
   /// </summary>
-  private static DMW.BorderType? GetBarBorder(DXW.ParagraphBorders openXmlElement)
+  private static DMW.Border? GetBarBorder(DXW.ParagraphBorders openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BarBorder>();
     if (element != null)
@@ -161,12 +161,12 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
     return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BarBorder>(), value, diffs, objName);
   }
   
-  private static void SetBarBorder(DXW.ParagraphBorders openXmlElement, DMW.BorderType? value)
+  private static void SetBarBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BarBorder>();
     if (itemElement != null)

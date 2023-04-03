@@ -64,7 +64,7 @@ public class SdtProperties : ModelElement, IBodyElement
   /// </summary>
   public String? Tag { get; set; }
 
-  public Color3? Color { get; set; }
+  public Color? Color { get; set; }
 
   public AppearanceKind? Appearance { get; set; }
 

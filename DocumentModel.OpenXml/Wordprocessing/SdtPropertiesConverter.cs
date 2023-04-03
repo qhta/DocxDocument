@@ -206,7 +206,7 @@ public static class SdtPropertiesConverter
     }
   }
   
-  private static DMW.Color3? GetColor(DXW.SdtProperties openXmlElement)
+  private static DMW.Color? GetColor(DXW.SdtProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2013W.Color>();
     if (element != null)
@@ -214,12 +214,12 @@ public static class SdtPropertiesConverter
     return null;
   }
   
-  private static bool CmpColor(DXW.SdtProperties openXmlElement, DMW.Color3? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXW.SdtProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
   {
     return DMXW.Color3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013W.Color>(), value, diffs, objName);
   }
   
-  private static void SetColor(DXW.SdtProperties openXmlElement, DMW.Color3? value)
+  private static void SetColor(DXW.SdtProperties openXmlElement, DMW.Color? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2013W.Color>();
     if (itemElement != null)
@@ -234,12 +234,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.AppearanceKind? GetAppearance(DXW.SdtProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXO2013W.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value);
   }
   
   private static bool CmpAppearance(DXW.SdtProperties openXmlElement, DMW.AppearanceKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXO2013W.SdtAppearance, DMW.AppearanceKind>(openXmlElement.GetFirstChild<DXO2013W.Appearance>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetAppearance(DXW.SdtProperties openXmlElement, DMW.AppearanceKind? value)
@@ -248,13 +248,13 @@ public static class SdtPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>(itemElement, (DMW.AppearanceKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXO2013W.SdtAppearance, DMW.AppearanceKind>(itemElement, (DMW.AppearanceKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2013W.Appearance, DocumentFormat.OpenXml.Office2013.Word.SdtAppearance, DMW.AppearanceKind>((DMW.AppearanceKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2013W.Appearance, DXO2013W.SdtAppearance, DMW.AppearanceKind>((DMW.AppearanceKind)value));
   }
   
   private static Boolean? GetWebExtensionLinked(DXW.SdtProperties openXmlElement)

@@ -9,20 +9,20 @@ public class DivBorder: ModelElement
   /// <summary>
   ///   Top Border for HTML div.
   /// </summary>
-  public BorderType? TopBorder { get; set; }
+  public Border? TopBorder { get; set; }
 
   /// <summary>
   ///   Left Border for HTML div.
   /// </summary>
-  public BorderType? LeftBorder { get; set; }
+  public Border? LeftBorder { get; set; }
 
   /// <summary>
   ///   Bottom Border for HTML div.
   /// </summary>
-  public BorderType? BottomBorder { get; set; }
+  public Border? BottomBorder { get; set; }
 
   /// <summary>
   ///   Right Border for HTML div.
   /// </summary>
-  public BorderType? RightBorder { get; set; }
+  public Border? RightBorder { get; set; }
 }

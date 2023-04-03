@@ -1,49 +1,49 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Twips unit. 1 twip = 1/1440 inch.
+/// HalfPoints unit. 1 HalfPoint = 1/144 inch.
 /// </summary>
-[TypeConverter(typeof(TwipsTypeConverter))]
-public struct Twips: IComparable<Twips>
+[TypeConverter(typeof(HalfPointsTypeConverter))]
+public struct HalfPoints: IComparable<HalfPoints>
 {
   /// <summary>
   /// There is a small difference between real and nominal factors
   /// </summary>
-  const double TwipsInMM = 1440/25.4; //56,695238095238095238095238095238;
-  const double TwipsInCM = TwipsInMM/10.0;
-  const double TwipsInInch = 1440;
-  const double TwipsInPoint = 20;
+  const double HpsInMM = 144/25.4; //56.695238095238095238095238095238;
+  const double HpsInCM = HpsInMM/10.0;
+  const double HpsInInch = 144;
+  const double HpsInPoint = 2;
 
   private Int64 Value;
 
   /// <summary>
-  /// Constructor converting from string. 
+  /// Constructor converting from string.
   /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
-  public Twips(string str)
+  public HalfPoints(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*HpsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*HpsInCM;
       Value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*TwipsInInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*HpsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*TwipsInPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*HpsInPoint;
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -52,7 +52,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public Twips(UInt32 value)
+  public HalfPoints(UInt32 value)
   {
     Value = value;
   }
@@ -60,7 +60,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public Twips(Int32 value)
+  public HalfPoints(Int32 value)
   {
     Value = value;
   }
@@ -68,7 +68,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public Twips(UInt64 value)
+  public HalfPoints(UInt64 value)
   {
     Value = (Int64)value;
   }
@@ -76,7 +76,7 @@ public struct Twips: IComparable<Twips>
   /// <summary>
   /// Converting constructor from Int64 value.
   /// </summary>
-  public Twips(Int64 value)
+  public HalfPoints(Int64 value)
   {
     Value = value;
   }
@@ -85,25 +85,25 @@ public struct Twips: IComparable<Twips>
   /// Converts value to millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
-    => Value/TwipsInMM;
+    => Value/HpsInMM;
 
   /// <summary>
   /// Converts value to centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
-    => Value/TwipsInCM;
+    => Value/HpsInCM;
 
   /// <summary>
   /// Converts value to inches. Result is a double number.
   /// </summary>
   public double ToInch()
-    => Value/TwipsInInch;
+    => Value/HpsInInch;
 
   /// <summary>
   /// Converts value to points. Result is a double number.
   /// </summary>
   public double ToPoints()
-    => Value/TwipsInPoint;
+    => Value/HpsInPoint;
 
   /// <summary>
   /// Converts integer value to string.
@@ -124,7 +124,7 @@ public struct Twips: IComparable<Twips>
 
   /// <summary>
   /// Converts double value to string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// Unit can be determined as suffix "mm", "cm", "pt", or "in"
   /// </summary>
   public string ToString(int precision, string unit)
   {
@@ -141,51 +141,51 @@ public struct Twips: IComparable<Twips>
   {
     string format=$"F{precision}";
     if (unit.EndsWith("mm"))
-      return (Value/TwipsInMM).ToString(format, provider)+unit;
+      return (Value/HpsInMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/TwipsInCM).ToString(format, provider)+unit;
+      return (Value/HpsInCM).ToString(format, provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/TwipsInInch).ToString(format, provider)+unit;
+      return (Value/HpsInInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/TwipsInPoint).ToString(format, provider)+unit;
+      return (Value/HpsInPoint).ToString(format, provider)+unit;
     return Value.ToString();
   }
 
   /// <summary>
   /// Converts double value to string using unit
   /// and format provider to determine digits separator.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// Unit can be determined as suffix "mm" or "in" or "in."
   /// </summary>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
-      return (Value/TwipsInMM).ToString(provider)+unit;
+      return (Value/HpsInMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/TwipsInCM).ToString(provider)+unit;
+      return (Value/HpsInCM).ToString(provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/TwipsInInch).ToString(provider)+unit;
+      return (Value/HpsInInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/TwipsInPoint).ToString(provider)+unit;
+      return (Value/HpsInPoint).ToString(provider)+unit;
     return Value.ToString();
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator Twips(string value) { return new Twips(value); }
-  public static implicit operator string(Twips value) { return value.Value.ToString(); }
-  public static implicit operator Twips(Int16 value) { return new Twips(value); }
-  public static implicit operator Int16(Twips value) { return (Int16)value.Value; }
-  public static implicit operator Twips(UInt16 value) { return new Twips(value); }
-  public static implicit operator UInt16(Twips value) { return (UInt16)value.Value; }
-  public static implicit operator Twips(Int32 value) { return new Twips(value); }
-  public static implicit operator Int32(Twips value) { return (Int32)value.Value; }
-  public static implicit operator Twips(UInt32 value) { return new Twips(value); }
-  public static implicit operator UInt32(Twips value) { return (UInt32)value.Value; }
-  public static implicit operator Twips(Int64 value) { return new Twips(value); }
-  public static implicit operator Int64(Twips value) { return (Int64)value.Value; }
-  public static implicit operator Twips(UInt64 value) { return new Twips(value); }
-  public static implicit operator UInt64(Twips value) { return (UInt64)value.Value; }
+  public static implicit operator HalfPoints(string value) { return new HalfPoints(value); }
+  public static implicit operator string(HalfPoints value) { return value.Value.ToString(); }
+  public static implicit operator HalfPoints(Int16 value) { return new HalfPoints(value); }
+  public static implicit operator Int16(HalfPoints value) { return (Int16)value.Value; }
+  public static implicit operator HalfPoints(UInt16 value) { return new HalfPoints(value); }
+  public static implicit operator UInt16(HalfPoints value) { return (UInt16)value.Value; }
+  public static implicit operator HalfPoints(Int32 value) { return new HalfPoints(value); }
+  public static implicit operator Int32(HalfPoints value) { return (Int32)value.Value; }
+  public static implicit operator HalfPoints(UInt32 value) { return new HalfPoints(value); }
+  public static implicit operator UInt32(HalfPoints value) { return (UInt32)value.Value; }
+  public static implicit operator HalfPoints(Int64 value) { return new HalfPoints(value); }
+  public static implicit operator Int64(HalfPoints value) { return (Int64)value.Value; }
+  public static implicit operator HalfPoints(UInt64 value) { return new HalfPoints(value); }
+  public static implicit operator UInt64(HalfPoints value) { return (UInt64)value.Value; }
 
-  public int CompareTo(Twips other)
+  public int CompareTo(HalfPoints other)
   {
     return Value.CompareTo(other.Value);
   }

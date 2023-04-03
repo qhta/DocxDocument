@@ -1,18 +1,18 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// HalfPoints unit. 1 HalfPoints = 1/144 inch.
+/// EighthPoints unit. 1 EighthPoint = 1/576 inch.
 /// </summary>
-[TypeConverter(typeof(HpsTypeConverter))]
-public struct Hps: IComparable<Hps>
+[TypeConverter(typeof(EighthPointsTypeConverter))]
+public struct EighthPoints: IComparable<EighthPoints>
 {
   /// <summary>
   /// There is a small difference between real and nominal factors
   /// </summary>
-  const double hpsMM = 144/25.4; //56.695238095238095238095238095238;
-  const double hpsCM = hpsMM/10.0;
-  const double hpsInch = 144;
-  const double hpsPoint = 2;
+  const double EpsInMM = 576/25.4; //56.695238095238095238095238095238;
+  const double EpsInCM = EpsInMM/10.0;
+  const double EpsInInch = 576;
+  const double EpsInPoint = 8;
 
   private Int64 Value;
 
@@ -20,30 +20,30 @@ public struct Hps: IComparable<Hps>
   /// Constructor converting from string.
   /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
   /// </summary>
-  public Hps(string str)
+  public EighthPoints(string str)
   {
     if (str.EndsWith("mm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*hpsMM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*EpsInMM;
       Value = (Int64)val;
     }
     if (str.EndsWith("cm"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*hpsCM;
+      var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture)*EpsInCM;
       Value = (Int64)val;
     }
     else if (str.EndsWith("in"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*hpsInch;
+      var val = Double.Parse(str.Replace(",","."),System.Globalization.CultureInfo.InvariantCulture)*EpsInInch;
       Value = (int)val;
     }
     else if (str.EndsWith("pt"))
     {
       str = str.Substring(0, str.Length -2).Trim();
-      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*hpsPoint;
+      var val = Double.Parse(str.Replace(",", "."), System.Globalization.CultureInfo.InvariantCulture)*EpsInPoint;
       Value = (Int64)val;
     }
     else  Value = Int32.Parse(str);
@@ -52,7 +52,7 @@ public struct Hps: IComparable<Hps>
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public Hps(UInt32 value)
+  public EighthPoints(UInt32 value)
   {
     Value = value;
   }
@@ -60,7 +60,7 @@ public struct Hps: IComparable<Hps>
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public Hps(Int32 value)
+  public EighthPoints(Int32 value)
   {
     Value = value;
   }
@@ -68,7 +68,7 @@ public struct Hps: IComparable<Hps>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public Hps(UInt64 value)
+  public EighthPoints(UInt64 value)
   {
     Value = (Int64)value;
   }
@@ -76,7 +76,7 @@ public struct Hps: IComparable<Hps>
   /// <summary>
   /// Converting constructor from Int64 value.
   /// </summary>
-  public Hps(Int64 value)
+  public EighthPoints(Int64 value)
   {
     Value = value;
   }
@@ -85,25 +85,25 @@ public struct Hps: IComparable<Hps>
   /// Converts value to millimeters. Result is a double number.
   /// </summary>
   public double ToMM()
-    => Value/hpsMM;
+    => Value/EpsInMM;
 
   /// <summary>
   /// Converts value to centimeters. Result is a double number.
   /// </summary>
   public double ToCM()
-    => Value/hpsCM;
+    => Value/EpsInCM;
 
   /// <summary>
   /// Converts value to inches. Result is a double number.
   /// </summary>
   public double ToInch()
-    => Value/hpsInch;
+    => Value/EpsInInch;
 
   /// <summary>
   /// Converts value to points. Result is a double number.
   /// </summary>
   public double ToPoints()
-    => Value/hpsPoint;
+    => Value/EpsInPoint;
 
   /// <summary>
   /// Converts integer value to string.
@@ -141,13 +141,13 @@ public struct Hps: IComparable<Hps>
   {
     string format=$"F{precision}";
     if (unit.EndsWith("mm"))
-      return (Value/hpsMM).ToString(format, provider)+unit;
+      return (Value/EpsInMM).ToString(format, provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/hpsCM).ToString(format, provider)+unit;
+      return (Value/EpsInCM).ToString(format, provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/hpsInch).ToString(format, provider)+unit;
+      return (Value/EpsInInch).ToString(format, provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/hpsPoint).ToString(format, provider)+unit;
+      return (Value/EpsInPoint).ToString(format, provider)+unit;
     return Value.ToString();
   }
 
@@ -159,33 +159,33 @@ public struct Hps: IComparable<Hps>
   public string ToString(IFormatProvider provider, string unit)
   {
     if (unit.EndsWith("mm"))
-      return (Value/hpsMM).ToString(provider)+unit;
+      return (Value/EpsInMM).ToString(provider)+unit;
     if (unit.EndsWith("cm"))
-      return (Value/hpsCM).ToString(provider)+unit;
+      return (Value/EpsInCM).ToString(provider)+unit;
     if (unit.EndsWith("in"))
-      return (Value/hpsInch).ToString(provider)+unit;
+      return (Value/EpsInInch).ToString(provider)+unit;
     if (unit.EndsWith("pt"))
-      return (Value/hpsPoint).ToString(provider)+unit;
+      return (Value/EpsInPoint).ToString(provider)+unit;
     return Value.ToString();
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator Hps(string value) { return new Hps(value); }
-  public static implicit operator string(Hps value) { return value.Value.ToString(); }
-  public static implicit operator Hps(Int16 value) { return new Hps(value); }
-  public static implicit operator Int16(Hps value) { return (Int16)value.Value; }
-  public static implicit operator Hps(UInt16 value) { return new Hps(value); }
-  public static implicit operator UInt16(Hps value) { return (UInt16)value.Value; }
-  public static implicit operator Hps(Int32 value) { return new Hps(value); }
-  public static implicit operator Int32(Hps value) { return (Int32)value.Value; }
-  public static implicit operator Hps(UInt32 value) { return new Hps(value); }
-  public static implicit operator UInt32(Hps value) { return (UInt32)value.Value; }
-  public static implicit operator Hps(Int64 value) { return new Hps(value); }
-  public static implicit operator Int64(Hps value) { return (Int64)value.Value; }
-  public static implicit operator Hps(UInt64 value) { return new Hps(value); }
-  public static implicit operator UInt64(Hps value) { return (UInt64)value.Value; }
+  public static implicit operator EighthPoints(string value) { return new EighthPoints(value); }
+  public static implicit operator string(EighthPoints value) { return value.Value.ToString(); }
+  public static implicit operator EighthPoints(Int16 value) { return new EighthPoints(value); }
+  public static implicit operator Int16(EighthPoints value) { return (Int16)value.Value; }
+  public static implicit operator EighthPoints(UInt16 value) { return new EighthPoints(value); }
+  public static implicit operator UInt16(EighthPoints value) { return (UInt16)value.Value; }
+  public static implicit operator EighthPoints(Int32 value) { return new EighthPoints(value); }
+  public static implicit operator Int32(EighthPoints value) { return (Int32)value.Value; }
+  public static implicit operator EighthPoints(UInt32 value) { return new EighthPoints(value); }
+  public static implicit operator UInt32(EighthPoints value) { return (UInt32)value.Value; }
+  public static implicit operator EighthPoints(Int64 value) { return new EighthPoints(value); }
+  public static implicit operator Int64(EighthPoints value) { return (Int64)value.Value; }
+  public static implicit operator EighthPoints(UInt64 value) { return new EighthPoints(value); }
+  public static implicit operator UInt64(EighthPoints value) { return (UInt64)value.Value; }
 
-  public int CompareTo(Hps other)
+  public int CompareTo(EighthPoints other)
   {
     return Value.CompareTo(other.Value);
   }

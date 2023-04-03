@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-internal class HpsTypeConverter : TypeConverter
+internal class PointsTypeConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -20,13 +20,13 @@ internal class HpsTypeConverter : TypeConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new Hps(str);
+      return new Points(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is Hps val)
+    if (value is Points val)
       return val.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }
