@@ -1,47 +1,68 @@
 ﻿namespace DocumentModel;
 
 /// <summary>
-/// Percent unit.
+/// BytePercent unit.
 /// </summary>
-[TypeConverter(typeof(PercentTypeConverter))]
-public struct Percent: IComparable<Percent>
+[TypeConverter(typeof(BytePercentTypeConverter))]
+public struct BytePercent: IComparable<BytePercent>
 {
-  private Decimal Value;
+  private Byte Value;
 
   /// <summary>
   /// Constructor converting from string. 
   /// Unit can be determined as suffix "%".
   /// </summary>
-  public Percent(string str)
+  public BytePercent(string str)
   {
     if (str.EndsWith("%"))
+    {
       str = str.Substring(0, str.Length - 1);
-    var val = Decimal.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
-    Value = val;
+      var val = Byte.Parse(str);
+      Value = val;
+    }
+  }
+
+  /// <summary>
+  /// Converting constructor from Byte value.
+  /// </summary>
+  public BytePercent(Byte value)
+  {
+    Value = (Byte)value;
   }
 
   /// <summary>
   /// Converting constructor from UInt32 value.
   /// </summary>
-  public Percent(UInt32 value)
+  public BytePercent(UInt32 value)
   {
-    Value = value;
+    Value = (Byte)value;
   }
 
   /// <summary>
   /// Converting constructor from Int32 value.
   /// </summary>
-  public Percent(Int32 value)
+  public BytePercent(Int32 value)
   {
-    Value = value;
+    Value = (Byte)value;
   }
 
   /// <summary>
-  /// Converting constructor from UInt64 value.
+  /// Converts value from hexadecimal string.
   /// </summary>
-  public Percent(Decimal value)
+  public static BytePercent FromHexString(string str)
   {
-    Value = value;
+    var val = Byte.Parse(str, NumberStyles.HexNumber);
+    val = (Byte)(System.Math.Round(val*100/255.0));
+    return new BytePercent(val);
+  }
+
+  /// <summary>
+  /// Converts value scale to hexadecimal string (two hex digits).
+  /// </summary>
+  public string ToHexString()
+  {
+    var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
+    return val.ToString("2X");
   }
 
   /// <summary>
@@ -97,22 +118,18 @@ public struct Percent: IComparable<Percent>
   }
 
   #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator Percent(string value) { return new Percent(value); }
-  public static implicit operator string(Percent value) { return value.Value.ToString(); }
-  public static implicit operator Percent(Int16 value) { return new Percent(value); }
-  public static implicit operator Int16(Percent value) { return (Int16)value.Value; }
-  public static implicit operator Percent(UInt16 value) { return new Percent(value); }
-  public static implicit operator UInt16(Percent value) { return (UInt16)value.Value; }
-  public static implicit operator Percent(Int32 value) { return new Percent(value); }
-  public static implicit operator Int32(Percent value) { return (Int32)value.Value; }
-  public static implicit operator Percent(UInt32 value) { return new Percent(value); }
-  public static implicit operator UInt32(Percent value) { return (UInt32)value.Value; }
-  public static implicit operator Percent(Int64 value) { return new Percent(value); }
-  public static implicit operator Int64(Percent value) { return (Int64)value.Value; }
-  public static implicit operator Percent(UInt64 value) { return new Percent(value); }
-  public static implicit operator UInt64(Percent value) { return (UInt64)value.Value; }
+  public static implicit operator BytePercent(string value) { return new BytePercent(value); }
+  public static implicit operator string(BytePercent value) { return value.Value.ToString(); }
+  public static implicit operator BytePercent(Int16 value) { return new BytePercent(value); }
+  public static implicit operator Int16(BytePercent value) { return (Int16)value.Value; }
+  public static implicit operator BytePercent(UInt16 value) { return new BytePercent(value); }
+  public static implicit operator UInt16(BytePercent value) { return (UInt16)value.Value; }
+  public static implicit operator BytePercent(Int32 value) { return new BytePercent(value); }
+  public static implicit operator Int32(BytePercent value) { return (Int32)value.Value; }
+  public static implicit operator BytePercent(UInt32 value) { return new BytePercent(value); }
+  public static implicit operator UInt32(BytePercent value) { return (UInt32)value.Value; }
 
-  public int CompareTo(Percent other)
+  public int CompareTo(BytePercent other)
   {
     return Value.CompareTo(other.Value);
   }

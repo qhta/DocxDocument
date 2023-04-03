@@ -56,4 +56,14 @@ public struct RGB: IEquatable<RGB>
   {
     return (Int32)this;
   }
+
+  public RGB()
+  {
+    IsAuto = true;
+  }
+
+  public bool IsAuto { get; set; } = false;
+
+  public readonly static RGB Auto = new RGB();
+
 }

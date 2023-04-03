@@ -11,7 +11,7 @@ namespace DocumentModel.Wordprocessing;
 public class EmbeddedObject: ElementCollection<IEmbeddedObjectElement>, IRunElement
 {
   /// <summary>
-  ///   dxaOrig
+  ///   valOrig
   /// </summary>
   public String? DxaOriginal { get; set; }
 

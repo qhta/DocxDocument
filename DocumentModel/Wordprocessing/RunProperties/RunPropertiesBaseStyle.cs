@@ -119,7 +119,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   before the following character is rendered in the document. This property has an effect equivalent 
   ///   to the additional character pitched added by a document grid applied to the contents of a run. 
   /// </summary>
-  public DXA? Spacing { get; set; }
+  public Twips? Spacing { get; set; }
 
   /// <summary>
   ///   Specifies the amount by which each character shall be expanded or when the character is rendered in the document. 
@@ -135,7 +135,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   The Value specifies the smallest font size which shall have its kerning automatically adjusted if this setting is specified. 
   ///   If the font size in the sz element (§17.3.2.38) is smaller than this value, then no font kerning shall be performed. 
   /// </summary>
-  public HPS? Kern { get; set; }
+  public Hps? Kern { get; set; }
 
   /// <summary>
   ///   Specifies whether the current run should use the document grid characters per line settings defined in the docGrid element 
@@ -160,7 +160,7 @@ public class RunPropertiesBaseStyle: ModelElement
   ///   If the value is negative, then the parent run shall be lowered below the baseline 
   ///   of the surrounding text by the specified number of half-points. 
   /// </summary>
-  public HPS? Position { get; set; }
+  public Hps? Position { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run should be displayed as if they have an outline, 

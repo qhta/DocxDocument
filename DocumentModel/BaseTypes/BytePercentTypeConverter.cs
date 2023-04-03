@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-internal class DXATypeConverter : TypeConverter
+internal class BytePercentTypeConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -20,14 +20,14 @@ internal class DXATypeConverter : TypeConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new DXA(str);
+      return new BytePercent(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is DXA dxa)
-      return dxa.ToString();
+    if (value is BytePercent val)
+      return val.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }
 

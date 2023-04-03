@@ -13,7 +13,7 @@ public enum TableWidthKind
   Nil,
 
   /// <summary>
-  ///   dxa.
+  ///   val.
   /// </summary>
   Dxa
 }

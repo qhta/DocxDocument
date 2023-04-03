@@ -9,35 +9,35 @@ public class PageMargin: ModelElement, ISectionPropertiesElement
   /// <summary>
   ///   Top Margin Spacing
   /// </summary>
-  public DXA? Top { get; set; }
+  public Twips? Top { get; set; }
 
   /// <summary>
   ///   Right Margin Spacing
   /// </summary>
-  public DXA? Right { get; set; }
+  public Twips? Right { get; set; }
 
   /// <summary>
   ///   Page Bottom Spacing
   /// </summary>
-  public DXA? Bottom { get; set; }
+  public Twips? Bottom { get; set; }
 
   /// <summary>
   ///   Left Margin Spacing
   /// </summary>
-  public DXA? Left { get; set; }
+  public Twips? Left { get; set; }
 
   /// <summary>
   ///   Spacing to Top of Header
   /// </summary>
-  public DXA? Header { get; set; }
+  public Twips? Header { get; set; }
 
   /// <summary>
   ///   Spacing to Bottom of Footer
   /// </summary>
-  public DXA? Footer { get; set; }
+  public Twips? Footer { get; set; }
 
   /// <summary>
   ///   Page Gutter Spacing
   /// </summary>
-  public DXA? Gutter { get; set; }
+  public Twips? Gutter { get; set; }
 }

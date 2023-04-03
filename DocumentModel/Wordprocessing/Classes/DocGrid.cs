@@ -14,10 +14,10 @@ public class DocGrid: ModelElement, ISectionPropertiesElement
   /// <summary>
   ///   Document Grid Line Pitch
   /// </summary>
-  public DXA? LinePitch { get; set; }
+  public Twips? LinePitch { get; set; }
 
   /// <summary>
   ///   Document Grid Character Pitch
   /// </summary>
-  public DXA? CharacterSpace { get; set; }
+  public Twips? CharacterSpace { get; set; }
 }

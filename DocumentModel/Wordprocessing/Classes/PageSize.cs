@@ -9,12 +9,12 @@ public class PageSize: ModelElement, ISectionPropertiesElement
   /// <summary>
   ///   Page Width
   /// </summary>
-  public DXA? Width { get; set; }
+  public Twips? Width { get; set; }
 
   /// <summary>
   ///   Page Height
   /// </summary>
-  public DXA? Height { get; set; }
+  public Twips? Height { get; set; }
 
   /// <summary>
   ///   Page Orientation

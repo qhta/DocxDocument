@@ -15,6 +15,6 @@ public class FitText: ModelElement
   /// <summary>
   ///   Value
   /// </summary>
-  public DXA? Value { get; set; }
+  public Twips? Value { get; set; }
 
 }
