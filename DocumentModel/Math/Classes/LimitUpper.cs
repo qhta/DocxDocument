@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Upper-Limit Function.
 /// </summary>
-public class LimitUpper: ModelElement, ICommonMathElement
+public class LimitUpper: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Upper Limit Properties.

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide.
 /// </summary>
-public class Ruby: ModelElement, IRunElement
+public class Ruby: ModelElement, IRunContent
 {
   /// <summary>
   ///   Phonetic Guide Properties.

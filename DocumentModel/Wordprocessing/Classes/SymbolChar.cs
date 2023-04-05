@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///  Instead, this character shall be determined by pulling the character with the hexadecimal value 
 ///  specified in the char attribute from the font specified in the font attribute.
 /// </summary>
-public class SymbolChar: ModelElement, IRunElement
+public class SymbolChar: ModelElement, IRunContent
 {
   /// <summary>
   ///   Symbol Character Font

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageMargin Class.
 /// </summary>
-public class PageMargin: ModelElement, ISectionPropertiesElement
+public class PageMargin: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   Top Margin Spacing

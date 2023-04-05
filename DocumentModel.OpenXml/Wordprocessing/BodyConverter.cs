@@ -12,7 +12,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class BodyConverter
 {
   #region Body elements conversion
-  public static DMW.IBodyElement? CreateBodyElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IBodyContent? CreateBodyElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -54,7 +54,7 @@ public static class BodyConverter
       if (openXmlElement is DXW.SectionProperties sectionProperties && model is DMW.SectionProperties sectionPropertiesModel)
         return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
@@ -68,7 +68,7 @@ public static class BodyConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  public static OpenXmlElement CreateOpenXmlElement(DMW.IBodyElement model)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IBodyContent model)
   {
     if (model is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -83,7 +83,7 @@ public static class BodyConverter
     if (model is DMW.SectionProperties sectionProperties)
       return DMXW.SectionPropertiesConverter.CreateOpenXmlElement(sectionProperties);
 
-    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
+    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (commonMarker != null) return commonMarker;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in BodyConverter.CreateOpenXmlParagraphElement method");
@@ -96,7 +96,7 @@ public static class BodyConverter
     if (openXmlElement != null)
     {
       var model = new DMW.Body();
-      ElementCollectionConverter<DMW.IBodyElement>.FillModelElementCollection(openXmlElement, model, 
+      ElementCollectionConverter<DMW.IBodyContent>.FillModelElementCollection(openXmlElement, model, 
         (CreateModelElementMethod)CreateBodyElement);
       return model;
     }
@@ -105,7 +105,7 @@ public static class BodyConverter
 
   public static bool CompareModelElement(DXW.Body? openXmlElement, DMW.Body? model, DiffList? diffs, string? objName)
   {
-     return ElementCollectionConverter<IBodyElement>.CompareOpenXmlElementCollection
+     return ElementCollectionConverter<IBodyContent>.CompareOpenXmlElementCollection
         (openXmlElement, model, (CompareOpenXmlElementMethod)CompareBodyElement, diffs, objName);
   }
 

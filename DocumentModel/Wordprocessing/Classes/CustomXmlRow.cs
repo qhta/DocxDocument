@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Row-Level Custom XML Element.
 /// </summary>
-public class CustomXmlRow: ModelElement, ITableElement, ISdtRowElement
+public class CustomXmlRow: ModelElement, ITableContent, ISdtRowContent
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 

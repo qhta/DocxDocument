@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BidirectionalEmbedding Class.
 /// </summary>
-public class BidirectionalEmbedding: ModelElement, ICommonRunElement
+public class BidirectionalEmbedding: ModelElement, ICommonRunContent
 {
   /// <summary>
   ///   val

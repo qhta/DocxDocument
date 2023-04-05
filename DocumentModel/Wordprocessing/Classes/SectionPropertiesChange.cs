@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Revision Information for Section Properties.
 /// </summary>
-public class SectionPropertiesChange: ModelElement, ISectionPropertiesElement
+public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   author

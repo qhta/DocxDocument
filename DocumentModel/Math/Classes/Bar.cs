@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Bar.
 /// </summary>
-public class Bar: ModelElement, ICommonMathElement
+public class Bar: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Bar Properties.

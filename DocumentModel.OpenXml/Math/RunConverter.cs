@@ -83,7 +83,7 @@ public static class RunConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BreakConverter.CreateOpenXmlElement<DXW.Break>(value);
+      itemElement = DMXW.BreakConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

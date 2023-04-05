@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Delimiter Function.
 /// </summary>
-public class Delimiter: ModelElement, ICommonMathElement
+public class Delimiter: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Delimiter Properties.

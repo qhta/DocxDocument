@@ -34,7 +34,7 @@ public static class TableCellConverter
   #endregion
 
   #region TableCell elements conversion
-  public static DMW.ITableCellElement? CreateTableCellElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ITableCellContent? CreateTableCellElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -55,7 +55,7 @@ public static class TableCellConverter
     return null;
   }
 
-  public static bool CompareTableCellElement(DX.OpenXmlElement? openXmlElement, DMW.ITableCellElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareTableCellElement(DX.OpenXmlElement? openXmlElement, DMW.ITableCellContent? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -70,7 +70,7 @@ public static class TableCellConverter
       if (openXmlElement is DXW.AltChunk altChunk && value is DMW.AltChunk altChunkModel)
         return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
 
-      if (value is DMW.ICommonElement commonElementModel)
+      if (value is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
@@ -84,7 +84,7 @@ public static class TableCellConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DMW.ITableCellElement value)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.ITableCellContent value)
   {
     if (value is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -95,7 +95,7 @@ public static class TableCellConverter
     if (value is DMW.CustomXmlBlock customXmlBlock)
       return DMXW.CustomXmlBlockConverter.CreateOpenXmlElement(customXmlBlock);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonElement);
+    var result = CommonMarkersConverter.CreateOpenXmlElement(value as DMW.ICommonContent);
     if (result != null) return result;
     throw new InvalidOperationException($"Type of type \"{value.GetType()}\" not supported in TableCellConverter.CreateOpenXmlParagraphElement method");
   }

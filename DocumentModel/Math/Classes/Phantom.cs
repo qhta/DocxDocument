@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Phantom Function.
 /// </summary>
-public class Phantom: ModelElement, ICommonMathElement
+public class Phantom: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Phantom Properties.

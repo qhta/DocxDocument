@@ -18,7 +18,7 @@ public static class SdtBlockConverter
   /// <param name="openXmlElement">Item element of SdtContentBlock element</param>
   /// <returns>Newly created model element (or <c>null</c> if openXml element is <c>null</c>).</returns>
   /// <exception cref="InvalidOperationException">Thrown if openXml element type is not recognized.</exception>
-  public static DMW.ISdtBlockElement? CreateSdtContentBlockModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtBlockContent? CreateSdtContentBlockModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -58,7 +58,7 @@ public static class SdtBlockConverter
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
         return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
@@ -89,7 +89,7 @@ public static class SdtBlockConverter
     if (model is DMW.CustomXmlBlock customXmlBlock)
       return DMXW.CustomXmlBlockConverter.CreateOpenXmlElement(customXmlBlock);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
+    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
     throw new InvalidOperationException($"Model of type \"{model.GetType()}\" not supported in SdtBlockConverter.CreateOpenXmlParagraphElement method");
   }
@@ -129,7 +129,7 @@ public static class SdtBlockConverter
       var model = new DMW.SdtBlock();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      ElementCollectionConverter<DMW.ISdtBlockElement>.FillModelElementCollection(openXmlElement.SdtContentBlock, model, 
+      ElementCollectionConverter<DMW.ISdtBlockContent>.FillModelElementCollection(openXmlElement.SdtContentBlock, model, 
         (CreateModelElementMethod)CreateSdtContentBlockModelElement);
       return model;
     }
@@ -153,7 +153,7 @@ public static class SdtBlockConverter
         ok = false;
       if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<DMW.ISdtBlockElement>.CompareOpenXmlElementCollection(openXmlElement.SdtContentBlock, model,
+      if (!ElementCollectionConverter<DMW.ISdtBlockContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentBlock, model,
         (CompareOpenXmlElementMethod)CompareSdtContentBlockElement, diffs, objName))
         ok = false;
       return ok;
@@ -185,7 +185,7 @@ public static class SdtBlockConverter
   {
     SdtElementConverter.SetSdtProperties(openXmlElement, model.SdtProperties);
     SdtElementConverter.SetSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties);
-    return ElementCollectionConverter<DMW.ISdtBlockElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<DMW.ISdtBlockContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       (CompareOpenXmlElementMethod)CompareSdtContentBlockElement,
       (UpdateOpenXmlElementMethod)UpdateSdtContentBlockOpenXmlElement,
       (CreateOpenXmlElementMethod)CreateSdtContentBlockOpenXmlElement);

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the DocGrid Class.
 /// </summary>
-public class DocGrid: ModelElement, ISectionPropertiesElement
+public class DocGrid: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   Document Grid Type

@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   VML Object.
 /// </summary>
-public class Picture: ModelElement, IRunElement
+public class Picture: ModelElement, IRunContent
 {
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.

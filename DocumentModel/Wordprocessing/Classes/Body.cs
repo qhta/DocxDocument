@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The document body contains what is referred to as block-level markup - 
 ///   markup which can exist as a sibling element to paragraphs in a document.
 /// </summary>
-public class Body : ElementCollection<IBodyElement>
+public class Body : ElementCollection<IBodyContent>
 {
   public Body()
   {

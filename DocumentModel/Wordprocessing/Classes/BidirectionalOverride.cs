@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BidirectionalOverride Class.
 /// </summary>
-public class BidirectionalOverride: ModelElement, ICommonRunElement
+public class BidirectionalOverride: ModelElement, ICommonRunContent
 {
   /// <summary>
   ///   val

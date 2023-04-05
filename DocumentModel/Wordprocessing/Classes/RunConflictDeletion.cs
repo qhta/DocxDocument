@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the RunConflictDeletion Class.
 /// </summary>
-public class RunConflictDeletion: ModelElement, ICommonElement
+public class RunConflictDeletion: ModelElement, ICommonContent
 {
   public SdtRun? SdtRun { get; set; }
 

@@ -19,7 +19,7 @@ public static class ContentBlockContentConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -88,7 +88,7 @@ public static class ContentBlockContentConverter
     return false;
   }
 
-  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonElement? value)
+  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonContent? value)
   {
     if (value is DMW.ProofError proofError)
       return DMXW.ProofErrorConverter.CreateOpenXmlElement(proofError);

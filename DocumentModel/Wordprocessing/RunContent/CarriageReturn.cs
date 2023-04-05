@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///  Represents a carriage return character in a text run. 
@@ -7,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 /// The behavior of a carriage return in run content shall be identical to a break character with null type and clear attributes, 
 /// which shall end the current line and find the next available line on which to continue.
 /// </summary>
-public class CarriageReturn: ModelElement, IRunElement
+public class CarriageReturn: ModelElement, IRunContent
 {
 }

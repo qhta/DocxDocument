@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MarkupType Class.
 /// </summary>
-public class MarkupType2: ModelElement, ICommonElement
+public class MarkupType2: ModelElement, ICommonContent
 {
   /// <summary>
   ///   Annotation Identifier

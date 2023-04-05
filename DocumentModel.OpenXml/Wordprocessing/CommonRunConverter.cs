@@ -11,7 +11,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommonRunConverter
 {
-  public static DMW.ICommonRunElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ICommonRunContent? CreateModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
@@ -32,7 +32,7 @@ public static class CommonRunConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonRunElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonRunContent? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,7 +59,7 @@ public static class CommonRunConverter
     return false;
   }
 
-  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonRunElement? value)
+  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonRunContent? value)
   {
     if (value is DMW.Run run)
       return DMXW.RunConverter.CreateOpenXmlElement(run);
