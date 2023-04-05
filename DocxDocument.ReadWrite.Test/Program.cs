@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestSections();
+    RunTestBody();
   }
 
   private static void RunTestSections()
@@ -23,7 +23,7 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    //testInstance.TestReadDocumentBody(/*"_Jakość oprogramowania.docx", true*/);
+    testInstance.TestReadDocumentBody("_Jakość oprogramowania.docx", true);
     testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }

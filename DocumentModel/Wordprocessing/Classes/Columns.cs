@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents the columns layout in a section.
 /// </summary>
-public class Columns: ModelElement, ISectionPropertiesElement
+public class Columns: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   Equal Column Widths

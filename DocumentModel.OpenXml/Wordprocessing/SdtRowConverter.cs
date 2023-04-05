@@ -15,7 +15,7 @@ public static class SdtRowConverter
   /// <param name="openXmlElement">Item element of SdtContentRow element</param>
   /// <returns>Newly created model element (or <c>null</c> if openXml element is <c>null</c>).</returns>
   /// <exception cref="InvalidOperationException">Thrown if openXml element type is not recognized.</exception>
-  public static DMW.ISdtRowElement? CreateSdtContentRowModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtRowContent? CreateSdtContentRowModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.TableRow tableRow)
       return DMXW.TableRowConverter.CreateModelElement(tableRow);
@@ -51,7 +51,7 @@ public static class SdtRowConverter
       if (openXmlElement is DXW.CustomXmlRow customXmlRow && model is DMW.CustomXmlRow customXmlRowModel)
         return DMXW.CustomXmlRowConverter.CompareModelElement(customXmlRow, customXmlRowModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
@@ -79,7 +79,7 @@ public static class SdtRowConverter
     if (model is DMW.CustomXmlRow customXmlRow)
       return DMXW.CustomXmlRowConverter.CreateOpenXmlElement(customXmlRow);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
+    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRowConverter.CreateOpenXmlParagraphElement method");
   }
@@ -120,7 +120,7 @@ public static class SdtRowConverter
       var model = new DMW.SdtRow();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      ElementCollectionConverter<DMW.ISdtRowElement>.FillModelElementCollection(openXmlElement.SdtContentRow, model, 
+      ElementCollectionConverter<DMW.ISdtRowContent>.FillModelElementCollection(openXmlElement.SdtContentRow, model, 
         (CreateModelElementMethod)CreateSdtContentRowModelElement);
       return model;
     }
@@ -144,7 +144,7 @@ public static class SdtRowConverter
         ok = false;
       if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<DMW.ISdtRowElement>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRow, model,
+      if (!ElementCollectionConverter<DMW.ISdtRowContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRow, model,
         (CompareOpenXmlElementMethod)CompareSdtContentRowElement, diffs, objName))
       return ok;
     }
@@ -177,7 +177,7 @@ public static class SdtRowConverter
   {
     SdtElementConverter.SetSdtProperties(openXmlElement, model.SdtProperties);
     SdtElementConverter.SetSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties);
-    return ElementCollectionConverter<DMW.ISdtRowElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<DMW.ISdtRowContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       (CompareOpenXmlElementMethod)CompareSdtContentRowElement,
       (UpdateOpenXmlElementMethod)UpdateSdtContentRowOpenXmlElement,
       (CreateOpenXmlElementMethod)CreateSdtContentRowOpenXmlElement);

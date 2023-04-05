@@ -11,7 +11,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommonMarkersConverter
 {
-  public static DMW.ICommonElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ICommonContent? CreateModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.ProofError proofError)
       return DMXW.ProofErrorConverter.CreateModelElement(proofError);
@@ -74,7 +74,7 @@ public static class CommonMarkersConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -143,7 +143,7 @@ public static class CommonMarkersConverter
     return false;
   }
 
-  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonElement? value)
+  public static OpenXmlElement? CreateOpenXmlElement(DMW.ICommonContent? value)
   {
     if (value is DMW.ProofError proofError)
       return DMXW.ProofErrorConverter.CreateOpenXmlElement(proofError);
@@ -206,7 +206,7 @@ public static class CommonMarkersConverter
     return null;
   }
 
-    public static bool? UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonElement? value)
+    public static bool? UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? value)
   {
     if (openXmlElement != null && value != null)
     {

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Cell.
 /// </summary>
-public class TableCell: ElementCollection<ITableCellElement>, ITableRowElement, ISdtCellElement
+public class TableCell: ElementCollection<ITableCellContent>, ITableRowContent, ISdtCellContent
 {
   /// <summary>
   ///   Table Cell Properties.

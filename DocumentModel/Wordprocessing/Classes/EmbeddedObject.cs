@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   The layout properties of this embedded object, as well as an optional static representation, 
 ///   are specified using the drawing element.
 /// </summary>
-public class EmbeddedObject: ElementCollection<IEmbeddedObjectElement>, IRunElement
+public class EmbeddedObject: ElementCollection<IEmbeddedObjectContent>, IRunContent
 {
   /// <summary>
   ///   valOrig

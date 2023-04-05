@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Each document body has one SectionProperties element at the end. This element represents properties of the last section of the document.
 ///   Other SectionProperties are contained in paragraphs and represent the properties of just ended sections.
 /// </summary>
-public class Section : LinkedList<IBodyElement>
+public class Section : LinkedList<IBodyContent>
 {
   public SectionProperties? Properties { get; set; }
 
@@ -29,7 +29,7 @@ public class Section : LinkedList<IBodyElement>
     return index;
   }
 
-  public void Add(IBodyElement element)
+  public void Add(IBodyContent element)
   {
     AddLast(element);
   }

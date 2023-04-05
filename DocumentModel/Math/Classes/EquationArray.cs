@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Equation-Array Function.
 /// </summary>
-public class EquationArray: ModelElement, ICommonMathElement
+public class EquationArray: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Equation Array Properties.

@@ -211,7 +211,7 @@ public static class ParagraphConverter
   #endregion
 
   #region Paragraph elements conversion
-  public static DMW.IParagraphElement? CreateParagraphElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IParagraphContent? CreateParagraphElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.ParagraphProperties)
       return null;
@@ -266,13 +266,13 @@ public static class ParagraphConverter
       if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
         return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, subDocumentReferenceModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathElement commonMathModel)
+      if (model is DMMath.ICommonMathContent commonMathModel)
       {
         var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
         if (result != null)
@@ -306,10 +306,10 @@ public static class ParagraphConverter
     if (model is DMW.SubDocumentReference subDocumentReference)
       return DMXW.RelationshipTypeConverter.CreateOpenXmlElement(subDocumentReference);
 
-    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
+    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (commonMarker != null) return commonMarker;
 
-    var commonMathElement = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathElement);
+    var commonMathElement = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathContent);
     if (commonMathElement != null) return commonMathElement;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in ParagraphConverter.CreateOpenXmlParagraphElement method");
@@ -336,13 +336,13 @@ public static class ParagraphConverter
       if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
         return DMXW.RelationshipTypeConverter.UpdateOpenXmlElement(subDocumentReference, subDocumentReferenceModel);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.UpdateOpenXmlElement(openXmlElement, commonElementModel);
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathElement commonMathModel)
+      if (model is DMMath.ICommonMathContent commonMathModel)
       {
         var result = CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
         if (result != null)
@@ -370,7 +370,7 @@ public static class ParagraphConverter
       model.TextId = GetTextId(openXmlElement);
       model.NoSpellError = GetNoSpellError(openXmlElement);
       model.ParagraphProperties = GetParagraphProperties(openXmlElement);
-      ElementCollectionConverter<IParagraphElement>.FillModelElementCollection(openXmlElement, model, 
+      ElementCollectionConverter<IParagraphContent>.FillModelElementCollection(openXmlElement, model, 
         (CreateModelElementMethod)CreateParagraphElement);
       return model;
     }
@@ -400,7 +400,7 @@ public static class ParagraphConverter
         ok = false;
       if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<IParagraphElement>.CompareOpenXmlElementCollection(
+      if (!ElementCollectionConverter<IParagraphContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model, 
         (CompareOpenXmlElementMethod)CompareParagraphElement, diffs, objName))
         ok = false;
@@ -429,7 +429,7 @@ public static class ParagraphConverter
     SetTextId(openXmlElement, model.TextId);
     SetNoSpellError(openXmlElement, model.NoSpellError);
     SetParagraphProperties(openXmlElement, model.ParagraphProperties);
-    return ElementCollectionConverter<IParagraphElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<IParagraphContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       (CompareOpenXmlElementMethod)CompareParagraphElement,
       (UpdateOpenXmlElementMethod)UpdateOpenXmlParagraphElement,
       (CreateOpenXmlElementMethod)CreateOpenXmlParagraphElement);

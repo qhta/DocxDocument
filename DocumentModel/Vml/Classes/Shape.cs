@@ -8,7 +8,7 @@ namespace DocumentModel.Vml;
 /// <summary>
 ///   Shape Definition.
 /// </summary>
-public class Shape: ModelElement, IEmbeddedObjectElement
+public class Shape: ModelElement, IEmbeddedObjectContent
 {
   /// <summary>
   ///   Unique Identifier
