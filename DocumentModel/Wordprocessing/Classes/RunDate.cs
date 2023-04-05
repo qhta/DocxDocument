@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a date element of text run.
 /// </summary>
-public class RunDate: ModelElement, IRunElement
+public class RunDate: ModelElement, IRunContent
 {
   /// <summary>
   /// Specifies, which part of date is presented

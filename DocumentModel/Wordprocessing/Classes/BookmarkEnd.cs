@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BookmarkEnd Class.
 /// </summary>
-public class BookmarkEnd: MarkupRangeType, IParagraphElement, IRangeMarkupElement
+public class BookmarkEnd: MarkupRangeType, IParagraphContent, IRangeMarkupElement
 {
 
 }

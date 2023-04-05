@@ -16,7 +16,7 @@ public static class SdtRunConverter
   /// <param name="openXmlElement">Item element of SdtContentRun element</param>
   /// <returns>Newly created model element (or <c>null</c> if openXml element is <c>null</c>).</returns>
   /// <exception cref="InvalidOperationException">Thrown if openXml element type is not recognized.</exception>
-  public static DMW.ISdtRunElement? CreateSdtContentRunModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtRunContent? CreateSdtContentRunModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
@@ -77,13 +77,13 @@ public static class SdtRunConverter
       if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
         return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, subDocumentReferenceModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathElement commonMathModel)
+      if (model is DMMath.ICommonMathContent commonMathModel)
       {
         var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
         if (result != null)
@@ -121,10 +121,10 @@ public static class SdtRunConverter
     if (model is DMW.SubDocumentReference subDocumentReference)
       return DMXW.RelationshipTypeConverter.CreateOpenXmlElement(subDocumentReference);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonElement);
+    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
 
-    var mathResult = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathElement);
+    var mathResult = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathContent);
     if (mathResult != null) return mathResult;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlParagraphElement method");
@@ -157,13 +157,13 @@ public static class SdtRunConverter
       if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
         return DMXW.RelationshipTypeConverter.UpdateOpenXmlElement(subDocumentReference, subDocumentReferenceModel);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.UpdateOpenXmlElement(openXmlElement, commonElementModel);
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathElement commonMathModel)
+      if (model is DMMath.ICommonMathContent commonMathModel)
       {
         var result = CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
         if (result != null)
@@ -190,7 +190,7 @@ public static class SdtRunConverter
       var model = new DMW.SdtRun();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      ElementCollectionConverter<DMW.ISdtRunElement>.FillModelElementCollection(openXmlElement.SdtContentRun, model, 
+      ElementCollectionConverter<DMW.ISdtRunContent>.FillModelElementCollection(openXmlElement.SdtContentRun, model, 
         (CreateModelElementMethod)CreateSdtContentRunModelElement);
       return model;
     }
@@ -214,7 +214,7 @@ public static class SdtRunConverter
         ok = false;
       if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<DMW.ISdtRunElement>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRun, model,
+      if (!ElementCollectionConverter<DMW.ISdtRunContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRun, model,
         (CompareOpenXmlElementMethod)CompareSdtContentRunElement, diffs, objName))
         ok = false;
       return ok;
@@ -248,7 +248,7 @@ public static class SdtRunConverter
   {
     SdtElementConverter.SetSdtProperties(openXmlElement, model.SdtProperties);
     SdtElementConverter.SetSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties);
-    return ElementCollectionConverter<DMW.ISdtRunElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<DMW.ISdtRunContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       (CompareOpenXmlElementMethod)CompareSdtContentRunElement,
       (UpdateOpenXmlElementMethod)UpdateSdtContentRunOpenXmlElement,
       (CreateOpenXmlElementMethod)CreateSdtContentRunOpenXmlElement);

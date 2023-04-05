@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Lower-Limit Function.
 /// </summary>
-public class LimitLower: ModelElement, ICommonMathElement
+public class LimitLower: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Lower Limit Properties.

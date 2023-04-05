@@ -18,7 +18,7 @@ namespace DocumentModel.Wordprocessing;
 /// </item>
 /// </list>
 /// </summary>
-public class PositionalTab: ModelElement, IRunElement
+public class PositionalTab: ModelElement, IRunContent
 {
   /// <summary>
   ///   Positional Tab Stop Alignment

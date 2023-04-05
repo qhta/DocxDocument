@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Table Class.
 /// </summary>
-public class Table: ElementCollection<ITableElement>, IBodyElement, ITableCellElement, ISdtBlockElement
+public class Table: ElementCollection<ITableContent>, IBodyContent, ITableCellContent, ISdtBlockContent
 {
 
   public TableProperties? TableProperties { get; set; }

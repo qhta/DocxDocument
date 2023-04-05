@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Group-Character Function.
 /// </summary>
-public class GroupChar: ModelElement, ICommonMathElement
+public class GroupChar: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Group-Character Properties.

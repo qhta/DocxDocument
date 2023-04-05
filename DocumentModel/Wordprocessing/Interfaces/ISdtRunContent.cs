@@ -1,14 +1,16 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Interface for elements that can be included in document <see cref="SdtRun"/> element.
 /// </summary>
-public interface ISdtRunElement: IModelElement
+public interface ISdtRunContent : IModelElement
 {
-    public new Run? Parent
+  /// <summary>
+  /// Parent as a <see cref="SdtRun"/> element.
+  /// </summary>
+  public new SdtRun? Parent
   {
-    get => (this as IModelElement).Parent as Run;
+    get => (this as IModelElement).Parent as SdtRun;
     set => (this as IModelElement).Parent = value;
   }
 }

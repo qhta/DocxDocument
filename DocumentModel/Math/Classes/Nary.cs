@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   n-ary Operator Function.
 /// </summary>
-public class Nary: ModelElement, ICommonMathElement
+public class Nary: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   n-ary Properties.

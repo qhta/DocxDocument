@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the BookmarkStart Class.
 /// </summary>
-public class BookmarkStart: ModelElement, ICommonElement, IRangeMarkupElement
+public class BookmarkStart: ModelElement, ICommonContent, IRangeMarkupElement
 {
   /// <summary>
   ///   name

@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Sub-Superscript Function.
 /// </summary>
-public class SubSuperscript: ModelElement, ICommonMathElement
+public class SubSuperscript: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Sub-Superscript Properties.

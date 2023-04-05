@@ -11,7 +11,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommonMathConverter
 {
-  public static DMMath.ICommonMathElement? CreateModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMMath.ICommonMathContent? CreateModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXMath.Paragraph paragraph)
       return DMXMath.ParagraphConverter.CreateModelElement(paragraph);
@@ -59,7 +59,7 @@ public static class CommonMathConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMMath.ICommonMathElement? value, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMMath.ICommonMathContent? value, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -112,7 +112,7 @@ public static class CommonMathConverter
     return false;
   }
 
-  public static OpenXmlElement? CreateOpenXmlElement(DMMath.ICommonMathElement? value)
+  public static OpenXmlElement? CreateOpenXmlElement(DMMath.ICommonMathContent? value)
   {
     if (value is DMMath.Paragraph paragraph)
       return DMXMath.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -160,7 +160,7 @@ public static class CommonMathConverter
     return null;
   }
 
-    public static bool? UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DMMath.ICommonMathElement? value)
+    public static bool? UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DMMath.ICommonMathContent? value)
   {
     if (openXmlElement != null && value != null)
     {

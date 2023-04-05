@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Table Row.
 /// </summary>
-public class TableRow: ElementCollection<ITableRowElement>, ITableElement, ISdtRowElement
+public class TableRow: ElementCollection<ITableRowContent>, ITableContent, ISdtRowContent
 {
   /// <summary>
   ///   Revision Identifier for Table Row Glyph Formatting

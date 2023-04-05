@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the PageNumberType Class.
 /// </summary>
-public class PageNumberType: ModelElement, ISectionPropertiesElement
+public class PageNumberType: ModelElement, ISectionPropertiesContent
 {
   /// <summary>
   ///   Page Number Format

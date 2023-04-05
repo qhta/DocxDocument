@@ -102,7 +102,7 @@ public static class RunConverter
   #endregion
 
   #region Run elements conversion
-  public static DMW.IRunElement? CreateRunElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IRunContent? CreateRunElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.RunProperties)
       return null;
@@ -119,7 +119,7 @@ public static class RunConverter
     if (openXmlElement is DXW.Break brk)
       return DMXW.BreakConverter.CreateModelElement(brk);
     if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak)
-      return DMXW.BreakConverter.CreateModelElement(lastRenderedPageBreak);
+      return DMXW.LastRenderedPageBreakConverter.CreateModelElement(lastRenderedPageBreak);
     if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen)
       return DMXW.HyphenConverter.CreateModelElement(noBreakHyphen);
     if (openXmlElement is DXW.FootnoteReference footnoteReference)
@@ -194,8 +194,8 @@ public static class RunConverter
         return DMXW.FieldCharConverter.CompareModelElement(fieldChar, fieldCharModel, diffs, objName);
       if (openXmlElement is DXW.Break brk && model is DMW.Break brkModel)
         return DMXW.BreakConverter.CompareModelElement(brk, brkModel, diffs, objName);
-      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.Break lastRenderedPageBreakModel)
-        return DMXW.BreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName);
+      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.LastRenderedPageBreak lastRenderedPageBreakModel)
+        return DMXW.LastRenderedPageBreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName);
       if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is DMW.Hyphen noBreakHyphenModel)
         return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, noBreakHyphenModel, diffs, objName);
       if (openXmlElement is DXW.FootnoteReference footnoteReference && model is DMW.NoteReference footnoteReferenceModel)
@@ -218,7 +218,7 @@ public static class RunConverter
         return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, symbolCharModel, diffs, objName);
       if (openXmlElement is DXW.PageNumber pageNumber && model is DMW.PageNumber pageNumberModel)
         return DMXW.SimpleRunElementConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName);
-      if (openXmlElement is DXW.CarriageReturn carriageReturn && model is DMW.CarriageReturn carriageReturnModel)
+      if (openXmlElement is DXW.CarriageReturn carriageReturn && model is CarriageReturn carriageReturnModel)
         return DMXW.SimpleRunElementConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName);
       if (openXmlElement is DXW.TabChar tabChar && model is DMW.TabChar tabCharModel)
         return DMXW.SimpleRunElementConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
@@ -249,7 +249,7 @@ public static class RunConverter
       if (openXmlElement is DX.AlternateContent alternateContent && model is DM.AlternateContent alternateContentModel)
         return AlternateContentConverter.CompareModelElement(alternateContent, alternateContentModel, diffs, objName);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
         if (result != null)
@@ -287,7 +287,7 @@ public static class RunConverter
       return DMXW.SymbolCharConverter.CreateOpenXmlElement(symbolChar);
     if (model is DMW.PageNumber pageNumber)
       return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(pageNumber);
-    if (model is DMW.CarriageReturn carriageReturn)
+    if (model is CarriageReturn carriageReturn)
       return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(carriageReturn);
     if (model is DMW.TabChar tabChar)
       return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(tabChar);
@@ -306,7 +306,7 @@ public static class RunConverter
     if (model is DM.AlternateContent alternateContent)
       return DMX.AlternateContentConverter.CreateOpenXmlElement(alternateContent);
 
-    if (model is DMW.ICommonElement commonElementModel)
+    if (model is DMW.ICommonContent commonElementModel)
     {
       var result = CommonMarkersConverter.CreateOpenXmlElement(commonElementModel);
       if (result != null)
@@ -332,8 +332,8 @@ public static class RunConverter
         return DMXW.FieldCharConverter.UpdateOpenXmlElement(fieldChar, fieldCharModel);
       if (openXmlElement is DXW.Break brk && model is DMW.Break brkModel)
         return DMXW.BreakConverter.UpdateOpenXmlElement(brk, brkModel);
-      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.Break lastRenderedPageBreakModel)
-        return DMXW.BreakConverter.UpdateOpenXmlElement(lastRenderedPageBreak, lastRenderedPageBreakModel);
+      if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.LastRenderedPageBreak lastRenderedPageBreakModel)
+        return DMXW.LastRenderedPageBreakConverter.UpdateOpenXmlElement(lastRenderedPageBreak, lastRenderedPageBreakModel);
       if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is DMW.Hyphen noBreakHyphenModel)
         return DMXW.HyphenConverter.UpdateOpenXmlElement(noBreakHyphen, noBreakHyphenModel);
       if (openXmlElement is DXW.FootnoteReference footnoteReference && model is DMW.NoteReference footnoteReferenceModel)
@@ -356,7 +356,7 @@ public static class RunConverter
         return DMXW.SymbolCharConverter.UpdateOpenXmlElement(symbolChar, symbolCharModel);
       if (openXmlElement is DXW.PageNumber pageNumber && model is DMW.PageNumber pageNumberModel)
         return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(pageNumber, pageNumberModel);
-      if (openXmlElement is DXW.CarriageReturn carriageReturn && model is DMW.CarriageReturn carriageReturnModel)
+      if (openXmlElement is DXW.CarriageReturn carriageReturn && model is CarriageReturn carriageReturnModel)
         return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(carriageReturn, carriageReturnModel);
       if (openXmlElement is DXW.TabChar tabChar && model is DMW.TabChar tabCharModel)
         return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(tabChar, tabCharModel);
@@ -385,7 +385,7 @@ public static class RunConverter
       if (openXmlElement is DXW.Ruby ruby && model is DMW.Ruby rubyModel)
         return DMXW.RubyConverter.UpdateOpenXmlElement(ruby, rubyModel);
 
-      if (model is DMW.ICommonElement commonElementModel)
+      if (model is DMW.ICommonContent commonElementModel)
       {
         var result = CommonMarkersConverter.UpdateOpenXmlElement(openXmlElement, commonElementModel);
         if (result != null)
@@ -408,7 +408,7 @@ public static class RunConverter
       model.RsidRunDeletion = GetRsidRunDeletion(openXmlElement);
       model.RsidRunAddition = GetRsidRunAddition(openXmlElement);
       model.RunProperties = GetRunProperties(openXmlElement);
-      ElementCollectionConverter<IRunElement>.FillModelElementCollection(openXmlElement, model,
+      ElementCollectionConverter<IRunContent>.FillModelElementCollection(openXmlElement, model,
         (CreateModelElementMethod)CreateRunElement);
       return model;
     }
@@ -428,7 +428,7 @@ public static class RunConverter
         ok = false;
       if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<IRunElement>.CompareOpenXmlElementCollection(
+      if (!ElementCollectionConverter<IRunContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.RunProperties), model,
         (CompareOpenXmlElementMethod)CompareRunElement, diffs, objName))
         ok = false;
@@ -452,7 +452,7 @@ public static class RunConverter
     SetRsidRunDeletion(openXmlElement, model.RsidRunDeletion);
     SetRsidRunAddition(openXmlElement, model.RsidRunAddition);
     SetRunProperties(openXmlElement, model.RunProperties);
-    return ElementCollectionConverter<IRunElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<IRunContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       (CompareOpenXmlElementMethod)CompareRunElement,
       (UpdateOpenXmlElementMethod)UpdateOpenXmlElement,
       (CreateOpenXmlElementMethod)CreateOpenXmlElement

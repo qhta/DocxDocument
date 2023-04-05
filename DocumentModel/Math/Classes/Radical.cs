@@ -4,7 +4,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Radical Function.
 /// </summary>
-public class Radical: ModelElement, ICommonMathElement
+public class Radical: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Radical Properties.
