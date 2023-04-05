@@ -62,17 +62,17 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border Theme Color Tint
   /// </summary>
-  private static BytePercent? GetThemeTint(DXW.BorderType openXmlElement)
+  private static Percent? GetThemeTint(DXW.BorderType openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
-  private static bool CmpThemeTint(DXW.BorderType openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeTint(DXW.BorderType openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
-  private static void SetThemeTint(DXW.BorderType openXmlElement, BytePercent? value)
+  private static void SetThemeTint(DXW.BorderType openXmlElement, Percent? value)
   {
     openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class BorderTypeConverter
   /// <summary>
   /// Border Theme Color Shade
   /// </summary>
-  private static BytePercent? GetThemeShade(DXW.BorderType openXmlElement)
+  private static Percent? GetThemeShade(DXW.BorderType openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
-  private static bool CmpThemeShade(DXW.BorderType openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeShade(DXW.BorderType openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
-  private static void SetThemeShade(DXW.BorderType openXmlElement, BytePercent? value)
+  private static void SetThemeShade(DXW.BorderType openXmlElement, Percent? value)
   {
     openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
   }

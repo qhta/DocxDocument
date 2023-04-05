@@ -2,14 +2,19 @@
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 [TypeConverter(typeof(RGBTypeXmlConverter))]
-public struct RGB: IEquatable<RGB>
+public struct RGB : IEquatable<RGB>
 {
   public RGB(string str)
   {
-    var value = UInt32.Parse(str, NumberStyles.HexNumber);
-    R = (byte)(value >> 16);
-    G = (byte)(value >> 8);
-    B = (byte)(value);
+    if (str == "auto")
+      IsAuto = true;
+    else
+    {
+      var value = UInt32.Parse(str, NumberStyles.HexNumber);
+      R = (byte)(value >> 16);
+      G = (byte)(value >> 8);
+      B = (byte)(value);
+    }
   }
 
   public RGB(UInt32 value)
@@ -26,9 +31,12 @@ public struct RGB: IEquatable<RGB>
     B = b;
   }
 
-  public Byte R { get; set; }
-  public Byte G { get; set; }
-  public Byte B { get; set; }
+  public Byte R { get => r; set { r = value; IsAuto = false; } }
+  private Byte r;
+  public Byte G { get => g; set { g = value; IsAuto = false; } }
+  private Byte g;
+  public Byte B { get => b; set { b = value; IsAuto = false; } }
+  private Byte b;
 
   public static implicit operator RGB(UInt32 value) => new RGB { R = (byte)(value >> 16), G = (byte)(value >> 8), B = (byte)(value) };
   public static implicit operator UInt32(RGB value) => (UInt32)value.R << 16 | (UInt32)(value.G << 8) | value.B;
@@ -39,11 +47,10 @@ public struct RGB: IEquatable<RGB>
   public static implicit operator RGB(HexInt value) => new RGB { R = (byte)(value >> 16), G = (byte)(value >> 8), B = (byte)(value) };
   public static implicit operator HexInt(RGB value) => (UInt32)value.R << 16 | (UInt32)(value.G << 8) | value.B;
 
-  //public static implicit operator RGB?(HexInt? value) => (value == null) ? (RGB?)null : new RGB { R = (byte)(value >> 16), G = (byte)(value >> 8), B = (byte)(value) };
-  //public static implicit operator HexInt?(RGB? value) => (value == null) ? (HexInt?)null : ((UInt32)((RGB)value).R) << 16 | ((UInt32)((RGB)value).G) << 8 | ((UInt32)((RGB)value).B);
-
   public override string ToString()
   {
+    if (IsAuto)
+      return "auto";
     return R.ToString("X2") + G.ToString("X2") + B.ToString("X2");
   }
 
@@ -62,7 +69,7 @@ public struct RGB: IEquatable<RGB>
     IsAuto = true;
   }
 
-  public bool IsAuto { get; set; } = false;
+  public bool IsAuto { get; set; }
 
   public readonly static RGB Auto = new RGB();
 

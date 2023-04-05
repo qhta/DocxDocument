@@ -62,7 +62,7 @@ public struct BytePercent : IComparable<BytePercent>
   public string ToHexString()
   {
     var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
-    return val.ToString("2X");
+    return val.ToString("X2");
   }
 
   /// <summary>

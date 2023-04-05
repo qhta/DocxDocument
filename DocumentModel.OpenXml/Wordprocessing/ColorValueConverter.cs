@@ -11,8 +11,10 @@ public static class ColorValueConverter
     if (openXmlElement?.Value != null)
     {
       if (openXmlElement.Value == "auto")
-        return RGB.Auto;
-      return (DocumentModel.RGB)UInt32.Parse(openXmlElement.Value, NumberStyles.HexNumber);
+        return RGB.Auto;      
+      var val = UInt32.Parse(openXmlElement.Value, NumberStyles.HexNumber);
+      var result = (DocumentModel.RGB)val;
+      return result;
     }
     return null;
   }
@@ -20,8 +22,12 @@ public static class ColorValueConverter
   public static bool CmpValue(DX.StringValue? openXmlElement, DM.RGB? value, DiffList? diffs, string? objName, string? propName)
   {
     if (openXmlElement?.Value != null)
+    {
+      if (openXmlElement.Value == "auto" && value==RGB.Auto)
+        return true;
       if (UInt32.Parse(openXmlElement.Value, NumberStyles.HexNumber) == value)
         return true;
+    }
     if (openXmlElement?.Value == null && value == null) return true;
     diffs?.Add(objName, propName, openXmlElement?.Value, value?.ToString());
     return false;

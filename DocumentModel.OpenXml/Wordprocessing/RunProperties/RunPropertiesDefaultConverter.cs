@@ -49,7 +49,7 @@ public static class RunPropertiesDefaultConverter
     if (element != null && value != null)
     {
       var ok = true;
-      if (!RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!RunPropertiesBaseStyleConverter.CompareModelElement(element, value, diffs, objName))
         ok = false;
       return ok;
     }

@@ -1,6 +1,3 @@
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.EMMA;
-
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.OpenXml.Wordprocessing;
@@ -11,19 +8,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class RunConverter
 {
   #region Revision Identifier for Run conversion
-  private static DM.HexInt? GetRsidRunProperties(DXW.Run openXmlElement)
+  public static DM.HexInt? GetRsidRunProperties(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunProperties?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.RsidRunProperties.Value);
     return null;
   }
 
-  private static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunProperties?.Value, model, diffs, objName, "RsidRunProperties");
   }
 
-  private static void SetRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model)
+  public static void SetRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model)
   {
     if (model != null)
       openXmlElement.RsidRunProperties = model.ToString();
@@ -33,19 +30,19 @@ public static class RunConverter
   #endregion
 
   #region Revision Identifier for Run Deletion conversion
-  private static DM.HexInt? GetRsidRunDeletion(DXW.Run openXmlElement)
+  public static DM.HexInt? GetRsidRunDeletion(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunDeletion?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.RsidRunDeletion.Value);
     return null;
   }
 
-  private static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunDeletion?.Value, model, diffs, objName, "RsidRunDeletion");
   }
 
-  private static void SetRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model)
+  public static void SetRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model)
   {
     if (model != null)
       openXmlElement.RsidRunDeletion = model.ToString();
@@ -55,19 +52,19 @@ public static class RunConverter
   #endregion
 
   #region Revision Identifier for Run Addtion conversion
-  private static DM.HexInt? GetRsidRunAddition(DXW.Run openXmlElement)
+  public static DM.HexInt? GetRsidRunAddition(DXW.Run openXmlElement)
   {
     if (openXmlElement?.RsidRunAddition?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.RsidRunAddition.Value);
     return null;
   }
 
-  private static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunAddition?.Value, model, diffs, objName, "RsidRunAddition");
   }
 
-  private static void SetRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model)
+  public static void SetRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model)
   {
     if (model != null)
       openXmlElement.RsidRunAddition = model.ToString();
@@ -77,7 +74,7 @@ public static class RunConverter
   #endregion
 
   #region Run Properties conversion
-  private static DMW.RunProperties? GetRunProperties(DXW.Run openXmlElement)
+  public static DMW.RunProperties? GetRunProperties(DXW.Run openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunProperties>();
     if (element != null)
@@ -85,12 +82,12 @@ public static class RunConverter
     return null;
   }
 
-  private static bool CmpRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model, DiffList? diffs, string? objName)
+  public static bool CmpRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model, DiffList? diffs, string? objName)
   {
     return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), model, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
 
-  private static void SetRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model)
+  public static void SetRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.RunProperties>();
     if (itemElement != null)
@@ -105,7 +102,6 @@ public static class RunConverter
   #endregion
 
   #region Run elements conversion
-
   public static DMW.IRunElement? CreateRunElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.RunProperties)
