@@ -6,7 +6,7 @@
 [TypeConverter(typeof(PercentTypeConverter))]
 public struct Percent: IComparable<Percent>
 {
-  private Decimal Value;
+  private Double Value;
 
   /// <summary>
   /// Constructor converting from string. 
@@ -16,7 +16,7 @@ public struct Percent: IComparable<Percent>
   {
     if (str.EndsWith("%"))
       str = str.Substring(0, str.Length - 1);
-    var val = Decimal.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
+    var val = Double.Parse(str.Replace(",","."), System.Globalization.CultureInfo.InvariantCulture);
     Value = val;
   }
 
@@ -39,9 +39,31 @@ public struct Percent: IComparable<Percent>
   /// <summary>
   /// Converting constructor from UInt64 value.
   /// </summary>
-  public Percent(Decimal value)
+  public Percent(Double value)
   {
     Value = value;
+  }
+
+  /// <summary>
+  /// Converts value from hexadecimal string.
+  /// </summary>
+  public static Percent FromHexString(string str)
+  {
+    var val = Byte.Parse(str, NumberStyles.HexNumber);
+    var value = val * 100 / 255.0;
+//    Debug.WriteLine($"{str} => {value}");
+    return new Percent(value);
+  }
+
+  /// <summary>
+  /// Converts value scale to hexadecimal string (two hex digits).
+  /// </summary>
+  public string ToHexString()
+  {
+    var val = (Byte)(System.Math.Round(Value * 255 / 100.0));
+    var str = val.ToString("X2");
+//    Debug.WriteLine($"{Value} => {str}");
+    return str;
   }
 
   /// <summary>

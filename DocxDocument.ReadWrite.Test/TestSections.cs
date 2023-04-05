@@ -40,14 +40,14 @@ public class TestSections : TestBase
     var origSectionProperties = origBody?.Descendants<DXW.SectionProperties>().ToArray();
     int origSectionPropertiesCount = origSectionProperties?.Count() ?? 0;
     var diffs = new DiffList();
-    var ok = DMX.Int32ValueConverter.CmpValue(origSectionPropertiesCount,modelSectionsCount, diffs, "Sections.Count");
-    if (modelSections!=null && origSectionProperties!=null)
-    for (int i=0; i<Math.Min(modelSectionsCount, origSectionPropertiesCount); i++)
-    {
-      var modelSectionsProperties = modelSections[i].Properties;
-      var origSectionPropertiesElement = origSectionProperties[i];
-      DMXW.SectionPropertiesConverter.CompareModelElement(origSectionPropertiesElement, modelSectionsProperties, diffs, $"SectionProperties[{i}]");
-    }
+    var ok = DMX.Int32ValueConverter.CmpValue(origSectionPropertiesCount, modelSectionsCount, diffs, "Sections.Count");
+    if (modelSections != null && origSectionProperties != null)
+      for (int i = 0; i < Math.Min(modelSectionsCount, origSectionPropertiesCount); i++)
+      {
+        var modelSectionsProperties = modelSections[i].Properties;
+        var origSectionPropertiesElement = origSectionProperties[i];
+        DMXW.SectionPropertiesConverter.CompareModelElement(origSectionPropertiesElement, modelSectionsProperties, diffs, $"SectionProperties[{i}]");
+      }
     if (!ok && showDetails)
     {
       WriteLine("Read body differences found:");
@@ -73,7 +73,7 @@ public class TestSections : TestBase
   /// Tests body Xml serialization by reading specifed docx file,
   /// serialize and deserialize body using string writer.
   /// </summary>
-  public void TestReadSectionsXmlSerialization(string filename)
+  public void TestReadSectionsXmlSerialization(string filename, bool showDetails = false)
   {
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
@@ -92,15 +92,18 @@ public class TestSections : TestBase
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
-    //WriteLine(str);
-    WriteLine("=============SerializationEnd=============");
+    if (showDetails)
+    {
+      WriteLine(str);
+      WriteLine();
+    }
 
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
     Assert.IsNotNull(newBody, $"Deserialized body is null");
     var diffs = new DiffList();
     var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
-    if (!ok)
+    if (!ok && showDetails)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");

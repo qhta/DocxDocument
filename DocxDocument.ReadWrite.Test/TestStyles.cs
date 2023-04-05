@@ -23,7 +23,7 @@ public class TestStyles : TestBase
   [Test]
   public void TestReadNormalTemplateStyles()
   {
-    var filename = Path.Combine(TestPath, "Value.dotm");
+    var filename = Path.Combine(TestPath, "Normal.dotm");
     TestReadStyles(filename, true);
   }
 

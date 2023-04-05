@@ -30,6 +30,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="BaseTypes\BytePercent.cs" />
+    <Compile Remove="BaseTypes\BytePercentTypeConverter.cs" />
     <Compile Remove="BaseTypes\EighthPoints.cs" />
     <Compile Remove="BaseTypes\EighthPointsTypeConverter.cs" />
     <Compile Remove="BaseTypes\HalfPoints.cs" />

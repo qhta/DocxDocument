@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestStyles();
+    RunTestSections();
   }
 
   private static void RunTestSections()
@@ -15,8 +15,7 @@ internal class Program
     var testInstance = new TestSections();
     testInstance.Setup();
     //testInstance.TestReadSections();
-    testInstance.TestReadSectionsXmlSerialization("_Jakość oprogramowania.docx");
-    //testInstance.TestReadSectionsJsonSerialization();
+    testInstance.TestReadSectionsXmlSerialization("Math.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -42,10 +41,10 @@ internal class Program
   {
     var testInstance = new TestFonts();
     testInstance.Setup();
-    //testInstance.TestReadDocumentFonts();
+    testInstance.TestReadDocumentFonts();
     testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
-    //testInstance.TestReadEmbedFonts("Font embedding.docx", true);
-    //testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
+    testInstance.TestReadEmbedFonts("Font embedding.docx", true);
+    testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -53,7 +52,7 @@ internal class Program
   {
     var testInstance = new TestTheme();
     testInstance.Setup();
-    testInstance.TestReadDocumentTheme();
+    //testInstance.TestReadDocumentTheme();
     testInstance.TestThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
@@ -62,8 +61,8 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    //testInstance.TestReadDocumentStyles();
-    testInstance.TestReadStylesXmlSerialization("_Jakość oprogramowania.docx", true);
+    testInstance.TestReadNormalTemplateStyles();
+    //testInstance.TestReadStylesXmlSerialization("Bookmarks.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -80,7 +79,7 @@ internal class Program
   {
     var testInstance = new TestConverters();
     testInstance.Setup();
-    testInstance.TestHexIntConverter();
+    testInstance.TestEnumValueConverter();
     Console.WriteLine("\nTest passed");
   }
 

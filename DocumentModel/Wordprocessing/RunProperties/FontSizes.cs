@@ -17,7 +17,7 @@ public record FontSizes
   /// <summary>
   /// Value for complex script.
   /// </summary>
-  public Twips? ValCS { get => _ValCS ?? _Val; }
+  public Twips? ValCS { get => _ValCS; }
 
   /// <summary>
   /// Create dual value from a string. 
@@ -26,16 +26,18 @@ public record FontSizes
   public FontSizes(string str)
   {
     var ss = str.Split(new char[] { ';' });
-    if (ss.Length <= 2 )
+    if (ss.Length <= 2)
     {
       if (ss[0]!="")
         _Val = new Twips(ss[0]);
     }
-    if (ss.Length == 2 )
+    if (ss.Length == 2)
     {
       if (ss[1]!="")
         _ValCS = new Twips(ss[1]);
     }
+    else
+      _ValCS = _Val;
   }
 
   /// <summary>

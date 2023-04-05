@@ -25,49 +25,49 @@ public static class ColorConverter
   #region ThemeColor conversion.
   private static DMW.ThemeColorKind? GetThemeColor(DXW.Color openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
   private static bool CmpThemeColor(DXW.Color openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXW.Color openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   #endregion
 
   #region ThemeTint conversion
-  private static BytePercent? GetThemeTint(DXW.Color openXmlElement)
+  private static Percent? GetThemeTint(DXW.Color openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
-  private static bool CmpThemeTint(DXW.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeTint(DXW.Color openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
-  private static void SetThemeTint(DXW.Color openXmlElement, BytePercent? value)
+  private static void SetThemeTint(DXW.Color openXmlElement, Percent? value)
   {
     openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
   }
   #endregion
 
   #region ThemeShade conversion
-  private static BytePercent? GetThemeShade(DXW.Color openXmlElement)
+  private static Percent? GetThemeShade(DXW.Color openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
-  private static bool CmpThemeShade(DXW.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeShade(DXW.Color openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
-  private static void SetThemeShade(DXW.Color openXmlElement, BytePercent? value)
+  private static void SetThemeShade(DXW.Color openXmlElement, Percent? value)
   {
     openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
   }

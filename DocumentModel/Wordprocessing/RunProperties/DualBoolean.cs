@@ -17,7 +17,7 @@ public record DualBoolean
   /// <summary>
   /// Value for complex script.
   /// </summary>
-  public bool? ValCS { get => _ValCS ?? _Val; }
+  public bool? ValCS { get => _ValCS; }
 
   /// <summary>
   /// Create dual value from a string. 
@@ -36,6 +36,8 @@ public record DualBoolean
       if (bool.TryParse(ss[1], out var valCS))
         _ValCS = valCS;
     }
+    else
+      _ValCS = _Val;
   }
 
   /// <summary>

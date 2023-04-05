@@ -18,12 +18,12 @@ public class Color: ModelElement
   /// <summary>
   ///   Run Content Theme Color Tint
   /// </summary>
-  public BytePercent? ThemeTint { get; set; }
+  public Percent? ThemeTint { get; set; }
 
   /// <summary>
   ///   Run Content Theme Color Shade
   /// </summary>
-  public BytePercent? ThemeShade { get; set; }
+  public Percent? ThemeShade { get; set; }
 
   /// <summary>
   /// Determines all properties are null.

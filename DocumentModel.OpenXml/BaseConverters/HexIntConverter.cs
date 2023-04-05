@@ -1,8 +1,4 @@
-﻿using System.Diagnostics;
-
-using DocumentFormat.OpenXml;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class HexIntConverter
 {

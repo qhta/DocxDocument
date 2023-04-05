@@ -40,34 +40,34 @@ public static class Color3Converter
   #endregion
 
   #region ThemeTint conversion
-  private static BytePercent? GetThemeTint(DXO2013W.Color openXmlElement)
+  private static Percent? GetThemeTint(DXO2013W.Color openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
   }
   
-  private static bool CmpThemeTint(DXO2013W.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeTint(DXO2013W.Color openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
   }
   
-  private static void SetThemeTint(DXO2013W.Color openXmlElement, BytePercent? value)
+  private static void SetThemeTint(DXO2013W.Color openXmlElement, Percent? value)
   {
     openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
   }
   #endregion
 
   #region ThemeShade conversion
-  private static BytePercent? GetThemeShade(DXO2013W.Color openXmlElement)
+  private static Percent? GetThemeShade(DXO2013W.Color openXmlElement)
   {
     return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
   }
   
-  private static bool CmpThemeShade(DXO2013W.Color openXmlElement, BytePercent? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeShade(DXO2013W.Color openXmlElement, Percent? value, DiffList? diffs, string? objName)
   {
     return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
   }
   
-  private static void SetThemeShade(DXO2013W.Color openXmlElement, BytePercent? value)
+  private static void SetThemeShade(DXO2013W.Color openXmlElement, Percent? value)
   {
     openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
   }

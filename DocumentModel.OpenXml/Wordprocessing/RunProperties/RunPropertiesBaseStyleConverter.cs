@@ -10,6 +10,8 @@ public static class RunPropertiesBaseStyleConverter
   public static DMW.RunFonts? GetRunFonts(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunFonts>();
+    if (element == null)
+      return null;
     if (element != null)
       return DMXW.RunFontsConverter.CreateModelElement(element);
     return null;
@@ -17,6 +19,7 @@ public static class RunPropertiesBaseStyleConverter
 
   public static bool CmpRunFonts(DX.OpenXmlCompositeElement openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
   {
+    var element = openXmlElement.GetFirstChild<DXW.RunFonts>();
     return DMXW.RunFontsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunFonts>(), value, diffs, objName);
   }
 
@@ -86,7 +89,10 @@ public static class RunPropertiesBaseStyleConverter
     var val = Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSize>()?.Val);
     var valCS = Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.FontSizeComplexScript>()?.Val);
     if (val != null || valCS != null)
+    {
+      //Debug.WriteLine($"{val}; {valCS}");
       return new FontSizes(val*10, valCS*10);
+    }
     return null;
   }
 
