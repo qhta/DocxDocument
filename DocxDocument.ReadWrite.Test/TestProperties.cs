@@ -44,7 +44,7 @@ namespace DocxDocument.ReadWrite.Test
     [Test]
     public void TestReadNormalTemplateProperties()
     {
-      var filename = Path.Combine(TestPath, "Value.dotm");
+      var filename = Path.Combine(TestPath, "Normal.dotm");
       TestReadProperties(filename, true);
     }
 

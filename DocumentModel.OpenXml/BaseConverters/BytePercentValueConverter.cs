@@ -2,20 +2,20 @@
 
 public static class BytePercentValueConverter
 {
-  public static BytePercent? GetValue(DX.StringValue? element)
+  public static Percent? GetValue(DX.StringValue? element)
   {
     if (element?.Value != null)
-      return BytePercent.FromHexString(element.Value);
+      return Percent.FromHexString(element.Value);
     return null;
   }
 
-  public static bool CmpValue(DX.StringValue? element, BytePercent? value, DiffList? diffs, string? objName, string? propName)
+  public static bool CmpValue(DX.StringValue? element, Percent? value, DiffList? diffs, string? objName, string? propName)
   {
     var valProperty = element?.GetType().GetProperty("Value");
     if (valProperty != null && value is not null)
     {
       var valStr = (string?)valProperty.GetValue(element);
-      var valueStr = ((BytePercent)value).ToString();
+      var valueStr = ((Percent)value).ToHexString();
       if (valStr == valueStr) return true;
       diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
       return false;
@@ -25,18 +25,18 @@ public static class BytePercentValueConverter
     return false;
   }
 
-  public static DX.StringValue? CreateStringValue(BytePercent? value)
+  public static DX.StringValue? CreateStringValue(Percent? value)
   {
-    if (value is not null) return new DX.StringValue(((BytePercent)value).ToHexString());
+    if (value is not null) return new DX.StringValue(((Percent)value).ToHexString());
     return null;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(BytePercent? value)
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Percent? value)
     where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     if (value is not null)
     {
-      var newValue = new DX.StringValue(((BytePercent)value).ToHexString());
+      var newValue = new DX.StringValue(((Percent)value).ToHexString());
       var element = new OpenXmlElementType();
       var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
       if (valProperty != null)

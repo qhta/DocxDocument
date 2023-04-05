@@ -25,7 +25,7 @@ public class TestTheme : TestBase
   [Test]
   public void TestReadNormalTemplateTheme()
   {
-    var filename = Path.Combine(TestPath, "Value.dotm");
+    var filename = Path.Combine(TestPath, "Normal.dotm");
     ReadReadTheme(filename, true);
   }
 

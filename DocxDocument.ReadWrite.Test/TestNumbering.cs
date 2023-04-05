@@ -15,7 +15,7 @@ public class TestNumbering : TestBase
   [Test]
   public void TestNormalTemplateNumbering()
   {
-    var filename = Path.Combine(TestPath, "Value.dotm");
+    var filename = Path.Combine(TestPath, "Normal.dotm");
     TestReadNumbering(filename, true);
   }
 
