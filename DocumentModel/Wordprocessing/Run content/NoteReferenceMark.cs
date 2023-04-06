@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Represents a position of an endnote, footnote or annotation reference mark. 
@@ -11,8 +10,8 @@ namespace DocumentModel.Wordprocessing;
 public class NoteReferenceMark : ModelElement, IRunContent
 {
   /// <summary>
-  /// Annotation, endnote or footnote.
+  /// Specifies that the element refers to: endnote / footnote or annotation.
   /// </summary>
-   public NoteReferenceKind? Type { get; set;}
+  public NoteReferenceKind? Type { get; set; }
 
 }

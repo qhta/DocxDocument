@@ -9,7 +9,7 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Day, IsLong = false };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Day, IsLong = false };
       return model;
     }
     return null;
@@ -19,7 +19,7 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Day, IsLong = true };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Day, IsLong = true };
       return model;
     }
     return null;
@@ -29,7 +29,7 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Month, IsLong = false };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Month, IsLong = false };
       return model;
     }
     return null;
@@ -39,7 +39,7 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Month, IsLong = true };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Month, IsLong = true };
       return model;
     }
     return null;
@@ -49,7 +49,7 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Year, IsLong = false };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Year, IsLong = false };
       return model;
     }
     return null;
@@ -59,18 +59,18 @@ public static class RunDateConverter
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.RunDate { Part = DMW.DatePart.Year, IsLong = true };
+      var model = new DMW.RunDate { Part = DMW.DateItem.Year, IsLong = true };
       return model;
     }
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.RunDate? model, DMW.DatePart part, bool isLong, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.RunDate? model, DMW.DateItem part, bool isLong, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.DatePart, DMW.DatePart>(part, model.Part, diffs, objName, "Part"))
+      if (!EnumValueConverter.CmpValue<DMW.DateItem, DMW.DateItem>(part, model.Part, diffs, objName, "Part"))
         ok = false;
       if (!BooleanValueConverter.CmpValue(isLong, model.IsLong, diffs, objName, "IsLong"))
         ok = false;
@@ -82,38 +82,38 @@ public static class RunDateConverter
   }
 
   public static bool CompareModelElement(DXW.DayShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Day, false, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, false, diffs, objName);
 
   public static bool CompareModelElement(DXW.DayLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Day, true, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Day, true, diffs, objName);
 
   public static bool CompareModelElement(DXW.MonthShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Month, false, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, false, diffs, objName);
 
   public static bool CompareModelElement(DXW.MonthLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Month, true, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Month, true, diffs, objName);
 
   public static bool CompareModelElement(DXW.YearShort? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Year, false, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, false, diffs, objName);
 
   public static bool CompareModelElement(DXW.YearLong? openXmlElement, DMW.RunDate? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.DatePart.Year, true, diffs, objName);
+    => CheckModelElement(openXmlElement, model, DMW.DateItem.Year, true, diffs, objName);
 
   public static DX.OpenXmlElement CreateOpenXmlElement(DMW.RunDate model)
   {
     switch (model.Part)
     {
-      case DMW.DatePart.Day:
+      case DMW.DateItem.Day:
         if (model.IsLong)
           return new DXW.DayShort();
         else
           return new DXW.DayShort();
-      case DMW.DatePart.Month:
+      case DMW.DateItem.Month:
         if (model.IsLong)
           return new DXW.MonthShort();
         else
           return new DXW.MonthShort();
-      case DMW.DatePart.Year:
+      case DMW.DateItem.Year:
         if (model.IsLong)
           return new DXW.YearShort();
         else

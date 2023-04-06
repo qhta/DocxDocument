@@ -1,15 +1,15 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Represents a hyphen in a text run.
+///   Represents a hyphen in a text run. 
+///   There are two complementary ways to specific a character code of the hyphen: with enum typed HyphenKind or with a text string.
 /// </summary>
 public class Hyphen : ModelElement, IRunContent
 {
   /// <summary>
   /// Encoded char value of the hyphen.
   /// </summary>
-   public HyphenKind? Value
+  public HyphenKind? Value
   {
     get => _Value;
     set
@@ -28,7 +28,7 @@ public class Hyphen : ModelElement, IRunContent
   /// <summary>
   /// Visual text value.
   /// </summary>
-   public string Text
+  public string Text
   {
     get => _Text;
     set
@@ -36,7 +36,7 @@ public class Hyphen : ModelElement, IRunContent
       if (value != _Text)
       {
         _Text = value;
-        if (value.Length==1)
+        if (value.Length == 1)
           Value = (HyphenKind)value[0];
         else
           Value = null;

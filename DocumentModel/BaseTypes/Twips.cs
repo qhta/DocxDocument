@@ -110,7 +110,7 @@ public struct Twips : IComparable<Twips>
   /// </summary>
   public override string ToString()
   {
-    return ToString("pt");
+    return ToString(null);
   }
 
   /// <summary>

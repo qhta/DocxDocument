@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 [Flags]
 [JsonConverter(typeof(StringEnumConverter))]
-public enum DatePart
+public enum DateItem
 {
   /// <summary>
   ///   Day is presented
