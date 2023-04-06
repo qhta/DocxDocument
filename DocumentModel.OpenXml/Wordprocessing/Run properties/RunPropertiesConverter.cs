@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Run Properties.
+/// RunProperties class from/to OpenXml converter.
 /// </summary>
 public static class RunPropertiesConverter
 {
@@ -80,5 +80,4 @@ public static class RunPropertiesConverter
     SetRunPropertiesChange(openXmlElement, value.RunPropertiesChange);
   }
   #endregion
-
 }

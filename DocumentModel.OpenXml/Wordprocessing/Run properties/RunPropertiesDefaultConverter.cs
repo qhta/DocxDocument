@@ -1,36 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Default Run Properties.
+/// RunPropertiesDefault class from/to OpenXml converter.
 /// </summary>
 public static class RunPropertiesDefaultConverter
 {
-  //private static DMW.RunPropertiesBaseStyle? GetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement)
-  //{
-  //  var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-  //  if (element != null)
-  //    return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement(element);
-  //  return null;
-  //}
-
-  //private static bool CmpRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value, DiffList? diffs, string? objName)
-  //{
-  //  return DMXW.RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName);
-  //}
-
-  //private static void SetRunPropertiesBaseStyle(DXW.RunPropertiesDefault openXmlElement, DMW.RunPropertiesBaseStyle? value)
-  //{
-  //  var itemElement = openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-  //  if (itemElement != null)
-  //    itemElement.Remove();
-  //  if (value != null)
-  //  {
-  //    itemElement = DMXW.RunPropertiesBaseStyleConverter.CreateOpenXmlElement<DXW.RunPropertiesBaseStyle>(value);
-  //    if (itemElement != null)
-  //      openXmlElement.AddChild(itemElement);
-  //  }
-  //}
-
+  #region RunPropertiesDefault model conversion.
   public static DMW.RunPropertiesDefault? CreateModelElement(DXW.RunPropertiesDefault? openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
@@ -76,4 +51,5 @@ public static class RunPropertiesDefaultConverter
       openXmlElement.AddChild(element);
     }
   }
+  #endregion
 }

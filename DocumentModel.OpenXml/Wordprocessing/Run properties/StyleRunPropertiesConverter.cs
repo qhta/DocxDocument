@@ -5,6 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class StyleRunPropertiesConverter
 {
+  #region StyleRunProperties model conversion.
   public static DMW.StyleRunProperties? CreateModelElement(DXW.StyleRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
@@ -33,4 +34,5 @@ public static class StyleRunPropertiesConverter
   {
     RunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
   }
+  #endregion
 }
