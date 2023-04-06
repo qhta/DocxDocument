@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ParagraphPropertiesChange Class.
@@ -7,12 +6,12 @@ namespace DocumentModel.Wordprocessing;
 public class ParagraphPropertiesChange: ModelElement
 {
   /// <summary>
-  ///   author
+  ///   Author
   /// </summary>
   public String? Author { get; set; }
 
   /// <summary>
-  ///   date
+  ///   Sate
   /// </summary>
   public DateTime? Date { get; set; }
 
@@ -24,5 +23,5 @@ public class ParagraphPropertiesChange: ModelElement
   /// <summary>
   ///   Previous Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesExtended? ParagraphPropertiesExtended { get; set; }
+  public PreviousParagraphProperties? PreviousParagraphProperties { get; set; }
 }

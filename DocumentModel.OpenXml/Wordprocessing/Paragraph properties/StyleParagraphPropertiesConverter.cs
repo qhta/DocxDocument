@@ -1,0 +1,38 @@
+namespace DocumentModel.OpenXml.Wordprocessing;
+
+/// <summary>
+/// StyleParagraphProperties class from/to OpenXml converter.
+/// </summary>
+public static class StyleParagraphPropertiesConverter
+{
+  #region StyleParagraphProperties model conversion.
+  public static DMW.StyleParagraphProperties? CreateModelElement(DXW.StyleParagraphProperties? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var value = new DMW.StyleParagraphProperties();
+      ParagraphPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+      return value;
+    }
+    return null;
+  }
+  
+  public static bool CompareModelElement(DXW.StyleParagraphProperties? openXmlElement, DMW.StyleParagraphProperties? value, DiffList? diffs, string? objName)
+  {
+    return ParagraphPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+  }
+  
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleParagraphProperties value)
+    where OpenXmlElementType: DXW.StyleParagraphProperties, new()
+  {
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
+  }
+  
+  public static void UpdateOpenXmlElement(DXW.StyleParagraphProperties openXmlElement, DMW.StyleParagraphProperties value)
+  {
+    ParagraphPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+  }
+  #endregion
+}

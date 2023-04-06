@@ -1,10 +1,10 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Base class for RunProperties classes.
-///   Contains  these common properties, which are not applied to <see cref="BaseRunProperties"/>
+///   Extended BaseRunProperties.
+///   Contains these common properties, which are not applied to <see cref="BaseRunProperties"/>
 /// </summary>
-public abstract class ExtendedRunPropertiesBase : BaseRunProperties
+public abstract class ExtBaseRunProperties : BaseRunProperties
 {
   #region These properties are defined in ECMA
   /// <summary>

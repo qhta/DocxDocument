@@ -1,7 +1,3 @@
-using System.Xml.Linq;
-
-using DocumentFormat.OpenXml;
-
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.OpenXml.Wordprocessing;
@@ -186,7 +182,7 @@ public static class ParagraphConverter
       itemElement.Remove();
     if (model != null)
     {
-      itemElement = DMXW.ParagraphPropertiesConverter.CreateOpenXmlElement<DXW.ParagraphProperties>(model);
+      itemElement = DMXW.ParagraphPropertiesConverter.CreateOpenXmlElement(model);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -435,5 +431,4 @@ public static class ParagraphConverter
       (CreateOpenXmlElementMethod)CreateOpenXmlParagraphElement);
   }
   #endregion
-
 }

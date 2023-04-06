@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Base class for all RunProperties classes.
-///   Contains common properties
+///   Contains common properties.
 /// </summary>
 public abstract class BaseRunProperties: ModelElement
 {
