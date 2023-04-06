@@ -196,19 +196,19 @@ public static class RunConverter
         return DMXW.BreakConverter.CompareModelElement(brk, brkModel, diffs, objName);
       if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.LastRenderedPageBreak lastRenderedPageBreakModel)
         return DMXW.LastRenderedPageBreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName);
-      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is DMW.Hyphen noBreakHyphenModel)
+      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is Hyphen noBreakHyphenModel)
         return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, noBreakHyphenModel, diffs, objName);
-      if (openXmlElement is DXW.FootnoteReference footnoteReference && model is DMW.NoteReference footnoteReferenceModel)
+      if (openXmlElement is DXW.FootnoteReference footnoteReference && model is NoteReference footnoteReferenceModel)
         return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(footnoteReference, footnoteReferenceModel, diffs, objName);
-      if (openXmlElement is DXW.EndnoteReference endnoteReference && model is DMW.NoteReference endnoteReferenceModel)
+      if (openXmlElement is DXW.EndnoteReference endnoteReference && model is NoteReference endnoteReferenceModel)
         return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(endnoteReference, endnoteReferenceModel, diffs, objName);
       if (openXmlElement is DXW.CommentReference commentReference && model is DMW.CommentReference commentReferenceModel)
         return DMXW.MarkupTypeConverter.CompareModelElement(commentReference, commentReferenceModel, diffs, objName);
-      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && model is DMW.NoteReferenceMark footnoteReferenceMarkModel)
+      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && model is NoteReferenceMark footnoteReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.CompareModelElement(footnoteReferenceMark, footnoteReferenceMarkModel, diffs, objName);
-      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && model is DMW.NoteReferenceMark endnoteReferenceMarkModel)
+      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && model is NoteReferenceMark endnoteReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.CompareModelElement(endnoteReferenceMark, endnoteReferenceMarkModel, diffs, objName);
-      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && model is DMW.NoteReferenceMark annotationReferenceMarkModel)
+      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && model is NoteReferenceMark annotationReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.CompareModelElement(annotationReferenceMark, annotationReferenceMarkModel, diffs, objName);
       if (openXmlElement is DXW.SeparatorMark separatorMark && model is DMW.SeparatorMark separatorMarkModel)
         return DMXW.SeparatorMarkConverter.CompareModelElement(separatorMark, separatorMarkModel, diffs, objName);
@@ -224,7 +224,7 @@ public static class RunConverter
         return DMXW.SimpleRunElementConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
       if (openXmlElement is DXW.PositionalTab positionalTab && model is DMW.PositionalTab positionalTabModel)
         return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, positionalTabModel, diffs, objName);
-      if (openXmlElement is DXW.SoftHyphen softHyphen && model is DMW.Hyphen softHyphenModel)
+      if (openXmlElement is DXW.SoftHyphen softHyphen && model is Hyphen softHyphenModel)
         return DMXW.HyphenConverter.CompareModelElement(softHyphen, softHyphenModel, diffs, objName);
       if (openXmlElement is DXW.DayShort dayShort && model is DMW.RunDate dayShortModel)
         return DMXW.RunDateConverter.CompareModelElement(dayShort, dayShortModel, diffs, objName);
@@ -273,13 +273,13 @@ public static class RunConverter
       return DMXW.FieldCharConverter.CreateOpenXmlElement(fieldChar);
     if (model is DMW.Break brk)
       return DMXW.BreakConverter.CreateOpenXmlElement(brk);
-    if (model is DMW.Hyphen hyphen)
+    if (model is Hyphen hyphen)
       return DMXW.HyphenConverter.CreateOpenXmlElement(hyphen);
-    if (model is DMW.NoteReference footnoteReference)
+    if (model is NoteReference footnoteReference)
       return DMXW.FootnoteEndnoteReferenceTypeConverter.CreateOpenXmlElement(footnoteReference);
     if (model is DMW.CommentReference commentReference)
       return DMXW.MarkupTypeConverter.CreateOpenXmlElement(commentReference);
-    if (model is DMW.NoteReferenceMark footnoteReferenceMark)
+    if (model is NoteReferenceMark footnoteReferenceMark)
       return DMXW.NoteReferenceMarkConverter.CreateOpenXmlElement(footnoteReferenceMark);
     if (model is DMW.SeparatorMark separatorMark)
       return DMXW.SeparatorMarkConverter.CreateOpenXmlElement(separatorMark);
@@ -334,19 +334,19 @@ public static class RunConverter
         return DMXW.BreakConverter.UpdateOpenXmlElement(brk, brkModel);
       if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.LastRenderedPageBreak lastRenderedPageBreakModel)
         return DMXW.LastRenderedPageBreakConverter.UpdateOpenXmlElement(lastRenderedPageBreak, lastRenderedPageBreakModel);
-      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is DMW.Hyphen noBreakHyphenModel)
+      if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is Hyphen noBreakHyphenModel)
         return DMXW.HyphenConverter.UpdateOpenXmlElement(noBreakHyphen, noBreakHyphenModel);
-      if (openXmlElement is DXW.FootnoteReference footnoteReference && model is DMW.NoteReference footnoteReferenceModel)
+      if (openXmlElement is DXW.FootnoteReference footnoteReference && model is NoteReference footnoteReferenceModel)
         return DMXW.FootnoteEndnoteReferenceTypeConverter.UpdateOpenXmlElement(footnoteReference, footnoteReferenceModel);
-      if (openXmlElement is DXW.EndnoteReference endnoteReference && model is DMW.NoteReference endnoteReferenceModel)
+      if (openXmlElement is DXW.EndnoteReference endnoteReference && model is NoteReference endnoteReferenceModel)
         return DMXW.FootnoteEndnoteReferenceTypeConverter.UpdateOpenXmlElement(endnoteReference, endnoteReferenceModel);
       if (openXmlElement is DXW.CommentReference commentReference && model is DMW.CommentReference commentReferenceModel)
         return DMXW.MarkupTypeConverter.UpdateOpenXmlElement(commentReference, commentReferenceModel);
-      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && model is DMW.NoteReferenceMark footnoteReferenceMarkModel)
+      if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && model is NoteReferenceMark footnoteReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.UpdateOpenXmlElement(footnoteReferenceMark, footnoteReferenceMarkModel);
-      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && model is DMW.NoteReferenceMark endnoteReferenceMarkModel)
+      if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && model is NoteReferenceMark endnoteReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.UpdateOpenXmlElement(endnoteReferenceMark, endnoteReferenceMarkModel);
-      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && model is DMW.NoteReferenceMark annotationReferenceMarkModel)
+      if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && model is NoteReferenceMark annotationReferenceMarkModel)
         return DMXW.NoteReferenceMarkConverter.UpdateOpenXmlElement(annotationReferenceMark, annotationReferenceMarkModel);
       if (openXmlElement is DXW.SeparatorMark separatorMark && model is DMW.SeparatorMark separatorMarkModel)
         return DMXW.SeparatorMarkConverter.UpdateOpenXmlElement(separatorMark, separatorMarkModel);
@@ -362,7 +362,7 @@ public static class RunConverter
         return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(tabChar, tabCharModel);
       if (openXmlElement is DXW.PositionalTab positionalTab && model is DMW.PositionalTab positionalTabModel)
         return DMXW.PositionalTabConverter.UpdateOpenXmlElement(positionalTab, positionalTabModel);
-      if (openXmlElement is DXW.SoftHyphen softHyphen && model is DMW.Hyphen softHyphenModel)
+      if (openXmlElement is DXW.SoftHyphen softHyphen && model is Hyphen softHyphenModel)
         return DMXW.HyphenConverter.UpdateOpenXmlElement(softHyphen, softHyphenModel);
       if (openXmlElement is DXW.DayShort dayShort && model is DMW.RunDate dayShortModel)
         return DMXW.RunDateConverter.UpdateOpenXmlElement(dayShort, dayShortModel);

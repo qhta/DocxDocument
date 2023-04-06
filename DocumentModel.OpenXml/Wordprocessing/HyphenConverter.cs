@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -5,7 +7,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class HyphenConverter
 {
-  public static DMW.Hyphen? CreateModelElement(DXW.NoBreakHyphen? openXmlElement)
+  public static Hyphen? CreateModelElement(DXW.NoBreakHyphen? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -15,7 +17,7 @@ public static class HyphenConverter
     return null;
   }
 
-  public static DMW.Hyphen? CreateModelElement(DXW.SoftHyphen? openXmlElement)
+  public static Hyphen? CreateModelElement(DXW.SoftHyphen? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -25,7 +27,7 @@ public static class HyphenConverter
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.Hyphen? model, DMW.HyphenKind kind, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, Hyphen? model, DMW.HyphenKind kind, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && model != null)
     {
@@ -39,14 +41,14 @@ public static class HyphenConverter
     return false;
   }
 
-  public static bool CompareModelElement(DXW.NoBreakHyphen? openXmlElement, DMW.Hyphen? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NoBreakHyphen? openXmlElement, Hyphen? model, DiffList? diffs, string? objName)
     => CheckModelElement(openXmlElement, model, DMW.HyphenKind.NoBreakHyphen, diffs, objName);
 
-  public static bool CompareModelElement(DXW.SoftHyphen? openXmlElement, DMW.Hyphen? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SoftHyphen? openXmlElement, Hyphen? model, DiffList? diffs, string? objName)
     => CheckModelElement(openXmlElement, model, DMW.HyphenKind.SoftHyphen, diffs, objName);
 
 
-  public static DX.OpenXmlElement CreateOpenXmlElement(DMW.Hyphen model)
+  public static DX.OpenXmlElement CreateOpenXmlElement(Hyphen model)
   {
     switch (model.Value)
     {
@@ -58,9 +60,9 @@ public static class HyphenConverter
     throw new InvalidOperationException($"Not supported hyphen model {model.Value} in HyphenConverter.CreateOpenXmlParagraphElement");
   }
 
-    public static bool UpdateOpenXmlElement(DXW.NoBreakHyphen openXmlElement, DMW.Hyphen model)
+    public static bool UpdateOpenXmlElement(DXW.NoBreakHyphen openXmlElement, Hyphen model)
      => true;
 
-  public static bool UpdateOpenXmlElement(DXW.SoftHyphen openXmlElement, DMW.Hyphen model)
+  public static bool UpdateOpenXmlElement(DXW.SoftHyphen openXmlElement, Hyphen model)
      => true;
 }

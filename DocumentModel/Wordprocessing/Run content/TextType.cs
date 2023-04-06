@@ -1,8 +1,7 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Represents a textual element of text run.
+///   Represents a textual element of text run. There are two textual elements: Text and FieldCode
 /// </summary>
 public abstract class TextType: ModelElement, IRunContent
 {
