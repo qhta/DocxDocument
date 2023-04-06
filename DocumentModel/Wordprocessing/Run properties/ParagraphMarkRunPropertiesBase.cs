@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Base class for ParagraphMarkRunProperties classes.
-///   Contains  these common properties, which are not applied to <see cref="RunPropertiesBase"/>
+///   Contains  these common properties, which are not applied to <see cref="ExtBaseRunProperties"/>
 /// </summary>
-public abstract class ParagraphMarkRunPropertiesBase: RunPropertiesBase
+public abstract class ParagraphMarkRunPropertiesBase: ExtBaseRunProperties
 {
   /// <summary>
   ///   Inserted Paragraph.

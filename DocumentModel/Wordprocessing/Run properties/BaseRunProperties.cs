@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base class for all RunProperties classes.
 ///   Contains common properties
 /// </summary>
-public class RunPropertiesBaseStyle: ModelElement
+public abstract class BaseRunProperties: ModelElement
 {
     #region Common run properties
   /// <summary>

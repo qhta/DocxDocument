@@ -1,8 +1,7 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Paragraph Properties.
+///   Paragraph Properties Base Style. Contains
 /// </summary>
 public class ParagraphPropertiesBaseStyle: ModelElement
 {

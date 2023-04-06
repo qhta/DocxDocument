@@ -2,9 +2,9 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   Base class for RunProperties classes.
-///   Contains  these common properties, which are not applied to <see cref="RunPropertiesBaseStyle"/>
+///   Contains  these common properties, which are not applied to <see cref="BaseRunProperties"/>
 /// </summary>
-public abstract class RunPropertiesBase : RunPropertiesBaseStyle
+public abstract class ExtendedRunPropertiesBase : BaseRunProperties
 {
   #region These properties are defined in ECMA
   /// <summary>
@@ -26,7 +26,7 @@ public abstract class RunPropertiesBase : RunPropertiesBaseStyle
   ///   Specifies a highlighting color which is applied as a background behind the contents of this run. 
   ///   If this run has any background shading specified using the shading, 
   ///   then the background shading shall be superseded by the highlighting color when the contents of this run are displayed. 
-  ///   This property is not applied to <see cref="RunPropertiesBaseStyle"/> element.
+  ///   This property is not applied to <see cref="BaseRunProperties"/> element.
   /// </summary>
   public HighlightColorKind? Highlight { get; set; }
 

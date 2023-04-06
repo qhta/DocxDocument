@@ -696,7 +696,16 @@ public static class RunPropertiesBaseStyleConverter
   #endregion
 
   #region RunPropertiesBaseStyle base model conversion methods - for use in other RunProperties converters
-  public static void UpdateModelElement(DMW.RunPropertiesBaseStyle value, DX.OpenXmlCompositeElement openXmlElement)
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtendedRunPropertiesBase value)
+    where OpenXmlElementType : DX.OpenXmlCompositeElement, new()
+  {
+    var openXmlElement = new OpenXmlElementType();
+    UpdateOpenXmlElement(openXmlElement, value);
+    return openXmlElement;
+  }
+
+  public static void UpdateModelElement(DMW.BaseRunProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
     value.RunFonts = GetRunFonts(openXmlElement);
     value.Bold = GetBold(openXmlElement);
@@ -731,7 +740,7 @@ public static class RunPropertiesBaseStyleConverter
     value.SpecVanish = GetSpecVanish(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.RunPropertiesBaseStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseRunProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -805,15 +814,7 @@ public static class RunPropertiesBaseStyleConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesBase value)
-    where OpenXmlElementType : DX.OpenXmlCompositeElement, new()
-  {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
-    return openXmlElement;
-  }
-
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.RunPropertiesBaseStyle value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseRunProperties value)
   {
     SetRunFonts(openXmlElement, value.RunFonts);
     SetBold(openXmlElement, value.Bold);
@@ -850,18 +851,20 @@ public static class RunPropertiesBaseStyleConverter
   #endregion
 
   #region RunPropertiesBaseStyle specific model conversion methods - for use in other elements converters
-  public static DMW.RunPropertiesBaseStyle? CreateModelElement(DXW.RunPropertiesBaseStyle? openXmlElement)
+  public static ModelElementType? CreateModelElement<ModelElementType>(DX.OpenXmlCompositeElement? openXmlElement)
+    where ModelElementType : DMW.BaseRunProperties, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunPropertiesBaseStyle();
+      var value = new ModelElementType();
       RunPropertiesBaseStyleConverter.UpdateModelElement(value, openXmlElement);
       return value;
     }
     return null;
   }
+
   
-  public static DXW.RunPropertiesBaseStyle CreateOpenXmlElement(DMW.RunPropertiesBaseStyle value)
+  public static DXW.RunPropertiesBaseStyle CreateOpenXmlElement(DMW.BaseRunProperties value)
   {
     var openXmlElement = new DXW.RunPropertiesBaseStyle();
     UpdateOpenXmlElement(openXmlElement, value);
