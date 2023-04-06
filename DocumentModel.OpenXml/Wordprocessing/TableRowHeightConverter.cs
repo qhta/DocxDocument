@@ -47,9 +47,9 @@ public static class TableRowHeightConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableRowHeight();
-      value.Val = GetVal(openXmlElement);
-      value.HeightType = GetHeightType(openXmlElement);
+      var val = GetVal(openXmlElement);
+      var type = GetHeightType(openXmlElement);
+      var value = new DMW.TableRowHeight(val, type);
       return value;
     }
     return null;
@@ -60,9 +60,9 @@ public static class TableRowHeightConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Value, diffs, objName))
         ok = false;
-      if (!CmpHeightType(openXmlElement, value.HeightType, diffs, objName))
+      if (!CmpHeightType(openXmlElement, value.Type, diffs, objName))
         ok = false;
       return ok;
     }
@@ -81,7 +81,7 @@ public static class TableRowHeightConverter
   
   public static void UpdateOpenXmlElement(DXW.TableRowHeight openXmlElement, DMW.TableRowHeight value)
   {
-    SetVal(openXmlElement, value?.Val);
-    SetHeightType(openXmlElement, value?.HeightType);
+    SetVal(openXmlElement, value?.Value);
+    SetHeightType(openXmlElement, value?.Type);
   }
 }
