@@ -76,7 +76,7 @@ public static class TableRowPropertiesConverter
     SimpleValueConverter.SetValue<DXW.GridAfter,System.Int32>(openXmlElement, value);
   }
   
-  private static DMW.TableWidthType? GetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (element != null)
@@ -84,12 +84,12 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>(), value, diffs, objName);
   }
   
-  private static void SetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetWidthBeforeTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (itemElement != null)
@@ -102,7 +102,7 @@ public static class TableRowPropertiesConverter
     }
   }
   
-  private static DMW.TableWidthType? GetWidthAfterTableRow(DXW.TableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetWidthAfterTableRow(DXW.TableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>();
     if (element != null)
@@ -110,12 +110,12 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>(), value, diffs, objName);
   }
   
-  private static void SetWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetWidthAfterTableRow(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>();
     if (itemElement != null)
@@ -199,7 +199,7 @@ public static class TableRowPropertiesConverter
     BooleanValueConverter.SetOnOffOnlyType<DXW.TableHeader>(openXmlElement, value);
   }
   
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.TableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -207,12 +207,12 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

@@ -14,5 +14,5 @@ public class TableIndentation: ModelElement
   /// <summary>
   ///   type
   /// </summary>
-  public TableWidthUnitKind? Type { get; set; }
+  public TableWidthUnitType? Type { get; set; }
 }

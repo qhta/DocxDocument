@@ -8,7 +8,7 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Preferred Table Width Exception.
   /// </summary>
-  private static DMW.TableWidthType? GetTableWidth(DXW.TablePropertyExceptions openXmlElement)
+  private static DMW.TableWidth? GetTableWidth(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableWidth>();
     if (element != null)
@@ -16,12 +16,12 @@ public static class TablePropertyExceptionsConverter
     return null;
   }
   
-  private static bool CmpTableWidth(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableWidth(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName);
   }
   
-  private static void SetTableWidth(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableWidth(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableWidth>();
     if (itemElement != null)
@@ -65,7 +65,7 @@ public static class TablePropertyExceptionsConverter
   /// <summary>
   /// Table Cell Spacing Exception.
   /// </summary>
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -73,12 +73,12 @@ public static class TablePropertyExceptionsConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

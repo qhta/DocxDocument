@@ -72,7 +72,7 @@ public static class StyleTablePropertiesConverter
   /// <summary>
   /// TableCellSpacing.
   /// </summary>
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.StyleTableProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.StyleTableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -80,12 +80,12 @@ public static class StyleTablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.StyleTableProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

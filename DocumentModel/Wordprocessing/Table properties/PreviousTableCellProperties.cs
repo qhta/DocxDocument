@@ -14,7 +14,7 @@ public class PreviousTableCellProperties: ModelElement
   /// <summary>
   ///   TableCellWidth.
   /// </summary>
-  public TableWidthType? TableCellWidth { get; set; }
+  public TableWidth? TableCellWidth { get; set; }
 
   /// <summary>
   ///   GridSpan.

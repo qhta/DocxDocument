@@ -42,7 +42,7 @@ public static class ZoomConverter
   {
     var valStr = (value != null) ? (value.ToString() + "%") : null;
     if (openXmlElement?.Percent?.Value == valStr) return true;
-    diffs?.Add(objName, "Percent", openXmlElement?.Percent?.Value, valStr);
+    diffs?.Add(objName, "Pct", openXmlElement?.Percent?.Value, valStr);
     return false;
   }
   

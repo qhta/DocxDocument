@@ -7,12 +7,26 @@
 public struct Twips : IComparable<Twips>
 {
   /// <summary>
-  /// There is a small difference between real and nominal factors
+  /// How many twips are in one millimeter.
+  /// There is a small difference between real and nominal factors.
   /// </summary>
-  const double TwipsInMM = 1440 / 25.4; //56,695238095238095238095238095238;
-  const double TwipsInCM = TwipsInMM / 10.0;
-  const double TwipsInInch = 1440;
-  const double TwipsInPoint = 20;
+  public const double TwipsInMM = 1440 / 25.4; //56,695238095238095238095238095238;
+
+  /// <summary>
+  /// How many twips are in one centimeter.
+  /// There is a small difference between real and nominal factors.
+  /// </summary>
+  public const double TwipsInCM = TwipsInMM / 10.0;
+
+  /// <summary>
+  /// How many twips are in one inch.
+  /// </summary>
+  public const double TwipsInInch = 1440;
+
+  /// <summary>
+  /// How many twips are in one point.
+  /// </summary>
+  public const double TwipsInPoint = 20;
 
   private Int64 Value;
 

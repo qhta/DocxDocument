@@ -14,7 +14,7 @@ public class TableStyleConditionalTableProperties: ModelElement
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   TableIndentation.

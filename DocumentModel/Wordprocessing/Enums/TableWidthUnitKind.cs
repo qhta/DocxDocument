@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Defines the TableWidthUnitValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum TableWidthUnitKind
+public enum TableWidthUnitType
 {
   /// <summary>
   ///   No Width.
@@ -20,7 +20,7 @@ public enum TableWidthUnitKind
   /// <summary>
   ///   Width in Twentieths of a Point.
   /// </summary>
-  Dxa,
+  Twips,
 
   /// <summary>
   ///   Automatically Determined Width.

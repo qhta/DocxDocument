@@ -37,7 +37,7 @@ public static class PreviousTableCellPropertiesConverter
   /// <summary>
   /// TableCellWidth.
   /// </summary>
-  private static DMW.TableWidthType? GetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellWidth>();
     if (element != null)
@@ -45,12 +45,12 @@ public static class PreviousTableCellPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellWidth>(), value, diffs, objName);
   }
   
-  private static void SetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellWidth(DXW.PreviousTableCellProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellWidth>();
     if (itemElement != null)

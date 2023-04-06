@@ -76,7 +76,7 @@ public static class PreviousTableRowPropertiesConverter
     SimpleValueConverter.SetValue<DXW.GridAfter,System.Int32>(openXmlElement, value);
   }
   
-  private static DMW.TableWidthType? GetWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (element != null)
@@ -84,12 +84,12 @@ public static class PreviousTableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>(), value, diffs, objName);
   }
   
-  private static void SetWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetWidthBeforeTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (itemElement != null)
@@ -102,7 +102,7 @@ public static class PreviousTableRowPropertiesConverter
     }
   }
   
-  private static DMW.TableWidthType? GetWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>();
     if (element != null)
@@ -110,12 +110,12 @@ public static class PreviousTableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>(), value, diffs, objName);
   }
   
-  private static void SetWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetWidthAfterTableRow(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>();
     if (itemElement != null)
@@ -199,7 +199,7 @@ public static class PreviousTableRowPropertiesConverter
     BooleanValueConverter.SetOnOffOnlyType<DXW.TableHeader>(openXmlElement, value);
   }
   
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -207,12 +207,12 @@ public static class PreviousTableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.PreviousTableRowProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

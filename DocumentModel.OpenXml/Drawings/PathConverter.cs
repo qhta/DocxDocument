@@ -16,7 +16,7 @@ public static class PathConverter
   private static bool CmpWidth(DXDraw.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
-    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   

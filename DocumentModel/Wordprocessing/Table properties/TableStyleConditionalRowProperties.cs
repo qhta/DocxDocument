@@ -12,7 +12,7 @@ public class TableStyleConditionalRowProperties: ModelElement
 
   public Boolean? TableHeader { get; set; }
 
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   public TableRowAlignmentKind? TableJustification { get; set; }
 }

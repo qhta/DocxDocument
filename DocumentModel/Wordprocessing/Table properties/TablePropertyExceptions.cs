@@ -9,7 +9,7 @@ public class TablePropertyExceptions: ModelElement
   /// <summary>
   ///   Preferred Table Width Exception.
   /// </summary>
-  public TableWidthType? TableWidth { get; set; }
+  public TableWidth? TableWidth { get; set; }
 
   /// <summary>
   ///   Table Alignment Exception.
@@ -19,7 +19,7 @@ public class TablePropertyExceptions: ModelElement
   /// <summary>
   ///   Table Cell Spacing Exception.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   Table Indent from Leading Margin Exception.

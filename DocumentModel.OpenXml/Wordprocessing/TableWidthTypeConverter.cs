@@ -8,57 +8,59 @@ public static class TableWidthTypeConverter
   /// <summary>
   /// Table Width Value
   /// </summary>
-  private static String? GetWidth(DXW.TableWidthType openXmlElement)
+  private static Int64? GetWidth(DXW.TableWidthType openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Width);
+    return Int32ValueConverter.GetValue(openXmlElement?.Width);
   }
   
-  private static bool CmpWidth(DXW.TableWidthType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.TableWidthType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Width");
+    return StringValueConverter.CmpValue(openXmlElement?.Width, value.ToString(), diffs, objName, "Value");
   }
   
-  private static void SetWidth(DXW.TableWidthType openXmlElement, String? value)
+  private static void SetWidth(DXW.TableWidthType openXmlElement, Int64? value)
   {
-    openXmlElement.Width = StringValueConverter.CreateStringValue(value);
+    openXmlElement.Width = value!=null ? StringValueConverter.CreateStringValue(value.ToString()) : null;
   }
   
   /// <summary>
   /// Table Width Type
   /// </summary>
-  private static DMW.TableWidthUnitKind? GetType(DXW.TableWidthType openXmlElement)
+  private static DMW.TableWidthUnitType? GetType(DXW.TableWidthType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitKind? value)
+  private static void SetType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitType? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
   }
   
-  public static DMW.TableWidthType? CreateModelElement(DXW.TableWidthType? openXmlElement)
+  public static DMW.TableWidth? CreateModelElement(DXW.TableWidthType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableWidthType();
-      value.Width = GetWidth(openXmlElement);
-      value.Type = GetType(openXmlElement);
+      var width = GetWidth(openXmlElement);
+      if (width == 5000)
+        Debug.Assert(true);
+      var type = GetType(openXmlElement);
+      var value = new DMW.TableWidth(width, type);
       return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableWidthType? openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableWidthType? openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Value, diffs, objName))
         ok = false;
       if (!CmpType(openXmlElement, value.Type, diffs, objName))
         ok = false;
@@ -69,7 +71,7 @@ public static class TableWidthTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidthType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidth value)
     where OpenXmlElementType: DXW.TableWidthType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -77,9 +79,9 @@ public static class TableWidthTypeConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableWidthType openXmlElement, DMW.TableWidthType value)
+  public static void UpdateOpenXmlElement(DXW.TableWidthType openXmlElement, DMW.TableWidth value)
   {
-    SetWidth(openXmlElement, value?.Width);
+    SetWidth(openXmlElement, value?.Value);
     SetType(openXmlElement, value?.Type);
   }
 }

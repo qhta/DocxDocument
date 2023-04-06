@@ -24,7 +24,7 @@ public class StyleTableProperties: ModelElement
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   TableIndentation.

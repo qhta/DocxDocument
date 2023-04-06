@@ -15,7 +15,7 @@ public static class GridColumnConverter
   
   private static bool CmpWidth(DXW.GridColumn openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Width");
+    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
   
   private static void SetWidth(DXW.GridColumn openXmlElement, String? value)

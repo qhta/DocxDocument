@@ -53,7 +53,7 @@ public static class FramePropertiesConverter
   
   private static bool CmpWidth(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Width");
+    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
   
   private static void SetWidth(DXW.FrameProperties openXmlElement, String? value)
