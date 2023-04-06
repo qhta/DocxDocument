@@ -419,7 +419,7 @@ public static class RunPropertiesBaseConverter
   #endregion
 
   #region RunPropertiesBase model conversion.
-  public static void UpdateModelElement(DMW.RunPropertiesBase value, DX.OpenXmlCompositeElement openXmlElement)
+  public static void UpdateModelElement(DMW.ExtBaseRunProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
     RunPropertiesBaseStyleConverter.UpdateModelElement(value, openXmlElement);
     value.RunStyle = GetRunStyle(openXmlElement);
@@ -440,7 +440,7 @@ public static class RunPropertiesBaseConverter
     value.StylisticSets = GetStylisticSets(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.RunPropertiesBase? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseRunProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -486,7 +486,7 @@ public static class RunPropertiesBaseConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesBase value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtBaseRunProperties value)
     where OpenXmlElementType : DX.OpenXmlCompositeElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -494,7 +494,7 @@ public static class RunPropertiesBaseConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.RunPropertiesBase value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseRunProperties value)
   {
     RunPropertiesBaseStyleConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetRunStyle(openXmlElement, value.RunStyle);

@@ -19,7 +19,7 @@ public class TableStyleProperties: ModelElement
   /// <summary>
   ///   Table Style Conditional Formatting Run Properties.
   /// </summary>
-  public RunPropertiesBaseStyle? RunPropertiesBaseStyle { get; set; }
+  public TableStyleRunProperties? TableStyleRunProperties { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Table Properties.
