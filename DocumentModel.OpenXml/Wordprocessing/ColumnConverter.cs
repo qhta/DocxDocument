@@ -15,7 +15,7 @@ public static class ColumnConverter
   
   private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Width");
+    return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
   
   private static void SetWidth(DXW.Column openXmlElement, String? value)

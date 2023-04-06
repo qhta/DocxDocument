@@ -16,7 +16,7 @@ public static class TableIndentationConverter
   private static bool CmpWidth(DXW.TableIndentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
-    diffs?.Add(objName, "Width", openXmlElement?.Width?.Value, value);
+    diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
@@ -28,19 +28,19 @@ public static class TableIndentationConverter
   /// <summary>
   /// type
   /// </summary>
-  private static DMW.TableWidthUnitKind? GetType(DXW.TableIndentation openXmlElement)
+  private static DMW.TableWidthUnitType? GetType(DXW.TableIndentation openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitKind? value)
+  private static void SetType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitType? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
   }
   
   public static DMW.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)

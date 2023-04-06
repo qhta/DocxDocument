@@ -29,7 +29,7 @@ public class PreviousTableProperties: ModelElement
   /// <summary>
   ///   TableWidth.
   /// </summary>
-  public TableWidthType? TableWidth { get; set; }
+  public TableWidth? TableWidth { get; set; }
 
   /// <summary>
   ///   TableJustification.
@@ -39,7 +39,7 @@ public class PreviousTableProperties: ModelElement
   /// <summary>
   ///   TableCellSpacing.
   /// </summary>
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   /// <summary>
   ///   TableIndentation.

@@ -101,7 +101,7 @@ public static class TablePropertiesConverter
   /// <summary>
   /// TableWidth.
   /// </summary>
-  private static DMW.TableWidthType? GetTableWidth(DXW.TableProperties openXmlElement)
+  private static DMW.TableWidth? GetTableWidth(DXW.TableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableWidth>();
     if (element != null)
@@ -109,12 +109,12 @@ public static class TablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName);
   }
   
-  private static void SetTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableWidth(DXW.TableProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableWidth>();
     if (itemElement != null)
@@ -158,7 +158,7 @@ public static class TablePropertiesConverter
   /// <summary>
   /// TableCellSpacing.
   /// </summary>
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.TableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -166,12 +166,12 @@ public static class TablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TableProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

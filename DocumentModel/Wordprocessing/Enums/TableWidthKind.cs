@@ -15,5 +15,5 @@ public enum TableWidthKind
   /// <summary>
   ///   val.
   /// </summary>
-  Dxa
+  Twips
 }
