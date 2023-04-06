@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Run Properties on the Paragraph Mark.
+/// ParagraphMarkRunPropertiesChangeConverter class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphMarkRunPropertiesChangeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region Date conversion.
   private static DateTime? GetDate(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,9 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -60,10 +56,9 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Previous Run Properties for the Paragraph Mark.
-  /// </summary>
+  #endregion
+
+  #region PreviousParagraphMarkRunProperties conversion.
   private static DMW.PreviousParagraphMarkRunProperties? GetPreviousParagraphMarkRunProperties(DXW.ParagraphMarkRunPropertiesChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousParagraphMarkRunProperties>();
@@ -89,7 +84,9 @@ public static class ParagraphMarkRunPropertiesChangeConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region ParagraphMarkRunPropertiesChange model conversion.
   public static DMW.ParagraphMarkRunPropertiesChange? CreateModelElement(DXW.ParagraphMarkRunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
@@ -139,4 +136,5 @@ public static class ParagraphMarkRunPropertiesChangeConverter
     SetId(openXmlElement, value?.Id);
     SetPreviousParagraphMarkRunProperties(openXmlElement, value?.PreviousParagraphMarkRunProperties);
   }
+  #endregion
 }

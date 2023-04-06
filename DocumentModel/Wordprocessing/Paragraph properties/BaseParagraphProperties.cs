@@ -1,16 +1,11 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Previous Paragraph Properties.
+///   Base class for all ParagraphProperties classes.
+///   Contains common properties.
 /// </summary>
-public class ParagraphPropertiesExtended: ModelElement
+public abstract class BaseParagraphProperties: ModelElement
 {
-  /// <summary>
-  ///   ParagraphStyleId.
-  /// </summary>
-  public String? ParagraphStyleId { get; set; }
-
   /// <summary>
   ///   KeepNext.
   /// </summary>
@@ -160,14 +155,4 @@ public class ParagraphPropertiesExtended: ModelElement
   ///   OutlineLevel.
   /// </summary>
   public Int32? OutlineLevel { get; set; }
-
-  /// <summary>
-  ///   DivId.
-  /// </summary>
-  public String? DivId { get; set; }
-
-  /// <summary>
-  ///   ConditionalFormatStyle.
-  /// </summary>
-  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
 }

@@ -57,7 +57,7 @@ public static class DocDefaultsConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.ParagraphPropertiesDefaultConverter.CreateOpenXmlElement<DXW.ParagraphPropertiesDefault>(value);
+      itemElement = DMXW.ParagraphPropertiesDefaultConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

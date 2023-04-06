@@ -140,7 +140,6 @@ public static class RunPropertiesBaseConverter
   }
   #endregion
 
-
   #region Shadow14 conversion.
   public static DMW.Shadow2? GetShadow14(DX.OpenXmlCompositeElement openXmlElement)
   {

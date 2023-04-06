@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class RunPropertiesChangeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.RunPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class RunPropertiesChangeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region date conversion.
   private static DateTime? GetDate(DXW.RunPropertiesChange openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,9 @@ public static class RunPropertiesChangeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.RunPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -60,10 +56,9 @@ public static class RunPropertiesChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Previous Run Properties.
-  /// </summary>
+  #endregion
+
+  #region PreviousRunProperties conversion.
   private static DMW.PreviousRunProperties? GetPreviousRunProperties(DXW.RunPropertiesChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousRunProperties>();
@@ -89,7 +84,9 @@ public static class RunPropertiesChangeConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region RunPropertiesChange model conversion.
   public static DMW.RunPropertiesChange? CreateModelElement(DXW.RunPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
@@ -139,4 +136,5 @@ public static class RunPropertiesChangeConverter
     SetId(openXmlElement, value?.Id);
     SetPreviousRunProperties(openXmlElement, value?.PreviousRunProperties);
   }
+  #endregion
 }
