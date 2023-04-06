@@ -191,7 +191,7 @@ public static class ManualLayoutConverter
   
   private static bool CmpWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Width>()?.Val, value, diffs, objName, "Width");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Width>()?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value)

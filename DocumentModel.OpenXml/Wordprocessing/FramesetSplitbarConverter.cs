@@ -15,7 +15,7 @@ public static class FramesetSplitbarConverter
   
   private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val, value, diffs, objName, "Width");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val, value, diffs, objName, "Value");
   }
   
   private static void SetWidth(DXW.FramesetSplitbar openXmlElement, String? value)

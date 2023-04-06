@@ -14,9 +14,9 @@ public class TableRowProperties: ModelElement
 
   public Int32? GridAfter { get; set; }
 
-  public TableWidthType? WidthBeforeTableRow { get; set; }
+  public TableWidth? WidthBeforeTableRow { get; set; }
 
-  public TableWidthType? WidthAfterTableRow { get; set; }
+  public TableWidth? WidthAfterTableRow { get; set; }
 
   public TableRowHeight? TableRowHeight { get; set; }
 
@@ -26,7 +26,7 @@ public class TableRowProperties: ModelElement
 
   public Boolean? TableHeader { get; set; }
 
-  public TableWidthType? TableCellSpacing { get; set; }
+  public TableWidth? TableCellSpacing { get; set; }
 
   public TableRowAlignmentKind? TableJustification { get; set; }
 

@@ -133,6 +133,8 @@ public struct Percent: IComparable<Percent>
   public static implicit operator Int64(Percent value) { return (Int64)value.Value; }
   public static implicit operator Percent(UInt64 value) { return new Percent(value); }
   public static implicit operator UInt64(Percent value) { return (UInt64)value.Value; }
+  public static implicit operator Percent(Double value) { return new Percent(value); }
+  public static implicit operator Double(Percent value) { return (Double)value.Value; }
 
   public int CompareTo(Percent other)
   {

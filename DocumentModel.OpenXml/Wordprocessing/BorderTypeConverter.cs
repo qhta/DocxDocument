@@ -108,7 +108,7 @@ public static class BorderTypeConverter
   private static bool CmpSize(DXW.BorderType openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Size?.Value == value/5) return true;
-    diffs?.Add(objName, "Width", openXmlElement?.Size?.Value, value);
+    diffs?.Add(objName, "Value", openXmlElement?.Size?.Value, value);
     return false;
   }
   

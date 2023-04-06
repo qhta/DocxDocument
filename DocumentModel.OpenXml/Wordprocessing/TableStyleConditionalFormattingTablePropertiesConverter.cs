@@ -36,7 +36,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   /// <summary>
   /// TableCellSpacing.
   /// </summary>
-  private static DMW.TableWidthType? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.TableWidth? GetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -44,12 +44,12 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
   
-  private static void SetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidthType? value)
+  private static void SetTableCellSpacing(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)

@@ -9,30 +9,30 @@ public class TableCellMarginDefault: ModelElement
   /// <summary>
   ///   Table Cell Top Margin Default.
   /// </summary>
-  public TableWidthType? TopMargin { get; set; }
+  public TableWidth? TopMargin { get; set; }
 
   /// <summary>
   ///   Table Cell Left Margin Default.
   /// </summary>
-  public TableWidthDxaNilType? TableCellLeftMargin { get; set; }
+  public TableWidth? TableCellLeftMargin { get; set; }
 
   /// <summary>
   ///   StartMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public TableWidthType? StartMargin { get; set; }
+  public TableWidth? StartMargin { get; set; }
 
   /// <summary>
   ///   Table Cell Bottom Margin Default.
   /// </summary>
-  public TableWidthType? BottomMargin { get; set; }
+  public TableWidth? BottomMargin { get; set; }
 
   /// <summary>
   ///   Table Cell Right Margin Default.
   /// </summary>
-  public TableWidthDxaNilType? TableCellRightMargin { get; set; }
+  public TableWidth? TableCellRightMargin { get; set; }
 
   /// <summary>
   ///   EndMargin, this property is only available in Office 2010 and later..
   /// </summary>
-  public TableWidthType? EndMargin { get; set; }
+  public TableWidth? EndMargin { get; set; }
 }
