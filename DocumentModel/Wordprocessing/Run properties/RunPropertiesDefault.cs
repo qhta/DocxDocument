@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Default Run Properties.
 /// </summary>
-public class RunPropertiesDefault: RunPropertiesBaseStyle
+public class RunPropertiesDefault: BaseRunProperties
 {
   ///// <summary>
   /////   Run Properties.

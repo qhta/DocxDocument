@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Run Properties.
 /// </summary>
-public class RunProperties: RunPropertiesBase
+public class RunProperties: ExtBaseRunProperties
 {
   /// <summary>
   ///   RunPropertiesChange.
