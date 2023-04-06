@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-/// <see cref="Twips"/> data type to/from string converter. 
+/// <see cref="TableWidth"/> data type to/from string converter. 
 /// Implements <see cref="IRealTypeConverter"/> to specify the unit for serialization
 /// </summary>
 internal class TableWidthTypeConverter : TypeConverter, IRealTypeConverter
