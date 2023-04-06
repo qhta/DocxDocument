@@ -89,37 +89,38 @@ public class TestBody : TestBase
     var textWriter = new StringWriter();
     var serializer = new QXmlSerializer(typeof(DMW.Body), extraTypes.ToArray(),
           new SerializationOptions { AcceptAllProperties = true });
+    var t2 = DateTime.Now;
+    if (showDetails)
+      WriteLine($"Serializer creation time = {(t2 - t1).TotalSeconds} s");
     serializer.Serialize(textWriter, oldBody);
     textWriter.Flush();
     string str = textWriter.ToString();
-    var t2 = DateTime.Now;
+    var t3 = DateTime.Now;
     if (showDetails)
     {
       WriteLine(str);
       WriteLine();
     }
     if (showDetails)
-      WriteLine($"Serialization time = {(t2 - t1).TotalSeconds} s");
+      WriteLine($"Serialization time = {(t3 - t2).TotalSeconds} s");
 
-    var t3 = DateTime.Now;
+    var t4 = DateTime.Now;
     var textReader = new StringReader(str);
     var newBody = (DMW.Body?)serializer.Deserialize(textReader);
-    var t4 = DateTime.Now;
+    var t5 = DateTime.Now;
     if (showDetails)
-      WriteLine($"Deserialization time = {(t4 - t3).TotalSeconds} s");
+      WriteLine($"Deserialization time = {(t5 - t4).TotalSeconds} s");
     Assert.IsNotNull(newBody, $"Deserialized body is null");
-
-
 
     var diffs = new DiffList();
     var ok = DeepComparer.IsEqual(oldBody, newBody, diffs);
-    var t5 = DateTime.Now;
+    var t6 = DateTime.Now;
     if (!ok)
       foreach (var diff in diffs)
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
     if (showDetails)
-      WriteLine($"DeepCompare time = {(t5 - t4).TotalSeconds}");
+      WriteLine($"DeepCompare time = {(t6 - t5).TotalSeconds}");
   }
 
   /// <summary>
