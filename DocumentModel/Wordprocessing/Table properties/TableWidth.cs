@@ -1,23 +1,30 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the TableWidth Class.
+///   Defines the TableWidth class. Its Value can be absolute (in twips) or relative (in fiftieth of percent), or "auto" or "nil".
+///   The type of the Value is determined with the Type property.
+///   This class is used in multiple measures according to table horizontal dimension.
 /// </summary>
 [TypeConverter(typeof(TableWidthTypeConverter))]
 public class TableWidth : ModelElement
 {
   /// <summary>
-  ///   Table Width value. Can be absolute (in twips) or relative (in Fiftieth of Percent)
+  ///   Table Width value. Can be absolute (in twips) or relative (in fiftieth of percent).
   /// </summary>
-  public Int64 Value { get; private set; }
+  public Int64 Value { get; set; }
 
   /// <summary>
   ///   Table Width 
   /// </summary>
-  public TableWidthUnitType? Type { get; private set; }
+  public TableWidthUnitType? Type { get; set; }
 
   /// <summary>
-  /// Initializing converter with two parameters
+  /// Default constructor.
+  /// </summary>
+  public TableWidth(){ }
+
+  /// <summary>
+  /// Initializing constructor with two parameters
   /// </summary>
   /// <param name="width">string representation of the value</param>
   /// <param name="type">Unit/Type specification</param>
@@ -28,7 +35,7 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// Initializing converter with two parameters
+  /// Initializing constructor with two parameters
   /// </summary>
   /// <param name="width">string representation of the value</param>
   /// <param name="type">Unit/Type specification</param>
@@ -45,7 +52,7 @@ public class TableWidth : ModelElement
   /// <summary>
   /// Initializing converter with one string parameter
   /// </summary>
-  /// <param name="str">string representation of the value</param>
+  /// <param name="str">string representation of the value and Unit/Type</param>
   public TableWidth(string? str)
   {
     if (str == null || str == "nil")
@@ -92,8 +99,8 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// If Type is nil or auto then a string is emitted.
-  /// Otherwise a Percent or Value is converted to string.
+  /// If the Type is "nil" or "auto" then a string is emitted.
+  /// Otherwise the Percent or Value is converted to string.
   /// </summary>
   public override string? ToString()
   {
@@ -107,8 +114,8 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// If Type is nil or auto then a string is emitted.
-  /// Otherwise a Percent or Value is converted to string.
+  /// If the Type is "nil" or "auto" then a string is emitted.
+  /// Otherwise the Percent or Value is converted to string (using unit).
   /// </summary>
   public string? ToString(string? unit)
   {
@@ -120,8 +127,8 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// Converts double value to string using unit and specific precision (fractional digits count).
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// If the Type is "nil" or "auto" then a string is emitted.
+  /// Otherwise the Percent or Value is converted to string (using precision and unit).
   /// </summary>
   public string ToString(int precision, string? unit)
   {
@@ -133,10 +140,8 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// Converts double value to string using unit, specific precision (fractional digits count),
-  /// and format provider to determine digits separator.
-  /// Fixed format is used.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// If the Type is "nil" or "auto" then a string is emitted.
+  /// Otherwise the Percent or Value is converted to string (using precision, provider and unit).
   /// </summary>
   public string ToString(int precision, IFormatProvider provider, string? unit)
   {
@@ -164,9 +169,8 @@ public class TableWidth : ModelElement
   }
 
   /// <summary>
-  /// Converts double value to string using unit
-  /// and format provider to determine digits separator.
-  /// Unit can be determined as suffix "mm", "cm", "pt", or "in".
+  /// If the Type is "nil" or "auto" then a string is emitted.
+  /// Otherwise the Percent or Value is converted to string (using provider and unit).
   /// </summary>
   public string ToString(IFormatProvider provider, string? unit)
   {
