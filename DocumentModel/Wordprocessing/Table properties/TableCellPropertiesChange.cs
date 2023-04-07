@@ -2,24 +2,25 @@ namespace DocumentModel.Wordprocessing;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Revision Information for Table Cell Properties.
+///   TableCellPropertiesChange class used in <see cref="TableCellProperties"/>.
+///   Represents <see cref="PreviousTableCellProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TableCellPropertiesChange: ModelElement
 {
   /// <summary>
-  ///   author
+  ///   Author.
   /// </summary>
   public String? Author { get; set; }
 
   /// <summary>
-  ///   date
+  ///   Date.
   /// </summary>
   public DateTime? Date { get; set; }
 
   /// <summary>
-  ///   Annotation Identifier
+  ///   Annotation Identifier.
   /// </summary>
-  public String? Id { get; set; }
+  public String? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Table Cell Properties.
