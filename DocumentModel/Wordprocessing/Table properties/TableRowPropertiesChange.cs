@@ -1,7 +1,8 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Revision Information for Table Row Properties.
+///   TableRowPropertiesChange class used in <see cref="TableRowProperties"/>.
+///   Represents <see cref="PreviousTableRowProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TableRowPropertiesChange: ModelElement
 {
