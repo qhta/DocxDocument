@@ -15,7 +15,7 @@ public static class BackgroundConverter
   
   private static bool CmpId(DXVml.Background openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.Background openXmlElement, String? value)

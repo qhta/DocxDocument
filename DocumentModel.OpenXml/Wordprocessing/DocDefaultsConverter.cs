@@ -8,7 +8,7 @@ public static class DocDefaultsConverter
   /// <summary>
   /// Default Run Properties.
   /// </summary>
-  private static DMW.RunPropertiesDefault? GetRunPropertiesDefault(DXW.DocDefaults openXmlElement)
+  private static DMW.DefaultRunProperties? GetRunPropertiesDefault(DXW.DocDefaults openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesDefault>();
     if (element != null)
@@ -16,12 +16,12 @@ public static class DocDefaultsConverter
     return null;
   }
   
-  private static bool CmpRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.RunPropertiesDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.DefaultRunProperties? value, DiffList? diffs, string? objName)
   {
     return DMXW.RunPropertiesDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesDefault>(), value, diffs, objName);
   }
   
-  private static void SetRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.RunPropertiesDefault? value)
+  private static void SetRunPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.DefaultRunProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.RunPropertiesDefault>();
     if (itemElement != null)
@@ -37,7 +37,7 @@ public static class DocDefaultsConverter
   /// <summary>
   /// Default Paragraph Properties.
   /// </summary>
-  private static DMW.ParagraphPropertiesDefault? GetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement)
+  private static DMW.DefaultParagraphProperties? GetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesDefault>();
     if (element != null)
@@ -45,12 +45,12 @@ public static class DocDefaultsConverter
     return null;
   }
   
-  private static bool CmpParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.ParagraphPropertiesDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
   {
     return DMXW.ParagraphPropertiesDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphPropertiesDefault>(), value, diffs, objName);
   }
   
-  private static void SetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.ParagraphPropertiesDefault? value)
+  private static void SetParagraphPropertiesDefault(DXW.DocDefaults openXmlElement, DMW.DefaultParagraphProperties? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ParagraphPropertiesDefault>();
     if (itemElement != null)

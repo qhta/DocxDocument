@@ -1,8 +1,9 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Previous Run Properties for the Paragraph Mark.
+///   PreviousParagraphMarkRunProperties class used in <see cref="ParagraphMarkRunPropertiesChange"/>.
+///   Represents previous version of <see cref="ParagraphMarkRunProperties"/>.
 /// </summary>
-public class PreviousParagraphMarkRunProperties: ParagraphMarkRunPropertiesBase
+public class PreviousParagraphMarkRunProperties: BaseParagraphMarkRunProperties
 {
 }

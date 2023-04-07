@@ -218,7 +218,7 @@ public static class ToggleButtonConverter
   
   private static bool CmpId(DXOCustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.ToggleButton openXmlElement, String? value)

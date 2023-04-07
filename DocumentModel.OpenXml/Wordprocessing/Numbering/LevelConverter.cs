@@ -362,7 +362,7 @@ public static class LevelConverter
       value.LevelPictureBulletId = GetLevelPictureBulletId(openXmlElement);
       value.LegacyNumbering = GetLegacyNumbering(openXmlElement);
       value.LevelJustification = GetLevelJustification(openXmlElement);
-      value.PreviousParagraphProperties = GetPreviousParagraphProperties(openXmlElement);
+      value.NumberingLevelParagraphProperties = GetPreviousParagraphProperties(openXmlElement);
       value.NumberingSymbolRunProperties = GetNumberingSymbolRunProperties(openXmlElement);
       return value;
     }
@@ -400,7 +400,7 @@ public static class LevelConverter
         ok = false;
       if (!CmpLevelJustification(openXmlElement, value.LevelJustification, diffs, objName))
         ok = false;
-      if (!CmpPreviousParagraphProperties(openXmlElement, value.PreviousParagraphProperties, diffs, objName))
+      if (!CmpPreviousParagraphProperties(openXmlElement, value.NumberingLevelParagraphProperties, diffs, objName))
         ok = false;
       if (!CmpNumberingSymbolRunProperties(openXmlElement, value.NumberingSymbolRunProperties, diffs, objName))
         ok = false;
@@ -434,7 +434,7 @@ public static class LevelConverter
     SetLevelPictureBulletId(openXmlElement, value?.LevelPictureBulletId);
     SetLegacyNumbering(openXmlElement, value?.LegacyNumbering);
     SetLevelJustification(openXmlElement, value?.LevelJustification);
-    SetPreviousParagraphProperties(openXmlElement, value?.PreviousParagraphProperties);
+    SetPreviousParagraphProperties(openXmlElement, value?.NumberingLevelParagraphProperties);
     SetNumberingSymbolRunProperties(openXmlElement, value?.NumberingSymbolRunProperties);
   }
   #endregion

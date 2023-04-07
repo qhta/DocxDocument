@@ -177,7 +177,7 @@ public class TestStyles : TestBase
   /// </summary>
   /// <param name="modelParPropsDefaults">The model default paragraph properties.</param>
   /// <param name="origParPropsDefaults">The original default paragraph properties.</param>
-  private void CheckParagraphPropertiesDefault(DMW.ParagraphPropertiesDefault? modelParPropsDefaults,
+  private void CheckParagraphPropertiesDefault(DMW.DefaultParagraphProperties? modelParPropsDefaults,
     DXW.ParagraphPropertiesDefault? origParPropsDefaults)
   {
     if (origParPropsDefaults != null)
@@ -194,7 +194,7 @@ public class TestStyles : TestBase
   /// </summary>
   /// <param name="modelRunPropsDefaults">The model default run properties.</param>
   /// <param name="origRunPropsDefaults">The original default run properties.</param>
-  private void CheckRunPropertiesDefault(DMW.RunPropertiesDefault? modelRunPropsDefaults,
+  private void CheckRunPropertiesDefault(DMW.DefaultRunProperties? modelRunPropsDefaults,
     DXW.RunPropertiesDefault? origRunPropsDefaults)
   {
     if (origRunPropsDefaults != null)

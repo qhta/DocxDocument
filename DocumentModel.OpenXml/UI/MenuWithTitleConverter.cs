@@ -15,7 +15,7 @@ public static class MenuWithTitleConverter
   
   private static bool CmpId(DXOCustUI.MenuWithTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.MenuWithTitle openXmlElement, String? value)

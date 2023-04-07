@@ -56,7 +56,7 @@ public static class UnsizedSplitButtonConverter
   
   private static bool CmpId(DXOCustUI.UnsizedSplitButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.UnsizedSplitButton openXmlElement, String? value)

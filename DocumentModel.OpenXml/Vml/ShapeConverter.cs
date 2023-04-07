@@ -15,7 +15,7 @@ public static class ShapeConverter
   
   private static bool CmpId(DXVml.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.Shape openXmlElement, String? value)

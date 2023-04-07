@@ -15,7 +15,7 @@ public static class TabConverter
   
   private static bool CmpId(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.Tab openXmlElement, String? value)

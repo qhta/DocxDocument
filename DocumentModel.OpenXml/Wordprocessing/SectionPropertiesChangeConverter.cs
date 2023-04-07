@@ -53,7 +53,7 @@ public static class SectionPropertiesChangeConverter
   
   private static bool CmpId(DXW.SectionPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXW.SectionPropertiesChange openXmlElement, String? value)
