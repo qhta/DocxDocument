@@ -7,7 +7,6 @@ public static class TableWidthDxaNilTypeConverter
 {
   /// <summary>
   /// w
-  /// </summary>
   private static Int16? GetWidth(DXW.TableWidthDxaNilType openXmlElement)
   {
     return openXmlElement?.Width?.Value;
@@ -27,7 +26,6 @@ public static class TableWidthDxaNilTypeConverter
   
   /// <summary>
   /// type
-  /// </summary>
   private static DMW.TableWidthKind? GetType(DXW.TableWidthDxaNilType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value);

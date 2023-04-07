@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableCellPropertiesChangeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.TableCellPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class TableCellPropertiesChangeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region Date conversion.
   private static DateTime? GetDate(DXW.TableCellPropertiesChange openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,9 @@ public static class TableCellPropertiesChangeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.TableCellPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -60,10 +56,9 @@ public static class TableCellPropertiesChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Previous Table Cell Properties.
-  /// </summary>
+  #endregion
+
+  #region Previous Table Cell Properties conversion.
   private static DMW.PreviousTableCellProperties? GetPreviousTableCellProperties(DXW.TableCellPropertiesChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousTableCellProperties>();
@@ -139,4 +134,5 @@ public static class TableCellPropertiesChangeConverter
     SetId(openXmlElement, value?.Id);
     SetPreviousTableCellProperties(openXmlElement, value?.PreviousTableCellProperties);
   }
+  #endregion
 }

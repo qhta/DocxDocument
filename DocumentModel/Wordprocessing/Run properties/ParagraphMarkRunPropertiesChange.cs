@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   ParagraphMarkRunPropertiesChange class used in <see cref="ParagraphMarkRunProperties"/>.
-///   Represents <see cref="PreviousParagraphMarkRunProperties"/> annotated with Author, Date, and annotation Id.
+///   Represents <see cref="PreviousParagraphMarkRunProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class ParagraphMarkRunPropertiesChange: ModelElement
 {

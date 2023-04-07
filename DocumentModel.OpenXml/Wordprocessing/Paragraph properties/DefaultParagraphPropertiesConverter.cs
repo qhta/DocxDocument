@@ -1,18 +1,18 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphPropertiesDefault class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.DefaultParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
-public static class ParagraphPropertiesDefaultConverter
+public static class DefaultParagraphPropertiesConverter
 {
-  #region ParagraphPropertiesDefault model conversion.
+  #region DefaultParagraphProperties model conversion.
   public static DMW.DefaultParagraphProperties? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (element != null)
     {
       var value = new DMW.DefaultParagraphProperties();
-      ParagraphPropertiesBaseStyleConverter.UpdateModelElement(value, element);
+      BaseParagraphPropertiesConverter.UpdateModelElement(value, element);
       return value;
     }
     return null;
@@ -24,7 +24,7 @@ public static class ParagraphPropertiesDefaultConverter
     if (element != null && value != null)
     {
       var ok = true;
-      if (!ParagraphPropertiesBaseStyleConverter.CompareModelElement(element, value, diffs, objName))
+      if (!BaseParagraphPropertiesConverter.CompareModelElement(element, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -44,10 +44,10 @@ public static class ParagraphPropertiesDefaultConverter
   {
     var element = openXmlElement.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (element != null)
-      ParagraphPropertiesBaseStyleConverter.UpdateOpenXmlElement(element, value);
+      BaseParagraphPropertiesConverter.UpdateOpenXmlElement(element, value);
     else
     {
-      element = ParagraphPropertiesBaseStyleConverter.CreateOpenXmlElement(value);
+      element = BaseParagraphPropertiesConverter.CreateOpenXmlElement(value);
       openXmlElement.AddChild(element);
     }
   }

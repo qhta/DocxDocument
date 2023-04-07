@@ -1,17 +1,17 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// PreviousRunProperties class from/to OpenXmlConverter
+/// <see cref="DocumentModel.Wordprocessing.PreviousRunProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class PreviousRunPropertiesConverter
 {
-  #region PreviousRunProperties model conversion
+  #region PreviousRunProperties model conversion.
   public static DMW.PreviousRunProperties? CreateModelElement(DXW.PreviousRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.PreviousRunProperties();
-      RunPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
       return value;
     }
     return null;
@@ -19,7 +19,7 @@ public static class PreviousRunPropertiesConverter
   
   public static bool CompareModelElement(DXW.PreviousRunProperties? openXmlElement, DMW.PreviousRunProperties? value, DiffList? diffs, string? objName)
   {
-    return RunPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousRunProperties value)
@@ -32,7 +32,7 @@ public static class PreviousRunPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.PreviousRunProperties openXmlElement, DMW.PreviousRunProperties value)
   {
-    RunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
   }
   #endregion
 }

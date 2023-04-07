@@ -1,9 +1,9 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Previous Paragraph Properties.
+/// <see cref="DocumentModel.Wordprocessing.ExtBaseParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
-public static class ParagraphPropertiesBaseConverter
+public static class ExtBaseParagraphPropertiesConverter
 {
   #region ParagraphStyleId conversion.
   private static String? GetParagraphStyleId(DX.OpenXmlCompositeElement openXmlElement)
@@ -77,10 +77,10 @@ public static class ParagraphPropertiesBaseConverter
   }
   #endregion
 
-  #region ParagraphPropertiesBase model conversion.
+  #region ExtBaseParagraphProperties model conversion.
   public static void UpdateModelElement(DMW.ExtBaseParagraphProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
-    ParagraphPropertiesBaseStyleConverter.UpdateModelElement(value, openXmlElement);
+    BaseParagraphPropertiesConverter.UpdateModelElement(value, openXmlElement);
     value.ParagraphStyleId = GetParagraphStyleId(openXmlElement);
     value.DivId = GetDivId(openXmlElement);
     value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
@@ -91,7 +91,7 @@ public static class ParagraphPropertiesBaseConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!ParagraphPropertiesBaseStyleConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
         ok = false;
       if (!CmpParagraphStyleId(openXmlElement, value.ParagraphStyleId, diffs, objName))
         ok = false;
@@ -116,7 +116,7 @@ public static class ParagraphPropertiesBaseConverter
 
   public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseParagraphProperties value)
   {
-    ParagraphPropertiesBaseStyleConverter.UpdateOpenXmlElement(openXmlElement, value);
+    BaseParagraphPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetParagraphStyleId(openXmlElement, value?.ParagraphStyleId);
     SetDivId(openXmlElement, value?.DivId);
     SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
