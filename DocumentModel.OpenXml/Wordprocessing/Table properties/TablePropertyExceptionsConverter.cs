@@ -201,7 +201,7 @@ public static class TablePropertyExceptionsConverter
   #endregion
 
   #region Table Cell Margin Exceptions conversion.
-  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement)
+  private static DMW.DefaultTableCellMargin? GetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (element != null)
@@ -209,12 +209,12 @@ public static class TablePropertyExceptionsConverter
     return null;
   }
   
-  private static bool CmpTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
   
-  private static void SetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement, DMW.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement, DMW.DefaultTableCellMargin? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)

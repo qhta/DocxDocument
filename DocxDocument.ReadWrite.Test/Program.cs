@@ -7,15 +7,15 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestSections();
   }
 
   private static void RunTestSections()
   {
     var testInstance = new TestSections();
     testInstance.Setup();
-    //testInstance.TestReadSections();
-    testInstance.TestReadSectionsXmlSerialization("Math.docx", true);
+    testInstance.TestReadSections("PageSizes.docx",true);
+    //testInstance.TestReadSectionsXmlSerialization("Math.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -61,7 +61,7 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestReadNormalTemplateStyles();
+    testInstance.TestReadStyles("_Jakość oprogramowania.docx", true);
     //testInstance.TestReadStylesXmlSerialization("Bookmarks.docx", true);
     Console.WriteLine("\nTest passed");
   }
