@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableIndentationConverter
 {
-  /// <summary>
-  /// w
-  /// </summary>
+  #region Width conversion.
   private static Int32? GetWidth(DXW.TableIndentation openXmlElement)
   {
     return openXmlElement?.Width?.Value;
@@ -24,10 +22,9 @@ public static class TableIndentationConverter
   {
     openXmlElement.Width = value;
   }
-  
-  /// <summary>
-  /// type
-  /// </summary>
+  #endregion
+
+  #region Type conversion.
   private static DMW.TableWidthUnitType? GetType(DXW.TableIndentation openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
@@ -84,4 +81,5 @@ public static class TableIndentationConverter
     SetWidth(openXmlElement, value?.Width);
     SetType(openXmlElement, value?.Type);
   }
+  #endregion
 }

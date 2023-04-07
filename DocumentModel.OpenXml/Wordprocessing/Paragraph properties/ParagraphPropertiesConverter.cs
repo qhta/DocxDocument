@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphProperties class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.ParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphPropertiesConverter
 {
@@ -47,7 +47,7 @@ public static class ParagraphPropertiesConverter
 
   public static void UpdateModelElement(DMW.ParagraphProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
-    ParagraphPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+    ExtBaseParagraphPropertiesConverter.UpdateModelElement(value, openXmlElement);
     value.ParagraphPropertiesChange = GetParagraphPropertiesChange(openXmlElement);
   }
 
@@ -56,7 +56,7 @@ public static class ParagraphPropertiesConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!ParagraphPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
         ok = false;
       if (!CmpParagraphPropertiesChange(openXmlElement, value.ParagraphPropertiesChange, diffs, objName))
         ok = false;
@@ -76,7 +76,7 @@ public static class ParagraphPropertiesConverter
 
   public static void UpdateOpenXmlElement(DXW.ParagraphProperties openXmlElement, DMW.ParagraphProperties value)
   {
-    ParagraphPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseParagraphPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetParagraphPropertiesChange(openXmlElement, value.ParagraphPropertiesChange);
   }
   #endregion

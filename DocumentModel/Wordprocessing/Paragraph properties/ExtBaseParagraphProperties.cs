@@ -12,12 +12,9 @@ public abstract class ExtBaseParagraphProperties: BaseParagraphProperties
   public String? ParagraphStyleId { get; set; }
 
   /// <summary>
-  ///   Specifies the HTML div information which is associated with the current table row. 
-  ///   This information, stored in the Web Settings part, is used to associate one or more table rows with a particular HTML div element. 
-  ///   This property is used when saving an HTML document into the WordprocessingML format 
-  ///   in order to prevent a loss of all HTML div information, 
-  ///   so that the document can later be saved back into HTML format and have the stored information replaced, 
-  ///   since the HTML div can store formatting properties on arbitrary regions.
+  ///   Specifies that this paragraph should be located within the specified HTML div tag when this document is saved in HTML format. 
+  ///   This ID is then used to look up the associated div stored in the divs (§17.15.2.8) element. 
+  ///   This element is used to preserve the fidelity of existing HTML documents when saved in the WordprocessingML format. 
   /// </summary>
   public String? DivId { get; set; }
 

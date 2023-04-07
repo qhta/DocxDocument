@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableStyleConditionalFormattingTableCellPropertiesConverter
 {
-  /// <summary>
-  /// TableCellBorders.
-  /// </summary>
+  #region TableCellBorders conversion.
   private static DMW.TableCellBorders? GetTableCellBorders(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellBorders>();
@@ -33,10 +31,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Shading.
-  /// </summary>
+  #endregion
+
+  #region Shading conversion.
   private static DMW.Shading? GetShading(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Shading>();
@@ -62,10 +59,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// NoWrap.
-  /// </summary>
+  #endregion
+
+  #region NoWrap conversion.
   private static Boolean GetNoWrap(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoWrap>());
@@ -80,10 +76,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
   {
     BooleanValueConverter.SetOnOffOnlyType<DXW.NoWrap>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// TableCellMargin.
-  /// </summary>
+  #endregion
+
+  #region TableCellMargin conversion.
   private static DMW.TableCellMargin? GetTableCellMargin(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
@@ -109,10 +104,9 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// TableCellVerticalAlignment.
-  /// </summary>
+  #endregion
+
+  #region TableCellVerticalAlignment conversion.
   private static DMW.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value);
@@ -191,4 +185,5 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     SetTableCellMargin(openXmlElement, value?.TableCellMargin);
     SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
   }
+  #endregion
 }

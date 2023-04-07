@@ -12,9 +12,9 @@ public static class NumberingSymbolRunPropertiesConverter
     if (openXmlElement != null)
     {
       var value = new DMW.NumberingSymbolRunProperties();
-      RunPropertiesBaseStyleConverter.UpdateModelElement(value, openXmlElement);
-      value.RightToLeftText = RunPropertiesBaseConverter.GetRightToLeftText(openXmlElement);
-      value.ComplexScript = RunPropertiesBaseConverter.GetComplexScript(openXmlElement);
+      BaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
+      value.RightToLeftText = ExtBaseRunPropertiesConverter.GetRightToLeftText(openXmlElement);
+      value.ComplexScript = ExtBaseRunPropertiesConverter.GetComplexScript(openXmlElement);
       return value;
     }
     return null;
@@ -25,11 +25,11 @@ public static class NumberingSymbolRunPropertiesConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
         ok = false;
-      if (!RunPropertiesBaseConverter.CmpRightToLeftText(openXmlElement, value.RightToLeftText, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpRightToLeftText(openXmlElement, value.RightToLeftText, diffs, objName))
         ok = false;
-      if (!RunPropertiesBaseConverter.CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
         ok = false;
       return ok;
     }
@@ -48,9 +48,9 @@ public static class NumberingSymbolRunPropertiesConverter
 
   public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties value)
   {
-    RunPropertiesBaseStyleConverter.UpdateOpenXmlElement(openXmlElement, value);
-    RunPropertiesBaseConverter.SetRightToLeftText(openXmlElement, value.RightToLeftText);
-    RunPropertiesBaseConverter.SetComplexScript(openXmlElement, value.ComplexScript);
+    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.SetRightToLeftText(openXmlElement, value.RightToLeftText);
+    ExtBaseRunPropertiesConverter.SetComplexScript(openXmlElement, value.ComplexScript);
   }
   #endregion
 

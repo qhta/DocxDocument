@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Revision Information for Table Row Properties.
@@ -7,19 +6,19 @@ namespace DocumentModel.Wordprocessing;
 public class TableRowPropertiesChange: ModelElement
 {
   /// <summary>
-  ///   author
+  ///   Author.
   /// </summary>
   public String? Author { get; set; }
 
   /// <summary>
-  ///   date
+  ///   Date.
   /// </summary>
   public DateTime? Date { get; set; }
 
   /// <summary>
-  ///   Annotation Identifier
+  ///   Annotation Identifier.
   /// </summary>
-  public String? Id { get; set; }
+  public String? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Table Row Properties.

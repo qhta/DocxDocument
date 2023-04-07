@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TablePropertyExceptionsChangeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.TablePropertyExceptionsChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class TablePropertyExceptionsChangeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region Date conversion.
   private static DateTime? GetDate(DXW.TablePropertyExceptionsChange openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,9 @@ public static class TablePropertyExceptionsChangeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.TablePropertyExceptionsChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -63,7 +59,6 @@ public static class TablePropertyExceptionsChangeConverter
   
   /// <summary>
   /// Previous Table-Level Property Exceptions.
-  /// </summary>
   private static DMW.PreviousTablePropertyExceptions? GetPreviousTablePropertyExceptions(DXW.TablePropertyExceptionsChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousTablePropertyExceptions>();
@@ -97,7 +92,7 @@ public static class TablePropertyExceptionsChangeConverter
       var value = new DMW.TablePropertyExceptionsChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
+      value.AnnotationId = GetId(openXmlElement);
       value.PreviousTablePropertyExceptions = GetPreviousTablePropertyExceptions(openXmlElement);
       return value;
     }
@@ -113,7 +108,7 @@ public static class TablePropertyExceptionsChangeConverter
         ok = false;
       if (!CmpDate(openXmlElement, value.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
         ok = false;
       if (!CmpPreviousTablePropertyExceptions(openXmlElement, value.PreviousTablePropertyExceptions, diffs, objName))
         ok = false;
@@ -136,7 +131,8 @@ public static class TablePropertyExceptionsChangeConverter
   {
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, value?.AnnotationId);
     SetPreviousTablePropertyExceptions(openXmlElement, value?.PreviousTablePropertyExceptions);
   }
+  #endregion
 }

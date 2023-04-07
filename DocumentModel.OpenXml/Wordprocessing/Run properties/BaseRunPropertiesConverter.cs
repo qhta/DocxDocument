@@ -1,11 +1,10 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// RunPropertiesBaseStyle from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.BaseRunProperties"/> class from/to OpenXml converter.
 /// </summary>
-public static class RunPropertiesBaseStyleConverter
+public static class BaseRunPropertiesConverter
 {
-
   #region RunFonts conversion.
   public static DMW.RunFonts? GetRunFonts(DX.OpenXmlCompositeElement openXmlElement)
   {
@@ -695,7 +694,7 @@ public static class RunPropertiesBaseStyleConverter
   }
   #endregion
 
-  #region RunPropertiesBaseStyle base model conversion methods - for use in other RunProperties converters
+  #region BaseRunProperties model conversion.
   public static ModelElementType? CreateModelElement<ModelElementType>(DX.OpenXmlCompositeElement? openXmlElement)
     where ModelElementType : DMW.BaseRunProperties, new()
   {

@@ -1,9 +1,9 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// RunPropertiesBase class from/to OpenXml converter
+/// <see cref="DocumentModel.Wordprocessing.ExtBaseRunProperties"/> class from/to OpenXml converter.
 /// </summary>
-public static class RunPropertiesBaseConverter
+public static class ExtBaseRunPropertiesConverter
 {
   #region RunStyle conversion.
   public static String? GetRunStyle(DX.OpenXmlCompositeElement openXmlElement)
@@ -417,10 +417,10 @@ public static class RunPropertiesBaseConverter
   }
   #endregion
 
-  #region RunPropertiesBase model conversion.
+  #region ExtBaseRunProperties model conversion.
   public static void UpdateModelElement(DMW.ExtBaseRunProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
-    RunPropertiesBaseStyleConverter.UpdateModelElement(value, openXmlElement);
+    BaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
     value.RunStyle = GetRunStyle(openXmlElement);
     value.RightToLeftText = GetRightToLeftText(openXmlElement);
     value.ComplexScript = GetComplexScript(openXmlElement);
@@ -444,7 +444,7 @@ public static class RunPropertiesBaseConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement, value, diffs, objName)) 
+      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName)) 
         ok = false;
       if (!CmpRunStyle(openXmlElement, value.RunStyle, diffs, objName))
         ok = false;
@@ -495,7 +495,7 @@ public static class RunPropertiesBaseConverter
 
   public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseRunProperties value)
   {
-    RunPropertiesBaseStyleConverter.UpdateOpenXmlElement(openXmlElement, value);
+    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetRunStyle(openXmlElement, value.RunStyle);
     SetRightToLeftText(openXmlElement, value.RightToLeftText);
     SetComplexScript(openXmlElement, value.ComplexScript);

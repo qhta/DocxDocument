@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TablePropertyExceptionsConverter
 {
-  /// <summary>
-  /// Preferred Table Width Exception.
-  /// </summary>
+  #region Preferred Table Width Exception conversion.
   private static DMW.TableWidth? GetTableWidth(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableWidth>();
@@ -33,10 +31,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Alignment Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Alignment Exception conversion.
   private static DMW.TableRowAlignmentKind? GetTableJustification(DXW.TablePropertyExceptions openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
@@ -61,10 +58,9 @@ public static class TablePropertyExceptionsConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
-  
-  /// <summary>
-  /// Table Cell Spacing Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Cell Spacing Exception conversion.
   private static DMW.TableWidth? GetTableCellSpacing(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
@@ -90,10 +86,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Indent from Leading Margin Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Indent from Leading Margin Exception conversion.
   private static DMW.TableIndentation? GetTableIndentation(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableIndentation>();
@@ -119,10 +114,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Borders Exceptions.
-  /// </summary>
+  #endregion
+
+  #region Table Borders Exceptions conversion.
   private static DMW.TableBorders? GetTableBorders(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableBorders>();
@@ -148,10 +142,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Shading Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Shading Exception conversion.
   private static DMW.Shading? GetShading(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Shading>();
@@ -177,10 +170,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Layout Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Layout Exception conversion.
   private static DMW.TableLayout? GetTableLayout(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableLayout>();
@@ -206,10 +198,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Cell Margin Exceptions.
-  /// </summary>
+  #endregion
+
+  #region Table Cell Margin Exceptions conversion.
   private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
@@ -235,10 +226,9 @@ public static class TablePropertyExceptionsConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Settings Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Settings Exception conversion.
   private static DMW.TableLook? GetTableLook(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableLook>();
@@ -267,7 +257,6 @@ public static class TablePropertyExceptionsConverter
   
   /// <summary>
   /// Revision Information for Table-Level Property Exceptions.
-  /// </summary>
   private static DMW.TablePropertyExceptionsChange? GetTablePropertyExceptionsChange(DXW.TablePropertyExceptions openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TablePropertyExceptionsChange>();
@@ -367,4 +356,5 @@ public static class TablePropertyExceptionsConverter
     SetTableLook(openXmlElement, value?.TableLook);
     SetTablePropertyExceptionsChange(openXmlElement, value?.TablePropertyExceptionsChange);
   }
+  #endregion
 }
