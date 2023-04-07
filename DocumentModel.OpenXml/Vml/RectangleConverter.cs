@@ -15,7 +15,7 @@ public static class RectangleConverter
   
   private static bool CmpId(DXVml.Rectangle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.Rectangle openXmlElement, String? value)

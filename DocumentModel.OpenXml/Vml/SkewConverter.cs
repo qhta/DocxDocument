@@ -33,7 +33,7 @@ public static class SkewConverter
   
   private static bool CmpId(DXVmlO.Skew openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVmlO.Skew openXmlElement, String? value)

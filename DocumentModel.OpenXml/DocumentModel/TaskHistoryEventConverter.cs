@@ -35,7 +35,7 @@ public static class TaskHistoryEventConverter
   
   private static bool CmpId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value)

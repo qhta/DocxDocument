@@ -71,7 +71,7 @@ public static class CommentConverter
   
   private static bool CmpId(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXW.Comment openXmlElement, String? value)

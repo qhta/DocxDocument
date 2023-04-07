@@ -2,7 +2,8 @@ namespace DocumentModel.Wordprocessing;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Revision Information for Run Properties on the Paragraph Mark.
+///   ParagraphMarkRunPropertiesChange class used in <see cref="ParagraphMarkRunProperties"/>.
+///   Represents <see cref="PreviousParagraphMarkRunProperties"/> annotated with Author, Date, and annotation Id.
 /// </summary>
 public class ParagraphMarkRunPropertiesChange: ModelElement
 {
@@ -19,7 +20,7 @@ public class ParagraphMarkRunPropertiesChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public String? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Run Properties for the Paragraph Mark.

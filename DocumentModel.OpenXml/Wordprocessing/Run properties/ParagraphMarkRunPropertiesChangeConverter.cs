@@ -49,7 +49,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   
   private static bool CmpId(DXW.ParagraphMarkRunPropertiesChange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXW.ParagraphMarkRunPropertiesChange openXmlElement, String? value)
@@ -94,7 +94,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
       var value = new DMW.ParagraphMarkRunPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
+      value.AnnotationId = GetId(openXmlElement);
       value.PreviousParagraphMarkRunProperties = GetPreviousParagraphMarkRunProperties(openXmlElement);
       return value;
     }
@@ -110,7 +110,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
         ok = false;
       if (!CmpDate(openXmlElement, value.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
         ok = false;
       if (!CmpPreviousParagraphMarkRunProperties(openXmlElement, value.PreviousParagraphMarkRunProperties, diffs, objName))
         ok = false;
@@ -133,7 +133,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   {
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, value?.AnnotationId);
     SetPreviousParagraphMarkRunProperties(openXmlElement, value?.PreviousParagraphMarkRunProperties);
   }
   #endregion

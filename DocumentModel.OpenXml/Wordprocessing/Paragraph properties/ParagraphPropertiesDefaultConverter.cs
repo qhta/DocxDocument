@@ -6,19 +6,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class ParagraphPropertiesDefaultConverter
 {
   #region ParagraphPropertiesDefault model conversion.
-  public static DMW.ParagraphPropertiesDefault? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
+  public static DMW.DefaultParagraphProperties? CreateModelElement(DXW.ParagraphPropertiesDefault? openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (element != null)
     {
-      var value = new DMW.ParagraphPropertiesDefault();
+      var value = new DMW.DefaultParagraphProperties();
       ParagraphPropertiesBaseStyleConverter.UpdateModelElement(value, element);
       return value;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.ParagraphPropertiesDefault? openXmlElement, DMW.ParagraphPropertiesDefault? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphPropertiesDefault? openXmlElement, DMW.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (element != null && value != null)
@@ -33,14 +33,14 @@ public static class ParagraphPropertiesDefaultConverter
     return false;
   }
 
-  public static DXW.ParagraphPropertiesDefault CreateOpenXmlElement(DMW.ParagraphPropertiesDefault value)
+  public static DXW.ParagraphPropertiesDefault CreateOpenXmlElement(DMW.DefaultParagraphProperties value)
   {
     var openXmlElement = new DXW.ParagraphPropertiesDefault();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.ParagraphPropertiesDefault openXmlElement, DMW.ParagraphPropertiesDefault value)
+  public static void UpdateOpenXmlElement(DXW.ParagraphPropertiesDefault openXmlElement, DMW.DefaultParagraphProperties value)
   {
     var element = openXmlElement.GetFirstChild<DXW.ParagraphPropertiesBaseStyle>();
     if (element != null)

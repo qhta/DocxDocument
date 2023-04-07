@@ -192,7 +192,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   #endregion
 
   #region ParagraphMarkRunPropertiesBase model conversion
-  public static void UpdateModelElement(DMW.ParagraphMarkRunPropertiesBase value, DX.OpenXmlCompositeElement? openXmlElement)
+  public static void UpdateModelElement(DMW.BaseParagraphMarkRunProperties value, DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -207,7 +207,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     }
   }
   
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ParagraphMarkRunPropertiesBase? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -235,7 +235,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return false;
   }
  
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphMarkRunPropertiesBase value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseParagraphMarkRunProperties value)
   {
     SetInserted(openXmlElement, value.Inserted);
     SetDeleted(openXmlElement, value.Deleted);

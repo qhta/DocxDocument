@@ -16,7 +16,7 @@ public static class NonVisualDrawingPropertiesConverter
   private static bool CmpId(DXODraw.NonVisualDrawingProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class CurveConverter
   
   private static bool CmpId(DXVml.Curve openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.Curve openXmlElement, String? value)

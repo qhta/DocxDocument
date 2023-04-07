@@ -87,7 +87,7 @@ public static class DynamicMenuConverter
   
   private static bool CmpId(DXOCustUI.DynamicMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.DynamicMenu openXmlElement, String? value)

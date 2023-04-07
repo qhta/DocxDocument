@@ -15,7 +15,7 @@ public static class GroupConverter
   
   private static bool CmpId(DXOCustUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.Group openXmlElement, String? value)

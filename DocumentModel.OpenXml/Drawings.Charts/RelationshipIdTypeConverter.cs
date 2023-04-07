@@ -15,7 +15,7 @@ public static class RelationshipIdTypeConverter
   
   private static bool CmpId(DXDrawCharts.RelationshipIdType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXDrawCharts.RelationshipIdType openXmlElement, String? value)

@@ -184,7 +184,7 @@ public static class EditBoxConverter
   
   private static bool CmpId(DXOCustUI.EditBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.EditBox openXmlElement, String? value)

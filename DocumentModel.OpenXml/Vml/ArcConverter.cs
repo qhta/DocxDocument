@@ -875,7 +875,7 @@ public static class ArcConverter
   
   private static bool CmpId(DXVml.Arc openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.Arc openXmlElement, String? value)

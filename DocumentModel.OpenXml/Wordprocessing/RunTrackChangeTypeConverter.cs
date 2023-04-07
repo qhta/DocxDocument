@@ -53,7 +53,7 @@ public static class RunTrackChangeTypeConverter
   
   private static bool CmpId(DXW.RunTrackChangeType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXW.RunTrackChangeType openXmlElement, String? value)
