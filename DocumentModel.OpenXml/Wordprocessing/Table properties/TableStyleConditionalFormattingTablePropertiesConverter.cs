@@ -145,7 +145,7 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
   #endregion
 
   #region TableCellMarginDefault conversion.
-  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
+  private static DMW.DefaultTableCellMargin? GetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (element != null)
@@ -153,12 +153,12 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
   
-  private static void SetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DXW.TableStyleConditionalFormattingTableProperties openXmlElement, DMW.DefaultTableCellMargin? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)

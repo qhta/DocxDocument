@@ -44,7 +44,7 @@ public abstract class BaseTableProperties: ModelElement
   /// <summary>
   ///   Table Cell Margin..
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DefaultTableCellMargin? TableCellMarginDefault { get; set; }
 
   /// <summary>
   ///   Table Style Conditional Formatting Settings.

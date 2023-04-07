@@ -44,5 +44,5 @@ public class StyleTableProperties: ModelElement
   /// <summary>
   ///   TableCellMarginDefault.
   /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
+  public DefaultTableCellMargin? TableCellMarginDefault { get; set; }
 }

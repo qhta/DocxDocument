@@ -188,7 +188,7 @@ public static class StyleTablePropertiesConverter
   /// <summary>
   /// TableCellMarginDefault.
   /// </summary>
-  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement)
+  private static DMW.DefaultTableCellMargin? GetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (element != null)
@@ -196,12 +196,12 @@ public static class StyleTablePropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
   
-  private static void SetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DXW.StyleTableProperties openXmlElement, DMW.DefaultTableCellMargin? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)
