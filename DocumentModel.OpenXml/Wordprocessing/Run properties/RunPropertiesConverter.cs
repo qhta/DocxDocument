@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// RunProperties class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.RunProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class RunPropertiesConverter
 {
@@ -47,7 +47,7 @@ public static class RunPropertiesConverter
 
   public static void UpdateModelElement(DMW.RunProperties value, DX.OpenXmlCompositeElement openXmlElement)
   {
-    RunPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+    ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
     value.RunPropertiesChange = GetRunPropertiesChange(openXmlElement);
   }
 
@@ -56,7 +56,7 @@ public static class RunPropertiesConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!RunPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
         ok = false;
       if (!CmpRunPropertiesChange(openXmlElement, value.RunPropertiesChange, diffs, objName))
         ok = false;
@@ -76,7 +76,7 @@ public static class RunPropertiesConverter
 
   public static void UpdateOpenXmlElement(DXW.RunProperties openXmlElement, DMW.RunProperties value)
   {
-    RunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetRunPropertiesChange(openXmlElement, value.RunPropertiesChange);
   }
   #endregion

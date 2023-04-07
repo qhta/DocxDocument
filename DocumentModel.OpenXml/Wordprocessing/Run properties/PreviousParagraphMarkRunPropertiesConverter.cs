@@ -1,17 +1,17 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// PreviousParagraphMarkRunProperties class from/to OpenXmlConverter
+/// <see cref="DocumentModel.Wordprocessing.PreviousParagraphMarkRunProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class PreviousParagraphMarkRunPropertiesConverter
 {
-  #region PreviousParagraphMarkRunProperties model conversion
+  #region PreviousParagraphMarkRunProperties model conversion,
   public static DMW.PreviousParagraphMarkRunProperties? CreateModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.PreviousParagraphMarkRunProperties();
-      RunPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
       return value;
     }
     return null;
@@ -19,7 +19,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   public static bool CompareModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement, DMW.PreviousParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
   {
-    return RunPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousParagraphMarkRunProperties value)
@@ -32,7 +32,7 @@ public static class PreviousParagraphMarkRunPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.PreviousParagraphMarkRunProperties value)
   {
-    RunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
   }
   #endregion
 }

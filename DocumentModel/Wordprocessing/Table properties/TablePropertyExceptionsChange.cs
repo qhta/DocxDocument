@@ -1,8 +1,8 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Revision Information for Table-Level Property Exceptions.
+///   TablePropertyExceptionsChange class used in <see cref="TablePropertyExceptions"/>.
+///   Represents <see cref="PreviousTablePropertyExceptions"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class TablePropertyExceptionsChange: ModelElement
 {
@@ -19,7 +19,7 @@ public class TablePropertyExceptionsChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public String? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Table-Level Property Exceptions.

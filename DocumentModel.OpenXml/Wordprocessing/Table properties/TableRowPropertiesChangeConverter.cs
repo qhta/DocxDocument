@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableRowPropertiesChangeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.TableRowPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class TableRowPropertiesChangeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region Date conversion.
   private static DateTime? GetDate(DXW.TableRowPropertiesChange openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,9 @@ public static class TableRowPropertiesChangeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.TableRowPropertiesChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -60,10 +56,9 @@ public static class TableRowPropertiesChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Previous Table Row Properties.
-  /// </summary>
+  #endregion
+
+  #region Previous Table Row Properties conversion.
   private static DMW.PreviousTableRowProperties? GetPreviousTableRowProperties(DXW.TableRowPropertiesChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousTableRowProperties>();
@@ -97,7 +92,7 @@ public static class TableRowPropertiesChangeConverter
       var value = new DMW.TableRowPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
+      value.AnnotationId = GetId(openXmlElement);
       value.PreviousTableRowProperties = GetPreviousTableRowProperties(openXmlElement);
       return value;
     }
@@ -113,7 +108,7 @@ public static class TableRowPropertiesChangeConverter
         ok = false;
       if (!CmpDate(openXmlElement, value.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
         ok = false;
       if (!CmpPreviousTableRowProperties(openXmlElement, value.PreviousTableRowProperties, diffs, objName))
         ok = false;
@@ -136,7 +131,8 @@ public static class TableRowPropertiesChangeConverter
   {
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, value?.AnnotationId);
     SetPreviousTableRowProperties(openXmlElement, value?.PreviousTableRowProperties);
   }
+  #endregion
 }

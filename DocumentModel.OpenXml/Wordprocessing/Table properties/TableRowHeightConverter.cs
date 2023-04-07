@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableRowHeightConverter
 {
-  /// <summary>
-  /// Table Row Height
-  /// </summary>
+  #region Table Row Height conversion.
   private static UInt32? GetVal(DXW.TableRowHeight openXmlElement)
   {
     return openXmlElement?.Val?.Value;
@@ -24,10 +22,9 @@ public static class TableRowHeightConverter
   {
     openXmlElement.Val = value;
   }
-  
-  /// <summary>
-  /// Table Row Height Type
-  /// </summary>
+  #endregion
+
+  #region Table Row Height Type conversion.
   private static DMW.HeightRuleKind? GetHeightType(DXW.TableRowHeight openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
@@ -84,4 +81,5 @@ public static class TableRowHeightConverter
     SetVal(openXmlElement, value?.Value);
     SetHeightType(openXmlElement, value?.Type);
   }
+  #endregion
 }

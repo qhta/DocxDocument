@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphMarkRunPropertiesBase class from/to OpenXml converter
+/// <see cref="DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesBase"/> class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphMarkRunPropertiesBaseConverter
 {
@@ -90,7 +90,6 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   #endregion
 
   #region Move Destination Paragraph conversion.
-  /// </summary>
   private static DMW.TrackChangeType? GetMoveTo(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveTo>();
@@ -191,7 +190,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   }
   #endregion
 
-  #region ParagraphMarkRunPropertiesBase model conversion
+  #region ParagraphMarkRunPropertiesBase model conversion.
   public static void UpdateModelElement(DMW.BaseParagraphMarkRunProperties value, DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
@@ -202,7 +201,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
       value.MoveTo = GetMoveTo(openXmlElement);
       value.ConflictInsertion = GetConflictInsertion(openXmlElement);
       value.ConflictDeletion = GetConflictDeletion(openXmlElement);
-      RunPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
       value.OfficeMath = GetOfficeMath(openXmlElement);
     }
   }
@@ -224,7 +223,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
         ok = false;
       if (!CmpConflictDeletion(openXmlElement, value.ConflictDeletion, diffs, objName))
         ok = false;
-      if (!RunPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
         ok = false;
       if (!CmpOfficeMath(openXmlElement, value.OfficeMath, diffs, objName))
         ok = false;
@@ -243,7 +242,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     SetMoveTo(openXmlElement, value.MoveTo);
     SetConflictInsertion(openXmlElement, value.ConflictInsertion);
     SetConflictDeletion(openXmlElement, value.ConflictDeletion);
-    RunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
     SetOfficeMath(openXmlElement, value.OfficeMath);
   }
   #endregion

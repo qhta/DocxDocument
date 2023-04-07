@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableCellMarginConverter
 {
-  /// <summary>
-  /// Table Cell Top Margin Exception.
-  /// </summary>
+  #region Table Cell Top Margin Exception conversion.
   private static DMW.TableWidth? GetTopMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopMargin>();
@@ -33,10 +31,9 @@ public static class TableCellMarginConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Cell Left Margin Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Cell Left Margin Exception conversion.
   private static DMW.TableWidth? GetLeftMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LeftMargin>();
@@ -65,7 +62,6 @@ public static class TableCellMarginConverter
   
   /// <summary>
   /// StartMargin, this property is only available in Office 2010 and later..
-  /// </summary>
   private static DMW.TableWidth? GetStartMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.StartMargin>();
@@ -91,10 +87,9 @@ public static class TableCellMarginConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Cell Bottom Margin Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Cell Bottom Margin Exception conversion.
   private static DMW.TableWidth? GetBottomMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BottomMargin>();
@@ -120,10 +115,9 @@ public static class TableCellMarginConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Cell Right Margin Exception.
-  /// </summary>
+  #endregion
+
+  #region Table Cell Right Margin Exception conversion.
   private static DMW.TableWidth? GetRightMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RightMargin>();
@@ -152,7 +146,6 @@ public static class TableCellMarginConverter
   
   /// <summary>
   /// EndMargin, this property is only available in Office 2010 and later..
-  /// </summary>
   private static DMW.TableWidth? GetEndMargin(DXW.TableCellMargin openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.EndMargin>();
@@ -236,4 +229,5 @@ public static class TableCellMarginConverter
     SetRightMargin(openXmlElement, value?.RightMargin);
     SetEndMargin(openXmlElement, value?.EndMargin);
   }
+  #endregion
 }

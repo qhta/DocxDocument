@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableLookConverter
 {
-  /// <summary>
-  /// val
-  /// </summary>
+  #region val conversion.
   private static DM.HexChar? GetVal(DXW.TableLook openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -35,7 +33,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// firstRow, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetFirstRow(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.FirstRow);
@@ -53,7 +50,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// lastRow, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetLastRow(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.LastRow);
@@ -71,7 +67,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// firstColumn, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetFirstColumn(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.FirstColumn);
@@ -89,7 +84,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// lastColumn, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetLastColumn(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.LastColumn);
@@ -107,7 +101,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// noHBand, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetNoHorizontalBand(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.NoHorizontalBand);
@@ -125,7 +118,6 @@ public static class TableLookConverter
   
   /// <summary>
   /// noVBand, this property is only available in Office 2010 and later.
-  /// </summary>
   private static Boolean? GetNoVerticalBand(DXW.TableLook openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.NoVerticalBand);
@@ -202,4 +194,5 @@ public static class TableLookConverter
     SetNoHorizontalBand(openXmlElement, value?.NoHorizontalBand);
     SetNoVerticalBand(openXmlElement, value?.NoVerticalBand);
   }
+  #endregion
 }

@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphMarkRunProperties class from/to OpenXml converter
+/// <see cref="DocumentModel.Wordprocessing.ParagraphMarkRunProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphMarkRunPropertiesConverter
 {
@@ -33,7 +33,7 @@ public static class ParagraphMarkRunPropertiesConverter
   }
   #endregion
 
-  #region ParagraphMarkRunProperties model conversion
+  #region ParagraphMarkRunProperties model conversion.
   public static DMW.ParagraphMarkRunProperties? CreateModelElement(DXW.ParagraphMarkRunProperties? openXmlElement)
   {
     if (openXmlElement != null)

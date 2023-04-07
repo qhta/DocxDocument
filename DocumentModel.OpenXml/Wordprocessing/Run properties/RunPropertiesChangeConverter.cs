@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunPropertiesChange Class.
+/// <see cref="DocumentModel.Wordprocessing.RunPropertiesChange"/> class from/to OpenXml converter.
 /// </summary>
 public static class RunPropertiesChangeConverter
 {

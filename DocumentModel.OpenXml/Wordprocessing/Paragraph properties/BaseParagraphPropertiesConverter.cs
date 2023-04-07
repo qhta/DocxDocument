@@ -1,9 +1,9 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphPropertiesBaseStyle class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.BaseParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
-public static class ParagraphPropertiesBaseStyleConverter
+public static class BaseParagraphPropertiesConverter
 {
   #region KeepNext conversion.
   private static Boolean? GetKeepNext(DX.OpenXmlCompositeElement openXmlElement)
@@ -632,7 +632,7 @@ public static class ParagraphPropertiesBaseStyleConverter
   }
   #endregion
 
-  #region ParagraphPropertiesBaseStyle base model conversion methods - for use in other ParagraphProperties converters
+  #region BaseParagraphProperties model conversion.
   public static ModelElementType? CreateModelElement<ModelElementType>(DX.OpenXmlCompositeElement? openXmlElement)
     where ModelElementType : DMW.BaseParagraphProperties, new()
   {

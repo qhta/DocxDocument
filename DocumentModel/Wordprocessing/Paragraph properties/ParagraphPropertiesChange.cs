@@ -2,7 +2,7 @@ namespace DocumentModel.Wordprocessing;
 
 /// <summary>
 ///   ParagraphPropertiesChange class used in <see cref="ParagraphProperties"/>.
-///   Represents <see cref="PreviousParagraphProperties"/> annotated with Author, Date, and annotation Id.
+///   Represents <see cref="PreviousParagraphProperties"/> annotated with Author, Date, and AnnotationId.
 /// </summary>
 public class ParagraphPropertiesChange: ModelElement
 {

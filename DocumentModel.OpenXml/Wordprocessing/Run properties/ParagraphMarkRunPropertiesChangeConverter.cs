@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// ParagraphMarkRunPropertiesChangeConverter class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.ParagraphMarkRunPropertiesChange"/> class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphMarkRunPropertiesChangeConverter
 {

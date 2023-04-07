@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableGridChangeConverter
 {
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.TableGridChange openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -22,10 +20,9 @@ public static class TableGridChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Previous Table Grid.
-  /// </summary>
+  #endregion
+
+  #region Previous Table Grid conversion.
   private static DMW.PreviousTableGrid? GetPreviousTableGrid(DXW.TableGridChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousTableGrid>();
@@ -51,7 +48,9 @@ public static class TableGridChangeConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region TableGridChange model conversion.
   public static DMW.TableGridChange? CreateModelElement(DXW.TableGridChange? openXmlElement)
   {
     if (openXmlElement != null)
@@ -93,4 +92,5 @@ public static class TableGridChangeConverter
     SetId(openXmlElement, value?.Id);
     SetPreviousTableGrid(openXmlElement, value?.PreviousTableGrid);
   }
+  #endregion
 }

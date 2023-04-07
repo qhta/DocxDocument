@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableLayoutConverter
 {
-  /// <summary>
-  /// Table Layout Setting
-  /// </summary>
+  #region Table Layout Setting conversion.
   private static DMW.TableLayoutKind? GetType(DXW.TableLayout openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value);
@@ -60,4 +58,5 @@ public static class TableLayoutConverter
   {
     SetType(openXmlElement, value?.Type);
   }
+  #endregion
 }

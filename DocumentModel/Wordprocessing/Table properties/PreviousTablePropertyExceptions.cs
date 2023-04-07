@@ -1,53 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Previous Table-Level Property Exceptions.
+///   Previous Table Property Exceptions class used in <see cref="TablePropertyExceptionsChange"/>.
+///   Represents previous version of <see cref="TablePropertyExceptions"/>.
 /// </summary>
-public class PreviousTablePropertyExceptions: ModelElement
+public class PreviousTablePropertyExceptions: BaseTableProperties
 {
-  /// <summary>
-  ///   Preferred Table Width Exception.
-  /// </summary>
-  public TableWidth? TableWidth { get; set; }
-
-  /// <summary>
-  ///   Table Alignment Exception.
-  /// </summary>
-  public TableRowAlignmentKind? TableJustification { get; set; }
-
-  /// <summary>
-  ///   Table Cell Spacing Exception.
-  /// </summary>
-  public TableWidth? TableCellSpacing { get; set; }
-
-  /// <summary>
-  ///   Table Indent from Leading Margin Exception.
-  /// </summary>
-  public TableIndentation? TableIndentation { get; set; }
-
-  /// <summary>
-  ///   Table Borders Exceptions.
-  /// </summary>
-  public TableBorders? TableBorders { get; set; }
-
-  /// <summary>
-  ///   Table Shading Exception.
-  /// </summary>
-  public Shading? Shading { get; set; }
-
-  /// <summary>
-  ///   Table Layout Exception.
-  /// </summary>
-  public TableLayout? TableLayout { get; set; }
-
-  /// <summary>
-  ///   Table Cell Margin Exceptions.
-  /// </summary>
-  public TableCellMarginDefault? TableCellMarginDefault { get; set; }
-
-  /// <summary>
-  ///   Table Style Conditional Formatting Settings Exception.
-  /// </summary>
-  public TableLook? TableLook { get; set; }
 }

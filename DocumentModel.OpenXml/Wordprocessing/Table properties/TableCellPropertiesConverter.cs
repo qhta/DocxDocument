@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableCellPropertiesConverter
 {
-  /// <summary>
-  /// ConditionalFormatStyle.
-  /// </summary>
+  #region ConditionalFormatStyle conversion.
   private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
@@ -33,10 +31,9 @@ public static class TableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// TableCellWidth.
-  /// </summary>
+  #endregion
+
+  #region TableCellWidth conversion.
   private static DMW.TableWidth? GetTableCellWidth(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellWidth>();
@@ -62,10 +59,9 @@ public static class TableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// GridSpan.
-  /// </summary>
+  #endregion
+
+  #region GridSpan conversion.
   private static Int32? GetGridSpan(DXW.TableCellProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.GridSpan>()?.Val);
@@ -80,10 +76,9 @@ public static class TableCellPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXW.GridSpan,System.Int32>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// HorizontalMerge.
-  /// </summary>
+  #endregion
+
+  #region HorizontalMerge conversion.
   private static DMW.MergedCellKind? GetHorizontalMerge(DXW.TableCellProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value);
@@ -108,10 +103,9 @@ public static class TableCellPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
-  
-  /// <summary>
-  /// VerticalMerge.
-  /// </summary>
+  #endregion
+
+  #region VerticalMerge conversion.
   private static DMW.MergedCellKind? GetVerticalMerge(DXW.TableCellProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value);
@@ -136,10 +130,9 @@ public static class TableCellPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
-  
-  /// <summary>
-  /// TableCellBorders.
-  /// </summary>
+  #endregion
+
+  #region TableCellBorders conversion.
   private static DMW.TableCellBorders? GetTableCellBorders(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellBorders>();
@@ -165,10 +158,9 @@ public static class TableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Shading.
-  /// </summary>
+  #endregion
+
+  #region Shading conversion.
   private static DMW.Shading? GetShading(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Shading>();
@@ -194,10 +186,9 @@ public static class TableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// NoWrap.
-  /// </summary>
+  #endregion
+
+  #region NoWrap conversion.
   private static Boolean GetNoWrap(DXW.TableCellProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoWrap>());
@@ -212,10 +203,9 @@ public static class TableCellPropertiesConverter
   {
     BooleanValueConverter.SetOnOffOnlyType<DXW.NoWrap>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// TableCellMargin.
-  /// </summary>
+  #endregion
+
+  #region TableCellMargin conversion.
   private static DMW.TableCellMargin? GetTableCellMargin(DXW.TableCellProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMargin>();
@@ -241,10 +231,9 @@ public static class TableCellPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// TextDirection.
-  /// </summary>
+  #endregion
+
+  #region TextDirection conversion.
   private static DMW.TextDirectionKind? GetTextDirection(DXW.TableCellProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
@@ -269,10 +258,9 @@ public static class TableCellPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
-  
-  /// <summary>
-  /// TableCellFitText.
-  /// </summary>
+  #endregion
+
+  #region TableCellFitText conversion.
   private static Boolean GetTableCellFitText(DXW.TableCellProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TableCellFitText>());
@@ -287,10 +275,9 @@ public static class TableCellPropertiesConverter
   {
     BooleanValueConverter.SetOnOffOnlyType<DXW.TableCellFitText>(openXmlElement, value);
   }
-  
-  /// <summary>
-  /// TableCellVerticalAlignment.
-  /// </summary>
+  #endregion
+
+  #region TableCellVerticalAlignment conversion.
   private static DMW.TableVerticalAlignmentKind? GetTableCellVerticalAlignment(DXW.TableCellProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableCellVerticalAlignment>()?.Val?.Value);
@@ -315,10 +302,9 @@ public static class TableCellPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
   }
-  
-  /// <summary>
-  /// HideMark.
-  /// </summary>
+  #endregion
+
+  #region HideMark conversion.
   private static Boolean GetHideMark(DXW.TableCellProperties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.HideMark>());
@@ -539,4 +525,5 @@ public static class TableCellPropertiesConverter
     SetCellMerge(openXmlElement, value?.CellMerge);
     SetTableCellPropertiesChange(openXmlElement, value?.TableCellPropertiesChange);
   }
+  #endregion
 }

@@ -184,7 +184,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!ParagraphPropertiesDefaultConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
+      if (!DefaultParagraphPropertiesConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
@@ -201,7 +201,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!RunPropertiesDefaultConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
+      if (!DefaultRunPropertiesConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }

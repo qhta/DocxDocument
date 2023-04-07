@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// PreviousParagraphProperties class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.PreviousParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class PreviousParagraphPropertiesConverter
 {
@@ -11,7 +11,7 @@ public static class PreviousParagraphPropertiesConverter
     if (openXmlElement != null)
     {
       var value = new DMW.PreviousParagraphProperties();
-      ParagraphPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
+      ExtBaseParagraphPropertiesConverter.UpdateModelElement(value, openXmlElement);
       return value;
     }
     return null;
@@ -19,7 +19,7 @@ public static class PreviousParagraphPropertiesConverter
   
   public static bool CompareModelElement(DXW.PreviousParagraphProperties? openXmlElement, DMW.PreviousParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return ParagraphPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousParagraphProperties value)
@@ -32,7 +32,7 @@ public static class PreviousParagraphPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.PreviousParagraphProperties openXmlElement, DMW.PreviousParagraphProperties value)
   {
-    ParagraphPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseParagraphPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
   }
   #endregion
 }

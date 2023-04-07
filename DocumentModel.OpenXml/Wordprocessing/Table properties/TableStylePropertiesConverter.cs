@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableStylePropertiesConverter
 {
-  /// <summary>
-  /// Table Style Conditional Formatting Type
-  /// </summary>
+  #region TableTableStyleOverrideType conversion.
   private static DMW.TableStyleOverrideKind? GetType(DXW.TableStyleProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableStyleOverrideValues, DMW.TableStyleOverrideKind>(openXmlElement?.Type?.Value);
@@ -22,10 +20,9 @@ public static class TableStylePropertiesConverter
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableStyleOverrideValues, DMW.TableStyleOverrideKind>(value);
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Paragraph Properties.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Paragraph Properties conversion.
   private static DMW.StyleParagraphProperties? GetStyleParagraphProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.StyleParagraphProperties>();
@@ -51,21 +48,20 @@ public static class TableStylePropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Run Properties.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Run Properties conversion.
   private static DMW.TableStyleRunProperties? GetRunPropertiesBaseStyle(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (element != null)
-      return DMXW.RunPropertiesBaseStyleConverter.CreateModelElement<DMW.TableStyleRunProperties>(element);
+      return DMXW.BaseRunPropertiesConverter.CreateModelElement<DMW.TableStyleRunProperties>(element);
     return null;
   }
   
   private static bool CmpRunPropertiesBaseStyle(DXW.TableStyleProperties openXmlElement, DMW.TableStyleRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RunPropertiesBaseStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName);
+    return DMXW.BaseRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>(), value, diffs, objName);
   }
   
   private static void SetRunPropertiesBaseStyle(DXW.TableStyleProperties openXmlElement, DMW.TableStyleRunProperties? value)
@@ -75,15 +71,14 @@ public static class TableStylePropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RunPropertiesBaseStyleConverter.CreateOpenXmlElement(value);
+      itemElement = DMXW.BaseRunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Table Properties.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Table Properties conversion.
   private static DMW.TableStyleConditionalTableProperties? GetTableStyleConditionalFormattingTableProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableProperties>();
@@ -109,10 +104,9 @@ public static class TableStylePropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Table Row Properties.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Table Row Properties conversion.
   private static DMW.TableStyleConditionalRowProperties? GetTableStyleConditionalFormattingTableRowProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableRowProperties>();
@@ -138,10 +132,9 @@ public static class TableStylePropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Table Style Conditional Formatting Table Cell Properties.
-  /// </summary>
+  #endregion
+
+  #region Table Style Conditional Formatting Table Cell Properties conversion.
   private static DMW.TableStyleConditionalCellProperties? GetTableStyleConditionalFormattingTableCellProperties(DXW.TableStyleProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableStyleConditionalFormattingTableCellProperties>();
@@ -225,4 +218,5 @@ public static class TableStylePropertiesConverter
     SetTableStyleConditionalFormattingTableRowProperties(openXmlElement, value?.TableStyleConditionalRowProperties);
     SetTableStyleConditionalFormattingTableCellProperties(openXmlElement, value?.TableStyleConditionalCellProperties);
   }
+  #endregion
 }

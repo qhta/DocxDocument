@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunFonts Class.
+/// <see cref="DocumentModel.Wordprocessing.RunFonts"/> class from/to OpenXml converter.
 /// </summary>
 public static class RunFontsConverter
 {
-  /// <summary>
-  /// Font Content Type
-  /// </summary>
+  #region Font Content Type conversion.
   private static DMW.FontTypeHintKind? GetHint(DXW.RunFonts openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value);
@@ -22,10 +20,9 @@ public static class RunFontsConverter
   {
     openXmlElement.Hint = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues, DMW.FontTypeHintKind>(value);
   }
-  
-  /// <summary>
-  /// ASCII Font
-  /// </summary>
+  #endregion
+
+  #region ASCII Font conversion.
   private static String? GetAscii(DXW.RunFonts openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Ascii);
@@ -40,10 +37,9 @@ public static class RunFontsConverter
   {
     openXmlElement.Ascii = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// High ANSI Font
-  /// </summary>
+#endregion
+
+  #region High ANSI Font conversion.
   private static String? GetHighAnsi(DXW.RunFonts openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.HighAnsi);
@@ -58,10 +54,9 @@ public static class RunFontsConverter
   {
     openXmlElement.HighAnsi = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// East Asian Font
-  /// </summary>
+#endregion
+
+  #region East Asian Font conversion.
   private static String? GetEastAsia(DXW.RunFonts openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EastAsia);
@@ -79,7 +74,6 @@ public static class RunFontsConverter
   
   /// <summary>
   /// Complex Script Font
-  /// </summary>
   private static String? GetComplexScript(DXW.RunFonts openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ComplexScript);
@@ -94,10 +88,9 @@ public static class RunFontsConverter
   {
     openXmlElement.ComplexScript = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// ASCII Theme Font
-  /// </summary>
+#endregion
+
+  #region ASCII Theme Font conversion.
   private static DMW.ThemeFontKind? GetAsciiTheme(DXW.RunFonts openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value);
@@ -112,10 +105,9 @@ public static class RunFontsConverter
   {
     openXmlElement.AsciiTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
-  
-  /// <summary>
-  /// High ANSI Theme Font
-  /// </summary>
+#endregion
+
+  #region High ANSI Theme Font conversion.
   private static DMW.ThemeFontKind? GetHighAnsiTheme(DXW.RunFonts openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value);
@@ -130,10 +122,9 @@ public static class RunFontsConverter
   {
     openXmlElement.HighAnsiTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
-  
-  /// <summary>
-  /// East Asian Theme Font
-  /// </summary>
+#endregion
+
+  #region East Asian Theme Font conversion.
   private static DMW.ThemeFontKind? GetEastAsiaTheme(DXW.RunFonts openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value);
@@ -148,10 +139,9 @@ public static class RunFontsConverter
   {
     openXmlElement.EastAsiaTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
-  
-  /// <summary>
-  /// Complex Script Theme Font
-  /// </summary>
+#endregion
+
+  #region Complex Script Theme Font conversion.
   private static DMW.ThemeFontKind? GetComplexScriptTheme(DXW.RunFonts openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value);
@@ -166,7 +156,9 @@ public static class RunFontsConverter
   {
     openXmlElement.ComplexScriptTheme = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues, DMW.ThemeFontKind>(value);
   }
-  
+  #endregion
+
+  #region RunFonts model conversion.
   public static DMW.RunFonts? CreateModelElement(DXW.RunFonts? openXmlElement)
   {
     if (openXmlElement != null)
@@ -236,4 +228,5 @@ public static class RunFontsConverter
     SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
     SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
   }
+  #endregion
 }

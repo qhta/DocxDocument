@@ -7,7 +7,6 @@ public static class TablePositionPropertiesConverter
 {
   /// <summary>
   /// Distance From Left of Table to Text
-  /// </summary>
   private static Int16? GetLeftFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.LeftFromText?.Value;
@@ -27,7 +26,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// (Distance From Right of Table to Text
-  /// </summary>
   private static Int16? GetRightFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.RightFromText?.Value;
@@ -47,7 +45,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Distance From Top of Table to Text
-  /// </summary>
   private static Int16? GetTopFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.TopFromText?.Value;
@@ -67,7 +64,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Distance From Bottom of Table to Text
-  /// </summary>
   private static Int16? GetBottomFromText(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.BottomFromText?.Value;
@@ -87,7 +83,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Table Vertical Anchor
-  /// </summary>
   private static DMW.VerticalAnchorKind? GetVerticalAnchor(DXW.TablePositionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
@@ -105,7 +100,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Table Horizontal Anchor
-  /// </summary>
   private static DMW.HorizontalAnchorKind? GetHorizontalAnchor(DXW.TablePositionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
@@ -123,7 +117,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Relative Horizontal Alignment From Anchor
-  /// </summary>
   private static DMW.HorizontalAlignmentKind? GetTablePositionXAlignment(DXW.TablePositionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
@@ -141,7 +134,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Absolute Horizontal Distance From Anchor
-  /// </summary>
   private static Int32? GetTablePositionX(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.TablePositionX?.Value;
@@ -161,7 +153,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Relative Vertical Alignment from Anchor
-  /// </summary>
   private static DMW.VerticalAlignmentKind? GetTablePositionYAlignment(DXW.TablePositionProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
@@ -179,7 +170,6 @@ public static class TablePositionPropertiesConverter
   
   /// <summary>
   /// Absolute Vertical Distance From Anchor
-  /// </summary>
   private static Int32? GetTablePositionY(DXW.TablePositionProperties openXmlElement)
   {
     return openXmlElement?.TablePositionY?.Value;
