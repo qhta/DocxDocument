@@ -75,7 +75,8 @@ public class TestStyles : TestBase
     int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
     int origDefinedStylesCount = origDefinedStyles?.Elements<DXW.Style>().Count() ?? 0;
-    WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var diffs = new DiffList();
     if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
@@ -85,7 +86,8 @@ public class TestStyles : TestBase
     int modelLatentStylesCount = modelLatentStyles?.Count ?? 0;
     var origLatentStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles;
     int origLatentStylesCount = origLatentStyles?.Elements<LatentStyleExceptionInfo>().Count() ?? 0;
-    WriteLine($"  Document Lantent Styles: found {modelLatentStylesCount}, expected {origLatentStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Lantent Styles: found {modelLatentStylesCount}, expected {origLatentStylesCount}");
     diffs = new DiffList();
     if (!LatentStylesConverter.CompareModelElement(origLatentStyles, modelLatentStyles, diffs, null))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
@@ -93,42 +95,48 @@ public class TestStyles : TestBase
 
     var modelAllStyles = document.Styles.AllStyles;
     var modelAllStylesCount = modelAllStyles.Count();
-    WriteLine($"  Document All Styles: found {modelAllStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document All Styles: found {modelAllStylesCount}");
 
     var modelParaStyles = document.Styles.ParagraphStyles;
     var modelParaStylesCount = modelParaStyles.Count();
     var definedParaStylesCount = modelParaStyles.Count(item => item.IsDefined);
     var customParaStylesCount = modelParaStyles.Count(item => item.IsCustom == true);
     var validParaStylesCount = modelParaStyles.Count(item => item.IsValid);
-    WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}, valid {validParaStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}, valid {validParaStylesCount}");
 
     var modelCharStyles = document.Styles.CharacterStyles;
     var modelCharStylesCount = modelCharStyles.Count();
     var definedCharStylesCount = modelCharStyles.Count(item => item.IsDefined);
     var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom == true);
     var validCharStylesCount = modelCharStyles.Count(item => item.IsValid);
-    WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}, valid {validCharStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}, valid {validCharStylesCount}");
 
     var modelTableStyles = document.Styles.TableStyles;
     var modelTableStylesCount = modelTableStyles.Count();
     var definedTableStylesCount = modelTableStyles.Count(item => item.IsDefined);
     var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom == true);
     var validTableStylesCount = modelTableStyles.Count(item => item.IsValid);
-    WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}, valid {validTableStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}, valid {validTableStylesCount}");
 
     var modelNumStyles = document.Styles.NumberingStyles;
     var modelNumStylesCount = modelNumStyles.Count();
     var definedNumStylesCount = modelNumStyles.Count(item => item.IsDefined);
     var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom == true);
     var validNumStylesCount = modelNumStyles.Count(item => item.IsValid);
-    WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}, valid {validNumStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}, valid {validNumStylesCount}");
 
     var totalStylesCount = modelParaStylesCount + modelCharStylesCount + modelTableStylesCount + modelNumStylesCount;
     var totalValidStylesCount = validParaStylesCount + validCharStylesCount + validTableStylesCount + validNumStylesCount;
     var totalDefinedStylesCount = definedParaStylesCount + definedCharStylesCount + definedTableStylesCount + definedNumStylesCount;
 
     var totalStyleIds = document.Styles.StyleIndex.Count;
-    WriteLine($"  Document Style Ids: found {totalStyleIds}, expected {totalDefinedStylesCount}");
+    if (showDetails)
+      WriteLine($"  Document Style Ids: found {totalStyleIds}, expected {totalDefinedStylesCount}");
 
     Assert.That(totalStylesCount, Is.GreaterThanOrEqualTo(modelAllStylesCount), "Invalid total styles count");
     Assert.That(totalValidStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");

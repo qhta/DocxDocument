@@ -201,7 +201,7 @@ public static class BaseTablePropertiesConverter
   #endregion
 
   #region TableCellMarginDefault conversion.
-  private static DMW.TableCellMarginDefault? GetTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement)
+  private static DMW.DefaultTableCellMargin? GetTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (element != null)
@@ -209,12 +209,12 @@ public static class BaseTablePropertiesConverter
     return null;
   }
 
-  private static bool CmpTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.TableCellMarginDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
 
-  private static void SetTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.TableCellMarginDefault? value)
+  private static void SetTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.DefaultTableCellMargin? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>();
     if (itemElement != null)

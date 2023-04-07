@@ -62,10 +62,9 @@ public static class ParagraphMarkRunPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphMarkRunProperties value)
-    where OpenXmlElementType: DXW.ParagraphMarkRunProperties, new()
+  public static DXW.ParagraphMarkRunProperties CreateOpenXmlElement(DMW.ParagraphMarkRunProperties value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.ParagraphMarkRunProperties();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
