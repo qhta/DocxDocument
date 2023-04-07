@@ -1,8 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table Cell Properties.
-/// </summary>
+/// <see cref="DocumentModel.Wordprocessing.TableCellPropertiesChange"/> class from/to OpenXml converter./// </summary>
 public static class TableCellPropertiesChangeConverter
 {
   #region Author conversion.
@@ -58,7 +57,7 @@ public static class TableCellPropertiesChangeConverter
   }
   #endregion
 
-  #region Previous Table Cell Properties conversion.
+  #region PreviousTableCellProperties conversion.
   private static DMW.PreviousTableCellProperties? GetPreviousTableCellProperties(DXW.TableCellPropertiesChange openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousTableCellProperties>();
@@ -84,7 +83,9 @@ public static class TableCellPropertiesChangeConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region TableCellPropertiesChange conversion.
   public static DMW.TableCellPropertiesChange? CreateModelElement(DXW.TableCellPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
@@ -92,7 +93,7 @@ public static class TableCellPropertiesChangeConverter
       var value = new DMW.TableCellPropertiesChange();
       value.Author = GetAuthor(openXmlElement);
       value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
+      value.AnnotationId = GetId(openXmlElement);
       value.PreviousTableCellProperties = GetPreviousTableCellProperties(openXmlElement);
       return value;
     }
@@ -108,7 +109,7 @@ public static class TableCellPropertiesChangeConverter
         ok = false;
       if (!CmpDate(openXmlElement, value.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
         ok = false;
       if (!CmpPreviousTableCellProperties(openXmlElement, value.PreviousTableCellProperties, diffs, objName))
         ok = false;
@@ -131,7 +132,7 @@ public static class TableCellPropertiesChangeConverter
   {
     SetAuthor(openXmlElement, value?.Author);
     SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, value?.AnnotationId);
     SetPreviousTableCellProperties(openXmlElement, value?.PreviousTableCellProperties);
   }
   #endregion

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 ///   Base class for all TableRowProperties classes.
 ///   Contains common properties.
 /// </summary>
-public class BaseTableRowProperties: ModelElement
+public abstract class BaseTableRowProperties: ModelElement
 {
   /// <summary>
   /// Specifies the set of conditional table style formatting properties which have been applied to this table row. 
