@@ -128,7 +128,7 @@ public static class CheckBoxConverter
   
   private static bool CmpId(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.CheckBox openXmlElement, String? value)

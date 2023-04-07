@@ -306,7 +306,7 @@ public static class ElementCollectionConverter<T>
           var diff = diffs.FirstOrDefault();
           if (diff != null && diff.ObjectName == "Item")
           {
-            if (diff.PropertyName != "@Type" && diff.PropertyName?.EndsWith("Id") != true)
+            if (diff.PropertyName != "@Type" && diff.PropertyName?.EndsWith("AnnotationId") != true)
             {
               updateElementMethod(openXmlElement, modelElement);
               continue;

@@ -182,7 +182,7 @@ public static class VisibleToggleButtonConverter
   
   private static bool CmpId(DXOCustUI.VisibleToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.VisibleToggleButton openXmlElement, String? value)

@@ -338,7 +338,7 @@ public static class ComboBoxConverter
   
   private static bool CmpId(DXOCustUI.ComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.ComboBox openXmlElement, String? value)

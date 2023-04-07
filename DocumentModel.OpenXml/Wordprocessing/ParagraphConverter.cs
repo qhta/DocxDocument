@@ -3,7 +3,7 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Paragraph class converter.
+/// Defines the Paragraph class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphConverter
 {

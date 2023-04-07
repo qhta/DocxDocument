@@ -56,7 +56,7 @@ public static class SplitButtonRegularConverter
   
   private static bool CmpId(DXO2010CustUI.SplitButtonRegular openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXO2010CustUI.SplitButtonRegular openXmlElement, String? value)

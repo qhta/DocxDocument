@@ -92,7 +92,7 @@ public static class PermStartConverter
   private static bool CmpId(DXW.PermStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   

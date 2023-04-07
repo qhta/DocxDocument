@@ -34,7 +34,7 @@ public static class ColorStyleConverter
   private static bool CmpId(DXO2013DrawChartStyle.ColorStyle openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
-    diffs?.Add(objName, "Id", openXmlElement?.Id?.Value, value);
+    diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   

@@ -15,7 +15,7 @@ public static class TaskUndoConverter
   
   private static bool CmpId(DXO2021DocTasks.TaskUndo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXO2021DocTasks.TaskUndo openXmlElement, String? value)

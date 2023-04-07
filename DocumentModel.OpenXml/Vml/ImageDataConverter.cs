@@ -15,7 +15,7 @@ public static class ImageDataConverter
   
   private static bool CmpId(DXVml.ImageData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXVml.ImageData openXmlElement, String? value)

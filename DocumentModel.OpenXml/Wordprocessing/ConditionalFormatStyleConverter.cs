@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -8,19 +10,37 @@ public static class ConditionalFormatStyleConverter
   /// <summary>
   /// Conditional Formatting Bit Mask
   /// </summary>
-  private static String? GetVal(DXW.ConditionalFormatStyle openXmlElement)
+  private static ConditionalFormatFlags GetVal(DXW.ConditionalFormatStyle openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Val);
+    var str = StringValueConverter.GetValue(openXmlElement?.Val);
+    if (str != null)
+    {
+      var val = Convert.ToInt32(str, 2);
+      return (ConditionalFormatFlags)Enum.ToObject(typeof(ConditionalFormatFlags), val);
+    }
+    return 0;
   }
   
-  private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, ConditionalFormatFlags? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
+    string? str = null;
+    if (value!=null)
+    {
+      var val = (Int32)Convert.ChangeType(value, typeof(Int32));
+      str = Convert.ToString(val, 2).PadLeft(12, '0');
+    }
+    return StringValueConverter.CmpValue(openXmlElement?.Val, str, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXW.ConditionalFormatStyle openXmlElement, String? value)
+  private static void SetVal(DXW.ConditionalFormatStyle openXmlElement, ConditionalFormatFlags? value)
   {
-    openXmlElement.Val = StringValueConverter.CreateStringValue(value);
+    string? str = null;
+    if (value!=null)
+    {
+      var val = (Int32)Convert.ChangeType(value, typeof(Int32));
+      str = Convert.ToString(val, 2).PadLeft(12, '0');
+    }
+    openXmlElement.Val = StringValueConverter.CreateStringValue(str);
   }
   
   /// <summary>
@@ -245,18 +265,18 @@ public static class ConditionalFormatStyleConverter
     {
       var value = new DMW.ConditionalFormatStyle();
       value.Val = GetVal(openXmlElement);
-      value.FirstRow = GetFirstRow(openXmlElement);
-      value.LastRow = GetLastRow(openXmlElement);
-      value.FirstColumn = GetFirstColumn(openXmlElement);
-      value.LastColumn = GetLastColumn(openXmlElement);
-      value.OddVerticalBand = GetOddVerticalBand(openXmlElement);
-      value.EvenVerticalBand = GetEvenVerticalBand(openXmlElement);
-      value.OddHorizontalBand = GetOddHorizontalBand(openXmlElement);
-      value.EvenHorizontalBand = GetEvenHorizontalBand(openXmlElement);
-      value.FirstRowFirstColumn = GetFirstRowFirstColumn(openXmlElement);
-      value.FirstRowLastColumn = GetFirstRowLastColumn(openXmlElement);
-      value.LastRowFirstColumn = GetLastRowFirstColumn(openXmlElement);
-      value.LastRowLastColumn = GetLastRowLastColumn(openXmlElement);
+      value.FirstRow = GetFirstRow(openXmlElement) ?? value.FirstRow;
+      value.LastRow = GetLastRow(openXmlElement) ?? value.LastRow;
+      value.FirstColumn = GetFirstColumn(openXmlElement) ?? value.FirstColumn;
+      value.LastColumn = GetLastColumn(openXmlElement) ?? value.LastColumn;
+      value.OddVerticalBand = GetOddVerticalBand(openXmlElement) ?? value.OddVerticalBand;
+      value.EvenVerticalBand = GetEvenVerticalBand(openXmlElement) ?? value.EvenVerticalBand;
+      value.OddHorizontalBand = GetOddHorizontalBand(openXmlElement) ?? value.OddHorizontalBand;
+      value.EvenHorizontalBand = GetEvenHorizontalBand(openXmlElement) ?? value.EvenHorizontalBand;
+      value.FirstRowFirstColumn = GetFirstRowFirstColumn(openXmlElement) ?? value.FirstRowFirstColumn;
+      value.FirstRowLastColumn = GetFirstRowLastColumn(openXmlElement) ?? value.FirstRowLastColumn;
+      value.LastRowFirstColumn = GetLastRowFirstColumn(openXmlElement) ?? value.LastRowFirstColumn;
+      value.LastRowLastColumn = GetLastRowLastColumn(openXmlElement) ?? value.LastRowLastColumn;
       return value;
     }
     return null;

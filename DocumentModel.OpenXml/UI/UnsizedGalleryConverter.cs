@@ -511,7 +511,7 @@ public static class UnsizedGalleryConverter
   
   private static bool CmpId(DXOCustUI.UnsizedGallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.UnsizedGallery openXmlElement, String? value)

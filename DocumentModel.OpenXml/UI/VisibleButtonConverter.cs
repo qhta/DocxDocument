@@ -164,7 +164,7 @@ public static class VisibleButtonConverter
   
   private static bool CmpId(DXOCustUI.VisibleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.VisibleButton openXmlElement, String? value)

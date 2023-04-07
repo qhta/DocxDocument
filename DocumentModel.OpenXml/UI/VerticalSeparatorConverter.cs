@@ -15,7 +15,7 @@ public static class VerticalSeparatorConverter
   
   private static bool CmpId(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXOCustUI.VerticalSeparator openXmlElement, String? value)

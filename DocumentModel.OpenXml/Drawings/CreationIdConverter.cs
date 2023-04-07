@@ -15,7 +15,7 @@ public static class CreationIdConverter
   
   private static bool CmpId(DXO2016Draw.CreationId openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
   private static void SetId(DXO2016Draw.CreationId openXmlElement, String? value)

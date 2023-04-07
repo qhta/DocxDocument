@@ -9,10 +9,10 @@ public class DocDefaults: ModelElement
   /// <summary>
   ///   Default Run Properties.
   /// </summary>
-  public RunPropertiesDefault? RunPropertiesDefault { get; set; }
+  public DefaultRunProperties? RunPropertiesDefault { get; set; }
 
   /// <summary>
   ///   Default Paragraph Properties.
   /// </summary>
-  public ParagraphPropertiesDefault? ParagraphPropertiesDefault { get; set; }
+  public DefaultParagraphProperties? ParagraphPropertiesDefault { get; set; }
 }
