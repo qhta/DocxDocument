@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class LevelConverter
 {
 
-  #region Numbering Level
+  #region LevelIndex conversion.
   private static Int32? GetLevelIndex(DXW.Level openXmlElement)
   {
     return openXmlElement?.LevelIndex?.Value;
@@ -25,7 +25,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Template Code
+  #region TemplateCode conversion.
   private static DM.HexInt? GetTemplateCode(DXW.Level openXmlElement)
   {
     if (openXmlElement?.TemplateCode?.Value != null)
@@ -47,7 +47,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Tentative Numbering
+  #region Tentative conversion.
   private static Boolean? GetTentative(DXW.Level openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Tentative);
@@ -64,7 +64,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Starting Value.
+  #region StartNumbering conversion.
   private static Int32? GetStartNumberingValue(DXW.Level openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StartNumberingValue>()?.Val);
@@ -81,7 +81,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Numbering Format.
+  #region NumberingFormat conversion.
   private static DMW.NumberingFormat? GetNumberingFormat(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.NumberingFormat>();
@@ -109,7 +109,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Restart Numbering Level Symbol.
+  #region LevelRestart conversion.
   private static Int32? GetLevelRestart(DXW.Level openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LevelRestart>()?.Val);
@@ -126,7 +126,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Paragraph Style's Associated Numbering Level.
+  #region ParagraphStyleIdInLevel conversion.
   private static String? GetParagraphStyleIdInLevel(DXW.Level openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ParagraphStyleIdInLevel>()?.Val);
@@ -143,7 +143,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Display All Levels Using Arabic Numerals.
+  #region IsLegalNumberingStyle conversion.
   private static Boolean? GetIsLegalNumberingStyle(DXW.Level openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.IsLegalNumberingStyle>());
@@ -160,7 +160,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Content Between Numbering Symbol and Paragraph Text.
+  #region LevelSuffix conversion.
   private static DMW.LevelSuffixKind? GetLevelSuffix(DXW.Level openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(openXmlElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value);
@@ -187,7 +187,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Numbering Level Text.
+  #region LevelText conversion.
   private static DMW.NumLevelText? GetLevelText(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LevelText>();
@@ -215,7 +215,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Picture Numbering Symbol Definition Reference.
+  #region LevelPictureBulletId conversion.
   private static Int32? GetLevelPictureBulletId(DXW.Level openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LevelPictureBulletId>()?.Val);
@@ -232,7 +232,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Legacy Numbering Level Properties.
+  #region LegacyNumbering conversion.
   private static DMW.LegacyNumbering? GetLegacyNumbering(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.LegacyNumbering>();
@@ -260,7 +260,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Justification.
+  #region LevelJustification conversion.
   private static DMW.LevelJustificationKind? GetLevelJustification(DXW.Level openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(openXmlElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value);
@@ -287,7 +287,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Numbering Level Associated Paragraph Properties.
+  #region PreviousParagraphProperties conversion.
   private static DMW.PreviousParagraphProperties? GetPreviousParagraphProperties(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PreviousParagraphProperties>();
@@ -315,7 +315,7 @@ public static class LevelConverter
   }
   #endregion
 
-  #region Numbering Symbol Run Properties.
+  #region NumberingSymbolRunProperties conversion.
   private static DMW.NumberingSymbolRunProperties? GetNumberingSymbolRunProperties(DXW.Level openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.NumberingSymbolRunProperties>();
@@ -348,94 +348,94 @@ public static class LevelConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumLevel();
-      value.LevelIndex = GetLevelIndex(openXmlElement);
-      value.TemplateCode = GetTemplateCode(openXmlElement);
-      value.Tentative = GetTentative(openXmlElement);
-      value.StartNumberingValue = GetStartNumberingValue(openXmlElement);
-      value.NumberingFormat = GetNumberingFormat(openXmlElement);
-      value.LevelRestart = GetLevelRestart(openXmlElement);
-      value.ParagraphStyleIdInLevel = GetParagraphStyleIdInLevel(openXmlElement);
-      value.IsLegalNumberingStyle = GetIsLegalNumberingStyle(openXmlElement);
-      value.LevelSuffix = GetLevelSuffix(openXmlElement);
-      value.LevelText = GetLevelText(openXmlElement);
-      value.LevelPictureBulletId = GetLevelPictureBulletId(openXmlElement);
-      value.LegacyNumbering = GetLegacyNumbering(openXmlElement);
-      value.LevelJustification = GetLevelJustification(openXmlElement);
-      value.NumberingLevelParagraphProperties = GetPreviousParagraphProperties(openXmlElement);
-      value.NumberingSymbolRunProperties = GetNumberingSymbolRunProperties(openXmlElement);
-      return value;
+      var model = new DMW.NumLevel();
+      model.LevelIndex = GetLevelIndex(openXmlElement);
+      model.TemplateCode = GetTemplateCode(openXmlElement);
+      model.Tentative = GetTentative(openXmlElement);
+      model.StartNumberingValue = GetStartNumberingValue(openXmlElement);
+      model.NumberingFormat = GetNumberingFormat(openXmlElement);
+      model.LevelRestart = GetLevelRestart(openXmlElement);
+      model.ParagraphStyleIdInLevel = GetParagraphStyleIdInLevel(openXmlElement);
+      model.IsLegalNumberingStyle = GetIsLegalNumberingStyle(openXmlElement);
+      model.LevelSuffix = GetLevelSuffix(openXmlElement);
+      model.LevelText = GetLevelText(openXmlElement);
+      model.LevelPictureBulletId = GetLevelPictureBulletId(openXmlElement);
+      model.LegacyNumbering = GetLegacyNumbering(openXmlElement);
+      model.LevelJustification = GetLevelJustification(openXmlElement);
+      model.NumberingLevelParagraphProperties = GetPreviousParagraphProperties(openXmlElement);
+      model.NumberingSymbolRunProperties = GetNumberingSymbolRunProperties(openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Level? openXmlElement, DMW.NumLevel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Level? openXmlElement, DMW.NumLevel? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLevelIndex(openXmlElement, value.LevelIndex, diffs, objName))
+      if (!CmpLevelIndex(openXmlElement, model.LevelIndex, diffs, objName))
         ok = false;
-      if (!CmpTemplateCode(openXmlElement, value.TemplateCode, diffs, objName))
+      if (!CmpTemplateCode(openXmlElement, model.TemplateCode, diffs, objName))
         ok = false;
-      if (!CmpTentative(openXmlElement, value.Tentative, diffs, objName))
+      if (!CmpTentative(openXmlElement, model.Tentative, diffs, objName))
         ok = false;
-      if (!CmpStartNumberingValue(openXmlElement, value.StartNumberingValue, diffs, objName))
+      if (!CmpStartNumberingValue(openXmlElement, model.StartNumberingValue, diffs, objName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, model.NumberingFormat, diffs, objName))
         ok = false;
-      if (!CmpLevelRestart(openXmlElement, value.LevelRestart, diffs, objName))
+      if (!CmpLevelRestart(openXmlElement, model.LevelRestart, diffs, objName))
         ok = false;
-      if (!CmpParagraphStyleIdInLevel(openXmlElement, value.ParagraphStyleIdInLevel, diffs, objName))
+      if (!CmpParagraphStyleIdInLevel(openXmlElement, model.ParagraphStyleIdInLevel, diffs, objName))
         ok = false;
-      if (!CmpIsLegalNumberingStyle(openXmlElement, value.IsLegalNumberingStyle, diffs, objName))
+      if (!CmpIsLegalNumberingStyle(openXmlElement, model.IsLegalNumberingStyle, diffs, objName))
         ok = false;
-      if (!CmpLevelSuffix(openXmlElement, value.LevelSuffix, diffs, objName))
+      if (!CmpLevelSuffix(openXmlElement, model.LevelSuffix, diffs, objName))
         ok = false;
-      if (!CmpLevelText(openXmlElement, value.LevelText, diffs, objName))
+      if (!CmpLevelText(openXmlElement, model.LevelText, diffs, objName))
         ok = false;
-      if (!CmpLevelPictureBulletId(openXmlElement, value.LevelPictureBulletId, diffs, objName))
+      if (!CmpLevelPictureBulletId(openXmlElement, model.LevelPictureBulletId, diffs, objName))
         ok = false;
-      if (!CmpLegacyNumbering(openXmlElement, value.LegacyNumbering, diffs, objName))
+      if (!CmpLegacyNumbering(openXmlElement, model.LegacyNumbering, diffs, objName))
         ok = false;
-      if (!CmpLevelJustification(openXmlElement, value.LevelJustification, diffs, objName))
+      if (!CmpLevelJustification(openXmlElement, model.LevelJustification, diffs, objName))
         ok = false;
-      if (!CmpPreviousParagraphProperties(openXmlElement, value.NumberingLevelParagraphProperties, diffs, objName))
+      if (!CmpPreviousParagraphProperties(openXmlElement, model.NumberingLevelParagraphProperties, diffs, objName))
         ok = false;
-      if (!CmpNumberingSymbolRunProperties(openXmlElement, value.NumberingSymbolRunProperties, diffs, objName))
+      if (!CmpNumberingSymbolRunProperties(openXmlElement, model.NumberingSymbolRunProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevel value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevel model)
     where OpenXmlElementType : DXW.Level, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.Level openXmlElement, DMW.NumLevel value)
+  public static void UpdateOpenXmlElement(DXW.Level openXmlElement, DMW.NumLevel model)
   {
-    SetLevelIndex(openXmlElement, value?.LevelIndex);
-    SetTemplateCode(openXmlElement, value?.TemplateCode);
-    SetTentative(openXmlElement, value?.Tentative);
-    SetStartNumberingValue(openXmlElement, value?.StartNumberingValue);
-    SetNumberingFormat(openXmlElement, value?.NumberingFormat);
-    SetLevelRestart(openXmlElement, value?.LevelRestart);
-    SetParagraphStyleIdInLevel(openXmlElement, value?.ParagraphStyleIdInLevel);
-    SetIsLegalNumberingStyle(openXmlElement, value?.IsLegalNumberingStyle);
-    SetLevelSuffix(openXmlElement, value?.LevelSuffix);
-    SetLevelText(openXmlElement, value?.LevelText);
-    SetLevelPictureBulletId(openXmlElement, value?.LevelPictureBulletId);
-    SetLegacyNumbering(openXmlElement, value?.LegacyNumbering);
-    SetLevelJustification(openXmlElement, value?.LevelJustification);
-    SetPreviousParagraphProperties(openXmlElement, value?.NumberingLevelParagraphProperties);
-    SetNumberingSymbolRunProperties(openXmlElement, value?.NumberingSymbolRunProperties);
+    SetLevelIndex(openXmlElement, model?.LevelIndex);
+    SetTemplateCode(openXmlElement, model?.TemplateCode);
+    SetTentative(openXmlElement, model?.Tentative);
+    SetStartNumberingValue(openXmlElement, model?.StartNumberingValue);
+    SetNumberingFormat(openXmlElement, model?.NumberingFormat);
+    SetLevelRestart(openXmlElement, model?.LevelRestart);
+    SetParagraphStyleIdInLevel(openXmlElement, model?.ParagraphStyleIdInLevel);
+    SetIsLegalNumberingStyle(openXmlElement, model?.IsLegalNumberingStyle);
+    SetLevelSuffix(openXmlElement, model?.LevelSuffix);
+    SetLevelText(openXmlElement, model?.LevelText);
+    SetLevelPictureBulletId(openXmlElement, model?.LevelPictureBulletId);
+    SetLegacyNumbering(openXmlElement, model?.LegacyNumbering);
+    SetLevelJustification(openXmlElement, model?.LevelJustification);
+    SetPreviousParagraphProperties(openXmlElement, model?.NumberingLevelParagraphProperties);
+    SetNumberingSymbolRunProperties(openXmlElement, model?.NumberingSymbolRunProperties);
   }
   #endregion
 

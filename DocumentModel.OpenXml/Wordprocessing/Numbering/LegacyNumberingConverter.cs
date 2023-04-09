@@ -1,11 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Legacy Numbering Level Properties converter from/to OpenXML.
+/// <see cref="DocumentModel.Wordprocessing.LegacyNumbering"/> class from/to OpenXml converter.
 /// </summary>
 public static class LegacyNumberingConverter
 {
-  #region Use Legacy Numbering Properties
+  #region Legacy conversion.
   private static Boolean GetLegacy(DXW.LegacyNumbering openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Legacy) ?? true;
@@ -22,7 +22,7 @@ public static class LegacyNumberingConverter
   }
   #endregion
 
-  #region Legacy Spacing
+  #region LegacySpace conversion.
   private static Twips GetLegacySpace(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacySpace!=null)
@@ -41,7 +41,7 @@ public static class LegacyNumberingConverter
   }
   #endregion
 
-  #region Legacy Indent
+  #region LegacyIndent conversion.
   private static Twips GetLegacyIndent(DXW.LegacyNumbering openXmlElement)
   {
     if (openXmlElement?.LegacyIndent!=null)
@@ -65,46 +65,46 @@ public static class LegacyNumberingConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.LegacyNumbering();
-      value.Use = GetLegacy(openXmlElement);
-      value.Space = GetLegacySpace(openXmlElement);
-      value.Indent = GetLegacyIndent(openXmlElement);
-      return value;
+      var model = new DMW.LegacyNumbering();
+      model.Use = GetLegacy(openXmlElement);
+      model.Space = GetLegacySpace(openXmlElement);
+      model.Indent = GetLegacyIndent(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LegacyNumbering? openXmlElement, DMW.LegacyNumbering? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LegacyNumbering? openXmlElement, DMW.LegacyNumbering? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLegacy(openXmlElement, value.Use, diffs, objName))
+      if (!CmpLegacy(openXmlElement, model.Use, diffs, objName))
         ok = false;
-      if (!CmpLegacySpace(openXmlElement, value.Space, diffs, objName))
+      if (!CmpLegacySpace(openXmlElement, model.Space, diffs, objName))
         ok = false;
-      if (!CmpLegacyIndent(openXmlElement, value.Indent, diffs, objName))
+      if (!CmpLegacyIndent(openXmlElement, model.Indent, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LegacyNumbering value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LegacyNumbering model)
     where OpenXmlElementType: DXW.LegacyNumbering, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.LegacyNumbering openXmlElement, DMW.LegacyNumbering value)
+  public static void UpdateOpenXmlElement(DXW.LegacyNumbering openXmlElement, DMW.LegacyNumbering model)
   {
-    SetLegacy(openXmlElement, value?.Use);
-    SetLegacySpace(openXmlElement, value?.Space);
-    SetLegacyIndent(openXmlElement, value?.Indent);
+    SetLegacy(openXmlElement, model.Use);
+    SetLegacySpace(openXmlElement, model.Space);
+    SetLegacyIndent(openXmlElement, model.Indent);
   }
   #endregion
 }

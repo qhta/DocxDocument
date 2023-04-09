@@ -1,11 +1,9 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// FontRelationshipType from/
-/// </summary>
-public static class FontRelationshipTypeConverter
+/// <see cref="DocumentModel.Wordprocessing.EmbeddedFont"/> class from/to OpenXml converter./// </summary>
+public static class EmbeddedFontConverter
 {
-
   #region FontKey conversion
   private static String? GetFontKey(DXW.FontRelationshipType openXmlElement)
   {
@@ -57,51 +55,51 @@ public static class FontRelationshipTypeConverter
   }
   #endregion
 
-  #region FontRelationshipType conversion
+  #region EmbeddedFont model conversion
   public static DMW.EmbeddedFont? CreateModelElement(DXW.FontRelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.EmbeddedFont();
-      value.FontKey = GetFontKey(openXmlElement);
-      value.Subsetted = GetSubsetted(openXmlElement);
-      value.Id = GetId(openXmlElement);
-      return value;
+      var model = new DMW.EmbeddedFont();
+      model.FontKey = GetFontKey(openXmlElement);
+      model.Subsetted = GetSubsetted(openXmlElement);
+      model.Id = GetId(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.EmbeddedFont? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFontKey(openXmlElement, value.FontKey, diffs, objName))
+      if (!CmpFontKey(openXmlElement, model.FontKey, diffs, objName))
         ok = false;
-      if (!CmpSubsetted(openXmlElement, value.Subsetted, diffs, objName))
+      if (!CmpSubsetted(openXmlElement, model.Subsetted, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedFont value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EmbeddedFont model)
     where OpenXmlElementType: DXW.FontRelationshipType, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FontRelationshipType openXmlElement, DMW.EmbeddedFont value)
+  public static void UpdateOpenXmlElement(DXW.FontRelationshipType openXmlElement, DMW.EmbeddedFont model)
   {
-    SetFontKey(openXmlElement, value?.FontKey);
-    SetSubsetted(openXmlElement, value?.Subsetted);
-    SetId(openXmlElement, value?.Id);
+    SetFontKey(openXmlElement, model?.FontKey);
+    SetSubsetted(openXmlElement, model?.Subsetted);
+    SetId(openXmlElement, model?.Id);
   }
   #endregion
 }

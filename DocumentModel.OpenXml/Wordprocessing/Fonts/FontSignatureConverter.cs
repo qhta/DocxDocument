@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FontSignature Class.
+/// <see cref="DocumentModel.Wordprocessing.FontSignature"/> class from/to OpenXml converter.
 /// </summary>
 public static class FontSignatureConverter
 {
-  /// <summary>
-  /// First 32 Bits of Unicode Subset Bitfield
-  /// </summary>
+  #region First 32 Bits of Unicode Subset Bitfield conversion.
   private static DM.HexInt GetUnicodeSignature0(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature0?.Value != null)
@@ -27,10 +25,9 @@ public static class FontSignatureConverter
     else
       openXmlElement.UnicodeSignature0 = null;
   }
-  
-  /// <summary>
-  /// Second 32 Bits of Unicode Subset Bitfield
-  /// </summary>
+  #endregion
+
+  #region Second 32 Bits of Unicode Subset Bitfield conversion.
   private static DM.HexInt GetUnicodeSignature1(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature1?.Value != null)
@@ -50,10 +47,9 @@ public static class FontSignatureConverter
     else
       openXmlElement.UnicodeSignature1 = null;
   }
-  
-  /// <summary>
-  /// Third 32 Bits of Unicode Subset Bitfield
-  /// </summary>
+  #endregion
+
+  #region Third 32 Bits of Unicode Subset Bitfield conversion.
   private static DM.HexInt GetUnicodeSignature2(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature2?.Value != null)
@@ -73,10 +69,9 @@ public static class FontSignatureConverter
     else
       openXmlElement.UnicodeSignature2 = null;
   }
-  
-  /// <summary>
-  /// Fourth 32 Bits of Unicode Subset Bitfield
-  /// </summary>
+  #endregion
+
+  #region Fourth 32 Bits of Unicode Subset Bitfield conversion.
   private static DM.HexInt GetUnicodeSignature3(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.UnicodeSignature3?.Value != null)
@@ -96,10 +91,9 @@ public static class FontSignatureConverter
     else
       openXmlElement.UnicodeSignature3 = null;
   }
-  
-  /// <summary>
-  /// Lower 32 Bits of Code Page Bit Field
-  /// </summary>
+  #endregion
+
+  #region Lower 32 Bits of Code Page Bit Field conversion.
   private static DM.HexInt GetCodePageSignature0(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.CodePageSignature0?.Value != null)
@@ -119,10 +113,9 @@ public static class FontSignatureConverter
     else
       openXmlElement.CodePageSignature0 = null;
   }
-  
-  /// <summary>
-  /// Upper 32 Bits of Code Page Bit Field
-  /// </summary>
+  #endregion
+
+  #region Upper 32 Bits of Code Page Bit Field conversion.
   private static DM.HexInt GetCodePageSignature1(DXW.FontSignature openXmlElement)
   {
     if (openXmlElement?.CodePageSignature1?.Value != null)
@@ -142,62 +135,65 @@ public static class FontSignatureConverter
     else
       openXmlElement.CodePageSignature1 = null;
   }
-  
+  #endregion
+
+  #region FontSignature model conversion.
   public static DMW.FontSignature? CreateModelElement(DXW.FontSignature? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FontSignature();
-      value.UnicodeSignature0 = GetUnicodeSignature0(openXmlElement);
-      value.UnicodeSignature1 = GetUnicodeSignature1(openXmlElement);
-      value.UnicodeSignature2 = GetUnicodeSignature2(openXmlElement);
-      value.UnicodeSignature3 = GetUnicodeSignature3(openXmlElement);
-      value.CodePageSignature0 = GetCodePageSignature0(openXmlElement);
-      value.CodePageSignature1 = GetCodePageSignature1(openXmlElement);
-      return value;
+      var model = new DMW.FontSignature();
+      model.UnicodeSignature0 = GetUnicodeSignature0(openXmlElement);
+      model.UnicodeSignature1 = GetUnicodeSignature1(openXmlElement);
+      model.UnicodeSignature2 = GetUnicodeSignature2(openXmlElement);
+      model.UnicodeSignature3 = GetUnicodeSignature3(openXmlElement);
+      model.CodePageSignature0 = GetCodePageSignature0(openXmlElement);
+      model.CodePageSignature1 = GetCodePageSignature1(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FontSignature? openXmlElement, DMW.FontSignature? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontSignature? openXmlElement, DMW.FontSignature? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpUnicodeSignature0(openXmlElement, value.UnicodeSignature0, diffs, objName))
+      if (!CmpUnicodeSignature0(openXmlElement, model.UnicodeSignature0, diffs, objName))
         ok = false;
-      if (!CmpUnicodeSignature1(openXmlElement, value.UnicodeSignature1, diffs, objName))
+      if (!CmpUnicodeSignature1(openXmlElement, model.UnicodeSignature1, diffs, objName))
         ok = false;
-      if (!CmpUnicodeSignature2(openXmlElement, value.UnicodeSignature2, diffs, objName))
+      if (!CmpUnicodeSignature2(openXmlElement, model.UnicodeSignature2, diffs, objName))
         ok = false;
-      if (!CmpUnicodeSignature3(openXmlElement, value.UnicodeSignature3, diffs, objName))
+      if (!CmpUnicodeSignature3(openXmlElement, model.UnicodeSignature3, diffs, objName))
         ok = false;
-      if (!CmpCodePageSignature0(openXmlElement, value.CodePageSignature0, diffs, objName))
+      if (!CmpCodePageSignature0(openXmlElement, model.CodePageSignature0, diffs, objName))
         ok = false;
-      if (!CmpCodePageSignature1(openXmlElement, value.CodePageSignature1, diffs, objName))
+      if (!CmpCodePageSignature1(openXmlElement, model.CodePageSignature1, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FontSignature value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FontSignature model)
     where OpenXmlElementType: DXW.FontSignature, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FontSignature openXmlElement, DMW.FontSignature value)
+  public static void UpdateOpenXmlElement(DXW.FontSignature openXmlElement, DMW.FontSignature model)
   {
-    SetUnicodeSignature0(openXmlElement, value?.UnicodeSignature0);
-    SetUnicodeSignature1(openXmlElement, value?.UnicodeSignature1);
-    SetUnicodeSignature2(openXmlElement, value?.UnicodeSignature2);
-    SetUnicodeSignature3(openXmlElement, value?.UnicodeSignature3);
-    SetCodePageSignature0(openXmlElement, value?.CodePageSignature0);
-    SetCodePageSignature1(openXmlElement, value?.CodePageSignature1);
+    SetUnicodeSignature0(openXmlElement, model?.UnicodeSignature0);
+    SetUnicodeSignature1(openXmlElement, model?.UnicodeSignature1);
+    SetUnicodeSignature2(openXmlElement, model?.UnicodeSignature2);
+    SetUnicodeSignature3(openXmlElement, model?.UnicodeSignature3);
+    SetCodePageSignature0(openXmlElement, model?.CodePageSignature0);
+    SetCodePageSignature1(openXmlElement, model?.CodePageSignature1);
   }
+  #endregion
 }

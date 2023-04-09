@@ -1,8 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-
-/// Numbering Definitions.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.Numbering"/> class from/to OpenXml converter.
+/// </summary>
 public static class NumberingConverter
 {
   #region NumberingPictureBullets
@@ -196,55 +196,55 @@ public static class NumberingConverter
   }
   #endregion
 
-  #region Numbering 
+  #region Numbering model conversion
   public static DMW.Numbering? CreateModelElement(DXW.Numbering? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Numbering();
-      value.NumberingPictureBullets = GetNumberingPictureBullets(openXmlElement);
-      value.AbstractNums = GetAbstractNums(openXmlElement);
-      value.NumberingInstances = GetNumberingInstances(openXmlElement);
-      value.NumberingIdMacAtCleanup = GetNumberingIdMacAtCleanup(openXmlElement);
-      return value;
+      var model = new DMW.Numbering();
+      model.NumberingPictureBullets = GetNumberingPictureBullets(openXmlElement);
+      model.AbstractNums = GetAbstractNums(openXmlElement);
+      model.NumberingInstances = GetNumberingInstances(openXmlElement);
+      model.NumberingIdMacAtCleanup = GetNumberingIdMacAtCleanup(openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Numbering? openXmlElement, DMW.Numbering? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Numbering? openXmlElement, DMW.Numbering? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNumberingPictureBullets(openXmlElement, value.NumberingPictureBullets, diffs, objName))
+      if (!CmpNumberingPictureBullets(openXmlElement, model.NumberingPictureBullets, diffs, objName))
         ok = false;
-      if (!CmpAbstractNums(openXmlElement, value.AbstractNums, diffs, objName))
+      if (!CmpAbstractNums(openXmlElement, model.AbstractNums, diffs, objName))
         ok = false;
-      if (!CmpNumberingInstances(openXmlElement, value.NumberingInstances, diffs, objName))
+      if (!CmpNumberingInstances(openXmlElement, model.NumberingInstances, diffs, objName))
         ok = false;
-      if (!CmpNumberingIdMacAtCleanup(openXmlElement, value.NumberingIdMacAtCleanup, diffs, objName))
+      if (!CmpNumberingIdMacAtCleanup(openXmlElement, model.NumberingIdMacAtCleanup, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Numbering value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Numbering model)
     where OpenXmlElementType : DXW.Numbering, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.Numbering openXmlElement, DMW.Numbering value)
+  public static void UpdateOpenXmlElement(DXW.Numbering openXmlElement, DMW.Numbering model)
   {
-    SetNumberingPictureBullets(openXmlElement, value?.NumberingPictureBullets);
-    SetAbstractNums(openXmlElement, value?.AbstractNums);
-    SetNumberingInstances(openXmlElement, value?.NumberingInstances);
-    SetNumberingIdMacAtCleanup(openXmlElement, value?.NumberingIdMacAtCleanup);
+    SetNumberingPictureBullets(openXmlElement, model?.NumberingPictureBullets);
+    SetAbstractNums(openXmlElement, model?.AbstractNums);
+    SetNumberingInstances(openXmlElement, model?.NumberingInstances);
+    SetNumberingIdMacAtCleanup(openXmlElement, model?.NumberingIdMacAtCleanup);
   }
   #endregion
 }
