@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// <see cref="DocumentModel.Wordprocessing.PreviousTableCellProperties"/> class from/to OpenXml converter.
+/// <see cref="DocumentModel.Wordprocessing.TableRowProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class TableRowPropertiesConverter
 {
@@ -150,58 +150,58 @@ public static class TableRowPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableRowProperties();
-      BaseTableRowPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      value.Inserted = GetInserted(openXmlElement);
-      value.Deleted = GetDeleted(openXmlElement);
-      value.TableRowPropertiesChange = GetTableRowPropertiesChange(openXmlElement);
-      value.ConflictInsertion = GetConflictInsertion(openXmlElement);
-      value.ConflictDeletion = GetConflictDeletion(openXmlElement);
-      return value;
+      var model = new DMW.TableRowProperties();
+      BaseTableRowPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      model.Inserted = GetInserted(openXmlElement);
+      model.Deleted = GetDeleted(openXmlElement);
+      model.TableRowPropertiesChange = GetTableRowPropertiesChange(openXmlElement);
+      model.ConflictInsertion = GetConflictInsertion(openXmlElement);
+      model.ConflictDeletion = GetConflictDeletion(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableRowProperties? openXmlElement, DMW.TableRowProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRowProperties? openXmlElement, DMW.TableRowProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName))
         ok = false;
-      if (!CmpDeleted(openXmlElement, value.Deleted, diffs, objName))
+      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName))
         ok = false;
-      if (!CmpTableRowPropertiesChange(openXmlElement, value.TableRowPropertiesChange, diffs, objName))
+      if (!CmpTableRowPropertiesChange(openXmlElement, model.TableRowPropertiesChange, diffs, objName))
         ok = false;
-      if (!CmpConflictInsertion(openXmlElement, value.ConflictInsertion, diffs, objName))
+      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName))
         ok = false;
-      if (!CmpConflictDeletion(openXmlElement, value.ConflictDeletion, diffs, objName))
+      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowProperties model)
     where OpenXmlElementType: DXW.TableRowProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableRowProperties openXmlElement, DMW.TableRowProperties value)
+  public static void UpdateOpenXmlElement(DXW.TableRowProperties openXmlElement, DMW.TableRowProperties model)
   {
-    BaseTableRowPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetInserted(openXmlElement, value?.Inserted);
-    SetDeleted(openXmlElement, value?.Deleted);
-    SetTableRowPropertiesChange(openXmlElement, value?.TableRowPropertiesChange);
-    SetConflictInsertion(openXmlElement, value?.ConflictInsertion);
-    SetConflictDeletion(openXmlElement, value?.ConflictDeletion);
+    BaseTableRowPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetInserted(openXmlElement, model?.Inserted);
+    SetDeleted(openXmlElement, model?.Deleted);
+    SetTableRowPropertiesChange(openXmlElement, model?.TableRowPropertiesChange);
+    SetConflictInsertion(openXmlElement, model?.ConflictInsertion);
+    SetConflictDeletion(openXmlElement, model?.ConflictDeletion);
   }
   #endregion
 }

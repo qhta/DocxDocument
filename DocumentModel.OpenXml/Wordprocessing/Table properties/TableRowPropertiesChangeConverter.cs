@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Revision Information for Table Row Properties.
+/// <see cref="DocumentModel.Wordprocessing.TableRowPropertiesChange"/> class from/to OpenXml converter.
 /// </summary>
 public static class TableRowPropertiesChangeConverter
 {
@@ -84,55 +84,57 @@ public static class TableRowPropertiesChangeConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region TableRowPropertiesChange model conversion.
   public static DMW.TableRowPropertiesChange? CreateModelElement(DXW.TableRowPropertiesChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableRowPropertiesChange();
-      value.Author = GetAuthor(openXmlElement);
-      value.Date = GetDate(openXmlElement);
-      value.AnnotationId = GetId(openXmlElement);
-      value.PreviousTableRowProperties = GetPreviousTableRowProperties(openXmlElement);
-      return value;
+      var model = new DMW.TableRowPropertiesChange();
+      model.Author = GetAuthor(openXmlElement);
+      model.Date = GetDate(openXmlElement);
+      model.AnnotationId = GetId(openXmlElement);
+      model.PreviousTableRowProperties = GetPreviousTableRowProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableRowPropertiesChange? openXmlElement, DMW.TableRowPropertiesChange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRowPropertiesChange? openXmlElement, DMW.TableRowPropertiesChange? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
         ok = false;
-      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
+      if (!CmpId(openXmlElement, model.AnnotationId, diffs, objName))
         ok = false;
-      if (!CmpPreviousTableRowProperties(openXmlElement, value.PreviousTableRowProperties, diffs, objName))
+      if (!CmpPreviousTableRowProperties(openXmlElement, model.PreviousTableRowProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowPropertiesChange value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowPropertiesChange model)
     where OpenXmlElementType: DXW.TableRowPropertiesChange, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableRowPropertiesChange openXmlElement, DMW.TableRowPropertiesChange value)
+  public static void UpdateOpenXmlElement(DXW.TableRowPropertiesChange openXmlElement, DMW.TableRowPropertiesChange model)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.AnnotationId);
-    SetPreviousTableRowProperties(openXmlElement, value?.PreviousTableRowProperties);
+    SetAuthor(openXmlElement, model?.Author);
+    SetDate(openXmlElement, model?.Date);
+    SetId(openXmlElement, model?.AnnotationId);
+    SetPreviousTableRowProperties(openXmlElement, model?.PreviousTableRowProperties);
   }
   #endregion
 }

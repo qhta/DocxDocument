@@ -5,62 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class TableGridConverter
 {
-  private static Collection<DMW.GridColumn>? GetGridColumns(DXW.TableGrid openXmlElement)
-  {
-    var collection = new Collection<DMW.GridColumn>();
-    foreach (var item in openXmlElement.Elements<DXW.GridColumn>())
-    {
-      var newItem = DMXW.GridColumnConverter.CreateModelElement(item);
-      if (newItem != null)
-        collection.Add(newItem);
-    }
-    if (collection.Count>0)
-      return collection;
-    return null;
-  }
-  
-  private static bool CmpGridColumns(DXW.TableGrid openXmlElement, Collection<DMW.GridColumn>? value, DiffList? diffs, string? objName)
-  {
-    var origElements = openXmlElement.Elements<DXW.GridColumn>();
-    var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
-    {
-      if (origElementsCount != modelElementsCount)
-      {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
-        return false;
-      }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!DMXW.GridColumnConverter.CompareModelElement(origItem, modelItem, diffs, objName))
-          ok = false;
-      }
-      return ok;
-    }
-    if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
-    return false;
-  }
-  
-  private static void SetGridColumns(DXW.TableGrid openXmlElement, Collection<DMW.GridColumn>? value)
-  {
-    openXmlElement.RemoveAllChildren<DXW.GridColumn>();
-    if (value != null)
-    {
-      foreach (var item in value)
-      {
-        var newItem = DMXW.GridColumnConverter.CreateOpenXmlElement<DXW.GridColumn>(item);
-        if (newItem != null)
-          openXmlElement.AddChild(newItem);
-      }
-    }
-  }
-  
+  #region TableGridChange conversion.
   private static DMW.TableGridChange? GetTableGridChange(DXW.TableGrid openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableGridChange>();
@@ -86,46 +31,49 @@ public static class TableGridConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region TableGrid model conversion.
   public static DMW.TableGrid? CreateModelElement(DXW.TableGrid? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableGrid();
-      value.GridColumns = GetGridColumns(openXmlElement);
-      value.TableGridChange = GetTableGridChange(openXmlElement);
-      return value;
+      var model = new DMW.TableGrid();
+      BaseTableGridConverter.UpdateModelElement(model, openXmlElement);
+      model.TableGridChange = GetTableGridChange(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableGrid? openXmlElement, DMW.TableGrid? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableGrid? openXmlElement, DMW.TableGrid? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpGridColumns(openXmlElement, value.GridColumns, diffs, objName))
+      if (!BaseTableGridConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpTableGridChange(openXmlElement, value.TableGridChange, diffs, objName))
+      if (!CmpTableGridChange(openXmlElement, model.TableGridChange, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableGrid value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableGrid model)
     where OpenXmlElementType: DXW.TableGrid, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableGrid openXmlElement, DMW.TableGrid value)
+  public static void UpdateOpenXmlElement(DXW.TableGrid openXmlElement, DMW.TableGrid model)
   {
-    SetGridColumns(openXmlElement, value?.GridColumns);
-    SetTableGridChange(openXmlElement, value?.TableGridChange);
+    BaseTableGridConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetTableGridChange(openXmlElement, model.TableGridChange);
   }
+  #endregion
 }

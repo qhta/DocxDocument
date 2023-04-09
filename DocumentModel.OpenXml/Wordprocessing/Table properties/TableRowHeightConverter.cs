@@ -1,11 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableRowHeight Class.
+/// <see cref="DocumentModel.Wordprocessing.TableRowHeight"/> class from/to OpenXml converter.
 /// </summary>
 public static class TableRowHeightConverter
 {
-  #region Table Row Height conversion.
+  #region Value conversion.
   private static UInt32? GetVal(DXW.TableRowHeight openXmlElement)
   {
     return openXmlElement?.Val?.Value;
@@ -24,7 +24,7 @@ public static class TableRowHeightConverter
   }
   #endregion
 
-  #region Table Row Height Type conversion.
+  #region HeightType conversion.
   private static DMW.HeightRuleKind? GetHeightType(DXW.TableRowHeight openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
@@ -39,47 +39,49 @@ public static class TableRowHeightConverter
   {
     openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(value);
   }
-  
+  #endregion
+
+  #region TableRowHeight model conversion.
   public static DMW.TableRowHeight? CreateModelElement(DXW.TableRowHeight? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var val = GetVal(openXmlElement);
       var type = GetHeightType(openXmlElement);
-      var value = new DMW.TableRowHeight(val, type);
-      return value;
+      var model = new DMW.TableRowHeight(val, type);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableRowHeight? openXmlElement, DMW.TableRowHeight? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRowHeight? openXmlElement, DMW.TableRowHeight? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Value, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Value, diffs, objName))
         ok = false;
-      if (!CmpHeightType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpHeightType(openXmlElement, model.Type, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowHeight value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableRowHeight model)
     where OpenXmlElementType: DXW.TableRowHeight, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableRowHeight openXmlElement, DMW.TableRowHeight value)
+  public static void UpdateOpenXmlElement(DXW.TableRowHeight openXmlElement, DMW.TableRowHeight model)
   {
-    SetVal(openXmlElement, value?.Value);
-    SetHeightType(openXmlElement, value?.Type);
+    SetVal(openXmlElement, model?.Value);
+    SetHeightType(openXmlElement, model?.Type);
   }
   #endregion
 }

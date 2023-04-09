@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class BaseTableRowPropertiesConverter
 {
   #region ConditionalFormatStyle conversion.
-  private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.ConditionalFormatFlags? GetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (element != null)
@@ -14,19 +14,19 @@ public static class BaseTableRowPropertiesConverter
     return null;
   }
 
-  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
+  public static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
   {
     return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName);
   }
 
-  private static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatStyle? value)
+  public static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>(value);
+      itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>((DMW.ConditionalFormatFlags)value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -34,58 +34,58 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region DivId conversion.
-  private static String? GetDivId(DX.OpenXmlCompositeElement openXmlElement)
+  public static String? GetDivId(DX.OpenXmlCompositeElement openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DivId>()?.Val);
   }
 
-  private static bool CmpDivId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  public static bool CmpDivId(DX.OpenXmlCompositeElement openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DivId>()?.Val, value, diffs, objName, "DivId");
   }
 
-  private static void SetDivId(DX.OpenXmlCompositeElement openXmlElement, String? value)
+  public static void SetDivId(DX.OpenXmlCompositeElement openXmlElement, String? value)
   {
     StringValueConverter.SetValue<DXW.DivId>(openXmlElement, value);
   }
   #endregion
 
   #region GridBefore conversion.
-  private static Int32? GetGridBefore(DX.OpenXmlCompositeElement openXmlElement)
+  public static Int32? GetGridBefore(DX.OpenXmlCompositeElement openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.GridBefore>()?.Val);
   }
 
-  private static bool CmpGridBefore(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  public static bool CmpGridBefore(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.GridBefore>()?.Val, value, diffs, objName, "GridBefore");
   }
 
-  private static void SetGridBefore(DX.OpenXmlCompositeElement openXmlElement, Int32? value)
+  public static void SetGridBefore(DX.OpenXmlCompositeElement openXmlElement, Int32? value)
   {
     SimpleValueConverter.SetValue<DXW.GridBefore, System.Int32>(openXmlElement, value);
   }
   #endregion
 
   #region GridAfter conversion.
-  private static Int32? GetGridAfter(DX.OpenXmlCompositeElement openXmlElement)
+  public static Int32? GetGridAfter(DX.OpenXmlCompositeElement openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.GridAfter>()?.Val);
   }
 
-  private static bool CmpGridAfter(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  public static bool CmpGridAfter(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.GridAfter>()?.Val, value, diffs, objName, "GridAfter");
   }
 
-  private static void SetGridAfter(DX.OpenXmlCompositeElement openXmlElement, Int32? value)
+  public static void SetGridAfter(DX.OpenXmlCompositeElement openXmlElement, Int32? value)
   {
     SimpleValueConverter.SetValue<DXW.GridAfter, System.Int32>(openXmlElement, value);
   }
   #endregion
 
   #region WidthBeforeTableRow conversion.
-  private static DMW.TableWidth? GetWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.TableWidth? GetWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (element != null)
@@ -93,12 +93,12 @@ public static class BaseTableRowPropertiesConverter
     return null;
   }
 
-  private static bool CmpWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CmpWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>(), value, diffs, objName);
   }
 
-  private static void SetWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
+  public static void SetWidthBeforeTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthBeforeTableRow>();
     if (itemElement != null)
@@ -113,7 +113,7 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region WidthAfterTableRow conversion.
-  private static DMW.TableWidth? GetWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.TableWidth? GetWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.WidthAfterTableRow>();
     if (element != null)
@@ -121,12 +121,12 @@ public static class BaseTableRowPropertiesConverter
     return null;
   }
 
-  private static bool CmpWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CmpWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>(), value, diffs, objName);
   }
 
-  private static void SetWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
+  public static void SetWidthAfterTableRow(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.WidthAfterTableRow>();
     if (itemElement != null)
@@ -141,7 +141,7 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region TableRowHeight conversion.
-  private static DMW.TableRowHeight? GetTableRowHeight(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.TableRowHeight? GetTableRowHeight(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableRowHeight>();
     if (element != null)
@@ -149,12 +149,12 @@ public static class BaseTableRowPropertiesConverter
     return null;
   }
 
-  private static bool CmpTableRowHeight(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowHeight? value, DiffList? diffs, string? objName)
+  public static bool CmpTableRowHeight(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowHeight? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableRowHeightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableRowHeight>(), value, diffs, objName);
   }
 
-  private static void SetTableRowHeight(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowHeight? value)
+  public static void SetTableRowHeight(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowHeight? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableRowHeight>();
     if (itemElement != null)
@@ -169,58 +169,58 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region Hidden coversion.
-  private static Boolean? GetHidden(DX.OpenXmlCompositeElement openXmlElement)
+  public static Boolean? GetHidden(DX.OpenXmlCompositeElement openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Hidden>());
   }
 
-  private static bool CmpHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  public static bool CmpHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Hidden>(), value, diffs, objName);
   }
 
-  private static void SetHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
+  public static void SetHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
     BooleanValueConverter.SetOnOffType<DXW.Hidden>(openXmlElement, value);
   }
   #endregion
 
   #region CantSplit conversion.
-  private static Boolean GetCantSplit(DX.OpenXmlCompositeElement openXmlElement)
+  public static Boolean GetCantSplit(DX.OpenXmlCompositeElement openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.CantSplit>());
   }
 
-  private static bool CmpCantSplit(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  public static bool CmpCantSplit(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.CantSplit>(), value, diffs, objName);
   }
 
-  private static void SetCantSplit(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
+  public static void SetCantSplit(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
     BooleanValueConverter.SetOnOffOnlyType<DXW.CantSplit>(openXmlElement, value);
   }
   #endregion
 
   #region TableHeader conversion.
-  private static Boolean GetTableHeader(DX.OpenXmlCompositeElement openXmlElement)
+  public static Boolean GetTableHeader(DX.OpenXmlCompositeElement openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TableHeader>());
   }
 
-  private static bool CmpTableHeader(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  public static bool CmpTableHeader(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TableHeader>(), value, diffs, objName);
   }
 
-  private static void SetTableHeader(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
+  public static void SetTableHeader(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
     BooleanValueConverter.SetOnOffOnlyType<DXW.TableHeader>(openXmlElement, value);
   }
   #endregion
 
   #region TableCellSpacing conversion.
-  private static DMW.TableWidth? GetTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.TableWidth? GetTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellSpacing>();
     if (element != null)
@@ -228,12 +228,12 @@ public static class BaseTableRowPropertiesConverter
     return null;
   }
 
-  private static bool CmpTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CmpTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellSpacing>(), value, diffs, objName);
   }
 
-  private static void SetTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
+  public static void SetTableCellSpacing(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableCellSpacing>();
     if (itemElement != null)
@@ -248,17 +248,17 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region TableJustification conversion.
-  private static DMW.TableRowAlignmentKind? GetTableJustification(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.TableRowAlignmentKind? GetTableJustification(DX.OpenXmlCompositeElement openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value);
   }
 
-  private static bool CmpTableJustification(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
+  public static bool CmpTableJustification(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowAlignmentKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues, DMW.TableRowAlignmentKind>(openXmlElement.GetFirstChild<DXW.TableJustification>()?.Val?.Value, value, diffs, objName);
   }
 
-  private static void SetTableJustification(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowAlignmentKind? value)
+  public static void SetTableJustification(DX.OpenXmlCompositeElement openXmlElement, DMW.TableRowAlignmentKind? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.TableJustification>();
     if (itemElement != null)
@@ -275,72 +275,72 @@ public static class BaseTableRowPropertiesConverter
   #endregion
 
   #region BaseTableRowProperties model conversion.
-  public static void UpdateModelElement(DMW.BaseTableRowProperties value, DX.OpenXmlCompositeElement openXmlElement)
+  public static void UpdateModelElement(DMW.BaseTableRowProperties model, DX.OpenXmlCompositeElement openXmlElement)
   {
-    value.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
-    value.DivId = GetDivId(openXmlElement);
-    value.GridBefore = GetGridBefore(openXmlElement);
-    value.GridAfter = GetGridAfter(openXmlElement);
-    value.WidthBeforeTableRow = GetWidthBeforeTableRow(openXmlElement);
-    value.WidthAfterTableRow = GetWidthAfterTableRow(openXmlElement);
-    value.TableRowHeight = GetTableRowHeight(openXmlElement);
-    value.Hidden = GetHidden(openXmlElement);
-    value.CantSplit = GetCantSplit(openXmlElement);
-    value.TableHeader = GetTableHeader(openXmlElement);
-    value.TableCellSpacing = GetTableCellSpacing(openXmlElement);
-    value.TableJustification = GetTableJustification(openXmlElement);
+    model.ConditionalFormatStyle = GetConditionalFormatStyle(openXmlElement);
+    model.DivId = GetDivId(openXmlElement);
+    model.GridBefore = GetGridBefore(openXmlElement);
+    model.GridAfter = GetGridAfter(openXmlElement);
+    model.WidthBefore = GetWidthBeforeTableRow(openXmlElement);
+    model.WidthAfter = GetWidthAfterTableRow(openXmlElement);
+    model.RowHeight = GetTableRowHeight(openXmlElement);
+    model.GlyphHidden = GetHidden(openXmlElement);
+    model.CantSplit = GetCantSplit(openXmlElement);
+    model.IsHeader = GetTableHeader(openXmlElement);
+    model.CellSpacing = GetTableCellSpacing(openXmlElement);
+    model.RowAlignment = GetTableJustification(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseTableRowProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseTableRowProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpConditionalFormatStyle(openXmlElement, value.ConditionalFormatStyle, diffs, objName))
+      if (!CmpConditionalFormatStyle(openXmlElement, model.ConditionalFormatStyle, diffs, objName))
         ok = false;
-      if (!CmpDivId(openXmlElement, value.DivId, diffs, objName))
+      if (!CmpDivId(openXmlElement, model.DivId, diffs, objName))
         ok = false;
-      if (!CmpGridBefore(openXmlElement, value.GridBefore, diffs, objName))
+      if (!CmpGridBefore(openXmlElement, model.GridBefore, diffs, objName))
         ok = false;
-      if (!CmpGridAfter(openXmlElement, value.GridAfter, diffs, objName))
+      if (!CmpGridAfter(openXmlElement, model.GridAfter, diffs, objName))
         ok = false;
-      if (!CmpWidthBeforeTableRow(openXmlElement, value.WidthBeforeTableRow, diffs, objName))
+      if (!CmpWidthBeforeTableRow(openXmlElement, model.WidthBefore, diffs, objName))
         ok = false;
-      if (!CmpWidthAfterTableRow(openXmlElement, value.WidthAfterTableRow, diffs, objName))
+      if (!CmpWidthAfterTableRow(openXmlElement, model.WidthAfter, diffs, objName))
         ok = false;
-      if (!CmpTableRowHeight(openXmlElement, value.TableRowHeight, diffs, objName))
+      if (!CmpTableRowHeight(openXmlElement, model.RowHeight, diffs, objName))
         ok = false;
-      if (!CmpHidden(openXmlElement, value.Hidden, diffs, objName))
+      if (!CmpHidden(openXmlElement, model.GlyphHidden, diffs, objName))
         ok = false;
-      if (!CmpCantSplit(openXmlElement, value.CantSplit, diffs, objName))
+      if (!CmpCantSplit(openXmlElement, model.CantSplit, diffs, objName))
         ok = false;
-      if (!CmpTableHeader(openXmlElement, value.TableHeader, diffs, objName))
+      if (!CmpTableHeader(openXmlElement, model.IsHeader, diffs, objName))
         ok = false;
-      if (!CmpTableCellSpacing(openXmlElement, value.TableCellSpacing, diffs, objName))
+      if (!CmpTableCellSpacing(openXmlElement, model.CellSpacing, diffs, objName))
         ok = false;
-      if (!CmpTableJustification(openXmlElement, value.TableJustification, diffs, objName))
+      if (!CmpTableJustification(openXmlElement, model.RowAlignment, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseTableRowProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseTableRowProperties model)
   {
-    SetConditionalFormatStyle(openXmlElement, value?.ConditionalFormatStyle);
-    SetDivId(openXmlElement, value?.DivId);
-    SetGridBefore(openXmlElement, value?.GridBefore);
-    SetGridAfter(openXmlElement, value?.GridAfter);
-    SetWidthBeforeTableRow(openXmlElement, value?.WidthBeforeTableRow);
-    SetWidthAfterTableRow(openXmlElement, value?.WidthAfterTableRow);
-    SetTableRowHeight(openXmlElement, value?.TableRowHeight);
-    SetHidden(openXmlElement, value?.Hidden);
-    SetCantSplit(openXmlElement, value?.CantSplit);
-    SetTableHeader(openXmlElement, value?.TableHeader);
-    SetTableCellSpacing(openXmlElement, value?.TableCellSpacing);
-    SetTableJustification(openXmlElement, value?.TableJustification);
+    SetConditionalFormatStyle(openXmlElement, model?.ConditionalFormatStyle);
+    SetDivId(openXmlElement, model?.DivId);
+    SetGridBefore(openXmlElement, model?.GridBefore);
+    SetGridAfter(openXmlElement, model?.GridAfter);
+    SetWidthBeforeTableRow(openXmlElement, model?.WidthBefore);
+    SetWidthAfterTableRow(openXmlElement, model?.WidthAfter);
+    SetTableRowHeight(openXmlElement, model?.RowHeight);
+    SetHidden(openXmlElement, model?.GlyphHidden);
+    SetCantSplit(openXmlElement, model?.CantSplit);
+    SetTableHeader(openXmlElement, model?.IsHeader);
+    SetTableCellSpacing(openXmlElement, model?.CellSpacing);
+    SetTableJustification(openXmlElement, model?.RowAlignment);
   }
   #endregion
 }

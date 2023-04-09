@@ -21,23 +21,21 @@ public static class TableLayoutConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(value);
   }
   
-  public static DMW.TableLayout? CreateModelElement(DXW.TableLayout? openXmlElement)
+  public static DMW.TableLayoutKind? CreateModelElement(DXW.TableLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableLayout();
-      value.Type = GetType(openXmlElement);
-      return value;
+      return GetType(openXmlElement);
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableLayout? openXmlElement, DMW.TableLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableLayout? openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -46,7 +44,7 @@ public static class TableLayoutConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLayout value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLayoutKind value)
     where OpenXmlElementType: DXW.TableLayout, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -54,9 +52,9 @@ public static class TableLayoutConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableLayout openXmlElement, DMW.TableLayout value)
+  public static void UpdateOpenXmlElement(DXW.TableLayout openXmlElement, DMW.TableLayoutKind value)
   {
-    SetType(openXmlElement, value?.Type);
+    SetType(openXmlElement, value);
   }
   #endregion
 }

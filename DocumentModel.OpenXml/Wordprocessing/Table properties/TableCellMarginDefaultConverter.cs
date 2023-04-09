@@ -1,11 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableCellMarginDefault Class.
+/// <see cref="DocumentModel.Wordprocessing.DefaultTableCellMargin"/> class from/to OpenXml converter.
 /// </summary>
 public static class TableCellMarginDefaultConverter
 {
-  #region Table Cell Top Margin Default conversion.
+  #region TopMargin conversion.
   private static DMW.TableWidth? GetTopMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TopMargin>();
@@ -33,7 +33,7 @@ public static class TableCellMarginDefaultConverter
   }
   #endregion
 
-  #region Table Cell Left Margin Default conversion.
+  #region LeftMargin conversion.
   private static DMW.TableWidth? GetTableCellLeftMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellLeftMargin>();
@@ -59,9 +59,9 @@ public static class TableCellMarginDefaultConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// StartMargin, this property is only available in Office 2010 and later..
+  #endregion
+
+  #region StartMargin conversion.
   private static DMW.TableWidth? GetStartMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.StartMargin>();
@@ -89,7 +89,7 @@ public static class TableCellMarginDefaultConverter
   }
   #endregion
 
-  #region Table Cell Bottom Margin Default conversion.
+  #region BottomMargin conversion.
   private static DMW.TableWidth? GetBottomMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.BottomMargin>();
@@ -117,7 +117,7 @@ public static class TableCellMarginDefaultConverter
   }
   #endregion
 
-  #region Table Cell Right Margin Default conversion.
+  #region RightMargin conversion.
   private static DMW.TableWidth? GetTableCellRightMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellRightMargin>();
@@ -143,9 +143,9 @@ public static class TableCellMarginDefaultConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// EndMargin, this property is only available in Office 2010 and later..
+  #endregion
+
+  #region EndMargin conversion.
   private static DMW.TableWidth? GetEndMargin(DXW.TableCellMarginDefault openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.EndMargin>();
@@ -171,63 +171,65 @@ public static class TableCellMarginDefaultConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region DefaultTableCellMargin model conversion.
   public static DMW.DefaultTableCellMargin? CreateModelElement(DXW.TableCellMarginDefault? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.DefaultTableCellMargin();
-      value.TopMargin = GetTopMargin(openXmlElement);
-      value.LeftMargin = GetTableCellLeftMargin(openXmlElement);
-      value.StartMargin = GetStartMargin(openXmlElement);
-      value.BottomMargin = GetBottomMargin(openXmlElement);
-      value.RightMargin = GetTableCellRightMargin(openXmlElement);
-      value.EndMargin = GetEndMargin(openXmlElement);
-      return value;
+      var model = new DMW.DefaultTableCellMargin();
+      model.TopMargin = GetTopMargin(openXmlElement);
+      model.LeftMargin = GetTableCellLeftMargin(openXmlElement);
+      model.StartMargin = GetStartMargin(openXmlElement);
+      model.BottomMargin = GetBottomMargin(openXmlElement);
+      model.RightMargin = GetTableCellRightMargin(openXmlElement);
+      model.EndMargin = GetEndMargin(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCellMarginDefault? openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCellMarginDefault? openXmlElement, DMW.DefaultTableCellMargin? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpTopMargin(openXmlElement, value.TopMargin, diffs, objName))
+      if (!CmpTopMargin(openXmlElement, model.TopMargin, diffs, objName))
         ok = false;
-      if (!CmpTableCellLeftMargin(openXmlElement, value.LeftMargin, diffs, objName))
+      if (!CmpTableCellLeftMargin(openXmlElement, model.LeftMargin, diffs, objName))
         ok = false;
-      if (!CmpStartMargin(openXmlElement, value.StartMargin, diffs, objName))
+      if (!CmpStartMargin(openXmlElement, model.StartMargin, diffs, objName))
         ok = false;
-      if (!CmpBottomMargin(openXmlElement, value.BottomMargin, diffs, objName))
+      if (!CmpBottomMargin(openXmlElement, model.BottomMargin, diffs, objName))
         ok = false;
-      if (!CmpTableCellRightMargin(openXmlElement, value.RightMargin, diffs, objName))
+      if (!CmpTableCellRightMargin(openXmlElement, model.RightMargin, diffs, objName))
         ok = false;
-      if (!CmpEndMargin(openXmlElement, value.EndMargin, diffs, objName))
+      if (!CmpEndMargin(openXmlElement, model.EndMargin, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DefaultTableCellMargin value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DefaultTableCellMargin model)
     where OpenXmlElementType: DXW.TableCellMarginDefault, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableCellMarginDefault openXmlElement, DMW.DefaultTableCellMargin value)
+  public static void UpdateOpenXmlElement(DXW.TableCellMarginDefault openXmlElement, DMW.DefaultTableCellMargin model)
   {
-    SetTopMargin(openXmlElement, value?.TopMargin);
-    SetTableCellLeftMargin(openXmlElement, value?.LeftMargin);
-    SetStartMargin(openXmlElement, value?.StartMargin);
-    SetBottomMargin(openXmlElement, value?.BottomMargin);
-    SetTableCellRightMargin(openXmlElement, value?.RightMargin);
-    SetEndMargin(openXmlElement, value?.EndMargin);
+    SetTopMargin(openXmlElement, model?.TopMargin);
+    SetTableCellLeftMargin(openXmlElement, model?.LeftMargin);
+    SetStartMargin(openXmlElement, model?.StartMargin);
+    SetBottomMargin(openXmlElement, model?.BottomMargin);
+    SetTableCellRightMargin(openXmlElement, model?.RightMargin);
+    SetEndMargin(openXmlElement, model?.EndMargin);
   }
   #endregion
 }

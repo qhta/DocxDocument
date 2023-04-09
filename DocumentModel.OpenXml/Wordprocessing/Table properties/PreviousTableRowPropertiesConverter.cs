@@ -10,29 +10,29 @@ public static class PreviousTableRowPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PreviousTableRowProperties();
-      BaseTableRowPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.PreviousTableRowProperties();
+      BaseTableRowPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousTableRowProperties? openXmlElement, DMW.PreviousTableRowProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousTableRowProperties? openXmlElement, DMW.PreviousTableRowProperties? model, DiffList? diffs, string? objName)
   {
-    return BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableRowProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableRowProperties model)
     where OpenXmlElementType: DXW.PreviousTableRowProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PreviousTableRowProperties openXmlElement, DMW.PreviousTableRowProperties value)
+  public static void UpdateOpenXmlElement(DXW.PreviousTableRowProperties openXmlElement, DMW.PreviousTableRowProperties model)
   {
-    BaseTableRowPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    BaseTableRowPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
   #endregion
 }

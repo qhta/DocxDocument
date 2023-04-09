@@ -148,53 +148,53 @@ public static class ExtBaseTablePropertiesConverter
   }
   #endregion
 
-  #region 
-  public static void UpdateModelElement(DMW.ExtBaseTableProperties value, DX.OpenXmlCompositeElement openXmlElement)
+  #region ExtBaseTableProperties model conversion
+  public static void UpdateModelElement(DMW.ExtBaseTableProperties model, DX.OpenXmlCompositeElement openXmlElement)
   {
-    BaseTablePropertiesConverter.UpdateModelElement(value, openXmlElement);
-    value.TableStyle = GetTableStyle(openXmlElement);
-    value.TablePositionProperties = GetTablePositionProperties(openXmlElement);
-    value.TableOverlap = GetTableOverlap(openXmlElement);
-    value.BiDiVisual = GetBiDiVisual(openXmlElement);
-    value.TableCaption = GetTableCaption(openXmlElement);
-    value.TableDescription = GetTableDescription(openXmlElement);
+    CurrentTablePropertiesConverter.UpdateModelElement(model, openXmlElement);
+    model.TableStyle = GetTableStyle(openXmlElement);
+    model.TablePositionProperties = GetTablePositionProperties(openXmlElement);
+    model.TableOverlap = GetTableOverlap(openXmlElement);
+    model.BiDiVisual = GetBiDiVisual(openXmlElement);
+    model.TableCaption = GetTableCaption(openXmlElement);
+    model.TableDescription = GetTableDescription(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseTableProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseTableProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTablePropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!CurrentTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpTableStyle(openXmlElement, value.TableStyle, diffs, objName))
+      if (!CmpTableStyle(openXmlElement, model.TableStyle, diffs, objName))
         ok = false;
-      if (!CmpTablePositionProperties(openXmlElement, value.TablePositionProperties, diffs, objName))
+      if (!CmpTablePositionProperties(openXmlElement, model.TablePositionProperties, diffs, objName))
         ok = false;
-      if (!CmpTableOverlap(openXmlElement, value.TableOverlap, diffs, objName))
+      if (!CmpTableOverlap(openXmlElement, model.TableOverlap, diffs, objName))
         ok = false;
-      if (!CmpBiDiVisual(openXmlElement, value.BiDiVisual, diffs, objName))
+      if (!CmpBiDiVisual(openXmlElement, model.BiDiVisual, diffs, objName))
         ok = false;
-      if (!CmpTableCaption(openXmlElement, value.TableCaption, diffs, objName))
+      if (!CmpTableCaption(openXmlElement, model.TableCaption, diffs, objName))
         ok = false;
-      if (!CmpTableDescription(openXmlElement, value.TableDescription, diffs, objName))
+      if (!CmpTableDescription(openXmlElement, model.TableDescription, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseTableProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseTableProperties model)
   {
-    BaseTablePropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetTableStyle(openXmlElement, value?.TableStyle);
-    SetTablePositionProperties(openXmlElement, value?.TablePositionProperties);
-    SetTableOverlap(openXmlElement, value?.TableOverlap);
-    SetBiDiVisual(openXmlElement, value?.BiDiVisual);
-    SetTableCaption(openXmlElement, value?.TableCaption);
-    SetTableDescription(openXmlElement, value?.TableDescription);
+    CurrentTablePropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetTableStyle(openXmlElement, model?.TableStyle);
+    SetTablePositionProperties(openXmlElement, model?.TablePositionProperties);
+    SetTableOverlap(openXmlElement, model?.TableOverlap);
+    SetBiDiVisual(openXmlElement, model?.BiDiVisual);
+    SetTableCaption(openXmlElement, model?.TableCaption);
+    SetTableDescription(openXmlElement, model?.TableDescription);
   }
   #endregion
 }
