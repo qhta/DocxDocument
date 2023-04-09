@@ -1,12 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the TableWidthType Class.
+/// <see cref="DocumentModel.Wordprocessing.TableWidthType"/> class from/to OpenXml converter.
 /// </summary>
 public static class TableWidthTypeConverter
 {
-  /// <summary>
-  /// Table Width Value
+  #region Width conversion.
   private static Int64? GetWidth(DXW.TableWidthType openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Width);
@@ -21,9 +20,9 @@ public static class TableWidthTypeConverter
   {
     openXmlElement.Width = value!=null ? StringValueConverter.CreateStringValue(value.ToString()) : null;
   }
-  
-  /// <summary>
-  /// Table Width Type
+  #endregion
+
+  #region Type conversion.
   private static DMW.TableWidthUnitType? GetType(DXW.TableWidthType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
@@ -38,48 +37,88 @@ public static class TableWidthTypeConverter
   {
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
   }
+  #endregion
+
+  #region TableWidth value conversion.
+  public static DMW.TableWidth? GetValue(DX.StringValue? openXmlElement)
+  {
+    if (openXmlElement != null)
+    {
+      var width = Int64ValueConverter.GetValue(openXmlElement);
+      var model = new DMW.TableWidth(width);
+      return model;
+    }
+    return null;
+  }
   
+  public static bool CmpValue(DX.StringValue? openXmlElement, DMW.TableWidth? model, DiffList? diffs, string? objName, string? propName)
+  {
+    if (openXmlElement != null && model != null)
+    {
+      var ok = true;
+      if (!Int64ValueConverter.CmpValue(openXmlElement, model.Value, diffs, objName))
+        ok = false;
+      return ok;
+    }
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
+    return false;
+  }
+  
+  public static DX.StringValue? CreateStringValue(DMW.TableWidth? model)
+  {
+    var openXmlElement = new DX.StringValue();
+    UpdateOpenXmlElement(openXmlElement, model);
+    return openXmlElement;
+  }
+  
+  public static void UpdateOpenXmlElement(DX.StringValue openXmlElement, DMW.TableWidth? model)
+  {
+    Int64ValueConverter.SetStringValue(openXmlElement, model?.Value);
+  }
+  #endregion
+
+  #region TableWidthType model conversion.
   public static DMW.TableWidth? CreateModelElement(DXW.TableWidthType? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var width = GetWidth(openXmlElement);
-      if (width == 5000)
-        Debug.Assert(true);
       var type = GetType(openXmlElement);
-      var value = new DMW.TableWidth(width, type);
-      return value;
+      var model = new DMW.TableWidth(width, type);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableWidthType? openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableWidthType? openXmlElement, DMW.TableWidth? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Value, diffs, objName))
+      if (!CmpWidth(openXmlElement, model.Value, diffs, objName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, model.Type, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidth value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidth model)
     where OpenXmlElementType: DXW.TableWidthType, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableWidthType openXmlElement, DMW.TableWidth value)
+  public static void UpdateOpenXmlElement(DXW.TableWidthType openXmlElement, DMW.TableWidth model)
   {
-    SetWidth(openXmlElement, value?.Value);
-    SetType(openXmlElement, value?.Type);
+    SetWidth(openXmlElement, model?.Value);
+    SetType(openXmlElement, model?.Type);
   }
+  #endregion
 }

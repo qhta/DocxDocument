@@ -38,42 +38,42 @@ public static class TableCellPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableCellProperties();
-      BaseTableCellPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      value.TableCellPropertiesChange = GetTableCellPropertiesChange(openXmlElement);
-      return value;
+      var model = new DMW.TableCellProperties();
+      CurrentTableCellPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      model.TableCellPropertiesChange = GetTableCellPropertiesChange(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCellProperties? openXmlElement, DMW.TableCellProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCellProperties? openXmlElement, DMW.TableCellProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (! BaseTableCellPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (! CurrentTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpTableCellPropertiesChange(openXmlElement, value.TableCellPropertiesChange, diffs, objName))
+      if (!CmpTableCellPropertiesChange(openXmlElement, model.TableCellPropertiesChange, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableCellProperties model)
     where OpenXmlElementType: DXW.TableCellProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableCellProperties openXmlElement, DMW.TableCellProperties value)
+  public static void UpdateOpenXmlElement(DXW.TableCellProperties openXmlElement, DMW.TableCellProperties model)
   {
-    BaseTableCellPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetTableCellPropertiesChange(openXmlElement, value?.TableCellPropertiesChange);
+    CurrentTableCellPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetTableCellPropertiesChange(openXmlElement, model?.TableCellPropertiesChange);
   }
   #endregion
 }

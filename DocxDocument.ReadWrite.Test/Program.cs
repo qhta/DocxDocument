@@ -7,7 +7,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestSections();
+    RunTestBody();
   }
 
   private static void RunTestSections()

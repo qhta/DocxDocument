@@ -1,8 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Style Conditional Formatting Table Cell Properties.
-/// </summary>
+/// <see cref="DocumentModel.Wordprocessing.TableStyleConditionalFormattingTableCellProperties"/> class from/to OpenXml converter./// </summary>
 public static class TableStyleConditionalFormattingTableCellPropertiesConverter
 {
   #region TableCellBorders conversion.
@@ -131,59 +130,61 @@ public static class TableStyleConditionalFormattingTableCellPropertiesConverter
     if (value != null)
       openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableCellVerticalAlignment, DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues, DMW.TableVerticalAlignmentKind>((DMW.TableVerticalAlignmentKind)value));
   }
-  
+  #endregion
+
+  #region TableStyleConditionCellProperties model conversion.
   public static DMW.TableStyleConditionalCellProperties? CreateModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableStyleConditionalCellProperties();
-      value.TableCellBorders = GetTableCellBorders(openXmlElement);
-      value.Shading = GetShading(openXmlElement);
-      value.NoWrap = GetNoWrap(openXmlElement);
-      value.TableCellMargin = GetTableCellMargin(openXmlElement);
-      value.TableCellVerticalAlignment = GetTableCellVerticalAlignment(openXmlElement);
-      return value;
+      var model = new DMW.TableStyleConditionalCellProperties();
+      model.TableCellBorders = GetTableCellBorders(openXmlElement);
+      model.Shading = GetShading(openXmlElement);
+      model.NoWrap = GetNoWrap(openXmlElement);
+      model.TableCellMargin = GetTableCellMargin(openXmlElement);
+      model.TableCellVerticalAlignment = GetTableCellVerticalAlignment(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement, DMW.TableStyleConditionalCellProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableCellProperties? openXmlElement, DMW.TableStyleConditionalCellProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpTableCellBorders(openXmlElement, value.TableCellBorders, diffs, objName))
+      if (!CmpTableCellBorders(openXmlElement, model.TableCellBorders, diffs, objName))
         ok = false;
-      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+      if (!CmpShading(openXmlElement, model.Shading, diffs, objName))
         ok = false;
-      if (!CmpNoWrap(openXmlElement, value.NoWrap, diffs, objName))
+      if (!CmpNoWrap(openXmlElement, model.NoWrap, diffs, objName))
         ok = false;
-      if (!CmpTableCellMargin(openXmlElement, value.TableCellMargin, diffs, objName))
+      if (!CmpTableCellMargin(openXmlElement, model.TableCellMargin, diffs, objName))
         ok = false;
-      if (!CmpTableCellVerticalAlignment(openXmlElement, value.TableCellVerticalAlignment, diffs, objName))
+      if (!CmpTableCellVerticalAlignment(openXmlElement, model.TableCellVerticalAlignment, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalCellProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalCellProperties model)
     where OpenXmlElementType: DXW.TableStyleConditionalFormattingTableCellProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableStyleConditionalCellProperties value)
+  public static void UpdateOpenXmlElement(DXW.TableStyleConditionalFormattingTableCellProperties openXmlElement, DMW.TableStyleConditionalCellProperties model)
   {
-    SetTableCellBorders(openXmlElement, value?.TableCellBorders);
-    SetShading(openXmlElement, value?.Shading);
-    SetNoWrap(openXmlElement, value?.NoWrap);
-    SetTableCellMargin(openXmlElement, value?.TableCellMargin);
-    SetTableCellVerticalAlignment(openXmlElement, value?.TableCellVerticalAlignment);
+    SetTableCellBorders(openXmlElement, model?.TableCellBorders);
+    SetShading(openXmlElement, model?.Shading);
+    SetNoWrap(openXmlElement, model?.NoWrap);
+    SetTableCellMargin(openXmlElement, model?.TableCellMargin);
+    SetTableCellVerticalAlignment(openXmlElement, model?.TableCellVerticalAlignment);
   }
   #endregion
 }

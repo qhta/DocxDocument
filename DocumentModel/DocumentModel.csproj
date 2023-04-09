@@ -55,6 +55,8 @@
     <Compile Remove="Wordprocessing\Classes\TemplateCommandGroup.cs" />
     <Compile Remove="Wordprocessing\Classes\ToolbarData.cs" />
     <Compile Remove="Wordprocessing\Classes\Toolbars.cs" />
+    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
+    <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
   </ItemGroup>
 
   <ItemGroup>

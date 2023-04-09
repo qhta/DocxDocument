@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   as well as cases where two existing independent tables are merged 
 ///   (in order to prevent the look of the second table from being superseded by the first table).
 /// </summary>
-public class TablePropertyExceptions: BaseTableProperties
+public class TablePropertyExceptions: CurrentTableProperties
 {
   /// <summary>
   ///   Revision Information for Table-Level Property Exceptions.

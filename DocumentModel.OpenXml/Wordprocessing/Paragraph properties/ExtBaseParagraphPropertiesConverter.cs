@@ -50,7 +50,7 @@ public static class ExtBaseParagraphPropertiesConverter
   #endregion
 
   #region ConditionalFormatStyle conversion.
-  private static DMW.ConditionalFormatStyle? GetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement)
+  private static DMW.ConditionalFormatFlags? GetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (element != null)
@@ -58,19 +58,19 @@ public static class ExtBaseParagraphPropertiesConverter
     return null;
   }
 
-  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
   {
     return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName);
   }
 
-  private static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatStyle? value)
+  private static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>(value);
+      itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>((DMW.ConditionalFormatFlags)value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

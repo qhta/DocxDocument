@@ -56,7 +56,7 @@ public static class TableGridChangeConverter
     if (openXmlElement != null)
     {
       var value = new DMW.TableGridChange();
-      value.Id = GetId(openXmlElement);
+      value.AnnotationId = GetId(openXmlElement);
       value.PreviousTableGrid = GetPreviousTableGrid(openXmlElement);
       return value;
     }
@@ -68,7 +68,7 @@ public static class TableGridChangeConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
         ok = false;
       if (!CmpPreviousTableGrid(openXmlElement, value.PreviousTableGrid, diffs, objName))
         ok = false;
@@ -89,7 +89,7 @@ public static class TableGridChangeConverter
   
   public static void UpdateOpenXmlElement(DXW.TableGridChange openXmlElement, DMW.TableGridChange value)
   {
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, value?.AnnotationId);
     SetPreviousTableGrid(openXmlElement, value?.PreviousTableGrid);
   }
   #endregion

@@ -22,5 +22,5 @@ public abstract class ExtBaseParagraphProperties: BaseParagraphProperties
   ///   Specifies the set of conditional table style formatting properties which have been applied to this paragraph, 
   ///   if this paragraph is contained within a table cell. 
   /// </summary>
-  public ConditionalFormatStyle? ConditionalFormatStyle { get; set; }
+  public ConditionalFormatFlags? ConditionalFormatStyle { get; set; }
 }

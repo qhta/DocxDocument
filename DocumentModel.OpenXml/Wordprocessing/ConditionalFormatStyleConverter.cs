@@ -259,60 +259,61 @@ public static class ConditionalFormatStyleConverter
     openXmlElement.LastRowLastColumn = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DMW.ConditionalFormatStyle? CreateModelElement(DXW.ConditionalFormatStyle? openXmlElement)
+  public static DMW.ConditionalFormatFlags? CreateModelElement(DXW.ConditionalFormatStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ConditionalFormatStyle();
-      value.Val = GetVal(openXmlElement);
-      value.FirstRow = GetFirstRow(openXmlElement) ?? value.FirstRow;
-      value.LastRow = GetLastRow(openXmlElement) ?? value.LastRow;
-      value.FirstColumn = GetFirstColumn(openXmlElement) ?? value.FirstColumn;
-      value.LastColumn = GetLastColumn(openXmlElement) ?? value.LastColumn;
-      value.OddVerticalBand = GetOddVerticalBand(openXmlElement) ?? value.OddVerticalBand;
-      value.EvenVerticalBand = GetEvenVerticalBand(openXmlElement) ?? value.EvenVerticalBand;
-      value.OddHorizontalBand = GetOddHorizontalBand(openXmlElement) ?? value.OddHorizontalBand;
-      value.EvenHorizontalBand = GetEvenHorizontalBand(openXmlElement) ?? value.EvenHorizontalBand;
-      value.FirstRowFirstColumn = GetFirstRowFirstColumn(openXmlElement) ?? value.FirstRowFirstColumn;
-      value.FirstRowLastColumn = GetFirstRowLastColumn(openXmlElement) ?? value.FirstRowLastColumn;
-      value.LastRowFirstColumn = GetLastRowFirstColumn(openXmlElement) ?? value.LastRowFirstColumn;
-      value.LastRowLastColumn = GetLastRowLastColumn(openXmlElement) ?? value.LastRowLastColumn;
-      return value;
+      return GetVal(openXmlElement);
+      //var value = new DMW.ConditionalFormatStyle();
+      //value.Val = GetVal(openXmlElement);
+      //value.FirstRow = GetFirstRow(openXmlElement) ?? value.FirstRow;
+      //value.LastRow = GetLastRow(openXmlElement) ?? value.LastRow;
+      //value.FirstColumn = GetFirstColumn(openXmlElement) ?? value.FirstColumn;
+      //value.LastColumn = GetLastColumn(openXmlElement) ?? value.LastColumn;
+      //value.OddVerticalBand = GetOddVerticalBand(openXmlElement) ?? value.OddVerticalBand;
+      //value.EvenVerticalBand = GetEvenVerticalBand(openXmlElement) ?? value.EvenVerticalBand;
+      //value.OddHorizontalBand = GetOddHorizontalBand(openXmlElement) ?? value.OddHorizontalBand;
+      //value.EvenHorizontalBand = GetEvenHorizontalBand(openXmlElement) ?? value.EvenHorizontalBand;
+      //value.FirstRowFirstColumn = GetFirstRowFirstColumn(openXmlElement) ?? value.FirstRowFirstColumn;
+      //value.FirstRowLastColumn = GetFirstRowLastColumn(openXmlElement) ?? value.FirstRowLastColumn;
+      //value.LastRowFirstColumn = GetLastRowFirstColumn(openXmlElement) ?? value.LastRowFirstColumn;
+      //value.LastRowLastColumn = GetLastRowLastColumn(openXmlElement) ?? value.LastRowLastColumn;
+      //return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ConditionalFormatStyle? openXmlElement, DMW.ConditionalFormatStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ConditionalFormatStyle? openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value, diffs, objName))
         ok = false;
-      if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
-        ok = false;
-      if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
-        ok = false;
-      if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
-        ok = false;
-      if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
-        ok = false;
-      if (!CmpOddVerticalBand(openXmlElement, value.OddVerticalBand, diffs, objName))
-        ok = false;
-      if (!CmpEvenVerticalBand(openXmlElement, value.EvenVerticalBand, diffs, objName))
-        ok = false;
-      if (!CmpOddHorizontalBand(openXmlElement, value.OddHorizontalBand, diffs, objName))
-        ok = false;
-      if (!CmpEvenHorizontalBand(openXmlElement, value.EvenHorizontalBand, diffs, objName))
-        ok = false;
-      if (!CmpFirstRowFirstColumn(openXmlElement, value.FirstRowFirstColumn, diffs, objName))
-        ok = false;
-      if (!CmpFirstRowLastColumn(openXmlElement, value.FirstRowLastColumn, diffs, objName))
-        ok = false;
-      if (!CmpLastRowFirstColumn(openXmlElement, value.LastRowFirstColumn, diffs, objName))
-        ok = false;
-      if (!CmpLastRowLastColumn(openXmlElement, value.LastRowLastColumn, diffs, objName))
-        ok = false;
+      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
+      //  ok = false;
+      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpOddVerticalBand(openXmlElement, value.OddVerticalBand, diffs, objName))
+      //  ok = false;
+      //if (!CmpEvenVerticalBand(openXmlElement, value.EvenVerticalBand, diffs, objName))
+      //  ok = false;
+      //if (!CmpOddHorizontalBand(openXmlElement, value.OddHorizontalBand, diffs, objName))
+      //  ok = false;
+      //if (!CmpEvenHorizontalBand(openXmlElement, value.EvenHorizontalBand, diffs, objName))
+      //  ok = false;
+      //if (!CmpFirstRowFirstColumn(openXmlElement, value.FirstRowFirstColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpFirstRowLastColumn(openXmlElement, value.FirstRowLastColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastRowFirstColumn(openXmlElement, value.LastRowFirstColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastRowLastColumn(openXmlElement, value.LastRowLastColumn, diffs, objName))
+      //  ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
@@ -320,7 +321,7 @@ public static class ConditionalFormatStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ConditionalFormatStyle value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ConditionalFormatFlags value)
     where OpenXmlElementType: DXW.ConditionalFormatStyle, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -328,20 +329,20 @@ public static class ConditionalFormatStyleConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.ConditionalFormatStyle openXmlElement, DMW.ConditionalFormatStyle value)
+  public static void UpdateOpenXmlElement(DXW.ConditionalFormatStyle openXmlElement, DMW.ConditionalFormatFlags value)
   {
-    SetVal(openXmlElement, value?.Val);
-    SetFirstRow(openXmlElement, value?.FirstRow);
-    SetLastRow(openXmlElement, value?.LastRow);
-    SetFirstColumn(openXmlElement, value?.FirstColumn);
-    SetLastColumn(openXmlElement, value?.LastColumn);
-    SetOddVerticalBand(openXmlElement, value?.OddVerticalBand);
-    SetEvenVerticalBand(openXmlElement, value?.EvenVerticalBand);
-    SetOddHorizontalBand(openXmlElement, value?.OddHorizontalBand);
-    SetEvenHorizontalBand(openXmlElement, value?.EvenHorizontalBand);
-    SetFirstRowFirstColumn(openXmlElement, value?.FirstRowFirstColumn);
-    SetFirstRowLastColumn(openXmlElement, value?.FirstRowLastColumn);
-    SetLastRowFirstColumn(openXmlElement, value?.LastRowFirstColumn);
-    SetLastRowLastColumn(openXmlElement, value?.LastRowLastColumn);
+    SetVal(openXmlElement, value);
+    SetFirstRow(openXmlElement, value.HasFlag(ConditionalFormatFlags.FirstRow));
+    SetLastRow(openXmlElement, value.HasFlag(ConditionalFormatFlags.LastRow));
+    SetFirstColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.FirstColumn));
+    SetLastColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.LastColumn));
+    SetOddVerticalBand(openXmlElement, value.HasFlag(ConditionalFormatFlags.OddVBand));
+    SetEvenVerticalBand(openXmlElement, value.HasFlag(ConditionalFormatFlags.EvenVBand));
+    SetOddHorizontalBand(openXmlElement, value.HasFlag(ConditionalFormatFlags.OddHBand));
+    SetEvenHorizontalBand(openXmlElement, value.HasFlag(ConditionalFormatFlags.EvenHBand));
+    SetFirstRowFirstColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.FirstRowFirstColumn));
+    SetFirstRowLastColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.FirstRowLastColumn));
+    SetLastRowFirstColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.LastRowFirstColumn));
+    SetLastRowLastColumn(openXmlElement, value.HasFlag(ConditionalFormatFlags.LastRowLastColumn));
   }
 }

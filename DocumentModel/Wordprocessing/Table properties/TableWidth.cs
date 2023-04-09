@@ -23,6 +23,16 @@ public class TableWidth : ModelElement
   /// </summary>
   public TableWidth(){ }
 
+  
+  /// <summary>
+  /// Initializing constructor with one parameters
+  /// </summary>
+  /// <param name="width">string representation of the value</param>
+  public TableWidth(Int64? width)
+  {
+    Value = width ?? 0;
+  }
+
   /// <summary>
   /// Initializing constructor with two parameters
   /// </summary>

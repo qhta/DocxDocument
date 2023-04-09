@@ -3,7 +3,7 @@ using DocumentModel.Wordprocessing;
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Table Properties.
+/// <see cref="DocumentModel.Wordprocessing.TableProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class TablePropertiesConverter
 {

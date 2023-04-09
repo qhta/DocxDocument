@@ -6,27 +6,39 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class TableLookConverter
 {
   #region val conversion.
-  private static DM.HexChar? GetVal(DXW.TableLook openXmlElement)
+  private static DMW.TableLookFlags? GetVal(DXW.TableLook openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
-      return HexCharConverter.GetValue(openXmlElement.Val.Value);
+    {
+      var val = HexCharConverter.GetValue(openXmlElement.Val.Value) ^ 0x600;
+      if (val is not null)
+        return (DMW.TableLookFlags)Enum.ToObject(typeof(DMW.TableLookFlags), (UInt16)val);
+    }
     return null;
   }
   
-  private static bool CmpVal(DXW.TableLook openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.TableLook openXmlElement, DMW.TableLookFlags? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.Val?.Value != null)
-      if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(value))
+    if (openXmlElement?.Val?.Value != null && value!=null)
+    {
+      var val = (UInt16)Convert.ChangeType(value, typeof(UInt16)) ^ 0x600;
+      var hexChar = new HexChar(val);
+      if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(hexChar))
         return true;
+    }
     if (openXmlElement == null && openXmlElement?.Val?.Value == null && value is null) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetVal(DXW.TableLook openXmlElement, DM.HexChar? value)
+  private static void SetVal(DXW.TableLook openXmlElement, DMW.TableLookFlags? value)
   {
     if (value is not null)
-      openXmlElement.Val = value.ToString();
+    {
+      var val = (UInt16)Convert.ChangeType(value, typeof(UInt16)) ^ 0x600;
+      var str = val.ToString("X4");
+      openXmlElement.Val = str;
+    }
     else
       openXmlElement.Val = null;
   }
@@ -133,42 +145,43 @@ public static class TableLookConverter
     openXmlElement.NoVerticalBand = BooleanValueConverter.CreateOnOffValue(value);
   }
   
-  public static DMW.TableLook? CreateModelElement(DXW.TableLook? openXmlElement)
+  public static DMW.TableLookFlags? CreateModelElement(DXW.TableLook? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableLook();
-      value.Val = GetVal(openXmlElement);
-      value.FirstRow = GetFirstRow(openXmlElement);
-      value.LastRow = GetLastRow(openXmlElement);
-      value.FirstColumn = GetFirstColumn(openXmlElement);
-      value.LastColumn = GetLastColumn(openXmlElement);
-      value.NoHorizontalBand = GetNoHorizontalBand(openXmlElement);
-      value.NoVerticalBand = GetNoVerticalBand(openXmlElement);
-      return value;
+      return GetVal(openXmlElement);
+      //var value = new DMW.TableLook();
+      //value.Val = GetVal(openXmlElement);
+      //value.FirstRow = GetFirstRow(openXmlElement);
+      //value.LastRow = GetLastRow(openXmlElement);
+      //value.FirstColumn = GetFirstColumn(openXmlElement);
+      //value.LastColumn = GetLastColumn(openXmlElement);
+      //value.NoHorizontalBand = GetNoHorizontalBand(openXmlElement);
+      //value.NoVerticalBand = GetNoVerticalBand(openXmlElement);
+      //return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableLook? openXmlElement, DMW.TableLook? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableLook? openXmlElement, DMW.TableLookFlags? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value, diffs, objName))
         ok = false;
-      if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
-        ok = false;
-      if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
-        ok = false;
-      if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
-        ok = false;
-      if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
-        ok = false;
-      if (!CmpNoHorizontalBand(openXmlElement, value.NoHorizontalBand, diffs, objName))
-        ok = false;
-      if (!CmpNoVerticalBand(openXmlElement, value.NoVerticalBand, diffs, objName))
-        ok = false;
+      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
+      //  ok = false;
+      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
+      //  ok = false;
+      //if (!CmpNoHorizontalBand(openXmlElement, value.NoHorizontalBand, diffs, objName))
+      //  ok = false;
+      //if (!CmpNoVerticalBand(openXmlElement, value.NoVerticalBand, diffs, objName))
+      //  ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
@@ -176,7 +189,7 @@ public static class TableLookConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLook value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableLookFlags value)
     where OpenXmlElementType: DXW.TableLook, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -184,15 +197,15 @@ public static class TableLookConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableLook openXmlElement, DMW.TableLook value)
+  public static void UpdateOpenXmlElement(DXW.TableLook openXmlElement, DMW.TableLookFlags value)
   {
-    SetVal(openXmlElement, value?.Val);
-    SetFirstRow(openXmlElement, value?.FirstRow);
-    SetLastRow(openXmlElement, value?.LastRow);
-    SetFirstColumn(openXmlElement, value?.FirstColumn);
-    SetLastColumn(openXmlElement, value?.LastColumn);
-    SetNoHorizontalBand(openXmlElement, value?.NoHorizontalBand);
-    SetNoVerticalBand(openXmlElement, value?.NoVerticalBand);
+    SetVal(openXmlElement, value);
+    //SetFirstRow(openXmlElement, value?.FirstRow);
+    //SetLastRow(openXmlElement, value?.LastRow);
+    //SetFirstColumn(openXmlElement, value?.FirstColumn);
+    //SetLastColumn(openXmlElement, value?.LastColumn);
+    //SetNoHorizontalBand(openXmlElement, value?.NoHorizontalBand);
+    //SetNoVerticalBand(openXmlElement, value?.NoVerticalBand);
   }
   #endregion
 }

@@ -8,7 +8,7 @@ namespace DocumentModel.OpenXml;
 public static class Int32ValueConverter
 {
 
-  #region OpenXmlLeafTextElement
+  #region OpenXmlLeafTextElement conversion.
 
   /// <summary>
   /// Converts text content of LeafTextElement to Int32.
@@ -56,7 +56,7 @@ public static class Int32ValueConverter
   }
   #endregion
 
-  #region HpsMeasureType.
+  #region HpsMeasureType conversion.
   /// <summary>
   /// Converts HpsMeasureType to Int32.
   /// </summary>
@@ -114,7 +114,7 @@ public static class Int32ValueConverter
   }
   #endregion
 
-  #region StringValue
+  #region StringValue conversion.
   /// <summary>
   /// Converts StringValue to Int32.
   /// </summary>
@@ -146,7 +146,7 @@ public static class Int32ValueConverter
   }
   #endregion
 
-  #region Two Int32 values
+  #region Compare two Int32 values
   /// <summary>
   /// Compares two Int32 values.
   /// </summary>

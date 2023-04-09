@@ -8,6 +8,6 @@ namespace DocumentModel.Wordprocessing;
 ///   In any instance where there is a conflict between the table level, table-level exception, or row level properties 
 ///   with a corresponding table cell property, these properties shall overwrite the table or row wide properties.
 /// </summary>
-public class PreviousTableCellProperties: BaseTableCellProperties
+public class PreviousTableCellProperties: CurrentTableCellProperties
 {
 }

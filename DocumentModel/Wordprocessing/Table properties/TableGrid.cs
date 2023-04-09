@@ -1,12 +1,13 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Table Grid.
 /// </summary>
-public class TableGrid: ModelElement
+public class TableGrid: BaseTableGrid
 {
-  public Collection<GridColumn>? GridColumns { get; set; }
-
+  
+  /// <summary>
+  /// Change record of previous Table Grid.
+  /// </summary>
   public TableGridChange? TableGridChange { get; set; }
 }

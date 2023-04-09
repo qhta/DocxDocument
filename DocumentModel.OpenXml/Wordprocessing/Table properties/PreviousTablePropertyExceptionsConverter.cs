@@ -5,32 +5,34 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PreviousTablePropertyExceptionsConverter
 {
+  #region PreviousTablePropertyExceptions model conversion.
   public static DMW.PreviousTablePropertyExceptions? CreateModelElement(DXW.PreviousTablePropertyExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PreviousTablePropertyExceptions();
-      BaseTablePropertiesConverter.UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.PreviousTablePropertyExceptions();
+      CurrentTablePropertiesConverter.UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousTablePropertyExceptions? openXmlElement, DMW.PreviousTablePropertyExceptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousTablePropertyExceptions? openXmlElement, DMW.PreviousTablePropertyExceptions? model, DiffList? diffs, string? objName)
   {
-    return BaseTablePropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return CurrentTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTablePropertyExceptions value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTablePropertyExceptions model)
     where OpenXmlElementType: DXW.PreviousTablePropertyExceptions, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.PreviousTablePropertyExceptions value)
+  public static void UpdateOpenXmlElement(DXW.PreviousTablePropertyExceptions openXmlElement, DMW.PreviousTablePropertyExceptions model)
   {
-    BaseTablePropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    CurrentTablePropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
+  #endregion
 }
