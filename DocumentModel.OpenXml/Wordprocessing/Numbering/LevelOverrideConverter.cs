@@ -1,11 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-
-/// Defines the LevelOverride Class.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.NumLevelOverride"/> class from/to OpenXml converter.
+/// </summary>
 public static class LevelOverrideConverter
 {
-  #region Numbering Level ID
+  #region LevelIndex conversion.
   private static Int32? GetLevelIndex(DXW.LevelOverride openXmlElement)
   {
     return openXmlElement?.LevelIndex?.Value;
@@ -24,7 +24,7 @@ public static class LevelOverrideConverter
   }
 #endregion
 
-  #region Numbering Level Starting Value Override.
+  #region StartOverrideNumberingValue conversion.
   private static Int32? GetStartOverrideNumberingValue(DXW.LevelOverride openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StartOverrideNumberingValue>()?.Val);
@@ -41,7 +41,7 @@ public static class LevelOverrideConverter
   }
 #endregion
 
-  #region Numbering Level Override Definition.
+  #region NumLevel conversion
   private static DMW.NumLevel? GetLevel(DXW.LevelOverride openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Level>();
@@ -74,46 +74,46 @@ public static class LevelOverrideConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumLevelOverride();
-      value.LevelIndex = GetLevelIndex(openXmlElement);
-      value.StartOverrideNumberingValue = GetStartOverrideNumberingValue(openXmlElement);
-      value.Level = GetLevel(openXmlElement);
-      return value;
+      var model = new DMW.NumLevelOverride();
+      model.LevelIndex = GetLevelIndex(openXmlElement);
+      model.StartOverrideNumberingValue = GetStartOverrideNumberingValue(openXmlElement);
+      model.Level = GetLevel(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LevelOverride? openXmlElement, DMW.NumLevelOverride? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LevelOverride? openXmlElement, DMW.NumLevelOverride? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLevelIndex(openXmlElement, value.LevelIndex, diffs, objName))
+      if (!CmpLevelIndex(openXmlElement, model.LevelIndex, diffs, objName))
         ok = false;
-      if (!CmpStartOverrideNumberingValue(openXmlElement, value.StartOverrideNumberingValue, diffs, objName))
+      if (!CmpStartOverrideNumberingValue(openXmlElement, model.StartOverrideNumberingValue, diffs, objName))
         ok = false;
-      if (!CmpLevel(openXmlElement, value.Level, diffs, objName))
+      if (!CmpLevel(openXmlElement, model.Level, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevelOverride value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumLevelOverride model)
     where OpenXmlElementType: DXW.LevelOverride, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.LevelOverride openXmlElement, DMW.NumLevelOverride value)
+  public static void UpdateOpenXmlElement(DXW.LevelOverride openXmlElement, DMW.NumLevelOverride model)
   {
-    SetLevelIndex(openXmlElement, value?.LevelIndex);
-    SetStartOverrideNumberingValue(openXmlElement, value?.StartOverrideNumberingValue);
-    SetLevel(openXmlElement, value?.Level);
+    SetLevelIndex(openXmlElement, model?.LevelIndex);
+    SetStartOverrideNumberingValue(openXmlElement, model?.StartOverrideNumberingValue);
+    SetLevel(openXmlElement, model?.Level);
   }
   #endregion
 

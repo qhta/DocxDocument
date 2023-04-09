@@ -1,12 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-
-/// Defines the NumberingProperties Class.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.NumberingProperties"/> class from/to OpenXml converter.
+/// </summary>
 public static class NumberingPropertiesConverter
 {
-
-  #region Numbering Level Reference.
+  #region NumberingLevelReference conversion.
   private static Int32? GetNumberingLevelReference(DXW.NumberingProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingLevelReference>()?.Val);
@@ -21,9 +20,9 @@ public static class NumberingPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXW.NumberingLevelReference,System.Int32>(openXmlElement, value);
   }
-#endregion
+  #endregion
 
-  #region Numbering Definition Instance Reference.
+  #region NumberingId conversion.
   private static Int32? GetNumberingId(DXW.NumberingProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingId>()?.Val);
@@ -38,9 +37,9 @@ public static class NumberingPropertiesConverter
   {
     SimpleValueConverter.SetValue<DXW.NumberingId,System.Int32>(openXmlElement, value);
   }
-#endregion
+  #endregion
 
-  #region Previous Paragraph Numbering Properties.
+  #region NumberingChange conversion.
   private static DMW.NumberingChange? GetNumberingChange(DXW.NumberingProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.NumberingChange>();
@@ -66,7 +65,7 @@ public static class NumberingPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-#endregion
+  #endregion
 
   #region Inserted Numbering Properties.
   private static DMW.TrackChangeType? GetInserted(DXW.NumberingProperties openXmlElement)
@@ -94,55 +93,57 @@ public static class NumberingPropertiesConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region NumberingProperties model conversion.
   public static DMW.NumberingProperties? CreateModelElement(DXW.NumberingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingProperties();
-      value.NumberingLevelReference = GetNumberingLevelReference(openXmlElement);
-      value.NumberingId = GetNumberingId(openXmlElement);
-      value.NumberingChange = GetNumberingChange(openXmlElement);
-      value.Inserted = GetInserted(openXmlElement);
-      return value;
+      var model = new DMW.NumberingProperties();
+      model.NumberingLevelReference = GetNumberingLevelReference(openXmlElement);
+      model.NumberingId = GetNumberingId(openXmlElement);
+      model.NumberingChange = GetNumberingChange(openXmlElement);
+      model.Inserted = GetInserted(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.NumberingProperties? openXmlElement, DMW.NumberingProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingProperties? openXmlElement, DMW.NumberingProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNumberingLevelReference(openXmlElement, value.NumberingLevelReference, diffs, objName))
+      if (!CmpNumberingLevelReference(openXmlElement, model.NumberingLevelReference, diffs, objName))
         ok = false;
-      if (!CmpNumberingId(openXmlElement, value.NumberingId, diffs, objName))
+      if (!CmpNumberingId(openXmlElement, model.NumberingId, diffs, objName))
         ok = false;
-      if (!CmpNumberingChange(openXmlElement, value.NumberingChange, diffs, objName))
+      if (!CmpNumberingChange(openXmlElement, model.NumberingChange, diffs, objName))
         ok = false;
-      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingProperties model)
     where OpenXmlElementType: DXW.NumberingProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.NumberingProperties openXmlElement, DMW.NumberingProperties value)
+  public static void UpdateOpenXmlElement(DXW.NumberingProperties openXmlElement, DMW.NumberingProperties model)
   {
-    SetNumberingLevelReference(openXmlElement, value?.NumberingLevelReference);
-    SetNumberingId(openXmlElement, value?.NumberingId);
-    SetNumberingChange(openXmlElement, value?.NumberingChange);
-    SetInserted(openXmlElement, value?.Inserted);
+    SetNumberingLevelReference(openXmlElement, model?.NumberingLevelReference);
+    SetNumberingId(openXmlElement, model?.NumberingId);
+    SetNumberingChange(openXmlElement, model?.NumberingChange);
+    SetInserted(openXmlElement, model?.Inserted);
   }
-#endregion
+  #endregion
 }

@@ -1,56 +1,56 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Numbering Symbol Run Properties.
+/// <see cref="DocumentModel.Wordprocessing.NumberingSymbolRunProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class NumberingSymbolRunPropertiesConverter
 {
 
-  #region NumberingSymbolRunProperties mode conversion
+  #region NumberingSymbolRunProperties model conversion
   public static DMW.NumberingSymbolRunProperties? CreateModelElement(DXW.NumberingSymbolRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingSymbolRunProperties();
-      BaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      value.RightToLeftText = ExtBaseRunPropertiesConverter.GetRightToLeftText(openXmlElement);
-      value.ComplexScript = ExtBaseRunPropertiesConverter.GetComplexScript(openXmlElement);
-      return value;
+      var model = new DMW.NumberingSymbolRunProperties();
+      BaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      model.RightToLeftText = ExtBaseRunPropertiesConverter.GetRightToLeftText(openXmlElement);
+      model.ComplexScript = ExtBaseRunPropertiesConverter.GetComplexScript(openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.NumberingSymbolRunProperties? openXmlElement, DMW.NumberingSymbolRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingSymbolRunProperties? openXmlElement, DMW.NumberingSymbolRunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CmpRightToLeftText(openXmlElement, value.RightToLeftText, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpRightToLeftText(openXmlElement, model.RightToLeftText, diffs, objName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingSymbolRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingSymbolRunProperties model)
     where OpenXmlElementType : DXW.NumberingSymbolRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.NumberingSymbolRunProperties openXmlElement, DMW.NumberingSymbolRunProperties model)
   {
-    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    ExtBaseRunPropertiesConverter.SetRightToLeftText(openXmlElement, value.RightToLeftText);
-    ExtBaseRunPropertiesConverter.SetComplexScript(openXmlElement, value.ComplexScript);
+    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    ExtBaseRunPropertiesConverter.SetRightToLeftText(openXmlElement, model.RightToLeftText);
+    ExtBaseRunPropertiesConverter.SetComplexScript(openXmlElement, model.ComplexScript);
   }
   #endregion
 
