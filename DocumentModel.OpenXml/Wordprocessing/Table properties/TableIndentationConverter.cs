@@ -40,24 +40,24 @@ public static class TableIndentationConverter
     openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
   }
   
-  public static DMW.TableIndentation? CreateModelElement(DXW.TableIndentation? openXmlElement)
+  public static DMW.TableWidth? CreateModelElement(DXW.TableIndentation? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.TableIndentation();
-      value.Width = GetWidth(openXmlElement);
-      value.Type = GetType(openXmlElement);
+      var width = GetWidth(openXmlElement);
+      var type = GetType(openXmlElement);
+      var value = new DMW.TableWidth(width, type);
       return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableIndentation? openXmlElement, DMW.TableIndentation? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableIndentation? openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, (Int32)value.Value, diffs, objName))
         ok = false;
       if (!CmpType(openXmlElement, value.Type, diffs, objName))
         ok = false;
@@ -68,7 +68,7 @@ public static class TableIndentationConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableIndentation value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableWidth value)
     where OpenXmlElementType: DXW.TableIndentation, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -76,10 +76,10 @@ public static class TableIndentationConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableIndentation openXmlElement, DMW.TableIndentation value)
+  public static void UpdateOpenXmlElement(DXW.TableIndentation openXmlElement, DMW.TableWidth value)
   {
-    SetWidth(openXmlElement, value?.Width);
-    SetType(openXmlElement, value?.Type);
+    SetWidth(openXmlElement, (Int32)value.Value);
+    SetType(openXmlElement, value.Type);
   }
   #endregion
 }

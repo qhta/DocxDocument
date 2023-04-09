@@ -72,7 +72,7 @@ public static class DocPropertiesConverter
   private static bool CmpHidden(DXDrawW.DocProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Hidden?.Value == value) return true;
-    diffs?.Add(objName, "Hidden", openXmlElement?.Hidden?.Value, value);
+    diffs?.Add(objName, "GlyphHidden", openXmlElement?.Hidden?.Value, value);
     return false;
   }
   
