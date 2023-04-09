@@ -1,8 +1,9 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 
-/// Previous Paragraph Numbering Properties.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.NumberingChange"/> class from/to OpenXml converter.
+/// </summary>
 public static class NumberingChangeConverter
 {
 
@@ -74,55 +75,57 @@ public static class NumberingChangeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
+  #endregion
 
+  #region NumberingChange model conversion
   public static DMW.NumberingChange? CreateModelElement(DXW.NumberingChange? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingChange();
-      value.Original = GetOriginal(openXmlElement);
-      value.Author = GetAuthor(openXmlElement);
-      value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
-      return value;
+      var model = new DMW.NumberingChange();
+      model.Original = GetOriginal(openXmlElement);
+      model.Author = GetAuthor(openXmlElement);
+      model.Date = GetDate(openXmlElement);
+      model.Id = GetId(openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.NumberingChange? openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingChange? openXmlElement, DMW.NumberingChange? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpOriginal(openXmlElement, value.Original, diffs, objName))
+      if (!CmpOriginal(openXmlElement, model.Original, diffs, objName))
         ok = false;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
         ok = false;
-      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingChange model)
     where OpenXmlElementType : DXW.NumberingChange, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.NumberingChange openXmlElement, DMW.NumberingChange value)
+  public static void UpdateOpenXmlElement(DXW.NumberingChange openXmlElement, DMW.NumberingChange model)
   {
-    SetOriginal(openXmlElement, value?.Original);
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetOriginal(openXmlElement, model?.Original);
+    SetAuthor(openXmlElement, model?.Author);
+    SetDate(openXmlElement, model?.Date);
+    SetId(openXmlElement, model?.Id);
   }
   #endregion
 }

@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Font Table Root Element converter
+/// <see cref="DocumentModel.Wordprocessing.Fonts"/> class from/to OpenXml converter.
 /// </summary>
 public static class FontsConverter
 {
@@ -64,39 +64,39 @@ public static class FontsConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Fonts();
-      GetItems(openXmlElement, value);
-      if (value.Count == 0) return null;
-      return value;
+      var model = new DMW.Fonts();
+      GetItems(openXmlElement, model);
+      if (model.Count == 0) return null;
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Fonts? openXmlElement, DMW.Fonts? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Fonts? openXmlElement, DMW.Fonts? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value, diffs, objName))
+      if (!CmpItems(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Fonts value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Fonts model)
     where OpenXmlElementType: DXW.Fonts, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Fonts openXmlElement, DMW.Fonts value)
+  public static void UpdateOpenXmlElement(DXW.Fonts openXmlElement, DMW.Fonts model)
   {
-    SetItems(openXmlElement, value);
+    SetItems(openXmlElement, model);
   }
   #endregion
 }

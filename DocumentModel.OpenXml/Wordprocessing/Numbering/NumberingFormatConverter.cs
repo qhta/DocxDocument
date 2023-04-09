@@ -1,12 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-
-/// Footnote Numbering Format.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.NumberingFormat"/> class from/to OpenXml converter.
+/// </summary>
 public static class NumberingFormatConverter
 {
-
-  #region Numbering Format Type
+  #region NumberFormatType conversion.
   private static DMW.NumberFormatKind? GetVal(DXW.NumberingFormat openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value);
@@ -21,9 +20,9 @@ public static class NumberingFormatConverter
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
   }
-#endregion
+  #endregion
 
-  #region format, this property is only available in Office 2010 and later.
+  #region Format conversion.
   private static String? GetFormat(DXW.NumberingFormat openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Format);
@@ -38,47 +37,49 @@ public static class NumberingFormatConverter
   {
     openXmlElement.Format = StringValueConverter.CreateStringValue(value);
   }
-  
+  #endregion
+
+  #region NumberingFormat model conversion.
   public static DMW.NumberingFormat? CreateModelElement(DXW.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingFormat();
-      value.Type = GetVal(openXmlElement);
-      value.Custom = GetFormat(openXmlElement);
-      return value;
+      var model = new DMW.NumberingFormat();
+      model.Type = GetVal(openXmlElement);
+      model.Custom = GetFormat(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.NumberingFormat? openXmlElement, DMW.NumberingFormat? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingFormat? openXmlElement, DMW.NumberingFormat? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Type, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Type, diffs, objName))
         ok = false;
-      if (!CmpFormat(openXmlElement, value.Custom, diffs, objName))
+      if (!CmpFormat(openXmlElement, model.Custom, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingFormat value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingFormat model)
     where OpenXmlElementType: DXW.NumberingFormat, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.NumberingFormat openXmlElement, DMW.NumberingFormat value)
+  public static void UpdateOpenXmlElement(DXW.NumberingFormat openXmlElement, DMW.NumberingFormat model)
   {
-    SetVal(openXmlElement, value?.Type);
-    SetFormat(openXmlElement, value?.Custom);
+    SetVal(openXmlElement, model?.Type);
+    SetFormat(openXmlElement, model?.Custom);
   }
-#endregion
+  #endregion
 }

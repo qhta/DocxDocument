@@ -2,11 +2,11 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 
 
 /// <summary>
-/// Abstract Numbering Definition from/to converter.
+/// <see cref="DocumentModel.Wordprocessing.FontSignature"/> class from/to OpenXml converter.
 /// </summary>
 public static class AbstractNumConverter
 {
-  #region Abstract Numbering Definition ID
+  #region AbstractNumberId conversion.
   private static Int32? GetAbstractNumberId(DXW.AbstractNum openXmlElement)
   {
     return openXmlElement?.AbstractNumberId?.Value;
@@ -25,7 +25,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Abstract Numbering Definition Identifier.
+  #region Nsid conversion.
   private static UInt32? GetNsid(DXW.AbstractNum openXmlElement)
   {
     if (openXmlElement?.Nsid?.Val?.Value != null)
@@ -52,7 +52,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Abstract Numbering Definition Type.
+  #region MultiLevelType conversion.
   private static DMW.MultiLevelKind? GetMultiLevelType(DXW.AbstractNum openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues, DMW.MultiLevelKind>(openXmlElement.GetFirstChild<DXW.MultiLevelType>()?.Val?.Value);
@@ -79,7 +79,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Numbering Template Code.
+  #region TemplateCode conversion.
   private static UInt32? GetTemplateCode(DXW.AbstractNum openXmlElement)
   {
     if (openXmlElement?.TemplateCode?.Val?.Value != null)
@@ -106,7 +106,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Abstract Numbering Definition Name.
+  #region AbstractNumDefinitionName conversion.
   private static String? GetAbstractNumDefinitionName(DXW.AbstractNum openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumDefinitionName>()?.Val);
@@ -123,7 +123,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Numbering Style Definition.
+  #region StyleLink conversion.
   private static String? GetStyleLink(DXW.AbstractNum openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.StyleLink>()?.Val);
@@ -140,7 +140,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Numbering Style Reference.
+  #region NumberingStyleLink conversion.
   private static String? GetNumberingStyleLink(DXW.AbstractNum openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.NumberingStyleLink>()?.Val);
@@ -157,7 +157,7 @@ public static class AbstractNumConverter
   }
   #endregion
 
-  #region Levels
+  #region Levels conversion.
   private static DMW.NumLevels? GetLevels(DXW.AbstractNum openXmlElement)
   {
     var collection = new DMW.NumLevels();
@@ -220,66 +220,66 @@ public static class AbstractNumConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.AbstractNum();
-      value.AbstractNumberId = GetAbstractNumberId(openXmlElement);
-      value.Nsid = GetNsid(openXmlElement);
-      value.MultiLevelType = GetMultiLevelType(openXmlElement);
-      value.TemplateCode = GetTemplateCode(openXmlElement);
-      value.AbstractNumDefinitionName = GetAbstractNumDefinitionName(openXmlElement);
-      value.StyleLink = GetStyleLink(openXmlElement);
-      value.NumberingStyleLink = GetNumberingStyleLink(openXmlElement);
-      value.Levels = GetLevels(openXmlElement);
-      return value;
+      var model = new DMW.AbstractNum();
+      model.AbstractNumberId = GetAbstractNumberId(openXmlElement);
+      model.Nsid = GetNsid(openXmlElement);
+      model.MultiLevelType = GetMultiLevelType(openXmlElement);
+      model.TemplateCode = GetTemplateCode(openXmlElement);
+      model.AbstractNumDefinitionName = GetAbstractNumDefinitionName(openXmlElement);
+      model.StyleLink = GetStyleLink(openXmlElement);
+      model.NumberingStyleLink = GetNumberingStyleLink(openXmlElement);
+      model.Levels = GetLevels(openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.AbstractNum? openXmlElement, DMW.AbstractNum? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.AbstractNum? openXmlElement, DMW.AbstractNum? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAbstractNumberId(openXmlElement, value.AbstractNumberId, diffs, objName))
+      if (!CmpAbstractNumberId(openXmlElement, model.AbstractNumberId, diffs, objName))
         ok = false;
-      if (!CmpNsid(openXmlElement, value.Nsid, diffs, objName))
+      if (!CmpNsid(openXmlElement, model.Nsid, diffs, objName))
         ok = false;
-      if (!CmpMultiLevelType(openXmlElement, value.MultiLevelType, diffs, objName))
+      if (!CmpMultiLevelType(openXmlElement, model.MultiLevelType, diffs, objName))
         ok = false;
-      if (!CmpTemplateCode(openXmlElement, value.TemplateCode, diffs, objName))
+      if (!CmpTemplateCode(openXmlElement, model.TemplateCode, diffs, objName))
         ok = false;
-      if (!CmpAbstractNumDefinitionName(openXmlElement, value.AbstractNumDefinitionName, diffs, objName))
+      if (!CmpAbstractNumDefinitionName(openXmlElement, model.AbstractNumDefinitionName, diffs, objName))
         ok = false;
-      if (!CmpStyleLink(openXmlElement, value.StyleLink, diffs, objName))
+      if (!CmpStyleLink(openXmlElement, model.StyleLink, diffs, objName))
         ok = false;
-      if (!CmpNumberingStyleLink(openXmlElement, value.NumberingStyleLink, diffs, objName))
+      if (!CmpNumberingStyleLink(openXmlElement, model.NumberingStyleLink, diffs, objName))
         ok = false;
-      if (!CmpLevels(openXmlElement, value.Levels, diffs, objName))
+      if (!CmpLevels(openXmlElement, model.Levels, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AbstractNum value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.AbstractNum model)
     where OpenXmlElementType : DXW.AbstractNum, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.AbstractNum openXmlElement, DMW.AbstractNum value)
+  public static void UpdateOpenXmlElement(DXW.AbstractNum openXmlElement, DMW.AbstractNum model)
   {
-    SetAbstractNumberId(openXmlElement, value?.AbstractNumberId);
-    SetNsid(openXmlElement, value?.Nsid);
-    SetMultiLevelType(openXmlElement, value?.MultiLevelType);
-    SetTemplateCode(openXmlElement, value?.TemplateCode);
-    SetAbstractNumDefinitionName(openXmlElement, value?.AbstractNumDefinitionName);
-    SetStyleLink(openXmlElement, value?.StyleLink);
-    SetNumberingStyleLink(openXmlElement, value?.NumberingStyleLink);
-    SetLevels(openXmlElement, value?.Levels);
+    SetAbstractNumberId(openXmlElement, model?.AbstractNumberId);
+    SetNsid(openXmlElement, model?.Nsid);
+    SetMultiLevelType(openXmlElement, model?.MultiLevelType);
+    SetTemplateCode(openXmlElement, model?.TemplateCode);
+    SetAbstractNumDefinitionName(openXmlElement, model?.AbstractNumDefinitionName);
+    SetStyleLink(openXmlElement, model?.StyleLink);
+    SetNumberingStyleLink(openXmlElement, model?.NumberingStyleLink);
+    SetLevels(openXmlElement, model?.Levels);
   }
   #endregion
 

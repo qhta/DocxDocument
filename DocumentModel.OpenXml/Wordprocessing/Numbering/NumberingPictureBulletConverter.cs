@@ -1,12 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
-
-/// Picture Numbering Symbol Definition.
-
+/// <summary>
+/// <see cref="DocumentModel.Wordprocessing.NumberingPictureBullet"/> class from/to OpenXml converter.
+/// </summary>
 public static class NumberingPictureBulletConverter
 {
-
-  #region numPicBulletId
+  #region NumberingPictureBullerId conversion.
   private static Int32? GetNumberingPictureBulletId(DXW.NumberingPictureBullet openXmlElement)
   {
     return openXmlElement?.NumberingPictureBulletId?.Value;
@@ -23,9 +22,9 @@ public static class NumberingPictureBulletConverter
   {
     openXmlElement.NumberingPictureBulletId = value;
   }
-#endregion
+  #endregion
 
-  #region PictureBulletBase.
+  #region PictureBulletBase conversion.
   private static DMW.PictureBulletBase? GetPictureBulletBase(DXW.NumberingPictureBullet openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.PictureBulletBase>();
@@ -51,7 +50,7 @@ public static class NumberingPictureBulletConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-#endregion
+  #endregion
 
   #region Drawing.
   private static DMW.Drawing? GetDrawing(DXW.NumberingPictureBullet openXmlElement)
@@ -79,51 +78,52 @@ public static class NumberingPictureBulletConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region NumberingPictureBullet model conversion.
   public static DMW.NumberingPictureBullet? CreateModelElement(DXW.NumberingPictureBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.NumberingPictureBullet();
-      value.NumberingPictureBulletId = GetNumberingPictureBulletId(openXmlElement);
-      value.PictureBulletBase = GetPictureBulletBase(openXmlElement);
-      value.Drawing = GetDrawing(openXmlElement);
-      return value;
+      var model = new DMW.NumberingPictureBullet();
+      model.NumberingPictureBulletId = GetNumberingPictureBulletId(openXmlElement);
+      model.PictureBulletBase = GetPictureBulletBase(openXmlElement);
+      model.Drawing = GetDrawing(openXmlElement);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXW.NumberingPictureBullet? openXmlElement, DMW.NumberingPictureBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingPictureBullet? openXmlElement, DMW.NumberingPictureBullet? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNumberingPictureBulletId(openXmlElement, value.NumberingPictureBulletId, diffs, objName))
+      if (!CmpNumberingPictureBulletId(openXmlElement, model.NumberingPictureBulletId, diffs, objName))
         ok = false;
-      if (!CmpPictureBulletBase(openXmlElement, value.PictureBulletBase, diffs, objName))
+      if (!CmpPictureBulletBase(openXmlElement, model.PictureBulletBase, diffs, objName))
         ok = false;
-      if (!CmpDrawing(openXmlElement, value.Drawing, diffs, objName))
+      if (!CmpDrawing(openXmlElement, model.Drawing, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingPictureBullet value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingPictureBullet model)
     where OpenXmlElementType: DXW.NumberingPictureBullet, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.NumberingPictureBullet openXmlElement, DMW.NumberingPictureBullet value)
+  public static void UpdateOpenXmlElement(DXW.NumberingPictureBullet openXmlElement, DMW.NumberingPictureBullet model)
   {
-    SetNumberingPictureBulletId(openXmlElement, value?.NumberingPictureBulletId);
-    SetPictureBulletBase(openXmlElement, value?.PictureBulletBase);
-    SetDrawing(openXmlElement, value?.Drawing);
+    SetNumberingPictureBulletId(openXmlElement, model?.NumberingPictureBulletId);
+    SetPictureBulletBase(openXmlElement, model?.PictureBulletBase);
+    SetDrawing(openXmlElement, model?.Drawing);
   }
-#endregion
+  #endregion
 }
