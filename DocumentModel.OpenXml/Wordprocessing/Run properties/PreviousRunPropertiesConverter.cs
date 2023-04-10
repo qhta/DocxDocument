@@ -10,29 +10,29 @@ public static class PreviousRunPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PreviousRunProperties();
-      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.PreviousRunProperties();
+      ExtBaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousRunProperties? openXmlElement, DMW.PreviousRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousRunProperties? openXmlElement, DMW.PreviousRunProperties? model, DiffList? diffs, string? objName)
   {
-    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousRunProperties model)
     where OpenXmlElementType: DXW.PreviousRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PreviousRunProperties openXmlElement, DMW.PreviousRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.PreviousRunProperties openXmlElement, DMW.PreviousRunProperties model)
   {
-    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
   #endregion
 }

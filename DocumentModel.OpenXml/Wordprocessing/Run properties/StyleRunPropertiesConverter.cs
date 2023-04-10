@@ -10,29 +10,29 @@ public static class StyleRunPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.StyleRunProperties();
-      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.StyleRunProperties();
+      ExtBaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.StyleRunProperties? openXmlElement, DMW.StyleRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.StyleRunProperties? openXmlElement, DMW.StyleRunProperties? model, DiffList? diffs, string? objName)
   {
-    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleRunProperties model)
     where OpenXmlElementType: DXW.StyleRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.StyleRunProperties openXmlElement, DMW.StyleRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.StyleRunProperties openXmlElement, DMW.StyleRunProperties model)
   {
-    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
   #endregion
 }

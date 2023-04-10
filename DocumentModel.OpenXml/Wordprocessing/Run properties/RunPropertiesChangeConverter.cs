@@ -91,50 +91,50 @@ public static class RunPropertiesChangeConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunPropertiesChange();
-      value.Author = GetAuthor(openXmlElement);
-      value.Date = GetDate(openXmlElement);
-      value.AnnotationId = GetId(openXmlElement);
-      value.PreviousRunProperties = GetPreviousRunProperties(openXmlElement);
-      return value;
+      var model = new DMW.RunPropertiesChange();
+      model.Author = GetAuthor(openXmlElement);
+      model.Date = GetDate(openXmlElement);
+      model.AnnotationId = GetId(openXmlElement);
+      model.PreviousRunProperties = GetPreviousRunProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RunPropertiesChange? openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunPropertiesChange? openXmlElement, DMW.RunPropertiesChange? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
         ok = false;
-      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
+      if (!CmpId(openXmlElement, model.AnnotationId, diffs, objName))
         ok = false;
-      if (!CmpPreviousRunProperties(openXmlElement, value.PreviousRunProperties, diffs, objName))
+      if (!CmpPreviousRunProperties(openXmlElement, model.PreviousRunProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesChange value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunPropertiesChange model)
     where OpenXmlElementType: DXW.RunPropertiesChange, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.RunPropertiesChange openXmlElement, DMW.RunPropertiesChange value)
+  public static void UpdateOpenXmlElement(DXW.RunPropertiesChange openXmlElement, DMW.RunPropertiesChange model)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.AnnotationId);
-    SetPreviousRunProperties(openXmlElement, value?.PreviousRunProperties);
+    SetAuthor(openXmlElement, model?.Author);
+    SetDate(openXmlElement, model?.Date);
+    SetId(openXmlElement, model?.AnnotationId);
+    SetPreviousRunProperties(openXmlElement, model?.PreviousRunProperties);
   }
   #endregion
 }

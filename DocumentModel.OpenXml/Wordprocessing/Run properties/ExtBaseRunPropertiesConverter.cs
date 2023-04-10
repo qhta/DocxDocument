@@ -418,100 +418,100 @@ public static class ExtBaseRunPropertiesConverter
   #endregion
 
   #region ExtBaseRunProperties model conversion.
-  public static void UpdateModelElement(DMW.ExtBaseRunProperties value, DX.OpenXmlCompositeElement openXmlElement)
+  public static void UpdateModelElement(DMW.ExtBaseRunProperties model, DX.OpenXmlCompositeElement openXmlElement)
   {
-    BaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-    value.RunStyle = GetRunStyle(openXmlElement);
-    value.RightToLeftText = GetRightToLeftText(openXmlElement);
-    value.ComplexScript = GetComplexScript(openXmlElement);
-    value.Highlight = GetHighlight(openXmlElement);
-    value.ContextualAlternates = GetContextualAlternatives(openXmlElement);
-    value.Glow = GetGlow(openXmlElement);
-    value.Shadow14 = GetShadow14(openXmlElement);
-    value.Reflection = GetReflection(openXmlElement);
-    value.TextOutlineEffect = GetTextOutlineEffect(openXmlElement);
-    value.FillTextEffect = GetFillTextEffect(openXmlElement);
-    value.Scene3D = GetScene3D(openXmlElement);
-    value.Properties3D = GetProperties3D(openXmlElement);
-    value.Ligatures = GetLigatures(openXmlElement);
-    value.NumberingFormat = GetNumberingFormat(openXmlElement);
-    value.NumberSpacing = GetNumberSpacing(openXmlElement);
-    value.StylisticSets = GetStylisticSets(openXmlElement);
+    BaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+    model.RunStyle = GetRunStyle(openXmlElement);
+    model.RightToLeftText = GetRightToLeftText(openXmlElement);
+    model.ComplexScript = GetComplexScript(openXmlElement);
+    model.Highlight = GetHighlight(openXmlElement);
+    model.ContextualAlternates = GetContextualAlternatives(openXmlElement);
+    model.Glow = GetGlow(openXmlElement);
+    model.Shadow14 = GetShadow14(openXmlElement);
+    model.Reflection = GetReflection(openXmlElement);
+    model.TextOutlineEffect = GetTextOutlineEffect(openXmlElement);
+    model.FillTextEffect = GetFillTextEffect(openXmlElement);
+    model.Scene3D = GetScene3D(openXmlElement);
+    model.Properties3D = GetProperties3D(openXmlElement);
+    model.Ligatures = GetLigatures(openXmlElement);
+    model.NumberingFormat = GetNumberingFormat(openXmlElement);
+    model.NumberSpacing = GetNumberSpacing(openXmlElement);
+    model.StylisticSets = GetStylisticSets(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.ExtBaseRunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName)) 
+      if (!BaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName)) 
         ok = false;
-      if (!CmpRunStyle(openXmlElement, value.RunStyle, diffs, objName))
+      if (!CmpRunStyle(openXmlElement, model.RunStyle, diffs, objName))
         ok = false;
-      if (!CmpRightToLeftText(openXmlElement, value.RightToLeftText, diffs, objName))
+      if (!CmpRightToLeftText(openXmlElement, model.RightToLeftText, diffs, objName))
         ok = false;
-      if (!CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
+      if (!CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName))
         ok = false;
-      if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName))
+      if (!CmpHighlight(openXmlElement, model.Highlight, diffs, objName))
         ok = false;
-      if (!CmpGlow(openXmlElement, value.Glow, diffs, objName))
+      if (!CmpGlow(openXmlElement, model.Glow, diffs, objName))
         ok = false;
-      if (!CmpShadow14(openXmlElement, value.Shadow14, diffs, objName))
+      if (!CmpShadow14(openXmlElement, model.Shadow14, diffs, objName))
         ok = false;
-      if (!CmpReflection(openXmlElement, value.Reflection, diffs, objName))
+      if (!CmpReflection(openXmlElement, model.Reflection, diffs, objName))
         ok = false;
-      if (!CmpTextOutlineEffect(openXmlElement, value.TextOutlineEffect, diffs, objName))
+      if (!CmpTextOutlineEffect(openXmlElement, model.TextOutlineEffect, diffs, objName))
         ok = false;
-      if (!CmpFillTextEffect(openXmlElement, value.FillTextEffect, diffs, objName))
+      if (!CmpFillTextEffect(openXmlElement, model.FillTextEffect, diffs, objName))
         ok = false;
-      if (!CmpScene3D(openXmlElement, value.Scene3D, diffs, objName))
+      if (!CmpScene3D(openXmlElement, model.Scene3D, diffs, objName))
         ok = false;
-      if (!CmpProperties3D(openXmlElement, value.Properties3D, diffs, objName))
+      if (!CmpProperties3D(openXmlElement, model.Properties3D, diffs, objName))
         ok = false;
-      if (!CmpLigatures(openXmlElement, value.Ligatures, diffs, objName))
+      if (!CmpLigatures(openXmlElement, model.Ligatures, diffs, objName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, model.NumberingFormat, diffs, objName))
         ok = false;
-      if (!CmpNumberSpacing(openXmlElement, value.NumberSpacing, diffs, objName))
+      if (!CmpNumberSpacing(openXmlElement, model.NumberSpacing, diffs, objName))
         ok = false;
-      if (!CmpStylisticSets(openXmlElement, value.StylisticSets, diffs, objName))
+      if (!CmpStylisticSets(openXmlElement, model.StylisticSets, diffs, objName))
         ok = false;
-      if (!CmpContextualAlternatives(openXmlElement, value.ContextualAlternates, diffs, objName))
+      if (!CmpContextualAlternatives(openXmlElement, model.ContextualAlternates, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtBaseRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtBaseRunProperties model)
     where OpenXmlElementType : DX.OpenXmlCompositeElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseRunProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.ExtBaseRunProperties model)
   {
-    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetRunStyle(openXmlElement, value.RunStyle);
-    SetRightToLeftText(openXmlElement, value.RightToLeftText);
-    SetComplexScript(openXmlElement, value.ComplexScript);
-    SetHighlight(openXmlElement, value.Highlight);
-    SetGlow(openXmlElement, value.Glow);
-    SetShadow14(openXmlElement, value.Shadow14);
-    SetReflection(openXmlElement, value.Reflection);
-    SetTextOutlineEffect(openXmlElement, value.TextOutlineEffect);
-    SetFillTextEffect(openXmlElement, value.FillTextEffect);
-    SetScene3D(openXmlElement, value.Scene3D);
-    SetProperties3D(openXmlElement, value.Properties3D);
-    SetLigatures(openXmlElement, value.Ligatures);
-    SetNumberingFormat(openXmlElement, value.NumberingFormat);
-    SetNumberSpacing(openXmlElement, value.NumberSpacing);
-    SetStylisticSets(openXmlElement, value.StylisticSets);
-    SetContextualAlternatives(openXmlElement, value.ContextualAlternates);
+    BaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetRunStyle(openXmlElement, model.RunStyle);
+    SetRightToLeftText(openXmlElement, model.RightToLeftText);
+    SetComplexScript(openXmlElement, model.ComplexScript);
+    SetHighlight(openXmlElement, model.Highlight);
+    SetGlow(openXmlElement, model.Glow);
+    SetShadow14(openXmlElement, model.Shadow14);
+    SetReflection(openXmlElement, model.Reflection);
+    SetTextOutlineEffect(openXmlElement, model.TextOutlineEffect);
+    SetFillTextEffect(openXmlElement, model.FillTextEffect);
+    SetScene3D(openXmlElement, model.Scene3D);
+    SetProperties3D(openXmlElement, model.Properties3D);
+    SetLigatures(openXmlElement, model.Ligatures);
+    SetNumberingFormat(openXmlElement, model.NumberingFormat);
+    SetNumberSpacing(openXmlElement, model.NumberSpacing);
+    SetStylisticSets(openXmlElement, model.StylisticSets);
+    SetContextualAlternatives(openXmlElement, model.ContextualAlternates);
   }
   #endregion
 

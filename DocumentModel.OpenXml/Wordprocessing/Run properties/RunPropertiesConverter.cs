@@ -38,46 +38,46 @@ public static class RunPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunProperties();
-      UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.RunProperties();
+      UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static void UpdateModelElement(DMW.RunProperties value, DX.OpenXmlCompositeElement openXmlElement)
+  public static void UpdateModelElement(DMW.RunProperties model, DX.OpenXmlCompositeElement openXmlElement)
   {
-    ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-    value.RunPropertiesChange = GetRunPropertiesChange(openXmlElement);
+    ExtBaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+    model.RunPropertiesChange = GetRunPropertiesChange(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.RunProperties? openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunProperties? openXmlElement, DMW.RunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpRunPropertiesChange(openXmlElement, value.RunPropertiesChange, diffs, objName))
+      if (!CmpRunPropertiesChange(openXmlElement, model.RunPropertiesChange, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static DXW.RunProperties CreateOpenXmlElement(DMW.RunProperties value)
+  public static DXW.RunProperties CreateOpenXmlElement(DMW.RunProperties model)
   {
     var openXmlElement = new DXW.RunProperties();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.RunProperties openXmlElement, DMW.RunProperties value)
+  public static void UpdateOpenXmlElement(DXW.RunProperties openXmlElement, DMW.RunProperties model)
   {
-    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetRunPropertiesChange(openXmlElement, value.RunPropertiesChange);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetRunPropertiesChange(openXmlElement, model.RunPropertiesChange);
   }
   #endregion
 }

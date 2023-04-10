@@ -191,59 +191,59 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   #endregion
 
   #region ParagraphMarkRunPropertiesBase model conversion.
-  public static void UpdateModelElement(DMW.BaseParagraphMarkRunProperties value, DX.OpenXmlCompositeElement? openXmlElement)
+  public static void UpdateModelElement(DMW.BaseParagraphMarkRunProperties model, DX.OpenXmlCompositeElement? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      value.Inserted = GetInserted(openXmlElement);
-      value.Deleted = GetDeleted(openXmlElement);
-      value.MoveFrom = GetMoveFrom(openXmlElement);
-      value.MoveTo = GetMoveTo(openXmlElement);
-      value.ConflictInsertion = GetConflictInsertion(openXmlElement);
-      value.ConflictDeletion = GetConflictDeletion(openXmlElement);
-      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      value.OfficeMath = GetOfficeMath(openXmlElement);
+      model.Inserted = GetInserted(openXmlElement);
+      model.Deleted = GetDeleted(openXmlElement);
+      model.MoveFrom = GetMoveFrom(openXmlElement);
+      model.MoveTo = GetMoveTo(openXmlElement);
+      model.ConflictInsertion = GetConflictInsertion(openXmlElement);
+      model.ConflictDeletion = GetConflictDeletion(openXmlElement);
+      ExtBaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      model.OfficeMath = GetOfficeMath(openXmlElement);
     }
   }
   
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseParagraphMarkRunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpInserted(openXmlElement, value.Inserted, diffs, objName))
+      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName))
         ok = false;
-      if (!CmpDeleted(openXmlElement, value.Deleted, diffs, objName))
+      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName))
         ok = false;
-      if (!CmpMoveFrom(openXmlElement, value.MoveFrom, diffs, objName))
+      if (!CmpMoveFrom(openXmlElement, model.MoveFrom, diffs, objName))
         ok = false;
-      if (!CmpMoveTo(openXmlElement, value.MoveTo, diffs, objName))
+      if (!CmpMoveTo(openXmlElement, model.MoveTo, diffs, objName))
         ok = false;
-      if (!CmpConflictInsertion(openXmlElement, value.ConflictInsertion, diffs, objName))
+      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName))
         ok = false;
-      if (!CmpConflictDeletion(openXmlElement, value.ConflictDeletion, diffs, objName))
+      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpOfficeMath(openXmlElement, value.OfficeMath, diffs, objName))
+      if (!CmpOfficeMath(openXmlElement, model.OfficeMath, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
  
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseParagraphMarkRunProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseParagraphMarkRunProperties model)
   {
-    SetInserted(openXmlElement, value.Inserted);
-    SetDeleted(openXmlElement, value.Deleted);
-    SetMoveFrom(openXmlElement, value.MoveFrom);
-    SetMoveTo(openXmlElement, value.MoveTo);
-    SetConflictInsertion(openXmlElement, value.ConflictInsertion);
-    SetConflictDeletion(openXmlElement, value.ConflictDeletion);
-    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetOfficeMath(openXmlElement, value.OfficeMath);
+    SetInserted(openXmlElement, model.Inserted);
+    SetDeleted(openXmlElement, model.Deleted);
+    SetMoveFrom(openXmlElement, model.MoveFrom);
+    SetMoveTo(openXmlElement, model.MoveTo);
+    SetConflictInsertion(openXmlElement, model.ConflictInsertion);
+    SetConflictDeletion(openXmlElement, model.ConflictDeletion);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetOfficeMath(openXmlElement, model.OfficeMath);
   }
   #endregion
 }

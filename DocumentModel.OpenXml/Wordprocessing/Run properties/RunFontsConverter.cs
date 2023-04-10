@@ -163,70 +163,70 @@ public static class RunFontsConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunFonts();
-      value.Hint = GetHint(openXmlElement);
-      value.Ascii = GetAscii(openXmlElement);
-      value.HighAnsi = GetHighAnsi(openXmlElement);
-      value.EastAsia = GetEastAsia(openXmlElement);
-      value.ComplexScript = GetComplexScript(openXmlElement);
-      value.AsciiTheme = GetAsciiTheme(openXmlElement);
-      value.HighAnsiTheme = GetHighAnsiTheme(openXmlElement);
-      value.EastAsiaTheme = GetEastAsiaTheme(openXmlElement);
-      value.ComplexScriptTheme = GetComplexScriptTheme(openXmlElement);
-      return value;
+      var model = new DMW.RunFonts();
+      model.Hint = GetHint(openXmlElement);
+      model.Ascii = GetAscii(openXmlElement);
+      model.HighAnsi = GetHighAnsi(openXmlElement);
+      model.EastAsia = GetEastAsia(openXmlElement);
+      model.ComplexScript = GetComplexScript(openXmlElement);
+      model.AsciiTheme = GetAsciiTheme(openXmlElement);
+      model.HighAnsiTheme = GetHighAnsiTheme(openXmlElement);
+      model.EastAsiaTheme = GetEastAsiaTheme(openXmlElement);
+      model.ComplexScriptTheme = GetComplexScriptTheme(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RunFonts? openXmlElement, DMW.RunFonts? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunFonts? openXmlElement, DMW.RunFonts? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpHint(openXmlElement, value.Hint, diffs, objName))
+      if (!CmpHint(openXmlElement, model.Hint, diffs, objName))
         ok = false;
-      if (!CmpAscii(openXmlElement, value.Ascii, diffs, objName))
+      if (!CmpAscii(openXmlElement, model.Ascii, diffs, objName))
         ok = false;
-      if (!CmpHighAnsi(openXmlElement, value.HighAnsi, diffs, objName))
+      if (!CmpHighAnsi(openXmlElement, model.HighAnsi, diffs, objName))
         ok = false;
-      if (!CmpEastAsia(openXmlElement, value.EastAsia, diffs, objName))
+      if (!CmpEastAsia(openXmlElement, model.EastAsia, diffs, objName))
         ok = false;
-      if (!CmpComplexScript(openXmlElement, value.ComplexScript, diffs, objName))
+      if (!CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName))
         ok = false;
-      if (!CmpAsciiTheme(openXmlElement, value.AsciiTheme, diffs, objName))
+      if (!CmpAsciiTheme(openXmlElement, model.AsciiTheme, diffs, objName))
         ok = false;
-      if (!CmpHighAnsiTheme(openXmlElement, value.HighAnsiTheme, diffs, objName))
+      if (!CmpHighAnsiTheme(openXmlElement, model.HighAnsiTheme, diffs, objName))
         ok = false;
-      if (!CmpEastAsiaTheme(openXmlElement, value.EastAsiaTheme, diffs, objName))
+      if (!CmpEastAsiaTheme(openXmlElement, model.EastAsiaTheme, diffs, objName))
         ok = false;
-      if (!CmpComplexScriptTheme(openXmlElement, value.ComplexScriptTheme, diffs, objName))
+      if (!CmpComplexScriptTheme(openXmlElement, model.ComplexScriptTheme, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunFonts value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunFonts model)
     where OpenXmlElementType: DXW.RunFonts, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.RunFonts openXmlElement, DMW.RunFonts value)
+  public static void UpdateOpenXmlElement(DXW.RunFonts openXmlElement, DMW.RunFonts model)
   {
-    SetHint(openXmlElement, value?.Hint);
-    SetAscii(openXmlElement, value?.Ascii);
-    SetHighAnsi(openXmlElement, value?.HighAnsi);
-    SetEastAsia(openXmlElement, value?.EastAsia);
-    SetComplexScript(openXmlElement, value?.ComplexScript);
-    SetAsciiTheme(openXmlElement, value?.AsciiTheme);
-    SetHighAnsiTheme(openXmlElement, value?.HighAnsiTheme);
-    SetEastAsiaTheme(openXmlElement, value?.EastAsiaTheme);
-    SetComplexScriptTheme(openXmlElement, value?.ComplexScriptTheme);
+    SetHint(openXmlElement, model?.Hint);
+    SetAscii(openXmlElement, model?.Ascii);
+    SetHighAnsi(openXmlElement, model?.HighAnsi);
+    SetEastAsia(openXmlElement, model?.EastAsia);
+    SetComplexScript(openXmlElement, model?.ComplexScript);
+    SetAsciiTheme(openXmlElement, model?.AsciiTheme);
+    SetHighAnsiTheme(openXmlElement, model?.HighAnsiTheme);
+    SetEastAsiaTheme(openXmlElement, model?.EastAsiaTheme);
+    SetComplexScriptTheme(openXmlElement, model?.ComplexScriptTheme);
   }
   #endregion
 }

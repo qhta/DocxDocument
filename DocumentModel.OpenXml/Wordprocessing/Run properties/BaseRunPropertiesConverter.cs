@@ -700,162 +700,162 @@ public static class BaseRunPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new ModelElementType();
-      UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new ModelElementType();
+      UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
 
-  public static DXW.RunPropertiesBaseStyle CreateOpenXmlElement(DMW.BaseRunProperties value)
+  public static DXW.RunPropertiesBaseStyle CreateOpenXmlElement(DMW.BaseRunProperties model)
   {
     var openXmlElement = new DXW.RunPropertiesBaseStyle();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateModelElement(DMW.BaseRunProperties value, DX.OpenXmlCompositeElement openXmlElement)
+  public static void UpdateModelElement(DMW.BaseRunProperties model, DX.OpenXmlCompositeElement openXmlElement)
   {
-    value.RunFonts = GetRunFonts(openXmlElement);
-    value.Bold = GetBold(openXmlElement);
-    value.Italic = GetItalic(openXmlElement);
-    value.FontSize = GetFontSize(openXmlElement);
-    value.Caps = GetCaps(openXmlElement);
-    value.SmallCaps = GetSmallCaps(openXmlElement);
-    value.Strike = GetStrike(openXmlElement);
-    value.DoubleStrike = GetDoubleStrike(openXmlElement);
-    value.Outline = GetOutline(openXmlElement);
-    value.Shadow = GetShadow(openXmlElement);
-    value.Emboss = GetEmboss(openXmlElement);
-    value.Imprint = GetImprint(openXmlElement);
-    value.NoProof = GetNoProof(openXmlElement);
-    value.SnapToGrid = GetSnapToGrid(openXmlElement);
-    value.Vanish = GetVanish(openXmlElement);
-    value.WebHidden = GetWebHidden(openXmlElement);
-    value.Color = GetColor(openXmlElement);
-    value.Spacing = GetSpacing(openXmlElement);
-    value.CharacterScale = GetCharacterScale(openXmlElement);
-    value.Kern = GetKern(openXmlElement);
-    value.Position = GetPosition(openXmlElement);
-    value.Underline = GetUnderline(openXmlElement);
-    value.TextEffect = GetTextEffect(openXmlElement);
-    value.Border = GetBorder(openXmlElement);
-    value.Shading = GetShading(openXmlElement);
-    value.FitText = GetFitText(openXmlElement);
-    value.VerticalTextAlignment = GetVerticalTextAlignment(openXmlElement);
-    value.Emphasis = GetEmphasis(openXmlElement);
-    value.Language = GetLanguages(openXmlElement);
-    value.EastAsianLayout = GetEastAsianLayout(openXmlElement);
-    value.SpecVanish = GetSpecVanish(openXmlElement);
+    model.RunFonts = GetRunFonts(openXmlElement);
+    model.Bold = GetBold(openXmlElement);
+    model.Italic = GetItalic(openXmlElement);
+    model.FontSize = GetFontSize(openXmlElement);
+    model.Caps = GetCaps(openXmlElement);
+    model.SmallCaps = GetSmallCaps(openXmlElement);
+    model.Strike = GetStrike(openXmlElement);
+    model.DoubleStrike = GetDoubleStrike(openXmlElement);
+    model.Outline = GetOutline(openXmlElement);
+    model.Shadow = GetShadow(openXmlElement);
+    model.Emboss = GetEmboss(openXmlElement);
+    model.Imprint = GetImprint(openXmlElement);
+    model.NoProof = GetNoProof(openXmlElement);
+    model.SnapToGrid = GetSnapToGrid(openXmlElement);
+    model.Vanish = GetVanish(openXmlElement);
+    model.WebHidden = GetWebHidden(openXmlElement);
+    model.Color = GetColor(openXmlElement);
+    model.Spacing = GetSpacing(openXmlElement);
+    model.CharacterScale = GetCharacterScale(openXmlElement);
+    model.Kern = GetKern(openXmlElement);
+    model.Position = GetPosition(openXmlElement);
+    model.Underline = GetUnderline(openXmlElement);
+    model.TextEffect = GetTextEffect(openXmlElement);
+    model.Border = GetBorder(openXmlElement);
+    model.Shading = GetShading(openXmlElement);
+    model.FitText = GetFitText(openXmlElement);
+    model.VerticalTextAlignment = GetVerticalTextAlignment(openXmlElement);
+    model.Emphasis = GetEmphasis(openXmlElement);
+    model.Language = GetLanguages(openXmlElement);
+    model.EastAsianLayout = GetEastAsianLayout(openXmlElement);
+    model.SpecVanish = GetSpecVanish(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseRunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpRunFonts(openXmlElement, value.RunFonts, diffs, objName))
+      if (!CmpRunFonts(openXmlElement, model.RunFonts, diffs, objName))
         ok = false;
-      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+      if (!CmpBold(openXmlElement, model.Bold, diffs, objName))
         ok = false;
-      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
+      if (!CmpItalic(openXmlElement, model.Italic, diffs, objName))
         ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+      if (!CmpFontSize(openXmlElement, model.FontSize, diffs, objName))
         ok = false;
-      if (!CmpCaps(openXmlElement, value.Caps, diffs, objName))
+      if (!CmpCaps(openXmlElement, model.Caps, diffs, objName))
         ok = false;
-      if (!CmpSmallCaps(openXmlElement, value.SmallCaps, diffs, objName))
+      if (!CmpSmallCaps(openXmlElement, model.SmallCaps, diffs, objName))
         ok = false;
-      if (!CmpStrike(openXmlElement, value.Strike, diffs, objName))
+      if (!CmpStrike(openXmlElement, model.Strike, diffs, objName))
         ok = false;
-      if (!CmpDoubleStrike(openXmlElement, value.DoubleStrike, diffs, objName))
+      if (!CmpDoubleStrike(openXmlElement, model.DoubleStrike, diffs, objName))
         ok = false;
-      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+      if (!CmpOutline(openXmlElement, model.Outline, diffs, objName))
         ok = false;
-      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName))
+      if (!CmpShadow(openXmlElement, model.Shadow, diffs, objName))
         ok = false;
-      if (!CmpEmboss(openXmlElement, value.Emboss, diffs, objName))
+      if (!CmpEmboss(openXmlElement, model.Emboss, diffs, objName))
         ok = false;
-      if (!CmpImprint(openXmlElement, value.Imprint, diffs, objName))
+      if (!CmpImprint(openXmlElement, model.Imprint, diffs, objName))
         ok = false;
-      if (!CmpNoProof(openXmlElement, value.NoProof, diffs, objName))
+      if (!CmpNoProof(openXmlElement, model.NoProof, diffs, objName))
         ok = false;
-      if (!CmpSnapToGrid(openXmlElement, value.SnapToGrid, diffs, objName))
+      if (!CmpSnapToGrid(openXmlElement, model.SnapToGrid, diffs, objName))
         ok = false;
-      if (!CmpVanish(openXmlElement, value.Vanish, diffs, objName))
+      if (!CmpVanish(openXmlElement, model.Vanish, diffs, objName))
         ok = false;
-      if (!CmpWebHidden(openXmlElement, value.WebHidden, diffs, objName))
+      if (!CmpWebHidden(openXmlElement, model.WebHidden, diffs, objName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+      if (!CmpColor(openXmlElement, model.Color, diffs, objName))
         ok = false;
-      if (!CmpSpacing(openXmlElement, value.Spacing, diffs, objName))
+      if (!CmpSpacing(openXmlElement, model.Spacing, diffs, objName))
         ok = false;
-      if (!CmpCharacterScale(openXmlElement, value.CharacterScale, diffs, objName))
+      if (!CmpCharacterScale(openXmlElement, model.CharacterScale, diffs, objName))
         ok = false;
-      if (!CmpKern(openXmlElement, value.Kern, diffs, objName))
+      if (!CmpKern(openXmlElement, model.Kern, diffs, objName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, model.Position, diffs, objName))
         ok = false;
-      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
+      if (!CmpUnderline(openXmlElement, model.Underline, diffs, objName))
         ok = false;
-      if (!CmpTextEffect(openXmlElement, value.TextEffect, diffs, objName))
+      if (!CmpTextEffect(openXmlElement, model.TextEffect, diffs, objName))
         ok = false;
-      if (!CmpBorder(openXmlElement, value.Border, diffs, objName))
+      if (!CmpBorder(openXmlElement, model.Border, diffs, objName))
         ok = false;
-      if (!CmpShading(openXmlElement, value.Shading, diffs, objName))
+      if (!CmpShading(openXmlElement, model.Shading, diffs, objName))
         ok = false;
-      if (!CmpFitText(openXmlElement, value.FitText, diffs, objName))
+      if (!CmpFitText(openXmlElement, model.FitText, diffs, objName))
         ok = false;
-      if (!CmpVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment, diffs, objName))
+      if (!CmpVerticalTextAlignment(openXmlElement, model.VerticalTextAlignment, diffs, objName))
         ok = false;
-      if (!CmpEmphasis(openXmlElement, value.Emphasis, diffs, objName))
+      if (!CmpEmphasis(openXmlElement, model.Emphasis, diffs, objName))
         ok = false;
-      if (!CmpLanguages(openXmlElement, value.Language, diffs, objName))
+      if (!CmpLanguages(openXmlElement, model.Language, diffs, objName))
         ok = false;
-      if (!CmpEastAsianLayout(openXmlElement, value.EastAsianLayout, diffs, objName))
+      if (!CmpEastAsianLayout(openXmlElement, model.EastAsianLayout, diffs, objName))
         ok = false;
-      if (!CmpSpecVanish(openXmlElement, value.SpecVanish, diffs, objName))
+      if (!CmpSpecVanish(openXmlElement, model.SpecVanish, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseRunProperties value)
+  public static void UpdateOpenXmlElement(DX.OpenXmlCompositeElement openXmlElement, DMW.BaseRunProperties model)
   {
-    SetRunFonts(openXmlElement, value.RunFonts);
-    SetBold(openXmlElement, value.Bold);
-    SetItalic(openXmlElement, value.Italic);
-    SetFontSize(openXmlElement, value.FontSize);
-    SetCaps(openXmlElement, value.Caps);
-    SetSmallCaps(openXmlElement, value.SmallCaps);
-    SetStrike(openXmlElement, value.Strike);
-    SetDoubleStrike(openXmlElement, value.DoubleStrike);
-    SetOutline(openXmlElement, value.Outline);
-    SetShadow(openXmlElement, value.Shadow);
-    SetEmboss(openXmlElement, value.Emboss);
-    SetImprint(openXmlElement, value.Imprint);
-    SetNoProof(openXmlElement, value.NoProof);
-    SetSnapToGrid(openXmlElement, value.SnapToGrid);
-    SetVanish(openXmlElement, value.Vanish);
-    SetWebHidden(openXmlElement, value.WebHidden);
-    SetColor(openXmlElement, value.Color);
-    SetSpacing(openXmlElement, value.Spacing);
-    SetCharacterScale(openXmlElement, value.CharacterScale);
-    SetKern(openXmlElement, value.Kern);
-    SetPosition(openXmlElement, value.Position);
-    SetUnderline(openXmlElement, value.Underline);
-    SetTextEffect(openXmlElement, value.TextEffect);
-    SetBorder(openXmlElement, value.Border);
-    SetShading(openXmlElement, value.Shading);
-    SetFitText(openXmlElement, value.FitText);
-    SetVerticalTextAlignment(openXmlElement, value.VerticalTextAlignment);
-    SetEmphasis(openXmlElement, value.Emphasis);
-    SetLanguages(openXmlElement, value.Language);
-    SetEastAsianLayout(openXmlElement, value.EastAsianLayout);
-    SetSpecVanish(openXmlElement, value.SpecVanish);
+    SetRunFonts(openXmlElement, model.RunFonts);
+    SetBold(openXmlElement, model.Bold);
+    SetItalic(openXmlElement, model.Italic);
+    SetFontSize(openXmlElement, model.FontSize);
+    SetCaps(openXmlElement, model.Caps);
+    SetSmallCaps(openXmlElement, model.SmallCaps);
+    SetStrike(openXmlElement, model.Strike);
+    SetDoubleStrike(openXmlElement, model.DoubleStrike);
+    SetOutline(openXmlElement, model.Outline);
+    SetShadow(openXmlElement, model.Shadow);
+    SetEmboss(openXmlElement, model.Emboss);
+    SetImprint(openXmlElement, model.Imprint);
+    SetNoProof(openXmlElement, model.NoProof);
+    SetSnapToGrid(openXmlElement, model.SnapToGrid);
+    SetVanish(openXmlElement, model.Vanish);
+    SetWebHidden(openXmlElement, model.WebHidden);
+    SetColor(openXmlElement, model.Color);
+    SetSpacing(openXmlElement, model.Spacing);
+    SetCharacterScale(openXmlElement, model.CharacterScale);
+    SetKern(openXmlElement, model.Kern);
+    SetPosition(openXmlElement, model.Position);
+    SetUnderline(openXmlElement, model.Underline);
+    SetTextEffect(openXmlElement, model.TextEffect);
+    SetBorder(openXmlElement, model.Border);
+    SetShading(openXmlElement, model.Shading);
+    SetFitText(openXmlElement, model.FitText);
+    SetVerticalTextAlignment(openXmlElement, model.VerticalTextAlignment);
+    SetEmphasis(openXmlElement, model.Emphasis);
+    SetLanguages(openXmlElement, model.Language);
+    SetEastAsianLayout(openXmlElement, model.EastAsianLayout);
+    SetSpecVanish(openXmlElement, model.SpecVanish);
   }
 
   #endregion

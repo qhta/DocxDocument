@@ -5,34 +5,34 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PreviousParagraphMarkRunPropertiesConverter
 {
-  #region PreviousParagraphMarkRunProperties model conversion,
+  #region PreviousParagraphMarkRunProperties model conversion.
   public static DMW.PreviousParagraphMarkRunProperties? CreateModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.PreviousParagraphMarkRunProperties();
-      ExtBaseRunPropertiesConverter.UpdateModelElement(value, openXmlElement);
-      return value;
+      var model = new DMW.PreviousParagraphMarkRunProperties();
+      ExtBaseRunPropertiesConverter.UpdateModelElement(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement, DMW.PreviousParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousParagraphMarkRunProperties? openXmlElement, DMW.PreviousParagraphMarkRunProperties? model, DiffList? diffs, string? objName)
   {
-    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousParagraphMarkRunProperties value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousParagraphMarkRunProperties model)
     where OpenXmlElementType: DXW.PreviousParagraphMarkRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.PreviousParagraphMarkRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.PreviousParagraphMarkRunProperties openXmlElement, DMW.PreviousParagraphMarkRunProperties model)
   {
-    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, value);
+    ExtBaseRunPropertiesConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
   #endregion
 }
