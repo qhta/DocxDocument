@@ -38,41 +38,41 @@ public static class ParagraphMarkRunPropertiesConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphMarkRunProperties();
-      ParagraphMarkRunPropertiesBaseConverter.UpdateModelElement(value, openXmlElement);
-      value.ParagraphMarkRunPropertiesChange = GetParagraphMarkRunPropertiesChange(openXmlElement);
-      return value;
+      var model = new DMW.ParagraphMarkRunProperties();
+      ParagraphMarkRunPropertiesBaseConverter.UpdateModelElement(model, openXmlElement);
+      model.ParagraphMarkRunPropertiesChange = GetParagraphMarkRunPropertiesChange(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ParagraphMarkRunProperties? openXmlElement, DMW.ParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphMarkRunProperties? openXmlElement, DMW.ParagraphMarkRunProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!ParagraphMarkRunPropertiesBaseConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ParagraphMarkRunPropertiesBaseConverter.CompareModelElement(openXmlElement, model, diffs, objName))
         ok = false;
-      if (!CmpParagraphMarkRunPropertiesChange(openXmlElement, value.ParagraphMarkRunPropertiesChange, diffs, objName))
+      if (!CmpParagraphMarkRunPropertiesChange(openXmlElement, model.ParagraphMarkRunPropertiesChange, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXW.ParagraphMarkRunProperties CreateOpenXmlElement(DMW.ParagraphMarkRunProperties value)
+  public static DXW.ParagraphMarkRunProperties CreateOpenXmlElement(DMW.ParagraphMarkRunProperties model)
   {
     var openXmlElement = new DXW.ParagraphMarkRunProperties();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunProperties model)
   {
-    ParagraphMarkRunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, value);
-    SetParagraphMarkRunPropertiesChange(openXmlElement, value.ParagraphMarkRunPropertiesChange);
+    ParagraphMarkRunPropertiesBaseConverter.UpdateOpenXmlElement(openXmlElement, model);
+    SetParagraphMarkRunPropertiesChange(openXmlElement, model.ParagraphMarkRunPropertiesChange);
   }
   #endregion
 }

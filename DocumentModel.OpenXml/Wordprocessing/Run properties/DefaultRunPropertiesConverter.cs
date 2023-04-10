@@ -11,43 +11,43 @@ public static class DefaultRunPropertiesConverter
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (element != null)
     {
-      var value = new DMW.DefaultRunProperties();
-      BaseRunPropertiesConverter.UpdateModelElement(value, element);
-      return value;
+      var model = new DMW.DefaultRunProperties();
+      BaseRunPropertiesConverter.UpdateModelElement(model, element);
+      return model;
     }
     return null;
   }
 
-  public static bool CompareModelElement(DXW.RunPropertiesDefault? openXmlElement, DMW.DefaultRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunPropertiesDefault? openXmlElement, DMW.DefaultRunProperties? model, DiffList? diffs, string? objName)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RunPropertiesBaseStyle>();
-    if (element != null && value != null)
+    if (element != null && model != null)
     {
       var ok = true;
-      if (!BaseRunPropertiesConverter.CompareModelElement(element, value, diffs, objName))
+      if (!BaseRunPropertiesConverter.CompareModelElement(element, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static DXW.RunPropertiesDefault CreateOpenXmlElement(DMW.DefaultRunProperties value)
+  public static DXW.RunPropertiesDefault CreateOpenXmlElement(DMW.DefaultRunProperties model)
   {
     var openXmlElement = new DXW.RunPropertiesDefault();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.RunPropertiesDefault openXmlElement, DMW.DefaultRunProperties value)
+  public static void UpdateOpenXmlElement(DXW.RunPropertiesDefault openXmlElement, DMW.DefaultRunProperties model)
   {
     var element = openXmlElement.GetFirstChild<DXW.RunPropertiesBaseStyle>();
     if (element != null)
-      BaseRunPropertiesConverter.UpdateOpenXmlElement(element, value);
+      BaseRunPropertiesConverter.UpdateOpenXmlElement(element, model);
     else
     {
-      element = BaseRunPropertiesConverter.CreateOpenXmlElement(value);
+      element = BaseRunPropertiesConverter.CreateOpenXmlElement(model);
       openXmlElement.AddChild(element);
     }
   }
