@@ -91,50 +91,50 @@ public static class ParagraphMarkRunPropertiesChangeConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ParagraphMarkRunPropertiesChange();
-      value.Author = GetAuthor(openXmlElement);
-      value.Date = GetDate(openXmlElement);
-      value.AnnotationId = GetId(openXmlElement);
-      value.PreviousParagraphMarkRunProperties = GetPreviousParagraphMarkRunProperties(openXmlElement);
-      return value;
+      var model = new DMW.ParagraphMarkRunPropertiesChange();
+      model.Author = GetAuthor(openXmlElement);
+      model.Date = GetDate(openXmlElement);
+      model.AnnotationId = GetId(openXmlElement);
+      model.PreviousParagraphMarkRunProperties = GetPreviousParagraphMarkRunProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ParagraphMarkRunPropertiesChange? openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphMarkRunPropertiesChange? openXmlElement, DMW.ParagraphMarkRunPropertiesChange? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
         ok = false;
-      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.AnnotationId, diffs, objName))
+      if (!CmpId(openXmlElement, model.AnnotationId, diffs, objName))
         ok = false;
-      if (!CmpPreviousParagraphMarkRunProperties(openXmlElement, value.PreviousParagraphMarkRunProperties, diffs, objName))
+      if (!CmpPreviousParagraphMarkRunProperties(openXmlElement, model.PreviousParagraphMarkRunProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphMarkRunPropertiesChange value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ParagraphMarkRunPropertiesChange model)
     where OpenXmlElementType: DXW.ParagraphMarkRunPropertiesChange, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DMW.ParagraphMarkRunPropertiesChange value)
+  public static void UpdateOpenXmlElement(DXW.ParagraphMarkRunPropertiesChange openXmlElement, DMW.ParagraphMarkRunPropertiesChange model)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.AnnotationId);
-    SetPreviousParagraphMarkRunProperties(openXmlElement, value?.PreviousParagraphMarkRunProperties);
+    SetAuthor(openXmlElement, model?.Author);
+    SetDate(openXmlElement, model?.Date);
+    SetId(openXmlElement, model?.AnnotationId);
+    SetPreviousParagraphMarkRunProperties(openXmlElement, model?.PreviousParagraphMarkRunProperties);
   }
   #endregion
 }
