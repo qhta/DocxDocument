@@ -1,10 +1,8 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ExtensionList Class.
 /// </summary>
-public class ExtensionList: ModelElement
+public class ExtensionList: Collection<Extension>
 {
-  public Collection<Extension>? Extensions { get; set; }
 }

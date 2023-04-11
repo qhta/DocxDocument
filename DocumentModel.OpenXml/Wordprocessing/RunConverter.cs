@@ -313,7 +313,7 @@ public static class RunConverter
         return result;
     }
 
-    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in Run.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in Run.CreateOpenXmlParagraphContent method");
   }
 
   public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)

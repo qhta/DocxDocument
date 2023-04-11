@@ -1,13 +1,19 @@
-﻿using DocumentModel;
-using DocumentModel.Wordprocessing;
-
-namespace DocxDocument.ReadWrite.Test;
+﻿namespace DocxDocument.ReadWrite.Test;
 
 internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestComments();
+  }
+
+  private static void RunTestComments()
+  {
+    var testInstance = new TestComments();
+    testInstance.Setup();
+    testInstance.TestReadComments("Comments.docx",true);
+    testInstance.TestReadCommentsXmlSerialization("Comments.docx", true);
+    Console.WriteLine("\nTest passed");
   }
 
   private static void RunTestSections()

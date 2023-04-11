@@ -5,49 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DMW.Extension>? GetExtensions(DXO2021WComtExt.ExtensionList openXmlElement)
+  public static DMW.ExtensionList? GetExtensions(DXO2021WComtExt.ExtensionList openXmlElement)
   {
-    var collection = new Collection<DMW.Extension>();
+    var collection = new DMW.ExtensionList();
     foreach (var item in openXmlElement.Elements<DXO2021WExtList.Extension>())
     {
       var newItem = DMXW.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
+    if (collection.Count > 0)
       return collection;
     return null;
   }
-  
-  private static bool CmpExtensions(DXO2021WComtExt.ExtensionList openXmlElement, Collection<DMW.Extension>? value, DiffList? diffs, string? objName)
+
+  public static bool CmpExtensions(DXO2021WComtExt.ExtensionList? openXmlElement, Collection<DMW.Extension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2021WExtList.Extension>();
-    var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
+    int origElementsCount = 0;
+    if (openXmlElement != null)
     {
-      if (origElementsCount != modelElementsCount)
+      var origElements = openXmlElement.Elements<DXO2021WExtList.Extension>();
+      origElementsCount = origElements.Count();
+      var modelElementsCount = value?.Count() ?? 0;
+      if (value != null)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
-        return false;
+        if (origElementsCount != modelElementsCount)
+        {
+          diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+          return false;
+        }
+        var ok = true;
+        var modelEnumerator = value.GetEnumerator();
+        foreach (var origItem in origElements)
+        {
+          modelEnumerator.MoveNext();
+          var modelItem = modelEnumerator.Current;
+          if (!DMXW.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+            ok = false;
+        }
+        return ok;
       }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!DMXW.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
-          ok = false;
-      }
-      return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
-  private static void SetExtensions(DXO2021WComtExt.ExtensionList openXmlElement, Collection<DMW.Extension>? value)
+
+  public static void SetExtensions(DXO2021WComtExt.ExtensionList openXmlElement, Collection<DMW.Extension>? value)
   {
     openXmlElement.RemoveAllChildren<DXO2021WExtList.Extension>();
     if (value != null)
@@ -60,42 +64,40 @@ public static class ExtensionListConverter
       }
     }
   }
-  
+
   public static DMW.ExtensionList? CreateModelElement(DXO2021WComtExt.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.ExtensionList();
-      value.Extensions = GetExtensions(openXmlElement);
-      return value;
+      return GetExtensions(openXmlElement);
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXO2021WComtExt.ExtensionList? openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXO2021WComtExt.ExtensionList? openXmlElement, DMW.ExtensionList? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpExtensions(openXmlElement, value.Extensions, diffs, objName))
+      if (!CmpExtensions(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtensionList value)
-    where OpenXmlElementType: DXO2021WComtExt.ExtensionList, new()
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ExtensionList model)
+    where OpenXmlElementType : DXO2021WComtExt.ExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXO2021WComtExt.ExtensionList openXmlElement, DMW.ExtensionList value)
+
+  public static void UpdateOpenXmlElement(DXO2021WComtExt.ExtensionList openXmlElement, DMW.ExtensionList model)
   {
-    SetExtensions(openXmlElement, value?.Extensions);
+    SetExtensions(openXmlElement, model);
   }
 }

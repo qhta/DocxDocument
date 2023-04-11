@@ -1,23 +1,22 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CommentEx Class.
+///   Specifies additional information for a single comment in the current document.
 /// </summary>
 public class CommentEx: ModelElement
 {
   /// <summary>
-  ///   paraId, this property is only available in Office 2013 and later.
+  ///   Specifies the paraId of the last paragraph in the associated comment.
   /// </summary>
   public HexInt? ParaId { get; set; }
 
   /// <summary>
-  ///   paraIdParent, this property is only available in Office 2013 and later.
+  ///   Specifies the paraId of the last paragraph in the comment to which the associated comment is a reply.
   /// </summary>
   public HexInt? ParaIdParent { get; set; }
 
   /// <summary>
-  ///   done, this property is only available in Office 2013 and later.
+  ///   Specifies whether the associated comment is marked as done. 
   /// </summary>
   public Boolean? Done { get; set; }
 }

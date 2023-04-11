@@ -91,7 +91,7 @@ public static class SdtBlockConverter
 
     var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
-    throw new InvalidOperationException($"Model of type \"{model.GetType()}\" not supported in SdtBlockConverter.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Model of type \"{model.GetType()}\" not supported in SdtBlockConverter.CreateOpenXmlParagraphContent method");
   }
 
   /// <summary>

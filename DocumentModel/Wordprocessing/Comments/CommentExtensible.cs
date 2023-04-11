@@ -1,28 +1,32 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CommentExtensible Class.
+///   Specifies additional information about comments in the document.
 /// </summary>
 public class CommentExtensible: ModelElement
 {
   /// <summary>
-  ///   durableId, this property is only available in Office 2021 and later.
+  ///   Specifies the identifier for the associated comment. Values MUST be greater than 0 and less than 0x7FFFFFFF.
   /// </summary>
   public HexInt? DurableId { get; set; }
 
   /// <summary>
-  ///   dateUtc, this property is only available in Office 2021 and later.
+  ///   Specifies date information for the comment. Unlike the date attribute of a comment element, 
+  ///   the dateUtc attribute is defined to be in the UTC time zone.
   /// </summary>
   public DateTime? DateUtc { get; set; }
 
   /// <summary>
-  ///   intelligentPlaceholder, this property is only available in Office 2021 and later.
+  ///   When true specifies that the comment is a follow-up. 
+  ///   The default value is false. 
+  ///   The attribute MUST NOT be present on comments that are replies as specified by the paraIdParent attribute 
+  ///   of an associated element of type CT_CommentEx.
+  ///   When intelligentPlaceholder is true, the content of the comment SHOULD be ignored.
   /// </summary>
   public Boolean? IntelligentPlaceholder { get; set; }
 
   /// <summary>
-  ///   ExtensionList.
+  ///   Specifies additional information about a single comment.
   /// </summary>
   public ExtensionList? ExtensionList { get; set; }
 }

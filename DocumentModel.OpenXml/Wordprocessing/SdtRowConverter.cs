@@ -81,7 +81,7 @@ public static class SdtRowConverter
 
     var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
-    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRowConverter.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRowConverter.CreateOpenXmlParagraphContent method");
   }
 
   /// <summary>
