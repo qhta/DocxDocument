@@ -1,52 +1,41 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Comment Content.
+///   This element specifies the content of a single comment stored in the Comments part of a WordprocessingML document.
 /// </summary>
-public class Comment: ModelElement
+public class Comment: ElementCollection<ICommentContent>
 {
   /// <summary>
-  ///   initials
+  ///   Specifies a unique identifier for an annotation.
   /// </summary>
-  public String? Initials { get; set; }
+  public String? Id { get; set; }
 
   /// <summary>
-  ///   author
+  ///   Specifies the author for an annotation.
   /// </summary>
   public String? Author { get; set; }
 
   /// <summary>
-  ///   date
+  ///   Specifies the initials of the author of the current comment. 
+  ///   This information can be used to format and present the associated comment information block (§17.13.4.1), 
+  ///   or in any user interface supported by an application. 
+  ///   If there is more than one author with the same initials, 
+  ///   it might be more useful to display the author name. 
+  /// </summary>
+  public String? Initials { get; set; }
+
+  /// <summary>
+  ///   Specifies the date information for an annotation.
   /// </summary>
   public DateTime? Date { get; set; }
 
   /// <summary>
-  ///   Annotation Identifier
+  ///   Identifier of the first paragraph in the comment.
   /// </summary>
-  public String? Id { get; set; }
+  public HexInt? ParaId { get; set; }
 
-  public Collection<AltChunk>? AltChunks { get; set; }
-
-  public CustomXmlBlock? CustomXmlBlock { get; set; }
-
-  public SdtBlock? SdtBlock { get; set; }
-
-  public Collection<Paragraph>? Paragraphs { get; set; }
-
-  public Collection<Table>? Tables { get; set; }
-
-  public ProofError? ProofError { get; set; }
-
-  public PermStart? PermStart { get; set; }
-
-  public PermEnd? PermEnd { get; set; }
-
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
+  /// <summary>
+  ///   Durable identifier of the comment.
+  /// </summary>
+  public HexInt? DurableId { get; set; }
 }

@@ -5,21 +5,30 @@ namespace DocxDocument.Reader;
 [Flags]
 public enum Parts : Int64
 {
-  CoreFileProperties = 0x0001,
-  ExtendedFileProperties = 0x0002,
-  CustomFileProperties = 0x0004,
-  DocumentSettings = 0x0008,
-  AllDocumentProperties = 0x000F,
+  CoreFileProperties     = 0x000001,
+  ExtendedFileProperties = 0x000002,
+  CustomFileProperties   = 0x000004,
+  DocumentSettings       = 0x000008,
+  AllDocumentProperties  = 0x00000F,
 
-  NumberingDefinitions = 0x0100,
-  StyleDefinitions = 0x0200,
-  Theme = 0x0400,
-  FontTable = 0x0800,
-  EmbeddedFonts = 0x1800,
-  Stylistics = 0x1F00,
+  NumberingDefinitions   = 0x000100,
+  StyleDefinitions       = 0x000200,
+  Theme                  = 0x000400,
+  FontTable              = 0x000800,
+  EmbeddedFonts          = 0x001800,
+  Stylistics             = 0x001F00,
 
-  Paragraphs = 0x10000,
-  Body = 0xF0000,
+  Comments               = 0x002000,
+
+  Revisions              = 0x004000,
+  Bookmarks              = 0x008000,
+  RangePermissions       = 0x010000,
+  Proofing               = 0x020000,
+  InlineAnnotations      = 0x040000,
+  AllAnnotations         = 0x07F000,
+
+  Paragraphs             = 0x100000,
+  Body                   = 0xF00000,
 
   //HeadersAndFooters           = 0x1000,
   //FootnotesAndEndNotes        = 0x2000,
@@ -91,6 +100,8 @@ public partial class DocxReader
       document.Fonts = ReadFonts();
     if (parts.HasFlag(Parts.EmbeddedFonts))
       document.EmbeddedFonts = ReadEmbedFonts();
+    if (parts.HasFlag(Parts.Comments))
+      document.Comments = ReadDocComments();
     if (parts.HasFlag(Parts.Body))
       document.Body = ReadBody(parts);
     return document;
@@ -201,5 +212,31 @@ public partial class DocxReader
     else
       body = new();
     return body;
+  }
+
+  private DMW.DocComments ReadDocComments()
+  {
+    DMW.DocComments docComments;
+    var commentsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsPart?.Comments;
+    if (commentsOpenXmlElement != null)
+    {
+      docComments = new();
+      docComments.Comments = DMXW.CommentsConverter.CreateModelElement(commentsOpenXmlElement) ?? new();
+    }
+    else
+    {
+      docComments = new();
+      docComments.Comments = new();
+    }
+    var commentsExOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsExPart?.CommentsEx;
+    if (commentsExOpenXmlElement != null)
+      docComments.CommentsEx = DMXW.CommentsExConverter.CreateModelElement(commentsExOpenXmlElement) ?? new();
+    var commentsIdsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsIdsPart?.CommentsIds;
+    if (commentsIdsOpenXmlElement != null)
+      docComments.CommentsIds = DMXW.CommentsIdsConverter.CreateModelElement(commentsIdsOpenXmlElement) ?? new();
+    var commentsExtensibleOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordCommentsExtensiblePart?.CommentsExtensible;
+    if (commentsExtensibleOpenXmlElement != null)
+      docComments.CommentsExtensible = DMXW.CommentsExtensibleConverter.GetCommentsExtensibles(commentsExtensibleOpenXmlElement);
+    return docComments;
   }
 }

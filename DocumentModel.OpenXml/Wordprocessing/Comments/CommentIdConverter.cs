@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentIdConverter
 {
-  /// <summary>
-  /// paraId, this property is only available in Office 2019 and later.
-  /// </summary>
+  #region ParaId conversion.
   private static DM.HexInt? GetParaId(DXO2019WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
@@ -27,10 +25,9 @@ public static class CommentIdConverter
     else
       openXmlElement.ParaId = null;
   }
-  
-  /// <summary>
-  /// durableId, this property is only available in Office 2019 and later.
-  /// </summary>
+  #endregion
+
+  #region DurableId conversion.
   private static DM.HexInt? GetDurableId(DXO2019WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
@@ -50,7 +47,7 @@ public static class CommentIdConverter
     else
       openXmlElement.DurableId = null;
   }
-  
+
   public static DMW.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
   {
     if (openXmlElement != null)
@@ -62,7 +59,7 @@ public static class CommentIdConverter
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXO2019WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -78,18 +75,19 @@ public static class CommentIdConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId value)
-    where OpenXmlElementType: DXO2019WCid.CommentId, new()
+    where OpenXmlElementType : DXO2019WCid.CommentId, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXO2019WCid.CommentId openXmlElement, DMW.CommentId value)
   {
     SetParaId(openXmlElement, value?.ParaId);
     SetDurableId(openXmlElement, value?.DurableId);
   }
+  #endregion
 }

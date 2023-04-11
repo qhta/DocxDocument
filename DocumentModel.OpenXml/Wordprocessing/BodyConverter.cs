@@ -86,7 +86,7 @@ public static class BodyConverter
     var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (commonMarker != null) return commonMarker;
 
-    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in BodyConverter.CreateOpenXmlParagraphElement method");
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in BodyConverter.CreateOpenXmlParagraphContent method");
   }
   #endregion
 

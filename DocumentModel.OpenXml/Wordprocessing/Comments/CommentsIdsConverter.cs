@@ -1,13 +1,14 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsIds Class.
+/// <see cref="DMW.CommentsIds"/> class from/to OpenXml conversion.
 /// </summary>
 public static class CommentsIdsConverter
 {
-  private static Collection<DMW.CommentId>? GetCommentIds(DXO2019WCid.CommentsIds openXmlElement)
+  #region CommentsIds collection conversion.
+  private static DMW.CommentsIds? GetCommentsIds(DXO2019WCid.CommentsIds openXmlElement)
   {
-    var collection = new Collection<DMW.CommentId>();
+    var collection = new DMW.CommentsIds();
     foreach (var item in openXmlElement.Elements<DXO2019WCid.CommentId>())
     {
       var newItem = DMXW.CommentIdConverter.CreateModelElement(item);
@@ -19,7 +20,7 @@ public static class CommentsIdsConverter
     return null;
   }
   
-  private static bool CmpCommentIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentsIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXO2019WCid.CommentId>();
     var origElementsCount = origElements.Count();
@@ -60,42 +61,44 @@ public static class CommentsIdsConverter
       }
     }
   }
-  
+  #endregion
+
+  #region CommentsIds model conversion
   public static DMW.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentsIds();
-      value.CommentIds = GetCommentIds(openXmlElement);
-      return value;
+      var model = GetCommentsIds(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXO2019WCid.CommentsIds? openXmlElement, DMW.CommentsIds? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO2019WCid.CommentsIds? openXmlElement, DMW.CommentsIds? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpCommentIds(openXmlElement, value.CommentIds, diffs, objName))
+      if (!CmpCommentsIds(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsIds value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsIds model)
     where OpenXmlElementType: DXO2019WCid.CommentsIds, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2019WCid.CommentsIds openXmlElement, DMW.CommentsIds value)
+  public static void UpdateOpenXmlElement(DXO2019WCid.CommentsIds openXmlElement, DMW.CommentsIds model)
   {
-    SetCommentIds(openXmlElement, value?.CommentIds);
+    SetCommentIds(openXmlElement, model);
   }
+  #endregion
 }

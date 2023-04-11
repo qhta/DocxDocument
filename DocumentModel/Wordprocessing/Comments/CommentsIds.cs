@@ -1,10 +1,8 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CommentsIds Class.
+///   This element represents the root element of the CommentsIds part of a WordprocessingML document.
 /// </summary>
-public class CommentsIds: ModelElement
+public class CommentsIds: Collection<CommentId>
 {
-  public Collection<CommentId>? CommentIds { get; set; }
 }

@@ -91,7 +91,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
         openXmlElement = CreateOpenXmlElement<DXW.EndnoteReference>(value);
         break;
       default:
-        throw new InvalidOperationException($"Not supported kind {value.Kind} in FootnoteEndNoteReferenceTypeConverter.CreateOpenXmlParagraphElement");
+        throw new InvalidOperationException($"Not supported kind {value.Kind} in FootnoteEndNoteReferenceTypeConverter.CreateOpenXmlParagraphContent");
     }
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;

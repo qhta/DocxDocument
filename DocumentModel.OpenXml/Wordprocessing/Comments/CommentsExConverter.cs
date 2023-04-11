@@ -1,25 +1,22 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the CommentsEx Class.
+/// <see cref="DMW.CommentEx"/> class from/to OpenXml converter
 /// </summary>
 public static class CommentsExConverter
 {
-  private static Collection<DMW.CommentEx>? GetCommentExs(DXO2013W.CommentsEx openXmlElement)
+  #region Items conversion.
+  private static void GetCommentsEx(DMW.CommentsEx collection, DXO2013W.CommentsEx openXmlElement)
   {
-    var collection = new Collection<DMW.CommentEx>();
     foreach (var item in openXmlElement.Elements<DXO2013W.CommentEx>())
     {
       var newItem = DMXW.CommentExConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpCommentExs(DXO2013W.CommentsEx openXmlElement, Collection<DMW.CommentEx>? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentsEx(DXO2013W.CommentsEx openXmlElement, DMW.CommentsEx? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXO2013W.CommentEx>();
     var origElementsCount = origElements.Count();
@@ -47,7 +44,7 @@ public static class CommentsExConverter
     return false;
   }
   
-  private static void SetCommentExs(DXO2013W.CommentsEx openXmlElement, Collection<DMW.CommentEx>? value)
+  private static void SetCommentsEx(DXO2013W.CommentsEx openXmlElement, DMW.CommentsEx? value)
   {
     openXmlElement.RemoveAllChildren<DXO2013W.CommentEx>();
     if (value != null)
@@ -60,42 +57,45 @@ public static class CommentsExConverter
       }
     }
   }
-  
+  #endregion
+
+  #region CommentsEx model conversion.
   public static DMW.CommentsEx? CreateModelElement(DXO2013W.CommentsEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CommentsEx();
-      value.CommentExs = GetCommentExs(openXmlElement);
-      return value;
+      var model = new DMW.CommentsEx();
+      GetCommentsEx(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013W.CommentsEx? openXmlElement, DMW.CommentsEx? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO2013W.CommentsEx? openXmlElement, DMW.CommentsEx? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpCommentExs(openXmlElement, value.CommentExs, diffs, objName))
+      if (!CmpCommentsEx(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsEx value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsEx model)
     where OpenXmlElementType: DXO2013W.CommentsEx, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013W.CommentsEx openXmlElement, DMW.CommentsEx value)
+  public static void UpdateOpenXmlElement(DXO2013W.CommentsEx openXmlElement, DMW.CommentsEx model)
   {
-    SetCommentExs(openXmlElement, value?.CommentExs);
+    SetCommentsEx(openXmlElement, model);
   }
+  #endregion
 }

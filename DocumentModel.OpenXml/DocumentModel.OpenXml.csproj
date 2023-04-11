@@ -16,6 +16,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Packaging\WordCommentsExtensiblePartConverter.cs" />
+    <Compile Remove="Packaging\WordprocessingCommentsExPartConverter.cs" />
+    <Compile Remove="Packaging\WordprocessingCommentsIdsPartConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.19.0" />
   </ItemGroup>
 
@@ -37,6 +43,11 @@
     <Reference Include="Qhta.TypeUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
     </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Wordprocessing\Paragraph content\" />
+    <Folder Include="Wordprocessing\Run content\" />
   </ItemGroup>
 
 </Project>

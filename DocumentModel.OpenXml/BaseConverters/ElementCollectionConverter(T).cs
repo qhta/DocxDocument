@@ -155,13 +155,13 @@ public static class ElementCollectionConverter<T>
     var elementConverterType = Type.GetType(typeName);
     if (elementConverterType == null)
       throw new InvalidOperationException($"Converter of type {typeName} not found");
-    var converterMethod = elementConverterType.GetMethod("CreateOpenXmlParagraphElement", BindingFlags.Public | BindingFlags.Static);
+    var converterMethod = elementConverterType.GetMethod("CreateOpenXmlParagraphContent", BindingFlags.Public | BindingFlags.Static);
     if (converterMethod == null)
-      throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphElement\" not found in type {typeName}");
+      throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" not found in type {typeName}");
     var openXmlElement = converterMethod.Invoke(null, new object[] { modelElementCollection });
     if (openXmlElement is DX.OpenXmlCompositeElement result)
       return result;
-    throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphElement\" in type {typeName} must return OpenXmlElement result");
+    throw new InvalidOperationException($"Method \"CreateOpenXmlParagraphContent\" in type {typeName} must return OpenXmlElement result");
   }
 
   /// <summary>

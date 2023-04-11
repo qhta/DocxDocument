@@ -1,10 +1,8 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CommentsEx Class.
+///   This element represents the root element of the CommentsExtended part of a WordprocessingML document.
 /// </summary>
-public class CommentsEx: ModelElement
+public class CommentsEx: Collection<CommentEx>
 {
-  public Collection<CommentEx>? CommentExs { get; set; }
 }
