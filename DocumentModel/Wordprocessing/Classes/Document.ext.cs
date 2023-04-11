@@ -28,4 +28,6 @@ public partial class Document
 
   public Numbering? Numbering { get; set; }
 
+  public DocComments? Comments { get; set; }
+
 }

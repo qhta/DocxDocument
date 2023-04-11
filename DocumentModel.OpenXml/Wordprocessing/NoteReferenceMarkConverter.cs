@@ -40,7 +40,7 @@ public static class NoteReferenceMarkConverter
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!EnumValueConverter.CmpValue<DMW.NoteReferenceKind, DMW.NoteReferenceKind>(kind, model.Type, diffs, objName, "Type"))
+      if (!EnumValueConverter.CmpValue(kind, model.Type, diffs, objName, "Type"))
         ok = false;
       return ok;
     }
@@ -69,7 +69,7 @@ public static class NoteReferenceMarkConverter
       case DMW.NoteReferenceKind.Annotation:
         return new DXW.AnnotationReferenceMark();
     }
-    throw new InvalidOperationException($"Not supported type {model.Type} in NoteReferenceMarkConverter.CreateOpenXmlParagraphElement");
+    throw new InvalidOperationException($"Not supported type {model.Type} in NoteReferenceMarkConverter.CreateOpenXmlParagraphContent");
   }
 
   public static bool UpdateOpenXmlElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model)

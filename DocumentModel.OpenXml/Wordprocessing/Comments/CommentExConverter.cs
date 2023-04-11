@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentExConverter
 {
-  /// <summary>
-  /// paraId, this property is only available in Office 2013 and later.
-  /// </summary>
+  #region ParaId conversion.
   private static DM.HexInt? GetParaId(DXO2013W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
@@ -27,10 +25,9 @@ public static class CommentExConverter
     else
       openXmlElement.ParaId = null;
   }
-  
-  /// <summary>
-  /// paraIdParent, this property is only available in Office 2013 and later.
-  /// </summary>
+  #endregion
+
+  #region ParaIdParent conversion.
   private static DM.HexInt? GetParaIdParent(DXO2013W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaIdParent?.Value != null)
@@ -50,10 +47,9 @@ public static class CommentExConverter
     else
       openXmlElement.ParaIdParent = null;
   }
-  
-  /// <summary>
-  /// done, this property is only available in Office 2013 and later.
-  /// </summary>
+  #endregion
+
+  #region Done conversion.
   private static Boolean? GetDone(DXO2013W.CommentEx openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Done);
@@ -68,7 +64,9 @@ public static class CommentExConverter
   {
     openXmlElement.Done = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
+  #endregion
+
+  #region CommentEx model conversion.
   public static DMW.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
   {
     if (openXmlElement != null)
@@ -114,4 +112,5 @@ public static class CommentExConverter
     SetParaIdParent(openXmlElement, value?.ParaIdParent);
     SetDone(openXmlElement, value?.Done);
   }
+  #endregion
 }

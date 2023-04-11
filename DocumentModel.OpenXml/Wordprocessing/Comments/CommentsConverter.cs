@@ -1,30 +1,27 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Comments Collection.
+/// <see cref="DMW.Comments"/> class from/to OpenXml converter.
 /// </summary>
 public static class CommentsConverter
 {
-  private static Collection<DMW.Comment>? GetItems(DXW.Comments openXmlElement)
+  #region Items conversion.
+  private static void GetComments(DMW.Comments collection, DXW.Comments openXmlElement)
   {
-    var collection = new Collection<DMW.Comment>();
     foreach (var item in openXmlElement.Elements<DXW.Comment>())
     {
       var newItem = DMXW.CommentConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value, DiffList? diffs, string? objName)
+  private static bool CmpComments(DXW.Comments openXmlElement, DMW.Comments? collection, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.Comment>();
     var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
+    var modelElementsCount = collection?.Count() ?? 0;
+    if (collection != null)
     {
       if (origElementsCount != modelElementsCount)
       {
@@ -32,7 +29,7 @@ public static class CommentsConverter
         return false;
       }
       var ok = true;
-      var modelEnumerator = value.GetEnumerator();
+      var modelEnumerator = collection.GetEnumerator();
       foreach (var origItem in origElements)
       {
         modelEnumerator.MoveNext();
@@ -42,17 +39,17 @@ public static class CommentsConverter
       }
       return ok;
     }
-    if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (origElementsCount == 0 && collection == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, collection);
     return false;
   }
-  
-  private static void SetItems(DXW.Comments openXmlElement, Collection<DMW.Comment>? value)
+
+  private static void SetComments(DXW.Comments openXmlElement, DMW.Comments? collection)
   {
     openXmlElement.RemoveAllChildren<DXW.Comment>();
-    if (value != null)
+    if (collection != null)
     {
-      foreach (var item in value)
+      foreach (var item in collection)
       {
         var newItem = DMXW.CommentConverter.CreateOpenXmlElement<DXW.Comment>(item);
         if (newItem != null)
@@ -60,42 +57,45 @@ public static class CommentsConverter
       }
     }
   }
-  
+  #endregion
+
+  #region Commments model conversion.
   public static DMW.Comments? CreateModelElement(DXW.Comments? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Comments();
-      value.Items = GetItems(openXmlElement);
-      return value;
+      var model = new DMW.Comments();
+      GetComments(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Comments? openXmlElement, DMW.Comments? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Comments? openXmlElement, DMW.Comments? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpComments(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Comments value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Comments model)
     where OpenXmlElementType: DXW.Comments, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Comments openXmlElement, DMW.Comments value)
+  public static void UpdateOpenXmlElement(DXW.Comments openXmlElement, DMW.Comments model)
   {
-    SetItems(openXmlElement, value?.Items);
+    SetComments(openXmlElement, model);
   }
+  #endregion
 }

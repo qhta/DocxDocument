@@ -7,6 +7,7 @@ public interface ICommonContent: IBodyContent, IParagraphContent, ITableContent,
   ISdtBlockContent,
   ISdtRunContent, 
   ISdtRowContent, 
-  ISdtCellContent
+  ISdtCellContent,
+  ICommentContent
 {
 }

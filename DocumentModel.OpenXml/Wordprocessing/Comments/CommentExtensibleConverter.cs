@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CommentExtensibleConverter
 {
-  /// <summary>
-  /// durableId, this property is only available in Office 2021 and later.
-  /// </summary>
+  #region DurableId conversion.
   private static DM.HexInt? GetDurableId(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
@@ -27,10 +25,9 @@ public static class CommentExtensibleConverter
     else
       openXmlElement.DurableId = null;
   }
-  
-  /// <summary>
-  /// dateUtc, this property is only available in Office 2021 and later.
-  /// </summary>
+  #endregion
+
+  #region DateUtc conversion.
   private static DateTime? GetDateUtc(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     return openXmlElement?.DateUtc?.Value;
@@ -47,10 +44,9 @@ public static class CommentExtensibleConverter
   {
     openXmlElement.DateUtc = value;
   }
-  
-  /// <summary>
-  /// intelligentPlaceholder, this property is only available in Office 2021 and later.
-  /// </summary>
+  #endregion
+
+  #region IntelligentPlaceholder conversion.
   private static Boolean? GetIntelligentPlaceholder(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.IntelligentPlaceholder);
@@ -65,21 +61,20 @@ public static class CommentExtensibleConverter
   {
     openXmlElement.IntelligentPlaceholder = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// ExtensionList.
-  /// </summary>
+  #endregion
+
+  #region ExtensionList conversion.
   private static DMW.ExtensionList? GetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO2021WComtExt.ExtensionList>();
     if (element != null)
-      return DMXW.ExtensionListConverter.CreateModelElement(element);
+      return DMXW.ExtensionListConverter.GetExtensions(element);
     return null;
   }
   
   private static bool CmpExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXW.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName);
+    return DMXW.ExtensionListConverter.CmpExtensions(openXmlElement.GetFirstChild<DXO2021WComtExt.ExtensionList>(), value, diffs, objName);
   }
   
   private static void SetExtensionList(DXO2021WComtExt.CommentExtensible openXmlElement, DMW.ExtensionList? value)
@@ -144,4 +139,5 @@ public static class CommentExtensibleConverter
     SetIntelligentPlaceholder(openXmlElement, value?.IntelligentPlaceholder);
     SetExtensionList(openXmlElement, value?.ExtensionList);
   }
+  #endregion
 }

@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the AltChunk Class.
 /// </summary>
-public class AltChunk: ModelElement, IBodyContent, ITableCellContent
+public class AltChunk: ModelElement, IBodyContent, ITableCellContent, ICommentContent
 {
   /// <summary>
   ///   Relationship to Part

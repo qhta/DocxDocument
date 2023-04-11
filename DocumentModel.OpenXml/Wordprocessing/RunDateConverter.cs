@@ -119,7 +119,7 @@ public static class RunDateConverter
         else
           return new DXW.YearShort();
     }
-    throw new InvalidOperationException($"Not supported date part {model.Part} in RunDateConverter.CreateOpenXmlParagraphElement");
+    throw new InvalidOperationException($"Not supported date part {model.Part} in RunDateConverter.CreateOpenXmlParagraphContent");
   }
 
   public static bool UpdateOpenXmlElement(DXW.DayShort? openXmlElement, DMW.RunDate? model)
