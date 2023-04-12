@@ -22,8 +22,7 @@ public static class BidirectionalEmbeddingConverter
   }
   #endregion
 
-  
-  public static DMW.BidirectionalEmbedding? CreateModelElement(DXW.BidirectionalEmbedding? openXmlElement)
+ public static DMW.BidirectionalEmbedding? CreateModelElement(DXW.BidirectionalEmbedding? openXmlElement)
   {
     if (openXmlElement != null)
     {

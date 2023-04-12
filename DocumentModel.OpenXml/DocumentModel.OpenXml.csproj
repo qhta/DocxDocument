@@ -20,6 +20,7 @@
     <Compile Remove="Packaging\WordprocessingCommentsExPartConverter.cs" />
     <Compile Remove="Packaging\WordprocessingCommentsIdsPartConverter.cs" />
     <Compile Remove="Wordprocessing\CommonRunConverter.cs" />
+    <Compile Remove="Wordprocessing\ContentBlockContentConverter.cs" />
     <Compile Remove="Wordprocessing\DataBinding3Converter.cs" />
   </ItemGroup>
 
@@ -52,7 +53,6 @@
     <Folder Include="Wordprocessing\VBA\" />
     <Folder Include="Wordprocessing\Paragraph content\" />
     <Folder Include="Wordprocessing\Ruby\" />
-    <Folder Include="Wordprocessing\Run content\" />
     <Folder Include="Wordprocessing\Settings\" />
   </ItemGroup>
 

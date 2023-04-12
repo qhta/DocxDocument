@@ -141,11 +141,11 @@ public static class RunConverter
     if (openXmlElement is DXW.SymbolChar symbolChar)
       return DMXW.SymbolCharConverter.CreateModelElement(symbolChar);
     if (openXmlElement is DXW.PageNumber pageNumber)
-      return DMXW.SimpleRunElementConverter.CreateModelElement(pageNumber);
+      return DMXW.PageNumberConverter.CreateModelElement(pageNumber);
     if (openXmlElement is DXW.CarriageReturn carriageReturn)
-      return DMXW.SimpleRunElementConverter.CreateModelElement(carriageReturn);
+      return DMXW.CarriageReturnConverter.CreateModelElement(carriageReturn);
     if (openXmlElement is DXW.TabChar tabChar)
-      return DMXW.SimpleRunElementConverter.CreateModelElement(tabChar);
+      return DMXW.TabCharConverter.CreateModelElement(tabChar);
     if (openXmlElement is DXW.PositionalTab positionalTab)
       return DMXW.PositionalTabConverter.CreateModelElement(positionalTab);
     if (openXmlElement is DXW.SoftHyphen softHyphen)
@@ -217,11 +217,11 @@ public static class RunConverter
       if (openXmlElement is DXW.SymbolChar symbolChar && model is DMW.SymbolChar symbolCharModel)
         return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, symbolCharModel, diffs, objName);
       if (openXmlElement is DXW.PageNumber pageNumber && model is DMW.PageNumber pageNumberModel)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName);
+        return DMXW.PageNumberConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName);
       if (openXmlElement is DXW.CarriageReturn carriageReturn && model is CarriageReturn carriageReturnModel)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName);
+        return DMXW.CarriageReturnConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName);
       if (openXmlElement is DXW.TabChar tabChar && model is DMW.TabChar tabCharModel)
-        return DMXW.SimpleRunElementConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
+        return DMXW.TabCharConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
       if (openXmlElement is DXW.PositionalTab positionalTab && model is DMW.PositionalTab positionalTabModel)
         return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, positionalTabModel, diffs, objName);
       if (openXmlElement is DXW.SoftHyphen softHyphen && model is Hyphen softHyphenModel)
@@ -286,11 +286,11 @@ public static class RunConverter
     if (model is DMW.SymbolChar symbolChar)
       return DMXW.SymbolCharConverter.CreateOpenXmlElement(symbolChar);
     if (model is DMW.PageNumber pageNumber)
-      return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(pageNumber);
+      return DMXW.PageNumberConverter.CreateOpenXmlElement(pageNumber);
     if (model is CarriageReturn carriageReturn)
-      return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(carriageReturn);
+      return DMXW.CarriageReturnConverter.CreateOpenXmlElement(carriageReturn);
     if (model is DMW.TabChar tabChar)
-      return DMXW.SimpleRunElementConverter.CreateOpenXmlElement(tabChar);
+      return DMXW.TabCharConverter.CreateOpenXmlElement(tabChar);
     if (model is DMW.PositionalTab positionalTab)
       return DMXW.PositionalTabConverter.CreateOpenXmlElement(positionalTab);
     if (model is DMW.RunDate date)
@@ -355,11 +355,11 @@ public static class RunConverter
       if (openXmlElement is DXW.SymbolChar symbolChar && model is DMW.SymbolChar symbolCharModel)
         return DMXW.SymbolCharConverter.UpdateOpenXmlElement(symbolChar, symbolCharModel);
       if (openXmlElement is DXW.PageNumber pageNumber && model is DMW.PageNumber pageNumberModel)
-        return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(pageNumber, pageNumberModel);
+        return DMXW.PageNumberConverter.UpdateOpenXmlElement(pageNumber, pageNumberModel);
       if (openXmlElement is DXW.CarriageReturn carriageReturn && model is CarriageReturn carriageReturnModel)
-        return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(carriageReturn, carriageReturnModel);
+        return DMXW.CarriageReturnConverter.UpdateOpenXmlElement(carriageReturn, carriageReturnModel);
       if (openXmlElement is DXW.TabChar tabChar && model is DMW.TabChar tabCharModel)
-        return DMXW.SimpleRunElementConverter.UpdateOpenXmlElement(tabChar, tabCharModel);
+        return DMXW.TabCharConverter.UpdateOpenXmlElement(tabChar, tabCharModel);
       if (openXmlElement is DXW.PositionalTab positionalTab && model is DMW.PositionalTab positionalTabModel)
         return DMXW.PositionalTabConverter.UpdateOpenXmlElement(positionalTab, positionalTabModel);
       if (openXmlElement is DXW.SoftHyphen softHyphen && model is Hyphen softHyphenModel)
