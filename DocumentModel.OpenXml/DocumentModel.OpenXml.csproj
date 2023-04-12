@@ -19,6 +19,8 @@
     <Compile Remove="Packaging\WordCommentsExtensiblePartConverter.cs" />
     <Compile Remove="Packaging\WordprocessingCommentsExPartConverter.cs" />
     <Compile Remove="Packaging\WordprocessingCommentsIdsPartConverter.cs" />
+    <Compile Remove="Wordprocessing\CommonRunConverter.cs" />
+    <Compile Remove="Wordprocessing\DataBinding3Converter.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -46,8 +48,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Wordprocessing\Frames and framesets\" />
+    <Folder Include="Wordprocessing\VBA\" />
     <Folder Include="Wordprocessing\Paragraph content\" />
+    <Folder Include="Wordprocessing\Ruby\" />
     <Folder Include="Wordprocessing\Run content\" />
+    <Folder Include="Wordprocessing\Settings\" />
   </ItemGroup>
 
 </Project>

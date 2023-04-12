@@ -6,7 +6,7 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Defines the Run Class.
 /// </summary>
-public class Run: ModelElement
+public class Run: ModelElement, IBidirectionalContent
 {
   /// <summary>
   ///   Run Properties.

@@ -482,13 +482,13 @@ public static class BaseRunPropertiesConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.Border>();
     if (element != null)
-      return DMXW.BorderTypeConverter.CreateModelElement(element);
+      return DMXW.BorderConverter.CreateModelElement(element);
     return null;
   }
 
   public static bool CmpBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
   {
-    return DMXW.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Border>(), value, diffs, objName);
   }
 
   public static void SetBorder(DX.OpenXmlCompositeElement openXmlElement, DMW.Border? value)
@@ -498,7 +498,7 @@ public static class BaseRunPropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.BorderTypeConverter.CreateOpenXmlElement<DXW.Border>(value);
+      itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.Border>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
