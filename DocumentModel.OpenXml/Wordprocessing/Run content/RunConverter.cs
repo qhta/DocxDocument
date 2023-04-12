@@ -101,8 +101,8 @@ public static class RunConverter
   }
   #endregion
 
-  #region Run elements conversion
-  public static DMW.IRunContent? CreateRunElement(DX.OpenXmlElement? openXmlElement)
+  #region Run content conversion
+  public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.RunProperties)
       return null;
@@ -178,7 +178,7 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CompareRunElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -395,7 +395,6 @@ public static class RunConverter
     }
     return false;
   }
-
   #endregion
 
   #region Run conversion
@@ -409,7 +408,7 @@ public static class RunConverter
       model.RsidRunAddition = GetRsidRunAddition(openXmlElement);
       model.RunProperties = GetRunProperties(openXmlElement);
       ElementCollectionConverter<IRunContent>.FillModelElementCollection(openXmlElement, model,
-        (CreateModelElementMethod)CreateRunElement);
+        (CreateModelElementMethod)CreateRunContent);
       return model;
     }
     return null;
@@ -430,7 +429,7 @@ public static class RunConverter
         ok = false;
       if (!ElementCollectionConverter<IRunContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.RunProperties), model,
-        (CompareOpenXmlElementMethod)CompareRunElement, diffs, objName))
+        (CompareOpenXmlElementMethod)CompareRunContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -453,7 +452,7 @@ public static class RunConverter
     SetRsidRunAddition(openXmlElement, model.RsidRunAddition);
     SetRunProperties(openXmlElement, model.RunProperties);
     return ElementCollectionConverter<IRunContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareRunElement,
+      (CompareOpenXmlElementMethod)CompareRunContent,
       (UpdateOpenXmlElementMethod)UpdateOpenXmlElement,
       (CreateOpenXmlElementMethod)CreateOpenXmlElement
       );

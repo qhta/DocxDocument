@@ -20,13 +20,13 @@ public class Run: ModelElement, IBidirectionalContent
 
   public Wordprocessing.Break? Break { get; set; }
 
-  public DMW.TextType? Text { get; set; }
+  public DMW.TextualElement? Text { get; set; }
 
-  public DMW.TextType? DeletedText { get; set; }
+  public DMW.TextualElement? DeletedText { get; set; }
 
-  public DMW.TextType? FieldCode { get; set; }
+  public DMW.TextualElement? FieldCode { get; set; }
 
-  public DMW.TextType? DeletedFieldCode { get; set; }
+  public DMW.TextualElement? DeletedFieldCode { get; set; }
 
   public Boolean? NoBreakHyphen { get; set; }
 

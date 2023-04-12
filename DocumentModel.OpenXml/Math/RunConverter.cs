@@ -89,7 +89,7 @@ public static class RunConverter
     }
   }
   
-  private static DMW.TextType? GetText(DXMath.Run openXmlElement)
+  private static DMW.TextualElement? GetText(DXMath.Run openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Text>();
     if (element != null)
@@ -97,12 +97,12 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpText(DXMath.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXMath.Run openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
   {
     return DMXW.TextTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Text>(), value, diffs, objName);
   }
   
-  private static void SetText(DXMath.Run openXmlElement, DMW.TextType? value)
+  private static void SetText(DXMath.Run openXmlElement, DMW.TextualElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Text>();
     if (itemElement != null)
@@ -115,7 +115,7 @@ public static class RunConverter
     }
   }
   
-  private static DMW.TextType? GetDeletedText(DXMath.Run openXmlElement)
+  private static DMW.TextualElement? GetDeletedText(DXMath.Run openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.DeletedText>();
     if (element != null)
@@ -123,12 +123,12 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpDeletedText(DXMath.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
+  private static bool CmpDeletedText(DXMath.Run openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
   {
     return DMXW.TextTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedText>(), value, diffs, objName);
   }
   
-  private static void SetDeletedText(DXMath.Run openXmlElement, DMW.TextType? value)
+  private static void SetDeletedText(DXMath.Run openXmlElement, DMW.TextualElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DeletedText>();
     if (itemElement != null)
@@ -141,7 +141,7 @@ public static class RunConverter
     }
   }
   
-  private static DMW.TextType? GetFieldCode(DXMath.Run openXmlElement)
+  private static DMW.TextualElement? GetFieldCode(DXMath.Run openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.FieldCode>();
     if (element != null)
@@ -149,12 +149,12 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpFieldCode(DXMath.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldCode(DXMath.Run openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
   {
     return DMXW.TextTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FieldCode>(), value, diffs, objName);
   }
   
-  private static void SetFieldCode(DXMath.Run openXmlElement, DMW.TextType? value)
+  private static void SetFieldCode(DXMath.Run openXmlElement, DMW.TextualElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FieldCode>();
     if (itemElement != null)
@@ -167,7 +167,7 @@ public static class RunConverter
     }
   }
   
-  private static DMW.TextType? GetDeletedFieldCode(DXMath.Run openXmlElement)
+  private static DMW.TextualElement? GetDeletedFieldCode(DXMath.Run openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.DeletedFieldCode>();
     if (element != null)
@@ -175,12 +175,12 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpDeletedFieldCode(DXMath.Run openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
+  private static bool CmpDeletedFieldCode(DXMath.Run openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
   {
     return DMXW.TextTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DeletedFieldCode>(), value, diffs, objName);
   }
   
-  private static void SetDeletedFieldCode(DXMath.Run openXmlElement, DMW.TextType? value)
+  private static void SetDeletedFieldCode(DXMath.Run openXmlElement, DMW.TextualElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DeletedFieldCode>();
     if (itemElement != null)

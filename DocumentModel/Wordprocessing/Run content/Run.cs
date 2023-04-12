@@ -2,9 +2,11 @@ namespace DocumentModel.Wordprocessing;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Phonetic Guide Text Run.
+///   Defines a region of text with a common set of properties. 
+///   A run allows the producer to specify a single set of formatting properties, 
+///   applying the same information to all the contents of the run. .
 /// </summary>
-public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent
+public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent
 {
   /// <summary>
   ///   Revision Identifier for Run Properties
@@ -22,7 +24,9 @@ public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunCont
   public HexInt? RsidRunAddition { get; set; }
 
   /// <summary>
-  ///   Run Properties.
+  ///   Specifies a set of run properties which shall be applied to the contents of the parent run 
+  ///   after all style formatting has been applied to the text. These properties are defined as direct formatting, 
+  ///   since they are directly applied to the run and supersede any formatting from styles..
   /// </summary>
   public RunProperties? RunProperties { get; set; }
 

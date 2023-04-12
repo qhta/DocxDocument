@@ -26,7 +26,7 @@ public static class TextTypeConverter
   #endregion
 
   private static ElementType CreateModelElement<ElementType>(DXW.TextType openXmlElement)
-    where ElementType : DMW.TextType, new()
+    where ElementType : DMW.TextualElement, new()
   {
     var value = new ElementType();
     value.Text = GetText(openXmlElement);
@@ -53,7 +53,7 @@ public static class TextTypeConverter
     return result;
   }
 
-  public static bool CompareModelElement(DXW.TextType? openXmlElement, DMW.TextType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TextType? openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,7 +73,7 @@ public static class TextTypeConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextualElement value)
     where OpenXmlElementType : DXW.TextType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -97,7 +97,7 @@ public static class TextTypeConverter
       return CreateOpenXmlElement<DXW.DeletedFieldCode>(value);
   }
 
-  public static bool UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextType value)
+  public static bool UpdateOpenXmlElement(DXW.TextType openXmlElement, DMW.TextualElement value)
   {
     SetText(openXmlElement, value.Text);
     return true;
