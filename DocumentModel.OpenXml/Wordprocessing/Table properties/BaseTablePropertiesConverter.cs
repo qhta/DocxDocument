@@ -149,13 +149,13 @@ public static class BaseTablePropertiesConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.TableCellMarginDefault>();
     if (element != null)
-      return DMXW.TableCellMarginDefaultConverter.CreateModelElement(element);
+      return DMXW.DefaultTableCellMarginConverter.CreateModelElement(element);
     return null;
   }
 
   public static bool CmpTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.DefaultTableCellMargin? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TableCellMarginDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
+    return DMXW.DefaultTableCellMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellMarginDefault>(), value, diffs, objName);
   }
 
   public static void SetTableCellMarginDefault(DX.OpenXmlCompositeElement openXmlElement, DMW.DefaultTableCellMargin? value)
@@ -165,7 +165,7 @@ public static class BaseTablePropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.TableCellMarginDefaultConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
+      itemElement = DMXW.DefaultTableCellMarginConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

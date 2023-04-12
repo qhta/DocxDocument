@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Deleted Run Content.
 /// </summary>
-public class DeletedRun: ModelElement, ICommonContent
+public class DeletedRun: ModelElement, IRangeMarkupElement, ICommonContent
 {
   public SdtRun? SdtRun { get; set; }
 
