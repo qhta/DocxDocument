@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestComments();
+    RunTestBody();
   }
 
   private static void RunTestComments()

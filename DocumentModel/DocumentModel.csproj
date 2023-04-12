@@ -41,20 +41,7 @@
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
-    <Compile Remove="Wordprocessing\Classes\AcceleratorKeymapType.cs" />
-    <Compile Remove="Wordprocessing\Classes\AllocatedCommand.cs" />
-    <Compile Remove="Wordprocessing\Classes\AllocatedCommandManifest.cs" />
-    <Compile Remove="Wordprocessing\Classes\AllocatedCommands.cs" />
-    <Compile Remove="Wordprocessing\Classes\Color3.cs" />
-    <Compile Remove="Wordprocessing\Classes\KeyMapCustomizations.cs" />
-    <Compile Remove="Wordprocessing\Classes\KeyMapEntry.cs" />
-    <Compile Remove="Wordprocessing\Classes\MismatchedKeyMapCustomization.cs" />
-    <Compile Remove="Wordprocessing\Classes\Paragraph.ext.cs" />
-    <Compile Remove="Wordprocessing\Classes\SdtContentBlock.cs" />
-    <Compile Remove="Wordprocessing\Classes\SdtContentRow.cs" />
-    <Compile Remove="Wordprocessing\Classes\TemplateCommandGroup.cs" />
-    <Compile Remove="Wordprocessing\Classes\ToolbarData.cs" />
-    <Compile Remove="Wordprocessing\Classes\Toolbars.cs" />
+    <Compile Remove="Wordprocessing\Interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />
   </ItemGroup>

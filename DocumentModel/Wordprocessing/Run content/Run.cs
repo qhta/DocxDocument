@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Phonetic Guide Text Run.
 /// </summary>
-public class Run: ElementCollection<IRunContent>, ICommonRunContent
+public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent
 {
   /// <summary>
   ///   Revision Identifier for Run Properties

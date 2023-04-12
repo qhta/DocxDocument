@@ -5,6 +5,6 @@ namespace DocumentModel.Math;
 /// <summary>
 ///   Interface for math elements that can be included in many other elements.
 /// </summary>
-public interface ICommonMathContent: IParagraphContent, ISdtRunContent
+public interface ICommonMathContent: IParagraphContent, ISdtRunContent, IBidirectionalContent
 {
 }

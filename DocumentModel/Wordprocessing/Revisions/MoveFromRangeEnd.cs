@@ -4,7 +4,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the MoveFromRangeEnd Class.
 /// </summary>
-public class MoveFromRangeEnd: MarkupRangeType, IRangeMarkupElement
+public class MoveFromRangeEnd: MarkupRangeType
 {
 
 }
