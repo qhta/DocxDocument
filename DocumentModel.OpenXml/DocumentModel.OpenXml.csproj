@@ -51,7 +51,6 @@
   <ItemGroup>
     <Folder Include="Wordprocessing\Frames and framesets\" />
     <Folder Include="Wordprocessing\VBA\" />
-    <Folder Include="Wordprocessing\Paragraph content\" />
     <Folder Include="Wordprocessing\Ruby\" />
     <Folder Include="Wordprocessing\Settings\" />
   </ItemGroup>

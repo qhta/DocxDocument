@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Represents a textual element of text run. There are two textual elements: Text and FieldCode
 /// </summary>
-public abstract class TextType: ModelElement, IRunContent
+public abstract class TextualElement: ModelElement, IRunContent
 {
   /// <summary>
   ///   Indicates whether this element is deleted.
