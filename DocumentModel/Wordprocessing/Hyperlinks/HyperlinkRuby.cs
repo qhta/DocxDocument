@@ -11,32 +11,32 @@ public class HyperlinkRuby: ModelElement
   /// <summary>
   ///   tgtFrame
   /// </summary>
-  public String? TargetFrame { get; set; }
+  public string? TargetFrame { get; set; }
 
   /// <summary>
   ///   tooltip
   /// </summary>
-  public String? Tooltip { get; set; }
+  public string? Tooltip { get; set; }
 
   /// <summary>
   ///   docLocation
   /// </summary>
-  public String? DocLocation { get; set; }
+  public string? DocLocation { get; set; }
 
   /// <summary>
   ///   history
   /// </summary>
-  public Boolean? History { get; set; }
+  public bool? History { get; set; }
 
   /// <summary>
   ///   anchor
   /// </summary>
-  public String? Anchor { get; set; }
+  public string? Anchor { get; set; }
 
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   public CustomXmlRuby? CustomXmlRuby { get; set; }
 
@@ -124,7 +124,7 @@ public class HyperlinkRuby: ModelElement
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

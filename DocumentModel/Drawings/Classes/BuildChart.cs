@@ -9,10 +9,10 @@ public class BuildChart: ModelElement
   /// <summary>
   ///   Build
   /// </summary>
-  public String? Build { get; set; }
+  public string? Build { get; set; }
 
   /// <summary>
   ///   Animate Background
   /// </summary>
-  public Boolean? AnimateBackground { get; set; }
+  public bool? AnimateBackground { get; set; }
 }

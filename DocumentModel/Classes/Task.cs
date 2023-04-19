@@ -9,7 +9,7 @@ public class Task: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   TaskAnchor.

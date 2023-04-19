@@ -11,7 +11,7 @@ public class NonVisualDrawingPropertiesExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public CompatExtension? CompatExtension { get; set; }
 
@@ -21,7 +21,7 @@ public class NonVisualDrawingPropertiesExtension: ModelElement
 
   public PredecessorDrawingElementReference? PredecessorDrawingElementReference { get; set; }
 
-  public Boolean? Decorative { get; set; }
+  public bool? Decorative { get; set; }
 
   public ClassificationOutcome? ClassificationOutcome { get; set; }
 

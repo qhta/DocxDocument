@@ -9,7 +9,7 @@ public class LayoutVariablePropertySetType: ModelElement
   /// <summary>
   ///   Show Organization Chart User Interface.
   /// </summary>
-  public Boolean? OrganizationChart { get; set; }
+  public bool? OrganizationChart { get; set; }
 
   /// <summary>
   ///   Maximum Children.
@@ -24,7 +24,7 @@ public class LayoutVariablePropertySetType: ModelElement
   /// <summary>
   ///   Show Insert Bullet.
   /// </summary>
-  public Boolean? BulletEnabled { get; set; }
+  public bool? BulletEnabled { get; set; }
 
   /// <summary>
   ///   Diagram Direction.

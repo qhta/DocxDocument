@@ -9,7 +9,7 @@ public class Fill: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Fill Type
@@ -19,52 +19,52 @@ public class Fill: ModelElement
   /// <summary>
   ///   Fill Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Primary Color
   /// </summary>
-  public String? Color { get; set; }
+  public string? Color { get; set; }
 
   /// <summary>
   ///   Primary Color Opacity
   /// </summary>
-  public String? Opacity { get; set; }
+  public string? Opacity { get; set; }
 
   /// <summary>
   ///   Secondary Color
   /// </summary>
-  public String? Color2 { get; set; }
+  public string? Color2 { get; set; }
 
   /// <summary>
   ///   Fill Image Source
   /// </summary>
-  public String? Source { get; set; }
+  public string? Source { get; set; }
 
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Href { get; set; }
+  public string? Href { get; set; }
 
   /// <summary>
   ///   Alternate Image Reference Location
   /// </summary>
-  public String? AlternateImageReference { get; set; }
+  public string? AlternateImageReference { get; set; }
 
   /// <summary>
   ///   Fill Image Size
   /// </summary>
-  public String? Size { get; set; }
+  public string? Size { get; set; }
 
   /// <summary>
   ///   Fill Image Origin
   /// </summary>
-  public String? Origin { get; set; }
+  public string? Origin { get; set; }
 
   /// <summary>
   ///   Fill Image Position
   /// </summary>
-  public String? Position { get; set; }
+  public string? Position { get; set; }
 
   /// <summary>
   ///   Image Aspect Ratio
@@ -74,7 +74,7 @@ public class Fill: ModelElement
   /// <summary>
   ///   Intermediate Colors
   /// </summary>
-  public String? Colors { get; set; }
+  public string? Colors { get; set; }
 
   /// <summary>
   ///   Gradient Angle
@@ -84,22 +84,22 @@ public class Fill: ModelElement
   /// <summary>
   ///   Align Image With Shape
   /// </summary>
-  public Boolean? AlignShape { get; set; }
+  public bool? AlignShape { get; set; }
 
   /// <summary>
   ///   Gradient Center
   /// </summary>
-  public String? Focus { get; set; }
+  public string? Focus { get; set; }
 
   /// <summary>
   ///   Radial Gradient Size
   /// </summary>
-  public String? FocusSize { get; set; }
+  public string? FocusSize { get; set; }
 
   /// <summary>
   ///   Radial Gradient Center
   /// </summary>
-  public String? FocusPosition { get; set; }
+  public string? FocusPosition { get; set; }
 
   /// <summary>
   ///   Gradient Fill Method
@@ -109,32 +109,32 @@ public class Fill: ModelElement
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public Boolean? DetectMouseClick { get; set; }
+  public bool? DetectMouseClick { get; set; }
 
   /// <summary>
   ///   Title
   /// </summary>
-  public String? Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   ///   Secondary Color Opacity
   /// </summary>
-  public String? Opacity2 { get; set; }
+  public string? Opacity2 { get; set; }
 
   /// <summary>
   ///   Recolor Fill as Picture
   /// </summary>
-  public Boolean? Recolor { get; set; }
+  public bool? Recolor { get; set; }
 
   /// <summary>
   ///   Rotate Fill with Shape
   /// </summary>
-  public Boolean? Rotate { get; set; }
+  public bool? Rotate { get; set; }
 
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 
   /// <summary>
   ///   FillExtendedProperties.

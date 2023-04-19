@@ -93,7 +93,7 @@ public class MainDocumentPart: ModelElement
   /// </summary>
   public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the WordprocessingPrinterSettingsParts of the MainDocumentPart

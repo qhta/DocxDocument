@@ -9,10 +9,10 @@ public class SaveThroughXslt: ModelElement
   /// <summary>
   ///   XSL Transformation Location
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Local Identifier for XSL Transform
   /// </summary>
-  public String? SolutionId { get; set; }
+  public string? SolutionId { get; set; }
 }

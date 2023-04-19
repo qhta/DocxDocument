@@ -15,7 +15,7 @@ public class NumLevelText: ModelElement
   /// <summary>
   ///   Level Text
   /// </summary>
-  public String? Text { get; set; }
+  public string? Text { get; set; }
 
   /// <summary>
   ///   Level Text Is Null Character

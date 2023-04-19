@@ -14,5 +14,5 @@ public class DataPart: ModelElement
   /// <summary>
   ///   Gets the content type (MIME type) of the data in the part.
   /// </summary>
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 }

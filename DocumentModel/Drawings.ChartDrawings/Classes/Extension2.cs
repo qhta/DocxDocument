@@ -9,5 +9,5 @@ public class Extension2: ModelElement
   /// <summary>
   ///   uri, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 }

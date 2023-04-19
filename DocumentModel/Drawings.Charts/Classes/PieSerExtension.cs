@@ -9,7 +9,7 @@ public class PieSerExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public FilteredSeriesTitle? FilteredSeriesTitle { get; set; }
 

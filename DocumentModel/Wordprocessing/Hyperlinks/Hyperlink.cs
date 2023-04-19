@@ -6,37 +6,37 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Hyperlink Class.
 /// </summary>
-public class Hyperlink: ModelElement, IParagraphContent, ISdtRunContent, IBidirectionalContent
+public class Hyperlink: ModelElement, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
   ///   Hyperlink Target Frame
   /// </summary>
-  public String? TargetFrame { get; set; }
+  public string? TargetFrame { get; set; }
 
   /// <summary>
   ///   Associated String
   /// </summary>
-  public String? Tooltip { get; set; }
+  public string? Tooltip { get; set; }
 
   /// <summary>
   ///   Location in Target Document
   /// </summary>
-  public String? DocLocation { get; set; }
+  public string? DocLocation { get; set; }
 
   /// <summary>
   ///   Add To Viewed Hyperlinks
   /// </summary>
-  public Boolean? History { get; set; }
+  public bool? History { get; set; }
 
   /// <summary>
   ///   Hyperlink Anchor
   /// </summary>
-  public String? Anchor { get; set; }
+  public string? Anchor { get; set; }
 
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   public CustomXmlRun? CustomXmlRun { get; set; }
 
@@ -122,7 +122,7 @@ public class Hyperlink: ModelElement, IParagraphContent, ISdtRunContent, IBidire
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

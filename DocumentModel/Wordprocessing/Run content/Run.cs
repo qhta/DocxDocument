@@ -1,12 +1,13 @@
+using DocumentModel.Math;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines a region of text with a common set of properties. 
 ///   A run allows the producer to specify a single set of formatting properties, 
 ///   applying the same information to all the contents of the run. .
 /// </summary>
-public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent
+public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent, IMathArgumentContent
 {
   /// <summary>
   ///   Revision Identifier for Run Properties

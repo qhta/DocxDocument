@@ -9,7 +9,7 @@ public class SerAxExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public NumberingFormat3? NumberingFormat { get; set; }
 }

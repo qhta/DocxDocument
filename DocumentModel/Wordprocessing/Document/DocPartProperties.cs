@@ -14,7 +14,7 @@ public class DocPartProperties: ModelElement
   /// <summary>
   ///   Associated Paragraph Style Name.
   /// </summary>
-  public String? StyleId { get; set; }
+  public string? StyleId { get; set; }
 
   /// <summary>
   ///   Entry Categorization.
@@ -34,10 +34,10 @@ public class DocPartProperties: ModelElement
   /// <summary>
   ///   Description for Entry.
   /// </summary>
-  public String? Description { get; set; }
+  public string? Description { get; set; }
 
   /// <summary>
   ///   Entry ID.
   /// </summary>
-  public String? DocPartId { get; set; }
+  public string? DocPartId { get; set; }
 }

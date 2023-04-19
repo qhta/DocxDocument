@@ -1,5 +1,4 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Group-Character Properties.
@@ -9,7 +8,7 @@ public class GroupCharProperties: ModelElement
   /// <summary>
   ///   Group Character (Grouping Character).
   /// </summary>
-  public String? AccentChar { get; set; }
+  public string? AccentChar { get; set; }
 
   /// <summary>
   ///   Position (Group Character).
@@ -22,7 +21,7 @@ public class GroupCharProperties: ModelElement
   public VerticalJustificationKind? VerticalJustification { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of group-char object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

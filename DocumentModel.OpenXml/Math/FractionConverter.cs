@@ -1,140 +1,139 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Fraction Function.
+/// <see cref="DMM.Fraction"/> class from/to OpenXml converter.
 /// </summary>
 public static class FractionConverter
 {
-  /// <summary>
-  /// Fraction Properties.
-  /// </summary>
-  private static DMMath.FractionProperties? GetFractionProperties(DXMath.Fraction openXmlElement)
+  #region Fraction Properties. conversion.
+  private static DMM.FractionProperties? GetFractionProperties(DXM.Fraction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.FractionProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.FractionProperties>();
     if (element != null)
-      return DMXMath.FractionPropertiesConverter.CreateModelElement(element);
+      return DMXM.FractionPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFractionProperties(DXM.Fraction openXmlElement, DMM.FractionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FractionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FractionProperties>(), value, diffs, objName);
+    return DMXM.FractionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FractionProperties>(), value, diffs, objName);
   }
   
-  private static void SetFractionProperties(DXMath.Fraction openXmlElement, DMMath.FractionProperties? value)
+  private static void SetFractionProperties(DXM.Fraction openXmlElement, DMM.FractionProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.FractionProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.FractionProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.FractionPropertiesConverter.CreateOpenXmlElement<DXMath.FractionProperties>(value);
+      itemElement = DMXM.FractionPropertiesConverter.CreateOpenXmlElement<DXM.FractionProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Numerator.
-  /// </summary>
-  private static DMMath.Numerator? GetNumerator(DXMath.Fraction openXmlElement)
+  #endregion
+
+  #region Numerator conversion.
+  private static DMM.Numerator? GetNumerator(DXM.Fraction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Numerator>();
+    var element = openXmlElement?.GetFirstChild<DXM.Numerator>();
     if (element != null)
-      return DMXMath.NumeratorConverter.CreateModelElement(element);
+      return DMXM.NumeratorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value, DiffList? diffs, string? objName)
+  private static bool CmpNumerator(DXM.Fraction openXmlElement, DMM.Numerator? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.NumeratorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Numerator>(), value, diffs, objName);
+    return DMXM.NumeratorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Numerator>(), value, diffs, objName);
   }
   
-  private static void SetNumerator(DXMath.Fraction openXmlElement, DMMath.Numerator? value)
+  private static void SetNumerator(DXM.Fraction openXmlElement, DMM.Numerator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Numerator>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Numerator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.NumeratorConverter.CreateOpenXmlElement<DXMath.Numerator>(value);
+      itemElement = DMXM.NumeratorConverter.CreateOpenXmlElement<DXM.Numerator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Denominator.
-  /// </summary>
-  private static DMMath.Denominator? GetDenominator(DXMath.Fraction openXmlElement)
+  #endregion
+
+  #region Denominator conversion.
+  private static DMM.Denominator? GetDenominator(DXM.Fraction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Denominator>();
+    var element = openXmlElement?.GetFirstChild<DXM.Denominator>();
     if (element != null)
-      return DMXMath.DenominatorConverter.CreateModelElement(element);
+      return DMXM.DenominatorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value, DiffList? diffs, string? objName)
+  private static bool CmpDenominator(DXM.Fraction openXmlElement, DMM.Denominator? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DenominatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Denominator>(), value, diffs, objName);
+    return DMXM.DenominatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Denominator>(), value, diffs, objName);
   }
   
-  private static void SetDenominator(DXMath.Fraction openXmlElement, DMMath.Denominator? value)
+  private static void SetDenominator(DXM.Fraction openXmlElement, DMM.Denominator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Denominator>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Denominator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.DenominatorConverter.CreateOpenXmlElement<DXMath.Denominator>(value);
+      itemElement = DMXM.DenominatorConverter.CreateOpenXmlElement<DXM.Denominator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.Fraction? CreateModelElement(DXMath.Fraction? openXmlElement)
+  #endregion
+
+  #region Fraction model conversion.
+  public static DMM.Fraction? CreateModelElement(DXM.Fraction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Fraction();
-      value.FractionProperties = GetFractionProperties(openXmlElement);
-      value.Numerator = GetNumerator(openXmlElement);
-      value.Denominator = GetDenominator(openXmlElement);
-      return value;
+      var model = new DMM.Fraction();
+      model.FractionProperties = GetFractionProperties(openXmlElement);
+      model.Numerator = GetNumerator(openXmlElement);
+      model.Denominator = GetDenominator(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.Fraction? openXmlElement, DMMath.Fraction? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Fraction? openXmlElement, DMM.Fraction? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFractionProperties(openXmlElement, value.FractionProperties, diffs, objName))
+      if (!CmpFractionProperties(openXmlElement, model.FractionProperties, diffs, objName))
         ok = false;
-      if (!CmpNumerator(openXmlElement, value.Numerator, diffs, objName))
+      if (!CmpNumerator(openXmlElement, model.Numerator, diffs, objName))
         ok = false;
-      if (!CmpDenominator(openXmlElement, value.Denominator, diffs, objName))
+      if (!CmpDenominator(openXmlElement, model.Denominator, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.Fraction CreateOpenXmlElement(DMMath.Fraction value)
+  public static DXM.Fraction CreateOpenXmlElement(DMM.Fraction model)
   {
-    var openXmlElement = new DXMath.Fraction();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.Fraction();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.Fraction openXmlElement, DMMath.Fraction value)
+  public static bool UpdateOpenXmlElement(DXM.Fraction openXmlElement, DMM.Fraction model)
   {
-    SetFractionProperties(openXmlElement, value?.FractionProperties);
-    SetNumerator(openXmlElement, value?.Numerator);
-    SetDenominator(openXmlElement, value?.Denominator);
+    SetFractionProperties(openXmlElement, model?.FractionProperties);
+    SetNumerator(openXmlElement, model?.Numerator);
+    SetDenominator(openXmlElement, model?.Denominator);
     return true;
   }
+  #endregion
 }

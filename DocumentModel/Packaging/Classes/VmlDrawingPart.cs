@@ -6,7 +6,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class VmlDrawingPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ImageParts of the VmlDrawingPart
@@ -18,5 +18,5 @@ public class VmlDrawingPart: ModelElement
   /// </summary>
   public Collection<LegacyDiagramTextPart>? LegacyDiagramTextParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

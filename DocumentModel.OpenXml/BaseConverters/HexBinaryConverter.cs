@@ -62,7 +62,7 @@ public static class HexBinaryConverter
     if (value != null)
     {
       var element = new OpenXmlElementType();
-      if (((HexBinary)value).Length > 0)
+      if (value.Length > 0)
       {
         var valProperty = typeof(OpenXmlElementType).GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
         if (valProperty != null)

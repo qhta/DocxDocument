@@ -6,15 +6,15 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class FormFieldData: ModelElement
 {
-  public String? FormFieldName { get; set; }
+  public string? FormFieldName { get; set; }
 
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
-  public Boolean? CalculateOnExit { get; set; }
+  public bool? CalculateOnExit { get; set; }
 
-  public String? EntryMacro { get; set; }
+  public string? EntryMacro { get; set; }
 
-  public String? ExitMacro { get; set; }
+  public string? ExitMacro { get; set; }
 
   public HelpText? HelpText { get; set; }
 

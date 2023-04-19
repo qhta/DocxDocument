@@ -1,13 +1,13 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Pre-Sub-Superscript Properties.
+///   This element specifies the Pre-Sub-Superscript object, 
+///   which consists of a base e and a subscript and superscript placed to the left of the base, as in {_1^2}A. 
 /// </summary>
 public class PreSubSuperProperties: ModelElement
 {
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of pre-sub-superscript object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

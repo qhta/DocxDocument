@@ -9,25 +9,25 @@ public class PivotOptions: ModelElement
   /// <summary>
   ///   DropZoneFilter.
   /// </summary>
-  public Boolean? DropZoneFilter { get; set; }
+  public bool? DropZoneFilter { get; set; }
 
   /// <summary>
   ///   DropZoneCategories.
   /// </summary>
-  public Boolean? DropZoneCategories { get; set; }
+  public bool? DropZoneCategories { get; set; }
 
   /// <summary>
   ///   DropZoneData.
   /// </summary>
-  public Boolean? DropZoneData { get; set; }
+  public bool? DropZoneData { get; set; }
 
   /// <summary>
   ///   DropZoneSeries.
   /// </summary>
-  public Boolean? DropZoneSeries { get; set; }
+  public bool? DropZoneSeries { get; set; }
 
   /// <summary>
   ///   DropZonesVisible.
   /// </summary>
-  public Boolean? DropZonesVisible { get; set; }
+  public bool? DropZonesVisible { get; set; }
 }

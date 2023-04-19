@@ -1,107 +1,107 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Group-Character Function.
+/// <see cref="DMM.GroupChar"/> class from/to OpenXml converter.
 /// </summary>
 public static class GroupCharConverter
 {
-  /// <summary>
-  /// Group-Character Properties.
-  /// </summary>
-  private static DMMath.GroupCharProperties? GetGroupCharProperties(DXMath.GroupChar openXmlElement)
+  #region Group-Character Properties. conversion.
+  private static DMM.GroupCharProperties? GetGroupCharProperties(DXM.GroupChar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.GroupCharProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.GroupCharProperties>();
     if (element != null)
-      return DMXMath.GroupCharPropertiesConverter.CreateModelElement(element);
+      return DMXM.GroupCharPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupCharProperties(DXM.GroupChar openXmlElement, DMM.GroupCharProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.GroupCharProperties>(), value, diffs, objName);
+    return DMXM.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.GroupCharProperties>(), value, diffs, objName);
   }
   
-  private static void SetGroupCharProperties(DXMath.GroupChar openXmlElement, DMMath.GroupCharProperties? value)
+  private static void SetGroupCharProperties(DXM.GroupChar openXmlElement, DMM.GroupCharProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.GroupCharProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.GroupCharProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.GroupCharPropertiesConverter.CreateOpenXmlElement<DXMath.GroupCharProperties>(value);
+      itemElement = DMXM.GroupCharPropertiesConverter.CreateOpenXmlElement<DXM.GroupCharProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base.
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.GroupChar openXmlElement)
+  #endregion
+
+  #region Base conversion.
+  private static DMM.Argument? GetArgument(DXM.GroupChar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.GroupChar openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.GroupChar openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.GroupChar openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.GroupChar openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.GroupChar? CreateModelElement(DXMath.GroupChar? openXmlElement)
+  #endregion
+
+  #region GroupChar model conversion.
+  public static DMM.GroupChar? CreateModelElement(DXM.GroupChar? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.GroupChar();
-      value.GroupCharProperties = GetGroupCharProperties(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      return value;
+      var model = new DMM.GroupChar();
+      model.GroupCharProperties = GetGroupCharProperties(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.GroupChar? openXmlElement, DMMath.GroupChar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.GroupChar? openXmlElement, DMM.GroupChar? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpGroupCharProperties(openXmlElement, value.GroupCharProperties, diffs, objName))
+      if (!CmpGroupCharProperties(openXmlElement, model.GroupCharProperties, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.GroupChar CreateOpenXmlElement(DMMath.GroupChar value)
+  public static DXM.GroupChar CreateOpenXmlElement(DMM.GroupChar model)
   {
-    var openXmlElement = new DXMath.GroupChar();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.GroupChar();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.GroupChar openXmlElement, DMMath.GroupChar value)
+  public static bool UpdateOpenXmlElement(DXM.GroupChar openXmlElement, DMM.GroupChar model)
   {
-    SetGroupCharProperties(openXmlElement, value?.GroupCharProperties);
-    SetBase(openXmlElement, value?.Base);
+    SetGroupCharProperties(openXmlElement, model.GroupCharProperties);
+    SetArgument(openXmlElement, model.Argument);
     return true;
   }
+  #endregion
 }

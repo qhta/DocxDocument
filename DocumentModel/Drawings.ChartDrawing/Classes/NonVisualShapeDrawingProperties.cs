@@ -9,7 +9,7 @@ public class NonVisualShapeDrawingProperties: ModelElement
   /// <summary>
   ///   Text Box
   /// </summary>
-  public Boolean? TextBox { get; set; }
+  public bool? TextBox { get; set; }
 
   /// <summary>
   ///   Shape Locks.

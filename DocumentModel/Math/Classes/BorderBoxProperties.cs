@@ -1,53 +1,52 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Border Box Properties.
+///   This element specifies the properties of the Border Box object, which dictate the types of lines that can be drawn as part of the border. 
 /// </summary>
 public class BorderBoxProperties: ModelElement
 {
   /// <summary>
   ///   Hide Top Edge.
   /// </summary>
-  public BooleanKind? HideTop { get; set; }
+  public bool? HideTop { get; set; }
 
   /// <summary>
   ///   Hide Bottom Edge.
   /// </summary>
-  public BooleanKind? HideBottom { get; set; }
+  public bool? HideBottom { get; set; }
 
   /// <summary>
   ///   Hide Left Edge.
   /// </summary>
-  public BooleanKind? HideLeft { get; set; }
+  public bool? HideLeft { get; set; }
 
   /// <summary>
   ///   Hide Right Edge.
   /// </summary>
-  public BooleanKind? HideRight { get; set; }
+  public bool? HideRight { get; set; }
 
   /// <summary>
   ///   Border Box Strikethrough Horizontal.
   /// </summary>
-  public BooleanKind? StrikeHorizontal { get; set; }
+  public bool? StrikeHorizontal { get; set; }
 
   /// <summary>
   ///   Border Box Strikethrough Vertical.
   /// </summary>
-  public BooleanKind? StrikeVertical { get; set; }
+  public bool? StrikeVertical { get; set; }
 
   /// <summary>
   ///   Border Box Strikethrough Bottom-Left to Top-Right.
   /// </summary>
-  public BooleanKind? StrikeBottomLeftToTopRight { get; set; }
+  public bool? StrikeBottomLeftToTopRight { get; set; }
 
   /// <summary>
   ///   Border Box Strikethrough Top-Left to Bottom-Right.
   /// </summary>
-  public BooleanKind? StrikeTopLeftToBottomRight { get; set; }
+  public bool? StrikeTopLeftToBottomRight { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of border-box object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

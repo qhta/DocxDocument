@@ -43,7 +43,7 @@ public class ScatterChartSeries3: ModelElement
 
   public YValues? YValues { get; set; }
 
-  public Boolean? Smooth { get; set; }
+  public bool? Smooth { get; set; }
 
   public ScatterSerExtensionList? ScatterSerExtensionList { get; set; }
 }

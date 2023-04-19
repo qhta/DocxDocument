@@ -29,7 +29,7 @@ public class BarChartSeries3: ModelElement
   /// <summary>
   ///   InvertIfNegative.
   /// </summary>
-  public Boolean? InvertIfNegative { get; set; }
+  public bool? InvertIfNegative { get; set; }
 
   /// <summary>
   ///   PictureOptions.

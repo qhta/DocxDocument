@@ -14,5 +14,5 @@ public class HelpText: ModelElement
   /// <summary>
   ///   Help Text Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

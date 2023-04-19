@@ -9,82 +9,82 @@ public class SplitButtonWithTitle: ModelElement
   /// <summary>
   ///   enabled
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ
   /// </summary>
-  public String? IdQ { get; set; }
+  public string? IdQ { get; set; }
 
   /// <summary>
   ///   idMso
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 
   /// <summary>
   ///   tag
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   insertAfterMso
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  public string? InsertAfterMso { get; set; }
 
   /// <summary>
   ///   insertBeforeMso
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   ///   insertAfterQ
   /// </summary>
-  public String? InsertAfterQ { get; set; }
+  public string? InsertAfterQ { get; set; }
 
   /// <summary>
   ///   insertBeforeQ
   /// </summary>
-  public String? InsertBeforeQ { get; set; }
+  public string? InsertBeforeQ { get; set; }
 
   /// <summary>
   ///   visible
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   keytip
   /// </summary>
-  public String? Keytip { get; set; }
+  public string? Keytip { get; set; }
 
   /// <summary>
   ///   getKeytip
   /// </summary>
-  public String? GetKeytip { get; set; }
+  public string? GetKeytip { get; set; }
 
   /// <summary>
   ///   showLabel
   /// </summary>
-  public Boolean? ShowLabel { get; set; }
+  public bool? ShowLabel { get; set; }
 
   /// <summary>
   ///   getShowLabel
   /// </summary>
-  public String? GetShowLabel { get; set; }
+  public string? GetShowLabel { get; set; }
 
   public VisibleButton? VisibleButton { get; set; }
 

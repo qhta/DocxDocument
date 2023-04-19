@@ -14,15 +14,15 @@ public class HorizontalPosition: ModelElement
   /// <summary>
   ///   Relative Horizontal Alignment.
   /// </summary>
-  public String? HorizontalAlignment { get; set; }
+  public string? HorizontalAlignment { get; set; }
 
   /// <summary>
   ///   Absolute Position Offset.
   /// </summary>
-  public String? PositionOffset { get; set; }
+  public string? PositionOffset { get; set; }
 
   /// <summary>
   ///   PercentagePositionHeightOffset, this property is only available in Office 2010 and later..
   /// </summary>
-  public String? PercentagePositionHeightOffset { get; set; }
+  public string? PercentagePositionHeightOffset { get; set; }
 }

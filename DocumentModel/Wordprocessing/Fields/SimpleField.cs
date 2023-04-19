@@ -6,27 +6,27 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the SimpleField Class.
 /// </summary>
-public class SimpleField: ModelElement, IParagraphContent, ISdtRunContent, IBidirectionalContent
+public class SimpleField: ModelElement, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
   ///   Field Codes
   /// </summary>
-  public String? Instruction { get; set; }
+  public string? Instruction { get; set; }
 
   /// <summary>
   ///   Field Should Not Be Recalculated
   /// </summary>
-  public Boolean? FieldLock { get; set; }
+  public bool? FieldLock { get; set; }
 
   /// <summary>
   ///   Field Result Invalidated
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  public bool? Dirty { get; set; }
 
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public String? FieldData { get; set; }
+  public string? FieldData { get; set; }
 
   public CustomXmlRun? CustomXmlRun { get; set; }
 
@@ -112,7 +112,7 @@ public class SimpleField: ModelElement, IParagraphContent, ISdtRunContent, IBidi
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

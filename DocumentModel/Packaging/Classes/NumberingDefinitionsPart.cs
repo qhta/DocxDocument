@@ -8,7 +8,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class NumberingDefinitionsPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ImageParts of the NumberingDefinitionsPart
@@ -20,5 +20,5 @@ public class NumberingDefinitionsPart: ModelElement
   /// </summary>
   public Numbering? Numbering { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

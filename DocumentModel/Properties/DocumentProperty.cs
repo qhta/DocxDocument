@@ -96,7 +96,7 @@ public partial class DocumentProperty : ModelElement//IEquatable<DocumentPropert
   /// <summary>
   ///   Bookmark Link Target
   /// </summary>
-   public String? LinkTarget { get; set; }
+   public string? LinkTarget { get; set; }
 
   public override string ToString()
   {

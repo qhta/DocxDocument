@@ -9,7 +9,7 @@ public class CustomXmlProperties: ModelElement
   /// <summary>
   ///   Custom XML Element Placeholder Text.
   /// </summary>
-  public String? CustomXmlPlaceholder { get; set; }
+  public string? CustomXmlPlaceholder { get; set; }
 
   public Collection<CustomXmlAttribute>? CustomXmlAttributes { get; set; }
 }

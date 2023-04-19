@@ -1,107 +1,107 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Box Function.
+/// <see cref="DMM.Box"/> class from/to OpenXml converter.
 /// </summary>
 public static class BoxConverter
 {
-  /// <summary>
-  /// Box Properties.
-  /// </summary>
-  private static DMMath.BoxProperties? GetBoxProperties(DXMath.Box openXmlElement)
+  #region Box Properties. conversion.
+  private static DMM.BoxProperties? GetBoxProperties(DXM.Box openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.BoxProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.BoxProperties>();
     if (element != null)
-      return DMXMath.BoxPropertiesConverter.CreateModelElement(element);
+      return DMXM.BoxPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBoxProperties(DXMath.Box openXmlElement, DMMath.BoxProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBoxProperties(DXM.Box openXmlElement, DMM.BoxProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BoxProperties>(), value, diffs, objName);
+    return DMXM.BoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BoxProperties>(), value, diffs, objName);
   }
   
-  private static void SetBoxProperties(DXMath.Box openXmlElement, DMMath.BoxProperties? value)
+  private static void SetBoxProperties(DXM.Box openXmlElement, DMM.BoxProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BoxProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.BoxProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BoxPropertiesConverter.CreateOpenXmlElement<DXMath.BoxProperties>(value);
+      itemElement = DMXM.BoxPropertiesConverter.CreateOpenXmlElement<DXM.BoxProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base.
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.Box openXmlElement)
+  #endregion
+
+  #region Base conversion.
+  private static DMM.Argument? GetArgument(DXM.Box openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.Box openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Box openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.Box openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.Box openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.Box? CreateModelElement(DXMath.Box? openXmlElement)
+  #endregion
+
+  #region Box model conversion.
+  public static DMM.Box? CreateModelElement(DXM.Box? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Box();
-      value.BoxProperties = GetBoxProperties(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      return value;
+      var model = new DMM.Box();
+      model.BoxProperties = GetBoxProperties(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.Box? openXmlElement, DMMath.Box? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Box? openXmlElement, DMM.Box? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBoxProperties(openXmlElement, value.BoxProperties, diffs, objName))
+      if (!CmpBoxProperties(openXmlElement, model.BoxProperties, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.Box CreateOpenXmlElement(DMMath.Box value)
+  public static DXM.Box CreateOpenXmlElement(DMM.Box model)
   {
-    var openXmlElement = new DXMath.Box();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.Box();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.Box openXmlElement, DMMath.Box value)
+  public static bool UpdateOpenXmlElement(DXM.Box openXmlElement, DMM.Box model)
   {
-    SetBoxProperties(openXmlElement, value?.BoxProperties);
-    SetBase(openXmlElement, value?.Base);
+    SetBoxProperties(openXmlElement, model?.BoxProperties);
+    SetArgument(openXmlElement, model?.Argument);
     return true;
   }
+  #endregion
 }

@@ -11,22 +11,22 @@ public class SimpleFieldRuby: ModelElement
   /// <summary>
   ///   instr
   /// </summary>
-  public String? Instruction { get; set; }
+  public string? Instruction { get; set; }
 
   /// <summary>
   ///   fldLock
   /// </summary>
-  public Boolean? FieldLock { get; set; }
+  public bool? FieldLock { get; set; }
 
   /// <summary>
   ///   dirty
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  public bool? Dirty { get; set; }
 
   /// <summary>
   ///   FieldData.
   /// </summary>
-  public String? FieldData { get; set; }
+  public string? FieldData { get; set; }
 
   public CustomXmlRuby? CustomXmlRuby { get; set; }
 
@@ -114,7 +114,7 @@ public class SimpleFieldRuby: ModelElement
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

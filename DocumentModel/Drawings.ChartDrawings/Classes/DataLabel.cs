@@ -39,7 +39,7 @@ public class DataLabel: ModelElement
   /// <summary>
   ///   SeparatorXsdstring.
   /// </summary>
-  public String? SeparatorXsdstring { get; set; }
+  public string? SeparatorXsdstring { get; set; }
 
   /// <summary>
   ///   ExtensionList.

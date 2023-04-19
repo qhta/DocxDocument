@@ -9,7 +9,7 @@ public class RecipientData: ModelElement
   /// <summary>
   ///   Record Is Included in Mail Merge.
   /// </summary>
-  public Boolean? Active { get; set; }
+  public bool? Active { get; set; }
 
   /// <summary>
   ///   Index of Column Containing Unique Values for Record.

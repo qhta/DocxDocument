@@ -1,134 +1,132 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Delimiter Function.
+/// <see cref="DMM.Delimiter"/> class from/to OpenXml converter.
 /// </summary>
 public static class DelimiterConverter
 {
-  /// <summary>
-  /// Delimiter Properties.
-  /// </summary>
-  private static DMMath.DelimiterProperties? GetDelimiterProperties(DXMath.Delimiter openXmlElement)
+  #region Delimiter Properties conversion.
+  private static DMM.DelimiterProperties? GetDelimiterProperties(DXM.Delimiter openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.DelimiterProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.DelimiterProperties>();
     if (element != null)
-      return DMXMath.DelimiterPropertiesConverter.CreateModelElement(element);
+      return DMXM.DelimiterPropertiesConverter.CreateModelElement(element);
     return null;
   }
-  
-  private static bool CmpDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
+
+  private static bool CmpDelimiterProperties(DXM.Delimiter openXmlElement, DMM.DelimiterProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.DelimiterProperties>(), value, diffs, objName);
+    return DMXM.DelimiterPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.DelimiterProperties>(), value, diffs, objName);
   }
-  
-  private static void SetDelimiterProperties(DXMath.Delimiter openXmlElement, DMMath.DelimiterProperties? value)
+
+  private static void SetDelimiterProperties(DXM.Delimiter openXmlElement, DMM.DelimiterProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.DelimiterProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.DelimiterProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.DelimiterPropertiesConverter.CreateOpenXmlElement<DXMath.DelimiterProperties>(value);
+      itemElement = DMXM.DelimiterPropertiesConverter.CreateOpenXmlElement<DXM.DelimiterProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  private static Collection<DMMath.Base>? GetBases(DXMath.Delimiter openXmlElement)
+  #endregion
+
+  #region Base element conversion.
+  private static DMM.Argument? CreateBaseElement(DX.OpenXmlElement? openXmlElement)
   {
-    var collection = new Collection<DMMath.Base>();
-    foreach (var item in openXmlElement.Elements<DXMath.Base>())
-    {
-      var newItem = DMXMath.BaseConverter.CreateModelElement(item);
-      if (newItem != null)
-        collection.Add(newItem);
-    }
-    if (collection.Count>0)
-      return collection;
+    if (openXmlElement is DXM.Base baseElement)
+      return DMXM.ArgumentConverter.CreateModelElement(baseElement);
+
+    if (openXmlElement != null)
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in DelimiterConverter.CreateBaseElement method");
     return null;
   }
-  
-  private static bool CmpBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
+
+  public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
   {
-    var origElements = openXmlElement.Elements<DXMath.Base>();
-    var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
+    if (openXmlElement != null && model != null)
     {
-      if (origElementsCount != modelElementsCount)
-      {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
-        return false;
-      }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!DMXMath.BaseConverter.CompareModelElement(origItem, modelItem, diffs, objName))
-          ok = false;
-      }
-      return ok;
+      if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
+        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName);
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
+      return false;
+
     }
-    if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  private static void SetBases(DXMath.Delimiter openXmlElement, Collection<DMMath.Base>? value)
+
+  public static OpenXmlElement CreateOpenXmlBaseElement(DM.IModelElement model)
   {
-    openXmlElement.RemoveAllChildren<DXMath.Base>();
-    if (value != null)
-    {
-      foreach (var item in value)
-      {
-        var newItem = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(item);
-        if (newItem != null)
-          openXmlElement.AddChild(newItem);
-      }
-    }
+    if (model is DMM.Argument baseModel)
+      return DMXM.ArgumentConverter.CreateOpenXmlElement(baseModel);
+
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in DelimiterConverter.CreateOpenXmlArgumentContent method");
   }
-  
-  public static DMMath.Delimiter? CreateModelElement(DXMath.Delimiter? openXmlElement)
+
+  public static bool UpdateOpenXmlBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  {
+    if (openXmlElement != null && model != null)
+    {
+      if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
+        return DMXM.ArgumentConverter.UpdateOpenXmlElement(baseElement, baseModel);
+      return true;
+    }
+    return false;
+  }
+  #endregion
+
+  #region Delimiter model conversion.
+  public static DMM.Delimiter? CreateModelElement(DXM.Delimiter? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Delimiter();
-      value.DelimiterProperties = GetDelimiterProperties(openXmlElement);
-      value.Bases = GetBases(openXmlElement);
-      return value;
+      var model = new DMM.Delimiter();
+      model.DelimiterProperties = GetDelimiterProperties(openXmlElement);
+      ElementCollectionConverter<DMM.Argument>.FillModelElementCollection(
+         openXmlElement.Where(item => item is not DXM.DelimiterProperties), model,
+        CreateBaseElement);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXMath.Delimiter? openXmlElement, DMMath.Delimiter? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXM.Delimiter? openXmlElement, DMM.Delimiter? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpDelimiterProperties(openXmlElement, value.DelimiterProperties, diffs, objName))
+      if (!CmpDelimiterProperties(openXmlElement, model.DelimiterProperties, diffs, objName))
         ok = false;
-      if (!CmpBases(openXmlElement, value.Bases, diffs, objName))
+      if (!ElementCollectionConverter<DMM.Argument>.CompareOpenXmlElementCollection(
+        openXmlElement.Where(item=>item is not DXM.DelimiterProperties), model,
+        CompareBaseElement, diffs, objName))
         ok = false;
+
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static DXMath.Delimiter CreateOpenXmlElement(DMMath.Delimiter value)
+
+  public static DXM.Delimiter CreateOpenXmlElement(DMM.Delimiter model)
   {
-    var openXmlElement = new DXMath.Delimiter();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.Delimiter();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static bool UpdateOpenXmlElement(DXMath.Delimiter openXmlElement, DMMath.Delimiter value)
+
+  public static bool UpdateOpenXmlElement(DXM.Delimiter openXmlElement, DMM.Delimiter model)
   {
-    SetDelimiterProperties(openXmlElement, value?.DelimiterProperties);
-    SetBases(openXmlElement, value?.Bases);
-    return true;
+    SetDelimiterProperties(openXmlElement, model.DelimiterProperties);
+    return ElementCollectionConverter<DMM.Argument>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      CompareBaseElement,
+      UpdateOpenXmlBaseElement,
+      CreateOpenXmlBaseElement);
   }
+  #endregion
 }

@@ -9,17 +9,17 @@ public class DiagramAutoBullet: ModelElement
   /// <summary>
   ///   prefix, this property is only available in Office 2019 and later.
   /// </summary>
-  public String? AutoBulletPrefix { get; set; }
+  public string? AutoBulletPrefix { get; set; }
 
   /// <summary>
   ///   leadZeros, this property is only available in Office 2019 and later.
   /// </summary>
-  public Boolean? LeadZeros { get; set; }
+  public bool? LeadZeros { get; set; }
 
   /// <summary>
   ///   No Bullet.
   /// </summary>
-  public Boolean? NoBullet { get; set; }
+  public bool? NoBullet { get; set; }
 
   /// <summary>
   ///   Auto-Numbered Bullet.

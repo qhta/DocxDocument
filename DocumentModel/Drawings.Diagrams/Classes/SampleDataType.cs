@@ -9,7 +9,7 @@ public class SampleDataType: ModelElement
   /// <summary>
   ///   Use Default
   /// </summary>
-  public Boolean? UseDefault { get; set; }
+  public bool? UseDefault { get; set; }
 
   /// <summary>
   ///   Data Model.

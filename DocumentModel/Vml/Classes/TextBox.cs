@@ -11,22 +11,22 @@ public class TextBox: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  public string? Style { get; set; }
 
   /// <summary>
   ///   Text Box Inset
   /// </summary>
-  public String? Inset { get; set; }
+  public string? Inset { get; set; }
 
   /// <summary>
   ///   Text Box Single-Click Selection Toggle
   /// </summary>
-  public Boolean? SingleClick { get; set; }
+  public bool? SingleClick { get; set; }
 
   public TextBoxContent? TextBoxContent { get; set; }
 }

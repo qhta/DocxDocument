@@ -1,7 +1,7 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the BookmarkStart Class.
+/// <see cref="DMW.BookmarkStart"/> class from/to OpenXml converter.
 /// </summary>
 public static class BookmarkStartConverter
 {
@@ -84,19 +84,19 @@ public static class BookmarkStartConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DXW.BookmarkStart openXmlElement)
+  private static Int32? GetId(DXW.BookmarkStart openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Id);
+    return Int32ValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
+    return Int32ValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXW.BookmarkStart openXmlElement, String? value)
+  private static void SetId(DXW.BookmarkStart openXmlElement, Int32? value)
   {
-    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
+    openXmlElement.Id = Int32ValueConverter.CreateStringValue(value);
   }
   
   public static DMW.BookmarkStart? CreateModelElement(DXW.BookmarkStart? openXmlElement)

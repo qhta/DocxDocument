@@ -24,14 +24,14 @@ public class Path: ModelElement
   /// <summary>
   ///   Path Stroke
   /// </summary>
-  public Boolean? Stroke { get; set; }
+  public bool? Stroke { get; set; }
 
   /// <summary>
   ///   3D Extrusion Allowed
   /// </summary>
-  public Boolean? ExtrusionOk { get; set; }
+  public bool? ExtrusionOk { get; set; }
 
-  public Boolean? CloseShapePath { get; set; }
+  public bool? CloseShapePath { get; set; }
 
   public MoveTo? MoveTo { get; set; }
 

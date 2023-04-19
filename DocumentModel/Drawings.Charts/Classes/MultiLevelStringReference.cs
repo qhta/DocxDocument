@@ -9,7 +9,7 @@ public class MultiLevelStringReference: ModelElement
   /// <summary>
   ///   Formula.
   /// </summary>
-  public String? Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   ///   MultiLevelStringCache.

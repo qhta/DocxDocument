@@ -1,13 +1,28 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-///   Defines the MarkupRangeType Class.
+/// <see cref="DMW.MarkupRangeElement"/> class from/to OpenXml converter.
 /// </summary>
-public static class MarkupRangeTypeConverter
+public static class MarkupRangeElementConverter
 {
-  /// <summary>
-  ///   displacedByCustomXml
-  /// </summary>
+  #region Annotation Identifier conversion.
+  private static Int32? GetId(DXW.MarkupRangeType openXmlElement)
+  {
+    return Int32ValueConverter.GetValue(openXmlElement?.Id);
+  }
+
+  private static bool CmpId(DXW.MarkupRangeType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  {
+    return Int32ValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
+  }
+
+  private static void SetId(DXW.MarkupRangeType openXmlElement, Int32? value)
+  {
+    openXmlElement.Id = Int32ValueConverter.CreateStringValue(value);
+  }
+  #endregion
+
+  #region displacedByCustomXml conversion.
   private static DMW.DisplacedByCustomXmlKind? GetDisplacedByCustomXml(DXW.MarkupRangeType openXmlElement)
   {
     return EnumValueConverter.GetValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
@@ -22,27 +37,10 @@ public static class MarkupRangeTypeConverter
   {
     openXmlElement.DisplacedByCustomXml = EnumValueConverter.CreateEnumValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(value);
   }
+  #endregion
 
-  /// <summary>
-  ///   Annotation Identifier
-  /// </summary>
-  private static String? GetId(DXW.MarkupRangeType openXmlElement)
-  {
-    return StringValueConverter.GetValue(openXmlElement?.Id);
-  }
-
-  private static bool CmpId(DXW.MarkupRangeType openXmlElement, String? value, DiffList? diffs, string? objName)
-  {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
-  }
-
-  private static void SetId(DXW.MarkupRangeType openXmlElement, String? value)
-  {
-    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
-  }
-
-  private static ElementType? CreateModelElement<ElementType>(DXW.MarkupRangeType? openXmlElement)
-    where ElementType : DMW.MarkupRangeType, new()
+  public static ElementType? CreateModelElement<ElementType>(DXW.MarkupRangeType? openXmlElement)
+    where ElementType : DMW.MarkupRangeElement, new()
   {
     if (openXmlElement != null)
     {
@@ -79,7 +77,7 @@ public static class MarkupRangeTypeConverter
     return CreateModelElement<DMW.MoveFromRangeEnd>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.MarkupRangeType? openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.MarkupRangeType? openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -95,7 +93,7 @@ public static class MarkupRangeTypeConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MarkupRangeType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MarkupRangeElement value)
     where OpenXmlElementType : DXW.MarkupRangeType, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -118,7 +116,7 @@ public static class MarkupRangeTypeConverter
   public static DXW.MoveToRangeEnd CreateOpenXmlElement(DMW.MoveToRangeEnd value)
     => CreateOpenXmlElement<DXW.MoveToRangeEnd>(value);
 
-  public static bool UpdateOpenXmlElement(DXW.MarkupRangeType openXmlElement, DMW.MarkupRangeType value)
+  public static bool UpdateOpenXmlElement(DXW.MarkupRangeType openXmlElement, DMW.MarkupRangeElement value)
   {
     SetDisplacedByCustomXml(openXmlElement, value?.DisplacedByCustomXml);
     SetId(openXmlElement, value?.Id);

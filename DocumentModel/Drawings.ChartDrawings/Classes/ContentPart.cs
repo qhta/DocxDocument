@@ -9,7 +9,7 @@ public class ContentPart: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 
   /// <summary>
   ///   bwMode, this property is only available in Office 2010 and later.

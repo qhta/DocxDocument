@@ -9,7 +9,7 @@ public class NonVisualPictureDrawingProperties: ModelElement
   /// <summary>
   ///   preferRelativeResize
   /// </summary>
-  public Boolean? PreferRelativeResize { get; set; }
+  public bool? PreferRelativeResize { get; set; }
 
   /// <summary>
   ///   PictureLocks.

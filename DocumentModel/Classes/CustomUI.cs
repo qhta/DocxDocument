@@ -9,12 +9,12 @@ public class CustomUI: ModelElement
   /// <summary>
   ///   onLoad, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? OnLoad { get; set; }
+  public string? OnLoad { get; set; }
 
   /// <summary>
   ///   loadImage, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? LoadImage { get; set; }
+  public string? LoadImage { get; set; }
 
   /// <summary>
   ///   Commands.

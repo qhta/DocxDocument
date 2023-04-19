@@ -9,7 +9,7 @@ public class StyleColor: ModelElement
   /// <summary>
   ///   val, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 
   public Int32? Tint { get; set; }
 

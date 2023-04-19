@@ -9,7 +9,7 @@ public class Ribbon: ModelElement
   /// <summary>
   ///   startFromScratch, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? StartFromScratch { get; set; }
+  public bool? StartFromScratch { get; set; }
 
   /// <summary>
   ///   QuickAccessToolbar.

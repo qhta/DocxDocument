@@ -6,7 +6,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class Model3DReferenceRelationshipPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

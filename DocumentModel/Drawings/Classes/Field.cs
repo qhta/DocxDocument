@@ -9,12 +9,12 @@ public class Field: ModelElement
   /// <summary>
   ///   Field ID
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Field Type
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   Text Character Properties.
@@ -29,5 +29,5 @@ public class Field: ModelElement
   /// <summary>
   ///   Text.
   /// </summary>
-  public String? Text { get; set; }
+  public string? Text { get; set; }
 }

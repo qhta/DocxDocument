@@ -1,15 +1,14 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Matrix Column Properties.
+///   This element specifies the properties of the matrix column mn, including the number of columns and the type of justification.
 /// </summary>
 public class MatrixColumnProperties: ModelElement
 {
   /// <summary>
   ///   Matrix Column Count.
   /// </summary>
-  public Int64? MatrixColumnCount { get; set; }
+  public Int32? MatrixColumnCount { get; set; }
 
   /// <summary>
   ///   Matrix Column Justification.

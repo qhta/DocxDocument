@@ -38,6 +38,7 @@
     <Compile Remove="BaseTypes\HalfPointsTypeConverter.cs" />
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
     <Compile Remove="Drawings.ChartDrawing\Classes\Extent.cs" />
+    <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />
     <Compile Remove="Packaging\Classes\CustomizationPart.cs" />
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />

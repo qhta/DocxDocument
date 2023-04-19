@@ -1541,27 +1541,27 @@ public static class DocumentSettingsConverter
     }
   }
   
-  private static DMMath.MathProperties? GetMathProperties(DXW.Settings openXmlElement)
+  private static DMM.MathProperties? GetMathProperties(DXW.Settings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.MathProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.MathProperties>();
     if (element != null)
-      return DMXMath.MathPropertiesConverter.CreateModelElement(element);
+      return DMXM.MathPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMathProperties(DXW.Settings openXmlElement, DMMath.MathProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMathProperties(DXW.Settings openXmlElement, DMM.MathProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.MathPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.MathProperties>(), value, diffs, objName);
+    return DMXM.MathPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.MathProperties>(), value, diffs, objName);
   }
   
-  private static void SetMathProperties(DXW.Settings openXmlElement, DMMath.MathProperties? value)
+  private static void SetMathProperties(DXW.Settings openXmlElement, DMM.MathProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.MathProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.MathProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.MathPropertiesConverter.CreateOpenXmlElement<DXMath.MathProperties>(value);
+      itemElement = DMXM.MathPropertiesConverter.CreateOpenXmlElement<DXM.MathProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1589,7 +1589,7 @@ public static class DocumentSettingsConverter
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
-        collection.Add((string)newItem);
+        collection.Add(newItem);
     }
     if (collection.Count>0)
       return collection;

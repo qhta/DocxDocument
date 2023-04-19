@@ -9,45 +9,45 @@ public class HeaderFooter: ModelElement
   /// <summary>
   ///   alignWithMargins, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? AlignWithMargins { get; set; }
+  public bool? AlignWithMargins { get; set; }
 
   /// <summary>
   ///   differentOddEven, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? DifferentOddEven { get; set; }
+  public bool? DifferentOddEven { get; set; }
 
   /// <summary>
   ///   differentFirst, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? DifferentFirst { get; set; }
+  public bool? DifferentFirst { get; set; }
 
   /// <summary>
   ///   OddHeaderXsdstring.
   /// </summary>
-  public String? OddHeaderXsdstring { get; set; }
+  public string? OddHeaderXsdstring { get; set; }
 
   /// <summary>
   ///   OddFooterXsdstring.
   /// </summary>
-  public String? OddFooterXsdstring { get; set; }
+  public string? OddFooterXsdstring { get; set; }
 
   /// <summary>
   ///   EvenHeaderXsdstring.
   /// </summary>
-  public String? EvenHeaderXsdstring { get; set; }
+  public string? EvenHeaderXsdstring { get; set; }
 
   /// <summary>
   ///   EvenFooterXsdstring.
   /// </summary>
-  public String? EvenFooterXsdstring { get; set; }
+  public string? EvenFooterXsdstring { get; set; }
 
   /// <summary>
   ///   FirstHeaderXsdstring.
   /// </summary>
-  public String? FirstHeaderXsdstring { get; set; }
+  public string? FirstHeaderXsdstring { get; set; }
 
   /// <summary>
   ///   FirstFooterXsdstring.
   /// </summary>
-  public String? FirstFooterXsdstring { get; set; }
+  public string? FirstFooterXsdstring { get; set; }
 }

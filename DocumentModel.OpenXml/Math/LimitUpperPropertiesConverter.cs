@@ -1,74 +1,75 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Upper Limit Properties.
+/// <see cref="DMM.LimitUpperProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class LimitUpperPropertiesConverter
 {
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.LimitUpperProperties openXmlElement)
+  #region ControlProperties. conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.LimitUpperProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.LimitUpperProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.LimitUpperProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.LimitUpperProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.LimitUpperProperties? CreateModelElement(DXMath.LimitUpperProperties? openXmlElement)
+  #endregion
+
+  #region LimitUpperProperties model conversion.
+  public static DMM.LimitUpperProperties? CreateModelElement(DXM.LimitUpperProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.LimitUpperProperties();
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.LimitUpperProperties();
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.LimitUpperProperties? openXmlElement, DMMath.LimitUpperProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.LimitUpperProperties? openXmlElement, DMM.LimitUpperProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.LimitUpperProperties value)
-    where OpenXmlElementType: DXMath.LimitUpperProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.LimitUpperProperties model)
+    where OpenXmlElementType: DXM.LimitUpperProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.LimitUpperProperties openXmlElement, DMMath.LimitUpperProperties value)
+  public static void UpdateOpenXmlElement(DXM.LimitUpperProperties openXmlElement, DMM.LimitUpperProperties model)
   {
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

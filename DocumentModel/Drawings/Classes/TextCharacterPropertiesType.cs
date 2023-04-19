@@ -9,7 +9,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public Boolean? SmtClean { get; set; }
+  public bool? SmtClean { get; set; }
 
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility
@@ -19,17 +19,17 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   kumimoji
   /// </summary>
-  public Boolean? Kumimoji { get; set; }
+  public bool? Kumimoji { get; set; }
 
   /// <summary>
   ///   lang
   /// </summary>
-  public String? Language { get; set; }
+  public string? Language { get; set; }
 
   /// <summary>
   ///   altLang
   /// </summary>
-  public String? AlternativeLanguage { get; set; }
+  public string? AlternativeLanguage { get; set; }
 
   /// <summary>
   ///   sz
@@ -39,12 +39,12 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   b
   /// </summary>
-  public Boolean? Bold { get; set; }
+  public bool? Bold { get; set; }
 
   /// <summary>
   ///   i
   /// </summary>
-  public Boolean? Italic { get; set; }
+  public bool? Italic { get; set; }
 
   /// <summary>
   ///   u
@@ -74,7 +74,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   normalizeH
   /// </summary>
-  public Boolean? NormalizeHeight { get; set; }
+  public bool? NormalizeHeight { get; set; }
 
   /// <summary>
   ///   baseline
@@ -84,22 +84,22 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   noProof
   /// </summary>
-  public Boolean? NoProof { get; set; }
+  public bool? NoProof { get; set; }
 
   /// <summary>
   ///   dirty
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  public bool? Dirty { get; set; }
 
   /// <summary>
   ///   err
   /// </summary>
-  public Boolean? SpellingError { get; set; }
+  public bool? SpellingError { get; set; }
 
   /// <summary>
   ///   smtClean
   /// </summary>
-  public Boolean? SmartTagClean { get; set; }
+  public bool? SmartTagClean { get; set; }
 
   /// <summary>
   ///   smtId
@@ -109,7 +109,7 @@ public class TextCharacterPropertiesType: ModelElement
   /// <summary>
   ///   bmk
   /// </summary>
-  public String? Bookmark { get; set; }
+  public string? Bookmark { get; set; }
 
   /// <summary>
   ///   Outline.

@@ -1,15 +1,15 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Delimiter Function.
+///   This element specifies the delimiter object, consisting of opening and closing delimiters 
+///   (such as parentheses, braces, brackets, and vertical bars), and an element contained inside. 
+///   The delimiter may have more than one element, with a designated separator character between each element. 
 /// </summary>
-public class Delimiter: ModelElement, ICommonMathContent
+public class Delimiter: ElementCollection<Argument>, ICommonMathContent
 {
   /// <summary>
-  ///   Delimiter Properties.
+  ///   Specifies Delimiter object properties.
   /// </summary>
   public DelimiterProperties? DelimiterProperties { get; set; }
 
-  public Collection<Base>? Bases { get; set; }
 }

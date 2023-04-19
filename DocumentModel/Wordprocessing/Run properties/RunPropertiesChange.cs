@@ -9,7 +9,7 @@ public class RunPropertiesChange: ModelElement
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   date
@@ -19,7 +19,7 @@ public class RunPropertiesChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? AnnotationId { get; set; }
+  public string? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Run Properties.

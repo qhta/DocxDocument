@@ -9,7 +9,7 @@ public class Connection: ModelElement
   /// <summary>
   ///   Model Identifier
   /// </summary>
-  public String? ModelId { get; set; }
+  public string? ModelId { get; set; }
 
   /// <summary>
   ///   Point Type
@@ -19,12 +19,12 @@ public class Connection: ModelElement
   /// <summary>
   ///   Source Identifier
   /// </summary>
-  public String? SourceId { get; set; }
+  public string? SourceId { get; set; }
 
   /// <summary>
   ///   Destination Identifier
   /// </summary>
-  public String? DestinationId { get; set; }
+  public string? DestinationId { get; set; }
 
   /// <summary>
   ///   Source Position
@@ -39,17 +39,17 @@ public class Connection: ModelElement
   /// <summary>
   ///   Parent Transition Identifier
   /// </summary>
-  public String? ParentTransitionId { get; set; }
+  public string? ParentTransitionId { get; set; }
 
   /// <summary>
   ///   Sibling Transition Identifier
   /// </summary>
-  public String? SiblingTransitionId { get; set; }
+  public string? SiblingTransitionId { get; set; }
 
   /// <summary>
   ///   Presentation Identifier
   /// </summary>
-  public String? PresentationId { get; set; }
+  public string? PresentationId { get; set; }
 
   /// <summary>
   ///   ExtensionList.

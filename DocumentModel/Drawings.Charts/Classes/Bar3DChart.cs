@@ -19,7 +19,7 @@ public class Bar3DChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<BarChartSeries>? BarChartSeries { get; set; }
 

@@ -23,7 +23,7 @@ public class CommentExtensible: ModelElement
   ///   of an associated element of type CT_CommentEx.
   ///   When intelligentPlaceholder is true, the content of the comment SHOULD be ignored.
   /// </summary>
-  public Boolean? IntelligentPlaceholder { get; set; }
+  public bool? IntelligentPlaceholder { get; set; }
 
   /// <summary>
   ///   Specifies additional information about a single comment.

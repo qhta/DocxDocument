@@ -9,60 +9,60 @@ public class ImageControl: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   image, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Image { get; set; }
+  public string? Image { get; set; }
 
   /// <summary>
   ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? ImageMso { get; set; }
+  public string? ImageMso { get; set; }
 
   /// <summary>
   ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetImage { get; set; }
+  public string? GetImage { get; set; }
 
   /// <summary>
   ///   altText, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AltText { get; set; }
+  public string? AltText { get; set; }
 
   /// <summary>
   ///   getAltText, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetAltText { get; set; }
+  public string? GetAltText { get; set; }
 }

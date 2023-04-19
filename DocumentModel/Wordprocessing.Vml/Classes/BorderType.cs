@@ -19,5 +19,5 @@ public class BorderType: ModelElement
   /// <summary>
   ///   Border shadow
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  public bool? Shadow { get; set; }
 }

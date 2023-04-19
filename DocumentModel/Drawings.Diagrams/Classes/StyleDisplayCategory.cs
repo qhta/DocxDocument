@@ -9,7 +9,7 @@ public class StyleDisplayCategory: ModelElement
   /// <summary>
   ///   Category Type
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   Priority

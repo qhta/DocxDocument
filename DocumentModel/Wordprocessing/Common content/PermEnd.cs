@@ -1,18 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the PermEnd Class.
+///   This element specifies the end of a single range permission within a WordprocessingML document. 
+///   This end marker is matched with the appropriately paired start marker 
+///   by matching the value of the Id attribute from the associated permStart element.
 /// </summary>
-public class PermEnd: ModelElement, ICommonContent
+public class PermEnd: MarkupRangeElement, ICommonContent
 {
-  /// <summary>
-  ///   Annotation ID
-  /// </summary>
-  public Int32? Id { get; set; }
-
-  /// <summary>
-  ///   Annotation Displaced By Custom XML Markup
-  /// </summary>
-  public DisplacedByCustomXmlKind? DisplacedByCustomXml { get; set; }
 }

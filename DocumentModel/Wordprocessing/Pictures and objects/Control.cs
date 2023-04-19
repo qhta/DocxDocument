@@ -9,15 +9,15 @@ public class Control: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Unique Name for Embedded Control
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Associated VML Data Reference
   /// </summary>
-  public String? ShapeId { get; set; }
+  public string? ShapeId { get; set; }
 
   /// <summary>
   ///   Embedded Control Properties Relationship Reference
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

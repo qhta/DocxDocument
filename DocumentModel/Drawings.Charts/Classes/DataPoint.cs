@@ -14,7 +14,7 @@ public class DataPoint: ModelElement
   /// <summary>
   ///   Invert if Negative.
   /// </summary>
-  public Boolean? InvertIfNegative { get; set; }
+  public bool? InvertIfNegative { get; set; }
 
   /// <summary>
   ///   Marker.
@@ -24,7 +24,7 @@ public class DataPoint: ModelElement
   /// <summary>
   ///   3D Bubble.
   /// </summary>
-  public Boolean? Bubble3D { get; set; }
+  public bool? Bubble3D { get; set; }
 
   /// <summary>
   ///   Explosion.

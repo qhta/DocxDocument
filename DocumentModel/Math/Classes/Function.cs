@@ -1,10 +1,10 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Function Apply Function.
+///   This element specifies the Function-Apply object, which consists of a function name and an argument element (e) acted upon. 
+///   It is often applied using a form of linear format. 
 /// </summary>
-public class MathFunction: ModelElement, ICommonMathContent
+public class Function: ModelElement, ICommonMathContent
 {
   /// <summary>
   ///   Function Properties.
@@ -19,5 +19,5 @@ public class MathFunction: ModelElement, ICommonMathContent
   /// <summary>
   ///   Base (Argument).
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 }

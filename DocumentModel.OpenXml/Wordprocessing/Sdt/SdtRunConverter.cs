@@ -8,7 +8,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class SdtRunConverter
 {
 
-  #region SdtContentRun elements conversion
+  #region SdtContentRun elements conversion.
 
     /// <summary>
   /// Creates item model element for SdtContentRun element item
@@ -39,7 +39,7 @@ public static class SdtRunConverter
     if (model != null)
       return model;
 
-    var mathModel = CommonMathConverter.CreateModelElement(openXmlElement);
+    var mathModel = DMXM.CommonMathConverter.CreateModelElement(openXmlElement);
      if (mathModel != null)
       return mathModel;
 
@@ -83,9 +83,9 @@ public static class SdtRunConverter
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathContent commonMathModel)
+      if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
         if (result != null)
           return (bool)result;
       }
@@ -124,7 +124,7 @@ public static class SdtRunConverter
     var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (result != null) return result;
 
-    var mathResult = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathContent);
+    var mathResult = DMXM.CommonMathConverter.CreateOpenXmlElement(model as DMM.ICommonMathContent);
     if (mathResult != null) return mathResult;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRunConverter.CreateOpenXmlParagraphContent method");
@@ -163,9 +163,9 @@ public static class SdtRunConverter
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathContent commonMathModel)
+      if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
+        var result = DMXM.CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
         if (result != null)
           return (bool)result;
       }
@@ -176,7 +176,7 @@ public static class SdtRunConverter
   #endregion
 
 
-  #region StdRun conversion
+  #region StdRun model conversion.
 
   /// <summary>
   /// Creates a model element for a SdtRun element.
@@ -190,8 +190,8 @@ public static class SdtRunConverter
       var model = new DMW.SdtRun();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      ElementCollectionConverter<DMW.ISdtRunContent>.FillModelElementCollection(openXmlElement.SdtContentRun, model, 
-        (CreateModelElementMethod)CreateSdtContentRunModelElement);
+      ElementCollectionConverter<DMW.ISdtRunContent>.FillModelElementCollection(openXmlElement.SdtContentRun, model,
+        CreateSdtContentRunModelElement);
       return model;
     }
     return null;
@@ -215,7 +215,7 @@ public static class SdtRunConverter
       if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
         ok = false;
       if (!ElementCollectionConverter<DMW.ISdtRunContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRun, model,
-        (CompareOpenXmlElementMethod)CompareSdtContentRunElement, diffs, objName))
+        CompareSdtContentRunElement, diffs, objName))
         ok = false;
       return ok;
     }
@@ -249,9 +249,9 @@ public static class SdtRunConverter
     SdtElementConverter.SetSdtProperties(openXmlElement, model.SdtProperties);
     SdtElementConverter.SetSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties);
     return ElementCollectionConverter<DMW.ISdtRunContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareSdtContentRunElement,
-      (UpdateOpenXmlElementMethod)UpdateSdtContentRunOpenXmlElement,
-      (CreateOpenXmlElementMethod)CreateSdtContentRunOpenXmlElement);
+      CompareSdtContentRunElement,
+      UpdateSdtContentRunOpenXmlElement,
+      CreateSdtContentRunOpenXmlElement);
   }
   #endregion
 

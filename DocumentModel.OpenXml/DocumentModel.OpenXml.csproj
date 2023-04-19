@@ -16,6 +16,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Math\OfficeMathArgumentTypeConverter.cs" />
     <Compile Remove="Packaging\WordCommentsExtensiblePartConverter.cs" />
     <Compile Remove="Packaging\WordprocessingCommentsExPartConverter.cs" />
     <Compile Remove="Packaging\WordprocessingCommentsIdsPartConverter.cs" />

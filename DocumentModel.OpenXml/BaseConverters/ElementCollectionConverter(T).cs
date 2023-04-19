@@ -189,24 +189,48 @@ public static class ElementCollectionConverter<T>
 
   #region collection items conversion methods with delegate parameters
 
+  ///// <summary>
+  ///// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
+  ///// </summary>
+  ///// <param name="compositeElement">Composite openXml element read from DocumentFormat.OpenXml document.</param>
+  ///// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
+  ///// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
+  ///// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
+  //public static bool FillModelElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T> modelElementCollection,
+  //  CreateModelElementMethod createElementMethod)
+  //{
+  //  if (compositeElement != null)
+  //  {
+  //    var elements = compositeElement.Elements().ToArray();
+  //    foreach (var element in elements)
+  //    {
+  //      var item = createElementMethod(element);
+  //      if (item is T modelElement)
+  //        modelElementCollection.Add(modelElement);
+  //    }
+  //  }
+  //  return true;
+  //}
+
   /// <summary>
   /// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
   /// </summary>
-  /// <param name="compositeElement">Composite openXml element read from DocumentFormat.OpenXml document.</param>
+  /// <param name="elements">A collection of openXml element read from DocumentFormat.OpenXml document.</param>
   /// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
   /// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
   /// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
-  public static bool FillModelElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T> modelElementCollection,
+  public static bool FillModelElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<T> modelElementCollection,
     CreateModelElementMethod createElementMethod)
   {
-    if (compositeElement != null)
+    if (elements != null)
     {
-      var elements = compositeElement.Elements().ToArray();
       foreach (var element in elements)
       {
         var item = createElementMethod(element);
         if (item is T modelElement)
           modelElementCollection.Add(modelElement);
+        else if (item!=null)
+          throw new InvalidOperationException($"Type {item.GetType()} does not implement {typeof(T)}");
       }
     }
     return true;
@@ -265,13 +289,13 @@ public static class ElementCollectionConverter<T>
               ok = false;
           }
         }
-        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, objName))
+        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, objName, "Count"))
           ok = false;
         return ok;
       }
       else
       {
-        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, "Count"))
+        if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, objName, "Count"))
           ok = false;
         return ok;
        }

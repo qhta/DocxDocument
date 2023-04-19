@@ -1,95 +1,95 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Column Properties.
+/// <see cref="DMM.MatrixColumnProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class MatrixColumnPropertiesConverter
 {
-  /// <summary>
-  /// Matrix Column Count.
-  /// </summary>
-  private static Int64? GetMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement)
+  #region Matrix Column Count. conversion.
+  private static Int32? GetMatrixColumnCount(DXM.MatrixColumnProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.MatrixColumnCount>()?.Val);
   }
   
-  private static bool CmpMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrixColumnCount(DXM.MatrixColumnProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.MatrixColumnCount>()?.Val, value, diffs, objName, "MatrixColumnCount");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.MatrixColumnCount>()?.Val, value, diffs, objName, "MatrixColumnCount");
   }
   
-  private static void SetMatrixColumnCount(DXMath.MatrixColumnProperties openXmlElement, Int64? value)
+  private static void SetMatrixColumnCount(DXM.MatrixColumnProperties openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXMath.MatrixColumnCount,System.Int64>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXM.MatrixColumnCount,System.Int64>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Matrix Column Justification conversion.
+  private static DMM.HorizontalAlignmentKind? GetMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Matrix Column Justification.
-  /// </summary>
-  private static DMMath.HorizontalAlignmentKind? GetMatrixColumnJustification(DXMath.MatrixColumnProperties openXmlElement)
+  private static bool CmpMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement, DMM.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpMatrixColumnJustification(DXMath.MatrixColumnProperties openXmlElement, DMMath.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static void SetMatrixColumnJustification(DXM.MatrixColumnProperties openXmlElement, DMM.HorizontalAlignmentKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetMatrixColumnJustification(DXMath.MatrixColumnProperties openXmlElement, DMMath.HorizontalAlignmentKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.MatrixColumnJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.MatrixColumnJustification>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>(itemElement, (DMMath.HorizontalAlignmentKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>(itemElement, (DMM.HorizontalAlignmentKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMMath.HorizontalAlignmentKind>((DMMath.HorizontalAlignmentKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>((DMM.HorizontalAlignmentKind)value));
   }
-  
-  public static DMMath.MatrixColumnProperties? CreateModelElement(DXMath.MatrixColumnProperties? openXmlElement)
+  #endregion
+
+  #region MatrixColumnProperties model conversion.
+  public static DMM.MatrixColumnProperties? CreateModelElement(DXM.MatrixColumnProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixColumnProperties();
-      value.MatrixColumnCount = GetMatrixColumnCount(openXmlElement);
-      value.MatrixColumnJustification = GetMatrixColumnJustification(openXmlElement);
-      return value;
+      var model = new DMM.MatrixColumnProperties();
+      model.MatrixColumnCount = GetMatrixColumnCount(openXmlElement);
+      model.MatrixColumnJustification = GetMatrixColumnJustification(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.MatrixColumnProperties? openXmlElement, DMMath.MatrixColumnProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MatrixColumnProperties? openXmlElement, DMM.MatrixColumnProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpMatrixColumnCount(openXmlElement, value.MatrixColumnCount, diffs, objName))
+      if (!CmpMatrixColumnCount(openXmlElement, model.MatrixColumnCount, diffs, objName))
         ok = false;
-      if (!CmpMatrixColumnJustification(openXmlElement, value.MatrixColumnJustification, diffs, objName))
+      if (!CmpMatrixColumnJustification(openXmlElement, model.MatrixColumnJustification, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumnProperties value)
-    where OpenXmlElementType: DXMath.MatrixColumnProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.MatrixColumnProperties model)
+    where OpenXmlElementType: DXM.MatrixColumnProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.MatrixColumnProperties openXmlElement, DMMath.MatrixColumnProperties value)
+  public static void UpdateOpenXmlElement(DXM.MatrixColumnProperties openXmlElement, DMM.MatrixColumnProperties model)
   {
-    SetMatrixColumnCount(openXmlElement, value?.MatrixColumnCount);
-    SetMatrixColumnJustification(openXmlElement, value?.MatrixColumnJustification);
+    SetMatrixColumnCount(openXmlElement, model?.MatrixColumnCount);
+    SetMatrixColumnJustification(openXmlElement, model?.MatrixColumnJustification);
   }
+  #endregion
 }

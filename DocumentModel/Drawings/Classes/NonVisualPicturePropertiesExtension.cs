@@ -9,7 +9,7 @@ public class NonVisualPicturePropertiesExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public CameraTool? CameraTool { get; set; }
 

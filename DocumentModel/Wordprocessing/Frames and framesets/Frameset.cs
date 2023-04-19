@@ -9,7 +9,7 @@ public class Frameset: ModelElement
   /// <summary>
   ///   Nested Frameset Size.
   /// </summary>
-  public String? FrameSize { get; set; }
+  public string? FrameSize { get; set; }
 
   /// <summary>
   ///   Frameset Splitter Properties.

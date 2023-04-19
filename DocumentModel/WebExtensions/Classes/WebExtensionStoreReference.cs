@@ -9,22 +9,22 @@ public class WebExtensionStoreReference: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   version, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Version { get; set; }
+  public string? Version { get; set; }
 
   /// <summary>
   ///   store, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Store { get; set; }
+  public string? Store { get; set; }
 
   /// <summary>
   ///   storeType, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? StoreType { get; set; }
+  public string? StoreType { get; set; }
 
   /// <summary>
   ///   OfficeArtExtensionList.

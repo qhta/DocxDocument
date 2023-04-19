@@ -10,7 +10,7 @@ public class ParagraphMarkRunPropertiesChange: ModelElement
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   date
@@ -20,7 +20,7 @@ public class ParagraphMarkRunPropertiesChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? AnnotationId { get; set; }
+  public string? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Run Properties for the Paragraph Mark.

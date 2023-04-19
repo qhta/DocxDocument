@@ -14,7 +14,7 @@ public class Area3DChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<AreaChartSeries>? AreaChartSeries { get; set; }
 

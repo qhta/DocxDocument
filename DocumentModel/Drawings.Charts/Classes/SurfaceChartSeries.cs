@@ -44,7 +44,7 @@ public class SurfaceChartSeries: ModelElement
   /// <summary>
   ///   Bubble3D.
   /// </summary>
-  public Boolean? Bubble3D { get; set; }
+  public bool? Bubble3D { get; set; }
 
   /// <summary>
   ///   SurfaceSerExtensionList.

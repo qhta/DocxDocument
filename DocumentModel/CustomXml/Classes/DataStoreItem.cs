@@ -9,7 +9,7 @@ public class DataStoreItem: ModelElement
   /// <summary>
   ///   Custom XML Data ID
   /// </summary>
-  public String? ItemId { get; set; }
+  public string? ItemId { get; set; }
 
   /// <summary>
   ///   Set of Associated XML Schemas.

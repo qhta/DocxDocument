@@ -16,7 +16,7 @@ public class TextBodyProperties: ModelElement
   /// <summary>
   ///   Paragraph Spacing
   /// </summary>
-  public Boolean? UseParagraphSpacing { get; set; }
+  public bool? UseParagraphSpacing { get; set; }
 
   /// <summary>
   ///   Text Vertical Overflow
@@ -71,12 +71,12 @@ public class TextBodyProperties: ModelElement
   /// <summary>
   ///   Columns Right-To-Left
   /// </summary>
-  public Boolean? RightToLeftColumns { get; set; }
+  public bool? RightToLeftColumns { get; set; }
 
   /// <summary>
   ///   From WordArt
   /// </summary>
-  public Boolean? FromWordArt { get; set; }
+  public bool? FromWordArt { get; set; }
 
   /// <summary>
   ///   Anchor
@@ -86,33 +86,33 @@ public class TextBodyProperties: ModelElement
   /// <summary>
   ///   Anchor Center
   /// </summary>
-  public Boolean? AnchorCenter { get; set; }
+  public bool? AnchorCenter { get; set; }
 
   /// <summary>
   ///   Force Anti-Alias
   /// </summary>
-  public Boolean? ForceAntiAlias { get; set; }
+  public bool? ForceAntiAlias { get; set; }
 
   /// <summary>
   ///   Text Upright
   /// </summary>
-  public Boolean? UpRight { get; set; }
+  public bool? UpRight { get; set; }
 
   /// <summary>
   ///   Compatible Line Spacing
   /// </summary>
-  public Boolean? CompatibleLineSpacing { get; set; }
+  public bool? CompatibleLineSpacing { get; set; }
 
   /// <summary>
   ///   Preset Text Shape.
   /// </summary>
   public PresetTextWrap? PresetTextWrap { get; set; }
 
-  public Boolean? NoAutoFit { get; set; }
+  public bool? NoAutoFit { get; set; }
 
   public NormalAutoFit? NormalAutoFit { get; set; }
 
-  public Boolean? ShapeAutoFit { get; set; }
+  public bool? ShapeAutoFit { get; set; }
 
   public Scene3DType? Scene3DType { get; set; }
 

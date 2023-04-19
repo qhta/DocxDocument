@@ -11,7 +11,7 @@ public class LegendEntry: ModelElement
   /// </summary>
   public UInt32? Index { get; set; }
 
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   public TextProperties? TextProperties { get; set; }
 

@@ -48,16 +48,16 @@ public static class ContentPartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ContentPart value)
-    where OpenXmlElementType: DXW.ContentPart, new()
+  public static DXW.ContentPart CreateOpenXmlElement(DMW.ContentPart value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.ContentPart();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.ContentPart openXmlElement, DMW.ContentPart value)
+  public static bool UpdateOpenXmlElement(DXW.ContentPart openXmlElement, DMW.ContentPart value)
   {
     SetId(openXmlElement, value?.Id);
+    return true;
   }
 }

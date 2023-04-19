@@ -1,107 +1,107 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Border-Box Function.
+/// <see cref="DMM.BorderBox"/> class from/to OpenXml converter.
 /// </summary>
 public static class BorderBoxConverter
 {
-  /// <summary>
-  /// Border Box Properties.
-  /// </summary>
-  private static DMMath.BorderBoxProperties? GetBorderBoxProperties(DXMath.BorderBox openXmlElement)
+  #region Border Box Properties. conversion.
+  private static DMM.BorderBoxProperties? GetBorderBoxProperties(DXM.BorderBox openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.BorderBoxProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.BorderBoxProperties>();
     if (element != null)
-      return DMXMath.BorderBoxPropertiesConverter.CreateModelElement(element);
+      return DMXM.BorderBoxPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderBoxProperties(DXM.BorderBox openXmlElement, DMM.BorderBoxProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.BorderBoxProperties>(), value, diffs, objName);
+    return DMXM.BorderBoxPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.BorderBoxProperties>(), value, diffs, objName);
   }
   
-  private static void SetBorderBoxProperties(DXMath.BorderBox openXmlElement, DMMath.BorderBoxProperties? value)
+  private static void SetBorderBoxProperties(DXM.BorderBox openXmlElement, DMM.BorderBoxProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BorderBoxProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.BorderBoxProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BorderBoxPropertiesConverter.CreateOpenXmlElement<DXMath.BorderBoxProperties>(value);
+      itemElement = DMXM.BorderBoxPropertiesConverter.CreateOpenXmlElement<DXM.BorderBoxProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base.
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.BorderBox openXmlElement)
+  #endregion
+
+  #region Base conversion.
+  private static DMM.Argument? GetArgument(DXM.BorderBox openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.BorderBox openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.BorderBox openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.BorderBox openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.BorderBox openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.BorderBox? CreateModelElement(DXMath.BorderBox? openXmlElement)
+  #endregion
+
+  #region BorderBox model conversion.
+  public static DMM.BorderBox? CreateModelElement(DXM.BorderBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BorderBox();
-      value.BorderBoxProperties = GetBorderBoxProperties(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      return value;
+      var model = new DMM.BorderBox();
+      model.BorderBoxProperties = GetBorderBoxProperties(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.BorderBox? openXmlElement, DMMath.BorderBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BorderBox? openXmlElement, DMM.BorderBox? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBorderBoxProperties(openXmlElement, value.BorderBoxProperties, diffs, objName))
+      if (!CmpBorderBoxProperties(openXmlElement, model.BorderBoxProperties, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.BorderBox CreateOpenXmlElement(DMMath.BorderBox value)
+  public static DXM.BorderBox CreateOpenXmlElement(DMM.BorderBox model)
   {
-    var openXmlElement = new DXMath.BorderBox();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.BorderBox();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.BorderBox openXmlElement, DMMath.BorderBox value)
+  public static bool UpdateOpenXmlElement(DXM.BorderBox openXmlElement, DMM.BorderBox model)
   {
-    SetBorderBoxProperties(openXmlElement, value?.BorderBoxProperties);
-    SetBase(openXmlElement, value?.Base);
+    SetBorderBoxProperties(openXmlElement, model.BorderBoxProperties);
+    SetArgument(openXmlElement, model.Argument);
     return true;
   }
+  #endregion
 }

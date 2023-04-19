@@ -6,12 +6,12 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class RibbonExtensibilityPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ImageParts of the RibbonExtensibilityPart
   /// </summary>
   public Collection<ImagePart>? ImageParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

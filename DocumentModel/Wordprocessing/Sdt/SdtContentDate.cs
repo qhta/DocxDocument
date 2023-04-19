@@ -14,12 +14,12 @@ public class SdtContentDate: ModelElement
   /// <summary>
   ///   Date Display Mask.
   /// </summary>
-  public String? DateFormat { get; set; }
+  public string? DateFormat { get; set; }
 
   /// <summary>
   ///   Date Picker Language ID.
   /// </summary>
-  public String? LanguageId { get; set; }
+  public string? LanguageId { get; set; }
 
   /// <summary>
   ///   Custom XML Data Date Storage Format.

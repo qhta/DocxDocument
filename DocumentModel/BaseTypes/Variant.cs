@@ -962,12 +962,12 @@ public class Variant : IConvertible, IEquatable<Variant>
     return new Variant(VariantType.DateTime, value);
   }
 
-  public static implicit operator String?(Variant value)
+  public static implicit operator string?(Variant value)
   {
     return value.ToString();
   }
 
-  public static implicit operator Variant(String? value)
+  public static implicit operator Variant(string? value)
   {
     return new Variant(VariantType.Lpwstr, value);
   }

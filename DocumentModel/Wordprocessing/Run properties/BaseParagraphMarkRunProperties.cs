@@ -44,6 +44,6 @@ public abstract class BaseParagraphMarkRunProperties: ExtBaseRunProperties
   ///  markup. Instead, this run property is stored on the paragraph mark's run properties to indicate that the
   ///  paragraph mark is part of an Office Open XML Math equation.
   /// </summary>
-  public Boolean? OfficeMath { get; set; }
+  public bool? OfficeMath { get; set; }
 
 }

@@ -9,117 +9,117 @@ public class Group: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetLabel { get; set; }
+  public string? GetLabel { get; set; }
 
   /// <summary>
   ///   image, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Image { get; set; }
+  public string? Image { get; set; }
 
   /// <summary>
   ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? ImageMso { get; set; }
+  public string? ImageMso { get; set; }
 
   /// <summary>
   ///   getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetImage { get; set; }
+  public string? GetImage { get; set; }
 
   /// <summary>
   ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  public string? InsertAfterMso { get; set; }
 
   /// <summary>
   ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertAfterQulifiedId { get; set; }
+  public string? InsertAfterQulifiedId { get; set; }
 
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertBeforeQulifiedId { get; set; }
+  public string? InsertBeforeQulifiedId { get; set; }
 
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Screentip { get; set; }
+  public string? Screentip { get; set; }
 
   /// <summary>
   ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetScreentip { get; set; }
+  public string? GetScreentip { get; set; }
 
   /// <summary>
   ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Supertip { get; set; }
+  public string? Supertip { get; set; }
 
   /// <summary>
   ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetSupertip { get; set; }
+  public string? GetSupertip { get; set; }
 
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Keytip { get; set; }
+  public string? Keytip { get; set; }
 
   /// <summary>
   ///   getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetKeytip { get; set; }
+  public string? GetKeytip { get; set; }
 
   /// <summary>
   ///   autoScale, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? AutoScale { get; set; }
+  public bool? AutoScale { get; set; }
 
   /// <summary>
   ///   centerVertically, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? CenterVertically { get; set; }
+  public bool? CenterVertically { get; set; }
 
   public ControlClone? ControlClone { get; set; }
 

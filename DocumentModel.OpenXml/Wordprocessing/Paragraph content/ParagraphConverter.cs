@@ -236,8 +236,9 @@ public static class ParagraphConverter
       model.TextId = GetTextId(openXmlElement);
       model.NoSpellError = GetNoSpellError(openXmlElement);
       model.ParagraphProperties = GetParagraphProperties(openXmlElement);
-      ElementCollectionConverter<IParagraphContent>.FillModelElementCollection(openXmlElement, model, 
-        (CreateModelElementMethod)CreateParagraphContent);
+      ElementCollectionConverter<IParagraphContent>.FillModelElementCollection(
+        openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
+        CreateParagraphContent);
       return model;
     }
     return null;
@@ -267,8 +268,8 @@ public static class ParagraphConverter
       if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
         ok = false;
       if (!ElementCollectionConverter<IParagraphContent>.CompareOpenXmlElementCollection(
-        openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model, 
-        (CompareOpenXmlElementMethod)CompareParagraphContent, diffs, objName))
+        openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
+        CompareParagraphContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -296,9 +297,9 @@ public static class ParagraphConverter
     SetNoSpellError(openXmlElement, model.NoSpellError);
     SetParagraphProperties(openXmlElement, model.ParagraphProperties);
     return ElementCollectionConverter<IParagraphContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareParagraphContent,
-      (UpdateOpenXmlElementMethod)UpdateOpenXmlParagraphContent,
-      (CreateOpenXmlElementMethod)CreateOpenXmlParagraphContent);
+      CompareParagraphContent,
+      UpdateOpenXmlParagraphContent,
+      CreateOpenXmlParagraphContent);
   }
   #endregion
 }

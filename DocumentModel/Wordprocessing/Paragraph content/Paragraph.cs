@@ -50,7 +50,7 @@ public partial class Paragraph: ElementCollection<IParagraphContent>,
   /// <summary>
   ///   Specifies whether the text of that paragraph is free of detected spelling errors. 
   /// </summary>
-  public Boolean? NoSpellError { get; set; }
+  public bool? NoSpellError { get; set; }
   
   /// <summary>
   ///   Paragraph Properties.

@@ -9,7 +9,7 @@ public class WrapPolygon: ModelElement
   /// <summary>
   ///   Wrapping Points Modified
   /// </summary>
-  public Boolean? Edited { get; set; }
+  public bool? Edited { get; set; }
 
   /// <summary>
   ///   Wrapping Polygon Start.

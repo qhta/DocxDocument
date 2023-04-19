@@ -9,15 +9,15 @@ public class EmbeddedWavAudioFileType: ModelElement
   /// <summary>
   ///   Embedded Audio File Relationship ID
   /// </summary>
-  public String? Embed { get; set; }
+  public string? Embed { get; set; }
 
   /// <summary>
   ///   Sound Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Recognized Built-In Sound
   /// </summary>
-  public Boolean? BuiltIn { get; set; }
+  public bool? BuiltIn { get; set; }
 }

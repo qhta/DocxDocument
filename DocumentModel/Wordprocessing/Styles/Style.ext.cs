@@ -5,7 +5,7 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   /// <summary>
   ///   Primary Style Name.
   /// </summary>
-  public String? Name
+  public string? Name
   {
     get => StyleName;
     set

@@ -9,7 +9,7 @@ public class Diagram: ModelElement
   /// <summary>
   ///   Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Animation Build Step

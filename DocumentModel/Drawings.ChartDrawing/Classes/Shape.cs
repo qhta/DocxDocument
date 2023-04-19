@@ -9,22 +9,22 @@ public class Shape: ModelElement
   /// <summary>
   ///   Reference to Custom Function
   /// </summary>
-  public String? Macro { get; set; }
+  public string? Macro { get; set; }
 
   /// <summary>
   ///   Text Link
   /// </summary>
-  public String? TextLink { get; set; }
+  public string? TextLink { get; set; }
 
   /// <summary>
   ///   Lock Text
   /// </summary>
-  public Boolean? LockText { get; set; }
+  public bool? LockText { get; set; }
 
   /// <summary>
   ///   Publish to Server
   /// </summary>
-  public Boolean? Published { get; set; }
+  public bool? Published { get; set; }
 
   /// <summary>
   ///   Non-Visual Shape Properties.

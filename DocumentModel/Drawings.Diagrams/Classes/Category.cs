@@ -9,7 +9,7 @@ public class Category: ModelElement
   /// <summary>
   ///   Category Type
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   Priority

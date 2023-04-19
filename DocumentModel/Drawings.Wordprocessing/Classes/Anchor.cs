@@ -31,7 +31,7 @@ public class Anchor: ModelElement
   /// <summary>
   ///   Page Positioning
   /// </summary>
-  public Boolean? SimplePos { get; set; }
+  public bool? SimplePos { get; set; }
 
   /// <summary>
   ///   Relative Z-Ordering Position
@@ -41,27 +41,27 @@ public class Anchor: ModelElement
   /// <summary>
   ///   Display Behind Document Text
   /// </summary>
-  public Boolean? BehindDoc { get; set; }
+  public bool? BehindDoc { get; set; }
 
   /// <summary>
   ///   Lock Anchor
   /// </summary>
-  public Boolean? Locked { get; set; }
+  public bool? Locked { get; set; }
 
   /// <summary>
   ///   Layout In Table Cell
   /// </summary>
-  public Boolean? LayoutInCell { get; set; }
+  public bool? LayoutInCell { get; set; }
 
   /// <summary>
   ///   Hidden
   /// </summary>
-  public Boolean? Hidden { get; set; }
+  public bool? Hidden { get; set; }
 
   /// <summary>
   ///   Allow Objects to Overlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public bool? AllowOverlap { get; set; }
 
   /// <summary>
   ///   editId, this property is only available in Office 2010 and later.
@@ -98,7 +98,7 @@ public class Anchor: ModelElement
   /// </summary>
   public EffectExtent? EffectExtent { get; set; }
 
-  public Boolean? WrapNone { get; set; }
+  public bool? WrapNone { get; set; }
 
   public WrapSquare? WrapSquare { get; set; }
 

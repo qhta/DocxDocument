@@ -1,140 +1,139 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Function Apply Function.
+/// <see cref="DMM.Function"/> class from/to OpenXml converter.
 /// </summary>
 public static class MathFunctionConverter
 {
-  /// <summary>
-  /// Function Properties.
-  /// </summary>
-  private static DMMath.FunctionProperties? GetFunctionProperties(DXMath.MathFunction openXmlElement)
+  #region Function Properties. conversion.
+  private static DMM.FunctionProperties? GetFunctionProperties(DXM.MathFunction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.FunctionProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.FunctionProperties>();
     if (element != null)
-      return DMXMath.FunctionPropertiesConverter.CreateModelElement(element);
+      return DMXM.FunctionPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFunctionProperties(DXM.MathFunction openXmlElement, DMM.FunctionProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FunctionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FunctionProperties>(), value, diffs, objName);
+    return DMXM.FunctionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionProperties>(), value, diffs, objName);
   }
   
-  private static void SetFunctionProperties(DXMath.MathFunction openXmlElement, DMMath.FunctionProperties? value)
+  private static void SetFunctionProperties(DXM.MathFunction openXmlElement, DMM.FunctionProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.FunctionProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.FunctionProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.FunctionPropertiesConverter.CreateOpenXmlElement<DXMath.FunctionProperties>(value);
+      itemElement = DMXM.FunctionPropertiesConverter.CreateOpenXmlElement<DXM.FunctionProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Function Name.
-  /// </summary>
-  private static DMMath.FunctionName? GetFunctionName(DXMath.MathFunction openXmlElement)
+  #endregion
+
+  #region Function Name conversion.
+  private static DMM.FunctionName? GetFunctionName(DXM.MathFunction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.FunctionName>();
+    var element = openXmlElement?.GetFirstChild<DXM.FunctionName>();
     if (element != null)
-      return DMXMath.FunctionNameConverter.CreateModelElement(element);
+      return DMXM.FunctionNameConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value, DiffList? diffs, string? objName)
+  private static bool CmpFunctionName(DXM.MathFunction openXmlElement, DMM.FunctionName? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.FunctionNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.FunctionName>(), value, diffs, objName);
+    return DMXM.FunctionNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionName>(), value, diffs, objName);
   }
   
-  private static void SetFunctionName(DXMath.MathFunction openXmlElement, DMMath.FunctionName? value)
+  private static void SetFunctionName(DXM.MathFunction openXmlElement, DMM.FunctionName? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.FunctionName>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.FunctionName>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.FunctionNameConverter.CreateOpenXmlElement<DXMath.FunctionName>(value);
+      itemElement = DMXM.FunctionNameConverter.CreateOpenXmlElement<DXM.FunctionName>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base (Argument).
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.MathFunction openXmlElement)
+  #endregion
+
+  #region Base (Argument) conversion.
+  private static DMM.Argument? GetArgument(DXM.MathFunction openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.MathFunction openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.MathFunction openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.MathFunction openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.MathFunction openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.MathFunction? CreateModelElement(DXMath.MathFunction? openXmlElement)
+  #endregion
+
+  #region MathFunction model conversion.
+  public static DMM.Function? CreateModelElement(DXM.MathFunction? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MathFunction();
-      value.FunctionProperties = GetFunctionProperties(openXmlElement);
-      value.FunctionName = GetFunctionName(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      return value;
+      var model = new DMM.Function();
+      model.FunctionProperties = GetFunctionProperties(openXmlElement);
+      model.FunctionName = GetFunctionName(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.MathFunction? openXmlElement, DMMath.MathFunction? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MathFunction? openXmlElement, DMM.Function? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFunctionProperties(openXmlElement, value.FunctionProperties, diffs, objName))
+      if (!CmpFunctionProperties(openXmlElement, model.FunctionProperties, diffs, objName))
         ok = false;
-      if (!CmpFunctionName(openXmlElement, value.FunctionName, diffs, objName))
+      if (!CmpFunctionName(openXmlElement, model.FunctionName, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.MathFunction CreateOpenXmlElement(DMMath.MathFunction value)
+  public static DXM.MathFunction CreateOpenXmlElement(DMM.Function model)
   {
-    var openXmlElement = new DXMath.MathFunction();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.MathFunction();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.MathFunction openXmlElement, DMMath.MathFunction value)
+  public static bool UpdateOpenXmlElement(DXM.MathFunction openXmlElement, DMM.Function model)
   {
-    SetFunctionProperties(openXmlElement, value?.FunctionProperties);
-    SetFunctionName(openXmlElement, value?.FunctionName);
-    SetBase(openXmlElement, value?.Base);
+    SetFunctionProperties(openXmlElement, model.FunctionProperties);
+    SetFunctionName(openXmlElement, model.FunctionName);
+    SetArgument(openXmlElement, model.Argument);
     return true;
   }
+  #endregion
 }

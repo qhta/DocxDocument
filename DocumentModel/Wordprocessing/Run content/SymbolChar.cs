@@ -12,7 +12,7 @@ public class SymbolChar: ModelElement, IRunContent
   /// <summary>
   ///   Symbol Character Font
   /// </summary>
-  public String? Font { get; set; }
+  public string? Font { get; set; }
 
   /// <summary>
   ///   Symbol Character Code

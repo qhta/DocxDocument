@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class TableStyleConditionalRowProperties: ModelElement
 {
-  public Boolean? Hidden { get; set; }
+  public bool? Hidden { get; set; }
 
-  public Boolean? CantSplit { get; set; }
+  public bool? CantSplit { get; set; }
 
-  public Boolean? TableHeader { get; set; }
+  public bool? TableHeader { get; set; }
 
   public TableWidth? TableCellSpacing { get; set; }
 

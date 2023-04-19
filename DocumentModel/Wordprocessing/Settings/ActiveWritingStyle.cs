@@ -8,7 +8,7 @@ public class ActiveWritingStyle: ModelElement
   /// <summary>
   ///   Writing Style Language
   /// </summary>
-  public String? Language { get; set; }
+  public string? Language { get; set; }
 
   /// <summary>
   ///   Grammatical Engine ID
@@ -23,15 +23,15 @@ public class ActiveWritingStyle: ModelElement
   /// <summary>
   ///   Natural Language Grammar Check
   /// </summary>
-  public Boolean? NaturalLanguageGrammarCheck { get; set; }
+  public bool? NaturalLanguageGrammarCheck { get; set; }
 
   /// <summary>
   ///   Check Stylistic Rules With Grammar
   /// </summary>
-  public Boolean? CheckStyle { get; set; }
+  public bool? CheckStyle { get; set; }
 
   /// <summary>
   ///   Application Name
   /// </summary>
-  public String? ApplicationName { get; set; }
+  public string? ApplicationName { get; set; }
 }

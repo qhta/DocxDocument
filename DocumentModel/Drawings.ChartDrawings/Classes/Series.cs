@@ -14,7 +14,7 @@ public class Series: ModelElement
   /// <summary>
   ///   hidden, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Hidden { get; set; }
+  public bool? Hidden { get; set; }
 
   /// <summary>
   ///   ownerIdx, this property is only available in Office 2016 and later.
@@ -24,7 +24,7 @@ public class Series: ModelElement
   /// <summary>
   ///   uniqueId, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? UniqueId { get; set; }
+  public string? UniqueId { get; set; }
 
   /// <summary>
   ///   formatIdx, this property is only available in Office 2016 and later.

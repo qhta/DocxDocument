@@ -1,10 +1,8 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Matrix Columns.
+///   This element specifies the collection of columns of the matrix .
 /// </summary>
-public class MatrixColumns: ModelElement
+public class MatrixColumns: ElementCollection<MatrixColumn>
 {
-  public Collection<MatrixColumn>? Items { get; set; }
 }

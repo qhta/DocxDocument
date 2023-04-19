@@ -9,5 +9,5 @@ public class MacroWllType: ModelElement
   /// <summary>
   ///   macroName
   /// </summary>
-  public String? MacroName { get; set; }
+  public string? MacroName { get; set; }
 }

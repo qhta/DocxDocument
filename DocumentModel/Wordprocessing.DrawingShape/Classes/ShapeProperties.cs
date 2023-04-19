@@ -22,7 +22,7 @@ public class ShapeProperties: ModelElement
 
   public PresetGeometry? PresetGeometry { get; set; }
 
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -32,7 +32,7 @@ public class ShapeProperties: ModelElement
 
   public PatternFill? PatternFill { get; set; }
 
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 
   public Outline? Outline { get; set; }
 

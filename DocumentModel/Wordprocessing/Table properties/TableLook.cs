@@ -14,30 +14,30 @@ public class TableLook: ModelElement
   /// <summary>
   ///   firstRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstRow { get; set; }
+  public bool? FirstRow { get; set; }
 
   /// <summary>
   ///   lastRow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastRow { get; set; }
+  public bool? LastRow { get; set; }
 
   /// <summary>
   ///   firstColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? FirstColumn { get; set; }
+  public bool? FirstColumn { get; set; }
 
   /// <summary>
   ///   lastColumn, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? LastColumn { get; set; }
+  public bool? LastColumn { get; set; }
 
   /// <summary>
   ///   noHBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoHorizontalBand { get; set; }
+  public bool? NoHorizontalBand { get; set; }
 
   /// <summary>
   ///   noVBand, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoVerticalBand { get; set; }
+  public bool? NoVerticalBand { get; set; }
 }

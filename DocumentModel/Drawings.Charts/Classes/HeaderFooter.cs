@@ -9,45 +9,45 @@ public class HeaderFooter: ModelElement
   /// <summary>
   ///   Align With Margins
   /// </summary>
-  public Boolean? AlignWithMargins { get; set; }
+  public bool? AlignWithMargins { get; set; }
 
   /// <summary>
   ///   Different Odd Even
   /// </summary>
-  public Boolean? DifferentOddEven { get; set; }
+  public bool? DifferentOddEven { get; set; }
 
   /// <summary>
   ///   Different First
   /// </summary>
-  public Boolean? DifferentFirst { get; set; }
+  public bool? DifferentFirst { get; set; }
 
   /// <summary>
   ///   Odd Header.
   /// </summary>
-  public String? OddHeader { get; set; }
+  public string? OddHeader { get; set; }
 
   /// <summary>
   ///   Odd Footer.
   /// </summary>
-  public String? OddFooter { get; set; }
+  public string? OddFooter { get; set; }
 
   /// <summary>
   ///   Even Header.
   /// </summary>
-  public String? EvenHeader { get; set; }
+  public string? EvenHeader { get; set; }
 
   /// <summary>
   ///   Even Footer.
   /// </summary>
-  public String? EvenFooter { get; set; }
+  public string? EvenFooter { get; set; }
 
   /// <summary>
   ///   First Header.
   /// </summary>
-  public String? FirstHeader { get; set; }
+  public string? FirstHeader { get; set; }
 
   /// <summary>
   ///   First Footer.
   /// </summary>
-  public String? FirstFooter { get; set; }
+  public string? FirstFooter { get; set; }
 }

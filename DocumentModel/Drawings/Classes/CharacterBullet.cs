@@ -9,5 +9,5 @@ public class CharacterBullet: ModelElement
   /// <summary>
   ///   Bullet Character
   /// </summary>
-  public String? Char { get; set; }
+  public string? Char { get; set; }
 }

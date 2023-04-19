@@ -14,5 +14,5 @@ public class ShapeIdMap: ModelElement
   /// <summary>
   ///   Shape IDs
   /// </summary>
-  public String? Data { get; set; }
+  public string? Data { get; set; }
 }

@@ -12,7 +12,7 @@ public class DiagramDefinitionExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public NumberDiagramInfoList? NumberDiagramInfoList { get; set; }
 

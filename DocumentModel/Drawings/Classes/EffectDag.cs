@@ -12,9 +12,9 @@ public class EffectDag: ModelElement
 
   public AlphaBiLevel? AlphaBiLevel { get; set; }
 
-  public Boolean? AlphaCeiling { get; set; }
+  public bool? AlphaCeiling { get; set; }
 
-  public Boolean? AlphaFloor { get; set; }
+  public bool? AlphaFloor { get; set; }
 
   public AlphaInverse? AlphaInverse { get; set; }
 

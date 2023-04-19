@@ -9,32 +9,32 @@ public class GraphicFrameLocks: ModelElement
   /// <summary>
   ///   Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get; set; }
+  public bool? NoGrouping { get; set; }
 
   /// <summary>
   ///   Disallow Selection of Child Shapes
   /// </summary>
-  public Boolean? NoDrilldown { get; set; }
+  public bool? NoDrilldown { get; set; }
 
   /// <summary>
   ///   Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get; set; }
+  public bool? NoSelection { get; set; }
 
   /// <summary>
   ///   Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get; set; }
+  public bool? NoChangeAspect { get; set; }
 
   /// <summary>
   ///   Disallow Shape Movement
   /// </summary>
-  public Boolean? NoMove { get; set; }
+  public bool? NoMove { get; set; }
 
   /// <summary>
   ///   Disallow Shape Resize
   /// </summary>
-  public Boolean? NoResize { get; set; }
+  public bool? NoResize { get; set; }
 
   /// <summary>
   ///   ExtensionList.

@@ -14,7 +14,7 @@ public class Underline: ModelElement
   /// <summary>
   ///   Underline Color
   /// </summary>
-  public String? Color { get; set; }
+  public string? Color { get; set; }
 
   /// <summary>
   ///   Underline Theme Color
@@ -24,10 +24,10 @@ public class Underline: ModelElement
   /// <summary>
   ///   Underline Theme Color Tint
   /// </summary>
-  public String? ThemeTint { get; set; }
+  public string? ThemeTint { get; set; }
 
   /// <summary>
   ///   Underline Theme Color Shade
   /// </summary>
-  public String? ThemeShade { get; set; }
+  public string? ThemeShade { get; set; }
 }

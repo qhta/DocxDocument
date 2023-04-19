@@ -12,67 +12,67 @@ public class Group: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  public string? Style { get; set; }
 
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Href { get; set; }
+  public string? Href { get; set; }
 
   /// <summary>
   ///   Hyperlink Display Target
   /// </summary>
-  public String? Target { get; set; }
+  public string? Target { get; set; }
 
   /// <summary>
   ///   CSS Reference
   /// </summary>
-  public String? Class { get; set; }
+  public string? Class { get; set; }
 
   /// <summary>
   ///   Shape Title
   /// </summary>
-  public String? Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   ///   Alternate Text
   /// </summary>
-  public String? Alternate { get; set; }
+  public string? Alternate { get; set; }
 
   /// <summary>
   ///   Coordinate Space Size
   /// </summary>
-  public String? CoordinateSize { get; set; }
+  public string? CoordinateSize { get; set; }
 
   /// <summary>
   ///   Coordinate Space Origin
   /// </summary>
-  public String? CoordinateOrigin { get; set; }
+  public string? CoordinateOrigin { get; set; }
 
   /// <summary>
   ///   Shape Bounding Polygon
   /// </summary>
-  public String? WrapCoordinates { get; set; }
+  public string? WrapCoordinates { get; set; }
 
   /// <summary>
   ///   Print Toggle
   /// </summary>
-  public Boolean? Print { get; set; }
+  public bool? Print { get; set; }
 
   /// <summary>
   ///   spid
   /// </summary>
-  public String? OptionalString { get; set; }
+  public string? OptionalString { get; set; }
 
   /// <summary>
   ///   oned
   /// </summary>
-  public Boolean? Oned { get; set; }
+  public bool? Oned { get; set; }
 
   /// <summary>
   ///   regroupid
@@ -82,37 +82,37 @@ public class Group: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   doubleclicknotify
   /// </summary>
-  public Boolean? DoubleClickNotify { get; set; }
+  public bool? DoubleClickNotify { get; set; }
 
   /// <summary>
   ///   button
   /// </summary>
-  public Boolean? Button { get; set; }
+  public bool? Button { get; set; }
 
   /// <summary>
   ///   userhidden
   /// </summary>
-  public Boolean? UserHidden { get; set; }
+  public bool? UserHidden { get; set; }
 
   /// <summary>
   ///   bullet
   /// </summary>
-  public Boolean? Bullet { get; set; }
+  public bool? Bullet { get; set; }
 
   /// <summary>
   ///   hr
   /// </summary>
-  public Boolean? Horizontal { get; set; }
+  public bool? Horizontal { get; set; }
 
   /// <summary>
   ///   hrstd
   /// </summary>
-  public Boolean? HorizontalStandard { get; set; }
+  public bool? HorizontalStandard { get; set; }
 
   /// <summary>
   ///   hrnoshade
   /// </summary>
-  public Boolean? HorizontalNoShade { get; set; }
+  public bool? HorizontalNoShade { get; set; }
 
   /// <summary>
   ///   hrpct
@@ -127,17 +127,17 @@ public class Group: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   allowincell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public bool? AllowInCell { get; set; }
 
   /// <summary>
   ///   allowoverlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public bool? AllowOverlap { get; set; }
 
   /// <summary>
   ///   userdrawn
   /// </summary>
-  public Boolean? UserDrawn { get; set; }
+  public bool? UserDrawn { get; set; }
 
   /// <summary>
   ///   dgmlayout
@@ -172,12 +172,12 @@ public class Group: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Table Properties
   /// </summary>
-  public String? TableProperties { get; set; }
+  public string? TableProperties { get; set; }
 
   /// <summary>
   ///   Table Row Height Limits
   /// </summary>
-  public String? TableLimits { get; set; }
+  public string? TableLimits { get; set; }
 
   public Group? ChildGroup { get; set; }
 
@@ -209,5 +209,5 @@ public class Group: ModelElement, IEmbeddedObjectContent
 
   public TextWrap? TextWrap { get; set; }
 
-  public Boolean? AnchorLock { get; set; }
+  public bool? AnchorLock { get; set; }
 }

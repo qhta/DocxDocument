@@ -9,7 +9,7 @@ public class TrackChangeType2: ModelElement, IRangeMarkupElement, ICommonContent
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   date
@@ -19,5 +19,5 @@ public class TrackChangeType2: ModelElement, IRangeMarkupElement, ICommonContent
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

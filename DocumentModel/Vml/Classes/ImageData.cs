@@ -9,47 +9,47 @@ public class ImageData: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Image Transparency Color
   /// </summary>
-  public String? ChromAKey { get; set; }
+  public string? ChromAKey { get; set; }
 
   /// <summary>
   ///   Image Left Crop
   /// </summary>
-  public String? CropLeft { get; set; }
+  public string? CropLeft { get; set; }
 
   /// <summary>
   ///   Image Top Crop
   /// </summary>
-  public String? CropTop { get; set; }
+  public string? CropTop { get; set; }
 
   /// <summary>
   ///   Image Right Crop
   /// </summary>
-  public String? CropRight { get; set; }
+  public string? CropRight { get; set; }
 
   /// <summary>
   ///   Image Bottom Crop
   /// </summary>
-  public String? CropBottom { get; set; }
+  public string? CropBottom { get; set; }
 
   /// <summary>
   ///   Image Intensity
   /// </summary>
-  public String? Gain { get; set; }
+  public string? Gain { get; set; }
 
   /// <summary>
   ///   Image Brightness
   /// </summary>
-  public String? BlackLevel { get; set; }
+  public string? BlackLevel { get; set; }
 
   /// <summary>
   ///   Image Gamma Correction
   /// </summary>
-  public String? Gamma { get; set; }
+  public string? Gamma { get; set; }
 
   /// <summary>
   ///   Image Grayscale Toggle
@@ -59,45 +59,45 @@ public class ImageData: ModelElement
   /// <summary>
   ///   Image Bilevel Toggle
   /// </summary>
-  public Boolean? BiLevel { get; set; }
+  public bool? BiLevel { get; set; }
 
   /// <summary>
   ///   Embossed Color
   /// </summary>
-  public String? EmbossColor { get; set; }
+  public string? EmbossColor { get; set; }
 
   /// <summary>
   ///   Black Recoloring Color
   /// </summary>
-  public String? RecolorTarget { get; set; }
+  public string? RecolorTarget { get; set; }
 
   /// <summary>
   ///   Image Data Title
   /// </summary>
-  public String? Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   ///   Detect Mouse Click
   /// </summary>
-  public Boolean? DetectMouseClick { get; set; }
+  public bool? DetectMouseClick { get; set; }
 
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? RelId { get; set; }
+  public string? RelId { get; set; }
 
   /// <summary>
   ///   Explicit Relationship to Image Data
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 
   /// <summary>
   ///   Explicit Relationship to Alternate Image Data
   /// </summary>
-  public String? Picture { get; set; }
+  public string? Picture { get; set; }
 
   /// <summary>
   ///   Explicit Relationship to Hyperlink Target
   /// </summary>
-  public String? RelHref { get; set; }
+  public string? RelHref { get; set; }
 }

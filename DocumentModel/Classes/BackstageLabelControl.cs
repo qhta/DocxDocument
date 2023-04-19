@@ -9,17 +9,17 @@ public class BackstageLabelControl: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   alignLabel, this property is only available in Office 2010 and later.
@@ -34,35 +34,35 @@ public class BackstageLabelControl: ModelElement
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetLabel { get; set; }
+  public string? GetLabel { get; set; }
 
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   noWrap, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NoWrap { get; set; }
+  public bool? NoWrap { get; set; }
 }

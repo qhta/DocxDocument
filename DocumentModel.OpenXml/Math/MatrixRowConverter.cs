@@ -1,27 +1,24 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Row.
+/// <see cref="DMM.MatrixRow"/> class from/to OpenXml converter.
 /// </summary>
 public static class MatrixRowConverter
 {
-  private static Collection<DMMath.Base>? GetBases(DXMath.MatrixRow openXmlElement)
+  #region Bases conversion.
+  private static void GetBases(ICollection<DMM.Argument> collection, DXM.MatrixRow openXmlElement)
   {
-    var collection = new Collection<DMMath.Base>();
-    foreach (var item in openXmlElement.Elements<DXMath.Base>())
+    foreach (var item in openXmlElement.Elements<DXM.Base>())
     {
-      var newItem = DMXMath.BaseConverter.CreateModelElement(item);
+      var newItem = DMXM.ArgumentConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpBases(DXMath.MatrixRow openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
+  private static bool CmpBases(DXM.MatrixRow openXmlElement, IEnumerable<DMM.Argument>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXMath.Base>();
+    var origElements = openXmlElement.Elements<DXM.Base>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +34,7 @@ public static class MatrixRowConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXMath.BaseConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXM.ArgumentConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,55 +44,58 @@ public static class MatrixRowConverter
     return false;
   }
   
-  private static void SetBases(DXMath.MatrixRow openXmlElement, Collection<DMMath.Base>? value)
+  private static void SetBases(DXM.MatrixRow openXmlElement, IEnumerable<DMM.Argument>? value)
   {
-    openXmlElement.RemoveAllChildren<DXMath.Base>();
+    openXmlElement.RemoveAllChildren<DXM.Base>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(item);
+        var newItem = DMXM.ArgumentConverter.CreateOpenXmlElement(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
-  
-  public static DMMath.MatrixRow? CreateModelElement(DXMath.MatrixRow? openXmlElement)
+  #endregion
+
+  #region MatrixRow model conversion.
+  public static DMM.MatrixRow? CreateModelElement(DXM.MatrixRow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixRow();
-      value.Bases = GetBases(openXmlElement);
-      return value;
+      var model = new DMM.MatrixRow();
+      GetBases(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.MatrixRow? openXmlElement, DMMath.MatrixRow? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MatrixRow? openXmlElement, DMM.MatrixRow? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBases(openXmlElement, value.Bases, diffs, objName))
+      if (!CmpBases(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixRow value)
-    where OpenXmlElementType: DXMath.MatrixRow, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.MatrixRow model)
+    where OpenXmlElementType: DXM.MatrixRow, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.MatrixRow openXmlElement, DMMath.MatrixRow value)
+  public static void UpdateOpenXmlElement(DXM.MatrixRow openXmlElement, DMM.MatrixRow model)
   {
-    SetBases(openXmlElement, value?.Bases);
+    SetBases(openXmlElement, model);
   }
+  #endregion
 }

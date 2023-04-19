@@ -19,7 +19,7 @@ public class DateAxis: ModelElement
   /// <summary>
   ///   Delete.
   /// </summary>
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   /// <summary>
   ///   Axis Position.
@@ -80,7 +80,7 @@ public class DateAxis: ModelElement
 
   public Double? CrossesAt { get; set; }
 
-  public Boolean? AutoLabeled { get; set; }
+  public bool? AutoLabeled { get; set; }
 
   public UInt16? LabelOffset { get; set; }
 

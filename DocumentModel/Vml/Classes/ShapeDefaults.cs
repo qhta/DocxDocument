@@ -19,37 +19,37 @@ public class ShapeDefaults: ModelElement
   /// <summary>
   ///   style
   /// </summary>
-  public String? Style { get; set; }
+  public string? Style { get; set; }
 
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? BeFilled { get; set; }
+  public bool? BeFilled { get; set; }
 
   /// <summary>
   ///   Default Fill Color
   /// </summary>
-  public String? FillColor { get; set; }
+  public string? FillColor { get; set; }
 
   /// <summary>
   ///   Shape Stroke Toggle
   /// </summary>
-  public Boolean? IsStroke { get; set; }
+  public bool? IsStroke { get; set; }
 
   /// <summary>
   ///   Shape Stroke Color
   /// </summary>
-  public String? StrokeColor { get; set; }
+  public string? StrokeColor { get; set; }
 
   /// <summary>
   ///   Allow in Table Cell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public bool? AllowInCell { get; set; }
 
   /// <summary>
   ///   allowoverlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public bool? AllowOverlap { get; set; }
 
   /// <summary>
   ///   insetmode

@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Upper-Limit Function.
+///   This element specifies the Upper-Limit object, consisting of text on the baseline and reduced-size text immediately above it.
 /// </summary>
 public class LimitUpper: ModelElement, ICommonMathContent
 {
@@ -12,9 +11,9 @@ public class LimitUpper: ModelElement, ICommonMathContent
   public LimitUpperProperties? LimitUpperProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 
   /// <summary>
   ///   Limit (Upper).

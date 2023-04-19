@@ -9,10 +9,10 @@ public class NoLineBreaksBeforeKinsoku: ModelElement
   /// <summary>
   ///   lang
   /// </summary>
-  public String? Language { get; set; }
+  public string? Language { get; set; }
 
   /// <summary>
   ///   val
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

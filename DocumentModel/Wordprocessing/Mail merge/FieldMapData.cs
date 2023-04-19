@@ -14,12 +14,12 @@ public class FieldMapData: ModelElement
   /// <summary>
   ///   Data Source Name for Column.
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Predefined Merge Field Name.
   /// </summary>
-  public String? MappedName { get; set; }
+  public string? MappedName { get; set; }
 
   /// <summary>
   ///   Index of Column Being Mapped.
@@ -29,10 +29,10 @@ public class FieldMapData: ModelElement
   /// <summary>
   ///   Merge Field Name Language ID.
   /// </summary>
-  public String? LanguageId { get; set; }
+  public string? LanguageId { get; set; }
 
   /// <summary>
   ///   Use Country/Region-Based Address Field Ordering.
   /// </summary>
-  public Boolean? DynamicAddress { get; set; }
+  public bool? DynamicAddress { get; set; }
 }

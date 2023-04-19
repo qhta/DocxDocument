@@ -11,12 +11,12 @@ public class Snapshot: ModelElement
   /// <summary>
   ///   Embedded Picture Reference
   /// </summary>
-  public String? Embed { get; set; }
+  public string? Embed { get; set; }
 
   /// <summary>
   ///   Linked Picture Reference
   /// </summary>
-  public String? Link { get; set; }
+  public string? Link { get; set; }
 
   /// <summary>
   ///   Compression state for blips.
@@ -25,9 +25,9 @@ public class Snapshot: ModelElement
 
   public AlphaBiLevel? AlphaBiLevel { get; set; }
 
-  public Boolean? AlphaCeiling { get; set; }
+  public bool? AlphaCeiling { get; set; }
 
-  public Boolean? AlphaFloor { get; set; }
+  public bool? AlphaFloor { get; set; }
 
   public AlphaInverse? AlphaInverse { get; set; }
 

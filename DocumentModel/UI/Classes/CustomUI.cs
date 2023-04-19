@@ -9,12 +9,12 @@ public class CustomUI: ModelElement
   /// <summary>
   ///   onLoad
   /// </summary>
-  public String? OnLoad { get; set; }
+  public string? OnLoad { get; set; }
 
   /// <summary>
   ///   loadImage
   /// </summary>
-  public String? LoadImage { get; set; }
+  public string? LoadImage { get; set; }
 
   /// <summary>
   ///   RepurposedCommands.

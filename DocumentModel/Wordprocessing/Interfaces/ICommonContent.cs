@@ -1,3 +1,5 @@
+using DocumentModel.Math;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -9,6 +11,9 @@ public interface ICommonContent: IBodyContent, IParagraphContent, ITableContent,
   ISdtRowContent, 
   ISdtCellContent,
   ICommentContent,
-  IBidirectionalContent
+  IBidirectionalContent,
+  IMathArgumentContent,
+  IOfficeMathContent,
+  IMathParagraphContent
 {
 }

@@ -10,17 +10,17 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   /// <summary>
   ///   Specifies the style ID of the character style which shall be used to format the contents of this paragraph.
   /// </summary>
-  public String? RunStyle { get; set; }
+  public string? RunStyle { get; set; }
 
   /// <summary>
   ///   Specifies whether the contents of this run shall be treated as complex script text regardless of their Unicode character values when determining the formatting for this run. 
   /// </summary>
-  public Boolean? ComplexScript { get; set; }
+  public bool? ComplexScript { get; set; }
 
   /// <summary>
   ///   Specifies whether the contents of this run shall have right-to-left characteristics.
   /// </summary>
-  public Boolean? RightToLeftText { get; set; }
+  public bool? RightToLeftText { get; set; }
 
   /// <summary>
   ///   Specifies a highlighting color which is applied as a background behind the contents of this run. 

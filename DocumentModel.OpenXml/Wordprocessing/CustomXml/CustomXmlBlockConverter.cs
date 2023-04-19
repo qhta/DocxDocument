@@ -307,19 +307,19 @@ public static class CustomXmlBlockConverter
     return null;
   }
   
-  private static bool CmpBookmarkEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpBookmarkEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName);
+    return DMXW.MarkupRangeElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BookmarkEnd>(), value, diffs, objName);
   }
   
-  private static void SetBookmarkEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value)
+  private static void SetBookmarkEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.BookmarkEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.BookmarkEnd>(value);
+      itemElement = DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.BookmarkEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -329,23 +329,23 @@ public static class CustomXmlBlockConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeStart>();
     if (element != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCommentRangeStart(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentRangeStart(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName);
+    return DMXW.MarkupRangeElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeStart>(), value, diffs, objName);
   }
   
-  private static void SetCommentRangeStart(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value)
+  private static void SetCommentRangeStart(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeStart>(value);
+      itemElement = DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.CommentRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -355,23 +355,23 @@ public static class CustomXmlBlockConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.CommentRangeEnd>();
     if (element != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCommentRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName);
+    return DMXW.MarkupRangeElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CommentRangeEnd>(), value, diffs, objName);
   }
   
-  private static void SetCommentRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value)
+  private static void SetCommentRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.CommentRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.CommentRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.CommentRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -407,23 +407,23 @@ public static class CustomXmlBlockConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveFromRangeEnd>();
     if (element != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMoveFromRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveFromRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName);
+    return DMXW.MarkupRangeElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>(), value, diffs, objName);
   }
   
-  private static void SetMoveFromRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value)
+  private static void SetMoveFromRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MoveFromRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.MoveFromRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.MoveFromRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -459,23 +459,23 @@ public static class CustomXmlBlockConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.MoveToRangeEnd>();
     if (element != null)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(element);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMoveToRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveToRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupRangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName);
+    return DMXW.MarkupRangeElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>(), value, diffs, objName);
   }
   
-  private static void SetMoveToRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeType? value)
+  private static void SetMoveToRangeEnd(DXW.CustomXmlBlock openXmlElement, DMW.MarkupRangeElement? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MoveToRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.MoveToRangeEnd>(value);
+      itemElement = DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.MoveToRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

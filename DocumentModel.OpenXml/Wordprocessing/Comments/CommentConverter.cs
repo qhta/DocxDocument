@@ -174,7 +174,7 @@ public static class CommentConverter
       model.Date = GetDate(openXmlElement);
       model.Id = GetId(openXmlElement);
       ElementCollectionConverter<DMW.ICommentContent>.FillModelElementCollection(openXmlElement, model,
-        (CreateModelElementMethod)CreateCommentContent);
+        CreateCommentContent);
 
       return model;
     }
@@ -196,7 +196,7 @@ public static class CommentConverter
         ok = false;
       if (!ElementCollectionConverter<DMW.ICommentContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.ParagraphProperties), model,
-        (CompareOpenXmlElementMethod)CompareCommentContent, diffs, objName))
+        CompareCommentContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -220,9 +220,9 @@ public static class CommentConverter
     SetDate(openXmlElement, model.Date);
     SetId(openXmlElement, model.Id);
     ElementCollectionConverter<DMW.ICommentContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareCommentContent,
-      (UpdateOpenXmlElementMethod)UpdateOpenXmlCommentContent,
-      (CreateOpenXmlElementMethod)CreateOpenXmlCommentContent);
+      CompareCommentContent,
+      UpdateOpenXmlCommentContent,
+      CreateOpenXmlCommentContent);
   }
   #endregion
 }

@@ -16,12 +16,12 @@ public class OleObject: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   OLE Object Application
   /// </summary>
-  public String? ProgId { get; set; }
+  public string? ProgId { get; set; }
 
   /// <summary>
   ///   OLE Object Shape
   /// </summary>
-  public String? ShapeId { get; set; }
+  public string? ShapeId { get; set; }
 
   /// <summary>
   ///   OLE Object Representation
@@ -31,12 +31,12 @@ public class OleObject: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   OLE Object Unique ID
   /// </summary>
-  public String? ObjectId { get; set; }
+  public string? ObjectId { get; set; }
 
   /// <summary>
   ///   Relationship
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   OLE Update Mode
@@ -46,15 +46,15 @@ public class OleObject: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Embedded Object Alternate Image Request.
   /// </summary>
-  public String? LinkType { get; set; }
+  public string? LinkType { get; set; }
 
   /// <summary>
   ///   Embedded Object Cannot Be Refreshed.
   /// </summary>
-  public String? LockedField { get; set; }
+  public string? LockedField { get; set; }
 
   /// <summary>
   ///   WordprocessingML Field Switches.
   /// </summary>
-  public String? FieldCodes { get; set; }
+  public string? FieldCodes { get; set; }
 }

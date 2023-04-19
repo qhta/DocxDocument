@@ -19,7 +19,7 @@ public class LineNumberType: ModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Distance Between Text and Line Numbering
   /// </summary>
-  public String? Distance { get; set; }
+  public string? Distance { get; set; }
 
   /// <summary>
   ///   Line Numbering Restart Setting

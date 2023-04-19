@@ -9,12 +9,12 @@ public class Surface3DChart: ModelElement
   /// <summary>
   ///   Wireframe.
   /// </summary>
-  public Boolean? Wireframe { get; set; }
+  public bool? Wireframe { get; set; }
 
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<SurfaceChartSeries>? SurfaceChartSeries { get; set; }
 

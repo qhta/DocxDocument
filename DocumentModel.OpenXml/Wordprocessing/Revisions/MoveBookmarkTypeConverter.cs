@@ -122,19 +122,19 @@ public static class MoveBookmarkTypeConverter
   /// <summary>
   /// Annotation Identifier
   /// </summary>
-  private static String? GetId(DXW.MoveBookmarkType openXmlElement)
+  private static Int32? GetId(DXW.MoveBookmarkType openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Id);
+    return Int32ValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.MoveBookmarkType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.MoveBookmarkType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
+    return Int32ValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXW.MoveBookmarkType openXmlElement, String? value)
+  private static void SetId(DXW.MoveBookmarkType openXmlElement, Int32? value)
   {
-    openXmlElement.Id = StringValueConverter.CreateStringValue(value);
+    openXmlElement.Id = Int32ValueConverter.CreateStringValue(value);
   }
   
   public static ElementType? CreateModelElement<ElementType>(DXW.MoveBookmarkType? openXmlElement)

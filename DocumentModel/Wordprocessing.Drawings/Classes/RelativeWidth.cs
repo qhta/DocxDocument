@@ -14,5 +14,5 @@ public class RelativeWidth: ModelElement
   /// <summary>
   ///   PercentageWidth.
   /// </summary>
-  public String? PercentageWidth { get; set; }
+  public string? PercentageWidth { get; set; }
 }

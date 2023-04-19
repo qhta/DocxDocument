@@ -9,7 +9,7 @@ public class AudioFromFile: ModelElement
   /// <summary>
   ///   Linked Relationship ID
   /// </summary>
-  public String? Link { get; set; }
+  public string? Link { get; set; }
 
   /// <summary>
   ///   ExtensionList.

@@ -9,40 +9,40 @@ public class VerticalSeparator: ModelElement
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ
   /// </summary>
-  public String? IdQ { get; set; }
+  public string? IdQ { get; set; }
 
   /// <summary>
   ///   visible
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   insertAfterMso
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  public string? InsertAfterMso { get; set; }
 
   /// <summary>
   ///   insertBeforeMso
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   ///   insertAfterQ
   /// </summary>
-  public String? InsertAfterQ { get; set; }
+  public string? InsertAfterQ { get; set; }
 
   /// <summary>
   ///   insertBeforeQ
   /// </summary>
-  public String? InsertBeforeQ { get; set; }
+  public string? InsertBeforeQ { get; set; }
 }

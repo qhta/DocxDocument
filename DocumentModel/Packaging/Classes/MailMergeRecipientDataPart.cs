@@ -20,5 +20,5 @@ public class MailMergeRecipientDataPart: ModelElement
   /// </summary>
   public MailMergeRecipients? MailMergeRecipients { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

@@ -14,5 +14,5 @@ public class GeoDataPointToEntityQuery: ModelElement
   /// <summary>
   ///   entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? EntityId { get; set; }
+  public string? EntityId { get; set; }
 }

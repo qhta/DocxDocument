@@ -13,7 +13,7 @@ public class DiagramColorsPart: ModelElement
   /// </summary>
   public ColorsDefinition? ColorsDefinition { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

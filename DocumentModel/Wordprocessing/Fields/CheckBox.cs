@@ -6,11 +6,11 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class CheckBox: ModelElement
 {
-  public String? FormFieldSize { get; set; }
+  public string? FormFieldSize { get; set; }
 
-  public Boolean? AutomaticallySizeFormField { get; set; }
+  public bool? AutomaticallySizeFormField { get; set; }
 
-  public Boolean? DefaultCheckBoxFormFieldState { get; set; }
+  public bool? DefaultCheckBoxFormFieldState { get; set; }
 
-  public Boolean? Checked { get; set; }
+  public bool? Checked { get; set; }
 }

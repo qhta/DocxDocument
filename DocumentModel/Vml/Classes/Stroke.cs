@@ -9,27 +9,27 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Stroke Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Stroke Weight
   /// </summary>
-  public String? Weight { get; set; }
+  public string? Weight { get; set; }
 
   /// <summary>
   ///   Stroke Color
   /// </summary>
-  public String? Color { get; set; }
+  public string? Color { get; set; }
 
   /// <summary>
   ///   Stroke Opacity
   /// </summary>
-  public String? Opacity { get; set; }
+  public string? Opacity { get; set; }
 
   /// <summary>
   ///   Stroke Line Style
@@ -39,7 +39,7 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Miter Joint Limit
   /// </summary>
-  public String? Miterlimit { get; set; }
+  public string? Miterlimit { get; set; }
 
   /// <summary>
   ///   Line End Join Style
@@ -54,7 +54,7 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Stroke Dash Pattern
   /// </summary>
-  public String? DashStyle { get; set; }
+  public string? DashStyle { get; set; }
 
   /// <summary>
   ///   Stroke Image Style
@@ -64,7 +64,7 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Stroke Image Location
   /// </summary>
-  public String? Source { get; set; }
+  public string? Source { get; set; }
 
   /// <summary>
   ///   Stroke Image Aspect Ratio
@@ -74,17 +74,17 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Stroke Image Size
   /// </summary>
-  public String? ImageSize { get; set; }
+  public string? ImageSize { get; set; }
 
   /// <summary>
   ///   Stoke Image Alignment
   /// </summary>
-  public Boolean? ImageAlignShape { get; set; }
+  public bool? ImageAlignShape { get; set; }
 
   /// <summary>
   ///   Stroke Alternate Pattern Color
   /// </summary>
-  public String? Color2 { get; set; }
+  public string? Color2 { get; set; }
 
   /// <summary>
   ///   Line Start Arrowhead
@@ -119,32 +119,32 @@ public class Stroke: ModelElement
   /// <summary>
   ///   Original Image Reference
   /// </summary>
-  public String? Href { get; set; }
+  public string? Href { get; set; }
 
   /// <summary>
   ///   Alternate Image Reference
   /// </summary>
-  public String? AlternateImageReference { get; set; }
+  public string? AlternateImageReference { get; set; }
 
   /// <summary>
   ///   Stroke Title
   /// </summary>
-  public String? Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public Boolean? ForceDash { get; set; }
+  public bool? ForceDash { get; set; }
 
   /// <summary>
   ///   Relationship
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public Boolean? Insetpen { get; set; }
+  public bool? Insetpen { get; set; }
 
   /// <summary>
   ///   LeftStroke.

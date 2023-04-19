@@ -9,7 +9,7 @@ public class Columns: ModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Equal Column Widths
   /// </summary>
-  public Boolean? EqualWidth { get; set; }
+  public bool? EqualWidth { get; set; }
 
   /// <summary>
   ///   Spacing Between Equal Width Columns
@@ -24,7 +24,7 @@ public class Columns: ModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Draw Line Between Columns
   /// </summary>
-  public Boolean? Separator { get; set; }
+  public bool? Separator { get; set; }
 
   public Collection<Column>? Items { get; set; }
 }

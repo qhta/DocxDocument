@@ -1,160 +1,158 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Group-Character Properties.
+/// <see cref="DMM.GroupCharProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class GroupCharPropertiesConverter
 {
-  /// <summary>
-  /// Group Character (Grouping Character).
-  /// </summary>
-  private static String? GetAccentChar(DXMath.GroupCharProperties openXmlElement)
+  #region Group Character (Grouping Character). conversion.
+  private static String? GetAccentChar(DXM.GroupCharProperties openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val);
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val);
   }
   
-  private static bool CmpAccentChar(DXMath.GroupCharProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAccentChar(DXM.GroupCharProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val, value, diffs, objName, "AccentChar");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val, value, diffs, objName, "Operator");
   }
   
-  private static void SetAccentChar(DXMath.GroupCharProperties openXmlElement, String? value)
+  private static void SetAccentChar(DXM.GroupCharProperties openXmlElement, String? value)
   {
-    StringValueConverter.SetValue<DXMath.AccentChar>(openXmlElement, value);
+    StringValueConverter.SetValue<DXM.AccentChar>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Position (Group Character) conversion.
+  private static DMM.VerticalJustificationKind? GetPosition(DXM.GroupCharProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Position (Group Character).
-  /// </summary>
-  private static DMMath.VerticalJustificationKind? GetPosition(DXMath.GroupCharProperties openXmlElement)
+  private static bool CmpPosition(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpPosition(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static void SetPosition(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetPosition(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Position>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement, (DMMath.VerticalJustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(itemElement, (DMM.VerticalJustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>((DMMath.VerticalJustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
+  }
+  #endregion
+
+  #region Vertical Justification conversion.
+  private static DMM.VerticalJustificationKind? GetVerticalJustification(DXM.GroupCharProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.VerticalJustification>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Vertical Justification.
-  /// </summary>
-  private static DMMath.VerticalJustificationKind? GetVerticalJustification(DXMath.GroupCharProperties openXmlElement)
+  private static bool CmpVerticalJustification(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.VerticalJustification>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.VerticalJustification>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpVerticalJustification(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static void SetVerticalJustification(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.VerticalJustification>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetVerticalJustification(DXMath.GroupCharProperties openXmlElement, DMMath.VerticalJustificationKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.VerticalJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.VerticalJustification>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement, (DMMath.VerticalJustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(itemElement, (DMM.VerticalJustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>((DMMath.VerticalJustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.GroupCharProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.GroupCharProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.GroupCharProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.GroupCharProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.GroupCharProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.GroupCharProperties? CreateModelElement(DXMath.GroupCharProperties? openXmlElement)
+  #endregion
+
+  #region GroupCharProperties model conversion.
+  public static DMM.GroupCharProperties? CreateModelElement(DXM.GroupCharProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.GroupCharProperties();
-      value.AccentChar = GetAccentChar(openXmlElement);
-      value.Position = GetPosition(openXmlElement);
-      value.VerticalJustification = GetVerticalJustification(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.GroupCharProperties();
+      model.AccentChar = GetAccentChar(openXmlElement);
+      model.Position = GetPosition(openXmlElement);
+      model.VerticalJustification = GetVerticalJustification(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.GroupCharProperties? openXmlElement, DMMath.GroupCharProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.GroupCharProperties? openXmlElement, DMM.GroupCharProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAccentChar(openXmlElement, value.AccentChar, diffs, objName))
+      if (!CmpAccentChar(openXmlElement, model.AccentChar, diffs, objName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, model.Position, diffs, objName))
         ok = false;
-      if (!CmpVerticalJustification(openXmlElement, value.VerticalJustification, diffs, objName))
+      if (!CmpVerticalJustification(openXmlElement, model.VerticalJustification, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.GroupCharProperties value)
-    where OpenXmlElementType: DXMath.GroupCharProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.GroupCharProperties model)
+    where OpenXmlElementType: DXM.GroupCharProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.GroupCharProperties openXmlElement, DMMath.GroupCharProperties value)
+  public static void UpdateOpenXmlElement(DXM.GroupCharProperties openXmlElement, DMM.GroupCharProperties model)
   {
-    SetAccentChar(openXmlElement, value?.AccentChar);
-    SetPosition(openXmlElement, value?.Position);
-    SetVerticalJustification(openXmlElement, value?.VerticalJustification);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetAccentChar(openXmlElement, model?.AccentChar);
+    SetPosition(openXmlElement, model?.Position);
+    SetVerticalJustification(openXmlElement, model?.VerticalJustification);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

@@ -1,204 +1,200 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Delimiter Properties.
+/// <see cref="DMM.DelimiterProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class DelimiterPropertiesConverter
 {
-  /// <summary>
-  /// Delimiter Beginning Character.
-  /// </summary>
-  private static String? GetBeginChar(DXMath.DelimiterProperties openXmlElement)
+  #region Delimiter Beginning Character conversion.
+  private static String? GetBeginChar(DXM.DelimiterProperties openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.BeginChar>()?.Val);
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.BeginChar>()?.Val);
   }
   
-  private static bool CmpBeginChar(DXMath.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBeginChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.BeginChar>()?.Val, value, diffs, objName, "BeginChar");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.BeginChar>()?.Val, value, diffs, objName, "BeginChar");
   }
   
-  private static void SetBeginChar(DXMath.DelimiterProperties openXmlElement, String? value)
+  private static void SetBeginChar(DXM.DelimiterProperties openXmlElement, String? value)
   {
-    StringValueConverter.SetValue<DXMath.BeginChar>(openXmlElement, value);
+    StringValueConverter.SetValue<DXM.BeginChar>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Delimiter Separator Character conversion.
+  private static String? GetSeparatorChar(DXM.DelimiterProperties openXmlElement)
+  {
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.SeparatorChar>()?.Val);
   }
   
-  /// <summary>
-  /// Delimiter Separator Character.
-  /// </summary>
-  private static String? GetSeparatorChar(DXMath.DelimiterProperties openXmlElement)
+  private static bool CmpSeparatorChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.SeparatorChar>()?.Val);
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.SeparatorChar>()?.Val, value, diffs, objName, "SeparatorChar");
   }
   
-  private static bool CmpSeparatorChar(DXMath.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static void SetSeparatorChar(DXM.DelimiterProperties openXmlElement, String? value)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.SeparatorChar>()?.Val, value, diffs, objName, "SeparatorChar");
+    StringValueConverter.SetValue<DXM.SeparatorChar>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Delimiter Ending Character conversion.
+  private static String? GetEndChar(DXM.DelimiterProperties openXmlElement)
+  {
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.EndChar>()?.Val);
   }
   
-  private static void SetSeparatorChar(DXMath.DelimiterProperties openXmlElement, String? value)
+  private static bool CmpEndChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    StringValueConverter.SetValue<DXMath.SeparatorChar>(openXmlElement, value);
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.EndChar>()?.Val, value, diffs, objName, "EndChar");
   }
   
-  /// <summary>
-  /// Delimiter Ending Character.
-  /// </summary>
-  private static String? GetEndChar(DXMath.DelimiterProperties openXmlElement)
+  private static void SetEndChar(DXM.DelimiterProperties openXmlElement, String? value)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.EndChar>()?.Val);
+    StringValueConverter.SetValue<DXM.EndChar>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Delimiter Grow conversion.
+  private static bool? GetGrowOperators(DXM.DelimiterProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value);
   }
   
-  private static bool CmpEndChar(DXMath.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGrowOperators(DXM.DelimiterProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.EndChar>()?.Val, value, diffs, objName, "EndChar");
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetEndChar(DXMath.DelimiterProperties openXmlElement, String? value)
+  private static void SetGrowOperators(DXM.DelimiterProperties openXmlElement, bool? value)
   {
-    StringValueConverter.SetValue<DXMath.EndChar>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// Delimiter Grow.
-  /// </summary>
-  private static DMMath.BooleanKind? GetGrowOperators(DXMath.DelimiterProperties openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value);
-  }
-  
-  private static bool CmpGrowOperators(DXMath.DelimiterProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetGrowOperators(DXMath.DelimiterProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.GrowOperators>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.GrowOperators>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
+  }
+  #endregion
+
+  #region Shape (Delimiters) conversion.
+  private static DMM.ShapeDelimiterKind? GetShape(DXM.DelimiterProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXM.Shape>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Shape (Delimiters).
-  /// </summary>
-  private static DMMath.ShapeDelimiterKind? GetShape(DXMath.DelimiterProperties openXmlElement)
+  private static bool CmpShape(DXM.DelimiterProperties openXmlElement, DMM.ShapeDelimiterKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXMath.Shape>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXM.Shape>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpShape(DXMath.DelimiterProperties openXmlElement, DMMath.ShapeDelimiterKind? value, DiffList? diffs, string? objName)
+  private static void SetShape(DXM.DelimiterProperties openXmlElement, DMM.ShapeDelimiterKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXMath.Shape>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetShape(DXMath.DelimiterProperties openXmlElement, DMMath.ShapeDelimiterKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Shape>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>(itemElement, (DMMath.ShapeDelimiterKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(itemElement, (DMM.ShapeDelimiterKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMMath.ShapeDelimiterKind>((DMMath.ShapeDelimiterKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>((DMM.ShapeDelimiterKind)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.DelimiterProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.DelimiterProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.DelimiterProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.DelimiterProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.DelimiterProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.DelimiterProperties? CreateModelElement(DXMath.DelimiterProperties? openXmlElement)
+  #endregion
+
+  #region DelimiterProperties model conversion.
+  public static DMM.DelimiterProperties? CreateModelElement(DXM.DelimiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.DelimiterProperties();
-      value.BeginChar = GetBeginChar(openXmlElement);
-      value.SeparatorChar = GetSeparatorChar(openXmlElement);
-      value.EndChar = GetEndChar(openXmlElement);
-      value.GrowOperators = GetGrowOperators(openXmlElement);
-      value.Shape = GetShape(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.DelimiterProperties();
+      model.BeginChar = GetBeginChar(openXmlElement);
+      model.SeparatorChar = GetSeparatorChar(openXmlElement);
+      model.EndChar = GetEndChar(openXmlElement);
+      model.GrowOperators = GetGrowOperators(openXmlElement);
+      model.Shape = GetShape(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.DelimiterProperties? openXmlElement, DMMath.DelimiterProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.DelimiterProperties? openXmlElement, DMM.DelimiterProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBeginChar(openXmlElement, value.BeginChar, diffs, objName))
+      if (!CmpBeginChar(openXmlElement, model.BeginChar, diffs, objName))
         ok = false;
-      if (!CmpSeparatorChar(openXmlElement, value.SeparatorChar, diffs, objName))
+      if (!CmpSeparatorChar(openXmlElement, model.SeparatorChar, diffs, objName))
         ok = false;
-      if (!CmpEndChar(openXmlElement, value.EndChar, diffs, objName))
+      if (!CmpEndChar(openXmlElement, model.EndChar, diffs, objName))
         ok = false;
-      if (!CmpGrowOperators(openXmlElement, value.GrowOperators, diffs, objName))
+      if (!CmpGrowOperators(openXmlElement, model.GrowOperators, diffs, objName))
         ok = false;
-      if (!CmpShape(openXmlElement, value.Shape, diffs, objName))
+      if (!CmpShape(openXmlElement, model.Shape, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.DelimiterProperties value)
-    where OpenXmlElementType: DXMath.DelimiterProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.DelimiterProperties model)
+    where OpenXmlElementType: DXM.DelimiterProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.DelimiterProperties openXmlElement, DMMath.DelimiterProperties value)
+  public static void UpdateOpenXmlElement(DXM.DelimiterProperties openXmlElement, DMM.DelimiterProperties model)
   {
-    SetBeginChar(openXmlElement, value?.BeginChar);
-    SetSeparatorChar(openXmlElement, value?.SeparatorChar);
-    SetEndChar(openXmlElement, value?.EndChar);
-    SetGrowOperators(openXmlElement, value?.GrowOperators);
-    SetShape(openXmlElement, value?.Shape);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetBeginChar(openXmlElement, model?.BeginChar);
+    SetSeparatorChar(openXmlElement, model?.SeparatorChar);
+    SetEndChar(openXmlElement, model?.EndChar);
+    SetGrowOperators(openXmlElement, model?.GrowOperators);
+    SetShape(openXmlElement, model?.Shape);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

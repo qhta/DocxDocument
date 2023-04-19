@@ -9,7 +9,7 @@ public class UnderlineFill: ModelElement
   /// <summary>
   ///   NoFill.
   /// </summary>
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   /// <summary>
   ///   SolidFill.
@@ -34,5 +34,5 @@ public class UnderlineFill: ModelElement
   /// <summary>
   ///   Group Fill.
   /// </summary>
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 }

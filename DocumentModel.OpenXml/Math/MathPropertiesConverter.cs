@@ -1,461 +1,451 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Math Properties.
+/// <see cref="DMM.MathProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class MathPropertiesConverter
 {
-  /// <summary>
-  /// Math Font.
-  /// </summary>
-  private static String? GetMathFont(DXMath.MathProperties openXmlElement)
+  #region Math Font. conversion.
+  private static String? GetMathFont(DXM.MathProperties openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val);
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.MathFont>()?.Val);
   }
   
-  private static bool CmpMathFont(DXMath.MathProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMathFont(DXM.MathProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.MathFont>()?.Val, value, diffs, objName, "MathFont");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.MathFont>()?.Val, value, diffs, objName, "MathFont");
   }
   
-  private static void SetMathFont(DXMath.MathProperties openXmlElement, String? value)
+  private static void SetMathFont(DXM.MathProperties openXmlElement, String? value)
   {
-    StringValueConverter.SetValue<DXMath.MathFont>(openXmlElement, value);
+    StringValueConverter.SetValue<DXM.MathFont>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Break on Binary Operators conversion.
+  private static DMM.BreakBinaryOperatorKind? GetBreakBinary(DXM.MathProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXM.BreakBinary>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Break on Binary Operators.
-  /// </summary>
-  private static DMMath.BreakBinaryOperatorKind? GetBreakBinary(DXMath.MathProperties openXmlElement)
+  private static bool CmpBreakBinary(DXM.MathProperties openXmlElement, DMM.BreakBinaryOperatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXMath.BreakBinary>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXM.BreakBinary>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpBreakBinary(DXMath.MathProperties openXmlElement, DMMath.BreakBinaryOperatorKind? value, DiffList? diffs, string? objName)
+  private static void SetBreakBinary(DXM.MathProperties openXmlElement, DMM.BreakBinaryOperatorKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(openXmlElement.GetFirstChild<DXMath.BreakBinary>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetBreakBinary(DXMath.MathProperties openXmlElement, DMMath.BreakBinaryOperatorKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BreakBinary>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.BreakBinary>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>(itemElement, (DMMath.BreakBinaryOperatorKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>(itemElement, (DMM.BreakBinaryOperatorKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMMath.BreakBinaryOperatorKind>((DMMath.BreakBinaryOperatorKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>((DMM.BreakBinaryOperatorKind)value));
+  }
+  #endregion
+
+  #region Break on Binary Subtraction conversion.
+  private static DMM.BreakBinarySubtractionKind? GetBreakBinarySubtraction(DXM.MathProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXM.BreakBinarySubtraction>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Break on Binary Subtraction.
-  /// </summary>
-  private static DMMath.BreakBinarySubtractionKind? GetBreakBinarySubtraction(DXMath.MathProperties openXmlElement)
+  private static bool CmpBreakBinarySubtraction(DXM.MathProperties openXmlElement, DMM.BreakBinarySubtractionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXM.BreakBinarySubtraction>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpBreakBinarySubtraction(DXMath.MathProperties openXmlElement, DMMath.BreakBinarySubtractionKind? value, DiffList? diffs, string? objName)
+  private static void SetBreakBinarySubtraction(DXM.MathProperties openXmlElement, DMM.BreakBinarySubtractionKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetBreakBinarySubtraction(DXMath.MathProperties openXmlElement, DMMath.BreakBinarySubtractionKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.BreakBinarySubtraction>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.BreakBinarySubtraction>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>(itemElement, (DMMath.BreakBinarySubtractionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>(itemElement, (DMM.BreakBinarySubtractionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMMath.BreakBinarySubtractionKind>((DMMath.BreakBinarySubtractionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>((DMM.BreakBinarySubtractionKind)value));
+  }
+  #endregion
+
+  #region Small Fraction conversion.
+  private static bool? GetSmallFraction(DXM.MathProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.SmallFraction>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Small Fraction.
-  /// </summary>
-  private static DMMath.BooleanKind? GetSmallFraction(DXMath.MathProperties openXmlElement)
+  private static bool CmpSmallFraction(DXM.MathProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.SmallFraction>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.SmallFraction>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpSmallFraction(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetSmallFraction(DXM.MathProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.SmallFraction>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetSmallFraction(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.SmallFraction>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.SmallFraction>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.SmallFraction, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.SmallFraction>((bool)value));
+  }
+  #endregion
+
+  #region Use Display Math Defaults conversion.
+  private static bool? GetDisplayDefaults(DXM.MathProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.DisplayDefaults>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Use Display Math Defaults.
-  /// </summary>
-  private static DMMath.BooleanKind? GetDisplayDefaults(DXMath.MathProperties openXmlElement)
+  private static bool CmpDisplayDefaults(DXM.MathProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.DisplayDefaults>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.DisplayDefaults>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpDisplayDefaults(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetDisplayDefaults(DXM.MathProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.DisplayDefaults>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetDisplayDefaults(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.DisplayDefaults>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.DisplayDefaults>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.DisplayDefaults, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.DisplayDefaults>((bool)value));
+  }
+  #endregion
+
+  #region Left Margin conversion.
+  private static UInt32? GetLeftMargin(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.LeftMargin>()?.Val);
   }
   
-  /// <summary>
-  /// Left Margin.
-  /// </summary>
-  private static UInt32? GetLeftMargin(DXMath.MathProperties openXmlElement)
+  private static bool CmpLeftMargin(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.LeftMargin>()?.Val, value, diffs, objName, "LeftMargin");
   }
   
-  private static bool CmpLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static void SetLeftMargin(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.LeftMargin>()?.Val, value, diffs, objName, "LeftMargin");
+    SimpleValueConverter.SetValue<DXM.LeftMargin,System.UInt32>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Right Margin conversion.
+  private static UInt32? GetRightMargin(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.RightMargin>()?.Val);
   }
   
-  private static void SetLeftMargin(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static bool CmpRightMargin(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    SimpleValueConverter.SetValue<DXMath.LeftMargin,System.UInt32>(openXmlElement, value);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.RightMargin>()?.Val, value, diffs, objName, "RightMargin");
   }
   
-  /// <summary>
-  /// Right Margin.
-  /// </summary>
-  private static UInt32? GetRightMargin(DXMath.MathProperties openXmlElement)
+  private static void SetRightMargin(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val);
+    SimpleValueConverter.SetValue<DXM.RightMargin,System.UInt32>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Default Justification conversion.
+  private static DMM.JustificationKind? GetDefaultJustification(DXM.MathProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.DefaultJustification>()?.Val?.Value);
   }
   
-  private static bool CmpRightMargin(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultJustification(DXM.MathProperties openXmlElement, DMM.JustificationKind? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.RightMargin>()?.Val, value, diffs, objName, "RightMargin");
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.DefaultJustification>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetRightMargin(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static void SetDefaultJustification(DXM.MathProperties openXmlElement, DMM.JustificationKind? value)
   {
-    SimpleValueConverter.SetValue<DXMath.RightMargin,System.UInt32>(openXmlElement, value);
-  }
-  
-  /// <summary>
-  /// Default Justification.
-  /// </summary>
-  private static DMMath.JustificationKind? GetDefaultJustification(DXMath.MathProperties openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.DefaultJustification>()?.Val?.Value);
-  }
-  
-  private static bool CmpDefaultJustification(DXMath.MathProperties openXmlElement, DMMath.JustificationKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.DefaultJustification>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetDefaultJustification(DXMath.MathProperties openXmlElement, DMMath.JustificationKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.DefaultJustification>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.DefaultJustification>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(itemElement, (DMMath.JustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(itemElement, (DMM.JustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>((DMMath.JustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
+  }
+  #endregion
+
+  #region Pre-Equation Spacing conversion.
+  private static UInt32? GetPreSpacing(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.PreSpacing>()?.Val);
   }
   
-  /// <summary>
-  /// Pre-Equation Spacing.
-  /// </summary>
-  private static UInt32? GetPreSpacing(DXMath.MathProperties openXmlElement)
+  private static bool CmpPreSpacing(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.PreSpacing>()?.Val, value, diffs, objName, "PreSpacing");
   }
   
-  private static bool CmpPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static void SetPreSpacing(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.PreSpacing>()?.Val, value, diffs, objName, "PreSpacing");
+    SimpleValueConverter.SetValue<DXM.PreSpacing,System.UInt32>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Post-Equation Spacing conversion.
+  private static UInt32? GetPostSpacing(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.PostSpacing>()?.Val);
   }
   
-  private static void SetPreSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static bool CmpPostSpacing(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    SimpleValueConverter.SetValue<DXMath.PreSpacing,System.UInt32>(openXmlElement, value);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.PostSpacing>()?.Val, value, diffs, objName, "PostSpacing");
   }
   
-  /// <summary>
-  /// Post-Equation Spacing.
-  /// </summary>
-  private static UInt32? GetPostSpacing(DXMath.MathProperties openXmlElement)
+  private static void SetPostSpacing(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val);
+    SimpleValueConverter.SetValue<DXM.PostSpacing,System.UInt32>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Inter-Equation Spacing conversion.
+  private static UInt32? GetInterSpacing(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.InterSpacing>()?.Val);
   }
   
-  private static bool CmpPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpInterSpacing(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.PostSpacing>()?.Val, value, diffs, objName, "PostSpacing");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.InterSpacing>()?.Val, value, diffs, objName, "InterSpacing");
   }
   
-  private static void SetPostSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static void SetInterSpacing(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXMath.PostSpacing,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXM.InterSpacing,System.UInt32>(openXmlElement, value);
+  }
+  #endregion
+
+  #region Intra-Equation Spacing conversion.
+  private static UInt32? GetIntraSpacing(DXM.MathProperties openXmlElement)
+  {
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.IntraSpacing>()?.Val);
   }
   
-  /// <summary>
-  /// Inter-Equation Spacing.
-  /// </summary>
-  private static UInt32? GetInterSpacing(DXMath.MathProperties openXmlElement)
+  private static bool CmpIntraSpacing(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.IntraSpacing>()?.Val, value, diffs, objName, "IntraSpacing");
   }
   
-  private static bool CmpInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static void SetIntraSpacing(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.InterSpacing>()?.Val, value, diffs, objName, "InterSpacing");
+    SimpleValueConverter.SetValue<DXM.IntraSpacing,System.UInt32>(openXmlElement, value);
   }
   
-  private static void SetInterSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static UInt32? GetWrapIndent(DXM.MathProperties openXmlElement)
   {
-    SimpleValueConverter.SetValue<DXMath.InterSpacing,System.UInt32>(openXmlElement, value);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.WrapIndent>()?.Val);
   }
   
-  /// <summary>
-  /// Intra-Equation Spacing.
-  /// </summary>
-  private static UInt32? GetIntraSpacing(DXMath.MathProperties openXmlElement)
+  private static bool CmpWrapIndent(DXM.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val);
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.WrapIndent>()?.Val, value, diffs, objName, "WrapIndent");
   }
   
-  private static bool CmpIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static void SetWrapIndent(DXM.MathProperties openXmlElement, UInt32? value)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.IntraSpacing>()?.Val, value, diffs, objName, "IntraSpacing");
+    SimpleValueConverter.SetValue<DXM.WrapIndent,System.UInt32>(openXmlElement, value);
   }
   
-  private static void SetIntraSpacing(DXMath.MathProperties openXmlElement, UInt32? value)
+  private static bool? GetWrapRight(DXM.MathProperties openXmlElement)
   {
-    SimpleValueConverter.SetValue<DXMath.IntraSpacing,System.UInt32>(openXmlElement, value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.WrapRight>()?.Val?.Value);
   }
   
-  private static UInt32? GetWrapIndent(DXMath.MathProperties openXmlElement)
+  private static bool CmpWrapRight(DXM.MathProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.WrapRight>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static void SetWrapRight(DXM.MathProperties openXmlElement, bool? value)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.WrapIndent>()?.Val, value, diffs, objName, "WrapIndent");
-  }
-  
-  private static void SetWrapIndent(DXMath.MathProperties openXmlElement, UInt32? value)
-  {
-    SimpleValueConverter.SetValue<DXMath.WrapIndent,System.UInt32>(openXmlElement, value);
-  }
-  
-  private static DMMath.BooleanKind? GetWrapRight(DXMath.MathProperties openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.WrapRight>()?.Val?.Value);
-  }
-  
-  private static bool CmpWrapRight(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.WrapRight>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetWrapRight(DXMath.MathProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.WrapRight>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.WrapRight>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.WrapRight, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.WrapRight>((bool)value));
   }
   
-  private static DMMath.LimitLocationKind? GetIntegralLimitLocation(DXMath.MathProperties openXmlElement)
+  private static DMM.LimitLocationKind? GetIntegralLimitLocation(DXM.MathProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.IntegralLimitLocation>()?.Val?.Value);
   }
   
-  private static bool CmpIntegralLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpIntegralLimitLocation(DXM.MathProperties openXmlElement, DMM.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.IntegralLimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetIntegralLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value)
+  private static void SetIntegralLimitLocation(DXM.MathProperties openXmlElement, DMM.LimitLocationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.IntegralLimitLocation>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.IntegralLimitLocation>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(itemElement, (DMM.LimitLocationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
   }
   
-  private static DMMath.LimitLocationKind? GetNaryLimitLocation(DXMath.MathProperties openXmlElement)
+  private static DMM.LimitLocationKind? GetNaryLimitLocation(DXM.MathProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.NaryLimitLocation>()?.Val?.Value);
   }
   
-  private static bool CmpNaryLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpNaryLimitLocation(DXM.MathProperties openXmlElement, DMM.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.NaryLimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetNaryLimitLocation(DXMath.MathProperties openXmlElement, DMMath.LimitLocationKind? value)
+  private static void SetNaryLimitLocation(DXM.MathProperties openXmlElement, DMM.LimitLocationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.NaryLimitLocation>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.NaryLimitLocation>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(itemElement, (DMM.LimitLocationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
   }
-  
-  public static DMMath.MathProperties? CreateModelElement(DXMath.MathProperties? openXmlElement)
+  #endregion
+
+  #region MathProperties model conversion.
+  public static DMM.MathProperties? CreateModelElement(DXM.MathProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MathProperties();
-      value.MathFont = GetMathFont(openXmlElement);
-      value.BreakBinary = GetBreakBinary(openXmlElement);
-      value.BreakBinarySubtraction = GetBreakBinarySubtraction(openXmlElement);
-      value.SmallFraction = GetSmallFraction(openXmlElement);
-      value.DisplayDefaults = GetDisplayDefaults(openXmlElement);
-      value.LeftMargin = GetLeftMargin(openXmlElement);
-      value.RightMargin = GetRightMargin(openXmlElement);
-      value.DefaultJustification = GetDefaultJustification(openXmlElement);
-      value.PreSpacing = GetPreSpacing(openXmlElement);
-      value.PostSpacing = GetPostSpacing(openXmlElement);
-      value.InterSpacing = GetInterSpacing(openXmlElement);
-      value.IntraSpacing = GetIntraSpacing(openXmlElement);
-      value.WrapIndent = GetWrapIndent(openXmlElement);
-      value.WrapRight = GetWrapRight(openXmlElement);
-      value.IntegralLimitLocation = GetIntegralLimitLocation(openXmlElement);
-      value.NaryLimitLocation = GetNaryLimitLocation(openXmlElement);
-      return value;
+      var model = new DMM.MathProperties();
+      model.MathFont = GetMathFont(openXmlElement);
+      model.BreakBinary = GetBreakBinary(openXmlElement);
+      model.BreakBinarySubtraction = GetBreakBinarySubtraction(openXmlElement);
+      model.SmallFraction = GetSmallFraction(openXmlElement);
+      model.DisplayDefaults = GetDisplayDefaults(openXmlElement);
+      model.LeftMargin = GetLeftMargin(openXmlElement);
+      model.RightMargin = GetRightMargin(openXmlElement);
+      model.DefaultJustification = GetDefaultJustification(openXmlElement);
+      model.PreSpacing = GetPreSpacing(openXmlElement);
+      model.PostSpacing = GetPostSpacing(openXmlElement);
+      model.InterSpacing = GetInterSpacing(openXmlElement);
+      model.IntraSpacing = GetIntraSpacing(openXmlElement);
+      model.WrapIndent = GetWrapIndent(openXmlElement);
+      model.WrapRight = GetWrapRight(openXmlElement);
+      model.IntegralLimitLocation = GetIntegralLimitLocation(openXmlElement);
+      model.NaryLimitLocation = GetNaryLimitLocation(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.MathProperties? openXmlElement, DMMath.MathProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MathProperties? openXmlElement, DMM.MathProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpMathFont(openXmlElement, value.MathFont, diffs, objName))
+      if (!CmpMathFont(openXmlElement, model.MathFont, diffs, objName))
         ok = false;
-      if (!CmpBreakBinary(openXmlElement, value.BreakBinary, diffs, objName))
+      if (!CmpBreakBinary(openXmlElement, model.BreakBinary, diffs, objName))
         ok = false;
-      if (!CmpBreakBinarySubtraction(openXmlElement, value.BreakBinarySubtraction, diffs, objName))
+      if (!CmpBreakBinarySubtraction(openXmlElement, model.BreakBinarySubtraction, diffs, objName))
         ok = false;
-      if (!CmpSmallFraction(openXmlElement, value.SmallFraction, diffs, objName))
+      if (!CmpSmallFraction(openXmlElement, model.SmallFraction, diffs, objName))
         ok = false;
-      if (!CmpDisplayDefaults(openXmlElement, value.DisplayDefaults, diffs, objName))
+      if (!CmpDisplayDefaults(openXmlElement, model.DisplayDefaults, diffs, objName))
         ok = false;
-      if (!CmpLeftMargin(openXmlElement, value.LeftMargin, diffs, objName))
+      if (!CmpLeftMargin(openXmlElement, model.LeftMargin, diffs, objName))
         ok = false;
-      if (!CmpRightMargin(openXmlElement, value.RightMargin, diffs, objName))
+      if (!CmpRightMargin(openXmlElement, model.RightMargin, diffs, objName))
         ok = false;
-      if (!CmpDefaultJustification(openXmlElement, value.DefaultJustification, diffs, objName))
+      if (!CmpDefaultJustification(openXmlElement, model.DefaultJustification, diffs, objName))
         ok = false;
-      if (!CmpPreSpacing(openXmlElement, value.PreSpacing, diffs, objName))
+      if (!CmpPreSpacing(openXmlElement, model.PreSpacing, diffs, objName))
         ok = false;
-      if (!CmpPostSpacing(openXmlElement, value.PostSpacing, diffs, objName))
+      if (!CmpPostSpacing(openXmlElement, model.PostSpacing, diffs, objName))
         ok = false;
-      if (!CmpInterSpacing(openXmlElement, value.InterSpacing, diffs, objName))
+      if (!CmpInterSpacing(openXmlElement, model.InterSpacing, diffs, objName))
         ok = false;
-      if (!CmpIntraSpacing(openXmlElement, value.IntraSpacing, diffs, objName))
+      if (!CmpIntraSpacing(openXmlElement, model.IntraSpacing, diffs, objName))
         ok = false;
-      if (!CmpWrapIndent(openXmlElement, value.WrapIndent, diffs, objName))
+      if (!CmpWrapIndent(openXmlElement, model.WrapIndent, diffs, objName))
         ok = false;
-      if (!CmpWrapRight(openXmlElement, value.WrapRight, diffs, objName))
+      if (!CmpWrapRight(openXmlElement, model.WrapRight, diffs, objName))
         ok = false;
-      if (!CmpIntegralLimitLocation(openXmlElement, value.IntegralLimitLocation, diffs, objName))
+      if (!CmpIntegralLimitLocation(openXmlElement, model.IntegralLimitLocation, diffs, objName))
         ok = false;
-      if (!CmpNaryLimitLocation(openXmlElement, value.NaryLimitLocation, diffs, objName))
+      if (!CmpNaryLimitLocation(openXmlElement, model.NaryLimitLocation, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MathProperties value)
-    where OpenXmlElementType: DXMath.MathProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.MathProperties model)
+    where OpenXmlElementType: DXM.MathProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.MathProperties openXmlElement, DMMath.MathProperties value)
+  public static void UpdateOpenXmlElement(DXM.MathProperties openXmlElement, DMM.MathProperties model)
   {
-    SetMathFont(openXmlElement, value?.MathFont);
-    SetBreakBinary(openXmlElement, value?.BreakBinary);
-    SetBreakBinarySubtraction(openXmlElement, value?.BreakBinarySubtraction);
-    SetSmallFraction(openXmlElement, value?.SmallFraction);
-    SetDisplayDefaults(openXmlElement, value?.DisplayDefaults);
-    SetLeftMargin(openXmlElement, value?.LeftMargin);
-    SetRightMargin(openXmlElement, value?.RightMargin);
-    SetDefaultJustification(openXmlElement, value?.DefaultJustification);
-    SetPreSpacing(openXmlElement, value?.PreSpacing);
-    SetPostSpacing(openXmlElement, value?.PostSpacing);
-    SetInterSpacing(openXmlElement, value?.InterSpacing);
-    SetIntraSpacing(openXmlElement, value?.IntraSpacing);
-    SetWrapIndent(openXmlElement, value?.WrapIndent);
-    SetWrapRight(openXmlElement, value?.WrapRight);
-    SetIntegralLimitLocation(openXmlElement, value?.IntegralLimitLocation);
-    SetNaryLimitLocation(openXmlElement, value?.NaryLimitLocation);
+    SetMathFont(openXmlElement, model?.MathFont);
+    SetBreakBinary(openXmlElement, model?.BreakBinary);
+    SetBreakBinarySubtraction(openXmlElement, model?.BreakBinarySubtraction);
+    SetSmallFraction(openXmlElement, model?.SmallFraction);
+    SetDisplayDefaults(openXmlElement, model?.DisplayDefaults);
+    SetLeftMargin(openXmlElement, model?.LeftMargin);
+    SetRightMargin(openXmlElement, model?.RightMargin);
+    SetDefaultJustification(openXmlElement, model?.DefaultJustification);
+    SetPreSpacing(openXmlElement, model?.PreSpacing);
+    SetPostSpacing(openXmlElement, model?.PostSpacing);
+    SetInterSpacing(openXmlElement, model?.InterSpacing);
+    SetIntraSpacing(openXmlElement, model?.IntraSpacing);
+    SetWrapIndent(openXmlElement, model?.WrapIndent);
+    SetWrapRight(openXmlElement, model?.WrapRight);
+    SetIntegralLimitLocation(openXmlElement, model?.IntegralLimitLocation);
+    SetNaryLimitLocation(openXmlElement, model?.NaryLimitLocation);
   }
+  #endregion
 }

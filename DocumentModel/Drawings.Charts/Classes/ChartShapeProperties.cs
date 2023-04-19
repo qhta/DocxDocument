@@ -20,7 +20,7 @@ public class ChartShapeProperties: ModelElement
 
   public PresetGeometry? PresetGeometry { get; set; }
 
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 

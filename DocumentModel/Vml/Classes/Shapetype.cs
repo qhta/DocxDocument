@@ -13,67 +13,67 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  public string? Style { get; set; }
 
   /// <summary>
   ///   Hyperlink Target
   /// </summary>
-  public String? Href { get; set; }
+  public string? Href { get; set; }
 
   /// <summary>
   ///   Hyperlink Display Target
   /// </summary>
-  public String? Target { get; set; }
+  public string? Target { get; set; }
 
   /// <summary>
   ///   CSS Reference
   /// </summary>
-  public String? Class { get; set; }
+  public string? Class { get; set; }
 
   /// <summary>
   ///   Shape Title
   /// </summary>
-  public String? Title { get; set; }
+  public string? Title { get; set; }
 
   /// <summary>
   ///   Alternate Text
   /// </summary>
-  public String? Alternate { get; set; }
+  public string? Alternate { get; set; }
 
   /// <summary>
   ///   Coordinate Space Size
   /// </summary>
-  public String? CoordinateSize { get; set; }
+  public string? CoordinateSize { get; set; }
 
   /// <summary>
   ///   Coordinate Space Origin
   /// </summary>
-  public String? CoordinateOrigin { get; set; }
+  public string? CoordinateOrigin { get; set; }
 
   /// <summary>
   ///   Shape Bounding Polygon
   /// </summary>
-  public String? WrapCoordinates { get; set; }
+  public string? WrapCoordinates { get; set; }
 
   /// <summary>
   ///   Print Toggle
   /// </summary>
-  public Boolean? Print { get; set; }
+  public bool? Print { get; set; }
 
   /// <summary>
   ///   Optional String
   /// </summary>
-  public String? OptionalString { get; set; }
+  public string? OptionalString { get; set; }
 
   /// <summary>
   ///   Shape Handle Toggle
   /// </summary>
-  public Boolean? Oned { get; set; }
+  public bool? Oned { get; set; }
 
   /// <summary>
   ///   Regroup ID
@@ -83,37 +83,37 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Double-click Notification Toggle
   /// </summary>
-  public Boolean? DoubleClickNotify { get; set; }
+  public bool? DoubleClickNotify { get; set; }
 
   /// <summary>
   ///   Button Behavior Toggle
   /// </summary>
-  public Boolean? Button { get; set; }
+  public bool? Button { get; set; }
 
   /// <summary>
   ///   Hide Script Anchors
   /// </summary>
-  public Boolean? UserHidden { get; set; }
+  public bool? UserHidden { get; set; }
 
   /// <summary>
   ///   Graphical Bullet
   /// </summary>
-  public Boolean? Bullet { get; set; }
+  public bool? Bullet { get; set; }
 
   /// <summary>
   ///   Horizontal Rule Toggle
   /// </summary>
-  public Boolean? Horizontal { get; set; }
+  public bool? Horizontal { get; set; }
 
   /// <summary>
   ///   Horizontal Rule Standard Display Toggle
   /// </summary>
-  public Boolean? HorizontalStandard { get; set; }
+  public bool? HorizontalStandard { get; set; }
 
   /// <summary>
   ///   Horizontal Rule 3D Shading Toggle
   /// </summary>
-  public Boolean? HorizontalNoShade { get; set; }
+  public bool? HorizontalNoShade { get; set; }
 
   /// <summary>
   ///   Horizontal Rule Length Percentage
@@ -128,37 +128,37 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Allow in Table Cell
   /// </summary>
-  public Boolean? AllowInCell { get; set; }
+  public bool? AllowInCell { get; set; }
 
   /// <summary>
   ///   Allow Shape Overlap
   /// </summary>
-  public Boolean? AllowOverlap { get; set; }
+  public bool? AllowOverlap { get; set; }
 
   /// <summary>
   ///   Exists In Master Slide
   /// </summary>
-  public Boolean? UserDrawn { get; set; }
+  public bool? UserDrawn { get; set; }
 
   /// <summary>
   ///   Border Top Color
   /// </summary>
-  public String? BorderTopColor { get; set; }
+  public string? BorderTopColor { get; set; }
 
   /// <summary>
   ///   Border Left Color
   /// </summary>
-  public String? BorderLeftColor { get; set; }
+  public string? BorderLeftColor { get; set; }
 
   /// <summary>
   ///   Bottom Border Color
   /// </summary>
-  public String? BorderBottomColor { get; set; }
+  public string? BorderBottomColor { get; set; }
 
   /// <summary>
   ///   Border Right Color
   /// </summary>
-  public String? BorderRightColor { get; set; }
+  public string? BorderRightColor { get; set; }
 
   /// <summary>
   ///   Diagram Node Layout Identifier
@@ -183,32 +183,32 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? Filled { get; set; }
+  public bool? Filled { get; set; }
 
   /// <summary>
   ///   Fill Color
   /// </summary>
-  public String? FillColor { get; set; }
+  public string? FillColor { get; set; }
 
   /// <summary>
   ///   Shape Stroke Toggle
   /// </summary>
-  public Boolean? Stroked { get; set; }
+  public bool? Stroked { get; set; }
 
   /// <summary>
   ///   Shape Stroke Color
   /// </summary>
-  public String? StrokeColor { get; set; }
+  public string? StrokeColor { get; set; }
 
   /// <summary>
   ///   Shape Stroke Weight
   /// </summary>
-  public String? StrokeWeight { get; set; }
+  public string? StrokeWeight { get; set; }
 
   /// <summary>
   ///   Inset Border From Path
   /// </summary>
-  public Boolean? InsetPen { get; set; }
+  public bool? InsetPen { get; set; }
 
   /// <summary>
   ///   Optional Number
@@ -238,47 +238,47 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   Force Dashed Outline
   /// </summary>
-  public Boolean? ForceDash { get; set; }
+  public bool? ForceDash { get; set; }
 
   /// <summary>
   ///   Embedded Object Icon Toggle
   /// </summary>
-  public Boolean? OleIcon { get; set; }
+  public bool? OleIcon { get; set; }
 
   /// <summary>
   ///   Embedded Object Toggle
   /// </summary>
-  public Boolean? Ole { get; set; }
+  public bool? Ole { get; set; }
 
   /// <summary>
   ///   Relative Resize Toggle
   /// </summary>
-  public Boolean? PreferRelative { get; set; }
+  public bool? PreferRelative { get; set; }
 
   /// <summary>
   ///   Clip to Wrapping Polygon
   /// </summary>
-  public Boolean? ClipToWrap { get; set; }
+  public bool? ClipToWrap { get; set; }
 
   /// <summary>
   ///   Clipping Toggle
   /// </summary>
-  public Boolean? Clip { get; set; }
+  public bool? Clip { get; set; }
 
   /// <summary>
   ///   Adjustment Parameters
   /// </summary>
-  public String? Adjustment { get; set; }
+  public string? Adjustment { get; set; }
 
   /// <summary>
   ///   Edge Path
   /// </summary>
-  public String? EdgePath { get; set; }
+  public string? EdgePath { get; set; }
 
   /// <summary>
   ///   Master Element Toggle
   /// </summary>
-  public String? Master { get; set; }
+  public string? Master { get; set; }
 
   public Path? Path { get; set; }
 
@@ -312,7 +312,7 @@ public class Shapetype: ModelElement, IEmbeddedObjectContent
 
   public TextWrap? TextWrap { get; set; }
 
-  public Boolean? AnchorLock { get; set; }
+  public bool? AnchorLock { get; set; }
 
   public BorderType? TopBorder { get; set; }
 

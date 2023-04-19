@@ -11,7 +11,7 @@ public class DocumentBackground: ModelElement
   /// <summary>
   ///   color
   /// </summary>
-  public String? Color { get; set; }
+  public string? Color { get; set; }
 
   /// <summary>
   ///   themeColor
@@ -21,12 +21,12 @@ public class DocumentBackground: ModelElement
   /// <summary>
   ///   themeTint
   /// </summary>
-  public String? ThemeTint { get; set; }
+  public string? ThemeTint { get; set; }
 
   /// <summary>
   ///   themeShade
   /// </summary>
-  public String? ThemeShade { get; set; }
+  public string? ThemeShade { get; set; }
 
   /// <summary>
   ///   Background.

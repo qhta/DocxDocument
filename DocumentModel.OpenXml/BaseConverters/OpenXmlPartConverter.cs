@@ -8,8 +8,10 @@ namespace DocumentModel.OpenXml.Packaging;
 public static class OpenXmlPartConverter
 {
   /// <summary>
-  ///   Gets the internal part path in the package.
+  ///  Gets the internal part path in the package.
   /// </summary>
+  /// <param name="openXmlElement"></param>
+  /// <returns></returns>
   public static Uri? GetUri(OpenXmlPart? openXmlElement)
   {
     return openXmlElement?.Uri;

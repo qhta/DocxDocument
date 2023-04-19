@@ -9,12 +9,12 @@ public class DataSourceObject: ModelElement
   /// <summary>
   ///   UDL Connection String.
   /// </summary>
-  public String? UdlConnectionString { get; set; }
+  public string? UdlConnectionString { get; set; }
 
   /// <summary>
   ///   Data Source Table Name.
   /// </summary>
-  public String? DataSourceTableName { get; set; }
+  public string? DataSourceTableName { get; set; }
 
   /// <summary>
   ///   ODSO Data Source File Path.
@@ -34,7 +34,7 @@ public class DataSourceObject: ModelElement
   /// <summary>
   ///   First Row of Data Source Contains Column Names.
   /// </summary>
-  public Boolean? FirstRowHeader { get; set; }
+  public bool? FirstRowHeader { get; set; }
 
   public Collection<FieldMapData>? FieldMapDatas { get; set; }
 

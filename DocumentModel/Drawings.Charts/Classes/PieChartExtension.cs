@@ -9,7 +9,7 @@ public class PieChartExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public FilteredPieSeries? FilteredPieSeries { get; set; }
 }

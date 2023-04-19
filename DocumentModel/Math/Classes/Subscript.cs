@@ -12,9 +12,9 @@ public class Subscript: ModelElement, ICommonMathContent
   public SubscriptProperties? SubscriptProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Subscript base argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 
   /// <summary>
   ///   Subscript (Subscript function).

@@ -14,5 +14,5 @@ public class Run: ModelElement
   /// <summary>
   ///   Text String.
   /// </summary>
-  public String? Text { get; set; }
+  public string? Text { get; set; }
 }

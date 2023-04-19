@@ -9,100 +9,100 @@ public class LabelControl: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Screentip { get; set; }
+  public string? Screentip { get; set; }
 
   /// <summary>
   ///   getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetScreentip { get; set; }
+  public string? GetScreentip { get; set; }
 
   /// <summary>
   ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Supertip { get; set; }
+  public string? Supertip { get; set; }
 
   /// <summary>
   ///   getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetSupertip { get; set; }
+  public string? GetSupertip { get; set; }
 
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetLabel { get; set; }
+  public string? GetLabel { get; set; }
 
   /// <summary>
   ///   insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  public string? InsertAfterMso { get; set; }
 
   /// <summary>
   ///   insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   ///   insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertAfterQulifiedId { get; set; }
+  public string? InsertAfterQulifiedId { get; set; }
 
   /// <summary>
   ///   insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? InsertBeforeQulifiedId { get; set; }
+  public string? InsertBeforeQulifiedId { get; set; }
 
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   showLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? ShowLabel { get; set; }
+  public bool? ShowLabel { get; set; }
 
   /// <summary>
   ///   getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetShowLabel { get; set; }
+  public string? GetShowLabel { get; set; }
 }

@@ -8,7 +8,7 @@ public class DataPointLine: ModelElement
 {
   public LineReference? LineReference { get; set; }
 
-  public String? LineWidthScale { get; set; }
+  public string? LineWidthScale { get; set; }
 
   public FillReference? FillReference { get; set; }
 

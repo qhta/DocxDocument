@@ -14,17 +14,17 @@ public class Callout: ModelElement
   /// <summary>
   ///   Callout toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Callout type
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   Callout gap
   /// </summary>
-  public String? Gap { get; set; }
+  public string? Gap { get; set; }
 
   /// <summary>
   ///   Callout angle
@@ -34,45 +34,45 @@ public class Callout: ModelElement
   /// <summary>
   ///   Callout automatic drop toggle
   /// </summary>
-  public Boolean? DropAuto { get; set; }
+  public bool? DropAuto { get; set; }
 
   /// <summary>
   ///   Callout drop position
   /// </summary>
-  public String? Drop { get; set; }
+  public string? Drop { get; set; }
 
   /// <summary>
   ///   Callout drop distance
   /// </summary>
-  public String? Distance { get; set; }
+  public string? Distance { get; set; }
 
   /// <summary>
   ///   Callout length toggle
   /// </summary>
-  public Boolean? LengthSpecified { get; set; }
+  public bool? LengthSpecified { get; set; }
 
   /// <summary>
   ///   Callout length
   /// </summary>
-  public String? Length { get; set; }
+  public string? Length { get; set; }
 
   /// <summary>
   ///   Callout accent bar toggle
   /// </summary>
-  public Boolean? AccentBar { get; set; }
+  public bool? AccentBar { get; set; }
 
   /// <summary>
   ///   Callout text border toggle
   /// </summary>
-  public Boolean? TextBorder { get; set; }
+  public bool? TextBorder { get; set; }
 
   /// <summary>
   ///   Callout flip x
   /// </summary>
-  public Boolean? MinusX { get; set; }
+  public bool? MinusX { get; set; }
 
   /// <summary>
   ///   Callout flip y
   /// </summary>
-  public Boolean? MinusY { get; set; }
+  public bool? MinusY { get; set; }
 }

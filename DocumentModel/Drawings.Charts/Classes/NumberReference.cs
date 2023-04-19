@@ -9,7 +9,7 @@ public class NumberReference: ModelElement
   /// <summary>
   ///   Formula.
   /// </summary>
-  public String? Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   ///   NumberingCache.

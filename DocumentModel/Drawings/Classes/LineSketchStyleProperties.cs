@@ -17,7 +17,7 @@ public class LineSketchStyleProperties: ModelElement
 
   public LineSketchTypeProperties? LineSketchTypeProperties { get; set; }
 
-  public String? LineSketchSeed { get; set; }
+  public string? LineSketchSeed { get; set; }
 
   public OfficeArtExtensionList6? OfficeArtExtensionList { get; set; }
 }

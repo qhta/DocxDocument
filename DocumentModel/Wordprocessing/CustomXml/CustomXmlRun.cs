@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlRun Class.
 /// </summary>
-public class CustomXmlRun: ModelElement, IParagraphContent, IRunContent, ISdtRunContent, ITableContent, IBidirectionalContent
+public class CustomXmlRun: ModelElement, IParagraphContent, IRunContent, ISdtRunContent, ITableContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 
@@ -94,7 +94,7 @@ public class CustomXmlRun: ModelElement, IParagraphContent, IRunContent, ISdtRun
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

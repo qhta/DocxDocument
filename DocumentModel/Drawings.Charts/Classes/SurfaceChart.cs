@@ -9,7 +9,7 @@ public class SurfaceChart: ModelElement
   /// <summary>
   ///   Wireframe.
   /// </summary>
-  public Boolean? Wireframe { get; set; }
+  public bool? Wireframe { get; set; }
 
   public Collection<SurfaceChartSeries>? SurfaceChartSeries { get; set; }
 

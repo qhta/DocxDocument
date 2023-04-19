@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Function Properties.
+///   This element specifies properties such as ctrlPr that can be stored on the function apply object func.
 /// </summary>
 public class FunctionProperties: ModelElement
 {

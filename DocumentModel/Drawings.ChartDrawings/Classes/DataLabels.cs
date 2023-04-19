@@ -34,7 +34,7 @@ public class DataLabels: ModelElement
   /// <summary>
   ///   SeparatorXsdstring.
   /// </summary>
-  public String? SeparatorXsdstring { get; set; }
+  public string? SeparatorXsdstring { get; set; }
 
   public Collection<DataLabel>? Items { get; set; }
 

@@ -7,12 +7,12 @@ public partial class LatentStyleExceptionInfo: INotifyPropertyChanged, INotifyPr
 {
   private ListOf<String>? _Aliases;
 
-  private String? _StyleName;
+  private string? _StyleName;
 
   /// <summary>
   ///   Primary Style Name.
   /// </summary>
-  public String? StyleName
+  public string? StyleName
   {
     get => _StyleName;
     set

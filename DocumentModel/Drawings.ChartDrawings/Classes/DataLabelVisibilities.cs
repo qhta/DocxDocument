@@ -9,15 +9,15 @@ public class DataLabelVisibilities: ModelElement
   /// <summary>
   ///   seriesName, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? SeriesName { get; set; }
+  public bool? SeriesName { get; set; }
 
   /// <summary>
   ///   categoryName, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? CategoryName { get; set; }
+  public bool? CategoryName { get; set; }
 
   /// <summary>
   ///   value, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Value { get; set; }
+  public bool? Value { get; set; }
 }

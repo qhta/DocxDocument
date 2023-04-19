@@ -13,5 +13,5 @@ public class AltChunkProperties: ModelElement
   ///   Conversely, if this element's val attribute is false, any style which exists in both the imported content and main document 
   ///   shall apply the style form the main document in place of the style in the imported content.
   /// </summary>
-  public Boolean? MatchSource { get; set; }
+  public bool? MatchSource { get; set; }
 }

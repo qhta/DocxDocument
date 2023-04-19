@@ -51,8 +51,8 @@ public static class BidirectionalOverrideConverter
     {
       var model = new DMW.BidirectionalOverride();
       model.Type = GetVal(openXmlElement);
-      ElementCollectionConverter<DMW.IBidirectionalContent>.FillModelElementCollection(openXmlElement, model, 
-        (CreateModelElementMethod)CreateBidirectionalOverrideContent);
+      ElementCollectionConverter<DMW.IBidirectionalContent>.FillModelElementCollection(openXmlElement, model,
+        CreateBidirectionalOverrideContent);
       return model;
     }
     return null;
@@ -66,8 +66,8 @@ public static class BidirectionalOverrideConverter
       if (!CmpVal(openXmlElement, model.Type, diffs, objName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IBidirectionalContent>.CompareOpenXmlElementCollection(
-        openXmlElement, model, 
-        (CompareOpenXmlElementMethod)CompareBidirectionalOverrideContent, diffs, objName))
+        openXmlElement, model,
+        CompareBidirectionalOverrideContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -87,9 +87,9 @@ public static class BidirectionalOverrideConverter
   {
     SetVal(openXmlElement, model.Type);
     return ElementCollectionConverter<DMW.IBidirectionalContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareBidirectionalOverrideContent,
-      (UpdateOpenXmlElementMethod)UpdateOpenXmlBidirectionalOverrideContent,
-      (CreateOpenXmlElementMethod)CreateOpenXmlBidirectionalOverrideContent);
+      CompareBidirectionalOverrideContent,
+      UpdateOpenXmlBidirectionalOverrideContent,
+      CreateOpenXmlBidirectionalOverrideContent);
   }
   #endregion
 }

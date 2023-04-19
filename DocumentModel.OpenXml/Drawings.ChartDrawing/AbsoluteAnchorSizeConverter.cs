@@ -59,7 +59,7 @@ public static class AbsoluteAnchorSizeConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ExtentConverter.CreateOpenXmlElement<DXDrawChartDraw.Extent>((Extent)value);
+      itemElement = DMXDrawsChartDraw.ExtentConverter.CreateOpenXmlElement<DXDrawChartDraw.Extent>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

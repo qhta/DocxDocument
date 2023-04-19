@@ -9,17 +9,17 @@ public class Mcd: ModelElement
   /// <summary>
   ///   macroName
   /// </summary>
-  public String? MacroName { get; set; }
+  public string? MacroName { get; set; }
 
   /// <summary>
   ///   name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   menuHelp
   /// </summary>
-  public String? MenuHelp { get; set; }
+  public string? MenuHelp { get; set; }
 
   /// <summary>
   ///   bEncrypt

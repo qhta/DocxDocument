@@ -9,12 +9,12 @@ public class GraphicFrame: ModelElement
   /// <summary>
   ///   Reference to Custom Function
   /// </summary>
-  public String? Macro { get; set; }
+  public string? Macro { get; set; }
 
   /// <summary>
   ///   Publish To Server
   /// </summary>
-  public Boolean? Published { get; set; }
+  public bool? Published { get; set; }
 
   /// <summary>
   ///   Non-Visual Graphic Frame Properties.

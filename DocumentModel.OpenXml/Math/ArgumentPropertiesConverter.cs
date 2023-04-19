@@ -1,63 +1,64 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Argument Properties.
+/// <see cref="DMM.ArgumentProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class ArgumentPropertiesConverter
 {
-  /// <summary>
-  /// Argument Size.
-  /// </summary>
-  private static Int64? GetArgumentSize(DXMath.ArgumentProperties openXmlElement)
+  #region Argument Size conversion
+  private static Int32? GetArgumentSize(DXM.ArgumentProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.ArgumentSize>()?.Val);
   }
   
-  private static bool CmpArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpArgumentSize(DXM.ArgumentProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.ArgumentSize>()?.Val, value, diffs, objName, "ArgumentSize");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.ArgumentSize>()?.Val, value, diffs, objName, "ArgumentSize");
   }
   
-  private static void SetArgumentSize(DXMath.ArgumentProperties openXmlElement, Int64? value)
+  private static void SetArgumentSize(DXM.ArgumentProperties openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXMath.ArgumentSize,System.Int64>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXM.ArgumentSize,System.Int64>(openXmlElement, value);
   }
-  
-  public static DMMath.ArgumentProperties? CreateModelElement(DXMath.ArgumentProperties? openXmlElement)
+  #endregion
+
+  #region ArgumentProperties model conversion.
+  public static DMM.ArgumentProperties? CreateModelElement(DXM.ArgumentProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.ArgumentProperties();
-      value.ArgumentSize = GetArgumentSize(openXmlElement);
-      return value;
+      var model = new DMM.ArgumentProperties();
+      model.ArgumentSize = GetArgumentSize(openXmlElement);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXMath.ArgumentProperties? openXmlElement, DMMath.ArgumentProperties? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXM.ArgumentProperties? openXmlElement, DMM.ArgumentProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpArgumentSize(openXmlElement, value.ArgumentSize, diffs, objName))
+      if (!CmpArgumentSize(openXmlElement, model.ArgumentSize, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.ArgumentProperties value)
-    where OpenXmlElementType: DXMath.ArgumentProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.ArgumentProperties model)
+    where OpenXmlElementType: DXM.ArgumentProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.ArgumentProperties openXmlElement, DMMath.ArgumentProperties value)
+  public static void UpdateOpenXmlElement(DXM.ArgumentProperties openXmlElement, DMM.ArgumentProperties model)
   {
-    SetArgumentSize(openXmlElement, value?.ArgumentSize);
+    SetArgumentSize(openXmlElement, model?.ArgumentSize);
   }
+  #endregion
 }

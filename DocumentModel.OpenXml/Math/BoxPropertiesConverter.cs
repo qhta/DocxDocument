@@ -1,235 +1,231 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Box Properties.
+/// <see cref="DMM.BoxProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class BoxPropertiesConverter
 {
-  /// <summary>
-  /// Operator Emulator.
-  /// </summary>
-  private static DMMath.BooleanKind? GetOperatorEmulator(DXMath.BoxProperties openXmlElement)
+  #region Operator Emulator. conversion.
+  private static bool? GetOperatorEmulator(DXM.BoxProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.OperatorEmulator>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.OperatorEmulator>()?.Val?.Value);
   }
   
-  private static bool CmpOperatorEmulator(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOperatorEmulator(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.OperatorEmulator>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.OperatorEmulator>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetOperatorEmulator(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
+  private static void SetOperatorEmulator(DXM.BoxProperties openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.OperatorEmulator>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.OperatorEmulator>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement<DXM.OperatorEmulator>(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.OperatorEmulator, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.OperatorEmulator>((bool)value));
+  }
+  #endregion
+
+  #region No Break conversion.
+  private static bool? GetNoBreak(DXM.BoxProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.NoBreak>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// No Break.
-  /// </summary>
-  private static DMMath.BooleanKind? GetNoBreak(DXMath.BoxProperties openXmlElement)
+  private static bool CmpNoBreak(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NoBreak>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.NoBreak>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpNoBreak(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetNoBreak(DXM.BoxProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.NoBreak>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetNoBreak(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.NoBreak>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.NoBreak>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.NoBreak, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.NoBreak>((bool)value));
+  }
+  #endregion
+
+  #region Differential conversion.
+  private static bool? GetDifferential(DXM.BoxProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.Differential>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Differential.
-  /// </summary>
-  private static DMMath.BooleanKind? GetDifferential(DXMath.BoxProperties openXmlElement)
+  private static bool CmpDifferential(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Differential>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Differential>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpDifferential(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetDifferential(DXM.BoxProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Differential>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetDifferential(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Differential>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Differential>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Differential, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Differential>((bool)value));
   }
-  
-  /// <summary>
-  /// Break.
-  /// </summary>
-  private static DMMath.Break? GetBreak(DXMath.BoxProperties openXmlElement)
+  #endregion
+
+  #region Break conversion.
+  private static DMM.Break? GetBreak(DXM.BoxProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Break>();
+    var element = openXmlElement?.GetFirstChild<DXM.Break>();
     if (element != null)
-      return DMXMath.BreakConverter.CreateModelElement(element);
+      return DMXM.BreakConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
+  private static bool CmpBreak(DXM.BoxProperties openXmlElement, DMM.Break? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Break>(), value, diffs, objName);
+    return DMXM.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Break>(), value, diffs, objName);
   }
   
-  private static void SetBreak(DXMath.BoxProperties openXmlElement, DMMath.Break? value)
+  private static void SetBreak(DXM.BoxProperties openXmlElement, DMM.Break? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Break>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Break>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BreakConverter.CreateOpenXmlElement<DXMath.Break>(value);
+      itemElement = DMXM.BreakConverter.CreateOpenXmlElement<DXM.Break>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Alignment.
-  /// </summary>
-  private static DMMath.BooleanKind? GetAlignment(DXMath.BoxProperties openXmlElement)
+  #endregion
+
+  #region Alignment conversion.
+  private static bool? GetAlignment(DXM.BoxProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.Alignment>()?.Val?.Value);
   }
   
-  private static bool CmpAlignment(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Alignment>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Alignment>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetAlignment(DXMath.BoxProperties openXmlElement, DMMath.BooleanKind? value)
+  private static void SetAlignment(DXM.BoxProperties openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Alignment>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Alignment>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Alignment, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Alignment>((bool)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.BoxProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.BoxProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.BoxProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.BoxProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.BoxProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.BoxProperties? CreateModelElement(DXMath.BoxProperties? openXmlElement)
+  #endregion
+
+  #region BoxProperties model conversion.
+  public static DMM.BoxProperties? CreateModelElement(DXM.BoxProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BoxProperties();
-      value.OperatorEmulator = GetOperatorEmulator(openXmlElement);
-      value.NoBreak = GetNoBreak(openXmlElement);
-      value.Differential = GetDifferential(openXmlElement);
-      value.Break = GetBreak(openXmlElement);
-      value.Alignment = GetAlignment(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.BoxProperties();
+      model.OperatorEmulator = GetOperatorEmulator(openXmlElement);
+      model.NoBreak = GetNoBreak(openXmlElement);
+      model.Differential = GetDifferential(openXmlElement);
+      model.Break = GetBreak(openXmlElement);
+      model.Alignment = GetAlignment(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.BoxProperties? openXmlElement, DMMath.BoxProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BoxProperties? openXmlElement, DMM.BoxProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpOperatorEmulator(openXmlElement, value.OperatorEmulator, diffs, objName))
+      if (!CmpOperatorEmulator(openXmlElement, model.OperatorEmulator, diffs, objName))
         ok = false;
-      if (!CmpNoBreak(openXmlElement, value.NoBreak, diffs, objName))
+      if (!CmpNoBreak(openXmlElement, model.NoBreak, diffs, objName))
         ok = false;
-      if (!CmpDifferential(openXmlElement, value.Differential, diffs, objName))
+      if (!CmpDifferential(openXmlElement, model.Differential, diffs, objName))
         ok = false;
-      if (!CmpBreak(openXmlElement, value.Break, diffs, objName))
+      if (!CmpBreak(openXmlElement, model.Break, diffs, objName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, model.Alignment, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.BoxProperties value)
-    where OpenXmlElementType: DXMath.BoxProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.BoxProperties model)
+    where OpenXmlElementType: DXM.BoxProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.BoxProperties openXmlElement, DMMath.BoxProperties value)
+  public static void UpdateOpenXmlElement(DXM.BoxProperties openXmlElement, DMM.BoxProperties model)
   {
-    SetOperatorEmulator(openXmlElement, value?.OperatorEmulator);
-    SetNoBreak(openXmlElement, value?.NoBreak);
-    SetDifferential(openXmlElement, value?.Differential);
-    SetBreak(openXmlElement, value?.Break);
-    SetAlignment(openXmlElement, value?.Alignment);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetOperatorEmulator(openXmlElement, model?.OperatorEmulator);
+    SetNoBreak(openXmlElement, model?.NoBreak);
+    SetDifferential(openXmlElement, model?.Differential);
+    SetBreak(openXmlElement, model?.Break);
+    SetAlignment(openXmlElement, model?.Alignment);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

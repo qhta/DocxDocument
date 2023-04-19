@@ -1,20 +1,18 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Accent.
+///   This element specifies the accent function, consisting of a base and a combining diacritical mark. 
+///   If AccentProperties is omitted, the default accent is U+0302 (COMBINING CIRCUMFLEX ACCENT).
 /// </summary>
 public class Accent: ModelElement, ICommonMathContent
 {
   /// <summary>
-  ///   Accent Properties.
+  ///   Specifies formatting properties of accent function.
   /// </summary>
   public AccentProperties? AccentProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Specifies the argument of accent function.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 }

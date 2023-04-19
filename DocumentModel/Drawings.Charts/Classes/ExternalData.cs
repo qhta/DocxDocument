@@ -9,10 +9,10 @@ public class ExternalData: ModelElement
   /// <summary>
   ///   Relationship Reference
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Update Automatically.
   /// </summary>
-  public Boolean? AutoUpdate { get; set; }
+  public bool? AutoUpdate { get; set; }
 }

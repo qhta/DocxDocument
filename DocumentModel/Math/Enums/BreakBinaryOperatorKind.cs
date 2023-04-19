@@ -1,5 +1,4 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the BreakBinaryOperatorValues enumeration.
@@ -8,17 +7,17 @@ namespace DocumentModel.Math;
 public enum BreakBinaryOperatorKind
 {
   /// <summary>
-  ///   Before.
+  ///   Break occurs before binary operator.
   /// </summary>
   Before,
 
   /// <summary>
-  ///   After.
+  ///   Break occurs after binary operator.
   /// </summary>
   After,
 
   /// <summary>
-  ///   Repeat.
+  ///   Break occurs after binary operator, but the operator is repeater at the beginning on the next line.
   /// </summary>
   Repeat
 }

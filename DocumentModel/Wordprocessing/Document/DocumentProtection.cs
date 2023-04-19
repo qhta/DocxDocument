@@ -14,12 +14,12 @@ public class DocumentProtection: ModelElement
   /// <summary>
   ///   Only Allow Formatting With Unlocked Styles
   /// </summary>
-  public Boolean? Formatting { get; set; }
+  public bool? Formatting { get; set; }
 
   /// <summary>
   ///   Enforce Document Protection Settings
   /// </summary>
-  public Boolean? Enforcement { get; set; }
+  public bool? Enforcement { get; set; }
 
   /// <summary>
   ///   Cryptographic Provider Type
@@ -49,7 +49,7 @@ public class DocumentProtection: ModelElement
   /// <summary>
   ///   Cryptographic Provider
   /// </summary>
-  public String? CryptographicProvider { get; set; }
+  public string? CryptographicProvider { get; set; }
 
   /// <summary>
   ///   Cryptographic Algorithm Extensibility
@@ -59,7 +59,7 @@ public class DocumentProtection: ModelElement
   /// <summary>
   ///   Algorithm Extensibility Source
   /// </summary>
-  public String? AlgorithmIdExtensibilitySource { get; set; }
+  public string? AlgorithmIdExtensibilitySource { get; set; }
 
   /// <summary>
   ///   Cryptographic Provider Type Extensibility
@@ -69,7 +69,7 @@ public class DocumentProtection: ModelElement
   /// <summary>
   ///   Provider Type Extensibility Source
   /// </summary>
-  public String? CryptographicProviderTypeExtSource { get; set; }
+  public string? CryptographicProviderTypeExtSource { get; set; }
 
   /// <summary>
   ///   Password Hash
@@ -84,7 +84,7 @@ public class DocumentProtection: ModelElement
   /// <summary>
   ///   algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AlgorithmName { get; set; }
+  public string? AlgorithmName { get; set; }
 
   /// <summary>
   ///   hashValue, this property is only available in Office 2010 and later.

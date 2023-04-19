@@ -9,37 +9,37 @@ public class GroupShapeLocks: ModelElement
   /// <summary>
   ///   Disallow Shape Grouping
   /// </summary>
-  public Boolean? NoGrouping { get; set; }
+  public bool? NoGrouping { get; set; }
 
   /// <summary>
   ///   Disallow Shape Ungrouping
   /// </summary>
-  public Boolean? NoUngrouping { get; set; }
+  public bool? NoUngrouping { get; set; }
 
   /// <summary>
   ///   Disallow Shape Selection
   /// </summary>
-  public Boolean? NoSelection { get; set; }
+  public bool? NoSelection { get; set; }
 
   /// <summary>
   ///   Disallow Shape Rotation
   /// </summary>
-  public Boolean? NoRotation { get; set; }
+  public bool? NoRotation { get; set; }
 
   /// <summary>
   ///   Disallow Aspect Ratio Change
   /// </summary>
-  public Boolean? NoChangeAspect { get; set; }
+  public bool? NoChangeAspect { get; set; }
 
   /// <summary>
   ///   Disallow Moving Shape
   /// </summary>
-  public Boolean? NoMove { get; set; }
+  public bool? NoMove { get; set; }
 
   /// <summary>
   ///   Disallow Shape Resizing
   /// </summary>
-  public Boolean? NoResize { get; set; }
+  public bool? NoResize { get; set; }
 
   /// <summary>
   ///   ExtensionList.

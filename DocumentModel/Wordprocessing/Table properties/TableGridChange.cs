@@ -8,7 +8,7 @@ public class TableGridChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? AnnotationId { get; set; }
+  public string? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Table Grid.

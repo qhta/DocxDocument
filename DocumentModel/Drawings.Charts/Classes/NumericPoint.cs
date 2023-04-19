@@ -14,10 +14,10 @@ public class NumericPoint: ModelElement
   /// <summary>
   ///   Number Format
   /// </summary>
-  public String? FormatCode { get; set; }
+  public string? FormatCode { get; set; }
 
   /// <summary>
   ///   Numeric Value.
   /// </summary>
-  public String? NumericValue { get; set; }
+  public string? NumericValue { get; set; }
 }

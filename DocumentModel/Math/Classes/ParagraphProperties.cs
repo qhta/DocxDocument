@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Office Math Paragraph Properties.
+///   This element specifies properties of the math paragraph oMathPara, including justification jc.
 /// </summary>
 public class ParagraphProperties: ModelElement
 {

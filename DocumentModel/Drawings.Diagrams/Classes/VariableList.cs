@@ -6,13 +6,13 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public class VariableList: ModelElement
 {
-  public Boolean? OrganizationChart { get; set; }
+  public bool? OrganizationChart { get; set; }
 
   public Int32? MaxNumberOfChildren { get; set; }
 
   public Int32? PreferredNumberOfChildren { get; set; }
 
-  public Boolean? BulletEnabled { get; set; }
+  public bool? BulletEnabled { get; set; }
 
   public DirectionKind? Direction { get; set; }
 

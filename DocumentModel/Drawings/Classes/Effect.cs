@@ -9,5 +9,5 @@ public class Effect: ModelElement
   /// <summary>
   ///   Reference
   /// </summary>
-  public String? Reference { get; set; }
+  public string? Reference { get; set; }
 }

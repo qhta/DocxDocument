@@ -9,7 +9,7 @@ public class Category: ModelElement
   /// <summary>
   ///   Category Associated With Entry.
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Gallery Associated With Entry.

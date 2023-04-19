@@ -9,17 +9,17 @@ public class PropertySet: ModelElement
   /// <summary>
   ///   Presentation Element Identifier
   /// </summary>
-  public String? PresentationElementId { get; set; }
+  public string? PresentationElementId { get; set; }
 
   /// <summary>
   ///   Presentation Name
   /// </summary>
-  public String? PresentationName { get; set; }
+  public string? PresentationName { get; set; }
 
   /// <summary>
   ///   Presentation Style Label
   /// </summary>
-  public String? PresentationStyleLabel { get; set; }
+  public string? PresentationStyleLabel { get; set; }
 
   /// <summary>
   ///   Presentation Style Index
@@ -34,47 +34,47 @@ public class PropertySet: ModelElement
   /// <summary>
   ///   Current Diagram Type
   /// </summary>
-  public String? LayoutTypeId { get; set; }
+  public string? LayoutTypeId { get; set; }
 
   /// <summary>
   ///   Current Diagram Category
   /// </summary>
-  public String? LayoutCategoryId { get; set; }
+  public string? LayoutCategoryId { get; set; }
 
   /// <summary>
   ///   Current Style Type
   /// </summary>
-  public String? QuickStyleTypeId { get; set; }
+  public string? QuickStyleTypeId { get; set; }
 
   /// <summary>
   ///   Current Style Category
   /// </summary>
-  public String? QuickStyleCategoryId { get; set; }
+  public string? QuickStyleCategoryId { get; set; }
 
   /// <summary>
   ///   Color Transform Type Identifier
   /// </summary>
-  public String? ColorType { get; set; }
+  public string? ColorType { get; set; }
 
   /// <summary>
   ///   Color Transform Category
   /// </summary>
-  public String? ColorCategoryId { get; set; }
+  public string? ColorCategoryId { get; set; }
 
   /// <summary>
   ///   Coherent 3D Behavior
   /// </summary>
-  public Boolean? Coherent3D { get; set; }
+  public bool? Coherent3D { get; set; }
 
   /// <summary>
   ///   Placeholder Text
   /// </summary>
-  public String? PlaceholderText { get; set; }
+  public string? PlaceholderText { get; set; }
 
   /// <summary>
   ///   Placeholder
   /// </summary>
-  public Boolean? Placeholder { get; set; }
+  public bool? Placeholder { get; set; }
 
   /// <summary>
   ///   Custom Rotation
@@ -84,12 +84,12 @@ public class PropertySet: ModelElement
   /// <summary>
   ///   Custom Vertical Flip
   /// </summary>
-  public Boolean? VerticalFlip { get; set; }
+  public bool? VerticalFlip { get; set; }
 
   /// <summary>
   ///   Custom Horizontal Flip
   /// </summary>
-  public Boolean? HorizontalFlip { get; set; }
+  public bool? HorizontalFlip { get; set; }
 
   /// <summary>
   ///   Fixed Width Override
@@ -114,7 +114,7 @@ public class PropertySet: ModelElement
   /// <summary>
   ///   Text Changed
   /// </summary>
-  public Boolean? TextChanged { get; set; }
+  public bool? TextChanged { get; set; }
 
   /// <summary>
   ///   Custom Factor Width

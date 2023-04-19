@@ -8,7 +8,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class FontTablePart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the FontParts of the FontTablePart
@@ -20,5 +20,5 @@ public class FontTablePart: ModelElement
   /// </summary>
   public Fonts? Fonts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

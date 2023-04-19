@@ -9,20 +9,20 @@ public class LineSketchTypeProperties: ModelElement
   /// <summary>
   ///   LineSketchNoneEmpty.
   /// </summary>
-  public Boolean? LineSketchNoneEmpty { get; set; }
+  public bool? LineSketchNoneEmpty { get; set; }
 
   /// <summary>
   ///   LineSketchCurvedEmpty.
   /// </summary>
-  public Boolean? LineSketchCurvedEmpty { get; set; }
+  public bool? LineSketchCurvedEmpty { get; set; }
 
   /// <summary>
   ///   LineSketchFreehandEmpty.
   /// </summary>
-  public Boolean? LineSketchFreehandEmpty { get; set; }
+  public bool? LineSketchFreehandEmpty { get; set; }
 
   /// <summary>
   ///   LineSketchScribbleEmpty.
   /// </summary>
-  public Boolean? LineSketchScribbleEmpty { get; set; }
+  public bool? LineSketchScribbleEmpty { get; set; }
 }

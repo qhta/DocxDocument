@@ -14,12 +14,12 @@ public class Shape: ModelElement
   /// <summary>
   ///   Shape Type
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   Relationship to Image Part
   /// </summary>
-  public String? Blip { get; set; }
+  public string? Blip { get; set; }
 
   /// <summary>
   ///   Z-Order Offset
@@ -29,17 +29,17 @@ public class Shape: ModelElement
   /// <summary>
   ///   Hide Geometry
   /// </summary>
-  public Boolean? HideGeometry { get; set; }
+  public bool? HideGeometry { get; set; }
 
   /// <summary>
   ///   Prevent Text Editing
   /// </summary>
-  public Boolean? LockedText { get; set; }
+  public bool? LockedText { get; set; }
 
   /// <summary>
   ///   Image Placeholder
   /// </summary>
-  public Boolean? BlipPlaceholder { get; set; }
+  public bool? BlipPlaceholder { get; set; }
 
   /// <summary>
   ///   Shape Adjust List.

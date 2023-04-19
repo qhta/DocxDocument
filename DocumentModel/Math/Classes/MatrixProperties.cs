@@ -1,35 +1,32 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Matrix Properties.
+///   This element specifies properties of the matrix m, including the justification of the matrix and the layout of elements within the matrix.
 /// </summary>
 public class MatrixProperties: ModelElement
 {
   /// <summary>
-  ///   Matrix Base Justification.
+  ///   Specifies the justification of the matrix. 
+  ///   Text outside of the matrix can be aligned with the bottom, top, or center of a matrix object. 
+  ///   If this element is omitted, the matrix assumes center justification. 
+  ///   In other words, whether the element is absent or present without the val attribute, the default of the val attribute is center.
   /// </summary>
   public VerticalAlignmentKind? BaseJustification { get; set; }
 
   /// <summary>
   ///   Hide Placeholders (Matrix).
   /// </summary>
-  public BooleanKind? HidePlaceholder { get; set; }
+  public bool? HidePlaceholder { get; set; }
 
   /// <summary>
-  ///   Row Spacing Rule.
+  ///   Row Spacing.
   /// </summary>
-  public Int64? RowSpacingRule { get; set; }
+  public RowSpacing? RowSpacing { get; set; }
 
   /// <summary>
   ///   Matrix Column Gap Rule.
   /// </summary>
   public Int64? ColumnGapRule { get; set; }
-
-  /// <summary>
-  ///   Row Spacing (Matrix).
-  /// </summary>
-  public UInt16? RowSpacing { get; set; }
 
   /// <summary>
   ///   Matrix Column Spacing.
@@ -47,7 +44,7 @@ public class MatrixProperties: ModelElement
   public MatrixColumns? MatrixColumns { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of matrix object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

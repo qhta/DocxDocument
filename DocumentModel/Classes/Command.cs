@@ -9,20 +9,20 @@ public class Command: ModelElement
   /// <summary>
   ///   onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? OnAction { get; set; }
+  public string? OnAction { get; set; }
 
   /// <summary>
   ///   enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 }

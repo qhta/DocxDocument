@@ -8,12 +8,12 @@ public class Comment: ElementCollection<ICommentContent>
   /// <summary>
   ///   Specifies a unique identifier for an annotation.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Specifies the author for an annotation.
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   Specifies the initials of the author of the current comment. 
@@ -22,7 +22,7 @@ public class Comment: ElementCollection<ICommentContent>
   ///   If there is more than one author with the same initials, 
   ///   it might be more useful to display the author name. 
   /// </summary>
-  public String? Initials { get; set; }
+  public string? Initials { get; set; }
 
   /// <summary>
   ///   Specifies the date information for an annotation.

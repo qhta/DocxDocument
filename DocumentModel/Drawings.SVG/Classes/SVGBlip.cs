@@ -9,10 +9,10 @@ public class SVGBlip: ModelElement
   /// <summary>
   ///   Embedded Picture Reference
   /// </summary>
-  public String? Embed { get; set; }
+  public string? Embed { get; set; }
 
   /// <summary>
   ///   Linked Picture Reference
   /// </summary>
-  public String? Link { get; set; }
+  public string? Link { get; set; }
 }

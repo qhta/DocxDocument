@@ -9,12 +9,12 @@ public class DataLabelFieldTableEntry: ModelElement
   /// <summary>
   ///   TextFieldGuid.
   /// </summary>
-  public String? TextFieldGuid { get; set; }
+  public string? TextFieldGuid { get; set; }
 
   /// <summary>
   ///   Formula.
   /// </summary>
-  public String? Formula { get; set; }
+  public string? Formula { get; set; }
 
   /// <summary>
   ///   DataLabelFieldTableCache.

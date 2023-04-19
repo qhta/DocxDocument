@@ -19,7 +19,7 @@ public class ChartTitle: ModelElement
   /// <summary>
   ///   overlay, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Overlay { get; set; }
+  public bool? Overlay { get; set; }
 
   /// <summary>
   ///   Text.

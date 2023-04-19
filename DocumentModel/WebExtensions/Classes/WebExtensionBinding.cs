@@ -9,17 +9,17 @@ public class WebExtensionBinding: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   type, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   appref, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? AppReference { get; set; }
+  public string? AppReference { get; set; }
 
   /// <summary>
   ///   OfficeArtExtensionList.

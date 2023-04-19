@@ -9,12 +9,12 @@ public class Indentation: ModelElement
   /// <summary>
   ///   Left Indentation
   /// </summary>
-  public String? Left { get; set; }
+  public string? Left { get; set; }
 
   /// <summary>
   ///   start, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Start { get; set; }
+  public string? Start { get; set; }
 
   /// <summary>
   ///   Left Indentation in Character Units
@@ -29,12 +29,12 @@ public class Indentation: ModelElement
   /// <summary>
   ///   Right Indentation
   /// </summary>
-  public String? Right { get; set; }
+  public string? Right { get; set; }
 
   /// <summary>
   ///   end, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? End { get; set; }
+  public string? End { get; set; }
 
   /// <summary>
   ///   Right Indentation in Character Units
@@ -49,7 +49,7 @@ public class Indentation: ModelElement
   /// <summary>
   ///   Indentation Removed from First Line
   /// </summary>
-  public String? Hanging { get; set; }
+  public string? Hanging { get; set; }
 
   /// <summary>
   ///   Indentation Removed From First Line in Character Units
@@ -59,7 +59,7 @@ public class Indentation: ModelElement
   /// <summary>
   ///   Additional First Line Indentation
   /// </summary>
-  public String? FirstLine { get; set; }
+  public string? FirstLine { get; set; }
 
   /// <summary>
   ///   Additional First Line Indentation in Character Units

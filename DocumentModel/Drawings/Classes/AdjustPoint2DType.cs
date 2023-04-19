@@ -9,10 +9,10 @@ public class AdjustPoint2DType: ModelElement
   /// <summary>
   ///   X-Coordinate
   /// </summary>
-  public String? X { get; set; }
+  public string? X { get; set; }
 
   /// <summary>
   ///   Y-Coordinate
   /// </summary>
-  public String? Y { get; set; }
+  public string? Y { get; set; }
 }

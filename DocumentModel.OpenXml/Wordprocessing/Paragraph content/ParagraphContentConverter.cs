@@ -10,8 +10,6 @@ public static class ParagraphContentConverter
   #region Paragraph content conversion
   public static DM.IModelElement? CreateParagraphContent(DX.OpenXmlElement? openXmlElement)
   {
-    if (openXmlElement is DXW.ParagraphProperties)
-      return null;
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
     if (openXmlElement is DXW.Hyperlink hyperlink)
@@ -33,7 +31,7 @@ public static class ParagraphContentConverter
     if (commonMarker != null)
       return commonMarker;
 
-    var commonMathElement = CommonMathConverter.CreateModelElement(openXmlElement);
+    var commonMathElement = DMXM.CommonMathConverter.CreateModelElement(openXmlElement);
     if (commonMathElement != null)
       return commonMathElement;
 
@@ -69,9 +67,9 @@ public static class ParagraphContentConverter
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathContent commonMathModel)
+      if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
         if (result != null)
           return (bool)result;
       }
@@ -106,7 +104,7 @@ public static class ParagraphContentConverter
     var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
     if (commonMarker != null) return commonMarker;
 
-    var commonMathElement = CommonMathConverter.CreateOpenXmlElement(model as DMMath.ICommonMathContent);
+    var commonMathElement = DMXM.CommonMathConverter.CreateOpenXmlElement(model as DMM.ICommonMathContent);
     if (commonMathElement != null) return commonMathElement;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in ParagraphContentConverter.CreateOpenXmlParagraphContent method");
@@ -139,9 +137,9 @@ public static class ParagraphContentConverter
         if (result != null)
           return (bool)result;
       }
-      if (model is DMMath.ICommonMathContent commonMathModel)
+      if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
+        var result = DMXM.CommonMathConverter.UpdateOpenXmlElement(openXmlElement, commonMathModel);
         if (result != null)
           return (bool)result;
       }

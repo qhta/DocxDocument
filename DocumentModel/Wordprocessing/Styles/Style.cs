@@ -13,39 +13,39 @@ public partial class Style : IEquatable<Style>
   /// <summary>
   ///   Style ID
   /// </summary>
-  public String? StyleId { get; set; }
+  public string? StyleId { get; set; }
 
   /// <summary>
   ///   Style Name
   /// </summary>
-  public String? StyleName { get; set; }
+  public string? StyleName { get; set; }
 
   /// <summary>
   ///   Default Style
   /// </summary>
   [DefaultValue(false)]
-  public Boolean? IsDefault { get; set; }
+  public bool? IsDefault { get; set; }
 
   /// <summary>
   ///   User-Defined Style
   /// </summary>
   [DefaultValue(false)]
-  public Boolean? IsCustom { get; set; }
+  public bool? IsCustom { get; set; }
 
   /// <summary>
   ///   Parent Style ID.
   /// </summary>
-  public String? BasedOn { get; set; }
+  public string? BasedOn { get; set; }
 
   /// <summary>
   ///   Style For Next Paragraph.
   /// </summary>
-  public String? NextParagraphStyle { get; set; }
+  public string? NextParagraphStyle { get; set; }
 
   /// <summary>
   ///   Linked Style Reference.
   /// </summary>
-  public String? LinkedStyle { get; set; }
+  public string? LinkedStyle { get; set; }
 
   /// <summary>
   ///   Automatically Merge User Formatting Into Style Definition.

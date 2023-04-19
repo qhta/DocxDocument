@@ -9,7 +9,7 @@ public class Caption: ModelElement
   /// <summary>
   ///   Caption Type Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Automatic Caption Placement
@@ -19,7 +19,7 @@ public class Caption: ModelElement
   /// <summary>
   ///   Include Chapter Number in Field for Caption
   /// </summary>
-  public Boolean? ChapterNumber { get; set; }
+  public bool? ChapterNumber { get; set; }
 
   /// <summary>
   ///   Style for Chapter Headings
@@ -29,7 +29,7 @@ public class Caption: ModelElement
   /// <summary>
   ///   Do Not Include Name In Caption
   /// </summary>
-  public Boolean? NoLabel { get; set; }
+  public bool? NoLabel { get; set; }
 
   /// <summary>
   ///   Caption Numbering Format

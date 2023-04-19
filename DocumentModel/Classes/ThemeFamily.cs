@@ -9,17 +9,17 @@ public class ThemeFamily: ModelElement
   /// <summary>
   ///   name, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   vid, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Vid { get; set; }
+  public string? Vid { get; set; }
 
   /// <summary>
   ///   OfficeArtExtensionList.

@@ -1,73 +1,74 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Office Math Paragraph Properties.
+/// <see cref="DMM.ParagraphProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class ParagraphPropertiesConverter
 {
-  /// <summary>
-  /// Justification.
-  /// </summary>
-  private static DMMath.JustificationKind? GetJustification(DXMath.ParagraphProperties openXmlElement)
+  #region Justification. conversion.
+  private static DMM.JustificationKind? GetJustification(DXM.ParagraphProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.Justification>()?.Val?.Value);
   }
   
-  private static bool CmpJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpJustification(DXM.ParagraphProperties openXmlElement, DMM.JustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(openXmlElement.GetFirstChild<DXMath.Justification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.Justification>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetJustification(DXMath.ParagraphProperties openXmlElement, DMMath.JustificationKind? value)
+  private static void SetJustification(DXM.ParagraphProperties openXmlElement, DMM.JustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Justification>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Justification>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>(itemElement, (DMMath.JustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(itemElement, (DMM.JustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMMath.JustificationKind>((DMMath.JustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
   }
-  
-  public static DMMath.ParagraphProperties? CreateModelElement(DXMath.ParagraphProperties? openXmlElement)
+  #endregion
+
+  #region ParagraphProperties model conversion.
+  public static DMM.ParagraphProperties? CreateModelElement(DXM.ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.ParagraphProperties();
-      value.Justification = GetJustification(openXmlElement);
-      return value;
+      var model = new DMM.ParagraphProperties();
+      model.Justification = GetJustification(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.ParagraphProperties? openXmlElement, DMMath.ParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.ParagraphProperties? openXmlElement, DMM.ParagraphProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpJustification(openXmlElement, value.Justification, diffs, objName))
+      if (!CmpJustification(openXmlElement, model.Justification, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.ParagraphProperties value)
-    where OpenXmlElementType: DXMath.ParagraphProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.ParagraphProperties model)
+    where OpenXmlElementType: DXM.ParagraphProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.ParagraphProperties openXmlElement, DMMath.ParagraphProperties value)
+  public static void UpdateOpenXmlElement(DXM.ParagraphProperties openXmlElement, DMM.ParagraphProperties model)
   {
-    SetJustification(openXmlElement, value?.Justification);
+    SetJustification(openXmlElement, model?.Justification);
   }
+  #endregion
 }

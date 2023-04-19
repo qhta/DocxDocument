@@ -19,7 +19,7 @@ public class SeriesAxis: ModelElement
   /// <summary>
   ///   Delete.
   /// </summary>
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   /// <summary>
   ///   Axis Position.

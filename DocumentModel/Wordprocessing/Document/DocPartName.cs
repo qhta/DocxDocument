@@ -9,10 +9,10 @@ public class DocPartName: ModelElement
   /// <summary>
   ///   Name Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 
   /// <summary>
   ///   Built-In Entry
   /// </summary>
-  public Boolean? Decorated { get; set; }
+  public bool? Decorated { get; set; }
 }

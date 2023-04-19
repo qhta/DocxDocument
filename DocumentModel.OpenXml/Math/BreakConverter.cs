@@ -1,70 +1,47 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Break.
+/// <see cref="DMM.Break"/> class from/to OpenXml converter.
 /// </summary>
 public static class BreakConverter
 {
-  /// <summary>
-  /// Index of Operator to Align To
-  /// </summary>
-  private static Int64? GetAlignAt(DXMath.Break openXmlElement)
+  #region Index of Operator to Align To conversion.
+  private static Int32? GetAlignAt(DXM.Break openXmlElement)
   {
-    return openXmlElement?.AlignAt?.Value;
+    return Int32ValueConverter.GetValue(openXmlElement?.AlignAt?.Value);
   }
   
-  private static bool CmpAlignAt(DXMath.Break openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignAt(DXM.Break openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AlignAt?.Value == value) return true;
     diffs?.Add(objName, "AlignAt", openXmlElement?.AlignAt?.Value, value);
     return false;
   }
   
-  private static void SetAlignAt(DXMath.Break openXmlElement, Int64? value)
+  private static void SetAlignAt(DXM.Break openXmlElement, Int32? value)
   {
-    openXmlElement.AlignAt = value;
+    openXmlElement.AlignAt = Int32ValueConverter.CreateIntegerValue(value);
   }
-  
-  /// <summary>
-  /// Index of Operator to Align To
-  /// </summary>
-  private static Int64? GetVal(DXMath.Break openXmlElement)
-  {
-    return openXmlElement?.Val?.Value;
-  }
-  
-  private static bool CmpVal(DXMath.Break openXmlElement, Int64? value, DiffList? diffs, string? objName)
-  {
-    if (openXmlElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value);
-    return false;
-  }
-  
-  private static void SetVal(DXMath.Break openXmlElement, Int64? value)
-  {
-    openXmlElement.Val = value;
-  }
-  
-  public static DMMath.Break? CreateModelElement(DXMath.Break? openXmlElement)
+  #endregion
+
+  #region Break model conversion.
+  public static DMM.Break? CreateModelElement(DXM.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Break();
+      var value = new DMM.Break();
       value.AlignAt = GetAlignAt(openXmlElement);
-      value.Val = GetVal(openXmlElement);
       return value;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.Break? openXmlElement, DMMath.Break? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Break? openXmlElement, DMM.Break? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
       if (!CmpAlignAt(openXmlElement, value.AlignAt, diffs, objName))
-        ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
         ok = false;
       return ok;
     }
@@ -73,17 +50,17 @@ public static class BreakConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.Break value)
-    where OpenXmlElementType: DXMath.Break, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.Break value)
+    where OpenXmlElementType: DXM.Break, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.Break openXmlElement, DMMath.Break value)
+  public static void UpdateOpenXmlElement(DXM.Break openXmlElement, DMM.Break value)
   {
     SetAlignAt(openXmlElement, value?.AlignAt);
-    SetVal(openXmlElement, value?.Val);
   }
+  #endregion
 }

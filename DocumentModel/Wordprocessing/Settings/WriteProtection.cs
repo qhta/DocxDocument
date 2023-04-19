@@ -9,7 +9,7 @@ public class WriteProtection: ModelElement
   /// <summary>
   ///   Recommend Write Protection in User Interface
   /// </summary>
-  public Boolean? Recommended { get; set; }
+  public bool? Recommended { get; set; }
 
   /// <summary>
   ///   Cryptographic Provider Type
@@ -39,7 +39,7 @@ public class WriteProtection: ModelElement
   /// <summary>
   ///   Cryptographic Provider
   /// </summary>
-  public String? CryptographicProvider { get; set; }
+  public string? CryptographicProvider { get; set; }
 
   /// <summary>
   ///   Cryptographic Algorithm Extensibility
@@ -49,7 +49,7 @@ public class WriteProtection: ModelElement
   /// <summary>
   ///   Algorithm Extensibility Source
   /// </summary>
-  public String? AlgorithmIdExtensibilitySource { get; set; }
+  public string? AlgorithmIdExtensibilitySource { get; set; }
 
   /// <summary>
   ///   Cryptographic Provider Type Extensibility
@@ -59,7 +59,7 @@ public class WriteProtection: ModelElement
   /// <summary>
   ///   Provider Type Extensibility Source
   /// </summary>
-  public String? CryptographicProviderTypeExtSource { get; set; }
+  public string? CryptographicProviderTypeExtSource { get; set; }
 
   /// <summary>
   ///   Password Hash
@@ -74,7 +74,7 @@ public class WriteProtection: ModelElement
   /// <summary>
   ///   algorithmName, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? AlgorithmName { get; set; }
+  public string? AlgorithmName { get; set; }
 
   /// <summary>
   ///   hashValue, this property is only available in Office 2010 and later.

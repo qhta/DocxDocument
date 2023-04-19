@@ -8,14 +8,14 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class ChartDrawingPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ImageParts of the ChartDrawingPart
   /// </summary>
   public Collection<ImagePart>? ImageParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets or sets the root element of this part.

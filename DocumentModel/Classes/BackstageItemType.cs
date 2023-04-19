@@ -9,15 +9,15 @@ public class BackstageItemType: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? GetLabel { get; set; }
+  public string? GetLabel { get; set; }
 }

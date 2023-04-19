@@ -8,7 +8,7 @@ public class DataLabels: ModelElement
 {
   public Collection<DataLabel>? Items { get; set; }
 
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   public NumberingFormat? NumberingFormat { get; set; }
 
@@ -18,21 +18,21 @@ public class DataLabels: ModelElement
 
   public DataLabelPositionKind? DataLabelPosition { get; set; }
 
-  public Boolean? ShowLegendKey { get; set; }
+  public bool? ShowLegendKey { get; set; }
 
-  public Boolean? ShowValue { get; set; }
+  public bool? ShowValue { get; set; }
 
-  public Boolean? ShowCategoryName { get; set; }
+  public bool? ShowCategoryName { get; set; }
 
-  public Boolean? ShowSeriesName { get; set; }
+  public bool? ShowSeriesName { get; set; }
 
-  public Boolean? ShowPercent { get; set; }
+  public bool? ShowPercent { get; set; }
 
-  public Boolean? ShowBubbleSize { get; set; }
+  public bool? ShowBubbleSize { get; set; }
 
-  public String? Separator { get; set; }
+  public string? Separator { get; set; }
 
-  public Boolean? ShowLeaderLines { get; set; }
+  public bool? ShowLeaderLines { get; set; }
 
   public LeaderLines? LeaderLines { get; set; }
 

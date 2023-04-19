@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Equation Array Properties.
+///   This element specifies the properties of the array object, including the vertical justification of the object and layout inside the object. 
 /// </summary>
 public class EquationArrayProperties: ModelElement
 {
@@ -14,25 +13,20 @@ public class EquationArrayProperties: ModelElement
   /// <summary>
   ///   Maximum Distribution.
   /// </summary>
-  public BooleanKind? MaxDistribution { get; set; }
+  public bool? MaxDistribution { get; set; }
 
   /// <summary>
   ///   Object Distribution.
   /// </summary>
-  public BooleanKind? ObjectDistribution { get; set; }
+  public bool? ObjectDistribution { get; set; }
 
   /// <summary>
-  ///   Row Spacing Rule.
+  ///   Row Spacing (Equation Array). The meaning of the value is unspecified.
   /// </summary>
-  public Int64? RowSpacingRule { get; set; }
+  public RowSpacing? RowSpacing { get; set; }
 
   /// <summary>
-  ///   Row Spacing (Equation Array).
-  /// </summary>
-  public UInt16? RowSpacing { get; set; }
-
-  /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of equation array object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

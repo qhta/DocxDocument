@@ -11,9 +11,9 @@ public class DataModelExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public DataModelExtensionBlock? DataModelExtensionBlock { get; set; }
 
-  public Boolean? RecolorImages { get; set; }
+  public bool? RecolorImages { get; set; }
 }

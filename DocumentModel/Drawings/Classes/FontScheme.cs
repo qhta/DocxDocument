@@ -9,7 +9,7 @@ public class FontScheme: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Major Font.

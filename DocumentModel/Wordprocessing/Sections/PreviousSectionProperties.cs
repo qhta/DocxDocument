@@ -79,7 +79,7 @@ public class PreviousSectionProperties: ModelElement
   /// <summary>
   ///   FormProtection.
   /// </summary>
-  public Boolean? FormProtection { get; set; }
+  public bool? FormProtection { get; set; }
 
   /// <summary>
   ///   VerticalTextAlignmentOnPage.
@@ -89,12 +89,12 @@ public class PreviousSectionProperties: ModelElement
   /// <summary>
   ///   NoEndnote.
   /// </summary>
-  public Boolean? NoEndnote { get; set; }
+  public bool? NoEndnote { get; set; }
 
   /// <summary>
   ///   TitlePage.
   /// </summary>
-  public Boolean? TitlePage { get; set; }
+  public bool? TitlePage { get; set; }
 
   /// <summary>
   ///   TextDirection.
@@ -104,12 +104,12 @@ public class PreviousSectionProperties: ModelElement
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public Boolean? BiDi { get; set; }
+  public bool? BiDi { get; set; }
 
   /// <summary>
   ///   GutterOnRight.
   /// </summary>
-  public Boolean? GutterOnRight { get; set; }
+  public bool? GutterOnRight { get; set; }
 
   /// <summary>
   ///   DocGrid.

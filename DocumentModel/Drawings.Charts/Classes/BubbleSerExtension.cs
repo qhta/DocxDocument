@@ -9,7 +9,7 @@ public class BubbleSerExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public InvertSolidFillFormat? InvertSolidFillFormat { get; set; }
 

@@ -39,12 +39,12 @@ public class TextParagraphPropertiesType: ModelElement
   /// <summary>
   ///   Right To Left
   /// </summary>
-  public Boolean? RightToLeft { get; set; }
+  public bool? RightToLeft { get; set; }
 
   /// <summary>
   ///   East Asian Line Break
   /// </summary>
-  public Boolean? EastAsianLineBreak { get; set; }
+  public bool? EastAsianLineBreak { get; set; }
 
   /// <summary>
   ///   Font Alignment
@@ -54,12 +54,12 @@ public class TextParagraphPropertiesType: ModelElement
   /// <summary>
   ///   Latin Line Break
   /// </summary>
-  public Boolean? LatinLineBreak { get; set; }
+  public bool? LatinLineBreak { get; set; }
 
   /// <summary>
   ///   Hanging Punctuation
   /// </summary>
-  public Boolean? Height { get; set; }
+  public bool? Height { get; set; }
 
   /// <summary>
   ///   Line Spacing.

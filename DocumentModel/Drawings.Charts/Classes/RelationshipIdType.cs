@@ -9,5 +9,5 @@ public class RelationshipIdType: ModelElement
   /// <summary>
   ///   Relationship Reference
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

@@ -9,37 +9,37 @@ public class Div: ModelElement
   /// <summary>
   ///   div Data ID
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Data for HTML blockquote Element.
   /// </summary>
-  public Boolean? BlockQuote { get; set; }
+  public bool? BlockQuote { get; set; }
 
   /// <summary>
   ///   Data for HTML body Element.
   /// </summary>
-  public Boolean? BodyDiv { get; set; }
+  public bool? BodyDiv { get; set; }
 
   /// <summary>
   ///   Left Margin for HTML div.
   /// </summary>
-  public String? LeftMarginDiv { get; set; }
+  public string? LeftMarginDiv { get; set; }
 
   /// <summary>
   ///   Right Margin for HTML div.
   /// </summary>
-  public String? RightMarginDiv { get; set; }
+  public string? RightMarginDiv { get; set; }
 
   /// <summary>
   ///   Top Margin for HTML div.
   /// </summary>
-  public String? TopMarginDiv { get; set; }
+  public string? TopMarginDiv { get; set; }
 
   /// <summary>
   ///   Bottom Margin for HTML div.
   /// </summary>
-  public String? BottomMarginDiv { get; set; }
+  public string? BottomMarginDiv { get; set; }
 
   /// <summary>
   ///   Set of Borders for HTML div.

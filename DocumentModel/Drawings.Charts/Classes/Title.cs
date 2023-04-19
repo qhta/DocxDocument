@@ -19,7 +19,7 @@ public class Title: ModelElement
   /// <summary>
   ///   Overlay.
   /// </summary>
-  public Boolean? Overlay { get; set; }
+  public bool? Overlay { get; set; }
 
   /// <summary>
   ///   ChartShapeProperties.
