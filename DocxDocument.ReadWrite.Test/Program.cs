@@ -7,6 +7,15 @@ internal class Program
     RunTestBody();
   }
 
+    private static void RunTestBackground()
+  {
+    var testInstance = new TestProperties();
+    testInstance.Setup();
+    testInstance.TestReadProperties("BorderColor.docx", true);
+    testInstance.TestReadPropertiesXmlSerialization("BorderColor.docx", true);
+    Console.WriteLine("\nTest passed");
+  }
+
   private static void RunTestComments()
   {
     var testInstance = new TestComments();

@@ -1,32 +1,17 @@
 using DocumentModel.Vml;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Document Background.
+///   This element specifies the background for every page of the document containing the background element. 
+///   A document's background is the image or fill for the entire page surface, behind all other document content.
 /// </summary>
 public class DocumentBackground: ModelElement
 {
   /// <summary>
-  ///   color
+  ///   Specifies the color for the background of the document.
   /// </summary>
-  public string? Color { get; set; }
-
-  /// <summary>
-  ///   themeColor
-  /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
-
-  /// <summary>
-  ///   themeTint
-  /// </summary>
-  public string? ThemeTint { get; set; }
-
-  /// <summary>
-  ///   themeShade
-  /// </summary>
-  public string? ThemeShade { get; set; }
+  public Color? Color { get; set; }
 
   /// <summary>
   ///   Background.
