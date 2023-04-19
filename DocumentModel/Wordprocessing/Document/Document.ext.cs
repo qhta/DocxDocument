@@ -1,11 +1,13 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Document.
+///   Definition of model properties.
 /// </summary>
 public partial class Document
 {
+  /// <summary>
+  /// Compound of object of document properties
+  /// </summary>
   public DocumentProperties? Properties { get; set; }
 
   public Styles? Styles { get; set; }
