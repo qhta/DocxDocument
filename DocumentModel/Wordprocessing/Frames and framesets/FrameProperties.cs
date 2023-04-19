@@ -19,7 +19,7 @@ public class FrameProperties: ModelElement
   /// <summary>
   ///   Frame Width
   /// </summary>
-  public String? Width { get; set; }
+  public string? Width { get; set; }
 
   /// <summary>
   ///   Frame Height
@@ -29,12 +29,12 @@ public class FrameProperties: ModelElement
   /// <summary>
   ///   Vertical Frame Padding
   /// </summary>
-  public String? VerticalSpace { get; set; }
+  public string? VerticalSpace { get; set; }
 
   /// <summary>
   ///   Horizontal Frame Padding
   /// </summary>
-  public String? HorizontalSpace { get; set; }
+  public string? HorizontalSpace { get; set; }
 
   /// <summary>
   ///   Text Wrapping Around Frame
@@ -54,7 +54,7 @@ public class FrameProperties: ModelElement
   /// <summary>
   ///   Absolute Horizontal Position
   /// </summary>
-  public String? X { get; set; }
+  public string? X { get; set; }
 
   /// <summary>
   ///   Relative Horizontal Position
@@ -64,7 +64,7 @@ public class FrameProperties: ModelElement
   /// <summary>
   ///   Absolute Vertical Position
   /// </summary>
-  public String? Y { get; set; }
+  public string? Y { get; set; }
 
   /// <summary>
   ///   Relative Vertical Position
@@ -79,5 +79,5 @@ public class FrameProperties: ModelElement
   /// <summary>
   ///   Lock Frame Anchor to Paragraph
   /// </summary>
-  public Boolean? AnchorLock { get; set; }
+  public bool? AnchorLock { get; set; }
 }

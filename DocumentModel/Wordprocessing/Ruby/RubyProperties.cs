@@ -14,7 +14,7 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Text Font Size.
   /// </summary>
-  public String? PhoneticGuideTextFontSize { get; set; }
+  public string? PhoneticGuideTextFontSize { get; set; }
 
   /// <summary>
   ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
@@ -24,15 +24,15 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Base Text Font Size.
   /// </summary>
-  public String? PhoneticGuideBaseTextSize { get; set; }
+  public string? PhoneticGuideBaseTextSize { get; set; }
 
   /// <summary>
   ///   Language ID for Phonetic Guide.
   /// </summary>
-  public String? LanguageId { get; set; }
+  public string? LanguageId { get; set; }
 
   /// <summary>
   ///   Invalidated Field Cache.
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  public bool? Dirty { get; set; }
 }

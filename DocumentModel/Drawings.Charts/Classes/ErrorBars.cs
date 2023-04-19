@@ -24,7 +24,7 @@ public class ErrorBars: ModelElement
   /// <summary>
   ///   No End Cap.
   /// </summary>
-  public Boolean? NoEndCap { get; set; }
+  public bool? NoEndCap { get; set; }
 
   /// <summary>
   ///   Plus.

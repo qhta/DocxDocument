@@ -9,7 +9,7 @@ public class ChartSpaceExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public PivotOptions? PivotOptions { get; set; }
 

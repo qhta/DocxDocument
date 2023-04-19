@@ -1,8 +1,8 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   n-ary Operator Function.
+///   This element specifies an n-ary object, consisting of an n-ary object, a base (or operand) and optional upper and lower limits.
+///   Examples of n-ary objects are: integral, sum, product.
 /// </summary>
 public class Nary: ModelElement, ICommonMathContent
 {
@@ -22,16 +22,8 @@ public class Nary: ModelElement, ICommonMathContent
   public SuperArgument? SuperArgument { get; set; }
 
   /// <summary>
-  ///   Base (Argument).
+  ///   Base argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 
-  //public override int GetHashCode()
-  //{
-  //  Debug.Indent();
-  //  var hashCode = base.GetHashCode();
-  //  Debug.WriteLine($"{this}.HashCode={hashCode}");
-  //  Debug.Unindent();
-  //  return hashCode;
-  //}
 }

@@ -9,60 +9,60 @@ public class SignatureLine: ModelElement
   /// <summary>
   ///   isSignatureLine, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? IsSignatureLine { get; set; }
+  public bool? IsSignatureLine { get; set; }
 
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   provId, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? ProviderId { get; set; }
+  public string? ProviderId { get; set; }
 
   /// <summary>
   ///   signingInstructionsSet, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? SigningInstructionsSet { get; set; }
+  public bool? SigningInstructionsSet { get; set; }
 
   /// <summary>
   ///   allowComments, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? AllowComments { get; set; }
+  public bool? AllowComments { get; set; }
 
   /// <summary>
   ///   showSignDate, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? ShowSignDate { get; set; }
+  public bool? ShowSignDate { get; set; }
 
   /// <summary>
   ///   suggestedSigner, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? SuggestedSigner { get; set; }
+  public string? SuggestedSigner { get; set; }
 
   /// <summary>
   ///   suggestedSigner2, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? SuggestedSigner2 { get; set; }
+  public string? SuggestedSigner2 { get; set; }
 
   /// <summary>
   ///   suggestedSignerEmail, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? SuggestedSignerEmail { get; set; }
+  public string? SuggestedSignerEmail { get; set; }
 
   /// <summary>
   ///   signingInstructions, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? SigningInstructions { get; set; }
+  public string? SigningInstructions { get; set; }
 
   /// <summary>
   ///   addlXml, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? AdditionalXml { get; set; }
+  public string? AdditionalXml { get; set; }
 
   /// <summary>
   ///   sigProvUrl, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? SignatureProviderUrl { get; set; }
+  public string? SignatureProviderUrl { get; set; }
 }

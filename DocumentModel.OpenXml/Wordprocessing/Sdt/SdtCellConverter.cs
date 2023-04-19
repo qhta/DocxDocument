@@ -118,8 +118,8 @@ public static class SdtCellConverter
       var model = new DMW.SdtCell();
       model.SdtProperties = SdtElementConverter.GetSdtProperties(openXmlElement);
       model.SdtEndCharProperties = SdtElementConverter.GetSdtEndCharProperties(openXmlElement);
-      ElementCollectionConverter<DMW.ISdtCellContent>.FillModelElementCollection(openXmlElement.SdtContentCell, model, 
-        (CreateModelElementMethod)CreateSdtContentCellModelElement);
+      ElementCollectionConverter<DMW.ISdtCellContent>.FillModelElementCollection(openXmlElement.SdtContentCell, model,
+        CreateSdtContentCellModelElement);
       return model;
     }
     return null;
@@ -143,7 +143,7 @@ public static class SdtCellConverter
       if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
         ok = false;
       if (!ElementCollectionConverter<DMW.ISdtCellContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentCell, model,
-        (CompareOpenXmlElementMethod)CompareSdtContentCellElement, diffs, objName))
+        CompareSdtContentCellElement, diffs, objName))
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
@@ -176,9 +176,9 @@ public static class SdtCellConverter
     SdtElementConverter.SetSdtProperties(openXmlElement, model.SdtProperties);
     SdtElementConverter.SetSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties);
     return ElementCollectionConverter<DMW.ISdtCellContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareSdtContentCellElement,
-      (UpdateOpenXmlElementMethod)UpdateSdtContentCellOpenXmlElement,
-      (CreateOpenXmlElementMethod)CreateSdtContentCellOpenXmlElement);
+      CompareSdtContentCellElement,
+      UpdateSdtContentCellOpenXmlElement,
+      CreateSdtContentCellOpenXmlElement);
   }
   #endregion
 

@@ -8,7 +8,7 @@ public class DefaultRunProperties: ModelElement
 {
   public Outline? Outline { get; set; }
 
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -18,7 +18,7 @@ public class DefaultRunProperties: ModelElement
 
   public PatternFill? PatternFill { get; set; }
 
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 
   public EffectList? EffectList { get; set; }
 
@@ -26,11 +26,11 @@ public class DefaultRunProperties: ModelElement
 
   public Highlight? Highlight { get; set; }
 
-  public Boolean? UnderlineFollowsText { get; set; }
+  public bool? UnderlineFollowsText { get; set; }
 
   public Underline? Underline { get; set; }
 
-  public Boolean? UnderlineFillText { get; set; }
+  public bool? UnderlineFillText { get; set; }
 
   public UnderlineFill? UnderlineFill { get; set; }
 
@@ -46,7 +46,7 @@ public class DefaultRunProperties: ModelElement
 
   public HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
 
-  public Boolean? RightToLeft { get; set; }
+  public bool? RightToLeft { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

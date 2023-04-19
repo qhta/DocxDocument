@@ -9,7 +9,7 @@ public class CheckBoxSymbolType: ModelElement
   /// <summary>
   ///   font, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Font { get; set; }
+  public string? Font { get; set; }
 
   /// <summary>
   ///   val, this property is only available in Office 2010 and later.

@@ -14,22 +14,22 @@ public class Gallery: ModelElement
   /// <summary>
   ///   getSize
   /// </summary>
-  public String? GetSize { get; set; }
+  public string? GetSize { get; set; }
 
   /// <summary>
   ///   description
   /// </summary>
-  public String? Description { get; set; }
+  public string? Description { get; set; }
 
   /// <summary>
   ///   getDescription
   /// </summary>
-  public String? GetDescription { get; set; }
+  public string? GetDescription { get; set; }
 
   /// <summary>
   ///   invalidateContentOnDrop
   /// </summary>
-  public Boolean? InvalidateContentOnDrop { get; set; }
+  public bool? InvalidateContentOnDrop { get; set; }
 
   /// <summary>
   ///   columns
@@ -54,207 +54,207 @@ public class Gallery: ModelElement
   /// <summary>
   ///   getItemWidth
   /// </summary>
-  public String? GetItemWidth { get; set; }
+  public string? GetItemWidth { get; set; }
 
   /// <summary>
   ///   getItemHeight
   /// </summary>
-  public String? GetItemHeight { get; set; }
+  public string? GetItemHeight { get; set; }
 
   /// <summary>
   ///   showItemLabel
   /// </summary>
-  public Boolean? ShowItemLabel { get; set; }
+  public bool? ShowItemLabel { get; set; }
 
   /// <summary>
   ///   onAction
   /// </summary>
-  public String? OnAction { get; set; }
+  public string? OnAction { get; set; }
 
   /// <summary>
   ///   enabled
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   image
   /// </summary>
-  public String? Image { get; set; }
+  public string? Image { get; set; }
 
   /// <summary>
   ///   imageMso
   /// </summary>
-  public String? ImageMso { get; set; }
+  public string? ImageMso { get; set; }
 
   /// <summary>
   ///   getImage
   /// </summary>
-  public String? GetImage { get; set; }
+  public string? GetImage { get; set; }
 
   /// <summary>
   ///   showItemImage
   /// </summary>
-  public Boolean? ShowItemImage { get; set; }
+  public bool? ShowItemImage { get; set; }
 
   /// <summary>
   ///   getItemCount
   /// </summary>
-  public String? GetItemCount { get; set; }
+  public string? GetItemCount { get; set; }
 
   /// <summary>
   ///   getItemLabel
   /// </summary>
-  public String? GetItemLabel { get; set; }
+  public string? GetItemLabel { get; set; }
 
   /// <summary>
   ///   getItemScreentip
   /// </summary>
-  public String? GetItemScreentip { get; set; }
+  public string? GetItemScreentip { get; set; }
 
   /// <summary>
   ///   getItemSupertip
   /// </summary>
-  public String? GetItemSupertip { get; set; }
+  public string? GetItemSupertip { get; set; }
 
   /// <summary>
   ///   getItemImage
   /// </summary>
-  public String? GetItemImage { get; set; }
+  public string? GetItemImage { get; set; }
 
   /// <summary>
   ///   getItemID
   /// </summary>
-  public String? GetItemID { get; set; }
+  public string? GetItemID { get; set; }
 
   /// <summary>
   ///   sizeString
   /// </summary>
-  public String? SizeString { get; set; }
+  public string? SizeString { get; set; }
 
   /// <summary>
   ///   getSelectedItemID
   /// </summary>
-  public String? GetSelectedItemID { get; set; }
+  public string? GetSelectedItemID { get; set; }
 
   /// <summary>
   ///   getSelectedItemIndex
   /// </summary>
-  public String? GetSelectedItemIndex { get; set; }
+  public string? GetSelectedItemIndex { get; set; }
 
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ
   /// </summary>
-  public String? IdQ { get; set; }
+  public string? IdQ { get; set; }
 
   /// <summary>
   ///   idMso
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 
   /// <summary>
   ///   tag
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   screentip
   /// </summary>
-  public String? Screentip { get; set; }
+  public string? Screentip { get; set; }
 
   /// <summary>
   ///   getScreentip
   /// </summary>
-  public String? GetScreentip { get; set; }
+  public string? GetScreentip { get; set; }
 
   /// <summary>
   ///   supertip
   /// </summary>
-  public String? Supertip { get; set; }
+  public string? Supertip { get; set; }
 
   /// <summary>
   ///   getSupertip
   /// </summary>
-  public String? GetSupertip { get; set; }
+  public string? GetSupertip { get; set; }
 
   /// <summary>
   ///   label
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   getLabel
   /// </summary>
-  public String? GetLabel { get; set; }
+  public string? GetLabel { get; set; }
 
   /// <summary>
   ///   insertAfterMso
   /// </summary>
-  public String? InsertAfterMso { get; set; }
+  public string? InsertAfterMso { get; set; }
 
   /// <summary>
   ///   insertBeforeMso
   /// </summary>
-  public String? InsertBeforeMso { get; set; }
+  public string? InsertBeforeMso { get; set; }
 
   /// <summary>
   ///   insertAfterQ
   /// </summary>
-  public String? InsertAfterQ { get; set; }
+  public string? InsertAfterQ { get; set; }
 
   /// <summary>
   ///   insertBeforeQ
   /// </summary>
-  public String? InsertBeforeQ { get; set; }
+  public string? InsertBeforeQ { get; set; }
 
   /// <summary>
   ///   visible
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   getVisible
   /// </summary>
-  public String? GetVisible { get; set; }
+  public string? GetVisible { get; set; }
 
   /// <summary>
   ///   keytip
   /// </summary>
-  public String? Keytip { get; set; }
+  public string? Keytip { get; set; }
 
   /// <summary>
   ///   getKeytip
   /// </summary>
-  public String? GetKeytip { get; set; }
+  public string? GetKeytip { get; set; }
 
   /// <summary>
   ///   showLabel
   /// </summary>
-  public Boolean? ShowLabel { get; set; }
+  public bool? ShowLabel { get; set; }
 
   /// <summary>
   ///   getShowLabel
   /// </summary>
-  public String? GetShowLabel { get; set; }
+  public string? GetShowLabel { get; set; }
 
   /// <summary>
   ///   showImage
   /// </summary>
-  public Boolean? ShowImage { get; set; }
+  public bool? ShowImage { get; set; }
 
   /// <summary>
   ///   getShowImage
   /// </summary>
-  public String? GetShowImage { get; set; }
+  public string? GetShowImage { get; set; }
 
   public Collection<Item>? Items { get; set; }
 

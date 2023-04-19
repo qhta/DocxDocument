@@ -9,12 +9,12 @@ public class StyleDefinition: ModelElement
   /// <summary>
   ///   Unique Style ID
   /// </summary>
-  public String? UniqueId { get; set; }
+  public string? UniqueId { get; set; }
 
   /// <summary>
   ///   Minimum Version
   /// </summary>
-  public String? MinVersion { get; set; }
+  public string? MinVersion { get; set; }
 
   public Collection<StyleDefinitionTitle>? StyleDefinitionTitles { get; set; }
 

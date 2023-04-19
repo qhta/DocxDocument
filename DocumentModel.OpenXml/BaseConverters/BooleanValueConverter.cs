@@ -1,13 +1,14 @@
 ﻿using System.Runtime.CompilerServices;
 
 using DocumentFormat.OpenXml;
+using DocumentFormat.OpenXml.Office2016.Drawing.Command;
 using DocumentFormat.OpenXml.Wordprocessing;
 
 namespace DocumentModel.OpenXml;
 
 public static class BooleanValueConverter
 {
-  #region OnOffValue
+  #region OnOffValue conversion.
   public static Boolean? GetValue(OnOffValue? element)
   {
     return element?.Value;
@@ -27,7 +28,7 @@ public static class BooleanValueConverter
   }
   #endregion
 
-  #region OnOffOnlyValue
+  #region OnOffOnlyValue conversion.
   public static Boolean? GetValue(OnOffOnlyValues? element)
   {
     if (element == null) return null;
@@ -36,10 +37,10 @@ public static class BooleanValueConverter
 
   public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    if (element!=null && value != null)
+    if (element != null && value != null)
     {
-      if ((element == OnOffOnlyValues.On) && value==true) return true;
-      if ((element == OnOffOnlyValues.Off) && value==false) return true;
+      if ((element == OnOffOnlyValues.On) && value == true) return true;
+      if ((element == OnOffOnlyValues.Off) && value == false) return true;
     }
     if (element == null && value == null) return true;
     diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
@@ -54,7 +55,7 @@ public static class BooleanValueConverter
   }
   #endregion
 
-  #region Convert OnOffType
+  #region OnOffType conversion.
   public static Boolean? GetValue(OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -102,7 +103,7 @@ public static class BooleanValueConverter
   }
   #endregion
 
-  #region Convert OnOffOnlyType
+  #region OnOffOnlyType conversion.
   public static Boolean GetValue(OnOffOnlyType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -144,19 +145,89 @@ public static class BooleanValueConverter
       }
       if (value == true)
       {
-        var itemElement = new ElementType();
-        openXmlElement.AddChild(itemElement);
+        var itemElement = openXmlElement.GetFirstChild<ElementType>();
+        if (itemElement == null)
+          openXmlElement.AddChild(new ElementType());
       }
     }
   }
   #endregion
 
+  #region Math BooleanValues conversion.
+  public static Boolean? GetValue(DX.EnumValue<DXM.BooleanValues>? openXmlElement)
+  {
+    if (openXmlElement?.Value != null)
+    {
+      switch (openXmlElement.Value)
+      {
+        case DXM.BooleanValues.True:
+        case DXM.BooleanValues.On:
+        case DXM.BooleanValues.One:
+          return true;
+        case DXM.BooleanValues.False:
+        case DXM.BooleanValues.Off:
+        case DXM.BooleanValues.Zero:
+          return false;
+      }
+    }
+    return null;
+  }
 
+  public static Boolean CmpValue(DX.EnumValue<DXM.BooleanValues>? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Value != null && value != null)
+    {
+      switch (openXmlElement.Value)
+      {
+        case DXM.BooleanValues.True:
+        case DXM.BooleanValues.On:
+        case DXM.BooleanValues.One:
+          return value == true;
+        case DXM.BooleanValues.False:
+        case DXM.BooleanValues.Off:
+        case DXM.BooleanValues.Zero:
+          return value == false;
+      }
+    }
+    if (openXmlElement?.Value == null && value == null)
+      return true;
+    if (openXmlElement != null && value == true)
+      return true;
+    if (openXmlElement == null && value == false)
+      return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Value, value);
+    return false;
+  }
+
+  public static void UpdateOpenXmlElement<ElementType>(ElementType openXmlElement, Boolean value)
+    where ElementType : DX.OpenXmlElement, new()
+  {
+    var valueProp = typeof(ElementType).GetProperty("Value");
+    if (valueProp != null)
+      valueProp.SetValue(openXmlElement, value == true);
+    else
+      throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+  }
+
+  public static ElementType CreateOpenXmlElement<ElementType>(Boolean value)
+  where ElementType : DX.OpenXmlElement, new()
+  {
+    var openXmlElement = new ElementType();
+    var valueProp = typeof(ElementType).GetProperty("Value");
+    if (valueProp != null)
+      valueProp.SetValue(openXmlElement, value == true);
+    else
+      throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+    return openXmlElement;
+  }
+  #endregion
+
+  #region TypedOpenXmlLeafTextElement conversion.
   public static bool? GetValue(DX.TypedOpenXmlLeafTextElement? element)
   {
     if (element?.Text != null)
     {
-      var text = (string)element.Text.ToLower();
+      var text = element.Text.ToLower();
       switch (text)
       {
         case "true": return true;
@@ -191,4 +262,5 @@ public static class BooleanValueConverter
     }
     return null;
   }
+  #endregion
 }

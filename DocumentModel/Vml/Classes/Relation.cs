@@ -14,15 +14,15 @@ public class Relation: ModelElement
   /// <summary>
   ///   Diagram Relationship Source Shape
   /// </summary>
-  public String? SourceId { get; set; }
+  public string? SourceId { get; set; }
 
   /// <summary>
   ///   Diagram Relationship Destination Shape
   /// </summary>
-  public String? DestinationId { get; set; }
+  public string? DestinationId { get; set; }
 
   /// <summary>
   ///   Diagram Relationship Center Shape
   /// </summary>
-  public String? CenterShapeId { get; set; }
+  public string? CenterShapeId { get; set; }
 }

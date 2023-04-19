@@ -9,19 +9,19 @@ public class DLblsExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public ChartText3? ChartText { get; set; }
 
   public DataLabelFieldTable? DataLabelFieldTable { get; set; }
 
-  public Boolean? ShowDataLabelsRange { get; set; }
+  public bool? ShowDataLabelsRange { get; set; }
 
   public ShapeProperties3? ShapeProperties { get; set; }
 
   public Layout3? Layout { get; set; }
 
-  public Boolean? ShowLeaderLines { get; set; }
+  public bool? ShowLeaderLines { get; set; }
 
   public LeaderLines3? LeaderLines { get; set; }
 }

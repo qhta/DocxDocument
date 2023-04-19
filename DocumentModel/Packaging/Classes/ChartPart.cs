@@ -23,12 +23,12 @@ public class ChartPart: ModelElement
   /// </summary>
   public Collection<ChartStylePart>? ChartStyleParts { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ImageParts of the ChartPart
   /// </summary>
   public Collection<ImagePart>? ImageParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

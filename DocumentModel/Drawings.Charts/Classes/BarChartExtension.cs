@@ -9,7 +9,7 @@ public class BarChartExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public FilteredBarSeries? FilteredBarSeries { get; set; }
 }

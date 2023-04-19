@@ -14,5 +14,5 @@ public class Ink: ModelElement
   /// <summary>
   ///   Annotation Flag
   /// </summary>
-  public Boolean? AnnotationFlag { get; set; }
+  public bool? AnnotationFlag { get; set; }
 }

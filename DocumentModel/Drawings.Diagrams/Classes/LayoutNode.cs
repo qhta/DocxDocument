@@ -9,12 +9,12 @@ public class LayoutNode: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Style Label
   /// </summary>
-  public String? StyleLabel { get; set; }
+  public string? StyleLabel { get; set; }
 
   /// <summary>
   ///   Child Order
@@ -24,7 +24,7 @@ public class LayoutNode: ModelElement
   /// <summary>
   ///   Move With
   /// </summary>
-  public String? MoveWith { get; set; }
+  public string? MoveWith { get; set; }
 
   public Algorithm? Algorithm { get; set; }
 

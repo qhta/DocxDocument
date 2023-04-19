@@ -14,5 +14,5 @@ public class SeriesText: ModelElement
   /// <summary>
   ///   NumericValue.
   /// </summary>
-  public String? NumericValue { get; set; }
+  public string? NumericValue { get; set; }
 }

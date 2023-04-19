@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Charts;
 /// </summary>
 public class NumberingCache: ModelElement
 {
-  public String? FormatCode { get; set; }
+  public string? FormatCode { get; set; }
 
   public UInt32? PointCount { get; set; }
 

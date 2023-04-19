@@ -14,10 +14,10 @@ public class CompatibilitySetting: ModelElement
   /// <summary>
   ///   uri
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   /// <summary>
   ///   val
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

@@ -9,17 +9,17 @@ public class Background: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Shape Fill Toggle
   /// </summary>
-  public Boolean? Filled { get; set; }
+  public bool? Filled { get; set; }
 
   /// <summary>
   ///   Fill Color
   /// </summary>
-  public String? Fillcolor { get; set; }
+  public string? Fillcolor { get; set; }
 
   /// <summary>
   ///   Black-and-White Mode

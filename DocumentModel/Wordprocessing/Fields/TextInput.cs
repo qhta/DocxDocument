@@ -14,7 +14,7 @@ public class TextInput: ModelElement
   /// <summary>
   ///   Default Text Box Form Field String.
   /// </summary>
-  public String? DefaultTextBoxFormFieldString { get; set; }
+  public string? DefaultTextBoxFormFieldString { get; set; }
 
   /// <summary>
   ///   Text Box Form Field Maximum Length.
@@ -24,5 +24,5 @@ public class TextInput: ModelElement
   /// <summary>
   ///   Text Box Form Field Formatting.
   /// </summary>
-  public String? Format { get; set; }
+  public string? Format { get; set; }
 }

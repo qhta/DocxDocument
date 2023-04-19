@@ -24,17 +24,17 @@ public class PageSetup: ModelElement
   /// <summary>
   ///   blackAndWhite, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? BlackAndWhite { get; set; }
+  public bool? BlackAndWhite { get; set; }
 
   /// <summary>
   ///   draft, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Draft { get; set; }
+  public bool? Draft { get; set; }
 
   /// <summary>
   ///   useFirstPageNumber, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? UseFirstPageNumber { get; set; }
+  public bool? UseFirstPageNumber { get; set; }
 
   /// <summary>
   ///   horizontalDpi, this property is only available in Office 2016 and later.

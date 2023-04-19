@@ -9,7 +9,7 @@ public class Point: ModelElement
   /// <summary>
   ///   Model Identifier
   /// </summary>
-  public String? ModelId { get; set; }
+  public string? ModelId { get; set; }
 
   /// <summary>
   ///   Point Type
@@ -19,7 +19,7 @@ public class Point: ModelElement
   /// <summary>
   ///   Connection Identifier
   /// </summary>
-  public String? ConnectionId { get; set; }
+  public string? ConnectionId { get; set; }
 
   /// <summary>
   ///   Property Set.

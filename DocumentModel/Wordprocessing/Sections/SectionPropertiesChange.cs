@@ -9,7 +9,7 @@ public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
   /// <summary>
   ///   author
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   date
@@ -19,7 +19,7 @@ public class SectionPropertiesChange: ModelElement, ISectionPropertiesContent
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Previous Section Properties.

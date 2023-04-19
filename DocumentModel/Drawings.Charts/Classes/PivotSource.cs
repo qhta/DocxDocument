@@ -9,7 +9,7 @@ public class PivotSource: ModelElement
   /// <summary>
   ///   Pivot Name.
   /// </summary>
-  public String? PivotTableName { get; set; }
+  public string? PivotTableName { get; set; }
 
   /// <summary>
   ///   Format ID.

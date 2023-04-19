@@ -14,5 +14,5 @@ public class StatusText: ModelElement
   /// <summary>
   ///   Status Text Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

@@ -24,7 +24,7 @@ public class NumLevel: ModelElement
   ///   Specifies that a given numbering level was been saved by a producer but was not used in the parent document. 
   ///   This means that this numbering level can be redefined by a future consumer without changing the actual content of the document. 
   /// </summary>
-  public Boolean? Tentative { get; set; }
+  public bool? Tentative { get; set; }
 
   /// <summary>
   ///   This element specifies the starting value for the numbering 
@@ -55,12 +55,12 @@ public class NumLevel: ModelElement
   /// <summary>
   ///   Paragraph Style's Associated Numbering Level.
   /// </summary>
-  public String? ParagraphStyleIdInLevel { get; set; }
+  public string? ParagraphStyleIdInLevel { get; set; }
 
   /// <summary>
   ///   Display All Levels Using Arabic Numerals.
   /// </summary>
-  public Boolean? IsLegalNumberingStyle { get; set; }
+  public bool? IsLegalNumberingStyle { get; set; }
 
   /// <summary>
   ///   Specifies the content which shall be added between a given numbering level's text 

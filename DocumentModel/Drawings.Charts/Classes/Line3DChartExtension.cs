@@ -9,7 +9,7 @@ public class Line3DChartExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public FilteredLineSeriesExtension? FilteredLineSeriesExtension { get; set; }
 }

@@ -6,9 +6,9 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class DocumentTasksPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets or sets the root element of this part.

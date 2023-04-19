@@ -9,7 +9,7 @@ public class Choose: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   public DiagramChooseIf? DiagramChooseIf { get; set; }
 

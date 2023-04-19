@@ -9,12 +9,12 @@ public class Backstage: ModelElement
   /// <summary>
   ///   onShow, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? OnShow { get; set; }
+  public string? OnShow { get; set; }
 
   /// <summary>
   ///   onHide, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? OnHide { get; set; }
+  public string? OnHide { get; set; }
 
   public BackstageTab? BackstageTab { get; set; }
 

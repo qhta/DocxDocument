@@ -9,5 +9,5 @@ public class IdPartPair: ModelElement
   /// <summary>
   ///   Gets or sets the relationship ID in the pair.
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 }

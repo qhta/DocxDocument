@@ -14,11 +14,11 @@ public class BlipExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public ImageProperties? ImageProperties { get; set; }
 
-  public Boolean? UseLocalDpi { get; set; }
+  public bool? UseLocalDpi { get; set; }
 
   public WebVideoProperty? WebVideoProperty { get; set; }
 

@@ -1,106 +1,106 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Radical Properties.
+/// <see cref="DMM.RadicalProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class RadicalPropertiesConverter
 {
-  /// <summary>
-  /// Hide Degree.
-  /// </summary>
-  private static DMMath.BooleanKind? GetHideDegree(DXMath.RadicalProperties openXmlElement)
+  #region Hide Degree. conversion.
+  private static bool? GetHideDegree(DXM.RadicalProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideDegree>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.HideDegree>()?.Val?.Value);
   }
   
-  private static bool CmpHideDegree(DXMath.RadicalProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHideDegree(DXM.RadicalProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideDegree>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.HideDegree>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetHideDegree(DXMath.RadicalProperties openXmlElement, DMMath.BooleanKind? value)
+  private static void SetHideDegree(DXM.RadicalProperties openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.HideDegree>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.HideDegree>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideDegree, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideDegree>((bool)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.RadicalProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.RadicalProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.RadicalProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.RadicalProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.RadicalProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.RadicalProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.RadicalProperties? CreateModelElement(DXMath.RadicalProperties? openXmlElement)
+  #endregion
+
+  #region RadicalProperties model conversion.
+  public static DMM.RadicalProperties? CreateModelElement(DXM.RadicalProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.RadicalProperties();
-      value.HideDegree = GetHideDegree(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.RadicalProperties();
+      model.HideDegree = GetHideDegree(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.RadicalProperties? openXmlElement, DMMath.RadicalProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.RadicalProperties? openXmlElement, DMM.RadicalProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpHideDegree(openXmlElement, value.HideDegree, diffs, objName))
+      if (!CmpHideDegree(openXmlElement, model.HideDegree, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.RadicalProperties value)
-    where OpenXmlElementType: DXMath.RadicalProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.RadicalProperties model)
+    where OpenXmlElementType: DXM.RadicalProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.RadicalProperties openXmlElement, DMMath.RadicalProperties value)
+  public static void UpdateOpenXmlElement(DXM.RadicalProperties openXmlElement, DMM.RadicalProperties model)
   {
-    SetHideDegree(openXmlElement, value?.HideDegree);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetHideDegree(openXmlElement, model?.HideDegree);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

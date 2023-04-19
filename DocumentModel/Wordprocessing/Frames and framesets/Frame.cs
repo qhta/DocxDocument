@@ -9,12 +9,12 @@ public class Frame: ModelElement
   /// <summary>
   ///   Frame Size.
   /// </summary>
-  public String? FrameSize { get; set; }
+  public string? FrameSize { get; set; }
 
   /// <summary>
   ///   Frame Name.
   /// </summary>
-  public String? FrameName { get; set; }
+  public string? FrameName { get; set; }
 
   /// <summary>
   ///   Source File for Frame.
@@ -39,10 +39,10 @@ public class Frame: ModelElement
   /// <summary>
   ///   Frame Cannot Be Resized.
   /// </summary>
-  public Boolean? NoResizeAllowed { get; set; }
+  public bool? NoResizeAllowed { get; set; }
 
   /// <summary>
   ///   Maintain Link to Existing File.
   /// </summary>
-  public Boolean? LinkedToFile { get; set; }
+  public bool? LinkedToFile { get; set; }
 }

@@ -1,72 +1,71 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Bar Properties.
+/// <see cref="DMM.BarProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class BarPropertiesConverter
 {
-  /// <summary>
-  /// Position (Bar).
-  /// </summary>
-  private static DMMath.VerticalJustificationKind? GetPosition(DXMath.BarProperties openXmlElement)
+  #region Position (Bar). conversion.
+  private static DMM.VerticalJustificationKind? GetPosition(DXM.BarProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value);
   }
   
-  private static bool CmpPosition(DXMath.BarProperties openXmlElement, DMMath.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXM.BarProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXMath.Position>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetPosition(DXMath.BarProperties openXmlElement, DMMath.VerticalJustificationKind? value)
+  private static void SetPosition(DXM.BarProperties openXmlElement, DMM.VerticalJustificationKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Position>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>(itemElement, (DMMath.VerticalJustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(itemElement, (DMM.VerticalJustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMMath.VerticalJustificationKind>((DMMath.VerticalJustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.BarProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.BarProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.BarProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.BarProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.BarProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.BarProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.BarProperties? CreateModelElement(DXMath.BarProperties? openXmlElement)
+  #endregion
+
+  #region BarProperties model conversion.
+  public static DMM.BarProperties? CreateModelElement(DXM.BarProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.BarProperties();
+      var value = new DMM.BarProperties();
       value.Position = GetPosition(openXmlElement);
       value.ControlProperties = GetControlProperties(openXmlElement);
       return value;
@@ -74,7 +73,7 @@ public static class BarPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.BarProperties? openXmlElement, DMMath.BarProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BarProperties? openXmlElement, DMM.BarProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -90,17 +89,18 @@ public static class BarPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.BarProperties value)
-    where OpenXmlElementType: DXMath.BarProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.BarProperties value)
+    where OpenXmlElementType: DXM.BarProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.BarProperties openXmlElement, DMMath.BarProperties value)
+  public static void UpdateOpenXmlElement(DXM.BarProperties openXmlElement, DMM.BarProperties value)
   {
     SetPosition(openXmlElement, value?.Position);
     SetControlProperties(openXmlElement, value?.ControlProperties);
   }
+  #endregion
 }

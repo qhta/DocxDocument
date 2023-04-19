@@ -1,5 +1,4 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the BreakBinarySubtractionValues enumeration.
@@ -8,17 +7,17 @@ namespace DocumentModel.Math;
 public enum BreakBinarySubtractionKind
 {
   /// <summary>
-  ///   Minus Minus.
+  ///   Minus is left on the end of the line and repeated on the beginning of the next line.
   /// </summary>
   MinusMinus,
 
   /// <summary>
-  ///   Minus Plus.
+  ///   Minus is left on the end of the line and plus is placed on the beginning of the next line.
   /// </summary>
   MinusPlus,
 
   /// <summary>
-  ///   Plus Minus.
+  ///   Plus is left on the end of the line and minus is placed on the beginning of the next line.
   /// </summary>
   PlusMinus
 }

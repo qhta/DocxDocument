@@ -9,7 +9,7 @@ public class CustomColor: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

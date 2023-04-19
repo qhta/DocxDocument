@@ -6,7 +6,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class WorksheetPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the ControlPropertiesParts of the WorksheetPart
@@ -63,7 +63,7 @@ public class WorksheetPart: ModelElement
   /// </summary>
   public Collection<QueryTablePart>? QueryTableParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the SlicersParts of the WorksheetPart

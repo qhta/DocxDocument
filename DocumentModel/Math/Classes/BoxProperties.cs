@@ -1,25 +1,26 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Box Properties.
+///   This element specifies properties of the Box object, for example, 
+///   whether the Box serves as operator emulator with or without an alignment point, 
+///   serves as a line break point, or receives the correct spacing for the mathematical differential. 
 /// </summary>
 public class BoxProperties: ModelElement
 {
   /// <summary>
   ///   Operator Emulator.
   /// </summary>
-  public BooleanKind? OperatorEmulator { get; set; }
+  public bool? OperatorEmulator { get; set; }
 
   /// <summary>
   ///   No Break.
   /// </summary>
-  public BooleanKind? NoBreak { get; set; }
+  public bool? NoBreak { get; set; }
 
   /// <summary>
   ///   Differential.
   /// </summary>
-  public BooleanKind? Differential { get; set; }
+  public bool? Differential { get; set; }
 
   /// <summary>
   ///   Break.
@@ -29,10 +30,10 @@ public class BoxProperties: ModelElement
   /// <summary>
   ///   Alignment.
   /// </summary>
-  public BooleanKind? Alignment { get; set; }
+  public bool? Alignment { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of box object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

@@ -14,7 +14,7 @@ public class FillOverlay: ModelElement
   /// <summary>
   ///   NoFill.
   /// </summary>
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   /// <summary>
   ///   SolidFill.
@@ -39,5 +39,5 @@ public class FillOverlay: ModelElement
   /// <summary>
   ///   Group Fill.
   /// </summary>
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 }

@@ -22,7 +22,7 @@ public class Font: ModelElement
   ///   This name shall be used to link the information stored in this element 
   ///   with uses of this value in the rFonts element (§17.3.2.26) in document content.
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Specifies a set of alternative names which can be used to locate the font specified by the parent element. 
@@ -57,7 +57,7 @@ public class Font: ModelElement
   /// <summary>
   ///   NotTrueType.
   /// </summary>
-  public Boolean? NotTrueType { get; set; }
+  public bool? NotTrueType { get; set; }
 
   /// <summary>
   ///   Pitch.

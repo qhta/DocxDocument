@@ -61,13 +61,13 @@ public abstract class CurrentTableCellProperties : BaseTableCellProperties
   ///   This setting shall behave identically to placing the contents of this paragraph in a run 
   ///   and using the fitText element (§17.3.2.14), if the width provided on that element matched the width of the current cell.
   /// </summary>
-  public Boolean? TableCellFitText { get; set; }
+  public bool? TableCellFitText { get; set; }
 
   /// <summary>
   ///   Specifies whether the end of cell glyph shall influence the height of the given table row in the table. 
   ///   If it is specified, then only printing characters in this cell shall be used to determine the row height..
   /// </summary>
-  public Boolean? HideMark { get; set; }
+  public bool? HideMark { get; set; }
 
   /// <summary>
   /// Specifies that the parent table cell shall be treated as though it was inserted into the document 

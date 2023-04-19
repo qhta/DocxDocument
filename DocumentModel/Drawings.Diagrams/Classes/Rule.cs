@@ -19,7 +19,7 @@ public class Rule: ModelElement
   /// <summary>
   ///   For Name
   /// </summary>
-  public String? ForName { get; set; }
+  public string? ForName { get; set; }
 
   /// <summary>
   ///   Data Point Type

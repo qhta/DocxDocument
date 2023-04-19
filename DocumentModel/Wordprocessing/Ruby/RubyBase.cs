@@ -94,7 +94,7 @@ public class RubyBase: ModelElement
 
   public Fraction? Fraction { get; set; }
 
-  public MathFunction? MathFunction { get; set; }
+  public Function? MathFunction { get; set; }
 
   public GroupChar? GroupChar { get; set; }
 

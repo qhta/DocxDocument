@@ -9,7 +9,7 @@ public class StyleLabel: ModelElement
   /// <summary>
   ///   Style Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   3-D Scene.

@@ -48,7 +48,7 @@ public class LineChartSeries3: ModelElement
 
   public Values? Values { get; set; }
 
-  public Boolean? Smooth { get; set; }
+  public bool? Smooth { get; set; }
 
   public LineSerExtensionList? LineSerExtensionList { get; set; }
 }

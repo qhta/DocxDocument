@@ -1,8 +1,8 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Group-Character Function.
+///   This element specifies the Group-Character object, consisting of a character drawn above or below text, 
+///   often with the purpose of visually grouping items.
 /// </summary>
 public class GroupChar: ModelElement, ICommonMathContent
 {
@@ -12,7 +12,7 @@ public class GroupChar: ModelElement, ICommonMathContent
   public GroupCharProperties? GroupCharProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Arugment of the group-character object.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 }

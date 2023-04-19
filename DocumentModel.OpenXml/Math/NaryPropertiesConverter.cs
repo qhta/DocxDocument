@@ -1,224 +1,220 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// n-ary Properties.
+/// <see cref="DMM.NaryProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class NaryPropertiesConverter
 {
-  /// <summary>
-  /// n-ary Operator Character.
-  /// </summary>
-  private static String? GetAccentChar(DXMath.NaryProperties openXmlElement)
+  #region n-ary Operator Character. conversion.
+  private static String? GetAccentChar(DXM.NaryProperties openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val);
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val);
   }
   
-  private static bool CmpAccentChar(DXMath.NaryProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAccentChar(DXM.NaryProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXMath.AccentChar>()?.Val, value, diffs, objName, "AccentChar");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val, value, diffs, objName, "Operator");
   }
   
-  private static void SetAccentChar(DXMath.NaryProperties openXmlElement, String? value)
+  private static void SetAccentChar(DXM.NaryProperties openXmlElement, String? value)
   {
-    StringValueConverter.SetValue<DXMath.AccentChar>(openXmlElement, value);
+    StringValueConverter.SetValue<DXM.AccentChar>(openXmlElement, value);
+  }
+  #endregion
+
+  #region n-ary Limit Location conversion.
+  private static DMM.LimitLocationKind? GetLimitLocation(DXM.NaryProperties openXmlElement)
+  {
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.LimitLocation>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// n-ary Limit Location.
-  /// </summary>
-  private static DMMath.LimitLocationKind? GetLimitLocation(DXMath.NaryProperties openXmlElement)
+  private static bool CmpLimitLocation(DXM.NaryProperties openXmlElement, DMM.LimitLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.LimitLocation>()?.Val?.Value);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(openXmlElement.GetFirstChild<DXM.LimitLocation>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpLimitLocation(DXMath.NaryProperties openXmlElement, DMMath.LimitLocationKind? value, DiffList? diffs, string? objName)
+  private static void SetLimitLocation(DXM.NaryProperties openXmlElement, DMM.LimitLocationKind? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(openXmlElement.GetFirstChild<DXMath.LimitLocation>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetLimitLocation(DXMath.NaryProperties openXmlElement, DMMath.LimitLocationKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.LimitLocation>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.LimitLocation>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>(itemElement, (DMMath.LimitLocationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>(itemElement, (DMM.LimitLocationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMMath.LimitLocationKind>((DMMath.LimitLocationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
+  }
+  #endregion
+
+  #region n-ary Grow conversion.
+  private static bool? GetGrowOperators(DXM.NaryProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// n-ary Grow.
-  /// </summary>
-  private static DMMath.BooleanKind? GetGrowOperators(DXMath.NaryProperties openXmlElement)
+  private static bool CmpGrowOperators(DXM.NaryProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpGrowOperators(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetGrowOperators(DXM.NaryProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.GrowOperators>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetGrowOperators(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.GrowOperators>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.GrowOperators>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.GrowOperators, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
+  }
+  #endregion
+
+  #region Hide Subscript (n-ary) conversion.
+  private static bool? GetHideSubArgument(DXM.NaryProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.HideSubArgument>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Hide Subscript (n-ary).
-  /// </summary>
-  private static DMMath.BooleanKind? GetHideSubArgument(DXMath.NaryProperties openXmlElement)
+  private static bool CmpHideSubArgument(DXM.NaryProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSubArgument>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.HideSubArgument>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpHideSubArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetHideSubArgument(DXM.NaryProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSubArgument>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetHideSubArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.HideSubArgument>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.HideSubArgument>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideSubArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSubArgument>((bool)value));
+  }
+  #endregion
+
+  #region Hide Superscript (n-ary) conversion.
+  private static bool? GetHideSuperArgument(DXM.NaryProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.HideSuperArgument>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Hide Superscript (n-ary).
-  /// </summary>
-  private static DMMath.BooleanKind? GetHideSuperArgument(DXMath.NaryProperties openXmlElement)
+  private static bool CmpHideSuperArgument(DXM.NaryProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSuperArgument>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.HideSuperArgument>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpHideSuperArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetHideSuperArgument(DXM.NaryProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.HideSuperArgument>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetHideSuperArgument(DXMath.NaryProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.HideSuperArgument>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.HideSuperArgument>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.HideSuperArgument, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSuperArgument>((bool)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.NaryProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.NaryProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.NaryProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.NaryProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.NaryProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.NaryProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.NaryProperties? CreateModelElement(DXMath.NaryProperties? openXmlElement)
+  #endregion
+
+  #region NaryProperties model conversion.
+  public static DMM.NaryProperties? CreateModelElement(DXM.NaryProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.NaryProperties();
-      value.AccentChar = GetAccentChar(openXmlElement);
-      value.LimitLocation = GetLimitLocation(openXmlElement);
-      value.GrowOperators = GetGrowOperators(openXmlElement);
-      value.HideSubArgument = GetHideSubArgument(openXmlElement);
-      value.HideSuperArgument = GetHideSuperArgument(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.NaryProperties();
+      model.Operator = GetAccentChar(openXmlElement);
+      model.LimitLocation = GetLimitLocation(openXmlElement);
+      model.GrowOperators = GetGrowOperators(openXmlElement);
+      model.HideSubArgument = GetHideSubArgument(openXmlElement);
+      model.HideSuperArgument = GetHideSuperArgument(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.NaryProperties? openXmlElement, DMMath.NaryProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.NaryProperties? openXmlElement, DMM.NaryProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAccentChar(openXmlElement, value.AccentChar, diffs, objName))
+      if (!CmpAccentChar(openXmlElement, model.Operator, diffs, objName))
         ok = false;
-      if (!CmpLimitLocation(openXmlElement, value.LimitLocation, diffs, objName))
+      if (!CmpLimitLocation(openXmlElement, model.LimitLocation, diffs, objName))
         ok = false;
-      if (!CmpGrowOperators(openXmlElement, value.GrowOperators, diffs, objName))
+      if (!CmpGrowOperators(openXmlElement, model.GrowOperators, diffs, objName))
         ok = false;
-      if (!CmpHideSubArgument(openXmlElement, value.HideSubArgument, diffs, objName))
+      if (!CmpHideSubArgument(openXmlElement, model.HideSubArgument, diffs, objName))
         ok = false;
-      if (!CmpHideSuperArgument(openXmlElement, value.HideSuperArgument, diffs, objName))
+      if (!CmpHideSuperArgument(openXmlElement, model.HideSuperArgument, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.NaryProperties value)
-    where OpenXmlElementType: DXMath.NaryProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.NaryProperties model)
+    where OpenXmlElementType: DXM.NaryProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.NaryProperties openXmlElement, DMMath.NaryProperties value)
+  public static void UpdateOpenXmlElement(DXM.NaryProperties openXmlElement, DMM.NaryProperties model)
   {
-    SetAccentChar(openXmlElement, value?.AccentChar);
-    SetLimitLocation(openXmlElement, value?.LimitLocation);
-    SetGrowOperators(openXmlElement, value?.GrowOperators);
-    SetHideSubArgument(openXmlElement, value?.HideSubArgument);
-    SetHideSuperArgument(openXmlElement, value?.HideSuperArgument);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetAccentChar(openXmlElement, model?.Operator);
+    SetLimitLocation(openXmlElement, model?.LimitLocation);
+    SetGrowOperators(openXmlElement, model?.GrowOperators);
+    SetHideSubArgument(openXmlElement, model?.HideSubArgument);
+    SetHideSuperArgument(openXmlElement, model?.HideSuperArgument);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

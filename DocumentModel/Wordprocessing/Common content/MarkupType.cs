@@ -9,5 +9,5 @@ public class MarkupType: ModelElement, ICommonContent
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

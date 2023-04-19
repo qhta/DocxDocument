@@ -14,22 +14,22 @@ public class RunFonts: ModelElement
   /// <summary>
   ///   ASCII Font
   /// </summary>
-  public String? Ascii { get; set; }
+  public string? Ascii { get; set; }
 
   /// <summary>
   ///   High ANSI Font
   /// </summary>
-  public String? HighAnsi { get; set; }
+  public string? HighAnsi { get; set; }
 
   /// <summary>
   ///   East Asian Font
   /// </summary>
-  public String? EastAsia { get; set; }
+  public string? EastAsia { get; set; }
 
   /// <summary>
   ///   Complex Script Font
   /// </summary>
-  public String? ComplexScript { get; set; }
+  public string? ComplexScript { get; set; }
 
   /// <summary>
   ///   ASCII Theme Font

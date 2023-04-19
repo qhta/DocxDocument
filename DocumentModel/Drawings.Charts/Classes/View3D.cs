@@ -29,7 +29,7 @@ public class View3D: ModelElement
   /// <summary>
   ///   Right Angle Axes.
   /// </summary>
-  public Boolean? RightAngleAxes { get; set; }
+  public bool? RightAngleAxes { get; set; }
 
   /// <summary>
   ///   Perspective.

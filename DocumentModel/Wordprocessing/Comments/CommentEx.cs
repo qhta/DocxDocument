@@ -18,5 +18,5 @@ public class CommentEx: ModelElement
   /// <summary>
   ///   Specifies whether the associated comment is marked as done. 
   /// </summary>
-  public Boolean? Done { get; set; }
+  public bool? Done { get; set; }
 }

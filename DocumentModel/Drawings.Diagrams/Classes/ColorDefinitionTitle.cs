@@ -9,10 +9,10 @@ public class ColorDefinitionTitle: ModelElement
   /// <summary>
   ///   Language
   /// </summary>
-  public String? Language { get; set; }
+  public string? Language { get; set; }
 
   /// <summary>
   ///   Description Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

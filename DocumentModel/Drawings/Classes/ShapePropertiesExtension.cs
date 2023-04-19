@@ -9,7 +9,7 @@ public class ShapePropertiesExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public HiddenFillProperties? HiddenFillProperties { get; set; }
 
@@ -21,5 +21,5 @@ public class ShapePropertiesExtension: ModelElement
 
   public HiddenShape3D? HiddenShape3D { get; set; }
 
-  public Boolean? ShadowObscured { get; set; }
+  public bool? ShadowObscured { get; set; }
 }

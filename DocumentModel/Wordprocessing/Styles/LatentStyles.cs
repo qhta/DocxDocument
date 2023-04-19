@@ -10,7 +10,7 @@ public partial class LatentStyles
   ///   Default Style Locking Setting
   /// </summary>
   //[DefaultValue(false)]
-  public Boolean? DefaultLockedState { get; set; }
+  public bool? DefaultLockedState { get; set; }
 
   /// <summary>
   ///   Default User Interface Priority Setting
@@ -22,19 +22,19 @@ public partial class LatentStyles
   ///   Default Semi-Hidden Setting
   /// </summary>
   //[DefaultValue(false)]
-  public Boolean? DefaultSemiHidden { get; set; }
+  public bool? DefaultSemiHidden { get; set; }
 
   /// <summary>
   ///   Default Hidden Until Used Setting
   /// </summary>
   //[DefaultValue(false)]
-  public Boolean? DefaultUnhideWhenUsed { get; set; }
+  public bool? DefaultUnhideWhenUsed { get; set; }
 
   /// <summary>
   ///   Default Primary Style Setting
   /// </summary>
   //[DefaultValue(false)]
-  public Boolean? DefaultPrimaryStyle { get; set; }
+  public bool? DefaultPrimaryStyle { get; set; }
 
   /// <summary>
   ///   Latent Style Count

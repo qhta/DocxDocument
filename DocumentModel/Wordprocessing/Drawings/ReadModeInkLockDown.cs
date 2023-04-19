@@ -9,7 +9,7 @@ public class ReadModeInkLockDown: ModelElement
   /// <summary>
   ///   Use Actual Pages, Not Virtual Pages
   /// </summary>
-  public Boolean? UseActualPages { get; set; }
+  public bool? UseActualPages { get; set; }
 
   /// <summary>
   ///   Virtual Page Width
@@ -24,5 +24,5 @@ public class ReadModeInkLockDown: ModelElement
   /// <summary>
   ///   Font Size Scaling
   /// </summary>
-  public String? FontSize { get; set; }
+  public string? FontSize { get; set; }
 }

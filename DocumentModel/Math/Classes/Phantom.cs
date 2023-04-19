@@ -1,8 +1,9 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Phantom Function.
+///   This element specifies the phantom object. This object has two primary uses: 
+///   adding the spacing of the phantom base element e without displaying that base; 
+///   and suppressing part of the glyph for spacing considerations.
 /// </summary>
 public class Phantom: ModelElement, ICommonMathContent
 {
@@ -12,7 +13,7 @@ public class Phantom: ModelElement, ICommonMathContent
   public PhantomProperties? PhantomProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Phantom object argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 }

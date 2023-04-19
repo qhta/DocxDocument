@@ -11,7 +11,7 @@ public class LabelInfoPart: ModelElement
   /// </summary>
   public ClassificationLabelList? ClassificationLabelList { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

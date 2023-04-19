@@ -39,7 +39,7 @@ public abstract class BaseRunProperties: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public DualBoolean? Bold { get; set; }
+  public DualBool? Bold { get; set; }
 
   /// <summary>
   ///   Specifies whether the italic property shall be applied to characters in the contents of this run when displayed in a document.
@@ -53,7 +53,7 @@ public abstract class BaseRunProperties: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public DualBoolean? Italic { get; set; }
+  public DualBool? Italic { get; set; }
 
 
   /// <summary>
@@ -76,7 +76,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   This property does not affect any non-alphabetic character in this run, 
   ///   and does not change the Unicode character for lowercase text, only the method in which it is displayed.
   /// </summary>
-  public Boolean? Caps { get; set; }
+  public bool? Caps { get; set; }
 
   /// <summary>
   ///   Element specifies that all small letter characters in this text run 
@@ -87,7 +87,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   If this font cannot be made two point smaller than the current size, 
   ///   then it shall be displayed as the smallest possible font size in capital letters.
   /// </summary>
-  public Boolean? SmallCaps { get; set; }
+  public bool? SmallCaps { get; set; }
 
 
   /// <summary>
@@ -99,12 +99,12 @@ public abstract class BaseRunProperties: ModelElement
   /// <summary>
   ///   Specifies that the contents of this run shall be displayed with a single horizontal line through the center of the line. 
   /// </summary>
-  public Boolean? Strike { get; set; }
+  public bool? Strike { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run shall be displayed with two horizontal lines through each character displayed on the line.
   /// </summary>
-  public Boolean? DoubleStrike { get; set; }
+  public bool? DoubleStrike { get; set; }
 
   /// <summary>
   ///   Specifies the color which shall be used to display the contents of this run in the document. 
@@ -141,7 +141,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   when laying out the contents in this run. This setting determines whether the additional character pitch 
   ///   specified in the document grid shall be added to each character in this run as specified by the document grid.
   /// </summary>
-  public Boolean? SnapToGrid { get; set; }
+  public bool? SnapToGrid { get; set; }
 
   /// <summary>
   ///   Specifies the alignment which shall be applied to the contents of this run 
@@ -165,26 +165,26 @@ public abstract class BaseRunProperties: ModelElement
   ///   Specifies that the contents of this run should be displayed as if they have an outline, 
   ///   by drawing a one pixel wide border around the inside and outside borders of each character glyph in the run..
   /// </summary>
-  public Boolean? Outline { get; set; }
+  public bool? Outline { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run should be displayed as if embossed, 
   ///   which makes text appear as if it is raised off the page in relief.
   /// </summary>
-  public Boolean? Emboss { get; set; }
+  public bool? Emboss { get; set; }
 
   /// <summary>
   ///   specifies that the contents of this run should be displayed as if imprinted, 
   ///   which makes text appear to be imprinted or pressed into page (also referred to as 'engrave').
   /// </summary>
-  public Boolean? Imprint { get; set; }
+  public bool? Imprint { get; set; }
 
   /// <summary>
   ///   Specifies that the contents of this run shall be displayed as if each character has a shadow. 
   ///   For left-to-right text, the shadow is beneath the text and to its right; 
   ///   for right-to-left text, the shadow is beneath the text and to its left..
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  public bool? Shadow { get; set; }
 
   /// <summary>
   ///   Specifies the languages which shall be used to check spelling and grammar (if requested) when processing the contents of this run.
@@ -206,7 +206,7 @@ public abstract class BaseRunProperties: ModelElement
   /// <summary>
   ///   Specifies that the contents of this run shall not report any errors when the document is scanned for spelling and grammar.
   /// </summary>
-  public Boolean? NoProof { get; set; }
+  public bool? NoProof { get; set; }
 
   /// <summary>
   ///   Like paragraph shading, this element specifies the shading applied to the contents of the run.
@@ -272,7 +272,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   Specifies whether the contents of this run shall be hidden from display at display time in a document. 
   ///   The setting should affect the normal display of text, but an application can have settings to force hidden text to be displayed.
   /// </summary>
-  public Boolean? Vanish { get; set; }
+  public bool? Vanish { get; set; }
 
   /// <summary>
   ///   Specifies that the given run shall always behave as if it is hidden, 
@@ -286,7 +286,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   which in previous word processors would ignore the use of the style if it were being used as a character style. 
   ///   If this element is applied to any other run, it can be ignored.
   /// </summary>
-  public Boolean? SpecVanish { get; set; }
+  public bool? SpecVanish { get; set; }
 
   /// <summary>
   ///   Specifies whether the contents of this run shall be hidden from display 
@@ -294,7 +294,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   The setting should affect the normal display of text in a web page view, 
   ///   but an application can have settings to force hidden text to be displayed.
   /// </summary>
-  public Boolean? WebHidden { get; set; }
+  public bool? WebHidden { get; set; }
   #endregion
 
 }

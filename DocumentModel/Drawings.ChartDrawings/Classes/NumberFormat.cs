@@ -9,10 +9,10 @@ public class NumberFormat: ModelElement
   /// <summary>
   ///   formatCode, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? FormatCode { get; set; }
+  public string? FormatCode { get; set; }
 
   /// <summary>
   ///   sourceLinked, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? SourceLinked { get; set; }
+  public bool? SourceLinked { get; set; }
 }

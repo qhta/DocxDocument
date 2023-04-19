@@ -9,10 +9,10 @@ public class MarkerType: ModelElement
   /// <summary>
   ///   Relative X Coordinate.
   /// </summary>
-  public String? XPosition { get; set; }
+  public string? XPosition { get; set; }
 
   /// <summary>
   ///   Relative Y Coordinate.
   /// </summary>
-  public String? YPosition { get; set; }
+  public string? YPosition { get; set; }
 }

@@ -11,7 +11,7 @@ public class OpenXmlPackage: ModelElement
   /// <summary>
   ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.
   /// </summary>
-  public Boolean? StrictRelationshipFound { get; set; }
+  public bool? StrictRelationshipFound { get; set; }
 
   /// <summary>
   ///   Gets the package of the document.
@@ -51,5 +51,5 @@ public class OpenXmlPackage: ModelElement
   /// <summary>
   ///   Gets a value indicating whether the parts should be saved when disposed.
   /// </summary>
-  public Boolean? AutoSave { get; set; }
+  public bool? AutoSave { get; set; }
 }

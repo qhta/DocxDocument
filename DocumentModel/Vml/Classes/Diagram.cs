@@ -19,17 +19,17 @@ public class Diagram: ModelElement
   /// <summary>
   ///   Diagram Automatic Format
   /// </summary>
-  public Boolean? AutoFormat { get; set; }
+  public bool? AutoFormat { get; set; }
 
   /// <summary>
   ///   Diagram Reverse Direction
   /// </summary>
-  public Boolean? Reverse { get; set; }
+  public bool? Reverse { get; set; }
 
   /// <summary>
   ///   Diagram Automatic Layout
   /// </summary>
-  public Boolean? AutoLayout { get; set; }
+  public bool? AutoLayout { get; set; }
 
   /// <summary>
   ///   Diagram Layout X Scale
@@ -49,7 +49,7 @@ public class Diagram: ModelElement
   /// <summary>
   ///   Diagram Layout Extents
   /// </summary>
-  public String? ConstrainBounds { get; set; }
+  public string? ConstrainBounds { get; set; }
 
   /// <summary>
   ///   Diagram Base Font Size

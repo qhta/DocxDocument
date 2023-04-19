@@ -9,10 +9,10 @@ public class Column: ModelElement
   /// <summary>
   ///   Column Width
   /// </summary>
-  public String? Width { get; set; }
+  public string? Width { get; set; }
 
   /// <summary>
   ///   Space Before Following Column
   /// </summary>
-  public String? Space { get; set; }
+  public string? Space { get; set; }
 }

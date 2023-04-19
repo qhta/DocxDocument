@@ -16,7 +16,7 @@ public class SlidePart: ModelElement
   /// </summary>
   public Collection<PowerPointCommentPart>? commentParts { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the CustomXmlParts of the SlidePart
@@ -83,7 +83,7 @@ public class SlidePart: ModelElement
   /// </summary>
   public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the SlideParts of the SlidePart

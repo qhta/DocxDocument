@@ -9,5 +9,5 @@ public class ClipPath: ModelElement
   /// <summary>
   ///   Path Definition
   /// </summary>
-  public String? Value { get; set; }
+  public string? Value { get; set; }
 }

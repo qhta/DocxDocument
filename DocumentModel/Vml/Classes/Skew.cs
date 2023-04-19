@@ -14,25 +14,25 @@ public class Skew: ModelElement
   /// <summary>
   ///   Skew ID
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Skew Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Skew Offset
   /// </summary>
-  public String? Offset { get; set; }
+  public string? Offset { get; set; }
 
   /// <summary>
   ///   Skew Origin
   /// </summary>
-  public String? Origin { get; set; }
+  public string? Origin { get; set; }
 
   /// <summary>
   ///   Skew Perspective Matrix
   /// </summary>
-  public String? Matrix { get; set; }
+  public string? Matrix { get; set; }
 }

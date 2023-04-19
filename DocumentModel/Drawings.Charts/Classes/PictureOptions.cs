@@ -9,17 +9,17 @@ public class PictureOptions: ModelElement
   /// <summary>
   ///   Apply To Front.
   /// </summary>
-  public Boolean? ApplyToFront { get; set; }
+  public bool? ApplyToFront { get; set; }
 
   /// <summary>
   ///   Apply To Sides.
   /// </summary>
-  public Boolean? ApplyToSides { get; set; }
+  public bool? ApplyToSides { get; set; }
 
   /// <summary>
   ///   Apply to End.
   /// </summary>
-  public Boolean? ApplyToEnd { get; set; }
+  public bool? ApplyToEnd { get; set; }
 
   /// <summary>
   ///   Picture Format.

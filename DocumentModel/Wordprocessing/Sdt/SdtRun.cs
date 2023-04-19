@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Specifies the presence of a structured document tag around one or more inline-level structures (runs, DrawingML objects, fields, etc.) in the current paragraph. 
 /// </summary>
-public class SdtRun: ElementCollection<ISdtRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent
+public class SdtRun: ElementCollection<ISdtRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
 {
   /// <summary>
   ///  Specifies the set of properties which shall be applied to this structured document tag.

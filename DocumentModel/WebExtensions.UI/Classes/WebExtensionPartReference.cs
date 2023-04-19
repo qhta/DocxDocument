@@ -9,5 +9,5 @@ public class WebExtensionPartReference: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

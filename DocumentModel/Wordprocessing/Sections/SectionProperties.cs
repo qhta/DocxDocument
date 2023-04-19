@@ -31,19 +31,19 @@ public partial class SectionProperties : ModelElement, IBodyContent
 
   public SectionMarkKind? SectionType { get; set; }
 
-  public Boolean? FormProtection { get; set; }
+  public bool? FormProtection { get; set; }
 
   public VerticalJustificationKind? VerticalTextAlignmentOnPage { get; set; }
 
-  public Boolean? NoEndnote { get; set; }
+  public bool? NoEndnote { get; set; }
 
-  public Boolean? TitlePage { get; set; }
+  public bool? TitlePage { get; set; }
 
   public TextDirectionKind? TextDirection { get; set; }
 
-  public Boolean? BiDi { get; set; }
+  public bool? BiDi { get; set; }
 
-  public Boolean? GutterOnRight { get; set; }
+  public bool? GutterOnRight { get; set; }
 
   public Int32? FootnoteColumns { get; set; }
 

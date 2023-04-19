@@ -11,5 +11,5 @@ public class EmbeddedControlPersistencePart: ModelElement
   /// </summary>
   public Collection<EmbeddedControlPersistenceBinaryDataPart>? EmbeddedControlPersistenceBinaryDataParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

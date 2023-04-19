@@ -14,5 +14,5 @@ public class Blur: ModelElement
   /// <summary>
   ///   Grow Bounds
   /// </summary>
-  public Boolean? Grow { get; set; }
+  public bool? Grow { get; set; }
 }

@@ -104,8 +104,6 @@ public static class RunConverter
   #region Run content conversion
   public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement)
   {
-    if (openXmlElement is DXW.RunProperties)
-      return null;
     if (openXmlElement is DXW.Text text)
       return DMXW.TextTypeConverter.CreateModelElement(text);
     if (openXmlElement is DXW.DeletedText deletedText)
@@ -170,6 +168,8 @@ public static class RunConverter
       return DMXW.DrawingConverter.CreateModelElement(drawing);
     if (openXmlElement is DXW.Ruby ruby)
       return DMXW.RubyConverter.CreateModelElement(ruby);
+    if (openXmlElement is DXW.ContentPart contentPart)
+      return ContentPartConverter.CreateModelElement(contentPart);
     if (openXmlElement is DX.AlternateContent alternateContent)
       return AlternateContentConverter.CreateModelElement(alternateContent);
 
@@ -246,6 +246,8 @@ public static class RunConverter
         return DMXW.DrawingConverter.CompareModelElement(drawing, drawingModel, diffs, objName);
       if (openXmlElement is DXW.Ruby ruby && model is DMW.Ruby rubyModel)
         return DMXW.RubyConverter.CompareModelElement(ruby, rubyModel, diffs, objName);
+      if (openXmlElement is DXW.ContentPart contentPart && model is DMW.ContentPart contentPartModel)
+        return DMXW.ContentPartConverter.CompareModelElement(contentPart, contentPartModel, diffs, objName);
       if (openXmlElement is DX.AlternateContent alternateContent && model is DM.AlternateContent alternateContentModel)
         return AlternateContentConverter.CompareModelElement(alternateContent, alternateContentModel, diffs, objName);
 
@@ -303,6 +305,8 @@ public static class RunConverter
       return DMXW.DrawingConverter.CreateOpenXmlElement(drawing);
     if (model is DMW.Ruby ruby)
       return DMXW.RubyConverter.CreateOpenXmlElement(ruby);
+    if (model is DMW.ContentPart contentPart)
+      return DMXW.ContentPartConverter.CreateOpenXmlElement(contentPart);
     if (model is DM.AlternateContent alternateContent)
       return DMX.AlternateContentConverter.CreateOpenXmlElement(alternateContent);
 
@@ -407,8 +411,9 @@ public static class RunConverter
       model.RsidRunDeletion = GetRsidRunDeletion(openXmlElement);
       model.RsidRunAddition = GetRsidRunAddition(openXmlElement);
       model.RunProperties = GetRunProperties(openXmlElement);
-      ElementCollectionConverter<IRunContent>.FillModelElementCollection(openXmlElement, model,
-        (CreateModelElementMethod)CreateRunContent);
+      ElementCollectionConverter<IRunContent>.FillModelElementCollection(
+        openXmlElement.Where(item => item is not DXW.RunProperties), model,
+        CreateRunContent);
       return model;
     }
     return null;
@@ -429,7 +434,7 @@ public static class RunConverter
         ok = false;
       if (!ElementCollectionConverter<IRunContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.RunProperties), model,
-        (CompareOpenXmlElementMethod)CompareRunContent, diffs, objName))
+        CompareRunContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -452,9 +457,9 @@ public static class RunConverter
     SetRsidRunAddition(openXmlElement, model.RsidRunAddition);
     SetRunProperties(openXmlElement, model.RunProperties);
     return ElementCollectionConverter<IRunContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareRunContent,
-      (UpdateOpenXmlElementMethod)UpdateOpenXmlElement,
-      (CreateOpenXmlElementMethod)CreateOpenXmlElement
+      CompareRunContent,
+      UpdateOpenXmlElement,
+      CreateOpenXmlElement
       );
   }
   #endregion

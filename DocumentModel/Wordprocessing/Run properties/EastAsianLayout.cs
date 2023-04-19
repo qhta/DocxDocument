@@ -14,7 +14,7 @@ public class EastAsianLayout: ModelElement
   /// <summary>
   ///   Two Lines in One
   /// </summary>
-  public Boolean? Combine { get; set; }
+  public bool? Combine { get; set; }
 
   /// <summary>
   ///   Display Brackets Around Two Lines in One
@@ -24,10 +24,10 @@ public class EastAsianLayout: ModelElement
   /// <summary>
   ///   Horizontal in Vertical (Rotate Text)
   /// </summary>
-  public Boolean? Vertical { get; set; }
+  public bool? Vertical { get; set; }
 
   /// <summary>
   ///   Compress Rotated Text to Line Height
   /// </summary>
-  public Boolean? VerticalCompress { get; set; }
+  public bool? VerticalCompress { get; set; }
 }

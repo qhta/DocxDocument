@@ -18,17 +18,17 @@ public class FieldChar: ModelElement, IRunContent
   /// <summary>
   ///   Field Should Not Be Recalculated
   /// </summary>
-  public Boolean? FieldLock { get; set; }
+  public bool? FieldLock { get; set; }
 
   /// <summary>
   ///   Field Result Invalidated
   /// </summary>
-  public Boolean? Dirty { get; set; }
+  public bool? Dirty { get; set; }
 
   /// <summary>
   ///   Custom Field Data.
   /// </summary>
-  public String? FieldData { get; set; }
+  public string? FieldData { get; set; }
 
   /// <summary>
   ///   Form Field Properties.

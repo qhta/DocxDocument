@@ -9,17 +9,17 @@ public class ReferenceRelationship: ModelElement
   /// <summary>
   ///   Gets the relationship type.
   /// </summary>
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets a value indicating whether the target of the relationship is Internal or External to the .
   /// </summary>
-  public Boolean? IsExternal { get; set; }
+  public bool? IsExternal { get; set; }
 
   /// <summary>
   ///   Gets the relationship ID.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Gets the target URI of the relationship.

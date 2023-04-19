@@ -1,107 +1,107 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Phantom Function.
+/// <see cref="DMM.Phantom"/> class from/to OpenXml converter.
 /// </summary>
 public static class PhantomConverter
 {
-  /// <summary>
-  /// Phantom Properties.
-  /// </summary>
-  private static DMMath.PhantomProperties? GetPhantomProperties(DXMath.Phantom openXmlElement)
+  #region Phantom Properties. conversion.
+  private static DMM.PhantomProperties? GetPhantomProperties(DXM.Phantom openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.PhantomProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.PhantomProperties>();
     if (element != null)
-      return DMXMath.PhantomPropertiesConverter.CreateModelElement(element);
+      return DMXM.PhantomPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpPhantomProperties(DXM.Phantom openXmlElement, DMM.PhantomProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.PhantomProperties>(), value, diffs, objName);
+    return DMXM.PhantomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.PhantomProperties>(), value, diffs, objName);
   }
   
-  private static void SetPhantomProperties(DXMath.Phantom openXmlElement, DMMath.PhantomProperties? value)
+  private static void SetPhantomProperties(DXM.Phantom openXmlElement, DMM.PhantomProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.PhantomProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.PhantomProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.PhantomPropertiesConverter.CreateOpenXmlElement<DXMath.PhantomProperties>(value);
+      itemElement = DMXM.PhantomPropertiesConverter.CreateOpenXmlElement<DXM.PhantomProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base.
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.Phantom openXmlElement)
+  #endregion
+
+  #region Base conversion.
+  private static DMM.Argument? GetArgument(DXM.Phantom openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.Phantom openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Phantom openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.Phantom openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.Phantom openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.Phantom? CreateModelElement(DXMath.Phantom? openXmlElement)
+  #endregion
+
+  #region Phantom model conversion.
+  public static DMM.Phantom? CreateModelElement(DXM.Phantom? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.Phantom();
-      value.PhantomProperties = GetPhantomProperties(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      return value;
+      var model = new DMM.Phantom();
+      model.PhantomProperties = GetPhantomProperties(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.Phantom? openXmlElement, DMMath.Phantom? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Phantom? openXmlElement, DMM.Phantom? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpPhantomProperties(openXmlElement, value.PhantomProperties, diffs, objName))
+      if (!CmpPhantomProperties(openXmlElement, model.PhantomProperties, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.Phantom CreateOpenXmlElement(DMMath.Phantom value)
+  public static DXM.Phantom CreateOpenXmlElement(DMM.Phantom model)
   {
-    var openXmlElement = new DXMath.Phantom();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.Phantom();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.Phantom openXmlElement, DMMath.Phantom value)
+  public static bool UpdateOpenXmlElement(DXM.Phantom openXmlElement, DMM.Phantom model)
   {
-    SetPhantomProperties(openXmlElement, value?.PhantomProperties);
-    SetBase(openXmlElement, value?.Base);
+    SetPhantomProperties(openXmlElement, model.PhantomProperties);
+    SetArgument(openXmlElement, model.Argument);
     return true;
   }
+  #endregion
 }

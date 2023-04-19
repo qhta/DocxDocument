@@ -9,17 +9,17 @@ public class ChartSpace: ModelElement
   /// <summary>
   ///   Date1904.
   /// </summary>
-  public Boolean? Date1904 { get; set; }
+  public bool? Date1904 { get; set; }
 
   /// <summary>
   ///   EditingLanguage.
   /// </summary>
-  public String? EditingLanguage { get; set; }
+  public string? EditingLanguage { get; set; }
 
   /// <summary>
   ///   RoundedCorners.
   /// </summary>
-  public Boolean? RoundedCorners { get; set; }
+  public bool? RoundedCorners { get; set; }
 
   public Byte? Style { get; set; }
 

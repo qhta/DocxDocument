@@ -8,7 +8,7 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class DiagramDataPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets or sets the root element of this part.
@@ -20,7 +20,7 @@ public class DiagramDataPart: ModelElement
   /// </summary>
   public Collection<ImagePart>? ImageParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the SlideParts of the DiagramDataPart

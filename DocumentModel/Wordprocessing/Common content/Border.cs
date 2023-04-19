@@ -29,10 +29,10 @@ public class Border: ModelElement
   /// <summary>
   ///   Border Shadow
   /// </summary>
-  public Boolean? Shadow { get; set; }
+  public bool? Shadow { get; set; }
 
   /// <summary>
   ///   Create Frame Effect
   /// </summary>
-  public Boolean? Frame { get; set; }
+  public bool? Frame { get; set; }
 }

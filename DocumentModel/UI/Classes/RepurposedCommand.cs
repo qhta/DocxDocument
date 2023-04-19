@@ -9,20 +9,20 @@ public class RepurposedCommand: ModelElement
   /// <summary>
   ///   onAction
   /// </summary>
-  public String? OnAction { get; set; }
+  public string? OnAction { get; set; }
 
   /// <summary>
   ///   enabled
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   getEnabled
   /// </summary>
-  public String? GetEnabled { get; set; }
+  public string? GetEnabled { get; set; }
 
   /// <summary>
   ///   idMso
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 }

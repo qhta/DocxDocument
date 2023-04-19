@@ -18,7 +18,7 @@ public class GroupShapeProperties: ModelElement
   /// </summary>
   public TransformGroup? TransformGroup { get; set; }
 
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -28,7 +28,7 @@ public class GroupShapeProperties: ModelElement
 
   public PatternFill? PatternFill { get; set; }
 
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 
   public EffectList? EffectList { get; set; }
 

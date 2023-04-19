@@ -12,9 +12,9 @@ public class SubSuperscript: ModelElement, ICommonMathContent
   public SubSuperscriptProperties? SubSuperscriptProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Base argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Base { get; set; }
 
   /// <summary>
   ///   Subscript (Sub-Superscript).

@@ -14,12 +14,12 @@ public class OpenXmlPart: ModelElement
   /// <summary>
   ///   Gets the content type (MIME type) of the content data in the part.
   /// </summary>
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the relationship type of the part.
   /// </summary>
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the root element of the current part.

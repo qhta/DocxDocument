@@ -9,7 +9,7 @@ public class Rule: ModelElement
   /// <summary>
   ///   Rule ID
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Rule Type
@@ -24,7 +24,7 @@ public class Rule: ModelElement
   /// <summary>
   ///   Rule Shape Reference
   /// </summary>
-  public String? ShapeReference { get; set; }
+  public string? ShapeReference { get; set; }
 
   public Collection<Proxy>? Proxies { get; set; }
 }

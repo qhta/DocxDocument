@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Matrix Column.
+///   This element specifies a single column in a matrix.
 /// </summary>
 public class MatrixColumn: ModelElement
 {

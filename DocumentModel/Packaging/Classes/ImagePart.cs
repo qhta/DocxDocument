@@ -6,5 +6,5 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class ImagePart: ModelElement
 {
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

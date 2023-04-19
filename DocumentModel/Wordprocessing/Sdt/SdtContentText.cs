@@ -9,5 +9,5 @@ public class SdtContentText: ModelElement
   /// <summary>
   ///   Allow Soft Line Breaks
   /// </summary>
-  public Boolean? MultiLine { get; set; }
+  public bool? MultiLine { get; set; }
 }

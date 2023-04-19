@@ -1,234 +1,230 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Phantom Properties.
+/// <see cref="DMM.PhantomProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class PhantomPropertiesConverter
 {
-  /// <summary>
-  /// Phantom Show.
-  /// </summary>
-  private static DMMath.BooleanKind? GetShowPhantom(DXMath.PhantomProperties openXmlElement)
+  #region Phantom Show. conversion.
+  private static bool? GetShowPhantom(DXM.PhantomProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ShowPhantom>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.ShowPhantom>()?.Val?.Value);
   }
   
-  private static bool CmpShowPhantom(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static bool CmpShowPhantom(DXM.PhantomProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ShowPhantom>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ShowPhantom>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetShowPhantom(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value)
+  private static void SetShowPhantom(DXM.PhantomProperties openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ShowPhantom>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ShowPhantom>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.ShowPhantom, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ShowPhantom>((bool)value));
+  }
+  #endregion
+
+  #region Phantom Zero Width conversion.
+  private static bool? GetZeroWidth(DXM.PhantomProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.ZeroWidth>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Phantom Zero Width.
-  /// </summary>
-  private static DMMath.BooleanKind? GetZeroWidth(DXMath.PhantomProperties openXmlElement)
+  private static bool CmpZeroWidth(DXM.PhantomProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroWidth>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ZeroWidth>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpZeroWidth(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetZeroWidth(DXM.PhantomProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroWidth>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetZeroWidth(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ZeroWidth>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ZeroWidth>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.ZeroWidth, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroWidth>((bool)value));
+  }
+  #endregion
+
+  #region Phantom Zero Ascent conversion.
+  private static bool? GetZeroAscent(DXM.PhantomProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.ZeroAscent>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Phantom Zero Ascent.
-  /// </summary>
-  private static DMMath.BooleanKind? GetZeroAscent(DXMath.PhantomProperties openXmlElement)
+  private static bool CmpZeroAscent(DXM.PhantomProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroAscent>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ZeroAscent>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpZeroAscent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetZeroAscent(DXM.PhantomProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroAscent>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetZeroAscent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ZeroAscent>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ZeroAscent>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.ZeroAscent, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroAscent>((bool)value));
+  }
+  #endregion
+
+  #region Phantom Zero Descent conversion.
+  private static bool? GetZeroDescent(DXM.PhantomProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.ZeroDescent>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Phantom Zero Descent.
-  /// </summary>
-  private static DMMath.BooleanKind? GetZeroDescent(DXMath.PhantomProperties openXmlElement)
+  private static bool CmpZeroDescent(DXM.PhantomProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroDescent>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ZeroDescent>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpZeroDescent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetZeroDescent(DXM.PhantomProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.ZeroDescent>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetZeroDescent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ZeroDescent>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ZeroDescent>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.ZeroDescent, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroDescent>((bool)value));
+  }
+  #endregion
+
+  #region Transparent (Phantom) conversion.
+  private static bool? GetTransparent(DXM.PhantomProperties openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.Transparent>()?.Val?.Value);
   }
   
-  /// <summary>
-  /// Transparent (Phantom).
-  /// </summary>
-  private static DMMath.BooleanKind? GetTransparent(DXMath.PhantomProperties openXmlElement)
+  private static bool CmpTransparent(DXM.PhantomProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Transparent>()?.Val?.Value);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Transparent>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static bool CmpTransparent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static void SetTransparent(DXM.PhantomProperties openXmlElement, bool? value)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.Transparent>()?.Val?.Value, value, diffs, objName);
-  }
-  
-  private static void SetTransparent(DXMath.PhantomProperties openXmlElement, DMMath.BooleanKind? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Transparent>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Transparent>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.Transparent, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Transparent>((bool)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.PhantomProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.PhantomProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.PhantomProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.PhantomProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.PhantomProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.PhantomProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.PhantomProperties? CreateModelElement(DXMath.PhantomProperties? openXmlElement)
+  #endregion
+
+  #region PhantomProperties model conversion.
+  public static DMM.PhantomProperties? CreateModelElement(DXM.PhantomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.PhantomProperties();
-      value.ShowPhantom = GetShowPhantom(openXmlElement);
-      value.ZeroWidth = GetZeroWidth(openXmlElement);
-      value.ZeroAscent = GetZeroAscent(openXmlElement);
-      value.ZeroDescent = GetZeroDescent(openXmlElement);
-      value.Transparent = GetTransparent(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.PhantomProperties();
+      model.ShowPhantom = GetShowPhantom(openXmlElement);
+      model.ZeroWidth = GetZeroWidth(openXmlElement);
+      model.ZeroAscent = GetZeroAscent(openXmlElement);
+      model.ZeroDescent = GetZeroDescent(openXmlElement);
+      model.Transparent = GetTransparent(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.PhantomProperties? openXmlElement, DMMath.PhantomProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.PhantomProperties? openXmlElement, DMM.PhantomProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpShowPhantom(openXmlElement, value.ShowPhantom, diffs, objName))
+      if (!CmpShowPhantom(openXmlElement, model.ShowPhantom, diffs, objName))
         ok = false;
-      if (!CmpZeroWidth(openXmlElement, value.ZeroWidth, diffs, objName))
+      if (!CmpZeroWidth(openXmlElement, model.ZeroWidth, diffs, objName))
         ok = false;
-      if (!CmpZeroAscent(openXmlElement, value.ZeroAscent, diffs, objName))
+      if (!CmpZeroAscent(openXmlElement, model.ZeroAscent, diffs, objName))
         ok = false;
-      if (!CmpZeroDescent(openXmlElement, value.ZeroDescent, diffs, objName))
+      if (!CmpZeroDescent(openXmlElement, model.ZeroDescent, diffs, objName))
         ok = false;
-      if (!CmpTransparent(openXmlElement, value.Transparent, diffs, objName))
+      if (!CmpTransparent(openXmlElement, model.Transparent, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.PhantomProperties value)
-    where OpenXmlElementType: DXMath.PhantomProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.PhantomProperties model)
+    where OpenXmlElementType: DXM.PhantomProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.PhantomProperties openXmlElement, DMMath.PhantomProperties value)
+  public static void UpdateOpenXmlElement(DXM.PhantomProperties openXmlElement, DMM.PhantomProperties model)
   {
-    SetShowPhantom(openXmlElement, value?.ShowPhantom);
-    SetZeroWidth(openXmlElement, value?.ZeroWidth);
-    SetZeroAscent(openXmlElement, value?.ZeroAscent);
-    SetZeroDescent(openXmlElement, value?.ZeroDescent);
-    SetTransparent(openXmlElement, value?.Transparent);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetShowPhantom(openXmlElement, model?.ShowPhantom);
+    SetZeroWidth(openXmlElement, model?.ZeroWidth);
+    SetZeroAscent(openXmlElement, model?.ZeroAscent);
+    SetZeroDescent(openXmlElement, model?.ZeroDescent);
+    SetTransparent(openXmlElement, model?.Transparent);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

@@ -9,7 +9,7 @@ public class FillTextEffect: ModelElement
   /// <summary>
   ///   NoFillEmpty.
   /// </summary>
-  public Boolean? NoFillEmpty { get; set; }
+  public bool? NoFillEmpty { get; set; }
 
   /// <summary>
   ///   SolidColorFillProperties.

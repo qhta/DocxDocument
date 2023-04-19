@@ -14,7 +14,7 @@ public class ScatterChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<ScatterChartSeries>? ScatterChartSeries { get; set; }
 

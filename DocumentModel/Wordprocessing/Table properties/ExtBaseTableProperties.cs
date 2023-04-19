@@ -9,7 +9,7 @@ public abstract class ExtBaseTableProperties: CurrentTableProperties
   /// <summary>
   ///   TableStyle.
   /// </summary>
-  public String? TableStyle { get; set; }
+  public string? TableStyle { get; set; }
 
   /// <summary>
   ///   TablePositionProperties.
@@ -24,15 +24,15 @@ public abstract class ExtBaseTableProperties: CurrentTableProperties
   /// <summary>
   ///   BiDiVisual.
   /// </summary>
-  public Boolean? BiDiVisual { get; set; }
+  public bool? BiDiVisual { get; set; }
 
   /// <summary>
   ///   TableCaption, this property is only available in Office 2010 and later..
   /// </summary>
-  public String? TableCaption { get; set; }
+  public string? TableCaption { get; set; }
 
   /// <summary>
   ///   TableDescription, this property is only available in Office 2010 and later..
   /// </summary>
-  public String? TableDescription { get; set; }
+  public string? TableDescription { get; set; }
 }

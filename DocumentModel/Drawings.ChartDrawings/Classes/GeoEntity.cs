@@ -9,7 +9,7 @@ public class GeoEntity: ModelElement
   /// <summary>
   ///   entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? EntityName { get; set; }
+  public string? EntityName { get; set; }
 
   /// <summary>
   ///   entityType, this property is only available in Office 2016 and later.

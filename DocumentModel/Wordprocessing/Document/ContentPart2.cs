@@ -1,7 +1,6 @@
 using DocumentModel.Drawings;
 
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ContentPart Class.
@@ -16,7 +15,7 @@ public class ContentPart2: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? RelationshipId { get; set; }
+  public string? RelationshipId { get; set; }
 
   /// <summary>
   ///   WordNonVisualContentPartShapeProperties.

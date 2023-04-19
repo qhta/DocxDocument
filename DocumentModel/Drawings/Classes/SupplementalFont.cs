@@ -9,10 +9,10 @@ public class SupplementalFont: ModelElement
   /// <summary>
   ///   Script
   /// </summary>
-  public String? Script { get; set; }
+  public string? Script { get; set; }
 
   /// <summary>
   ///   Typeface
   /// </summary>
-  public String? Typeface { get; set; }
+  public string? Typeface { get; set; }
 }

@@ -14,5 +14,5 @@ public class Parameter: ModelElement
   /// <summary>
   ///   Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 }

@@ -19,7 +19,7 @@ public class TableStyleConditionalCellProperties: ModelElement
   /// <summary>
   ///   NoWrap.
   /// </summary>
-  public Boolean? NoWrap { get; set; }
+  public bool? NoWrap { get; set; }
 
   /// <summary>
   ///   TableCellMargin.

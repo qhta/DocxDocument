@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.Diagrams;
 /// </summary>
 public class Background: ModelElement
 {
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -16,7 +16,7 @@ public class Background: ModelElement
 
   public PatternFill? PatternFill { get; set; }
 
-  public Boolean? GroupFill { get; set; }
+  public bool? GroupFill { get; set; }
 
   public EffectList? EffectList { get; set; }
 

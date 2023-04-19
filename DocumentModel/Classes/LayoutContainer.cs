@@ -9,17 +9,17 @@ public class LayoutContainer: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? QualifiedId { get; set; }
+  public string? QualifiedId { get; set; }
 
   /// <summary>
   ///   tag, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   /// <summary>
   ///   align, this property is only available in Office 2010 and later.

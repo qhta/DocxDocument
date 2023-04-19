@@ -19,7 +19,7 @@ public class StyleEntry: ModelElement
   /// <summary>
   ///   LineWidthScale.
   /// </summary>
-  public String? LineWidthScale { get; set; }
+  public string? LineWidthScale { get; set; }
 
   /// <summary>
   ///   FillReference.

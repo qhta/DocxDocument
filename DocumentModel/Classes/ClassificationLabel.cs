@@ -9,37 +9,37 @@ public class ClassificationLabel: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   enabled, this property is only available in Office 2021 and later.
   /// </summary>
-  public Boolean? Enabled { get; set; }
+  public bool? Enabled { get; set; }
 
   /// <summary>
   ///   setDate, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? SetDate { get; set; }
+  public string? SetDate { get; set; }
 
   /// <summary>
   ///   method, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Method { get; set; }
+  public string? Method { get; set; }
 
   /// <summary>
   ///   name, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   siteId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? SiteId { get; set; }
+  public string? SiteId { get; set; }
 
   /// <summary>
   ///   actionId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? ActionId { get; set; }
+  public string? ActionId { get; set; }
 
   /// <summary>
   ///   contentBits, this property is only available in Office 2021 and later.
@@ -49,5 +49,5 @@ public class ClassificationLabel: ModelElement
   /// <summary>
   ///   removed, this property is only available in Office 2021 and later.
   /// </summary>
-  public Boolean? Removed { get; set; }
+  public bool? Removed { get; set; }
 }

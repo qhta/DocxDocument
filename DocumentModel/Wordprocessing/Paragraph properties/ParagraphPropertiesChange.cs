@@ -9,7 +9,7 @@ public class ParagraphPropertiesChange: ModelElement
   /// <summary>
   ///   Author
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   Sate
@@ -19,7 +19,7 @@ public class ParagraphPropertiesChange: ModelElement
   /// <summary>
   ///   Annotation Identifier
   /// </summary>
-  public String? AnnotationId { get; set; }
+  public string? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Paragraph Properties.

@@ -15,7 +15,7 @@ public class Legend: ModelElement
 
   public Layout? Layout { get; set; }
 
-  public Boolean? Overlay { get; set; }
+  public bool? Overlay { get; set; }
 
   public ChartShapeProperties? ChartShapeProperties { get; set; }
 
