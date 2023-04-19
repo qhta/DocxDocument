@@ -1,6 +1,8 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// Custom properties enable users to define custom metadata properties through a set of well-defined data types.
+/// </summary>
 public partial class CustomProperties : ICollection<DocumentProperty>
 {
   public Collection<DocumentProperty>? CustomDocumentProperties { get; set; }
