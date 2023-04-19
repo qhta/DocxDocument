@@ -9,10 +9,10 @@ public class ListItem: ModelElement
   /// <summary>
   ///   List Entry Display Text
   /// </summary>
-  public String? DisplayText { get; set; }
+  public string? DisplayText { get; set; }
 
   /// <summary>
   ///   List Entry Value
   /// </summary>
-  public String? Value { get; set; }
+  public string? Value { get; set; }
 }

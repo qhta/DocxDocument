@@ -9,7 +9,7 @@ public class Shape: ModelElement
   /// <summary>
   ///   modelId, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? ModelId { get; set; }
+  public string? ModelId { get; set; }
 
   /// <summary>
   ///   ShapeNonVisualProperties.

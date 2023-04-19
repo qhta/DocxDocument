@@ -9,5 +9,5 @@ public class Extension: ModelElement
   /// <summary>
   ///   Uniform Resource Identifier
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 }

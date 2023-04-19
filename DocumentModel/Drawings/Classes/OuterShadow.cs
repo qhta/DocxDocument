@@ -49,7 +49,7 @@ public class OuterShadow: ModelElement
   /// <summary>
   ///   Rotate With Shape
   /// </summary>
-  public Boolean? RotateWithShape { get; set; }
+  public bool? RotateWithShape { get; set; }
 
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

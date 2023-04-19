@@ -9,17 +9,17 @@ public abstract class BaseParagraphProperties: ModelElement
   /// <summary>
   ///   KeepNext.
   /// </summary>
-  public Boolean? KeepNext { get; set; }
+  public bool? KeepNext { get; set; }
 
   /// <summary>
   ///   KeepLines.
   /// </summary>
-  public Boolean? KeepLines { get; set; }
+  public bool? KeepLines { get; set; }
 
   /// <summary>
   ///   PageBreakBefore.
   /// </summary>
-  public Boolean? PageBreakBefore { get; set; }
+  public bool? PageBreakBefore { get; set; }
 
   /// <summary>
   ///   FrameProperties.
@@ -29,7 +29,7 @@ public abstract class BaseParagraphProperties: ModelElement
   /// <summary>
   ///   WidowControl.
   /// </summary>
-  public Boolean? WidowControl { get; set; }
+  public bool? WidowControl { get; set; }
 
   /// <summary>
   ///   NumberingProperties.
@@ -39,7 +39,7 @@ public abstract class BaseParagraphProperties: ModelElement
   /// <summary>
   ///   SuppressLineNumbers.
   /// </summary>
-  public Boolean? SuppressLineNumbers { get; set; }
+  public bool? SuppressLineNumbers { get; set; }
 
   /// <summary>
   ///   ParagraphBorders.
@@ -59,52 +59,52 @@ public abstract class BaseParagraphProperties: ModelElement
   /// <summary>
   ///   SuppressAutoHyphens.
   /// </summary>
-  public Boolean? SuppressAutoHyphens { get; set; }
+  public bool? SuppressAutoHyphens { get; set; }
 
   /// <summary>
   ///   Kinsoku.
   /// </summary>
-  public Boolean? Kinsoku { get; set; }
+  public bool? Kinsoku { get; set; }
 
   /// <summary>
   ///   WordWrap.
   /// </summary>
-  public Boolean? WordWrap { get; set; }
+  public bool? WordWrap { get; set; }
 
   /// <summary>
   ///   OverflowPunctuation.
   /// </summary>
-  public Boolean? OverflowPunctuation { get; set; }
+  public bool? OverflowPunctuation { get; set; }
 
   /// <summary>
   ///   TopLinePunctuation.
   /// </summary>
-  public Boolean? TopLinePunctuation { get; set; }
+  public bool? TopLinePunctuation { get; set; }
 
   /// <summary>
   ///   AutoSpaceDE.
   /// </summary>
-  public Boolean? AutoSpaceDE { get; set; }
+  public bool? AutoSpaceDE { get; set; }
 
   /// <summary>
   ///   AutoSpaceDN.
   /// </summary>
-  public Boolean? AutoSpaceDN { get; set; }
+  public bool? AutoSpaceDN { get; set; }
 
   /// <summary>
   ///   BiDi.
   /// </summary>
-  public Boolean? BiDi { get; set; }
+  public bool? BiDi { get; set; }
 
   /// <summary>
   ///   AdjustRightIndent.
   /// </summary>
-  public Boolean? AdjustRightIndent { get; set; }
+  public bool? AdjustRightIndent { get; set; }
 
   /// <summary>
   ///   SnapToGrid.
   /// </summary>
-  public Boolean? SnapToGrid { get; set; }
+  public bool? SnapToGrid { get; set; }
 
   /// <summary>
   ///   SpacingBetweenLines.
@@ -119,17 +119,17 @@ public abstract class BaseParagraphProperties: ModelElement
   /// <summary>
   ///   ContextualSpacing.
   /// </summary>
-  public Boolean? ContextualSpacing { get; set; }
+  public bool? ContextualSpacing { get; set; }
 
   /// <summary>
   ///   MirrorIndents.
   /// </summary>
-  public Boolean? MirrorIndents { get; set; }
+  public bool? MirrorIndents { get; set; }
 
   /// <summary>
   ///   SuppressOverlap.
   /// </summary>
-  public Boolean? SuppressOverlap { get; set; }
+  public bool? SuppressOverlap { get; set; }
 
   /// <summary>
   ///   Justification.

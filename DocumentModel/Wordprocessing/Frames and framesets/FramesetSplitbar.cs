@@ -9,7 +9,7 @@ public class FramesetSplitbar: ModelElement
   /// <summary>
   ///   Frameset Splitter Width.
   /// </summary>
-  public String? Width { get; set; }
+  public string? Width { get; set; }
 
   /// <summary>
   ///   Frameset Splitter Color.
@@ -19,10 +19,10 @@ public class FramesetSplitbar: ModelElement
   /// <summary>
   ///   Do Not Display Frameset Splitters.
   /// </summary>
-  public Boolean? NoBorder { get; set; }
+  public bool? NoBorder { get; set; }
 
   /// <summary>
   ///   Frameset Splitter Border Style.
   /// </summary>
-  public Boolean? FlatBorders { get; set; }
+  public bool? FlatBorders { get; set; }
 }

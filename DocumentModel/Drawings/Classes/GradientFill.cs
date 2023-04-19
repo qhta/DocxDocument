@@ -14,7 +14,7 @@ public class GradientFill: ModelElement
   /// <summary>
   ///   Rotate With Shape
   /// </summary>
-  public Boolean? RotateWithShape { get; set; }
+  public bool? RotateWithShape { get; set; }
 
   /// <summary>
   ///   Gradient Stop List.

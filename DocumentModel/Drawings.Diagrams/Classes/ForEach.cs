@@ -9,12 +9,12 @@ public class ForEach: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Reference
   /// </summary>
-  public String? Reference { get; set; }
+  public string? Reference { get; set; }
 
   /// <summary>
   ///   Axis

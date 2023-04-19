@@ -9,16 +9,16 @@ public class Languages: ModelElement
   /// <summary>
   ///   Language for all regular scripts.
   /// </summary>
-  public String? Regular { get; set; }
+  public string? Regular { get; set; }
 
   /// <summary>
   ///   Language for complex (bidirectional) scripts
   /// </summary>
-  public String? ComplexScript { get; set; }
+  public string? ComplexScript { get; set; }
 
   /// <summary>
   ///   Language for east-asian scripts.
   /// </summary>
-  public String? EastAsia { get; set; }
+  public string? EastAsia { get; set; }
 
 }

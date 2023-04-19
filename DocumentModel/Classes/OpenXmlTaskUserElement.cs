@@ -9,15 +9,15 @@ public class OpenXmlTaskUserElement: ModelElement
   /// <summary>
   ///   userId, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? UserId { get; set; }
+  public string? UserId { get; set; }
 
   /// <summary>
   ///   userName, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? UserName { get; set; }
+  public string? UserName { get; set; }
 
   /// <summary>
   ///   userProvider, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? UserProvider { get; set; }
+  public string? UserProvider { get; set; }
 }

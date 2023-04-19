@@ -1,38 +1,39 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Delimiter Properties.
+///   Specifies the properties of <see cref="Delimiter"/>, including the enclosing and separating characters, 
+///   and the properties that affect the shape of the delimiters.
 /// </summary>
 public class DelimiterProperties: ModelElement
 {
   /// <summary>
   ///   Delimiter Beginning Character.
   /// </summary>
-  public String? BeginChar { get; set; }
+  public string? BeginChar { get; set; }
 
   /// <summary>
   ///   Delimiter Separator Character.
   /// </summary>
-  public String? SeparatorChar { get; set; }
+  public string? SeparatorChar { get; set; }
 
   /// <summary>
   ///   Delimiter Ending Character.
   /// </summary>
-  public String? EndChar { get; set; }
+  public string? EndChar { get; set; }
 
   /// <summary>
-  ///   Delimiter Grow.
+  ///   Allows separators to grow according to operator size.
   /// </summary>
-  public BooleanKind? GrowOperators { get; set; }
+  public bool? GrowOperators { get; set; }
 
   /// <summary>
-  ///   Shape (Delimiters).
+  ///   Specifies if delimiter are vertically centered around the delimited expression,
+  ///   or they are matched to the baseline of the expression.
   /// </summary>
   public ShapeDelimiterKind? Shape { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of delimiter object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

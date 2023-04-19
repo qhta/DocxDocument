@@ -9,12 +9,12 @@ public class OEmbedShared: ModelElement
   /// <summary>
   ///   srcUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? SrcUrl { get; set; }
+  public string? SrcUrl { get; set; }
 
   /// <summary>
   ///   type, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? Type { get; set; }
+  public string? Type { get; set; }
 
   /// <summary>
   ///   OfficeArtExtensionList.

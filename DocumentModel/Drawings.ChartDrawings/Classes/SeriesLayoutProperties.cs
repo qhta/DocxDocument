@@ -21,7 +21,7 @@ public class SeriesLayoutProperties: ModelElement
   /// </summary>
   public SeriesElementVisibilities? SeriesElementVisibilities { get; set; }
 
-  public Boolean? Aggregation { get; set; }
+  public bool? Aggregation { get; set; }
 
   public Binning? Binning { get; set; }
 

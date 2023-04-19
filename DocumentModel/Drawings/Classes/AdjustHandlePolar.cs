@@ -9,32 +9,32 @@ public class AdjustHandlePolar: ModelElement
   /// <summary>
   ///   Radial Adjustment Guide
   /// </summary>
-  public String? RadialAdjustmentGuide { get; set; }
+  public string? RadialAdjustmentGuide { get; set; }
 
   /// <summary>
   ///   Minimum Radial Adjustment
   /// </summary>
-  public String? MinRadial { get; set; }
+  public string? MinRadial { get; set; }
 
   /// <summary>
   ///   Maximum Radial Adjustment
   /// </summary>
-  public String? MaxRadial { get; set; }
+  public string? MaxRadial { get; set; }
 
   /// <summary>
   ///   Angle Adjustment Guide
   /// </summary>
-  public String? AngleAdjustmentGuide { get; set; }
+  public string? AngleAdjustmentGuide { get; set; }
 
   /// <summary>
   ///   Minimum Angle Adjustment
   /// </summary>
-  public String? MinAngle { get; set; }
+  public string? MinAngle { get; set; }
 
   /// <summary>
   ///   Maximum Angle Adjustment
   /// </summary>
-  public String? MaxAngle { get; set; }
+  public string? MaxAngle { get; set; }
 
   /// <summary>
   ///   Shape Position Coordinate.

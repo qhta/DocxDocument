@@ -9,12 +9,12 @@ public class Person: ModelElement
   /// <summary>
   ///   Gets or sets the  value. It is only available for backwards compatibility
   /// </summary>
-  public String? Contact { get; set; }
+  public string? Contact { get; set; }
 
   /// <summary>
   ///   author, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   PresenceInfo.

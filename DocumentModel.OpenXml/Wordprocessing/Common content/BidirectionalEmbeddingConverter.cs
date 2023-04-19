@@ -51,8 +51,8 @@ public static class BidirectionalEmbeddingConverter
     {
       var model = new DMW.BidirectionalEmbedding();
       model.Type = GetVal(openXmlElement);
-      ElementCollectionConverter<DMW.IBidirectionalContent>.FillModelElementCollection(openXmlElement, model, 
-        (CreateModelElementMethod)CreateBidirectionalEmbeddingContent);
+      ElementCollectionConverter<DMW.IBidirectionalContent>.FillModelElementCollection(openXmlElement, model,
+        CreateBidirectionalEmbeddingContent);
       return model;
     }
     return null;
@@ -66,8 +66,8 @@ public static class BidirectionalEmbeddingConverter
       if (!CmpVal(openXmlElement, model.Type, diffs, objName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IBidirectionalContent>.CompareOpenXmlElementCollection(
-        openXmlElement, model, 
-        (CompareOpenXmlElementMethod)CompareBidirectionalEmbeddingContent, diffs, objName))
+        openXmlElement, model,
+        CompareBidirectionalEmbeddingContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -87,9 +87,9 @@ public static class BidirectionalEmbeddingConverter
   {
     SetVal(openXmlElement, model.Type);
     return ElementCollectionConverter<DMW.IBidirectionalContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      (CompareOpenXmlElementMethod)CompareBidirectionalEmbeddingContent,
-      (UpdateOpenXmlElementMethod)UpdateOpenXmlBidirectionalEmbeddingContent,
-      (CreateOpenXmlElementMethod)CreateOpenXmlBidirectionalEmbeddingContent);
+      CompareBidirectionalEmbeddingContent,
+      UpdateOpenXmlBidirectionalEmbeddingContent,
+      CreateOpenXmlBidirectionalEmbeddingContent);
   }
   #endregion
 }

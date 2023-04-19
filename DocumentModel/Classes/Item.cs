@@ -9,30 +9,30 @@ public class Item: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   label, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Label { get; set; }
+  public string? Label { get; set; }
 
   /// <summary>
   ///   image, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Image { get; set; }
+  public string? Image { get; set; }
 
   /// <summary>
   ///   imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? ImageMso { get; set; }
+  public string? ImageMso { get; set; }
 
   /// <summary>
   ///   screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Screentip { get; set; }
+  public string? Screentip { get; set; }
 
   /// <summary>
   ///   supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? Supertip { get; set; }
+  public string? Supertip { get; set; }
 }

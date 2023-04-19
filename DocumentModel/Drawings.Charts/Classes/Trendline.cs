@@ -9,7 +9,7 @@ public class Trendline: ModelElement
   /// <summary>
   ///   Trendline Name.
   /// </summary>
-  public String? TrendlineName { get; set; }
+  public string? TrendlineName { get; set; }
 
   /// <summary>
   ///   ChartShapeProperties.
@@ -49,12 +49,12 @@ public class Trendline: ModelElement
   /// <summary>
   ///   Display R Squared Value.
   /// </summary>
-  public Boolean? DisplayRSquaredValue { get; set; }
+  public bool? DisplayRSquaredValue { get; set; }
 
   /// <summary>
   ///   Display Equation.
   /// </summary>
-  public Boolean? DisplayEquation { get; set; }
+  public bool? DisplayEquation { get; set; }
 
   /// <summary>
   ///   Trendline Label.

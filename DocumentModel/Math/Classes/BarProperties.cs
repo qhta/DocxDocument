@@ -1,18 +1,18 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Bar Properties.
+///   This element specifies properties of the bar function. 
+///   If this element is omitted, the bar assumes its default location of top (the mathematical overbar). 
 /// </summary>
 public class BarProperties: ModelElement
 {
   /// <summary>
-  ///   Position (Bar).
+  ///   Specifies vertical position of the bar.
   /// </summary>
   public VerticalJustificationKind? Position { get; set; }
 
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of bar function argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

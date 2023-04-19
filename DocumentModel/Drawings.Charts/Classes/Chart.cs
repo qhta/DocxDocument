@@ -14,7 +14,7 @@ public class Chart: ModelElement
   /// <summary>
   ///   True if the chart automatic title has been deleted..
   /// </summary>
-  public Boolean? AutoTitleDeleted { get; set; }
+  public bool? AutoTitleDeleted { get; set; }
 
   /// <summary>
   ///   pivot chart format persistence data.
@@ -54,7 +54,7 @@ public class Chart: ModelElement
   /// <summary>
   ///   True if only visible cells are plotted..
   /// </summary>
-  public Boolean? PlotVisibleOnly { get; set; }
+  public bool? PlotVisibleOnly { get; set; }
 
   /// <summary>
   ///   The way that blank cells are plotted on a chart..
@@ -64,7 +64,7 @@ public class Chart: ModelElement
   /// <summary>
   ///   True if we should render datalabels over the maximum scale.
   /// </summary>
-  public Boolean? ShowDataLabelsOverMaximum { get; set; }
+  public bool? ShowDataLabelsOverMaximum { get; set; }
 
   /// <summary>
   ///   Extensibility container.

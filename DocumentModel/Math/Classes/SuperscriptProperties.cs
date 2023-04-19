@@ -1,13 +1,12 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Superscript Properties.
+///   This element specifies properties such as ctrlPr that can be stored on the Superscript object.
 /// </summary>
 public class SuperscriptProperties: ModelElement
 {
   /// <summary>
-  ///   ControlProperties.
+  ///   Specifies formatting of Superscript object argument.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

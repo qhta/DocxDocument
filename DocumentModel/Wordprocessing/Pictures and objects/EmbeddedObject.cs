@@ -13,12 +13,12 @@ public class EmbeddedObject: ElementCollection<IEmbeddedObjectContent>, IRunCont
   /// <summary>
   ///   valOrig
   /// </summary>
-  public String? DxaOriginal { get; set; }
+  public string? DxaOriginal { get; set; }
 
   /// <summary>
   ///   dyaOrig
   /// </summary>
-  public String? DyaOriginal { get; set; }
+  public string? DyaOriginal { get; set; }
 
   /// <summary>
   ///   anchorId, this property is only available in Office 2010 and later.

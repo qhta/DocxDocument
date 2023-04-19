@@ -19,7 +19,7 @@ public class CategoryAxis: ModelElement
   /// <summary>
   ///   Delete.
   /// </summary>
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   /// <summary>
   ///   Axis Position.
@@ -80,7 +80,7 @@ public class CategoryAxis: ModelElement
 
   public Double? CrossesAt { get; set; }
 
-  public Boolean? AutoLabeled { get; set; }
+  public bool? AutoLabeled { get; set; }
 
   public LabelAlignmentKind? LabelAlignment { get; set; }
 
@@ -90,7 +90,7 @@ public class CategoryAxis: ModelElement
 
   public Int32? TickMarkSkip { get; set; }
 
-  public Boolean? NoMultiLevelLabels { get; set; }
+  public bool? NoMultiLevelLabels { get; set; }
 
   public CatAxExtensionList? CatAxExtensionList { get; set; }
 }

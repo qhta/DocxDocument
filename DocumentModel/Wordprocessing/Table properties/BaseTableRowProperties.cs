@@ -23,7 +23,7 @@ public abstract class BaseTableRowProperties: ModelElement
   /// If the contents of this table row cannot fit on a single page, 
   /// then this row shall start on a new page and flow onto multiple pages as necessary. 
   /// </summary>
-  public Boolean? CantSplit { get; set; }
+  public bool? CantSplit { get; set; }
 
   /// <summary>
   /// Specifies that the current table row shall be repeated 
@@ -31,7 +31,7 @@ public abstract class BaseTableRowProperties: ModelElement
   /// This gives this table row the behavior of a 'header' row on each of these pages. 
   /// This property can be applied to any number of rows at the top of the table structure in order to generate multi-row table headers.
   /// </summary>
-  public Boolean? IsHeader { get; set; }
+  public bool? IsHeader { get; set; }
 
   /// <summary>
   /// Specifies the alignment of a single row in the parent table with respect to the text margins in the current section. 
@@ -54,7 +54,7 @@ public abstract class BaseTableRowProperties: ModelElement
   /// <summary>
   /// Specifies that the glyph representing the end character of current table row shall not be displayed in the current document.
   /// </summary>
-  public Boolean? GlyphHidden { get; set; }
+  public bool? GlyphHidden { get; set; }
 
   /// <summary>
   /// Specifies the number of grid columns in the parent table's table grid (§17.4.48; §17.4.47) 
@@ -98,7 +98,7 @@ public abstract class BaseTableRowProperties: ModelElement
   /// so that the document can later be saved back into HTML format and have the stored information replaced, 
   /// since the HTML div can store formatting properties on arbitrary regions. 
   /// </summary>
-  public String? DivId { get; set; }
+  public string? DivId { get; set; }
 
   /// <summary>
   /// Specifies the set of conditional table style formatting properties which have been applied to this table row. 

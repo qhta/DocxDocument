@@ -9,7 +9,7 @@ public class ColorStyle: ModelElement
   /// <summary>
   ///   meth, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? Method { get; set; }
+  public string? Method { get; set; }
 
   /// <summary>
   ///   id, this property is only available in Office 2013 and later.

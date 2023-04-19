@@ -9,7 +9,7 @@ public class ConnectionSite: ModelElement
   /// <summary>
   ///   Connection Site Angle
   /// </summary>
-  public String? Angle { get; set; }
+  public string? Angle { get; set; }
 
   /// <summary>
   ///   Position.

@@ -9,7 +9,7 @@ public partial class ColorScheme
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   public ThemeColors ThemeColors { get; set; } = new ThemeColors();
 

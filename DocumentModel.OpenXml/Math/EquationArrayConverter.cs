@@ -1,134 +1,132 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Equation-Array Function.
+/// <see cref="DMM.EquationArray"/> class from/to OpenXml converter.
 /// </summary>
 public static class EquationArrayConverter
 {
-  /// <summary>
-  /// Equation Array Properties.
-  /// </summary>
-  private static DMMath.EquationArrayProperties? GetEquationArrayProperties(DXMath.EquationArray openXmlElement)
+  #region EquationArray Properties conversion.
+  private static DMM.EquationArrayProperties? GetEquationArrayProperties(DXM.EquationArray openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.EquationArrayProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.EquationArrayProperties>();
     if (element != null)
-      return DMXMath.EquationArrayPropertiesConverter.CreateModelElement(element);
+      return DMXM.EquationArrayPropertiesConverter.CreateModelElement(element);
     return null;
   }
-  
-  private static bool CmpEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value, DiffList? diffs, string? objName)
+
+  private static bool CmpEquationArrayProperties(DXM.EquationArray openXmlElement, DMM.EquationArrayProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.EquationArrayProperties>(), value, diffs, objName);
+    return DMXM.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.EquationArrayProperties>(), value, diffs, objName);
   }
-  
-  private static void SetEquationArrayProperties(DXMath.EquationArray openXmlElement, DMMath.EquationArrayProperties? value)
+
+  private static void SetEquationArrayProperties(DXM.EquationArray openXmlElement, DMM.EquationArrayProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.EquationArrayProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.EquationArrayProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.EquationArrayPropertiesConverter.CreateOpenXmlElement<DXMath.EquationArrayProperties>(value);
+      itemElement = DMXM.EquationArrayPropertiesConverter.CreateOpenXmlElement<DXM.EquationArrayProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  private static Collection<DMMath.Base>? GetBases(DXMath.EquationArray openXmlElement)
+  #endregion
+
+  #region Base element conversion.
+  private static DMM.Argument? CreateBaseElement(DX.OpenXmlElement? openXmlElement)
   {
-    var collection = new Collection<DMMath.Base>();
-    foreach (var item in openXmlElement.Elements<DXMath.Base>())
-    {
-      var newItem = DMXMath.BaseConverter.CreateModelElement(item);
-      if (newItem != null)
-        collection.Add(newItem);
-    }
-    if (collection.Count>0)
-      return collection;
+    if (openXmlElement is DXM.Base baseElement)
+      return DMXM.ArgumentConverter.CreateModelElement(baseElement);
+
+    if (openXmlElement != null)
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in EquationArrayConverter.CreateBaseElement method");
     return null;
   }
-  
-  private static bool CmpBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value, DiffList? diffs, string? objName)
+
+  public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
   {
-    var origElements = openXmlElement.Elements<DXMath.Base>();
-    var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
+    if (openXmlElement != null && model != null)
     {
-      if (origElementsCount != modelElementsCount)
-      {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
-        return false;
-      }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!DMXMath.BaseConverter.CompareModelElement(origItem, modelItem, diffs, objName))
-          ok = false;
-      }
-      return ok;
+      if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
+        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName);
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
+      return false;
+
     }
-    if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  private static void SetBases(DXMath.EquationArray openXmlElement, Collection<DMMath.Base>? value)
+
+  public static OpenXmlElement CreateOpenXmlBaseElement(DM.IModelElement model)
   {
-    openXmlElement.RemoveAllChildren<DXMath.Base>();
-    if (value != null)
-    {
-      foreach (var item in value)
-      {
-        var newItem = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(item);
-        if (newItem != null)
-          openXmlElement.AddChild(newItem);
-      }
-    }
+    if (model is DMM.Argument baseModel)
+      return DMXM.ArgumentConverter.CreateOpenXmlElement(baseModel);
+
+    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in EquationArrayConverter.CreateOpenXmlArgumentContent method");
   }
-  
-  public static DMMath.EquationArray? CreateModelElement(DXMath.EquationArray? openXmlElement)
+
+  public static bool UpdateOpenXmlBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  {
+    if (openXmlElement != null && model != null)
+    {
+      if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
+        return DMXM.ArgumentConverter.UpdateOpenXmlElement(baseElement, baseModel);
+      return true;
+    }
+    return false;
+  }
+  #endregion
+
+  #region EquationArray model conversion.
+  public static DMM.EquationArray? CreateModelElement(DXM.EquationArray? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.EquationArray();
-      value.EquationArrayProperties = GetEquationArrayProperties(openXmlElement);
-      value.Bases = GetBases(openXmlElement);
-      return value;
+      var model = new DMM.EquationArray();
+      model.EquationArrayProperties = GetEquationArrayProperties(openXmlElement);
+      ElementCollectionConverter<DMM.Argument>.FillModelElementCollection(
+         openXmlElement.Where(item => item is not DXM.EquationArrayProperties), model,
+        CreateBaseElement);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXMath.EquationArray? openXmlElement, DMMath.EquationArray? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXM.EquationArray? openXmlElement, DMM.EquationArray? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpEquationArrayProperties(openXmlElement, value.EquationArrayProperties, diffs, objName))
+      if (!CmpEquationArrayProperties(openXmlElement, model.EquationArrayProperties, diffs, objName))
         ok = false;
-      if (!CmpBases(openXmlElement, value.Bases, diffs, objName))
+      if (!ElementCollectionConverter<DMM.Argument>.CompareOpenXmlElementCollection(
+        openXmlElement.Where(item=>item is not DXM.EquationArrayProperties), model,
+        CompareBaseElement, diffs, objName))
         ok = false;
+
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static DXMath.EquationArray CreateOpenXmlElement(DMMath.EquationArray value)
+
+  public static DXM.EquationArray CreateOpenXmlElement(DMM.EquationArray model)
   {
-    var openXmlElement = new DXMath.EquationArray();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.EquationArray();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static bool UpdateOpenXmlElement(DXMath.EquationArray openXmlElement, DMMath.EquationArray value)
+
+  public static bool UpdateOpenXmlElement(DXM.EquationArray openXmlElement, DMM.EquationArray model)
   {
-    SetEquationArrayProperties(openXmlElement, value?.EquationArrayProperties);
-    SetBases(openXmlElement, value?.Bases);
-    return true;
+    SetEquationArrayProperties(openXmlElement, model.EquationArrayProperties);
+    return ElementCollectionConverter<DMM.Argument>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      CompareBaseElement,
+      UpdateOpenXmlBaseElement,
+      CreateOpenXmlBaseElement);
   }
+  #endregion
 }

@@ -4,8 +4,8 @@
 /// Dual boolean. First value is for regular script, second for complex script.
 /// If second value is null, it is assumed to be the first value;
 /// </summary>
-[TypeConverter(typeof(DualBooleanTypeConverter))]
-public record DualBoolean
+[TypeConverter(typeof(DualBoolTypeConverter))]
+public record DualBool
 {
   private readonly bool? _Val, _ValCS;
 
@@ -23,7 +23,7 @@ public record DualBoolean
   /// Create dual value from a string. 
   /// String can be a single value or two values separated by comma or semicolon.
   /// </summary>
-  public DualBoolean(string str)
+  public DualBool(string str)
   {
     var ss = str.Split(new char[] { ',', ';' });
     if (ss.Length <= 2 )
@@ -43,7 +43,7 @@ public record DualBoolean
   /// <summary>
   /// Create dual value from two boolean values. 
   /// </summary>
-  public DualBoolean(bool? val, bool? valCS = null)
+  public DualBool(bool? val, bool? valCS = null)
   {
     _Val = val;
     _ValCS = valCS;
@@ -51,21 +51,21 @@ public record DualBoolean
 
 
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
-  public static implicit operator DualBoolean(string val)
+  public static implicit operator DualBool(string val)
   {
-    return new DualBoolean(val);
+    return new DualBool(val);
   }
 
-  public static implicit operator DualBoolean(bool val)
+  public static implicit operator DualBool(bool val)
   {
-    return new DualBoolean(val);
+    return new DualBool((bool?)val);
   }
 
-  public static implicit operator bool? (DualBoolean? value) => value?.Val;
-  public static implicit operator DualBoolean?(bool? value) => value != null ? new DualBoolean(value) : null;
+  public static implicit operator bool? (DualBool? value) => value?.Val;
+  public static implicit operator DualBool?(bool? value) => value != null ? new DualBool(value) : null;
 
-  //public static implicit operator (bool?, bool?)? (DualBoolean? value) => (value?.Val!=null && value?.ValCS!=null) ? DualBoolean;
-  //public static implicit operator DualBoolean?((bool? value, bool? valueCS)) => value != null ? new DualBoolean(value) : null;
+  //public static implicit operator (bool?, bool?)? (Dualbool? value) => (value?.Val!=null && value?.ValCS!=null) ? DualBoolean;
+  //public static implicit operator Dualbool?((bool? value, bool? valueCS)) => value != null ? new DualBoolean(value) : null;
 
   public override string? ToString()
   {

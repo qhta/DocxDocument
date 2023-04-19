@@ -14,7 +14,7 @@ public class RadarChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<RadarChartSeries>? RadarChartSeries { get; set; }
 

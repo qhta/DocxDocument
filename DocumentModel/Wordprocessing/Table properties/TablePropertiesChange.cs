@@ -9,7 +9,7 @@ public class TablePropertiesChange: ModelElement
   /// <summary>
   ///   Author.
   /// </summary>
-  public String? Author { get; set; }
+  public string? Author { get; set; }
 
   /// <summary>
   ///   Date.
@@ -19,7 +19,7 @@ public class TablePropertiesChange: ModelElement
   /// <summary>
   ///   Annotation Identifier.
   /// </summary>
-  public String? AnnotationId { get; set; }
+  public string? AnnotationId { get; set; }
 
   /// <summary>
   ///   Previous Table Properties.

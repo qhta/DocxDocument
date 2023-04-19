@@ -9,7 +9,7 @@ public class FormatScheme: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Fill Style List.

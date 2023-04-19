@@ -14,5 +14,5 @@ public class RelativeHeight: ModelElement
   /// <summary>
   ///   PercentageHeight.
   /// </summary>
-  public String? PercentageHeight { get; set; }
+  public string? PercentageHeight { get; set; }
 }

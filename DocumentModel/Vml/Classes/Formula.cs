@@ -9,5 +9,5 @@ public class Formula: ModelElement
   /// <summary>
   ///   Equation
   /// </summary>
-  public String? Equation { get; set; }
+  public string? Equation { get; set; }
 }

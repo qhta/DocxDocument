@@ -14,7 +14,7 @@ public class Axis: ModelElement
   /// <summary>
   ///   hidden, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Hidden { get; set; }
+  public bool? Hidden { get; set; }
 
   public CategoryAxisScaling? CategoryAxisScaling { get; set; }
 

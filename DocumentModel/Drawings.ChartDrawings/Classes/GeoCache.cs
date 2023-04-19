@@ -9,9 +9,9 @@ public class GeoCache: ModelElement
   /// <summary>
   ///   provider, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Provider { get; set; }
+  public string? Provider { get; set; }
 
-  public String? Xsdbase64Binary { get; set; }
+  public string? Xsdbase64Binary { get; set; }
 
   public Clear? Clear { get; set; }
 }

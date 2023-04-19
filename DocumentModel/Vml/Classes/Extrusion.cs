@@ -14,7 +14,7 @@ public class Extrusion: ModelElement
   /// <summary>
   ///   Extrusion Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Extrusion Type
@@ -29,12 +29,12 @@ public class Extrusion: ModelElement
   /// <summary>
   ///   Extrusion Viewpoint Origin
   /// </summary>
-  public String? ViewpointOrigin { get; set; }
+  public string? ViewpointOrigin { get; set; }
 
   /// <summary>
   ///   Extrusion Viewpoint
   /// </summary>
-  public String? Viewpoint { get; set; }
+  public string? Viewpoint { get; set; }
 
   /// <summary>
   ///   Extrusion Skew Angle
@@ -44,22 +44,22 @@ public class Extrusion: ModelElement
   /// <summary>
   ///   Extrusion Skew
   /// </summary>
-  public String? SkewAmount { get; set; }
+  public string? SkewAmount { get; set; }
 
   /// <summary>
   ///   Forward Extrusion
   /// </summary>
-  public String? ForceDepth { get; set; }
+  public string? ForceDepth { get; set; }
 
   /// <summary>
   ///   Backward Extrusion Depth
   /// </summary>
-  public String? BackDepth { get; set; }
+  public string? BackDepth { get; set; }
 
   /// <summary>
   ///   Rotation Axis
   /// </summary>
-  public String? Orientation { get; set; }
+  public string? Orientation { get; set; }
 
   /// <summary>
   ///   Rotation Around Axis
@@ -69,27 +69,27 @@ public class Extrusion: ModelElement
   /// <summary>
   ///   Rotation Toggle
   /// </summary>
-  public Boolean? LockRotationCenter { get; set; }
+  public bool? LockRotationCenter { get; set; }
 
   /// <summary>
   ///   Center of Rotation Toggle
   /// </summary>
-  public Boolean? AutoRotationCenter { get; set; }
+  public bool? AutoRotationCenter { get; set; }
 
   /// <summary>
   ///   Rotation Center
   /// </summary>
-  public String? RotationCenter { get; set; }
+  public string? RotationCenter { get; set; }
 
   /// <summary>
   ///   X-Y Rotation Angle
   /// </summary>
-  public String? RotationAngle { get; set; }
+  public string? RotationAngle { get; set; }
 
   /// <summary>
   ///   Extrusion Color
   /// </summary>
-  public String? Color { get; set; }
+  public string? Color { get; set; }
 
   /// <summary>
   ///   Shininess
@@ -99,65 +99,65 @@ public class Extrusion: ModelElement
   /// <summary>
   ///   Specularity
   /// </summary>
-  public String? Specularity { get; set; }
+  public string? Specularity { get; set; }
 
   /// <summary>
   ///   Diffuse Reflection
   /// </summary>
-  public String? Diffusity { get; set; }
+  public string? Diffusity { get; set; }
 
   /// <summary>
   ///   Metallic Surface Toggle
   /// </summary>
-  public Boolean? Metal { get; set; }
+  public bool? Metal { get; set; }
 
   /// <summary>
   ///   Simulated Bevel
   /// </summary>
-  public String? Edge { get; set; }
+  public string? Edge { get; set; }
 
   /// <summary>
   ///   Faceting Quality
   /// </summary>
-  public String? Facet { get; set; }
+  public string? Facet { get; set; }
 
   /// <summary>
   ///   Shape Face Lighting Toggle
   /// </summary>
-  public Boolean? LightFace { get; set; }
+  public bool? LightFace { get; set; }
 
   /// <summary>
   ///   Brightness
   /// </summary>
-  public String? Brightness { get; set; }
+  public string? Brightness { get; set; }
 
   /// <summary>
   ///   Primary Light Position
   /// </summary>
-  public String? LightPosition { get; set; }
+  public string? LightPosition { get; set; }
 
   /// <summary>
   ///   Primary Light Intensity
   /// </summary>
-  public String? LightLevel { get; set; }
+  public string? LightLevel { get; set; }
 
   /// <summary>
   ///   Primary Light Harshness Toggle
   /// </summary>
-  public Boolean? LightHarsh { get; set; }
+  public bool? LightHarsh { get; set; }
 
   /// <summary>
   ///   Secondary Light Position
   /// </summary>
-  public String? LightPosition2 { get; set; }
+  public string? LightPosition2 { get; set; }
 
   /// <summary>
   ///   Secondary Light Intensity
   /// </summary>
-  public String? LightLevel2 { get; set; }
+  public string? LightLevel2 { get; set; }
 
   /// <summary>
   ///   Secondary Light Harshness Toggle
   /// </summary>
-  public Boolean? LightHarsh2 { get; set; }
+  public bool? LightHarsh2 { get; set; }
 }

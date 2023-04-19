@@ -114,6 +114,43 @@ public static class Int32ValueConverter
   }
   #endregion
 
+  #region IntegerValue conversion.
+  /// <summary>
+  /// Converts IntegerValue to Int32.
+  /// </summary>
+  /// <param name="integerValue">IntegerValue to convert</param>
+  /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
+  public static Int32? GetValue(IntegerValue? integerValue)
+  {
+    if (integerValue?.Value != null)
+    {
+      return (Int32)integerValue.Value;
+    }
+    return null;
+  }
+
+  /// <summary>
+  /// Compares a value get from OpenXml IntegerValue to Int32 value.
+  /// </summary>
+  /// <param name="element">IntegerValue to compare.</param>
+  /// <param name="value">Int32 value to compare (can be null)</param>
+  /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
+  /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
+  public static bool CmpValue(IntegerValue? element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (GetValue(element) == value) return true;
+    diffs?.Add(objName, propName ?? element?.GetType().ToString(), element?.Value, value);
+    return false;
+  }
+
+  public static IntegerValue? CreateIntegerValue(Int32? value)
+  {
+    if (value == null) return null;
+    return new IntegerValue { Value = (Int32)value };
+  }
+  #endregion
+
   #region StringValue conversion.
   /// <summary>
   /// Converts StringValue to Int32.
@@ -144,6 +181,12 @@ public static class Int32ValueConverter
     diffs?.Add(objName, propName ?? element?.GetType().ToString(), element?.Value, value);
     return false;
   }
+
+  public static StringValue? CreateStringValue(Int32? value)
+  {
+    if (value == null) return null;
+    return new StringValue { Value = value.ToString() };
+  }
   #endregion
 
   #region Compare two Int32 values
@@ -163,24 +206,4 @@ public static class Int32ValueConverter
   }
   #endregion
 
-  //#region Common OpenXml element creation
-  ///// <summary>
-  ///// Creates a specific OpenXml element based on Int32 value.
-  ///// If a specified OpenXmlElement type contains a "Val" property, then it is filled with input value.
-  ///// Otherwise a string representation of input value is inserted to LeafTextElement content of the result.
-  ///// </summary>
-  ///// <typeparam name="OpenXmlElementType">Can be any OpenXmlElement type</typeparam>
-  ///// <param name="value">value to convert</param>
-  ///// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
-  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
-  //  where OpenXmlElementType : OpenXmlElement, new()
-  //{
-  //  if (typeof(OpenXmlElementType).IsEqualOrSubclassOf(typeof(OpenXmlLeafTextElement)))
-  //  {
-  //    var method = typeof(Int32ValueConverter).GetMethod(
-  //    return CreateOpenXmlLeafTextElement<OpenXmlElementType>(value));
-  //  }
-  //  return null;
-  //}
-  //#endregion
 }

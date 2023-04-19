@@ -9,5 +9,5 @@ public class LevelReference: ModelElement
   /// <summary>
   ///   SequenceOfReferences.
   /// </summary>
-  public String? SequenceOfReferences { get; set; }
+  public string? SequenceOfReferences { get; set; }
 }

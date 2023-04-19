@@ -8,12 +8,12 @@ namespace DocumentModel.Packaging;
 /// </summary>
 public class CustomFilePropertiesPart: ModelElement
 {
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets or sets the root element of this part.
   /// </summary>
   public CustomProperties? Properties { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

@@ -34,7 +34,7 @@ public class BubbleChartSeries: ModelElement
   /// <summary>
   ///   InvertIfNegative.
   /// </summary>
-  public Boolean? InvertIfNegative { get; set; }
+  public bool? InvertIfNegative { get; set; }
 
   public Collection<DataPoint>? DataPoints { get; set; }
 
@@ -50,7 +50,7 @@ public class BubbleChartSeries: ModelElement
 
   public BubbleSize? BubbleSize { get; set; }
 
-  public Boolean? Bubble3D { get; set; }
+  public bool? Bubble3D { get; set; }
 
   public BubbleSerExtensionList? BubbleSerExtensionList { get; set; }
 }

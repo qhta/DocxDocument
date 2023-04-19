@@ -1,8 +1,8 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Lower-Limit Function.
+///   This element specifies the Lower-Limit object, consisting of text on the baseline 
+///   and reduced-size text immediately below it. Examples of limLow include lim and max.
 /// </summary>
 public class LimitLower: ModelElement, ICommonMathContent
 {
@@ -12,12 +12,12 @@ public class LimitLower: ModelElement, ICommonMathContent
   public LimitLowerProperties? LimitLowerProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 
   /// <summary>
-  ///   Limit (Lower).
+  ///   Limit (lower.
   /// </summary>
   public Limit? Limit { get; set; }
 }

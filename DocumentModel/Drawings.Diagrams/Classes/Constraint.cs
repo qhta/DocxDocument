@@ -19,7 +19,7 @@ public class Constraint: ModelElement
   /// <summary>
   ///   For Name
   /// </summary>
-  public String? ForName { get; set; }
+  public string? ForName { get; set; }
 
   /// <summary>
   ///   Data Point Type
@@ -39,7 +39,7 @@ public class Constraint: ModelElement
   /// <summary>
   ///   Reference For Name
   /// </summary>
-  public String? ReferenceForName { get; set; }
+  public string? ReferenceForName { get; set; }
 
   /// <summary>
   ///   Reference Point Type

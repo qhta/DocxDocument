@@ -18,7 +18,7 @@ public class GlossaryDocumentPart: ModelElement
   /// </summary>
   public Collection<ChartPart>? ChartParts { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
   /// <summary>
   ///   Gets the DiagramColorsParts of the GlossaryDocumentPart
@@ -90,7 +90,7 @@ public class GlossaryDocumentPart: ModelElement
   /// </summary>
   public Collection<Model3DReferenceRelationshipPart>? Model3DReferenceRelationshipParts { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 
   /// <summary>
   ///   Gets the WordprocessingPrinterSettingsParts of the GlossaryDocumentPart

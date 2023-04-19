@@ -14,55 +14,55 @@ public class Lock: ModelElement
   /// <summary>
   ///   Position Lock
   /// </summary>
-  public Boolean? Position { get; set; }
+  public bool? Position { get; set; }
 
   /// <summary>
   ///   Selection Lock
   /// </summary>
-  public Boolean? Selection { get; set; }
+  public bool? Selection { get; set; }
 
   /// <summary>
   ///   Grouping Lock
   /// </summary>
-  public Boolean? Grouping { get; set; }
+  public bool? Grouping { get; set; }
 
   /// <summary>
   ///   Ungrouping Lock
   /// </summary>
-  public Boolean? Ungrouping { get; set; }
+  public bool? Ungrouping { get; set; }
 
   /// <summary>
   ///   Rotation Lock
   /// </summary>
-  public Boolean? Rotation { get; set; }
+  public bool? Rotation { get; set; }
 
   /// <summary>
   ///   Cropping Lock
   /// </summary>
-  public Boolean? Cropping { get; set; }
+  public bool? Cropping { get; set; }
 
   /// <summary>
   ///   Vertices Lock
   /// </summary>
-  public Boolean? Verticies { get; set; }
+  public bool? Verticies { get; set; }
 
   /// <summary>
   ///   Handles Lock
   /// </summary>
-  public Boolean? AdjustHandles { get; set; }
+  public bool? AdjustHandles { get; set; }
 
   /// <summary>
   ///   Text Lock
   /// </summary>
-  public Boolean? TextLock { get; set; }
+  public bool? TextLock { get; set; }
 
   /// <summary>
   ///   Aspect Ratio Lock
   /// </summary>
-  public Boolean? AspectRatio { get; set; }
+  public bool? AspectRatio { get; set; }
 
   /// <summary>
   ///   AutoShape Type Lock
   /// </summary>
-  public Boolean? ShapeType { get; set; }
+  public bool? ShapeType { get; set; }
 }

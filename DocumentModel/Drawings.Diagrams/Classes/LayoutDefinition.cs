@@ -9,17 +9,17 @@ public class LayoutDefinition: ModelElement
   /// <summary>
   ///   uniqueId
   /// </summary>
-  public String? UniqueId { get; set; }
+  public string? UniqueId { get; set; }
 
   /// <summary>
   ///   minVer
   /// </summary>
-  public String? MinVersion { get; set; }
+  public string? MinVersion { get; set; }
 
   /// <summary>
   ///   defStyle
   /// </summary>
-  public String? DefaultStyle { get; set; }
+  public string? DefaultStyle { get; set; }
 
   public Collection<Title>? Titles { get; set; }
 

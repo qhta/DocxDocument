@@ -9,7 +9,7 @@ public class TextFontType: ModelElement
   /// <summary>
   ///   Text Typeface
   /// </summary>
-  public String? Typeface { get; set; }
+  public string? Typeface { get; set; }
 
   /// <summary>
   ///   Panose Setting

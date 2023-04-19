@@ -24,17 +24,17 @@ public static class CommonMarkersConverter
     if (openXmlElement is DXW.BookmarkEnd bookmarkEnd)
       return DMXW.BookmarkEndConverter.CreateModelElement(bookmarkEnd);
     if (openXmlElement is DXW.CommentRangeStart commentRangeStart)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(commentRangeStart);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(commentRangeStart);
     if (openXmlElement is DXW.CommentRangeEnd commentRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(commentRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(commentRangeEnd);
     if (openXmlElement is DXW.MoveFromRangeStart moveFromRangeStart)
       return DMXW.MoveBookmarkTypeConverter.CreateModelElement(moveFromRangeStart);
     if (openXmlElement is DXW.MoveFromRangeEnd moveFromRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(moveFromRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(moveFromRangeEnd);
     if (openXmlElement is DXW.MoveToRangeStart moveToRangeStart)
       return DMXW.MoveBookmarkTypeConverter.CreateModelElement(moveToRangeStart);
     if (openXmlElement is DXW.MoveToRangeEnd moveToRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateModelElement(moveToRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateModelElement(moveToRangeEnd);
     if (openXmlElement is DXW.CustomXmlInsRangeStart customXmlInsRangeStart)
       return DMXW.TrackChangeTypeConverter.CreateModelElement(customXmlInsRangeStart);
     if (openXmlElement is DXW.CustomXmlInsRangeEnd customXmlInsRangeEnd)
@@ -89,17 +89,17 @@ public static class CommonMarkersConverter
       if (openXmlElement is DXW.BookmarkEnd bookmarkEnd && value is DMW.BookmarkEnd bookmarkEndModel)
         return DMXW.BookmarkEndConverter.CompareModelElement(bookmarkEnd, bookmarkEndModel, diffs, objName);
       if (openXmlElement is DXW.CommentRangeStart commentRangeStart && value is DMW.CommentRangeStart commentRangeStartModel)
-        return DMXW.MarkupRangeTypeConverter.CompareModelElement(commentRangeStart, commentRangeStartModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeStart, commentRangeStartModel, diffs, objName);
       if (openXmlElement is DXW.CommentRangeEnd commentRangeEnd && value is DMW.CommentRangeEnd commentRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.CompareModelElement(commentRangeEnd, commentRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeEnd, commentRangeEndModel, diffs, objName);
       if (openXmlElement is DXW.MoveFromRangeStart moveFromRangeStart && value is DMW.MoveFromRangeStart moveFromRangeStartModel)
         return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveFromRangeStart, moveFromRangeStartModel, diffs, objName);
       if (openXmlElement is DXW.MoveFromRangeEnd moveFromRangeEnd && value is DMW.MoveFromRangeEnd moveFromRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.CompareModelElement(moveFromRangeEnd, moveFromRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveFromRangeEnd, moveFromRangeEndModel, diffs, objName);
       if (openXmlElement is DXW.MoveToRangeStart moveToRangeStart && value is DMW.MoveToRangeStart moveToRangeStartModel)
         return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveToRangeStart, moveToRangeStartModel, diffs, objName);
       if (openXmlElement is DXW.MoveToRangeEnd moveToRangeEnd && value is DMW.MoveToRangeEnd moveToRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.CompareModelElement(moveToRangeEnd, moveToRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveToRangeEnd, moveToRangeEndModel, diffs, objName);
       if (openXmlElement is DXW.CustomXmlInsRangeStart customXmlInsRangeStart && value is DMW.CustomXmlInsRangeStart customXmlInsRangeStartModel)
         return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlInsRangeStart, customXmlInsRangeStartModel, diffs, objName);
       if (openXmlElement is DXW.CustomXmlInsRangeEnd customXmlInsRangeEnd && value is DMW.CustomXmlInsRangeEnd customXmlInsRangeEndModel)
@@ -156,17 +156,17 @@ public static class CommonMarkersConverter
     if (value is DMW.BookmarkEnd bookmarkEnd)
       return DMXW.BookmarkEndConverter.CreateOpenXmlElement(bookmarkEnd);
     if (value is DMW.CommentRangeStart commentRangeStart)
-      return DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement(commentRangeStart);
+      return DMXW.MarkupRangeElementConverter.CreateOpenXmlElement(commentRangeStart);
     if (value is DMW.CommentRangeEnd commentRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement(commentRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateOpenXmlElement(commentRangeEnd);
     if (value is DMW.MoveFromRangeStart moveFromRangeStart)
       return DMXW.MoveBookmarkTypeConverter.CreateOpenXmlElement(moveFromRangeStart);
     if (value is DMW.MoveFromRangeEnd moveFromRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement(moveFromRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateOpenXmlElement(moveFromRangeEnd);
     if (value is DMW.MoveToRangeStart moveToRangeStart)
       return DMXW.MoveBookmarkTypeConverter.CreateOpenXmlElement(moveToRangeStart);
     if (value is DMW.MoveToRangeEnd moveToRangeEnd)
-      return DMXW.MarkupRangeTypeConverter.CreateOpenXmlElement<DXW.MoveFromRangeEnd>(moveToRangeEnd);
+      return DMXW.MarkupRangeElementConverter.CreateOpenXmlElement<DXW.MoveFromRangeEnd>(moveToRangeEnd);
     if (value is DMW.CustomXmlInsRangeStart customXmlInsRangeStart)
       return DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CustomXmlInsRangeStart>(customXmlInsRangeStart);
     if (value is DMW.CustomXmlInsRangeEnd customXmlInsRangeEnd)
@@ -221,17 +221,17 @@ public static class CommonMarkersConverter
       if (openXmlElement is DXW.BookmarkEnd bookmarkEnd && value is DMW.BookmarkEnd bookmarkEndModel)
         return DMXW.BookmarkEndConverter.UpdateOpenXmlElement(bookmarkEnd, bookmarkEndModel);
       if (openXmlElement is DXW.CommentRangeStart commentRangeStart && value is DMW.CommentRangeStart commentRangeStartModel)
-        return DMXW.MarkupRangeTypeConverter.UpdateOpenXmlElement(commentRangeStart, commentRangeStartModel);
+        return DMXW.MarkupRangeElementConverter.UpdateOpenXmlElement(commentRangeStart, commentRangeStartModel);
       if (openXmlElement is DXW.CommentRangeEnd commentRangeEnd && value is DMW.CommentRangeEnd commentRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.UpdateOpenXmlElement(commentRangeEnd, commentRangeEndModel);
+        return DMXW.MarkupRangeElementConverter.UpdateOpenXmlElement(commentRangeEnd, commentRangeEndModel);
       if (openXmlElement is DXW.MoveFromRangeStart moveFromRangeStart && value is DMW.MoveFromRangeStart moveFromRangeStartModel)
         return DMXW.MoveBookmarkTypeConverter.UpdateOpenXmlElement(moveFromRangeStart, moveFromRangeStartModel);
       if (openXmlElement is DXW.MoveFromRangeEnd moveFromRangeEnd && value is DMW.MoveFromRangeEnd moveFromRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.UpdateOpenXmlElement(moveFromRangeEnd, moveFromRangeEndModel);
+        return DMXW.MarkupRangeElementConverter.UpdateOpenXmlElement(moveFromRangeEnd, moveFromRangeEndModel);
       if (openXmlElement is DXW.MoveToRangeStart moveToRangeStart && value is DMW.MoveToRangeStart moveToRangeStartModel)
         return DMXW.MoveBookmarkTypeConverter.UpdateOpenXmlElement(moveToRangeStart, moveToRangeStartModel);
       if (openXmlElement is DXW.MoveToRangeEnd moveToRangeEnd && value is DMW.MoveToRangeEnd moveToRangeEndModel)
-        return DMXW.MarkupRangeTypeConverter.UpdateOpenXmlElement(moveToRangeEnd, moveToRangeEndModel);
+        return DMXW.MarkupRangeElementConverter.UpdateOpenXmlElement(moveToRangeEnd, moveToRangeEndModel);
       if (openXmlElement is DXW.CustomXmlInsRangeStart customXmlInsRangeStart && value is DMW.CustomXmlInsRangeStart customXmlInsRangeStartModel)
         return DMXW.TrackChangeTypeConverter.UpdateOpenXmlElement(customXmlInsRangeStart, customXmlInsRangeStartModel);
       if (openXmlElement is DXW.CustomXmlInsRangeEnd customXmlInsRangeEnd && value is DMW.CustomXmlInsRangeEnd customXmlInsRangeEndModel)

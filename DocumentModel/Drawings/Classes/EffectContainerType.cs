@@ -14,5 +14,5 @@ public class EffectContainerType: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 }

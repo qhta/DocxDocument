@@ -9,5 +9,5 @@ public class SdtPlaceholder: ModelElement
   /// <summary>
   ///   Document Part Reference.
   /// </summary>
-  public String? DocPartReference { get; set; }
+  public string? DocPartReference { get; set; }
 }

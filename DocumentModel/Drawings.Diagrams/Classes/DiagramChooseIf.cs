@@ -9,7 +9,7 @@ public class DiagramChooseIf: ModelElement
   /// <summary>
   ///   Name
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Axis
@@ -49,7 +49,7 @@ public class DiagramChooseIf: ModelElement
   /// <summary>
   ///   Argument
   /// </summary>
-  public String? Argument { get; set; }
+  public string? Argument { get; set; }
 
   /// <summary>
   ///   Operator
@@ -59,7 +59,7 @@ public class DiagramChooseIf: ModelElement
   /// <summary>
   ///   Value
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 
   public Algorithm? Algorithm { get; set; }
 

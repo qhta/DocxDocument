@@ -1,74 +1,75 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Function Properties.
+/// <see cref="DMM.FunctionProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class FunctionPropertiesConverter
 {
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.FunctionProperties openXmlElement)
+  #region ControlProperties. conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.FunctionProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.FunctionProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.FunctionProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.FunctionProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.FunctionProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.FunctionProperties? CreateModelElement(DXMath.FunctionProperties? openXmlElement)
+  #endregion
+
+  #region FunctionProperties model conversion.
+  public static DMM.FunctionProperties? CreateModelElement(DXM.FunctionProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.FunctionProperties();
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.FunctionProperties();
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.FunctionProperties? openXmlElement, DMMath.FunctionProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.FunctionProperties? openXmlElement, DMM.FunctionProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.FunctionProperties value)
-    where OpenXmlElementType: DXMath.FunctionProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.FunctionProperties model)
+    where OpenXmlElementType: DXM.FunctionProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.FunctionProperties openXmlElement, DMMath.FunctionProperties value)
+  public static void UpdateOpenXmlElement(DXM.FunctionProperties openXmlElement, DMM.FunctionProperties model)
   {
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

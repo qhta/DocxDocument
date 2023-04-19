@@ -8,5 +8,5 @@ public class TextData: ModelElement
 {
   public OpenXmlFormulaElement? Formula { get; set; }
 
-  public String? VXsdstring { get; set; }
+  public string? VXsdstring { get; set; }
 }

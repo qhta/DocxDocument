@@ -96,8 +96,8 @@ public static class BodyConverter
     if (openXmlElement != null)
     {
       var model = new DMW.Body();
-      ElementCollectionConverter<DMW.IBodyContent>.FillModelElementCollection(openXmlElement, model, 
-        (CreateModelElementMethod)CreateBodyElement);
+      ElementCollectionConverter<DMW.IBodyContent>.FillModelElementCollection(openXmlElement, model,
+        CreateBodyElement);
       return model;
     }
     return null;
@@ -106,7 +106,7 @@ public static class BodyConverter
   public static bool CompareModelElement(DXW.Body? openXmlElement, DMW.Body? model, DiffList? diffs, string? objName)
   {
      return ElementCollectionConverter<IBodyContent>.CompareOpenXmlElementCollection
-        (openXmlElement, model, (CompareOpenXmlElementMethod)CompareBodyElement, diffs, objName);
+        (openXmlElement, model, CompareBodyElement, diffs, objName);
   }
 
   public static DXW.Body CreateOpenXmlElement(DMW.Body value)

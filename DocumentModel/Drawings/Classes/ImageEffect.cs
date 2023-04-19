@@ -9,7 +9,7 @@ public class ImageEffect: ModelElement
   /// <summary>
   ///   visible, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? Visible { get; set; }
+  public bool? Visible { get; set; }
 
   /// <summary>
   ///   ArtisticBlur.

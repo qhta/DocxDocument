@@ -24,17 +24,17 @@ public class PageSetup: ModelElement
   /// <summary>
   ///   Black and White
   /// </summary>
-  public Boolean? BlackAndWhite { get; set; }
+  public bool? BlackAndWhite { get; set; }
 
   /// <summary>
   ///   Draft
   /// </summary>
-  public Boolean? Draft { get; set; }
+  public bool? Draft { get; set; }
 
   /// <summary>
   ///   Use First Page Number
   /// </summary>
-  public Boolean? UseFirstPageNumber { get; set; }
+  public bool? UseFirstPageNumber { get; set; }
 
   /// <summary>
   ///   Horizontal DPI

@@ -1,106 +1,106 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Sub-Superscript Properties.
+/// <see cref="DMM.SubSuperscriptProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class SubSuperscriptPropertiesConverter
 {
-  /// <summary>
-  /// Align Scripts.
-  /// </summary>
-  private static DMMath.BooleanKind? GetAlignScripts(DXMath.SubSuperscriptProperties openXmlElement)
+  #region Align Scripts. conversion.
+  private static bool? GetAlignScripts(DXM.SubSuperscriptProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.AlignScripts>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.AlignScripts>()?.Val?.Value);
   }
   
-  private static bool CmpAlignScripts(DXMath.SubSuperscriptProperties openXmlElement, DMMath.BooleanKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignScripts(DXM.SubSuperscriptProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(openXmlElement.GetFirstChild<DXMath.AlignScripts>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.AlignScripts>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetAlignScripts(DXMath.SubSuperscriptProperties openXmlElement, DMMath.BooleanKind? value)
+  private static void SetAlignScripts(DXM.SubSuperscriptProperties openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.AlignScripts>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.AlignScripts>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>(itemElement, (DMMath.BooleanKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXMath.AlignScripts, DocumentFormat.OpenXml.Math.BooleanValues, DMMath.BooleanKind>((DMMath.BooleanKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.AlignScripts>((bool)value));
   }
-  
-  /// <summary>
-  /// ControlProperties.
-  /// </summary>
-  private static DMMath.ControlProperties? GetControlProperties(DXMath.SubSuperscriptProperties openXmlElement)
+  #endregion
+
+  #region ControlProperties conversion.
+  private static DMM.ControlProperties? GetControlProperties(DXM.SubSuperscriptProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.ControlProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.ControlProperties>();
     if (element != null)
-      return DMXMath.ControlPropertiesConverter.CreateModelElement(element);
+      return DMXM.ControlPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlProperties(DXMath.SubSuperscriptProperties openXmlElement, DMMath.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.SubSuperscriptProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
   }
   
-  private static void SetControlProperties(DXMath.SubSuperscriptProperties openXmlElement, DMMath.ControlProperties? value)
+  private static void SetControlProperties(DXM.SubSuperscriptProperties openXmlElement, DMM.ControlProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.ControlProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.ControlProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.ControlPropertiesConverter.CreateOpenXmlElement<DXMath.ControlProperties>(value);
+      itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.SubSuperscriptProperties? CreateModelElement(DXMath.SubSuperscriptProperties? openXmlElement)
+  #endregion
+
+  #region SubSuperscriptProperties model conversion.
+  public static DMM.SubSuperscriptProperties? CreateModelElement(DXM.SubSuperscriptProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.SubSuperscriptProperties();
-      value.AlignScripts = GetAlignScripts(openXmlElement);
-      value.ControlProperties = GetControlProperties(openXmlElement);
-      return value;
+      var model = new DMM.SubSuperscriptProperties();
+      model.AlignScripts = GetAlignScripts(openXmlElement);
+      model.ControlProperties = GetControlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.SubSuperscriptProperties? openXmlElement, DMMath.SubSuperscriptProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.SubSuperscriptProperties? openXmlElement, DMM.SubSuperscriptProperties? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAlignScripts(openXmlElement, value.AlignScripts, diffs, objName))
+      if (!CmpAlignScripts(openXmlElement, model.AlignScripts, diffs, objName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.SubSuperscriptProperties value)
-    where OpenXmlElementType: DXMath.SubSuperscriptProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.SubSuperscriptProperties model)
+    where OpenXmlElementType: DXM.SubSuperscriptProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.SubSuperscriptProperties openXmlElement, DMMath.SubSuperscriptProperties value)
+  public static void UpdateOpenXmlElement(DXM.SubSuperscriptProperties openXmlElement, DMM.SubSuperscriptProperties model)
   {
-    SetAlignScripts(openXmlElement, value?.AlignScripts);
-    SetControlProperties(openXmlElement, value?.ControlProperties);
+    SetAlignScripts(openXmlElement, model?.AlignScripts);
+    SetControlProperties(openXmlElement, model?.ControlProperties);
   }
+  #endregion
 }

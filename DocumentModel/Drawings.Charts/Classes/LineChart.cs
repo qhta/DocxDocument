@@ -14,7 +14,7 @@ public class LineChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<LineChartSeries>? LineChartSeries { get; set; }
 
@@ -26,9 +26,9 @@ public class LineChart: ModelElement
 
   public UpDownBars? UpDownBars { get; set; }
 
-  public Boolean? ShowMarker { get; set; }
+  public bool? ShowMarker { get; set; }
 
-  public Boolean? Smooth { get; set; }
+  public bool? Smooth { get; set; }
 
   public Collection<UInt32>? AxisIds { get; set; }
 

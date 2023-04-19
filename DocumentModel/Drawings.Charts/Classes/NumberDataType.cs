@@ -9,7 +9,7 @@ public class NumberDataType: ModelElement
   /// <summary>
   ///   Format Code.
   /// </summary>
-  public String? FormatCode { get; set; }
+  public string? FormatCode { get; set; }
 
   /// <summary>
   ///   Point Count.

@@ -14,12 +14,12 @@ public class Transform: ModelElement
   /// <summary>
   ///   Horizontal Flip
   /// </summary>
-  public Boolean? HorizontalFlip { get; set; }
+  public bool? HorizontalFlip { get; set; }
 
   /// <summary>
   ///   Vertical Flip
   /// </summary>
-  public Boolean? VerticalFlip { get; set; }
+  public bool? VerticalFlip { get; set; }
 
   /// <summary>
   ///   Offset.

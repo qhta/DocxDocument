@@ -1,27 +1,24 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Matrix Columns.
+/// <see cref="DMM.MatrixColumns"/> class from/to OpenXml converter.
 /// </summary>
 public static class MatrixColumnsConverter
 {
-  private static Collection<DMMath.MatrixColumn>? GetItems(DXMath.MatrixColumns openXmlElement)
+  #region ArgumentProperties conversion.
+  private static void GetItems(ICollection<DMM.MatrixColumn> collection, DXM.MatrixColumns openXmlElement)
   {
-    var collection = new Collection<DMMath.MatrixColumn>();
-    foreach (var item in openXmlElement.Elements<DXMath.MatrixColumn>())
+    foreach (var item in openXmlElement.Elements<DXM.MatrixColumn>())
     {
-      var newItem = DMXMath.MatrixColumnConverter.CreateModelElement(item);
+      var newItem = DMXM.MatrixColumnConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpItems(DXMath.MatrixColumns openXmlElement, Collection<DMMath.MatrixColumn>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXM.MatrixColumns openXmlElement, IEnumerable<DMM.MatrixColumn>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXMath.MatrixColumn>();
+    var origElements = openXmlElement.Elements<DXM.MatrixColumn>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +34,7 @@ public static class MatrixColumnsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXMath.MatrixColumnConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXM.MatrixColumnConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,55 +44,58 @@ public static class MatrixColumnsConverter
     return false;
   }
   
-  private static void SetItems(DXMath.MatrixColumns openXmlElement, Collection<DMMath.MatrixColumn>? value)
+  private static void SetItems(DXM.MatrixColumns openXmlElement, IEnumerable<DMM.MatrixColumn>? value)
   {
-    openXmlElement.RemoveAllChildren<DXMath.MatrixColumn>();
+    openXmlElement.RemoveAllChildren<DXM.MatrixColumn>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXMath.MatrixColumnConverter.CreateOpenXmlElement<DXMath.MatrixColumn>(item);
+        var newItem = DMXM.MatrixColumnConverter.CreateOpenXmlElement<DXM.MatrixColumn>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
-  
-  public static DMMath.MatrixColumns? CreateModelElement(DXMath.MatrixColumns? openXmlElement)
+  #endregion
+
+  #region MatrixColumns model conversion.
+  public static DMM.MatrixColumns? CreateModelElement(DXM.MatrixColumns? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.MatrixColumns();
-      value.Items = GetItems(openXmlElement);
-      return value;
+      var model = new DMM.MatrixColumns();
+      GetItems(model, openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.MatrixColumns? openXmlElement, DMMath.MatrixColumns? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MatrixColumns? openXmlElement, DMM.MatrixColumns? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, model, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMMath.MatrixColumns value)
-    where OpenXmlElementType: DXMath.MatrixColumns, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.MatrixColumns model)
+    where OpenXmlElementType: DXM.MatrixColumns, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXMath.MatrixColumns openXmlElement, DMMath.MatrixColumns value)
+  public static void UpdateOpenXmlElement(DXM.MatrixColumns openXmlElement, DMM.MatrixColumns model)
   {
-    SetItems(openXmlElement, value?.Items);
+    SetItems(openXmlElement, model);
   }
+  #endregion
 }

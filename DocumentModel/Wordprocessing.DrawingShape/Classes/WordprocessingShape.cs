@@ -9,7 +9,7 @@ public class WordprocessingShape: ModelElement
   /// <summary>
   ///   normalEastAsianFlow, this property is only available in Office 2010 and later.
   /// </summary>
-  public Boolean? NormalEastAsianFlow { get; set; }
+  public bool? NormalEastAsianFlow { get; set; }
 
   /// <summary>
   ///   NonVisualDrawingProperties.

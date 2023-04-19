@@ -14,5 +14,5 @@ public class ColorMostRecentlyUsed: ModelElement
   /// <summary>
   ///   Recent colors
   /// </summary>
-  public String? Colors { get; set; }
+  public string? Colors { get; set; }
 }

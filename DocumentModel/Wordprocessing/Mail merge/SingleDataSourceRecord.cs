@@ -9,7 +9,7 @@ public class SingleDataSourceRecord: ModelElement
   /// <summary>
   ///   RecordIncluded.
   /// </summary>
-  public Boolean? RecordIncluded { get; set; }
+  public bool? RecordIncluded { get; set; }
 
   /// <summary>
   ///   RecordHashCode.

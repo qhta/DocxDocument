@@ -20,7 +20,7 @@ public class SdtProperties : ModelElement, IBodyContent
   /// <summary>
   /// Specifies the friendly name associated with the current structured document tag.
   /// </summary>
-  public String? SdtAlias { get; set; }
+  public string? SdtAlias { get; set; }
 
   /// <summary>
   /// Specifies the set of behaviors that shall be applied to the contents of the parent structured document tag 
@@ -42,7 +42,7 @@ public class SdtProperties : ModelElement, IBodyContent
   /// (as opposed to regular text contents within the structured document tag). 
   /// If this element is present and set to true, this state shall be resumed (showing placeholder text) upon opening this document.
   /// </summary>
-  public Boolean? ShowingPlaceholder { get; set; }
+  public bool? ShowingPlaceholder { get; set; }
 
   /// <summary>
   /// Specifies the information that shall be used to establish a mapping between the parent structured document tag 
@@ -54,7 +54,7 @@ public class SdtProperties : ModelElement, IBodyContent
   /// Specifies whether the parent structured document tag shall be removed from the WordprocessingML document 
   /// when the its contents are modified.
   /// </summary>
-  public Boolean? TemporarySdt { get; set; }
+  public bool? TemporarySdt { get; set; }
 
   /// <summary>
   /// Specifies a programmatic tag associated with the current structured document tag. 
@@ -62,31 +62,31 @@ public class SdtProperties : ModelElement, IBodyContent
   /// in order to identify it without providing a visible friendly name. 
   /// The string representing the programmatic tag shall be stored on this element's val attribute.
   /// </summary>
-  public String? Tag { get; set; }
+  public string? Tag { get; set; }
 
   public Color? Color { get; set; }
 
   public AppearanceKind? Appearance { get; set; }
 
-  public Boolean? WebExtensionLinked { get; set; }
+  public bool? WebExtensionLinked { get; set; }
 
-  public Boolean? WebExtensionCreated { get; set; }
+  public bool? WebExtensionCreated { get; set; }
 
-  public Boolean? SdtContentEquation { get; set; }
+  public bool? SdtContentEquation { get; set; }
 
-  public Boolean? SdtContentPicture { get; set; }
+  public bool? SdtContentPicture { get; set; }
 
-  public Boolean? SdtContentRichText { get; set; }
+  public bool? SdtContentRichText { get; set; }
 
-  public Boolean? SdtContentCitation { get; set; }
+  public bool? SdtContentCitation { get; set; }
 
-  public Boolean? SdtContentGroup { get; set; }
+  public bool? SdtContentGroup { get; set; }
 
-  public Boolean? SdtContentBibliography { get; set; }
+  public bool? SdtContentBibliography { get; set; }
 
-  public Boolean? EntityPickerEmpty { get; set; }
+  public bool? EntityPickerEmpty { get; set; }
 
-  public Boolean? IsRepeatedSectionItem { get; set; }
+  public bool? IsRepeatedSectionItem { get; set; }
 
   public SdtContentText? SdtContentText { get; set; }
 

@@ -9,40 +9,40 @@ public class TextPath: ModelElement
   /// <summary>
   ///   Unique Identifier
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Shape Styling Properties
   /// </summary>
-  public String? Style { get; set; }
+  public string? Style { get; set; }
 
   /// <summary>
   ///   Text Path Toggle
   /// </summary>
-  public Boolean? On { get; set; }
+  public bool? On { get; set; }
 
   /// <summary>
   ///   Shape Fit Toggle
   /// </summary>
-  public Boolean? FitShape { get; set; }
+  public bool? FitShape { get; set; }
 
   /// <summary>
   ///   Path Fit Toggle
   /// </summary>
-  public Boolean? FitPath { get; set; }
+  public bool? FitPath { get; set; }
 
   /// <summary>
   ///   Text Path Trim Toggle
   /// </summary>
-  public Boolean? Trim { get; set; }
+  public bool? Trim { get; set; }
 
   /// <summary>
   ///   Text X-Scaling
   /// </summary>
-  public Boolean? XScale { get; set; }
+  public bool? XScale { get; set; }
 
   /// <summary>
   ///   Text Path Text
   /// </summary>
-  public String? String { get; set; }
+  public string? String { get; set; }
 }

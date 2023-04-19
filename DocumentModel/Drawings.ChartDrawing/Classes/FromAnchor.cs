@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings.ChartDrawing;
 /// </summary>
 public class FromAnchor: ModelElement
 {
-  public String? XPosition { get; set; }
+  public string? XPosition { get; set; }
 
-  public String? YPosition { get; set; }
+  public string? YPosition { get; set; }
 }

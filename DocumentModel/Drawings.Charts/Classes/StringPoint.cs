@@ -14,5 +14,5 @@ public class StringPoint: ModelElement
   /// <summary>
   ///   Text Value.
   /// </summary>
-  public String? NumericValue { get; set; }
+  public string? NumericValue { get; set; }
 }

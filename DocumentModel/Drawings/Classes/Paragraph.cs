@@ -17,7 +17,7 @@ public class Paragraph: ModelElement
 
   public Field? Field { get; set; }
 
-  public Boolean? TextMath { get; set; }
+  public bool? TextMath { get; set; }
 
   public EndParagraphRunProperties? EndParagraphRunProperties { get; set; }
 }

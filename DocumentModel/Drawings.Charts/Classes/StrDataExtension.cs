@@ -9,7 +9,7 @@ public class StrDataExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
-  public Boolean? AutoGeneneratedCategories { get; set; }
+  public bool? AutoGeneneratedCategories { get; set; }
 }

@@ -9,7 +9,7 @@ public class Ribbon: ModelElement
   /// <summary>
   ///   startFromScratch
   /// </summary>
-  public Boolean? StartFromScratch { get; set; }
+  public bool? StartFromScratch { get; set; }
 
   /// <summary>
   ///   OfficeMenu.

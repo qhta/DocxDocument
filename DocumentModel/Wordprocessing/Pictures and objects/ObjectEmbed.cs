@@ -14,20 +14,20 @@ public class ObjectEmbed: ModelElement, IEmbeddedObjectContent
   /// <summary>
   ///   id
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   progId
   /// </summary>
-  public String? ProgId { get; set; }
+  public string? ProgId { get; set; }
 
   /// <summary>
   ///   shapeId
   /// </summary>
-  public String? ShapeId { get; set; }
+  public string? ShapeId { get; set; }
 
   /// <summary>
   ///   fieldCodes
   /// </summary>
-  public String? FieldCodes { get; set; }
+  public string? FieldCodes { get; set; }
 }

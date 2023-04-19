@@ -6,7 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class Underline: ModelElement
 {
-  public Boolean? NoFill { get; set; }
+  public bool? NoFill { get; set; }
 
   public SolidFill? SolidFill { get; set; }
 
@@ -18,9 +18,9 @@ public class Underline: ModelElement
 
   public CustomDash? CustomDash { get; set; }
 
-  public Boolean? Round { get; set; }
+  public bool? Round { get; set; }
 
-  public Boolean? LineJoinBevel { get; set; }
+  public bool? LineJoinBevel { get; set; }
 
   public Miter? Miter { get; set; }
 

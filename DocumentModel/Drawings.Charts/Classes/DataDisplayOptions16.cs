@@ -9,5 +9,5 @@ public class DataDisplayOptions16: ModelElement
   /// <summary>
   ///   BooleanFalse.
   /// </summary>
-  public Boolean? BooleanFalse { get; set; }
+  public bool? BooleanFalse { get; set; }
 }

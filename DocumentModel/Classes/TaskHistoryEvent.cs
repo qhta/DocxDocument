@@ -14,7 +14,7 @@ public class TaskHistoryEvent: ModelElement
   /// <summary>
   ///   id, this property is only available in Office 2021 and later.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   AttributionTaskUser.
@@ -30,7 +30,7 @@ public class TaskHistoryEvent: ModelElement
 
   public OpenXmlTaskUserElement? UnassignTaskUser { get; set; }
 
-  public Boolean? TaskCreateEventInfo { get; set; }
+  public bool? TaskCreateEventInfo { get; set; }
 
   public TaskTitleEventInfo? TaskTitleEventInfo { get; set; }
 
@@ -40,11 +40,11 @@ public class TaskHistoryEvent: ModelElement
 
   public TaskPriorityEventInfo? TaskPriorityEventInfo { get; set; }
 
-  public Boolean? TaskDeleteEventInfo { get; set; }
+  public bool? TaskDeleteEventInfo { get; set; }
 
-  public Boolean? TaskUndeleteEventInfo { get; set; }
+  public bool? TaskUndeleteEventInfo { get; set; }
 
-  public Boolean? TaskUnassignAll { get; set; }
+  public bool? TaskUnassignAll { get; set; }
 
   public TaskUndo? TaskUndo { get; set; }
 

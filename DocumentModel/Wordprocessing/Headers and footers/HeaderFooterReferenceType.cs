@@ -14,5 +14,5 @@ public class HeaderFooterReferenceType: ModelElement, IParagraphContent, ISectio
   /// <summary>
   ///   Relationship to part where header or footer is defined.
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 }

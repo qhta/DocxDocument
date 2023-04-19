@@ -1,10 +1,9 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Matrix Row.
+///   This element specifies a single row of the matrix.
 /// </summary>
-public class MatrixRow: ModelElement
+[XmlObject]
+public class MatrixRow: ElementCollection<Argument>
 {
-  public Collection<Base>? Bases { get; set; }
 }

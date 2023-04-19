@@ -1,18 +1,18 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Accent Properties.
+///   This element specifies the properties of the Accent function. 
+///   If AccentChar is omitted, the default accent character is U+0302 (COMBINING CIRCUMFLEX ACCENT). 
 /// </summary>
 public class AccentProperties: ModelElement
 {
   /// <summary>
-  ///   Accent Character.
+  ///   Specifies visible accent character.
   /// </summary>
-  public String? AccentChar { get; set; }
+  public string? AccentChar { get; set; }
 
   /// <summary>
-  ///   Control Properties.
+  ///   Specifies formatting of accent character.
   /// </summary>
   public ControlProperties? ControlProperties { get; set; }
 }

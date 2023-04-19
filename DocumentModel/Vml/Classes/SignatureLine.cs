@@ -14,60 +14,60 @@ public class SignatureLine: ModelElement
   /// <summary>
   ///   Signature Line Flag
   /// </summary>
-  public Boolean? IsSignatureLine { get; set; }
+  public bool? IsSignatureLine { get; set; }
 
   /// <summary>
   ///   Unique ID
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   Signature Provider ID
   /// </summary>
-  public String? ProviderId { get; set; }
+  public string? ProviderId { get; set; }
 
   /// <summary>
   ///   Use Signing Instructions Flag
   /// </summary>
-  public Boolean? SigningInstructionsSet { get; set; }
+  public bool? SigningInstructionsSet { get; set; }
 
   /// <summary>
   ///   User-specified Comments Flag
   /// </summary>
-  public Boolean? AllowComments { get; set; }
+  public bool? AllowComments { get; set; }
 
   /// <summary>
   ///   Show Signed Date Flag
   /// </summary>
-  public Boolean? ShowSignDate { get; set; }
+  public bool? ShowSignDate { get; set; }
 
   /// <summary>
   ///   Suggested Signer Line 1
   /// </summary>
-  public String? SuggestedSigner { get; set; }
+  public string? SuggestedSigner { get; set; }
 
   /// <summary>
   ///   Suggested Signer Line 2
   /// </summary>
-  public String? SuggestedSigner2 { get; set; }
+  public string? SuggestedSigner2 { get; set; }
 
   /// <summary>
   ///   Suggested Signer E-mail Address
   /// </summary>
-  public String? SuggestedSignerEmail { get; set; }
+  public string? SuggestedSignerEmail { get; set; }
 
   /// <summary>
   ///   Instructions for Signing
   /// </summary>
-  public String? SigningInstructions { get; set; }
+  public string? SigningInstructions { get; set; }
 
   /// <summary>
   ///   Additional Signature Information
   /// </summary>
-  public String? AdditionalXml { get; set; }
+  public string? AdditionalXml { get; set; }
 
   /// <summary>
   ///   Signature Provider Download URL
   /// </summary>
-  public String? SignatureProviderUrl { get; set; }
+  public string? SignatureProviderUrl { get; set; }
 }

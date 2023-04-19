@@ -14,7 +14,7 @@ public class MailMerge: ModelElement
   /// <summary>
   ///   Query Contains Link to External Query File.
   /// </summary>
-  public Boolean? LinkToQuery { get; set; }
+  public bool? LinkToQuery { get; set; }
 
   /// <summary>
   ///   Data Source Type.
@@ -24,12 +24,12 @@ public class MailMerge: ModelElement
   /// <summary>
   ///   Data Source Connection String.
   /// </summary>
-  public String? ConnectString { get; set; }
+  public string? ConnectString { get; set; }
 
   /// <summary>
   ///   Query For Data Source Records To Merge.
   /// </summary>
-  public String? Query { get; set; }
+  public string? Query { get; set; }
 
   /// <summary>
   ///   Data Source File Path.
@@ -44,7 +44,7 @@ public class MailMerge: ModelElement
   /// <summary>
   ///   Remove Blank Lines from Merged Documents.
   /// </summary>
-  public Boolean? DoNotSuppressBlankLines { get; set; }
+  public bool? DoNotSuppressBlankLines { get; set; }
 
   /// <summary>
   ///   Merged Document Destination.
@@ -54,22 +54,22 @@ public class MailMerge: ModelElement
   /// <summary>
   ///   Column Containing E-mail Address.
   /// </summary>
-  public String? AddressFieldName { get; set; }
+  public string? AddressFieldName { get; set; }
 
   /// <summary>
   ///   Merged E-mail or Fax Subject Line.
   /// </summary>
-  public String? MailSubject { get; set; }
+  public string? MailSubject { get; set; }
 
   /// <summary>
   ///   Merged Document To E-Mail Attachment.
   /// </summary>
-  public Boolean? MailAsAttachment { get; set; }
+  public bool? MailAsAttachment { get; set; }
 
   /// <summary>
   ///   View Merged Data Within Document.
   /// </summary>
-  public Boolean? ViewMergedData { get; set; }
+  public bool? ViewMergedData { get; set; }
 
   /// <summary>
   ///   Record Currently Displayed In Merged Document.

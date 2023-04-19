@@ -9,7 +9,7 @@ public class ContextMenu: ModelElement
   /// <summary>
   ///   idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  public String? IdMso { get; set; }
+  public string? IdMso { get; set; }
 
   public ControlCloneRegular? ControlCloneRegular { get; set; }
 

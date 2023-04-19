@@ -9,17 +9,17 @@ public class BubbleChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<BubbleChartSeries>? BubbleChartSeries { get; set; }
 
   public DataLabels? DataLabels { get; set; }
 
-  public Boolean? Bubble3D { get; set; }
+  public bool? Bubble3D { get; set; }
 
   public UInt32? BubbleScale { get; set; }
 
-  public Boolean? ShowNegativeBubbles { get; set; }
+  public bool? ShowNegativeBubbles { get; set; }
 
   public SizeRepresentsKind? SizeRepresents { get; set; }
 

@@ -1,18 +1,18 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Border-Box Function.
+///   This element specifies the border-box object, consisting of a border drawn around an instance of mathematical text 
+///   (such as a formula or equation). If borderBoxPr is omitted then the default behavior of borderBox is a rectangular border 
 /// </summary>
 public class BorderBox: ModelElement, ICommonMathContent
 {
   /// <summary>
-  ///   Border Box Properties.
+  ///   Specifies properties of border-box object.
   /// </summary>
   public BorderBoxProperties? BorderBoxProperties { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Specifies argument of border-box object.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Argument { get; set; }
 }

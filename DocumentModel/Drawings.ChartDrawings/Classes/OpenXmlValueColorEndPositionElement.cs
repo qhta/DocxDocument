@@ -9,7 +9,7 @@ public class OpenXmlValueColorEndPositionElement: ModelElement
   /// <summary>
   ///   ExtremeValueColorPosition.
   /// </summary>
-  public Boolean? ExtremeValueColorPosition { get; set; }
+  public bool? ExtremeValueColorPosition { get; set; }
 
   /// <summary>
   ///   NumberColorPosition.

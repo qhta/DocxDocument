@@ -9,10 +9,10 @@ public class SketchOptions: ModelElement
   /// <summary>
   ///   InSketchMode.
   /// </summary>
-  public Boolean? InSketchMode { get; set; }
+  public bool? InSketchMode { get; set; }
 
   /// <summary>
   ///   ShowSketchButton.
   /// </summary>
-  public Boolean? ShowSketchButton { get; set; }
+  public bool? ShowSketchButton { get; set; }
 }

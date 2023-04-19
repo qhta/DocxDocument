@@ -14,20 +14,20 @@ public class Binning: ModelElement
   /// <summary>
   ///   underflow, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Underflow { get; set; }
+  public string? Underflow { get; set; }
 
   /// <summary>
   ///   overflow, this property is only available in Office 2016 and later.
   /// </summary>
-  public String? Overflow { get; set; }
+  public string? Overflow { get; set; }
 
   /// <summary>
   ///   Xsddouble.
   /// </summary>
-  public String? Xsddouble { get; set; }
+  public string? Xsddouble { get; set; }
 
   /// <summary>
   ///   BinCountXsdunsignedInt.
   /// </summary>
-  public String? BinCountXsdunsignedInt { get; set; }
+  public string? BinCountXsdunsignedInt { get; set; }
 }

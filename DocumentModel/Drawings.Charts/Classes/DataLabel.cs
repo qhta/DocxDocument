@@ -11,7 +11,7 @@ public class DataLabel: ModelElement
   /// </summary>
   public UInt32? Index { get; set; }
 
-  public Boolean? Delete { get; set; }
+  public bool? Delete { get; set; }
 
   public Layout? Layout { get; set; }
 
@@ -25,19 +25,19 @@ public class DataLabel: ModelElement
 
   public DataLabelPositionKind? DataLabelPosition { get; set; }
 
-  public Boolean? ShowLegendKey { get; set; }
+  public bool? ShowLegendKey { get; set; }
 
-  public Boolean? ShowValue { get; set; }
+  public bool? ShowValue { get; set; }
 
-  public Boolean? ShowCategoryName { get; set; }
+  public bool? ShowCategoryName { get; set; }
 
-  public Boolean? ShowSeriesName { get; set; }
+  public bool? ShowSeriesName { get; set; }
 
-  public Boolean? ShowPercent { get; set; }
+  public bool? ShowPercent { get; set; }
 
-  public Boolean? ShowBubbleSize { get; set; }
+  public bool? ShowBubbleSize { get; set; }
 
-  public String? Separator { get; set; }
+  public string? Separator { get; set; }
 
   public DLblExtensionList? DLblExtensionList { get; set; }
 }

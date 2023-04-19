@@ -13,7 +13,7 @@ public class WordCommentsExtensiblePart: ModelElement
   /// </summary>
   public CommentsExtensible? CommentsExtensible { get; set; }
 
-  public String? ContentType { get; set; }
+  public string? ContentType { get; set; }
 
-  public String? RelationshipType { get; set; }
+  public string? RelationshipType { get; set; }
 }

@@ -11,8 +11,10 @@ namespace DocumentModel.OpenXml.Packaging;
 public static class OpenXmlPackageConverter
 {
   /// <summary>
-  ///   Gets a value indicating whether this package contains Transitional relationships converted from Strict.
+  /// Gets a value indicating whether this package contains Transitional relationships converted from Strict.
   /// </summary>
+  /// <param name="openXmlElement"></param>
+  /// <returns></returns>
   public static Boolean? GetStrictRelationshipFound(OpenXmlPackage? openXmlElement)
   {
     return openXmlElement?.StrictRelationshipFound;

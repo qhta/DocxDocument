@@ -13,7 +13,7 @@ public class AltChunk: ModelElement, IBodyContent, ITableCellContent, ICommentCo
   /// <summary>
   ///   Relationship to Part
   /// </summary>
-  public String? Id { get; set; }
+  public string? Id { get; set; }
 
   /// <summary>
   ///   External Content Import Properties.

@@ -9,7 +9,7 @@ public class ColorChange: ModelElement
   /// <summary>
   ///   Consider Alpha Values
   /// </summary>
-  public Boolean? UseAlpha { get; set; }
+  public bool? UseAlpha { get; set; }
 
   /// <summary>
   ///   Change Color From.

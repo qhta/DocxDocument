@@ -9,22 +9,22 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Name of Document Template.
   /// </summary>
-  public String? Template { get; set; }
+  public string? Template { get; set; }
 
   /// <summary>
   ///   Name of Manager.
   /// </summary>
-  public String? Manager { get; set; }
+  public string? Manager { get; set; }
 
   /// <summary>
   ///   Name of Company.
   /// </summary>
-  public String? Company { get; set; }
+  public string? Company { get; set; }
 
   /// <summary>
   ///   Intended Format of Presentation.
   /// </summary>
-  public String? PresentationFormat { get; set; }
+  public string? PresentationFormat { get; set; }
 
   /// <summary>
   ///   Thumbnail Display Mode.
@@ -54,7 +54,7 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Relative Hyperlink Base.
   /// </summary>
-  public String? HyperlinkBase { get; set; }
+  public string? HyperlinkBase { get; set; }
 
   /// <summary>
   ///   Hyperlink List.
@@ -79,11 +79,11 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   Application Name.
   /// </summary>
-  public String? Application { get; set; }
+  public string? Application { get; set; }
 
   /// <summary>
   ///   Application Version.
   /// </summary>
-  public String? ApplicationVersion { get; set; }
+  public string? ApplicationVersion { get; set; }
 
 }

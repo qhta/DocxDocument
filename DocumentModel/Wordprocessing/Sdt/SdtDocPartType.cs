@@ -9,15 +9,15 @@ public class SdtDocPartType: ModelElement
   /// <summary>
   ///   Document Part Gallery Filter.
   /// </summary>
-  public String? DocPartGallery { get; set; }
+  public string? DocPartGallery { get; set; }
 
   /// <summary>
   ///   Document Part Category Filter.
   /// </summary>
-  public String? DocPartCategory { get; set; }
+  public string? DocPartCategory { get; set; }
 
   /// <summary>
   ///   Built-In Document Part.
   /// </summary>
-  public Boolean? DocPartUnique { get; set; }
+  public bool? DocPartUnique { get; set; }
 }

@@ -9,7 +9,7 @@ public class CategoryFilterException: ModelElement
   /// <summary>
   ///   SequenceOfReferences.
   /// </summary>
-  public String? SequenceOfReferences { get; set; }
+  public string? SequenceOfReferences { get; set; }
 
   /// <summary>
   ///   ShapeProperties.
@@ -24,12 +24,12 @@ public class CategoryFilterException: ModelElement
   /// <summary>
   ///   InvertIfNegativeBoolean.
   /// </summary>
-  public Boolean? InvertIfNegativeBoolean { get; set; }
+  public bool? InvertIfNegativeBoolean { get; set; }
 
   /// <summary>
   ///   Bubble3D.
   /// </summary>
-  public Boolean? Bubble3D { get; set; }
+  public bool? Bubble3D { get; set; }
 
   /// <summary>
   ///   Marker.

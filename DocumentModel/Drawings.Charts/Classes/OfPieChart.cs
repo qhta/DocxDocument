@@ -14,7 +14,7 @@ public class OfPieChart: ModelElement
   /// <summary>
   ///   VaryColors.
   /// </summary>
-  public Boolean? VaryColors { get; set; }
+  public bool? VaryColors { get; set; }
 
   public Collection<PieChartSeries>? PieChartSeries { get; set; }
 

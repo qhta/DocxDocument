@@ -26,7 +26,7 @@ public class TextOutlineEffect: ModelElement
   /// </summary>
   public PenAlignmentKind? Alignment { get; set; }
 
-  public Boolean? NoFillEmpty { get; set; }
+  public bool? NoFillEmpty { get; set; }
 
   public SolidColorFillProperties? SolidColorFillProperties { get; set; }
 
@@ -34,9 +34,9 @@ public class TextOutlineEffect: ModelElement
 
   public PresetLineDashKind? PresetLineDashProperties { get; set; }
 
-  public Boolean? RoundEmpty { get; set; }
+  public bool? RoundEmpty { get; set; }
 
-  public Boolean? BevelEmpty { get; set; }
+  public bool? BevelEmpty { get; set; }
 
   public LineJoinMiterProperties? LineJoinMiterProperties { get; set; }
 }

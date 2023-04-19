@@ -37,22 +37,22 @@ public static class BaseRunPropertiesConverter
   #endregion
 
   #region Bold & BoldComplexScript child elements conversion.
-  public static DualBoolean? GetBold(DX.OpenXmlCompositeElement openXmlElement)
+  public static DualBool? GetBold(DX.OpenXmlCompositeElement openXmlElement)
   {
     var val = BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Bold>());
     var valCS = BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>());
     if (val != null || valCS != null)
-      return new DualBoolean(val, valCS);
+      return new DualBool(val, valCS);
     return null;
   }
 
-  public static bool CmpBold(DX.OpenXmlCompositeElement openXmlElement, DualBoolean? value, DiffList? diffs, string? objName)
+  public static bool CmpBold(DX.OpenXmlCompositeElement openXmlElement, DualBool? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Bold>(), value?.Val, diffs, objName, "Type")
         && BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BoldComplexScript>(), value?.ValCS, diffs, objName, "ComplexScript");
   }
 
-  public static void SetBold(DX.OpenXmlCompositeElement openXmlElement, DualBoolean? value)
+  public static void SetBold(DX.OpenXmlCompositeElement openXmlElement, DualBool? value)
   {
     BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value?.Val);
     BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value?.ValCS);
@@ -60,22 +60,22 @@ public static class BaseRunPropertiesConverter
   #endregion
 
   #region Italic & ItalicComplexScript child elements conversion.
-  public static DualBoolean? GetItalic(DX.OpenXmlCompositeElement openXmlElement)
+  public static DualBool? GetItalic(DX.OpenXmlCompositeElement openXmlElement)
   {
     var val = BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.Italic>());
     var valCS = BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>());
     if (val != null || valCS != null)
-      return new DualBoolean(val, valCS);
+      return new DualBool(val, valCS);
     return null;
   }
 
-  public static bool CmpItalic(DX.OpenXmlCompositeElement openXmlElement, DualBoolean? value, DiffList? diffs, string? objName)
+  public static bool CmpItalic(DX.OpenXmlCompositeElement openXmlElement, DualBool? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Italic>(), value?.Val, diffs, objName, "Type")
         && BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ItalicComplexScript>(), value?.ValCS, diffs, objName, "ComplexScript");
   }
 
-  public static void SetItalic(DX.OpenXmlCompositeElement openXmlElement, DualBoolean? value)
+  public static void SetItalic(DX.OpenXmlCompositeElement openXmlElement, DualBool? value)
   {
     BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value?.Val);
     BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value?.ValCS);

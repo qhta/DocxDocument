@@ -9,25 +9,25 @@ public class SeriesElementVisibilities: ModelElement
   /// <summary>
   ///   connectorLines, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? ConnectorLines { get; set; }
+  public bool? ConnectorLines { get; set; }
 
   /// <summary>
   ///   meanLine, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? MeanLine { get; set; }
+  public bool? MeanLine { get; set; }
 
   /// <summary>
   ///   meanMarker, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? MeanMarker { get; set; }
+  public bool? MeanMarker { get; set; }
 
   /// <summary>
   ///   nonoutliers, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Nonoutliers { get; set; }
+  public bool? Nonoutliers { get; set; }
 
   /// <summary>
   ///   outliers, this property is only available in Office 2016 and later.
   /// </summary>
-  public Boolean? Outliers { get; set; }
+  public bool? Outliers { get; set; }
 }

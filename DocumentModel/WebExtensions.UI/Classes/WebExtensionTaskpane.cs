@@ -9,12 +9,12 @@ public class WebExtensionTaskpane: ModelElement
   /// <summary>
   ///   dockstate, this property is only available in Office 2013 and later.
   /// </summary>
-  public String? DockState { get; set; }
+  public string? DockState { get; set; }
 
   /// <summary>
   ///   visibility, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? Visibility { get; set; }
+  public bool? Visibility { get; set; }
 
   /// <summary>
   ///   width, this property is only available in Office 2013 and later.
@@ -29,7 +29,7 @@ public class WebExtensionTaskpane: ModelElement
   /// <summary>
   ///   locked, this property is only available in Office 2013 and later.
   /// </summary>
-  public Boolean? Locked { get; set; }
+  public bool? Locked { get; set; }
 
   /// <summary>
   ///   WebExtensionPartReference.

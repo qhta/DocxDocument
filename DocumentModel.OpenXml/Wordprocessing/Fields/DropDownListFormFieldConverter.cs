@@ -48,7 +48,7 @@ public static class DropDownListFormFieldConverter
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
-        collection.Add((string)newItem);
+        collection.Add(newItem);
     }
     if (collection.Count>0)
       return collection;

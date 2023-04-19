@@ -9,10 +9,10 @@ public class AutoCaption: ModelElement
   /// <summary>
   ///   Identifier of Object to be Automatically Captioned
   /// </summary>
-  public String? Name { get; set; }
+  public string? Name { get; set; }
 
   /// <summary>
   ///   Caption Used for Automatic Captioning
   /// </summary>
-  public String? Caption { get; set; }
+  public string? Caption { get; set; }
 }

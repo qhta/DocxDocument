@@ -1,7 +1,7 @@
 ﻿namespace DocumentModel;
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
-internal class DualBooleanTypeConverter : TypeConverter
+internal class DualBoolTypeConverter : TypeConverter
 {
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
@@ -20,13 +20,13 @@ internal class DualBooleanTypeConverter : TypeConverter
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
   {
     if (value is string str)
-      return new DualBoolean(str);
+      return new DualBool(str);
     return base.ConvertFrom(context, culture, value);
   }
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is DualBoolean val)
+    if (value is DualBool val)
       return val.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
   }

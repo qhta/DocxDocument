@@ -1,8 +1,7 @@
 namespace DocumentModel.Math;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Radical Function.
+///   This element specifies the radical object, consisting of a radical, a base e and an optional degree deg.
 /// </summary>
 public class Radical: ModelElement, ICommonMathContent
 {
@@ -17,7 +16,7 @@ public class Radical: ModelElement, ICommonMathContent
   public Degree? Degree { get; set; }
 
   /// <summary>
-  ///   Base.
+  ///   Base argument.
   /// </summary>
-  public Base? Base { get; set; }
+  public Argument? Base { get; set; }
 }

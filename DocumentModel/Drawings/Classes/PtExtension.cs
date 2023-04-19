@@ -11,7 +11,7 @@ public class PtExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public NonVisualDrawingProperties? NonVisualDrawingProperties { get; set; }
 }

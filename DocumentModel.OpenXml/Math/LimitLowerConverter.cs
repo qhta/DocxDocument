@@ -1,140 +1,139 @@
 namespace DocumentModel.OpenXml.Math;
 
 /// <summary>
-/// Lower-Limit Function.
+/// <see cref="DMM.LimitLower"/> class from/to OpenXml converter.
 /// </summary>
 public static class LimitLowerConverter
 {
-  /// <summary>
-  /// Lower Limit Properties.
-  /// </summary>
-  private static DMMath.LimitLowerProperties? GetLimitLowerProperties(DXMath.LimitLower openXmlElement)
+  #region Lower Limit Properties conversion.
+  private static DMM.LimitLowerProperties? GetLimitLowerProperties(DXM.LimitLower openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.LimitLowerProperties>();
+    var element = openXmlElement?.GetFirstChild<DXM.LimitLowerProperties>();
     if (element != null)
-      return DMXMath.LimitLowerPropertiesConverter.CreateModelElement(element);
+      return DMXM.LimitLowerPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLimitLowerProperties(DXMath.LimitLower openXmlElement, DMMath.LimitLowerProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLimitLowerProperties(DXM.LimitLower openXmlElement, DMM.LimitLowerProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitLowerPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.LimitLowerProperties>(), value, diffs, objName);
+    return DMXM.LimitLowerPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.LimitLowerProperties>(), value, diffs, objName);
   }
   
-  private static void SetLimitLowerProperties(DXMath.LimitLower openXmlElement, DMMath.LimitLowerProperties? value)
+  private static void SetLimitLowerProperties(DXM.LimitLower openXmlElement, DMM.LimitLowerProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.LimitLowerProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.LimitLowerProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.LimitLowerPropertiesConverter.CreateOpenXmlElement<DXMath.LimitLowerProperties>(value);
+      itemElement = DMXM.LimitLowerPropertiesConverter.CreateOpenXmlElement<DXM.LimitLowerProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Base.
-  /// </summary>
-  private static DMMath.Base? GetBase(DXMath.LimitLower openXmlElement)
+  #endregion
+
+  #region Base conversion.
+  private static DMM.Argument? GetArgument(DXM.LimitLower openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Base>();
+    var element = openXmlElement?.GetFirstChild<DXM.Base>();
     if (element != null)
-      return DMXMath.BaseConverter.CreateModelElement(element);
+      return DMXM.ArgumentConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBase(DXMath.LimitLower openXmlElement, DMMath.Base? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.LimitLower openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.BaseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
   }
   
-  private static void SetBase(DXMath.LimitLower openXmlElement, DMMath.Base? value)
+  private static void SetArgument(DXM.LimitLower openXmlElement, DMM.Argument? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Base>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Base>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.BaseConverter.CreateOpenXmlElement<DXMath.Base>(value);
+      itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Limit (Lower).
-  /// </summary>
-  private static DMMath.Limit? GetLimit(DXMath.LimitLower openXmlElement)
+  #endregion
+
+  #region Limit (Lower) conversion.
+  private static DMM.Limit? GetLimit(DXM.LimitLower openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXMath.Limit>();
+    var element = openXmlElement?.GetFirstChild<DXM.Limit>();
     if (element != null)
-      return DMXMath.LimitConverter.CreateModelElement(element);
+      return DMXM.LimitConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLimit(DXMath.LimitLower openXmlElement, DMMath.Limit? value, DiffList? diffs, string? objName)
+  private static bool CmpLimit(DXM.LimitLower openXmlElement, DMM.Limit? value, DiffList? diffs, string? objName)
   {
-    return DMXMath.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXMath.Limit>(), value, diffs, objName);
+    return DMXM.LimitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Limit>(), value, diffs, objName);
   }
   
-  private static void SetLimit(DXMath.LimitLower openXmlElement, DMMath.Limit? value)
+  private static void SetLimit(DXM.LimitLower openXmlElement, DMM.Limit? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXMath.Limit>();
+    var itemElement = openXmlElement.GetFirstChild<DXM.Limit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXMath.LimitConverter.CreateOpenXmlElement<DXMath.Limit>(value);
+      itemElement = DMXM.LimitConverter.CreateOpenXmlElement<DXM.Limit>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMMath.LimitLower? CreateModelElement(DXMath.LimitLower? openXmlElement)
+  #endregion
+
+  #region LimitLower model conversion.
+  public static DMM.LimitLower? CreateModelElement(DXM.LimitLower? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMMath.LimitLower();
-      value.LimitLowerProperties = GetLimitLowerProperties(openXmlElement);
-      value.Base = GetBase(openXmlElement);
-      value.Limit = GetLimit(openXmlElement);
-      return value;
+      var model = new DMM.LimitLower();
+      model.LimitLowerProperties = GetLimitLowerProperties(openXmlElement);
+      model.Argument = GetArgument(openXmlElement);
+      model.Limit = GetLimit(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXMath.LimitLower? openXmlElement, DMMath.LimitLower? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.LimitLower? openXmlElement, DMM.LimitLower? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLimitLowerProperties(openXmlElement, value.LimitLowerProperties, diffs, objName))
+      if (!CmpLimitLowerProperties(openXmlElement, model.LimitLowerProperties, diffs, objName))
         ok = false;
-      if (!CmpBase(openXmlElement, value.Base, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
         ok = false;
-      if (!CmpLimit(openXmlElement, value.Limit, diffs, objName))
+      if (!CmpLimit(openXmlElement, model.Limit, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXMath.LimitLower CreateOpenXmlElement(DMMath.LimitLower value)
+  public static DXM.LimitLower CreateOpenXmlElement(DMM.LimitLower model)
   {
-    var openXmlElement = new DXMath.LimitLower();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXM.LimitLower();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXMath.LimitLower openXmlElement, DMMath.LimitLower value)
+  public static bool UpdateOpenXmlElement(DXM.LimitLower openXmlElement, DMM.LimitLower model)
   {
-    SetLimitLowerProperties(openXmlElement, value?.LimitLowerProperties);
-    SetBase(openXmlElement, value?.Base);
-    SetLimit(openXmlElement, value?.Limit);
+    SetLimitLowerProperties(openXmlElement, model?.LimitLowerProperties);
+    SetArgument(openXmlElement, model?.Argument);
+    SetLimit(openXmlElement, model?.Limit);
     return true;
   }
+  #endregion
 }

@@ -9,7 +9,7 @@ public class NonVisualGroupDrawingShapePropsExtension: ModelElement
   /// <summary>
   ///   URI
   /// </summary>
-  public String? Uri { get; set; }
+  public string? Uri { get; set; }
 
   public NonVisualGroupProperties? NonVisualGroupProperties { get; set; }
 }

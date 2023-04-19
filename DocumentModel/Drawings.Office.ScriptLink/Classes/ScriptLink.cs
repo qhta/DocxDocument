@@ -9,7 +9,7 @@ public class ScriptLink: ModelElement
   /// <summary>
   ///   val, this property is only available in Microsoft365 and later.
   /// </summary>
-  public String? Val { get; set; }
+  public string? Val { get; set; }
 
   /// <summary>
   ///   OfficeArtExtensionList.
