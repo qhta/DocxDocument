@@ -4,14 +4,24 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial class Styles //: ICollection<Style>, IDictionary<string, Style>
+public partial class Styles: ModelElement
 {
+  /// <summary>
+  /// Defines Styles.
+  /// </summary>
+  public DefinedStyles DefinedStyles { get; set; } = new DefinedStyles();
+
   [XmlIgnore]
   public IDictionary<string, Style> StyleIndex => DefinedStyles.StyleIndex;
+  [XmlIgnore]
   public IEnumerable<Style> AllStyles => DefinedStyles;
+  [XmlIgnore]
   public IEnumerable<Style> ParagraphStyles => DefinedStyles.Where(item => item.Type==StyleKind.Paragraph);
+  [XmlIgnore]
   public IEnumerable<Style> CharacterStyles => DefinedStyles.Where(item => item.Type==StyleKind.Character);
+  [XmlIgnore]
   public IEnumerable<Style> TableStyles => DefinedStyles.Where(item => item.Type==StyleKind.Table);
+  [XmlIgnore]
   public IEnumerable<Style> NumberingStyles => DefinedStyles.Where(item => item.Type==StyleKind.Numbering);
 
 
