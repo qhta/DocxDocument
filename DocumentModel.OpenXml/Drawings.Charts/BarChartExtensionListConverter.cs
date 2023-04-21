@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BarChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.BarChartExtension>? GetBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement)
+  private static Collection<DMDC.BarChartExtension>? GetBarChartExtensions(DXDC.BarChartExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.BarChartExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.BarChartExtension>())
+    var collection = new Collection<DMDC.BarChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.BarChartExtension>())
     {
-      var newItem = DMXDrawsCharts.BarChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.BarChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class BarChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement, Collection<DMDrawsCharts.BarChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpBarChartExtensions(DXDC.BarChartExtensionList openXmlElement, Collection<DMDC.BarChartExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.BarChartExtension>();
+    var origElements = openXmlElement.Elements<DXDC.BarChartExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class BarChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.BarChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.BarChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class BarChartExtensionListConverter
     return false;
   }
   
-  private static void SetBarChartExtensions(DXDrawCharts.BarChartExtensionList openXmlElement, Collection<DMDrawsCharts.BarChartExtension>? value)
+  private static void SetBarChartExtensions(DXDC.BarChartExtensionList openXmlElement, Collection<DMDC.BarChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.BarChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.BarChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.BarChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.BarChartExtension>(item);
+        var newItem = DMXDC.BarChartExtensionConverter.CreateOpenXmlElement<DXDC.BarChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarChartExtensionList? CreateModelElement(DXDrawCharts.BarChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BarChartExtensionList? CreateModelElement(DXDC.BarChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class BarChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BarChartExtensionList? openXmlElement, DMDrawsCharts.BarChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BarChartExtensionList? openXmlElement, DMDC.BarChartExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class BarChartExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarChartExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.BarChartExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BarChartExtensionList value)
+    where OpenXmlElementType: DXDC.BarChartExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BarChartExtensionList openXmlElement, DMDrawsCharts.BarChartExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.BarChartExtensionList openXmlElement, DMDC.BarChartExtensionList value)
   {
     SetBarChartExtensions(openXmlElement, value?.BarChartExtensions);
   }

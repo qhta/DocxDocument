@@ -8,19 +8,19 @@ public static class DashStopConverter
   /// <summary>
   /// Dash Length
   /// </summary>
-  private static Int32? GetDashLength(DXDraw.DashStop openXmlElement)
+  private static Int32? GetDashLength(DXD.DashStop openXmlElement)
   {
     return openXmlElement?.DashLength?.Value;
   }
   
-  private static bool CmpDashLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDashLength(DXD.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DashLength?.Value == value) return true;
     diffs?.Add(objName, "DashLength", openXmlElement?.DashLength?.Value, value);
     return false;
   }
   
-  private static void SetDashLength(DXDraw.DashStop openXmlElement, Int32? value)
+  private static void SetDashLength(DXD.DashStop openXmlElement, Int32? value)
   {
     openXmlElement.DashLength = value;
   }
@@ -28,24 +28,24 @@ public static class DashStopConverter
   /// <summary>
   /// Space Length
   /// </summary>
-  private static Int32? GetSpaceLength(DXDraw.DashStop openXmlElement)
+  private static Int32? GetSpaceLength(DXD.DashStop openXmlElement)
   {
     return openXmlElement?.SpaceLength?.Value;
   }
   
-  private static bool CmpSpaceLength(DXDraw.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpaceLength(DXD.DashStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SpaceLength?.Value == value) return true;
     diffs?.Add(objName, "SpaceLength", openXmlElement?.SpaceLength?.Value, value);
     return false;
   }
   
-  private static void SetSpaceLength(DXDraw.DashStop openXmlElement, Int32? value)
+  private static void SetSpaceLength(DXD.DashStop openXmlElement, Int32? value)
   {
     openXmlElement.SpaceLength = value;
   }
   
-  public static DocumentModel.Drawings.DashStop? CreateModelElement(DXDraw.DashStop? openXmlElement)
+  public static DocumentModel.Drawings.DashStop? CreateModelElement(DXD.DashStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class DashStopConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.DashStop? openXmlElement, DMDraws.DashStop? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.DashStop? openXmlElement, DMD.DashStop? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class DashStopConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DashStop value)
-    where OpenXmlElementType: DXDraw.DashStop, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.DashStop value)
+    where OpenXmlElementType: DXD.DashStop, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.DashStop openXmlElement, DMDraws.DashStop value)
+  public static void UpdateOpenXmlElement(DXD.DashStop openXmlElement, DMD.DashStop value)
   {
     SetDashLength(openXmlElement, value?.DashLength);
     SetSpaceLength(openXmlElement, value?.SpaceLength);

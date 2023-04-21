@@ -8,22 +8,22 @@ public static class CreationIdConverter
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetId(DXO2016Draw.CreationId openXmlElement)
+  private static String? GetId(DXO16D.CreationId openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2016Draw.CreationId openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO16D.CreationId openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2016Draw.CreationId openXmlElement, String? value)
+  private static void SetId(DXO16D.CreationId openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.CreationId? CreateModelElement(DXO2016Draw.CreationId? openXmlElement)
+  public static DocumentModel.Drawings.CreationId? CreateModelElement(DXO16D.CreationId? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class CreationIdConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016Draw.CreationId? openXmlElement, DMDraws.CreationId? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16D.CreationId? openXmlElement, DMD.CreationId? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class CreationIdConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CreationId value)
-    where OpenXmlElementType: DXO2016Draw.CreationId, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CreationId value)
+    where OpenXmlElementType: DXO16D.CreationId, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016Draw.CreationId openXmlElement, DMDraws.CreationId value)
+  public static void UpdateOpenXmlElement(DXO16D.CreationId openXmlElement, DMD.CreationId value)
   {
     SetId(openXmlElement, value?.Id);
   }

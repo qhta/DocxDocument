@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class CommandsConverter
 {
-  private static Collection<DM.Command>? GetItems(DXO2010CustUI.Commands openXmlElement)
+  private static Collection<DM.Command>? GetItems(DXO10CUI.Commands openXmlElement)
   {
     var collection = new Collection<DM.Command>();
-    foreach (var item in openXmlElement.Elements<DXO2010CustUI.Command>())
+    foreach (var item in openXmlElement.Elements<DXO10CUI.Command>())
     {
       var newItem = DMX.CommandConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class CommandsConverter
     return null;
   }
   
-  private static bool CmpItems(DXO2010CustUI.Commands openXmlElement, Collection<DM.Command>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO10CUI.Commands openXmlElement, Collection<DM.Command>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010CustUI.Command>();
+    var origElements = openXmlElement.Elements<DXO10CUI.Command>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class CommandsConverter
     return false;
   }
   
-  private static void SetItems(DXO2010CustUI.Commands openXmlElement, Collection<DM.Command>? value)
+  private static void SetItems(DXO10CUI.Commands openXmlElement, Collection<DM.Command>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010CustUI.Command>();
+    openXmlElement.RemoveAllChildren<DXO10CUI.Command>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.CommandConverter.CreateOpenXmlElement<DXO2010CustUI.Command>(item);
+        var newItem = DMX.CommandConverter.CreateOpenXmlElement<DXO10CUI.Command>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Commands? CreateModelElement(DXO2010CustUI.Commands? openXmlElement)
+  public static DocumentModel.Commands? CreateModelElement(DXO10CUI.Commands? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CommandsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.Commands? openXmlElement, DM.Commands? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Commands? openXmlElement, DM.Commands? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class CommandsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Commands value)
-    where OpenXmlElementType: DXO2010CustUI.Commands, new()
+    where OpenXmlElementType: DXO10CUI.Commands, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.Commands openXmlElement, DM.Commands value)
+  public static void UpdateOpenXmlElement(DXO10CUI.Commands openXmlElement, DM.Commands value)
   {
     SetItems(openXmlElement, value?.Items);
   }

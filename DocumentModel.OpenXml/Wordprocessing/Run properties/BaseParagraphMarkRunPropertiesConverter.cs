@@ -120,7 +120,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   #region Conflict Insertion conversion.
   private static DMW.TrackChangeType2? GetConflictInsertion(DX.OpenXmlCompositeElement openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.ConflictInsertion>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.ConflictInsertion>();
     if (element != null)
       return DMXW.TrackChangeType2Converter.CreateModelElement(element);
     return null;
@@ -128,17 +128,17 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   
   private static bool CmpConflictInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictInsertion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>(), value, diffs, objName);
   }
   
   private static void SetConflictInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.ConflictInsertion>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.ConflictInsertion>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.ConflictInsertion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -148,7 +148,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   #region Conflict Deletion conversion.
   private static DMW.TrackChangeType2? GetConflictDeletion(DX.OpenXmlCompositeElement openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.ConflictDeletion>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.ConflictDeletion>();
     if (element != null)
       return DMXW.TrackChangeType2Converter.CreateModelElement(element);
     return null;
@@ -156,17 +156,17 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   
   private static bool CmpConflictDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.ConflictDeletion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>(), value, diffs, objName);
   }
   
   private static void SetConflictDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.ConflictDeletion>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.ConflictDeletion>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.ConflictDeletion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

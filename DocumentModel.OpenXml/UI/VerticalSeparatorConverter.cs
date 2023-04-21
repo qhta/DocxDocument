@@ -8,17 +8,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetId(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetId(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetIdQ(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.VerticalSeparator openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.VerticalSeparator openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.VerticalSeparator openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.VerticalSeparator openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.VerticalSeparator openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.VerticalSeparator openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -67,17 +67,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetGetVisible(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -85,17 +85,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -103,17 +103,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -139,22 +139,22 @@ public static class VerticalSeparatorConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.VerticalSeparator openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.VerticalSeparator openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.VerticalSeparator openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.VerticalSeparator openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.VerticalSeparator openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.UI.VerticalSeparator? CreateModelElement(DXOCustUI.VerticalSeparator? openXmlElement)
+  public static DocumentModel.UI.VerticalSeparator? CreateModelElement(DXOCUI.VerticalSeparator? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -172,7 +172,7 @@ public static class VerticalSeparatorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.VerticalSeparator? openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.VerticalSeparator? openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -201,14 +201,14 @@ public static class VerticalSeparatorConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.VerticalSeparator value)
-    where OpenXmlElementType: DXOCustUI.VerticalSeparator, new()
+    where OpenXmlElementType: DXOCUI.VerticalSeparator, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.VerticalSeparator openXmlElement, DMUI.VerticalSeparator value)
+  public static void UpdateOpenXmlElement(DXOCUI.VerticalSeparator openXmlElement, DMUI.VerticalSeparator value)
   {
     SetId(openXmlElement, value?.Id);
     SetIdQ(openXmlElement, value?.IdQ);

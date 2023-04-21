@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class GradientStopListConverter
 {
-  private static Collection<DMW.GradientStop>? GetGradientStops(DXO2010W.GradientStopList openXmlElement)
+  private static Collection<DMW.GradientStop>? GetGradientStops(DXO10W.GradientStopList openXmlElement)
   {
     var collection = new Collection<DMW.GradientStop>();
-    foreach (var item in openXmlElement.Elements<DXO2010W.GradientStop>())
+    foreach (var item in openXmlElement.Elements<DXO10W.GradientStop>())
     {
       var newItem = DMXW.GradientStopConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class GradientStopListConverter
     return null;
   }
   
-  private static bool CmpGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientStops(DXO10W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010W.GradientStop>();
+    var origElements = openXmlElement.Elements<DXO10W.GradientStop>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class GradientStopListConverter
     return false;
   }
   
-  private static void SetGradientStops(DXO2010W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value)
+  private static void SetGradientStops(DXO10W.GradientStopList openXmlElement, Collection<DMW.GradientStop>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010W.GradientStop>();
+    openXmlElement.RemoveAllChildren<DXO10W.GradientStop>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.GradientStopConverter.CreateOpenXmlElement<DXO2010W.GradientStop>(item);
+        var newItem = DMXW.GradientStopConverter.CreateOpenXmlElement<DXO10W.GradientStop>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DMW.GradientStopList? CreateModelElement(DXO2010W.GradientStopList? openXmlElement)
+  public static DMW.GradientStopList? CreateModelElement(DXO10W.GradientStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class GradientStopListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.GradientStopList? openXmlElement, DMW.GradientStopList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.GradientStopList? openXmlElement, DMW.GradientStopList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class GradientStopListConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.GradientStopList value)
-    where OpenXmlElementType: DXO2010W.GradientStopList, new()
+    where OpenXmlElementType: DXO10W.GradientStopList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.GradientStopList openXmlElement, DMW.GradientStopList value)
+  public static void UpdateOpenXmlElement(DXO10W.GradientStopList openXmlElement, DMW.GradientStopList value)
   {
     SetGradientStops(openXmlElement, value?.GradientStops);
   }

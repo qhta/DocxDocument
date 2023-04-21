@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PivotFormatsConverter
 {
-  private static Collection<DMDrawsCharts.PivotFormat>? GetItems(DXDrawCharts.PivotFormats openXmlElement)
+  private static Collection<DMDC.PivotFormat>? GetItems(DXDC.PivotFormats openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.PivotFormat>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.PivotFormat>())
+    var collection = new Collection<DMDC.PivotFormat>();
+    foreach (var item in openXmlElement.Elements<DXDC.PivotFormat>())
     {
-      var newItem = DMXDrawsCharts.PivotFormatConverter.CreateModelElement(item);
+      var newItem = DMXDC.PivotFormatConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class PivotFormatsConverter
     return null;
   }
   
-  private static bool CmpItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXDC.PivotFormats openXmlElement, Collection<DMDC.PivotFormat>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.PivotFormat>();
+    var origElements = openXmlElement.Elements<DXDC.PivotFormat>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class PivotFormatsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.PivotFormatConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.PivotFormatConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class PivotFormatsConverter
     return false;
   }
   
-  private static void SetItems(DXDrawCharts.PivotFormats openXmlElement, Collection<DMDrawsCharts.PivotFormat>? value)
+  private static void SetItems(DXDC.PivotFormats openXmlElement, Collection<DMDC.PivotFormat>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.PivotFormat>();
+    openXmlElement.RemoveAllChildren<DXDC.PivotFormat>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.PivotFormatConverter.CreateOpenXmlElement<DXDrawCharts.PivotFormat>(item);
+        var newItem = DMXDC.PivotFormatConverter.CreateOpenXmlElement<DXDC.PivotFormat>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PivotFormats? CreateModelElement(DXDrawCharts.PivotFormats? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PivotFormats? CreateModelElement(DXDC.PivotFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class PivotFormatsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.PivotFormats? openXmlElement, DMDrawsCharts.PivotFormats? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PivotFormats? openXmlElement, DMDC.PivotFormats? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class PivotFormatsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PivotFormats value)
-    where OpenXmlElementType: DXDrawCharts.PivotFormats, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.PivotFormats value)
+    where OpenXmlElementType: DXDC.PivotFormats, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.PivotFormats openXmlElement, DMDrawsCharts.PivotFormats value)
+  public static void UpdateOpenXmlElement(DXDC.PivotFormats openXmlElement, DMDC.PivotFormats value)
   {
     SetItems(openXmlElement, value?.Items);
   }

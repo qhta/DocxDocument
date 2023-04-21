@@ -8,27 +8,27 @@ public static class GroupShapeConverter
   /// <summary>
   /// Non-Visual Group Shape Properties.
   /// </summary>
-  private static DMDrawsChartDraw.NonVisualGroupShapeProperties? GetNonVisualGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.NonVisualGroupShapeProperties? GetNonVisualGroupShapeProperties(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.NonVisualGroupShapeProperties>();
     if (element != null)
-      return DMXDrawsChartDraw.NonVisualGroupShapePropertiesConverter.CreateModelElement(element);
+      return DMXDCD.NonVisualGroupShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualGroupShapeProperties(DXDCD.GroupShape openXmlElement, DMDCD.NonVisualGroupShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualGroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualGroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualGroupShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.NonVisualGroupShapeProperties? value)
+  private static void SetNonVisualGroupShapeProperties(DXDCD.GroupShape openXmlElement, DMDCD.NonVisualGroupShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGroupShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.NonVisualGroupShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.NonVisualGroupShapePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualGroupShapeProperties>(value);
+      itemElement = DMXDCD.NonVisualGroupShapePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGroupShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,163 +37,163 @@ public static class GroupShapeConverter
   /// <summary>
   /// Group Shape Properties.
   /// </summary>
-  private static DMDrawsChartDraw.GroupShapeProperties? GetGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.GroupShapeProperties? GetGroupShapeProperties(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.GroupShapeProperties>();
     if (element != null)
-      return DMXDrawsChartDraw.GroupShapePropertiesConverter.CreateModelElement(element);
+      return DMXDCD.GroupShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeProperties(DXDCD.GroupShape openXmlElement, DMDCD.GroupShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShapeProperties>(), value, diffs, objName);
+    return DMXDCD.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GroupShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetGroupShapeProperties(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShapeProperties? value)
+  private static void SetGroupShapeProperties(DXDCD.GroupShape openXmlElement, DMDCD.GroupShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.GroupShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.GroupShapePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.GroupShapeProperties>(value);
+      itemElement = DMXDCD.GroupShapePropertiesConverter.CreateOpenXmlElement<DXDCD.GroupShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.Shape? GetShape(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.Shape? GetShape(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.Shape>();
     if (element != null)
-      return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(element);
+      return DMXDCD.ShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDCD.GroupShape openXmlElement, DMDCD.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>(), value, diffs, objName);
+    return DMXDCD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Shape>(), value, diffs, objName);
   }
   
-  private static void SetShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.Shape? value)
+  private static void SetShape(DXDCD.GroupShape openXmlElement, DMDCD.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.Shape>(value);
+      itemElement = DMXDCD.ShapeConverter.CreateOpenXmlElement<DXDCD.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.GroupShape? GetChildGroupShape(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.GroupShape? GetChildGroupShape(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.GroupShape>();
     if (element != null)
-      return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(element);
+      return DMXDCD.GroupShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChildGroupShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
+  private static bool CmpChildGroupShape(DXDCD.GroupShape openXmlElement, DMDCD.GroupShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>(), value, diffs, objName);
+    return DMXDCD.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GroupShape>(), value, diffs, objName);
   }
   
-  private static void SetChildGroupShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShape? value)
+  private static void SetChildGroupShape(DXDCD.GroupShape openXmlElement, DMDCD.GroupShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.GroupShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.GroupShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.GroupShape>(value);
+      itemElement = DMXDCD.GroupShapeConverter.CreateOpenXmlElement<DXDCD.GroupShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.GraphicFrame? GetGraphicFrame(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.GraphicFrame? GetGraphicFrame(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.GraphicFrame>();
     if (element != null)
-      return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(element);
+      return DMXDCD.GraphicFrameConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGraphicFrame(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphicFrame(DXDCD.GroupShape openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>(), value, diffs, objName);
+    return DMXDCD.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GraphicFrame>(), value, diffs, objName);
   }
   
-  private static void SetGraphicFrame(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GraphicFrame? value)
+  private static void SetGraphicFrame(DXDCD.GroupShape openXmlElement, DMDCD.GraphicFrame? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.GraphicFrame>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.GraphicFrameConverter.CreateOpenXmlElement<DXDrawChartDraw.GraphicFrame>(value);
+      itemElement = DMXDCD.GraphicFrameConverter.CreateOpenXmlElement<DXDCD.GraphicFrame>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.ConnectionShape? GetConnectionShape(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.ConnectionShape? GetConnectionShape(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.ConnectionShape>();
     if (element != null)
-      return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(element);
+      return DMXDCD.ConnectionShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConnectionShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.ConnectionShape? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionShape(DXDCD.GroupShape openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>(), value, diffs, objName);
+    return DMXDCD.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ConnectionShape>(), value, diffs, objName);
   }
   
-  private static void SetConnectionShape(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.ConnectionShape? value)
+  private static void SetConnectionShape(DXDCD.GroupShape openXmlElement, DMDCD.ConnectionShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.ConnectionShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ConnectionShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.ConnectionShape>(value);
+      itemElement = DMXDCD.ConnectionShapeConverter.CreateOpenXmlElement<DXDCD.ConnectionShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.Picture? GetPicture(DXDrawChartDraw.GroupShape openXmlElement)
+  private static DMDCD.Picture? GetPicture(DXDCD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.Picture>();
     if (element != null)
-      return DMXDrawsChartDraw.PictureConverter.CreateModelElement(element);
+      return DMXDCD.PictureConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPicture(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
+  private static bool CmpPicture(DXDCD.GroupShape openXmlElement, DMDCD.Picture? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>(), value, diffs, objName);
+    return DMXDCD.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Picture>(), value, diffs, objName);
   }
   
-  private static void SetPicture(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.Picture? value)
+  private static void SetPicture(DXDCD.GroupShape openXmlElement, DMDCD.Picture? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.Picture>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.PictureConverter.CreateOpenXmlElement<DXDrawChartDraw.Picture>(value);
+      itemElement = DMXDCD.PictureConverter.CreateOpenXmlElement<DXDCD.Picture>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.GroupShape? CreateModelElement(DXDrawChartDraw.GroupShape? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.GroupShape? CreateModelElement(DXDCD.GroupShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -210,7 +210,7 @@ public static class GroupShapeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.GroupShape? openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.GroupShape? openXmlElement, DMDCD.GroupShape? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -236,15 +236,15 @@ public static class GroupShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.GroupShape value)
-    where OpenXmlElementType: DXDrawChartDraw.GroupShape, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.GroupShape value)
+    where OpenXmlElementType: DXDCD.GroupShape, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.GroupShape openXmlElement, DMDrawsChartDraw.GroupShape value)
+  public static void UpdateOpenXmlElement(DXDCD.GroupShape openXmlElement, DMDCD.GroupShape value)
   {
     SetNonVisualGroupShapeProperties(openXmlElement, value?.NonVisualGroupShapeProperties);
     SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);

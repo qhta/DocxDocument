@@ -8,48 +8,48 @@ public static class PieChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.PieChartExtension openXmlElement)
+  private static String? GetUri(DXDC.PieChartExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.PieChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.PieChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.PieChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.PieChartExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.FilteredPieSeries? GetFilteredPieSeries(DXDrawCharts.PieChartExtension openXmlElement)
+  private static DMDC.FilteredPieSeries? GetFilteredPieSeries(DXDC.PieChartExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredPieSeries>();
     if (element != null)
-      return DMXDrawsCharts.FilteredPieSeriesConverter.CreateModelElement(element);
+      return DMXDC.FilteredPieSeriesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredPieSeries(DXDrawCharts.PieChartExtension openXmlElement, DMDrawsCharts.FilteredPieSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredPieSeries(DXDC.PieChartExtension openXmlElement, DMDC.FilteredPieSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredPieSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>(), value, diffs, objName);
+    return DMXDC.FilteredPieSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredPieSeries>(), value, diffs, objName);
   }
   
-  private static void SetFilteredPieSeries(DXDrawCharts.PieChartExtension openXmlElement, DMDrawsCharts.FilteredPieSeries? value)
+  private static void SetFilteredPieSeries(DXDC.PieChartExtension openXmlElement, DMDC.FilteredPieSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredPieSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredPieSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredPieSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredPieSeries>(value);
+      itemElement = DMXDC.FilteredPieSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredPieSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieChartExtension? CreateModelElement(DXDrawCharts.PieChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PieChartExtension? CreateModelElement(DXDC.PieChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class PieChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.PieChartExtension? openXmlElement, DMDrawsCharts.PieChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PieChartExtension? openXmlElement, DMDC.PieChartExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class PieChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieChartExtension value)
-    where OpenXmlElementType: DXDrawCharts.PieChartExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.PieChartExtension value)
+    where OpenXmlElementType: DXDC.PieChartExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.PieChartExtension openXmlElement, DMDrawsCharts.PieChartExtension value)
+  public static void UpdateOpenXmlElement(DXDC.PieChartExtension openXmlElement, DMDC.PieChartExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredPieSeries(openXmlElement, value?.FilteredPieSeries);

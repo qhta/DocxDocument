@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ShapeGuideListConverter
 {
-  private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.ShapeGuideList openXmlElement)
+  private static Collection<DMD.ShapeGuide>? GetShapeGuides(DXD.ShapeGuideList openXmlElement)
   {
-    var collection = new Collection<DMDraws.ShapeGuide>();
-    foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
+    var collection = new Collection<DMD.ShapeGuide>();
+    foreach (var item in openXmlElement.Elements<DXD.ShapeGuide>())
     {
-      var newItem = DMXDraws.ShapeGuideConverter.CreateModelElement(item);
+      var newItem = DMXD.ShapeGuideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ShapeGuideListConverter
     return null;
   }
   
-  private static bool CmpShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeGuides(DXD.ShapeGuideList openXmlElement, Collection<DMD.ShapeGuide>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.ShapeGuide>();
+    var origElements = openXmlElement.Elements<DXD.ShapeGuide>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ShapeGuideListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ShapeGuideListConverter
     return false;
   }
   
-  private static void SetShapeGuides(DXDraw.ShapeGuideList openXmlElement, Collection<DMDraws.ShapeGuide>? value)
+  private static void SetShapeGuides(DXD.ShapeGuideList openXmlElement, Collection<DMD.ShapeGuide>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.ShapeGuide>();
+    openXmlElement.RemoveAllChildren<DXD.ShapeGuide>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ShapeGuideConverter.CreateOpenXmlElement<DXDraw.ShapeGuide>(item);
+        var newItem = DMXD.ShapeGuideConverter.CreateOpenXmlElement<DXD.ShapeGuide>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ShapeGuideList? CreateModelElement(DXDraw.ShapeGuideList? openXmlElement)
+  public static DocumentModel.Drawings.ShapeGuideList? CreateModelElement(DXD.ShapeGuideList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ShapeGuideListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ShapeGuideList? openXmlElement, DMDraws.ShapeGuideList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ShapeGuideList? openXmlElement, DMD.ShapeGuideList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ShapeGuideListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapeGuideList value)
-    where OpenXmlElementType: DXDraw.ShapeGuideList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ShapeGuideList value)
+    where OpenXmlElementType: DXD.ShapeGuideList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ShapeGuideList openXmlElement, DMDraws.ShapeGuideList value)
+  public static void UpdateOpenXmlElement(DXD.ShapeGuideList openXmlElement, DMD.ShapeGuideList value)
   {
     SetShapeGuides(openXmlElement, value?.ShapeGuides);
   }

@@ -8,19 +8,19 @@ public static class SdtContentCheckBoxConverter
   /// <summary>
   /// Checked.
   /// </summary>
-  private static DMW.OnOffKind? GetChecked(DXO2010W.SdtContentCheckBox openXmlElement)
+  private static DMW.OnOffKind? GetChecked(DXO10W.SdtContentCheckBox openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.Checked>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO10W.Checked>()?.Val?.Value);
   }
   
-  private static bool CmpChecked(DXO2010W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpChecked(DXO10W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.Checked>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO10W.Checked>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetChecked(DXO2010W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value)
+  private static void SetChecked(DXO10W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.Checked>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.Checked>();
     if (itemElement != null)
     {
       if (value != null)
@@ -30,33 +30,33 @@ public static class SdtContentCheckBoxConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2010W.Checked, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.Checked, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
   }
   
   /// <summary>
   /// CheckedState.
   /// </summary>
-  private static DMW.CheckBoxSymbolType? GetCheckedState(DXO2010W.SdtContentCheckBox openXmlElement)
+  private static DMW.CheckBoxSymbolType? GetCheckedState(DXO10W.SdtContentCheckBox openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.CheckedState>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.CheckedState>();
     if (element != null)
       return DMXW.CheckBoxSymbolTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CheckedState>(), value, diffs, objName);
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CheckedState>(), value, diffs, objName);
   }
   
-  private static void SetCheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
+  private static void SetCheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CheckedState>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.CheckedState>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO2010W.CheckedState>(value);
+      itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO10W.CheckedState>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -65,33 +65,33 @@ public static class SdtContentCheckBoxConverter
   /// <summary>
   /// UncheckedState.
   /// </summary>
-  private static DMW.CheckBoxSymbolType? GetUncheckedState(DXO2010W.SdtContentCheckBox openXmlElement)
+  private static DMW.CheckBoxSymbolType? GetUncheckedState(DXO10W.SdtContentCheckBox openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.UncheckedState>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.UncheckedState>();
     if (element != null)
       return DMXW.CheckBoxSymbolTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUncheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  private static bool CmpUncheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.UncheckedState>(), value, diffs, objName);
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.UncheckedState>(), value, diffs, objName);
   }
   
-  private static void SetUncheckedState(DXO2010W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
+  private static void SetUncheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.UncheckedState>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.UncheckedState>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO2010W.UncheckedState>(value);
+      itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO10W.UncheckedState>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMW.SdtContentCheckBox? CreateModelElement(DXO2010W.SdtContentCheckBox? openXmlElement)
+  public static DMW.SdtContentCheckBox? CreateModelElement(DXO10W.SdtContentCheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -104,7 +104,7 @@ public static class SdtContentCheckBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.SdtContentCheckBox? openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.SdtContentCheckBox? openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -123,14 +123,14 @@ public static class SdtContentCheckBoxConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtContentCheckBox value)
-    where OpenXmlElementType: DXO2010W.SdtContentCheckBox, new()
+    where OpenXmlElementType: DXO10W.SdtContentCheckBox, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.SdtContentCheckBox openXmlElement, DMW.SdtContentCheckBox value)
+  public static void UpdateOpenXmlElement(DXO10W.SdtContentCheckBox openXmlElement, DMW.SdtContentCheckBox value)
   {
     SetChecked(openXmlElement, value?.Checked);
     SetCheckedState(openXmlElement, value?.CheckedState);

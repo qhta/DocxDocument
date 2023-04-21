@@ -8,24 +8,24 @@ public static class TaskProgressEventInfoConverter
   /// <summary>
   /// percentComplete, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Int32? GetPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement)
+  private static Int32? GetPercentComplete(DXO21DT.TaskProgressEventInfo openXmlElement)
   {
     return openXmlElement?.PercentComplete?.Value;
   }
   
-  private static bool CmpPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPercentComplete(DXO21DT.TaskProgressEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.PercentComplete?.Value == value) return true;
     diffs?.Add(objName, "PercentComplete", openXmlElement?.PercentComplete?.Value, value);
     return false;
   }
   
-  private static void SetPercentComplete(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, Int32? value)
+  private static void SetPercentComplete(DXO21DT.TaskProgressEventInfo openXmlElement, Int32? value)
   {
     openXmlElement.PercentComplete = value;
   }
   
-  public static DocumentModel.TaskProgressEventInfo? CreateModelElement(DXO2021DocTasks.TaskProgressEventInfo? openXmlElement)
+  public static DocumentModel.TaskProgressEventInfo? CreateModelElement(DXO21DT.TaskProgressEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class TaskProgressEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.TaskProgressEventInfo? openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskProgressEventInfo? openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -51,14 +51,14 @@ public static class TaskProgressEventInfoConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskProgressEventInfo value)
-    where OpenXmlElementType: DXO2021DocTasks.TaskProgressEventInfo, new()
+    where OpenXmlElementType: DXO21DT.TaskProgressEventInfo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskProgressEventInfo openXmlElement, DM.TaskProgressEventInfo value)
+  public static void UpdateOpenXmlElement(DXO21DT.TaskProgressEventInfo openXmlElement, DM.TaskProgressEventInfo value)
   {
     SetPercentComplete(openXmlElement, value?.PercentComplete);
   }

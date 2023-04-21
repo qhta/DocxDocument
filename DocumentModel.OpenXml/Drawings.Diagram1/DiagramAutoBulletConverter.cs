@@ -8,17 +8,17 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// prefix, this property is only available in Office 2019 and later.
   /// </summary>
-  private static String? GetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static String? GetAutoBulletPrefix(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.AutoBulletPrefix);
   }
   
-  private static bool CmpAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoBulletPrefix(DXO19DD11.DiagramAutoBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AutoBulletPrefix, value, diffs, objName, "AutoBulletPrefix");
   }
   
-  private static void SetAutoBulletPrefix(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, String? value)
+  private static void SetAutoBulletPrefix(DXO19DD11.DiagramAutoBullet openXmlElement, String? value)
   {
     openXmlElement.AutoBulletPrefix = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// leadZeros, this property is only available in Office 2019 and later.
   /// </summary>
-  private static Boolean? GetLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static Boolean? GetLeadZeros(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
     return openXmlElement?.LeadZeros?.Value;
   }
   
-  private static bool CmpLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLeadZeros(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.LeadZeros?.Value == value) return true;
     diffs?.Add(objName, "LeadZeros", openXmlElement?.LeadZeros?.Value, value);
     return false;
   }
   
-  private static void SetLeadZeros(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)
+  private static void SetLeadZeros(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.LeadZeros = new BooleanValue { Value = (Boolean)value };
@@ -49,30 +49,30 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// No Bullet.
   /// </summary>
-  private static Boolean? GetNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static Boolean? GetNoBullet(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
   }
   
-  private static bool CmpNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBullet(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoBullet", val, value);
+    diffs?.Add(objName, "DXD.NoBullet", val, value);
     return false;
   }
   
-  private static void SetNoBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, Boolean? value)
+  private static void SetNoBullet(DXO19DD11.DiagramAutoBullet openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoBullet>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoBullet();
+      var itemElement = new DXD.NoBullet();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -80,27 +80,27 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Auto-Numbered Bullet.
   /// </summary>
-  private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static DMD.AutoNumberedBullet? GetAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.AutoNumberedBullet>();
     if (element != null)
-      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(element);
+      return DMXD.AutoNumberedBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>(), value, diffs, objName);
+    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName);
   }
   
-  private static void SetAutoNumberedBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.AutoNumberedBullet? value)
+  private static void SetAutoNumberedBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.AutoNumberedBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AutoNumberedBulletConverter.CreateOpenXmlElement<DXDraw.AutoNumberedBullet>(value);
+      itemElement = DMXD.AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -109,27 +109,27 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Character Bullet.
   /// </summary>
-  private static DMDraws.CharacterBullet? GetCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static DMD.CharacterBullet? GetCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.CharacterBullet>();
     if (element != null)
-      return DMXDraws.CharacterBulletConverter.CreateModelElement(element);
+      return DMXD.CharacterBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CharacterBullet>(), value, diffs, objName);
+    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName);
   }
   
-  private static void SetCharacterBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.CharacterBullet? value)
+  private static void SetCharacterBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.CharacterBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.CharacterBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.CharacterBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CharacterBulletConverter.CreateOpenXmlElement<DXDraw.CharacterBullet>(value);
+      itemElement = DMXD.CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -138,33 +138,33 @@ public static class DiagramAutoBulletConverter
   /// <summary>
   /// Picture Bullet.
   /// </summary>
-  private static DMDraws.PictureBullet? GetPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement)
+  private static DMD.PictureBullet? GetPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.PictureBullet>();
     if (element != null)
-      return DMXDraws.PictureBulletConverter.CreateModelElement(element);
+      return DMXD.PictureBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.PictureBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PictureBullet>(), value, diffs, objName);
+    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName);
   }
   
-  private static void SetPictureBullet(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDraws.PictureBullet? value)
+  private static void SetPictureBullet(DXO19DD11.DiagramAutoBullet openXmlElement, DMD.PictureBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PictureBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PictureBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PictureBulletConverter.CreateOpenXmlElement<DXDraw.PictureBullet>(value);
+      itemElement = DMXD.PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? CreateModelElement(DXO2019DrawDgm11.DiagramAutoBullet? openXmlElement)
+  public static DocumentModel.Drawings.Diagram1.DiagramAutoBullet? CreateModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -180,7 +180,7 @@ public static class DiagramAutoBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2019DrawDgm11.DiagramAutoBullet? openXmlElement, DMDrawsDgm1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19DD11.DiagramAutoBullet? openXmlElement, DMDD1.DiagramAutoBullet? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -204,15 +204,15 @@ public static class DiagramAutoBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.DiagramAutoBullet value)
-    where OpenXmlElementType: DXO2019DrawDgm11.DiagramAutoBullet, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD1.DiagramAutoBullet value)
+    where OpenXmlElementType: DXO19DD11.DiagramAutoBullet, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2019DrawDgm11.DiagramAutoBullet openXmlElement, DMDrawsDgm1.DiagramAutoBullet value)
+  public static void UpdateOpenXmlElement(DXO19DD11.DiagramAutoBullet openXmlElement, DMDD1.DiagramAutoBullet value)
   {
     SetAutoBulletPrefix(openXmlElement, value?.AutoBulletPrefix);
     SetLeadZeros(openXmlElement, value?.LeadZeros);

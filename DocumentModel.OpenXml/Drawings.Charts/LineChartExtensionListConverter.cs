@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LineChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.LineChartExtension>? GetLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement)
+  private static Collection<DMDC.LineChartExtension>? GetLineChartExtensions(DXDC.LineChartExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.LineChartExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartExtension>())
+    var collection = new Collection<DMDC.LineChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.LineChartExtension>())
     {
-      var newItem = DMXDrawsCharts.LineChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.LineChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class LineChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement, Collection<DMDrawsCharts.LineChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChartExtensions(DXDC.LineChartExtensionList openXmlElement, Collection<DMDC.LineChartExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.LineChartExtension>();
+    var origElements = openXmlElement.Elements<DXDC.LineChartExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class LineChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.LineChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LineChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class LineChartExtensionListConverter
     return false;
   }
   
-  private static void SetLineChartExtensions(DXDrawCharts.LineChartExtensionList openXmlElement, Collection<DMDrawsCharts.LineChartExtension>? value)
+  private static void SetLineChartExtensions(DXDC.LineChartExtensionList openXmlElement, Collection<DMDC.LineChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.LineChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.LineChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.LineChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.LineChartExtension>(item);
+        var newItem = DMXDC.LineChartExtensionConverter.CreateOpenXmlElement<DXDC.LineChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LineChartExtensionList? CreateModelElement(DXDrawCharts.LineChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineChartExtensionList? CreateModelElement(DXDC.LineChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class LineChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.LineChartExtensionList? openXmlElement, DMDrawsCharts.LineChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.LineChartExtensionList? openXmlElement, DMDC.LineChartExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class LineChartExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LineChartExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.LineChartExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.LineChartExtensionList value)
+    where OpenXmlElementType: DXDC.LineChartExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.LineChartExtensionList openXmlElement, DMDrawsCharts.LineChartExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.LineChartExtensionList openXmlElement, DMDC.LineChartExtensionList value)
   {
     SetLineChartExtensions(openXmlElement, value?.LineChartExtensions);
   }

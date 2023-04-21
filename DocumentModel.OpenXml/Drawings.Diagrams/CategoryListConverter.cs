@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class CategoryListConverter
 {
-  private static Collection<DMDrawsDgms.Category>? GetCategories(DXDrawDgms.CategoryList openXmlElement)
+  private static Collection<DMDD.Category>? GetCategories(DXDD.CategoryList openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Category>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Category>())
+    var collection = new Collection<DMDD.Category>();
+    foreach (var item in openXmlElement.Elements<DXDD.Category>())
     {
-      var newItem = DMXDrawsDgms.CategoryConverter.CreateModelElement(item);
+      var newItem = DMXDD.CategoryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class CategoryListConverter
     return null;
   }
   
-  private static bool CmpCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value, DiffList? diffs, string? objName)
+  private static bool CmpCategories(DXDD.CategoryList openXmlElement, Collection<DMDD.Category>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Category>();
+    var origElements = openXmlElement.Elements<DXDD.Category>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class CategoryListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.CategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.CategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class CategoryListConverter
     return false;
   }
   
-  private static void SetCategories(DXDrawDgms.CategoryList openXmlElement, Collection<DMDrawsDgms.Category>? value)
+  private static void SetCategories(DXDD.CategoryList openXmlElement, Collection<DMDD.Category>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Category>();
+    openXmlElement.RemoveAllChildren<DXDD.Category>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.CategoryConverter.CreateOpenXmlElement<DXDrawDgms.Category>(item);
+        var newItem = DMXDD.CategoryConverter.CreateOpenXmlElement<DXDD.Category>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DXDrawDgms.CategoryList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.CategoryList? CreateModelElement(DXDD.CategoryList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CategoryListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.CategoryList? openXmlElement, DMDrawsDgms.CategoryList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.CategoryList? openXmlElement, DMDD.CategoryList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CategoryListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.CategoryList value)
-    where OpenXmlElementType: DXDrawDgms.CategoryList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.CategoryList value)
+    where OpenXmlElementType: DXDD.CategoryList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.CategoryList openXmlElement, DMDrawsDgms.CategoryList value)
+  public static void UpdateOpenXmlElement(DXDD.CategoryList openXmlElement, DMDD.CategoryList value)
   {
     SetCategories(openXmlElement, value?.Categories);
   }

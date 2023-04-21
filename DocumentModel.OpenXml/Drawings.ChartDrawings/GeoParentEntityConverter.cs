@@ -8,22 +8,22 @@ public static class GeoParentEntityConverter
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityId(DXO2016DrawChartDraw.GeoParentEntity openXmlElement)
+  private static String? GetEntityId(DXO16DCD.GeoParentEntity openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoParentEntity openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoParentEntity openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
-  private static void SetEntityId(DXO2016DrawChartDraw.GeoParentEntity openXmlElement, String? value)
+  private static void SetEntityId(DXO16DCD.GeoParentEntity openXmlElement, String? value)
   {
     openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(DXO2016DrawChartDraw.GeoParentEntity? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoParentEntity? CreateModelElement(DXO16DCD.GeoParentEntity? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class GeoParentEntityConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoParentEntity? openXmlElement, DMDrawsChartDraws.GeoParentEntity? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoParentEntity? openXmlElement, DMDCDs.GeoParentEntity? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class GeoParentEntityConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoParentEntity value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoParentEntity, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoParentEntity value)
+    where OpenXmlElementType: DXO16DCD.GeoParentEntity, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoParentEntity openXmlElement, DMDrawsChartDraws.GeoParentEntity value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoParentEntity openXmlElement, DMDCDs.GeoParentEntity value)
   {
     SetEntityId(openXmlElement, value?.EntityId);
   }

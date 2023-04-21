@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LevelConverter
 {
-  private static Collection<DMDrawsCharts.StringPoint>? GetStringPoints(DXDrawCharts.Level openXmlElement)
+  private static Collection<DMDC.StringPoint>? GetStringPoints(DXDC.Level openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.StringPoint>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.StringPoint>())
+    var collection = new Collection<DMDC.StringPoint>();
+    foreach (var item in openXmlElement.Elements<DXDC.StringPoint>())
     {
-      var newItem = DMXDrawsCharts.StringPointConverter.CreateModelElement(item);
+      var newItem = DMXDC.StringPointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class LevelConverter
     return null;
   }
   
-  private static bool CmpStringPoints(DXDrawCharts.Level openXmlElement, Collection<DMDrawsCharts.StringPoint>? value, DiffList? diffs, string? objName)
+  private static bool CmpStringPoints(DXDC.Level openXmlElement, Collection<DMDC.StringPoint>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.StringPoint>();
+    var origElements = openXmlElement.Elements<DXDC.StringPoint>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class LevelConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.StringPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.StringPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class LevelConverter
     return false;
   }
   
-  private static void SetStringPoints(DXDrawCharts.Level openXmlElement, Collection<DMDrawsCharts.StringPoint>? value)
+  private static void SetStringPoints(DXDC.Level openXmlElement, Collection<DMDC.StringPoint>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.StringPoint>();
+    openXmlElement.RemoveAllChildren<DXDC.StringPoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.StringPointConverter.CreateOpenXmlElement<DXDrawCharts.StringPoint>(item);
+        var newItem = DMXDC.StringPointConverter.CreateOpenXmlElement<DXDC.StringPoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DXDrawCharts.Level? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Level? CreateModelElement(DXDC.Level? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class LevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.Level? openXmlElement, DMDrawsCharts.Level? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Level? openXmlElement, DMDC.Level? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class LevelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Level value)
-    where OpenXmlElementType: DXDrawCharts.Level, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Level value)
+    where OpenXmlElementType: DXDC.Level, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.Level openXmlElement, DMDrawsCharts.Level value)
+  public static void UpdateOpenXmlElement(DXDC.Level openXmlElement, DMDC.Level value)
   {
     SetStringPoints(openXmlElement, value?.StringPoints);
   }

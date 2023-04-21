@@ -8,19 +8,19 @@ public static class PageMarginsConverter
   /// <summary>
   /// l, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetL(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetL(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.L?.Value;
   }
   
-  private static bool CmpL(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpL(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.L?.Value == value) return true;
     diffs?.Add(objName, "L", openXmlElement?.L?.Value, value);
     return false;
   }
   
-  private static void SetL(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetL(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.L = value;
   }
@@ -28,19 +28,19 @@ public static class PageMarginsConverter
   /// <summary>
   /// r, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetR(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetR(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.R?.Value;
   }
   
-  private static bool CmpR(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpR(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.R?.Value == value) return true;
     diffs?.Add(objName, "R", openXmlElement?.R?.Value, value);
     return false;
   }
   
-  private static void SetR(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetR(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.R = value;
   }
@@ -48,19 +48,19 @@ public static class PageMarginsConverter
   /// <summary>
   /// t, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetT(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetT(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.T?.Value;
   }
   
-  private static bool CmpT(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpT(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.T?.Value == value) return true;
     diffs?.Add(objName, "T", openXmlElement?.T?.Value, value);
     return false;
   }
   
-  private static void SetT(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetT(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.T = value;
   }
@@ -68,19 +68,19 @@ public static class PageMarginsConverter
   /// <summary>
   /// b, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetB(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetB(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.B?.Value;
   }
   
-  private static bool CmpB(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpB(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.B?.Value == value) return true;
     diffs?.Add(objName, "B", openXmlElement?.B?.Value, value);
     return false;
   }
   
-  private static void SetB(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetB(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.B = value;
   }
@@ -88,19 +88,19 @@ public static class PageMarginsConverter
   /// <summary>
   /// header, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetHeader(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetHeader(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.Header?.Value;
   }
   
-  private static bool CmpHeader(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpHeader(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Header?.Value == value) return true;
     diffs?.Add(objName, "Header", openXmlElement?.Header?.Value, value);
     return false;
   }
   
-  private static void SetHeader(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetHeader(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Header = value;
   }
@@ -108,24 +108,24 @@ public static class PageMarginsConverter
   /// <summary>
   /// footer, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetFooter(DXO2016DrawChartDraw.PageMargins openXmlElement)
+  private static Double? GetFooter(DXO16DCD.PageMargins openXmlElement)
   {
     return openXmlElement?.Footer?.Value;
   }
   
-  private static bool CmpFooter(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpFooter(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Footer?.Value == value) return true;
     diffs?.Add(objName, "Footer", openXmlElement?.Footer?.Value, value);
     return false;
   }
   
-  private static void SetFooter(DXO2016DrawChartDraw.PageMargins openXmlElement, Double? value)
+  private static void SetFooter(DXO16DCD.PageMargins openXmlElement, Double? value)
   {
     openXmlElement.Footer = value;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PageMargins? CreateModelElement(DXO2016DrawChartDraw.PageMargins? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.PageMargins? CreateModelElement(DXO16DCD.PageMargins? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -141,7 +141,7 @@ public static class PageMarginsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.PageMargins? openXmlElement, DMDrawsChartDraws.PageMargins? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.PageMargins? openXmlElement, DMDCDs.PageMargins? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -165,15 +165,15 @@ public static class PageMarginsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PageMargins value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.PageMargins, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.PageMargins value)
+    where OpenXmlElementType: DXO16DCD.PageMargins, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PageMargins openXmlElement, DMDrawsChartDraws.PageMargins value)
+  public static void UpdateOpenXmlElement(DXO16DCD.PageMargins openXmlElement, DMDCDs.PageMargins value)
   {
     SetL(openXmlElement, value?.L);
     SetR(openXmlElement, value?.R);

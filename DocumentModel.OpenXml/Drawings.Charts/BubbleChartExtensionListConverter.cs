@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BubbleChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.BubbleChartExtension>? GetBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement)
+  private static Collection<DMDC.BubbleChartExtension>? GetBubbleChartExtensions(DXDC.BubbleChartExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.BubbleChartExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.BubbleChartExtension>())
+    var collection = new Collection<DMDC.BubbleChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.BubbleChartExtension>())
     {
-      var newItem = DMXDrawsCharts.BubbleChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.BubbleChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class BubbleChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement, Collection<DMDrawsCharts.BubbleChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpBubbleChartExtensions(DXDC.BubbleChartExtensionList openXmlElement, Collection<DMDC.BubbleChartExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.BubbleChartExtension>();
+    var origElements = openXmlElement.Elements<DXDC.BubbleChartExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class BubbleChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.BubbleChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.BubbleChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class BubbleChartExtensionListConverter
     return false;
   }
   
-  private static void SetBubbleChartExtensions(DXDrawCharts.BubbleChartExtensionList openXmlElement, Collection<DMDrawsCharts.BubbleChartExtension>? value)
+  private static void SetBubbleChartExtensions(DXDC.BubbleChartExtensionList openXmlElement, Collection<DMDC.BubbleChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.BubbleChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.BubbleChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.BubbleChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.BubbleChartExtension>(item);
+        var newItem = DMXDC.BubbleChartExtensionConverter.CreateOpenXmlElement<DXDC.BubbleChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? CreateModelElement(DXDrawCharts.BubbleChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleChartExtensionList? CreateModelElement(DXDC.BubbleChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class BubbleChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BubbleChartExtensionList? openXmlElement, DMDrawsCharts.BubbleChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BubbleChartExtensionList? openXmlElement, DMDC.BubbleChartExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class BubbleChartExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.BubbleChartExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BubbleChartExtensionList value)
+    where OpenXmlElementType: DXDC.BubbleChartExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleChartExtensionList openXmlElement, DMDrawsCharts.BubbleChartExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.BubbleChartExtensionList openXmlElement, DMDC.BubbleChartExtensionList value)
   {
     SetBubbleChartExtensions(openXmlElement, value?.BubbleChartExtensions);
   }

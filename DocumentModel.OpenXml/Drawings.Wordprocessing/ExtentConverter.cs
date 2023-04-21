@@ -8,19 +8,19 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Length
   /// </summary>
-  private static Int64 GetCx(DXDrawW.Extent openXmlElement)
+  private static Int64 GetCx(DXDW.Extent openXmlElement)
   {
     return openXmlElement?.Cx?.Value ?? 0;
   }
   
-  private static bool CmpCx(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpCx(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Cx?.Value == value) return true;
     diffs?.Add(objName, "Cx", openXmlElement?.Cx?.Value, value);
     return false;
   }
   
-  private static void SetCx(DXDrawW.Extent openXmlElement, Int64? value)
+  private static void SetCx(DXDW.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cx = value;
   }
@@ -28,24 +28,24 @@ public static class ExtentConverter
   /// <summary>
   /// Extent Width
   /// </summary>
-  private static Int64 GetCy(DXDrawW.Extent openXmlElement)
+  private static Int64 GetCy(DXDW.Extent openXmlElement)
   {
     return openXmlElement?.Cy?.Value ?? 0;
   }
   
-  private static bool CmpCy(DXDrawW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpCy(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Cy?.Value == value) return true;
     diffs?.Add(objName, "Cy", openXmlElement?.Cy?.Value, value);
     return false;
   }
   
-  private static void SetCy(DXDrawW.Extent openXmlElement, Int64? value)
+  private static void SetCy(DXDW.Extent openXmlElement, Int64? value)
   {
     openXmlElement.Cy = value;
   }
   
-  public static DocumentModel.Drawings.Extent? CreateModelElement(DXDrawW.Extent? openXmlElement)
+  public static DocumentModel.Drawings.Extent? CreateModelElement(DXDW.Extent? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ExtentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawW.Extent? openXmlElement, DMDraws.Extent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.Extent? openXmlElement, DMD.Extent? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ExtentConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Extent value)
-    where OpenXmlElementType: DXDrawW.Extent, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Extent value)
+    where OpenXmlElementType: DXDW.Extent, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawW.Extent openXmlElement, DMDraws.Extent value)
+  public static void UpdateOpenXmlElement(DXDW.Extent openXmlElement, DMD.Extent value)
   {
     SetCx(openXmlElement, value?.Cx);
     SetCy(openXmlElement, value?.Cy);

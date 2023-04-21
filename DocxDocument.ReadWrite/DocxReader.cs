@@ -17,15 +17,16 @@ public enum Parts : Int64
   FontTable              = 0x000800,
   EmbeddedFonts          = 0x001800,
   Stylistics             = 0x001F00,
+  Background             = 0x002000,
 
-  Comments               = 0x002000,
+  Comments               = 0x004000,
 
-  Revisions              = 0x004000,
-  Bookmarks              = 0x008000,
-  RangePermissions       = 0x010000,
-  Proofing               = 0x020000,
-  InlineAnnotations      = 0x040000,
-  AllAnnotations         = 0x07F000,
+  Revisions              = 0x008000,
+  Bookmarks              = 0x010000,
+  RangePermissions       = 0x020000,
+  Proofing               = 0x040000,
+  InlineAnnotations      = 0x080000,
+  AllAnnotations         = 0x0F8000,
 
   Paragraphs             = 0x100000,
   Body                   = 0xF00000,
@@ -100,6 +101,8 @@ public partial class DocxReader
       document.Fonts = ReadFonts();
     if (parts.HasFlag(Parts.EmbeddedFonts))
       document.EmbeddedFonts = ReadEmbedFonts();
+    if (parts.HasFlag(Parts.Background))
+      document.Background = ReadBackground();
     if (parts.HasFlag(Parts.Comments))
       document.Comments = ReadDocComments();
     if (parts.HasFlag(Parts.Body))
@@ -111,17 +114,17 @@ public partial class DocxReader
   {
     var properties = new DM.DocumentProperties();
     if (parts.HasFlag(Parts.CoreFileProperties))
-      properties.CoreProperties = DMXProps.CorePropertiesConverter.CreateModelElement(WordprocessingDocument.PackageProperties);
+      properties.CoreProperties = DMXP.CorePropertiesConverter.CreateModelElement(WordprocessingDocument.PackageProperties);
 
     if (parts.HasFlag(Parts.ExtendedFileProperties) && WordprocessingDocument.ExtendedFilePropertiesPart?.Properties != null)
     {
-      properties.ContentProperties = DMXProps.ExtendedPropertiesConverter.GetContentProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
-      properties.StatisticProperties = DMXProps.ExtendedPropertiesConverter.GetStatisticProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+      properties.ContentProperties = DMXP.ExtendedPropertiesConverter.GetContentProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
+      properties.StatisticProperties = DMXP.ExtendedPropertiesConverter.GetStatisticProperties(WordprocessingDocument.ExtendedFilePropertiesPart.Properties);
     }
 
     if (parts.HasFlag(Parts.CustomFileProperties) && WordprocessingDocument.CustomFilePropertiesPart?.Properties != null)
       properties.CustomProperties =
-        DMXProps.CustomPropertiesConverter.CreateModelElement(WordprocessingDocument.CustomFilePropertiesPart.Properties);
+        DMXP.CustomPropertiesConverter.CreateModelElement(WordprocessingDocument.CustomFilePropertiesPart.Properties);
 
     if (parts.HasFlag(Parts.DocumentSettings) && WordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings != null)
       properties.DocumentSettings =
@@ -156,15 +159,26 @@ public partial class DocxReader
     return numbering;
   }
 
-  private DMDraws.Theme ReadTheme()
+  private DMD.Theme ReadTheme()
   {
-    DMDraws.Theme theme;
+    DMD.Theme theme;
     var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<ThemePart>()?.FirstOrDefault()?.Theme;
     if (themeOpenXmlElement != null)
-      theme = DMXDraws.ThemeConverter.CreateModelElement(themeOpenXmlElement) ?? new();
+      theme = DMXD.ThemeConverter.CreateModelElement(themeOpenXmlElement) ?? new();
     else
       theme = new();
     return theme;
+  }
+
+  private DMW.DocumentBackground ReadBackground()
+  {
+    DMW.DocumentBackground background;
+    var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.Document?.DocumentBackground;
+    if (themeOpenXmlElement != null)
+      background = DMXW.DocumentBackgroundConverter.CreateModelElement(themeOpenXmlElement) ?? new();
+    else
+      background = new();
+    return background;
   }
 
   private DMW.Fonts ReadFonts()

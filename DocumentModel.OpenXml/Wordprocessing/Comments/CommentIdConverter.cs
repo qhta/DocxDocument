@@ -6,19 +6,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class CommentIdConverter
 {
   #region ParaId conversion.
-  private static DM.HexInt? GetParaId(DXO2019WCid.CommentId openXmlElement)
+  private static DM.HexInt? GetParaId(DXO19WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.ParaId.Value);
     return null;
   }
   
-  private static bool CmpParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
   
-  private static void SetParaId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)
+  private static void SetParaId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value)
   {
     if (value != null)
       openXmlElement.ParaId = value.ToString();
@@ -28,19 +28,19 @@ public static class CommentIdConverter
   #endregion
 
   #region DurableId conversion.
-  private static DM.HexInt? GetDurableId(DXO2019WCid.CommentId openXmlElement)
+  private static DM.HexInt? GetDurableId(DXO19WCid.CommentId openXmlElement)
   {
     if (openXmlElement?.DurableId?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.DurableId.Value);
     return null;
   }
   
-  private static bool CmpDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.DurableId?.Value, value, diffs, objName, "DurableId");
   }
   
-  private static void SetDurableId(DXO2019WCid.CommentId openXmlElement, DM.HexInt? value)
+  private static void SetDurableId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value)
   {
     if (value != null)
       openXmlElement.DurableId = value.ToString();
@@ -48,7 +48,7 @@ public static class CommentIdConverter
       openXmlElement.DurableId = null;
   }
 
-  public static DMW.CommentId? CreateModelElement(DXO2019WCid.CommentId? openXmlElement)
+  public static DMW.CommentId? CreateModelElement(DXO19WCid.CommentId? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,7 +60,7 @@ public static class CommentIdConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXO2019WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,14 +77,14 @@ public static class CommentIdConverter
   }
 
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentId value)
-    where OpenXmlElementType : DXO2019WCid.CommentId, new()
+    where OpenXmlElementType : DXO19WCid.CommentId, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXO2019WCid.CommentId openXmlElement, DMW.CommentId value)
+  public static void UpdateOpenXmlElement(DXO19WCid.CommentId openXmlElement, DMW.CommentId value)
   {
     SetParaId(openXmlElement, value?.ParaId);
     SetDurableId(openXmlElement, value?.DurableId);

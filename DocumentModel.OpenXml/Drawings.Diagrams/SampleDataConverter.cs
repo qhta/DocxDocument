@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class SampleDataConverter
 {
-  private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.SampleData openXmlElement)
+  private static DMDD.DataModel? GetDataModel(DXDD.SampleData openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
+    var element = openXmlElement?.GetFirstChild<DXDD.DataModel>();
     if (element != null)
-      return DMXDrawsDgms.DataModelConverter.CreateModelElement(element);
+      return DMXDD.DataModelConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataModel(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModel(DXDD.SampleData openXmlElement, DMDD.DataModel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName);
+    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName);
   }
   
-  private static void SetDataModel(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.DataModel? value)
+  private static void SetDataModel(DXDD.SampleData openXmlElement, DMDD.DataModel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.DataModel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.DataModel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.DataModelConverter.CreateOpenXmlElement<DXDrawDgms.DataModel>(value);
+      itemElement = DMXDD.DataModelConverter.CreateOpenXmlElement<DXDD.DataModel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.SampleData? CreateModelElement(DXDrawDgms.SampleData? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.SampleData? CreateModelElement(DXDD.SampleData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class SampleDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.SampleData? openXmlElement, DMDrawsDgms.SampleData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.SampleData? openXmlElement, DMDD.SampleData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class SampleDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.SampleData value)
-    where OpenXmlElementType: DXDrawDgms.SampleData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.SampleData value)
+    where OpenXmlElementType: DXDD.SampleData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.SampleData openXmlElement, DMDrawsDgms.SampleData value)
+  public static void UpdateOpenXmlElement(DXDD.SampleData openXmlElement, DMDD.SampleData value)
   {
     SetDataModel(openXmlElement, value?.DataModel);
   }

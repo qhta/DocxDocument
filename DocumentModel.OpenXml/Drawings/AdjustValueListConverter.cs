@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class AdjustValueListConverter
 {
-  private static Collection<DMDraws.ShapeGuide>? GetShapeGuides(DXDraw.AdjustValueList openXmlElement)
+  private static Collection<DMD.ShapeGuide>? GetShapeGuides(DXD.AdjustValueList openXmlElement)
   {
-    var collection = new Collection<DMDraws.ShapeGuide>();
-    foreach (var item in openXmlElement.Elements<DXDraw.ShapeGuide>())
+    var collection = new Collection<DMD.ShapeGuide>();
+    foreach (var item in openXmlElement.Elements<DXD.ShapeGuide>())
     {
-      var newItem = DMXDraws.ShapeGuideConverter.CreateModelElement(item);
+      var newItem = DMXD.ShapeGuideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class AdjustValueListConverter
     return null;
   }
   
-  private static bool CmpShapeGuides(DXDraw.AdjustValueList openXmlElement, Collection<DMDraws.ShapeGuide>? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeGuides(DXD.AdjustValueList openXmlElement, Collection<DMD.ShapeGuide>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.ShapeGuide>();
+    var origElements = openXmlElement.Elements<DXD.ShapeGuide>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class AdjustValueListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ShapeGuideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class AdjustValueListConverter
     return false;
   }
   
-  private static void SetShapeGuides(DXDraw.AdjustValueList openXmlElement, Collection<DMDraws.ShapeGuide>? value)
+  private static void SetShapeGuides(DXD.AdjustValueList openXmlElement, Collection<DMD.ShapeGuide>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.ShapeGuide>();
+    openXmlElement.RemoveAllChildren<DXD.ShapeGuide>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ShapeGuideConverter.CreateOpenXmlElement<DXDraw.ShapeGuide>(item);
+        var newItem = DMXD.ShapeGuideConverter.CreateOpenXmlElement<DXD.ShapeGuide>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.AdjustValueList? CreateModelElement(DXDraw.AdjustValueList? openXmlElement)
+  public static DocumentModel.Drawings.AdjustValueList? CreateModelElement(DXD.AdjustValueList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class AdjustValueListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AdjustValueList? openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustValueList? openXmlElement, DMD.AdjustValueList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class AdjustValueListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustValueList value)
-    where OpenXmlElementType: DXDraw.AdjustValueList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AdjustValueList value)
+    where OpenXmlElementType: DXD.AdjustValueList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AdjustValueList openXmlElement, DMDraws.AdjustValueList value)
+  public static void UpdateOpenXmlElement(DXD.AdjustValueList openXmlElement, DMD.AdjustValueList value)
   {
     SetShapeGuides(openXmlElement, value?.ShapeGuides);
   }

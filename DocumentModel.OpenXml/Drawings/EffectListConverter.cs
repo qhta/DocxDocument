@@ -8,27 +8,27 @@ public static class EffectListConverter
   /// <summary>
   /// Blur Effect.
   /// </summary>
-  private static DMDraws.Blur? GetBlur(DXDraw.EffectList openXmlElement)
+  private static DMD.Blur? GetBlur(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Blur>();
+    var element = openXmlElement?.GetFirstChild<DXD.Blur>();
     if (element != null)
-      return DMXDraws.BlurConverter.CreateModelElement(element);
+      return DMXD.BlurConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlur(DXDraw.EffectList openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
+  private static bool CmpBlur(DXD.EffectList openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blur>(), value, diffs, objName);
+    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName);
   }
   
-  private static void SetBlur(DXDraw.EffectList openXmlElement, DMDraws.Blur? value)
+  private static void SetBlur(DXD.EffectList openXmlElement, DMD.Blur? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blur>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Blur>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlurConverter.CreateOpenXmlElement<DXDraw.Blur>(value);
+      itemElement = DMXD.BlurConverter.CreateOpenXmlElement<DXD.Blur>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class EffectListConverter
   /// <summary>
   /// FillOverlay.
   /// </summary>
-  private static DMDraws.FillOverlay? GetFillOverlay(DXDraw.EffectList openXmlElement)
+  private static DMD.FillOverlay? GetFillOverlay(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.FillOverlay>();
+    var element = openXmlElement?.GetFirstChild<DXD.FillOverlay>();
     if (element != null)
-      return DMXDraws.FillOverlayConverter.CreateModelElement(element);
+      return DMXD.FillOverlayConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFillOverlay(DXDraw.EffectList openXmlElement, DMDraws.FillOverlay? value, DiffList? diffs, string? objName)
+  private static bool CmpFillOverlay(DXD.EffectList openXmlElement, DMD.FillOverlay? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillOverlay>(), value, diffs, objName);
+    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName);
   }
   
-  private static void SetFillOverlay(DXDraw.EffectList openXmlElement, DMDraws.FillOverlay? value)
+  private static void SetFillOverlay(DXD.EffectList openXmlElement, DMD.FillOverlay? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.FillOverlay>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.FillOverlay>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.FillOverlayConverter.CreateOpenXmlElement<DXDraw.FillOverlay>(value);
+      itemElement = DMXD.FillOverlayConverter.CreateOpenXmlElement<DXD.FillOverlay>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class EffectListConverter
   /// <summary>
   /// Glow.
   /// </summary>
-  private static DMDraws.Glow? GetGlow(DXDraw.EffectList openXmlElement)
+  private static DMD.Glow? GetGlow(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Glow>();
+    var element = openXmlElement?.GetFirstChild<DXD.Glow>();
     if (element != null)
-      return DMXDraws.GlowConverter.CreateModelElement(element);
+      return DMXD.GlowConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGlow(DXDraw.EffectList openXmlElement, DMDraws.Glow? value, DiffList? diffs, string? objName)
+  private static bool CmpGlow(DXD.EffectList openXmlElement, DMD.Glow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Glow>(), value, diffs, objName);
+    return DMXD.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Glow>(), value, diffs, objName);
   }
   
-  private static void SetGlow(DXDraw.EffectList openXmlElement, DMDraws.Glow? value)
+  private static void SetGlow(DXD.EffectList openXmlElement, DMD.Glow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Glow>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Glow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GlowConverter.CreateOpenXmlElement<DXDraw.Glow>(value);
+      itemElement = DMXD.GlowConverter.CreateOpenXmlElement<DXD.Glow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,27 +95,27 @@ public static class EffectListConverter
   /// <summary>
   /// InnerShadow.
   /// </summary>
-  private static DMDraws.InnerShadow? GetInnerShadow(DXDraw.EffectList openXmlElement)
+  private static DMD.InnerShadow? GetInnerShadow(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.InnerShadow>();
+    var element = openXmlElement?.GetFirstChild<DXD.InnerShadow>();
     if (element != null)
-      return DMXDraws.InnerShadowConverter.CreateModelElement(element);
+      return DMXD.InnerShadowConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpInnerShadow(DXDraw.EffectList openXmlElement, DMDraws.InnerShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpInnerShadow(DXD.EffectList openXmlElement, DMD.InnerShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.InnerShadow>(), value, diffs, objName);
+    return DMXD.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.InnerShadow>(), value, diffs, objName);
   }
   
-  private static void SetInnerShadow(DXDraw.EffectList openXmlElement, DMDraws.InnerShadow? value)
+  private static void SetInnerShadow(DXD.EffectList openXmlElement, DMD.InnerShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.InnerShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.InnerShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.InnerShadowConverter.CreateOpenXmlElement<DXDraw.InnerShadow>(value);
+      itemElement = DMXD.InnerShadowConverter.CreateOpenXmlElement<DXD.InnerShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -124,27 +124,27 @@ public static class EffectListConverter
   /// <summary>
   /// OuterShadow.
   /// </summary>
-  private static DMDraws.OuterShadow? GetOuterShadow(DXDraw.EffectList openXmlElement)
+  private static DMD.OuterShadow? GetOuterShadow(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.OuterShadow>();
+    var element = openXmlElement?.GetFirstChild<DXD.OuterShadow>();
     if (element != null)
-      return DMXDraws.OuterShadowConverter.CreateModelElement(element);
+      return DMXD.OuterShadowConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOuterShadow(DXDraw.EffectList openXmlElement, DMDraws.OuterShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpOuterShadow(DXD.EffectList openXmlElement, DMD.OuterShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.OuterShadow>(), value, diffs, objName);
+    return DMXD.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.OuterShadow>(), value, diffs, objName);
   }
   
-  private static void SetOuterShadow(DXDraw.EffectList openXmlElement, DMDraws.OuterShadow? value)
+  private static void SetOuterShadow(DXD.EffectList openXmlElement, DMD.OuterShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.OuterShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.OuterShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OuterShadowConverter.CreateOpenXmlElement<DXDraw.OuterShadow>(value);
+      itemElement = DMXD.OuterShadowConverter.CreateOpenXmlElement<DXD.OuterShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -153,27 +153,27 @@ public static class EffectListConverter
   /// <summary>
   /// PresetShadow.
   /// </summary>
-  private static DMDraws.PresetShadow? GetPresetShadow(DXDraw.EffectList openXmlElement)
+  private static DMD.PresetShadow? GetPresetShadow(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetShadow>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetShadow>();
     if (element != null)
-      return DMXDraws.PresetShadowConverter.CreateModelElement(element);
+      return DMXD.PresetShadowConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetShadow(DXDraw.EffectList openXmlElement, DMDraws.PresetShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetShadow(DXD.EffectList openXmlElement, DMD.PresetShadow? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetShadow>(), value, diffs, objName);
+    return DMXD.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetShadow>(), value, diffs, objName);
   }
   
-  private static void SetPresetShadow(DXDraw.EffectList openXmlElement, DMDraws.PresetShadow? value)
+  private static void SetPresetShadow(DXD.EffectList openXmlElement, DMD.PresetShadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetShadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetShadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetShadowConverter.CreateOpenXmlElement<DXDraw.PresetShadow>(value);
+      itemElement = DMXD.PresetShadowConverter.CreateOpenXmlElement<DXD.PresetShadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -182,27 +182,27 @@ public static class EffectListConverter
   /// <summary>
   /// Reflection.
   /// </summary>
-  private static DMDraws.Reflection? GetReflection(DXDraw.EffectList openXmlElement)
+  private static DMD.Reflection? GetReflection(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Reflection>();
+    var element = openXmlElement?.GetFirstChild<DXD.Reflection>();
     if (element != null)
-      return DMXDraws.ReflectionConverter.CreateModelElement(element);
+      return DMXD.ReflectionConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpReflection(DXDraw.EffectList openXmlElement, DMDraws.Reflection? value, DiffList? diffs, string? objName)
+  private static bool CmpReflection(DXD.EffectList openXmlElement, DMD.Reflection? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Reflection>(), value, diffs, objName);
+    return DMXD.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Reflection>(), value, diffs, objName);
   }
   
-  private static void SetReflection(DXDraw.EffectList openXmlElement, DMDraws.Reflection? value)
+  private static void SetReflection(DXD.EffectList openXmlElement, DMD.Reflection? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Reflection>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Reflection>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ReflectionConverter.CreateOpenXmlElement<DXDraw.Reflection>(value);
+      itemElement = DMXD.ReflectionConverter.CreateOpenXmlElement<DXD.Reflection>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -211,33 +211,33 @@ public static class EffectListConverter
   /// <summary>
   /// SoftEdge.
   /// </summary>
-  private static DMDraws.SoftEdge? GetSoftEdge(DXDraw.EffectList openXmlElement)
+  private static DMD.SoftEdge? GetSoftEdge(DXD.EffectList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SoftEdge>();
+    var element = openXmlElement?.GetFirstChild<DXD.SoftEdge>();
     if (element != null)
-      return DMXDraws.SoftEdgeConverter.CreateModelElement(element);
+      return DMXD.SoftEdgeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSoftEdge(DXDraw.EffectList openXmlElement, DMDraws.SoftEdge? value, DiffList? diffs, string? objName)
+  private static bool CmpSoftEdge(DXD.EffectList openXmlElement, DMD.SoftEdge? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SoftEdge>(), value, diffs, objName);
+    return DMXD.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SoftEdge>(), value, diffs, objName);
   }
   
-  private static void SetSoftEdge(DXDraw.EffectList openXmlElement, DMDraws.SoftEdge? value)
+  private static void SetSoftEdge(DXD.EffectList openXmlElement, DMD.SoftEdge? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SoftEdge>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SoftEdge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SoftEdgeConverter.CreateOpenXmlElement<DXDraw.SoftEdge>(value);
+      itemElement = DMXD.SoftEdgeConverter.CreateOpenXmlElement<DXD.SoftEdge>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.EffectList? CreateModelElement(DXDraw.EffectList? openXmlElement)
+  public static DocumentModel.Drawings.EffectList? CreateModelElement(DXD.EffectList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -255,7 +255,7 @@ public static class EffectListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.EffectList? openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectList? openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -283,15 +283,15 @@ public static class EffectListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectList value)
-    where OpenXmlElementType: DXDraw.EffectList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.EffectList value)
+    where OpenXmlElementType: DXD.EffectList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.EffectList openXmlElement, DMDraws.EffectList value)
+  public static void UpdateOpenXmlElement(DXD.EffectList openXmlElement, DMD.EffectList value)
   {
     SetBlur(openXmlElement, value?.Blur);
     SetFillOverlay(openXmlElement, value?.FillOverlay);

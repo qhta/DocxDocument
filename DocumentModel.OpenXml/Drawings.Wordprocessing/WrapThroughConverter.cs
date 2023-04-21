@@ -8,37 +8,37 @@ public static class WrapThroughConverter
   /// <summary>
   /// Text Wrapping Location
   /// </summary>
-  private static DMDrawsW.WrapTextKind? GetWrapText(DXDrawW.WrapThrough openXmlElement)
+  private static DMDW.WrapTextKind? GetWrapText(DXDW.WrapThrough openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(openXmlElement?.WrapText?.Value);
   }
   
-  private static bool CmpWrapText(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapTextKind? value, DiffList? diffs, string? objName)
+  private static bool CmpWrapText(DXDW.WrapThrough openXmlElement, DMDW.WrapTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(openXmlElement?.WrapText?.Value, value, diffs, objName);
   }
   
-  private static void SetWrapText(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapTextKind? value)
+  private static void SetWrapText(DXDW.WrapThrough openXmlElement, DMDW.WrapTextKind? value)
   {
-    openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDrawsW.WrapTextKind>(value);
+    openXmlElement.WrapText = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues, DMDW.WrapTextKind>(value);
   }
   
   /// <summary>
   /// Distance From Text on Left Edge
   /// </summary>
-  private static UInt32? GetDistanceFromLeft(DXDrawW.WrapThrough openXmlElement)
+  private static UInt32? GetDistanceFromLeft(DXDW.WrapThrough openXmlElement)
   {
     return openXmlElement?.DistanceFromLeft?.Value;
   }
   
-  private static bool CmpDistanceFromLeft(DXDrawW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromLeft(DXDW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DistanceFromLeft?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromLeft", openXmlElement?.DistanceFromLeft?.Value, value);
     return false;
   }
   
-  private static void SetDistanceFromLeft(DXDrawW.WrapThrough openXmlElement, UInt32? value)
+  private static void SetDistanceFromLeft(DXDW.WrapThrough openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromLeft = value;
   }
@@ -46,19 +46,19 @@ public static class WrapThroughConverter
   /// <summary>
   /// Distance From Text on Right Edge
   /// </summary>
-  private static UInt32? GetDistanceFromRight(DXDrawW.WrapThrough openXmlElement)
+  private static UInt32? GetDistanceFromRight(DXDW.WrapThrough openXmlElement)
   {
     return openXmlElement?.DistanceFromRight?.Value;
   }
   
-  private static bool CmpDistanceFromRight(DXDrawW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromRight(DXDW.WrapThrough openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DistanceFromRight?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromRight", openXmlElement?.DistanceFromRight?.Value, value);
     return false;
   }
   
-  private static void SetDistanceFromRight(DXDrawW.WrapThrough openXmlElement, UInt32? value)
+  private static void SetDistanceFromRight(DXDW.WrapThrough openXmlElement, UInt32? value)
   {
     openXmlElement.DistanceFromRight = value;
   }
@@ -66,33 +66,33 @@ public static class WrapThroughConverter
   /// <summary>
   /// Wrapping Polygon.
   /// </summary>
-  private static DMDrawsW.WrapPolygon? GetWrapPolygon(DXDrawW.WrapThrough openXmlElement)
+  private static DMDW.WrapPolygon? GetWrapPolygon(DXDW.WrapThrough openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawW.WrapPolygon>();
+    var element = openXmlElement?.GetFirstChild<DXDW.WrapPolygon>();
     if (element != null)
-      return DMXDrawsW.WrapPolygonConverter.CreateModelElement(element);
+      return DMXDW.WrapPolygonConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value, DiffList? diffs, string? objName)
+  private static bool CmpWrapPolygon(DXDW.WrapThrough openXmlElement, DMDW.WrapPolygon? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.WrapPolygon>(), value, diffs, objName);
+    return DMXDW.WrapPolygonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.WrapPolygon>(), value, diffs, objName);
   }
   
-  private static void SetWrapPolygon(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapPolygon? value)
+  private static void SetWrapPolygon(DXDW.WrapThrough openXmlElement, DMDW.WrapPolygon? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawW.WrapPolygon>();
+    var itemElement = openXmlElement.GetFirstChild<DXDW.WrapPolygon>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsW.WrapPolygonConverter.CreateOpenXmlElement<DXDrawW.WrapPolygon>(value);
+      itemElement = DMXDW.WrapPolygonConverter.CreateOpenXmlElement<DXDW.WrapPolygon>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(DXDrawW.WrapThrough? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WrapThrough? CreateModelElement(DXDW.WrapThrough? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -106,7 +106,7 @@ public static class WrapThroughConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawW.WrapThrough? openXmlElement, DMDrawsW.WrapThrough? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.WrapThrough? openXmlElement, DMDW.WrapThrough? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -126,15 +126,15 @@ public static class WrapThroughConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapThrough value)
-    where OpenXmlElementType: DXDrawW.WrapThrough, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDW.WrapThrough value)
+    where OpenXmlElementType: DXDW.WrapThrough, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawW.WrapThrough openXmlElement, DMDrawsW.WrapThrough value)
+  public static void UpdateOpenXmlElement(DXDW.WrapThrough openXmlElement, DMDW.WrapThrough value)
   {
     SetWrapText(openXmlElement, value?.WrapText);
     SetDistanceFromLeft(openXmlElement, value?.DistanceFromLeft);

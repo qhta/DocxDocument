@@ -8,17 +8,17 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// embeddedHtml, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement)
+  private static String? GetEmbeddedHtml(DXO13WD.WebVideoProperty openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EmbeddedHtml);
   }
   
-  private static bool CmpEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedHtml(DXO13WD.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EmbeddedHtml, value, diffs, objName, "EmbeddedHtml");
   }
   
-  private static void SetEmbeddedHtml(DXO2013WDraw.WebVideoProperty openXmlElement, String? value)
+  private static void SetEmbeddedHtml(DXO13WD.WebVideoProperty openXmlElement, String? value)
   {
     openXmlElement.EmbeddedHtml = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// h, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetHeight(DXO2013WDraw.WebVideoProperty openXmlElement)
+  private static UInt32? GetHeight(DXO13WD.WebVideoProperty openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
     return false;
   }
   
-  private static void SetHeight(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
+  private static void SetHeight(DXO13WD.WebVideoProperty openXmlElement, UInt32? value)
   {
     openXmlElement.Height = value;
   }
@@ -46,24 +46,24 @@ public static class WebVideoPropertyConverter
   /// <summary>
   /// w, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetWidth(DXO2013WDraw.WebVideoProperty openXmlElement)
+  private static UInt32? GetWidth(DXO13WD.WebVideoProperty openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
-  private static void SetWidth(DXO2013WDraw.WebVideoProperty openXmlElement, UInt32? value)
+  private static void SetWidth(DXO13WD.WebVideoProperty openXmlElement, UInt32? value)
   {
     openXmlElement.Width = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WebVideoProperty? CreateModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WebVideoProperty? CreateModelElement(DXO13WD.WebVideoProperty? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,7 +76,7 @@ public static class WebVideoPropertyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013WDraw.WebVideoProperty? openXmlElement, DMDrawsW.WebVideoProperty? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WD.WebVideoProperty? openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -94,15 +94,15 @@ public static class WebVideoPropertyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WebVideoProperty value)
-    where OpenXmlElementType: DXO2013WDraw.WebVideoProperty, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDW.WebVideoProperty value)
+    where OpenXmlElementType: DXO13WD.WebVideoProperty, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013WDraw.WebVideoProperty openXmlElement, DMDrawsW.WebVideoProperty value)
+  public static void UpdateOpenXmlElement(DXO13WD.WebVideoProperty openXmlElement, DMDW.WebVideoProperty value)
   {
     SetEmbeddedHtml(openXmlElement, value?.EmbeddedHtml);
     SetHeight(openXmlElement, value?.Height);

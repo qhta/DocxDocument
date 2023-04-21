@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class SurfaceSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.SurfaceSerExtension>? GetSurfaceSerExtensions(DXDrawCharts.SurfaceSerExtensionList openXmlElement)
+  private static Collection<DMDC.SurfaceSerExtension>? GetSurfaceSerExtensions(DXDC.SurfaceSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.SurfaceSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.SurfaceSerExtension>())
+    var collection = new Collection<DMDC.SurfaceSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.SurfaceSerExtension>())
     {
-      var newItem = DMXDrawsCharts.SurfaceSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.SurfaceSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class SurfaceSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpSurfaceSerExtensions(DXDrawCharts.SurfaceSerExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpSurfaceSerExtensions(DXDC.SurfaceSerExtensionList openXmlElement, Collection<DMDC.SurfaceSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.SurfaceSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.SurfaceSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class SurfaceSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.SurfaceSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.SurfaceSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class SurfaceSerExtensionListConverter
     return false;
   }
   
-  private static void SetSurfaceSerExtensions(DXDrawCharts.SurfaceSerExtensionList openXmlElement, Collection<DMDrawsCharts.SurfaceSerExtension>? value)
+  private static void SetSurfaceSerExtensions(DXDC.SurfaceSerExtensionList openXmlElement, Collection<DMDC.SurfaceSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.SurfaceSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.SurfaceSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.SurfaceSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.SurfaceSerExtension>(item);
+        var newItem = DMXDC.SurfaceSerExtensionConverter.CreateOpenXmlElement<DXDC.SurfaceSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtensionList? CreateModelElement(DXDrawCharts.SurfaceSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceSerExtensionList? CreateModelElement(DXDC.SurfaceSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class SurfaceSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.SurfaceSerExtensionList? openXmlElement, DMDrawsCharts.SurfaceSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SurfaceSerExtensionList? openXmlElement, DMDC.SurfaceSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class SurfaceSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.SurfaceSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.SurfaceSerExtensionList value)
+    where OpenXmlElementType: DXDC.SurfaceSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.SurfaceSerExtensionList openXmlElement, DMDrawsCharts.SurfaceSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.SurfaceSerExtensionList openXmlElement, DMDC.SurfaceSerExtensionList value)
   {
     SetSurfaceSerExtensions(openXmlElement, value?.SurfaceSerExtensions);
   }

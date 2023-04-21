@@ -1,7 +1,3 @@
-using System.Xml.Linq;
-
-using DocumentFormat.OpenXml.Office2019.Drawing.Model3D;
-
 using DocumentModel.Wordprocessing;
 
 namespace DocumentModel.OpenXml.Wordprocessing;

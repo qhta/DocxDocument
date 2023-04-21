@@ -52,21 +52,21 @@ public static class ChartDrawingPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsCharts.UserShapes? GetUserShapes(DXPack.ChartDrawingPart openXmlElement)
+  private static DMDC.UserShapes? GetUserShapes(DXPack.ChartDrawingPart openXmlElement)
   {
-      return DMXDrawsCharts.UserShapesConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawCharts.UserShapes);
+      return DMXDC.UserShapesConverter.CreateModelElement(openXmlElement?.RootElement as DXDC.UserShapes);
   }
   
-  private static bool CmpUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDrawsCharts.UserShapes? value, DiffList? diffs, string? objName)
+  private static bool CmpUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDC.UserShapes? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDrawsCharts.UserShapes? value)
+  private static void SetUserShapes(DXPack.ChartDrawingPart openXmlElement, DMDC.UserShapes? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsCharts.UserShapesConverter.CreateOpenXmlElement<DXDrawCharts.UserShapes>(value);
+       var rootElement = DMXDC.UserShapesConverter.CreateOpenXmlElement<DXDC.UserShapes>(value);
        if (rootElement != null)
          openXmlElement.UserShapes = rootElement;
     }

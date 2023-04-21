@@ -5,99 +5,99 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DisplayUnitsConverter
 {
-  private static Double? GetCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement)
+  private static Double? GetCustomDisplayUnit(DXDC.DisplayUnits openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CustomDisplayUnit>()?.Val);
   }
   
-  private static bool CmpCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomDisplayUnit(DXDC.DisplayUnits openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.CustomDisplayUnit>()?.Val, value, diffs, objName, "CustomDisplayUnit");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CustomDisplayUnit>()?.Val, value, diffs, objName, "CustomDisplayUnit");
   }
   
-  private static void SetCustomDisplayUnit(DXDrawCharts.DisplayUnits openXmlElement, Double? value)
+  private static void SetCustomDisplayUnit(DXDC.DisplayUnits openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.CustomDisplayUnit,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.CustomDisplayUnit,System.Double>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.BuiltInUnitKind? GetBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement)
+  private static DMDC.BuiltInUnitKind? GetBuiltInUnit(DXDC.DisplayUnits openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDC.BuiltInUnit>()?.Val?.Value);
   }
   
-  private static bool CmpBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.BuiltInUnitKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBuiltInUnit(DXDC.DisplayUnits openXmlElement, DMDC.BuiltInUnitKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(openXmlElement.GetFirstChild<DXDC.BuiltInUnit>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetBuiltInUnit(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.BuiltInUnitKind? value)
+  private static void SetBuiltInUnit(DXDC.DisplayUnits openXmlElement, DMDC.BuiltInUnitKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BuiltInUnit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BuiltInUnit>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>(itemElement, (DMDrawsCharts.BuiltInUnitKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>(itemElement, (DMDC.BuiltInUnitKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDrawsCharts.BuiltInUnitKind>((DMDrawsCharts.BuiltInUnitKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>((DMDC.BuiltInUnitKind)value));
   }
   
-  private static DMDrawsCharts.DisplayUnitsLabel? GetDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement)
+  private static DMDC.DisplayUnitsLabel? GetDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DisplayUnitsLabel>();
     if (element != null)
-      return DMXDrawsCharts.DisplayUnitsLabelConverter.CreateModelElement(element);
+      return DMXDC.DisplayUnitsLabelConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>(), value, diffs, objName);
+    return DMXDC.DisplayUnitsLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DisplayUnitsLabel>(), value, diffs, objName);
   }
   
-  private static void SetDisplayUnitsLabel(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value)
+  private static void SetDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnitsLabel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnitsLabel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DisplayUnitsLabel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DisplayUnitsLabelConverter.CreateOpenXmlElement<DXDrawCharts.DisplayUnitsLabel>(value);
+      itemElement = DMXDC.DisplayUnitsLabelConverter.CreateOpenXmlElement<DXDC.DisplayUnitsLabel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DisplayUnits openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.DisplayUnits openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.DisplayUnits openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.DisplayUnits openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DXDrawCharts.DisplayUnits? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DisplayUnits? CreateModelElement(DXDC.DisplayUnits? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -111,7 +111,7 @@ public static class DisplayUnitsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DisplayUnits? openXmlElement, DMDrawsCharts.DisplayUnits? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DisplayUnits? openXmlElement, DMDC.DisplayUnits? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -131,15 +131,15 @@ public static class DisplayUnitsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnits value)
-    where OpenXmlElementType: DXDrawCharts.DisplayUnits, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DisplayUnits value)
+    where OpenXmlElementType: DXDC.DisplayUnits, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DisplayUnits openXmlElement, DMDrawsCharts.DisplayUnits value)
+  public static void UpdateOpenXmlElement(DXDC.DisplayUnits openXmlElement, DMDC.DisplayUnits value)
   {
     SetCustomDisplayUnit(openXmlElement, value?.CustomDisplayUnit);
     SetBuiltInUnit(openXmlElement, value?.BuiltInUnit);

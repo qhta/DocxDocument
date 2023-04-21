@@ -34,7 +34,7 @@ public static class DocumentTasksPartConverter
   /// </summary>
   private static DM.Tasks? GetTasks(DXPack.DocumentTasksPart openXmlElement)
   {
-      return DMX.TasksConverter.CreateModelElement(openXmlElement?.RootElement as DXO2021DocTasks.Tasks);
+      return DMX.TasksConverter.CreateModelElement(openXmlElement?.RootElement as DXO21DT.Tasks);
   }
   
   private static bool CmpTasks(DXPack.DocumentTasksPart openXmlElement, DM.Tasks? value, DiffList? diffs, string? objName)
@@ -46,7 +46,7 @@ public static class DocumentTasksPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMX.TasksConverter.CreateOpenXmlElement<DXO2021DocTasks.Tasks>(value);
+       var rootElement = DMX.TasksConverter.CreateOpenXmlElement<DXO21DT.Tasks>(value);
        if (rootElement != null)
          openXmlElement.Tasks = rootElement;
     }

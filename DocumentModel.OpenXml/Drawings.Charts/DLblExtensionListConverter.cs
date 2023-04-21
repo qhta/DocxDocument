@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DLblExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.DLblExtension>? GetDLblExtensions(DXDrawCharts.DLblExtensionList openXmlElement)
+  private static Collection<DMDC.DLblExtension>? GetDLblExtensions(DXDC.DLblExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.DLblExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.DLblExtension>())
+    var collection = new Collection<DMDC.DLblExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.DLblExtension>())
     {
-      var newItem = DMXDrawsCharts.DLblExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.DLblExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class DLblExtensionListConverter
     return null;
   }
   
-  private static bool CmpDLblExtensions(DXDrawCharts.DLblExtensionList openXmlElement, Collection<DMDrawsCharts.DLblExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpDLblExtensions(DXDC.DLblExtensionList openXmlElement, Collection<DMDC.DLblExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.DLblExtension>();
+    var origElements = openXmlElement.Elements<DXDC.DLblExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class DLblExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.DLblExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DLblExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class DLblExtensionListConverter
     return false;
   }
   
-  private static void SetDLblExtensions(DXDrawCharts.DLblExtensionList openXmlElement, Collection<DMDrawsCharts.DLblExtension>? value)
+  private static void SetDLblExtensions(DXDC.DLblExtensionList openXmlElement, Collection<DMDC.DLblExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.DLblExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.DLblExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.DLblExtensionConverter.CreateOpenXmlElement<DXDrawCharts.DLblExtension>(item);
+        var newItem = DMXDC.DLblExtensionConverter.CreateOpenXmlElement<DXDC.DLblExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DLblExtensionList? CreateModelElement(DXDrawCharts.DLblExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DLblExtensionList? CreateModelElement(DXDC.DLblExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class DLblExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DLblExtensionList? openXmlElement, DMDrawsCharts.DLblExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DLblExtensionList? openXmlElement, DMDC.DLblExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class DLblExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DLblExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.DLblExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DLblExtensionList value)
+    where OpenXmlElementType: DXDC.DLblExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DLblExtensionList openXmlElement, DMDrawsCharts.DLblExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.DLblExtensionList openXmlElement, DMDC.DLblExtensionList value)
   {
     SetDLblExtensions(openXmlElement, value?.DLblExtensions);
   }

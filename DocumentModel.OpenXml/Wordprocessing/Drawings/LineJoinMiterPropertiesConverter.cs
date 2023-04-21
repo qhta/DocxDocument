@@ -8,24 +8,24 @@ public static class LineJoinMiterPropertiesConverter
   /// <summary>
   /// lim, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetLimit(DXO2010W.LineJoinMiterProperties openXmlElement)
+  private static Int32? GetLimit(DXO10W.LineJoinMiterProperties openXmlElement)
   {
     return openXmlElement?.Limit?.Value;
   }
   
-  private static bool CmpLimit(DXO2010W.LineJoinMiterProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLimit(DXO10W.LineJoinMiterProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Limit?.Value == value) return true;
     diffs?.Add(objName, "Limit", openXmlElement?.Limit?.Value, value);
     return false;
   }
   
-  private static void SetLimit(DXO2010W.LineJoinMiterProperties openXmlElement, Int32? value)
+  private static void SetLimit(DXO10W.LineJoinMiterProperties openXmlElement, Int32? value)
   {
     openXmlElement.Limit = value;
   }
   
-  public static DMW.LineJoinMiterProperties? CreateModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement)
+  public static DMW.LineJoinMiterProperties? CreateModelElement(DXO10W.LineJoinMiterProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class LineJoinMiterPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.LineJoinMiterProperties? openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.LineJoinMiterProperties? openXmlElement, DMW.LineJoinMiterProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -51,14 +51,14 @@ public static class LineJoinMiterPropertiesConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LineJoinMiterProperties value)
-    where OpenXmlElementType: DXO2010W.LineJoinMiterProperties, new()
+    where OpenXmlElementType: DXO10W.LineJoinMiterProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.LineJoinMiterProperties openXmlElement, DMW.LineJoinMiterProperties value)
+  public static void UpdateOpenXmlElement(DXO10W.LineJoinMiterProperties openXmlElement, DMW.LineJoinMiterProperties value)
   {
     SetLimit(openXmlElement, value?.Limit);
   }

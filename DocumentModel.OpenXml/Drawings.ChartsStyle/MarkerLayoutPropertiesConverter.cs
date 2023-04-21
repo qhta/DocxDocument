@@ -8,42 +8,42 @@ public static class MarkerLayoutPropertiesConverter
   /// <summary>
   /// symbol, this property is only available in Office 2013 and later.
   /// </summary>
-  private static DMDrawsChartsStyle.MarkerStyle? GetSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement)
+  private static DMDCS.MarkerStyle? GetSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(openXmlElement?.Symbol?.Value);
   }
   
-  private static bool CmpSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerStyle? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(openXmlElement?.Symbol?.Value, value, diffs, objName);
   }
   
-  private static void SetSymbol(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerStyle? value)
+  private static void SetSymbol(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerStyle? value)
   {
-    openXmlElement.Symbol = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDrawsChartsStyle.MarkerStyle>(value);
+    openXmlElement.Symbol = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle, DMDCS.MarkerStyle>(value);
   }
   
   /// <summary>
   /// size, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Byte? GetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement)
+  private static Byte? GetSize(DXO13DCS.MarkerLayoutProperties openXmlElement)
   {
     return openXmlElement?.Size?.Value;
   }
   
-  private static bool CmpSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXO13DCS.MarkerLayoutProperties openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Size?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Size?.Value, value);
     return false;
   }
   
-  private static void SetSize(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, Byte? value)
+  private static void SetSize(DXO13DCS.MarkerLayoutProperties openXmlElement, Byte? value)
   {
     openXmlElement.Size = value;
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(DXO2013DrawChartStyle.MarkerLayoutProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.MarkerLayoutProperties? CreateModelElement(DXO13DCS.MarkerLayoutProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class MarkerLayoutPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChartStyle.MarkerLayoutProperties? openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.MarkerLayoutProperties? openXmlElement, DMDCS.MarkerLayoutProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -71,15 +71,15 @@ public static class MarkerLayoutPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.MarkerLayoutProperties value)
-    where OpenXmlElementType: DXO2013DrawChartStyle.MarkerLayoutProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCS.MarkerLayoutProperties value)
+    where OpenXmlElementType: DXO13DCS.MarkerLayoutProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.MarkerLayoutProperties openXmlElement, DMDrawsChartsStyle.MarkerLayoutProperties value)
+  public static void UpdateOpenXmlElement(DXO13DCS.MarkerLayoutProperties openXmlElement, DMDCS.MarkerLayoutProperties value)
   {
     SetSymbol(openXmlElement, value?.Symbol);
     SetSize(openXmlElement, value?.Size);

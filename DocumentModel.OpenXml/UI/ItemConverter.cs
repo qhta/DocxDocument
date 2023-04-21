@@ -8,17 +8,17 @@ public static class ItemConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.Item openXmlElement)
+  private static String? GetId(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetId(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class ItemConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.Item openXmlElement)
+  private static String? GetLabel(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class ItemConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DXOCustUI.Item openXmlElement)
+  private static String? GetImage(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetImage(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class ItemConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DXOCustUI.Item openXmlElement)
+  private static String? GetImageMso(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetImageMso(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class ItemConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DXOCustUI.Item openXmlElement)
+  private static String? GetScreentip(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetScreentip(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -98,22 +98,22 @@ public static class ItemConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DXOCustUI.Item openXmlElement)
+  private static String? GetSupertip(DXOCUI.Item openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXOCustUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXOCUI.Item openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXOCustUI.Item openXmlElement, String? value)
+  private static void SetSupertip(DXOCUI.Item openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.UI.Item? CreateModelElement(DXOCustUI.Item? openXmlElement)
+  public static DocumentModel.UI.Item? CreateModelElement(DXOCUI.Item? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,7 +129,7 @@ public static class ItemConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.Item? openXmlElement, DMUI.Item? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.Item? openXmlElement, DMUI.Item? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -154,14 +154,14 @@ public static class ItemConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Item value)
-    where OpenXmlElementType: DXOCustUI.Item, new()
+    where OpenXmlElementType: DXOCUI.Item, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.Item openXmlElement, DMUI.Item value)
+  public static void UpdateOpenXmlElement(DXOCUI.Item openXmlElement, DMUI.Item value)
   {
     SetId(openXmlElement, value?.Id);
     SetLabel(openXmlElement, value?.Label);

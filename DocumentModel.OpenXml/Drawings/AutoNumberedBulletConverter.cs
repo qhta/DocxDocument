@@ -8,42 +8,42 @@ public static class AutoNumberedBulletConverter
   /// <summary>
   /// Bullet Autonumbering Type
   /// </summary>
-  private static DMDraws.TextAutoNumberSchemeKind? GetType(DXDraw.AutoNumberedBullet openXmlElement)
+  private static DMD.TextAutoNumberSchemeKind? GetType(DXD.AutoNumberedBullet openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMD.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.TextAutoNumberSchemeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXD.AutoNumberedBullet openXmlElement, DMD.TextAutoNumberSchemeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMD.TextAutoNumberSchemeKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.TextAutoNumberSchemeKind? value)
+  private static void SetType(DXD.AutoNumberedBullet openXmlElement, DMD.TextAutoNumberSchemeKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMDraws.TextAutoNumberSchemeKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues, DMD.TextAutoNumberSchemeKind>(value);
   }
   
   /// <summary>
   /// Start Numbering At
   /// </summary>
-  private static Int32? GetStartAt(DXDraw.AutoNumberedBullet openXmlElement)
+  private static Int32? GetStartAt(DXD.AutoNumberedBullet openXmlElement)
   {
     return openXmlElement?.StartAt?.Value;
   }
   
-  private static bool CmpStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpStartAt(DXD.AutoNumberedBullet openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.StartAt?.Value == value) return true;
     diffs?.Add(objName, "StartAt", openXmlElement?.StartAt?.Value, value);
     return false;
   }
   
-  private static void SetStartAt(DXDraw.AutoNumberedBullet openXmlElement, Int32? value)
+  private static void SetStartAt(DXD.AutoNumberedBullet openXmlElement, Int32? value)
   {
     openXmlElement.StartAt = value;
   }
   
-  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(DXDraw.AutoNumberedBullet? openXmlElement)
+  public static DocumentModel.Drawings.AutoNumberedBullet? CreateModelElement(DXD.AutoNumberedBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class AutoNumberedBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AutoNumberedBullet? openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AutoNumberedBullet? openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -71,15 +71,15 @@ public static class AutoNumberedBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AutoNumberedBullet value)
-    where OpenXmlElementType: DXDraw.AutoNumberedBullet, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AutoNumberedBullet value)
+    where OpenXmlElementType: DXD.AutoNumberedBullet, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AutoNumberedBullet openXmlElement, DMDraws.AutoNumberedBullet value)
+  public static void UpdateOpenXmlElement(DXD.AutoNumberedBullet openXmlElement, DMD.AutoNumberedBullet value)
   {
     SetType(openXmlElement, value?.Type);
     SetStartAt(openXmlElement, value?.StartAt);

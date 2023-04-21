@@ -8,27 +8,27 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   /// <summary>
   /// GroupShapeLocks.
   /// </summary>
-  private static DMDraws.GroupShapeLocks? GetGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement)
+  private static DMD.GroupShapeLocks? GetGroupShapeLocks(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.GroupShapeLocks>();
+    var element = openXmlElement?.GetFirstChild<DXD.GroupShapeLocks>();
     if (element != null)
-      return DMXDraws.GroupShapeLocksConverter.CreateModelElement(element);
+      return DMXD.GroupShapeLocksConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.GroupShapeLocks? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeLocks(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement, DMD.GroupShapeLocks? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GroupShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GroupShapeLocks>(), value, diffs, objName);
+    return DMXD.GroupShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GroupShapeLocks>(), value, diffs, objName);
   }
   
-  private static void SetGroupShapeLocks(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.GroupShapeLocks? value)
+  private static void SetGroupShapeLocks(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement, DMD.GroupShapeLocks? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupShapeLocks>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GroupShapeLocks>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GroupShapeLocksConverter.CreateOpenXmlElement<DXDraw.GroupShapeLocks>(value);
+      itemElement = DMXD.GroupShapeLocksConverter.CreateOpenXmlElement<DXD.GroupShapeLocks>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
   /// <summary>
   /// NonVisualGroupDrawingShapePropsExtensionList.
   /// </summary>
-  private static DMDraws.NonVisualGroupDrawingShapePropsExtensionList? GetNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement)
+  private static DMD.NonVisualGroupDrawingShapePropsExtensionList? GetNonVisualGroupDrawingShapePropsExtensionList(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.NonVisualGroupDrawingShapePropsExtensionList>();
     if (element != null)
-      return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateModelElement(element);
+      return DMXD.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualGroupDrawingShapePropsExtensionList(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement, DMD.NonVisualGroupDrawingShapePropsExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>(), value, diffs, objName);
+    return DMXD.NonVisualGroupDrawingShapePropsExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NonVisualGroupDrawingShapePropsExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualGroupDrawingShapePropsExtensionList(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDraws.NonVisualGroupDrawingShapePropsExtensionList? value)
+  private static void SetNonVisualGroupDrawingShapePropsExtensionList(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement, DMD.NonVisualGroupDrawingShapePropsExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.NonVisualGroupDrawingShapePropsExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateOpenXmlElement<DXDraw.NonVisualGroupDrawingShapePropsExtensionList>(value);
+      itemElement = DMXD.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualGroupDrawingShapePropsExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? CreateModelElement(DXODraw.NonVisualGroupDrawingShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.NonVisualGroupDrawingShapeProperties? CreateModelElement(DXOD.NonVisualGroupDrawingShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODraw.NonVisualGroupDrawingShapeProperties? openXmlElement, DMDrawsO.NonVisualGroupDrawingShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.NonVisualGroupDrawingShapeProperties? openXmlElement, DMDO.NonVisualGroupDrawingShapeProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class NonVisualGroupDrawingShapePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.NonVisualGroupDrawingShapeProperties value)
-    where OpenXmlElementType: DXODraw.NonVisualGroupDrawingShapeProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.NonVisualGroupDrawingShapeProperties value)
+    where OpenXmlElementType: DXOD.NonVisualGroupDrawingShapeProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODraw.NonVisualGroupDrawingShapeProperties openXmlElement, DMDrawsO.NonVisualGroupDrawingShapeProperties value)
+  public static void UpdateOpenXmlElement(DXOD.NonVisualGroupDrawingShapeProperties openXmlElement, DMDO.NonVisualGroupDrawingShapeProperties value)
   {
     SetGroupShapeLocks(openXmlElement, value?.GroupShapeLocks);
     SetNonVisualGroupDrawingShapePropsExtensionList(openXmlElement, value?.NonVisualGroupDrawingShapePropsExtensionList);

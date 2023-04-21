@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class StrDataExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.StrDataExtension>? GetStrDataExtensions(DXDrawCharts.StrDataExtensionList openXmlElement)
+  private static Collection<DMDC.StrDataExtension>? GetStrDataExtensions(DXDC.StrDataExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.StrDataExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.StrDataExtension>())
+    var collection = new Collection<DMDC.StrDataExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.StrDataExtension>())
     {
-      var newItem = DMXDrawsCharts.StrDataExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.StrDataExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class StrDataExtensionListConverter
     return null;
   }
   
-  private static bool CmpStrDataExtensions(DXDrawCharts.StrDataExtensionList openXmlElement, Collection<DMDrawsCharts.StrDataExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpStrDataExtensions(DXDC.StrDataExtensionList openXmlElement, Collection<DMDC.StrDataExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.StrDataExtension>();
+    var origElements = openXmlElement.Elements<DXDC.StrDataExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class StrDataExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.StrDataExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.StrDataExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class StrDataExtensionListConverter
     return false;
   }
   
-  private static void SetStrDataExtensions(DXDrawCharts.StrDataExtensionList openXmlElement, Collection<DMDrawsCharts.StrDataExtension>? value)
+  private static void SetStrDataExtensions(DXDC.StrDataExtensionList openXmlElement, Collection<DMDC.StrDataExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.StrDataExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.StrDataExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.StrDataExtensionConverter.CreateOpenXmlElement<DXDrawCharts.StrDataExtension>(item);
+        var newItem = DMXDC.StrDataExtensionConverter.CreateOpenXmlElement<DXDC.StrDataExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrDataExtensionList? CreateModelElement(DXDrawCharts.StrDataExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StrDataExtensionList? CreateModelElement(DXDC.StrDataExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class StrDataExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StrDataExtensionList? openXmlElement, DMDrawsCharts.StrDataExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StrDataExtensionList? openXmlElement, DMDC.StrDataExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class StrDataExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrDataExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.StrDataExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StrDataExtensionList value)
+    where OpenXmlElementType: DXDC.StrDataExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StrDataExtensionList openXmlElement, DMDrawsCharts.StrDataExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.StrDataExtensionList openXmlElement, DMDC.StrDataExtensionList value)
   {
     SetStrDataExtensions(openXmlElement, value?.StrDataExtensions);
   }

@@ -6,19 +6,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class CommentExConverter
 {
   #region ParaId conversion.
-  private static DM.HexInt? GetParaId(DXO2013W.CommentEx openXmlElement)
+  private static DM.HexInt? GetParaId(DXO13W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaId?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.ParaId.Value);
     return null;
   }
   
-  private static bool CmpParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
   
-  private static void SetParaId(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
+  private static void SetParaId(DXO13W.CommentEx openXmlElement, DM.HexInt? value)
   {
     if (value != null)
       openXmlElement.ParaId = value.ToString();
@@ -28,19 +28,19 @@ public static class CommentExConverter
   #endregion
 
   #region ParaIdParent conversion.
-  private static DM.HexInt? GetParaIdParent(DXO2013W.CommentEx openXmlElement)
+  private static DM.HexInt? GetParaIdParent(DXO13W.CommentEx openXmlElement)
   {
     if (openXmlElement?.ParaIdParent?.Value != null)
       return HexIntConverter.GetValue(openXmlElement.ParaIdParent.Value);
     return null;
   }
   
-  private static bool CmpParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaIdParent(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaIdParent?.Value, value, diffs, objName, "ParaIdParent");
   }
   
-  private static void SetParaIdParent(DXO2013W.CommentEx openXmlElement, DM.HexInt? value)
+  private static void SetParaIdParent(DXO13W.CommentEx openXmlElement, DM.HexInt? value)
   {
     if (value != null)
       openXmlElement.ParaIdParent = value.ToString();
@@ -50,24 +50,24 @@ public static class CommentExConverter
   #endregion
 
   #region Done conversion.
-  private static Boolean? GetDone(DXO2013W.CommentEx openXmlElement)
+  private static Boolean? GetDone(DXO13W.CommentEx openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Done);
   }
   
-  private static bool CmpDone(DXO2013W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDone(DXO13W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Done, value, diffs, objName, "Done");
   }
   
-  private static void SetDone(DXO2013W.CommentEx openXmlElement, Boolean? value)
+  private static void SetDone(DXO13W.CommentEx openXmlElement, Boolean? value)
   {
     openXmlElement.Done = BooleanValueConverter.CreateOnOffValue(value);
   }
   #endregion
 
   #region CommentEx model conversion.
-  public static DMW.CommentEx? CreateModelElement(DXO2013W.CommentEx? openXmlElement)
+  public static DMW.CommentEx? CreateModelElement(DXO13W.CommentEx? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -80,7 +80,7 @@ public static class CommentExConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013W.CommentEx? openXmlElement, DMW.CommentEx? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.CommentEx? openXmlElement, DMW.CommentEx? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -99,14 +99,14 @@ public static class CommentExConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentEx value)
-    where OpenXmlElementType: DXO2013W.CommentEx, new()
+    where OpenXmlElementType: DXO13W.CommentEx, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013W.CommentEx openXmlElement, DMW.CommentEx value)
+  public static void UpdateOpenXmlElement(DXO13W.CommentEx openXmlElement, DMW.CommentEx value)
   {
     SetParaId(openXmlElement, value?.ParaId);
     SetParaIdParent(openXmlElement, value?.ParaIdParent);

@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class StyleDataConverter
 {
-  private static DMDrawsDgms.DataModel? GetDataModel(DXDrawDgms.StyleData openXmlElement)
+  private static DMDD.DataModel? GetDataModel(DXDD.StyleData openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModel>();
+    var element = openXmlElement?.GetFirstChild<DXDD.DataModel>();
     if (element != null)
-      return DMXDrawsDgms.DataModelConverter.CreateModelElement(element);
+      return DMXDD.DataModelConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataModel(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModel(DXDD.StyleData openXmlElement, DMDD.DataModel? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModel>(), value, diffs, objName);
+    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName);
   }
   
-  private static void SetDataModel(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.DataModel? value)
+  private static void SetDataModel(DXDD.StyleData openXmlElement, DMDD.DataModel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.DataModel>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.DataModel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.DataModelConverter.CreateOpenXmlElement<DXDrawDgms.DataModel>(value);
+      itemElement = DMXDD.DataModelConverter.CreateOpenXmlElement<DXDD.DataModel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleData? CreateModelElement(DXDrawDgms.StyleData? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleData? CreateModelElement(DXDD.StyleData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class StyleDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.StyleData? openXmlElement, DMDrawsDgms.StyleData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.StyleData? openXmlElement, DMDD.StyleData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class StyleDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleData value)
-    where OpenXmlElementType: DXDrawDgms.StyleData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.StyleData value)
+    where OpenXmlElementType: DXDD.StyleData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.StyleData openXmlElement, DMDrawsDgms.StyleData value)
+  public static void UpdateOpenXmlElement(DXDD.StyleData openXmlElement, DMDD.StyleData value)
   {
     SetDataModel(openXmlElement, value?.DataModel);
   }

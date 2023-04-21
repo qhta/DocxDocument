@@ -1,14 +1,4 @@
-using System.Reflection;
-
-using DocumentFormat.OpenXml.Wordprocessing;
-
-using DocumentModel;
-using DocumentModel.OpenXml;
-using DocumentModel.OpenXml.Wordprocessing;
 using DocumentModel.OpenXml.Drawings;
-
-using Qhta.Xml.Serialization;
-using System.Xml;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -66,6 +56,8 @@ public class TestTheme : TestBase
   /// <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
   public virtual void ReadReadTheme(string filename, bool showDetails = false)
   {
+    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+      filename = Path.Combine(TestPath, filename);
     WriteLine(filename);
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Theme);
@@ -88,24 +80,36 @@ public class TestTheme : TestBase
   }
 
   /// <summary>
-  /// Tests theme Xml serialization by reading "CustomProperties.docx" file,
+  /// Tests theme Xml serialization by reading all docx files,
   /// serialize and deserialize theme using string writer.
   /// </summary>
   [Test]
-  public void TestThemeXmlSerialization()
+  public void TestReadThemeXmlSerialization()
   {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadThemeXmlSerialization(filename);
+  }
 
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
+  /// <summary>
+  /// Tests theme Xml serialization by reading the specified docx file,
+  /// serialize and deserialize theme using string writer.
+  /// </summary>
+  public void TestReadThemeXmlSerialization(string filename, bool showDetails = false)
+  {
+    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+      filename = Path.Combine(TestPath, filename);
+    WriteLine(filename);
+
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Theme);
-    DMDraws.Theme oldTheme = document.Theme ?? new DMDraws.Theme();//TestReadProperties(filename, true);
+    DMD.Theme oldTheme = document.Theme ?? new DMD.Theme();
     Assert.IsNotNull(oldTheme, "No document theme read");
     if (oldTheme == null)
       return;
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(DMDraws.Theme), extraTypes.ToArray(),
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+    var serializer = new QXmlSerializer(typeof(DMD.Theme), extraTypes.ToArray(),
       new SerializationOptions { AcceptAllProperties = true });
     serializer.Serialize(textWriter, oldTheme);
     textWriter.Flush();
@@ -114,9 +118,15 @@ public class TestTheme : TestBase
     WriteLine();
 
     var textReader = new StringReader(str);
-    var newTheme = (DMDraws.Theme?)serializer.Deserialize(textReader);
-    Assert.IsNotNull(newTheme, $"Deserialized properties are null");
-    newTheme.ShouldDeepEqual(oldTheme);
+    var newTheme = (DMD.Theme?)serializer.Deserialize(textReader);
+    Assert.IsNotNull(newTheme, $"Deserialized theme is null");
+    var diffs = new DiffList();
+    var ok = DeepComparer.IsEqual(oldTheme, newTheme, diffs);
+    var t6 = DateTime.Now;
+    if (!ok)
+      foreach (var diff in diffs)
+        WriteLine(diff.ToString());
+    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
   }
 
 }

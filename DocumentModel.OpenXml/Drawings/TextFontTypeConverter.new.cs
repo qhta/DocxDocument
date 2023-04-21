@@ -8,19 +8,19 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Text Typeface
   /// </summary>
-  private static String? GetTypeface(DXDraw.TextFontType openXmlElement)
+  private static String? GetTypeface(DXD.TextFontType openXmlElement)
   {
     return openXmlElement?.Typeface?.Value;
   }
   
-  private static bool CmpTypeface(DXDraw.TextFontType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTypeface(DXD.TextFontType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Typeface?.Value == value) return true;
     diffs?.Add(objName, "Typeface", openXmlElement?.Typeface?.Value, value);
     return false;
   }
   
-  private static void SetTypeface(DXDraw.TextFontType openXmlElement, String? value)
+  private static void SetTypeface(DXD.TextFontType openXmlElement, String? value)
   {
     if (value != null)
       openXmlElement.Typeface = new StringValue { Value = value };
@@ -31,14 +31,14 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Panose Setting
   /// </summary>
-  private static HexBinary? GetPanose(DXDraw.TextFontType openXmlElement)
+  private static HexBinary? GetPanose(DXD.TextFontType openXmlElement)
   {
     if (openXmlElement?.Panose?.Value != null)
       return Convert.FromHexString(openXmlElement.Panose.Value);
     return null;
   }
   
-  private static bool CmpPanose(DXDraw.TextFontType openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
+  private static bool CmpPanose(DXD.TextFontType openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Panose?.Value != null && value!=null)
       if (Convert.FromHexString(openXmlElement.Panose.Value).SequenceEqual((byte[])value))
@@ -48,7 +48,7 @@ public static class TextFontTypeConverter
     return false;
   }
   
-  private static void SetPanose(DXDraw.TextFontType openXmlElement, HexBinary? value)
+  private static void SetPanose(DXD.TextFontType openXmlElement, HexBinary? value)
   {
     if (value != null)
       openXmlElement.Panose = Convert.ToHexString(value);
@@ -59,19 +59,19 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Similar Font Family
   /// </summary>
-  private static SByte? GetPitchFamily(DXDraw.TextFontType openXmlElement)
+  private static SByte? GetPitchFamily(DXD.TextFontType openXmlElement)
   {
     return openXmlElement?.PitchFamily?.Value;
   }
   
-  private static bool CmpPitchFamily(DXDraw.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpPitchFamily(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.PitchFamily?.Value == value) return true;
     diffs?.Add(objName, "PitchFamily", openXmlElement?.PitchFamily?.Value, value);
     return false;
   }
   
-  private static void SetPitchFamily(DXDraw.TextFontType openXmlElement, SByte? value)
+  private static void SetPitchFamily(DXD.TextFontType openXmlElement, SByte? value)
   {
     openXmlElement.PitchFamily = value;
   }
@@ -79,28 +79,28 @@ public static class TextFontTypeConverter
   /// <summary>
   /// Similar Character Set
   /// </summary>
-  private static SByte? GetCharacterSet(DXDraw.TextFontType openXmlElement)
+  private static SByte? GetCharacterSet(DXD.TextFontType openXmlElement)
   {
     return openXmlElement?.CharacterSet?.Value;
   }
   
-  private static bool CmpCharacterSet(DXDraw.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterSet(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CharacterSet?.Value == value) return true;
     diffs?.Add(objName, "CharacterSet", openXmlElement?.CharacterSet?.Value, value);
     return false;
   }
   
-  private static void SetCharacterSet(DXDraw.TextFontType openXmlElement, SByte? value)
+  private static void SetCharacterSet(DXD.TextFontType openXmlElement, SByte? value)
   {
     openXmlElement.CharacterSet = value;
   }
   
-  public static DMDraws.TextFontType? CreateModelElement(DXDraw.TextFontType? openXmlElement)
+  public static DMD.TextFontType? CreateModelElement(DXD.TextFontType? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.TextFontType();
+      var value = new DMD.TextFontType();
       value.Typeface = GetTypeface(openXmlElement);
       value.Panose = GetPanose(openXmlElement);
       value.PitchFamily = GetPitchFamily(openXmlElement);
@@ -110,7 +110,7 @@ public static class TextFontTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.TextFontType? openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TextFontType? openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -130,8 +130,8 @@ public static class TextFontTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextFontType? value)
-    where OpenXmlElementType: DXDraw.TextFontType, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMD.TextFontType? value)
+    where OpenXmlElementType: DXD.TextFontType, new()
   {
     if (value != null)
     {

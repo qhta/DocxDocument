@@ -8,48 +8,48 @@ public static class PtExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.PtExtension openXmlElement)
+  private static String? GetUri(DXD.PtExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.PtExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.PtExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.PtExtension openXmlElement, String? value)
+  private static void SetUri(DXD.PtExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsDgms.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement)
+  private static DMDD.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXD.PtExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10DD.NonVisualDrawingProperties>();
     if (element != null)
-      return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+      return DMXDD.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXD.PtExtension openXmlElement, DMDD.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DD.NonVisualDrawingProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualDrawingProperties(DXDraw.PtExtension openXmlElement, DMDrawsDgms.NonVisualDrawingProperties? value)
+  private static void SetNonVisualDrawingProperties(DXD.PtExtension openXmlElement, DMDD.NonVisualDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawDgm.NonVisualDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DD.NonVisualDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO2010DrawDgm.NonVisualDrawingProperties>(value);
+      itemElement = DMXDD.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PtExtension? CreateModelElement(DXDraw.PtExtension? openXmlElement)
+  public static DocumentModel.Drawings.PtExtension? CreateModelElement(DXD.PtExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class PtExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.PtExtension? openXmlElement, DMDraws.PtExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PtExtension? openXmlElement, DMD.PtExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class PtExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PtExtension value)
-    where OpenXmlElementType: DXDraw.PtExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.PtExtension value)
+    where OpenXmlElementType: DXD.PtExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.PtExtension openXmlElement, DMDraws.PtExtension value)
+  public static void UpdateOpenXmlElement(DXD.PtExtension openXmlElement, DMD.PtExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);

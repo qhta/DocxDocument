@@ -8,22 +8,22 @@ public static class FormulaConverter
   /// <summary>
   /// Equation
   /// </summary>
-  private static String? GetEquation(DXVml.Formula openXmlElement)
+  private static String? GetEquation(DXV.Formula openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Equation);
   }
   
-  private static bool CmpEquation(DXVml.Formula openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEquation(DXV.Formula openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Equation, value, diffs, objName, "Equation");
   }
   
-  private static void SetEquation(DXVml.Formula openXmlElement, String? value)
+  private static void SetEquation(DXV.Formula openXmlElement, String? value)
   {
     openXmlElement.Equation = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Vml.Formula? CreateModelElement(DXVml.Formula? openXmlElement)
+  public static DocumentModel.Vml.Formula? CreateModelElement(DXV.Formula? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class FormulaConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVml.Formula? openXmlElement, DMVml.Formula? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.Formula? openXmlElement, DMV.Formula? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class FormulaConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formula value)
-    where OpenXmlElementType: DXVml.Formula, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.Formula value)
+    where OpenXmlElementType: DXV.Formula, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVml.Formula openXmlElement, DMVml.Formula value)
+  public static void UpdateOpenXmlElement(DXV.Formula openXmlElement, DMV.Formula value)
   {
     SetEquation(openXmlElement, value?.Equation);
   }

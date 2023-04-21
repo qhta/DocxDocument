@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class FormatOverridesConverter
 {
-  private static Collection<DMDrawsChartDraws.FormatOverride>? GetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement)
+  private static Collection<DMDCDs.FormatOverride>? GetItems(DXO16DCD.FormatOverrides openXmlElement)
   {
-    var collection = new Collection<DMDrawsChartDraws.FormatOverride>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.FormatOverride>())
+    var collection = new Collection<DMDCDs.FormatOverride>();
+    foreach (var item in openXmlElement.Elements<DXO16DCD.FormatOverride>())
     {
-      var newItem = DMXDrawsChartDraws.FormatOverrideConverter.CreateModelElement(item);
+      var newItem = DMXDCDs.FormatOverrideConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class FormatOverridesConverter
     return null;
   }
   
-  private static bool CmpItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement, Collection<DMDrawsChartDraws.FormatOverride>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO16DCD.FormatOverrides openXmlElement, Collection<DMDCDs.FormatOverride>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.FormatOverride>();
+    var origElements = openXmlElement.Elements<DXO16DCD.FormatOverride>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class FormatOverridesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsChartDraws.FormatOverrideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.FormatOverrideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class FormatOverridesConverter
     return false;
   }
   
-  private static void SetItems(DXO2016DrawChartDraw.FormatOverrides openXmlElement, Collection<DMDrawsChartDraws.FormatOverride>? value)
+  private static void SetItems(DXO16DCD.FormatOverrides openXmlElement, Collection<DMDCDs.FormatOverride>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.FormatOverride>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.FormatOverride>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsChartDraws.FormatOverrideConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.FormatOverride>(item);
+        var newItem = DMXDCDs.FormatOverrideConverter.CreateOpenXmlElement<DXO16DCD.FormatOverride>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.FormatOverrides? CreateModelElement(DXO2016DrawChartDraw.FormatOverrides? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.FormatOverrides? CreateModelElement(DXO16DCD.FormatOverrides? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class FormatOverridesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.FormatOverrides? openXmlElement, DMDrawsChartDraws.FormatOverrides? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.FormatOverrides? openXmlElement, DMDCDs.FormatOverrides? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class FormatOverridesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.FormatOverrides value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.FormatOverrides, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.FormatOverrides value)
+    where OpenXmlElementType: DXO16DCD.FormatOverrides, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.FormatOverrides openXmlElement, DMDrawsChartDraws.FormatOverrides value)
+  public static void UpdateOpenXmlElement(DXO16DCD.FormatOverrides openXmlElement, DMDCDs.FormatOverrides value)
   {
     SetItems(openXmlElement, value?.Items);
   }

@@ -8,27 +8,27 @@ public static class TextConverter
   /// <summary>
   /// TextData.
   /// </summary>
-  private static DMDrawsChartDraws.TextData? GetTextData(DXO2016DrawChartDraw.Text openXmlElement)
+  private static DMDCDs.TextData? GetTextData(DXO16DCD.Text openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TextData>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.TextData>();
     if (element != null)
-      return DMXDrawsChartDraws.TextDataConverter.CreateModelElement(element);
+      return DMXDCDs.TextDataConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextData(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.TextData? value, DiffList? diffs, string? objName)
+  private static bool CmpTextData(DXO16DCD.Text openXmlElement, DMDCDs.TextData? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TextData>(), value, diffs, objName);
+    return DMXDCDs.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TextData>(), value, diffs, objName);
   }
   
-  private static void SetTextData(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.TextData? value)
+  private static void SetTextData(DXO16DCD.Text openXmlElement, DMDCDs.TextData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TextData>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.TextData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.TextDataConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.TextData>(value);
+      itemElement = DMXDCDs.TextDataConverter.CreateOpenXmlElement<DXO16DCD.TextData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class TextConverter
   /// <summary>
   /// RichTextBody.
   /// </summary>
-  private static DMDrawsChartDraws.RichTextBody? GetRichTextBody(DXO2016DrawChartDraw.Text openXmlElement)
+  private static DMDCDs.RichTextBody? GetRichTextBody(DXO16DCD.Text openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.RichTextBody>();
     if (element != null)
-      return DMXDrawsChartDraws.RichTextBodyConverter.CreateModelElement(element);
+      return DMXDCDs.RichTextBodyConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRichTextBody(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.RichTextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpRichTextBody(DXO16DCD.Text openXmlElement, DMDCDs.RichTextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>(), value, diffs, objName);
+    return DMXDCDs.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.RichTextBody>(), value, diffs, objName);
   }
   
-  private static void SetRichTextBody(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.RichTextBody? value)
+  private static void SetRichTextBody(DXO16DCD.Text openXmlElement, DMDCDs.RichTextBody? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.RichTextBody>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.RichTextBody>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.RichTextBodyConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.RichTextBody>(value);
+      itemElement = DMXDCDs.RichTextBodyConverter.CreateOpenXmlElement<DXO16DCD.RichTextBody>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Text? CreateModelElement(DXO2016DrawChartDraw.Text? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Text? CreateModelElement(DXO16DCD.Text? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class TextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Text? openXmlElement, DMDrawsChartDraws.Text? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Text? openXmlElement, DMDCDs.Text? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class TextConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Text value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Text, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Text value)
+    where OpenXmlElementType: DXO16DCD.Text, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Text openXmlElement, DMDrawsChartDraws.Text value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Text openXmlElement, DMDCDs.Text value)
   {
     SetTextData(openXmlElement, value?.TextData);
     SetRichTextBody(openXmlElement, value?.RichTextBody);

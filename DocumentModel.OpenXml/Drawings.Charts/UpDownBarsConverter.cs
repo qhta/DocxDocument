@@ -8,45 +8,45 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Gap Width.
   /// </summary>
-  private static UInt16? GetGapWidth(DXDrawCharts.UpDownBars openXmlElement)
+  private static UInt16? GetGapWidth(DXDC.UpDownBars openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val);
   }
   
-  private static bool CmpGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpGapWidth(DXDC.UpDownBars openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
-  private static void SetGapWidth(DXDrawCharts.UpDownBars openXmlElement, UInt16? value)
+  private static void SetGapWidth(DXDC.UpDownBars openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
   /// Up Bars.
   /// </summary>
-  private static DMDrawsCharts.UpBars? GetUpBars(DXDrawCharts.UpDownBars openXmlElement)
+  private static DMDC.UpBars? GetUpBars(DXDC.UpDownBars openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.UpBars>();
+    var element = openXmlElement?.GetFirstChild<DXDC.UpBars>();
     if (element != null)
-      return DMXDrawsCharts.UpBarsConverter.CreateModelElement(element);
+      return DMXDC.UpBarsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value, DiffList? diffs, string? objName)
+  private static bool CmpUpBars(DXDC.UpDownBars openXmlElement, DMDC.UpBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpBars>(), value, diffs, objName);
+    return DMXDC.UpBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpBars>(), value, diffs, objName);
   }
   
-  private static void SetUpBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpBars? value)
+  private static void SetUpBars(DXDC.UpDownBars openXmlElement, DMDC.UpBars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.UpBars>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.UpBars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.UpBarsConverter.CreateOpenXmlElement<DXDrawCharts.UpBars>(value);
+      itemElement = DMXDC.UpBarsConverter.CreateOpenXmlElement<DXDC.UpBars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,27 +55,27 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Down Bars.
   /// </summary>
-  private static DMDrawsCharts.DownBars? GetDownBars(DXDrawCharts.UpDownBars openXmlElement)
+  private static DMDC.DownBars? GetDownBars(DXDC.UpDownBars openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DownBars>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DownBars>();
     if (element != null)
-      return DMXDrawsCharts.DownBarsConverter.CreateModelElement(element);
+      return DMXDC.DownBarsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
+  private static bool CmpDownBars(DXDC.UpDownBars openXmlElement, DMDC.DownBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DownBars>(), value, diffs, objName);
+    return DMXDC.DownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DownBars>(), value, diffs, objName);
   }
   
-  private static void SetDownBars(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.DownBars? value)
+  private static void SetDownBars(DXDC.UpDownBars openXmlElement, DMDC.DownBars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DownBars>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DownBars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DownBarsConverter.CreateOpenXmlElement<DXDrawCharts.DownBars>(value);
+      itemElement = DMXDC.DownBarsConverter.CreateOpenXmlElement<DXDC.DownBars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -84,33 +84,33 @@ public static class UpDownBarsConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.UpDownBars openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.UpDownBars openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.UpDownBars openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.UpDownBars openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.UpDownBars? CreateModelElement(DXDrawCharts.UpDownBars? openXmlElement)
+  public static DocumentModel.Drawings.Charts.UpDownBars? CreateModelElement(DXDC.UpDownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -124,7 +124,7 @@ public static class UpDownBarsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.UpDownBars? openXmlElement, DMDrawsCharts.UpDownBars? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.UpDownBars? openXmlElement, DMDC.UpDownBars? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -144,15 +144,15 @@ public static class UpDownBarsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.UpDownBars value)
-    where OpenXmlElementType: DXDrawCharts.UpDownBars, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.UpDownBars value)
+    where OpenXmlElementType: DXDC.UpDownBars, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.UpDownBars openXmlElement, DMDrawsCharts.UpDownBars value)
+  public static void UpdateOpenXmlElement(DXDC.UpDownBars openXmlElement, DMDC.UpDownBars value)
   {
     SetGapWidth(openXmlElement, value?.GapWidth);
     SetUpBars(openXmlElement, value?.UpBars);

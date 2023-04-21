@@ -8,17 +8,17 @@ public static class BlipConverter
   /// <summary>
   /// Embedded Picture Reference
   /// </summary>
-  private static String? GetEmbed(DXDraw.Blip openXmlElement)
+  private static String? GetEmbed(DXD.Blip openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
-  private static bool CmpEmbed(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbed(DXD.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
   
-  private static void SetEmbed(DXDraw.Blip openXmlElement, String? value)
+  private static void SetEmbed(DXD.Blip openXmlElement, String? value)
   {
     openXmlElement.Embed = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class BlipConverter
   /// <summary>
   /// Linked Picture Reference
   /// </summary>
-  private static String? GetLink(DXDraw.Blip openXmlElement)
+  private static String? GetLink(DXD.Blip openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
-  private static bool CmpLink(DXDraw.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLink(DXD.Blip openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
   
-  private static void SetLink(DXDraw.Blip openXmlElement, String? value)
+  private static void SetLink(DXD.Blip openXmlElement, String? value)
   {
     openXmlElement.Link = StringValueConverter.CreateStringValue(value);
   }
@@ -44,496 +44,496 @@ public static class BlipConverter
   /// <summary>
   /// Compression state for blips.
   /// </summary>
-  private static DMDraws.BlipCompressionKind? GetCompressionState(DXDraw.Blip openXmlElement)
+  private static DMD.BlipCompressionKind? GetCompressionState(DXD.Blip openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMDraws.BlipCompressionKind>(openXmlElement?.CompressionState?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(openXmlElement?.CompressionState?.Value);
   }
   
-  private static bool CmpCompressionState(DXDraw.Blip openXmlElement, DMDraws.BlipCompressionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCompressionState(DXD.Blip openXmlElement, DMD.BlipCompressionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMDraws.BlipCompressionKind>(openXmlElement?.CompressionState?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(openXmlElement?.CompressionState?.Value, value, diffs, objName);
   }
   
-  private static void SetCompressionState(DXDraw.Blip openXmlElement, DMDraws.BlipCompressionKind? value)
+  private static void SetCompressionState(DXD.Blip openXmlElement, DMD.BlipCompressionKind? value)
   {
-    openXmlElement.CompressionState = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMDraws.BlipCompressionKind>(value);
+    openXmlElement.CompressionState = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(value);
   }
   
-  private static DMDraws.AlphaBiLevel? GetAlphaBiLevel(DXDraw.Blip openXmlElement)
+  private static DMD.AlphaBiLevel? GetAlphaBiLevel(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaBiLevel>();
+    var element = openXmlElement?.GetFirstChild<DXD.AlphaBiLevel>();
     if (element != null)
-      return DMXDraws.AlphaBiLevelConverter.CreateModelElement(element);
+      return DMXD.AlphaBiLevelConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlphaBiLevel(DXDraw.Blip openXmlElement, DMDraws.AlphaBiLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaBiLevel(DXD.Blip openXmlElement, DMD.AlphaBiLevel? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AlphaBiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AlphaBiLevel>(), value, diffs, objName);
+    return DMXD.AlphaBiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaBiLevel>(), value, diffs, objName);
   }
   
-  private static void SetAlphaBiLevel(DXDraw.Blip openXmlElement, DMDraws.AlphaBiLevel? value)
+  private static void SetAlphaBiLevel(DXD.Blip openXmlElement, DMD.AlphaBiLevel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaBiLevel>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaBiLevel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AlphaBiLevelConverter.CreateOpenXmlElement<DXDraw.AlphaBiLevel>(value);
+      itemElement = DMXD.AlphaBiLevelConverter.CreateOpenXmlElement<DXD.AlphaBiLevel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAlphaCeiling(DXDraw.Blip openXmlElement)
+  private static Boolean? GetAlphaCeiling(DXD.Blip openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null;
+    return openXmlElement.GetFirstChild<DXD.AlphaCeiling>() != null;
   }
   
-  private static bool CmpAlphaCeiling(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaCeiling(DXD.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.AlphaCeiling>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.AlphaCeiling", val, value);
+    diffs?.Add(objName, "DXD.AlphaCeiling", val, value);
     return false;
   }
   
-  private static void SetAlphaCeiling(DXDraw.Blip openXmlElement, Boolean? value)
+  private static void SetAlphaCeiling(DXD.Blip openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaCeiling>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.AlphaCeiling>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.AlphaCeiling();
+      var itemElement = new DXD.AlphaCeiling();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAlphaFloor(DXDraw.Blip openXmlElement)
+  private static Boolean? GetAlphaFloor(DXD.Blip openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null;
+    return openXmlElement.GetFirstChild<DXD.AlphaFloor>() != null;
   }
   
-  private static bool CmpAlphaFloor(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaFloor(DXD.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.AlphaFloor>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.AlphaFloor", val, value);
+    diffs?.Add(objName, "DXD.AlphaFloor", val, value);
     return false;
   }
   
-  private static void SetAlphaFloor(DXDraw.Blip openXmlElement, Boolean? value)
+  private static void SetAlphaFloor(DXD.Blip openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaFloor>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.AlphaFloor>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.AlphaFloor();
+      var itemElement = new DXD.AlphaFloor();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.AlphaInverse? GetAlphaInverse(DXDraw.Blip openXmlElement)
+  private static DMD.AlphaInverse? GetAlphaInverse(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaInverse>();
+    var element = openXmlElement?.GetFirstChild<DXD.AlphaInverse>();
     if (element != null)
-      return DMXDraws.AlphaInverseConverter.CreateModelElement(element);
+      return DMXD.AlphaInverseConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlphaInverse(DXDraw.Blip openXmlElement, DMDraws.AlphaInverse? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaInverse(DXD.Blip openXmlElement, DMD.AlphaInverse? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AlphaInverseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AlphaInverse>(), value, diffs, objName);
+    return DMXD.AlphaInverseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaInverse>(), value, diffs, objName);
   }
   
-  private static void SetAlphaInverse(DXDraw.Blip openXmlElement, DMDraws.AlphaInverse? value)
+  private static void SetAlphaInverse(DXD.Blip openXmlElement, DMD.AlphaInverse? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaInverse>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaInverse>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AlphaInverseConverter.CreateOpenXmlElement<DXDraw.AlphaInverse>(value);
+      itemElement = DMXD.AlphaInverseConverter.CreateOpenXmlElement<DXD.AlphaInverse>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.AlphaModulationEffect? GetAlphaModulationEffect(DXDraw.Blip openXmlElement)
+  private static DMD.AlphaModulationEffect? GetAlphaModulationEffect(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationEffect>();
+    var element = openXmlElement?.GetFirstChild<DXD.AlphaModulationEffect>();
     if (element != null)
-      return DMXDraws.AlphaModulationEffectConverter.CreateModelElement(element);
+      return DMXD.AlphaModulationEffectConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlphaModulationEffect(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulationEffect(DXD.Blip openXmlElement, DMD.AlphaModulationEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AlphaModulationEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AlphaModulationEffect>(), value, diffs, objName);
+    return DMXD.AlphaModulationEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationEffect>(), value, diffs, objName);
   }
   
-  private static void SetAlphaModulationEffect(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationEffect? value)
+  private static void SetAlphaModulationEffect(DXD.Blip openXmlElement, DMD.AlphaModulationEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulationEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaModulationEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AlphaModulationEffectConverter.CreateOpenXmlElement<DXDraw.AlphaModulationEffect>(value);
+      itemElement = DMXD.AlphaModulationEffectConverter.CreateOpenXmlElement<DXD.AlphaModulationEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.AlphaModulationFixed? GetAlphaModulationFixed(DXDraw.Blip openXmlElement)
+  private static DMD.AlphaModulationFixed? GetAlphaModulationFixed(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaModulationFixed>();
+    var element = openXmlElement?.GetFirstChild<DXD.AlphaModulationFixed>();
     if (element != null)
-      return DMXDraws.AlphaModulationFixedConverter.CreateModelElement(element);
+      return DMXD.AlphaModulationFixedConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlphaModulationFixed(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationFixed? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulationFixed(DXD.Blip openXmlElement, DMD.AlphaModulationFixed? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AlphaModulationFixedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AlphaModulationFixed>(), value, diffs, objName);
+    return DMXD.AlphaModulationFixedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationFixed>(), value, diffs, objName);
   }
   
-  private static void SetAlphaModulationFixed(DXDraw.Blip openXmlElement, DMDraws.AlphaModulationFixed? value)
+  private static void SetAlphaModulationFixed(DXD.Blip openXmlElement, DMD.AlphaModulationFixed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulationFixed>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaModulationFixed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AlphaModulationFixedConverter.CreateOpenXmlElement<DXDraw.AlphaModulationFixed>(value);
+      itemElement = DMXD.AlphaModulationFixedConverter.CreateOpenXmlElement<DXD.AlphaModulationFixed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.AlphaReplace? GetAlphaReplace(DXDraw.Blip openXmlElement)
+  private static DMD.AlphaReplace? GetAlphaReplace(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AlphaReplace>();
+    var element = openXmlElement?.GetFirstChild<DXD.AlphaReplace>();
     if (element != null)
-      return DMXDraws.AlphaReplaceConverter.CreateModelElement(element);
+      return DMXD.AlphaReplaceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlphaReplace(DXDraw.Blip openXmlElement, DMDraws.AlphaReplace? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaReplace(DXD.Blip openXmlElement, DMD.AlphaReplace? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AlphaReplaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AlphaReplace>(), value, diffs, objName);
+    return DMXD.AlphaReplaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaReplace>(), value, diffs, objName);
   }
   
-  private static void SetAlphaReplace(DXDraw.Blip openXmlElement, DMDraws.AlphaReplace? value)
+  private static void SetAlphaReplace(DXD.Blip openXmlElement, DMD.AlphaReplace? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaReplace>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaReplace>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AlphaReplaceConverter.CreateOpenXmlElement<DXDraw.AlphaReplace>(value);
+      itemElement = DMXD.AlphaReplaceConverter.CreateOpenXmlElement<DXD.AlphaReplace>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BiLevel? GetBiLevel(DXDraw.Blip openXmlElement)
+  private static DMD.BiLevel? GetBiLevel(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BiLevel>();
+    var element = openXmlElement?.GetFirstChild<DXD.BiLevel>();
     if (element != null)
-      return DMXDraws.BiLevelConverter.CreateModelElement(element);
+      return DMXD.BiLevelConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBiLevel(DXDraw.Blip openXmlElement, DMDraws.BiLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpBiLevel(DXD.Blip openXmlElement, DMD.BiLevel? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BiLevel>(), value, diffs, objName);
+    return DMXD.BiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BiLevel>(), value, diffs, objName);
   }
   
-  private static void SetBiLevel(DXDraw.Blip openXmlElement, DMDraws.BiLevel? value)
+  private static void SetBiLevel(DXD.Blip openXmlElement, DMD.BiLevel? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BiLevel>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BiLevel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BiLevelConverter.CreateOpenXmlElement<DXDraw.BiLevel>(value);
+      itemElement = DMXD.BiLevelConverter.CreateOpenXmlElement<DXD.BiLevel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Blur? GetBlur(DXDraw.Blip openXmlElement)
+  private static DMD.Blur? GetBlur(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Blur>();
+    var element = openXmlElement?.GetFirstChild<DXD.Blur>();
     if (element != null)
-      return DMXDraws.BlurConverter.CreateModelElement(element);
+      return DMXD.BlurConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlur(DXDraw.Blip openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
+  private static bool CmpBlur(DXD.Blip openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Blur>(), value, diffs, objName);
+    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName);
   }
   
-  private static void SetBlur(DXDraw.Blip openXmlElement, DMDraws.Blur? value)
+  private static void SetBlur(DXD.Blip openXmlElement, DMD.Blur? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blur>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Blur>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlurConverter.CreateOpenXmlElement<DXDraw.Blur>(value);
+      itemElement = DMXD.BlurConverter.CreateOpenXmlElement<DXD.Blur>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ColorChange? GetColorChange(DXDraw.Blip openXmlElement)
+  private static DMD.ColorChange? GetColorChange(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ColorChange>();
+    var element = openXmlElement?.GetFirstChild<DXD.ColorChange>();
     if (element != null)
-      return DMXDraws.ColorChangeConverter.CreateModelElement(element);
+      return DMXD.ColorChangeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorChange(DXDraw.Blip openXmlElement, DMDraws.ColorChange? value, DiffList? diffs, string? objName)
+  private static bool CmpColorChange(DXD.Blip openXmlElement, DMD.ColorChange? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorChange>(), value, diffs, objName);
+    return DMXD.ColorChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorChange>(), value, diffs, objName);
   }
   
-  private static void SetColorChange(DXDraw.Blip openXmlElement, DMDraws.ColorChange? value)
+  private static void SetColorChange(DXD.Blip openXmlElement, DMD.ColorChange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorChange>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ColorChange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ColorChangeConverter.CreateOpenXmlElement<DXDraw.ColorChange>(value);
+      itemElement = DMXD.ColorChangeConverter.CreateOpenXmlElement<DXD.ColorChange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ColorReplacement? GetColorReplacement(DXDraw.Blip openXmlElement)
+  private static DMD.ColorReplacement? GetColorReplacement(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ColorReplacement>();
+    var element = openXmlElement?.GetFirstChild<DXD.ColorReplacement>();
     if (element != null)
-      return DMXDraws.ColorReplacementConverter.CreateModelElement(element);
+      return DMXD.ColorReplacementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorReplacement(DXDraw.Blip openXmlElement, DMDraws.ColorReplacement? value, DiffList? diffs, string? objName)
+  private static bool CmpColorReplacement(DXD.Blip openXmlElement, DMD.ColorReplacement? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorReplacementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorReplacement>(), value, diffs, objName);
+    return DMXD.ColorReplacementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorReplacement>(), value, diffs, objName);
   }
   
-  private static void SetColorReplacement(DXDraw.Blip openXmlElement, DMDraws.ColorReplacement? value)
+  private static void SetColorReplacement(DXD.Blip openXmlElement, DMD.ColorReplacement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorReplacement>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ColorReplacement>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ColorReplacementConverter.CreateOpenXmlElement<DXDraw.ColorReplacement>(value);
+      itemElement = DMXD.ColorReplacementConverter.CreateOpenXmlElement<DXD.ColorReplacement>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Duotone? GetDuotone(DXDraw.Blip openXmlElement)
+  private static DMD.Duotone? GetDuotone(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Duotone>();
+    var element = openXmlElement?.GetFirstChild<DXD.Duotone>();
     if (element != null)
-      return DMXDraws.DuotoneConverter.CreateModelElement(element);
+      return DMXD.DuotoneConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDuotone(DXDraw.Blip openXmlElement, DMDraws.Duotone? value, DiffList? diffs, string? objName)
+  private static bool CmpDuotone(DXD.Blip openXmlElement, DMD.Duotone? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.DuotoneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Duotone>(), value, diffs, objName);
+    return DMXD.DuotoneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Duotone>(), value, diffs, objName);
   }
   
-  private static void SetDuotone(DXDraw.Blip openXmlElement, DMDraws.Duotone? value)
+  private static void SetDuotone(DXD.Blip openXmlElement, DMD.Duotone? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Duotone>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Duotone>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.DuotoneConverter.CreateOpenXmlElement<DXDraw.Duotone>(value);
+      itemElement = DMXD.DuotoneConverter.CreateOpenXmlElement<DXD.Duotone>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.FillOverlay? GetFillOverlay(DXDraw.Blip openXmlElement)
+  private static DMD.FillOverlay? GetFillOverlay(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.FillOverlay>();
+    var element = openXmlElement?.GetFirstChild<DXD.FillOverlay>();
     if (element != null)
-      return DMXDraws.FillOverlayConverter.CreateModelElement(element);
+      return DMXD.FillOverlayConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFillOverlay(DXDraw.Blip openXmlElement, DMDraws.FillOverlay? value, DiffList? diffs, string? objName)
+  private static bool CmpFillOverlay(DXD.Blip openXmlElement, DMD.FillOverlay? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillOverlay>(), value, diffs, objName);
+    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName);
   }
   
-  private static void SetFillOverlay(DXDraw.Blip openXmlElement, DMDraws.FillOverlay? value)
+  private static void SetFillOverlay(DXD.Blip openXmlElement, DMD.FillOverlay? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.FillOverlay>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.FillOverlay>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.FillOverlayConverter.CreateOpenXmlElement<DXDraw.FillOverlay>(value);
+      itemElement = DMXD.FillOverlayConverter.CreateOpenXmlElement<DXD.FillOverlay>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetGrayscale(DXDraw.Blip openXmlElement)
+  private static Boolean GetGrayscale(DXD.Blip openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
+    return openXmlElement.GetFirstChild<DXD.Grayscale>() != null;
   }
   
-  private static bool CmpGrayscale(DXDraw.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGrayscale(DXD.Blip openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Grayscale>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Grayscale>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Grayscale", val, value);
+    diffs?.Add(objName, "DXD.Grayscale", val, value);
     return false;
   }
   
-  private static void SetGrayscale(DXDraw.Blip openXmlElement, Boolean? value)
+  private static void SetGrayscale(DXD.Blip openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Grayscale>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Grayscale>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Grayscale();
+      var itemElement = new DXD.Grayscale();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Hsl? GetHsl(DXDraw.Blip openXmlElement)
+  private static DMD.Hsl? GetHsl(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Hsl>();
+    var element = openXmlElement?.GetFirstChild<DXD.Hsl>();
     if (element != null)
-      return DMXDraws.HslConverter.CreateModelElement(element);
+      return DMXD.HslConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHsl(DXDraw.Blip openXmlElement, DMDraws.Hsl? value, DiffList? diffs, string? objName)
+  private static bool CmpHsl(DXD.Blip openXmlElement, DMD.Hsl? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Hsl>(), value, diffs, objName);
+    return DMXD.HslConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Hsl>(), value, diffs, objName);
   }
   
-  private static void SetHsl(DXDraw.Blip openXmlElement, DMDraws.Hsl? value)
+  private static void SetHsl(DXD.Blip openXmlElement, DMD.Hsl? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Hsl>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Hsl>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HslConverter.CreateOpenXmlElement<DXDraw.Hsl>(value);
+      itemElement = DMXD.HslConverter.CreateOpenXmlElement<DXD.Hsl>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.LuminanceEffect? GetLuminanceEffect(DXDraw.Blip openXmlElement)
+  private static DMD.LuminanceEffect? GetLuminanceEffect(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LuminanceEffect>();
+    var element = openXmlElement?.GetFirstChild<DXD.LuminanceEffect>();
     if (element != null)
-      return DMXDraws.LuminanceEffectConverter.CreateModelElement(element);
+      return DMXD.LuminanceEffectConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLuminanceEffect(DXDraw.Blip openXmlElement, DMDraws.LuminanceEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceEffect(DXD.Blip openXmlElement, DMD.LuminanceEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LuminanceEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LuminanceEffect>(), value, diffs, objName);
+    return DMXD.LuminanceEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LuminanceEffect>(), value, diffs, objName);
   }
   
-  private static void SetLuminanceEffect(DXDraw.Blip openXmlElement, DMDraws.LuminanceEffect? value)
+  private static void SetLuminanceEffect(DXD.Blip openXmlElement, DMD.LuminanceEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LuminanceEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LuminanceEffectConverter.CreateOpenXmlElement<DXDraw.LuminanceEffect>(value);
+      itemElement = DMXD.LuminanceEffectConverter.CreateOpenXmlElement<DXD.LuminanceEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TintEffect? GetTintEffect(DXDraw.Blip openXmlElement)
+  private static DMD.TintEffect? GetTintEffect(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.TintEffect>();
+    var element = openXmlElement?.GetFirstChild<DXD.TintEffect>();
     if (element != null)
-      return DMXDraws.TintEffectConverter.CreateModelElement(element);
+      return DMXD.TintEffectConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTintEffect(DXDraw.Blip openXmlElement, DMDraws.TintEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpTintEffect(DXD.Blip openXmlElement, DMD.TintEffect? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TintEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TintEffect>(), value, diffs, objName);
+    return DMXD.TintEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TintEffect>(), value, diffs, objName);
   }
   
-  private static void SetTintEffect(DXDraw.Blip openXmlElement, DMDraws.TintEffect? value)
+  private static void SetTintEffect(DXD.Blip openXmlElement, DMD.TintEffect? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.TintEffect>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.TintEffect>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TintEffectConverter.CreateOpenXmlElement<DXDraw.TintEffect>(value);
+      itemElement = DMXD.TintEffectConverter.CreateOpenXmlElement<DXD.TintEffect>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BlipExtensionList? GetBlipExtensionList(DXDraw.Blip openXmlElement)
+  private static DMD.BlipExtensionList? GetBlipExtensionList(DXD.Blip openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BlipExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.BlipExtensionList>();
     if (element != null)
-      return DMXDraws.BlipExtensionListConverter.CreateModelElement(element);
+      return DMXD.BlipExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlipExtensionList(DXDraw.Blip openXmlElement, DMDraws.BlipExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipExtensionList(DXD.Blip openXmlElement, DMD.BlipExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipExtensionList>(), value, diffs, objName);
+    return DMXD.BlipExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetBlipExtensionList(DXDraw.Blip openXmlElement, DMDraws.BlipExtensionList? value)
+  private static void SetBlipExtensionList(DXD.Blip openXmlElement, DMD.BlipExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlipExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlipExtensionListConverter.CreateOpenXmlElement<DXDraw.BlipExtensionList>(value);
+      itemElement = DMXD.BlipExtensionListConverter.CreateOpenXmlElement<DXD.BlipExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Blip? CreateModelElement(DXDraw.Blip? openXmlElement)
+  public static DocumentModel.Drawings.Blip? CreateModelElement(DXD.Blip? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -564,7 +564,7 @@ public static class BlipConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Blip? openXmlElement, DMDraws.Blip? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Blip? openXmlElement, DMD.Blip? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -618,15 +618,15 @@ public static class BlipConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blip value)
-    where OpenXmlElementType: DXDraw.Blip, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Blip value)
+    where OpenXmlElementType: DXD.Blip, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Blip openXmlElement, DMDraws.Blip value)
+  public static void UpdateOpenXmlElement(DXD.Blip openXmlElement, DMD.Blip value)
   {
     SetEmbed(openXmlElement, value?.Embed);
     SetLink(openXmlElement, value?.Link);

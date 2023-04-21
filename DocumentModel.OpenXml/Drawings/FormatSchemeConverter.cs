@@ -8,17 +8,17 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DXDraw.FormatScheme openXmlElement)
+  private static String? GetName(DXD.FormatScheme openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDraw.FormatScheme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.FormatScheme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDraw.FormatScheme openXmlElement, String? value)
+  private static void SetName(DXD.FormatScheme openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -26,27 +26,27 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Fill Style List.
   /// </summary>
-  private static DMDraws.FillStyleList? GetFillStyleList(DXDraw.FormatScheme openXmlElement)
+  private static DMD.FillStyleList? GetFillStyleList(DXD.FormatScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.FillStyleList>();
+    var element = openXmlElement?.GetFirstChild<DXD.FillStyleList>();
     if (element != null)
-      return DMXDraws.FillStyleListConverter.CreateModelElement(element);
+      return DMXD.FillStyleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FillStyleList>(), value, diffs, objName);
+    return DMXD.FillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillStyleList>(), value, diffs, objName);
   }
   
-  private static void SetFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.FillStyleList? value)
+  private static void SetFillStyleList(DXD.FormatScheme openXmlElement, DMD.FillStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.FillStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.FillStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.FillStyleListConverter.CreateOpenXmlElement<DXDraw.FillStyleList>(value);
+      itemElement = DMXD.FillStyleListConverter.CreateOpenXmlElement<DXD.FillStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,27 +55,27 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Line Style List.
   /// </summary>
-  private static DMDraws.LineStyleList? GetLineStyleList(DXDraw.FormatScheme openXmlElement)
+  private static DMD.LineStyleList? GetLineStyleList(DXD.FormatScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LineStyleList>();
+    var element = openXmlElement?.GetFirstChild<DXD.LineStyleList>();
     if (element != null)
-      return DMXDraws.LineStyleListConverter.CreateModelElement(element);
+      return DMXD.LineStyleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineStyleList>(), value, diffs, objName);
+    return DMXD.LineStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineStyleList>(), value, diffs, objName);
   }
   
-  private static void SetLineStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.LineStyleList? value)
+  private static void SetLineStyleList(DXD.FormatScheme openXmlElement, DMD.LineStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LineStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LineStyleListConverter.CreateOpenXmlElement<DXDraw.LineStyleList>(value);
+      itemElement = DMXD.LineStyleListConverter.CreateOpenXmlElement<DXD.LineStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -84,27 +84,27 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Effect Style List.
   /// </summary>
-  private static DMDraws.EffectStyleList? GetEffectStyleList(DXDraw.FormatScheme openXmlElement)
+  private static DMD.EffectStyleList? GetEffectStyleList(DXD.FormatScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectStyleList>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectStyleList>();
     if (element != null)
-      return DMXDraws.EffectStyleListConverter.CreateModelElement(element);
+      return DMXD.EffectStyleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectStyleList>(), value, diffs, objName);
+    return DMXD.EffectStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyleList>(), value, diffs, objName);
   }
   
-  private static void SetEffectStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.EffectStyleList? value)
+  private static void SetEffectStyleList(DXD.FormatScheme openXmlElement, DMD.EffectStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectStyleListConverter.CreateOpenXmlElement<DXDraw.EffectStyleList>(value);
+      itemElement = DMXD.EffectStyleListConverter.CreateOpenXmlElement<DXD.EffectStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -113,33 +113,33 @@ public static class FormatSchemeConverter
   /// <summary>
   /// Background Fill Style List.
   /// </summary>
-  private static DMDraws.BackgroundFillStyleList? GetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement)
+  private static DMD.BackgroundFillStyleList? GetBackgroundFillStyleList(DXD.FormatScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BackgroundFillStyleList>();
+    var element = openXmlElement?.GetFirstChild<DXD.BackgroundFillStyleList>();
     if (element != null)
-      return DMXDraws.BackgroundFillStyleListConverter.CreateModelElement(element);
+      return DMXD.BackgroundFillStyleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BackgroundFillStyleList>(), value, diffs, objName);
+    return DMXD.BackgroundFillStyleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundFillStyleList(DXDraw.FormatScheme openXmlElement, DMDraws.BackgroundFillStyleList? value)
+  private static void SetBackgroundFillStyleList(DXD.FormatScheme openXmlElement, DMD.BackgroundFillStyleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BackgroundFillStyleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BackgroundFillStyleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundFillStyleListConverter.CreateOpenXmlElement<DXDraw.BackgroundFillStyleList>(value);
+      itemElement = DMXD.BackgroundFillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DXDraw.FormatScheme? openXmlElement)
+  public static DocumentModel.Drawings.FormatScheme? CreateModelElement(DXD.FormatScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -154,7 +154,7 @@ public static class FormatSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.FormatScheme? openXmlElement, DMDraws.FormatScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FormatScheme? openXmlElement, DMD.FormatScheme? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -176,15 +176,15 @@ public static class FormatSchemeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FormatScheme value)
-    where OpenXmlElementType: DXDraw.FormatScheme, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FormatScheme value)
+    where OpenXmlElementType: DXD.FormatScheme, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.FormatScheme openXmlElement, DMDraws.FormatScheme value)
+  public static void UpdateOpenXmlElement(DXD.FormatScheme openXmlElement, DMD.FormatScheme value)
   {
     SetName(openXmlElement, value?.Name);
     SetFillStyleList(openXmlElement, value?.FillStyleList);

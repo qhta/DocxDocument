@@ -8,17 +8,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Horizontal Adjustment Guide
   /// </summary>
-  private static String? GetXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetXAdjustmentGuide(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.XAdjustmentGuide);
   }
   
-  private static bool CmpXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.XAdjustmentGuide, value, diffs, objName, "XAdjustmentGuide");
   }
   
-  private static void SetXAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetXAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.XAdjustmentGuide = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Minimum Horizontal Adjustment
   /// </summary>
-  private static String? GetMinX(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetMinX(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MinX);
   }
   
-  private static bool CmpMinX(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinX, value, diffs, objName, "MinX");
   }
   
-  private static void SetMinX(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMinX(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.MinX = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Maximum Horizontal Adjustment
   /// </summary>
-  private static String? GetMaxX(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetMaxX(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MaxX);
   }
   
-  private static bool CmpMaxX(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxX, value, diffs, objName, "MaxX");
   }
   
-  private static void SetMaxX(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMaxX(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.MaxX = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Vertical Adjustment Guide
   /// </summary>
-  private static String? GetYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetYAdjustmentGuide(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.YAdjustmentGuide);
   }
   
-  private static bool CmpYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.YAdjustmentGuide, value, diffs, objName, "YAdjustmentGuide");
   }
   
-  private static void SetYAdjustmentGuide(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetYAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.YAdjustmentGuide = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Minimum Vertical Adjustment
   /// </summary>
-  private static String? GetMinY(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetMinY(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MinY);
   }
   
-  private static bool CmpMinY(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinY, value, diffs, objName, "MinY");
   }
   
-  private static void SetMinY(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMinY(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.MinY = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Maximum Vertical Adjustment
   /// </summary>
-  private static String? GetMaxY(DXDraw.AdjustHandleXY openXmlElement)
+  private static String? GetMaxY(DXD.AdjustHandleXY openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MaxY);
   }
   
-  private static bool CmpMaxY(DXDraw.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxY, value, diffs, objName, "MaxY");
   }
   
-  private static void SetMaxY(DXDraw.AdjustHandleXY openXmlElement, String? value)
+  private static void SetMaxY(DXD.AdjustHandleXY openXmlElement, String? value)
   {
     openXmlElement.MaxY = StringValueConverter.CreateStringValue(value);
   }
@@ -116,33 +116,33 @@ public static class AdjustHandleXYConverter
   /// <summary>
   /// Position.
   /// </summary>
-  private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.AdjustHandleXY openXmlElement)
+  private static DMD.AdjustPoint2DType? GetPosition(DXD.AdjustHandleXY openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Position>();
+    var element = openXmlElement?.GetFirstChild<DXD.Position>();
     if (element != null)
-      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+      return DMXD.AdjustPoint2DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPosition(DXDraw.AdjustHandleXY openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.AdjustHandleXY openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Position>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName);
   }
   
-  private static void SetPosition(DXDraw.AdjustHandleXY openXmlElement, DMDraws.AdjustPoint2DType? value)
+  private static void SetPosition(DXD.AdjustHandleXY openXmlElement, DMD.AdjustPoint2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Position>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Position>(value);
+      itemElement = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Position>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DXDraw.AdjustHandleXY? openXmlElement)
+  public static DocumentModel.Drawings.AdjustHandleXY? CreateModelElement(DXD.AdjustHandleXY? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -159,7 +159,7 @@ public static class AdjustHandleXYConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AdjustHandleXY? openXmlElement, DMDraws.AdjustHandleXY? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustHandleXY? openXmlElement, DMD.AdjustHandleXY? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -185,15 +185,15 @@ public static class AdjustHandleXYConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustHandleXY value)
-    where OpenXmlElementType: DXDraw.AdjustHandleXY, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AdjustHandleXY value)
+    where OpenXmlElementType: DXD.AdjustHandleXY, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AdjustHandleXY openXmlElement, DMDraws.AdjustHandleXY value)
+  public static void UpdateOpenXmlElement(DXD.AdjustHandleXY openXmlElement, DMD.AdjustHandleXY value)
   {
     SetXAdjustmentGuide(openXmlElement, value?.XAdjustmentGuide);
     SetMinX(openXmlElement, value?.MinX);

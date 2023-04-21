@@ -5,237 +5,237 @@ namespace DocumentModel.OpenXml.Drawings.ChartsStyle;
 /// </summary>
 public static class UpBarConverter
 {
-  private static DMDrawsChartsStyle.LineReference? GetLineReference(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.LineReference? GetLineReference(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.LineReference>();
     if (element != null)
-      return DMXDrawsChartsStyle.LineReferenceConverter.CreateModelElement(element);
+      return DMXDCS.LineReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.LineReference? value, DiffList? diffs, string? objName)
+  private static bool CmpLineReference(DXO13DCS.UpBar openXmlElement, DMDCS.LineReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>(), value, diffs, objName);
+    return DMXDCS.LineReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.LineReference>(), value, diffs, objName);
   }
   
-  private static void SetLineReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.LineReference? value)
+  private static void SetLineReference(DXO13DCS.UpBar openXmlElement, DMDCS.LineReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.LineReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.LineReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.LineReference>(value);
+      itemElement = DMXDCS.LineReferenceConverter.CreateOpenXmlElement<DXO13DCS.LineReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetLineWidthScale(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static String? GetLineWidthScale(DXO13DCS.UpBar openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineWidthScale>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO13DCS.LineWidthScale>()?.Text;
   }
   
-  private static bool CmpLineWidthScale(DXO2013DrawChartStyle.UpBar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLineWidthScale(DXO13DCS.UpBar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.LineWidthScale>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO13DCS.LineWidthScale>()?.Text == value;
   }
   
-  private static void SetLineWidthScale(DXO2013DrawChartStyle.UpBar openXmlElement, String? value)
+  private static void SetLineWidthScale(DXO13DCS.UpBar openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.LineWidthScale>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.LineWidthScale>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013DrawChartStyle.LineWidthScale { Text = value };
+      itemElement = new DXO13DCS.LineWidthScale { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.FillReference? GetFillReference(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.FillReference? GetFillReference(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FillReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.FillReference>();
     if (element != null)
-      return DMXDrawsChartsStyle.FillReferenceConverter.CreateModelElement(element);
+      return DMXDCS.FillReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFillReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.FillReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFillReference(DXO13DCS.UpBar openXmlElement, DMDCS.FillReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>(), value, diffs, objName);
+    return DMXDCS.FillReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.FillReference>(), value, diffs, objName);
   }
   
-  private static void SetFillReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.FillReference? value)
+  private static void SetFillReference(DXO13DCS.UpBar openXmlElement, DMDCS.FillReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FillReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.FillReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.FillReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.FillReference>(value);
+      itemElement = DMXDCS.FillReferenceConverter.CreateOpenXmlElement<DXO13DCS.FillReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.EffectReference? GetEffectReference(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.EffectReference? GetEffectReference(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.EffectReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.EffectReference>();
     if (element != null)
-      return DMXDrawsChartsStyle.EffectReferenceConverter.CreateModelElement(element);
+      return DMXDCS.EffectReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.EffectReference? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectReference(DXO13DCS.UpBar openXmlElement, DMDCS.EffectReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>(), value, diffs, objName);
+    return DMXDCS.EffectReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.EffectReference>(), value, diffs, objName);
   }
   
-  private static void SetEffectReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.EffectReference? value)
+  private static void SetEffectReference(DXO13DCS.UpBar openXmlElement, DMDCS.EffectReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.EffectReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.EffectReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.EffectReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.EffectReference>(value);
+      itemElement = DMXDCS.EffectReferenceConverter.CreateOpenXmlElement<DXO13DCS.EffectReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.FontReference? GetFontReference(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.FontReference? GetFontReference(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.FontReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.FontReference>();
     if (element != null)
-      return DMXDrawsChartsStyle.FontReferenceConverter.CreateModelElement(element);
+      return DMXDCS.FontReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFontReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.FontReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFontReference(DXO13DCS.UpBar openXmlElement, DMDCS.FontReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>(), value, diffs, objName);
+    return DMXDCS.FontReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.FontReference>(), value, diffs, objName);
   }
   
-  private static void SetFontReference(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.FontReference? value)
+  private static void SetFontReference(DXO13DCS.UpBar openXmlElement, DMDCS.FontReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.FontReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.FontReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.FontReferenceConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.FontReference>(value);
+      itemElement = DMXDCS.FontReferenceConverter.CreateOpenXmlElement<DXO13DCS.FontReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.ShapeProperties? GetShapeProperties(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.ShapeProperties? GetShapeProperties(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.ShapeProperties>();
     if (element != null)
-      return DMXDrawsChartsStyle.ShapePropertiesConverter.CreateModelElement(element);
+      return DMXDCS.ShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO13DCS.UpBar openXmlElement, DMDCS.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>(), value, diffs, objName);
+    return DMXDCS.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.ShapeProperties? value)
+  private static void SetShapeProperties(DXO13DCS.UpBar openXmlElement, DMDCS.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.ShapePropertiesConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ShapeProperties>(value);
+      itemElement = DMXDCS.ShapePropertiesConverter.CreateOpenXmlElement<DXO13DCS.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.TextCharacterPropertiesType? GetTextCharacterPropertiesType(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.TextCharacterPropertiesType>();
     if (element != null)
-      return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateModelElement(element);
+      return DMXDCS.TextCharacterPropertiesTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextCharacterPropertiesType(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
+  private static bool CmpTextCharacterPropertiesType(DXO13DCS.UpBar openXmlElement, DMDCS.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>(), value, diffs, objName);
+    return DMXDCS.TextCharacterPropertiesTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.TextCharacterPropertiesType>(), value, diffs, objName);
   }
   
-  private static void SetTextCharacterPropertiesType(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.TextCharacterPropertiesType? value)
+  private static void SetTextCharacterPropertiesType(DXO13DCS.UpBar openXmlElement, DMDCS.TextCharacterPropertiesType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextCharacterPropertiesType>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.TextCharacterPropertiesType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.TextCharacterPropertiesType>(value);
+      itemElement = DMXDCS.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DXO13DCS.TextCharacterPropertiesType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.TextBodyProperties? GetTextBodyProperties(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.TextBodyProperties? GetTextBodyProperties(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.TextBodyProperties>();
     if (element != null)
-      return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateModelElement(element);
+      return DMXDCS.TextBodyPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextBodyProperties(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBodyProperties(DXO13DCS.UpBar openXmlElement, DMDCS.TextBodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.TextBodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>(), value, diffs, objName);
+    return DMXDCS.TextBodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.TextBodyProperties>(), value, diffs, objName);
   }
   
-  private static void SetTextBodyProperties(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.TextBodyProperties? value)
+  private static void SetTextBodyProperties(DXO13DCS.UpBar openXmlElement, DMDCS.TextBodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.TextBodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.TextBodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.TextBodyPropertiesConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.TextBodyProperties>(value);
+      itemElement = DMXDCS.TextBodyPropertiesConverter.CreateOpenXmlElement<DXO13DCS.TextBodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.UpBar openXmlElement)
+  private static DMDCS.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO13DCS.UpBar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDCS.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13DCS.UpBar openXmlElement, DMDCS.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDCS.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO13DCS.UpBar openXmlElement, DMDCS.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.OfficeArtExtensionList>(value);
+      itemElement = DMXDCS.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13DCS.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.UpBar? CreateModelElement(DXO2013DrawChartStyle.UpBar? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.UpBar? CreateModelElement(DXO13DCS.UpBar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -254,7 +254,7 @@ public static class UpBarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChartStyle.UpBar? openXmlElement, DMDrawsChartsStyle.UpBar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.UpBar? openXmlElement, DMDCS.UpBar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -284,15 +284,15 @@ public static class UpBarConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.UpBar value)
-    where OpenXmlElementType: DXO2013DrawChartStyle.UpBar, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCS.UpBar value)
+    where OpenXmlElementType: DXO13DCS.UpBar, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.UpBar openXmlElement, DMDrawsChartsStyle.UpBar value)
+  public static void UpdateOpenXmlElement(DXO13DCS.UpBar openXmlElement, DMDCS.UpBar value)
   {
     SetLineReference(openXmlElement, value?.LineReference);
     SetLineWidthScale(openXmlElement, value?.LineWidthScale);

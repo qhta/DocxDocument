@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LinePropertiesExtensionListConverter
 {
-  private static Collection<DMDraws.LinePropertiesExtension>? GetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement)
+  private static Collection<DMD.LinePropertiesExtension>? GetLinePropertiesExtensions(DXD.LinePropertiesExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.LinePropertiesExtension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.LinePropertiesExtension>())
+    var collection = new Collection<DMD.LinePropertiesExtension>();
+    foreach (var item in openXmlElement.Elements<DXD.LinePropertiesExtension>())
     {
-      var newItem = DMXDraws.LinePropertiesExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.LinePropertiesExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class LinePropertiesExtensionListConverter
     return null;
   }
   
-  private static bool CmpLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpLinePropertiesExtensions(DXD.LinePropertiesExtensionList openXmlElement, Collection<DMD.LinePropertiesExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.LinePropertiesExtension>();
+    var origElements = openXmlElement.Elements<DXD.LinePropertiesExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class LinePropertiesExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.LinePropertiesExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.LinePropertiesExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class LinePropertiesExtensionListConverter
     return false;
   }
   
-  private static void SetLinePropertiesExtensions(DXDraw.LinePropertiesExtensionList openXmlElement, Collection<DMDraws.LinePropertiesExtension>? value)
+  private static void SetLinePropertiesExtensions(DXD.LinePropertiesExtensionList openXmlElement, Collection<DMD.LinePropertiesExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.LinePropertiesExtension>();
+    openXmlElement.RemoveAllChildren<DXD.LinePropertiesExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.LinePropertiesExtensionConverter.CreateOpenXmlElement<DXDraw.LinePropertiesExtension>(item);
+        var newItem = DMXD.LinePropertiesExtensionConverter.CreateOpenXmlElement<DXD.LinePropertiesExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.LinePropertiesExtensionList? CreateModelElement(DXD.LinePropertiesExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class LinePropertiesExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.LinePropertiesExtensionList? openXmlElement, DMDraws.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LinePropertiesExtensionList? openXmlElement, DMD.LinePropertiesExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class LinePropertiesExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesExtensionList value)
-    where OpenXmlElementType: DXDraw.LinePropertiesExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LinePropertiesExtensionList value)
+    where OpenXmlElementType: DXD.LinePropertiesExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.LinePropertiesExtensionList openXmlElement, DMDraws.LinePropertiesExtensionList value)
+  public static void UpdateOpenXmlElement(DXD.LinePropertiesExtensionList openXmlElement, DMD.LinePropertiesExtensionList value)
   {
     SetLinePropertiesExtensions(openXmlElement, value?.LinePropertiesExtensions);
   }

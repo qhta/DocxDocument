@@ -25,7 +25,7 @@ public class EmbeddedObject: ElementCollection<IEmbeddedObjectContent>, IRunCont
   /// </summary>
   public HexInt? AnchorId { get; set; }
 
-  public DMVml.Group? Group { get; set; }
+  public DMV.Group? Group { get; set; }
 
   public ImageFile? ImageFile { get; set; }
 

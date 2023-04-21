@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CatAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.CatAxExtension>? GetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement)
+  private static Collection<DMDC.CatAxExtension>? GetCatAxExtensions(DXDC.CatAxExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.CatAxExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.CatAxExtension>())
+    var collection = new Collection<DMDC.CatAxExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.CatAxExtension>())
     {
-      var newItem = DMXDrawsCharts.CatAxExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.CatAxExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class CatAxExtensionListConverter
     return null;
   }
   
-  private static bool CmpCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpCatAxExtensions(DXDC.CatAxExtensionList openXmlElement, Collection<DMDC.CatAxExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.CatAxExtension>();
+    var origElements = openXmlElement.Elements<DXDC.CatAxExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class CatAxExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.CatAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.CatAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class CatAxExtensionListConverter
     return false;
   }
   
-  private static void SetCatAxExtensions(DXDrawCharts.CatAxExtensionList openXmlElement, Collection<DMDrawsCharts.CatAxExtension>? value)
+  private static void SetCatAxExtensions(DXDC.CatAxExtensionList openXmlElement, Collection<DMDC.CatAxExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.CatAxExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.CatAxExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.CatAxExtensionConverter.CreateOpenXmlElement<DXDrawCharts.CatAxExtension>(item);
+        var newItem = DMXDC.CatAxExtensionConverter.CreateOpenXmlElement<DXDC.CatAxExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CatAxExtensionList? CreateModelElement(DXDrawCharts.CatAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CatAxExtensionList? CreateModelElement(DXDC.CatAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CatAxExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.CatAxExtensionList? openXmlElement, DMDrawsCharts.CatAxExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.CatAxExtensionList? openXmlElement, DMDC.CatAxExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CatAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CatAxExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.CatAxExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.CatAxExtensionList value)
+    where OpenXmlElementType: DXDC.CatAxExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.CatAxExtensionList openXmlElement, DMDrawsCharts.CatAxExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.CatAxExtensionList openXmlElement, DMDC.CatAxExtensionList value)
   {
     SetCatAxExtensions(openXmlElement, value?.CatAxExtensions);
   }

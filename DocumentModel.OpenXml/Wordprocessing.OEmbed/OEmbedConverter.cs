@@ -8,17 +8,17 @@ public static class OEmbedConverter
   /// <summary>
   /// oEmbedUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement)
+  private static String? GetOEmbedUrl(DXOSWY20OE.OEmbed openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OEmbedUrl);
   }
   
-  private static bool CmpOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbedUrl(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OEmbedUrl, value, diffs, objName, "OEmbedUrl");
   }
   
-  private static void SetOEmbedUrl(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
+  private static void SetOEmbedUrl(DXOSWY20OE.OEmbed openXmlElement, String? value)
   {
     openXmlElement.OEmbedUrl = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class OEmbedConverter
   /// <summary>
   /// mediaType, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetMediaType(DXOWY2020OEmb.OEmbed openXmlElement)
+  private static String? GetMediaType(DXOSWY20OE.OEmbed openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MediaType);
   }
   
-  private static bool CmpMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMediaType(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MediaType, value, diffs, objName, "MediaType");
   }
   
-  private static void SetMediaType(DXOWY2020OEmb.OEmbed openXmlElement, String? value)
+  private static void SetMediaType(DXOSWY20OE.OEmbed openXmlElement, String? value)
   {
     openXmlElement.MediaType = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class OEmbedConverter
   /// <summary>
   /// picLocksAutoForOEmbed, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static Boolean? GetPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement)
+  private static Boolean? GetPicLocksAutoForOEmbed(DXOSWY20OE.OEmbed openXmlElement)
   {
     return openXmlElement?.PicLocksAutoForOEmbed?.Value;
   }
   
-  private static bool CmpPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPicLocksAutoForOEmbed(DXOSWY20OE.OEmbed openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.PicLocksAutoForOEmbed?.Value == value) return true;
     diffs?.Add(objName, "PicLocksAutoForOEmbed", openXmlElement?.PicLocksAutoForOEmbed?.Value, value);
     return false;
   }
   
-  private static void SetPicLocksAutoForOEmbed(DXOWY2020OEmb.OEmbed openXmlElement, Boolean? value)
+  private static void SetPicLocksAutoForOEmbed(DXOSWY20OE.OEmbed openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PicLocksAutoForOEmbed = new BooleanValue { Value = (Boolean)value };
@@ -64,7 +64,7 @@ public static class OEmbedConverter
       openXmlElement.PicLocksAutoForOEmbed = null;
   }
   
-  public static DMW.OEmbed.OEmbed? CreateModelElement(DXOWY2020OEmb.OEmbed? openXmlElement)
+  public static DMW.OEmbed.OEmbed? CreateModelElement(DXOSWY20OE.OEmbed? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -77,7 +77,7 @@ public static class OEmbedConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOWY2020OEmb.OEmbed? openXmlElement, DMWOEmb.OEmbed? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOSWY20OE.OEmbed? openXmlElement, DMWOE.OEmbed? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -95,15 +95,15 @@ public static class OEmbedConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWOEmb.OEmbed value)
-    where OpenXmlElementType: DXOWY2020OEmb.OEmbed, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWOE.OEmbed value)
+    where OpenXmlElementType: DXOSWY20OE.OEmbed, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOWY2020OEmb.OEmbed openXmlElement, DMWOEmb.OEmbed value)
+  public static void UpdateOpenXmlElement(DXOSWY20OE.OEmbed openXmlElement, DMWOE.OEmbed value)
   {
     SetOEmbedUrl(openXmlElement, value?.OEmbedUrl);
     SetMediaType(openXmlElement, value?.MediaType);

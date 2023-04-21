@@ -8,33 +8,33 @@ public static class FilteredLineSeriesExtensionConverter
   /// <summary>
   /// LineChartSeries.
   /// </summary>
-  private static DMDrawsCharts.LineChartSeries3? GetLineChartSeries(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement)
+  private static DMDC.LineChartSeries3? GetLineChartSeries(DXO13DC.FilteredLineSeriesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.LineChartSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.LineChartSeries>();
     if (element != null)
-      return DMXDrawsCharts.LineChartSeries3Converter.CreateModelElement(element);
+      return DMXDC.LineChartSeries3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineChartSeries(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement, DMDrawsCharts.LineChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChartSeries(DXO13DC.FilteredLineSeriesExtension openXmlElement, DMDC.LineChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LineChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.LineChartSeries>(), value, diffs, objName);
+    return DMXDC.LineChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.LineChartSeries>(), value, diffs, objName);
   }
   
-  private static void SetLineChartSeries(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement, DMDrawsCharts.LineChartSeries3? value)
+  private static void SetLineChartSeries(DXO13DC.FilteredLineSeriesExtension openXmlElement, DMDC.LineChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.LineChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.LineChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.LineChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.LineChartSeries>(value);
+      itemElement = DMXDC.LineChartSeries3Converter.CreateOpenXmlElement<DXO13DC.LineChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? CreateModelElement(DXO2013DrawChart.FilteredLineSeriesExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredLineSeriesExtension? CreateModelElement(DXO13DC.FilteredLineSeriesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class FilteredLineSeriesExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.FilteredLineSeriesExtension? openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredLineSeriesExtension? openXmlElement, DMDC.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class FilteredLineSeriesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredLineSeriesExtension value)
-    where OpenXmlElementType: DXO2013DrawChart.FilteredLineSeriesExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.FilteredLineSeriesExtension value)
+    where OpenXmlElementType: DXO13DC.FilteredLineSeriesExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredLineSeriesExtension openXmlElement, DMDrawsCharts.FilteredLineSeriesExtension value)
+  public static void UpdateOpenXmlElement(DXO13DC.FilteredLineSeriesExtension openXmlElement, DMDC.FilteredLineSeriesExtension value)
   {
     SetLineChartSeries(openXmlElement, value?.LineChartSeries);
   }

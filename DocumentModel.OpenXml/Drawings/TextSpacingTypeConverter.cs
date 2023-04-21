@@ -8,40 +8,40 @@ public static class TextSpacingTypeConverter
   /// <summary>
   /// Spacing Percent.
   /// </summary>
-  private static Int32? GetSpacingPercent(DXDraw.TextSpacingType openXmlElement)
+  private static Int32? GetSpacingPercent(DXD.TextSpacingType openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val);
   }
   
-  private static bool CmpSpacingPercent(DXDraw.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPercent(DXD.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val, value, diffs, objName, "SpacingPercent");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val, value, diffs, objName, "SpacingPercent");
   }
   
-  private static void SetSpacingPercent(DXDraw.TextSpacingType openXmlElement, Int32? value)
+  private static void SetSpacingPercent(DXD.TextSpacingType openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SpacingPercent,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(openXmlElement, value);
   }
   
   /// <summary>
   /// Spacing Points.
   /// </summary>
-  private static Int32? GetSpacingPoints(DXDraw.TextSpacingType openXmlElement)
+  private static Int32? GetSpacingPoints(DXD.TextSpacingType openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val);
   }
   
-  private static bool CmpSpacingPoints(DXDraw.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPoints(DXD.TextSpacingType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val, value, diffs, objName, "SpacingPoints");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val, value, diffs, objName, "SpacingPoints");
   }
   
-  private static void SetSpacingPoints(DXDraw.TextSpacingType openXmlElement, Int32? value)
+  private static void SetSpacingPoints(DXD.TextSpacingType openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SpacingPoints,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.TextSpacingType? CreateModelElement(DXDraw.TextSpacingType? openXmlElement)
+  public static DocumentModel.Drawings.TextSpacingType? CreateModelElement(DXD.TextSpacingType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class TextSpacingTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.TextSpacingType? openXmlElement, DMDraws.TextSpacingType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TextSpacingType? openXmlElement, DMD.TextSpacingType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class TextSpacingTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TextSpacingType value)
-    where OpenXmlElementType: DXDraw.TextSpacingType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.TextSpacingType value)
+    where OpenXmlElementType: DXD.TextSpacingType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.TextSpacingType openXmlElement, DMDraws.TextSpacingType value)
+  public static void UpdateOpenXmlElement(DXD.TextSpacingType openXmlElement, DMD.TextSpacingType value)
   {
     SetSpacingPercent(openXmlElement, value?.SpacingPercent);
     SetSpacingPoints(openXmlElement, value?.SpacingPoints);

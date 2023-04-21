@@ -8,27 +8,27 @@ public static class QuickAccessToolbarConverter
   /// <summary>
   /// SharedControlsQatItems.
   /// </summary>
-  private static DM.SharedControlsQatItems? GetSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement)
+  private static DM.SharedControlsQatItems? GetSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.SharedControlsQatItems>();
     if (element != null)
       return DMX.SharedControlsQatItemsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
+  private static bool CmpSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
   {
-    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>(), value, diffs, objName);
+    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SharedControlsQatItems>(), value, diffs, objName);
   }
   
-  private static void SetSharedControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value)
+  private static void SetSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.SharedControlsQatItems>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.SharedControlsQatItems>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.SharedControlsQatItemsConverter.CreateOpenXmlElement<DXO2010CustUI.SharedControlsQatItems>(value);
+      itemElement = DMX.SharedControlsQatItemsConverter.CreateOpenXmlElement<DXO10CUI.SharedControlsQatItems>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class QuickAccessToolbarConverter
   /// <summary>
   /// DocumentControlsQatItems.
   /// </summary>
-  private static DM.DocumentControlsQatItems? GetDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement)
+  private static DM.DocumentControlsQatItems? GetDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.DocumentControlsQatItems>();
     if (element != null)
       return DMX.DocumentControlsQatItemsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs, string? objName)
   {
-    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>(), value, diffs, objName);
+    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DocumentControlsQatItems>(), value, diffs, objName);
   }
   
-  private static void SetDocumentControlsQatItems(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value)
+  private static void SetDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.DocumentControlsQatItems>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.DocumentControlsQatItems>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.DocumentControlsQatItemsConverter.CreateOpenXmlElement<DXO2010CustUI.DocumentControlsQatItems>(value);
+      itemElement = DMX.DocumentControlsQatItemsConverter.CreateOpenXmlElement<DXO10CUI.DocumentControlsQatItems>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.QuickAccessToolbar? CreateModelElement(DXO2010CustUI.QuickAccessToolbar? openXmlElement)
+  public static DocumentModel.QuickAccessToolbar? CreateModelElement(DXO10CUI.QuickAccessToolbar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.QuickAccessToolbar? openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.QuickAccessToolbar? openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -92,14 +92,14 @@ public static class QuickAccessToolbarConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.QuickAccessToolbar value)
-    where OpenXmlElementType: DXO2010CustUI.QuickAccessToolbar, new()
+    where OpenXmlElementType: DXO10CUI.QuickAccessToolbar, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.QuickAccessToolbar openXmlElement, DM.QuickAccessToolbar value)
+  public static void UpdateOpenXmlElement(DXO10CUI.QuickAccessToolbar openXmlElement, DM.QuickAccessToolbar value)
   {
     SetSharedControlsQatItems(openXmlElement, value?.SharedControlsQatItems);
     SetDocumentControlsQatItems(openXmlElement, value?.DocumentControlsQatItems);

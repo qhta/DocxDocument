@@ -8,24 +8,24 @@ public static class AlphaBiLevelConverter
   /// <summary>
   /// Threshold
   /// </summary>
-  private static Int32? GetThreshold(DXDraw.AlphaBiLevel openXmlElement)
+  private static Int32? GetThreshold(DXD.AlphaBiLevel openXmlElement)
   {
     return openXmlElement?.Threshold?.Value;
   }
   
-  private static bool CmpThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpThreshold(DXD.AlphaBiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Threshold?.Value == value) return true;
     diffs?.Add(objName, "Threshold", openXmlElement?.Threshold?.Value, value);
     return false;
   }
   
-  private static void SetThreshold(DXDraw.AlphaBiLevel openXmlElement, Int32? value)
+  private static void SetThreshold(DXD.AlphaBiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
   }
   
-  public static DocumentModel.Drawings.AlphaBiLevel? CreateModelElement(DXDraw.AlphaBiLevel? openXmlElement)
+  public static DocumentModel.Drawings.AlphaBiLevel? CreateModelElement(DXD.AlphaBiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class AlphaBiLevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AlphaBiLevel? openXmlElement, DMDraws.AlphaBiLevel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaBiLevel? openXmlElement, DMD.AlphaBiLevel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class AlphaBiLevelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaBiLevel value)
-    where OpenXmlElementType: DXDraw.AlphaBiLevel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AlphaBiLevel value)
+    where OpenXmlElementType: DXD.AlphaBiLevel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AlphaBiLevel openXmlElement, DMDraws.AlphaBiLevel value)
+  public static void UpdateOpenXmlElement(DXD.AlphaBiLevel openXmlElement, DMD.AlphaBiLevel value)
   {
     SetThreshold(openXmlElement, value?.Threshold);
   }

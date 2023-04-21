@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class NumRefExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.NumRefExtension>? GetNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement)
+  private static Collection<DMDC.NumRefExtension>? GetNumRefExtensions(DXDC.NumRefExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.NumRefExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.NumRefExtension>())
+    var collection = new Collection<DMDC.NumRefExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.NumRefExtension>())
     {
-      var newItem = DMXDrawsCharts.NumRefExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.NumRefExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class NumRefExtensionListConverter
     return null;
   }
   
-  private static bool CmpNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement, Collection<DMDrawsCharts.NumRefExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumRefExtensions(DXDC.NumRefExtensionList openXmlElement, Collection<DMDC.NumRefExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.NumRefExtension>();
+    var origElements = openXmlElement.Elements<DXDC.NumRefExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class NumRefExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.NumRefExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.NumRefExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class NumRefExtensionListConverter
     return false;
   }
   
-  private static void SetNumRefExtensions(DXDrawCharts.NumRefExtensionList openXmlElement, Collection<DMDrawsCharts.NumRefExtension>? value)
+  private static void SetNumRefExtensions(DXDC.NumRefExtensionList openXmlElement, Collection<DMDC.NumRefExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.NumRefExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.NumRefExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.NumRefExtensionConverter.CreateOpenXmlElement<DXDrawCharts.NumRefExtension>(item);
+        var newItem = DMXDC.NumRefExtensionConverter.CreateOpenXmlElement<DXDC.NumRefExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumRefExtensionList? CreateModelElement(DXDrawCharts.NumRefExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumRefExtensionList? CreateModelElement(DXDC.NumRefExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class NumRefExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.NumRefExtensionList? openXmlElement, DMDrawsCharts.NumRefExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumRefExtensionList? openXmlElement, DMDC.NumRefExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class NumRefExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumRefExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.NumRefExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.NumRefExtensionList value)
+    where OpenXmlElementType: DXDC.NumRefExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.NumRefExtensionList openXmlElement, DMDrawsCharts.NumRefExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.NumRefExtensionList openXmlElement, DMDC.NumRefExtensionList value)
   {
     SetNumRefExtensions(openXmlElement, value?.NumRefExtensions);
   }

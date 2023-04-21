@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomColorListConverter
 {
-  private static Collection<DMDraws.CustomColor>? GetCustomColors(DXDraw.CustomColorList openXmlElement)
+  private static Collection<DMD.CustomColor>? GetCustomColors(DXD.CustomColorList openXmlElement)
   {
-    var collection = new Collection<DMDraws.CustomColor>();
-    foreach (var item in openXmlElement.Elements<DXDraw.CustomColor>())
+    var collection = new Collection<DMD.CustomColor>();
+    foreach (var item in openXmlElement.Elements<DXD.CustomColor>())
     {
-      var newItem = DMXDraws.CustomColorConverter.CreateModelElement(item);
+      var newItem = DMXD.CustomColorConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class CustomColorListConverter
     return null;
   }
   
-  private static bool CmpCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomColors(DXD.CustomColorList openXmlElement, Collection<DMD.CustomColor>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.CustomColor>();
+    var origElements = openXmlElement.Elements<DXD.CustomColor>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class CustomColorListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.CustomColorConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.CustomColorConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class CustomColorListConverter
     return false;
   }
   
-  private static void SetCustomColors(DXDraw.CustomColorList openXmlElement, Collection<DMDraws.CustomColor>? value)
+  private static void SetCustomColors(DXD.CustomColorList openXmlElement, Collection<DMD.CustomColor>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.CustomColor>();
+    openXmlElement.RemoveAllChildren<DXD.CustomColor>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.CustomColorConverter.CreateOpenXmlElement<DXDraw.CustomColor>(item);
+        var newItem = DMXD.CustomColorConverter.CreateOpenXmlElement<DXD.CustomColor>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DXDraw.CustomColorList? openXmlElement)
+  public static DocumentModel.Drawings.CustomColorList? CreateModelElement(DXD.CustomColorList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CustomColorListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.CustomColorList? openXmlElement, DMDraws.CustomColorList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CustomColorList? openXmlElement, DMD.CustomColorList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CustomColorListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomColorList value)
-    where OpenXmlElementType: DXDraw.CustomColorList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CustomColorList value)
+    where OpenXmlElementType: DXD.CustomColorList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.CustomColorList openXmlElement, DMDraws.CustomColorList value)
+  public static void UpdateOpenXmlElement(DXD.CustomColorList openXmlElement, DMD.CustomColorList value)
   {
     SetCustomColors(openXmlElement, value?.CustomColors);
   }

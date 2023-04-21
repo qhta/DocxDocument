@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class MinorTickMarksTickMarksConverter
 {
-  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.MinorTickMarksTickMarks openXmlElement)
+  private static DMDCDs.ExtensionList? GetExtensionList(DXO16DCD.MinorTickMarksTickMarks openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2016DrawChartDraw.MinorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.MinorTickMarksTickMarks openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2016DrawChartDraw.MinorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.ExtensionList? value)
+  private static void SetExtensionList(DXO16DCD.MinorTickMarksTickMarks openXmlElement, DMDCDs.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
+      itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinorTickMarksTickMarks? CreateModelElement(DXO2016DrawChartDraw.MinorTickMarksTickMarks? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.MinorTickMarksTickMarks? CreateModelElement(DXO16DCD.MinorTickMarksTickMarks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class MinorTickMarksTickMarksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.MinorTickMarksTickMarks? openXmlElement, DMDrawsChartDraws.MinorTickMarksTickMarks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.MinorTickMarksTickMarks? openXmlElement, DMDCDs.MinorTickMarksTickMarks? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class MinorTickMarksTickMarksConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MinorTickMarksTickMarks value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.MinorTickMarksTickMarks, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.MinorTickMarksTickMarks value)
+    where OpenXmlElementType: DXO16DCD.MinorTickMarksTickMarks, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MinorTickMarksTickMarks openXmlElement, DMDrawsChartDraws.MinorTickMarksTickMarks value)
+  public static void UpdateOpenXmlElement(DXO16DCD.MinorTickMarksTickMarks openXmlElement, DMDCDs.MinorTickMarksTickMarks value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
   }

@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ExtraColorSchemeListConverter
 {
-  private static Collection<DMDraws.ExtraColorScheme>? GetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement)
+  private static Collection<DMD.ExtraColorScheme>? GetExtraColorSchemes(DXD.ExtraColorSchemeList openXmlElement)
   {
-    var collection = new Collection<DMDraws.ExtraColorScheme>();
-    foreach (var item in openXmlElement.Elements<DXDraw.ExtraColorScheme>())
+    var collection = new Collection<DMD.ExtraColorScheme>();
+    foreach (var item in openXmlElement.Elements<DXD.ExtraColorScheme>())
     {
-      var newItem = DMXDraws.ExtraColorSchemeConverter.CreateModelElement(item);
+      var newItem = DMXD.ExtraColorSchemeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ExtraColorSchemeListConverter
     return null;
   }
   
-  private static bool CmpExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement, Collection<DMDraws.ExtraColorScheme>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtraColorSchemes(DXD.ExtraColorSchemeList openXmlElement, Collection<DMD.ExtraColorScheme>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.ExtraColorScheme>();
+    var origElements = openXmlElement.Elements<DXD.ExtraColorScheme>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ExtraColorSchemeListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ExtraColorSchemeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ExtraColorSchemeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ExtraColorSchemeListConverter
     return false;
   }
   
-  private static void SetExtraColorSchemes(DXDraw.ExtraColorSchemeList openXmlElement, Collection<DMDraws.ExtraColorScheme>? value)
+  private static void SetExtraColorSchemes(DXD.ExtraColorSchemeList openXmlElement, Collection<DMD.ExtraColorScheme>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.ExtraColorScheme>();
+    openXmlElement.RemoveAllChildren<DXD.ExtraColorScheme>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ExtraColorSchemeConverter.CreateOpenXmlElement<DXDraw.ExtraColorScheme>(item);
+        var newItem = DMXD.ExtraColorSchemeConverter.CreateOpenXmlElement<DXD.ExtraColorScheme>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(DXDraw.ExtraColorSchemeList? openXmlElement)
+  public static DocumentModel.Drawings.ExtraColorSchemeList? CreateModelElement(DXD.ExtraColorSchemeList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ExtraColorSchemeListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ExtraColorSchemeList? openXmlElement, DMDraws.ExtraColorSchemeList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ExtraColorSchemeList? openXmlElement, DMD.ExtraColorSchemeList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ExtraColorSchemeListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtraColorSchemeList value)
-    where OpenXmlElementType: DXDraw.ExtraColorSchemeList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ExtraColorSchemeList value)
+    where OpenXmlElementType: DXD.ExtraColorSchemeList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ExtraColorSchemeList openXmlElement, DMDraws.ExtraColorSchemeList value)
+  public static void UpdateOpenXmlElement(DXD.ExtraColorSchemeList openXmlElement, DMD.ExtraColorSchemeList value)
   {
     SetExtraColorSchemes(openXmlElement, value?.ExtraColorSchemes);
   }

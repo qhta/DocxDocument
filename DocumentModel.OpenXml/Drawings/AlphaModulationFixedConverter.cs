@@ -8,24 +8,24 @@ public static class AlphaModulationFixedConverter
   /// <summary>
   /// Amount
   /// </summary>
-  private static Int32? GetAmount(DXDraw.AlphaModulationFixed openXmlElement)
+  private static Int32? GetAmount(DXD.AlphaModulationFixed openXmlElement)
   {
     return openXmlElement?.Amount?.Value;
   }
   
-  private static bool CmpAmount(DXDraw.AlphaModulationFixed openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAmount(DXD.AlphaModulationFixed openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Amount?.Value == value) return true;
     diffs?.Add(objName, "Amount", openXmlElement?.Amount?.Value, value);
     return false;
   }
   
-  private static void SetAmount(DXDraw.AlphaModulationFixed openXmlElement, Int32? value)
+  private static void SetAmount(DXD.AlphaModulationFixed openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.AlphaModulationFixed? CreateModelElement(DXDraw.AlphaModulationFixed? openXmlElement)
+  public static DocumentModel.Drawings.AlphaModulationFixed? CreateModelElement(DXD.AlphaModulationFixed? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class AlphaModulationFixedConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AlphaModulationFixed? openXmlElement, DMDraws.AlphaModulationFixed? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaModulationFixed? openXmlElement, DMD.AlphaModulationFixed? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class AlphaModulationFixedConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaModulationFixed value)
-    where OpenXmlElementType: DXDraw.AlphaModulationFixed, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AlphaModulationFixed value)
+    where OpenXmlElementType: DXD.AlphaModulationFixed, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AlphaModulationFixed openXmlElement, DMDraws.AlphaModulationFixed value)
+  public static void UpdateOpenXmlElement(DXD.AlphaModulationFixed openXmlElement, DMD.AlphaModulationFixed value)
   {
     SetAmount(openXmlElement, value?.Amount);
   }

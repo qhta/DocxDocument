@@ -8,27 +8,27 @@ public static class FontCollectionTypeConverter
   /// <summary>
   /// Latin Font.
   /// </summary>
-  private static DMDraws.TextFontType? GetLatinFont(DXDraw.FontCollectionType openXmlElement)
+  private static DMD.TextFontType? GetLatinFont(DXD.FontCollectionType openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LatinFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.LatinFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLatinFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpLatinFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LatinFont>(), value, diffs, objName);
   }
   
-  private static void SetLatinFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)
+  private static void SetLatinFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LatinFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LatinFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.LatinFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.LatinFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class FontCollectionTypeConverter
   /// <summary>
   /// East Asian Font.
   /// </summary>
-  private static DMDraws.TextFontType? GetEastAsianFont(DXDraw.FontCollectionType openXmlElement)
+  private static DMD.TextFontType? GetEastAsianFont(DXD.FontCollectionType openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.EastAsianFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEastAsianFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsianFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EastAsianFont>(), value, diffs, objName);
   }
   
-  private static void SetEastAsianFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)
+  private static void SetEastAsianFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EastAsianFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EastAsianFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.EastAsianFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.EastAsianFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,33 +66,33 @@ public static class FontCollectionTypeConverter
   /// <summary>
   /// Complex Script Font.
   /// </summary>
-  private static DMDraws.TextFontType? GetComplexScriptFont(DXDraw.FontCollectionType openXmlElement)
+  private static DMD.TextFontType? GetComplexScriptFont(DXD.FontCollectionType openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.ComplexScriptFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpComplexScriptFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpComplexScriptFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ComplexScriptFont>(), value, diffs, objName);
   }
   
-  private static void SetComplexScriptFont(DXDraw.FontCollectionType openXmlElement, DMDraws.TextFontType? value)
+  private static void SetComplexScriptFont(DXD.FontCollectionType openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ComplexScriptFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.ComplexScriptFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.ComplexScriptFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FontCollectionType? CreateModelElement(DXDraw.FontCollectionType? openXmlElement)
+  public static DocumentModel.Drawings.FontCollectionType? CreateModelElement(DXD.FontCollectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -105,7 +105,7 @@ public static class FontCollectionTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.FontCollectionType? openXmlElement, DMDraws.FontCollectionType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FontCollectionType? openXmlElement, DMD.FontCollectionType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -123,15 +123,15 @@ public static class FontCollectionTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontCollectionType value)
-    where OpenXmlElementType: DXDraw.FontCollectionType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FontCollectionType value)
+    where OpenXmlElementType: DXD.FontCollectionType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.FontCollectionType openXmlElement, DMDraws.FontCollectionType value)
+  public static void UpdateOpenXmlElement(DXD.FontCollectionType openXmlElement, DMD.FontCollectionType value)
   {
     SetLatinFont(openXmlElement, value?.LatinFont);
     SetEastAsianFont(openXmlElement, value?.EastAsianFont);

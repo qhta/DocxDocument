@@ -8,27 +8,27 @@ public static class RulesConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Rules openXmlElement)
+  private static DMV.ExtensionHandlingBehaviorKind? GetExtension(DXVO.Rules openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVmlO.Rules openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Rules openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
-  private static void SetExtension(DXVmlO.Rules openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVO.Rules openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(value);
   }
   
-  private static Collection<DMVml.Rule>? GetItems(DXVmlO.Rules openXmlElement)
+  private static Collection<DMV.Rule>? GetItems(DXVO.Rules openXmlElement)
   {
-    var collection = new Collection<DMVml.Rule>();
-    foreach (var item in openXmlElement.Elements<DXVmlO.Rule>())
+    var collection = new Collection<DMV.Rule>();
+    foreach (var item in openXmlElement.Elements<DXVO.Rule>())
     {
-      var newItem = DMXVml.RuleConverter.CreateModelElement(item);
+      var newItem = DMXV.RuleConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -37,9 +37,9 @@ public static class RulesConverter
     return null;
   }
   
-  private static bool CmpItems(DXVmlO.Rules openXmlElement, Collection<DMVml.Rule>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXVO.Rules openXmlElement, Collection<DMV.Rule>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXVmlO.Rule>();
+    var origElements = openXmlElement.Elements<DXVO.Rule>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -55,7 +55,7 @@ public static class RulesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXVml.RuleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXV.RuleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -65,21 +65,21 @@ public static class RulesConverter
     return false;
   }
   
-  private static void SetItems(DXVmlO.Rules openXmlElement, Collection<DMVml.Rule>? value)
+  private static void SetItems(DXVO.Rules openXmlElement, Collection<DMV.Rule>? value)
   {
-    openXmlElement.RemoveAllChildren<DXVmlO.Rule>();
+    openXmlElement.RemoveAllChildren<DXVO.Rule>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXVml.RuleConverter.CreateOpenXmlElement<DXVmlO.Rule>(item);
+        var newItem = DMXV.RuleConverter.CreateOpenXmlElement<DXVO.Rule>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.Rules? CreateModelElement(DXVmlO.Rules? openXmlElement)
+  public static DocumentModel.Vml.Rules? CreateModelElement(DXVO.Rules? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -91,7 +91,7 @@ public static class RulesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.Rules? openXmlElement, DMVml.Rules? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Rules? openXmlElement, DMV.Rules? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -107,15 +107,15 @@ public static class RulesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Rules value)
-    where OpenXmlElementType: DXVmlO.Rules, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.Rules value)
+    where OpenXmlElementType: DXVO.Rules, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.Rules openXmlElement, DMVml.Rules value)
+  public static void UpdateOpenXmlElement(DXVO.Rules openXmlElement, DMV.Rules value)
   {
     SetExtension(openXmlElement, value?.Extension);
     SetItems(openXmlElement, value?.Items);

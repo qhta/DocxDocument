@@ -8,33 +8,33 @@ public static class GeoLocationsConverter
   /// <summary>
   /// GeoLocation.
   /// </summary>
-  private static DMDrawsChartDraws.GeoLocation? GetGeoLocation(DXO2016DrawChartDraw.GeoLocations openXmlElement)
+  private static DMDCDs.GeoLocation? GetGeoLocation(DXO16DCD.GeoLocations openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoLocation>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoLocation>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoLocationConverter.CreateModelElement(element);
+      return DMXDCDs.GeoLocationConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoLocation(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocation? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoLocation(DXO16DCD.GeoLocations openXmlElement, DMDCDs.GeoLocation? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoLocationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocation>(), value, diffs, objName);
+    return DMXDCDs.GeoLocationConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocation>(), value, diffs, objName);
   }
   
-  private static void SetGeoLocation(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocation? value)
+  private static void SetGeoLocation(DXO16DCD.GeoLocations openXmlElement, DMDCDs.GeoLocation? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoLocation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoLocationConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoLocation>(value);
+      itemElement = DMXDCDs.GeoLocationConverter.CreateOpenXmlElement<DXO16DCD.GeoLocation>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(DXO2016DrawChartDraw.GeoLocations? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoLocations? CreateModelElement(DXO16DCD.GeoLocations? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class GeoLocationsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoLocations? openXmlElement, DMDrawsChartDraws.GeoLocations? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoLocations? openXmlElement, DMDCDs.GeoLocations? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class GeoLocationsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoLocations value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoLocations, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoLocations value)
+    where OpenXmlElementType: DXO16DCD.GeoLocations, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoLocations openXmlElement, DMDrawsChartDraws.GeoLocations value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoLocations openXmlElement, DMDCDs.GeoLocations value)
   {
     SetGeoLocation(openXmlElement, value?.GeoLocation);
   }

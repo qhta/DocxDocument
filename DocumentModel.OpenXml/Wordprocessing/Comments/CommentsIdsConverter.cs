@@ -6,10 +6,10 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class CommentsIdsConverter
 {
   #region CommentsIds collection conversion.
-  private static DMW.CommentsIds? GetCommentsIds(DXO2019WCid.CommentsIds openXmlElement)
+  private static DMW.CommentsIds? GetCommentsIds(DXO19WCid.CommentsIds openXmlElement)
   {
     var collection = new DMW.CommentsIds();
-    foreach (var item in openXmlElement.Elements<DXO2019WCid.CommentId>())
+    foreach (var item in openXmlElement.Elements<DXO19WCid.CommentId>())
     {
       var newItem = DMXW.CommentIdConverter.CreateModelElement(item);
       if (newItem != null)
@@ -20,9 +20,9 @@ public static class CommentsIdsConverter
     return null;
   }
   
-  private static bool CmpCommentsIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentsIds(DXO19WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2019WCid.CommentId>();
+    var origElements = openXmlElement.Elements<DXO19WCid.CommentId>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -48,14 +48,14 @@ public static class CommentsIdsConverter
     return false;
   }
   
-  private static void SetCommentIds(DXO2019WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value)
+  private static void SetCommentIds(DXO19WCid.CommentsIds openXmlElement, Collection<DMW.CommentId>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2019WCid.CommentId>();
+    openXmlElement.RemoveAllChildren<DXO19WCid.CommentId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.CommentIdConverter.CreateOpenXmlElement<DXO2019WCid.CommentId>(item);
+        var newItem = DMXW.CommentIdConverter.CreateOpenXmlElement<DXO19WCid.CommentId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
@@ -64,7 +64,7 @@ public static class CommentsIdsConverter
   #endregion
 
   #region CommentsIds model conversion
-  public static DMW.CommentsIds? CreateModelElement(DXO2019WCid.CommentsIds? openXmlElement)
+  public static DMW.CommentsIds? CreateModelElement(DXO19WCid.CommentsIds? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -74,7 +74,7 @@ public static class CommentsIdsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2019WCid.CommentsIds? openXmlElement, DMW.CommentsIds? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19WCid.CommentsIds? openXmlElement, DMW.CommentsIds? model, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && model != null)
     {
@@ -89,14 +89,14 @@ public static class CommentsIdsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsIds model)
-    where OpenXmlElementType: DXO2019WCid.CommentsIds, new()
+    where OpenXmlElementType: DXO19WCid.CommentsIds, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2019WCid.CommentsIds openXmlElement, DMW.CommentsIds model)
+  public static void UpdateOpenXmlElement(DXO19WCid.CommentsIds openXmlElement, DMW.CommentsIds model)
   {
     SetCommentIds(openXmlElement, model);
   }

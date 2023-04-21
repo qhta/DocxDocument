@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BandFormatsConverter
 {
-  private static Collection<DMDrawsCharts.BandFormat>? GetItems(DXDrawCharts.BandFormats openXmlElement)
+  private static Collection<DMDC.BandFormat>? GetItems(DXDC.BandFormats openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.BandFormat>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.BandFormat>())
+    var collection = new Collection<DMDC.BandFormat>();
+    foreach (var item in openXmlElement.Elements<DXDC.BandFormat>())
     {
-      var newItem = DMXDrawsCharts.BandFormatConverter.CreateModelElement(item);
+      var newItem = DMXDC.BandFormatConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class BandFormatsConverter
     return null;
   }
   
-  private static bool CmpItems(DXDrawCharts.BandFormats openXmlElement, Collection<DMDrawsCharts.BandFormat>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXDC.BandFormats openXmlElement, Collection<DMDC.BandFormat>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.BandFormat>();
+    var origElements = openXmlElement.Elements<DXDC.BandFormat>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class BandFormatsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.BandFormatConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.BandFormatConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class BandFormatsConverter
     return false;
   }
   
-  private static void SetItems(DXDrawCharts.BandFormats openXmlElement, Collection<DMDrawsCharts.BandFormat>? value)
+  private static void SetItems(DXDC.BandFormats openXmlElement, Collection<DMDC.BandFormat>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.BandFormat>();
+    openXmlElement.RemoveAllChildren<DXDC.BandFormat>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.BandFormatConverter.CreateOpenXmlElement<DXDrawCharts.BandFormat>(item);
+        var newItem = DMXDC.BandFormatConverter.CreateOpenXmlElement<DXDC.BandFormat>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DXDrawCharts.BandFormats? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BandFormats? CreateModelElement(DXDC.BandFormats? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class BandFormatsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BandFormats? openXmlElement, DMDrawsCharts.BandFormats? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BandFormats? openXmlElement, DMDC.BandFormats? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class BandFormatsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BandFormats value)
-    where OpenXmlElementType: DXDrawCharts.BandFormats, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BandFormats value)
+    where OpenXmlElementType: DXDC.BandFormats, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BandFormats openXmlElement, DMDrawsCharts.BandFormats value)
+  public static void UpdateOpenXmlElement(DXDC.BandFormats openXmlElement, DMDC.BandFormats value)
   {
     SetItems(openXmlElement, value?.Items);
   }

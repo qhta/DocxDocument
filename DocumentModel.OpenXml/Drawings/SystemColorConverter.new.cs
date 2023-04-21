@@ -8,32 +8,32 @@ public static class SystemColorConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static DMDraws.SystemColorKind? GetVal(DXDraw.SystemColor openXmlElement)
+  private static DMD.SystemColorKind? GetVal(DXD.SystemColor openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMDraws.SystemColorKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXDraw.SystemColor openXmlElement, DMDraws.SystemColorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXD.SystemColor openXmlElement, DMD.SystemColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMDraws.SystemColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetVal(DXDraw.SystemColor openXmlElement, DMDraws.SystemColorKind? value)
+  private static void SetVal(DXD.SystemColor openXmlElement, DMD.SystemColorKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMDraws.SystemColorKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.SystemColorValues, DMD.SystemColorKind>(value);
   }
   
   /// <summary>
   /// Last Color
   /// </summary>
-  private static DM.RGB? GetLastColor(DXDraw.SystemColor openXmlElement)
+  private static DM.RGB? GetLastColor(DXD.SystemColor openXmlElement)
   {
     if (openXmlElement?.LastColor?.Value != null)
       return (DocumentModel.RGB)UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber);
     return null;
   }
   
-  private static bool CmpLastColor(DXDraw.SystemColor openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
+  private static bool CmpLastColor(DXD.SystemColor openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.LastColor?.Value != null)
       if (UInt32.Parse(openXmlElement.LastColor.Value, NumberStyles.HexNumber) == value)
@@ -43,7 +43,7 @@ public static class SystemColorConverter
     return false;
   }
   
-  private static void SetLastColor(DXDraw.SystemColor openXmlElement, DM.RGB? value)
+  private static void SetLastColor(DXD.SystemColor openXmlElement, DM.RGB? value)
   {
     if (value != null)
       openXmlElement.LastColor = ((UInt32)value).ToString("X6");
@@ -51,726 +51,726 @@ public static class SystemColorConverter
       openXmlElement.LastColor = null;
   }
   
-  private static Int32? GetTint(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetTint(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Tint>()?.Val?.Value;
   }
   
-  private static bool CmpTint(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTint(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Tint>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Tint>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Tint", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Tint", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetTint(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetTint(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Tint>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Tint>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Tint{ Val = value };
+      itemElement = new DXD.Tint{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetShade(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetShade(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Shade>()?.Val?.Value;
   }
   
-  private static bool CmpShade(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpShade(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Shade>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Shade>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Shade", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Shade", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetShade(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetShade(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shade>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Shade>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Shade{ Val = value };
+      itemElement = new DXD.Shade{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetComplement(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetComplement(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    return openXmlElement.GetFirstChild<DXD.Complement>() != null;
   }
   
-  private static bool CmpComplement(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpComplement(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Complement>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Complement", val, value);
+    diffs?.Add(objName, "DXD.Complement", val, value);
     return false;
   }
   
-  private static void SetComplement(DXDraw.SystemColor openXmlElement, Boolean? value)
+  private static void SetComplement(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Complement>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Complement>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Complement();
+      var itemElement = new DXD.Complement();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetInverse(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetInverse(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    return openXmlElement.GetFirstChild<DXD.Inverse>() != null;
   }
   
-  private static bool CmpInverse(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverse(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Inverse>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Inverse", val, value);
+    diffs?.Add(objName, "DXD.Inverse", val, value);
     return false;
   }
   
-  private static void SetInverse(DXDraw.SystemColor openXmlElement, Boolean? value)
+  private static void SetInverse(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Inverse>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Inverse>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Inverse();
+      var itemElement = new DXD.Inverse();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetGray(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetGray(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    return openXmlElement.GetFirstChild<DXD.Gray>() != null;
   }
   
-  private static bool CmpGray(DXDraw.SystemColor openXmlElement, Boolean value, DiffList? diffs, string? objName)
+  private static bool CmpGray(DXD.SystemColor openXmlElement, Boolean value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Gray>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Gray", val, value);
+    diffs?.Add(objName, "DXD.Gray", val, value);
     return false;
   }
   
-  private static void SetGray(DXDraw.SystemColor openXmlElement, Boolean? value)
+  private static void SetGray(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gray>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Gray>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Gray();
+      var itemElement = new DXD.Gray();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlpha(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetAlpha(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val?.Value;
   }
   
-  private static bool CmpAlpha(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Alpha>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Alpha>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Alpha", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Alpha", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetAlpha(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetAlpha(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Alpha>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Alpha>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Alpha{ Val = value };
+      itemElement = new DXD.Alpha{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlphaOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetAlphaOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val?.Value;
   }
   
-  private static bool CmpAlphaOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.AlphaOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.AlphaOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetAlphaOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetAlphaOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.AlphaOffset{ Val = value };
+      itemElement = new DXD.AlphaOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlphaModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetAlphaModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val?.Value;
   }
   
-  private static bool CmpAlphaModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.AlphaModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.AlphaModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetAlphaModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetAlphaModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AlphaModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AlphaModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.AlphaModulation{ Val = value };
+      itemElement = new DXD.AlphaModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHue(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetHue(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Hue>()?.Val?.Value;
   }
   
-  private static bool CmpHue(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Hue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Hue>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Hue", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Hue", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetHue(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetHue(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Hue>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Hue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Hue{ Val = value };
+      itemElement = new DXD.Hue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHueOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetHueOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val?.Value;
   }
   
-  private static bool CmpHueOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.HueOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.HueOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.HueOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetHueOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetHueOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HueOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HueOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.HueOffset{ Val = value };
+      itemElement = new DXD.HueOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetHueModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetHueModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val?.Value;
   }
   
-  private static bool CmpHueModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.HueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.HueModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.HueModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.HueModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetHueModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetHueModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HueModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HueModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.HueModulation{ Val = value };
+      itemElement = new DXD.HueModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetSaturation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val?.Value;
   }
   
-  private static bool CmpSaturation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Saturation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Saturation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Saturation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Saturation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetSaturation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetSaturation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Saturation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Saturation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Saturation{ Val = value };
+      itemElement = new DXD.Saturation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetSaturationOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val?.Value;
   }
   
-  private static bool CmpSaturationOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.SaturationOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.SaturationOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetSaturationOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetSaturationOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SaturationOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SaturationOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.SaturationOffset{ Val = value };
+      itemElement = new DXD.SaturationOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetSaturationModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetSaturationModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val?.Value;
   }
   
-  private static bool CmpSaturationModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.SaturationModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.SaturationModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetSaturationModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetSaturationModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SaturationModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SaturationModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.SaturationModulation{ Val = value };
+      itemElement = new DXD.SaturationModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminance(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetLuminance(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val?.Value;
   }
   
-  private static bool CmpLuminance(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Luminance>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Luminance>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Luminance", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Luminance", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetLuminance(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetLuminance(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Luminance>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Luminance>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Luminance{ Val = value };
+      itemElement = new DXD.Luminance{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetLuminanceOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val?.Value;
   }
   
-  private static bool CmpLuminanceOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.LuminanceOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.LuminanceOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetLuminanceOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetLuminanceOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LuminanceOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.LuminanceOffset{ Val = value };
+      itemElement = new DXD.LuminanceOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetLuminanceModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetLuminanceModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val?.Value;
   }
   
-  private static bool CmpLuminanceModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.LuminanceModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.LuminanceModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetLuminanceModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetLuminanceModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LuminanceModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LuminanceModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.LuminanceModulation{ Val = value };
+      itemElement = new DXD.LuminanceModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRed(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetRed(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Red>()?.Val?.Value;
   }
   
-  private static bool CmpRed(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRed(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Red>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Red>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Red", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Red", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetRed(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetRed(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Red>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Red>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Red{ Val = value };
+      itemElement = new DXD.Red{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRedOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetRedOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val?.Value;
   }
   
-  private static bool CmpRedOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.RedOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.RedOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.RedOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetRedOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetRedOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RedOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RedOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.RedOffset{ Val = value };
+      itemElement = new DXD.RedOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetRedModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetRedModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val?.Value;
   }
   
-  private static bool CmpRedModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.RedModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.RedModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.RedModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.RedModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetRedModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetRedModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RedModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RedModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.RedModulation{ Val = value };
+      itemElement = new DXD.RedModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreen(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetGreen(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Green>()?.Val?.Value;
   }
   
-  private static bool CmpGreen(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreen(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Green>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Green>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Green", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Green", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetGreen(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetGreen(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Green>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Green>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Green{ Val = value };
+      itemElement = new DXD.Green{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreenOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetGreenOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val?.Value;
   }
   
-  private static bool CmpGreenOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.GreenOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.GreenOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.GreenOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetGreenOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetGreenOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GreenOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GreenOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.GreenOffset{ Val = value };
+      itemElement = new DXD.GreenOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetGreenModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetGreenModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val?.Value;
   }
   
-  private static bool CmpGreenModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.GreenModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.GreenModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.GreenModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.GreenModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetGreenModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetGreenModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GreenModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GreenModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.GreenModulation{ Val = value };
+      itemElement = new DXD.GreenModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlue(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetBlue(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.Blue>()?.Val?.Value;
   }
   
-  private static bool CmpBlue(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlue(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.Blue>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.Blue>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.Blue", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.Blue", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetBlue(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetBlue(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Blue>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Blue>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.Blue{ Val = value };
+      itemElement = new DXD.Blue{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlueOffset(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetBlueOffset(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val?.Value;
   }
   
-  private static bool CmpBlueOffset(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueOffset(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueOffset>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.BlueOffset>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.BlueOffset", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.BlueOffset", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetBlueOffset(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetBlueOffset(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlueOffset>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlueOffset>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.BlueOffset{ Val = value };
+      itemElement = new DXD.BlueOffset{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBlueModulation(DXDraw.SystemColor openXmlElement)
+  private static Int32? GetBlueModulation(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val?.Value;
+    return openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val?.Value;
   }
   
-  private static bool CmpBlueModulation(DXDraw.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueModulation(DXD.SystemColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXDraw.BlueModulation>();
+    var itemElement = openXmlElement?.GetFirstChild<DXD.BlueModulation>();
     if (itemElement?.Val?.Value == value) return true;
-    diffs?.Add(objName, "DXDraw.BlueModulation", itemElement?.Val?.Value, value);
+    diffs?.Add(objName, "DXD.BlueModulation", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetBlueModulation(DXDraw.SystemColor openXmlElement, Int32? value)
+  private static void SetBlueModulation(DXD.SystemColor openXmlElement, Int32? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlueModulation>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlueModulation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDraw.BlueModulation{ Val = value };
+      itemElement = new DXD.BlueModulation{ Val = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetGamma(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetGamma(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    return openXmlElement.GetFirstChild<DXD.Gamma>() != null;
   }
   
-  private static bool CmpGamma(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGamma(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Gamma>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Gamma", val, value);
+    diffs?.Add(objName, "DXD.Gamma", val, value);
     return false;
   }
   
-  private static void SetGamma(DXDraw.SystemColor openXmlElement, Boolean? value)
+  private static void SetGamma(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Gamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Gamma();
+      var itemElement = new DXD.Gamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetInverseGamma(DXDraw.SystemColor openXmlElement)
+  private static Boolean GetInverseGamma(DXD.SystemColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    return openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
   }
   
-  private static bool CmpInverseGamma(DXDraw.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverseGamma(DXD.SystemColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.InverseGamma", val, value);
+    diffs?.Add(objName, "DXD.InverseGamma", val, value);
     return false;
   }
   
-  private static void SetInverseGamma(DXDraw.SystemColor openXmlElement, Boolean? value)
+  private static void SetInverseGamma(DXD.SystemColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.InverseGamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.InverseGamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.InverseGamma();
+      var itemElement = new DXD.InverseGamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMDraws.SystemColor? CreateModelElement(DXDraw.SystemColor? openXmlElement)
+  public static DMD.SystemColor? CreateModelElement(DXD.SystemColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMDraws.SystemColor();
+      var value = new DMD.SystemColor();
       value.Val = GetVal(openXmlElement);
       value.LastColor = GetLastColor(openXmlElement);
       value.Tint = GetTint(openXmlElement);
@@ -806,7 +806,7 @@ public static class SystemColorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.SystemColor? openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.SystemColor? openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -878,8 +878,8 @@ public static class SystemColorConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SystemColor? value)
-    where OpenXmlElementType: DXDraw.SystemColor, new()
+  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMD.SystemColor? value)
+    where OpenXmlElementType: DXD.SystemColor, new()
   {
     if (value != null)
     {

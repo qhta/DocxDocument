@@ -8,33 +8,33 @@ public static class DrawingConverter
   /// <summary>
   /// ShapeTree.
   /// </summary>
-  private static DMDrawsO.ShapeTree? GetShapeTree(DXODraw.Drawing openXmlElement)
+  private static DMDO.ShapeTree? GetShapeTree(DXOD.Drawing openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.ShapeTree>();
+    var element = openXmlElement?.GetFirstChild<DXOD.ShapeTree>();
     if (element != null)
-      return DMXDrawsO.ShapeTreeConverter.CreateModelElement(element);
+      return DMXDO.ShapeTreeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeTree(DXOD.Drawing openXmlElement, DMDO.ShapeTree? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.ShapeTree>(), value, diffs, objName);
+    return DMXDO.ShapeTreeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeTree>(), value, diffs, objName);
   }
   
-  private static void SetShapeTree(DXODraw.Drawing openXmlElement, DMDrawsO.ShapeTree? value)
+  private static void SetShapeTree(DXOD.Drawing openXmlElement, DMDO.ShapeTree? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.ShapeTree>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.ShapeTree>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.ShapeTreeConverter.CreateOpenXmlElement<DXODraw.ShapeTree>(value);
+      itemElement = DMXDO.ShapeTreeConverter.CreateOpenXmlElement<DXOD.ShapeTree>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(DXODraw.Drawing? openXmlElement)
+  public static DocumentModel.Drawings.Office.Drawing? CreateModelElement(DXOD.Drawing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class DrawingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODraw.Drawing? openXmlElement, DMDrawsO.Drawing? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.Drawing? openXmlElement, DMDO.Drawing? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class DrawingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.Drawing value)
-    where OpenXmlElementType: DXODraw.Drawing, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.Drawing value)
+    where OpenXmlElementType: DXOD.Drawing, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODraw.Drawing openXmlElement, DMDrawsO.Drawing value)
+  public static void UpdateOpenXmlElement(DXOD.Drawing openXmlElement, DMDO.Drawing value)
   {
     SetShapeTree(openXmlElement, value?.ShapeTree);
   }

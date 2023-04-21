@@ -20,21 +20,21 @@ public static class CustomXmlPropertiesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMCustXml.DataStoreItem? GetDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement)
+  private static DMCX.DataStoreItem? GetDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement)
   {
-      return DMXCustXml.DataStoreItemConverter.CreateModelElement(openXmlElement?.RootElement as DXCustXmlDataProps.DataStoreItem);
+      return DMXCX.DataStoreItemConverter.CreateModelElement(openXmlElement?.RootElement as DXCXDP.DataStoreItem);
   }
   
-  private static bool CmpDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement, DMCustXml.DataStoreItem? value, DiffList? diffs, string? objName)
+  private static bool CmpDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement, DMCX.DataStoreItem? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement, DMCustXml.DataStoreItem? value)
+  private static void SetDataStoreItem(DXPack.CustomXmlPropertiesPart openXmlElement, DMCX.DataStoreItem? value)
   {
     if (value != null)
     {
-       var rootElement = DMXCustXml.DataStoreItemConverter.CreateOpenXmlElement<DXCustXmlDataProps.DataStoreItem>(value);
+       var rootElement = DMXCX.DataStoreItemConverter.CreateOpenXmlElement<DXCXDP.DataStoreItem>(value);
        if (rootElement != null)
          openXmlElement.DataStoreItem = rootElement;
     }

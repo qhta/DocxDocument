@@ -8,19 +8,19 @@ public static class BrightnessContrastConverter
   /// <summary>
   /// bright, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetBright(DXO2010Draw.BrightnessContrast openXmlElement)
+  private static Int32? GetBright(DXO10D.BrightnessContrast openXmlElement)
   {
     return openXmlElement?.Bright?.Value;
   }
   
-  private static bool CmpBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBright(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Bright?.Value == value) return true;
     diffs?.Add(objName, "Bright", openXmlElement?.Bright?.Value, value);
     return false;
   }
   
-  private static void SetBright(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
+  private static void SetBright(DXO10D.BrightnessContrast openXmlElement, Int32? value)
   {
     openXmlElement.Bright = value;
   }
@@ -28,24 +28,24 @@ public static class BrightnessContrastConverter
   /// <summary>
   /// contrast, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetContrast(DXO2010Draw.BrightnessContrast openXmlElement)
+  private static Int32? GetContrast(DXO10D.BrightnessContrast openXmlElement)
   {
     return openXmlElement?.Contrast?.Value;
   }
   
-  private static bool CmpContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpContrast(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Contrast?.Value == value) return true;
     diffs?.Add(objName, "Contrast", openXmlElement?.Contrast?.Value, value);
     return false;
   }
   
-  private static void SetContrast(DXO2010Draw.BrightnessContrast openXmlElement, Int32? value)
+  private static void SetContrast(DXO10D.BrightnessContrast openXmlElement, Int32? value)
   {
     openXmlElement.Contrast = value;
   }
   
-  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(DXO2010Draw.BrightnessContrast? openXmlElement)
+  public static DocumentModel.Drawings.BrightnessContrast? CreateModelElement(DXO10D.BrightnessContrast? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class BrightnessContrastConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.BrightnessContrast? openXmlElement, DMDraws.BrightnessContrast? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.BrightnessContrast? openXmlElement, DMD.BrightnessContrast? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class BrightnessContrastConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BrightnessContrast value)
-    where OpenXmlElementType: DXO2010Draw.BrightnessContrast, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BrightnessContrast value)
+    where OpenXmlElementType: DXO10D.BrightnessContrast, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.BrightnessContrast openXmlElement, DMDraws.BrightnessContrast value)
+  public static void UpdateOpenXmlElement(DXO10D.BrightnessContrast openXmlElement, DMD.BrightnessContrast value)
   {
     SetBright(openXmlElement, value?.Bright);
     SetContrast(openXmlElement, value?.Contrast);

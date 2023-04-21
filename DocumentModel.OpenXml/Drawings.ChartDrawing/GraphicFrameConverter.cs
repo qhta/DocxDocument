@@ -8,17 +8,17 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Reference to Custom Function
   /// </summary>
-  private static String? GetMacro(DXDrawChartDraw.GraphicFrame openXmlElement)
+  private static String? GetMacro(DXDCD.GraphicFrame openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
-  private static bool CmpMacro(DXDrawChartDraw.GraphicFrame openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacro(DXDCD.GraphicFrame openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
   
-  private static void SetMacro(DXDrawChartDraw.GraphicFrame openXmlElement, String? value)
+  private static void SetMacro(DXDCD.GraphicFrame openXmlElement, String? value)
   {
     openXmlElement.Macro = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Publish To Server
   /// </summary>
-  private static Boolean? GetPublished(DXDrawChartDraw.GraphicFrame openXmlElement)
+  private static Boolean? GetPublished(DXDCD.GraphicFrame openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
   
-  private static bool CmpPublished(DXDrawChartDraw.GraphicFrame openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPublished(DXDCD.GraphicFrame openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Published?.Value == value) return true;
     diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
     return false;
   }
   
-  private static void SetPublished(DXDrawChartDraw.GraphicFrame openXmlElement, Boolean? value)
+  private static void SetPublished(DXDCD.GraphicFrame openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
@@ -49,27 +49,27 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Non-Visual Graphic Frame Properties.
   /// </summary>
-  private static DMDrawsChartDraw.NonVisualGraphicFrameProperties? GetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement)
+  private static DMDCD.NonVisualGraphicFrameProperties? GetNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>();
     if (element != null)
-      return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateModelElement(element);
+      return DMXDCD.NonVisualGraphicFramePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement, DMDCD.NonVisualGraphicFrameProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualGraphicFrameProperties(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.NonVisualGraphicFrameProperties? value)
+  private static void SetNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement, DMDCD.NonVisualGraphicFrameProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualGraphicFrameProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualGraphicFrameProperties>(value);
+      itemElement = DMXDCD.NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGraphicFrameProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -78,27 +78,27 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Graphic Frame Transform.
   /// </summary>
-  private static DMDrawsChartDraw.Transform? GetTransform(DXDrawChartDraw.GraphicFrame openXmlElement)
+  private static DMDCD.Transform? GetTransform(DXDCD.GraphicFrame openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Transform>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.Transform>();
     if (element != null)
-      return DMXDrawsChartDraw.TransformConverter.CreateModelElement(element);
+      return DMXDCD.TransformConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform(DXDCD.GraphicFrame openXmlElement, DMDCD.Transform? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Transform>(), value, diffs, objName);
+    return DMXDCD.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Transform>(), value, diffs, objName);
   }
   
-  private static void SetTransform(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.Transform? value)
+  private static void SetTransform(DXDCD.GraphicFrame openXmlElement, DMDCD.Transform? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Transform>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.Transform>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.TransformConverter.CreateOpenXmlElement<DXDrawChartDraw.Transform>(value);
+      itemElement = DMXDCD.TransformConverter.CreateOpenXmlElement<DXDCD.Transform>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -107,33 +107,33 @@ public static class GraphicFrameConverter
   /// <summary>
   /// Graphical Object.
   /// </summary>
-  private static DMDraws.Graphic? GetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement)
+  private static DMD.Graphic? GetGraphic(DXDCD.GraphicFrame openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
+    var element = openXmlElement?.GetFirstChild<DXD.Graphic>();
     if (element != null)
-      return DMXDraws.GraphicConverter.CreateModelElement(element);
+      return DMXD.GraphicConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphic(DXDCD.GraphicFrame openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName);
+    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName);
   }
   
-  private static void SetGraphic(DXDrawChartDraw.GraphicFrame openXmlElement, DMDraws.Graphic? value)
+  private static void SetGraphic(DXDCD.GraphicFrame openXmlElement, DMD.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
+      itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.GraphicFrame? CreateModelElement(DXDrawChartDraw.GraphicFrame? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.GraphicFrame? CreateModelElement(DXDCD.GraphicFrame? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -148,7 +148,7 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.GraphicFrame? openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.GraphicFrame? openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -170,15 +170,15 @@ public static class GraphicFrameConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.GraphicFrame value)
-    where OpenXmlElementType: DXDrawChartDraw.GraphicFrame, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.GraphicFrame value)
+    where OpenXmlElementType: DXDCD.GraphicFrame, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.GraphicFrame openXmlElement, DMDrawsChartDraw.GraphicFrame value)
+  public static void UpdateOpenXmlElement(DXDCD.GraphicFrame openXmlElement, DMDCD.GraphicFrame value)
   {
     SetMacro(openXmlElement, value?.Macro);
     SetPublished(openXmlElement, value?.Published);

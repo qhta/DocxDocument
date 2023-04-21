@@ -8,19 +8,19 @@ public static class ArtisticCutoutConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCutout openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticCutout openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticCutout openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticCutoutConverter
   /// <summary>
   /// numberOfShades, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetNumberOfShades(DXO2010Draw.ArtisticCutout openXmlElement)
+  private static Int32? GetNumberOfShades(DXO10D.ArtisticCutout openXmlElement)
   {
     return openXmlElement?.NumberOfShades?.Value;
   }
   
-  private static bool CmpNumberOfShades(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberOfShades(DXO10D.ArtisticCutout openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NumberOfShades?.Value == value) return true;
     diffs?.Add(objName, "NumberOfShades", openXmlElement?.NumberOfShades?.Value, value);
     return false;
   }
   
-  private static void SetNumberOfShades(DXO2010Draw.ArtisticCutout openXmlElement, Int32? value)
+  private static void SetNumberOfShades(DXO10D.ArtisticCutout openXmlElement, Int32? value)
   {
     openXmlElement.NumberOfShades = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCutout? CreateModelElement(DXO2010Draw.ArtisticCutout? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticCutout? CreateModelElement(DXO10D.ArtisticCutout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticCutoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticCutout? openXmlElement, DMDraws.ArtisticCutout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticCutout? openXmlElement, DMD.ArtisticCutout? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticCutoutConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCutout value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticCutout, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticCutout value)
+    where OpenXmlElementType: DXO10D.ArtisticCutout, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticCutout openXmlElement, DMDraws.ArtisticCutout value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticCutout openXmlElement, DMD.ArtisticCutout value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetNumberOfShades(openXmlElement, value?.NumberOfShades);

@@ -4,15 +4,15 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestBackground();
   }
 
     private static void RunTestBackground()
   {
-    var testInstance = new TestProperties();
+    var testInstance = new TestBackground();
     testInstance.Setup();
-    testInstance.TestReadProperties("BorderColor.docx", true);
-    testInstance.TestReadPropertiesXmlSerialization("BorderColor.docx", true);
+    testInstance.TestReadBackground("BackgroundColor.docx", true);
+    testInstance.TestReadBackgroundXmlSerialization("BackgroundColor.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
@@ -68,7 +68,7 @@ internal class Program
     var testInstance = new TestTheme();
     testInstance.Setup();
     //testInstance.TestReadDocumentTheme();
-    testInstance.TestThemeXmlSerialization();
+    testInstance.TestReadThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
 

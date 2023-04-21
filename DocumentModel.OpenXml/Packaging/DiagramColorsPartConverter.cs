@@ -8,21 +8,21 @@ public static class DiagramColorsPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsDgms.ColorsDefinition? GetColorsDefinition(DXPack.DiagramColorsPart openXmlElement)
+  private static DMDD.ColorsDefinition? GetColorsDefinition(DXPack.DiagramColorsPart openXmlElement)
   {
-      return DMXDrawsDgms.ColorsDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.ColorsDefinition);
+      return DMXDD.ColorsDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDD.ColorsDefinition);
   }
   
-  private static bool CmpColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDrawsDgms.ColorsDefinition? value, DiffList? diffs, string? objName)
+  private static bool CmpColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDD.ColorsDefinition? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDrawsDgms.ColorsDefinition? value)
+  private static void SetColorsDefinition(DXPack.DiagramColorsPart openXmlElement, DMDD.ColorsDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsDgms.ColorsDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.ColorsDefinition>(value);
+       var rootElement = DMXDD.ColorsDefinitionConverter.CreateOpenXmlElement<DXDD.ColorsDefinition>(value);
        if (rootElement != null)
          openXmlElement.ColorsDefinition = rootElement;
     }

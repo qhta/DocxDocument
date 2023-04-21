@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class StylisticSetsConverter
 {
-  private static Collection<DMW.StyleSet>? GetStyleSets(DXO2010W.StylisticSets openXmlElement)
+  private static Collection<DMW.StyleSet>? GetStyleSets(DXO10W.StylisticSets openXmlElement)
   {
     var collection = new Collection<DMW.StyleSet>();
-    foreach (var item in openXmlElement.Elements<DXO2010W.StyleSet>())
+    foreach (var item in openXmlElement.Elements<DXO10W.StyleSet>())
     {
       var newItem = DMXW.StyleSetConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class StylisticSetsConverter
     return null;
   }
   
-  private static bool CmpStyleSets(DXO2010W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleSets(DXO10W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010W.StyleSet>();
+    var origElements = openXmlElement.Elements<DXO10W.StyleSet>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class StylisticSetsConverter
     return false;
   }
   
-  private static void SetStyleSets(DXO2010W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value)
+  private static void SetStyleSets(DXO10W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010W.StyleSet>();
+    openXmlElement.RemoveAllChildren<DXO10W.StyleSet>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.StyleSetConverter.CreateOpenXmlElement<DXO2010W.StyleSet>(item);
+        var newItem = DMXW.StyleSetConverter.CreateOpenXmlElement<DXO10W.StyleSet>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DMW.StylisticSets? CreateModelElement(DXO2010W.StylisticSets? openXmlElement)
+  public static DMW.StylisticSets? CreateModelElement(DXO10W.StylisticSets? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class StylisticSetsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.StylisticSets? openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.StylisticSets? openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class StylisticSetsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StylisticSets value)
-    where OpenXmlElementType: DXO2010W.StylisticSets, new()
+    where OpenXmlElementType: DXO10W.StylisticSets, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.StylisticSets openXmlElement, DMW.StylisticSets value)
+  public static void UpdateOpenXmlElement(DXO10W.StylisticSets openXmlElement, DMW.StylisticSets value)
   {
     SetStyleSets(openXmlElement, value?.StyleSets);
   }

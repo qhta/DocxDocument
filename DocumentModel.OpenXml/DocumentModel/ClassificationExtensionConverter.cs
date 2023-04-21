@@ -8,22 +8,22 @@ public static class ClassificationExtensionConverter
   /// <summary>
   /// uri, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement)
+  private static String? GetUri(DXO21MLMD.ClassificationExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXO21MLMD.ClassificationExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, String? value)
+  private static void SetUri(DXO21MLMD.ClassificationExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.ClassificationExtension? CreateModelElement(DXO2021MipLabelMeta.ClassificationExtension? openXmlElement)
+  public static DocumentModel.ClassificationExtension? CreateModelElement(DXO21MLMD.ClassificationExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ClassificationExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021MipLabelMeta.ClassificationExtension? openXmlElement, DM.ClassificationExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21MLMD.ClassificationExtension? openXmlElement, DM.ClassificationExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,14 +49,14 @@ public static class ClassificationExtensionConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationExtension value)
-    where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationExtension, new()
+    where OpenXmlElementType: DXO21MLMD.ClassificationExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationExtension openXmlElement, DM.ClassificationExtension value)
+  public static void UpdateOpenXmlElement(DXO21MLMD.ClassificationExtension openXmlElement, DM.ClassificationExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
   }

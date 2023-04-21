@@ -8,20 +8,20 @@ public static class PresentationOfConverter
   /// <summary>
   /// Axis
   /// </summary>
-  private static DM.ListOf<DMDrawsDgms.AxisKind>? GetAxis(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<DMDD.AxisKind>? GetAxis(DXDD.PresentationOf openXmlElement)
   {
-    return ListValueConverter.GetValue<DXDrawDgms.AxisValues, DMDrawsDgms.AxisKind>(openXmlElement?.Axis);
+    return ListValueConverter.GetValue<DXDD.AxisValues, DMDD.AxisKind>(openXmlElement?.Axis);
   }
   
-  private static bool CmpAxis(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.AxisKind>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxis(DXDD.PresentationOf openXmlElement, DM.ListOf<DMDD.AxisKind>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.CmpValue<DXDrawDgms.AxisValues, DMDrawsDgms.AxisKind>(openXmlElement?.Axis, value, diffs, objName);
+    return ListValueConverter.CmpValue<DXDD.AxisValues, DMDD.AxisKind>(openXmlElement?.Axis, value, diffs, objName);
   }
   
-  private static void SetAxis(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.AxisKind>? value)
+  private static void SetAxis(DXDD.PresentationOf openXmlElement, DM.ListOf<DMDD.AxisKind>? value)
   {
     if (value != null)
-      openXmlElement.Axis = ListValueConverter.CreateListValue<DXDrawDgms.AxisValues, DMDrawsDgms.AxisKind>(value);
+      openXmlElement.Axis = ListValueConverter.CreateListValue<DXDD.AxisValues, DMDD.AxisKind>(value);
     else
       openXmlElement.Axis = null;
   }
@@ -29,20 +29,20 @@ public static class PresentationOfConverter
   /// <summary>
   /// Data Point Type
   /// </summary>
-  private static DM.ListOf<DMDrawsDgms.ElementKind>? GetPointType(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<DMDD.ElementKind>? GetPointType(DXDD.PresentationOf openXmlElement)
   {
-    return ListValueConverter.GetValue<DXDrawDgms.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType);
+    return ListValueConverter.GetValue<DXDD.ElementValues, DMDD.ElementKind>(openXmlElement?.PointType);
   }
   
-  private static bool CmpPointType(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.ElementKind>? value, DiffList? diffs, string? objName)
+  private static bool CmpPointType(DXDD.PresentationOf openXmlElement, DM.ListOf<DMDD.ElementKind>? value, DiffList? diffs, string? objName)
   {
-    return ListValueConverter.CmpValue<DXDrawDgms.ElementValues, DMDrawsDgms.ElementKind>(openXmlElement?.PointType, value, diffs, objName);
+    return ListValueConverter.CmpValue<DXDD.ElementValues, DMDD.ElementKind>(openXmlElement?.PointType, value, diffs, objName);
   }
   
-  private static void SetPointType(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<DMDrawsDgms.ElementKind>? value)
+  private static void SetPointType(DXDD.PresentationOf openXmlElement, DM.ListOf<DMDD.ElementKind>? value)
   {
     if (value != null)
-      openXmlElement.PointType = ListValueConverter.CreateListValue<DXDrawDgms.ElementValues, DMDrawsDgms.ElementKind>(value);
+      openXmlElement.PointType = ListValueConverter.CreateListValue<DXDD.ElementValues, DMDD.ElementKind>(value);
     else
       openXmlElement.PointType = null;
   }
@@ -50,17 +50,17 @@ public static class PresentationOfConverter
   /// <summary>
   /// Hide Last Transition
   /// </summary>
-  private static DM.ListOf<Boolean>? GetHideLastTrans(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<Boolean>? GetHideLastTrans(DXDD.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.HideLastTrans);
   }
   
-  private static bool CmpHideLastTrans(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Boolean>? value, DiffList? diffs, string? objName)
+  private static bool CmpHideLastTrans(DXDD.PresentationOf openXmlElement, DM.ListOf<Boolean>? value, DiffList? diffs, string? objName)
   {
     return ListValueConverter.CmpValue(openXmlElement?.HideLastTrans, value, diffs, objName);
   }
   
-  private static void SetHideLastTrans(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Boolean>? value)
+  private static void SetHideLastTrans(DXDD.PresentationOf openXmlElement, DM.ListOf<Boolean>? value)
   {
     if (value != null)
       openXmlElement.HideLastTrans = ListValueConverter.CreateListValue<DX.BooleanValue>(value);
@@ -71,17 +71,17 @@ public static class PresentationOfConverter
   /// <summary>
   /// Start
   /// </summary>
-  private static DM.ListOf<Int32>? GetStart(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<Int32>? GetStart(DXDD.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Start);
   }
   
-  private static bool CmpStart(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXDD.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
   {
     return ListValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName);
   }
   
-  private static void SetStart(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
+  private static void SetStart(DXDD.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
   {
     if (value != null)
       openXmlElement.Start = ListValueConverter.CreateListValue<DX.Int32Value>(value);
@@ -92,17 +92,17 @@ public static class PresentationOfConverter
   /// <summary>
   /// Count
   /// </summary>
-  private static DM.ListOf<UInt32>? GetCount(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<UInt32>? GetCount(DXDD.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Count);
   }
   
-  private static bool CmpCount(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpCount(DXDD.PresentationOf openXmlElement, DM.ListOf<UInt32>? value, DiffList? diffs, string? objName)
   {
     return ListValueConverter.CmpValue(openXmlElement?.Count, value, diffs, objName);
   }
   
-  private static void SetCount(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<UInt32>? value)
+  private static void SetCount(DXDD.PresentationOf openXmlElement, DM.ListOf<UInt32>? value)
   {
     if (value != null)
       openXmlElement.Count = ListValueConverter.CreateListValue<DX.UInt32Value>(value);
@@ -113,17 +113,17 @@ public static class PresentationOfConverter
   /// <summary>
   /// Step
   /// </summary>
-  private static DM.ListOf<Int32>? GetStep(DXDrawDgms.PresentationOf openXmlElement)
+  private static DM.ListOf<Int32>? GetStep(DXDD.PresentationOf openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Step);
   }
   
-  private static bool CmpStep(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
+  private static bool CmpStep(DXDD.PresentationOf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
   {
     return ListValueConverter.CmpValue(openXmlElement?.Step, value, diffs, objName);
   }
   
-  private static void SetStep(DXDrawDgms.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
+  private static void SetStep(DXDD.PresentationOf openXmlElement, DM.ListOf<Int32>? value)
   {
     if (value != null)
       openXmlElement.Step = ListValueConverter.CreateListValue<DX.Int32Value>(value);
@@ -134,33 +134,33 @@ public static class PresentationOfConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.PresentationOf openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.PresentationOf openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.PresentationOf openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.PresentationOf openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(DXDrawDgms.PresentationOf? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PresentationOf? CreateModelElement(DXDD.PresentationOf? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -177,7 +177,7 @@ public static class PresentationOfConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.PresentationOf? openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.PresentationOf? openXmlElement, DMDD.PresentationOf? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -203,15 +203,15 @@ public static class PresentationOfConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PresentationOf value)
-    where OpenXmlElementType: DXDrawDgms.PresentationOf, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.PresentationOf value)
+    where OpenXmlElementType: DXDD.PresentationOf, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.PresentationOf openXmlElement, DMDrawsDgms.PresentationOf value)
+  public static void UpdateOpenXmlElement(DXDD.PresentationOf openXmlElement, DMDD.PresentationOf value)
   {
     SetAxis(openXmlElement, value?.Axis);
     SetPointType(openXmlElement, value?.PointType);

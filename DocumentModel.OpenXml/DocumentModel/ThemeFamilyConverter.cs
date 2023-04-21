@@ -8,17 +8,17 @@ public static class ThemeFamilyConverter
   /// <summary>
   /// name, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetName(DXO2013Theme.ThemeFamily openXmlElement)
+  private static String? GetName(DXO13T.ThemeFamily openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXO2013Theme.ThemeFamily openXmlElement, String? value)
+  private static void SetName(DXO13T.ThemeFamily openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class ThemeFamilyConverter
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetId(DXO2013Theme.ThemeFamily openXmlElement)
+  private static String? GetId(DXO13T.ThemeFamily openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2013Theme.ThemeFamily openXmlElement, String? value)
+  private static void SetId(DXO13T.ThemeFamily openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class ThemeFamilyConverter
   /// <summary>
   /// vid, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetVid(DXO2013Theme.ThemeFamily openXmlElement)
+  private static String? GetVid(DXO13T.ThemeFamily openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Vid);
   }
   
-  private static bool CmpVid(DXO2013Theme.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVid(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Vid, value, diffs, objName, "Vid");
   }
   
-  private static void SetVid(DXO2013Theme.ThemeFamily openXmlElement, String? value)
+  private static void SetVid(DXO13T.ThemeFamily openXmlElement, String? value)
   {
     openXmlElement.Vid = StringValueConverter.CreateStringValue(value);
   }
@@ -62,33 +62,33 @@ public static class ThemeFamilyConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DM.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement)
+  private static DM.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO13T.OfficeArtExtensionList>();
     if (element != null)
       return DMX.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13T.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2013Theme.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013Theme.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13T.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013Theme.OfficeArtExtensionList>(value);
+      itemElement = DMX.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13T.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.ThemeFamily? CreateModelElement(DXO2013Theme.ThemeFamily? openXmlElement)
+  public static DocumentModel.ThemeFamily? CreateModelElement(DXO13T.ThemeFamily? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -102,7 +102,7 @@ public static class ThemeFamilyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013Theme.ThemeFamily? openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13T.ThemeFamily? openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -123,14 +123,14 @@ public static class ThemeFamilyConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ThemeFamily value)
-    where OpenXmlElementType: DXO2013Theme.ThemeFamily, new()
+    where OpenXmlElementType: DXO13T.ThemeFamily, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013Theme.ThemeFamily openXmlElement, DM.ThemeFamily value)
+  public static void UpdateOpenXmlElement(DXO13T.ThemeFamily openXmlElement, DM.ThemeFamily value)
   {
     SetName(openXmlElement, value?.Name);
     SetId(openXmlElement, value?.Id);

@@ -8,19 +8,19 @@ public static class BlurConverter
   /// <summary>
   /// Radius
   /// </summary>
-  private static Int64? GetRadius(DXDraw.Blur openXmlElement)
+  private static Int64? GetRadius(DXD.Blur openXmlElement)
   {
     return openXmlElement?.Radius?.Value;
   }
   
-  private static bool CmpRadius(DXDraw.Blur openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRadius(DXD.Blur openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Radius?.Value == value) return true;
     diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
     return false;
   }
   
-  private static void SetRadius(DXDraw.Blur openXmlElement, Int64? value)
+  private static void SetRadius(DXD.Blur openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
   }
@@ -28,19 +28,19 @@ public static class BlurConverter
   /// <summary>
   /// Grow Bounds
   /// </summary>
-  private static Boolean? GetGrow(DXDraw.Blur openXmlElement)
+  private static Boolean? GetGrow(DXD.Blur openXmlElement)
   {
     return openXmlElement?.Grow?.Value;
   }
   
-  private static bool CmpGrow(DXDraw.Blur openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGrow(DXD.Blur openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Grow?.Value == value) return true;
     diffs?.Add(objName, "Grow", openXmlElement?.Grow?.Value, value);
     return false;
   }
   
-  private static void SetGrow(DXDraw.Blur openXmlElement, Boolean? value)
+  private static void SetGrow(DXD.Blur openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Grow = new BooleanValue { Value = (Boolean)value };
@@ -48,7 +48,7 @@ public static class BlurConverter
       openXmlElement.Grow = null;
   }
   
-  public static DocumentModel.Drawings.Blur? CreateModelElement(DXDraw.Blur? openXmlElement)
+  public static DocumentModel.Drawings.Blur? CreateModelElement(DXD.Blur? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,7 +60,7 @@ public static class BlurConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Blur? openXmlElement, DMDraws.Blur? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Blur? openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -76,15 +76,15 @@ public static class BlurConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blur value)
-    where OpenXmlElementType: DXDraw.Blur, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Blur value)
+    where OpenXmlElementType: DXD.Blur, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Blur openXmlElement, DMDraws.Blur value)
+  public static void UpdateOpenXmlElement(DXD.Blur openXmlElement, DMD.Blur value)
   {
     SetRadius(openXmlElement, value?.Radius);
     SetGrow(openXmlElement, value?.Grow);

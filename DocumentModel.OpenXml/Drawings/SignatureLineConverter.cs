@@ -8,19 +8,19 @@ public static class SignatureLineConverter
   /// <summary>
   /// isSignatureLine, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetIsSignatureLine(DXO2013Draw.SignatureLine openXmlElement)
+  private static Boolean? GetIsSignatureLine(DXO13D.SignatureLine openXmlElement)
   {
     return openXmlElement?.IsSignatureLine?.Value;
   }
   
-  private static bool CmpIsSignatureLine(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsSignatureLine(DXO13D.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.IsSignatureLine?.Value == value) return true;
     diffs?.Add(objName, "IsSignatureLine", openXmlElement?.IsSignatureLine?.Value, value);
     return false;
   }
   
-  private static void SetIsSignatureLine(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
+  private static void SetIsSignatureLine(DXO13D.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsSignatureLine = new BooleanValue { Value = (Boolean)value };
@@ -31,17 +31,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetId(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetId(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetId(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -49,17 +49,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// provId, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetProviderId(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetProviderId(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ProviderId);
   }
   
-  private static bool CmpProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpProviderId(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ProviderId, value, diffs, objName, "ProviderId");
   }
   
-  private static void SetProviderId(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetProviderId(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.ProviderId = StringValueConverter.CreateStringValue(value);
   }
@@ -67,19 +67,19 @@ public static class SignatureLineConverter
   /// <summary>
   /// signingInstructionsSet, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetSigningInstructionsSet(DXO2013Draw.SignatureLine openXmlElement)
+  private static Boolean? GetSigningInstructionsSet(DXO13D.SignatureLine openXmlElement)
   {
     return openXmlElement?.SigningInstructionsSet?.Value;
   }
   
-  private static bool CmpSigningInstructionsSet(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSigningInstructionsSet(DXO13D.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SigningInstructionsSet?.Value == value) return true;
     diffs?.Add(objName, "SigningInstructionsSet", openXmlElement?.SigningInstructionsSet?.Value, value);
     return false;
   }
   
-  private static void SetSigningInstructionsSet(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
+  private static void SetSigningInstructionsSet(DXO13D.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SigningInstructionsSet = new BooleanValue { Value = (Boolean)value };
@@ -90,19 +90,19 @@ public static class SignatureLineConverter
   /// <summary>
   /// allowComments, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetAllowComments(DXO2013Draw.SignatureLine openXmlElement)
+  private static Boolean? GetAllowComments(DXO13D.SignatureLine openXmlElement)
   {
     return openXmlElement?.AllowComments?.Value;
   }
   
-  private static bool CmpAllowComments(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAllowComments(DXO13D.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AllowComments?.Value == value) return true;
     diffs?.Add(objName, "AllowComments", openXmlElement?.AllowComments?.Value, value);
     return false;
   }
   
-  private static void SetAllowComments(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
+  private static void SetAllowComments(DXO13D.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowComments = new BooleanValue { Value = (Boolean)value };
@@ -113,19 +113,19 @@ public static class SignatureLineConverter
   /// <summary>
   /// showSignDate, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetShowSignDate(DXO2013Draw.SignatureLine openXmlElement)
+  private static Boolean? GetShowSignDate(DXO13D.SignatureLine openXmlElement)
   {
     return openXmlElement?.ShowSignDate?.Value;
   }
   
-  private static bool CmpShowSignDate(DXO2013Draw.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowSignDate(DXO13D.SignatureLine openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowSignDate?.Value == value) return true;
     diffs?.Add(objName, "ShowSignDate", openXmlElement?.ShowSignDate?.Value, value);
     return false;
   }
   
-  private static void SetShowSignDate(DXO2013Draw.SignatureLine openXmlElement, Boolean? value)
+  private static void SetShowSignDate(DXO13D.SignatureLine openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowSignDate = new BooleanValue { Value = (Boolean)value };
@@ -136,17 +136,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// suggestedSigner, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetSuggestedSigner(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SuggestedSigner);
   }
   
-  private static bool CmpSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSuggestedSigner(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SuggestedSigner, value, diffs, objName, "SuggestedSigner");
   }
   
-  private static void SetSuggestedSigner(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSigner(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.SuggestedSigner = StringValueConverter.CreateStringValue(value);
   }
@@ -154,17 +154,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// suggestedSigner2, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetSuggestedSigner2(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SuggestedSigner2);
   }
   
-  private static bool CmpSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSuggestedSigner2(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SuggestedSigner2, value, diffs, objName, "SuggestedSigner2");
   }
   
-  private static void SetSuggestedSigner2(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSigner2(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.SuggestedSigner2 = StringValueConverter.CreateStringValue(value);
   }
@@ -172,17 +172,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// suggestedSignerEmail, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetSuggestedSignerEmail(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SuggestedSignerEmail);
   }
   
-  private static bool CmpSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSuggestedSignerEmail(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SuggestedSignerEmail, value, diffs, objName, "SuggestedSignerEmail");
   }
   
-  private static void SetSuggestedSignerEmail(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetSuggestedSignerEmail(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.SuggestedSignerEmail = StringValueConverter.CreateStringValue(value);
   }
@@ -190,17 +190,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// signingInstructions, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetSigningInstructions(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetSigningInstructions(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SigningInstructions);
   }
   
-  private static bool CmpSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSigningInstructions(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SigningInstructions, value, diffs, objName, "SigningInstructions");
   }
   
-  private static void SetSigningInstructions(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetSigningInstructions(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.SigningInstructions = StringValueConverter.CreateStringValue(value);
   }
@@ -208,17 +208,17 @@ public static class SignatureLineConverter
   /// <summary>
   /// addlXml, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetAdditionalXml(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetAdditionalXml(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.AdditionalXml);
   }
   
-  private static bool CmpAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAdditionalXml(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AdditionalXml, value, diffs, objName, "AdditionalXml");
   }
   
-  private static void SetAdditionalXml(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetAdditionalXml(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.AdditionalXml = StringValueConverter.CreateStringValue(value);
   }
@@ -226,22 +226,22 @@ public static class SignatureLineConverter
   /// <summary>
   /// sigProvUrl, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement)
+  private static String? GetSignatureProviderUrl(DXO13D.SignatureLine openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SignatureProviderUrl);
   }
   
-  private static bool CmpSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSignatureProviderUrl(DXO13D.SignatureLine openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SignatureProviderUrl, value, diffs, objName, "SignatureProviderUrl");
   }
   
-  private static void SetSignatureProviderUrl(DXO2013Draw.SignatureLine openXmlElement, String? value)
+  private static void SetSignatureProviderUrl(DXO13D.SignatureLine openXmlElement, String? value)
   {
     openXmlElement.SignatureProviderUrl = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.SignatureLine? CreateModelElement(DXO2013Draw.SignatureLine? openXmlElement)
+  public static DocumentModel.Drawings.SignatureLine? CreateModelElement(DXO13D.SignatureLine? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -263,7 +263,7 @@ public static class SignatureLineConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013Draw.SignatureLine? openXmlElement, DMDraws.SignatureLine? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13D.SignatureLine? openXmlElement, DMD.SignatureLine? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -299,15 +299,15 @@ public static class SignatureLineConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SignatureLine value)
-    where OpenXmlElementType: DXO2013Draw.SignatureLine, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SignatureLine value)
+    where OpenXmlElementType: DXO13D.SignatureLine, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013Draw.SignatureLine openXmlElement, DMDraws.SignatureLine value)
+  public static void UpdateOpenXmlElement(DXO13D.SignatureLine openXmlElement, DMD.SignatureLine value)
   {
     SetIsSignatureLine(openXmlElement, value?.IsSignatureLine);
     SetId(openXmlElement, value?.Id);

@@ -8,19 +8,19 @@ public static class ArtisticGlowEdgesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticGlowEdges openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticGlowEdges openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticGlowEdgesConverter
   /// <summary>
   /// smoothness, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement)
+  private static Int32? GetSmoothness(DXO10D.ArtisticGlowEdges openXmlElement)
   {
     return openXmlElement?.Smoothness?.Value;
   }
   
-  private static bool CmpSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSmoothness(DXO10D.ArtisticGlowEdges openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Smoothness?.Value == value) return true;
     diffs?.Add(objName, "Smoothness", openXmlElement?.Smoothness?.Value, value);
     return false;
   }
   
-  private static void SetSmoothness(DXO2010Draw.ArtisticGlowEdges openXmlElement, Int32? value)
+  private static void SetSmoothness(DXO10D.ArtisticGlowEdges openXmlElement, Int32? value)
   {
     openXmlElement.Smoothness = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticGlowEdges? CreateModelElement(DXO2010Draw.ArtisticGlowEdges? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticGlowEdges? CreateModelElement(DXO10D.ArtisticGlowEdges? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticGlowEdgesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticGlowEdges? openXmlElement, DMDraws.ArtisticGlowEdges? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticGlowEdges? openXmlElement, DMD.ArtisticGlowEdges? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticGlowEdgesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticGlowEdges value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticGlowEdges, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticGlowEdges value)
+    where OpenXmlElementType: DXO10D.ArtisticGlowEdges, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticGlowEdges openXmlElement, DMDraws.ArtisticGlowEdges value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticGlowEdges openXmlElement, DMD.ArtisticGlowEdges value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetSmoothness(openXmlElement, value?.Smoothness);
