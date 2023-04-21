@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBackground();
+    RunTestStyles();
   }
 
     private static void RunTestBackground()
@@ -20,8 +20,8 @@ internal class Program
   {
     var testInstance = new TestComments();
     testInstance.Setup();
-    testInstance.TestReadComments("Comments.docx",true);
-    testInstance.TestReadCommentsXmlSerialization("Comments.docx", true);
+    testInstance.TestReadComments(/*"Comments.docx",true*/);
+    testInstance.TestReadCommentsXmlSerialization(/*"Comments.docx", true*/);
     Console.WriteLine("\nTest passed");
   }
 
@@ -29,8 +29,8 @@ internal class Program
   {
     var testInstance = new TestSections();
     testInstance.Setup();
-    testInstance.TestReadSections("PageSizes.docx",true);
-    //testInstance.TestReadSectionsXmlSerialization("Math.docx", true);
+    testInstance.TestReadSections(/*"PageSizes.docx",true*/);
+    testInstance.TestReadSectionsXmlSerialization(/*"Math.docx", true*/);
     Console.WriteLine("\nTest passed");
   }
 
@@ -76,8 +76,8 @@ internal class Program
   {
     var testInstance = new TestStyles();
     testInstance.Setup();
-    testInstance.TestReadStyles("_Jakość oprogramowania.docx", true);
-    //testInstance.TestReadStylesXmlSerialization("Bookmarks.docx", true);
+    testInstance.TestReadStyles(/*"_Jakość oprogramowania.docx", true*/);
+    testInstance.TestReadStylesXmlSerialization(/*"Bookmarks.docx", true*/);
     Console.WriteLine("\nTest passed");
   }
 
@@ -85,7 +85,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestReadDocumentProperties();
+    testInstance.TestReadProperties("Comments.docx", true);
     testInstance.TestReadPropertiesXmlSerialization();
     Console.WriteLine("Test passed");
   }

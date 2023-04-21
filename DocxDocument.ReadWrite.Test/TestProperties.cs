@@ -238,8 +238,10 @@ public class TestProperties : TestBase
       origDocumentSettingsCount = origDocument.MainDocumentPart?.DocumentSettingsPart?.Settings?.Elements().Count() ?? 0;
       var modelDocumentSettings = typeof(DocumentSettings).GetProperties();
       foreach (var prop in modelDocumentSettings.Where(item => item.CanWrite))
+      {
         if (prop.GetValue(documentSettings, null) != null)
           documentSettingsCount++;
+      }
       WriteLine(
         $"  DocumentSettings: defined {modelDocumentSettings.Count()} loaded {documentSettingsCount} expected {origDocumentSettingsCount}");
       if (showDetails)

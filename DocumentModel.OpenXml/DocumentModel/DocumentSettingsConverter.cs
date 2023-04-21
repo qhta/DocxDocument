@@ -1986,15 +1986,12 @@ public static class DocumentSettingsConverter
   
   private static Boolean? GetChartTrackingRefBased(DXW.Settings openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>() != null;
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>());
   }
   
   private static bool CmpChartTrackingRefBased(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>() != null;
-    if (val == value) return true;
-    diffs?.Add(objName, "DXO13W.ChartTrackingRefBased", val, value);
-    return false;
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>(), value, diffs, objName);
   }
   
   private static void SetChartTrackingRefBased(DXW.Settings openXmlElement, Boolean? value)

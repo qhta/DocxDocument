@@ -26,7 +26,7 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   {
     Items.Add(item);
     item.Parent = Parent ?? this;
-    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item, null, Items.Count - 1));
+    OnCollectionChanged?.Invoke(this, new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item));
   }
 
   public void Clear()

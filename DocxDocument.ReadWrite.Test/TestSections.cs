@@ -28,7 +28,7 @@ public class TestSections : TestBase
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
-    WriteLine(filename);
+    WriteLine($"Testing sections read of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     Assert.IsNotNull(document, "No document read");
@@ -75,11 +75,8 @@ public class TestSections : TestBase
   /// </summary>
   public void TestReadSectionsXmlSerialization(string filename, bool showDetails = false)
   {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-
     filename = Path.Combine(TestPath, filename);
-    WriteLine($"Testing sections of: {filename}");
+    WriteLine($"Testing sections serialization of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     var oldBody = document.Body ?? new();
@@ -87,6 +84,8 @@ public class TestSections : TestBase
     if (oldBody == null)
       return;
     var textWriter = new StringWriter();
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var serializer = new QXmlSerializer(typeof(DMW.Body), extraTypes.ToArray(),
       new SerializationOptions { AcceptAllProperties = true });
     serializer.Serialize(textWriter, oldBody);
