@@ -218,6 +218,53 @@ public static class BooleanValueConverter
   //}
   #endregion
 
+  #region OnOffType conversion.
+  public static Boolean? GetValue(DXO13W.OnOffType? openXmlElement)
+  {
+    if (openXmlElement?.Val?.Value != null)
+      return openXmlElement.Val.Value;
+    if (openXmlElement != null) return true;
+    return null;
+  }
+
+  public static Boolean CmpValue(DXO13W.OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Val?.Value != null && value != null)
+    {
+      if (openXmlElement.Val.Value == true && value == true)
+        return true;
+      if (openXmlElement.Val.Value == false && value == false)
+        return true;
+      diffs?.Add(objName, propName ?? openXmlElement.GetType().Name, openXmlElement.Val.Value, value);
+      return false;
+    }
+    if (openXmlElement?.Val?.Value == null && value == null)
+      return true;
+    if (openXmlElement != null && value == true)
+      return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Val?.Value, value);
+    return false;
+  }
+
+  public static void SetO13OnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
+    where ElementType : DXO13W.OnOffType, new()
+  {
+    if (openXmlElement != null)
+    {
+      if (value == false)
+      {
+        var itemElement = openXmlElement.GetFirstChild<ElementType>();
+        if (itemElement != null)
+          itemElement.Remove();
+      }
+      if (value == true)
+      {
+        var itemElement = new ElementType { Val = value };
+        openXmlElement.AddChild(itemElement);
+      }
+    }
+  }
+  #endregion
 
   #region Math BooleanValues conversion.
   public static Boolean? GetValue(DX.EnumValue<DXM.BooleanValues>? openXmlElement)

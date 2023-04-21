@@ -57,6 +57,8 @@ public class TestComments : TestBase
     var origCommentsEx = reader.WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsExPart?.CommentsEx;
     var origCommentsIds = reader.WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsIdsPart?.CommentsIds;
     var origCommentsExtensible = reader.WordprocessingDocument.MainDocumentPart?.WordCommentsExtensiblePart?.CommentsExtensible;
+    if (origComments==null && origCommentsEx==null && origCommentsIds==null && origCommentsExtensible==null)
+      return;
     var diffs = new DiffList();
     var ok = DMXW.CommentsConverter.CompareModelElement(origComments, modelComments?.Comments, diffs, null);
     if (!DMXW.CommentsExConverter.CompareModelElement(origCommentsEx, modelComments?.CommentsEx, diffs, null))
