@@ -102,7 +102,7 @@ public class TestStyles : TestBase
     var modelParaStylesCount = modelParaStyles.Count();
     var definedParaStylesCount = modelParaStyles.Count(item => item.IsDefined);
     var customParaStylesCount = modelParaStyles.Count(item => item.IsCustom == true);
-    var validParaStylesCount = modelParaStyles.Count(item => item.IsValid);
+    var validParaStylesCount = modelParaStyles.Count(item => item.IsVl);
     if (showDetails)
       WriteLine($"  Document Paragraph Styles: found {modelParaStylesCount}, defined {definedParaStylesCount}, custom {customParaStylesCount}, valid {validParaStylesCount}");
 
@@ -110,7 +110,7 @@ public class TestStyles : TestBase
     var modelCharStylesCount = modelCharStyles.Count();
     var definedCharStylesCount = modelCharStyles.Count(item => item.IsDefined);
     var customCharStylesCount = modelCharStyles.Count(item => item.IsCustom == true);
-    var validCharStylesCount = modelCharStyles.Count(item => item.IsValid);
+    var validCharStylesCount = modelCharStyles.Count(item => item.IsVl);
     if (showDetails)
       WriteLine($"  Document Character Styles: found {modelCharStylesCount}, defined {definedCharStylesCount}, custom {customCharStylesCount}, valid {validCharStylesCount}");
 
@@ -118,7 +118,7 @@ public class TestStyles : TestBase
     var modelTableStylesCount = modelTableStyles.Count();
     var definedTableStylesCount = modelTableStyles.Count(item => item.IsDefined);
     var customTableStylesCount = modelTableStyles.Count(item => item.IsCustom == true);
-    var validTableStylesCount = modelTableStyles.Count(item => item.IsValid);
+    var validTableStylesCount = modelTableStyles.Count(item => item.IsVl);
     if (showDetails)
       WriteLine($"  Document Table Styles: found {modelTableStylesCount}, defined {definedTableStylesCount}, custom {customTableStylesCount}, valid {validTableStylesCount}");
 
@@ -126,12 +126,12 @@ public class TestStyles : TestBase
     var modelNumStylesCount = modelNumStyles.Count();
     var definedNumStylesCount = modelNumStyles.Count(item => item.IsDefined);
     var customNumStylesCount = modelNumStyles.Count(item => item.IsCustom == true);
-    var validNumStylesCount = modelNumStyles.Count(item => item.IsValid);
+    var validNumStylesCount = modelNumStyles.Count(item => item.IsVl);
     if (showDetails)
       WriteLine($"  Document Numbering Styles: found {modelNumStylesCount}, defined {definedNumStylesCount}, custom {customNumStylesCount}, valid {validNumStylesCount}");
 
     var totalStylesCount = modelParaStylesCount + modelCharStylesCount + modelTableStylesCount + modelNumStylesCount;
-    var totalValidStylesCount = validParaStylesCount + validCharStylesCount + validTableStylesCount + validNumStylesCount;
+    var totalVlStylesCount = validParaStylesCount + validCharStylesCount + validTableStylesCount + validNumStylesCount;
     var totalDefinedStylesCount = definedParaStylesCount + definedCharStylesCount + definedTableStylesCount + definedNumStylesCount;
 
     var totalStyleIds = document.Styles.StyleIndex.Count;
@@ -139,7 +139,7 @@ public class TestStyles : TestBase
       WriteLine($"  Document Style Ids: found {totalStyleIds}, expected {totalDefinedStylesCount}");
 
     Assert.That(totalStylesCount, Is.GreaterThanOrEqualTo(modelAllStylesCount), "Invalid total styles count");
-    Assert.That(totalValidStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");
+    Assert.That(totalVlStylesCount, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid defined styles found");
     Assert.That(totalStyleIds, Is.GreaterThanOrEqualTo(totalDefinedStylesCount), "Invalid style Ids count");
 
     CheckReadDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);

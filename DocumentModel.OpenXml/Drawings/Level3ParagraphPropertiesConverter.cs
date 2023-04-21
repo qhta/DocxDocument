@@ -5,435 +5,435 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class Level3ParagraphPropertiesConverter
 {
-  private static DMDraws.LineSpacing? GetLineSpacing(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.LineSpacing? GetLineSpacing(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LineSpacing>();
+    var element = openXmlElement?.GetFirstChild<DXD.LineSpacing>();
     if (element != null)
-      return DMXDraws.LineSpacingConverter.CreateModelElement(element);
+      return DMXD.LineSpacingConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineSpacing(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSpacing(DXD.Level3ParagraphProperties openXmlElement, DMD.LineSpacing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineSpacing>(), value, diffs, objName);
+    return DMXD.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineSpacing>(), value, diffs, objName);
   }
   
-  private static void SetLineSpacing(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.LineSpacing? value)
+  private static void SetLineSpacing(DXD.Level3ParagraphProperties openXmlElement, DMD.LineSpacing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineSpacing>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LineSpacing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LineSpacingConverter.CreateOpenXmlElement<DXDraw.LineSpacing>(value);
+      itemElement = DMXD.LineSpacingConverter.CreateOpenXmlElement<DXD.LineSpacing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SpaceBefore? GetSpaceBefore(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.SpaceBefore? GetSpaceBefore(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceBefore>();
+    var element = openXmlElement?.GetFirstChild<DXD.SpaceBefore>();
     if (element != null)
-      return DMXDraws.SpaceBeforeConverter.CreateModelElement(element);
+      return DMXD.SpaceBeforeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSpaceBefore(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value, DiffList? diffs, string? objName)
+  private static bool CmpSpaceBefore(DXD.Level3ParagraphProperties openXmlElement, DMD.SpaceBefore? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceBefore>(), value, diffs, objName);
+    return DMXD.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceBefore>(), value, diffs, objName);
   }
   
-  private static void SetSpaceBefore(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.SpaceBefore? value)
+  private static void SetSpaceBefore(DXD.Level3ParagraphProperties openXmlElement, DMD.SpaceBefore? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceBefore>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SpaceBefore>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SpaceBeforeConverter.CreateOpenXmlElement<DXDraw.SpaceBefore>(value);
+      itemElement = DMXD.SpaceBeforeConverter.CreateOpenXmlElement<DXD.SpaceBefore>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SpaceAfter? GetSpaceAfter(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.SpaceAfter? GetSpaceAfter(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SpaceAfter>();
+    var element = openXmlElement?.GetFirstChild<DXD.SpaceAfter>();
     if (element != null)
-      return DMXDraws.SpaceAfterConverter.CreateModelElement(element);
+      return DMXD.SpaceAfterConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSpaceAfter(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value, DiffList? diffs, string? objName)
+  private static bool CmpSpaceAfter(DXD.Level3ParagraphProperties openXmlElement, DMD.SpaceAfter? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SpaceAfter>(), value, diffs, objName);
+    return DMXD.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceAfter>(), value, diffs, objName);
   }
   
-  private static void SetSpaceAfter(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.SpaceAfter? value)
+  private static void SetSpaceAfter(DXD.Level3ParagraphProperties openXmlElement, DMD.SpaceAfter? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SpaceAfter>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SpaceAfter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SpaceAfterConverter.CreateOpenXmlElement<DXDraw.SpaceAfter>(value);
+      itemElement = DMXD.SpaceAfterConverter.CreateOpenXmlElement<DXD.SpaceAfter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBulletColorText(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletColorText(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletColorText>() != null;
+    return openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
   }
   
-  private static bool CmpBulletColorText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletColorText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.BulletColorText>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.BulletColorText", val, value);
+    diffs?.Add(objName, "DXD.BulletColorText", val, value);
     return false;
   }
   
-  private static void SetBulletColorText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletColorText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletColorText>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.BulletColorText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.BulletColorText();
+      var itemElement = new DXD.BulletColorText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BulletColor? GetBulletColor(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.BulletColor? GetBulletColor(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BulletColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.BulletColor>();
     if (element != null)
-      return DMXDraws.BulletColorConverter.CreateModelElement(element);
+      return DMXD.BulletColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBulletColor(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.BulletColor? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletColor(DXD.Level3ParagraphProperties openXmlElement, DMD.BulletColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BulletColor>(), value, diffs, objName);
+    return DMXD.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletColor>(), value, diffs, objName);
   }
   
-  private static void SetBulletColor(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.BulletColor? value)
+  private static void SetBulletColor(DXD.Level3ParagraphProperties openXmlElement, DMD.BulletColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BulletColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BulletColorConverter.CreateOpenXmlElement<DXDraw.BulletColor>(value);
+      itemElement = DMXD.BulletColorConverter.CreateOpenXmlElement<DXD.BulletColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBulletSizeText(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletSizeText(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletSizeText>() != null;
+    return openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
   }
   
-  private static bool CmpBulletSizeText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizeText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.BulletSizeText>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.BulletSizeText", val, value);
+    diffs?.Add(objName, "DXD.BulletSizeText", val, value);
     return false;
   }
   
-  private static void SetBulletSizeText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletSizeText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletSizeText>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.BulletSizeText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.BulletSizeText();
+      var itemElement = new DXD.BulletSizeText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetBulletSizePercentage(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Int32? GetBulletSizePercentage(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val);
   }
   
-  private static bool CmpBulletSizePercentage(DXDraw.Level3ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizePercentage(DXD.Level3ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePercentage>()?.Val, value, diffs, objName, "BulletSizePercentage");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val, value, diffs, objName, "BulletSizePercentage");
   }
   
-  private static void SetBulletSizePercentage(DXDraw.Level3ParagraphProperties openXmlElement, Int32? value)
+  private static void SetBulletSizePercentage(DXD.Level3ParagraphProperties openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.BulletSizePercentage,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.BulletSizePercentage,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetBulletSizePoints(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Int32? GetBulletSizePoints(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val);
   }
   
-  private static bool CmpBulletSizePoints(DXDraw.Level3ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizePoints(DXD.Level3ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BulletSizePoints>()?.Val, value, diffs, objName, "BulletSizePoints");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val, value, diffs, objName, "BulletSizePoints");
   }
   
-  private static void SetBulletSizePoints(DXDraw.Level3ParagraphProperties openXmlElement, Int32? value)
+  private static void SetBulletSizePoints(DXD.Level3ParagraphProperties openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.BulletSizePoints,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.BulletSizePoints,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean? GetBulletFontText(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Boolean? GetBulletFontText(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.BulletFontText>() != null;
+    return openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
   }
   
-  private static bool CmpBulletFontText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletFontText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.BulletFontText>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.BulletFontText", val, value);
+    diffs?.Add(objName, "DXD.BulletFontText", val, value);
     return false;
   }
   
-  private static void SetBulletFontText(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetBulletFontText(DXD.Level3ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletFontText>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.BulletFontText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.BulletFontText();
+      var itemElement = new DXD.BulletFontText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TextFontType? GetBulletFont(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.TextFontType? GetBulletFont(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BulletFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.BulletFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBulletFont(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletFont(DXD.Level3ParagraphProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BulletFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletFont>(), value, diffs, objName);
   }
   
-  private static void SetBulletFont(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.TextFontType? value)
+  private static void SetBulletFont(DXD.Level3ParagraphProperties openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BulletFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BulletFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.BulletFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.BulletFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoBullet(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static Boolean? GetNoBullet(DXD.Level3ParagraphProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
   }
   
-  private static bool CmpNoBullet(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBullet(DXD.Level3ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoBullet>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoBullet", val, value);
+    diffs?.Add(objName, "DXD.NoBullet", val, value);
     return false;
   }
   
-  private static void SetNoBullet(DXDraw.Level3ParagraphProperties openXmlElement, Boolean? value)
+  private static void SetNoBullet(DXD.Level3ParagraphProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoBullet>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoBullet>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoBullet();
+      var itemElement = new DXD.NoBullet();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.AutoNumberedBullet? GetAutoNumberedBullet(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.AutoNumberedBullet? GetAutoNumberedBullet(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.AutoNumberedBullet>();
     if (element != null)
-      return DMXDraws.AutoNumberedBulletConverter.CreateModelElement(element);
+      return DMXD.AutoNumberedBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAutoNumberedBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoNumberedBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>(), value, diffs, objName);
+    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName);
   }
   
-  private static void SetAutoNumberedBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.AutoNumberedBullet? value)
+  private static void SetAutoNumberedBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AutoNumberedBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AutoNumberedBulletConverter.CreateOpenXmlElement<DXDraw.AutoNumberedBullet>(value);
+      itemElement = DMXD.AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.CharacterBullet? GetCharacterBullet(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.CharacterBullet? GetCharacterBullet(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.CharacterBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.CharacterBullet>();
     if (element != null)
-      return DMXDraws.CharacterBulletConverter.CreateModelElement(element);
+      return DMXD.CharacterBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCharacterBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CharacterBullet>(), value, diffs, objName);
+    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName);
   }
   
-  private static void SetCharacterBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.CharacterBullet? value)
+  private static void SetCharacterBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.CharacterBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.CharacterBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.CharacterBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CharacterBulletConverter.CreateOpenXmlElement<DXDraw.CharacterBullet>(value);
+      itemElement = DMXD.CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PictureBullet? GetPictureBullet(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.PictureBullet? GetPictureBullet(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PictureBullet>();
+    var element = openXmlElement?.GetFirstChild<DXD.PictureBullet>();
     if (element != null)
-      return DMXDraws.PictureBulletConverter.CreateModelElement(element);
+      return DMXD.PictureBulletConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.PictureBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.PictureBullet? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PictureBullet>(), value, diffs, objName);
+    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName);
   }
   
-  private static void SetPictureBullet(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.PictureBullet? value)
+  private static void SetPictureBullet(DXD.Level3ParagraphProperties openXmlElement, DMD.PictureBullet? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PictureBullet>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PictureBullet>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PictureBulletConverter.CreateOpenXmlElement<DXDraw.PictureBullet>(value);
+      itemElement = DMXD.PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TabStopList? GetTabStopList(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.TabStopList? GetTabStopList(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.TabStopList>();
+    var element = openXmlElement?.GetFirstChild<DXD.TabStopList>();
     if (element != null)
-      return DMXDraws.TabStopListConverter.CreateModelElement(element);
+      return DMXD.TabStopListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTabStopList(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.TabStopList? value, DiffList? diffs, string? objName)
+  private static bool CmpTabStopList(DXD.Level3ParagraphProperties openXmlElement, DMD.TabStopList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TabStopList>(), value, diffs, objName);
+    return DMXD.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TabStopList>(), value, diffs, objName);
   }
   
-  private static void SetTabStopList(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.TabStopList? value)
+  private static void SetTabStopList(DXD.Level3ParagraphProperties openXmlElement, DMD.TabStopList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.TabStopList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.TabStopList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TabStopListConverter.CreateOpenXmlElement<DXDraw.TabStopList>(value);
+      itemElement = DMXD.TabStopListConverter.CreateOpenXmlElement<DXD.TabStopList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.DefaultRunProperties? GetDefaultRunProperties(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.DefaultRunProperties? GetDefaultRunProperties(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.DefaultRunProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.DefaultRunProperties>();
     if (element != null)
-      return DMXDraws.DefaultRunPropertiesConverter.CreateModelElement(element);
+      return DMXD.DefaultRunPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDefaultRunProperties(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultRunProperties(DXD.Level3ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.DefaultRunProperties>(), value, diffs, objName);
+    return DMXD.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultRunProperties>(), value, diffs, objName);
   }
   
-  private static void SetDefaultRunProperties(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.DefaultRunProperties? value)
+  private static void SetDefaultRunProperties(DXD.Level3ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.DefaultRunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.DefaultRunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.DefaultRunPropertiesConverter.CreateOpenXmlElement<DXDraw.DefaultRunProperties>(value);
+      itemElement = DMXD.DefaultRunPropertiesConverter.CreateOpenXmlElement<DXD.DefaultRunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.Level3ParagraphProperties openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.Level3ParagraphProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.Level3ParagraphProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.Level3ParagraphProperties openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Level3ParagraphProperties? CreateModelElement(DXDraw.Level3ParagraphProperties? openXmlElement)
+  public static DocumentModel.Drawings.Level3ParagraphProperties? CreateModelElement(DXD.Level3ParagraphProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -460,7 +460,7 @@ public static class Level3ParagraphPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Level3ParagraphProperties? openXmlElement, DMDraws.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Level3ParagraphProperties? openXmlElement, DMD.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -506,15 +506,15 @@ public static class Level3ParagraphPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Level3ParagraphProperties value)
-    where OpenXmlElementType: DXDraw.Level3ParagraphProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Level3ParagraphProperties value)
+    where OpenXmlElementType: DXD.Level3ParagraphProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Level3ParagraphProperties openXmlElement, DMDraws.Level3ParagraphProperties value)
+  public static void UpdateOpenXmlElement(DXD.Level3ParagraphProperties openXmlElement, DMD.Level3ParagraphProperties value)
   {
     SetLineSpacing(openXmlElement, value?.LineSpacing);
     SetSpaceBefore(openXmlElement, value?.SpaceBefore);

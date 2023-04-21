@@ -8,73 +8,73 @@ public static class Marker3Converter
   /// <summary>
   /// Symbol.
   /// </summary>
-  private static DMDrawsCharts.MarkerStyleKind? GetSymbol(DXO2013DrawChart.Marker openXmlElement)
+  private static DMDC.MarkerStyleKind? GetSymbol(DXO13DC.Marker openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.Symbol>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDC.Symbol>()?.Val?.Value);
   }
   
-  private static bool CmpSymbol(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.MarkerStyleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbol(DXO13DC.Marker openXmlElement, DMDC.MarkerStyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDrawCharts.Symbol>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(openXmlElement.GetFirstChild<DXDC.Symbol>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetSymbol(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.MarkerStyleKind? value)
+  private static void SetSymbol(DXO13DC.Marker openXmlElement, DMDC.MarkerStyleKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Symbol>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Symbol>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>(itemElement, (DMDrawsCharts.MarkerStyleKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>(itemElement, (DMDC.MarkerStyleKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Symbol, DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDrawsCharts.MarkerStyleKind>((DMDrawsCharts.MarkerStyleKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Symbol, DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues, DMDC.MarkerStyleKind>((DMDC.MarkerStyleKind)value));
   }
   
   /// <summary>
   /// Size.
   /// </summary>
-  private static Byte? GetSize(DXO2013DrawChart.Marker openXmlElement)
+  private static Byte? GetSize(DXO13DC.Marker openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Size>()?.Val);
   }
   
-  private static bool CmpSize(DXO2013DrawChart.Marker openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXO13DC.Marker openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Size>()?.Val, value, diffs, objName, "Value");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Size>()?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetSize(DXO2013DrawChart.Marker openXmlElement, Byte? value)
+  private static void SetSize(DXO13DC.Marker openXmlElement, Byte? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Size,System.Byte>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Size,System.Byte>(openXmlElement, value);
   }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.Marker openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXO13DC.Marker openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXO13DC.Marker openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXO13DC.Marker openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -83,33 +83,33 @@ public static class Marker3Converter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXO2013DrawChart.Marker openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXO13DC.Marker openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO13DC.Marker openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXO13DC.Marker openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Marker3? CreateModelElement(DXO2013DrawChart.Marker? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Marker3? CreateModelElement(DXO13DC.Marker? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -123,7 +123,7 @@ public static class Marker3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.Marker? openXmlElement, DMDrawsCharts.Marker3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.Marker? openXmlElement, DMDC.Marker3? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -143,15 +143,15 @@ public static class Marker3Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Marker3 value)
-    where OpenXmlElementType: DXO2013DrawChart.Marker, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Marker3 value)
+    where OpenXmlElementType: DXO13DC.Marker, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.Marker openXmlElement, DMDrawsCharts.Marker3 value)
+  public static void UpdateOpenXmlElement(DXO13DC.Marker openXmlElement, DMDC.Marker3 value)
   {
     SetSymbol(openXmlElement, value?.Symbol);
     SetSize(openXmlElement, value?.Size);

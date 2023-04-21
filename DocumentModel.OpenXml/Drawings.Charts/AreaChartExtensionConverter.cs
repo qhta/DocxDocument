@@ -8,48 +8,48 @@ public static class AreaChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.AreaChartExtension openXmlElement)
+  private static String? GetUri(DXDC.AreaChartExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.AreaChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.AreaChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.AreaChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.AreaChartExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.FilteredAreaSeries? GetFilteredAreaSeries(DXDrawCharts.AreaChartExtension openXmlElement)
+  private static DMDC.FilteredAreaSeries? GetFilteredAreaSeries(DXDC.AreaChartExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredAreaSeries>();
     if (element != null)
-      return DMXDrawsCharts.FilteredAreaSeriesConverter.CreateModelElement(element);
+      return DMXDC.FilteredAreaSeriesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredAreaSeries(DXDrawCharts.AreaChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredAreaSeries(DXDC.AreaChartExtension openXmlElement, DMDC.FilteredAreaSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>(), value, diffs, objName);
+    return DMXDC.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredAreaSeries>(), value, diffs, objName);
   }
   
-  private static void SetFilteredAreaSeries(DXDrawCharts.AreaChartExtension openXmlElement, DMDrawsCharts.FilteredAreaSeries? value)
+  private static void SetFilteredAreaSeries(DXDC.AreaChartExtension openXmlElement, DMDC.FilteredAreaSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredAreaSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredAreaSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredAreaSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredAreaSeries>(value);
+      itemElement = DMXDC.FilteredAreaSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredAreaSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaChartExtension? CreateModelElement(DXDrawCharts.AreaChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaChartExtension? CreateModelElement(DXDC.AreaChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class AreaChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.AreaChartExtension? openXmlElement, DMDrawsCharts.AreaChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.AreaChartExtension? openXmlElement, DMDC.AreaChartExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class AreaChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaChartExtension value)
-    where OpenXmlElementType: DXDrawCharts.AreaChartExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.AreaChartExtension value)
+    where OpenXmlElementType: DXDC.AreaChartExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.AreaChartExtension openXmlElement, DMDrawsCharts.AreaChartExtension value)
+  public static void UpdateOpenXmlElement(DXDC.AreaChartExtension openXmlElement, DMDC.AreaChartExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredAreaSeries(openXmlElement, value?.FilteredAreaSeries);

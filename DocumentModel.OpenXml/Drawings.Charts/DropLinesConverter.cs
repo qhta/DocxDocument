@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DropLinesConverter
 {
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DropLines openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.DropLines openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.DropLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DropLines openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.DropLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.DropLines openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DXDrawCharts.DropLines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DropLines? CreateModelElement(DXDC.DropLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class DropLinesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DropLines? openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DropLines? openXmlElement, DMDC.DropLines? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class DropLinesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DropLines value)
-    where OpenXmlElementType: DXDrawCharts.DropLines, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DropLines value)
+    where OpenXmlElementType: DXDC.DropLines, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DropLines openXmlElement, DMDrawsCharts.DropLines value)
+  public static void UpdateOpenXmlElement(DXDC.DropLines openXmlElement, DMDC.DropLines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
   }

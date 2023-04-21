@@ -2,36 +2,36 @@
 
 public static class UInt32ValueConverter
 {
-  public static UInt32? GetValue(DXDrawCharts.UnsignedIntegerType element)
+  public static UInt32? GetValue(DXDC.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXDrawCharts.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXDC.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
   {
     if (element.Val?.Value == value) return true;
     diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 
-  public static UInt32? GetValue(DXO2016DrawCharts.UnsignedIntegerType element)
+  public static UInt32? GetValue(DXO16DC.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXO2016DrawCharts.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXO16DC.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
   {
     if (element.Val?.Value == value) return true;
     diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
 
-  public static UInt32? GetValue(DXO2016DrawChartDraw.UnsignedIntegerType element)
+  public static UInt32? GetValue(DXO16DCD.UnsignedIntegerType element)
   {
     return element.Val?.Value;
   }
 
-  public static bool CmpValue(DXO2016DrawChartDraw.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXO16DCD.UnsignedIntegerType element, UInt32? value, DiffList? diffs, string? objName)
   {
     if (element.Val?.Value == value) return true;
     diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);

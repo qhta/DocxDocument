@@ -8,33 +8,33 @@ public static class FilteredSurfaceSeriesConverter
   /// <summary>
   /// SurfaceChartSeries.
   /// </summary>
-  private static DMDrawsCharts.SurfaceChartSeries3? GetSurfaceChartSeries(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement)
+  private static DMDC.SurfaceChartSeries3? GetSurfaceChartSeries(DXO13DC.FilteredSurfaceSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.SurfaceChartSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.SurfaceChartSeries>();
     if (element != null)
-      return DMXDrawsCharts.SurfaceChartSeries3Converter.CreateModelElement(element);
+      return DMXDC.SurfaceChartSeries3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSurfaceChartSeries(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.SurfaceChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpSurfaceChartSeries(DXO13DC.FilteredSurfaceSeries openXmlElement, DMDC.SurfaceChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SurfaceChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.SurfaceChartSeries>(), value, diffs, objName);
+    return DMXDC.SurfaceChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.SurfaceChartSeries>(), value, diffs, objName);
   }
   
-  private static void SetSurfaceChartSeries(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.SurfaceChartSeries3? value)
+  private static void SetSurfaceChartSeries(DXO13DC.FilteredSurfaceSeries openXmlElement, DMDC.SurfaceChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.SurfaceChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.SurfaceChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.SurfaceChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.SurfaceChartSeries>(value);
+      itemElement = DMXDC.SurfaceChartSeries3Converter.CreateOpenXmlElement<DXO13DC.SurfaceChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? CreateModelElement(DXO2013DrawChart.FilteredSurfaceSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredSurfaceSeries? CreateModelElement(DXO13DC.FilteredSurfaceSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class FilteredSurfaceSeriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.FilteredSurfaceSeries? openXmlElement, DMDrawsCharts.FilteredSurfaceSeries? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredSurfaceSeries? openXmlElement, DMDC.FilteredSurfaceSeries? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class FilteredSurfaceSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredSurfaceSeries value)
-    where OpenXmlElementType: DXO2013DrawChart.FilteredSurfaceSeries, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.FilteredSurfaceSeries value)
+    where OpenXmlElementType: DXO13DC.FilteredSurfaceSeries, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredSurfaceSeries openXmlElement, DMDrawsCharts.FilteredSurfaceSeries value)
+  public static void UpdateOpenXmlElement(DXO13DC.FilteredSurfaceSeries openXmlElement, DMDC.FilteredSurfaceSeries value)
   {
     SetSurfaceChartSeries(openXmlElement, value?.SurfaceChartSeries);
   }

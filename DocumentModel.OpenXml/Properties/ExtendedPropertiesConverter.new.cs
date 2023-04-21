@@ -10,12 +10,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Name of Document Template.
   /// </summary>
-  public static String? GetTemplate(DXExtProps.Properties openXmlElement)
+  public static String? GetTemplate(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.Template?.Text;
   }
 
-  public static void SetTemplate(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetTemplate(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.Template != null)
     {
@@ -27,19 +27,19 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.Template { Text = value });
+        openXmlElement?.AddChild(new DXEP.Template { Text = value });
     }
   }
 
   /// <summary>
   ///   Name of Manager.
   /// </summary>
-  public static String? GetManager(DXExtProps.Properties openXmlElement)
+  public static String? GetManager(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.Manager?.Text;
   }
 
-  public static void SetManager(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetManager(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.Manager != null)
     {
@@ -51,19 +51,19 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.Manager { Text = value });
+        openXmlElement?.AddChild(new DXEP.Manager { Text = value });
     }
   }
 
   /// <summary>
   ///   Name of Company.
   /// </summary>
-  public static String? GetCompany(DXExtProps.Properties openXmlElement)
+  public static String? GetCompany(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.Company?.Text;
   }
 
-  public static void SetCompany(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetCompany(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.Company != null)
     {
@@ -75,59 +75,59 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.Company { Text = value });
+        openXmlElement?.AddChild(new DXEP.Company { Text = value });
     }
   }
 
   /// <summary>
   ///   Total Number of Pages.
   /// </summary>
-  public static Int32? GetPages(DXExtProps.Properties openXmlElement)
+  public static Int32? GetPages(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Pages);
   }
 
-  public static void SetPages(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetPages(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Pages = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Pages>(value);
+    openXmlElement.Pages = Int32ValueConverter.CreateOpenXmlElement<DXEP.Pages>(value);
   }
 
   /// <summary>
   ///   Word Count.
   /// </summary>
-  public static Int32? GetWords(DXExtProps.Properties openXmlElement)
+  public static Int32? GetWords(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Words);
   }
 
-  public static void SetWords(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetWords(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Words = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Words>(value);
+    openXmlElement.Words = Int32ValueConverter.CreateOpenXmlElement<DXEP.Words>(value);
   }
 
   /// <summary>
   ///   Total Number of Characters.
   /// </summary>
-  public static Int32? GetCharacters(DXExtProps.Properties openXmlElement)
+  public static Int32? GetCharacters(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Characters);
 
   }
 
-  public static void SetCharacters(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetCharacters(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Characters = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Characters>(value);
+    openXmlElement.Characters = Int32ValueConverter.CreateOpenXmlElement<DXEP.Characters>(value);
   }
 
   /// <summary>
   ///   Intended Format of Presentation.
   /// </summary>
-  public static String? GetPresentationFormat(DXExtProps.Properties openXmlElement)
+  public static String? GetPresentationFormat(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.PresentationFormat?.Text;
   }
 
-  public static void SetPresentationFormat(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetPresentationFormat(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.PresentationFormat != null)
     {
@@ -139,129 +139,129 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.PresentationFormat { Text = value });
+        openXmlElement?.AddChild(new DXEP.PresentationFormat { Text = value });
     }
   }
 
   /// <summary>
   ///   Number of Lines.
   /// </summary>
-  public static Int32? GetLines(DXExtProps.Properties openXmlElement)
+  public static Int32? GetLines(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Lines);
 
   }
 
-  public static void SetLines(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetLines(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Lines = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Lines>(value);
+    openXmlElement.Lines = Int32ValueConverter.CreateOpenXmlElement<DXEP.Lines>(value);
   }
 
   /// <summary>
   ///   Total Number of Paragraphs.
   /// </summary>
-  public static Int32? GetParagraphs(DXExtProps.Properties openXmlElement)
+  public static Int32? GetParagraphs(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Paragraphs);
 
   }
 
-  public static void SetParagraphs(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetParagraphs(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Paragraphs = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Paragraphs>(value);
+    openXmlElement.Paragraphs = Int32ValueConverter.CreateOpenXmlElement<DXEP.Paragraphs>(value);
   }
 
   /// <summary>
   ///   Slides Metadata Element.
   /// </summary>
-  public static Int32? GetSlides(DXExtProps.Properties openXmlElement)
+  public static Int32? GetSlides(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Slides);
 
   }
 
-  public static void SetSlides(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetSlides(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Slides = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Slides>(value);
+    openXmlElement.Slides = Int32ValueConverter.CreateOpenXmlElement<DXEP.Slides>(value);
   }
 
   /// <summary>
   ///   Number of Slides Containing Notes.
   /// </summary>
-  public static Int32? GetNotes(DXExtProps.Properties openXmlElement)
+  public static Int32? GetNotes(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.Notes);
 
   }
 
-  public static void SetNotes(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetNotes(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.Notes = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.Notes>(value);
+    openXmlElement.Notes = Int32ValueConverter.CreateOpenXmlElement<DXEP.Notes>(value);
   }
 
   /// <summary>
   ///   Total Edit Time Metadata Element.
   /// </summary>
-  public static Int32? GetTotalTime(DXExtProps.Properties openXmlElement)
+  public static Int32? GetTotalTime(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.TotalTime);
 
   }
 
-  public static void SetTotalTime(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetTotalTime(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.TotalTime = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.TotalTime>(value);
+    openXmlElement.TotalTime = Int32ValueConverter.CreateOpenXmlElement<DXEP.TotalTime>(value);
   }
 
   /// <summary>
   ///   Number of Hidden Slides.
   /// </summary>
-  public static Int32? GetHiddenSlides(DXExtProps.Properties openXmlElement)
+  public static Int32? GetHiddenSlides(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.HiddenSlides);
   }
 
-  public static void SetHiddenSlides(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetHiddenSlides(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.HiddenSlides = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.HiddenSlides>(value);
+    openXmlElement.HiddenSlides = Int32ValueConverter.CreateOpenXmlElement<DXEP.HiddenSlides>(value);
   }
 
   /// <summary>
   ///   Total Number of Multimedia Clips.
   /// </summary>
-  public static Int32? GetMultimediaClips(DXExtProps.Properties openXmlElement)
+  public static Int32? GetMultimediaClips(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.MultimediaClips);
 
   }
 
-  public static void SetMultimediaClips(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetMultimediaClips(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.MultimediaClips = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.MultimediaClips>(value);
+    openXmlElement.MultimediaClips = Int32ValueConverter.CreateOpenXmlElement<DXEP.MultimediaClips>(value);
   }
 
   /// <summary>
   ///   Thumbnail Display Mode.
   /// </summary>
-  public static Boolean? GetScaleCrop(DXExtProps.Properties openXmlElement)
+  public static Boolean? GetScaleCrop(DXEP.Properties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.ScaleCrop);
   }
 
-  public static void SetScaleCrop(DXExtProps.Properties openXmlElement, Boolean? value)
+  public static void SetScaleCrop(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.ScaleCrop = BooleanValueConverter.CreateOpenXmlElement<DXExtProps.ScaleCrop>(value);
+    openXmlElement.ScaleCrop = BooleanValueConverter.CreateOpenXmlElement<DXEP.ScaleCrop>(value);
   }
 
   /// <summary>
   ///   Heading Pairs.
   /// </summary>
-  public static DMProps.HeadingPairs? GetHeadingPairs(DXExtProps.Properties openXmlElement)
+  public static DMPr.HeadingPairs? GetHeadingPairs(DXEP.Properties openXmlElement)
   {
     return HeadingPairsConverter.CreateModelElement(openXmlElement?.HeadingPairs);
   }
 
-  public static void SetHeadingPairs(DXExtProps.Properties openXmlElement, DMProps.HeadingPairs? value)
+  public static void SetHeadingPairs(DXEP.Properties openXmlElement, DMPr.HeadingPairs? value)
   {
     if (openXmlElement != null)
       openXmlElement.HeadingPairs = HeadingPairsConverter.CreateOpenXmlElement(value);
@@ -270,12 +270,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Part Titles.
   /// </summary>
-  public static StringList? GetTitlesOfParts(DXExtProps.Properties openXmlElement)
+  public static StringList? GetTitlesOfParts(DXEP.Properties openXmlElement)
   {
     return TitlesOfPartsConverter.GetStrings(openXmlElement?.TitlesOfParts);
   }
 
-  public static void SetTitlesOfParts(DXExtProps.Properties openXmlElement, StringList? value)
+  public static void SetTitlesOfParts(DXEP.Properties openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       TitlesOfPartsConverter.SetStrings(openXmlElement.TitlesOfParts, value);
@@ -284,53 +284,53 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Links Up-to-Date.
   /// </summary>
-  public static Boolean? GetLinksUpToDate(DXExtProps.Properties openXmlElement)
+  public static Boolean? GetLinksUpToDate(DXEP.Properties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.LinksUpToDate);
   }
 
-  public static void SetLinksUpToDate(DXExtProps.Properties openXmlElement, Boolean? value)
+  public static void SetLinksUpToDate(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.LinksUpToDate = BooleanValueConverter.CreateOpenXmlElement<DXExtProps.LinksUpToDate>(value);
+    openXmlElement.LinksUpToDate = BooleanValueConverter.CreateOpenXmlElement<DXEP.LinksUpToDate>(value);
   }
 
   /// <summary>
   ///   Number of Characters (With Spaces).
   /// </summary>
-  public static Int32? GetCharactersWithSpaces(DXExtProps.Properties openXmlElement)
+  public static Int32? GetCharactersWithSpaces(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.CharactersWithSpaces);
 
   }
 
-  public static void SetCharactersWithSpaces(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetCharactersWithSpaces(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.CharactersWithSpaces = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.CharactersWithSpaces>(value);
+    openXmlElement.CharactersWithSpaces = Int32ValueConverter.CreateOpenXmlElement<DXEP.CharactersWithSpaces>(value);
   }
 
   /// <summary>
   ///   Shared Document.
   /// </summary>
-  public static Boolean? GetSharedDocument(DXExtProps.Properties openXmlElement)
+  public static Boolean? GetSharedDocument(DXEP.Properties openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.SharedDocument);
   }
 
-  public static void SetSharedDocument(DXExtProps.Properties openXmlElement, Boolean? value)
+  public static void SetSharedDocument(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.SharedDocument = BooleanValueConverter.CreateOpenXmlElement<DXExtProps.SharedDocument>(value);
+    openXmlElement.SharedDocument = BooleanValueConverter.CreateOpenXmlElement<DXEP.SharedDocument>(value);
 
   }
 
   /// <summary>
   ///   Relative Hyperlink Base.
   /// </summary>
-  public static String? GetHyperlinkBase(DXExtProps.Properties openXmlElement)
+  public static String? GetHyperlinkBase(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.HyperlinkBase?.Text;
   }
 
-  public static void SetHyperlinkBase(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetHyperlinkBase(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.HyperlinkBase != null)
     {
@@ -342,19 +342,19 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.HyperlinkBase { Text = value });
+        openXmlElement?.AddChild(new DXEP.HyperlinkBase { Text = value });
     }
   }
 
   /// <summary>
   ///   Hyperlink List.
   /// </summary>
-  public static StringList? GetHyperlinkList(DXExtProps.Properties? openXmlElement)
+  public static StringList? GetHyperlinkList(DXEP.Properties? openXmlElement)
   {
     return HyperlinkListConverter.GetStrings(openXmlElement?.HyperlinkList);
   }
 
-  public static void SetHyperlinkList(DXExtProps.Properties openXmlElement, StringList? value)
+  public static void SetHyperlinkList(DXEP.Properties openXmlElement, StringList? value)
   {
     if (openXmlElement != null)
       HyperlinkListConverter.SetStrings(openXmlElement.HyperlinkList, value);
@@ -363,26 +363,26 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Hyperlinks Changed.
   /// </summary>
-  public static Boolean? GetHyperlinksChanged(DXExtProps.Properties? openXmlElement)
+  public static Boolean? GetHyperlinksChanged(DXEP.Properties? openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.LinksUpToDate);
   }
 
-  public static void SetHyperlinksChanged(DXExtProps.Properties openXmlElement, Boolean? value)
+  public static void SetHyperlinksChanged(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.HyperlinksChanged = BooleanValueConverter.CreateOpenXmlElement<DXExtProps.HyperlinksChanged>(value);
+    openXmlElement.HyperlinksChanged = BooleanValueConverter.CreateOpenXmlElement<DXEP.HyperlinksChanged>(value);
 
   }
 
   /// <summary>
   ///   Digital Signature.
   /// </summary>
-  public static byte[]? GetDigitalSignature(DXExtProps.Properties openXmlElement)
+  public static byte[]? GetDigitalSignature(DXEP.Properties openXmlElement)
   {
     return DigitalSignatureConverter.CreateModelElement(openXmlElement?.DigitalSignature);
   }
 
-  public static void SetDigitalSignature(DXExtProps.Properties openXmlElement, byte[]? value)
+  public static void SetDigitalSignature(DXEP.Properties openXmlElement, byte[]? value)
   {
     if (openXmlElement != null)
       openXmlElement.DigitalSignature = DigitalSignatureConverter.CreateOpenXmlElement(value);
@@ -391,12 +391,12 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Application Name.
   /// </summary>
-  public static String? GetApplication(DXExtProps.Properties openXmlElement)
+  public static String? GetApplication(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.Application?.Text;
   }
 
-  public static void SetApplication(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetApplication(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.Application != null)
     {
@@ -408,19 +408,19 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.Application { Text = value });
+        openXmlElement?.AddChild(new DXEP.Application { Text = value });
     }
   }
 
   /// <summary>
   ///   Application Version.
   /// </summary>
-  public static String? GetApplicationVersion(DXExtProps.Properties openXmlElement)
+  public static String? GetApplicationVersion(DXEP.Properties openXmlElement)
   {
     return openXmlElement?.ApplicationVersion?.Text;
   }
 
-  public static void SetApplicationVersion(DXExtProps.Properties openXmlElement, String? value)
+  public static void SetApplicationVersion(DXEP.Properties openXmlElement, String? value)
   {
     if (openXmlElement?.ApplicationVersion != null)
     {
@@ -432,24 +432,24 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXExtProps.ApplicationVersion { Text = value });
+        openXmlElement?.AddChild(new DXEP.ApplicationVersion { Text = value });
     }
   }
 
   /// <summary>
   ///   Document Security.
   /// </summary>
-  public static Int32? GetDocumentSecurity(DXExtProps.Properties openXmlElement)
+  public static Int32? GetDocumentSecurity(DXEP.Properties openXmlElement)
   {
     return Int32ValueConverter.GetValue(openXmlElement?.DocumentSecurity);
   }
 
-  public static void SetDocumentSecurity(DXExtProps.Properties openXmlElement, Int32? value)
+  public static void SetDocumentSecurity(DXEP.Properties openXmlElement, Int32? value)
   {
-    openXmlElement.DocumentSecurity = Int32ValueConverter.CreateOpenXmlElement<DXExtProps.DocumentSecurity>(value);
+    openXmlElement.DocumentSecurity = Int32ValueConverter.CreateOpenXmlElement<DXEP.DocumentSecurity>(value);
   }
 
-  public static ContentProperties? GetContentProperties(DXExtProps.Properties? openXmlElement)
+  public static ContentProperties? GetContentProperties(DXEP.Properties? openXmlElement)
   {
     var value = new ContentProperties();
     if (openXmlElement != null)
@@ -474,7 +474,7 @@ public static class ExtendedPropertiesConverter
     return value;
   }
 
-  public static StatisticProperties? GetStatisticProperties(DXExtProps.Properties? openXmlElement)
+  public static StatisticProperties? GetStatisticProperties(DXEP.Properties? openXmlElement)
   {
     var value = new StatisticProperties();
     if (openXmlElement != null)
@@ -495,7 +495,7 @@ public static class ExtendedPropertiesConverter
   }
 
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(ContentProperties? value1, StatisticProperties? value2)
-    where OpenXmlElementType : DXExtProps.Properties, new()
+    where OpenXmlElementType : DXEP.Properties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     {

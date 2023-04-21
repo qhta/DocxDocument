@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CustomSplitConverter
 {
-  private static Collection<UInt32>? GetSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement)
+  private static Collection<UInt32>? GetSecondPiePoints(DXDC.CustomSplit openXmlElement)
   {
     var collection = new Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.SecondPiePoint>())
+    foreach (var item in openXmlElement.Elements<DXDC.SecondPiePoint>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class CustomSplitConverter
     return null;
   }
   
-  private static bool CmpSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondPiePoints(DXDC.CustomSplit openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.SecondPiePoint>();
+    var origElements = openXmlElement.Elements<DXDC.SecondPiePoint>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class CustomSplitConverter
     return false;
   }
   
-  private static void SetSecondPiePoints(DXDrawCharts.CustomSplit openXmlElement, Collection<UInt32>? value)
+  private static void SetSecondPiePoints(DXDC.CustomSplit openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.SecondPiePoint>();
+    openXmlElement.RemoveAllChildren<DXDC.SecondPiePoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDrawCharts.SecondPiePoint>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.SecondPiePoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CustomSplit? CreateModelElement(DXDrawCharts.CustomSplit? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CustomSplit? CreateModelElement(DXDC.CustomSplit? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CustomSplitConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.CustomSplit? openXmlElement, DMDrawsCharts.CustomSplit? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.CustomSplit? openXmlElement, DMDC.CustomSplit? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CustomSplitConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CustomSplit value)
-    where OpenXmlElementType: DXDrawCharts.CustomSplit, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.CustomSplit value)
+    where OpenXmlElementType: DXDC.CustomSplit, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.CustomSplit openXmlElement, DMDrawsCharts.CustomSplit value)
+  public static void UpdateOpenXmlElement(DXDC.CustomSplit openXmlElement, DMDC.CustomSplit value)
   {
     SetSecondPiePoints(openXmlElement, value?.SecondPiePoints);
   }

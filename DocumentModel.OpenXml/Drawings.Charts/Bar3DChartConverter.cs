@@ -8,96 +8,96 @@ public static class Bar3DChartConverter
   /// <summary>
   /// Bar Direction.
   /// </summary>
-  private static DMDrawsCharts.BarDirectionKind? GetBarDirection(DXDrawCharts.Bar3DChart openXmlElement)
+  private static DMDC.BarDirectionKind? GetBarDirection(DXDC.Bar3DChart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDC.BarDirectionKind>(openXmlElement.GetFirstChild<DXDC.BarDirection>()?.Val?.Value);
   }
   
-  private static bool CmpBarDirection(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.BarDirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBarDirection(DXDC.Bar3DChart openXmlElement, DMDC.BarDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDC.BarDirectionKind>(openXmlElement.GetFirstChild<DXDC.BarDirection>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetBarDirection(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.BarDirectionKind? value)
+  private static void SetBarDirection(DXDC.Bar3DChart openXmlElement, DMDC.BarDirectionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarDirection>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BarDirection>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>(itemElement, (DMDrawsCharts.BarDirectionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDC.BarDirectionKind>(itemElement, (DMDC.BarDirectionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarDirection, DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDrawsCharts.BarDirectionKind>((DMDrawsCharts.BarDirectionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BarDirection, DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues, DMDC.BarDirectionKind>((DMDC.BarDirectionKind)value));
   }
   
   /// <summary>
   /// Bar Grouping.
   /// </summary>
-  private static DMDrawsCharts.BarGroupingKind? GetBarGrouping(DXDrawCharts.Bar3DChart openXmlElement)
+  private static DMDC.BarGroupingKind? GetBarGrouping(DXDC.Bar3DChart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDC.BarGroupingKind>(openXmlElement.GetFirstChild<DXDC.BarGrouping>()?.Val?.Value);
   }
   
-  private static bool CmpBarGrouping(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.BarGroupingKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBarGrouping(DXDC.Bar3DChart openXmlElement, DMDC.BarGroupingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDC.BarGroupingKind>(openXmlElement.GetFirstChild<DXDC.BarGrouping>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetBarGrouping(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.BarGroupingKind? value)
+  private static void SetBarGrouping(DXDC.Bar3DChart openXmlElement, DMDC.BarGroupingKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BarGrouping>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BarGrouping>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>(itemElement, (DMDrawsCharts.BarGroupingKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDC.BarGroupingKind>(itemElement, (DMDC.BarGroupingKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.BarGrouping, DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDrawsCharts.BarGroupingKind>((DMDrawsCharts.BarGroupingKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BarGrouping, DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues, DMDC.BarGroupingKind>((DMDC.BarGroupingKind)value));
   }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DXDrawCharts.Bar3DChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDC.Bar3DChart openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    return openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
   }
   
-  private static bool CmpVaryColors(DXDrawCharts.Bar3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVaryColors(DXDC.Bar3DChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    diffs?.Add(objName, "DXDC.VaryColors", val, value);
     return false;
   }
   
-  private static void SetVaryColors(DXDrawCharts.Bar3DChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDC.Bar3DChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.VaryColors();
+      var itemElement = new DXDC.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsCharts.BarChartSeries>? GetBarChartSeries(DXDrawCharts.Bar3DChart openXmlElement)
+  private static Collection<DMDC.BarChartSeries>? GetBarChartSeries(DXDC.Bar3DChart openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.BarChartSeries>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.BarChartSeries>())
+    var collection = new Collection<DMDC.BarChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDC.BarChartSeries>())
     {
-      var newItem = DMXDrawsCharts.BarChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDC.BarChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -106,9 +106,9 @@ public static class Bar3DChartConverter
     return null;
   }
   
-  private static bool CmpBarChartSeries(DXDrawCharts.Bar3DChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpBarChartSeries(DXDC.Bar3DChart openXmlElement, Collection<DMDC.BarChartSeries>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.BarChartSeries>();
+    var origElements = openXmlElement.Elements<DXDC.BarChartSeries>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -124,7 +124,7 @@ public static class Bar3DChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.BarChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.BarChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -134,105 +134,105 @@ public static class Bar3DChartConverter
     return false;
   }
   
-  private static void SetBarChartSeries(DXDrawCharts.Bar3DChart openXmlElement, Collection<DMDrawsCharts.BarChartSeries>? value)
+  private static void SetBarChartSeries(DXDC.Bar3DChart openXmlElement, Collection<DMDC.BarChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.BarChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDC.BarChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.BarChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.BarChartSeries>(item);
+        var newItem = DMXDC.BarChartSeriesConverter.CreateOpenXmlElement<DXDC.BarChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.Bar3DChart openXmlElement)
+  private static DMDC.DataLabels? GetDataLabels(DXDC.Bar3DChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DataLabels>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabels(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXDC.Bar3DChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
   }
   
-  private static void SetDataLabels(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.DataLabels? value)
+  private static void SetDataLabels(DXDC.Bar3DChart openXmlElement, DMDC.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
+      itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt16? GetGapWidth(DXDrawCharts.Bar3DChart openXmlElement)
+  private static UInt16? GetGapWidth(DXDC.Bar3DChart openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val);
   }
   
-  private static bool CmpGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpGapWidth(DXDC.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
-  private static void SetGapWidth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
+  private static void SetGapWidth(DXDC.Bar3DChart openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
-  private static UInt16? GetGapDepth(DXDrawCharts.Bar3DChart openXmlElement)
+  private static UInt16? GetGapDepth(DXDC.Bar3DChart openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.GapDepth>()?.Val);
   }
   
-  private static bool CmpGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpGapDepth(DXDC.Bar3DChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapDepth>()?.Val, value, diffs, objName, "GapDepth");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.GapDepth>()?.Val, value, diffs, objName, "GapDepth");
   }
   
-  private static void SetGapDepth(DXDrawCharts.Bar3DChart openXmlElement, UInt16? value)
+  private static void SetGapDepth(DXDC.Bar3DChart openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.GapDepth,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.GapDepth,System.UInt16>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.ShapeKind? GetShape(DXDrawCharts.Bar3DChart openXmlElement)
+  private static DMDC.ShapeKind? GetShape(DXDC.Bar3DChart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(openXmlElement.GetFirstChild<DXDrawCharts.Shape>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>(openXmlElement.GetFirstChild<DXDC.Shape>()?.Val?.Value);
   }
   
-  private static bool CmpShape(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.ShapeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDC.Bar3DChart openXmlElement, DMDC.ShapeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(openXmlElement.GetFirstChild<DXDrawCharts.Shape>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>(openXmlElement.GetFirstChild<DXDC.Shape>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetShape(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.ShapeKind? value)
+  private static void SetShape(DXDC.Bar3DChart openXmlElement, DMDC.ShapeKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Shape>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>(itemElement, (DMDrawsCharts.ShapeKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>(itemElement, (DMDC.ShapeKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDrawsCharts.ShapeKind>((DMDrawsCharts.ShapeKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>((DMDC.ShapeKind)value));
   }
   
-  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.Bar3DChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDC.Bar3DChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
+    foreach (var item in openXmlElement.Elements<DXDC.AxisId>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -243,9 +243,9 @@ public static class Bar3DChartConverter
     return null;
   }
   
-  private static bool CmpAxisIds(DXDrawCharts.Bar3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisIds(DXDC.Bar3DChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElements = openXmlElement.Elements<DXDC.AxisId>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -271,47 +271,47 @@ public static class Bar3DChartConverter
     return false;
   }
   
-  private static void SetAxisIds(DXDrawCharts.Bar3DChart openXmlElement, Collection<UInt32>? value)
+  private static void SetAxisIds(DXDC.Bar3DChart openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
+    openXmlElement.RemoveAllChildren<DXDC.AxisId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisId>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.Bar3DChartExtensionList? GetBar3DChartExtensionList(DXDrawCharts.Bar3DChart openXmlElement)
+  private static DMDC.Bar3DChartExtensionList? GetBar3DChartExtensionList(DXDC.Bar3DChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Bar3DChartExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Bar3DChartExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.Bar3DChartExtensionListConverter.CreateModelElement(element);
+      return DMXDC.Bar3DChartExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBar3DChartExtensionList(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChartExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpBar3DChartExtensionList(DXDC.Bar3DChart openXmlElement, DMDC.Bar3DChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.Bar3DChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Bar3DChartExtensionList>(), value, diffs, objName);
+    return DMXDC.Bar3DChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Bar3DChartExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetBar3DChartExtensionList(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChartExtensionList? value)
+  private static void SetBar3DChartExtensionList(DXDC.Bar3DChart openXmlElement, DMDC.Bar3DChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Bar3DChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Bar3DChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.Bar3DChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.Bar3DChartExtensionList>(value);
+      itemElement = DMXDC.Bar3DChartExtensionListConverter.CreateOpenXmlElement<DXDC.Bar3DChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Bar3DChart? CreateModelElement(DXDrawCharts.Bar3DChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Bar3DChart? CreateModelElement(DXDC.Bar3DChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -331,7 +331,7 @@ public static class Bar3DChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.Bar3DChart? openXmlElement, DMDrawsCharts.Bar3DChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Bar3DChart? openXmlElement, DMDC.Bar3DChart? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -363,15 +363,15 @@ public static class Bar3DChartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Bar3DChart value)
-    where OpenXmlElementType: DXDrawCharts.Bar3DChart, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Bar3DChart value)
+    where OpenXmlElementType: DXDC.Bar3DChart, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.Bar3DChart openXmlElement, DMDrawsCharts.Bar3DChart value)
+  public static void UpdateOpenXmlElement(DXDC.Bar3DChart openXmlElement, DMDC.Bar3DChart value)
   {
     SetBarDirection(openXmlElement, value?.BarDirection);
     SetBarGrouping(openXmlElement, value?.BarGrouping);

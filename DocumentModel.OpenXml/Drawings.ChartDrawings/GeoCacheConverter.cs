@@ -8,70 +8,70 @@ public static class GeoCacheConverter
   /// <summary>
   /// provider, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetProvider(DXO2016DrawChartDraw.GeoCache openXmlElement)
+  private static String? GetProvider(DXO16DCD.GeoCache openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Provider);
   }
   
-  private static bool CmpProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpProvider(DXO16DCD.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Provider, value, diffs, objName, "Provider");
   }
   
-  private static void SetProvider(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value)
+  private static void SetProvider(DXO16DCD.GeoCache openXmlElement, String? value)
   {
     openXmlElement.Provider = StringValueConverter.CreateStringValue(value);
   }
   
-  private static String? GetXsdbase64Binary(DXO2016DrawChartDraw.GeoCache openXmlElement)
+  private static String? GetXsdbase64Binary(DXO16DCD.GeoCache openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Xsdbase64Binary>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.Xsdbase64Binary>()?.Text;
   }
   
-  private static bool CmpXsdbase64Binary(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXsdbase64Binary(DXO16DCD.GeoCache openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Xsdbase64Binary>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.Xsdbase64Binary>()?.Text == value;
   }
   
-  private static void SetXsdbase64Binary(DXO2016DrawChartDraw.GeoCache openXmlElement, String? value)
+  private static void SetXsdbase64Binary(DXO16DCD.GeoCache openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Xsdbase64Binary>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.Xsdbase64Binary>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.Xsdbase64Binary { Text = value };
+      itemElement = new DXO16DCD.Xsdbase64Binary { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraws.Clear? GetClear(DXO2016DrawChartDraw.GeoCache openXmlElement)
+  private static DMDCDs.Clear? GetClear(DXO16DCD.GeoCache openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Clear>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.Clear>();
     if (element != null)
-      return DMXDrawsChartDraws.ClearConverter.CreateModelElement(element);
+      return DMXDCDs.ClearConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpClear(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.Clear? value, DiffList? diffs, string? objName)
+  private static bool CmpClear(DXO16DCD.GeoCache openXmlElement, DMDCDs.Clear? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ClearConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Clear>(), value, diffs, objName);
+    return DMXDCDs.ClearConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Clear>(), value, diffs, objName);
   }
   
-  private static void SetClear(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.Clear? value)
+  private static void SetClear(DXO16DCD.GeoCache openXmlElement, DMDCDs.Clear? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Clear>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.Clear>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ClearConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Clear>(value);
+      itemElement = DMXDCDs.ClearConverter.CreateOpenXmlElement<DXO16DCD.Clear>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(DXO2016DrawChartDraw.GeoCache? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoCache? CreateModelElement(DXO16DCD.GeoCache? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -84,7 +84,7 @@ public static class GeoCacheConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoCache? openXmlElement, DMDrawsChartDraws.GeoCache? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoCache? openXmlElement, DMDCDs.GeoCache? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -102,15 +102,15 @@ public static class GeoCacheConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoCache value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoCache, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoCache value)
+    where OpenXmlElementType: DXO16DCD.GeoCache, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoCache openXmlElement, DMDrawsChartDraws.GeoCache value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoCache openXmlElement, DMDCDs.GeoCache value)
   {
     SetProvider(openXmlElement, value?.Provider);
     SetXsdbase64Binary(openXmlElement, value?.Xsdbase64Binary);

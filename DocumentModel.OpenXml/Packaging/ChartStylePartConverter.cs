@@ -8,21 +8,21 @@ public static class ChartStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsChartsStyle.ChartStyle? GetChartStyle(DXPack.ChartStylePart openXmlElement)
+  private static DMDCS.ChartStyle? GetChartStyle(DXPack.ChartStylePart openXmlElement)
   {
-      return DMXDrawsChartsStyle.ChartStyleConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013DrawChartStyle.ChartStyle);
+      return DMXDCS.ChartStyleConverter.CreateModelElement(openXmlElement?.RootElement as DXO13DCS.ChartStyle);
   }
   
-  private static bool CmpChartStyle(DXPack.ChartStylePart openXmlElement, DMDrawsChartsStyle.ChartStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpChartStyle(DXPack.ChartStylePart openXmlElement, DMDCS.ChartStyle? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetChartStyle(DXPack.ChartStylePart openXmlElement, DMDrawsChartsStyle.ChartStyle? value)
+  private static void SetChartStyle(DXPack.ChartStylePart openXmlElement, DMDCS.ChartStyle? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsChartsStyle.ChartStyleConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ChartStyle>(value);
+       var rootElement = DMXDCS.ChartStyleConverter.CreateOpenXmlElement<DXO13DCS.ChartStyle>(value);
        if (rootElement != null)
          openXmlElement.ChartStyle = rootElement;
     }

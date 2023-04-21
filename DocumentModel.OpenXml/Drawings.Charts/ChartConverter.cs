@@ -8,27 +8,27 @@ public static class ChartConverter
   /// <summary>
   /// Title data and formatting.
   /// </summary>
-  private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.Title? GetTitle(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Title>();
     if (element != null)
-      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+      return DMXDC.TitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTitle(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXDC.Chart openXmlElement, DMDC.Title? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Title>(), value, diffs, objName);
+    return DMXDC.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Title>(), value, diffs, objName);
   }
   
-  private static void SetTitle(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Title? value)
+  private static void SetTitle(DXDC.Chart openXmlElement, DMDC.Title? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Title>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Title>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.TitleConverter.CreateOpenXmlElement<DXDrawCharts.Title>(value);
+      itemElement = DMXDC.TitleConverter.CreateOpenXmlElement<DXDC.Title>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,30 +37,30 @@ public static class ChartConverter
   /// <summary>
   /// True if the chart automatic title has been deleted..
   /// </summary>
-  private static Boolean? GetAutoTitleDeleted(DXDrawCharts.Chart openXmlElement)
+  private static Boolean? GetAutoTitleDeleted(DXDC.Chart openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>() != null;
+    return openXmlElement.GetFirstChild<DXDC.AutoTitleDeleted>() != null;
   }
   
-  private static bool CmpAutoTitleDeleted(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoTitleDeleted(DXDC.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.AutoTitleDeleted>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.AutoTitleDeleted", val, value);
+    diffs?.Add(objName, "DXDC.AutoTitleDeleted", val, value);
     return false;
   }
   
-  private static void SetAutoTitleDeleted(DXDrawCharts.Chart openXmlElement, Boolean? value)
+  private static void SetAutoTitleDeleted(DXDC.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoTitleDeleted>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.AutoTitleDeleted>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.AutoTitleDeleted();
+      var itemElement = new DXDC.AutoTitleDeleted();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -68,27 +68,27 @@ public static class ChartConverter
   /// <summary>
   /// pivot chart format persistence data.
   /// </summary>
-  private static DMDrawsCharts.PivotFormats? GetPivotFormats(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.PivotFormats? GetPivotFormats(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PivotFormats>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PivotFormats>();
     if (element != null)
-      return DMXDrawsCharts.PivotFormatsConverter.CreateModelElement(element);
+      return DMXDC.PivotFormatsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPivotFormats(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PivotFormats? value, DiffList? diffs, string? objName)
+  private static bool CmpPivotFormats(DXDC.Chart openXmlElement, DMDC.PivotFormats? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PivotFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PivotFormats>(), value, diffs, objName);
+    return DMXDC.PivotFormatsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PivotFormats>(), value, diffs, objName);
   }
   
-  private static void SetPivotFormats(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PivotFormats? value)
+  private static void SetPivotFormats(DXDC.Chart openXmlElement, DMDC.PivotFormats? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PivotFormats>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PivotFormats>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PivotFormatsConverter.CreateOpenXmlElement<DXDrawCharts.PivotFormats>(value);
+      itemElement = DMXDC.PivotFormatsConverter.CreateOpenXmlElement<DXDC.PivotFormats>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -97,27 +97,27 @@ public static class ChartConverter
   /// <summary>
   /// 3D view settings.
   /// </summary>
-  private static DMDrawsCharts.View3D? GetView3D(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.View3D? GetView3D(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.View3D>();
+    var element = openXmlElement?.GetFirstChild<DXDC.View3D>();
     if (element != null)
-      return DMXDrawsCharts.View3DConverter.CreateModelElement(element);
+      return DMXDC.View3DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpView3D(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.View3D? value, DiffList? diffs, string? objName)
+  private static bool CmpView3D(DXDC.Chart openXmlElement, DMDC.View3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.View3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.View3D>(), value, diffs, objName);
+    return DMXDC.View3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.View3D>(), value, diffs, objName);
   }
   
-  private static void SetView3D(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.View3D? value)
+  private static void SetView3D(DXDC.Chart openXmlElement, DMDC.View3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.View3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.View3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.View3DConverter.CreateOpenXmlElement<DXDrawCharts.View3D>(value);
+      itemElement = DMXDC.View3DConverter.CreateOpenXmlElement<DXDC.View3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -126,27 +126,27 @@ public static class ChartConverter
   /// <summary>
   /// 3D floor formatting.
   /// </summary>
-  private static DMDrawsCharts.Floor? GetFloor(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.Floor? GetFloor(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Floor>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Floor>();
     if (element != null)
-      return DMXDrawsCharts.FloorConverter.CreateModelElement(element);
+      return DMXDC.FloorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFloor(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Floor? value, DiffList? diffs, string? objName)
+  private static bool CmpFloor(DXDC.Chart openXmlElement, DMDC.Floor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FloorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Floor>(), value, diffs, objName);
+    return DMXDC.FloorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Floor>(), value, diffs, objName);
   }
   
-  private static void SetFloor(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Floor? value)
+  private static void SetFloor(DXDC.Chart openXmlElement, DMDC.Floor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Floor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Floor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FloorConverter.CreateOpenXmlElement<DXDrawCharts.Floor>(value);
+      itemElement = DMXDC.FloorConverter.CreateOpenXmlElement<DXDC.Floor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -155,27 +155,27 @@ public static class ChartConverter
   /// <summary>
   /// 3D side wall formatting.
   /// </summary>
-  private static DMDrawsCharts.SideWall? GetSideWall(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.SideWall? GetSideWall(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SideWall>();
+    var element = openXmlElement?.GetFirstChild<DXDC.SideWall>();
     if (element != null)
-      return DMXDrawsCharts.SideWallConverter.CreateModelElement(element);
+      return DMXDC.SideWallConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSideWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.SideWall? value, DiffList? diffs, string? objName)
+  private static bool CmpSideWall(DXDC.Chart openXmlElement, DMDC.SideWall? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SideWallConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SideWall>(), value, diffs, objName);
+    return DMXDC.SideWallConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SideWall>(), value, diffs, objName);
   }
   
-  private static void SetSideWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.SideWall? value)
+  private static void SetSideWall(DXDC.Chart openXmlElement, DMDC.SideWall? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SideWall>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.SideWall>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.SideWallConverter.CreateOpenXmlElement<DXDrawCharts.SideWall>(value);
+      itemElement = DMXDC.SideWallConverter.CreateOpenXmlElement<DXDC.SideWall>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -184,27 +184,27 @@ public static class ChartConverter
   /// <summary>
   /// 3D back wall formatting.
   /// </summary>
-  private static DMDrawsCharts.BackWall? GetBackWall(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.BackWall? GetBackWall(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BackWall>();
+    var element = openXmlElement?.GetFirstChild<DXDC.BackWall>();
     if (element != null)
-      return DMXDrawsCharts.BackWallConverter.CreateModelElement(element);
+      return DMXDC.BackWallConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.BackWall? value, DiffList? diffs, string? objName)
+  private static bool CmpBackWall(DXDC.Chart openXmlElement, DMDC.BackWall? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BackWallConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BackWall>(), value, diffs, objName);
+    return DMXDC.BackWallConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BackWall>(), value, diffs, objName);
   }
   
-  private static void SetBackWall(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.BackWall? value)
+  private static void SetBackWall(DXDC.Chart openXmlElement, DMDC.BackWall? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BackWall>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BackWall>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.BackWallConverter.CreateOpenXmlElement<DXDrawCharts.BackWall>(value);
+      itemElement = DMXDC.BackWallConverter.CreateOpenXmlElement<DXDC.BackWall>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -213,27 +213,27 @@ public static class ChartConverter
   /// <summary>
   /// Plot data and formatting.
   /// </summary>
-  private static DMDrawsCharts.PlotArea? GetPlotArea(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.PlotArea? GetPlotArea(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PlotArea>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PlotArea>();
     if (element != null)
-      return DMXDrawsCharts.PlotAreaConverter.CreateModelElement(element);
+      return DMXDC.PlotAreaConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPlotArea(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PlotArea? value, DiffList? diffs, string? objName)
+  private static bool CmpPlotArea(DXDC.Chart openXmlElement, DMDC.PlotArea? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PlotArea>(), value, diffs, objName);
+    return DMXDC.PlotAreaConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PlotArea>(), value, diffs, objName);
   }
   
-  private static void SetPlotArea(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.PlotArea? value)
+  private static void SetPlotArea(DXDC.Chart openXmlElement, DMDC.PlotArea? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PlotArea>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PlotArea>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PlotAreaConverter.CreateOpenXmlElement<DXDrawCharts.PlotArea>(value);
+      itemElement = DMXDC.PlotAreaConverter.CreateOpenXmlElement<DXDC.PlotArea>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -242,27 +242,27 @@ public static class ChartConverter
   /// <summary>
   /// Legend data and formatting.
   /// </summary>
-  private static DMDrawsCharts.Legend? GetLegend(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.Legend? GetLegend(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Legend>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Legend>();
     if (element != null)
-      return DMXDrawsCharts.LegendConverter.CreateModelElement(element);
+      return DMXDC.LegendConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLegend(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Legend? value, DiffList? diffs, string? objName)
+  private static bool CmpLegend(DXDC.Chart openXmlElement, DMDC.Legend? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Legend>(), value, diffs, objName);
+    return DMXDC.LegendConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Legend>(), value, diffs, objName);
   }
   
-  private static void SetLegend(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Legend? value)
+  private static void SetLegend(DXDC.Chart openXmlElement, DMDC.Legend? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Legend>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Legend>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.LegendConverter.CreateOpenXmlElement<DXDrawCharts.Legend>(value);
+      itemElement = DMXDC.LegendConverter.CreateOpenXmlElement<DXDC.Legend>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -271,30 +271,30 @@ public static class ChartConverter
   /// <summary>
   /// True if only visible cells are plotted..
   /// </summary>
-  private static Boolean? GetPlotVisibleOnly(DXDrawCharts.Chart openXmlElement)
+  private static Boolean? GetPlotVisibleOnly(DXDC.Chart openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>() != null;
+    return openXmlElement.GetFirstChild<DXDC.PlotVisibleOnly>() != null;
   }
   
-  private static bool CmpPlotVisibleOnly(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPlotVisibleOnly(DXDC.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.PlotVisibleOnly>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.PlotVisibleOnly", val, value);
+    diffs?.Add(objName, "DXDC.PlotVisibleOnly", val, value);
     return false;
   }
   
-  private static void SetPlotVisibleOnly(DXDrawCharts.Chart openXmlElement, Boolean? value)
+  private static void SetPlotVisibleOnly(DXDC.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PlotVisibleOnly>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.PlotVisibleOnly>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.PlotVisibleOnly();
+      var itemElement = new DXDC.PlotVisibleOnly();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -302,58 +302,58 @@ public static class ChartConverter
   /// <summary>
   /// The way that blank cells are plotted on a chart..
   /// </summary>
-  private static DMDrawsCharts.DisplayBlanksAsKind? GetDisplayBlanksAs(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.DisplayBlanksAsKind? GetDisplayBlanksAs(DXDC.Chart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>(openXmlElement.GetFirstChild<DXDC.DisplayBlanksAs>()?.Val?.Value);
   }
   
-  private static bool CmpDisplayBlanksAs(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.DisplayBlanksAsKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayBlanksAs(DXDC.Chart openXmlElement, DMDC.DisplayBlanksAsKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>(openXmlElement.GetFirstChild<DXDC.DisplayBlanksAs>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetDisplayBlanksAs(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.DisplayBlanksAsKind? value)
+  private static void SetDisplayBlanksAs(DXDC.Chart openXmlElement, DMDC.DisplayBlanksAsKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayBlanksAs>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DisplayBlanksAs>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>(itemElement, (DMDrawsCharts.DisplayBlanksAsKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>(itemElement, (DMDC.DisplayBlanksAsKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDrawsCharts.DisplayBlanksAsKind>((DMDrawsCharts.DisplayBlanksAsKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>((DMDC.DisplayBlanksAsKind)value));
   }
   
   /// <summary>
   /// True if we should render datalabels over the maximum scale.
   /// </summary>
-  private static Boolean? GetShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement)
+  private static Boolean? GetShowDataLabelsOverMaximum(DXDC.Chart openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ShowDataLabelsOverMaximum>() != null;
   }
   
-  private static bool CmpShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowDataLabelsOverMaximum(DXDC.Chart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ShowDataLabelsOverMaximum>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ShowDataLabelsOverMaximum", val, value);
+    diffs?.Add(objName, "DXDC.ShowDataLabelsOverMaximum", val, value);
     return false;
   }
   
-  private static void SetShowDataLabelsOverMaximum(DXDrawCharts.Chart openXmlElement, Boolean? value)
+  private static void SetShowDataLabelsOverMaximum(DXDC.Chart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowDataLabelsOverMaximum>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ShowDataLabelsOverMaximum>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ShowDataLabelsOverMaximum();
+      var itemElement = new DXDC.ShowDataLabelsOverMaximum();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -361,33 +361,33 @@ public static class ChartConverter
   /// <summary>
   /// Extensibility container.
   /// </summary>
-  private static DMDrawsCharts.ChartExtensionList? GetChartExtensionList(DXDrawCharts.Chart openXmlElement)
+  private static DMDC.ChartExtensionList? GetChartExtensionList(DXDC.Chart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ChartExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ChartExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartExtensionList(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.ChartExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpChartExtensionList(DXDC.Chart openXmlElement, DMDC.ChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartExtensionList>(), value, diffs, objName);
+    return DMXDC.ChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetChartExtensionList(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.ChartExtensionList? value)
+  private static void SetChartExtensionList(DXDC.Chart openXmlElement, DMDC.ChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ChartExtensionList>(value);
+      itemElement = DMXDC.ChartExtensionListConverter.CreateOpenXmlElement<DXDC.ChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Chart? CreateModelElement(DXDrawCharts.Chart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Chart? CreateModelElement(DXDC.Chart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -410,7 +410,7 @@ public static class ChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.Chart? openXmlElement, DMDrawsCharts.Chart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Chart? openXmlElement, DMDC.Chart? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -448,15 +448,15 @@ public static class ChartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Chart value)
-    where OpenXmlElementType: DXDrawCharts.Chart, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Chart value)
+    where OpenXmlElementType: DXDC.Chart, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.Chart openXmlElement, DMDrawsCharts.Chart value)
+  public static void UpdateOpenXmlElement(DXDC.Chart openXmlElement, DMDC.Chart value)
   {
     SetTitle(openXmlElement, value?.Title);
     SetAutoTitleDeleted(openXmlElement, value?.AutoTitleDeleted);

@@ -8,19 +8,19 @@ public static class ArtisticPastelsSmoothConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticPastelsSmooth openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticPastelsSmooth openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticPastelsSmooth openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticPastelsSmooth openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticPastelsSmoothConverter
   /// <summary>
   /// scaling, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetBrushSize(DXO2010Draw.ArtisticPastelsSmooth openXmlElement)
+  private static Int32? GetBrushSize(DXO10D.ArtisticPastelsSmooth openXmlElement)
   {
     return openXmlElement?.BrushSize?.Value;
   }
   
-  private static bool CmpBrushSize(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBrushSize(DXO10D.ArtisticPastelsSmooth openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.BrushSize?.Value == value) return true;
     diffs?.Add(objName, "BrushSize", openXmlElement?.BrushSize?.Value, value);
     return false;
   }
   
-  private static void SetBrushSize(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, Int32? value)
+  private static void SetBrushSize(DXO10D.ArtisticPastelsSmooth openXmlElement, Int32? value)
   {
     openXmlElement.BrushSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPastelsSmooth? CreateModelElement(DXO2010Draw.ArtisticPastelsSmooth? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPastelsSmooth? CreateModelElement(DXO10D.ArtisticPastelsSmooth? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticPastelsSmoothConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticPastelsSmooth? openXmlElement, DMDraws.ArtisticPastelsSmooth? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticPastelsSmooth? openXmlElement, DMD.ArtisticPastelsSmooth? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticPastelsSmoothConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPastelsSmooth value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticPastelsSmooth, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticPastelsSmooth value)
+    where OpenXmlElementType: DXO10D.ArtisticPastelsSmooth, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPastelsSmooth openXmlElement, DMDraws.ArtisticPastelsSmooth value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticPastelsSmooth openXmlElement, DMD.ArtisticPastelsSmooth value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetBrushSize(openXmlElement, value?.BrushSize);

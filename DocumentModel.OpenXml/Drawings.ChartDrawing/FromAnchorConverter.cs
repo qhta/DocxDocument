@@ -5,51 +5,51 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawing;
 /// </summary>
 public static class FromAnchorConverter
 {
-  private static String? GetXPosition(DXDrawChartDraw.FromAnchor openXmlElement)
+  private static String? GetXPosition(DXDCD.FromAnchor openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text;
+      return openXmlElement?.GetFirstChild<DXDCD.XPosition>()?.Text;
   }
   
-  private static bool CmpXPosition(DXDrawChartDraw.FromAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXPosition(DXDCD.FromAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawChartDraw.XPosition>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXDCD.XPosition>()?.Text == value;
   }
   
-  private static void SetXPosition(DXDrawChartDraw.FromAnchor openXmlElement, String? value)
+  private static void SetXPosition(DXDCD.FromAnchor openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.XPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.XPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDrawChartDraw.XPosition { Text = value };
+      itemElement = new DXDCD.XPosition { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetYPosition(DXDrawChartDraw.FromAnchor openXmlElement)
+  private static String? GetYPosition(DXDCD.FromAnchor openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text;
+      return openXmlElement?.GetFirstChild<DXDCD.YPosition>()?.Text;
   }
   
-  private static bool CmpYPosition(DXDrawChartDraw.FromAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYPosition(DXDCD.FromAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawChartDraw.YPosition>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXDCD.YPosition>()?.Text == value;
   }
   
-  private static void SetYPosition(DXDrawChartDraw.FromAnchor openXmlElement, String? value)
+  private static void SetYPosition(DXDCD.FromAnchor openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.YPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.YPosition>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDrawChartDraw.YPosition { Text = value };
+      itemElement = new DXDCD.YPosition { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.FromAnchor? CreateModelElement(DXDrawChartDraw.FromAnchor? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.FromAnchor? CreateModelElement(DXDCD.FromAnchor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class FromAnchorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.FromAnchor? openXmlElement, DMDrawsChartDraw.FromAnchor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.FromAnchor? openXmlElement, DMDCD.FromAnchor? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class FromAnchorConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.FromAnchor value)
-    where OpenXmlElementType: DXDrawChartDraw.FromAnchor, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.FromAnchor value)
+    where OpenXmlElementType: DXDCD.FromAnchor, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.FromAnchor openXmlElement, DMDrawsChartDraw.FromAnchor value)
+  public static void UpdateOpenXmlElement(DXDCD.FromAnchor openXmlElement, DMDCD.FromAnchor value)
   {
     SetXPosition(openXmlElement, value?.XPosition);
     SetYPosition(openXmlElement, value?.YPosition);

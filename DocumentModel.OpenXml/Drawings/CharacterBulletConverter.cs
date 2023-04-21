@@ -8,22 +8,22 @@ public static class CharacterBulletConverter
   /// <summary>
   /// Bullet Character
   /// </summary>
-  private static String? GetChar(DXDraw.CharacterBullet openXmlElement)
+  private static String? GetChar(DXD.CharacterBullet openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Char);
   }
   
-  private static bool CmpChar(DXDraw.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpChar(DXD.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Char, value, diffs, objName, "Char");
   }
   
-  private static void SetChar(DXDraw.CharacterBullet openXmlElement, String? value)
+  private static void SetChar(DXD.CharacterBullet openXmlElement, String? value)
   {
     openXmlElement.Char = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(DXDraw.CharacterBullet? openXmlElement)
+  public static DocumentModel.Drawings.CharacterBullet? CreateModelElement(DXD.CharacterBullet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class CharacterBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.CharacterBullet? openXmlElement, DMDraws.CharacterBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CharacterBullet? openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class CharacterBulletConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CharacterBullet value)
-    where OpenXmlElementType: DXDraw.CharacterBullet, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CharacterBullet value)
+    where OpenXmlElementType: DXD.CharacterBullet, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.CharacterBullet openXmlElement, DMDraws.CharacterBullet value)
+  public static void UpdateOpenXmlElement(DXD.CharacterBullet openXmlElement, DMD.CharacterBullet value)
   {
     SetChar(openXmlElement, value?.Char);
   }

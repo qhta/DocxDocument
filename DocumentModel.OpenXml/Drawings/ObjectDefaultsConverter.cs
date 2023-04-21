@@ -8,27 +8,27 @@ public static class ObjectDefaultsConverter
   /// <summary>
   /// Shape Default.
   /// </summary>
-  private static DMDraws.ShapeDefault? GetShapeDefault(DXDraw.ObjectDefaults openXmlElement)
+  private static DMD.ShapeDefault? GetShapeDefault(DXD.ObjectDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ShapeDefault>();
+    var element = openXmlElement?.GetFirstChild<DXD.ShapeDefault>();
     if (element != null)
-      return DMXDraws.ShapeDefaultConverter.CreateModelElement(element);
+      return DMXD.ShapeDefaultConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.ShapeDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeDefault(DXD.ObjectDefaults openXmlElement, DMD.ShapeDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ShapeDefault>(), value, diffs, objName);
+    return DMXD.ShapeDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeDefault>(), value, diffs, objName);
   }
   
-  private static void SetShapeDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.ShapeDefault? value)
+  private static void SetShapeDefault(DXD.ObjectDefaults openXmlElement, DMD.ShapeDefault? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ShapeDefault>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ShapeDefault>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ShapeDefaultConverter.CreateOpenXmlElement<DXDraw.ShapeDefault>(value);
+      itemElement = DMXD.ShapeDefaultConverter.CreateOpenXmlElement<DXD.ShapeDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class ObjectDefaultsConverter
   /// <summary>
   /// Line Default.
   /// </summary>
-  private static DMDraws.LineDefault? GetLineDefault(DXDraw.ObjectDefaults openXmlElement)
+  private static DMD.LineDefault? GetLineDefault(DXD.ObjectDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LineDefault>();
+    var element = openXmlElement?.GetFirstChild<DXD.LineDefault>();
     if (element != null)
-      return DMXDraws.LineDefaultConverter.CreateModelElement(element);
+      return DMXD.LineDefaultConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.LineDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpLineDefault(DXD.ObjectDefaults openXmlElement, DMD.LineDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineDefault>(), value, diffs, objName);
+    return DMXD.LineDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineDefault>(), value, diffs, objName);
   }
   
-  private static void SetLineDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.LineDefault? value)
+  private static void SetLineDefault(DXD.ObjectDefaults openXmlElement, DMD.LineDefault? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineDefault>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LineDefault>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LineDefaultConverter.CreateOpenXmlElement<DXDraw.LineDefault>(value);
+      itemElement = DMXD.LineDefaultConverter.CreateOpenXmlElement<DXD.LineDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class ObjectDefaultsConverter
   /// <summary>
   /// Text Default.
   /// </summary>
-  private static DMDraws.TextDefault? GetTextDefault(DXDraw.ObjectDefaults openXmlElement)
+  private static DMD.TextDefault? GetTextDefault(DXD.ObjectDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.TextDefault>();
+    var element = openXmlElement?.GetFirstChild<DXD.TextDefault>();
     if (element != null)
-      return DMXDraws.TextDefaultConverter.CreateModelElement(element);
+      return DMXD.TextDefaultConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.TextDefault? value, DiffList? diffs, string? objName)
+  private static bool CmpTextDefault(DXD.ObjectDefaults openXmlElement, DMD.TextDefault? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.TextDefault>(), value, diffs, objName);
+    return DMXD.TextDefaultConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TextDefault>(), value, diffs, objName);
   }
   
-  private static void SetTextDefault(DXDraw.ObjectDefaults openXmlElement, DMDraws.TextDefault? value)
+  private static void SetTextDefault(DXD.ObjectDefaults openXmlElement, DMD.TextDefault? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.TextDefault>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.TextDefault>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextDefaultConverter.CreateOpenXmlElement<DXDraw.TextDefault>(value);
+      itemElement = DMXD.TextDefaultConverter.CreateOpenXmlElement<DXD.TextDefault>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,33 +95,33 @@ public static class ObjectDefaultsConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ObjectDefaults openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.ObjectDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.ObjectDefaults openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ObjectDefaults openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.ObjectDefaults openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.ObjectDefaults openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(DXDraw.ObjectDefaults? openXmlElement)
+  public static DocumentModel.Drawings.ObjectDefaults? CreateModelElement(DXD.ObjectDefaults? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -135,7 +135,7 @@ public static class ObjectDefaultsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ObjectDefaults? openXmlElement, DMDraws.ObjectDefaults? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ObjectDefaults? openXmlElement, DMD.ObjectDefaults? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -155,15 +155,15 @@ public static class ObjectDefaultsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ObjectDefaults value)
-    where OpenXmlElementType: DXDraw.ObjectDefaults, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ObjectDefaults value)
+    where OpenXmlElementType: DXD.ObjectDefaults, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ObjectDefaults openXmlElement, DMDraws.ObjectDefaults value)
+  public static void UpdateOpenXmlElement(DXD.ObjectDefaults openXmlElement, DMD.ObjectDefaults value)
   {
     SetShapeDefault(openXmlElement, value?.ShapeDefault);
     SetLineDefault(openXmlElement, value?.LineDefault);

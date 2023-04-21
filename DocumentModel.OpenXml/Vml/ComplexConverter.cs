@@ -8,22 +8,22 @@ public static class ComplexConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.Complex openXmlElement)
+  private static DMV.ExtensionHandlingBehaviorKind? GetExtension(DXVO.Complex openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVmlO.Complex openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Complex openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
-  private static void SetExtension(DXVmlO.Complex openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVO.Complex openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(value);
   }
   
-  public static DocumentModel.Vml.Complex? CreateModelElement(DXVmlO.Complex? openXmlElement)
+  public static DocumentModel.Vml.Complex? CreateModelElement(DXVO.Complex? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ComplexConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.Complex? openXmlElement, DMVml.Complex? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Complex? openXmlElement, DMV.Complex? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class ComplexConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Complex value)
-    where OpenXmlElementType: DXVmlO.Complex, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.Complex value)
+    where OpenXmlElementType: DXVO.Complex, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.Complex openXmlElement, DMVml.Complex value)
+  public static void UpdateOpenXmlElement(DXVO.Complex openXmlElement, DMV.Complex value)
   {
     SetExtension(openXmlElement, value?.Extension);
   }

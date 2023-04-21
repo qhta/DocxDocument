@@ -8,19 +8,19 @@ public static class ArtisticCrisscrossEtchingConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticCrisscrossEtching openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticCrisscrossEtching openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticCrisscrossEtchingConverter
   /// <summary>
   /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement)
+  private static Int32? GetPressure(DXO10D.ArtisticCrisscrossEtching openXmlElement)
   {
     return openXmlElement?.Pressure?.Value;
   }
   
-  private static bool CmpPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPressure(DXO10D.ArtisticCrisscrossEtching openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Pressure?.Value == value) return true;
     diffs?.Add(objName, "Pressure", openXmlElement?.Pressure?.Value, value);
     return false;
   }
   
-  private static void SetPressure(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, Int32? value)
+  private static void SetPressure(DXO10D.ArtisticCrisscrossEtching openXmlElement, Int32? value)
   {
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCrisscrossEtching? CreateModelElement(DXO2010Draw.ArtisticCrisscrossEtching? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticCrisscrossEtching? CreateModelElement(DXO10D.ArtisticCrisscrossEtching? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticCrisscrossEtchingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticCrisscrossEtching? openXmlElement, DMDraws.ArtisticCrisscrossEtching? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticCrisscrossEtching? openXmlElement, DMD.ArtisticCrisscrossEtching? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticCrisscrossEtchingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCrisscrossEtching value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticCrisscrossEtching, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticCrisscrossEtching value)
+    where OpenXmlElementType: DXO10D.ArtisticCrisscrossEtching, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticCrisscrossEtching openXmlElement, DMDraws.ArtisticCrisscrossEtching value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticCrisscrossEtching openXmlElement, DMD.ArtisticCrisscrossEtching value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetPressure(openXmlElement, value?.Pressure);

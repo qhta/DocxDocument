@@ -8,245 +8,245 @@ public static class ManualLayoutConverter
   /// <summary>
   /// Layout Target.
   /// </summary>
-  private static DMDrawsCharts.LayoutTargetKind? GetLayoutTarget(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.LayoutTargetKind? GetLayoutTarget(DXDC.ManualLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDrawCharts.LayoutTarget>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value);
   }
   
-  private static bool CmpLayoutTarget(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutTargetKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutTarget(DXDC.ManualLayout openXmlElement, DMDC.LayoutTargetKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDrawCharts.LayoutTarget>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetLayoutTarget(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutTargetKind? value)
+  private static void SetLayoutTarget(DXDC.ManualLayout openXmlElement, DMDC.LayoutTargetKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LayoutTarget>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.LayoutTarget>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>(itemElement, (DMDrawsCharts.LayoutTargetKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(itemElement, (DMDC.LayoutTargetKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDrawsCharts.LayoutTargetKind>((DMDrawsCharts.LayoutTargetKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>((DMDC.LayoutTargetKind)value));
   }
   
   /// <summary>
   /// Left Mode.
   /// </summary>
-  private static DMDrawsCharts.LayoutMode? GetLeftMode(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.LayoutMode? GetLeftMode(DXDC.ManualLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.LeftMode>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.LeftMode>()?.Val?.Value);
   }
   
-  private static bool CmpLeftMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.LeftMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.LeftMode>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetLeftMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
+  private static void SetLeftMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LeftMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.LeftMode>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement, (DMDrawsCharts.LayoutMode)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(itemElement, (DMDC.LayoutMode)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>((DMDrawsCharts.LayoutMode)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
   /// Top Mode.
   /// </summary>
-  private static DMDrawsCharts.LayoutMode? GetTopMode(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.LayoutMode? GetTopMode(DXDC.ManualLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.TopMode>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.TopMode>()?.Val?.Value);
   }
   
-  private static bool CmpTopMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpTopMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.TopMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.TopMode>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetTopMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
+  private static void SetTopMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TopMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.TopMode>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement, (DMDrawsCharts.LayoutMode)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(itemElement, (DMDC.LayoutMode)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>((DMDrawsCharts.LayoutMode)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
   /// Width Mode.
   /// </summary>
-  private static DMDrawsCharts.LayoutMode? GetWidthMode(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.LayoutMode? GetWidthMode(DXDC.ManualLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.WidthMode>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.WidthMode>()?.Val?.Value);
   }
   
-  private static bool CmpWidthMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.WidthMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.WidthMode>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetWidthMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
+  private static void SetWidthMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.WidthMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.WidthMode>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement, (DMDrawsCharts.LayoutMode)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(itemElement, (DMDC.LayoutMode)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>((DMDrawsCharts.LayoutMode)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
   /// Height Mode.
   /// </summary>
-  private static DMDrawsCharts.LayoutMode? GetHeightMode(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.LayoutMode? GetHeightMode(DXDC.ManualLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.HeightMode>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.HeightMode>()?.Val?.Value);
   }
   
-  private static bool CmpHeightMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(openXmlElement.GetFirstChild<DXDrawCharts.HeightMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.HeightMode>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetHeightMode(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.LayoutMode? value)
+  private static void SetHeightMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HeightMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.HeightMode>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>(itemElement, (DMDrawsCharts.LayoutMode)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(itemElement, (DMDC.LayoutMode)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDrawsCharts.LayoutMode>((DMDrawsCharts.LayoutMode)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
   /// Left.
   /// </summary>
-  private static Double? GetLeft(DXDrawCharts.ManualLayout openXmlElement)
+  private static Double? GetLeft(DXDC.ManualLayout openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Left>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Left>()?.Val);
   }
   
-  private static bool CmpLeft(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpLeft(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Left>()?.Val, value, diffs, objName, "Left");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Left>()?.Val, value, diffs, objName, "Left");
   }
   
-  private static void SetLeft(DXDrawCharts.ManualLayout openXmlElement, Double? value)
+  private static void SetLeft(DXDC.ManualLayout openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Left,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Left,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
   /// Top.
   /// </summary>
-  private static Double? GetTop(DXDrawCharts.ManualLayout openXmlElement)
+  private static Double? GetTop(DXDC.ManualLayout openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Top>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Top>()?.Val);
   }
   
-  private static bool CmpTop(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpTop(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Top>()?.Val, value, diffs, objName, "Top");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Top>()?.Val, value, diffs, objName, "Top");
   }
   
-  private static void SetTop(DXDrawCharts.ManualLayout openXmlElement, Double? value)
+  private static void SetTop(DXDC.ManualLayout openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Top,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Top,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
   /// Width.
   /// </summary>
-  private static Double? GetWidth(DXDrawCharts.ManualLayout openXmlElement)
+  private static Double? GetWidth(DXDC.ManualLayout openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Width>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Width>()?.Val);
   }
   
-  private static bool CmpWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Width>()?.Val, value, diffs, objName, "Value");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Width>()?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetWidth(DXDrawCharts.ManualLayout openXmlElement, Double? value)
+  private static void SetWidth(DXDC.ManualLayout openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Width,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Width,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
   /// Height.
   /// </summary>
-  private static Double? GetHeight(DXDrawCharts.ManualLayout openXmlElement)
+  private static Double? GetHeight(DXDC.ManualLayout openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Height>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Height>()?.Val);
   }
   
-  private static bool CmpHeight(DXDrawCharts.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Height>()?.Val, value, diffs, objName, "Height");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Height>()?.Val, value, diffs, objName, "Height");
   }
   
-  private static void SetHeight(DXDrawCharts.ManualLayout openXmlElement, Double? value)
+  private static void SetHeight(DXDC.ManualLayout openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Height,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Height,System.Double>(openXmlElement, value);
   }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.ManualLayout openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.ManualLayout openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.ManualLayout openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.ManualLayout openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ManualLayout? CreateModelElement(DXDrawCharts.ManualLayout? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ManualLayout? CreateModelElement(DXDC.ManualLayout? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -266,7 +266,7 @@ public static class ManualLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ManualLayout? openXmlElement, DMDrawsCharts.ManualLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ManualLayout? openXmlElement, DMDC.ManualLayout? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -298,15 +298,15 @@ public static class ManualLayoutConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ManualLayout value)
-    where OpenXmlElementType: DXDrawCharts.ManualLayout, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ManualLayout value)
+    where OpenXmlElementType: DXDC.ManualLayout, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ManualLayout openXmlElement, DMDrawsCharts.ManualLayout value)
+  public static void UpdateOpenXmlElement(DXDC.ManualLayout openXmlElement, DMDC.ManualLayout value)
   {
     SetLayoutTarget(openXmlElement, value?.LayoutTarget);
     SetLeftMode(openXmlElement, value?.LeftMode);

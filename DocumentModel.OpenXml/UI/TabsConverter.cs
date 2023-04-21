@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class TabsConverter
 {
-  private static Collection<DMUI.Tab>? GetItems(DXOCustUI.Tabs openXmlElement)
+  private static Collection<DMUI.Tab>? GetItems(DXOCUI.Tabs openXmlElement)
   {
     var collection = new Collection<DMUI.Tab>();
-    foreach (var item in openXmlElement.Elements<DXOCustUI.Tab>())
+    foreach (var item in openXmlElement.Elements<DXOCUI.Tab>())
     {
       var newItem = DMXUI.TabConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class TabsConverter
     return null;
   }
   
-  private static bool CmpItems(DXOCustUI.Tabs openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXOCUI.Tabs openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXOCustUI.Tab>();
+    var origElements = openXmlElement.Elements<DXOCUI.Tab>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class TabsConverter
     return false;
   }
   
-  private static void SetItems(DXOCustUI.Tabs openXmlElement, Collection<DMUI.Tab>? value)
+  private static void SetItems(DXOCUI.Tabs openXmlElement, Collection<DMUI.Tab>? value)
   {
-    openXmlElement.RemoveAllChildren<DXOCustUI.Tab>();
+    openXmlElement.RemoveAllChildren<DXOCUI.Tab>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXUI.TabConverter.CreateOpenXmlElement<DXOCustUI.Tab>(item);
+        var newItem = DMXUI.TabConverter.CreateOpenXmlElement<DXOCUI.Tab>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.Tabs? CreateModelElement(DXOCustUI.Tabs? openXmlElement)
+  public static DocumentModel.UI.Tabs? CreateModelElement(DXOCUI.Tabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class TabsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.Tabs? openXmlElement, DMUI.Tabs? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.Tabs? openXmlElement, DMUI.Tabs? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class TabsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Tabs value)
-    where OpenXmlElementType: DXOCustUI.Tabs, new()
+    where OpenXmlElementType: DXOCUI.Tabs, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.Tabs openXmlElement, DMUI.Tabs value)
+  public static void UpdateOpenXmlElement(DXOCUI.Tabs openXmlElement, DMUI.Tabs value)
   {
     SetItems(openXmlElement, value?.Items);
   }

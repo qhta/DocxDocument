@@ -8,19 +8,19 @@ public static class PathConverter
   /// <summary>
   /// Path Width
   /// </summary>
-  private static Int64? GetWidth(DXDraw.Path openXmlElement)
+  private static Int64? GetWidth(DXD.Path openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXDraw.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXD.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
-  private static void SetWidth(DXDraw.Path openXmlElement, Int64? value)
+  private static void SetWidth(DXD.Path openXmlElement, Int64? value)
   {
     openXmlElement.Width = value;
   }
@@ -28,19 +28,19 @@ public static class PathConverter
   /// <summary>
   /// Path Height
   /// </summary>
-  private static Int64? GetHeight(DXDraw.Path openXmlElement)
+  private static Int64? GetHeight(DXD.Path openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXDraw.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXD.Path openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
     return false;
   }
   
-  private static void SetHeight(DXDraw.Path openXmlElement, Int64? value)
+  private static void SetHeight(DXD.Path openXmlElement, Int64? value)
   {
     openXmlElement.Height = value;
   }
@@ -48,37 +48,37 @@ public static class PathConverter
   /// <summary>
   /// Path Fill
   /// </summary>
-  private static DMDraws.PathFillMode? GetFill(DXDraw.Path openXmlElement)
+  private static DMD.PathFillMode? GetFill(DXD.Path openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMDraws.PathFillMode>(openXmlElement?.Fill?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMD.PathFillMode>(openXmlElement?.Fill?.Value);
   }
   
-  private static bool CmpFill(DXDraw.Path openXmlElement, DMDraws.PathFillMode? value, DiffList? diffs, string? objName)
+  private static bool CmpFill(DXD.Path openXmlElement, DMD.PathFillMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMDraws.PathFillMode>(openXmlElement?.Fill?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMD.PathFillMode>(openXmlElement?.Fill?.Value, value, diffs, objName);
   }
   
-  private static void SetFill(DXDraw.Path openXmlElement, DMDraws.PathFillMode? value)
+  private static void SetFill(DXD.Path openXmlElement, DMD.PathFillMode? value)
   {
-    openXmlElement.Fill = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMDraws.PathFillMode>(value);
+    openXmlElement.Fill = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PathFillModeValues, DMD.PathFillMode>(value);
   }
   
   /// <summary>
   /// Path Stroke
   /// </summary>
-  private static Boolean? GetStroke(DXDraw.Path openXmlElement)
+  private static Boolean? GetStroke(DXD.Path openXmlElement)
   {
     return openXmlElement?.Stroke?.Value;
   }
   
-  private static bool CmpStroke(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStroke(DXD.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Stroke?.Value == value) return true;
     diffs?.Add(objName, "Stroke", openXmlElement?.Stroke?.Value, value);
     return false;
   }
   
-  private static void SetStroke(DXDraw.Path openXmlElement, Boolean? value)
+  private static void SetStroke(DXD.Path openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Stroke = new BooleanValue { Value = (Boolean)value };
@@ -89,19 +89,19 @@ public static class PathConverter
   /// <summary>
   /// 3D Extrusion Allowed
   /// </summary>
-  private static Boolean? GetExtrusionOk(DXDraw.Path openXmlElement)
+  private static Boolean? GetExtrusionOk(DXD.Path openXmlElement)
   {
     return openXmlElement?.ExtrusionOk?.Value;
   }
   
-  private static bool CmpExtrusionOk(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionOk(DXD.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ExtrusionOk?.Value == value) return true;
     diffs?.Add(objName, "ExtrusionOk", openXmlElement?.ExtrusionOk?.Value, value);
     return false;
   }
   
-  private static void SetExtrusionOk(DXDraw.Path openXmlElement, Boolean? value)
+  private static void SetExtrusionOk(DXD.Path openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ExtrusionOk = new BooleanValue { Value = (Boolean)value };
@@ -109,165 +109,165 @@ public static class PathConverter
       openXmlElement.ExtrusionOk = null;
   }
   
-  private static Boolean? GetCloseShapePath(DXDraw.Path openXmlElement)
+  private static Boolean? GetCloseShapePath(DXD.Path openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.CloseShapePath>() != null;
+    return openXmlElement.GetFirstChild<DXD.CloseShapePath>() != null;
   }
   
-  private static bool CmpCloseShapePath(DXDraw.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCloseShapePath(DXD.Path openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.CloseShapePath>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.CloseShapePath>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.CloseShapePath", val, value);
+    diffs?.Add(objName, "DXD.CloseShapePath", val, value);
     return false;
   }
   
-  private static void SetCloseShapePath(DXDraw.Path openXmlElement, Boolean? value)
+  private static void SetCloseShapePath(DXD.Path openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.CloseShapePath>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.CloseShapePath>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.CloseShapePath();
+      var itemElement = new DXD.CloseShapePath();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.MoveTo? GetMoveTo(DXDraw.Path openXmlElement)
+  private static DMD.MoveTo? GetMoveTo(DXD.Path openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.MoveTo>();
+    var element = openXmlElement?.GetFirstChild<DXD.MoveTo>();
     if (element != null)
-      return DMXDraws.MoveToConverter.CreateModelElement(element);
+      return DMXD.MoveToConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMoveTo(DXDraw.Path openXmlElement, DMDraws.MoveTo? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveTo(DXD.Path openXmlElement, DMD.MoveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.MoveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.MoveTo>(), value, diffs, objName);
+    return DMXD.MoveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MoveTo>(), value, diffs, objName);
   }
   
-  private static void SetMoveTo(DXDraw.Path openXmlElement, DMDraws.MoveTo? value)
+  private static void SetMoveTo(DXD.Path openXmlElement, DMD.MoveTo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.MoveTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.MoveTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.MoveToConverter.CreateOpenXmlElement<DXDraw.MoveTo>(value);
+      itemElement = DMXD.MoveToConverter.CreateOpenXmlElement<DXD.MoveTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.LineTo? GetLineTo(DXDraw.Path openXmlElement)
+  private static DMD.LineTo? GetLineTo(DXD.Path openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LineTo>();
+    var element = openXmlElement?.GetFirstChild<DXD.LineTo>();
     if (element != null)
-      return DMXDraws.LineToConverter.CreateModelElement(element);
+      return DMXD.LineToConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineTo(DXDraw.Path openXmlElement, DMDraws.LineTo? value, DiffList? diffs, string? objName)
+  private static bool CmpLineTo(DXD.Path openXmlElement, DMD.LineTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LineTo>(), value, diffs, objName);
+    return DMXD.LineToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineTo>(), value, diffs, objName);
   }
   
-  private static void SetLineTo(DXDraw.Path openXmlElement, DMDraws.LineTo? value)
+  private static void SetLineTo(DXD.Path openXmlElement, DMD.LineTo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LineTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LineTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LineToConverter.CreateOpenXmlElement<DXDraw.LineTo>(value);
+      itemElement = DMXD.LineToConverter.CreateOpenXmlElement<DXD.LineTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ArcTo? GetArcTo(DXDraw.Path openXmlElement)
+  private static DMD.ArcTo? GetArcTo(DXD.Path openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ArcTo>();
+    var element = openXmlElement?.GetFirstChild<DXD.ArcTo>();
     if (element != null)
-      return DMXDraws.ArcToConverter.CreateModelElement(element);
+      return DMXD.ArcToConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArcTo(DXDraw.Path openXmlElement, DMDraws.ArcTo? value, DiffList? diffs, string? objName)
+  private static bool CmpArcTo(DXD.Path openXmlElement, DMD.ArcTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArcToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ArcTo>(), value, diffs, objName);
+    return DMXD.ArcToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ArcTo>(), value, diffs, objName);
   }
   
-  private static void SetArcTo(DXDraw.Path openXmlElement, DMDraws.ArcTo? value)
+  private static void SetArcTo(DXD.Path openXmlElement, DMD.ArcTo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ArcTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ArcTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArcToConverter.CreateOpenXmlElement<DXDraw.ArcTo>(value);
+      itemElement = DMXD.ArcToConverter.CreateOpenXmlElement<DXD.ArcTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.QuadraticBezierCurveTo? GetQuadraticBezierCurveTo(DXDraw.Path openXmlElement)
+  private static DMD.QuadraticBezierCurveTo? GetQuadraticBezierCurveTo(DXD.Path openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.QuadraticBezierCurveTo>();
+    var element = openXmlElement?.GetFirstChild<DXD.QuadraticBezierCurveTo>();
     if (element != null)
-      return DMXDraws.QuadraticBezierCurveToConverter.CreateModelElement(element);
+      return DMXD.QuadraticBezierCurveToConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpQuadraticBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
+  private static bool CmpQuadraticBezierCurveTo(DXD.Path openXmlElement, DMD.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.QuadraticBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.QuadraticBezierCurveTo>(), value, diffs, objName);
+    return DMXD.QuadraticBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.QuadraticBezierCurveTo>(), value, diffs, objName);
   }
   
-  private static void SetQuadraticBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.QuadraticBezierCurveTo? value)
+  private static void SetQuadraticBezierCurveTo(DXD.Path openXmlElement, DMD.QuadraticBezierCurveTo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.QuadraticBezierCurveTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.QuadraticBezierCurveTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.QuadraticBezierCurveToConverter.CreateOpenXmlElement<DXDraw.QuadraticBezierCurveTo>(value);
+      itemElement = DMXD.QuadraticBezierCurveToConverter.CreateOpenXmlElement<DXD.QuadraticBezierCurveTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.CubicBezierCurveTo? GetCubicBezierCurveTo(DXDraw.Path openXmlElement)
+  private static DMD.CubicBezierCurveTo? GetCubicBezierCurveTo(DXD.Path openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.CubicBezierCurveTo>();
+    var element = openXmlElement?.GetFirstChild<DXD.CubicBezierCurveTo>();
     if (element != null)
-      return DMXDraws.CubicBezierCurveToConverter.CreateModelElement(element);
+      return DMXD.CubicBezierCurveToConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCubicBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.CubicBezierCurveTo? value, DiffList? diffs, string? objName)
+  private static bool CmpCubicBezierCurveTo(DXD.Path openXmlElement, DMD.CubicBezierCurveTo? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CubicBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CubicBezierCurveTo>(), value, diffs, objName);
+    return DMXD.CubicBezierCurveToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CubicBezierCurveTo>(), value, diffs, objName);
   }
   
-  private static void SetCubicBezierCurveTo(DXDraw.Path openXmlElement, DMDraws.CubicBezierCurveTo? value)
+  private static void SetCubicBezierCurveTo(DXD.Path openXmlElement, DMD.CubicBezierCurveTo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.CubicBezierCurveTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.CubicBezierCurveTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CubicBezierCurveToConverter.CreateOpenXmlElement<DXDraw.CubicBezierCurveTo>(value);
+      itemElement = DMXD.CubicBezierCurveToConverter.CreateOpenXmlElement<DXD.CubicBezierCurveTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Path? CreateModelElement(DXDraw.Path? openXmlElement)
+  public static DocumentModel.Drawings.Path? CreateModelElement(DXD.Path? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -288,7 +288,7 @@ public static class PathConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Path? openXmlElement, DMDraws.Path? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Path? openXmlElement, DMD.Path? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -322,15 +322,15 @@ public static class PathConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Path value)
-    where OpenXmlElementType: DXDraw.Path, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Path value)
+    where OpenXmlElementType: DXD.Path, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Path openXmlElement, DMDraws.Path value)
+  public static void UpdateOpenXmlElement(DXD.Path openXmlElement, DMD.Path value)
   {
     SetWidth(openXmlElement, value?.Width);
     SetHeight(openXmlElement, value?.Height);

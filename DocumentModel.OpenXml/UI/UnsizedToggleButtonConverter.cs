@@ -8,17 +8,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getPressed
   /// </summary>
-  private static String? GetGetPressed(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetPressed(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetPressed);
   }
   
-  private static bool CmpGetPressed(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetPressed(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetPressed, value, diffs, objName, "GetPressed");
   }
   
-  private static void SetGetPressed(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetPressed(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetPressed = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// onAction
   /// </summary>
-  private static String? GetOnAction(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetOnAction(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetOnAction(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static Boolean? GetEnabled(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -67,17 +67,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetEnabled(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -85,17 +85,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetDescription(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetDescription(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -103,17 +103,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetDescription(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetDescription(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetImage(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -139,17 +139,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetImageMso(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetImageMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -157,17 +157,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetImage(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
-  private static void SetGetImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
@@ -175,17 +175,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetId(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetId(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -193,17 +193,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetIdQ(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -211,17 +211,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetIdMso(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetIdMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -229,17 +229,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetTag(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetTag(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -247,17 +247,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetScreentip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetScreentip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -265,17 +265,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetScreentip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -283,17 +283,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetSupertip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetSupertip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -301,17 +301,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetSupertip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -319,17 +319,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetLabel(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetLabel(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -355,17 +355,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -373,17 +373,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -391,17 +391,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -409,17 +409,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
@@ -427,19 +427,19 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -450,17 +450,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetVisible(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -468,17 +468,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetKeytip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetKeytip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -486,17 +486,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetKeytip(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
@@ -504,19 +504,19 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static Boolean? GetShowLabel(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
     return false;
   }
   
-  private static void SetShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -527,17 +527,17 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetShowLabel(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
   
-  private static void SetGetShowLabel(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -545,19 +545,19 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static Boolean? GetShowImage(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static bool CmpShowImage(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowImage(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowImage?.Value == value) return true;
     diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
     return false;
   }
   
-  private static void SetShowImage(DXOCustUI.UnsizedToggleButton openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCUI.UnsizedToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -568,22 +568,22 @@ public static class UnsizedToggleButtonConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DXOCustUI.UnsizedToggleButton openXmlElement)
+  private static String? GetGetShowImage(DXOCUI.UnsizedToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowImage);
   }
   
-  private static bool CmpGetShowImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowImage, value, diffs, objName, "GetShowImage");
   }
   
-  private static void SetGetShowImage(DXOCustUI.UnsizedToggleButton openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCUI.UnsizedToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetShowImage = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.UI.UnsizedToggleButton? CreateModelElement(DXOCustUI.UnsizedToggleButton? openXmlElement)
+  public static DocumentModel.UI.UnsizedToggleButton? CreateModelElement(DXOCUI.UnsizedToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -624,7 +624,7 @@ public static class UnsizedToggleButtonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.UnsizedToggleButton? openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.UnsizedToggleButton? openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -699,14 +699,14 @@ public static class UnsizedToggleButtonConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.UnsizedToggleButton value)
-    where OpenXmlElementType: DXOCustUI.UnsizedToggleButton, new()
+    where OpenXmlElementType: DXOCUI.UnsizedToggleButton, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.UnsizedToggleButton openXmlElement, DMUI.UnsizedToggleButton value)
+  public static void UpdateOpenXmlElement(DXOCUI.UnsizedToggleButton openXmlElement, DMUI.UnsizedToggleButton value)
   {
     SetGetPressed(openXmlElement, value?.GetPressed);
     SetOnAction(openXmlElement, value?.OnAction);

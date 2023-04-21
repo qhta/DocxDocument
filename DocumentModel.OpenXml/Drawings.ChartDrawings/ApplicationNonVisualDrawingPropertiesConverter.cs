@@ -8,17 +8,17 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   /// <summary>
   /// macro, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement)
+  private static String? GetMacro(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
-  private static bool CmpMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacro(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
   
-  private static void SetMacro(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, String? value)
+  private static void SetMacro(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, String? value)
   {
     openXmlElement.Macro = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
   /// <summary>
   /// fPublished, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement)
+  private static Boolean? GetPublished(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Published?.Value;
   }
   
-  private static bool CmpPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPublished(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Published?.Value == value) return true;
     diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
     return false;
   }
   
-  private static void SetPublished(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value)
+  private static void SetPublished(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Published = new BooleanValue { Value = (Boolean)value };
@@ -46,7 +46,7 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
       openXmlElement.Published = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? CreateModelElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ApplicationNonVisualDrawingProperties? CreateModelElement(DXO10DCD.ApplicationNonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -58,7 +58,7 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties? openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.ApplicationNonVisualDrawingProperties? openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -74,15 +74,15 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ApplicationNonVisualDrawingProperties value)
-    where OpenXmlElementType: DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.ApplicationNonVisualDrawingProperties value)
+    where OpenXmlElementType: DXO10DCD.ApplicationNonVisualDrawingProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties value)
+  public static void UpdateOpenXmlElement(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties value)
   {
     SetMacro(openXmlElement, value?.Macro);
     SetPublished(openXmlElement, value?.Published);

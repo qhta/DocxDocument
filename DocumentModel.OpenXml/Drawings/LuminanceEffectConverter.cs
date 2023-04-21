@@ -8,19 +8,19 @@ public static class LuminanceEffectConverter
   /// <summary>
   /// Brightness
   /// </summary>
-  private static Int32? GetBrightness(DXDraw.LuminanceEffect openXmlElement)
+  private static Int32? GetBrightness(DXD.LuminanceEffect openXmlElement)
   {
     return openXmlElement?.Brightness?.Value;
   }
   
-  private static bool CmpBrightness(DXDraw.LuminanceEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBrightness(DXD.LuminanceEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Brightness?.Value == value) return true;
     diffs?.Add(objName, "Brightness", openXmlElement?.Brightness?.Value, value);
     return false;
   }
   
-  private static void SetBrightness(DXDraw.LuminanceEffect openXmlElement, Int32? value)
+  private static void SetBrightness(DXD.LuminanceEffect openXmlElement, Int32? value)
   {
     openXmlElement.Brightness = value;
   }
@@ -28,24 +28,24 @@ public static class LuminanceEffectConverter
   /// <summary>
   /// Contrast
   /// </summary>
-  private static Int32? GetContrast(DXDraw.LuminanceEffect openXmlElement)
+  private static Int32? GetContrast(DXD.LuminanceEffect openXmlElement)
   {
     return openXmlElement?.Contrast?.Value;
   }
   
-  private static bool CmpContrast(DXDraw.LuminanceEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpContrast(DXD.LuminanceEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Contrast?.Value == value) return true;
     diffs?.Add(objName, "Contrast", openXmlElement?.Contrast?.Value, value);
     return false;
   }
   
-  private static void SetContrast(DXDraw.LuminanceEffect openXmlElement, Int32? value)
+  private static void SetContrast(DXD.LuminanceEffect openXmlElement, Int32? value)
   {
     openXmlElement.Contrast = value;
   }
   
-  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(DXDraw.LuminanceEffect? openXmlElement)
+  public static DocumentModel.Drawings.LuminanceEffect? CreateModelElement(DXD.LuminanceEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class LuminanceEffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.LuminanceEffect? openXmlElement, DMDraws.LuminanceEffect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LuminanceEffect? openXmlElement, DMD.LuminanceEffect? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class LuminanceEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LuminanceEffect value)
-    where OpenXmlElementType: DXDraw.LuminanceEffect, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LuminanceEffect value)
+    where OpenXmlElementType: DXD.LuminanceEffect, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.LuminanceEffect openXmlElement, DMDraws.LuminanceEffect value)
+  public static void UpdateOpenXmlElement(DXD.LuminanceEffect openXmlElement, DMD.LuminanceEffect value)
   {
     SetBrightness(openXmlElement, value?.Brightness);
     SetContrast(openXmlElement, value?.Contrast);

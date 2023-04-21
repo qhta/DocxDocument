@@ -8,17 +8,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetId(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetId(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// enabled, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static Boolean? GetEnabled(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -49,17 +49,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// setDate, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetSetDate(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SetDate);
   }
   
-  private static bool CmpSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSetDate(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SetDate, value, diffs, objName, "SetDate");
   }
   
-  private static void SetSetDate(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetSetDate(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.SetDate = StringValueConverter.CreateStringValue(value);
   }
@@ -67,17 +67,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// method, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetMethod(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
-  private static bool CmpMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
   
-  private static void SetMethod(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetMethod(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.Method = StringValueConverter.CreateStringValue(value);
   }
@@ -85,17 +85,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// name, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetName(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetName(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -103,17 +103,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// siteId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetSiteId(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SiteId);
   }
   
-  private static bool CmpSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSiteId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SiteId, value, diffs, objName, "SiteId");
   }
   
-  private static void SetSiteId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetSiteId(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.SiteId = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// actionId, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static String? GetActionId(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ActionId);
   }
   
-  private static bool CmpActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpActionId(DXO21MLMD.ClassificationLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ActionId, value, diffs, objName, "ActionId");
   }
   
-  private static void SetActionId(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, String? value)
+  private static void SetActionId(DXO21MLMD.ClassificationLabel openXmlElement, String? value)
   {
     openXmlElement.ActionId = StringValueConverter.CreateStringValue(value);
   }
@@ -139,19 +139,19 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// contentBits, this property is only available in Office 2021 and later.
   /// </summary>
-  private static UInt32? GetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static UInt32? GetContentBits(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.ContentBits?.Value;
   }
   
-  private static bool CmpContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpContentBits(DXO21MLMD.ClassificationLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ContentBits?.Value == value) return true;
     diffs?.Add(objName, "ContentBits", openXmlElement?.ContentBits?.Value, value);
     return false;
   }
   
-  private static void SetContentBits(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, UInt32? value)
+  private static void SetContentBits(DXO21MLMD.ClassificationLabel openXmlElement, UInt32? value)
   {
     openXmlElement.ContentBits = value;
   }
@@ -159,19 +159,19 @@ public static class ClassificationLabelConverter
   /// <summary>
   /// removed, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Boolean? GetRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement)
+  private static Boolean? GetRemoved(DXO21MLMD.ClassificationLabel openXmlElement)
   {
     return openXmlElement?.Removed?.Value;
   }
   
-  private static bool CmpRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRemoved(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Removed?.Value == value) return true;
     diffs?.Add(objName, "Removed", openXmlElement?.Removed?.Value, value);
     return false;
   }
   
-  private static void SetRemoved(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, Boolean? value)
+  private static void SetRemoved(DXO21MLMD.ClassificationLabel openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Removed = new BooleanValue { Value = (Boolean)value };
@@ -179,7 +179,7 @@ public static class ClassificationLabelConverter
       openXmlElement.Removed = null;
   }
   
-  public static DocumentModel.ClassificationLabel? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabel? openXmlElement)
+  public static DocumentModel.ClassificationLabel? CreateModelElement(DXO21MLMD.ClassificationLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -198,7 +198,7 @@ public static class ClassificationLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021MipLabelMeta.ClassificationLabel? openXmlElement, DM.ClassificationLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21MLMD.ClassificationLabel? openXmlElement, DM.ClassificationLabel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -229,14 +229,14 @@ public static class ClassificationLabelConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabel value)
-    where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationLabel, new()
+    where OpenXmlElementType: DXO21MLMD.ClassificationLabel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationLabel openXmlElement, DM.ClassificationLabel value)
+  public static void UpdateOpenXmlElement(DXO21MLMD.ClassificationLabel openXmlElement, DM.ClassificationLabel value)
   {
     SetId(openXmlElement, value?.Id);
     SetEnabled(openXmlElement, value?.Enabled);

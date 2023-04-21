@@ -8,27 +8,27 @@ public static class HiddenEffectsPropertiesConverter
   /// <summary>
   /// Effect Container.
   /// </summary>
-  private static DMDraws.EffectList? GetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement)
+  private static DMD.EffectList? GetEffectList(DXO10D.HiddenEffectsProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
     if (element != null)
-      return DMXDraws.EffectListConverter.CreateModelElement(element);
+      return DMXD.EffectListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
   }
   
-  private static void SetEffectList(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectList? value)
+  private static void SetEffectList(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
+      itemElement = DMXD.EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class HiddenEffectsPropertiesConverter
   /// <summary>
   /// Effect Container.
   /// </summary>
-  private static DMDraws.EffectDag? GetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement)
+  private static DMD.EffectDag? GetEffectDag(DXO10D.HiddenEffectsProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectDag>();
     if (element != null)
-      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+      return DMXD.EffectDagConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
   }
   
-  private static void SetEffectDag(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.EffectDag? value)
+  private static void SetEffectDag(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
+      itemElement = DMXD.EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.HiddenEffectsProperties? CreateModelElement(DXO2010Draw.HiddenEffectsProperties? openXmlElement)
+  public static DocumentModel.Drawings.HiddenEffectsProperties? CreateModelElement(DXO10D.HiddenEffectsProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class HiddenEffectsPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.HiddenEffectsProperties? openXmlElement, DMDraws.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.HiddenEffectsProperties? openXmlElement, DMD.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class HiddenEffectsPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenEffectsProperties value)
-    where OpenXmlElementType: DXO2010Draw.HiddenEffectsProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.HiddenEffectsProperties value)
+    where OpenXmlElementType: DXO10D.HiddenEffectsProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenEffectsProperties openXmlElement, DMDraws.HiddenEffectsProperties value)
+  public static void UpdateOpenXmlElement(DXO10D.HiddenEffectsProperties openXmlElement, DMD.HiddenEffectsProperties value)
   {
     SetEffectList(openXmlElement, value?.EffectList);
     SetEffectDag(openXmlElement, value?.EffectDag);

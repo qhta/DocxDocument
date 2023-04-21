@@ -8,17 +8,17 @@ public static class AdjustPoint2DTypeConverter
   /// <summary>
   /// X-Coordinate
   /// </summary>
-  private static String? GetX(DXDraw.AdjustPoint2DType openXmlElement)
+  private static String? GetX(DXD.AdjustPoint2DType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.X);
   }
   
-  private static bool CmpX(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpX(DXD.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "Cx");
   }
   
-  private static void SetX(DXDraw.AdjustPoint2DType openXmlElement, String? value)
+  private static void SetX(DXD.AdjustPoint2DType openXmlElement, String? value)
   {
     openXmlElement.X = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class AdjustPoint2DTypeConverter
   /// <summary>
   /// Y-Coordinate
   /// </summary>
-  private static String? GetY(DXDraw.AdjustPoint2DType openXmlElement)
+  private static String? GetY(DXD.AdjustPoint2DType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Y);
   }
   
-  private static bool CmpY(DXDraw.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpY(DXD.AdjustPoint2DType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Cy");
   }
   
-  private static void SetY(DXDraw.AdjustPoint2DType openXmlElement, String? value)
+  private static void SetY(DXD.AdjustPoint2DType openXmlElement, String? value)
   {
     openXmlElement.Y = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(DXDraw.AdjustPoint2DType? openXmlElement)
+  public static DocumentModel.Drawings.AdjustPoint2DType? CreateModelElement(DXD.AdjustPoint2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class AdjustPoint2DTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AdjustPoint2DType? openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustPoint2DType? openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class AdjustPoint2DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustPoint2DType value)
-    where OpenXmlElementType: DXDraw.AdjustPoint2DType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AdjustPoint2DType value)
+    where OpenXmlElementType: DXD.AdjustPoint2DType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AdjustPoint2DType openXmlElement, DMDraws.AdjustPoint2DType value)
+  public static void UpdateOpenXmlElement(DXD.AdjustPoint2DType openXmlElement, DMD.AdjustPoint2DType value)
   {
     SetX(openXmlElement, value?.X);
     SetY(openXmlElement, value?.Y);

@@ -8,19 +8,19 @@ public static class HslConverter
   /// <summary>
   /// Hue
   /// </summary>
-  private static Int32? GetHue(DXDraw.Hsl openXmlElement)
+  private static Int32? GetHue(DXD.Hsl openXmlElement)
   {
     return openXmlElement?.Hue?.Value;
   }
   
-  private static bool CmpHue(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Hue?.Value == value) return true;
     diffs?.Add(objName, "Hue", openXmlElement?.Hue?.Value, value);
     return false;
   }
   
-  private static void SetHue(DXDraw.Hsl openXmlElement, Int32? value)
+  private static void SetHue(DXD.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Hue = value;
   }
@@ -28,19 +28,19 @@ public static class HslConverter
   /// <summary>
   /// Saturation
   /// </summary>
-  private static Int32? GetSaturation(DXDraw.Hsl openXmlElement)
+  private static Int32? GetSaturation(DXD.Hsl openXmlElement)
   {
     return openXmlElement?.Saturation?.Value;
   }
   
-  private static bool CmpSaturation(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Saturation?.Value == value) return true;
     diffs?.Add(objName, "Saturation", openXmlElement?.Saturation?.Value, value);
     return false;
   }
   
-  private static void SetSaturation(DXDraw.Hsl openXmlElement, Int32? value)
+  private static void SetSaturation(DXD.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Saturation = value;
   }
@@ -48,24 +48,24 @@ public static class HslConverter
   /// <summary>
   /// Luminance
   /// </summary>
-  private static Int32? GetLuminance(DXDraw.Hsl openXmlElement)
+  private static Int32? GetLuminance(DXD.Hsl openXmlElement)
   {
     return openXmlElement?.Luminance?.Value;
   }
   
-  private static bool CmpLuminance(DXDraw.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Luminance?.Value == value) return true;
     diffs?.Add(objName, "Luminance", openXmlElement?.Luminance?.Value, value);
     return false;
   }
   
-  private static void SetLuminance(DXDraw.Hsl openXmlElement, Int32? value)
+  private static void SetLuminance(DXD.Hsl openXmlElement, Int32? value)
   {
     openXmlElement.Luminance = value;
   }
   
-  public static DocumentModel.Drawings.Hsl? CreateModelElement(DXDraw.Hsl? openXmlElement)
+  public static DocumentModel.Drawings.Hsl? CreateModelElement(DXD.Hsl? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,7 +78,7 @@ public static class HslConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Hsl? openXmlElement, DMDraws.Hsl? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Hsl? openXmlElement, DMD.Hsl? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -96,15 +96,15 @@ public static class HslConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Hsl value)
-    where OpenXmlElementType: DXDraw.Hsl, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Hsl value)
+    where OpenXmlElementType: DXD.Hsl, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Hsl openXmlElement, DMDraws.Hsl value)
+  public static void UpdateOpenXmlElement(DXD.Hsl openXmlElement, DMD.Hsl value)
   {
     SetHue(openXmlElement, value?.Hue);
     SetSaturation(openXmlElement, value?.Saturation);

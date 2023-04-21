@@ -8,17 +8,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getPressed, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetPressed(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetPressed(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetPressed);
   }
   
-  private static bool CmpGetPressed(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetPressed(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetPressed, value, diffs, objName, "GetPressed");
   }
   
-  private static void SetGetPressed(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetPressed(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetPressed = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetOnAction(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetOnAction(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class CheckBoxConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DXO2010CustUI.CheckBox openXmlElement)
+  private static Boolean? GetEnabled(DXO10CUI.CheckBox openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO2010CustUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXO2010CustUI.CheckBox openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO10CUI.CheckBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -67,17 +67,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetEnabled(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetEnabled(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -85,17 +85,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// description, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetDescription(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetDescription(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetDescription(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -103,17 +103,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getDescription, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetDescription(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetDescription(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetDescription(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetId(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetId(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -139,17 +139,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetQualifiedId(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
-  private static void SetQualifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetQualifiedId(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -157,17 +157,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetTag(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetTag(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -175,17 +175,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetIdMso(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetIdMso(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -193,17 +193,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetScreentip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetScreentip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -211,17 +211,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetScreentip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetScreentip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -229,17 +229,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetSupertip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetSupertip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -247,17 +247,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetSupertip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetSupertip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -265,17 +265,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetLabel(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetLabel(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -283,17 +283,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetLabel(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetLabel(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -301,17 +301,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetInsertAfterMso(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -319,17 +319,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetInsertBeforeMso(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
   
-  private static void SetInsertAfterQulifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -355,17 +355,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
   
-  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -373,19 +373,19 @@ public static class CheckBoxConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DXO2010CustUI.CheckBox openXmlElement)
+  private static Boolean? GetVisible(DXO10CUI.CheckBox openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO2010CustUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXO2010CustUI.CheckBox openXmlElement, Boolean? value)
+  private static void SetVisible(DXO10CUI.CheckBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -396,17 +396,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetVisible(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetVisible(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -414,17 +414,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetKeytip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetKeytip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -432,22 +432,22 @@ public static class CheckBoxConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DXO2010CustUI.CheckBox openXmlElement)
+  private static String? GetGetKeytip(DXO10CUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO2010CustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXO2010CustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetKeytip(DXO10CUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.CheckBox? CreateModelElement(DXO2010CustUI.CheckBox? openXmlElement)
+  public static DocumentModel.CheckBox? CreateModelElement(DXO10CUI.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -481,7 +481,7 @@ public static class CheckBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.CheckBox? openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.CheckBox? openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -542,14 +542,14 @@ public static class CheckBoxConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.CheckBox value)
-    where OpenXmlElementType: DXO2010CustUI.CheckBox, new()
+    where OpenXmlElementType: DXO10CUI.CheckBox, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.CheckBox openXmlElement, DM.CheckBox value)
+  public static void UpdateOpenXmlElement(DXO10CUI.CheckBox openXmlElement, DM.CheckBox value)
   {
     SetGetPressed(openXmlElement, value?.GetPressed);
     SetOnAction(openXmlElement, value?.OnAction);

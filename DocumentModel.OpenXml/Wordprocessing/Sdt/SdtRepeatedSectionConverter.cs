@@ -8,53 +8,53 @@ public static class SdtRepeatedSectionConverter
   /// <summary>
   /// SectionTitle.
   /// </summary>
-  private static String? GetSectionTitle(DXO2013W.SdtRepeatedSection openXmlElement)
+  private static String? GetSectionTitle(DXO13W.SdtRepeatedSection openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013W.SectionTitle>()?.Val);
+    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13W.SectionTitle>()?.Val);
   }
   
-  private static bool CmpSectionTitle(DXO2013W.SdtRepeatedSection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSectionTitle(DXO13W.SdtRepeatedSection openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2013W.SectionTitle>()?.Val, value, diffs, objName, "SectionTitle");
+    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13W.SectionTitle>()?.Val, value, diffs, objName, "SectionTitle");
   }
   
-  private static void SetSectionTitle(DXO2013W.SdtRepeatedSection openXmlElement, String? value)
+  private static void SetSectionTitle(DXO13W.SdtRepeatedSection openXmlElement, String? value)
   {
-    StringValueConverter.SetValue<DXO2013W.SectionTitle>(openXmlElement, value);
+    StringValueConverter.SetValue<DXO13W.SectionTitle>(openXmlElement, value);
   }
   
   /// <summary>
   /// DoNotAllowInsertDeleteSection.
   /// </summary>
-  private static Boolean? GetDoNotAllowInsertDeleteSection(DXO2013W.SdtRepeatedSection openXmlElement)
+  private static Boolean? GetDoNotAllowInsertDeleteSection(DXO13W.SdtRepeatedSection openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2013W.DoNotAllowInsertDeleteSection>() != null;
+    return openXmlElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>() != null;
   }
   
-  private static bool CmpDoNotAllowInsertDeleteSection(DXO2013W.SdtRepeatedSection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDoNotAllowInsertDeleteSection(DXO13W.SdtRepeatedSection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2013W.DoNotAllowInsertDeleteSection>() != null;
+    var val = openXmlElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2013W.DoNotAllowInsertDeleteSection", val, value);
+    diffs?.Add(objName, "DXO13W.DoNotAllowInsertDeleteSection", val, value);
     return false;
   }
   
-  private static void SetDoNotAllowInsertDeleteSection(DXO2013W.SdtRepeatedSection openXmlElement, Boolean? value)
+  private static void SetDoNotAllowInsertDeleteSection(DXO13W.SdtRepeatedSection openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2013W.DoNotAllowInsertDeleteSection>();
+      var itemElement = openXmlElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2013W.DoNotAllowInsertDeleteSection();
+      var itemElement = new DXO13W.DoNotAllowInsertDeleteSection();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMW.SdtRepeatedSection? CreateModelElement(DXO2013W.SdtRepeatedSection? openXmlElement)
+  public static DMW.SdtRepeatedSection? CreateModelElement(DXO13W.SdtRepeatedSection? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -66,7 +66,7 @@ public static class SdtRepeatedSectionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013W.SdtRepeatedSection? openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.SdtRepeatedSection? openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -83,14 +83,14 @@ public static class SdtRepeatedSectionConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SdtRepeatedSection value)
-    where OpenXmlElementType: DXO2013W.SdtRepeatedSection, new()
+    where OpenXmlElementType: DXO13W.SdtRepeatedSection, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013W.SdtRepeatedSection openXmlElement, DMW.SdtRepeatedSection value)
+  public static void UpdateOpenXmlElement(DXO13W.SdtRepeatedSection openXmlElement, DMW.SdtRepeatedSection value)
   {
     SetSectionTitle(openXmlElement, value?.SectionTitle);
     SetDoNotAllowInsertDeleteSection(openXmlElement, value?.DoNotAllowInsertDeleteSection);

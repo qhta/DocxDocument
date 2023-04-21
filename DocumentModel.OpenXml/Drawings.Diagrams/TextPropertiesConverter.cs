@@ -8,27 +8,27 @@ public static class TextPropertiesConverter
   /// <summary>
   /// Apply 3D shape properties.
   /// </summary>
-  private static DMDraws.Shape3DType? GetShape3DType(DXDrawDgms.TextProperties openXmlElement)
+  private static DMD.Shape3DType? GetShape3DType(DXDD.TextProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
+    var element = openXmlElement?.GetFirstChild<DXD.Shape3DType>();
     if (element != null)
-      return DMXDraws.Shape3DTypeConverter.CreateModelElement(element);
+      return DMXD.Shape3DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape3DType(DXDrawDgms.TextProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3DType(DXDD.TextProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
+    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName);
   }
   
-  private static void SetShape3DType(DXDrawDgms.TextProperties openXmlElement, DMDraws.Shape3DType? value)
+  private static void SetShape3DType(DXDD.TextProperties openXmlElement, DMD.Shape3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shape3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Shape3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Shape3DTypeConverter.CreateOpenXmlElement<DXDraw.Shape3DType>(value);
+      itemElement = DMXD.Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class TextPropertiesConverter
   /// <summary>
   /// No text in 3D scene.
   /// </summary>
-  private static DMDraws.FlatText? GetFlatText(DXDrawDgms.TextProperties openXmlElement)
+  private static DMD.FlatText? GetFlatText(DXDD.TextProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.FlatText>();
+    var element = openXmlElement?.GetFirstChild<DXD.FlatText>();
     if (element != null)
-      return DMXDraws.FlatTextConverter.CreateModelElement(element);
+      return DMXD.FlatTextConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFlatText(DXDrawDgms.TextProperties openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
+  private static bool CmpFlatText(DXDD.TextProperties openXmlElement, DMD.FlatText? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.FlatText>(), value, diffs, objName);
+    return DMXD.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FlatText>(), value, diffs, objName);
   }
   
-  private static void SetFlatText(DXDrawDgms.TextProperties openXmlElement, DMDraws.FlatText? value)
+  private static void SetFlatText(DXDD.TextProperties openXmlElement, DMD.FlatText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.FlatText>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.FlatText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.FlatTextConverter.CreateOpenXmlElement<DXDraw.FlatText>(value);
+      itemElement = DMXD.FlatTextConverter.CreateOpenXmlElement<DXD.FlatText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.TextProperties? CreateModelElement(DXDrawDgms.TextProperties? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.TextProperties? CreateModelElement(DXDD.TextProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class TextPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.TextProperties? openXmlElement, DMDrawsDgms.TextProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.TextProperties? openXmlElement, DMDD.TextProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class TextPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.TextProperties value)
-    where OpenXmlElementType: DXDrawDgms.TextProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.TextProperties value)
+    where OpenXmlElementType: DXDD.TextProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.TextProperties openXmlElement, DMDrawsDgms.TextProperties value)
+  public static void UpdateOpenXmlElement(DXDD.TextProperties openXmlElement, DMDD.TextProperties value)
   {
     SetShape3DType(openXmlElement, value?.Shape3DType);
     SetFlatText(openXmlElement, value?.FlatText);

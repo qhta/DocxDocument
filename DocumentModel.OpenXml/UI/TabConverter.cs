@@ -8,17 +8,17 @@ public static class TabConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.Tab openXmlElement)
+  private static String? GetId(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetId(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class TabConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.Tab openXmlElement)
+  private static String? GetIdQ(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class TabConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DXOCustUI.Tab openXmlElement)
+  private static String? GetIdMso(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetIdMso(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class TabConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DXOCustUI.Tab openXmlElement)
+  private static String? GetTag(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetTag(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class TabConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.Tab openXmlElement)
+  private static String? GetLabel(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class TabConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DXOCustUI.Tab openXmlElement)
+  private static String? GetGetLabel(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetGetLabel(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -116,17 +116,17 @@ public static class TabConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.Tab openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -134,17 +134,17 @@ public static class TabConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.Tab openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -152,17 +152,17 @@ public static class TabConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.Tab openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -170,17 +170,17 @@ public static class TabConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.Tab openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
@@ -188,19 +188,19 @@ public static class TabConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.Tab openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.Tab openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.Tab openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.Tab openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.Tab openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.Tab openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -211,17 +211,17 @@ public static class TabConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.Tab openXmlElement)
+  private static String? GetGetVisible(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -229,17 +229,17 @@ public static class TabConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DXOCustUI.Tab openXmlElement)
+  private static String? GetKeytip(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetKeytip(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -247,48 +247,48 @@ public static class TabConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DXOCustUI.Tab openXmlElement)
+  private static String? GetGetKeytip(DXOCUI.Tab openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXOCustUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXOCUI.Tab openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXOCustUI.Tab openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCUI.Tab openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMUI.Group? GetGroup(DXOCustUI.Tab openXmlElement)
+  private static DMUI.Group? GetGroup(DXOCUI.Tab openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.Group>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.Group>();
     if (element != null)
       return DMXUI.GroupConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroup(DXOCustUI.Tab openXmlElement, DMUI.Group? value, DiffList? diffs, string? objName)
+  private static bool CmpGroup(DXOCUI.Tab openXmlElement, DMUI.Group? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.GroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.Group>(), value, diffs, objName);
+    return DMXUI.GroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.Group>(), value, diffs, objName);
   }
   
-  private static void SetGroup(DXOCustUI.Tab openXmlElement, DMUI.Group? value)
+  private static void SetGroup(DXOCUI.Tab openXmlElement, DMUI.Group? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.Group>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.Group>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.GroupConverter.CreateOpenXmlElement<DXOCustUI.Group>(value);
+      itemElement = DMXUI.GroupConverter.CreateOpenXmlElement<DXOCUI.Group>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.Tab? CreateModelElement(DXOCustUI.Tab? openXmlElement)
+  public static DocumentModel.UI.Tab? CreateModelElement(DXOCUI.Tab? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -313,7 +313,7 @@ public static class TabConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.Tab? openXmlElement, DMUI.Tab? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.Tab? openXmlElement, DMUI.Tab? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -356,14 +356,14 @@ public static class TabConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Tab value)
-    where OpenXmlElementType: DXOCustUI.Tab, new()
+    where OpenXmlElementType: DXOCUI.Tab, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.Tab openXmlElement, DMUI.Tab value)
+  public static void UpdateOpenXmlElement(DXOCUI.Tab openXmlElement, DMUI.Tab value)
   {
     SetId(openXmlElement, value?.Id);
     SetIdQ(openXmlElement, value?.IdQ);

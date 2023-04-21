@@ -8,22 +8,22 @@ public static class SchemaReferenceConverter
   /// <summary>
   /// Target Namespace of Associated XML Schema
   /// </summary>
-  private static String? GetUri(DXCustXmlDataProps.SchemaReference openXmlElement)
+  private static String? GetUri(DXCXDP.SchemaReference openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXCXDP.SchemaReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXCustXmlDataProps.SchemaReference openXmlElement, String? value)
+  private static void SetUri(DXCXDP.SchemaReference openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.CustomXml.SchemaReference? CreateModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement)
+  public static DocumentModel.CustomXml.SchemaReference? CreateModelElement(DXCXDP.SchemaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class SchemaReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXCustXmlDataProps.SchemaReference? openXmlElement, DMCustXml.SchemaReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXCXDP.SchemaReference? openXmlElement, DMCX.SchemaReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class SchemaReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCustXml.SchemaReference value)
-    where OpenXmlElementType: DXCustXmlDataProps.SchemaReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCX.SchemaReference value)
+    where OpenXmlElementType: DXCXDP.SchemaReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXCustXmlDataProps.SchemaReference openXmlElement, DMCustXml.SchemaReference value)
+  public static void UpdateOpenXmlElement(DXCXDP.SchemaReference openXmlElement, DMCX.SchemaReference value)
   {
     SetUri(openXmlElement, value?.Uri);
   }

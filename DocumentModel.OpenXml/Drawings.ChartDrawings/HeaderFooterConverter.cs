@@ -8,19 +8,19 @@ public static class HeaderFooterConverter
   /// <summary>
   /// alignWithMargins, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetAlignWithMargins(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static Boolean? GetAlignWithMargins(DXO16DCD.HeaderFooter openXmlElement)
   {
     return openXmlElement?.AlignWithMargins?.Value;
   }
   
-  private static bool CmpAlignWithMargins(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignWithMargins(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AlignWithMargins?.Value == value) return true;
     diffs?.Add(objName, "AlignWithMargins", openXmlElement?.AlignWithMargins?.Value, value);
     return false;
   }
   
-  private static void SetAlignWithMargins(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value)
+  private static void SetAlignWithMargins(DXO16DCD.HeaderFooter openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AlignWithMargins = new BooleanValue { Value = (Boolean)value };
@@ -31,19 +31,19 @@ public static class HeaderFooterConverter
   /// <summary>
   /// differentOddEven, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetDifferentOddEven(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static Boolean? GetDifferentOddEven(DXO16DCD.HeaderFooter openXmlElement)
   {
     return openXmlElement?.DifferentOddEven?.Value;
   }
   
-  private static bool CmpDifferentOddEven(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDifferentOddEven(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DifferentOddEven?.Value == value) return true;
     diffs?.Add(objName, "DifferentOddEven", openXmlElement?.DifferentOddEven?.Value, value);
     return false;
   }
   
-  private static void SetDifferentOddEven(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value)
+  private static void SetDifferentOddEven(DXO16DCD.HeaderFooter openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DifferentOddEven = new BooleanValue { Value = (Boolean)value };
@@ -54,19 +54,19 @@ public static class HeaderFooterConverter
   /// <summary>
   /// differentFirst, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetDifferentFirst(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static Boolean? GetDifferentFirst(DXO16DCD.HeaderFooter openXmlElement)
   {
     return openXmlElement?.DifferentFirst?.Value;
   }
   
-  private static bool CmpDifferentFirst(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDifferentFirst(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DifferentFirst?.Value == value) return true;
     diffs?.Add(objName, "DifferentFirst", openXmlElement?.DifferentFirst?.Value, value);
     return false;
   }
   
-  private static void SetDifferentFirst(DXO2016DrawChartDraw.HeaderFooter openXmlElement, Boolean? value)
+  private static void SetDifferentFirst(DXO16DCD.HeaderFooter openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DifferentFirst = new BooleanValue { Value = (Boolean)value };
@@ -77,24 +77,24 @@ public static class HeaderFooterConverter
   /// <summary>
   /// OddHeaderXsdstring.
   /// </summary>
-  private static String? GetOddHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetOddHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.OddHeaderXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.OddHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpOddHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOddHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.OddHeaderXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.OddHeaderXsdstring>()?.Text == value;
   }
   
-  private static void SetOddHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetOddHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.OddHeaderXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.OddHeaderXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.OddHeaderXsdstring { Text = value };
+      itemElement = new DXO16DCD.OddHeaderXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -102,24 +102,24 @@ public static class HeaderFooterConverter
   /// <summary>
   /// OddFooterXsdstring.
   /// </summary>
-  private static String? GetOddFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetOddFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.OddFooterXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.OddFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpOddFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOddFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.OddFooterXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.OddFooterXsdstring>()?.Text == value;
   }
   
-  private static void SetOddFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetOddFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.OddFooterXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.OddFooterXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.OddFooterXsdstring { Text = value };
+      itemElement = new DXO16DCD.OddFooterXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -127,24 +127,24 @@ public static class HeaderFooterConverter
   /// <summary>
   /// EvenHeaderXsdstring.
   /// </summary>
-  private static String? GetEvenHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetEvenHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.EvenHeaderXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpEvenHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.EvenHeaderXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>()?.Text == value;
   }
   
-  private static void SetEvenHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetEvenHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.EvenHeaderXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.EvenHeaderXsdstring { Text = value };
+      itemElement = new DXO16DCD.EvenHeaderXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -152,24 +152,24 @@ public static class HeaderFooterConverter
   /// <summary>
   /// EvenFooterXsdstring.
   /// </summary>
-  private static String? GetEvenFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetEvenFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.EvenFooterXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.EvenFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpEvenFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.EvenFooterXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.EvenFooterXsdstring>()?.Text == value;
   }
   
-  private static void SetEvenFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetEvenFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.EvenFooterXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.EvenFooterXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.EvenFooterXsdstring { Text = value };
+      itemElement = new DXO16DCD.EvenFooterXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -177,24 +177,24 @@ public static class HeaderFooterConverter
   /// <summary>
   /// FirstHeaderXsdstring.
   /// </summary>
-  private static String? GetFirstHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetFirstHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FirstHeaderXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpFirstHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FirstHeaderXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>()?.Text == value;
   }
   
-  private static void SetFirstHeaderXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetFirstHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.FirstHeaderXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.FirstHeaderXsdstring { Text = value };
+      itemElement = new DXO16DCD.FirstHeaderXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -202,29 +202,29 @@ public static class HeaderFooterConverter
   /// <summary>
   /// FirstFooterXsdstring.
   /// </summary>
-  private static String? GetFirstFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement)
+  private static String? GetFirstFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FirstFooterXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.FirstFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpFirstFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.FirstFooterXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.FirstFooterXsdstring>()?.Text == value;
   }
   
-  private static void SetFirstFooterXsdstring(DXO2016DrawChartDraw.HeaderFooter openXmlElement, String? value)
+  private static void SetFirstFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.FirstFooterXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.FirstFooterXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.FirstFooterXsdstring { Text = value };
+      itemElement = new DXO16DCD.FirstFooterXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DXO2016DrawChartDraw.HeaderFooter? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.HeaderFooter? CreateModelElement(DXO16DCD.HeaderFooter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -243,7 +243,7 @@ public static class HeaderFooterConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.HeaderFooter? openXmlElement, DMDrawsChartDraws.HeaderFooter? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.HeaderFooter? openXmlElement, DMDCDs.HeaderFooter? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -273,15 +273,15 @@ public static class HeaderFooterConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.HeaderFooter value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.HeaderFooter, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.HeaderFooter value)
+    where OpenXmlElementType: DXO16DCD.HeaderFooter, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.HeaderFooter openXmlElement, DMDrawsChartDraws.HeaderFooter value)
+  public static void UpdateOpenXmlElement(DXO16DCD.HeaderFooter openXmlElement, DMDCDs.HeaderFooter value)
   {
     SetAlignWithMargins(openXmlElement, value?.AlignWithMargins);
     SetDifferentOddEven(openXmlElement, value?.DifferentOddEven);

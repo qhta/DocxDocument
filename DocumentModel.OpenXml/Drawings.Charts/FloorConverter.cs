@@ -5,100 +5,100 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class FloorConverter
 {
-  private static Byte? GetThickness(DXDrawCharts.Floor openXmlElement)
+  private static Byte? GetThickness(DXDC.Floor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Thickness>()?.Val);
   }
   
-  private static bool CmpThickness(DXDrawCharts.Floor openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpThickness(DXDC.Floor openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val, value, diffs, objName, "Thickness");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Thickness>()?.Val, value, diffs, objName, "Thickness");
   }
   
-  private static void SetThickness(DXDrawCharts.Floor openXmlElement, Byte? value)
+  private static void SetThickness(DXDC.Floor openXmlElement, Byte? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Thickness,System.Byte>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Thickness,System.Byte>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.Floor openXmlElement)
+  private static DMDC.ShapeProperties? GetShapeProperties(DXDC.Floor openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDC.Floor openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ShapeProperties? value)
+  private static void SetShapeProperties(DXDC.Floor openXmlElement, DMDC.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ShapeProperties>(value);
+      itemElement = DMXDC.ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.Floor openXmlElement)
+  private static DMDC.PictureOptions? GetPictureOptions(DXDC.Floor openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PictureOptions>();
     if (element != null)
-      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+      return DMXDC.PictureOptionsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureOptions(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureOptions(DXDC.Floor openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
+    return DMXDC.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PictureOptions>(), value, diffs, objName);
   }
   
-  private static void SetPictureOptions(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.PictureOptions? value)
+  private static void SetPictureOptions(DXDC.Floor openXmlElement, DMDC.PictureOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PictureOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PictureOptionsConverter.CreateOpenXmlElement<DXDrawCharts.PictureOptions>(value);
+      itemElement = DMXDC.PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.Floor openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.Floor openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.Floor openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.Floor openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(DXDrawCharts.Floor? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Floor? CreateModelElement(DXDC.Floor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -112,7 +112,7 @@ public static class FloorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.Floor? openXmlElement, DMDrawsCharts.Floor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Floor? openXmlElement, DMDC.Floor? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -132,15 +132,15 @@ public static class FloorConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Floor value)
-    where OpenXmlElementType: DXDrawCharts.Floor, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Floor value)
+    where OpenXmlElementType: DXDC.Floor, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.Floor openXmlElement, DMDrawsCharts.Floor value)
+  public static void UpdateOpenXmlElement(DXDC.Floor openXmlElement, DMDC.Floor value)
   {
     SetThickness(openXmlElement, value?.Thickness);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);

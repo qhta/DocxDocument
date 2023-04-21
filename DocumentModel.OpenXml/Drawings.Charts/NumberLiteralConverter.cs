@@ -5,49 +5,49 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class NumberLiteralConverter
 {
-  private static String? GetFormatCode(DXDrawCharts.NumberLiteral openXmlElement)
+  private static String? GetFormatCode(DXDC.NumberLiteral openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text;
+      return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text;
   }
   
-  private static bool CmpFormatCode(DXDrawCharts.NumberLiteral openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumberLiteral openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text == value;
   }
   
-  private static void SetFormatCode(DXDrawCharts.NumberLiteral openXmlElement, String? value)
+  private static void SetFormatCode(DXDC.NumberLiteral openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FormatCode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.FormatCode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDrawCharts.FormatCode { Text = value };
+      itemElement = new DXDC.FormatCode { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt32? GetPointCount(DXDrawCharts.NumberLiteral openXmlElement)
+  private static UInt32? GetPointCount(DXDC.NumberLiteral openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXDrawCharts.NumberLiteral openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXDC.NumberLiteral openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
-  private static void SetPointCount(DXDrawCharts.NumberLiteral openXmlElement, UInt32? value)
+  private static void SetPointCount(DXDC.NumberLiteral openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.PointCount,System.UInt32>(openXmlElement, value);
   }
   
-  private static Collection<DMDrawsCharts.NumericPoint>? GetNumericPoints(DXDrawCharts.NumberLiteral openXmlElement)
+  private static Collection<DMDC.NumericPoint>? GetNumericPoints(DXDC.NumberLiteral openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.NumericPoint>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.NumericPoint>())
+    var collection = new Collection<DMDC.NumericPoint>();
+    foreach (var item in openXmlElement.Elements<DXDC.NumericPoint>())
     {
-      var newItem = DMXDrawsCharts.NumericPointConverter.CreateModelElement(item);
+      var newItem = DMXDC.NumericPointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -56,9 +56,9 @@ public static class NumberLiteralConverter
     return null;
   }
   
-  private static bool CmpNumericPoints(DXDrawCharts.NumberLiteral openXmlElement, Collection<DMDrawsCharts.NumericPoint>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericPoints(DXDC.NumberLiteral openXmlElement, Collection<DMDC.NumericPoint>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.NumericPoint>();
+    var origElements = openXmlElement.Elements<DXDC.NumericPoint>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -74,7 +74,7 @@ public static class NumberLiteralConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.NumericPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.NumericPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -84,47 +84,47 @@ public static class NumberLiteralConverter
     return false;
   }
   
-  private static void SetNumericPoints(DXDrawCharts.NumberLiteral openXmlElement, Collection<DMDrawsCharts.NumericPoint>? value)
+  private static void SetNumericPoints(DXDC.NumberLiteral openXmlElement, Collection<DMDC.NumericPoint>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.NumericPoint>();
+    openXmlElement.RemoveAllChildren<DXDC.NumericPoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.NumericPointConverter.CreateOpenXmlElement<DXDrawCharts.NumericPoint>(item);
+        var newItem = DMXDC.NumericPointConverter.CreateOpenXmlElement<DXDC.NumericPoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.NumberLiteral openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.NumberLiteral openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.NumberLiteral openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.NumberLiteral openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.NumberLiteral openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.NumberLiteral openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberLiteral? CreateModelElement(DXDrawCharts.NumberLiteral? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberLiteral? CreateModelElement(DXDC.NumberLiteral? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -138,7 +138,7 @@ public static class NumberLiteralConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.NumberLiteral? openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberLiteral? openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -158,15 +158,15 @@ public static class NumberLiteralConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberLiteral value)
-    where OpenXmlElementType: DXDrawCharts.NumberLiteral, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.NumberLiteral value)
+    where OpenXmlElementType: DXDC.NumberLiteral, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.NumberLiteral openXmlElement, DMDrawsCharts.NumberLiteral value)
+  public static void UpdateOpenXmlElement(DXDC.NumberLiteral openXmlElement, DMDC.NumberLiteral value)
   {
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetPointCount(openXmlElement, value?.PointCount);

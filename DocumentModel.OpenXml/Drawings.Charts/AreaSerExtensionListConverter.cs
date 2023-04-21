@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class AreaSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.AreaSerExtension>? GetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement)
+  private static Collection<DMDC.AreaSerExtension>? GetAreaSerExtensions(DXDC.AreaSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.AreaSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.AreaSerExtension>())
+    var collection = new Collection<DMDC.AreaSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.AreaSerExtension>())
     {
-      var newItem = DMXDrawsCharts.AreaSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.AreaSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class AreaSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement, Collection<DMDrawsCharts.AreaSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpAreaSerExtensions(DXDC.AreaSerExtensionList openXmlElement, Collection<DMDC.AreaSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.AreaSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.AreaSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class AreaSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.AreaSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.AreaSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class AreaSerExtensionListConverter
     return false;
   }
   
-  private static void SetAreaSerExtensions(DXDrawCharts.AreaSerExtensionList openXmlElement, Collection<DMDrawsCharts.AreaSerExtension>? value)
+  private static void SetAreaSerExtensions(DXDC.AreaSerExtensionList openXmlElement, Collection<DMDC.AreaSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.AreaSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.AreaSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.AreaSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.AreaSerExtension>(item);
+        var newItem = DMXDC.AreaSerExtensionConverter.CreateOpenXmlElement<DXDC.AreaSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(DXDrawCharts.AreaSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.AreaSerExtensionList? CreateModelElement(DXDC.AreaSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class AreaSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.AreaSerExtensionList? openXmlElement, DMDrawsCharts.AreaSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.AreaSerExtensionList? openXmlElement, DMDC.AreaSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class AreaSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.AreaSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.AreaSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.AreaSerExtensionList value)
+    where OpenXmlElementType: DXDC.AreaSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.AreaSerExtensionList openXmlElement, DMDrawsCharts.AreaSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.AreaSerExtensionList openXmlElement, DMDC.AreaSerExtensionList value)
   {
     SetAreaSerExtensions(openXmlElement, value?.AreaSerExtensions);
   }

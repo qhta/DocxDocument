@@ -8,17 +8,17 @@ public static class SupplementalFontConverter
   /// <summary>
   /// Script
   /// </summary>
-  private static String? GetScript(DXDraw.SupplementalFont openXmlElement)
+  private static String? GetScript(DXD.SupplementalFont openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Script);
   }
   
-  private static bool CmpScript(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScript(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Script, value, diffs, objName, "Script");
   }
   
-  private static void SetScript(DXDraw.SupplementalFont openXmlElement, String? value)
+  private static void SetScript(DXD.SupplementalFont openXmlElement, String? value)
   {
     openXmlElement.Script = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class SupplementalFontConverter
   /// <summary>
   /// Typeface
   /// </summary>
-  private static String? GetTypeface(DXDraw.SupplementalFont openXmlElement)
+  private static String? GetTypeface(DXD.SupplementalFont openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Typeface);
   }
   
-  private static bool CmpTypeface(DXDraw.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTypeface(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Typeface, value, diffs, objName, "Typeface");
   }
   
-  private static void SetTypeface(DXDraw.SupplementalFont openXmlElement, String? value)
+  private static void SetTypeface(DXD.SupplementalFont openXmlElement, String? value)
   {
     openXmlElement.Typeface = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DXDraw.SupplementalFont? openXmlElement)
+  public static DocumentModel.Drawings.SupplementalFont? CreateModelElement(DXD.SupplementalFont? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class SupplementalFontConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.SupplementalFont? openXmlElement, DMDraws.SupplementalFont? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.SupplementalFont? openXmlElement, DMD.SupplementalFont? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class SupplementalFontConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SupplementalFont value)
-    where OpenXmlElementType: DXDraw.SupplementalFont, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SupplementalFont value)
+    where OpenXmlElementType: DXD.SupplementalFont, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.SupplementalFont openXmlElement, DMDraws.SupplementalFont value)
+  public static void UpdateOpenXmlElement(DXD.SupplementalFont openXmlElement, DMD.SupplementalFont value)
   {
     SetScript(openXmlElement, value?.Script);
     SetTypeface(openXmlElement, value?.Typeface);

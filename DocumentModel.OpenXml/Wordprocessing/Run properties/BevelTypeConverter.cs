@@ -8,19 +8,19 @@ public static class BevelTypeConverter
   /// <summary>
   /// w, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetWidth(DXO2010W.BevelType openXmlElement)
+  private static Int64? GetWidth(DXO10W.BevelType openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXO2010W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXO10W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
-  private static void SetWidth(DXO2010W.BevelType openXmlElement, Int64? value)
+  private static void SetWidth(DXO10W.BevelType openXmlElement, Int64? value)
   {
     openXmlElement.Width = value;
   }
@@ -28,19 +28,19 @@ public static class BevelTypeConverter
   /// <summary>
   /// h, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int64? GetHeight(DXO2010W.BevelType openXmlElement)
+  private static Int64? GetHeight(DXO10W.BevelType openXmlElement)
   {
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXO2010W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXO10W.BevelType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
     return false;
   }
   
-  private static void SetHeight(DXO2010W.BevelType openXmlElement, Int64? value)
+  private static void SetHeight(DXO10W.BevelType openXmlElement, Int64? value)
   {
     openXmlElement.Height = value;
   }
@@ -48,22 +48,22 @@ public static class BevelTypeConverter
   /// <summary>
   /// prst, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMW.BevelPresetKind? GetPresetProfileType(DXO2010W.BevelType openXmlElement)
+  private static DMW.BevelPresetKind? GetPresetProfileType(DXO10W.BevelType openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DMW.BevelPresetKind>(openXmlElement?.PresetProfileType?.Value);
   }
   
-  private static bool CmpPresetProfileType(DXO2010W.BevelType openXmlElement, DMW.BevelPresetKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetProfileType(DXO10W.BevelType openXmlElement, DMW.BevelPresetKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DMW.BevelPresetKind>(openXmlElement?.PresetProfileType?.Value, value, diffs, objName);
   }
   
-  private static void SetPresetProfileType(DXO2010W.BevelType openXmlElement, DMW.BevelPresetKind? value)
+  private static void SetPresetProfileType(DXO10W.BevelType openXmlElement, DMW.BevelPresetKind? value)
   {
     openXmlElement.PresetProfileType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues, DMW.BevelPresetKind>(value);
   }
   
-  public static DMW.BevelType? CreateModelElement(DXO2010W.BevelType? openXmlElement)
+  public static DMW.BevelType? CreateModelElement(DXO10W.BevelType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -76,7 +76,7 @@ public static class BevelTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.BevelType? openXmlElement, DMW.BevelType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.BevelType? openXmlElement, DMW.BevelType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -95,14 +95,14 @@ public static class BevelTypeConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BevelType value)
-    where OpenXmlElementType: DXO2010W.BevelType, new()
+    where OpenXmlElementType: DXO10W.BevelType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.BevelType openXmlElement, DMW.BevelType value)
+  public static void UpdateOpenXmlElement(DXO10W.BevelType openXmlElement, DMW.BevelType value)
   {
     SetWidth(openXmlElement, value?.Width);
     SetHeight(openXmlElement, value?.Height);

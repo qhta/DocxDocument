@@ -5,137 +5,137 @@ namespace DocumentModel.OpenXml.Drawings.Office;
 /// </summary>
 public static class GroupShapeConverter
 {
-  private static DMDrawsO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXODraw.GroupShape openXmlElement)
+  private static DMDO.GroupShapeNonVisualProperties? GetGroupShapeNonVisualProperties(DXOD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>();
+    var element = openXmlElement?.GetFirstChild<DXOD.GroupShapeNonVisualProperties>();
     if (element != null)
-      return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(element);
+      return DMXDO.GroupShapeNonVisualPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupShapeNonVisualProperties(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeNonVisualProperties(DXOD.GroupShape openXmlElement, DMDO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>(), value, diffs, objName);
   }
   
-  private static void SetGroupShapeNonVisualProperties(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShapeNonVisualProperties? value)
+  private static void SetGroupShapeNonVisualProperties(DXOD.GroupShape openXmlElement, DMDO.GroupShapeNonVisualProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.GroupShapeNonVisualProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.GroupShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXODraw.GroupShapeNonVisualProperties>(value);
+      itemElement = DMXDO.GroupShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeNonVisualProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsO.GroupShapeProperties? GetGroupShapeProperties(DXODraw.GroupShape openXmlElement)
+  private static DMDO.GroupShapeProperties? GetGroupShapeProperties(DXOD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXOD.GroupShapeProperties>();
     if (element != null)
-      return DMXDrawsO.GroupShapePropertiesConverter.CreateModelElement(element);
+      return DMXDO.GroupShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupShapeProperties(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeProperties(DXOD.GroupShape openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.GroupShapeProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetGroupShapeProperties(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShapeProperties? value)
+  private static void SetGroupShapeProperties(DXOD.GroupShape openXmlElement, DMDO.GroupShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.GroupShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.GroupShapePropertiesConverter.CreateOpenXmlElement<DXODraw.GroupShapeProperties>(value);
+      itemElement = DMXDO.GroupShapePropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsO.Shape? GetShape(DXODraw.GroupShape openXmlElement)
+  private static DMDO.Shape? GetShape(DXOD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.Shape>();
+    var element = openXmlElement?.GetFirstChild<DXOD.Shape>();
     if (element != null)
-      return DMXDrawsO.ShapeConverter.CreateModelElement(element);
+      return DMXDO.ShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape(DXODraw.GroupShape openXmlElement, DMDrawsO.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXOD.GroupShape openXmlElement, DMDO.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.Shape>(), value, diffs, objName);
+    return DMXDO.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.Shape>(), value, diffs, objName);
   }
   
-  private static void SetShape(DXODraw.GroupShape openXmlElement, DMDrawsO.Shape? value)
+  private static void SetShape(DXOD.GroupShape openXmlElement, DMDO.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.ShapeConverter.CreateOpenXmlElement<DXODraw.Shape>(value);
+      itemElement = DMXDO.ShapeConverter.CreateOpenXmlElement<DXOD.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsO.GroupShape? GetChildGroupShape(DXODraw.GroupShape openXmlElement)
+  private static DMDO.GroupShape? GetChildGroupShape(DXOD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.GroupShape>();
+    var element = openXmlElement?.GetFirstChild<DXOD.GroupShape>();
     if (element != null)
-      return DMXDrawsO.GroupShapeConverter.CreateModelElement(element);
+      return DMXDO.GroupShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChildGroupShape(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShape? value, DiffList? diffs, string? objName)
+  private static bool CmpChildGroupShape(DXOD.GroupShape openXmlElement, DMDO.GroupShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.GroupShape>(), value, diffs, objName);
+    return DMXDO.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShape>(), value, diffs, objName);
   }
   
-  private static void SetChildGroupShape(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShape? value)
+  private static void SetChildGroupShape(DXOD.GroupShape openXmlElement, DMDO.GroupShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.GroupShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.GroupShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.GroupShapeConverter.CreateOpenXmlElement<DXODraw.GroupShape>(value);
+      itemElement = DMXDO.GroupShapeConverter.CreateOpenXmlElement<DXOD.GroupShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsO.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODraw.GroupShape openXmlElement)
+  private static DMDO.OfficeArtExtensionList? GetOfficeArtExtensionList(DXOD.GroupShape openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXOD.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsO.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDO.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXODraw.GroupShape openXmlElement, DMDrawsO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXOD.GroupShape openXmlElement, DMDO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXODraw.GroupShape openXmlElement, DMDrawsO.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXOD.GroupShape openXmlElement, DMDO.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODraw.OfficeArtExtensionList>(value);
+      itemElement = DMXDO.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.GroupShape? CreateModelElement(DXODraw.GroupShape? openXmlElement)
+  public static DocumentModel.Drawings.Office.GroupShape? CreateModelElement(DXOD.GroupShape? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -150,7 +150,7 @@ public static class GroupShapeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODraw.GroupShape? openXmlElement, DMDrawsO.GroupShape? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.GroupShape? openXmlElement, DMDO.GroupShape? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -172,15 +172,15 @@ public static class GroupShapeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.GroupShape value)
-    where OpenXmlElementType: DXODraw.GroupShape, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.GroupShape value)
+    where OpenXmlElementType: DXOD.GroupShape, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODraw.GroupShape openXmlElement, DMDrawsO.GroupShape value)
+  public static void UpdateOpenXmlElement(DXOD.GroupShape openXmlElement, DMDO.GroupShape value)
   {
     SetGroupShapeNonVisualProperties(openXmlElement, value?.GroupShapeNonVisualProperties);
     SetGroupShapeProperties(openXmlElement, value?.GroupShapeProperties);

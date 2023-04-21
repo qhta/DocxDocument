@@ -8,17 +8,17 @@ public static class TabSetConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DXO2010CustUI.TabSet openXmlElement)
+  private static String? GetIdMso(DXO10CUI.TabSet openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXO2010CustUI.TabSet openXmlElement, String? value)
+  private static void SetIdMso(DXO10CUI.TabSet openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class TabSetConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DXO2010CustUI.TabSet openXmlElement)
+  private static Boolean? GetVisible(DXO10CUI.TabSet openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.TabSet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXO2010CustUI.TabSet openXmlElement, Boolean? value)
+  private static void SetVisible(DXO10CUI.TabSet openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -49,25 +49,25 @@ public static class TabSetConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DXO2010CustUI.TabSet openXmlElement)
+  private static String? GetGetVisible(DXO10CUI.TabSet openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.TabSet openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXO2010CustUI.TabSet openXmlElement, String? value)
+  private static void SetGetVisible(DXO10CUI.TabSet openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
   
-  private static Collection<DM.Tab>? GetTabs(DXO2010CustUI.TabSet openXmlElement)
+  private static Collection<DM.Tab>? GetTabs(DXO10CUI.TabSet openXmlElement)
   {
     var collection = new Collection<DM.Tab>();
-    foreach (var item in openXmlElement.Elements<DXO2010CustUI.Tab>())
+    foreach (var item in openXmlElement.Elements<DXO10CUI.Tab>())
     {
       var newItem = DMX.TabConverter.CreateModelElement(item);
       if (newItem != null)
@@ -78,9 +78,9 @@ public static class TabSetConverter
     return null;
   }
   
-  private static bool CmpTabs(DXO2010CustUI.TabSet openXmlElement, Collection<DM.Tab>? value, DiffList? diffs, string? objName)
+  private static bool CmpTabs(DXO10CUI.TabSet openXmlElement, Collection<DM.Tab>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010CustUI.Tab>();
+    var origElements = openXmlElement.Elements<DXO10CUI.Tab>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -106,21 +106,21 @@ public static class TabSetConverter
     return false;
   }
   
-  private static void SetTabs(DXO2010CustUI.TabSet openXmlElement, Collection<DM.Tab>? value)
+  private static void SetTabs(DXO10CUI.TabSet openXmlElement, Collection<DM.Tab>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010CustUI.Tab>();
+    openXmlElement.RemoveAllChildren<DXO10CUI.Tab>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.TabConverter.CreateOpenXmlElement<DXO2010CustUI.Tab>(item);
+        var newItem = DMX.TabConverter.CreateOpenXmlElement<DXO10CUI.Tab>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.TabSet? CreateModelElement(DXO2010CustUI.TabSet? openXmlElement)
+  public static DocumentModel.TabSet? CreateModelElement(DXO10CUI.TabSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -134,7 +134,7 @@ public static class TabSetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.TabSet? openXmlElement, DM.TabSet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.TabSet? openXmlElement, DM.TabSet? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -155,14 +155,14 @@ public static class TabSetConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TabSet value)
-    where OpenXmlElementType: DXO2010CustUI.TabSet, new()
+    where OpenXmlElementType: DXO10CUI.TabSet, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.TabSet openXmlElement, DM.TabSet value)
+  public static void UpdateOpenXmlElement(DXO10CUI.TabSet openXmlElement, DM.TabSet value)
   {
     SetIdMso(openXmlElement, value?.IdMso);
     SetVisible(openXmlElement, value?.Visible);

@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.WebExtensions;
 /// </summary>
 public static class WebExtensionBindingListConverter
 {
-  private static Collection<DMWebExt.WebExtensionBinding>? GetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement)
+  private static Collection<DMWE.WebExtensionBinding>? GetWebExtensionBindings(DXO13WE.WebExtensionBindingList openXmlElement)
   {
-    var collection = new Collection<DMWebExt.WebExtensionBinding>();
-    foreach (var item in openXmlElement.Elements<DXO2013WebExt.WebExtensionBinding>())
+    var collection = new Collection<DMWE.WebExtensionBinding>();
+    foreach (var item in openXmlElement.Elements<DXO13WE.WebExtensionBinding>())
     {
-      var newItem = DMXWebExt.WebExtensionBindingConverter.CreateModelElement(item);
+      var newItem = DMXWE.WebExtensionBindingConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class WebExtensionBindingListConverter
     return null;
   }
   
-  private static bool CmpWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionBindings(DXO13WE.WebExtensionBindingList openXmlElement, Collection<DMWE.WebExtensionBinding>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013WebExt.WebExtensionBinding>();
+    var origElements = openXmlElement.Elements<DXO13WE.WebExtensionBinding>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class WebExtensionBindingListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXWebExt.WebExtensionBindingConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXWE.WebExtensionBindingConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class WebExtensionBindingListConverter
     return false;
   }
   
-  private static void SetWebExtensionBindings(DXO2013WebExt.WebExtensionBindingList openXmlElement, Collection<DMWebExt.WebExtensionBinding>? value)
+  private static void SetWebExtensionBindings(DXO13WE.WebExtensionBindingList openXmlElement, Collection<DMWE.WebExtensionBinding>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013WebExt.WebExtensionBinding>();
+    openXmlElement.RemoveAllChildren<DXO13WE.WebExtensionBinding>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXWebExt.WebExtensionBindingConverter.CreateOpenXmlElement<DXO2013WebExt.WebExtensionBinding>(item);
+        var newItem = DMXWE.WebExtensionBindingConverter.CreateOpenXmlElement<DXO13WE.WebExtensionBinding>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.WebExtensions.WebExtensionBindingList? CreateModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionBindingList? CreateModelElement(DXO13WE.WebExtensionBindingList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class WebExtensionBindingListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013WebExt.WebExtensionBindingList? openXmlElement, DMWebExt.WebExtensionBindingList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.WebExtensionBindingList? openXmlElement, DMWE.WebExtensionBindingList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class WebExtensionBindingListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionBindingList value)
-    where OpenXmlElementType: DXO2013WebExt.WebExtensionBindingList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWE.WebExtensionBindingList value)
+    where OpenXmlElementType: DXO13WE.WebExtensionBindingList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionBindingList openXmlElement, DMWebExt.WebExtensionBindingList value)
+  public static void UpdateOpenXmlElement(DXO13WE.WebExtensionBindingList openXmlElement, DMWE.WebExtensionBindingList value)
   {
     SetWebExtensionBindings(openXmlElement, value?.WebExtensionBindings);
   }

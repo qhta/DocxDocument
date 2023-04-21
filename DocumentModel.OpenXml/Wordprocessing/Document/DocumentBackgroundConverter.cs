@@ -131,27 +131,27 @@ public static class DocumentBackgroundConverter
   #endregion
 
   #region Background conversion.
-  private static DMVml.Background? GetBackground(DXW.DocumentBackground openXmlElement)
+  private static DMV.Background? GetBackground(DXW.DocumentBackground openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Background>();
+    var element = openXmlElement?.GetFirstChild<DXV.Background>();
     if (element != null)
-      return DMXVml.BackgroundConverter.CreateModelElement(element);
+      return DMXV.BackgroundConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMV.Background? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Background>(), value, diffs, objName);
+    return DMXV.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Background>(), value, diffs, objName);
   }
   
-  private static void SetBackground(DXW.DocumentBackground openXmlElement, DMVml.Background? value)
+  private static void SetBackground(DXW.DocumentBackground openXmlElement, DMV.Background? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Background>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Background>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.BackgroundConverter.CreateOpenXmlElement<DXVml.Background>(value);
+      itemElement = DMXV.BackgroundConverter.CreateOpenXmlElement<DXV.Background>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

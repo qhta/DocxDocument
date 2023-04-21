@@ -8,102 +8,102 @@ public static class View3DConverter
   /// <summary>
   /// X Rotation.
   /// </summary>
-  private static SByte? GetRotateX(DXDrawCharts.View3D openXmlElement)
+  private static SByte? GetRotateX(DXDC.View3D openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.RotateX>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.RotateX>()?.Val);
   }
   
-  private static bool CmpRotateX(DXDrawCharts.View3D openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateX(DXDC.View3D openXmlElement, SByte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.RotateX>()?.Val, value, diffs, objName, "RotateX");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.RotateX>()?.Val, value, diffs, objName, "RotateX");
   }
   
-  private static void SetRotateX(DXDrawCharts.View3D openXmlElement, SByte? value)
+  private static void SetRotateX(DXDC.View3D openXmlElement, SByte? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.RotateX,System.SByte>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.RotateX,System.SByte>(openXmlElement, value);
   }
   
   /// <summary>
   /// Height Percent.
   /// </summary>
-  private static UInt16? GetHeightPercent(DXDrawCharts.View3D openXmlElement)
+  private static UInt16? GetHeightPercent(DXDC.View3D openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.HeightPercent>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.HeightPercent>()?.Val);
   }
   
-  private static bool CmpHeightPercent(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.HeightPercent>()?.Val, value, diffs, objName, "HeightPercent");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.HeightPercent>()?.Val, value, diffs, objName, "HeightPercent");
   }
   
-  private static void SetHeightPercent(DXDrawCharts.View3D openXmlElement, UInt16? value)
+  private static void SetHeightPercent(DXDC.View3D openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.HeightPercent,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.HeightPercent,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
   /// Y Rotation.
   /// </summary>
-  private static UInt16? GetRotateY(DXDrawCharts.View3D openXmlElement)
+  private static UInt16? GetRotateY(DXDC.View3D openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.RotateY>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.RotateY>()?.Val);
   }
   
-  private static bool CmpRotateY(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateY(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.RotateY>()?.Val, value, diffs, objName, "RotateY");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.RotateY>()?.Val, value, diffs, objName, "RotateY");
   }
   
-  private static void SetRotateY(DXDrawCharts.View3D openXmlElement, UInt16? value)
+  private static void SetRotateY(DXDC.View3D openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.RotateY,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.RotateY,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
   /// Depth Percent.
   /// </summary>
-  private static UInt16? GetDepthPercent(DXDrawCharts.View3D openXmlElement)
+  private static UInt16? GetDepthPercent(DXDC.View3D openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.DepthPercent>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.DepthPercent>()?.Val);
   }
   
-  private static bool CmpDepthPercent(DXDrawCharts.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpDepthPercent(DXDC.View3D openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.DepthPercent>()?.Val, value, diffs, objName, "DepthPercent");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.DepthPercent>()?.Val, value, diffs, objName, "DepthPercent");
   }
   
-  private static void SetDepthPercent(DXDrawCharts.View3D openXmlElement, UInt16? value)
+  private static void SetDepthPercent(DXDC.View3D openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.DepthPercent,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.DepthPercent,System.UInt16>(openXmlElement, value);
   }
   
   /// <summary>
   /// Right Angle Axes.
   /// </summary>
-  private static Boolean? GetRightAngleAxes(DXDrawCharts.View3D openXmlElement)
+  private static Boolean? GetRightAngleAxes(DXDC.View3D openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.RightAngleAxes>() != null;
+    return openXmlElement.GetFirstChild<DXDC.RightAngleAxes>() != null;
   }
   
-  private static bool CmpRightAngleAxes(DXDrawCharts.View3D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRightAngleAxes(DXDC.View3D openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.RightAngleAxes>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.RightAngleAxes>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.RightAngleAxes", val, value);
+    diffs?.Add(objName, "DXDC.RightAngleAxes", val, value);
     return false;
   }
   
-  private static void SetRightAngleAxes(DXDrawCharts.View3D openXmlElement, Boolean? value)
+  private static void SetRightAngleAxes(DXDC.View3D openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.RightAngleAxes>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.RightAngleAxes>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.RightAngleAxes();
+      var itemElement = new DXDC.RightAngleAxes();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -111,51 +111,51 @@ public static class View3DConverter
   /// <summary>
   /// Perspective.
   /// </summary>
-  private static Byte? GetPerspective(DXDrawCharts.View3D openXmlElement)
+  private static Byte? GetPerspective(DXDC.View3D openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Perspective>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Perspective>()?.Val);
   }
   
-  private static bool CmpPerspective(DXDrawCharts.View3D openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpPerspective(DXDC.View3D openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Perspective>()?.Val, value, diffs, objName, "Perspective");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Perspective>()?.Val, value, diffs, objName, "Perspective");
   }
   
-  private static void SetPerspective(DXDrawCharts.View3D openXmlElement, Byte? value)
+  private static void SetPerspective(DXDC.View3D openXmlElement, Byte? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Perspective,System.Byte>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Perspective,System.Byte>(openXmlElement, value);
   }
   
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.View3D openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.View3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.View3D openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.View3D openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(DXDrawCharts.View3D? openXmlElement)
+  public static DocumentModel.Drawings.Charts.View3D? CreateModelElement(DXDC.View3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -172,7 +172,7 @@ public static class View3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.View3D? openXmlElement, DMDrawsCharts.View3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.View3D? openXmlElement, DMDC.View3D? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -198,15 +198,15 @@ public static class View3DConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.View3D value)
-    where OpenXmlElementType: DXDrawCharts.View3D, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.View3D value)
+    where OpenXmlElementType: DXDC.View3D, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.View3D openXmlElement, DMDrawsCharts.View3D value)
+  public static void UpdateOpenXmlElement(DXDC.View3D openXmlElement, DMDC.View3D value)
   {
     SetRotateX(openXmlElement, value?.RotateX);
     SetHeightPercent(openXmlElement, value?.HeightPercent);

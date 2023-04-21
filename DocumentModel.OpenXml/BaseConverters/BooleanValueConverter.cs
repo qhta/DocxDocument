@@ -154,34 +154,34 @@ public static class BooleanValueConverter
   #endregion
 
   #region Office2010 OnOffValues conversion.
-  public static Boolean? GetValue(DX.EnumValue<DXO2010W.OnOffValues>? openXmlElement)
+  public static Boolean? GetValue(DX.EnumValue<DXO10W.OnOffValues>? openXmlElement)
   {
     if (openXmlElement?.Value != null)
     {
       switch (openXmlElement.Value)
       {
-        case DXO2010W.OnOffValues.True:
-        case DXO2010W.OnOffValues.One:
+        case DXO10W.OnOffValues.True:
+        case DXO10W.OnOffValues.One:
           return true;
-        case DXO2010W.OnOffValues.False:
-        case DXO2010W.OnOffValues.Zero:
+        case DXO10W.OnOffValues.False:
+        case DXO10W.OnOffValues.Zero:
           return false;
       }
     }
     return null;
   }
 
-  public static Boolean CmpValue(DX.EnumValue<DXO2010W.OnOffValues>? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
+  public static Boolean CmpValue(DX.EnumValue<DXO10W.OnOffValues>? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Value != null && value != null)
     {
       switch (openXmlElement.Value)
       {
-        case DXO2010W.OnOffValues.True:
-        case DXO2010W.OnOffValues.One:
+        case DXO10W.OnOffValues.True:
+        case DXO10W.OnOffValues.One:
           return value == true;
-        case DXO2010W.OnOffValues.False:
-        case DXO2010W.OnOffValues.Zero:
+        case DXO10W.OnOffValues.False:
+        case DXO10W.OnOffValues.Zero:
           return value == false;
       }
     }

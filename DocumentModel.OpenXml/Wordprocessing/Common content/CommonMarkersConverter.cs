@@ -51,13 +51,13 @@ public static class CommonMarkersConverter
       return DMXW.TrackChangeTypeConverter.CreateModelElement(customXmlMoveToRangeStart);
     if (openXmlElement is DXW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEnd)
       return DMXW.MarkupTypeConverter.CreateModelElement(customXmlMoveToRangeEnd);
-    if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart)
+    if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart)
       return DMXW.TrackChangeType2Converter.CreateModelElement(customXmlConflictInsertionRangeStart);
-    if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd)
+    if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd)
       return DMXW.MarkupType2Converter.CreateModelElement(customXmlConflictInsertionRangeEnd);
-    if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart)
+    if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart)
       return DMXW.TrackChangeType2Converter.CreateModelElement(customXmlConflictDeletionRangeStart);
-    if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd)
+    if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd)
       return DMXW.MarkupType2Converter.CreateModelElement(customXmlConflictDeletionRangeEnd);
     if (openXmlElement is DXW.InsertedRun insertedRun)
       return DMXW.InsertedRunConverter.CreateModelElement(insertedRun);
@@ -67,9 +67,9 @@ public static class CommonMarkersConverter
       return DMXW.MoveFromRunConverter.CreateModelElement(moveFromRun);
     if (openXmlElement is DXW.MoveToRun moveToRun)
       return DMXW.MoveToRunConverter.CreateModelElement(moveToRun);
-    if (openXmlElement is DXO2010W.RunConflictInsertion runConflictInsertion)
+    if (openXmlElement is DXO10W.RunConflictInsertion runConflictInsertion)
       return DMXW.RunConflictInsertionConverter.CreateModelElement(runConflictInsertion);
-    if (openXmlElement is DXO2010W.RunConflictDeletion runConflictDeletion)
+    if (openXmlElement is DXO10W.RunConflictDeletion runConflictDeletion)
       return DMXW.RunConflictDeletionConverter.CreateModelElement(runConflictDeletion);
     return null;
   }
@@ -116,13 +116,13 @@ public static class CommonMarkersConverter
         return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlMoveToRangeStart, customXmlMoveToRangeStartModel, diffs, objName);
       if (openXmlElement is DXW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEnd && value is DMW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEndModel)
         return DMXW.MarkupTypeConverter.CompareModelElement(customXmlMoveToRangeEnd, customXmlMoveToRangeEndModel, diffs, objName);
-      if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart && value is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStartModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart && value is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStartModel)
         return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictInsertionRangeStart, customXmlConflictInsertionRangeStartModel, diffs, objName);
-      if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd && value is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEndModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd && value is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEndModel)
         return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictInsertionRangeEnd, customXmlConflictInsertionRangeEndModel, diffs, objName);
-      if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart && value is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStartModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart && value is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStartModel)
         return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictDeletionRangeStart, customXmlConflictDeletionRangeStartModel, diffs, objName);
-      if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd && value is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEndModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd && value is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEndModel)
         return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictDeletionRangeEnd, customXmlConflictDeletionRangeEndModel, diffs, objName);
       if (openXmlElement is DXW.InsertedRun insertedRun && value is DMW.InsertedRun insertedRunModel)
         return DMXW.InsertedRunConverter.CompareModelElement(insertedRun, insertedRunModel, diffs, objName);
@@ -132,9 +132,9 @@ public static class CommonMarkersConverter
         return DMXW.MoveFromRunConverter.CompareModelElement(moveFromRun, moveFromRunModel, diffs, objName);
       if (openXmlElement is DXW.MoveToRun moveToRun && value is DMW.MoveToRun moveToRunModel)
         return DMXW.MoveToRunConverter.CompareModelElement(moveToRun, moveToRunModel, diffs, objName);
-      if (openXmlElement is DXO2010W.RunConflictInsertion runConflictInsertion && value is DMW.RunConflictInsertion runConflictInsertionModel)
+      if (openXmlElement is DXO10W.RunConflictInsertion runConflictInsertion && value is DMW.RunConflictInsertion runConflictInsertionModel)
         return DMXW.RunConflictInsertionConverter.CompareModelElement(runConflictInsertion, value as DMW.RunConflictInsertion, diffs, objName);
-      if (openXmlElement is DXO2010W.RunConflictDeletion runConflictDeletion && value is DMW.RunConflictDeletion runConflictDeletionModel)
+      if (openXmlElement is DXO10W.RunConflictDeletion runConflictDeletion && value is DMW.RunConflictDeletion runConflictDeletionModel)
         return DMXW.RunConflictDeletionConverter.CompareModelElement(runConflictDeletion, value as DMW.RunConflictDeletion, diffs, objName);
       return null;
     }
@@ -184,13 +184,13 @@ public static class CommonMarkersConverter
     if (value is DMW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEnd)
       return DMXW.MarkupTypeConverter.CreateOpenXmlElement<DXW.CustomXmlMoveToRangeEnd>(customXmlMoveToRangeEnd);
     if (value is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart)
-      return DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeStart>(customXmlConflictInsertionRangeStart);
+      return DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictInsertionRangeStart>(customXmlConflictInsertionRangeStart);
     if (value is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd)
-      return DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeEnd>(customXmlConflictInsertionRangeEnd);
+      return DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictInsertionRangeEnd>(customXmlConflictInsertionRangeEnd);
     if (value is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart)
-      return DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeStart>(customXmlConflictDeletionRangeStart);
+      return DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictDeletionRangeStart>(customXmlConflictDeletionRangeStart);
     if (value is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd)
-      return DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeEnd>(customXmlConflictDeletionRangeEnd);
+      return DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictDeletionRangeEnd>(customXmlConflictDeletionRangeEnd);
     if (value is DMW.InsertedRun insertedRun)
       return DMXW.InsertedRunConverter.CreateOpenXmlElement<DXW.InsertedRun>(insertedRun);
     if (value is DMW.DeletedRun deletedRun)
@@ -200,9 +200,9 @@ public static class CommonMarkersConverter
     if (value is DMW.MoveToRun moveToRun)
       return DMXW.MoveToRunConverter.CreateOpenXmlElement<DXW.MoveToRun>(moveToRun);
     if (value is DMW.RunConflictInsertion runConflictInsertion)
-      return DMXW.RunConflictInsertionConverter.CreateOpenXmlElement<DXO2010W.RunConflictInsertion>(runConflictInsertion);
+      return DMXW.RunConflictInsertionConverter.CreateOpenXmlElement<DXO10W.RunConflictInsertion>(runConflictInsertion);
     if (value is DMW.RunConflictDeletion runConflictDeletion)
-      return DMXW.RunConflictDeletionConverter.CreateOpenXmlElement<DXO2010W.RunConflictDeletion>(runConflictDeletion);
+      return DMXW.RunConflictDeletionConverter.CreateOpenXmlElement<DXO10W.RunConflictDeletion>(runConflictDeletion);
     return null;
   }
 
@@ -248,13 +248,13 @@ public static class CommonMarkersConverter
         return DMXW.TrackChangeTypeConverter.UpdateOpenXmlElement(customXmlMoveToRangeStart, customXmlMoveToRangeStartModel);
       if (openXmlElement is DXW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEnd && value is DMW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEndModel)
         return DMXW.MarkupTypeConverter.UpdateOpenXmlElement(customXmlMoveToRangeEnd, customXmlMoveToRangeEndModel);
-      if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart && value is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStartModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart && value is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStartModel)
         return DMXW.TrackChangeType2Converter.UpdateOpenXmlElement(customXmlConflictInsertionRangeStart, customXmlConflictInsertionRangeStartModel);
-      if (openXmlElement is DXO2010W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd && value is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEndModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd && value is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEndModel)
         return DMXW.MarkupType2Converter.UpdateOpenXmlElement(customXmlConflictInsertionRangeEnd, customXmlConflictInsertionRangeEndModel);
-      if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart && value is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStartModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart && value is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStartModel)
         return DMXW.TrackChangeType2Converter.UpdateOpenXmlElement(customXmlConflictDeletionRangeStart, customXmlConflictDeletionRangeStartModel);
-      if (openXmlElement is DXO2010W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd && value is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEndModel)
+      if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd && value is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEndModel)
         return DMXW.MarkupType2Converter.UpdateOpenXmlElement(customXmlConflictDeletionRangeEnd, customXmlConflictDeletionRangeEndModel);
       if (openXmlElement is DXW.InsertedRun insertedRun && value is DMW.InsertedRun insertedRunModel)
         return DMXW.InsertedRunConverter.UpdateOpenXmlElement(insertedRun, insertedRunModel);
@@ -264,9 +264,9 @@ public static class CommonMarkersConverter
         return DMXW.MoveFromRunConverter.UpdateOpenXmlElement(moveFromRun, moveFromRunModel);
       if (openXmlElement is DXW.MoveToRun moveToRun && value is DMW.MoveToRun moveToRunModel)
         return DMXW.MoveToRunConverter.UpdateOpenXmlElement(moveToRun, moveToRunModel);
-      if (openXmlElement is DXO2010W.RunConflictInsertion runConflictInsertion && value is DMW.RunConflictInsertion runConflictInsertionModel)
+      if (openXmlElement is DXO10W.RunConflictInsertion runConflictInsertion && value is DMW.RunConflictInsertion runConflictInsertionModel)
         return DMXW.RunConflictInsertionConverter.UpdateOpenXmlElement(runConflictInsertion, runConflictInsertionModel);
-      if (openXmlElement is DXO2010W.RunConflictDeletion runConflictDeletion && value is DMW.RunConflictDeletion runConflictDeletionModel)
+      if (openXmlElement is DXO10W.RunConflictDeletion runConflictDeletion && value is DMW.RunConflictDeletion runConflictDeletionModel)
         return DMXW.RunConflictDeletionConverter.UpdateOpenXmlElement(runConflictDeletion, runConflictDeletionModel);
     }
     return false;

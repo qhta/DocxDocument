@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class PeopleConverter
 {
-  private static Collection<DMW.Person>? GetPersons(DXO2013W.People openXmlElement)
+  private static Collection<DMW.Person>? GetPersons(DXO13W.People openXmlElement)
   {
     var collection = new Collection<DMW.Person>();
-    foreach (var item in openXmlElement.Elements<DXO2013W.Person>())
+    foreach (var item in openXmlElement.Elements<DXO13W.Person>())
     {
       var newItem = DMXW.PersonConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class PeopleConverter
     return null;
   }
   
-  private static bool CmpPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs, string? objName)
+  private static bool CmpPersons(DXO13W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013W.Person>();
+    var origElements = openXmlElement.Elements<DXO13W.Person>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class PeopleConverter
     return false;
   }
   
-  private static void SetPersons(DXO2013W.People openXmlElement, Collection<DMW.Person>? value)
+  private static void SetPersons(DXO13W.People openXmlElement, Collection<DMW.Person>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013W.Person>();
+    openXmlElement.RemoveAllChildren<DXO13W.Person>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.PersonConverter.CreateOpenXmlElement<DXO2013W.Person>(item);
+        var newItem = DMXW.PersonConverter.CreateOpenXmlElement<DXO13W.Person>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DMW.People? CreateModelElement(DXO2013W.People? openXmlElement)
+  public static DMW.People? CreateModelElement(DXO13W.People? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class PeopleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013W.People? openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.People? openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class PeopleConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.People value)
-    where OpenXmlElementType: DXO2013W.People, new()
+    where OpenXmlElementType: DXO13W.People, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013W.People openXmlElement, DMW.People value)
+  public static void UpdateOpenXmlElement(DXO13W.People openXmlElement, DMW.People value)
   {
     SetPersons(openXmlElement, value?.Persons);
   }

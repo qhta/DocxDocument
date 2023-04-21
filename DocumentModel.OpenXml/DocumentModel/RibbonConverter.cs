@@ -8,19 +8,19 @@ public static class RibbonConverter
   /// <summary>
   /// startFromScratch, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement)
+  private static Boolean? GetStartFromScratch(DXO10CUI.Ribbon openXmlElement)
   {
     return openXmlElement?.StartFromScratch?.Value;
   }
   
-  private static bool CmpStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStartFromScratch(DXO10CUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.StartFromScratch?.Value == value) return true;
     diffs?.Add(objName, "StartFromScratch", openXmlElement?.StartFromScratch?.Value, value);
     return false;
   }
   
-  private static void SetStartFromScratch(DXO2010CustUI.Ribbon openXmlElement, Boolean? value)
+  private static void SetStartFromScratch(DXO10CUI.Ribbon openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.StartFromScratch = new BooleanValue { Value = (Boolean)value };
@@ -31,27 +31,27 @@ public static class RibbonConverter
   /// <summary>
   /// QuickAccessToolbar.
   /// </summary>
-  private static DM.QuickAccessToolbar? GetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement)
+  private static DM.QuickAccessToolbar? GetQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.QuickAccessToolbar>();
     if (element != null)
       return DMX.QuickAccessToolbarConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
   {
-    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>(), value, diffs, objName);
+    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.QuickAccessToolbar>(), value, diffs, objName);
   }
   
-  private static void SetQuickAccessToolbar(DXO2010CustUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
+  private static void SetQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.QuickAccessToolbar>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.QuickAccessToolbar>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.QuickAccessToolbarConverter.CreateOpenXmlElement<DXO2010CustUI.QuickAccessToolbar>(value);
+      itemElement = DMX.QuickAccessToolbarConverter.CreateOpenXmlElement<DXO10CUI.QuickAccessToolbar>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -60,27 +60,27 @@ public static class RibbonConverter
   /// <summary>
   /// Tabs.
   /// </summary>
-  private static DM.Tabs? GetTabs(DXO2010CustUI.Ribbon openXmlElement)
+  private static DM.Tabs? GetTabs(DXO10CUI.Ribbon openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.Tabs>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.Tabs>();
     if (element != null)
       return DMX.TabsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
+  private static bool CmpTabs(DXO10CUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
   {
-    return DMX.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.Tabs>(), value, diffs, objName);
+    return DMX.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Tabs>(), value, diffs, objName);
   }
   
-  private static void SetTabs(DXO2010CustUI.Ribbon openXmlElement, DM.Tabs? value)
+  private static void SetTabs(DXO10CUI.Ribbon openXmlElement, DM.Tabs? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.Tabs>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.Tabs>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TabsConverter.CreateOpenXmlElement<DXO2010CustUI.Tabs>(value);
+      itemElement = DMX.TabsConverter.CreateOpenXmlElement<DXO10CUI.Tabs>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -89,33 +89,33 @@ public static class RibbonConverter
   /// <summary>
   /// ContextualTabs.
   /// </summary>
-  private static DM.ContextualTabs? GetContextualTabs(DXO2010CustUI.Ribbon openXmlElement)
+  private static DM.ContextualTabs? GetContextualTabs(DXO10CUI.Ribbon openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ContextualTabs>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.ContextualTabs>();
     if (element != null)
       return DMX.ContextualTabsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
+  private static bool CmpContextualTabs(DXO10CUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
   {
-    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ContextualTabs>(), value, diffs, objName);
+    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ContextualTabs>(), value, diffs, objName);
   }
   
-  private static void SetContextualTabs(DXO2010CustUI.Ribbon openXmlElement, DM.ContextualTabs? value)
+  private static void SetContextualTabs(DXO10CUI.Ribbon openXmlElement, DM.ContextualTabs? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ContextualTabs>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.ContextualTabs>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ContextualTabsConverter.CreateOpenXmlElement<DXO2010CustUI.ContextualTabs>(value);
+      itemElement = DMX.ContextualTabsConverter.CreateOpenXmlElement<DXO10CUI.ContextualTabs>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Ribbon? CreateModelElement(DXO2010CustUI.Ribbon? openXmlElement)
+  public static DocumentModel.Ribbon? CreateModelElement(DXO10CUI.Ribbon? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,7 +129,7 @@ public static class RibbonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.Ribbon? openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Ribbon? openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -150,14 +150,14 @@ public static class RibbonConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Ribbon value)
-    where OpenXmlElementType: DXO2010CustUI.Ribbon, new()
+    where OpenXmlElementType: DXO10CUI.Ribbon, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.Ribbon openXmlElement, DM.Ribbon value)
+  public static void UpdateOpenXmlElement(DXO10CUI.Ribbon openXmlElement, DM.Ribbon value)
   {
     SetStartFromScratch(openXmlElement, value?.StartFromScratch);
     SetQuickAccessToolbar(openXmlElement, value?.QuickAccessToolbar);

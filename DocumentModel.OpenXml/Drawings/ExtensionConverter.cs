@@ -8,22 +8,22 @@ public static class ExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.Extension openXmlElement)
+  private static String? GetUri(DXD.Extension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.Extension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.Extension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.Extension openXmlElement, String? value)
+  private static void SetUri(DXD.Extension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Extension? CreateModelElement(DXDraw.Extension? openXmlElement)
+  public static DocumentModel.Drawings.Extension? CreateModelElement(DXD.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Extension? openXmlElement, DMDraws.Extension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Extension? openXmlElement, DMD.Extension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class ExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Extension value)
-    where OpenXmlElementType: DXDraw.Extension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Extension value)
+    where OpenXmlElementType: DXD.Extension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Extension openXmlElement, DMDraws.Extension value)
+  public static void UpdateOpenXmlElement(DXD.Extension openXmlElement, DMD.Extension value)
   {
     SetUri(openXmlElement, value?.Uri);
   }

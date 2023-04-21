@@ -33,7 +33,7 @@ public class TestBody : TestBase
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
-    WriteLine(filename);
+    WriteLine($"Testing body read of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.Body);
     Assert.IsNotNull(document, "No document read");
@@ -71,11 +71,9 @@ public class TestBody : TestBase
   /// </summary>
   public void TestReadBodyXmlSerialization(string filename, bool showDetails = false)
   {
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-
-    filename = Path.Combine(TestPath, filename);
-    WriteLine($"Testing body of: {filename}");
+    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+      filename = Path.Combine(TestPath, filename);
+    WriteLine($"Testing body serialization of: {filename}");
     var reader = new DocxReader(filename);
     var t0 = DateTime.Now;
     var document = reader.ReadDocument(Parts.Body);
@@ -87,6 +85,8 @@ public class TestBody : TestBase
     if (oldBody == null)
       return;
     var textWriter = new StringWriter();
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var serializer = new QXmlSerializer(typeof(DMW.Body), extraTypes.ToArray(),
           new SerializationOptions { AcceptAllProperties = true });
     var t2 = DateTime.Now;

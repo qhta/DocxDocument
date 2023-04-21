@@ -8,19 +8,19 @@ public static class TileConverter
   /// <summary>
   /// Horizontal Offset
   /// </summary>
-  private static Int64? GetHorizontalOffset(DXDraw.Tile openXmlElement)
+  private static Int64? GetHorizontalOffset(DXD.Tile openXmlElement)
   {
     return openXmlElement?.HorizontalOffset?.Value;
   }
   
-  private static bool CmpHorizontalOffset(DXDraw.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.HorizontalOffset?.Value == value) return true;
     diffs?.Add(objName, "HorizontalOffset", openXmlElement?.HorizontalOffset?.Value, value);
     return false;
   }
   
-  private static void SetHorizontalOffset(DXDraw.Tile openXmlElement, Int64? value)
+  private static void SetHorizontalOffset(DXD.Tile openXmlElement, Int64? value)
   {
     openXmlElement.HorizontalOffset = value;
   }
@@ -28,19 +28,19 @@ public static class TileConverter
   /// <summary>
   /// Vertical Offset
   /// </summary>
-  private static Int64? GetVerticalOffset(DXDraw.Tile openXmlElement)
+  private static Int64? GetVerticalOffset(DXD.Tile openXmlElement)
   {
     return openXmlElement?.VerticalOffset?.Value;
   }
   
-  private static bool CmpVerticalOffset(DXDraw.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.VerticalOffset?.Value == value) return true;
     diffs?.Add(objName, "VerticalOffset", openXmlElement?.VerticalOffset?.Value, value);
     return false;
   }
   
-  private static void SetVerticalOffset(DXDraw.Tile openXmlElement, Int64? value)
+  private static void SetVerticalOffset(DXD.Tile openXmlElement, Int64? value)
   {
     openXmlElement.VerticalOffset = value;
   }
@@ -48,19 +48,19 @@ public static class TileConverter
   /// <summary>
   /// Horizontal Ratio
   /// </summary>
-  private static Int32? GetHorizontalRatio(DXDraw.Tile openXmlElement)
+  private static Int32? GetHorizontalRatio(DXD.Tile openXmlElement)
   {
     return openXmlElement?.HorizontalRatio?.Value;
   }
   
-  private static bool CmpHorizontalRatio(DXDraw.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.HorizontalRatio?.Value == value) return true;
     diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
     return false;
   }
   
-  private static void SetHorizontalRatio(DXDraw.Tile openXmlElement, Int32? value)
+  private static void SetHorizontalRatio(DXD.Tile openXmlElement, Int32? value)
   {
     openXmlElement.HorizontalRatio = value;
   }
@@ -68,19 +68,19 @@ public static class TileConverter
   /// <summary>
   /// Vertical Ratio
   /// </summary>
-  private static Int32? GetVerticalRatio(DXDraw.Tile openXmlElement)
+  private static Int32? GetVerticalRatio(DXD.Tile openXmlElement)
   {
     return openXmlElement?.VerticalRatio?.Value;
   }
   
-  private static bool CmpVerticalRatio(DXDraw.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.VerticalRatio?.Value == value) return true;
     diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
     return false;
   }
   
-  private static void SetVerticalRatio(DXDraw.Tile openXmlElement, Int32? value)
+  private static void SetVerticalRatio(DXD.Tile openXmlElement, Int32? value)
   {
     openXmlElement.VerticalRatio = value;
   }
@@ -88,40 +88,40 @@ public static class TileConverter
   /// <summary>
   /// Tile Flipping
   /// </summary>
-  private static DMDraws.TileFlipKind? GetFlip(DXDraw.Tile openXmlElement)
+  private static DMD.TileFlipKind? GetFlip(DXD.Tile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(openXmlElement?.Flip?.Value);
   }
   
-  private static bool CmpFlip(DXDraw.Tile openXmlElement, DMDraws.TileFlipKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFlip(DXD.Tile openXmlElement, DMD.TileFlipKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName);
   }
   
-  private static void SetFlip(DXDraw.Tile openXmlElement, DMDraws.TileFlipKind? value)
+  private static void SetFlip(DXD.Tile openXmlElement, DMD.TileFlipKind? value)
   {
-    openXmlElement.Flip = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMDraws.TileFlipKind>(value);
+    openXmlElement.Flip = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(value);
   }
   
   /// <summary>
   /// Alignment
   /// </summary>
-  private static DMDraws.RectangleAlignmentKind? GetAlignment(DXDraw.Tile openXmlElement)
+  private static DMD.RectangleAlignmentKind? GetAlignment(DXD.Tile openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXDraw.Tile openXmlElement, DMDraws.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.Tile openXmlElement, DMD.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
-  private static void SetAlignment(DXDraw.Tile openXmlElement, DMDraws.RectangleAlignmentKind? value)
+  private static void SetAlignment(DXD.Tile openXmlElement, DMD.RectangleAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMDraws.RectangleAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(value);
   }
   
-  public static DocumentModel.Drawings.Tile? CreateModelElement(DXDraw.Tile? openXmlElement)
+  public static DocumentModel.Drawings.Tile? CreateModelElement(DXD.Tile? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -137,7 +137,7 @@ public static class TileConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Tile? openXmlElement, DMDraws.Tile? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Tile? openXmlElement, DMD.Tile? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -161,15 +161,15 @@ public static class TileConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Tile value)
-    where OpenXmlElementType: DXDraw.Tile, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Tile value)
+    where OpenXmlElementType: DXD.Tile, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Tile openXmlElement, DMDraws.Tile value)
+  public static void UpdateOpenXmlElement(DXD.Tile openXmlElement, DMD.Tile value)
   {
     SetHorizontalOffset(openXmlElement, value?.HorizontalOffset);
     SetVerticalOffset(openXmlElement, value?.VerticalOffset);

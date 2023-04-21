@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ChartSpaceExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.ChartSpaceExtension>? GetChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement)
+  private static Collection<DMDC.ChartSpaceExtension>? GetChartSpaceExtensions(DXDC.ChartSpaceExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.ChartSpaceExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.ChartSpaceExtension>())
+    var collection = new Collection<DMDC.ChartSpaceExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.ChartSpaceExtension>())
     {
-      var newItem = DMXDrawsCharts.ChartSpaceExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.ChartSpaceExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ChartSpaceExtensionListConverter
     return null;
   }
   
-  private static bool CmpChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement, Collection<DMDrawsCharts.ChartSpaceExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpChartSpaceExtensions(DXDC.ChartSpaceExtensionList openXmlElement, Collection<DMDC.ChartSpaceExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.ChartSpaceExtension>();
+    var origElements = openXmlElement.Elements<DXDC.ChartSpaceExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ChartSpaceExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.ChartSpaceExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.ChartSpaceExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ChartSpaceExtensionListConverter
     return false;
   }
   
-  private static void SetChartSpaceExtensions(DXDrawCharts.ChartSpaceExtensionList openXmlElement, Collection<DMDrawsCharts.ChartSpaceExtension>? value)
+  private static void SetChartSpaceExtensions(DXDC.ChartSpaceExtensionList openXmlElement, Collection<DMDC.ChartSpaceExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.ChartSpaceExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.ChartSpaceExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.ChartSpaceExtensionConverter.CreateOpenXmlElement<DXDrawCharts.ChartSpaceExtension>(item);
+        var newItem = DMXDC.ChartSpaceExtensionConverter.CreateOpenXmlElement<DXDC.ChartSpaceExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(DXDrawCharts.ChartSpaceExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartSpaceExtensionList? CreateModelElement(DXDC.ChartSpaceExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ChartSpaceExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ChartSpaceExtensionList? openXmlElement, DMDrawsCharts.ChartSpaceExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ChartSpaceExtensionList? openXmlElement, DMDC.ChartSpaceExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ChartSpaceExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartSpaceExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.ChartSpaceExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ChartSpaceExtensionList value)
+    where OpenXmlElementType: DXDC.ChartSpaceExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ChartSpaceExtensionList openXmlElement, DMDrawsCharts.ChartSpaceExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.ChartSpaceExtensionList openXmlElement, DMDC.ChartSpaceExtensionList value)
   {
     SetChartSpaceExtensions(openXmlElement, value?.ChartSpaceExtensions);
   }

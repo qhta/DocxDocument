@@ -8,17 +8,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Radial Adjustment Guide
   /// </summary>
-  private static String? GetRadialAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetRadialAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.RadialAdjustmentGuide);
   }
   
-  private static bool CmpRadialAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRadialAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RadialAdjustmentGuide, value, diffs, objName, "RadialAdjustmentGuide");
   }
   
-  private static void SetRadialAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetRadialAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.RadialAdjustmentGuide = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Minimum Radial Adjustment
   /// </summary>
-  private static String? GetMinRadial(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetMinRadial(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MinRadial);
   }
   
-  private static bool CmpMinRadial(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinRadial, value, diffs, objName, "MinRadial");
   }
   
-  private static void SetMinRadial(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetMinRadial(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.MinRadial = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Maximum Radial Adjustment
   /// </summary>
-  private static String? GetMaxRadial(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetMaxRadial(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MaxRadial);
   }
   
-  private static bool CmpMaxRadial(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxRadial, value, diffs, objName, "MaxRadial");
   }
   
-  private static void SetMaxRadial(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetMaxRadial(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.MaxRadial = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Angle Adjustment Guide
   /// </summary>
-  private static String? GetAngleAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetAngleAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.AngleAdjustmentGuide);
   }
   
-  private static bool CmpAngleAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAngleAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AngleAdjustmentGuide, value, diffs, objName, "AngleAdjustmentGuide");
   }
   
-  private static void SetAngleAdjustmentGuide(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetAngleAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.AngleAdjustmentGuide = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Minimum Angle Adjustment
   /// </summary>
-  private static String? GetMinAngle(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetMinAngle(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MinAngle);
   }
   
-  private static bool CmpMinAngle(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinAngle, value, diffs, objName, "MinAngle");
   }
   
-  private static void SetMinAngle(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetMinAngle(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.MinAngle = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Maximum Angle Adjustment
   /// </summary>
-  private static String? GetMaxAngle(DXDraw.AdjustHandlePolar openXmlElement)
+  private static String? GetMaxAngle(DXD.AdjustHandlePolar openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MaxAngle);
   }
   
-  private static bool CmpMaxAngle(DXDraw.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxAngle, value, diffs, objName, "MaxAngle");
   }
   
-  private static void SetMaxAngle(DXDraw.AdjustHandlePolar openXmlElement, String? value)
+  private static void SetMaxAngle(DXD.AdjustHandlePolar openXmlElement, String? value)
   {
     openXmlElement.MaxAngle = StringValueConverter.CreateStringValue(value);
   }
@@ -116,33 +116,33 @@ public static class AdjustHandlePolarConverter
   /// <summary>
   /// Shape Position Coordinate.
   /// </summary>
-  private static DMDraws.AdjustPoint2DType? GetPosition(DXDraw.AdjustHandlePolar openXmlElement)
+  private static DMD.AdjustPoint2DType? GetPosition(DXD.AdjustHandlePolar openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Position>();
+    var element = openXmlElement?.GetFirstChild<DXD.Position>();
     if (element != null)
-      return DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(element);
+      return DMXD.AdjustPoint2DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPosition(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Position>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName);
   }
   
-  private static void SetPosition(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustPoint2DType? value)
+  private static void SetPosition(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustPoint2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Position>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Position>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Position>(value);
+      itemElement = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Position>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DXDraw.AdjustHandlePolar? openXmlElement)
+  public static DocumentModel.Drawings.AdjustHandlePolar? CreateModelElement(DXD.AdjustHandlePolar? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -159,7 +159,7 @@ public static class AdjustHandlePolarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AdjustHandlePolar? openXmlElement, DMDraws.AdjustHandlePolar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustHandlePolar? openXmlElement, DMD.AdjustHandlePolar? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -185,15 +185,15 @@ public static class AdjustHandlePolarConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AdjustHandlePolar value)
-    where OpenXmlElementType: DXDraw.AdjustHandlePolar, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AdjustHandlePolar value)
+    where OpenXmlElementType: DXD.AdjustHandlePolar, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AdjustHandlePolar openXmlElement, DMDraws.AdjustHandlePolar value)
+  public static void UpdateOpenXmlElement(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustHandlePolar value)
   {
     SetRadialAdjustmentGuide(openXmlElement, value?.RadialAdjustmentGuide);
     SetMinRadial(openXmlElement, value?.MinRadial);

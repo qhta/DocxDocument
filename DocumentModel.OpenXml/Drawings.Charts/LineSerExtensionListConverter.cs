@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class LineSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.LineSerExtension>? GetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement)
+  private static Collection<DMDC.LineSerExtension>? GetLineSerExtensions(DXDC.LineSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.LineSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.LineSerExtension>())
+    var collection = new Collection<DMDC.LineSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.LineSerExtension>())
     {
-      var newItem = DMXDrawsCharts.LineSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.LineSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class LineSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement, Collection<DMDrawsCharts.LineSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSerExtensions(DXDC.LineSerExtensionList openXmlElement, Collection<DMDC.LineSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.LineSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.LineSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class LineSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.LineSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LineSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class LineSerExtensionListConverter
     return false;
   }
   
-  private static void SetLineSerExtensions(DXDrawCharts.LineSerExtensionList openXmlElement, Collection<DMDrawsCharts.LineSerExtension>? value)
+  private static void SetLineSerExtensions(DXDC.LineSerExtensionList openXmlElement, Collection<DMDC.LineSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.LineSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.LineSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.LineSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.LineSerExtension>(item);
+        var newItem = DMXDC.LineSerExtensionConverter.CreateOpenXmlElement<DXDC.LineSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LineSerExtensionList? CreateModelElement(DXDrawCharts.LineSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LineSerExtensionList? CreateModelElement(DXDC.LineSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class LineSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.LineSerExtensionList? openXmlElement, DMDrawsCharts.LineSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.LineSerExtensionList? openXmlElement, DMDC.LineSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class LineSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LineSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.LineSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.LineSerExtensionList value)
+    where OpenXmlElementType: DXDC.LineSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.LineSerExtensionList openXmlElement, DMDrawsCharts.LineSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.LineSerExtensionList openXmlElement, DMDC.LineSerExtensionList value)
   {
     SetLineSerExtensions(openXmlElement, value?.LineSerExtensions);
   }

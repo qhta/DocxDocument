@@ -8,33 +8,33 @@ public static class BackgroundCustomPropertiesConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement)
+  private static DMD.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO21DL.BackgroundCustomProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXD.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DL.BackgroundCustomProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO21DL.BackgroundCustomProperties openXmlElement, DMD.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.OfficeArtExtensionList>(value);
+      itemElement = DMXD.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundCustomProperties? CreateModelElement(DXO2021DrawLivefeed.BackgroundCustomProperties? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundCustomProperties? CreateModelElement(DXO21DL.BackgroundCustomProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class BackgroundCustomPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawLivefeed.BackgroundCustomProperties? openXmlElement, DMDraws.BackgroundCustomProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DL.BackgroundCustomProperties? openXmlElement, DMD.BackgroundCustomProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class BackgroundCustomPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundCustomProperties value)
-    where OpenXmlElementType: DXO2021DrawLivefeed.BackgroundCustomProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BackgroundCustomProperties value)
+    where OpenXmlElementType: DXO21DL.BackgroundCustomProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundCustomProperties openXmlElement, DMDraws.BackgroundCustomProperties value)
+  public static void UpdateOpenXmlElement(DXO21DL.BackgroundCustomProperties openXmlElement, DMD.BackgroundCustomProperties value)
   {
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
   }

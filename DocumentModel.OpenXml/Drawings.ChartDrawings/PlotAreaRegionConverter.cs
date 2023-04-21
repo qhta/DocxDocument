@@ -8,38 +8,38 @@ public static class PlotAreaRegionConverter
   /// <summary>
   /// PlotSurface.
   /// </summary>
-  private static DMDrawsChartDraws.PlotSurface? GetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
+  private static DMDCDs.PlotSurface? GetPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.PlotSurface>();
     if (element != null)
-      return DMXDrawsChartDraws.PlotSurfaceConverter.CreateModelElement(element);
+      return DMXDCDs.PlotSurfaceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value, DiffList? diffs, string? objName)
+  private static bool CmpPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotSurface? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>(), value, diffs, objName);
+    return DMXDCDs.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PlotSurface>(), value, diffs, objName);
   }
   
-  private static void SetPlotSurface(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotSurface? value)
+  private static void SetPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotSurface? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.PlotSurface>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.PlotSurface>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.PlotSurfaceConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.PlotSurface>(value);
+      itemElement = DMXDCDs.PlotSurfaceConverter.CreateOpenXmlElement<DXO16DCD.PlotSurface>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsChartDraws.Series>? GetSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
+  private static Collection<DMDCDs.Series>? GetSeries(DXO16DCD.PlotAreaRegion openXmlElement)
   {
-    var collection = new Collection<DMDrawsChartDraws.Series>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.Series>())
+    var collection = new Collection<DMDCDs.Series>();
+    foreach (var item in openXmlElement.Elements<DXO16DCD.Series>())
     {
-      var newItem = DMXDrawsChartDraws.SeriesConverter.CreateModelElement(item);
+      var newItem = DMXDCDs.SeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -48,9 +48,9 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  private static bool CmpSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, Collection<DMDrawsChartDraws.Series>? value, DiffList? diffs, string? objName)
+  private static bool CmpSeries(DXO16DCD.PlotAreaRegion openXmlElement, Collection<DMDCDs.Series>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.Series>();
+    var origElements = openXmlElement.Elements<DXO16DCD.Series>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -66,7 +66,7 @@ public static class PlotAreaRegionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsChartDraws.SeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.SeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -76,47 +76,47 @@ public static class PlotAreaRegionConverter
     return false;
   }
   
-  private static void SetSeries(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, Collection<DMDrawsChartDraws.Series>? value)
+  private static void SetSeries(DXO16DCD.PlotAreaRegion openXmlElement, Collection<DMDCDs.Series>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.Series>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.Series>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsChartDraws.SeriesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Series>(item);
+        var newItem = DMXDCDs.SeriesConverter.CreateOpenXmlElement<DXO16DCD.Series>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement)
+  private static DMDCDs.ExtensionList? GetExtensionList(DXO16DCD.PlotAreaRegion openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.ExtensionList? value)
+  private static void SetExtensionList(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
+      itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? CreateModelElement(DXO2016DrawChartDraw.PlotAreaRegion? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.PlotAreaRegion? CreateModelElement(DXO16DCD.PlotAreaRegion? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -129,7 +129,7 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.PlotAreaRegion? openXmlElement, DMDrawsChartDraws.PlotAreaRegion? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.PlotAreaRegion? openXmlElement, DMDCDs.PlotAreaRegion? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -147,15 +147,15 @@ public static class PlotAreaRegionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.PlotAreaRegion value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.PlotAreaRegion, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.PlotAreaRegion value)
+    where OpenXmlElementType: DXO16DCD.PlotAreaRegion, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.PlotAreaRegion openXmlElement, DMDrawsChartDraws.PlotAreaRegion value)
+  public static void UpdateOpenXmlElement(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotAreaRegion value)
   {
     SetPlotSurface(openXmlElement, value?.PlotSurface);
     SetSeries(openXmlElement, value?.Series);

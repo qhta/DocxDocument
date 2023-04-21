@@ -32,21 +32,21 @@ public static class DiagramStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsDgms.StyleDefinition? GetStyleDefinition(DXPack.DiagramStylePart openXmlElement)
+  private static DMDD.StyleDefinition? GetStyleDefinition(DXPack.DiagramStylePart openXmlElement)
   {
-      return DMXDrawsDgms.StyleDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.StyleDefinition);
+      return DMXDD.StyleDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDD.StyleDefinition);
   }
   
-  private static bool CmpStyleDefinition(DXPack.DiagramStylePart openXmlElement, DMDrawsDgms.StyleDefinition? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleDefinition(DXPack.DiagramStylePart openXmlElement, DMDD.StyleDefinition? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetStyleDefinition(DXPack.DiagramStylePart openXmlElement, DMDrawsDgms.StyleDefinition? value)
+  private static void SetStyleDefinition(DXPack.DiagramStylePart openXmlElement, DMDD.StyleDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsDgms.StyleDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.StyleDefinition>(value);
+       var rootElement = DMXDD.StyleDefinitionConverter.CreateOpenXmlElement<DXDD.StyleDefinition>(value);
        if (rootElement != null)
          openXmlElement.StyleDefinition = rootElement;
     }

@@ -5,85 +5,85 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class BackstageGroupsConverter
 {
-  private static DM.TaskFormGroup? GetTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement)
+  private static DM.TaskFormGroup? GetTaskFormGroup(DXO10CUI.BackstageGroups openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskFormGroup>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.TaskFormGroup>();
     if (element != null)
       return DMX.TaskFormGroupConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskFormGroup(DXO10CUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskFormGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.TaskFormGroup>(), value, diffs, objName);
+    return DMX.TaskFormGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.TaskFormGroup>(), value, diffs, objName);
   }
   
-  private static void SetTaskFormGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value)
+  private static void SetTaskFormGroup(DXO10CUI.BackstageGroups openXmlElement, DM.TaskFormGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.TaskFormGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.TaskFormGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskFormGroupConverter.CreateOpenXmlElement<DXO2010CustUI.TaskFormGroup>(value);
+      itemElement = DMX.TaskFormGroupConverter.CreateOpenXmlElement<DXO10CUI.TaskFormGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.BackstageGroup? GetBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement)
+  private static DM.BackstageGroup? GetBackstageGroup(DXO10CUI.BackstageGroups openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.BackstageGroup>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.BackstageGroup>();
     if (element != null)
       return DMX.BackstageGroupConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageGroup(DXO10CUI.BackstageGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroup>(), value, diffs, objName);
+    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageGroup>(), value, diffs, objName);
   }
   
-  private static void SetBackstageGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroup? value)
+  private static void SetBackstageGroup(DXO10CUI.BackstageGroups openXmlElement, DM.BackstageGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.BackstageGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.BackstageGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.BackstageGroupConverter.CreateOpenXmlElement<DXO2010CustUI.BackstageGroup>(value);
+      itemElement = DMX.BackstageGroupConverter.CreateOpenXmlElement<DXO10CUI.BackstageGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskGroup? GetTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement)
+  private static DM.TaskGroup? GetTaskGroup(DXO10CUI.BackstageGroups openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.TaskGroup>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.TaskGroup>();
     if (element != null)
       return DMX.TaskGroupConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskGroup(DXO10CUI.BackstageGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.TaskGroup>(), value, diffs, objName);
+    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.TaskGroup>(), value, diffs, objName);
   }
   
-  private static void SetTaskGroup(DXO2010CustUI.BackstageGroups openXmlElement, DM.TaskGroup? value)
+  private static void SetTaskGroup(DXO10CUI.BackstageGroups openXmlElement, DM.TaskGroup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.TaskGroup>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.TaskGroup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskGroupConverter.CreateOpenXmlElement<DXO2010CustUI.TaskGroup>(value);
+      itemElement = DMX.TaskGroupConverter.CreateOpenXmlElement<DXO10CUI.TaskGroup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.BackstageGroups? CreateModelElement(DXO2010CustUI.BackstageGroups? openXmlElement)
+  public static DocumentModel.BackstageGroups? CreateModelElement(DXO10CUI.BackstageGroups? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,7 +96,7 @@ public static class BackstageGroupsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.BackstageGroups? openXmlElement, DM.BackstageGroups? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.BackstageGroups? openXmlElement, DM.BackstageGroups? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -115,14 +115,14 @@ public static class BackstageGroupsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageGroups value)
-    where OpenXmlElementType: DXO2010CustUI.BackstageGroups, new()
+    where OpenXmlElementType: DXO10CUI.BackstageGroups, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstageGroups openXmlElement, DM.BackstageGroups value)
+  public static void UpdateOpenXmlElement(DXO10CUI.BackstageGroups openXmlElement, DM.BackstageGroups value)
   {
     SetTaskFormGroup(openXmlElement, value?.TaskFormGroup);
     SetBackstageGroup(openXmlElement, value?.BackstageGroup);

@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DM.Extension>? GetExtensions(DXO2021DocTasks.ExtensionList openXmlElement)
+  private static Collection<DM.Extension>? GetExtensions(DXO21DT.ExtensionList openXmlElement)
   {
     var collection = new Collection<DM.Extension>();
-    foreach (var item in openXmlElement.Elements<DXO2021OExtLst.Extension>())
+    foreach (var item in openXmlElement.Elements<DXO21OEL.Extension>())
     {
       var newItem = DMX.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class ExtensionListConverter
     return null;
   }
   
-  private static bool CmpExtensions(DXO2021DocTasks.ExtensionList openXmlElement, Collection<DM.Extension>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensions(DXO21DT.ExtensionList openXmlElement, Collection<DM.Extension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2021OExtLst.Extension>();
+    var origElements = openXmlElement.Elements<DXO21OEL.Extension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class ExtensionListConverter
     return false;
   }
   
-  private static void SetExtensions(DXO2021DocTasks.ExtensionList openXmlElement, Collection<DM.Extension>? value)
+  private static void SetExtensions(DXO21DT.ExtensionList openXmlElement, Collection<DM.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2021OExtLst.Extension>();
+    openXmlElement.RemoveAllChildren<DXO21OEL.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.ExtensionConverter.CreateOpenXmlElement<DXO2021OExtLst.Extension>(item);
+        var newItem = DMX.ExtensionConverter.CreateOpenXmlElement<DXO21OEL.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ExtensionList? CreateModelElement(DXO2021DocTasks.ExtensionList? openXmlElement)
+  public static DocumentModel.ExtensionList? CreateModelElement(DXO21DT.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.ExtensionList? openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.ExtensionList? openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class ExtensionListConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ExtensionList value)
-    where OpenXmlElementType: DXO2021DocTasks.ExtensionList, new()
+    where OpenXmlElementType: DXO21DT.ExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.ExtensionList openXmlElement, DM.ExtensionList value)
+  public static void UpdateOpenXmlElement(DXO21DT.ExtensionList openXmlElement, DM.ExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
   }

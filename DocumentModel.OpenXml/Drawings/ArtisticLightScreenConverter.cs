@@ -8,19 +8,19 @@ public static class ArtisticLightScreenConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticLightScreen openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticLightScreen openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticLightScreen openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticLightScreen openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticLightScreenConverter
   /// <summary>
   /// gridSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetGridSize(DXO2010Draw.ArtisticLightScreen openXmlElement)
+  private static Int32? GetGridSize(DXO10D.ArtisticLightScreen openXmlElement)
   {
     return openXmlElement?.GridSize?.Value;
   }
   
-  private static bool CmpGridSize(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGridSize(DXO10D.ArtisticLightScreen openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.GridSize?.Value == value) return true;
     diffs?.Add(objName, "GridSize", openXmlElement?.GridSize?.Value, value);
     return false;
   }
   
-  private static void SetGridSize(DXO2010Draw.ArtisticLightScreen openXmlElement, Int32? value)
+  private static void SetGridSize(DXO10D.ArtisticLightScreen openXmlElement, Int32? value)
   {
     openXmlElement.GridSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticLightScreen? CreateModelElement(DXO2010Draw.ArtisticLightScreen? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticLightScreen? CreateModelElement(DXO10D.ArtisticLightScreen? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticLightScreenConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticLightScreen? openXmlElement, DMDraws.ArtisticLightScreen? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticLightScreen? openXmlElement, DMD.ArtisticLightScreen? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticLightScreenConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticLightScreen value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticLightScreen, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticLightScreen value)
+    where OpenXmlElementType: DXO10D.ArtisticLightScreen, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticLightScreen openXmlElement, DMDraws.ArtisticLightScreen value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticLightScreen openXmlElement, DMD.ArtisticLightScreen value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetGridSize(openXmlElement, value?.GridSize);

@@ -8,27 +8,27 @@ public static class NonVisualPicturePropertiesConverter
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  private static DMDrawsChartDraw.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement)
+  private static DMDCD.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
     if (element != null)
-      return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+      return DMXDCD.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualDrawingProperties? value)
+  private static void SetNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualDrawingProperties>(value);
+      itemElement = DMXDCD.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class NonVisualPicturePropertiesConverter
   /// <summary>
   /// Non-Visual Picture Drawing Properties.
   /// </summary>
-  private static DMDrawsChartDraw.NonVisualPictureDrawingProperties? GetNonVisualPictureDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement)
+  private static DMDCD.NonVisualPictureDrawingProperties? GetNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.NonVisualPictureDrawingProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>();
     if (element != null)
-      return DMXDrawsChartDraw.NonVisualPictureDrawingPropertiesConverter.CreateModelElement(element);
+      return DMXDCD.NonVisualPictureDrawingPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualPictureDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualPictureDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualPictureDrawingProperties(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureDrawingProperties? value)
+  private static void SetNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.NonVisualPictureDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.NonVisualPictureDrawingPropertiesConverter.CreateOpenXmlElement<DXDrawChartDraw.NonVisualPictureDrawingProperties>(value);
+      itemElement = DMXDCD.NonVisualPictureDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualPictureDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? CreateModelElement(DXDrawChartDraw.NonVisualPictureProperties? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.NonVisualPictureProperties? CreateModelElement(DXDCD.NonVisualPictureProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class NonVisualPicturePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.NonVisualPictureProperties? openXmlElement, DMDrawsChartDraw.NonVisualPictureProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.NonVisualPictureProperties? openXmlElement, DMDCD.NonVisualPictureProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class NonVisualPicturePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.NonVisualPictureProperties value)
-    where OpenXmlElementType: DXDrawChartDraw.NonVisualPictureProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.NonVisualPictureProperties value)
+    where OpenXmlElementType: DXDCD.NonVisualPictureProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.NonVisualPictureProperties openXmlElement, DMDrawsChartDraw.NonVisualPictureProperties value)
+  public static void UpdateOpenXmlElement(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureProperties value)
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualPictureDrawingProperties(openXmlElement, value?.NonVisualPictureDrawingProperties);

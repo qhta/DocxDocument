@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class PieSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.PieSerExtension>? GetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement)
+  private static Collection<DMDC.PieSerExtension>? GetPieSerExtensions(DXDC.PieSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.PieSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.PieSerExtension>())
+    var collection = new Collection<DMDC.PieSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.PieSerExtension>())
     {
-      var newItem = DMXDrawsCharts.PieSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.PieSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class PieSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement, Collection<DMDrawsCharts.PieSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpPieSerExtensions(DXDC.PieSerExtensionList openXmlElement, Collection<DMDC.PieSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.PieSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.PieSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class PieSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.PieSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.PieSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class PieSerExtensionListConverter
     return false;
   }
   
-  private static void SetPieSerExtensions(DXDrawCharts.PieSerExtensionList openXmlElement, Collection<DMDrawsCharts.PieSerExtension>? value)
+  private static void SetPieSerExtensions(DXDC.PieSerExtensionList openXmlElement, Collection<DMDC.PieSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.PieSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.PieSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.PieSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.PieSerExtension>(item);
+        var newItem = DMXDC.PieSerExtensionConverter.CreateOpenXmlElement<DXDC.PieSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PieSerExtensionList? CreateModelElement(DXDrawCharts.PieSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PieSerExtensionList? CreateModelElement(DXDC.PieSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class PieSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.PieSerExtensionList? openXmlElement, DMDrawsCharts.PieSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PieSerExtensionList? openXmlElement, DMDC.PieSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class PieSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PieSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.PieSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.PieSerExtensionList value)
+    where OpenXmlElementType: DXDC.PieSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.PieSerExtensionList openXmlElement, DMDrawsCharts.PieSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.PieSerExtensionList openXmlElement, DMDC.PieSerExtensionList value)
   {
     SetPieSerExtensions(openXmlElement, value?.PieSerExtensions);
   }

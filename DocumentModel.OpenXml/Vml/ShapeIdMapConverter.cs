@@ -8,40 +8,40 @@ public static class ShapeIdMapConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.ShapeIdMap openXmlElement)
+  private static DMV.ExtensionHandlingBehaviorKind? GetExtension(DXVO.ShapeIdMap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVmlO.ShapeIdMap openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.ShapeIdMap openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
-  private static void SetExtension(DXVmlO.ShapeIdMap openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVO.ShapeIdMap openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Shape IDs
   /// </summary>
-  private static String? GetData(DXVmlO.ShapeIdMap openXmlElement)
+  private static String? GetData(DXVO.ShapeIdMap openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Data);
   }
   
-  private static bool CmpData(DXVmlO.ShapeIdMap openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpData(DXVO.ShapeIdMap openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Data, value, diffs, objName, "Data");
   }
   
-  private static void SetData(DXVmlO.ShapeIdMap openXmlElement, String? value)
+  private static void SetData(DXVO.ShapeIdMap openXmlElement, String? value)
   {
     openXmlElement.Data = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DXVmlO.ShapeIdMap? openXmlElement)
+  public static DocumentModel.Vml.ShapeIdMap? CreateModelElement(DXVO.ShapeIdMap? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class ShapeIdMapConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.ShapeIdMap? openXmlElement, DMVml.ShapeIdMap? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.ShapeIdMap? openXmlElement, DMV.ShapeIdMap? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class ShapeIdMapConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeIdMap value)
-    where OpenXmlElementType: DXVmlO.ShapeIdMap, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.ShapeIdMap value)
+    where OpenXmlElementType: DXVO.ShapeIdMap, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.ShapeIdMap openXmlElement, DMVml.ShapeIdMap value)
+  public static void UpdateOpenXmlElement(DXVO.ShapeIdMap openXmlElement, DMV.ShapeIdMap value)
   {
     SetExtension(openXmlElement, value?.Extension);
     SetData(openXmlElement, value?.Data);

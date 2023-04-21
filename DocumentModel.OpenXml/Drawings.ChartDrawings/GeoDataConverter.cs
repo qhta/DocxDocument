@@ -8,17 +8,17 @@ public static class GeoDataConverter
   /// <summary>
   /// entityName, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityName(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static String? GetEntityName(DXO16DCD.GeoData openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EntityName);
   }
   
-  private static bool CmpEntityName(DXO2016DrawChartDraw.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityName(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityName, value, diffs, objName, "EntityName");
   }
   
-  private static void SetEntityName(DXO2016DrawChartDraw.GeoData openXmlElement, String? value)
+  private static void SetEntityName(DXO16DCD.GeoData openXmlElement, String? value)
   {
     openXmlElement.EntityName = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class GeoDataConverter
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityId(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static String? GetEntityId(DXO16DCD.GeoData openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
-  private static void SetEntityId(DXO2016DrawChartDraw.GeoData openXmlElement, String? value)
+  private static void SetEntityId(DXO16DCD.GeoData openXmlElement, String? value)
   {
     openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class GeoDataConverter
   /// <summary>
   /// east, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetEast(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static Double? GetEast(DXO16DCD.GeoData openXmlElement)
   {
     return openXmlElement?.East?.Value;
   }
   
-  private static bool CmpEast(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpEast(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.East?.Value == value) return true;
     diffs?.Add(objName, "East", openXmlElement?.East?.Value, value);
     return false;
   }
   
-  private static void SetEast(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
+  private static void SetEast(DXO16DCD.GeoData openXmlElement, Double? value)
   {
     openXmlElement.East = value;
   }
@@ -64,19 +64,19 @@ public static class GeoDataConverter
   /// <summary>
   /// west, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetWest(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static Double? GetWest(DXO16DCD.GeoData openXmlElement)
   {
     return openXmlElement?.West?.Value;
   }
   
-  private static bool CmpWest(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpWest(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.West?.Value == value) return true;
     diffs?.Add(objName, "West", openXmlElement?.West?.Value, value);
     return false;
   }
   
-  private static void SetWest(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
+  private static void SetWest(DXO16DCD.GeoData openXmlElement, Double? value)
   {
     openXmlElement.West = value;
   }
@@ -84,19 +84,19 @@ public static class GeoDataConverter
   /// <summary>
   /// north, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetNorth(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static Double? GetNorth(DXO16DCD.GeoData openXmlElement)
   {
     return openXmlElement?.North?.Value;
   }
   
-  private static bool CmpNorth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpNorth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.North?.Value == value) return true;
     diffs?.Add(objName, "North", openXmlElement?.North?.Value, value);
     return false;
   }
   
-  private static void SetNorth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
+  private static void SetNorth(DXO16DCD.GeoData openXmlElement, Double? value)
   {
     openXmlElement.North = value;
   }
@@ -104,19 +104,19 @@ public static class GeoDataConverter
   /// <summary>
   /// south, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Double? GetSouth(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static Double? GetSouth(DXO16DCD.GeoData openXmlElement)
   {
     return openXmlElement?.South?.Value;
   }
   
-  private static bool CmpSouth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpSouth(DXO16DCD.GeoData openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.South?.Value == value) return true;
     diffs?.Add(objName, "South", openXmlElement?.South?.Value, value);
     return false;
   }
   
-  private static void SetSouth(DXO2016DrawChartDraw.GeoData openXmlElement, Double? value)
+  private static void SetSouth(DXO16DCD.GeoData openXmlElement, Double? value)
   {
     openXmlElement.South = value;
   }
@@ -124,27 +124,27 @@ public static class GeoDataConverter
   /// <summary>
   /// GeoPolygons.
   /// </summary>
-  private static DMDrawsChartDraws.GeoPolygons? GetGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static DMDCDs.GeoPolygons? GetGeoPolygons(DXO16DCD.GeoData openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoPolygons>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoPolygonsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoPolygonsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoPolygons(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoPolygons? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>(), value, diffs, objName);
+    return DMXDCDs.GeoPolygonsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoPolygons>(), value, diffs, objName);
   }
   
-  private static void SetGeoPolygons(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoPolygons? value)
+  private static void SetGeoPolygons(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoPolygons? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoPolygons>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoPolygons>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoPolygonsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoPolygons>(value);
+      itemElement = DMXDCDs.GeoPolygonsConverter.CreateOpenXmlElement<DXO16DCD.GeoPolygons>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -153,33 +153,33 @@ public static class GeoDataConverter
   /// <summary>
   /// Copyrights.
   /// </summary>
-  private static DMDrawsChartDraws.Copyrights? GetCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement)
+  private static DMDCDs.Copyrights? GetCopyrights(DXO16DCD.GeoData openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Copyrights>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.Copyrights>();
     if (element != null)
-      return DMXDrawsChartDraws.CopyrightsConverter.CreateModelElement(element);
+      return DMXDCDs.CopyrightsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
+  private static bool CmpCopyrights(DXO16DCD.GeoData openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Copyrights>(), value, diffs, objName);
+    return DMXDCDs.CopyrightsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Copyrights>(), value, diffs, objName);
   }
   
-  private static void SetCopyrights(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.Copyrights? value)
+  private static void SetCopyrights(DXO16DCD.GeoData openXmlElement, DMDCDs.Copyrights? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Copyrights>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.Copyrights>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.CopyrightsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Copyrights>(value);
+      itemElement = DMXDCDs.CopyrightsConverter.CreateOpenXmlElement<DXO16DCD.Copyrights>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoData? CreateModelElement(DXO2016DrawChartDraw.GeoData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoData? CreateModelElement(DXO16DCD.GeoData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -197,7 +197,7 @@ public static class GeoDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoData? openXmlElement, DMDrawsChartDraws.GeoData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoData? openXmlElement, DMDCDs.GeoData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -225,15 +225,15 @@ public static class GeoDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoData value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoData value)
+    where OpenXmlElementType: DXO16DCD.GeoData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoData openXmlElement, DMDrawsChartDraws.GeoData value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoData openXmlElement, DMDCDs.GeoData value)
   {
     SetEntityName(openXmlElement, value?.EntityName);
     SetEntityId(openXmlElement, value?.EntityId);

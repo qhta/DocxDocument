@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ConstraintsConverter
 {
-  private static Collection<DMDrawsDgms.Constraint>? GetItems(DXDrawDgms.Constraints openXmlElement)
+  private static Collection<DMDD.Constraint>? GetItems(DXDD.Constraints openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Constraint>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Constraint>())
+    var collection = new Collection<DMDD.Constraint>();
+    foreach (var item in openXmlElement.Elements<DXDD.Constraint>())
     {
-      var newItem = DMXDrawsDgms.ConstraintConverter.CreateModelElement(item);
+      var newItem = DMXDD.ConstraintConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ConstraintsConverter
     return null;
   }
   
-  private static bool CmpItems(DXDrawDgms.Constraints openXmlElement, Collection<DMDrawsDgms.Constraint>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXDD.Constraints openXmlElement, Collection<DMDD.Constraint>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Constraint>();
+    var origElements = openXmlElement.Elements<DXDD.Constraint>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ConstraintsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ConstraintConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ConstraintConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ConstraintsConverter
     return false;
   }
   
-  private static void SetItems(DXDrawDgms.Constraints openXmlElement, Collection<DMDrawsDgms.Constraint>? value)
+  private static void SetItems(DXDD.Constraints openXmlElement, Collection<DMDD.Constraint>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Constraint>();
+    openXmlElement.RemoveAllChildren<DXDD.Constraint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ConstraintConverter.CreateOpenXmlElement<DXDrawDgms.Constraint>(item);
+        var newItem = DMXDD.ConstraintConverter.CreateOpenXmlElement<DXDD.Constraint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(DXDrawDgms.Constraints? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Constraints? CreateModelElement(DXDD.Constraints? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ConstraintsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.Constraints? openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Constraints? openXmlElement, DMDD.Constraints? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ConstraintsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Constraints value)
-    where OpenXmlElementType: DXDrawDgms.Constraints, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.Constraints value)
+    where OpenXmlElementType: DXDD.Constraints, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.Constraints openXmlElement, DMDrawsDgms.Constraints value)
+  public static void UpdateOpenXmlElement(DXDD.Constraints openXmlElement, DMDD.Constraints value)
   {
     SetItems(openXmlElement, value?.Items);
   }

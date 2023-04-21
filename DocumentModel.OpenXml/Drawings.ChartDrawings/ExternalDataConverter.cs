@@ -8,17 +8,17 @@ public static class ExternalDataConverter
   /// <summary>
   /// RelId of the relationship for the external data, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetId(DXO2016DrawChartDraw.ExternalData openXmlElement)
+  private static String? GetId(DXO16DCD.ExternalData openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO16DCD.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2016DrawChartDraw.ExternalData openXmlElement, String? value)
+  private static void SetId(DXO16DCD.ExternalData openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class ExternalDataConverter
   /// <summary>
   /// True if the external link should automatically update, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement)
+  private static Boolean? GetAutoUpdate(DXO16DCD.ExternalData openXmlElement)
   {
     return openXmlElement?.AutoUpdate?.Value;
   }
   
-  private static bool CmpAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoUpdate(DXO16DCD.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AutoUpdate?.Value == value) return true;
     diffs?.Add(objName, "AutoUpdate", openXmlElement?.AutoUpdate?.Value, value);
     return false;
   }
   
-  private static void SetAutoUpdate(DXO2016DrawChartDraw.ExternalData openXmlElement, Boolean? value)
+  private static void SetAutoUpdate(DXO16DCD.ExternalData openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AutoUpdate = new BooleanValue { Value = (Boolean)value };
@@ -46,7 +46,7 @@ public static class ExternalDataConverter
       openXmlElement.AutoUpdate = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(DXO2016DrawChartDraw.ExternalData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ExternalData? CreateModelElement(DXO16DCD.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -58,7 +58,7 @@ public static class ExternalDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.ExternalData? openXmlElement, DMDrawsChartDraws.ExternalData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ExternalData? openXmlElement, DMDCDs.ExternalData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -74,15 +74,15 @@ public static class ExternalDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ExternalData value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.ExternalData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.ExternalData value)
+    where OpenXmlElementType: DXO16DCD.ExternalData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.ExternalData openXmlElement, DMDrawsChartDraws.ExternalData value)
+  public static void UpdateOpenXmlElement(DXO16DCD.ExternalData openXmlElement, DMDCDs.ExternalData value)
   {
     SetId(openXmlElement, value?.Id);
     SetAutoUpdate(openXmlElement, value?.AutoUpdate);

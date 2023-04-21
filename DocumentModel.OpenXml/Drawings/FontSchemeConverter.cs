@@ -8,17 +8,17 @@ public static class FontSchemeConverter
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DXDraw.FontScheme openXmlElement)
+  private static String? GetName(DXD.FontScheme openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDraw.FontScheme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.FontScheme openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDraw.FontScheme openXmlElement, String? value)
+  private static void SetName(DXD.FontScheme openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -26,27 +26,27 @@ public static class FontSchemeConverter
   /// <summary>
   /// Major Font.
   /// </summary>
-  private static DMDraws.MajorFont? GetMajorFont(DXDraw.FontScheme openXmlElement)
+  private static DMD.MajorFont? GetMajorFont(DXD.FontScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.MajorFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.MajorFont>();
     if (element != null)
-      return DMXDraws.MajorFontConverter.CreateModelElement(element);
+      return DMXD.MajorFontConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMajorFont(DXDraw.FontScheme openXmlElement, DMDraws.MajorFont? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorFont(DXD.FontScheme openXmlElement, DMD.MajorFont? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.MajorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.MajorFont>(), value, diffs, objName);
+    return DMXD.MajorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MajorFont>(), value, diffs, objName);
   }
   
-  private static void SetMajorFont(DXDraw.FontScheme openXmlElement, DMDraws.MajorFont? value)
+  private static void SetMajorFont(DXD.FontScheme openXmlElement, DMD.MajorFont? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.MajorFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.MajorFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.MajorFontConverter.CreateOpenXmlElement<DXDraw.MajorFont>(value);
+      itemElement = DMXD.MajorFontConverter.CreateOpenXmlElement<DXD.MajorFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,27 +55,27 @@ public static class FontSchemeConverter
   /// <summary>
   /// Minor fonts.
   /// </summary>
-  private static DMDraws.MinorFont? GetMinorFont(DXDraw.FontScheme openXmlElement)
+  private static DMD.MinorFont? GetMinorFont(DXD.FontScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.MinorFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.MinorFont>();
     if (element != null)
-      return DMXDraws.MinorFontConverter.CreateModelElement(element);
+      return DMXD.MinorFontConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMinorFont(DXDraw.FontScheme openXmlElement, DMDraws.MinorFont? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorFont(DXD.FontScheme openXmlElement, DMD.MinorFont? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.MinorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.MinorFont>(), value, diffs, objName);
+    return DMXD.MinorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MinorFont>(), value, diffs, objName);
   }
   
-  private static void SetMinorFont(DXDraw.FontScheme openXmlElement, DMDraws.MinorFont? value)
+  private static void SetMinorFont(DXD.FontScheme openXmlElement, DMD.MinorFont? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.MinorFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.MinorFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.MinorFontConverter.CreateOpenXmlElement<DXDraw.MinorFont>(value);
+      itemElement = DMXD.MinorFontConverter.CreateOpenXmlElement<DXD.MinorFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -84,33 +84,33 @@ public static class FontSchemeConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.FontScheme openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.FontScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.FontScheme openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.FontScheme openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.FontScheme openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.FontScheme openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FontScheme? CreateModelElement(DXDraw.FontScheme? openXmlElement)
+  public static DocumentModel.Drawings.FontScheme? CreateModelElement(DXD.FontScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -124,7 +124,7 @@ public static class FontSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.FontScheme? openXmlElement, DMDraws.FontScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FontScheme? openXmlElement, DMD.FontScheme? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -144,15 +144,15 @@ public static class FontSchemeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontScheme value)
-    where OpenXmlElementType: DXDraw.FontScheme, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FontScheme value)
+    where OpenXmlElementType: DXD.FontScheme, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.FontScheme openXmlElement, DMDraws.FontScheme value)
+  public static void UpdateOpenXmlElement(DXD.FontScheme openXmlElement, DMD.FontScheme value)
   {
     SetName(openXmlElement, value?.Name);
     SetMajorFont(openXmlElement, value?.MajorFont);

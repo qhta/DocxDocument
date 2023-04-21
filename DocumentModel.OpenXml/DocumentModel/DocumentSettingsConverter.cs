@@ -1802,27 +1802,27 @@ public static class DocumentSettingsConverter
     }
   }
   
-  private static DMCustXml.SchemaLibrary? GetSchemaLibrary(DXW.Settings openXmlElement)
+  private static DMCX.SchemaLibrary? GetSchemaLibrary(DXW.Settings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>();
+    var element = openXmlElement?.GetFirstChild<DXCXSR.SchemaLibrary>();
     if (element != null)
-      return DMXCustXml.SchemaLibraryConverter.CreateModelElement(element);
+      return DMXCX.SchemaLibraryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemaLibrary(DXW.Settings openXmlElement, DMCX.SchemaLibrary? value, DiffList? diffs, string? objName)
   {
-    return DMXCustXml.SchemaLibraryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>(), value, diffs, objName);
+    return DMXCX.SchemaLibraryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCXSR.SchemaLibrary>(), value, diffs, objName);
   }
   
-  private static void SetSchemaLibrary(DXW.Settings openXmlElement, DMCustXml.SchemaLibrary? value)
+  private static void SetSchemaLibrary(DXW.Settings openXmlElement, DMCX.SchemaLibrary? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXCustXmlSchRefs.SchemaLibrary>();
+    var itemElement = openXmlElement.GetFirstChild<DXCXSR.SchemaLibrary>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXCustXml.SchemaLibraryConverter.CreateOpenXmlElement<DXCustXmlSchRefs.SchemaLibrary>(value);
+      itemElement = DMXCX.SchemaLibraryConverter.CreateOpenXmlElement<DXCXSR.SchemaLibrary>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1906,32 +1906,32 @@ public static class DocumentSettingsConverter
   
   private static DM.HexInt? GetDocumentId(DXW.Settings openXmlElement)
   {
-    return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>()?.Val);
+    return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.DocumentId>()?.Val);
   }
   
   private static bool CmpDocumentId(DXW.Settings openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
   {
-    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.DocumentId>()?.Val, value, diffs, objName, "DocumentId");
+    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.DocumentId>()?.Val, value, diffs, objName, "DocumentId");
   }
   
   private static void SetDocumentId(DXW.Settings openXmlElement, DM.HexInt? value)
   {
-    HexIntConverter.SetValue<DXO2010W.DocumentId>(openXmlElement, value);
+    HexIntConverter.SetValue<DXO10W.DocumentId>(openXmlElement, value);
   }
   
   private static bool? GetDiscardImageEditingData(DXW.Settings openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO10W.DiscardImageEditingData>()?.Val?.Value);
   }
   
   private static bool CmpDiscardImageEditingData(DXW.Settings openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO10W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDiscardImageEditingData(DXW.Settings openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.DiscardImageEditingData>();
     if (itemElement != null)
     {
       if (value != null)
@@ -1941,59 +1941,59 @@ public static class DocumentSettingsConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO2010W.DiscardImageEditingData>((bool)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO10W.DiscardImageEditingData>((bool)value));
   }
   
   private static Int32? GetDefaultImageDpi(DXW.Settings openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.DefaultImageDpi>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.DefaultImageDpi>()?.Val);
   }
   
   private static bool CmpDefaultImageDpi(DXW.Settings openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.DefaultImageDpi>()?.Val, value, diffs, objName, "DefaultImageDpi");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.DefaultImageDpi>()?.Val, value, diffs, objName, "DefaultImageDpi");
   }
   
   private static void SetDefaultImageDpi(DXW.Settings openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.DefaultImageDpi,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.DefaultImageDpi,System.Int32>(openXmlElement, value);
   }
   
   private static bool? GetConflictMode(DXW.Settings openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO10W.ConflictMode>()?.Val?.Value);
   }
   
   private static bool CmpConflictMode(DXW.Settings openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO10W.ConflictMode>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetConflictMode(DXW.Settings openXmlElement, bool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.ConflictMode>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.ConflictMode>();
     if (itemElement != null)
     {
       if (value != null)
-        BooleanValueConverter.UpdateOpenXmlElement<DXO2010W.ConflictMode>(itemElement, (bool)value);
+        BooleanValueConverter.UpdateOpenXmlElement<DXO10W.ConflictMode>(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO2010W.ConflictMode>((bool)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO10W.ConflictMode>((bool)value));
   }
   
   private static Boolean? GetChartTrackingRefBased(DXW.Settings openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>() != null;
+    return openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>() != null;
   }
   
   private static bool CmpChartTrackingRefBased(DXW.Settings openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>() != null;
+    var val = openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2013W.ChartTrackingRefBased", val, value);
+    diffs?.Add(objName, "DXO13W.ChartTrackingRefBased", val, value);
     return false;
   }
   
@@ -2001,20 +2001,20 @@ public static class DocumentSettingsConverter
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2013W.ChartTrackingRefBased>();
+      var itemElement = openXmlElement.GetFirstChild<DXO13W.ChartTrackingRefBased>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2013W.ChartTrackingRefBased();
+      var itemElement = new DXO13W.ChartTrackingRefBased();
       openXmlElement.AddChild(itemElement);
     }
   }
   
   private static Guid? GetPersistentDocumentId(DXW.Settings openXmlElement)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO13W.PersistentDocumentId>();
     if (itemElement?.Val?.Value != null)
       return Guid.Parse(itemElement.Val.Value);
     return null;
@@ -2022,7 +2022,7 @@ public static class DocumentSettingsConverter
   
   private static bool CmpPersistentDocumentId(DXW.Settings openXmlElement, Guid? value, DiffList? diffs, string? objName)
   {
-    var itemElement = openXmlElement?.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    var itemElement = openXmlElement?.GetFirstChild<DXO13W.PersistentDocumentId>();
     if (itemElement?.Val?.Value != null)
     {
       var val = Guid.Parse(itemElement.Val.Value);
@@ -2035,12 +2035,12 @@ public static class DocumentSettingsConverter
   
   private static void SetPersistentDocumentId(DXW.Settings openXmlElement, Guid? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013W.PersistentDocumentId>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13W.PersistentDocumentId>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013W.PersistentDocumentId{ Val = ((Guid)value).ToString("B") };
+      itemElement = new DXO13W.PersistentDocumentId{ Val = ((Guid)value).ToString("B") };
       openXmlElement.AddChild(itemElement);
     }
   }

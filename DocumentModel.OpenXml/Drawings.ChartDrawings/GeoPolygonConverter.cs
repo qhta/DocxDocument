@@ -8,17 +8,17 @@ public static class GeoPolygonConverter
   /// <summary>
   /// polygonId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
+  private static String? GetPolygonId(DXO16DCD.GeoPolygon openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.PolygonId);
   }
   
-  private static bool CmpPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPolygonId(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PolygonId, value, diffs, objName, "PolygonId");
   }
   
-  private static void SetPolygonId(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
+  private static void SetPolygonId(DXO16DCD.GeoPolygon openXmlElement, String? value)
   {
     openXmlElement.PolygonId = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class GeoPolygonConverter
   /// <summary>
   /// numPoints, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Int64? GetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
+  private static Int64? GetNumPoints(DXO16DCD.GeoPolygon openXmlElement)
   {
     return openXmlElement?.NumPoints?.Value;
   }
   
-  private static bool CmpNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpNumPoints(DXO16DCD.GeoPolygon openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NumPoints?.Value == value) return true;
     diffs?.Add(objName, "NumPoints", openXmlElement?.NumPoints?.Value, value);
     return false;
   }
   
-  private static void SetNumPoints(DXO2016DrawChartDraw.GeoPolygon openXmlElement, Int64? value)
+  private static void SetNumPoints(DXO16DCD.GeoPolygon openXmlElement, Int64? value)
   {
     openXmlElement.NumPoints = value;
   }
@@ -46,22 +46,22 @@ public static class GeoPolygonConverter
   /// <summary>
   /// pcaRings, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement)
+  private static String? GetPcaRings(DXO16DCD.GeoPolygon openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.PcaRings);
   }
   
-  private static bool CmpPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPcaRings(DXO16DCD.GeoPolygon openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PcaRings, value, diffs, objName, "PcaRings");
   }
   
-  private static void SetPcaRings(DXO2016DrawChartDraw.GeoPolygon openXmlElement, String? value)
+  private static void SetPcaRings(DXO16DCD.GeoPolygon openXmlElement, String? value)
   {
     openXmlElement.PcaRings = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoPolygon? CreateModelElement(DXO16DCD.GeoPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -74,7 +74,7 @@ public static class GeoPolygonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoPolygon? openXmlElement, DMDrawsChartDraws.GeoPolygon? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoPolygon? openXmlElement, DMDCDs.GeoPolygon? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -92,15 +92,15 @@ public static class GeoPolygonConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoPolygon value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoPolygon, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoPolygon value)
+    where OpenXmlElementType: DXO16DCD.GeoPolygon, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoPolygon openXmlElement, DMDrawsChartDraws.GeoPolygon value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoPolygon openXmlElement, DMDCDs.GeoPolygon value)
   {
     SetPolygonId(openXmlElement, value?.PolygonId);
     SetNumPoints(openXmlElement, value?.NumPoints);

@@ -681,17 +681,17 @@ public static class SectionPropertiesConverter
   #region FootnoteColumns conversion
   private static Int32? GetFootnoteColumns(DXW.SectionProperties openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13W.FootnoteColumns>()?.Val);
   }
 
   private static bool CmpFootnoteColumns(DXW.SectionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2013W.FootnoteColumns>()?.Val, value, diffs, objName, "FootnoteColumns");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13W.FootnoteColumns>()?.Val, value, diffs, objName, "FootnoteColumns");
   }
 
   private static void SetFootnoteColumns(DXW.SectionProperties openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2013W.FootnoteColumns, System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO13W.FootnoteColumns, System.Int32>(openXmlElement, value);
   }
   #endregion
 

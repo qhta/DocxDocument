@@ -8,74 +8,74 @@ public static class DiagramDefinitionExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
+  private static String? GetUri(DXDD.DiagramDefinitionExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDD.DiagramDefinitionExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawDgms.DiagramDefinitionExtension openXmlElement, String? value)
+  private static void SetUri(DXDD.DiagramDefinitionExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsDgm1.NumberDiagramInfoList? GetNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
+  private static DMDD1.NumberDiagramInfoList? GetNumberDiagramInfoList(DXDD.DiagramDefinitionExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>();
+    var element = openXmlElement?.GetFirstChild<DXO19DD11.NumberDiagramInfoList>();
     if (element != null)
-      return DMXDrawsDgm1.NumberDiagramInfoListConverter.CreateModelElement(element);
+      return DMXDD1.NumberDiagramInfoListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberDiagramInfoList(DXDD.DiagramDefinitionExtension openXmlElement, DMDD1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm1.NumberDiagramInfoListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>(), value, diffs, objName);
+    return DMXDD1.NumberDiagramInfoListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD11.NumberDiagramInfoList>(), value, diffs, objName);
   }
   
-  private static void SetNumberDiagramInfoList(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value)
+  private static void SetNumberDiagramInfoList(DXDD.DiagramDefinitionExtension openXmlElement, DMDD1.NumberDiagramInfoList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawDgm11.NumberDiagramInfoList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO19DD11.NumberDiagramInfoList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgm1.NumberDiagramInfoListConverter.CreateOpenXmlElement<DXO2019DrawDgm11.NumberDiagramInfoList>(value);
+      itemElement = DMXDD1.NumberDiagramInfoListConverter.CreateOpenXmlElement<DXO19DD11.NumberDiagramInfoList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgm2.TextListStyleType? GetTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement)
+  private static DMDD2.TextListStyleType? GetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>();
+    var element = openXmlElement?.GetFirstChild<DXO19DD12.TextListStyleType>();
     if (element != null)
-      return DMXDrawsDgm2.TextListStyleTypeConverter.CreateModelElement(element);
+      return DMXDD2.TextListStyleTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm2.TextListStyleType? value, DiffList? diffs, string? objName)
+  private static bool CmpTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMDD2.TextListStyleType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgm2.TextListStyleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>(), value, diffs, objName);
+    return DMXDD2.TextListStyleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DD12.TextListStyleType>(), value, diffs, objName);
   }
   
-  private static void SetTextListStyleType(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgm2.TextListStyleType? value)
+  private static void SetTextListStyleType(DXDD.DiagramDefinitionExtension openXmlElement, DMDD2.TextListStyleType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawDgm12.TextListStyleType>();
+    var itemElement = openXmlElement.GetFirstChild<DXO19DD12.TextListStyleType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgm2.TextListStyleTypeConverter.CreateOpenXmlElement<DXO2019DrawDgm12.TextListStyleType>(value);
+      itemElement = DMXDD2.TextListStyleTypeConverter.CreateOpenXmlElement<DXO19DD12.TextListStyleType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension? CreateModelElement(DXDrawDgms.DiagramDefinitionExtension? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DiagramDefinitionExtension? CreateModelElement(DXDD.DiagramDefinitionExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -88,7 +88,7 @@ public static class DiagramDefinitionExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.DiagramDefinitionExtension? openXmlElement, DMDrawsDgms.DiagramDefinitionExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DiagramDefinitionExtension? openXmlElement, DMDD.DiagramDefinitionExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -106,15 +106,15 @@ public static class DiagramDefinitionExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramDefinitionExtension value)
-    where OpenXmlElementType: DXDrawDgms.DiagramDefinitionExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DiagramDefinitionExtension value)
+    where OpenXmlElementType: DXDD.DiagramDefinitionExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.DiagramDefinitionExtension openXmlElement, DMDrawsDgms.DiagramDefinitionExtension value)
+  public static void UpdateOpenXmlElement(DXDD.DiagramDefinitionExtension openXmlElement, DMDD.DiagramDefinitionExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetNumberDiagramInfoList(openXmlElement, value?.NumberDiagramInfoList);

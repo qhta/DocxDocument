@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class BlipExtensionListConverter
 {
-  private static Collection<DMDraws.BlipExtension>? GetBlipExtensions(DXDraw.BlipExtensionList openXmlElement)
+  private static Collection<DMD.BlipExtension>? GetBlipExtensions(DXD.BlipExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.BlipExtension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.BlipExtension>())
+    var collection = new Collection<DMD.BlipExtension>();
+    foreach (var item in openXmlElement.Elements<DXD.BlipExtension>())
     {
-      var newItem = DMXDraws.BlipExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.BlipExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class BlipExtensionListConverter
     return null;
   }
   
-  private static bool CmpBlipExtensions(DXDraw.BlipExtensionList openXmlElement, Collection<DMDraws.BlipExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipExtensions(DXD.BlipExtensionList openXmlElement, Collection<DMD.BlipExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.BlipExtension>();
+    var origElements = openXmlElement.Elements<DXD.BlipExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class BlipExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.BlipExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.BlipExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class BlipExtensionListConverter
     return false;
   }
   
-  private static void SetBlipExtensions(DXDraw.BlipExtensionList openXmlElement, Collection<DMDraws.BlipExtension>? value)
+  private static void SetBlipExtensions(DXD.BlipExtensionList openXmlElement, Collection<DMD.BlipExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.BlipExtension>();
+    openXmlElement.RemoveAllChildren<DXD.BlipExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.BlipExtensionConverter.CreateOpenXmlElement<DXDraw.BlipExtension>(item);
+        var newItem = DMXD.BlipExtensionConverter.CreateOpenXmlElement<DXD.BlipExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtensionList? CreateModelElement(DXDraw.BlipExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.BlipExtensionList? CreateModelElement(DXD.BlipExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class BlipExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.BlipExtensionList? openXmlElement, DMDraws.BlipExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BlipExtensionList? openXmlElement, DMD.BlipExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class BlipExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtensionList value)
-    where OpenXmlElementType: DXDraw.BlipExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BlipExtensionList value)
+    where OpenXmlElementType: DXD.BlipExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.BlipExtensionList openXmlElement, DMDraws.BlipExtensionList value)
+  public static void UpdateOpenXmlElement(DXD.BlipExtensionList openXmlElement, DMD.BlipExtensionList value)
   {
     SetBlipExtensions(openXmlElement, value?.BlipExtensions);
   }

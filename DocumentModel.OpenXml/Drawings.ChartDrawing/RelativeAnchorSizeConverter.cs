@@ -8,27 +8,27 @@ public static class RelativeAnchorSizeConverter
   /// <summary>
   /// Starting Anchor Point.
   /// </summary>
-  private static DMDrawsChartDraw.FromAnchor? GetFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.FromAnchor? GetFromAnchor(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.FromAnchor>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.FromAnchor>();
     if (element != null)
-      return DMXDrawsChartDraw.FromAnchorConverter.CreateModelElement(element);
+      return DMXDCD.FromAnchorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpFromAnchor(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.FromAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.FromAnchor>(), value, diffs, objName);
+    return DMXDCD.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.FromAnchor>(), value, diffs, objName);
   }
   
-  private static void SetFromAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.FromAnchor? value)
+  private static void SetFromAnchor(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.FromAnchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.FromAnchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.FromAnchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.FromAnchorConverter.CreateOpenXmlElement<DXDrawChartDraw.FromAnchor>(value);
+      itemElement = DMXDCD.FromAnchorConverter.CreateOpenXmlElement<DXDCD.FromAnchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,163 +37,163 @@ public static class RelativeAnchorSizeConverter
   /// <summary>
   /// Ending Anchor Point.
   /// </summary>
-  private static DMDrawsChartDraw.ToAnchor? GetToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.ToAnchor? GetToAnchor(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ToAnchor>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.ToAnchor>();
     if (element != null)
-      return DMXDrawsChartDraw.ToAnchorConverter.CreateModelElement(element);
+      return DMXDCD.ToAnchorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ToAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpToAnchor(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.ToAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ToAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ToAnchor>(), value, diffs, objName);
+    return DMXDCD.ToAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ToAnchor>(), value, diffs, objName);
   }
   
-  private static void SetToAnchor(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ToAnchor? value)
+  private static void SetToAnchor(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.ToAnchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.ToAnchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.ToAnchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ToAnchorConverter.CreateOpenXmlElement<DXDrawChartDraw.ToAnchor>(value);
+      itemElement = DMXDCD.ToAnchorConverter.CreateOpenXmlElement<DXDCD.ToAnchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.Shape? GetShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.Shape? GetShape(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Shape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.Shape>();
     if (element != null)
-      return DMXDrawsChartDraw.ShapeConverter.CreateModelElement(element);
+      return DMXDCD.ShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>(), value, diffs, objName);
+    return DMXDCD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Shape>(), value, diffs, objName);
   }
   
-  private static void SetShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Shape? value)
+  private static void SetShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.Shape>(value);
+      itemElement = DMXDCD.ShapeConverter.CreateOpenXmlElement<DXDCD.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.GroupShape? GetGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.GroupShape? GetGroupShape(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.GroupShape>();
     if (element != null)
-      return DMXDrawsChartDraw.GroupShapeConverter.CreateModelElement(element);
+      return DMXDCD.GroupShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.GroupShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>(), value, diffs, objName);
+    return DMXDCD.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GroupShape>(), value, diffs, objName);
   }
   
-  private static void SetGroupShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GroupShape? value)
+  private static void SetGroupShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.GroupShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GroupShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.GroupShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.GroupShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.GroupShape>(value);
+      itemElement = DMXDCD.GroupShapeConverter.CreateOpenXmlElement<DXDCD.GroupShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.GraphicFrame? GetGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.GraphicFrame? GetGraphicFrame(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.GraphicFrame>();
     if (element != null)
-      return DMXDrawsChartDraw.GraphicFrameConverter.CreateModelElement(element);
+      return DMXDCD.GraphicFrameConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphicFrame(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>(), value, diffs, objName);
+    return DMXDCD.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GraphicFrame>(), value, diffs, objName);
   }
   
-  private static void SetGraphicFrame(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.GraphicFrame? value)
+  private static void SetGraphicFrame(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.GraphicFrame? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.GraphicFrame>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.GraphicFrame>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.GraphicFrameConverter.CreateOpenXmlElement<DXDrawChartDraw.GraphicFrame>(value);
+      itemElement = DMXDCD.GraphicFrameConverter.CreateOpenXmlElement<DXDCD.GraphicFrame>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.ConnectionShape? GetConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.ConnectionShape? GetConnectionShape(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.ConnectionShape>();
     if (element != null)
-      return DMXDrawsChartDraw.ConnectionShapeConverter.CreateModelElement(element);
+      return DMXDCD.ConnectionShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>(), value, diffs, objName);
+    return DMXDCD.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ConnectionShape>(), value, diffs, objName);
   }
   
-  private static void SetConnectionShape(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.ConnectionShape? value)
+  private static void SetConnectionShape(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.ConnectionShape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.ConnectionShape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.ConnectionShape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.ConnectionShapeConverter.CreateOpenXmlElement<DXDrawChartDraw.ConnectionShape>(value);
+      itemElement = DMXDCD.ConnectionShapeConverter.CreateOpenXmlElement<DXDCD.ConnectionShape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraw.Picture? GetPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement)
+  private static DMDCD.Picture? GetPicture(DXDCD.RelativeAnchorSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawChartDraw.Picture>();
+    var element = openXmlElement?.GetFirstChild<DXDCD.Picture>();
     if (element != null)
-      return DMXDrawsChartDraw.PictureConverter.CreateModelElement(element);
+      return DMXDCD.PictureConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value, DiffList? diffs, string? objName)
+  private static bool CmpPicture(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.Picture? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraw.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>(), value, diffs, objName);
+    return DMXDCD.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Picture>(), value, diffs, objName);
   }
   
-  private static void SetPicture(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.Picture? value)
+  private static void SetPicture(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.Picture? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawChartDraw.Picture>();
+    var itemElement = openXmlElement.GetFirstChild<DXDCD.Picture>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraw.PictureConverter.CreateOpenXmlElement<DXDrawChartDraw.Picture>(value);
+      itemElement = DMXDCD.PictureConverter.CreateOpenXmlElement<DXDCD.Picture>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? CreateModelElement(DXDrawChartDraw.RelativeAnchorSize? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.RelativeAnchorSize? CreateModelElement(DXDCD.RelativeAnchorSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -210,7 +210,7 @@ public static class RelativeAnchorSizeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.RelativeAnchorSize? openXmlElement, DMDrawsChartDraw.RelativeAnchorSize? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.RelativeAnchorSize? openXmlElement, DMDCD.RelativeAnchorSize? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -236,15 +236,15 @@ public static class RelativeAnchorSizeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.RelativeAnchorSize value)
-    where OpenXmlElementType: DXDrawChartDraw.RelativeAnchorSize, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.RelativeAnchorSize value)
+    where OpenXmlElementType: DXDCD.RelativeAnchorSize, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.RelativeAnchorSize openXmlElement, DMDrawsChartDraw.RelativeAnchorSize value)
+  public static void UpdateOpenXmlElement(DXDCD.RelativeAnchorSize openXmlElement, DMDCD.RelativeAnchorSize value)
   {
     SetFromAnchor(openXmlElement, value?.FromAnchor);
     SetToAnchor(openXmlElement, value?.ToAnchor);

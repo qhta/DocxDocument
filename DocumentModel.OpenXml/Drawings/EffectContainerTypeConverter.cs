@@ -8,40 +8,40 @@ public static class EffectContainerTypeConverter
   /// <summary>
   /// Effect Container Type
   /// </summary>
-  private static DMDraws.EffectContainerKind? GetType(DXDraw.EffectContainerType openXmlElement)
+  private static DMD.EffectContainerKind? GetType(DXD.EffectContainerType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMDraws.EffectContainerKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXD.EffectContainerType openXmlElement, DMD.EffectContainerKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMDraws.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerKind? value)
+  private static void SetType(DXD.EffectContainerType openXmlElement, DMD.EffectContainerKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMDraws.EffectContainerKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(value);
   }
   
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DXDraw.EffectContainerType openXmlElement)
+  private static String? GetName(DXD.EffectContainerType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDraw.EffectContainerType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.EffectContainerType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDraw.EffectContainerType openXmlElement, String? value)
+  private static void SetName(DXD.EffectContainerType openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DXDraw.EffectContainerType? openXmlElement)
+  public static DocumentModel.Drawings.EffectContainerType? CreateModelElement(DXD.EffectContainerType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class EffectContainerTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.EffectContainerType? openXmlElement, DMDraws.EffectContainerType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectContainerType? openXmlElement, DMD.EffectContainerType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class EffectContainerTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectContainerType value)
-    where OpenXmlElementType: DXDraw.EffectContainerType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.EffectContainerType value)
+    where OpenXmlElementType: DXD.EffectContainerType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.EffectContainerType openXmlElement, DMDraws.EffectContainerType value)
+  public static void UpdateOpenXmlElement(DXD.EffectContainerType openXmlElement, DMD.EffectContainerType value)
   {
     SetType(openXmlElement, value?.Type);
     SetName(openXmlElement, value?.Name);

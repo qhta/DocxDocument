@@ -8,45 +8,45 @@ public static class ValueAxisConverter
   /// <summary>
   /// Axis ID.
   /// </summary>
-  private static UInt32? GetAxisId(DXDrawCharts.ValueAxis openXmlElement)
+  private static UInt32? GetAxisId(DXDC.ValueAxis openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.AxisId>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.AxisId>()?.Val);
   }
   
-  private static bool CmpAxisId(DXDrawCharts.ValueAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisId(DXDC.ValueAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.AxisId>()?.Val, value, diffs, objName, "AxisId");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.AxisId>()?.Val, value, diffs, objName, "AxisId");
   }
   
-  private static void SetAxisId(DXDrawCharts.ValueAxis openXmlElement, UInt32? value)
+  private static void SetAxisId(DXDC.ValueAxis openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.AxisId,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.AxisId,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
   /// Scaling.
   /// </summary>
-  private static DMDrawsCharts.Scaling? GetScaling(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.Scaling? GetScaling(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Scaling>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Scaling>();
     if (element != null)
-      return DMXDrawsCharts.ScalingConverter.CreateModelElement(element);
+      return DMXDC.ScalingConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpScaling(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Scaling? value, DiffList? diffs, string? objName)
+  private static bool CmpScaling(DXDC.ValueAxis openXmlElement, DMDC.Scaling? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ScalingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Scaling>(), value, diffs, objName);
+    return DMXDC.ScalingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Scaling>(), value, diffs, objName);
   }
   
-  private static void SetScaling(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Scaling? value)
+  private static void SetScaling(DXDC.ValueAxis openXmlElement, DMDC.Scaling? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Scaling>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Scaling>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ScalingConverter.CreateOpenXmlElement<DXDrawCharts.Scaling>(value);
+      itemElement = DMXDC.ScalingConverter.CreateOpenXmlElement<DXDC.Scaling>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,30 +55,30 @@ public static class ValueAxisConverter
   /// <summary>
   /// Delete.
   /// </summary>
-  private static Boolean? GetDelete(DXDrawCharts.ValueAxis openXmlElement)
+  private static Boolean? GetDelete(DXDC.ValueAxis openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    return openXmlElement.GetFirstChild<DXDC.Delete>() != null;
   }
   
-  private static bool CmpDelete(DXDrawCharts.ValueAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDelete(DXDC.ValueAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.Delete>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.Delete>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Delete", val, value);
+    diffs?.Add(objName, "DXDC.Delete", val, value);
     return false;
   }
   
-  private static void SetDelete(DXDrawCharts.ValueAxis openXmlElement, Boolean? value)
+  private static void SetDelete(DXDC.ValueAxis openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Delete>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.Delete>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.Delete();
+      var itemElement = new DXDC.Delete();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -86,55 +86,55 @@ public static class ValueAxisConverter
   /// <summary>
   /// Axis Position.
   /// </summary>
-  private static DMDrawsCharts.AxisPositionKind? GetAxisPosition(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.AxisPositionKind? GetAxisPosition(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.AxisPosition>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(openXmlElement.GetFirstChild<DXDC.AxisPosition>()?.Val?.Value);
   }
   
-  private static bool CmpAxisPosition(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.AxisPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisPosition(DXDC.ValueAxis openXmlElement, DMDC.AxisPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.AxisPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(openXmlElement.GetFirstChild<DXDC.AxisPosition>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetAxisPosition(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.AxisPositionKind? value)
+  private static void SetAxisPosition(DXDC.ValueAxis openXmlElement, DMDC.AxisPositionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AxisPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.AxisPosition>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>(itemElement, (DMDrawsCharts.AxisPositionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(itemElement, (DMDC.AxisPositionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDrawsCharts.AxisPositionKind>((DMDrawsCharts.AxisPositionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>((DMDC.AxisPositionKind)value));
   }
   
   /// <summary>
   /// Major Gridlines.
   /// </summary>
-  private static DMDrawsCharts.MajorGridlines? GetMajorGridlines(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.MajorGridlines? GetMajorGridlines(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MajorGridlines>();
+    var element = openXmlElement?.GetFirstChild<DXDC.MajorGridlines>();
     if (element != null)
-      return DMXDrawsCharts.MajorGridlinesConverter.CreateModelElement(element);
+      return DMXDC.MajorGridlinesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMajorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MajorGridlines? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorGridlines(DXDC.ValueAxis openXmlElement, DMDC.MajorGridlines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MajorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.MajorGridlines>(), value, diffs, objName);
+    return DMXDC.MajorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MajorGridlines>(), value, diffs, objName);
   }
   
-  private static void SetMajorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MajorGridlines? value)
+  private static void SetMajorGridlines(DXDC.ValueAxis openXmlElement, DMDC.MajorGridlines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorGridlines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.MajorGridlines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.MajorGridlinesConverter.CreateOpenXmlElement<DXDrawCharts.MajorGridlines>(value);
+      itemElement = DMXDC.MajorGridlinesConverter.CreateOpenXmlElement<DXDC.MajorGridlines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -143,27 +143,27 @@ public static class ValueAxisConverter
   /// <summary>
   /// Minor Gridlines.
   /// </summary>
-  private static DMDrawsCharts.MinorGridlines? GetMinorGridlines(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.MinorGridlines? GetMinorGridlines(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MinorGridlines>();
+    var element = openXmlElement?.GetFirstChild<DXDC.MinorGridlines>();
     if (element != null)
-      return DMXDrawsCharts.MinorGridlinesConverter.CreateModelElement(element);
+      return DMXDC.MinorGridlinesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMinorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MinorGridlines? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorGridlines(DXDC.ValueAxis openXmlElement, DMDC.MinorGridlines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MinorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.MinorGridlines>(), value, diffs, objName);
+    return DMXDC.MinorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MinorGridlines>(), value, diffs, objName);
   }
   
-  private static void SetMinorGridlines(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.MinorGridlines? value)
+  private static void SetMinorGridlines(DXDC.ValueAxis openXmlElement, DMDC.MinorGridlines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorGridlines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.MinorGridlines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.MinorGridlinesConverter.CreateOpenXmlElement<DXDrawCharts.MinorGridlines>(value);
+      itemElement = DMXDC.MinorGridlinesConverter.CreateOpenXmlElement<DXDC.MinorGridlines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -172,27 +172,27 @@ public static class ValueAxisConverter
   /// <summary>
   /// Title.
   /// </summary>
-  private static DMDrawsCharts.Title? GetTitle(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.Title? GetTitle(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Title>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Title>();
     if (element != null)
-      return DMXDrawsCharts.TitleConverter.CreateModelElement(element);
+      return DMXDC.TitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTitle(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Title? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXDC.ValueAxis openXmlElement, DMDC.Title? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Title>(), value, diffs, objName);
+    return DMXDC.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Title>(), value, diffs, objName);
   }
   
-  private static void SetTitle(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.Title? value)
+  private static void SetTitle(DXDC.ValueAxis openXmlElement, DMDC.Title? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Title>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Title>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.TitleConverter.CreateOpenXmlElement<DXDrawCharts.Title>(value);
+      itemElement = DMXDC.TitleConverter.CreateOpenXmlElement<DXDC.Title>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -201,27 +201,27 @@ public static class ValueAxisConverter
   /// <summary>
   /// Number Format.
   /// </summary>
-  private static DMDrawsCharts.NumberingFormat? GetNumberingFormat(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.NumberingFormat? GetNumberingFormat(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberingFormat>();
     if (element != null)
-      return DMXDrawsCharts.NumberingFormatConverter.CreateModelElement(element);
+      return DMXDC.NumberingFormatConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXDC.ValueAxis openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName);
   }
   
-  private static void SetNumberingFormat(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.NumberingFormat? value)
+  private static void SetNumberingFormat(DXDC.ValueAxis openXmlElement, DMDC.NumberingFormat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberingFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberingFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberingFormatConverter.CreateOpenXmlElement<DXDrawCharts.NumberingFormat>(value);
+      itemElement = DMXDC.NumberingFormatConverter.CreateOpenXmlElement<DXDC.NumberingFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -230,111 +230,111 @@ public static class ValueAxisConverter
   /// <summary>
   /// Major Tick Mark.
   /// </summary>
-  private static DMDrawsCharts.TickMarkKind? GetMajorTickMark(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.TickMarkKind? GetMajorTickMark(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(openXmlElement.GetFirstChild<DXDrawCharts.MajorTickMark>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MajorTickMark>()?.Val?.Value);
   }
   
-  private static bool CmpMajorTickMark(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickMarkKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorTickMark(DXDC.ValueAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(openXmlElement.GetFirstChild<DXDrawCharts.MajorTickMark>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MajorTickMark>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetMajorTickMark(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickMarkKind? value)
+  private static void SetMajorTickMark(DXDC.ValueAxis openXmlElement, DMDC.TickMarkKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MajorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.MajorTickMark>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(itemElement, (DMDrawsCharts.TickMarkKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(itemElement, (DMDC.TickMarkKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>((DMDrawsCharts.TickMarkKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
   }
   
   /// <summary>
   /// Minor Tick Mark.
   /// </summary>
-  private static DMDrawsCharts.TickMarkKind? GetMinorTickMark(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.TickMarkKind? GetMinorTickMark(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(openXmlElement.GetFirstChild<DXDrawCharts.MinorTickMark>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MinorTickMark>()?.Val?.Value);
   }
   
-  private static bool CmpMinorTickMark(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickMarkKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorTickMark(DXDC.ValueAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(openXmlElement.GetFirstChild<DXDrawCharts.MinorTickMark>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MinorTickMark>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetMinorTickMark(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickMarkKind? value)
+  private static void SetMinorTickMark(DXDC.ValueAxis openXmlElement, DMDC.TickMarkKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MinorTickMark>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.MinorTickMark>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>(itemElement, (DMDrawsCharts.TickMarkKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(itemElement, (DMDC.TickMarkKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDrawsCharts.TickMarkKind>((DMDrawsCharts.TickMarkKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
   }
   
   /// <summary>
   /// Tick Label Position.
   /// </summary>
-  private static DMDrawsCharts.TickLabelPositionKind? GetTickLabelPosition(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.TickLabelPositionKind? GetTickLabelPosition(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.TickLabelPosition>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.TickLabelPosition>()?.Val?.Value);
   }
   
-  private static bool CmpTickLabelPosition(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickLabelPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTickLabelPosition(DXDC.ValueAxis openXmlElement, DMDC.TickLabelPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDrawCharts.TickLabelPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.TickLabelPosition>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetTickLabelPosition(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TickLabelPositionKind? value)
+  private static void SetTickLabelPosition(DXDC.ValueAxis openXmlElement, DMDC.TickLabelPositionKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TickLabelPosition>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.TickLabelPosition>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>(itemElement, (DMDrawsCharts.TickLabelPositionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(itemElement, (DMDC.TickLabelPositionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDrawsCharts.TickLabelPositionKind>((DMDrawsCharts.TickLabelPositionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>((DMDC.TickLabelPositionKind)value));
   }
   
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.ValueAxis openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.ValueAxis openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -343,27 +343,27 @@ public static class ValueAxisConverter
   /// <summary>
   /// TextProperties.
   /// </summary>
-  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.TextProperties? GetTextProperties(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.TextProperties>();
     if (element != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+      return DMXDC.TextPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.ValueAxis openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
   }
   
-  private static void SetTextProperties(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.TextProperties? value)
+  private static void SetTextProperties(DXDC.ValueAxis openXmlElement, DMDC.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
+      itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -372,169 +372,169 @@ public static class ValueAxisConverter
   /// <summary>
   /// Crossing Axis ID.
   /// </summary>
-  private static UInt32? GetCrossingAxis(DXDrawCharts.ValueAxis openXmlElement)
+  private static UInt32? GetCrossingAxis(DXDC.ValueAxis openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.CrossingAxis>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CrossingAxis>()?.Val);
   }
   
-  private static bool CmpCrossingAxis(DXDrawCharts.ValueAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpCrossingAxis(DXDC.ValueAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.CrossingAxis>()?.Val, value, diffs, objName, "CrossingAxis");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CrossingAxis>()?.Val, value, diffs, objName, "CrossingAxis");
   }
   
-  private static void SetCrossingAxis(DXDrawCharts.ValueAxis openXmlElement, UInt32? value)
+  private static void SetCrossingAxis(DXDC.ValueAxis openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.CrossingAxis,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.CrossingAxis,System.UInt32>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.CrossesKind? GetCrosses(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.CrossesKind? GetCrosses(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>(openXmlElement.GetFirstChild<DXDrawCharts.Crosses>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(openXmlElement.GetFirstChild<DXDC.Crosses>()?.Val?.Value);
   }
   
-  private static bool CmpCrosses(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.CrossesKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCrosses(DXDC.ValueAxis openXmlElement, DMDC.CrossesKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>(openXmlElement.GetFirstChild<DXDrawCharts.Crosses>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(openXmlElement.GetFirstChild<DXDC.Crosses>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetCrosses(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.CrossesKind? value)
+  private static void SetCrosses(DXDC.ValueAxis openXmlElement, DMDC.CrossesKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Crosses>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Crosses>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>(itemElement, (DMDrawsCharts.CrossesKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(itemElement, (DMDC.CrossesKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDrawsCharts.CrossesKind>((DMDrawsCharts.CrossesKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>((DMDC.CrossesKind)value));
   }
   
-  private static Double? GetCrossesAt(DXDrawCharts.ValueAxis openXmlElement)
+  private static Double? GetCrossesAt(DXDC.ValueAxis openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.CrossesAt>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CrossesAt>()?.Val);
   }
   
-  private static bool CmpCrossesAt(DXDrawCharts.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpCrossesAt(DXDC.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.CrossesAt>()?.Val, value, diffs, objName, "CrossesAt");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CrossesAt>()?.Val, value, diffs, objName, "CrossesAt");
   }
   
-  private static void SetCrossesAt(DXDrawCharts.ValueAxis openXmlElement, Double? value)
+  private static void SetCrossesAt(DXDC.ValueAxis openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.CrossesAt,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.CrossesAt,System.Double>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.CrossBetweenKind? GetCrossBetween(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.CrossBetweenKind? GetCrossBetween(DXDC.ValueAxis openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDrawsCharts.CrossBetweenKind>(openXmlElement.GetFirstChild<DXDrawCharts.CrossBetween>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDC.CrossBetweenKind>(openXmlElement.GetFirstChild<DXDC.CrossBetween>()?.Val?.Value);
   }
   
-  private static bool CmpCrossBetween(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.CrossBetweenKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCrossBetween(DXDC.ValueAxis openXmlElement, DMDC.CrossBetweenKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDrawsCharts.CrossBetweenKind>(openXmlElement.GetFirstChild<DXDrawCharts.CrossBetween>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDC.CrossBetweenKind>(openXmlElement.GetFirstChild<DXDC.CrossBetween>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetCrossBetween(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.CrossBetweenKind? value)
+  private static void SetCrossBetween(DXDC.ValueAxis openXmlElement, DMDC.CrossBetweenKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.CrossBetween>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.CrossBetween>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDrawsCharts.CrossBetweenKind>(itemElement, (DMDrawsCharts.CrossBetweenKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDC.CrossBetweenKind>(itemElement, (DMDC.CrossBetweenKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.CrossBetween, DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDrawsCharts.CrossBetweenKind>((DMDrawsCharts.CrossBetweenKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.CrossBetween, DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues, DMDC.CrossBetweenKind>((DMDC.CrossBetweenKind)value));
   }
   
-  private static Double? GetMajorUnit(DXDrawCharts.ValueAxis openXmlElement)
+  private static Double? GetMajorUnit(DXDC.ValueAxis openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.MajorUnit>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.MajorUnit>()?.Val);
   }
   
-  private static bool CmpMajorUnit(DXDrawCharts.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorUnit(DXDC.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.MajorUnit>()?.Val, value, diffs, objName, "MajorUnit");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.MajorUnit>()?.Val, value, diffs, objName, "MajorUnit");
   }
   
-  private static void SetMajorUnit(DXDrawCharts.ValueAxis openXmlElement, Double? value)
+  private static void SetMajorUnit(DXDC.ValueAxis openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.MajorUnit,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.MajorUnit,System.Double>(openXmlElement, value);
   }
   
-  private static Double? GetMinorUnit(DXDrawCharts.ValueAxis openXmlElement)
+  private static Double? GetMinorUnit(DXDC.ValueAxis openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.MinorUnit>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.MinorUnit>()?.Val);
   }
   
-  private static bool CmpMinorUnit(DXDrawCharts.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorUnit(DXDC.ValueAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.MinorUnit>()?.Val, value, diffs, objName, "MinorUnit");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.MinorUnit>()?.Val, value, diffs, objName, "MinorUnit");
   }
   
-  private static void SetMinorUnit(DXDrawCharts.ValueAxis openXmlElement, Double? value)
+  private static void SetMinorUnit(DXDC.ValueAxis openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.MinorUnit,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.MinorUnit,System.Double>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.DisplayUnits? GetDisplayUnits(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.DisplayUnits? GetDisplayUnits(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DisplayUnits>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DisplayUnits>();
     if (element != null)
-      return DMXDrawsCharts.DisplayUnitsConverter.CreateModelElement(element);
+      return DMXDC.DisplayUnitsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDisplayUnits(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.DisplayUnits? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayUnits(DXDC.ValueAxis openXmlElement, DMDC.DisplayUnits? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DisplayUnitsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnits>(), value, diffs, objName);
+    return DMXDC.DisplayUnitsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DisplayUnits>(), value, diffs, objName);
   }
   
-  private static void SetDisplayUnits(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.DisplayUnits? value)
+  private static void SetDisplayUnits(DXDC.ValueAxis openXmlElement, DMDC.DisplayUnits? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DisplayUnits>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DisplayUnits>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DisplayUnitsConverter.CreateOpenXmlElement<DXDrawCharts.DisplayUnits>(value);
+      itemElement = DMXDC.DisplayUnitsConverter.CreateOpenXmlElement<DXDC.DisplayUnits>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.ValAxExtensionList? GetValAxExtensionList(DXDrawCharts.ValueAxis openXmlElement)
+  private static DMDC.ValAxExtensionList? GetValAxExtensionList(DXDC.ValueAxis openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ValAxExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ValAxExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ValAxExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ValAxExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpValAxExtensionList(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ValAxExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpValAxExtensionList(DXDC.ValueAxis openXmlElement, DMDC.ValAxExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ValAxExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ValAxExtensionList>(), value, diffs, objName);
+    return DMXDC.ValAxExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ValAxExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetValAxExtensionList(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ValAxExtensionList? value)
+  private static void SetValAxExtensionList(DXDC.ValueAxis openXmlElement, DMDC.ValAxExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ValAxExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ValAxExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ValAxExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ValAxExtensionList>(value);
+      itemElement = DMXDC.ValAxExtensionListConverter.CreateOpenXmlElement<DXDC.ValAxExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ValueAxis? CreateModelElement(DXDrawCharts.ValueAxis? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ValueAxis? CreateModelElement(DXDC.ValueAxis? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -565,7 +565,7 @@ public static class ValueAxisConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ValueAxis? openXmlElement, DMDrawsCharts.ValueAxis? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ValueAxis? openXmlElement, DMDC.ValueAxis? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -619,15 +619,15 @@ public static class ValueAxisConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ValueAxis value)
-    where OpenXmlElementType: DXDrawCharts.ValueAxis, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ValueAxis value)
+    where OpenXmlElementType: DXDC.ValueAxis, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ValueAxis openXmlElement, DMDrawsCharts.ValueAxis value)
+  public static void UpdateOpenXmlElement(DXDC.ValueAxis openXmlElement, DMDC.ValueAxis value)
   {
     SetAxisId(openXmlElement, value?.AxisId);
     SetScaling(openXmlElement, value?.Scaling);

@@ -5,55 +5,55 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class TextDataConverter
 {
-  private static DMDrawsChartDraws.OpenXmlFormulaElement? GetFormula(DXO2016DrawChartDraw.TextData openXmlElement)
+  private static DMDCDs.OpenXmlFormulaElement? GetFormula(DXO16DCD.TextData openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.Formula>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.Formula>();
     if (element != null)
-      return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateModelElement(element);
+      return DMXDCDs.OpenXmlFormulaElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO16DCD.TextData openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>(), value, diffs, objName);
+    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Formula>(), value, diffs, objName);
   }
   
-  private static void SetFormula(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.OpenXmlFormulaElement? value)
+  private static void SetFormula(DXO16DCD.TextData openXmlElement, DMDCDs.OpenXmlFormulaElement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.Formula>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.Formula>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.Formula>(value);
+      itemElement = DMXDCDs.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO16DCD.Formula>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetVXsdstring(DXO2016DrawChartDraw.TextData openXmlElement)
+  private static String? GetVXsdstring(DXO16DCD.TextData openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.VXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.VXsdstring>()?.Text;
   }
   
-  private static bool CmpVXsdstring(DXO2016DrawChartDraw.TextData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVXsdstring(DXO16DCD.TextData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.VXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.VXsdstring>()?.Text == value;
   }
   
-  private static void SetVXsdstring(DXO2016DrawChartDraw.TextData openXmlElement, String? value)
+  private static void SetVXsdstring(DXO16DCD.TextData openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.VXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.VXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.VXsdstring { Text = value };
+      itemElement = new DXO16DCD.VXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DXO2016DrawChartDraw.TextData? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.TextData? CreateModelElement(DXO16DCD.TextData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -65,7 +65,7 @@ public static class TextDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.TextData? openXmlElement, DMDrawsChartDraws.TextData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.TextData? openXmlElement, DMDCDs.TextData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -81,15 +81,15 @@ public static class TextDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.TextData value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.TextData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.TextData value)
+    where OpenXmlElementType: DXO16DCD.TextData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.TextData openXmlElement, DMDrawsChartDraws.TextData value)
+  public static void UpdateOpenXmlElement(DXO16DCD.TextData openXmlElement, DMDCDs.TextData value)
   {
     SetFormula(openXmlElement, value?.Formula);
     SetVXsdstring(openXmlElement, value?.VXsdstring);

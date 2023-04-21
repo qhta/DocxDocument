@@ -8,27 +8,27 @@ public static class DataModelConverter
   /// <summary>
   /// Point List.
   /// </summary>
-  private static DMDrawsDgms.PointList? GetPointList(DXDrawDgms.DataModel openXmlElement)
+  private static DMDD.PointList? GetPointList(DXDD.DataModel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PointList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.PointList>();
     if (element != null)
-      return DMXDrawsDgms.PointListConverter.CreateModelElement(element);
+      return DMXDD.PointListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPointList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.PointList? value, DiffList? diffs, string? objName)
+  private static bool CmpPointList(DXDD.DataModel openXmlElement, DMDD.PointList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PointListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PointList>(), value, diffs, objName);
+    return DMXDD.PointListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PointList>(), value, diffs, objName);
   }
   
-  private static void SetPointList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.PointList? value)
+  private static void SetPointList(DXDD.DataModel openXmlElement, DMDD.PointList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PointList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.PointList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.PointListConverter.CreateOpenXmlElement<DXDrawDgms.PointList>(value);
+      itemElement = DMXDD.PointListConverter.CreateOpenXmlElement<DXDD.PointList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class DataModelConverter
   /// <summary>
   /// Connection List.
   /// </summary>
-  private static DMDrawsDgms.ConnectionList? GetConnectionList(DXDrawDgms.DataModel openXmlElement)
+  private static DMDD.ConnectionList? GetConnectionList(DXDD.DataModel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ConnectionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ConnectionList>();
     if (element != null)
-      return DMXDrawsDgms.ConnectionListConverter.CreateModelElement(element);
+      return DMXDD.ConnectionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConnectionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.ConnectionList? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionList(DXDD.DataModel openXmlElement, DMDD.ConnectionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ConnectionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ConnectionList>(), value, diffs, objName);
+    return DMXDD.ConnectionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ConnectionList>(), value, diffs, objName);
   }
   
-  private static void SetConnectionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.ConnectionList? value)
+  private static void SetConnectionList(DXDD.DataModel openXmlElement, DMDD.ConnectionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ConnectionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ConnectionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ConnectionListConverter.CreateOpenXmlElement<DXDrawDgms.ConnectionList>(value);
+      itemElement = DMXDD.ConnectionListConverter.CreateOpenXmlElement<DXDD.ConnectionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class DataModelConverter
   /// <summary>
   /// Background Formatting.
   /// </summary>
-  private static DMDrawsDgms.Background? GetBackground(DXDrawDgms.DataModel openXmlElement)
+  private static DMDD.Background? GetBackground(DXDD.DataModel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Background>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Background>();
     if (element != null)
-      return DMXDrawsDgms.BackgroundConverter.CreateModelElement(element);
+      return DMXDD.BackgroundConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackground(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Background? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground(DXDD.DataModel openXmlElement, DMDD.Background? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Background>(), value, diffs, objName);
+    return DMXDD.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Background>(), value, diffs, objName);
   }
   
-  private static void SetBackground(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Background? value)
+  private static void SetBackground(DXDD.DataModel openXmlElement, DMDD.Background? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Background>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Background>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.BackgroundConverter.CreateOpenXmlElement<DXDrawDgms.Background>(value);
+      itemElement = DMXDD.BackgroundConverter.CreateOpenXmlElement<DXDD.Background>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,27 +95,27 @@ public static class DataModelConverter
   /// <summary>
   /// Whole E2O Formatting.
   /// </summary>
-  private static DMDrawsDgms.Whole? GetWhole(DXDrawDgms.DataModel openXmlElement)
+  private static DMDD.Whole? GetWhole(DXDD.DataModel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Whole>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Whole>();
     if (element != null)
-      return DMXDrawsDgms.WholeConverter.CreateModelElement(element);
+      return DMXDD.WholeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpWhole(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Whole? value, DiffList? diffs, string? objName)
+  private static bool CmpWhole(DXDD.DataModel openXmlElement, DMDD.Whole? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.WholeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Whole>(), value, diffs, objName);
+    return DMXDD.WholeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Whole>(), value, diffs, objName);
   }
   
-  private static void SetWhole(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.Whole? value)
+  private static void SetWhole(DXDD.DataModel openXmlElement, DMDD.Whole? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Whole>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Whole>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.WholeConverter.CreateOpenXmlElement<DXDrawDgms.Whole>(value);
+      itemElement = DMXDD.WholeConverter.CreateOpenXmlElement<DXDD.Whole>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -124,33 +124,33 @@ public static class DataModelConverter
   /// <summary>
   /// DataModelExtensionList.
   /// </summary>
-  private static DMDrawsDgms.DataModelExtensionList? GetDataModelExtensionList(DXDrawDgms.DataModel openXmlElement)
+  private static DMDD.DataModelExtensionList? GetDataModelExtensionList(DXDD.DataModel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.DataModelExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.DataModelExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.DataModelExtensionListConverter.CreateModelElement(element);
+      return DMXDD.DataModelExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataModelExtensionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.DataModelExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelExtensionList(DXDD.DataModel openXmlElement, DMDD.DataModelExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.DataModelExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.DataModelExtensionList>(), value, diffs, objName);
+    return DMXDD.DataModelExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModelExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetDataModelExtensionList(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.DataModelExtensionList? value)
+  private static void SetDataModelExtensionList(DXDD.DataModel openXmlElement, DMDD.DataModelExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.DataModelExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.DataModelExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.DataModelExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.DataModelExtensionList>(value);
+      itemElement = DMXDD.DataModelExtensionListConverter.CreateOpenXmlElement<DXDD.DataModelExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DataModel? CreateModelElement(DXDrawDgms.DataModel? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DataModel? CreateModelElement(DXDD.DataModel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -165,7 +165,7 @@ public static class DataModelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.DataModel? openXmlElement, DMDrawsDgms.DataModel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DataModel? openXmlElement, DMDD.DataModel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -187,15 +187,15 @@ public static class DataModelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DataModel value)
-    where OpenXmlElementType: DXDrawDgms.DataModel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DataModel value)
+    where OpenXmlElementType: DXDD.DataModel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.DataModel openXmlElement, DMDrawsDgms.DataModel value)
+  public static void UpdateOpenXmlElement(DXDD.DataModel openXmlElement, DMDD.DataModel value)
   {
     SetPointList(openXmlElement, value?.PointList);
     SetConnectionList(openXmlElement, value?.ConnectionList);

@@ -8,63 +8,63 @@ public static class BubbleChartSeries3Converter
   /// <summary>
   /// Index.
   /// </summary>
-  private static UInt32? GetIndex(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static UInt32? GetIndex(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val);
   }
   
-  private static bool CmpIndex(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXO13DC.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Index>()?.Val, value, diffs, objName, "Index");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val, value, diffs, objName, "Index");
   }
   
-  private static void SetIndex(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value)
+  private static void SetIndex(DXO13DC.BubbleChartSeries openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Index,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Index,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
   /// Order.
   /// </summary>
-  private static UInt32? GetOrder(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static UInt32? GetOrder(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Order>()?.Val);
   }
   
-  private static bool CmpOrder(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpOrder(DXO13DC.BubbleChartSeries openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Order>()?.Val, value, diffs, objName, "Order");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Order>()?.Val, value, diffs, objName, "Order");
   }
   
-  private static void SetOrder(DXO2013DrawChart.BubbleChartSeries openXmlElement, UInt32? value)
+  private static void SetOrder(DXO13DC.BubbleChartSeries openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Order,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Order,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
   /// Series Text.
   /// </summary>
-  private static DMDrawsCharts.SeriesText? GetSeriesText(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.SeriesText? GetSeriesText(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.SeriesText>();
+    var element = openXmlElement?.GetFirstChild<DXDC.SeriesText>();
     if (element != null)
-      return DMXDrawsCharts.SeriesTextConverter.CreateModelElement(element);
+      return DMXDC.SeriesTextConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSeriesText(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.SeriesText? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesText(DXO13DC.BubbleChartSeries openXmlElement, DMDC.SeriesText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>(), value, diffs, objName);
+    return DMXDC.SeriesTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SeriesText>(), value, diffs, objName);
   }
   
-  private static void SetSeriesText(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.SeriesText? value)
+  private static void SetSeriesText(DXO13DC.BubbleChartSeries openXmlElement, DMDC.SeriesText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SeriesText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.SeriesText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.SeriesTextConverter.CreateOpenXmlElement<DXDrawCharts.SeriesText>(value);
+      itemElement = DMXDC.SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -73,27 +73,27 @@ public static class BubbleChartSeries3Converter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXO13DC.BubbleChartSeries openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXO13DC.BubbleChartSeries openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -102,27 +102,27 @@ public static class BubbleChartSeries3Converter
   /// <summary>
   /// PictureOptions.
   /// </summary>
-  private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.PictureOptions? GetPictureOptions(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PictureOptions>();
     if (element != null)
-      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+      return DMXDC.PictureOptionsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureOptions(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureOptions(DXO13DC.BubbleChartSeries openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
+    return DMXDC.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PictureOptions>(), value, diffs, objName);
   }
   
-  private static void SetPictureOptions(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.PictureOptions? value)
+  private static void SetPictureOptions(DXO13DC.BubbleChartSeries openXmlElement, DMDC.PictureOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PictureOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PictureOptionsConverter.CreateOpenXmlElement<DXDrawCharts.PictureOptions>(value);
+      itemElement = DMXDC.PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -131,40 +131,40 @@ public static class BubbleChartSeries3Converter
   /// <summary>
   /// InvertIfNegative.
   /// </summary>
-  private static Boolean? GetInvertIfNegative(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static Boolean? GetInvertIfNegative(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null;
+    return openXmlElement.GetFirstChild<DXDC.InvertIfNegative>() != null;
   }
   
-  private static bool CmpInvertIfNegative(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertIfNegative(DXO13DC.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.InvertIfNegative>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.InvertIfNegative", val, value);
+    diffs?.Add(objName, "DXDC.InvertIfNegative", val, value);
     return false;
   }
   
-  private static void SetInvertIfNegative(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value)
+  private static void SetInvertIfNegative(DXO13DC.BubbleChartSeries openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.InvertIfNegative>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.InvertIfNegative>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.InvertIfNegative();
+      var itemElement = new DXDC.InvertIfNegative();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsCharts.DataPoint>? GetDataPoints(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static Collection<DMDC.DataPoint>? GetDataPoints(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.DataPoint>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.DataPoint>())
+    var collection = new Collection<DMDC.DataPoint>();
+    foreach (var item in openXmlElement.Elements<DXDC.DataPoint>())
     {
-      var newItem = DMXDrawsCharts.DataPointConverter.CreateModelElement(item);
+      var newItem = DMXDC.DataPointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -173,9 +173,9 @@ public static class BubbleChartSeries3Converter
     return null;
   }
   
-  private static bool CmpDataPoints(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataPoints(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.DataPoint>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.DataPoint>();
+    var origElements = openXmlElement.Elements<DXDC.DataPoint>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -191,7 +191,7 @@ public static class BubbleChartSeries3Converter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.DataPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DataPointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -201,52 +201,52 @@ public static class BubbleChartSeries3Converter
     return false;
   }
   
-  private static void SetDataPoints(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.DataPoint>? value)
+  private static void SetDataPoints(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.DataPoint>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.DataPoint>();
+    openXmlElement.RemoveAllChildren<DXDC.DataPoint>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.DataPointConverter.CreateOpenXmlElement<DXDrawCharts.DataPoint>(item);
+        var newItem = DMXDC.DataPointConverter.CreateOpenXmlElement<DXDC.DataPoint>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.DataLabels? GetDataLabels(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.DataLabels? GetDataLabels(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DataLabels>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabels(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXO13DC.BubbleChartSeries openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
   }
   
-  private static void SetDataLabels(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.DataLabels? value)
+  private static void SetDataLabels(DXO13DC.BubbleChartSeries openXmlElement, DMDC.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
+      itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsCharts.Trendline>? GetTrendlines(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static Collection<DMDC.Trendline>? GetTrendlines(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.Trendline>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.Trendline>())
+    var collection = new Collection<DMDC.Trendline>();
+    foreach (var item in openXmlElement.Elements<DXDC.Trendline>())
     {
-      var newItem = DMXDrawsCharts.TrendlineConverter.CreateModelElement(item);
+      var newItem = DMXDC.TrendlineConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -255,9 +255,9 @@ public static class BubbleChartSeries3Converter
     return null;
   }
   
-  private static bool CmpTrendlines(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.Trendline>? value, DiffList? diffs, string? objName)
+  private static bool CmpTrendlines(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.Trendline>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.Trendline>();
+    var origElements = openXmlElement.Elements<DXDC.Trendline>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -273,7 +273,7 @@ public static class BubbleChartSeries3Converter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.TrendlineConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.TrendlineConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -283,26 +283,26 @@ public static class BubbleChartSeries3Converter
     return false;
   }
   
-  private static void SetTrendlines(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.Trendline>? value)
+  private static void SetTrendlines(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.Trendline>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.Trendline>();
+    openXmlElement.RemoveAllChildren<DXDC.Trendline>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.TrendlineConverter.CreateOpenXmlElement<DXDrawCharts.Trendline>(item);
+        var newItem = DMXDC.TrendlineConverter.CreateOpenXmlElement<DXDC.Trendline>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static Collection<DMDrawsCharts.ErrorBars>? GetErrorBars(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static Collection<DMDC.ErrorBars>? GetErrorBars(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.ErrorBars>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.ErrorBars>())
+    var collection = new Collection<DMDC.ErrorBars>();
+    foreach (var item in openXmlElement.Elements<DXDC.ErrorBars>())
     {
-      var newItem = DMXDrawsCharts.ErrorBarsConverter.CreateModelElement(item);
+      var newItem = DMXDC.ErrorBarsConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -311,9 +311,9 @@ public static class BubbleChartSeries3Converter
     return null;
   }
   
-  private static bool CmpErrorBars(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.ErrorBars>? value, DiffList? diffs, string? objName)
+  private static bool CmpErrorBars(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.ErrorBars>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.ErrorBars>();
+    var origElements = openXmlElement.Elements<DXDC.ErrorBars>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -329,7 +329,7 @@ public static class BubbleChartSeries3Converter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.ErrorBarsConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.ErrorBarsConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -339,153 +339,153 @@ public static class BubbleChartSeries3Converter
     return false;
   }
   
-  private static void SetErrorBars(DXO2013DrawChart.BubbleChartSeries openXmlElement, Collection<DMDrawsCharts.ErrorBars>? value)
+  private static void SetErrorBars(DXO13DC.BubbleChartSeries openXmlElement, Collection<DMDC.ErrorBars>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.ErrorBars>();
+    openXmlElement.RemoveAllChildren<DXDC.ErrorBars>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.ErrorBarsConverter.CreateOpenXmlElement<DXDrawCharts.ErrorBars>(item);
+        var newItem = DMXDC.ErrorBarsConverter.CreateOpenXmlElement<DXDC.ErrorBars>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.XValues? GetXValues(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.XValues? GetXValues(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.XValues>();
+    var element = openXmlElement?.GetFirstChild<DXDC.XValues>();
     if (element != null)
-      return DMXDrawsCharts.XValuesConverter.CreateModelElement(element);
+      return DMXDC.XValuesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpXValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.XValues? value, DiffList? diffs, string? objName)
+  private static bool CmpXValues(DXO13DC.BubbleChartSeries openXmlElement, DMDC.XValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.XValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.XValues>(), value, diffs, objName);
+    return DMXDC.XValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.XValues>(), value, diffs, objName);
   }
   
-  private static void SetXValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.XValues? value)
+  private static void SetXValues(DXO13DC.BubbleChartSeries openXmlElement, DMDC.XValues? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.XValues>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.XValues>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.XValuesConverter.CreateOpenXmlElement<DXDrawCharts.XValues>(value);
+      itemElement = DMXDC.XValuesConverter.CreateOpenXmlElement<DXDC.XValues>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.YValues? GetYValues(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.YValues? GetYValues(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.YValues>();
+    var element = openXmlElement?.GetFirstChild<DXDC.YValues>();
     if (element != null)
-      return DMXDrawsCharts.YValuesConverter.CreateModelElement(element);
+      return DMXDC.YValuesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpYValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.YValues? value, DiffList? diffs, string? objName)
+  private static bool CmpYValues(DXO13DC.BubbleChartSeries openXmlElement, DMDC.YValues? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.YValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.YValues>(), value, diffs, objName);
+    return DMXDC.YValuesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.YValues>(), value, diffs, objName);
   }
   
-  private static void SetYValues(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.YValues? value)
+  private static void SetYValues(DXO13DC.BubbleChartSeries openXmlElement, DMDC.YValues? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.YValues>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.YValues>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.YValuesConverter.CreateOpenXmlElement<DXDrawCharts.YValues>(value);
+      itemElement = DMXDC.YValuesConverter.CreateOpenXmlElement<DXDC.YValues>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.BubbleSize? GetBubbleSize(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.BubbleSize? GetBubbleSize(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BubbleSize>();
+    var element = openXmlElement?.GetFirstChild<DXDC.BubbleSize>();
     if (element != null)
-      return DMXDrawsCharts.BubbleSizeConverter.CreateModelElement(element);
+      return DMXDC.BubbleSizeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBubbleSize(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSize? value, DiffList? diffs, string? objName)
+  private static bool CmpBubbleSize(DXO13DC.BubbleChartSeries openXmlElement, DMDC.BubbleSize? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleSize>(), value, diffs, objName);
+    return DMXDC.BubbleSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BubbleSize>(), value, diffs, objName);
   }
   
-  private static void SetBubbleSize(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSize? value)
+  private static void SetBubbleSize(DXO13DC.BubbleChartSeries openXmlElement, DMDC.BubbleSize? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BubbleSize>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BubbleSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.BubbleSizeConverter.CreateOpenXmlElement<DXDrawCharts.BubbleSize>(value);
+      itemElement = DMXDC.BubbleSizeConverter.CreateOpenXmlElement<DXDC.BubbleSize>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetBubble3D(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static Boolean? GetBubble3D(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    return openXmlElement.GetFirstChild<DXDC.Bubble3D>() != null;
   }
   
-  private static bool CmpBubble3D(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBubble3D(DXO13DC.BubbleChartSeries openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.Bubble3D>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.Bubble3D", val, value);
+    diffs?.Add(objName, "DXDC.Bubble3D", val, value);
     return false;
   }
   
-  private static void SetBubble3D(DXO2013DrawChart.BubbleChartSeries openXmlElement, Boolean? value)
+  private static void SetBubble3D(DXO13DC.BubbleChartSeries openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Bubble3D>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.Bubble3D>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.Bubble3D();
+      var itemElement = new DXDC.Bubble3D();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.BubbleSerExtensionList? GetBubbleSerExtensionList(DXO2013DrawChart.BubbleChartSeries openXmlElement)
+  private static DMDC.BubbleSerExtensionList? GetBubbleSerExtensionList(DXO13DC.BubbleChartSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.BubbleSerExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.BubbleSerExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.BubbleSerExtensionListConverter.CreateModelElement(element);
+      return DMXDC.BubbleSerExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBubbleSerExtensionList(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSerExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpBubbleSerExtensionList(DXO13DC.BubbleChartSeries openXmlElement, DMDC.BubbleSerExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BubbleSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.BubbleSerExtensionList>(), value, diffs, objName);
+    return DMXDC.BubbleSerExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BubbleSerExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetBubbleSerExtensionList(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleSerExtensionList? value)
+  private static void SetBubbleSerExtensionList(DXO13DC.BubbleChartSeries openXmlElement, DMDC.BubbleSerExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.BubbleSerExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.BubbleSerExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.BubbleSerExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.BubbleSerExtensionList>(value);
+      itemElement = DMXDC.BubbleSerExtensionListConverter.CreateOpenXmlElement<DXDC.BubbleSerExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleChartSeries3? CreateModelElement(DXO2013DrawChart.BubbleChartSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleChartSeries3? CreateModelElement(DXO13DC.BubbleChartSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -510,7 +510,7 @@ public static class BubbleChartSeries3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.BubbleChartSeries? openXmlElement, DMDrawsCharts.BubbleChartSeries3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.BubbleChartSeries? openXmlElement, DMDC.BubbleChartSeries3? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -552,15 +552,15 @@ public static class BubbleChartSeries3Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleChartSeries3 value)
-    where OpenXmlElementType: DXO2013DrawChart.BubbleChartSeries, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BubbleChartSeries3 value)
+    where OpenXmlElementType: DXO13DC.BubbleChartSeries, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.BubbleChartSeries openXmlElement, DMDrawsCharts.BubbleChartSeries3 value)
+  public static void UpdateOpenXmlElement(DXO13DC.BubbleChartSeries openXmlElement, DMDC.BubbleChartSeries3 value)
   {
     SetIndex(openXmlElement, value?.Index);
     SetOrder(openXmlElement, value?.Order);

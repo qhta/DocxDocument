@@ -5,100 +5,100 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BackWallConverter
 {
-  private static Byte? GetThickness(DXDrawCharts.BackWall openXmlElement)
+  private static Byte? GetThickness(DXDC.BackWall openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Thickness>()?.Val);
   }
   
-  private static bool CmpThickness(DXDrawCharts.BackWall openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpThickness(DXDC.BackWall openXmlElement, Byte? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.Thickness>()?.Val, value, diffs, objName, "Thickness");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Thickness>()?.Val, value, diffs, objName, "Thickness");
   }
   
-  private static void SetThickness(DXDrawCharts.BackWall openXmlElement, Byte? value)
+  private static void SetThickness(DXDC.BackWall openXmlElement, Byte? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.Thickness,System.Byte>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.Thickness,System.Byte>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.ShapeProperties? GetShapeProperties(DXDrawCharts.BackWall openXmlElement)
+  private static DMDC.ShapeProperties? GetShapeProperties(DXDC.BackWall openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDC.BackWall openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.ShapeProperties? value)
+  private static void SetShapeProperties(DXDC.BackWall openXmlElement, DMDC.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ShapeProperties>(value);
+      itemElement = DMXDC.ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.PictureOptions? GetPictureOptions(DXDrawCharts.BackWall openXmlElement)
+  private static DMDC.PictureOptions? GetPictureOptions(DXDC.BackWall openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PictureOptions>();
     if (element != null)
-      return DMXDrawsCharts.PictureOptionsConverter.CreateModelElement(element);
+      return DMXDC.PictureOptionsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureOptions(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureOptions(DXDC.BackWall openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>(), value, diffs, objName);
+    return DMXDC.PictureOptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PictureOptions>(), value, diffs, objName);
   }
   
-  private static void SetPictureOptions(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.PictureOptions? value)
+  private static void SetPictureOptions(DXDC.BackWall openXmlElement, DMDC.PictureOptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureOptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PictureOptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PictureOptionsConverter.CreateOpenXmlElement<DXDrawCharts.PictureOptions>(value);
+      itemElement = DMXDC.PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.BackWall openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.BackWall openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.BackWall openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.BackWall openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BackWall? CreateModelElement(DXDrawCharts.BackWall? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BackWall? CreateModelElement(DXDC.BackWall? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -112,7 +112,7 @@ public static class BackWallConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BackWall? openXmlElement, DMDrawsCharts.BackWall? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BackWall? openXmlElement, DMDC.BackWall? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -132,15 +132,15 @@ public static class BackWallConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BackWall value)
-    where OpenXmlElementType: DXDrawCharts.BackWall, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BackWall value)
+    where OpenXmlElementType: DXDC.BackWall, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BackWall openXmlElement, DMDrawsCharts.BackWall value)
+  public static void UpdateOpenXmlElement(DXDC.BackWall openXmlElement, DMDC.BackWall value)
   {
     SetThickness(openXmlElement, value?.Thickness);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);

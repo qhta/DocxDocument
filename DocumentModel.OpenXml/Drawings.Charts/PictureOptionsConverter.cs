@@ -8,30 +8,30 @@ public static class PictureOptionsConverter
   /// <summary>
   /// Apply To Front.
   /// </summary>
-  private static Boolean? GetApplyToFront(DXDrawCharts.PictureOptions openXmlElement)
+  private static Boolean? GetApplyToFront(DXDC.PictureOptions openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToFront>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ApplyToFront>() != null;
   }
   
-  private static bool CmpApplyToFront(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToFront(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToFront>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ApplyToFront>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ApplyToFront", val, value);
+    diffs?.Add(objName, "DXDC.ApplyToFront", val, value);
     return false;
   }
   
-  private static void SetApplyToFront(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)
+  private static void SetApplyToFront(DXDC.PictureOptions openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToFront>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ApplyToFront>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ApplyToFront();
+      var itemElement = new DXDC.ApplyToFront();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -39,30 +39,30 @@ public static class PictureOptionsConverter
   /// <summary>
   /// Apply To Sides.
   /// </summary>
-  private static Boolean? GetApplyToSides(DXDrawCharts.PictureOptions openXmlElement)
+  private static Boolean? GetApplyToSides(DXDC.PictureOptions openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToSides>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ApplyToSides>() != null;
   }
   
-  private static bool CmpApplyToSides(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToSides(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToSides>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ApplyToSides>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ApplyToSides", val, value);
+    diffs?.Add(objName, "DXDC.ApplyToSides", val, value);
     return false;
   }
   
-  private static void SetApplyToSides(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)
+  private static void SetApplyToSides(DXDC.PictureOptions openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToSides>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ApplyToSides>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ApplyToSides();
+      var itemElement = new DXDC.ApplyToSides();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -70,30 +70,30 @@ public static class PictureOptionsConverter
   /// <summary>
   /// Apply to End.
   /// </summary>
-  private static Boolean? GetApplyToEnd(DXDrawCharts.PictureOptions openXmlElement)
+  private static Boolean? GetApplyToEnd(DXDC.PictureOptions openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ApplyToEnd>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ApplyToEnd>() != null;
   }
   
-  private static bool CmpApplyToEnd(DXDrawCharts.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToEnd(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToEnd>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ApplyToEnd>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ApplyToEnd", val, value);
+    diffs?.Add(objName, "DXDC.ApplyToEnd", val, value);
     return false;
   }
   
-  private static void SetApplyToEnd(DXDrawCharts.PictureOptions openXmlElement, Boolean? value)
+  private static void SetApplyToEnd(DXDC.PictureOptions openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ApplyToEnd>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ApplyToEnd>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ApplyToEnd();
+      var itemElement = new DXDC.ApplyToEnd();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -101,50 +101,50 @@ public static class PictureOptionsConverter
   /// <summary>
   /// Picture Format.
   /// </summary>
-  private static DMDrawsCharts.PictureFormatKind? GetPictureFormat(DXDrawCharts.PictureOptions openXmlElement)
+  private static DMDC.PictureFormatKind? GetPictureFormat(DXDC.PictureOptions openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(openXmlElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value);
   }
   
-  private static bool CmpPictureFormat(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureFormat(DXDC.PictureOptions openXmlElement, DMDC.PictureFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(openXmlElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetPictureFormat(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureFormatKind? value)
+  private static void SetPictureFormat(DXDC.PictureOptions openXmlElement, DMDC.PictureFormatKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PictureFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PictureFormat>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>(itemElement, (DMDrawsCharts.PictureFormatKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(itemElement, (DMDC.PictureFormatKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDrawsCharts.PictureFormatKind>((DMDrawsCharts.PictureFormatKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>((DMDC.PictureFormatKind)value));
   }
   
   /// <summary>
   /// Picture Stack Unit.
   /// </summary>
-  private static Double? GetPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement)
+  private static Double? GetPictureStackUnit(DXDC.PictureOptions openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PictureStackUnit>()?.Val);
   }
   
-  private static bool CmpPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureStackUnit(DXDC.PictureOptions openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PictureStackUnit>()?.Val, value, diffs, objName, "PictureStackUnit");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PictureStackUnit>()?.Val, value, diffs, objName, "PictureStackUnit");
   }
   
-  private static void SetPictureStackUnit(DXDrawCharts.PictureOptions openXmlElement, Double? value)
+  private static void SetPictureStackUnit(DXDC.PictureOptions openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.PictureStackUnit,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.PictureStackUnit,System.Double>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DXDrawCharts.PictureOptions? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PictureOptions? CreateModelElement(DXDC.PictureOptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -159,7 +159,7 @@ public static class PictureOptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.PictureOptions? openXmlElement, DMDrawsCharts.PictureOptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PictureOptions? openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -181,15 +181,15 @@ public static class PictureOptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PictureOptions value)
-    where OpenXmlElementType: DXDrawCharts.PictureOptions, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.PictureOptions value)
+    where OpenXmlElementType: DXDC.PictureOptions, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.PictureOptions openXmlElement, DMDrawsCharts.PictureOptions value)
+  public static void UpdateOpenXmlElement(DXDC.PictureOptions openXmlElement, DMDC.PictureOptions value)
   {
     SetApplyToFront(openXmlElement, value?.ApplyToFront);
     SetApplyToSides(openXmlElement, value?.ApplyToSides);

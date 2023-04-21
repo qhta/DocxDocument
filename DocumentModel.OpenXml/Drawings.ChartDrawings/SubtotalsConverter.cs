@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class SubtotalsConverter
 {
-  private static Collection<UInt32>? GetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement)
+  private static Collection<UInt32>? GetUnsignedIntegerTypes(DXO16DCD.Subtotals openXmlElement)
   {
     var collection = new Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.UnsignedIntegerType>())
+    foreach (var item in openXmlElement.Elements<DXO16DCD.UnsignedIntegerType>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class SubtotalsConverter
     return null;
   }
   
-  private static bool CmpUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsignedIntegerTypes(DXO16DCD.Subtotals openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.UnsignedIntegerType>();
+    var origElements = openXmlElement.Elements<DXO16DCD.UnsignedIntegerType>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class SubtotalsConverter
     return false;
   }
   
-  private static void SetUnsignedIntegerTypes(DXO2016DrawChartDraw.Subtotals openXmlElement, Collection<UInt32>? value)
+  private static void SetUnsignedIntegerTypes(DXO16DCD.Subtotals openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.UnsignedIntegerType>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.UnsignedIntegerType>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.UnsignedIntegerType>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXO16DCD.UnsignedIntegerType>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Subtotals? CreateModelElement(DXO2016DrawChartDraw.Subtotals? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Subtotals? CreateModelElement(DXO16DCD.Subtotals? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class SubtotalsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Subtotals? openXmlElement, DMDrawsChartDraws.Subtotals? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Subtotals? openXmlElement, DMDCDs.Subtotals? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class SubtotalsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Subtotals value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Subtotals, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Subtotals value)
+    where OpenXmlElementType: DXO16DCD.Subtotals, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Subtotals openXmlElement, DMDrawsChartDraws.Subtotals value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Subtotals openXmlElement, DMDCDs.Subtotals value)
   {
     SetUnsignedIntegerTypes(openXmlElement, value?.UnsignedIntegerTypes);
   }

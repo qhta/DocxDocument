@@ -5,59 +5,59 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BubbleSizeConverter
 {
-  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.BubbleSize openXmlElement)
+  private static DMDC.NumberReference? GetNumberReference(DXDC.BubbleSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberReference>();
     if (element != null)
-      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+      return DMXDC.NumberReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberReference(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberReference(DXDC.BubbleSize openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName);
+    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName);
   }
   
-  private static void SetNumberReference(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.NumberReference? value)
+  private static void SetNumberReference(DXDC.BubbleSize openXmlElement, DMDC.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
+      itemElement = DMXDC.NumberReferenceConverter.CreateOpenXmlElement<DXDC.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.BubbleSize openXmlElement)
+  private static DMDC.NumberLiteral? GetNumberLiteral(DXDC.BubbleSize openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberLiteral>();
     if (element != null)
-      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+      return DMXDC.NumberLiteralConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberLiteral(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberLiteral(DXDC.BubbleSize openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName);
+    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName);
   }
   
-  private static void SetNumberLiteral(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDC.BubbleSize openXmlElement, DMDC.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
+      itemElement = DMXDC.NumberLiteralConverter.CreateOpenXmlElement<DXDC.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleSize? CreateModelElement(DXDrawCharts.BubbleSize? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleSize? CreateModelElement(DXDC.BubbleSize? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +69,7 @@ public static class BubbleSizeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BubbleSize? openXmlElement, DMDrawsCharts.BubbleSize? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BubbleSize? openXmlElement, DMDC.BubbleSize? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -85,15 +85,15 @@ public static class BubbleSizeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleSize value)
-    where OpenXmlElementType: DXDrawCharts.BubbleSize, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BubbleSize value)
+    where OpenXmlElementType: DXDC.BubbleSize, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleSize openXmlElement, DMDrawsCharts.BubbleSize value)
+  public static void UpdateOpenXmlElement(DXDC.BubbleSize openXmlElement, DMDC.BubbleSize value)
   {
     SetNumberReference(openXmlElement, value?.NumberReference);
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);

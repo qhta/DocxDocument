@@ -22,7 +22,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   /// </summary>
   private static DM.CustomUI? GetCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement)
   {
-      return DMX.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXO2010CustUI.CustomUI);
+      return DMX.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXO10CUI.CustomUI);
   }
   
   private static bool CmpCustomUI(DXPack.RibbonAndBackstageCustomizationsPart openXmlElement, DM.CustomUI? value, DiffList? diffs, string? objName)
@@ -34,7 +34,7 @@ public static class RibbonAndBackstageCustomizationsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMX.CustomUIConverter.CreateOpenXmlElement<DXO2010CustUI.CustomUI>(value);
+       var rootElement = DMX.CustomUIConverter.CreateOpenXmlElement<DXO10CUI.CustomUI>(value);
        if (rootElement != null)
          openXmlElement.CustomUI = rootElement;
     }

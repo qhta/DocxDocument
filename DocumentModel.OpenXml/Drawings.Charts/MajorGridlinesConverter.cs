@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class MajorGridlinesConverter
 {
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.MajorGridlines openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.MajorGridlines openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.MajorGridlines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.MajorGridlines openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.MajorGridlines openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.MajorGridlines openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.MajorGridlines? CreateModelElement(DXDrawCharts.MajorGridlines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.MajorGridlines? CreateModelElement(DXDC.MajorGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class MajorGridlinesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.MajorGridlines? openXmlElement, DMDrawsCharts.MajorGridlines? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.MajorGridlines? openXmlElement, DMDC.MajorGridlines? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class MajorGridlinesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.MajorGridlines value)
-    where OpenXmlElementType: DXDrawCharts.MajorGridlines, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.MajorGridlines value)
+    where OpenXmlElementType: DXDC.MajorGridlines, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.MajorGridlines openXmlElement, DMDrawsCharts.MajorGridlines value)
+  public static void UpdateOpenXmlElement(DXDC.MajorGridlines openXmlElement, DMDC.MajorGridlines value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
   }

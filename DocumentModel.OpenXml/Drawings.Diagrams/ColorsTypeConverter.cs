@@ -8,40 +8,40 @@ public static class ColorsTypeConverter
   /// <summary>
   /// Color Application Method Type
   /// </summary>
-  private static DMDrawsDgms.ColorApplicationMethodKind? GetMethod(DXDrawDgms.ColorsType openXmlElement)
+  private static DMDD.ColorApplicationMethodKind? GetMethod(DXDD.ColorsType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(openXmlElement?.Method?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDD.ColorApplicationMethodKind>(openXmlElement?.Method?.Value);
   }
   
-  private static bool CmpMethod(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorApplicationMethodKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXDD.ColorsType openXmlElement, DMDD.ColorApplicationMethodKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDD.ColorApplicationMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName);
   }
   
-  private static void SetMethod(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorApplicationMethodKind? value)
+  private static void SetMethod(DXDD.ColorsType openXmlElement, DMDD.ColorApplicationMethodKind? value)
   {
-    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDrawsDgms.ColorApplicationMethodKind>(value);
+    openXmlElement.Method = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues, DMDD.ColorApplicationMethodKind>(value);
   }
   
   /// <summary>
   /// Hue Direction
   /// </summary>
-  private static DMDrawsDgms.HueDirectionKind? GetHueDirection(DXDrawDgms.ColorsType openXmlElement)
+  private static DMDD.HueDirectionKind? GetHueDirection(DXDD.ColorsType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(openXmlElement?.HueDirection?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDD.HueDirectionKind>(openXmlElement?.HueDirection?.Value);
   }
   
-  private static bool CmpHueDirection(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.HueDirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHueDirection(DXDD.ColorsType openXmlElement, DMDD.HueDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(openXmlElement?.HueDirection?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDD.HueDirectionKind>(openXmlElement?.HueDirection?.Value, value, diffs, objName);
   }
   
-  private static void SetHueDirection(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.HueDirectionKind? value)
+  private static void SetHueDirection(DXDD.ColorsType openXmlElement, DMDD.HueDirectionKind? value)
   {
-    openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDrawsDgms.HueDirectionKind>(value);
+    openXmlElement.HueDirection = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues, DMDD.HueDirectionKind>(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorsType? CreateModelElement(DXDrawDgms.ColorsType? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorsType? CreateModelElement(DXDD.ColorsType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class ColorsTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.ColorsType? openXmlElement, DMDrawsDgms.ColorsType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ColorsType? openXmlElement, DMDD.ColorsType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class ColorsTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorsType value)
-    where OpenXmlElementType: DXDrawDgms.ColorsType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.ColorsType value)
+    where OpenXmlElementType: DXDD.ColorsType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.ColorsType openXmlElement, DMDrawsDgms.ColorsType value)
+  public static void UpdateOpenXmlElement(DXDD.ColorsType openXmlElement, DMDD.ColorsType value)
   {
     SetMethod(openXmlElement, value?.Method);
     SetHueDirection(openXmlElement, value?.HueDirection);

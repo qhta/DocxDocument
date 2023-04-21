@@ -8,19 +8,19 @@ public static class LinearGradientFillConverter
   /// <summary>
   /// Angle
   /// </summary>
-  private static Int32? GetAngle(DXDraw.LinearGradientFill openXmlElement)
+  private static Int32? GetAngle(DXD.LinearGradientFill openXmlElement)
   {
     return openXmlElement?.Angle?.Value;
   }
   
-  private static bool CmpAngle(DXDraw.LinearGradientFill openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXD.LinearGradientFill openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Angle?.Value == value) return true;
     diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
     return false;
   }
   
-  private static void SetAngle(DXDraw.LinearGradientFill openXmlElement, Int32? value)
+  private static void SetAngle(DXD.LinearGradientFill openXmlElement, Int32? value)
   {
     openXmlElement.Angle = value;
   }
@@ -28,19 +28,19 @@ public static class LinearGradientFillConverter
   /// <summary>
   /// Scaled
   /// </summary>
-  private static Boolean GetScaled(DXDraw.LinearGradientFill openXmlElement)
+  private static Boolean GetScaled(DXD.LinearGradientFill openXmlElement)
   {
     return openXmlElement?.Scaled?.Value ?? false;
   }
   
-  private static bool CmpScaled(DXDraw.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpScaled(DXD.LinearGradientFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Scaled?.Value == value) return true;
     diffs?.Add(objName, "Scaled", openXmlElement?.Scaled?.Value, value);
     return false;
   }
   
-  private static void SetScaled(DXDraw.LinearGradientFill openXmlElement, Boolean? value)
+  private static void SetScaled(DXD.LinearGradientFill openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Scaled = new BooleanValue { Value = (Boolean)value };
@@ -48,7 +48,7 @@ public static class LinearGradientFillConverter
       openXmlElement.Scaled = null;
   }
   
-  public static DocumentModel.Drawings.LinearGradientFill? CreateModelElement(DXDraw.LinearGradientFill? openXmlElement)
+  public static DocumentModel.Drawings.LinearGradientFill? CreateModelElement(DXD.LinearGradientFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,7 +60,7 @@ public static class LinearGradientFillConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.LinearGradientFill? openXmlElement, DMDraws.LinearGradientFill? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LinearGradientFill? openXmlElement, DMD.LinearGradientFill? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -76,15 +76,15 @@ public static class LinearGradientFillConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinearGradientFill value)
-    where OpenXmlElementType: DXDraw.LinearGradientFill, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LinearGradientFill value)
+    where OpenXmlElementType: DXD.LinearGradientFill, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.LinearGradientFill openXmlElement, DMDraws.LinearGradientFill value)
+  public static void UpdateOpenXmlElement(DXD.LinearGradientFill openXmlElement, DMD.LinearGradientFill value)
   {
     SetAngle(openXmlElement, value?.Angle);
     SetScaled(openXmlElement, value?.Scaled);

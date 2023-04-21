@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Vml;
 /// </summary>
 public static class ShapeHandlesConverter
 {
-  private static Collection<DMVml.ShapeHandle>? GetItems(DXVml.ShapeHandles openXmlElement)
+  private static Collection<DMV.ShapeHandle>? GetItems(DXV.ShapeHandles openXmlElement)
   {
-    var collection = new Collection<DMVml.ShapeHandle>();
-    foreach (var item in openXmlElement.Elements<DXVml.ShapeHandle>())
+    var collection = new Collection<DMV.ShapeHandle>();
+    foreach (var item in openXmlElement.Elements<DXV.ShapeHandle>())
     {
-      var newItem = DMXVml.ShapeHandleConverter.CreateModelElement(item);
+      var newItem = DMXV.ShapeHandleConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ShapeHandlesConverter
     return null;
   }
   
-  private static bool CmpItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXV.ShapeHandles openXmlElement, Collection<DMV.ShapeHandle>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXVml.ShapeHandle>();
+    var origElements = openXmlElement.Elements<DXV.ShapeHandle>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ShapeHandlesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXVml.ShapeHandleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXV.ShapeHandleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ShapeHandlesConverter
     return false;
   }
   
-  private static void SetItems(DXVml.ShapeHandles openXmlElement, Collection<DMVml.ShapeHandle>? value)
+  private static void SetItems(DXV.ShapeHandles openXmlElement, Collection<DMV.ShapeHandle>? value)
   {
-    openXmlElement.RemoveAllChildren<DXVml.ShapeHandle>();
+    openXmlElement.RemoveAllChildren<DXV.ShapeHandle>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXVml.ShapeHandleConverter.CreateOpenXmlElement<DXVml.ShapeHandle>(item);
+        var newItem = DMXV.ShapeHandleConverter.CreateOpenXmlElement<DXV.ShapeHandle>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(DXVml.ShapeHandles? openXmlElement)
+  public static DocumentModel.Vml.ShapeHandles? CreateModelElement(DXV.ShapeHandles? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ShapeHandlesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVml.ShapeHandles? openXmlElement, DMVml.ShapeHandles? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.ShapeHandles? openXmlElement, DMV.ShapeHandles? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ShapeHandlesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeHandles value)
-    where OpenXmlElementType: DXVml.ShapeHandles, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.ShapeHandles value)
+    where OpenXmlElementType: DXV.ShapeHandles, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVml.ShapeHandles openXmlElement, DMVml.ShapeHandles value)
+  public static void UpdateOpenXmlElement(DXV.ShapeHandles openXmlElement, DMV.ShapeHandles value)
   {
     SetItems(openXmlElement, value?.Items);
   }

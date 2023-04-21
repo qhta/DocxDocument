@@ -10,7 +10,7 @@ public static class CustomUIPartConverter
   /// </summary>
   private static DMUI.CustomUI? GetCustomUI(DXPack.CustomUIPart openXmlElement)
   {
-      return DMXUI.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXOCustUI.CustomUI);
+      return DMXUI.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXOCUI.CustomUI);
   }
   
   private static bool CmpCustomUI(DXPack.CustomUIPart openXmlElement, DMUI.CustomUI? value, DiffList? diffs, string? objName)
@@ -22,7 +22,7 @@ public static class CustomUIPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXUI.CustomUIConverter.CreateOpenXmlElement<DXOCustUI.CustomUI>(value);
+       var rootElement = DMXUI.CustomUIConverter.CreateOpenXmlElement<DXOCUI.CustomUI>(value);
        if (rootElement != null)
          openXmlElement.CustomUI = rootElement;
     }

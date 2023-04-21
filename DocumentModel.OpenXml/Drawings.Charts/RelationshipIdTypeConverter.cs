@@ -8,22 +8,22 @@ public static class RelationshipIdTypeConverter
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  private static String? GetId(DXDrawCharts.RelationshipIdType openXmlElement)
+  private static String? GetId(DXDC.RelationshipIdType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXDrawCharts.RelationshipIdType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXDC.RelationshipIdType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXDrawCharts.RelationshipIdType openXmlElement, String? value)
+  private static void SetId(DXDC.RelationshipIdType openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(DXDrawCharts.RelationshipIdType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.RelationshipIdType? CreateModelElement(DXDC.RelationshipIdType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class RelationshipIdTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.RelationshipIdType? openXmlElement, DMDrawsCharts.RelationshipIdType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.RelationshipIdType? openXmlElement, DMDC.RelationshipIdType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class RelationshipIdTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RelationshipIdType value)
-    where OpenXmlElementType: DXDrawCharts.RelationshipIdType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.RelationshipIdType value)
+    where OpenXmlElementType: DXDC.RelationshipIdType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.RelationshipIdType openXmlElement, DMDrawsCharts.RelationshipIdType value)
+  public static void UpdateOpenXmlElement(DXDC.RelationshipIdType openXmlElement, DMDC.RelationshipIdType value)
   {
     SetId(openXmlElement, value?.Id);
   }

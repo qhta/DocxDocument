@@ -8,27 +8,27 @@ public static class ShapeNonVisualPropertiesConverter
   /// <summary>
   /// NonVisualDrawingProperties.
   /// </summary>
-  private static DMDrawsO.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement)
+  private static DMDO.NonVisualDrawingProperties? GetNonVisualDrawingProperties(DXOD.ShapeNonVisualProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingProperties>();
+    var element = openXmlElement?.GetFirstChild<DXOD.NonVisualDrawingProperties>();
     if (element != null)
-      return DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
+      return DMXDO.NonVisualDrawingPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXOD.ShapeNonVisualProperties openXmlElement, DMDO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDO.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.NonVisualDrawingProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualDrawingProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties? value)
+  private static void SetNonVisualDrawingProperties(DXOD.ShapeNonVisualProperties openXmlElement, DMDO.NonVisualDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.NonVisualDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXODraw.NonVisualDrawingProperties>(value);
+      itemElement = DMXDO.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class ShapeNonVisualPropertiesConverter
   /// <summary>
   /// NonVisualDrawingShapeProperties.
   /// </summary>
-  private static DMDrawsO.NonVisualDrawingShapeProperties? GetNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement)
+  private static DMDO.NonVisualDrawingShapeProperties? GetNonVisualDrawingShapeProperties(DXOD.ShapeNonVisualProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXOD.NonVisualDrawingShapeProperties>();
     if (element != null)
-      return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CreateModelElement(element);
+      return DMXDO.NonVisualDrawingShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingShapeProperties(DXOD.ShapeNonVisualProperties openXmlElement, DMDO.NonVisualDrawingShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>(), value, diffs, objName);
+    return DMXDO.NonVisualDrawingShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.NonVisualDrawingShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualDrawingShapeProperties(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.NonVisualDrawingShapeProperties? value)
+  private static void SetNonVisualDrawingShapeProperties(DXOD.ShapeNonVisualProperties openXmlElement, DMDO.NonVisualDrawingShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODraw.NonVisualDrawingShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXOD.NonVisualDrawingShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsO.NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DXODraw.NonVisualDrawingShapeProperties>(value);
+      itemElement = DMXDO.NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(DXODraw.ShapeNonVisualProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.ShapeNonVisualProperties? CreateModelElement(DXOD.ShapeNonVisualProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class ShapeNonVisualPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODraw.ShapeNonVisualProperties? openXmlElement, DMDrawsO.ShapeNonVisualProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.ShapeNonVisualProperties? openXmlElement, DMDO.ShapeNonVisualProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class ShapeNonVisualPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.ShapeNonVisualProperties value)
-    where OpenXmlElementType: DXODraw.ShapeNonVisualProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.ShapeNonVisualProperties value)
+    where OpenXmlElementType: DXOD.ShapeNonVisualProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODraw.ShapeNonVisualProperties openXmlElement, DMDrawsO.ShapeNonVisualProperties value)
+  public static void UpdateOpenXmlElement(DXOD.ShapeNonVisualProperties openXmlElement, DMDO.ShapeNonVisualProperties value)
   {
     SetNonVisualDrawingProperties(openXmlElement, value?.NonVisualDrawingProperties);
     SetNonVisualDrawingShapeProperties(openXmlElement, value?.NonVisualDrawingShapeProperties);

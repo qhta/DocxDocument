@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.WebExtensions.UI;
 /// </summary>
 public static class TaskpanesConverter
 {
-  private static Collection<DMWebExtUI.WebExtensionTaskpane>? GetWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement)
+  private static Collection<DMWEUI.WebExtensionTaskpane>? GetWebExtensionTaskpanes(DXO13WEP.Taskpanes openXmlElement)
   {
-    var collection = new Collection<DMWebExtUI.WebExtensionTaskpane>();
-    foreach (var item in openXmlElement.Elements<DXO2013WebExtPane.WebExtensionTaskpane>())
+    var collection = new Collection<DMWEUI.WebExtensionTaskpane>();
+    foreach (var item in openXmlElement.Elements<DXO13WEP.WebExtensionTaskpane>())
     {
-      var newItem = DMXWebExtUI.WebExtensionTaskpaneConverter.CreateModelElement(item);
+      var newItem = DMXWEUI.WebExtensionTaskpaneConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class TaskpanesConverter
     return null;
   }
   
-  private static bool CmpWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement, Collection<DMWebExtUI.WebExtensionTaskpane>? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionTaskpanes(DXO13WEP.Taskpanes openXmlElement, Collection<DMWEUI.WebExtensionTaskpane>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013WebExtPane.WebExtensionTaskpane>();
+    var origElements = openXmlElement.Elements<DXO13WEP.WebExtensionTaskpane>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class TaskpanesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXWebExtUI.WebExtensionTaskpaneConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXWEUI.WebExtensionTaskpaneConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class TaskpanesConverter
     return false;
   }
   
-  private static void SetWebExtensionTaskpanes(DXO2013WebExtPane.Taskpanes openXmlElement, Collection<DMWebExtUI.WebExtensionTaskpane>? value)
+  private static void SetWebExtensionTaskpanes(DXO13WEP.Taskpanes openXmlElement, Collection<DMWEUI.WebExtensionTaskpane>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013WebExtPane.WebExtensionTaskpane>();
+    openXmlElement.RemoveAllChildren<DXO13WEP.WebExtensionTaskpane>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXWebExtUI.WebExtensionTaskpaneConverter.CreateOpenXmlElement<DXO2013WebExtPane.WebExtensionTaskpane>(item);
+        var newItem = DMXWEUI.WebExtensionTaskpaneConverter.CreateOpenXmlElement<DXO13WEP.WebExtensionTaskpane>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.WebExtensions.UI.Taskpanes? CreateModelElement(DXO2013WebExtPane.Taskpanes? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.Taskpanes? CreateModelElement(DXO13WEP.Taskpanes? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class TaskpanesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013WebExtPane.Taskpanes? openXmlElement, DMWebExtUI.Taskpanes? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WEP.Taskpanes? openXmlElement, DMWEUI.Taskpanes? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class TaskpanesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.Taskpanes value)
-    where OpenXmlElementType: DXO2013WebExtPane.Taskpanes, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWEUI.Taskpanes value)
+    where OpenXmlElementType: DXO13WEP.Taskpanes, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013WebExtPane.Taskpanes openXmlElement, DMWebExtUI.Taskpanes value)
+  public static void UpdateOpenXmlElement(DXO13WEP.Taskpanes openXmlElement, DMWEUI.Taskpanes value)
   {
     SetWebExtensionTaskpanes(openXmlElement, value?.WebExtensionTaskpanes);
   }

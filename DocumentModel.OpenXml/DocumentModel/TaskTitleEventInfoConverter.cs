@@ -8,22 +8,22 @@ public static class TaskTitleEventInfoConverter
   /// <summary>
   /// title, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement)
+  private static String? GetTitle(DXO21DT.TaskTitleEventInfo openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXO21DT.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
-  private static void SetTitle(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, String? value)
+  private static void SetTitle(DXO21DT.TaskTitleEventInfo openXmlElement, String? value)
   {
     openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement)
+  public static DocumentModel.TaskTitleEventInfo? CreateModelElement(DXO21DT.TaskTitleEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class TaskTitleEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.TaskTitleEventInfo? openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskTitleEventInfo? openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,14 +49,14 @@ public static class TaskTitleEventInfoConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskTitleEventInfo value)
-    where OpenXmlElementType: DXO2021DocTasks.TaskTitleEventInfo, new()
+    where OpenXmlElementType: DXO21DT.TaskTitleEventInfo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskTitleEventInfo openXmlElement, DM.TaskTitleEventInfo value)
+  public static void UpdateOpenXmlElement(DXO21DT.TaskTitleEventInfo openXmlElement, DM.TaskTitleEventInfo value)
   {
     SetTitle(openXmlElement, value?.Title);
   }

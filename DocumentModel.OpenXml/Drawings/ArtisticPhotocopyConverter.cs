@@ -8,19 +8,19 @@ public static class ArtisticPhotocopyConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticPhotocopy openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticPhotocopy openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticPhotocopy openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticPhotocopy openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticPhotocopy openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticPhotocopy openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticPhotocopyConverter
   /// <summary>
   /// detail, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetDetail(DXO2010Draw.ArtisticPhotocopy openXmlElement)
+  private static Int32? GetDetail(DXO10D.ArtisticPhotocopy openXmlElement)
   {
     return openXmlElement?.Detail?.Value;
   }
   
-  private static bool CmpDetail(DXO2010Draw.ArtisticPhotocopy openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDetail(DXO10D.ArtisticPhotocopy openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Detail?.Value == value) return true;
     diffs?.Add(objName, "Detail", openXmlElement?.Detail?.Value, value);
     return false;
   }
   
-  private static void SetDetail(DXO2010Draw.ArtisticPhotocopy openXmlElement, Int32? value)
+  private static void SetDetail(DXO10D.ArtisticPhotocopy openXmlElement, Int32? value)
   {
     openXmlElement.Detail = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(DXO2010Draw.ArtisticPhotocopy? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPhotocopy? CreateModelElement(DXO10D.ArtisticPhotocopy? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticPhotocopyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticPhotocopy? openXmlElement, DMDraws.ArtisticPhotocopy? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticPhotocopy? openXmlElement, DMD.ArtisticPhotocopy? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticPhotocopyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPhotocopy value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticPhotocopy, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticPhotocopy value)
+    where OpenXmlElementType: DXO10D.ArtisticPhotocopy, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPhotocopy openXmlElement, DMDraws.ArtisticPhotocopy value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticPhotocopy openXmlElement, DMD.ArtisticPhotocopy value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetDetail(openXmlElement, value?.Detail);

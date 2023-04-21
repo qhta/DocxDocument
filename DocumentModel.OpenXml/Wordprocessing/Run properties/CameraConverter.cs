@@ -8,22 +8,22 @@ public static class CameraConverter
   /// <summary>
   /// prst, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMW.PresetCameraKind? GetPresetCameraType(DXO2010W.Camera openXmlElement)
+  private static DMW.PresetCameraKind? GetPresetCameraType(DXO10W.Camera openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value);
   }
   
-  private static bool CmpPresetCameraType(DXO2010W.Camera openXmlElement, DMW.PresetCameraKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetCameraType(DXO10W.Camera openXmlElement, DMW.PresetCameraKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(openXmlElement?.PresetCameraType?.Value, value, diffs, objName);
   }
   
-  private static void SetPresetCameraType(DXO2010W.Camera openXmlElement, DMW.PresetCameraKind? value)
+  private static void SetPresetCameraType(DXO10W.Camera openXmlElement, DMW.PresetCameraKind? value)
   {
     openXmlElement.PresetCameraType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues, DMW.PresetCameraKind>(value);
   }
   
-  public static DMW.Camera? CreateModelElement(DXO2010W.Camera? openXmlElement)
+  public static DMW.Camera? CreateModelElement(DXO10W.Camera? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class CameraConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.Camera? openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Camera? openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,14 +49,14 @@ public static class CameraConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Camera value)
-    where OpenXmlElementType: DXO2010W.Camera, new()
+    where OpenXmlElementType: DXO10W.Camera, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.Camera openXmlElement, DMW.Camera value)
+  public static void UpdateOpenXmlElement(DXO10W.Camera openXmlElement, DMW.Camera value)
   {
     SetPresetCameraType(openXmlElement, value?.PresetCameraType);
   }

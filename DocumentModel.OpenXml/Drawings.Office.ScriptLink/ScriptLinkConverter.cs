@@ -8,17 +8,17 @@ public static class ScriptLinkConverter
   /// <summary>
   /// val, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement)
+  private static String? GetVal(DXODY21SL.ScriptLink openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXODY21SL.ScriptLink openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXODrawY2021ScptLnk.ScriptLink openXmlElement, String? value)
+  private static void SetVal(DXODY21SL.ScriptLink openXmlElement, String? value)
   {
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
@@ -26,33 +26,33 @@ public static class ScriptLinkConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDrawsOScptLnk.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement)
+  private static DMDOSL.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXODY21SL.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDOScptLnk.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement, DMDOSL.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21SL.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement, DMDOSL.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021ScptLnk.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXODY21SL.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsOScptLnk.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODrawY2021ScptLnk.OfficeArtExtensionList>(value);
+      itemElement = DMXDOScptLnk.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODY21SL.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.ScriptLink.ScriptLink? CreateModelElement(DXODrawY2021ScptLnk.ScriptLink? openXmlElement)
+  public static DocumentModel.Drawings.Office.ScriptLink.ScriptLink? CreateModelElement(DXODY21SL.ScriptLink? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,7 +64,7 @@ public static class ScriptLinkConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODrawY2021ScptLnk.ScriptLink? openXmlElement, DMDrawsOScptLnk.ScriptLink? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXODY21SL.ScriptLink? openXmlElement, DMDOSL.ScriptLink? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -80,15 +80,15 @@ public static class ScriptLinkConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOScptLnk.ScriptLink value)
-    where OpenXmlElementType: DXODrawY2021ScptLnk.ScriptLink, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDOSL.ScriptLink value)
+    where OpenXmlElementType: DXODY21SL.ScriptLink, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODrawY2021ScptLnk.ScriptLink openXmlElement, DMDrawsOScptLnk.ScriptLink value)
+  public static void UpdateOpenXmlElement(DXODY21SL.ScriptLink openXmlElement, DMDOSL.ScriptLink value)
   {
     SetVal(openXmlElement, value?.Val);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);

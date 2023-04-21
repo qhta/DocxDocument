@@ -8,51 +8,51 @@ public static class BlendConverter
   /// <summary>
   /// Blend Mode
   /// </summary>
-  private static DMDraws.BlendMode? GetBlendMode(DXDraw.Blend openXmlElement)
+  private static DMD.BlendMode? GetBlendMode(DXD.Blend openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.BlendMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(openXmlElement?.BlendMode?.Value);
   }
   
-  private static bool CmpBlendMode(DXDraw.Blend openXmlElement, DMDraws.BlendMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlendMode(DXD.Blend openXmlElement, DMD.BlendMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName);
   }
   
-  private static void SetBlendMode(DXDraw.Blend openXmlElement, DMDraws.BlendMode? value)
+  private static void SetBlendMode(DXD.Blend openXmlElement, DMD.BlendMode? value)
   {
-    openXmlElement.BlendMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMDraws.BlendMode>(value);
+    openXmlElement.BlendMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(value);
   }
   
   /// <summary>
   /// Effect to blend.
   /// </summary>
-  private static DMDraws.EffectContainer? GetEffectContainer(DXDraw.Blend openXmlElement)
+  private static DMD.EffectContainer? GetEffectContainer(DXD.Blend openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectContainer>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectContainer>();
     if (element != null)
-      return DMXDraws.EffectContainerConverter.CreateModelElement(element);
+      return DMXD.EffectContainerConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectContainer(DXD.Blend openXmlElement, DMD.EffectContainer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectContainer>(), value, diffs, objName);
+    return DMXD.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectContainer>(), value, diffs, objName);
   }
   
-  private static void SetEffectContainer(DXDraw.Blend openXmlElement, DMDraws.EffectContainer? value)
+  private static void SetEffectContainer(DXD.Blend openXmlElement, DMD.EffectContainer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectContainer>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectContainer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectContainerConverter.CreateOpenXmlElement<DXDraw.EffectContainer>(value);
+      itemElement = DMXD.EffectContainerConverter.CreateOpenXmlElement<DXD.EffectContainer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Blend? CreateModelElement(DXDraw.Blend? openXmlElement)
+  public static DocumentModel.Drawings.Blend? CreateModelElement(DXD.Blend? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,7 +64,7 @@ public static class BlendConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Blend? openXmlElement, DMDraws.Blend? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Blend? openXmlElement, DMD.Blend? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -80,15 +80,15 @@ public static class BlendConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Blend value)
-    where OpenXmlElementType: DXDraw.Blend, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Blend value)
+    where OpenXmlElementType: DXD.Blend, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Blend openXmlElement, DMDraws.Blend value)
+  public static void UpdateOpenXmlElement(DXD.Blend openXmlElement, DMD.Blend value)
   {
     SetBlendMode(openXmlElement, value?.BlendMode);
     SetEffectContainer(openXmlElement, value?.EffectContainer);

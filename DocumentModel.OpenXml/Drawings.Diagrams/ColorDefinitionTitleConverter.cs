@@ -8,17 +8,17 @@ public static class ColorDefinitionTitleConverter
   /// <summary>
   /// Language
   /// </summary>
-  private static String? GetLanguage(DXDrawDgms.ColorDefinitionTitle openXmlElement)
+  private static String? GetLanguage(DXDD.ColorDefinitionTitle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
-  private static bool CmpLanguage(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguage(DXDD.ColorDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
-  private static void SetLanguage(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value)
+  private static void SetLanguage(DXDD.ColorDefinitionTitle openXmlElement, String? value)
   {
     openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class ColorDefinitionTitleConverter
   /// <summary>
   /// Description Value
   /// </summary>
-  private static String? GetVal(DXDrawDgms.ColorDefinitionTitle openXmlElement)
+  private static String? GetVal(DXDD.ColorDefinitionTitle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXDD.ColorDefinitionTitle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXDrawDgms.ColorDefinitionTitle openXmlElement, String? value)
+  private static void SetVal(DXDD.ColorDefinitionTitle openXmlElement, String? value)
   {
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorDefinitionTitle? CreateModelElement(DXDrawDgms.ColorDefinitionTitle? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorDefinitionTitle? CreateModelElement(DXDD.ColorDefinitionTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class ColorDefinitionTitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.ColorDefinitionTitle? openXmlElement, DMDrawsDgms.ColorDefinitionTitle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ColorDefinitionTitle? openXmlElement, DMDD.ColorDefinitionTitle? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class ColorDefinitionTitleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorDefinitionTitle value)
-    where OpenXmlElementType: DXDrawDgms.ColorDefinitionTitle, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.ColorDefinitionTitle value)
+    where OpenXmlElementType: DXDD.ColorDefinitionTitle, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.ColorDefinitionTitle openXmlElement, DMDrawsDgms.ColorDefinitionTitle value)
+  public static void UpdateOpenXmlElement(DXDD.ColorDefinitionTitle openXmlElement, DMDD.ColorDefinitionTitle value)
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);

@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class OverrideColorMappingConverter
 {
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.OverrideColorMapping openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.OverrideColorMapping openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.OverrideColorMapping openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.OverrideColorMapping openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.OverrideColorMapping openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.OverrideColorMapping openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.OverrideColorMapping? CreateModelElement(DXDraw.OverrideColorMapping? openXmlElement)
+  public static DocumentModel.Drawings.OverrideColorMapping? CreateModelElement(DXD.OverrideColorMapping? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class OverrideColorMappingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.OverrideColorMapping? openXmlElement, DMDraws.OverrideColorMapping? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.OverrideColorMapping? openXmlElement, DMD.OverrideColorMapping? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class OverrideColorMappingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OverrideColorMapping value)
-    where OpenXmlElementType: DXDraw.OverrideColorMapping, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.OverrideColorMapping value)
+    where OpenXmlElementType: DXD.OverrideColorMapping, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.OverrideColorMapping openXmlElement, DMDraws.OverrideColorMapping value)
+  public static void UpdateOpenXmlElement(DXD.OverrideColorMapping openXmlElement, DMD.OverrideColorMapping value)
   {
     SetExtensionList(openXmlElement, value?.ExtensionList);
   }

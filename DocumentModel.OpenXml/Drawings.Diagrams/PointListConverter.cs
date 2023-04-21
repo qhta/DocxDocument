@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class PointListConverter
 {
-  private static Collection<DMDrawsDgms.Point>? GetPoints(DXDrawDgms.PointList openXmlElement)
+  private static Collection<DMDD.Point>? GetPoints(DXDD.PointList openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Point>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Point>())
+    var collection = new Collection<DMDD.Point>();
+    foreach (var item in openXmlElement.Elements<DXDD.Point>())
     {
-      var newItem = DMXDrawsDgms.PointConverter.CreateModelElement(item);
+      var newItem = DMXDD.PointConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class PointListConverter
     return null;
   }
   
-  private static bool CmpPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value, DiffList? diffs, string? objName)
+  private static bool CmpPoints(DXDD.PointList openXmlElement, Collection<DMDD.Point>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Point>();
+    var origElements = openXmlElement.Elements<DXDD.Point>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class PointListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.PointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.PointConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class PointListConverter
     return false;
   }
   
-  private static void SetPoints(DXDrawDgms.PointList openXmlElement, Collection<DMDrawsDgms.Point>? value)
+  private static void SetPoints(DXDD.PointList openXmlElement, Collection<DMDD.Point>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Point>();
+    openXmlElement.RemoveAllChildren<DXDD.Point>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.PointConverter.CreateOpenXmlElement<DXDrawDgms.Point>(item);
+        var newItem = DMXDD.PointConverter.CreateOpenXmlElement<DXDD.Point>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DXDrawDgms.PointList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.PointList? CreateModelElement(DXDD.PointList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class PointListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.PointList? openXmlElement, DMDrawsDgms.PointList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.PointList? openXmlElement, DMDD.PointList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class PointListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.PointList value)
-    where OpenXmlElementType: DXDrawDgms.PointList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.PointList value)
+    where OpenXmlElementType: DXDD.PointList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.PointList openXmlElement, DMDrawsDgms.PointList value)
+  public static void UpdateOpenXmlElement(DXDD.PointList openXmlElement, DMDD.PointList value)
   {
     SetPoints(openXmlElement, value?.Points);
   }

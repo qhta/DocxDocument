@@ -8,27 +8,27 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// Layout.
   /// </summary>
-  private static DMDrawsCharts.Layout? GetLayout(DXDrawCharts.DisplayUnitsLabel openXmlElement)
+  private static DMDC.Layout? GetLayout(DXDC.DisplayUnitsLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.Layout>();
+    var element = openXmlElement?.GetFirstChild<DXDC.Layout>();
     if (element != null)
-      return DMXDrawsCharts.LayoutConverter.CreateModelElement(element);
+      return DMXDC.LayoutConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLayout(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.DisplayUnitsLabel openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
   }
   
-  private static void SetLayout(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.Layout? value)
+  private static void SetLayout(DXDC.DisplayUnitsLabel openXmlElement, DMDC.Layout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Layout>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Layout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.LayoutConverter.CreateOpenXmlElement<DXDrawCharts.Layout>(value);
+      itemElement = DMXDC.LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// ChartText.
   /// </summary>
-  private static DMDrawsCharts.ChartText? GetChartText(DXDrawCharts.DisplayUnitsLabel openXmlElement)
+  private static DMDC.ChartText? GetChartText(DXDC.DisplayUnitsLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartText>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartText>();
     if (element != null)
-      return DMXDrawsCharts.ChartTextConverter.CreateModelElement(element);
+      return DMXDC.ChartTextConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartText(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartText? value, DiffList? diffs, string? objName)
+  private static bool CmpChartText(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartText>(), value, diffs, objName);
+    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName);
   }
   
-  private static void SetChartText(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartText? value)
+  private static void SetChartText(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartText? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartText>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartText>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartTextConverter.CreateOpenXmlElement<DXDrawCharts.ChartText>(value);
+      itemElement = DMXDC.ChartTextConverter.CreateOpenXmlElement<DXDC.ChartText>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,33 +95,33 @@ public static class DisplayUnitsLabelConverter
   /// <summary>
   /// TextProperties.
   /// </summary>
-  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement)
+  private static DMDC.TextProperties? GetTextProperties(DXDC.DisplayUnitsLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.TextProperties>();
     if (element != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+      return DMXDC.TextPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
   }
   
-  private static void SetTextProperties(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.TextProperties? value)
+  private static void SetTextProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
+      itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? CreateModelElement(DXDrawCharts.DisplayUnitsLabel? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DisplayUnitsLabel? CreateModelElement(DXDC.DisplayUnitsLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -135,7 +135,7 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DisplayUnitsLabel? openXmlElement, DMDrawsCharts.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DisplayUnitsLabel? openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -155,15 +155,15 @@ public static class DisplayUnitsLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DisplayUnitsLabel value)
-    where OpenXmlElementType: DXDrawCharts.DisplayUnitsLabel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DisplayUnitsLabel value)
+    where OpenXmlElementType: DXDC.DisplayUnitsLabel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DisplayUnitsLabel openXmlElement, DMDrawsCharts.DisplayUnitsLabel value)
+  public static void UpdateOpenXmlElement(DXDC.DisplayUnitsLabel openXmlElement, DMDC.DisplayUnitsLabel value)
   {
     SetLayout(openXmlElement, value?.Layout);
     SetChartText(openXmlElement, value?.ChartText);

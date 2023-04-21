@@ -8,126 +8,126 @@ public static class BubbleSerExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.BubbleSerExtension openXmlElement)
+  private static String? GetUri(DXDC.BubbleSerExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.BubbleSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.BubbleSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.BubbleSerExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.BubbleSerExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.InvertSolidFillFormat? GetInvertSolidFillFormat(DXDrawCharts.BubbleSerExtension openXmlElement)
+  private static DMDC.InvertSolidFillFormat? GetInvertSolidFillFormat(DXDC.BubbleSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>();
+    var element = openXmlElement?.GetFirstChild<DXO10DC.InvertSolidFillFormat>();
     if (element != null)
-      return DMXDrawsCharts.InvertSolidFillFormatConverter.CreateModelElement(element);
+      return DMXDC.InvertSolidFillFormatConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpInvertSolidFillFormat(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertSolidFillFormat(DXDC.BubbleSerExtension openXmlElement, DMDC.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>(), value, diffs, objName);
+    return DMXDC.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DC.InvertSolidFillFormat>(), value, diffs, objName);
   }
   
-  private static void SetInvertSolidFillFormat(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value)
+  private static void SetInvertSolidFillFormat(DXDC.BubbleSerExtension openXmlElement, DMDC.InvertSolidFillFormat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.InvertSolidFillFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DC.InvertSolidFillFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.InvertSolidFillFormatConverter.CreateOpenXmlElement<DXO2010DrawCharts.InvertSolidFillFormat>(value);
+      itemElement = DMXDC.InvertSolidFillFormatConverter.CreateOpenXmlElement<DXO10DC.InvertSolidFillFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.BubbleSerExtension openXmlElement)
+  private static DMDC.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDC.BubbleSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
     if (element != null)
-      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(element);
+      return DMXDC.FilteredCategoryTitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredCategoryTitle(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredCategoryTitle(DXDC.BubbleSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName);
+    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName);
   }
   
-  private static void SetFilteredCategoryTitle(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value)
+  private static void SetFilteredCategoryTitle(DXDC.BubbleSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredCategoryTitleConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredCategoryTitle>(value);
+      itemElement = DMXDC.FilteredCategoryTitleConverter.CreateOpenXmlElement<DXO13DC.FilteredCategoryTitle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.DataLabelsRange? GetDataLabelsRange(DXDrawCharts.BubbleSerExtension openXmlElement)
+  private static DMDC.DataLabelsRange? GetDataLabelsRange(DXDC.BubbleSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRange>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.DataLabelsRange>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsRangeConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsRangeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabelsRange(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelsRange(DXDC.BubbleSerExtension openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRange>(), value, diffs, objName);
+    return DMXDC.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRange>(), value, diffs, objName);
   }
   
-  private static void SetDataLabelsRange(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.DataLabelsRange? value)
+  private static void SetDataLabelsRange(DXDC.BubbleSerExtension openXmlElement, DMDC.DataLabelsRange? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRange>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.DataLabelsRange>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsRangeConverter.CreateOpenXmlElement<DXO2013DrawChart.DataLabelsRange>(value);
+      itemElement = DMXDC.DataLabelsRangeConverter.CreateOpenXmlElement<DXO13DC.DataLabelsRange>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.BubbleSerExtension openXmlElement)
+  private static DMDC.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDC.BubbleSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
     if (element != null)
-      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(element);
+      return DMXDC.CategoryFilterExceptionsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCategoryFilterExceptions(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterExceptions(DXDC.BubbleSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName);
   }
   
-  private static void SetCategoryFilterExceptions(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value)
+  private static void SetCategoryFilterExceptions(DXDC.BubbleSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DXO2013DrawChart.CategoryFilterExceptions>(value);
+      itemElement = DMXDC.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DXO13DC.CategoryFilterExceptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(DXDrawCharts.BubbleSerExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BubbleSerExtension? CreateModelElement(DXDC.BubbleSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,7 +142,7 @@ public static class BubbleSerExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BubbleSerExtension? openXmlElement, DMDrawsCharts.BubbleSerExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BubbleSerExtension? openXmlElement, DMDC.BubbleSerExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -164,15 +164,15 @@ public static class BubbleSerExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BubbleSerExtension value)
-    where OpenXmlElementType: DXDrawCharts.BubbleSerExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BubbleSerExtension value)
+    where OpenXmlElementType: DXDC.BubbleSerExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BubbleSerExtension openXmlElement, DMDrawsCharts.BubbleSerExtension value)
+  public static void UpdateOpenXmlElement(DXDC.BubbleSerExtension openXmlElement, DMDC.BubbleSerExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetInvertSolidFillFormat(openXmlElement, value?.InvertSolidFillFormat);

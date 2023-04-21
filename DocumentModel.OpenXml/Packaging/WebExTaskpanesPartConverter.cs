@@ -32,21 +32,21 @@ public static class WebExTaskpanesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMWebExtUI.Taskpanes? GetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement)
+  private static DMWEUI.Taskpanes? GetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement)
   {
-      return DMXWebExtUI.TaskpanesConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013WebExtPane.Taskpanes);
+      return DMXWEUI.TaskpanesConverter.CreateModelElement(openXmlElement?.RootElement as DXO13WEP.Taskpanes);
   }
   
-  private static bool CmpTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWebExtUI.Taskpanes? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWEUI.Taskpanes? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWebExtUI.Taskpanes? value)
+  private static void SetTaskpanes(DXPack.WebExTaskpanesPart openXmlElement, DMWEUI.Taskpanes? value)
   {
     if (value != null)
     {
-       var rootElement = DMXWebExtUI.TaskpanesConverter.CreateOpenXmlElement<DXO2013WebExtPane.Taskpanes>(value);
+       var rootElement = DMXWEUI.TaskpanesConverter.CreateOpenXmlElement<DXO13WEP.Taskpanes>(value);
        if (rootElement != null)
          openXmlElement.Taskpanes = rootElement;
     }

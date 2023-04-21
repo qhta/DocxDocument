@@ -8,19 +8,19 @@ public static class StyleSetConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static UInt32? GetId(DXO2010W.StyleSet openXmlElement)
+  private static UInt32? GetId(DXO10W.StyleSet openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO2010W.StyleSet openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10W.StyleSet openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXO2010W.StyleSet openXmlElement, UInt32? value)
+  private static void SetId(DXO10W.StyleSet openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -28,22 +28,22 @@ public static class StyleSetConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMW.OnOffKind? GetVal(DXO2010W.StyleSet openXmlElement)
+  private static DMW.OnOffKind? GetVal(DXO10W.StyleSet openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXO2010W.StyleSet openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO10W.StyleSet openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetVal(DXO2010W.StyleSet openXmlElement, DMW.OnOffKind? value)
+  private static void SetVal(DXO10W.StyleSet openXmlElement, DMW.OnOffKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DMW.StyleSet? CreateModelElement(DXO2010W.StyleSet? openXmlElement)
+  public static DMW.StyleSet? CreateModelElement(DXO10W.StyleSet? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class StyleSetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.StyleSet? openXmlElement, DMW.StyleSet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.StyleSet? openXmlElement, DMW.StyleSet? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -72,14 +72,14 @@ public static class StyleSetConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.StyleSet value)
-    where OpenXmlElementType: DXO2010W.StyleSet, new()
+    where OpenXmlElementType: DXO10W.StyleSet, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.StyleSet openXmlElement, DMW.StyleSet value)
+  public static void UpdateOpenXmlElement(DXO10W.StyleSet openXmlElement, DMW.StyleSet value)
   {
     SetId(openXmlElement, value?.Id);
     SetVal(openXmlElement, value?.Val);

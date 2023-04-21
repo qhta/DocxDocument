@@ -8,24 +8,24 @@ public static class TaskPriorityEventInfoConverter
   /// <summary>
   /// value, this property is only available in Office 2021 and later.
   /// </summary>
-  private static Int32? GetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement)
+  private static Int32? GetValue(DXO21DT.TaskPriorityEventInfo openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
   
-  private static bool CmpValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpValue(DXO21DT.TaskPriorityEventInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Value?.Value == value) return true;
     diffs?.Add(objName, "Type", openXmlElement?.Value?.Value, value);
     return false;
   }
   
-  private static void SetValue(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, Int32? value)
+  private static void SetValue(DXO21DT.TaskPriorityEventInfo openXmlElement, Int32? value)
   {
     openXmlElement.Value = value;
   }
   
-  public static DocumentModel.TaskPriorityEventInfo? CreateModelElement(DXO2021DocTasks.TaskPriorityEventInfo? openXmlElement)
+  public static DocumentModel.TaskPriorityEventInfo? CreateModelElement(DXO21DT.TaskPriorityEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class TaskPriorityEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.TaskPriorityEventInfo? openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskPriorityEventInfo? openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -51,14 +51,14 @@ public static class TaskPriorityEventInfoConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskPriorityEventInfo value)
-    where OpenXmlElementType: DXO2021DocTasks.TaskPriorityEventInfo, new()
+    where OpenXmlElementType: DXO21DT.TaskPriorityEventInfo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskPriorityEventInfo openXmlElement, DM.TaskPriorityEventInfo value)
+  public static void UpdateOpenXmlElement(DXO21DT.TaskPriorityEventInfo openXmlElement, DM.TaskPriorityEventInfo value)
   {
     SetValue(openXmlElement, value?.Value);
   }

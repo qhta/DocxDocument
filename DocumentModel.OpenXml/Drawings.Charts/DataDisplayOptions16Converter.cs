@@ -8,35 +8,35 @@ public static class DataDisplayOptions16Converter
   /// <summary>
   /// BooleanFalse.
   /// </summary>
-  private static Boolean? GetBooleanFalse(DXDrawCharts.DataDisplayOptions16 openXmlElement)
+  private static Boolean? GetBooleanFalse(DXDC.DataDisplayOptions16 openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2019DrawChart.BooleanFalse>() != null;
+    return openXmlElement.GetFirstChild<DXO19DC.BooleanFalse>() != null;
   }
   
-  private static bool CmpBooleanFalse(DXDrawCharts.DataDisplayOptions16 openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBooleanFalse(DXDC.DataDisplayOptions16 openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2019DrawChart.BooleanFalse>() != null;
+    var val = openXmlElement.GetFirstChild<DXO19DC.BooleanFalse>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2019DrawChart.BooleanFalse", val, value);
+    diffs?.Add(objName, "DXO19DC.BooleanFalse", val, value);
     return false;
   }
   
-  private static void SetBooleanFalse(DXDrawCharts.DataDisplayOptions16 openXmlElement, Boolean? value)
+  private static void SetBooleanFalse(DXDC.DataDisplayOptions16 openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2019DrawChart.BooleanFalse>();
+      var itemElement = openXmlElement.GetFirstChild<DXO19DC.BooleanFalse>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2019DrawChart.BooleanFalse();
+      var itemElement = new DXO19DC.BooleanFalse();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataDisplayOptions16? CreateModelElement(DXDrawCharts.DataDisplayOptions16? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataDisplayOptions16? CreateModelElement(DXDC.DataDisplayOptions16? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,7 +47,7 @@ public static class DataDisplayOptions16Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DataDisplayOptions16? openXmlElement, DMDrawsCharts.DataDisplayOptions16? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DataDisplayOptions16? openXmlElement, DMDC.DataDisplayOptions16? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -61,15 +61,15 @@ public static class DataDisplayOptions16Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataDisplayOptions16 value)
-    where OpenXmlElementType: DXDrawCharts.DataDisplayOptions16, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DataDisplayOptions16 value)
+    where OpenXmlElementType: DXDC.DataDisplayOptions16, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DataDisplayOptions16 openXmlElement, DMDrawsCharts.DataDisplayOptions16 value)
+  public static void UpdateOpenXmlElement(DXDC.DataDisplayOptions16 openXmlElement, DMDC.DataDisplayOptions16 value)
   {
     SetBooleanFalse(openXmlElement, value?.BooleanFalse);
   }

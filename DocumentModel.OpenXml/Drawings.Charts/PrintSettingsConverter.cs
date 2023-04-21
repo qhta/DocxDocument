@@ -8,27 +8,27 @@ public static class PrintSettingsConverter
   /// <summary>
   /// Header and Footer.
   /// </summary>
-  private static DMDrawsCharts.HeaderFooter? GetHeaderFooter(DXDrawCharts.PrintSettings openXmlElement)
+  private static DMDC.HeaderFooter? GetHeaderFooter(DXDC.PrintSettings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.HeaderFooter>();
+    var element = openXmlElement?.GetFirstChild<DXDC.HeaderFooter>();
     if (element != null)
-      return DMXDrawsCharts.HeaderFooterConverter.CreateModelElement(element);
+      return DMXDC.HeaderFooterConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.HeaderFooter? value, DiffList? diffs, string? objName)
+  private static bool CmpHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.HeaderFooter? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HeaderFooter>(), value, diffs, objName);
+    return DMXDC.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HeaderFooter>(), value, diffs, objName);
   }
   
-  private static void SetHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.HeaderFooter? value)
+  private static void SetHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.HeaderFooter? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HeaderFooter>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.HeaderFooter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.HeaderFooterConverter.CreateOpenXmlElement<DXDrawCharts.HeaderFooter>(value);
+      itemElement = DMXDC.HeaderFooterConverter.CreateOpenXmlElement<DXDC.HeaderFooter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class PrintSettingsConverter
   /// <summary>
   /// Page Margins.
   /// </summary>
-  private static DMDrawsCharts.PageMargins? GetPageMargins(DXDrawCharts.PrintSettings openXmlElement)
+  private static DMDC.PageMargins? GetPageMargins(DXDC.PrintSettings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PageMargins>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PageMargins>();
     if (element != null)
-      return DMXDrawsCharts.PageMarginsConverter.CreateModelElement(element);
+      return DMXDC.PageMarginsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPageMargins(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageMargins? value, DiffList? diffs, string? objName)
+  private static bool CmpPageMargins(DXDC.PrintSettings openXmlElement, DMDC.PageMargins? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageMargins>(), value, diffs, objName);
+    return DMXDC.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageMargins>(), value, diffs, objName);
   }
   
-  private static void SetPageMargins(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageMargins? value)
+  private static void SetPageMargins(DXDC.PrintSettings openXmlElement, DMDC.PageMargins? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PageMargins>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PageMargins>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PageMarginsConverter.CreateOpenXmlElement<DXDrawCharts.PageMargins>(value);
+      itemElement = DMXDC.PageMarginsConverter.CreateOpenXmlElement<DXDC.PageMargins>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class PrintSettingsConverter
   /// <summary>
   /// Page Setup.
   /// </summary>
-  private static DMDrawsCharts.PageSetup? GetPageSetup(DXDrawCharts.PrintSettings openXmlElement)
+  private static DMDC.PageSetup? GetPageSetup(DXDC.PrintSettings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.PageSetup>();
+    var element = openXmlElement?.GetFirstChild<DXDC.PageSetup>();
     if (element != null)
-      return DMXDrawsCharts.PageSetupConverter.CreateModelElement(element);
+      return DMXDC.PageSetupConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPageSetup(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageSetup? value, DiffList? diffs, string? objName)
+  private static bool CmpPageSetup(DXDC.PrintSettings openXmlElement, DMDC.PageSetup? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.PageSetup>(), value, diffs, objName);
+    return DMXDC.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageSetup>(), value, diffs, objName);
   }
   
-  private static void SetPageSetup(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PageSetup? value)
+  private static void SetPageSetup(DXDC.PrintSettings openXmlElement, DMDC.PageSetup? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.PageSetup>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.PageSetup>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.PageSetupConverter.CreateOpenXmlElement<DXDrawCharts.PageSetup>(value);
+      itemElement = DMXDC.PageSetupConverter.CreateOpenXmlElement<DXDC.PageSetup>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,33 +95,33 @@ public static class PrintSettingsConverter
   /// <summary>
   /// Legacy Drawing for Headers and Footers.
   /// </summary>
-  private static DMDrawsCharts.RelationshipIdType? GetLegacyDrawingHeaderFooter(DXDrawCharts.PrintSettings openXmlElement)
+  private static DMDC.RelationshipIdType? GetLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.LegacyDrawingHeaderFooter>();
+    var element = openXmlElement?.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>();
     if (element != null)
-      return DMXDrawsCharts.RelationshipIdTypeConverter.CreateModelElement(element);
+      return DMXDC.RelationshipIdTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLegacyDrawingHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.RelationshipIdType? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.RelationshipIdType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.LegacyDrawingHeaderFooter>(), value, diffs, objName);
+    return DMXDC.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>(), value, diffs, objName);
   }
   
-  private static void SetLegacyDrawingHeaderFooter(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.RelationshipIdType? value)
+  private static void SetLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.RelationshipIdType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.LegacyDrawingHeaderFooter>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.RelationshipIdTypeConverter.CreateOpenXmlElement<DXDrawCharts.LegacyDrawingHeaderFooter>(value);
+      itemElement = DMXDC.RelationshipIdTypeConverter.CreateOpenXmlElement<DXDC.LegacyDrawingHeaderFooter>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.PrintSettings? CreateModelElement(DXDrawCharts.PrintSettings? openXmlElement)
+  public static DocumentModel.Drawings.Charts.PrintSettings? CreateModelElement(DXDC.PrintSettings? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -135,7 +135,7 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.PrintSettings? openXmlElement, DMDrawsCharts.PrintSettings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PrintSettings? openXmlElement, DMDC.PrintSettings? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -155,15 +155,15 @@ public static class PrintSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.PrintSettings value)
-    where OpenXmlElementType: DXDrawCharts.PrintSettings, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.PrintSettings value)
+    where OpenXmlElementType: DXDC.PrintSettings, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.PrintSettings openXmlElement, DMDrawsCharts.PrintSettings value)
+  public static void UpdateOpenXmlElement(DXDC.PrintSettings openXmlElement, DMDC.PrintSettings value)
   {
     SetHeaderFooter(openXmlElement, value?.HeaderFooter);
     SetPageMargins(openXmlElement, value?.PageMargins);

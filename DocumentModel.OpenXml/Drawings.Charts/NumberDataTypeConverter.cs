@@ -8,24 +8,24 @@ public static class NumberDataTypeConverter
   /// <summary>
   /// Format Code.
   /// </summary>
-  private static String? GetFormatCode(DXDrawCharts.NumberDataType openXmlElement)
+  private static String? GetFormatCode(DXDC.NumberDataType openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text;
+      return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text;
   }
   
-  private static bool CmpFormatCode(DXDrawCharts.NumberDataType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumberDataType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.FormatCode>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXDC.FormatCode>()?.Text == value;
   }
   
-  private static void SetFormatCode(DXDrawCharts.NumberDataType openXmlElement, String? value)
+  private static void SetFormatCode(DXDC.NumberDataType openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.FormatCode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.FormatCode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDrawCharts.FormatCode { Text = value };
+      itemElement = new DXDC.FormatCode { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -33,22 +33,22 @@ public static class NumberDataTypeConverter
   /// <summary>
   /// Point Count.
   /// </summary>
-  private static UInt32? GetPointCount(DXDrawCharts.NumberDataType openXmlElement)
+  private static UInt32? GetPointCount(DXDC.NumberDataType openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXDrawCharts.NumberDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXDC.NumberDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
-  private static void SetPointCount(DXDrawCharts.NumberDataType openXmlElement, UInt32? value)
+  private static void SetPointCount(DXDC.NumberDataType openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.PointCount,System.UInt32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(DXDrawCharts.NumberDataType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberDataType? CreateModelElement(DXDC.NumberDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -60,7 +60,7 @@ public static class NumberDataTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.NumberDataType? openXmlElement, DMDrawsCharts.NumberDataType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberDataType? openXmlElement, DMDC.NumberDataType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -76,15 +76,15 @@ public static class NumberDataTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberDataType value)
-    where OpenXmlElementType: DXDrawCharts.NumberDataType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.NumberDataType value)
+    where OpenXmlElementType: DXDC.NumberDataType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.NumberDataType openXmlElement, DMDrawsCharts.NumberDataType value)
+  public static void UpdateOpenXmlElement(DXDC.NumberDataType openXmlElement, DMDC.NumberDataType value)
   {
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetPointCount(openXmlElement, value?.PointCount);

@@ -72,7 +72,7 @@ public partial class Style : INotifyPropertyChanged, INotifyPropertyChanging, IN
   /// <summary>
   /// Determines whether suitable properties are defined for specific style types.
   /// </summary>
-  public bool IsValid
+  public bool IsVl
   {
     get
     {

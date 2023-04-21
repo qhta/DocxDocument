@@ -22,7 +22,7 @@ public static class WordprocessingPeoplePartConverter
   /// </summary>
   private static DMW.People? GetPeople(DXPack.WordprocessingPeoplePart openXmlElement)
   {
-      return DMXW.PeopleConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013W.People);
+      return DMXW.PeopleConverter.CreateModelElement(openXmlElement?.RootElement as DXO13W.People);
   }
   
   private static bool CmpPeople(DXPack.WordprocessingPeoplePart openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
@@ -34,7 +34,7 @@ public static class WordprocessingPeoplePartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.PeopleConverter.CreateOpenXmlElement<DXO2013W.People>(value);
+       var rootElement = DMXW.PeopleConverter.CreateOpenXmlElement<DXO13W.People>(value);
        if (rootElement != null)
          openXmlElement.People = rootElement;
     }

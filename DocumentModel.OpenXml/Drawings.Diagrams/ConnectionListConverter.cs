@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class ConnectionListConverter
 {
-  private static Collection<DMDrawsDgms.Connection>? GetConnections(DXDrawDgms.ConnectionList openXmlElement)
+  private static Collection<DMDD.Connection>? GetConnections(DXDD.ConnectionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Connection>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Connection>())
+    var collection = new Collection<DMDD.Connection>();
+    foreach (var item in openXmlElement.Elements<DXDD.Connection>())
     {
-      var newItem = DMXDrawsDgms.ConnectionConverter.CreateModelElement(item);
+      var newItem = DMXDD.ConnectionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ConnectionListConverter
     return null;
   }
   
-  private static bool CmpConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value, DiffList? diffs, string? objName)
+  private static bool CmpConnections(DXDD.ConnectionList openXmlElement, Collection<DMDD.Connection>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Connection>();
+    var origElements = openXmlElement.Elements<DXDD.Connection>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ConnectionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ConnectionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ConnectionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ConnectionListConverter
     return false;
   }
   
-  private static void SetConnections(DXDrawDgms.ConnectionList openXmlElement, Collection<DMDrawsDgms.Connection>? value)
+  private static void SetConnections(DXDD.ConnectionList openXmlElement, Collection<DMDD.Connection>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Connection>();
+    openXmlElement.RemoveAllChildren<DXDD.Connection>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ConnectionConverter.CreateOpenXmlElement<DXDrawDgms.Connection>(item);
+        var newItem = DMXDD.ConnectionConverter.CreateOpenXmlElement<DXDD.Connection>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DXDrawDgms.ConnectionList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ConnectionList? CreateModelElement(DXDD.ConnectionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ConnectionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.ConnectionList? openXmlElement, DMDrawsDgms.ConnectionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ConnectionList? openXmlElement, DMDD.ConnectionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ConnectionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ConnectionList value)
-    where OpenXmlElementType: DXDrawDgms.ConnectionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.ConnectionList value)
+    where OpenXmlElementType: DXDD.ConnectionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.ConnectionList openXmlElement, DMDrawsDgms.ConnectionList value)
+  public static void UpdateOpenXmlElement(DXDD.ConnectionList openXmlElement, DMDD.ConnectionList value)
   {
     SetConnections(openXmlElement, value?.Connections);
   }

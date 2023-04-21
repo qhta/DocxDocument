@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ConnectionSiteListConverter
 {
-  private static Collection<DMDraws.ConnectionSite>? GetConnectionSites(DXDraw.ConnectionSiteList openXmlElement)
+  private static Collection<DMD.ConnectionSite>? GetConnectionSites(DXD.ConnectionSiteList openXmlElement)
   {
-    var collection = new Collection<DMDraws.ConnectionSite>();
-    foreach (var item in openXmlElement.Elements<DXDraw.ConnectionSite>())
+    var collection = new Collection<DMD.ConnectionSite>();
+    foreach (var item in openXmlElement.Elements<DXD.ConnectionSite>())
     {
-      var newItem = DMXDraws.ConnectionSiteConverter.CreateModelElement(item);
+      var newItem = DMXD.ConnectionSiteConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ConnectionSiteListConverter
     return null;
   }
   
-  private static bool CmpConnectionSites(DXDraw.ConnectionSiteList openXmlElement, Collection<DMDraws.ConnectionSite>? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionSites(DXD.ConnectionSiteList openXmlElement, Collection<DMD.ConnectionSite>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.ConnectionSite>();
+    var origElements = openXmlElement.Elements<DXD.ConnectionSite>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ConnectionSiteListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ConnectionSiteConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ConnectionSiteConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ConnectionSiteListConverter
     return false;
   }
   
-  private static void SetConnectionSites(DXDraw.ConnectionSiteList openXmlElement, Collection<DMDraws.ConnectionSite>? value)
+  private static void SetConnectionSites(DXD.ConnectionSiteList openXmlElement, Collection<DMD.ConnectionSite>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.ConnectionSite>();
+    openXmlElement.RemoveAllChildren<DXD.ConnectionSite>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ConnectionSiteConverter.CreateOpenXmlElement<DXDraw.ConnectionSite>(item);
+        var newItem = DMXD.ConnectionSiteConverter.CreateOpenXmlElement<DXD.ConnectionSite>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionSiteList? CreateModelElement(DXDraw.ConnectionSiteList? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionSiteList? CreateModelElement(DXD.ConnectionSiteList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ConnectionSiteListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ConnectionSiteList? openXmlElement, DMDraws.ConnectionSiteList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectionSiteList? openXmlElement, DMD.ConnectionSiteList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ConnectionSiteListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionSiteList value)
-    where OpenXmlElementType: DXDraw.ConnectionSiteList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ConnectionSiteList value)
+    where OpenXmlElementType: DXD.ConnectionSiteList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ConnectionSiteList openXmlElement, DMDraws.ConnectionSiteList value)
+  public static void UpdateOpenXmlElement(DXD.ConnectionSiteList openXmlElement, DMD.ConnectionSiteList value)
   {
     SetConnectionSites(openXmlElement, value?.ConnectionSites);
   }

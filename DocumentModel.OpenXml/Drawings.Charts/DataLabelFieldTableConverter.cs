@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DataLabelFieldTableConverter
 {
-  private static Collection<DMDrawsCharts.DataLabelFieldTableEntry>? GetDataLabelFieldTableEntries(DXO2013DrawChart.DataLabelFieldTable openXmlElement)
+  private static Collection<DMDC.DataLabelFieldTableEntry>? GetDataLabelFieldTableEntries(DXO13DC.DataLabelFieldTable openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.DataLabelFieldTableEntry>();
-    foreach (var item in openXmlElement.Elements<DXO2013DrawChart.DataLabelFieldTableEntry>())
+    var collection = new Collection<DMDC.DataLabelFieldTableEntry>();
+    foreach (var item in openXmlElement.Elements<DXO13DC.DataLabelFieldTableEntry>())
     {
-      var newItem = DMXDrawsCharts.DataLabelFieldTableEntryConverter.CreateModelElement(item);
+      var newItem = DMXDC.DataLabelFieldTableEntryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class DataLabelFieldTableConverter
     return null;
   }
   
-  private static bool CmpDataLabelFieldTableEntries(DXO2013DrawChart.DataLabelFieldTable openXmlElement, Collection<DMDrawsCharts.DataLabelFieldTableEntry>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelFieldTableEntries(DXO13DC.DataLabelFieldTable openXmlElement, Collection<DMDC.DataLabelFieldTableEntry>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013DrawChart.DataLabelFieldTableEntry>();
+    var origElements = openXmlElement.Elements<DXO13DC.DataLabelFieldTableEntry>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class DataLabelFieldTableConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.DataLabelFieldTableEntryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DataLabelFieldTableEntryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class DataLabelFieldTableConverter
     return false;
   }
   
-  private static void SetDataLabelFieldTableEntries(DXO2013DrawChart.DataLabelFieldTable openXmlElement, Collection<DMDrawsCharts.DataLabelFieldTableEntry>? value)
+  private static void SetDataLabelFieldTableEntries(DXO13DC.DataLabelFieldTable openXmlElement, Collection<DMDC.DataLabelFieldTableEntry>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013DrawChart.DataLabelFieldTableEntry>();
+    openXmlElement.RemoveAllChildren<DXO13DC.DataLabelFieldTableEntry>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.DataLabelFieldTableEntryConverter.CreateOpenXmlElement<DXO2013DrawChart.DataLabelFieldTableEntry>(item);
+        var newItem = DMXDC.DataLabelFieldTableEntryConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTableEntry>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelFieldTable? CreateModelElement(DXO2013DrawChart.DataLabelFieldTable? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelFieldTable? CreateModelElement(DXO13DC.DataLabelFieldTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class DataLabelFieldTableConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.DataLabelFieldTable? openXmlElement, DMDrawsCharts.DataLabelFieldTable? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabelFieldTable? openXmlElement, DMDC.DataLabelFieldTable? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class DataLabelFieldTableConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelFieldTable value)
-    where OpenXmlElementType: DXO2013DrawChart.DataLabelFieldTable, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DataLabelFieldTable value)
+    where OpenXmlElementType: DXO13DC.DataLabelFieldTable, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.DataLabelFieldTable openXmlElement, DMDrawsCharts.DataLabelFieldTable value)
+  public static void UpdateOpenXmlElement(DXO13DC.DataLabelFieldTable openXmlElement, DMDC.DataLabelFieldTable value)
   {
     SetDataLabelFieldTableEntries(openXmlElement, value?.DataLabelFieldTableEntries);
   }

@@ -8,33 +8,33 @@ public static class BreakConverter
   /// <summary>
   /// Text Run Properties.
   /// </summary>
-  private static DMDraws.RunProperties? GetRunProperties(DXDraw.Break openXmlElement)
+  private static DMD.RunProperties? GetRunProperties(DXD.Break openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.RunProperties>();
     if (element != null)
-      return DMXDraws.RunPropertiesConverter.CreateModelElement(element);
+      return DMXD.RunPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRunProperties(DXDraw.Break openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXD.Break openXmlElement, DMD.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RunProperties>(), value, diffs, objName);
+    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName);
   }
   
-  private static void SetRunProperties(DXDraw.Break openXmlElement, DMDraws.RunProperties? value)
+  private static void SetRunProperties(DXD.Break openXmlElement, DMD.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RunPropertiesConverter.CreateOpenXmlElement<DXDraw.RunProperties>(value);
+      itemElement = DMXD.RunPropertiesConverter.CreateOpenXmlElement<DXD.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Break? CreateModelElement(DXDraw.Break? openXmlElement)
+  public static DocumentModel.Drawings.Break? CreateModelElement(DXD.Break? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class BreakConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Break? openXmlElement, DMDraws.Break? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Break? openXmlElement, DMD.Break? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class BreakConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Break value)
-    where OpenXmlElementType: DXDraw.Break, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Break value)
+    where OpenXmlElementType: DXD.Break, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Break openXmlElement, DMDraws.Break value)
+  public static void UpdateOpenXmlElement(DXD.Break openXmlElement, DMD.Break value)
   {
     SetRunProperties(openXmlElement, value?.RunProperties);
   }

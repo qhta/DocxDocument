@@ -20,21 +20,21 @@ public static class CustomFilePropertiesPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMProps.CustomProperties? GetProperties(DXPack.CustomFilePropertiesPart openXmlElement)
+  private static DMPr.CustomProperties? GetProperties(DXPack.CustomFilePropertiesPart openXmlElement)
   {
-      return DMXProps.CustomPropertiesConverter.CreateModelElement(openXmlElement?.RootElement as DXCustProps.Properties);
+      return DMXP.CustomPropertiesConverter.CreateModelElement(openXmlElement?.RootElement as DXCP.Properties);
   }
   
-  private static bool CmpProperties(DXPack.CustomFilePropertiesPart openXmlElement, DMProps.CustomProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpProperties(DXPack.CustomFilePropertiesPart openXmlElement, DMPr.CustomProperties? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetProperties(DXPack.CustomFilePropertiesPart openXmlElement, DMProps.CustomProperties? value)
+  private static void SetProperties(DXPack.CustomFilePropertiesPart openXmlElement, DMPr.CustomProperties? value)
   {
     if (value != null)
     {
-       var rootElement = DMXProps.CustomPropertiesConverter.CreateOpenXmlElement<DXCustProps.Properties>(value);
+       var rootElement = DMXP.CustomPropertiesConverter.CreateOpenXmlElement<DXCP.Properties>(value);
        if (rootElement != null)
          openXmlElement.Properties = rootElement;
     }

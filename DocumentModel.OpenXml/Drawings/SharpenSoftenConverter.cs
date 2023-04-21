@@ -8,24 +8,24 @@ public static class SharpenSoftenConverter
   /// <summary>
   /// amount, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetAmount(DXO2010Draw.SharpenSoften openXmlElement)
+  private static Int32? GetAmount(DXO10D.SharpenSoften openXmlElement)
   {
     return openXmlElement?.Amount?.Value;
   }
   
-  private static bool CmpAmount(DXO2010Draw.SharpenSoften openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAmount(DXO10D.SharpenSoften openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Amount?.Value == value) return true;
     diffs?.Add(objName, "Amount", openXmlElement?.Amount?.Value, value);
     return false;
   }
   
-  private static void SetAmount(DXO2010Draw.SharpenSoften openXmlElement, Int32? value)
+  private static void SetAmount(DXO10D.SharpenSoften openXmlElement, Int32? value)
   {
     openXmlElement.Amount = value;
   }
   
-  public static DocumentModel.Drawings.SharpenSoften? CreateModelElement(DXO2010Draw.SharpenSoften? openXmlElement)
+  public static DocumentModel.Drawings.SharpenSoften? CreateModelElement(DXO10D.SharpenSoften? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class SharpenSoftenConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.SharpenSoften? openXmlElement, DMDraws.SharpenSoften? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.SharpenSoften? openXmlElement, DMD.SharpenSoften? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class SharpenSoftenConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SharpenSoften value)
-    where OpenXmlElementType: DXO2010Draw.SharpenSoften, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SharpenSoften value)
+    where OpenXmlElementType: DXO10D.SharpenSoften, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.SharpenSoften openXmlElement, DMDraws.SharpenSoften value)
+  public static void UpdateOpenXmlElement(DXO10D.SharpenSoften openXmlElement, DMD.SharpenSoften value)
   {
     SetAmount(openXmlElement, value?.Amount);
   }

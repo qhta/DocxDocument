@@ -40,21 +40,21 @@ public static class DiagramLayoutDefinitionPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsDgms.LayoutDefinition? GetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement)
+  private static DMDD.LayoutDefinition? GetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement)
   {
-      return DMXDrawsDgms.LayoutDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.LayoutDefinition);
+      return DMXDD.LayoutDefinitionConverter.CreateModelElement(openXmlElement?.RootElement as DXDD.LayoutDefinition);
   }
   
-  private static bool CmpLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDrawsDgms.LayoutDefinition? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDD.LayoutDefinition? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDrawsDgms.LayoutDefinition? value)
+  private static void SetLayoutDefinition(DXPack.DiagramLayoutDefinitionPart openXmlElement, DMDD.LayoutDefinition? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsDgms.LayoutDefinitionConverter.CreateOpenXmlElement<DXDrawDgms.LayoutDefinition>(value);
+       var rootElement = DMXDD.LayoutDefinitionConverter.CreateOpenXmlElement<DXDD.LayoutDefinition>(value);
        if (rootElement != null)
          openXmlElement.LayoutDefinition = rootElement;
     }

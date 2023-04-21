@@ -8,22 +8,22 @@ public static class PredecessorDrawingElementReferenceConverter
   /// <summary>
   /// pred, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement)
+  private static String? GetPred(DXO16D.PredecessorDrawingElementReference openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Pred);
   }
   
-  private static bool CmpPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPred(DXO16D.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Pred, value, diffs, objName, "Pred");
   }
   
-  private static void SetPred(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, String? value)
+  private static void SetPred(DXO16D.PredecessorDrawingElementReference openXmlElement, String? value)
   {
     openXmlElement.Pred = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement)
+  public static DocumentModel.Drawings.PredecessorDrawingElementReference? CreateModelElement(DXO16D.PredecessorDrawingElementReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class PredecessorDrawingElementReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016Draw.PredecessorDrawingElementReference? openXmlElement, DMDraws.PredecessorDrawingElementReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16D.PredecessorDrawingElementReference? openXmlElement, DMD.PredecessorDrawingElementReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class PredecessorDrawingElementReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PredecessorDrawingElementReference value)
-    where OpenXmlElementType: DXO2016Draw.PredecessorDrawingElementReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.PredecessorDrawingElementReference value)
+    where OpenXmlElementType: DXO16D.PredecessorDrawingElementReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016Draw.PredecessorDrawingElementReference openXmlElement, DMDraws.PredecessorDrawingElementReference value)
+  public static void UpdateOpenXmlElement(DXO16D.PredecessorDrawingElementReference openXmlElement, DMD.PredecessorDrawingElementReference value)
   {
     SetPred(openXmlElement, value?.Pred);
   }

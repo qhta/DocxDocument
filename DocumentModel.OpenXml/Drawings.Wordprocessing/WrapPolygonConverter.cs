@@ -8,19 +8,19 @@ public static class WrapPolygonConverter
   /// <summary>
   /// Wrapping Points Modified
   /// </summary>
-  private static Boolean? GetEdited(DXDrawW.WrapPolygon openXmlElement)
+  private static Boolean? GetEdited(DXDW.WrapPolygon openXmlElement)
   {
     return openXmlElement?.Edited?.Value;
   }
   
-  private static bool CmpEdited(DXDrawW.WrapPolygon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEdited(DXDW.WrapPolygon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Edited?.Value == value) return true;
     diffs?.Add(objName, "Edited", openXmlElement?.Edited?.Value, value);
     return false;
   }
   
-  private static void SetEdited(DXDrawW.WrapPolygon openXmlElement, Boolean? value)
+  private static void SetEdited(DXDW.WrapPolygon openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Edited = new BooleanValue { Value = (Boolean)value };
@@ -31,59 +31,59 @@ public static class WrapPolygonConverter
   /// <summary>
   /// Wrapping Polygon Start.
   /// </summary>
-  private static DMDrawsW.Point2DType? GetStartPoint(DXDrawW.WrapPolygon openXmlElement)
+  private static DMDW.Point2DType? GetStartPoint(DXDW.WrapPolygon openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawW.StartPoint>();
+    var element = openXmlElement?.GetFirstChild<DXDW.StartPoint>();
     if (element != null)
-      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(element);
+      return DMXDW.Point2DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStartPoint(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpStartPoint(DXDW.WrapPolygon openXmlElement, DMDW.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.StartPoint>(), value, diffs, objName);
+    return DMXDW.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.StartPoint>(), value, diffs, objName);
   }
   
-  private static void SetStartPoint(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value)
+  private static void SetStartPoint(DXDW.WrapPolygon openXmlElement, DMDW.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawW.StartPoint>();
+    var itemElement = openXmlElement.GetFirstChild<DXDW.StartPoint>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsW.Point2DTypeConverter.CreateOpenXmlElement<DXDrawW.StartPoint>(value);
+      itemElement = DMXDW.Point2DTypeConverter.CreateOpenXmlElement<DXDW.StartPoint>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsW.Point2DType? GetLineTo(DXDrawW.WrapPolygon openXmlElement)
+  private static DMDW.Point2DType? GetLineTo(DXDW.WrapPolygon openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawW.LineTo>();
+    var element = openXmlElement?.GetFirstChild<DXDW.LineTo>();
     if (element != null)
-      return DMXDrawsW.Point2DTypeConverter.CreateModelElement(element);
+      return DMXDW.Point2DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineTo(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpLineTo(DXDW.WrapPolygon openXmlElement, DMDW.Point2DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawW.LineTo>(), value, diffs, objName);
+    return DMXDW.Point2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.LineTo>(), value, diffs, objName);
   }
   
-  private static void SetLineTo(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.Point2DType? value)
+  private static void SetLineTo(DXDW.WrapPolygon openXmlElement, DMDW.Point2DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawW.LineTo>();
+    var itemElement = openXmlElement.GetFirstChild<DXDW.LineTo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsW.Point2DTypeConverter.CreateOpenXmlElement<DXDrawW.LineTo>(value);
+      itemElement = DMXDW.Point2DTypeConverter.CreateOpenXmlElement<DXDW.LineTo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DXDrawW.WrapPolygon? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.WrapPolygon? CreateModelElement(DXDW.WrapPolygon? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,7 +96,7 @@ public static class WrapPolygonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawW.WrapPolygon? openXmlElement, DMDrawsW.WrapPolygon? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.WrapPolygon? openXmlElement, DMDW.WrapPolygon? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -114,15 +114,15 @@ public static class WrapPolygonConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.WrapPolygon value)
-    where OpenXmlElementType: DXDrawW.WrapPolygon, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDW.WrapPolygon value)
+    where OpenXmlElementType: DXDW.WrapPolygon, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawW.WrapPolygon openXmlElement, DMDrawsW.WrapPolygon value)
+  public static void UpdateOpenXmlElement(DXDW.WrapPolygon openXmlElement, DMDW.WrapPolygon value)
   {
     SetEdited(openXmlElement, value?.Edited);
     SetStartPoint(openXmlElement, value?.StartPoint);

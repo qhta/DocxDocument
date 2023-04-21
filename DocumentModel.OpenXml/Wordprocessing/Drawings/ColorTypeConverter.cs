@@ -8,27 +8,27 @@ public static class ColorTypeConverter
   /// <summary>
   /// RgbColorModelHex.
   /// </summary>
-  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO2010W.ColorType openXmlElement)
+  private static DMW.RgbColorModelHex? GetRgbColorModelHex(DXO10W.ColorType openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.RgbColorModelHex>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.RgbColorModelHex>();
     if (element != null)
       return DMXW.RgbColorModelHexConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO2010W.ColorType openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXO10W.ColorType openXmlElement, DMW.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>(), value, diffs, objName);
+    return DMXW.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelHex(DXO2010W.ColorType openXmlElement, DMW.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO10W.ColorType openXmlElement, DMW.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO2010W.RgbColorModelHex>(value);
+      itemElement = DMXW.RgbColorModelHexConverter.CreateOpenXmlElement<DXO10W.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class ColorTypeConverter
   /// <summary>
   /// SchemeColor.
   /// </summary>
-  private static DMW.SchemeColor? GetSchemeColor(DXO2010W.ColorType openXmlElement)
+  private static DMW.SchemeColor? GetSchemeColor(DXO10W.ColorType openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.SchemeColor>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.SchemeColor>();
     if (element != null)
       return DMXW.SchemeColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSchemeColor(DXO2010W.ColorType openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXO10W.ColorType openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.SchemeColor>(), value, diffs, objName);
+    return DMXW.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.SchemeColor>(), value, diffs, objName);
   }
   
-  private static void SetSchemeColor(DXO2010W.ColorType openXmlElement, DMW.SchemeColor? value)
+  private static void SetSchemeColor(DXO10W.ColorType openXmlElement, DMW.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO2010W.SchemeColor>(value);
+      itemElement = DMXW.SchemeColorConverter.CreateOpenXmlElement<DXO10W.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DMW.ColorType? CreateModelElement(DXO2010W.ColorType? openXmlElement)
+  public static DMW.ColorType? CreateModelElement(DXO10W.ColorType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class ColorTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.ColorType? openXmlElement, DMW.ColorType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.ColorType? openXmlElement, DMW.ColorType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -92,14 +92,14 @@ public static class ColorTypeConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.ColorType value)
-    where OpenXmlElementType: DXO2010W.ColorType, new()
+    where OpenXmlElementType: DXO10W.ColorType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.ColorType openXmlElement, DMW.ColorType value)
+  public static void UpdateOpenXmlElement(DXO10W.ColorType openXmlElement, DMW.ColorType value)
   {
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);
     SetSchemeColor(openXmlElement, value?.SchemeColor);

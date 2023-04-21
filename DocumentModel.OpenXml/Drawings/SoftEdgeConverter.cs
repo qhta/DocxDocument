@@ -8,24 +8,24 @@ public static class SoftEdgeConverter
   /// <summary>
   /// Radius
   /// </summary>
-  private static Int64? GetRadius(DXDraw.SoftEdge openXmlElement)
+  private static Int64? GetRadius(DXD.SoftEdge openXmlElement)
   {
     return openXmlElement?.Radius?.Value;
   }
   
-  private static bool CmpRadius(DXDraw.SoftEdge openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRadius(DXD.SoftEdge openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Radius?.Value == value) return true;
     diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
     return false;
   }
   
-  private static void SetRadius(DXDraw.SoftEdge openXmlElement, Int64? value)
+  private static void SetRadius(DXD.SoftEdge openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
   }
   
-  public static DocumentModel.Drawings.SoftEdge? CreateModelElement(DXDraw.SoftEdge? openXmlElement)
+  public static DocumentModel.Drawings.SoftEdge? CreateModelElement(DXD.SoftEdge? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class SoftEdgeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.SoftEdge? openXmlElement, DMDraws.SoftEdge? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.SoftEdge? openXmlElement, DMD.SoftEdge? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class SoftEdgeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.SoftEdge value)
-    where OpenXmlElementType: DXDraw.SoftEdge, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.SoftEdge value)
+    where OpenXmlElementType: DXD.SoftEdge, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.SoftEdge openXmlElement, DMDraws.SoftEdge value)
+  public static void UpdateOpenXmlElement(DXD.SoftEdge openXmlElement, DMD.SoftEdge value)
   {
     SetRadius(openXmlElement, value?.Radius);
   }

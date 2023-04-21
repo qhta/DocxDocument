@@ -8,17 +8,17 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// srcUrl, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement)
+  private static String? GetSrcUrl(DXODY21OE.OEmbedShared openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SrcUrl);
   }
   
-  private static bool CmpSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSrcUrl(DXODY21OE.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SrcUrl, value, diffs, objName, "SrcUrl");
   }
   
-  private static void SetSrcUrl(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
+  private static void SetSrcUrl(DXODY21OE.OEmbedShared openXmlElement, String? value)
   {
     openXmlElement.SrcUrl = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// type, this property is only available in Microsoft365 and later.
   /// </summary>
-  private static String? GetType(DXODrawY2021OEmb.OEmbedShared openXmlElement)
+  private static String? GetType(DXODY21OE.OEmbedShared openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
-  private static bool CmpType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXODY21OE.OEmbedShared openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
-  private static void SetType(DXODrawY2021OEmb.OEmbedShared openXmlElement, String? value)
+  private static void SetType(DXODY21OE.OEmbedShared openXmlElement, String? value)
   {
     openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
@@ -44,33 +44,33 @@ public static class OEmbedSharedConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDrawsOOEmb.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement)
+  private static DMDOOE.OfficeArtExtensionList? GetOfficeArtExtensionList(DXODY21OE.OEmbedShared openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXODY21OE.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDOOEmb.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXODY21OE.OEmbedShared openXmlElement, DMDOOE.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOOEmb.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDOOEmb.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21OE.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXODY21OE.OEmbedShared openXmlElement, DMDOOE.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021OEmb.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXODY21OE.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsOOEmb.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODrawY2021OEmb.OfficeArtExtensionList>(value);
+      itemElement = DMXDOOEmb.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODY21OE.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? CreateModelElement(DXODrawY2021OEmb.OEmbedShared? openXmlElement)
+  public static DocumentModel.Drawings.Office.OEmbed.OEmbedShared? CreateModelElement(DXODY21OE.OEmbedShared? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -83,7 +83,7 @@ public static class OEmbedSharedConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODrawY2021OEmb.OEmbedShared? openXmlElement, DMDrawsOOEmb.OEmbedShared? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXODY21OE.OEmbedShared? openXmlElement, DMDOOE.OEmbedShared? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -101,15 +101,15 @@ public static class OEmbedSharedConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsOOEmb.OEmbedShared value)
-    where OpenXmlElementType: DXODrawY2021OEmb.OEmbedShared, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDOOE.OEmbedShared value)
+    where OpenXmlElementType: DXODY21OE.OEmbedShared, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODrawY2021OEmb.OEmbedShared openXmlElement, DMDrawsOOEmb.OEmbedShared value)
+  public static void UpdateOpenXmlElement(DXODY21OE.OEmbedShared openXmlElement, DMDOOE.OEmbedShared value)
   {
     SetSrcUrl(openXmlElement, value?.SrcUrl);
     SetType(openXmlElement, value?.Type);

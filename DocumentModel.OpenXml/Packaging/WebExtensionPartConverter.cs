@@ -52,21 +52,21 @@ public static class WebExtensionPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMWebExt.WebExtension? GetWebExtension(DXPack.WebExtensionPart openXmlElement)
+  private static DMWE.WebExtension? GetWebExtension(DXPack.WebExtensionPart openXmlElement)
   {
-      return DMXWebExt.WebExtensionConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013WebExt.WebExtension);
+      return DMXWE.WebExtensionConverter.CreateModelElement(openXmlElement?.RootElement as DXO13WE.WebExtension);
   }
   
-  private static bool CmpWebExtension(DXPack.WebExtensionPart openXmlElement, DMWebExt.WebExtension? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtension(DXPack.WebExtensionPart openXmlElement, DMWE.WebExtension? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetWebExtension(DXPack.WebExtensionPart openXmlElement, DMWebExt.WebExtension? value)
+  private static void SetWebExtension(DXPack.WebExtensionPart openXmlElement, DMWE.WebExtension? value)
   {
     if (value != null)
     {
-       var rootElement = DMXWebExt.WebExtensionConverter.CreateOpenXmlElement<DXO2013WebExt.WebExtension>(value);
+       var rootElement = DMXWE.WebExtensionConverter.CreateOpenXmlElement<DXO13WE.WebExtension>(value);
        if (rootElement != null)
          openXmlElement.WebExtension = rootElement;
     }

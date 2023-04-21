@@ -8,22 +8,22 @@ public static class StatisticsConverter
   /// <summary>
   /// quartileMethod, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DMDrawsChartDraws.QuartileMethod? GetQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement)
+  private static DMDCDs.QuartileMethod? GetQuartileMethod(DXO16DCD.Statistics openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(openXmlElement?.QuartileMethod?.Value);
   }
   
-  private static bool CmpQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value, DiffList? diffs, string? objName)
+  private static bool CmpQuartileMethod(DXO16DCD.Statistics openXmlElement, DMDCDs.QuartileMethod? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(openXmlElement?.QuartileMethod?.Value, value, diffs, objName);
   }
   
-  private static void SetQuartileMethod(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.QuartileMethod? value)
+  private static void SetQuartileMethod(DXO16DCD.Statistics openXmlElement, DMDCDs.QuartileMethod? value)
   {
-    openXmlElement.QuartileMethod = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDrawsChartDraws.QuartileMethod>(value);
+    openXmlElement.QuartileMethod = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod, DMDCDs.QuartileMethod>(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Statistics? CreateModelElement(DXO2016DrawChartDraw.Statistics? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Statistics? CreateModelElement(DXO16DCD.Statistics? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class StatisticsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Statistics? openXmlElement, DMDrawsChartDraws.Statistics? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Statistics? openXmlElement, DMDCDs.Statistics? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class StatisticsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Statistics value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Statistics, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Statistics value)
+    where OpenXmlElementType: DXO16DCD.Statistics, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Statistics openXmlElement, DMDrawsChartDraws.Statistics value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Statistics openXmlElement, DMDCDs.Statistics value)
   {
     SetQuartileMethod(openXmlElement, value?.QuartileMethod);
   }

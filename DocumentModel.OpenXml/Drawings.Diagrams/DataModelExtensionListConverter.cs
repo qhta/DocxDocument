@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class DataModelExtensionListConverter
 {
-  private static Collection<DMDraws.DataModelExtension>? GetDataModelExtensions(DXDrawDgms.DataModelExtensionList openXmlElement)
+  private static Collection<DMD.DataModelExtension>? GetDataModelExtensions(DXDD.DataModelExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.DataModelExtension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.DataModelExtension>())
+    var collection = new Collection<DMD.DataModelExtension>();
+    foreach (var item in openXmlElement.Elements<DXD.DataModelExtension>())
     {
-      var newItem = DMXDraws.DataModelExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.DataModelExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class DataModelExtensionListConverter
     return null;
   }
   
-  private static bool CmpDataModelExtensions(DXDrawDgms.DataModelExtensionList openXmlElement, Collection<DMDraws.DataModelExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelExtensions(DXDD.DataModelExtensionList openXmlElement, Collection<DMD.DataModelExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.DataModelExtension>();
+    var origElements = openXmlElement.Elements<DXD.DataModelExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class DataModelExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.DataModelExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.DataModelExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class DataModelExtensionListConverter
     return false;
   }
   
-  private static void SetDataModelExtensions(DXDrawDgms.DataModelExtensionList openXmlElement, Collection<DMDraws.DataModelExtension>? value)
+  private static void SetDataModelExtensions(DXDD.DataModelExtensionList openXmlElement, Collection<DMD.DataModelExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.DataModelExtension>();
+    openXmlElement.RemoveAllChildren<DXD.DataModelExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.DataModelExtensionConverter.CreateOpenXmlElement<DXDraw.DataModelExtension>(item);
+        var newItem = DMXD.DataModelExtensionConverter.CreateOpenXmlElement<DXD.DataModelExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? CreateModelElement(DXDrawDgms.DataModelExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DataModelExtensionList? CreateModelElement(DXDD.DataModelExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class DataModelExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.DataModelExtensionList? openXmlElement, DMDrawsDgms.DataModelExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DataModelExtensionList? openXmlElement, DMDD.DataModelExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class DataModelExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DataModelExtensionList value)
-    where OpenXmlElementType: DXDrawDgms.DataModelExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DataModelExtensionList value)
+    where OpenXmlElementType: DXDD.DataModelExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.DataModelExtensionList openXmlElement, DMDrawsDgms.DataModelExtensionList value)
+  public static void UpdateOpenXmlElement(DXDD.DataModelExtensionList openXmlElement, DMDD.DataModelExtensionList value)
   {
     SetDataModelExtensions(openXmlElement, value?.DataModelExtensions);
   }

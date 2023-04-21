@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class QuadraticBezierCurveToConverter
 {
-  private static Collection<DMDraws.AdjustPoint2DType>? GetPoints(DXDraw.QuadraticBezierCurveTo openXmlElement)
+  private static Collection<DMD.AdjustPoint2DType>? GetPoints(DXD.QuadraticBezierCurveTo openXmlElement)
   {
-    var collection = new Collection<DMDraws.AdjustPoint2DType>();
-    foreach (var item in openXmlElement.Elements<DXDraw.Point>())
+    var collection = new Collection<DMD.AdjustPoint2DType>();
+    foreach (var item in openXmlElement.Elements<DXD.Point>())
     {
-      var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(item);
+      var newItem = DMXD.AdjustPoint2DTypeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class QuadraticBezierCurveToConverter
     return null;
   }
   
-  private static bool CmpPoints(DXDraw.QuadraticBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
+  private static bool CmpPoints(DXD.QuadraticBezierCurveTo openXmlElement, Collection<DMD.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.Point>();
+    var origElements = openXmlElement.Elements<DXD.Point>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class QuadraticBezierCurveToConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.AdjustPoint2DTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class QuadraticBezierCurveToConverter
     return false;
   }
   
-  private static void SetPoints(DXDraw.QuadraticBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value)
+  private static void SetPoints(DXD.QuadraticBezierCurveTo openXmlElement, Collection<DMD.AdjustPoint2DType>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.Point>();
+    openXmlElement.RemoveAllChildren<DXD.Point>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Point>(item);
+        var newItem = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Point>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(DXDraw.QuadraticBezierCurveTo? openXmlElement)
+  public static DocumentModel.Drawings.QuadraticBezierCurveTo? CreateModelElement(DXD.QuadraticBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class QuadraticBezierCurveToConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.QuadraticBezierCurveTo? openXmlElement, DMDraws.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.QuadraticBezierCurveTo? openXmlElement, DMD.QuadraticBezierCurveTo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class QuadraticBezierCurveToConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.QuadraticBezierCurveTo value)
-    where OpenXmlElementType: DXDraw.QuadraticBezierCurveTo, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.QuadraticBezierCurveTo value)
+    where OpenXmlElementType: DXD.QuadraticBezierCurveTo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.QuadraticBezierCurveTo openXmlElement, DMDraws.QuadraticBezierCurveTo value)
+  public static void UpdateOpenXmlElement(DXD.QuadraticBezierCurveTo openXmlElement, DMD.QuadraticBezierCurveTo value)
   {
     SetPoints(openXmlElement, value?.Points);
   }

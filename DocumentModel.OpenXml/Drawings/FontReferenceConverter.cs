@@ -8,45 +8,45 @@ public static class FontReferenceConverter
   /// <summary>
   /// Identifier
   /// </summary>
-  private static DMDraws.FontCollectionIndexKind? GetIndex(DXDraw.FontReference openXmlElement)
+  private static DMD.FontCollectionIndexKind? GetIndex(DXD.FontReference openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMDraws.FontCollectionIndexKind>(openXmlElement?.Index?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(openXmlElement?.Index?.Value);
   }
   
-  private static bool CmpIndex(DXDraw.FontReference openXmlElement, DMDraws.FontCollectionIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXD.FontReference openXmlElement, DMD.FontCollectionIndexKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMDraws.FontCollectionIndexKind>(openXmlElement?.Index?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(openXmlElement?.Index?.Value, value, diffs, objName);
   }
   
-  private static void SetIndex(DXDraw.FontReference openXmlElement, DMDraws.FontCollectionIndexKind? value)
+  private static void SetIndex(DXD.FontReference openXmlElement, DMD.FontCollectionIndexKind? value)
   {
-    openXmlElement.Index = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMDraws.FontCollectionIndexKind>(value);
+    openXmlElement.Index = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(value);
   }
   
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.FontReference openXmlElement)
+  private static DMD.RgbColorModelPercentage? GetRgbColorModelPercentage(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (element != null)
-      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelPercentageConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXDraw.FontReference openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.FontReference openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelPercentage(DXDraw.FontReference openXmlElement, DMDraws.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXD.FontReference openXmlElement, DMD.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
+      itemElement = DMXD.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,27 +55,27 @@ public static class FontReferenceConverter
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.FontReference openXmlElement)
+  private static DMD.RgbColorModelHex? GetRgbColorModelHex(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelHex>();
     if (element != null)
-      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelHexConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXDraw.FontReference openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.FontReference openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelHex(DXDraw.FontReference openXmlElement, DMDraws.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXD.FontReference openXmlElement, DMD.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
+      itemElement = DMXD.RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -84,27 +84,27 @@ public static class FontReferenceConverter
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  private static DMDraws.HslColor? GetHslColor(DXDraw.FontReference openXmlElement)
+  private static DMD.HslColor? GetHslColor(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.HslColor>();
     if (element != null)
-      return DMXDraws.HslColorConverter.CreateModelElement(element);
+      return DMXD.HslColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHslColor(DXDraw.FontReference openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.FontReference openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
   }
   
-  private static void SetHslColor(DXDraw.FontReference openXmlElement, DMDraws.HslColor? value)
+  private static void SetHslColor(DXD.FontReference openXmlElement, DMD.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
+      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -113,27 +113,27 @@ public static class FontReferenceConverter
   /// <summary>
   /// System Color.
   /// </summary>
-  private static DMDraws.SystemColor? GetSystemColor(DXDraw.FontReference openXmlElement)
+  private static DMD.SystemColor? GetSystemColor(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SystemColor>();
     if (element != null)
-      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+      return DMXD.SystemColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSystemColor(DXDraw.FontReference openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.FontReference openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
   }
   
-  private static void SetSystemColor(DXDraw.FontReference openXmlElement, DMDraws.SystemColor? value)
+  private static void SetSystemColor(DXD.FontReference openXmlElement, DMD.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
+      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -142,27 +142,27 @@ public static class FontReferenceConverter
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.FontReference openXmlElement)
+  private static DMD.SchemeColor? GetSchemeColor(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SchemeColor>();
     if (element != null)
-      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+      return DMXD.SchemeColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSchemeColor(DXDraw.FontReference openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXD.FontReference openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
   }
   
-  private static void SetSchemeColor(DXDraw.FontReference openXmlElement, DMDraws.SchemeColor? value)
+  private static void SetSchemeColor(DXD.FontReference openXmlElement, DMD.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SchemeColorConverter.CreateOpenXmlElement<DXDraw.SchemeColor>(value);
+      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement<DXD.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -171,33 +171,33 @@ public static class FontReferenceConverter
   /// <summary>
   /// Preset Color.
   /// </summary>
-  private static DMDraws.PresetColor? GetPresetColor(DXDraw.FontReference openXmlElement)
+  private static DMD.PresetColor? GetPresetColor(DXD.FontReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetColor>();
     if (element != null)
-      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+      return DMXD.PresetColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetColor(DXDraw.FontReference openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.FontReference openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
   }
   
-  private static void SetPresetColor(DXDraw.FontReference openXmlElement, DMDraws.PresetColor? value)
+  private static void SetPresetColor(DXD.FontReference openXmlElement, DMD.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
+      itemElement = DMXD.PresetColorConverter.CreateOpenXmlElement<DXD.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.FontReference? CreateModelElement(DXDraw.FontReference? openXmlElement)
+  public static DocumentModel.Drawings.FontReference? CreateModelElement(DXD.FontReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -214,7 +214,7 @@ public static class FontReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.FontReference? openXmlElement, DMDraws.FontReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FontReference? openXmlElement, DMD.FontReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -240,15 +240,15 @@ public static class FontReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FontReference value)
-    where OpenXmlElementType: DXDraw.FontReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FontReference value)
+    where OpenXmlElementType: DXD.FontReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.FontReference openXmlElement, DMDraws.FontReference value)
+  public static void UpdateOpenXmlElement(DXD.FontReference openXmlElement, DMD.FontReference value)
   {
     SetIndex(openXmlElement, value?.Index);
     SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);

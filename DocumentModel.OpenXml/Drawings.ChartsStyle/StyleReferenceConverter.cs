@@ -8,19 +8,19 @@ public static class StyleReferenceConverter
   /// <summary>
   /// idx, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetIndex(DXO2013DrawChartStyle.StyleReference openXmlElement)
+  private static UInt32? GetIndex(DXO13DCS.StyleReference openXmlElement)
   {
     return openXmlElement?.Index?.Value;
   }
   
-  private static bool CmpIndex(DXO2013DrawChartStyle.StyleReference openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXO13DCS.StyleReference openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Index?.Value == value) return true;
     diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
     return false;
   }
   
-  private static void SetIndex(DXO2013DrawChartStyle.StyleReference openXmlElement, UInt32? value)
+  private static void SetIndex(DXO13DCS.StyleReference openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
   }
@@ -28,17 +28,17 @@ public static class StyleReferenceConverter
   /// <summary>
   /// mods, this property is only available in Office 2013 and later.
   /// </summary>
-  private static DM.ListOf<String>? GetModifiers(DXO2013DrawChartStyle.StyleReference openXmlElement)
+  private static DM.ListOf<String>? GetModifiers(DXO13DCS.StyleReference openXmlElement)
   {
     return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
   
-  private static bool CmpModifiers(DXO2013DrawChartStyle.StyleReference openXmlElement, DM.ListOf<String>? value, DiffList? diffs, string? objName)
+  private static bool CmpModifiers(DXO13DCS.StyleReference openXmlElement, DM.ListOf<String>? value, DiffList? diffs, string? objName)
   {
     return ListValueConverter.CmpValue(openXmlElement?.Modifiers, value, diffs, objName);
   }
   
-  private static void SetModifiers(DXO2013DrawChartStyle.StyleReference openXmlElement, DM.ListOf<String>? value)
+  private static void SetModifiers(DXO13DCS.StyleReference openXmlElement, DM.ListOf<String>? value)
   {
     if (value != null)
       openXmlElement.Modifiers = ListValueConverter.CreateListValue<DX.StringValue>(value);
@@ -46,7 +46,7 @@ public static class StyleReferenceConverter
       openXmlElement.Modifiers = null;
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DXO2013DrawChartStyle.StyleReference? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.StyleReference? CreateModelElement(DXO13DCS.StyleReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -58,7 +58,7 @@ public static class StyleReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChartStyle.StyleReference? openXmlElement, DMDrawsChartsStyle.StyleReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.StyleReference? openXmlElement, DMDCS.StyleReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -74,15 +74,15 @@ public static class StyleReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleReference value)
-    where OpenXmlElementType: DXO2013DrawChartStyle.StyleReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCS.StyleReference value)
+    where OpenXmlElementType: DXO13DCS.StyleReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.StyleReference openXmlElement, DMDrawsChartsStyle.StyleReference value)
+  public static void UpdateOpenXmlElement(DXO13DCS.StyleReference openXmlElement, DMDCS.StyleReference value)
   {
     SetIndex(openXmlElement, value?.Index);
     SetModifiers(openXmlElement, value?.Modifiers);

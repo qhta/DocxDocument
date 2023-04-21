@@ -8,47 +8,47 @@ public static class AlgorithmConverter
   /// <summary>
   /// Algorithm Type
   /// </summary>
-  private static DMDrawsDgms.AlgorithmKind? GetType(DXDrawDgms.Algorithm openXmlElement)
+  private static DMDD.AlgorithmKind? GetType(DXDD.Algorithm openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.AlgorithmKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Algorithm openXmlElement, DMDD.AlgorithmKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.AlgorithmKind? value)
+  private static void SetType(DXDD.Algorithm openXmlElement, DMDD.AlgorithmKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDrawsDgms.AlgorithmKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(value);
   }
   
   /// <summary>
   /// Revision Number
   /// </summary>
-  private static UInt32? GetRevision(DXDrawDgms.Algorithm openXmlElement)
+  private static UInt32? GetRevision(DXDD.Algorithm openXmlElement)
   {
     return openXmlElement?.Revision?.Value;
   }
   
-  private static bool CmpRevision(DXDrawDgms.Algorithm openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRevision(DXDD.Algorithm openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Revision?.Value == value) return true;
     diffs?.Add(objName, "Revision", openXmlElement?.Revision?.Value, value);
     return false;
   }
   
-  private static void SetRevision(DXDrawDgms.Algorithm openXmlElement, UInt32? value)
+  private static void SetRevision(DXDD.Algorithm openXmlElement, UInt32? value)
   {
     openXmlElement.Revision = value;
   }
   
-  private static Collection<DMDrawsDgms.Parameter>? GetParameters(DXDrawDgms.Algorithm openXmlElement)
+  private static Collection<DMDD.Parameter>? GetParameters(DXDD.Algorithm openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Parameter>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Parameter>())
+    var collection = new Collection<DMDD.Parameter>();
+    foreach (var item in openXmlElement.Elements<DXDD.Parameter>())
     {
-      var newItem = DMXDrawsDgms.ParameterConverter.CreateModelElement(item);
+      var newItem = DMXDD.ParameterConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -57,9 +57,9 @@ public static class AlgorithmConverter
     return null;
   }
   
-  private static bool CmpParameters(DXDrawDgms.Algorithm openXmlElement, Collection<DMDrawsDgms.Parameter>? value, DiffList? diffs, string? objName)
+  private static bool CmpParameters(DXDD.Algorithm openXmlElement, Collection<DMDD.Parameter>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Parameter>();
+    var origElements = openXmlElement.Elements<DXDD.Parameter>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -75,7 +75,7 @@ public static class AlgorithmConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ParameterConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ParameterConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -85,47 +85,47 @@ public static class AlgorithmConverter
     return false;
   }
   
-  private static void SetParameters(DXDrawDgms.Algorithm openXmlElement, Collection<DMDrawsDgms.Parameter>? value)
+  private static void SetParameters(DXDD.Algorithm openXmlElement, Collection<DMDD.Parameter>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Parameter>();
+    openXmlElement.RemoveAllChildren<DXDD.Parameter>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ParameterConverter.CreateOpenXmlElement<DXDrawDgms.Parameter>(item);
+        var newItem = DMXDD.ParameterConverter.CreateOpenXmlElement<DXDD.Parameter>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.Algorithm openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.Algorithm openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Algorithm openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.Algorithm openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Algorithm? CreateModelElement(DXDrawDgms.Algorithm? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Algorithm? CreateModelElement(DXDD.Algorithm? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -139,7 +139,7 @@ public static class AlgorithmConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.Algorithm? openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Algorithm? openXmlElement, DMDD.Algorithm? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -159,15 +159,15 @@ public static class AlgorithmConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Algorithm value)
-    where OpenXmlElementType: DXDrawDgms.Algorithm, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.Algorithm value)
+    where OpenXmlElementType: DXDD.Algorithm, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.Algorithm openXmlElement, DMDrawsDgms.Algorithm value)
+  public static void UpdateOpenXmlElement(DXDD.Algorithm openXmlElement, DMDD.Algorithm value)
   {
     SetType(openXmlElement, value?.Type);
     SetRevision(openXmlElement, value?.Revision);

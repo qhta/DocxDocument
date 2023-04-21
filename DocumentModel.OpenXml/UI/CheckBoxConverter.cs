@@ -8,17 +8,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getPressed
   /// </summary>
-  private static String? GetGetPressed(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetPressed(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetPressed);
   }
   
-  private static bool CmpGetPressed(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetPressed(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetPressed, value, diffs, objName, "GetPressed");
   }
   
-  private static void SetGetPressed(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetPressed(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetPressed = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// onAction
   /// </summary>
-  private static String? GetOnAction(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetOnAction(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetOnAction(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -44,19 +44,19 @@ public static class CheckBoxConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DXOCustUI.CheckBox openXmlElement)
+  private static Boolean? GetEnabled(DXOCUI.CheckBox openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXOCustUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXOCUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXOCustUI.CheckBox openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCUI.CheckBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -67,17 +67,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetEnabled(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -85,17 +85,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetDescription(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetDescription(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -103,17 +103,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetDescription(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetDescription(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetId(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetId(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -139,17 +139,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetIdQ(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -157,17 +157,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetIdMso(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetIdMso(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -175,17 +175,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetTag(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetTag(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -193,17 +193,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetScreentip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetScreentip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -211,17 +211,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetScreentip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -229,17 +229,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetSupertip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetSupertip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -247,17 +247,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetSupertip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -265,17 +265,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetLabel(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -283,17 +283,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetLabel(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetLabel(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -301,17 +301,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -319,17 +319,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -355,17 +355,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
@@ -373,19 +373,19 @@ public static class CheckBoxConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.CheckBox openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.CheckBox openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.CheckBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.CheckBox openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.CheckBox openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -396,17 +396,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetVisible(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -414,17 +414,17 @@ public static class CheckBoxConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetKeytip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetKeytip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -432,22 +432,22 @@ public static class CheckBoxConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DXOCustUI.CheckBox openXmlElement)
+  private static String? GetGetKeytip(DXOCUI.CheckBox openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXOCustUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXOCUI.CheckBox openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXOCustUI.CheckBox openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCUI.CheckBox openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.UI.CheckBox? CreateModelElement(DXOCustUI.CheckBox? openXmlElement)
+  public static DocumentModel.UI.CheckBox? CreateModelElement(DXOCUI.CheckBox? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -481,7 +481,7 @@ public static class CheckBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.CheckBox? openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.CheckBox? openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -542,14 +542,14 @@ public static class CheckBoxConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.CheckBox value)
-    where OpenXmlElementType: DXOCustUI.CheckBox, new()
+    where OpenXmlElementType: DXOCUI.CheckBox, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.CheckBox openXmlElement, DMUI.CheckBox value)
+  public static void UpdateOpenXmlElement(DXOCUI.CheckBox openXmlElement, DMUI.CheckBox value)
   {
     SetGetPressed(openXmlElement, value?.GetPressed);
     SetOnAction(openXmlElement, value?.OnAction);

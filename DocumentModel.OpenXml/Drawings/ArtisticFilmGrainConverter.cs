@@ -8,19 +8,19 @@ public static class ArtisticFilmGrainConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticFilmGrain openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticFilmGrain openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticFilmGrainConverter
   /// <summary>
   /// grainSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement)
+  private static Int32? GetGrainSize(DXO10D.ArtisticFilmGrain openXmlElement)
   {
     return openXmlElement?.GrainSize?.Value;
   }
   
-  private static bool CmpGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGrainSize(DXO10D.ArtisticFilmGrain openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.GrainSize?.Value == value) return true;
     diffs?.Add(objName, "GrainSize", openXmlElement?.GrainSize?.Value, value);
     return false;
   }
   
-  private static void SetGrainSize(DXO2010Draw.ArtisticFilmGrain openXmlElement, Int32? value)
+  private static void SetGrainSize(DXO10D.ArtisticFilmGrain openXmlElement, Int32? value)
   {
     openXmlElement.GrainSize = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticFilmGrain? CreateModelElement(DXO2010Draw.ArtisticFilmGrain? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticFilmGrain? CreateModelElement(DXO10D.ArtisticFilmGrain? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticFilmGrainConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticFilmGrain? openXmlElement, DMDraws.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticFilmGrain? openXmlElement, DMD.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticFilmGrainConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticFilmGrain value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticFilmGrain, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticFilmGrain value)
+    where OpenXmlElementType: DXO10D.ArtisticFilmGrain, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticFilmGrain openXmlElement, DMDraws.ArtisticFilmGrain value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticFilmGrain openXmlElement, DMD.ArtisticFilmGrain value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetGrainSize(openXmlElement, value?.GrainSize);

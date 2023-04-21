@@ -8,22 +8,22 @@ public static class ClassificationOutcomeConverter
   /// <summary>
   /// classificationOutcomeType, this property is only available in Office 2021 and later.
   /// </summary>
-  private static DMDraws.ClassificationOutcomeType? GetClassificationOutcomeType(DXO2021DrawDocCls.ClassificationOutcome openXmlElement)
+  private static DMD.ClassificationOutcomeType? GetClassificationOutcomeType(DXO21DDC.ClassificationOutcome openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMDraws.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMD.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value);
   }
   
-  private static bool CmpClassificationOutcomeType(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcomeType? value, DiffList? diffs, string? objName)
+  private static bool CmpClassificationOutcomeType(DXO21DDC.ClassificationOutcome openXmlElement, DMD.ClassificationOutcomeType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMDraws.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMD.ClassificationOutcomeType>(openXmlElement?.ClassificationOutcomeType?.Value, value, diffs, objName);
   }
   
-  private static void SetClassificationOutcomeType(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcomeType? value)
+  private static void SetClassificationOutcomeType(DXO21DDC.ClassificationOutcome openXmlElement, DMD.ClassificationOutcomeType? value)
   {
-    openXmlElement.ClassificationOutcomeType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMDraws.ClassificationOutcomeType>(value);
+    openXmlElement.ClassificationOutcomeType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType, DMD.ClassificationOutcomeType>(value);
   }
   
-  public static DocumentModel.Drawings.ClassificationOutcome? CreateModelElement(DXO2021DrawDocCls.ClassificationOutcome? openXmlElement)
+  public static DocumentModel.Drawings.ClassificationOutcome? CreateModelElement(DXO21DDC.ClassificationOutcome? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ClassificationOutcomeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawDocCls.ClassificationOutcome? openXmlElement, DMDraws.ClassificationOutcome? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DDC.ClassificationOutcome? openXmlElement, DMD.ClassificationOutcome? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class ClassificationOutcomeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ClassificationOutcome value)
-    where OpenXmlElementType: DXO2021DrawDocCls.ClassificationOutcome, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ClassificationOutcome value)
+    where OpenXmlElementType: DXO21DDC.ClassificationOutcome, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawDocCls.ClassificationOutcome openXmlElement, DMDraws.ClassificationOutcome value)
+  public static void UpdateOpenXmlElement(DXO21DDC.ClassificationOutcome openXmlElement, DMD.ClassificationOutcome value)
   {
     SetClassificationOutcomeType(openXmlElement, value?.ClassificationOutcomeType);
   }

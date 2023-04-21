@@ -8,19 +8,19 @@ public static class LinePropertiesTypeConverter
   /// <summary>
   /// line width
   /// </summary>
-  private static Int32? GetWidth(DXDraw.LinePropertiesType openXmlElement)
+  private static Int32? GetWidth(DXD.LinePropertiesType openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXDraw.LinePropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXD.LinePropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
-  private static void SetWidth(DXDraw.LinePropertiesType openXmlElement, Int32? value)
+  private static void SetWidth(DXD.LinePropertiesType openXmlElement, Int32? value)
   {
     openXmlElement.Width = value;
   }
@@ -28,58 +28,58 @@ public static class LinePropertiesTypeConverter
   /// <summary>
   /// line cap
   /// </summary>
-  private static DMDraws.LineCapKind? GetCapType(DXDraw.LinePropertiesType openXmlElement)
+  private static DMD.LineCapKind? GetCapType(DXD.LinePropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMDraws.LineCapKind>(openXmlElement?.CapType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMD.LineCapKind>(openXmlElement?.CapType?.Value);
   }
   
-  private static bool CmpCapType(DXDraw.LinePropertiesType openXmlElement, DMDraws.LineCapKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCapType(DXD.LinePropertiesType openXmlElement, DMD.LineCapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMDraws.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMD.LineCapKind>(openXmlElement?.CapType?.Value, value, diffs, objName);
   }
   
-  private static void SetCapType(DXDraw.LinePropertiesType openXmlElement, DMDraws.LineCapKind? value)
+  private static void SetCapType(DXD.LinePropertiesType openXmlElement, DMD.LineCapKind? value)
   {
-    openXmlElement.CapType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMDraws.LineCapKind>(value);
+    openXmlElement.CapType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.LineCapValues, DMD.LineCapKind>(value);
   }
   
   /// <summary>
   /// compound line type
   /// </summary>
-  private static DMDraws.CompoundLineKind? GetCompoundLineType(DXDraw.LinePropertiesType openXmlElement)
+  private static DMD.CompoundLineKind? GetCompoundLineType(DXD.LinePropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMDraws.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMD.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value);
   }
   
-  private static bool CmpCompoundLineType(DXDraw.LinePropertiesType openXmlElement, DMDraws.CompoundLineKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCompoundLineType(DXD.LinePropertiesType openXmlElement, DMD.CompoundLineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMDraws.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMD.CompoundLineKind>(openXmlElement?.CompoundLineType?.Value, value, diffs, objName);
   }
   
-  private static void SetCompoundLineType(DXDraw.LinePropertiesType openXmlElement, DMDraws.CompoundLineKind? value)
+  private static void SetCompoundLineType(DXD.LinePropertiesType openXmlElement, DMD.CompoundLineKind? value)
   {
-    openXmlElement.CompoundLineType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMDraws.CompoundLineKind>(value);
+    openXmlElement.CompoundLineType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.CompoundLineValues, DMD.CompoundLineKind>(value);
   }
   
   /// <summary>
   /// pen alignment
   /// </summary>
-  private static DMDraws.PenAlignmentKind? GetAlignment(DXDraw.LinePropertiesType openXmlElement)
+  private static DMD.PenAlignmentKind? GetAlignment(DXD.LinePropertiesType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMD.PenAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXDraw.LinePropertiesType openXmlElement, DMDraws.PenAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.LinePropertiesType openXmlElement, DMD.PenAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMD.PenAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
-  private static void SetAlignment(DXDraw.LinePropertiesType openXmlElement, DMDraws.PenAlignmentKind? value)
+  private static void SetAlignment(DXD.LinePropertiesType openXmlElement, DMD.PenAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMDraws.PenAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PenAlignmentValues, DMD.PenAlignmentKind>(value);
   }
   
-  public static DocumentModel.Drawings.LinePropertiesType? CreateModelElement(DXDraw.LinePropertiesType? openXmlElement)
+  public static DocumentModel.Drawings.LinePropertiesType? CreateModelElement(DXD.LinePropertiesType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -93,7 +93,7 @@ public static class LinePropertiesTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.LinePropertiesType? openXmlElement, DMDraws.LinePropertiesType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LinePropertiesType? openXmlElement, DMD.LinePropertiesType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -113,15 +113,15 @@ public static class LinePropertiesTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LinePropertiesType value)
-    where OpenXmlElementType: DXDraw.LinePropertiesType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LinePropertiesType value)
+    where OpenXmlElementType: DXD.LinePropertiesType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.LinePropertiesType openXmlElement, DMDraws.LinePropertiesType value)
+  public static void UpdateOpenXmlElement(DXD.LinePropertiesType openXmlElement, DMD.LinePropertiesType value)
   {
     SetWidth(openXmlElement, value?.Width);
     SetCapType(openXmlElement, value?.CapType);

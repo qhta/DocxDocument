@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class SerAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.SerAxExtension>? GetSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement)
+  private static Collection<DMDC.SerAxExtension>? GetSerAxExtensions(DXDC.SerAxExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.SerAxExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.SerAxExtension>())
+    var collection = new Collection<DMDC.SerAxExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.SerAxExtension>())
     {
-      var newItem = DMXDrawsCharts.SerAxExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.SerAxExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class SerAxExtensionListConverter
     return null;
   }
   
-  private static bool CmpSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpSerAxExtensions(DXDC.SerAxExtensionList openXmlElement, Collection<DMDC.SerAxExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.SerAxExtension>();
+    var origElements = openXmlElement.Elements<DXDC.SerAxExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class SerAxExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.SerAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.SerAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class SerAxExtensionListConverter
     return false;
   }
   
-  private static void SetSerAxExtensions(DXDrawCharts.SerAxExtensionList openXmlElement, Collection<DMDrawsCharts.SerAxExtension>? value)
+  private static void SetSerAxExtensions(DXDC.SerAxExtensionList openXmlElement, Collection<DMDC.SerAxExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.SerAxExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.SerAxExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.SerAxExtensionConverter.CreateOpenXmlElement<DXDrawCharts.SerAxExtension>(item);
+        var newItem = DMXDC.SerAxExtensionConverter.CreateOpenXmlElement<DXDC.SerAxExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(DXDrawCharts.SerAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SerAxExtensionList? CreateModelElement(DXDC.SerAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class SerAxExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.SerAxExtensionList? openXmlElement, DMDrawsCharts.SerAxExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SerAxExtensionList? openXmlElement, DMDC.SerAxExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class SerAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SerAxExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.SerAxExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.SerAxExtensionList value)
+    where OpenXmlElementType: DXDC.SerAxExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.SerAxExtensionList openXmlElement, DMDrawsCharts.SerAxExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.SerAxExtensionList openXmlElement, DMDC.SerAxExtensionList value)
   {
     SetSerAxExtensions(openXmlElement, value?.SerAxExtensions);
   }

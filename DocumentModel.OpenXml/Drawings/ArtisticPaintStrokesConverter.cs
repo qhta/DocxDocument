@@ -8,19 +8,19 @@ public static class ArtisticPaintStrokesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticPaintStrokes openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticPaintStrokes openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticPaintStrokes openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticPaintStrokes openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticPaintStrokesConverter
   /// <summary>
   /// intensity, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetIntensity(DXO2010Draw.ArtisticPaintStrokes openXmlElement)
+  private static Int32? GetIntensity(DXO10D.ArtisticPaintStrokes openXmlElement)
   {
     return openXmlElement?.Intensity?.Value;
   }
   
-  private static bool CmpIntensity(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpIntensity(DXO10D.ArtisticPaintStrokes openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Intensity?.Value == value) return true;
     diffs?.Add(objName, "Intensity", openXmlElement?.Intensity?.Value, value);
     return false;
   }
   
-  private static void SetIntensity(DXO2010Draw.ArtisticPaintStrokes openXmlElement, Int32? value)
+  private static void SetIntensity(DXO10D.ArtisticPaintStrokes openXmlElement, Int32? value)
   {
     openXmlElement.Intensity = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticPaintStrokes? CreateModelElement(DXO2010Draw.ArtisticPaintStrokes? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticPaintStrokes? CreateModelElement(DXO10D.ArtisticPaintStrokes? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticPaintStrokesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticPaintStrokes? openXmlElement, DMDraws.ArtisticPaintStrokes? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticPaintStrokes? openXmlElement, DMD.ArtisticPaintStrokes? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticPaintStrokesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticPaintStrokes value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticPaintStrokes, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticPaintStrokes value)
+    where OpenXmlElementType: DXO10D.ArtisticPaintStrokes, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticPaintStrokes openXmlElement, DMDraws.ArtisticPaintStrokes value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticPaintStrokes openXmlElement, DMD.ArtisticPaintStrokes value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetIntensity(openXmlElement, value?.Intensity);

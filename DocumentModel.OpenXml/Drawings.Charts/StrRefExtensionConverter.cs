@@ -8,100 +8,100 @@ public static class StrRefExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.StrRefExtension openXmlElement)
+  private static String? GetUri(DXDC.StrRefExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.StrRefExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.StrRefExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.StrRefExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.StrRefExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.FullReference? GetFullReference(DXDrawCharts.StrRefExtension openXmlElement)
+  private static DMDC.FullReference? GetFullReference(DXDC.StrRefExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FullReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FullReference>();
     if (element != null)
-      return DMXDrawsCharts.FullReferenceConverter.CreateModelElement(element);
+      return DMXDC.FullReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFullReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FullReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFullReference(DXDC.StrRefExtension openXmlElement, DMDC.FullReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FullReference>(), value, diffs, objName);
+    return DMXDC.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FullReference>(), value, diffs, objName);
   }
   
-  private static void SetFullReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FullReference? value)
+  private static void SetFullReference(DXDC.StrRefExtension openXmlElement, DMDC.FullReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FullReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FullReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FullReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.FullReference>(value);
+      itemElement = DMXDC.FullReferenceConverter.CreateOpenXmlElement<DXO13DC.FullReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.LevelReference? GetLevelReference(DXDrawCharts.StrRefExtension openXmlElement)
+  private static DMDC.LevelReference? GetLevelReference(DXDC.StrRefExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.LevelReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.LevelReference>();
     if (element != null)
-      return DMXDrawsCharts.LevelReferenceConverter.CreateModelElement(element);
+      return DMXDC.LevelReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevelReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.LevelReference? value, DiffList? diffs, string? objName)
+  private static bool CmpLevelReference(DXDC.StrRefExtension openXmlElement, DMDC.LevelReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.LevelReference>(), value, diffs, objName);
+    return DMXDC.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.LevelReference>(), value, diffs, objName);
   }
   
-  private static void SetLevelReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.LevelReference? value)
+  private static void SetLevelReference(DXDC.StrRefExtension openXmlElement, DMDC.LevelReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.LevelReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.LevelReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.LevelReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.LevelReference>(value);
+      itemElement = DMXDC.LevelReferenceConverter.CreateOpenXmlElement<DXO13DC.LevelReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.FormulaReference? GetFormulaReference(DXDrawCharts.StrRefExtension openXmlElement)
+  private static DMDC.FormulaReference? GetFormulaReference(DXDC.StrRefExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FormulaReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FormulaReference>();
     if (element != null)
-      return DMXDrawsCharts.FormulaReferenceConverter.CreateModelElement(element);
+      return DMXDC.FormulaReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFormulaReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFormulaReference(DXDC.StrRefExtension openXmlElement, DMDC.FormulaReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FormulaReference>(), value, diffs, objName);
+    return DMXDC.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FormulaReference>(), value, diffs, objName);
   }
   
-  private static void SetFormulaReference(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.FormulaReference? value)
+  private static void SetFormulaReference(DXDC.StrRefExtension openXmlElement, DMDC.FormulaReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FormulaReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FormulaReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FormulaReferenceConverter.CreateOpenXmlElement<DXO2013DrawChart.FormulaReference>(value);
+      itemElement = DMXDC.FormulaReferenceConverter.CreateOpenXmlElement<DXO13DC.FormulaReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrRefExtension? CreateModelElement(DXDrawCharts.StrRefExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StrRefExtension? CreateModelElement(DXDC.StrRefExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -115,7 +115,7 @@ public static class StrRefExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StrRefExtension? openXmlElement, DMDrawsCharts.StrRefExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StrRefExtension? openXmlElement, DMDC.StrRefExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -135,15 +135,15 @@ public static class StrRefExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrRefExtension value)
-    where OpenXmlElementType: DXDrawCharts.StrRefExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StrRefExtension value)
+    where OpenXmlElementType: DXDC.StrRefExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StrRefExtension openXmlElement, DMDrawsCharts.StrRefExtension value)
+  public static void UpdateOpenXmlElement(DXDC.StrRefExtension openXmlElement, DMDC.StrRefExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetFullReference(openXmlElement, value?.FullReference);

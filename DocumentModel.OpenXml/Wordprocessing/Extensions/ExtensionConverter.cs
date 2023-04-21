@@ -8,22 +8,22 @@ public static class ExtensionConverter
   /// <summary>
   /// uri, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetUri(DXO2021WExtList.Extension openXmlElement)
+  private static String? GetUri(DXO21WEL.Extension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXO2021WExtList.Extension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXO21WEL.Extension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXO2021WExtList.Extension openXmlElement, String? value)
+  private static void SetUri(DXO21WEL.Extension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DMW.Extension? CreateModelElement(DXO2021WExtList.Extension? openXmlElement)
+  public static DMW.Extension? CreateModelElement(DXO21WEL.Extension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021WExtList.Extension? openXmlElement, DMW.Extension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21WEL.Extension? openXmlElement, DMW.Extension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,14 +49,14 @@ public static class ExtensionConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Extension value)
-    where OpenXmlElementType: DXO2021WExtList.Extension, new()
+    where OpenXmlElementType: DXO21WEL.Extension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021WExtList.Extension openXmlElement, DMW.Extension value)
+  public static void UpdateOpenXmlElement(DXO21WEL.Extension openXmlElement, DMW.Extension value)
   {
     SetUri(openXmlElement, value?.Uri);
   }

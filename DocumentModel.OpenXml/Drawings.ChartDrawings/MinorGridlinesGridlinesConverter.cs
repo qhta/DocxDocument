@@ -5,59 +5,59 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class MinorGridlinesGridlinesConverter
 {
-  private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement)
+  private static DMDCDs.ShapeProperties? GetShapeProperties(DXO16DCD.MinorGridlinesGridlines openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ShapeProperties>();
     if (element != null)
-      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+      return DMXDCDs.ShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO16DCD.MinorGridlinesGridlines openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName);
+    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
+  private static void SetShapeProperties(DXO16DCD.MinorGridlinesGridlines openXmlElement, DMDCDs.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ShapePropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ShapeProperties>(value);
+      itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement)
+  private static DMDCDs.ExtensionList? GetExtensionList(DXO16DCD.MinorGridlinesGridlines openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.MinorGridlinesGridlines openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.ExtensionList? value)
+  private static void SetExtensionList(DXO16DCD.MinorGridlinesGridlines openXmlElement, DMDCDs.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
+      itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines? CreateModelElement(DXO2016DrawChartDraw.MinorGridlinesGridlines? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.MinorGridlinesGridlines? CreateModelElement(DXO16DCD.MinorGridlinesGridlines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +69,7 @@ public static class MinorGridlinesGridlinesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.MinorGridlinesGridlines? openXmlElement, DMDrawsChartDraws.MinorGridlinesGridlines? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.MinorGridlinesGridlines? openXmlElement, DMDCDs.MinorGridlinesGridlines? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -85,15 +85,15 @@ public static class MinorGridlinesGridlinesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.MinorGridlinesGridlines value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.MinorGridlinesGridlines, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.MinorGridlinesGridlines value)
+    where OpenXmlElementType: DXO16DCD.MinorGridlinesGridlines, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.MinorGridlinesGridlines openXmlElement, DMDrawsChartDraws.MinorGridlinesGridlines value)
+  public static void UpdateOpenXmlElement(DXO16DCD.MinorGridlinesGridlines openXmlElement, DMDCDs.MinorGridlinesGridlines value)
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
     SetExtensionList(openXmlElement, value?.ExtensionList);

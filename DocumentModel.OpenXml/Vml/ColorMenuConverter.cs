@@ -8,35 +8,35 @@ public static class ColorMenuConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.ColorMenu openXmlElement)
+  private static DMV.ExtensionHandlingBehaviorKind? GetExtension(DXVO.ColorMenu openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVmlO.ColorMenu openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.ColorMenu openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
-  private static void SetExtension(DXVmlO.ColorMenu openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVO.ColorMenu openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Default stroke color
   /// </summary>
-  private static String? GetStrokeColor(DXVmlO.ColorMenu openXmlElement)
+  private static String? GetStrokeColor(DXVO.ColorMenu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.StrokeColor);
   }
   
-  private static bool CmpStrokeColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStrokeColor(DXVO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StrokeColor, value, diffs, objName, "StrokeColor");
   }
   
-  private static void SetStrokeColor(DXVmlO.ColorMenu openXmlElement, String? value)
+  private static void SetStrokeColor(DXVO.ColorMenu openXmlElement, String? value)
   {
     openXmlElement.StrokeColor = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class ColorMenuConverter
   /// <summary>
   /// Default fill color
   /// </summary>
-  private static String? GetFillColor(DXVmlO.ColorMenu openXmlElement)
+  private static String? GetFillColor(DXVO.ColorMenu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.FillColor);
   }
   
-  private static bool CmpFillColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFillColor(DXVO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FillColor, value, diffs, objName, "FillColor");
   }
   
-  private static void SetFillColor(DXVmlO.ColorMenu openXmlElement, String? value)
+  private static void SetFillColor(DXVO.ColorMenu openXmlElement, String? value)
   {
     openXmlElement.FillColor = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class ColorMenuConverter
   /// <summary>
   /// Default shadow color
   /// </summary>
-  private static String? GetShadowColor(DXVmlO.ColorMenu openXmlElement)
+  private static String? GetShadowColor(DXVO.ColorMenu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ShadowColor);
   }
   
-  private static bool CmpShadowColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpShadowColor(DXVO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ShadowColor, value, diffs, objName, "ShadowColor");
   }
   
-  private static void SetShadowColor(DXVmlO.ColorMenu openXmlElement, String? value)
+  private static void SetShadowColor(DXVO.ColorMenu openXmlElement, String? value)
   {
     openXmlElement.ShadowColor = StringValueConverter.CreateStringValue(value);
   }
@@ -80,22 +80,22 @@ public static class ColorMenuConverter
   /// <summary>
   /// Default extrusion color
   /// </summary>
-  private static String? GetExtrusionColor(DXVmlO.ColorMenu openXmlElement)
+  private static String? GetExtrusionColor(DXVO.ColorMenu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ExtrusionColor);
   }
   
-  private static bool CmpExtrusionColor(DXVmlO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionColor(DXVO.ColorMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ExtrusionColor, value, diffs, objName, "ExtrusionColor");
   }
   
-  private static void SetExtrusionColor(DXVmlO.ColorMenu openXmlElement, String? value)
+  private static void SetExtrusionColor(DXVO.ColorMenu openXmlElement, String? value)
   {
     openXmlElement.ExtrusionColor = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Vml.ColorMenu? CreateModelElement(DXVmlO.ColorMenu? openXmlElement)
+  public static DocumentModel.Vml.ColorMenu? CreateModelElement(DXVO.ColorMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -110,7 +110,7 @@ public static class ColorMenuConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.ColorMenu? openXmlElement, DMVml.ColorMenu? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.ColorMenu? openXmlElement, DMV.ColorMenu? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -132,15 +132,15 @@ public static class ColorMenuConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ColorMenu value)
-    where OpenXmlElementType: DXVmlO.ColorMenu, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.ColorMenu value)
+    where OpenXmlElementType: DXVO.ColorMenu, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.ColorMenu openXmlElement, DMVml.ColorMenu value)
+  public static void UpdateOpenXmlElement(DXVO.ColorMenu openXmlElement, DMV.ColorMenu value)
   {
     SetExtension(openXmlElement, value?.Extension);
     SetStrokeColor(openXmlElement, value?.StrokeColor);

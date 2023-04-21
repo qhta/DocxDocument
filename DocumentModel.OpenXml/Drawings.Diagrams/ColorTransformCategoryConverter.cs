@@ -8,17 +8,17 @@ public static class ColorTransformCategoryConverter
   /// <summary>
   /// Category Type
   /// </summary>
-  private static String? GetType(DXDrawDgms.ColorTransformCategory openXmlElement)
+  private static String? GetType(DXDD.ColorTransformCategory openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
-  private static bool CmpType(DXDrawDgms.ColorTransformCategory openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.ColorTransformCategory openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
   
-  private static void SetType(DXDrawDgms.ColorTransformCategory openXmlElement, String? value)
+  private static void SetType(DXDD.ColorTransformCategory openXmlElement, String? value)
   {
     openXmlElement.Type = StringValueConverter.CreateStringValue(value);
   }
@@ -26,24 +26,24 @@ public static class ColorTransformCategoryConverter
   /// <summary>
   /// Priority
   /// </summary>
-  private static UInt32? GetPriority(DXDrawDgms.ColorTransformCategory openXmlElement)
+  private static UInt32? GetPriority(DXDD.ColorTransformCategory openXmlElement)
   {
     return openXmlElement?.Priority?.Value;
   }
   
-  private static bool CmpPriority(DXDrawDgms.ColorTransformCategory openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPriority(DXDD.ColorTransformCategory openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Priority?.Value == value) return true;
     diffs?.Add(objName, "Priority", openXmlElement?.Priority?.Value, value);
     return false;
   }
   
-  private static void SetPriority(DXDrawDgms.ColorTransformCategory openXmlElement, UInt32? value)
+  private static void SetPriority(DXDD.ColorTransformCategory openXmlElement, UInt32? value)
   {
     openXmlElement.Priority = value;
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(DXDrawDgms.ColorTransformCategory? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorTransformCategory? CreateModelElement(DXDD.ColorTransformCategory? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class ColorTransformCategoryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.ColorTransformCategory? openXmlElement, DMDrawsDgms.ColorTransformCategory? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ColorTransformCategory? openXmlElement, DMDD.ColorTransformCategory? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -71,15 +71,15 @@ public static class ColorTransformCategoryConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorTransformCategory value)
-    where OpenXmlElementType: DXDrawDgms.ColorTransformCategory, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.ColorTransformCategory value)
+    where OpenXmlElementType: DXDD.ColorTransformCategory, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.ColorTransformCategory openXmlElement, DMDrawsDgms.ColorTransformCategory value)
+  public static void UpdateOpenXmlElement(DXDD.ColorTransformCategory openXmlElement, DMDD.ColorTransformCategory value)
   {
     SetType(openXmlElement, value?.Type);
     SetPriority(openXmlElement, value?.Priority);

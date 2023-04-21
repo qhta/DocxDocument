@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkExtensionListConverter
 {
-  private static Collection<DMDraws.HyperlinkExtension>? GetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement)
+  private static Collection<DMD.HyperlinkExtension>? GetHyperlinkExtensions(DXD.HyperlinkExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.HyperlinkExtension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.HyperlinkExtension>())
+    var collection = new Collection<DMD.HyperlinkExtension>();
+    foreach (var item in openXmlElement.Elements<DXD.HyperlinkExtension>())
     {
-      var newItem = DMXDraws.HyperlinkExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.HyperlinkExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class HyperlinkExtensionListConverter
     return null;
   }
   
-  private static bool CmpHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkExtensions(DXD.HyperlinkExtensionList openXmlElement, Collection<DMD.HyperlinkExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.HyperlinkExtension>();
+    var origElements = openXmlElement.Elements<DXD.HyperlinkExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class HyperlinkExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.HyperlinkExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.HyperlinkExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class HyperlinkExtensionListConverter
     return false;
   }
   
-  private static void SetHyperlinkExtensions(DXDraw.HyperlinkExtensionList openXmlElement, Collection<DMDraws.HyperlinkExtension>? value)
+  private static void SetHyperlinkExtensions(DXD.HyperlinkExtensionList openXmlElement, Collection<DMD.HyperlinkExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.HyperlinkExtension>();
+    openXmlElement.RemoveAllChildren<DXD.HyperlinkExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.HyperlinkExtensionConverter.CreateOpenXmlElement<DXDraw.HyperlinkExtension>(item);
+        var newItem = DMXD.HyperlinkExtensionConverter.CreateOpenXmlElement<DXD.HyperlinkExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DXDraw.HyperlinkExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkExtensionList? CreateModelElement(DXD.HyperlinkExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class HyperlinkExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.HyperlinkExtensionList? openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.HyperlinkExtensionList? openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class HyperlinkExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkExtensionList value)
-    where OpenXmlElementType: DXDraw.HyperlinkExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.HyperlinkExtensionList value)
+    where OpenXmlElementType: DXD.HyperlinkExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.HyperlinkExtensionList openXmlElement, DMDraws.HyperlinkExtensionList value)
+  public static void UpdateOpenXmlElement(DXD.HyperlinkExtensionList openXmlElement, DMD.HyperlinkExtensionList value)
   {
     SetHyperlinkExtensions(openXmlElement, value?.HyperlinkExtensions);
   }

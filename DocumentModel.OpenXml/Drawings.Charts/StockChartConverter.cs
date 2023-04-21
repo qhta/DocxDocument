@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class StockChartConverter
 {
-  private static Collection<DMDrawsCharts.LineChartSeries>? GetLineChartSeries(DXDrawCharts.StockChart openXmlElement)
+  private static Collection<DMDC.LineChartSeries>? GetLineChartSeries(DXDC.StockChart openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.LineChartSeries>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.LineChartSeries>())
+    var collection = new Collection<DMDC.LineChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDC.LineChartSeries>())
     {
-      var newItem = DMXDrawsCharts.LineChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDC.LineChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class StockChartConverter
     return null;
   }
   
-  private static bool CmpLineChartSeries(DXDrawCharts.StockChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChartSeries(DXDC.StockChart openXmlElement, Collection<DMDC.LineChartSeries>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.LineChartSeries>();
+    var origElements = openXmlElement.Elements<DXDC.LineChartSeries>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class StockChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.LineChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LineChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,128 +47,128 @@ public static class StockChartConverter
     return false;
   }
   
-  private static void SetLineChartSeries(DXDrawCharts.StockChart openXmlElement, Collection<DMDrawsCharts.LineChartSeries>? value)
+  private static void SetLineChartSeries(DXDC.StockChart openXmlElement, Collection<DMDC.LineChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.LineChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDC.LineChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.LineChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.LineChartSeries>(item);
+        var newItem = DMXDC.LineChartSeriesConverter.CreateOpenXmlElement<DXDC.LineChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.StockChart openXmlElement)
+  private static DMDC.DataLabels? GetDataLabels(DXDC.StockChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DataLabels>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabels(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXDC.StockChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
   }
   
-  private static void SetDataLabels(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DataLabels? value)
+  private static void SetDataLabels(DXDC.StockChart openXmlElement, DMDC.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
+      itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.DropLines? GetDropLines(DXDrawCharts.StockChart openXmlElement)
+  private static DMDC.DropLines? GetDropLines(DXDC.StockChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DropLines>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DropLines>();
     if (element != null)
-      return DMXDrawsCharts.DropLinesConverter.CreateModelElement(element);
+      return DMXDC.DropLinesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDropLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DropLines? value, DiffList? diffs, string? objName)
+  private static bool CmpDropLines(DXDC.StockChart openXmlElement, DMDC.DropLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DropLines>(), value, diffs, objName);
+    return DMXDC.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DropLines>(), value, diffs, objName);
   }
   
-  private static void SetDropLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.DropLines? value)
+  private static void SetDropLines(DXDC.StockChart openXmlElement, DMDC.DropLines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DropLines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DropLines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DropLinesConverter.CreateOpenXmlElement<DXDrawCharts.DropLines>(value);
+      itemElement = DMXDC.DropLinesConverter.CreateOpenXmlElement<DXDC.DropLines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.HighLowLines? GetHighLowLines(DXDrawCharts.StockChart openXmlElement)
+  private static DMDC.HighLowLines? GetHighLowLines(DXDC.StockChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.HighLowLines>();
+    var element = openXmlElement?.GetFirstChild<DXDC.HighLowLines>();
     if (element != null)
-      return DMXDrawsCharts.HighLowLinesConverter.CreateModelElement(element);
+      return DMXDC.HighLowLinesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHighLowLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.HighLowLines? value, DiffList? diffs, string? objName)
+  private static bool CmpHighLowLines(DXDC.StockChart openXmlElement, DMDC.HighLowLines? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.HighLowLines>(), value, diffs, objName);
+    return DMXDC.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HighLowLines>(), value, diffs, objName);
   }
   
-  private static void SetHighLowLines(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.HighLowLines? value)
+  private static void SetHighLowLines(DXDC.StockChart openXmlElement, DMDC.HighLowLines? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.HighLowLines>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.HighLowLines>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.HighLowLinesConverter.CreateOpenXmlElement<DXDrawCharts.HighLowLines>(value);
+      itemElement = DMXDC.HighLowLinesConverter.CreateOpenXmlElement<DXDC.HighLowLines>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.UpDownBars? GetUpDownBars(DXDrawCharts.StockChart openXmlElement)
+  private static DMDC.UpDownBars? GetUpDownBars(DXDC.StockChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.UpDownBars>();
+    var element = openXmlElement?.GetFirstChild<DXDC.UpDownBars>();
     if (element != null)
-      return DMXDrawsCharts.UpDownBarsConverter.CreateModelElement(element);
+      return DMXDC.UpDownBarsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUpDownBars(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.UpDownBars? value, DiffList? diffs, string? objName)
+  private static bool CmpUpDownBars(DXDC.StockChart openXmlElement, DMDC.UpDownBars? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.UpDownBars>(), value, diffs, objName);
+    return DMXDC.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpDownBars>(), value, diffs, objName);
   }
   
-  private static void SetUpDownBars(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.UpDownBars? value)
+  private static void SetUpDownBars(DXDC.StockChart openXmlElement, DMDC.UpDownBars? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.UpDownBars>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.UpDownBars>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.UpDownBarsConverter.CreateOpenXmlElement<DXDrawCharts.UpDownBars>(value);
+      itemElement = DMXDC.UpDownBarsConverter.CreateOpenXmlElement<DXDC.UpDownBars>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<UInt32>? GetAxisIds(DXDrawCharts.StockChart openXmlElement)
+  private static Collection<UInt32>? GetAxisIds(DXDC.StockChart openXmlElement)
   {
     var collection = new Collection<UInt32>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.AxisId>())
+    foreach (var item in openXmlElement.Elements<DXDC.AxisId>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
@@ -179,9 +179,9 @@ public static class StockChartConverter
     return null;
   }
   
-  private static bool CmpAxisIds(DXDrawCharts.StockChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisIds(DXDC.StockChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.AxisId>();
+    var origElements = openXmlElement.Elements<DXDC.AxisId>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -207,47 +207,47 @@ public static class StockChartConverter
     return false;
   }
   
-  private static void SetAxisIds(DXDrawCharts.StockChart openXmlElement, Collection<UInt32>? value)
+  private static void SetAxisIds(DXDC.StockChart openXmlElement, Collection<UInt32>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.AxisId>();
+    openXmlElement.RemoveAllChildren<DXDC.AxisId>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDrawCharts.AxisId>(item);
+        var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.StockChartExtensionList? GetStockChartExtensionList(DXDrawCharts.StockChart openXmlElement)
+  private static DMDC.StockChartExtensionList? GetStockChartExtensionList(DXDC.StockChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StockChartExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.StockChartExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.StockChartExtensionListConverter.CreateModelElement(element);
+      return DMXDC.StockChartExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStockChartExtensionList(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChartExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpStockChartExtensionList(DXDC.StockChart openXmlElement, DMDC.StockChartExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StockChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StockChartExtensionList>(), value, diffs, objName);
+    return DMXDC.StockChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StockChartExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetStockChartExtensionList(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChartExtensionList? value)
+  private static void SetStockChartExtensionList(DXDC.StockChart openXmlElement, DMDC.StockChartExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StockChartExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.StockChartExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.StockChartExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.StockChartExtensionList>(value);
+      itemElement = DMXDC.StockChartExtensionListConverter.CreateOpenXmlElement<DXDC.StockChartExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StockChart? CreateModelElement(DXDrawCharts.StockChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StockChart? CreateModelElement(DXDC.StockChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -264,7 +264,7 @@ public static class StockChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StockChart? openXmlElement, DMDrawsCharts.StockChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StockChart? openXmlElement, DMDC.StockChart? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -290,15 +290,15 @@ public static class StockChartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChart value)
-    where OpenXmlElementType: DXDrawCharts.StockChart, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StockChart value)
+    where OpenXmlElementType: DXDC.StockChart, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StockChart openXmlElement, DMDrawsCharts.StockChart value)
+  public static void UpdateOpenXmlElement(DXDC.StockChart openXmlElement, DMDC.StockChart value)
   {
     SetLineChartSeries(openXmlElement, value?.LineChartSeries);
     SetDataLabels(openXmlElement, value?.DataLabels);

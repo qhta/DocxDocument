@@ -8,19 +8,19 @@ public static class BackgroundMarkConverter
   /// <summary>
   /// x1, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetFirstXCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
+  private static Int32? GetFirstXCoordinate(DXO10D.BackgroundMark openXmlElement)
   {
     return openXmlElement?.FirstXCoordinate?.Value;
   }
   
-  private static bool CmpFirstXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.FirstXCoordinate?.Value == value) return true;
     diffs?.Add(objName, "FirstXCoordinate", openXmlElement?.FirstXCoordinate?.Value, value);
     return false;
   }
   
-  private static void SetFirstXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
+  private static void SetFirstXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.FirstXCoordinate = value;
   }
@@ -28,19 +28,19 @@ public static class BackgroundMarkConverter
   /// <summary>
   /// y1, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
+  private static Int32? GetFirstYCoordinate(DXO10D.BackgroundMark openXmlElement)
   {
     return openXmlElement?.FirstYCoordinate?.Value;
   }
   
-  private static bool CmpFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.FirstYCoordinate?.Value == value) return true;
     diffs?.Add(objName, "FirstYCoordinate", openXmlElement?.FirstYCoordinate?.Value, value);
     return false;
   }
   
-  private static void SetFirstYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
+  private static void SetFirstYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.FirstYCoordinate = value;
   }
@@ -48,19 +48,19 @@ public static class BackgroundMarkConverter
   /// <summary>
   /// x2, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSecondXCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
+  private static Int32? GetSecondXCoordinate(DXO10D.BackgroundMark openXmlElement)
   {
     return openXmlElement?.SecondXCoordinate?.Value;
   }
   
-  private static bool CmpSecondXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SecondXCoordinate?.Value == value) return true;
     diffs?.Add(objName, "SecondXCoordinate", openXmlElement?.SecondXCoordinate?.Value, value);
     return false;
   }
   
-  private static void SetSecondXCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
+  private static void SetSecondXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.SecondXCoordinate = value;
   }
@@ -68,24 +68,24 @@ public static class BackgroundMarkConverter
   /// <summary>
   /// y2, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement)
+  private static Int32? GetSecondYCoordinate(DXO10D.BackgroundMark openXmlElement)
   {
     return openXmlElement?.SecondYCoordinate?.Value;
   }
   
-  private static bool CmpSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SecondYCoordinate?.Value == value) return true;
     diffs?.Add(objName, "SecondYCoordinate", openXmlElement?.SecondYCoordinate?.Value, value);
     return false;
   }
   
-  private static void SetSecondYCoordinate(DXO2010Draw.BackgroundMark openXmlElement, Int32? value)
+  private static void SetSecondYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value)
   {
     openXmlElement.SecondYCoordinate = value;
   }
   
-  public static DocumentModel.Drawings.BackgroundMark? CreateModelElement(DXO2010Draw.BackgroundMark? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundMark? CreateModelElement(DXO10D.BackgroundMark? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,7 +99,7 @@ public static class BackgroundMarkConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.BackgroundMark? openXmlElement, DMDraws.BackgroundMark? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.BackgroundMark? openXmlElement, DMD.BackgroundMark? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -119,15 +119,15 @@ public static class BackgroundMarkConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundMark value)
-    where OpenXmlElementType: DXO2010Draw.BackgroundMark, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BackgroundMark value)
+    where OpenXmlElementType: DXO10D.BackgroundMark, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.BackgroundMark openXmlElement, DMDraws.BackgroundMark value)
+  public static void UpdateOpenXmlElement(DXO10D.BackgroundMark openXmlElement, DMD.BackgroundMark value)
   {
     SetFirstXCoordinate(openXmlElement, value?.FirstXCoordinate);
     SetFirstYCoordinate(openXmlElement, value?.FirstYCoordinate);

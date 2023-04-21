@@ -8,17 +8,17 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Position
   /// </summary>
-  private static String? GetPosition(DXVml.ShapeHandle openXmlElement)
+  private static String? GetPosition(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Position);
   }
   
-  private static bool CmpPosition(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Position, value, diffs, objName, "Position");
   }
   
-  private static void SetPosition(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetPosition(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.Position = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Polar Center
   /// </summary>
-  private static String? GetPolar(DXVml.ShapeHandle openXmlElement)
+  private static String? GetPolar(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Polar);
   }
   
-  private static bool CmpPolar(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPolar(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Polar, value, diffs, objName, "Polar");
   }
   
-  private static void SetPolar(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetPolar(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.Polar = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Coordinate Mapping
   /// </summary>
-  private static String? GetMap(DXVml.ShapeHandle openXmlElement)
+  private static String? GetMap(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Map);
   }
   
-  private static bool CmpMap(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMap(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Map, value, diffs, objName, "Map");
   }
   
-  private static void SetMap(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetMap(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.Map = StringValueConverter.CreateStringValue(value);
   }
@@ -62,19 +62,19 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Invert Handle's X Position
   /// </summary>
-  private static Boolean? GetInvertX(DXVml.ShapeHandle openXmlElement)
+  private static Boolean? GetInvertX(DXV.ShapeHandle openXmlElement)
   {
     return openXmlElement?.InvertX?.Value;
   }
   
-  private static bool CmpInvertX(DXVml.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertX(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.InvertX?.Value == value) return true;
     diffs?.Add(objName, "InvertX", openXmlElement?.InvertX?.Value, value);
     return false;
   }
   
-  private static void SetInvertX(DXVml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetInvertX(DXV.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvertX = value;
@@ -85,19 +85,19 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Invert Handle's Y Position
   /// </summary>
-  private static Boolean? GetInvertY(DXVml.ShapeHandle openXmlElement)
+  private static Boolean? GetInvertY(DXV.ShapeHandle openXmlElement)
   {
     return openXmlElement?.InvertY?.Value;
   }
   
-  private static bool CmpInvertY(DXVml.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertY(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.InvertY?.Value == value) return true;
     diffs?.Add(objName, "InvertY", openXmlElement?.InvertY?.Value, value);
     return false;
   }
   
-  private static void SetInvertY(DXVml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetInvertY(DXV.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvertY = value;
@@ -108,19 +108,19 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Inversion Toggle
   /// </summary>
-  private static Boolean? GetSwitch(DXVml.ShapeHandle openXmlElement)
+  private static Boolean? GetSwitch(DXV.ShapeHandle openXmlElement)
   {
     return openXmlElement?.Switch?.Value;
   }
   
-  private static bool CmpSwitch(DXVml.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSwitch(DXV.ShapeHandle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Switch?.Value == value) return true;
     diffs?.Add(objName, "Switch", openXmlElement?.Switch?.Value, value);
     return false;
   }
   
-  private static void SetSwitch(DXVml.ShapeHandle openXmlElement, Boolean? value)
+  private static void SetSwitch(DXV.ShapeHandle openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Switch = value;
@@ -131,17 +131,17 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle X Position Range
   /// </summary>
-  private static String? GetXRange(DXVml.ShapeHandle openXmlElement)
+  private static String? GetXRange(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.XRange);
   }
   
-  private static bool CmpXRange(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.XRange, value, diffs, objName, "XRange");
   }
   
-  private static void SetXRange(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetXRange(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.XRange = StringValueConverter.CreateStringValue(value);
   }
@@ -149,17 +149,17 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Y Position Range
   /// </summary>
-  private static String? GetYRange(DXVml.ShapeHandle openXmlElement)
+  private static String? GetYRange(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.YRange);
   }
   
-  private static bool CmpYRange(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.YRange, value, diffs, objName, "YRange");
   }
   
-  private static void SetYRange(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetYRange(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.YRange = StringValueConverter.CreateStringValue(value);
   }
@@ -167,22 +167,22 @@ public static class ShapeHandleConverter
   /// <summary>
   /// Handle Polar Radius Range
   /// </summary>
-  private static String? GetRadiusRange(DXVml.ShapeHandle openXmlElement)
+  private static String? GetRadiusRange(DXV.ShapeHandle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.RadiusRange);
   }
   
-  private static bool CmpRadiusRange(DXVml.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRadiusRange(DXV.ShapeHandle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RadiusRange, value, diffs, objName, "RadiusRange");
   }
   
-  private static void SetRadiusRange(DXVml.ShapeHandle openXmlElement, String? value)
+  private static void SetRadiusRange(DXV.ShapeHandle openXmlElement, String? value)
   {
     openXmlElement.RadiusRange = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DXVml.ShapeHandle? openXmlElement)
+  public static DocumentModel.Vml.ShapeHandle? CreateModelElement(DXV.ShapeHandle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -201,7 +201,7 @@ public static class ShapeHandleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVml.ShapeHandle? openXmlElement, DMVml.ShapeHandle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.ShapeHandle? openXmlElement, DMV.ShapeHandle? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -231,15 +231,15 @@ public static class ShapeHandleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ShapeHandle value)
-    where OpenXmlElementType: DXVml.ShapeHandle, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.ShapeHandle value)
+    where OpenXmlElementType: DXV.ShapeHandle, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVml.ShapeHandle openXmlElement, DMVml.ShapeHandle value)
+  public static void UpdateOpenXmlElement(DXV.ShapeHandle openXmlElement, DMV.ShapeHandle value)
   {
     SetPosition(openXmlElement, value?.Position);
     SetPolar(openXmlElement, value?.Polar);

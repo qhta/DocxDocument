@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class OfficeArtExtensionList6Converter
 {
-  private static Collection<DMDraws.Extension>? GetExtensions(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement)
+  private static Collection<DMD.Extension>? GetExtensions(DXO21DSS.OfficeArtExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.Extension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
+    var collection = new Collection<DMD.Extension>();
+    foreach (var item in openXmlElement.Elements<DXD.Extension>())
     {
-      var newItem = DMXDraws.ExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class OfficeArtExtensionList6Converter
     return null;
   }
   
-  private static bool CmpExtensions(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensions(DXO21DSS.OfficeArtExtensionList openXmlElement, Collection<DMD.Extension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.Extension>();
+    var origElements = openXmlElement.Elements<DXD.Extension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class OfficeArtExtensionList6Converter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class OfficeArtExtensionList6Converter
     return false;
   }
   
-  private static void SetExtensions(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement, Collection<DMDraws.Extension>? value)
+  private static void SetExtensions(DXO21DSS.OfficeArtExtensionList openXmlElement, Collection<DMD.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.Extension>();
+    openXmlElement.RemoveAllChildren<DXD.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ExtensionConverter.CreateOpenXmlElement<DXDraw.Extension>(item);
+        var newItem = DMXD.ExtensionConverter.CreateOpenXmlElement<DXD.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.OfficeArtExtensionList6? CreateModelElement(DXO2021DrawSketchyShps.OfficeArtExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.OfficeArtExtensionList6? CreateModelElement(DXO21DSS.OfficeArtExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class OfficeArtExtensionList6Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawSketchyShps.OfficeArtExtensionList? openXmlElement, DMDraws.OfficeArtExtensionList6? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DSS.OfficeArtExtensionList? openXmlElement, DMD.OfficeArtExtensionList6? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class OfficeArtExtensionList6Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeArtExtensionList6 value)
-    where OpenXmlElementType: DXO2021DrawSketchyShps.OfficeArtExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.OfficeArtExtensionList6 value)
+    where OpenXmlElementType: DXO21DSS.OfficeArtExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawSketchyShps.OfficeArtExtensionList openXmlElement, DMDraws.OfficeArtExtensionList6 value)
+  public static void UpdateOpenXmlElement(DXO21DSS.OfficeArtExtensionList openXmlElement, DMD.OfficeArtExtensionList6 value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
   }

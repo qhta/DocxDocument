@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ContextMenusConverter
 {
-  private static Collection<DM.ContextMenu>? GetItems(DXO2010CustUI.ContextMenus openXmlElement)
+  private static Collection<DM.ContextMenu>? GetItems(DXO10CUI.ContextMenus openXmlElement)
   {
     var collection = new Collection<DM.ContextMenu>();
-    foreach (var item in openXmlElement.Elements<DXO2010CustUI.ContextMenu>())
+    foreach (var item in openXmlElement.Elements<DXO10CUI.ContextMenu>())
     {
       var newItem = DMX.ContextMenuConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class ContextMenusConverter
     return null;
   }
   
-  private static bool CmpItems(DXO2010CustUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO10CUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010CustUI.ContextMenu>();
+    var origElements = openXmlElement.Elements<DXO10CUI.ContextMenu>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class ContextMenusConverter
     return false;
   }
   
-  private static void SetItems(DXO2010CustUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value)
+  private static void SetItems(DXO10CUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010CustUI.ContextMenu>();
+    openXmlElement.RemoveAllChildren<DXO10CUI.ContextMenu>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.ContextMenuConverter.CreateOpenXmlElement<DXO2010CustUI.ContextMenu>(item);
+        var newItem = DMX.ContextMenuConverter.CreateOpenXmlElement<DXO10CUI.ContextMenu>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ContextMenus? CreateModelElement(DXO2010CustUI.ContextMenus? openXmlElement)
+  public static DocumentModel.ContextMenus? CreateModelElement(DXO10CUI.ContextMenus? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ContextMenusConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.ContextMenus? openXmlElement, DM.ContextMenus? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ContextMenus? openXmlElement, DM.ContextMenus? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class ContextMenusConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ContextMenus value)
-    where OpenXmlElementType: DXO2010CustUI.ContextMenus, new()
+    where OpenXmlElementType: DXO10CUI.ContextMenus, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.ContextMenus openXmlElement, DM.ContextMenus value)
+  public static void UpdateOpenXmlElement(DXO10CUI.ContextMenus openXmlElement, DM.ContextMenus value)
   {
     SetItems(openXmlElement, value?.Items);
   }

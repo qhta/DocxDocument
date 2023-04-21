@@ -8,507 +8,507 @@ public static class StyleColorConverter
   /// <summary>
   /// val, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetVal(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static String? GetVal(DXO13DCS.StyleColor openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO13DCS.StyleColor openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXO2013DrawChartStyle.StyleColor openXmlElement, String? value)
+  private static void SetVal(DXO13DCS.StyleColor openXmlElement, String? value)
   {
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  private static Int32? GetTint(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetTint(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Tint>()?.Val);
   }
   
-  private static bool CmpTint(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTint(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Tint>()?.Val, value, diffs, objName, "Tint");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Tint>()?.Val, value, diffs, objName, "Tint");
   }
   
-  private static void SetTint(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetTint(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Tint,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Tint,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetShade(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetShade(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Shade>()?.Val);
   }
   
-  private static bool CmpShade(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpShade(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Shade>()?.Val, value, diffs, objName, "Shade");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Shade>()?.Val, value, diffs, objName, "Shade");
   }
   
-  private static void SetShade(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetShade(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Shade,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Shade,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean GetComplement(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Boolean GetComplement(DXO13DCS.StyleColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    return openXmlElement.GetFirstChild<DXD.Complement>() != null;
   }
   
-  private static bool CmpComplement(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpComplement(DXO13DCS.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Complement>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Complement>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Complement", val, value);
+    diffs?.Add(objName, "DXD.Complement", val, value);
     return false;
   }
   
-  private static void SetComplement(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
+  private static void SetComplement(DXO13DCS.StyleColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Complement>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Complement>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Complement();
+      var itemElement = new DXD.Complement();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetInverse(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Boolean GetInverse(DXO13DCS.StyleColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    return openXmlElement.GetFirstChild<DXD.Inverse>() != null;
   }
   
-  private static bool CmpInverse(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverse(DXO13DCS.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Inverse>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Inverse>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Inverse", val, value);
+    diffs?.Add(objName, "DXD.Inverse", val, value);
     return false;
   }
   
-  private static void SetInverse(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
+  private static void SetInverse(DXO13DCS.StyleColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Inverse>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Inverse>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Inverse();
+      var itemElement = new DXD.Inverse();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetGray(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Boolean GetGray(DXO13DCS.StyleColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    return openXmlElement.GetFirstChild<DXD.Gray>() != null;
   }
   
-  private static bool CmpGray(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGray(DXO13DCS.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Gray>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Gray>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Gray", val, value);
+    diffs?.Add(objName, "DXD.Gray", val, value);
     return false;
   }
   
-  private static void SetGray(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
+  private static void SetGray(DXO13DCS.StyleColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gray>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Gray>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Gray();
+      var itemElement = new DXD.Gray();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Int32? GetAlpha(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetAlpha(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val);
   }
   
-  private static bool CmpAlpha(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Alpha>()?.Val, value, diffs, objName, "Alpha");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val, value, diffs, objName, "Alpha");
   }
   
-  private static void SetAlpha(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetAlpha(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Alpha,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Alpha,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetAlphaOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetAlphaOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val);
   }
   
-  private static bool CmpAlphaOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.AlphaOffset>()?.Val, value, diffs, objName, "AlphaOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val, value, diffs, objName, "AlphaOffset");
   }
   
-  private static void SetAlphaOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetAlphaOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.AlphaOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.AlphaOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetAlphaModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetAlphaModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val);
   }
   
-  private static bool CmpAlphaModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.AlphaModulation>()?.Val, value, diffs, objName, "AlphaModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val, value, diffs, objName, "AlphaModulation");
   }
   
-  private static void SetAlphaModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetAlphaModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.AlphaModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.AlphaModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetHue(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetHue(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Hue>()?.Val);
   }
   
-  private static bool CmpHue(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Hue>()?.Val, value, diffs, objName, "Hue");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Hue>()?.Val, value, diffs, objName, "Hue");
   }
   
-  private static void SetHue(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetHue(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Hue,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Hue,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetHueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetHueOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val);
   }
   
-  private static bool CmpHueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.HueOffset>()?.Val, value, diffs, objName, "HueOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val, value, diffs, objName, "HueOffset");
   }
   
-  private static void SetHueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetHueOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.HueOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.HueOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetHueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetHueModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val);
   }
   
-  private static bool CmpHueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.HueModulation>()?.Val, value, diffs, objName, "HueModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val, value, diffs, objName, "HueModulation");
   }
   
-  private static void SetHueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetHueModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.HueModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.HueModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetSaturation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val);
   }
   
-  private static bool CmpSaturation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Saturation>()?.Val, value, diffs, objName, "Saturation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val, value, diffs, objName, "Saturation");
   }
   
-  private static void SetSaturation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetSaturation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Saturation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Saturation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturationOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetSaturationOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val);
   }
   
-  private static bool CmpSaturationOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SaturationOffset>()?.Val, value, diffs, objName, "SaturationOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val, value, diffs, objName, "SaturationOffset");
   }
   
-  private static void SetSaturationOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetSaturationOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SaturationOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SaturationOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturationModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetSaturationModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val);
   }
   
-  private static bool CmpSaturationModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SaturationModulation>()?.Val, value, diffs, objName, "SaturationModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val, value, diffs, objName, "SaturationModulation");
   }
   
-  private static void SetSaturationModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetSaturationModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SaturationModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SaturationModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminance(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetLuminance(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val);
   }
   
-  private static bool CmpLuminance(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Luminance>()?.Val, value, diffs, objName, "Luminance");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val, value, diffs, objName, "Luminance");
   }
   
-  private static void SetLuminance(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetLuminance(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Luminance,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Luminance,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminanceOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetLuminanceOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val);
   }
   
-  private static bool CmpLuminanceOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.LuminanceOffset>()?.Val, value, diffs, objName, "LuminanceOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val, value, diffs, objName, "LuminanceOffset");
   }
   
-  private static void SetLuminanceOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetLuminanceOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.LuminanceOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.LuminanceOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminanceModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetLuminanceModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val);
   }
   
-  private static bool CmpLuminanceModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.LuminanceModulation>()?.Val, value, diffs, objName, "LuminanceModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val, value, diffs, objName, "LuminanceModulation");
   }
   
-  private static void SetLuminanceModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetLuminanceModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.LuminanceModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.LuminanceModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetRed(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetRed(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Red>()?.Val);
   }
   
-  private static bool CmpRed(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRed(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Red>()?.Val, value, diffs, objName, "Red");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Red>()?.Val, value, diffs, objName, "Red");
   }
   
-  private static void SetRed(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetRed(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Red,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Red,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetRedOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetRedOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val);
   }
   
-  private static bool CmpRedOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.RedOffset>()?.Val, value, diffs, objName, "RedOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val, value, diffs, objName, "RedOffset");
   }
   
-  private static void SetRedOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetRedOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.RedOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.RedOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetRedModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetRedModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val);
   }
   
-  private static bool CmpRedModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.RedModulation>()?.Val, value, diffs, objName, "RedModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val, value, diffs, objName, "RedModulation");
   }
   
-  private static void SetRedModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetRedModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.RedModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.RedModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetGreen(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetGreen(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Green>()?.Val);
   }
   
-  private static bool CmpGreen(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreen(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Green>()?.Val, value, diffs, objName, "Green");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Green>()?.Val, value, diffs, objName, "Green");
   }
   
-  private static void SetGreen(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetGreen(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Green,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Green,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetGreenOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetGreenOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val);
   }
   
-  private static bool CmpGreenOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.GreenOffset>()?.Val, value, diffs, objName, "GreenOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val, value, diffs, objName, "GreenOffset");
   }
   
-  private static void SetGreenOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetGreenOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.GreenOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.GreenOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetGreenModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetGreenModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val);
   }
   
-  private static bool CmpGreenModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.GreenModulation>()?.Val, value, diffs, objName, "GreenModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val, value, diffs, objName, "GreenModulation");
   }
   
-  private static void SetGreenModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetGreenModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.GreenModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.GreenModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetBlue(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetBlue(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Blue>()?.Val);
   }
   
-  private static bool CmpBlue(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlue(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.Blue>()?.Val, value, diffs, objName, "Blue");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Blue>()?.Val, value, diffs, objName, "Blue");
   }
   
-  private static void SetBlue(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetBlue(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.Blue,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.Blue,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetBlueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetBlueOffset(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val);
   }
   
-  private static bool CmpBlueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueOffset(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BlueOffset>()?.Val, value, diffs, objName, "BlueOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val, value, diffs, objName, "BlueOffset");
   }
   
-  private static void SetBlueOffset(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetBlueOffset(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.BlueOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.BlueOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetBlueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Int32? GetBlueModulation(DXO13DCS.StyleColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val);
   }
   
-  private static bool CmpBlueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueModulation(DXO13DCS.StyleColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.BlueModulation>()?.Val, value, diffs, objName, "BlueModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val, value, diffs, objName, "BlueModulation");
   }
   
-  private static void SetBlueModulation(DXO2013DrawChartStyle.StyleColor openXmlElement, Int32? value)
+  private static void SetBlueModulation(DXO13DCS.StyleColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.BlueModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.BlueModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Boolean GetGamma(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Boolean GetGamma(DXO13DCS.StyleColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    return openXmlElement.GetFirstChild<DXD.Gamma>() != null;
   }
   
-  private static bool CmpGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGamma(DXO13DCS.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.Gamma>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.Gamma>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.Gamma", val, value);
+    diffs?.Add(objName, "DXD.Gamma", val, value);
     return false;
   }
   
-  private static void SetGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
+  private static void SetGamma(DXO13DCS.StyleColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.Gamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.Gamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.Gamma();
+      var itemElement = new DXD.Gamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean GetInverseGamma(DXO2013DrawChartStyle.StyleColor openXmlElement)
+  private static Boolean GetInverseGamma(DXO13DCS.StyleColor openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    return openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
   }
   
-  private static bool CmpInverseGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverseGamma(DXO13DCS.StyleColor openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.InverseGamma>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.InverseGamma", val, value);
+    diffs?.Add(objName, "DXD.InverseGamma", val, value);
     return false;
   }
   
-  private static void SetInverseGamma(DXO2013DrawChartStyle.StyleColor openXmlElement, Boolean? value)
+  private static void SetInverseGamma(DXO13DCS.StyleColor openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.InverseGamma>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.InverseGamma>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.InverseGamma();
+      var itemElement = new DXD.InverseGamma();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.StyleColor? CreateModelElement(DXO2013DrawChartStyle.StyleColor? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.StyleColor? CreateModelElement(DXO13DCS.StyleColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -547,7 +547,7 @@ public static class StyleColorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChartStyle.StyleColor? openXmlElement, DMDrawsChartsStyle.StyleColor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.StyleColor? openXmlElement, DMDCS.StyleColor? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -617,15 +617,15 @@ public static class StyleColorConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.StyleColor value)
-    where OpenXmlElementType: DXO2013DrawChartStyle.StyleColor, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCS.StyleColor value)
+    where OpenXmlElementType: DXO13DCS.StyleColor, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.StyleColor openXmlElement, DMDrawsChartsStyle.StyleColor value)
+  public static void UpdateOpenXmlElement(DXO13DCS.StyleColor openXmlElement, DMDCS.StyleColor value)
   {
     SetVal(openXmlElement, value?.Val);
     SetTint(openXmlElement, value?.Tint);

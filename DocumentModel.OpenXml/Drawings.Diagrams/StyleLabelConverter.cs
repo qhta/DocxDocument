@@ -8,17 +8,17 @@ public static class StyleLabelConverter
   /// <summary>
   /// Style Name
   /// </summary>
-  private static String? GetName(DXDrawDgms.StyleLabel openXmlElement)
+  private static String? GetName(DXDD.StyleLabel openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDrawDgms.StyleLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXDD.StyleLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDrawDgms.StyleLabel openXmlElement, String? value)
+  private static void SetName(DXDD.StyleLabel openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -26,27 +26,27 @@ public static class StyleLabelConverter
   /// <summary>
   /// 3-D Scene.
   /// </summary>
-  private static DMDrawsDgms.Scene3D? GetScene3D(DXDrawDgms.StyleLabel openXmlElement)
+  private static DMDD.Scene3D? GetScene3D(DXDD.StyleLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Scene3D>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Scene3D>();
     if (element != null)
-      return DMXDrawsDgms.Scene3DConverter.CreateModelElement(element);
+      return DMXDD.Scene3DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpScene3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Scene3D? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3D(DXDD.StyleLabel openXmlElement, DMDD.Scene3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Scene3D>(), value, diffs, objName);
+    return DMXDD.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Scene3D>(), value, diffs, objName);
   }
   
-  private static void SetScene3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Scene3D? value)
+  private static void SetScene3D(DXDD.StyleLabel openXmlElement, DMDD.Scene3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Scene3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Scene3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.Scene3DConverter.CreateOpenXmlElement<DXDrawDgms.Scene3D>(value);
+      itemElement = DMXDD.Scene3DConverter.CreateOpenXmlElement<DXDD.Scene3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -55,27 +55,27 @@ public static class StyleLabelConverter
   /// <summary>
   /// 3-D Shape Properties.
   /// </summary>
-  private static DMDrawsDgms.Shape3D? GetShape3D(DXDrawDgms.StyleLabel openXmlElement)
+  private static DMDD.Shape3D? GetShape3D(DXDD.StyleLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Shape3D>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Shape3D>();
     if (element != null)
-      return DMXDrawsDgms.Shape3DConverter.CreateModelElement(element);
+      return DMXDD.Shape3DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Shape3D? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3D(DXDD.StyleLabel openXmlElement, DMDD.Shape3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.Shape3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape3D>(), value, diffs, objName);
+    return DMXDD.Shape3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Shape3D>(), value, diffs, objName);
   }
   
-  private static void SetShape3D(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Shape3D? value)
+  private static void SetShape3D(DXDD.StyleLabel openXmlElement, DMDD.Shape3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Shape3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Shape3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.Shape3DConverter.CreateOpenXmlElement<DXDrawDgms.Shape3D>(value);
+      itemElement = DMXDD.Shape3DConverter.CreateOpenXmlElement<DXDD.Shape3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -84,27 +84,27 @@ public static class StyleLabelConverter
   /// <summary>
   /// Text Properties.
   /// </summary>
-  private static DMDrawsDgms.TextProperties? GetTextProperties(DXDrawDgms.StyleLabel openXmlElement)
+  private static DMDD.TextProperties? GetTextProperties(DXDD.StyleLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.TextProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDD.TextProperties>();
     if (element != null)
-      return DMXDrawsDgms.TextPropertiesConverter.CreateModelElement(element);
+      return DMXDD.TextPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextProperties(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDD.StyleLabel openXmlElement, DMDD.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.TextProperties>(), value, diffs, objName);
+    return DMXDD.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.TextProperties>(), value, diffs, objName);
   }
   
-  private static void SetTextProperties(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.TextProperties? value)
+  private static void SetTextProperties(DXDD.StyleLabel openXmlElement, DMDD.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.TextPropertiesConverter.CreateOpenXmlElement<DXDrawDgms.TextProperties>(value);
+      itemElement = DMXDD.TextPropertiesConverter.CreateOpenXmlElement<DXDD.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -113,27 +113,27 @@ public static class StyleLabelConverter
   /// <summary>
   /// Shape Style.
   /// </summary>
-  private static DMDrawsDgms.Style? GetStyle(DXDrawDgms.StyleLabel openXmlElement)
+  private static DMDD.Style? GetStyle(DXDD.StyleLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Style>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Style>();
     if (element != null)
-      return DMXDrawsDgms.StyleConverter.CreateModelElement(element);
+      return DMXDD.StyleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStyle(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Style? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXDD.StyleLabel openXmlElement, DMDD.Style? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Style>(), value, diffs, objName);
+    return DMXDD.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Style>(), value, diffs, objName);
   }
   
-  private static void SetStyle(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.Style? value)
+  private static void SetStyle(DXDD.StyleLabel openXmlElement, DMDD.Style? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Style>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Style>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.StyleConverter.CreateOpenXmlElement<DXDrawDgms.Style>(value);
+      itemElement = DMXDD.StyleConverter.CreateOpenXmlElement<DXDD.Style>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -142,33 +142,33 @@ public static class StyleLabelConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.StyleLabel openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.StyleLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.StyleLabel openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.StyleLabel openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleLabel? CreateModelElement(DXDrawDgms.StyleLabel? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleLabel? CreateModelElement(DXDD.StyleLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -184,7 +184,7 @@ public static class StyleLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.StyleLabel? openXmlElement, DMDrawsDgms.StyleLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.StyleLabel? openXmlElement, DMDD.StyleLabel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -208,15 +208,15 @@ public static class StyleLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleLabel value)
-    where OpenXmlElementType: DXDrawDgms.StyleLabel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.StyleLabel value)
+    where OpenXmlElementType: DXDD.StyleLabel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.StyleLabel openXmlElement, DMDrawsDgms.StyleLabel value)
+  public static void UpdateOpenXmlElement(DXDD.StyleLabel openXmlElement, DMDD.StyleLabel value)
   {
     SetName(openXmlElement, value?.Name);
     SetScene3D(openXmlElement, value?.Scene3D);

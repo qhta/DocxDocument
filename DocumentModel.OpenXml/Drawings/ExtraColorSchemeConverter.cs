@@ -8,27 +8,27 @@ public static class ExtraColorSchemeConverter
   /// <summary>
   /// ColorScheme.
   /// </summary>
-  private static DMDraws.ColorScheme? GetColorScheme(DXDraw.ExtraColorScheme openXmlElement)
+  private static DMD.ColorScheme? GetColorScheme(DXD.ExtraColorScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ColorScheme>();
+    var element = openXmlElement?.GetFirstChild<DXD.ColorScheme>();
     if (element != null)
-      return DMXDraws.ColorSchemeConverter.CreateModelElement(element);
+      return DMXD.ColorSchemeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value, DiffList? diffs, string? objName)
+  private static bool CmpColorScheme(DXD.ExtraColorScheme openXmlElement, DMD.ColorScheme? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorScheme>(), value, diffs, objName);
+    return DMXD.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorScheme>(), value, diffs, objName);
   }
   
-  private static void SetColorScheme(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorScheme? value)
+  private static void SetColorScheme(DXD.ExtraColorScheme openXmlElement, DMD.ColorScheme? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorScheme>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ColorScheme>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ColorSchemeConverter.CreateOpenXmlElement<DXDraw.ColorScheme>(value);
+      itemElement = DMXD.ColorSchemeConverter.CreateOpenXmlElement<DXD.ColorScheme>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class ExtraColorSchemeConverter
   /// <summary>
   /// ColorMap.
   /// </summary>
-  private static DMDraws.ColorMap? GetColorMap(DXDraw.ExtraColorScheme openXmlElement)
+  private static DMD.ColorMap? GetColorMap(DXD.ExtraColorScheme openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ColorMap>();
+    var element = openXmlElement?.GetFirstChild<DXD.ColorMap>();
     if (element != null)
-      return DMXDraws.ColorMapConverter.CreateModelElement(element);
+      return DMXD.ColorMapConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value, DiffList? diffs, string? objName)
+  private static bool CmpColorMap(DXD.ExtraColorScheme openXmlElement, DMD.ColorMap? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ColorMap>(), value, diffs, objName);
+    return DMXD.ColorMapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorMap>(), value, diffs, objName);
   }
   
-  private static void SetColorMap(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ColorMap? value)
+  private static void SetColorMap(DXD.ExtraColorScheme openXmlElement, DMD.ColorMap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ColorMap>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ColorMap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ColorMapConverter.CreateOpenXmlElement<DXDraw.ColorMap>(value);
+      itemElement = DMXD.ColorMapConverter.CreateOpenXmlElement<DXD.ColorMap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DXDraw.ExtraColorScheme? openXmlElement)
+  public static DocumentModel.Drawings.ExtraColorScheme? CreateModelElement(DXD.ExtraColorScheme? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class ExtraColorSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ExtraColorScheme? openXmlElement, DMDraws.ExtraColorScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ExtraColorScheme? openXmlElement, DMD.ExtraColorScheme? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class ExtraColorSchemeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtraColorScheme value)
-    where OpenXmlElementType: DXDraw.ExtraColorScheme, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ExtraColorScheme value)
+    where OpenXmlElementType: DXD.ExtraColorScheme, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ExtraColorScheme openXmlElement, DMDraws.ExtraColorScheme value)
+  public static void UpdateOpenXmlElement(DXD.ExtraColorScheme openXmlElement, DMD.ExtraColorScheme value)
   {
     SetColorScheme(openXmlElement, value?.ColorScheme);
     SetColorMap(openXmlElement, value?.ColorMap);

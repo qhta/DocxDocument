@@ -8,48 +8,48 @@ public static class SerAxExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.SerAxExtension openXmlElement)
+  private static String? GetUri(DXDC.SerAxExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.SerAxExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.SerAxExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.SerAxExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.SerAxExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.NumberingFormat3? GetNumberingFormat(DXDrawCharts.SerAxExtension openXmlElement)
+  private static DMDC.NumberingFormat3? GetNumberingFormat(DXDC.SerAxExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.NumberingFormat>();
     if (element != null)
-      return DMXDrawsCharts.NumberingFormat3Converter.CreateModelElement(element);
+      return DMXDC.NumberingFormat3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXDrawCharts.SerAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXDC.SerAxExtension openXmlElement, DMDC.NumberingFormat3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.NumberingFormat>(), value, diffs, objName);
   }
   
-  private static void SetNumberingFormat(DXDrawCharts.SerAxExtension openXmlElement, DMDrawsCharts.NumberingFormat3? value)
+  private static void SetNumberingFormat(DXDC.SerAxExtension openXmlElement, DMDC.NumberingFormat3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.NumberingFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.NumberingFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberingFormat3Converter.CreateOpenXmlElement<DXO2013DrawChart.NumberingFormat>(value);
+      itemElement = DMXDC.NumberingFormat3Converter.CreateOpenXmlElement<DXO13DC.NumberingFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SerAxExtension? CreateModelElement(DXDrawCharts.SerAxExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SerAxExtension? CreateModelElement(DXDC.SerAxExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class SerAxExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.SerAxExtension? openXmlElement, DMDrawsCharts.SerAxExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SerAxExtension? openXmlElement, DMDC.SerAxExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class SerAxExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SerAxExtension value)
-    where OpenXmlElementType: DXDrawCharts.SerAxExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.SerAxExtension value)
+    where OpenXmlElementType: DXDC.SerAxExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.SerAxExtension openXmlElement, DMDrawsCharts.SerAxExtension value)
+  public static void UpdateOpenXmlElement(DXDC.SerAxExtension openXmlElement, DMDC.SerAxExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);

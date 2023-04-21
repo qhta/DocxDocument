@@ -10,7 +10,7 @@ public static class LabelInfoPartConverter
   /// </summary>
   private static DM.ClassificationLabelList? GetClassificationLabelList(DXPack.LabelInfoPart openXmlElement)
   {
-      return DMX.ClassificationLabelListConverter.CreateModelElement(openXmlElement?.RootElement as DXO2021MipLabelMeta.ClassificationLabelList);
+      return DMX.ClassificationLabelListConverter.CreateModelElement(openXmlElement?.RootElement as DXO21MLMD.ClassificationLabelList);
   }
   
   private static bool CmpClassificationLabelList(DXPack.LabelInfoPart openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
@@ -22,7 +22,7 @@ public static class LabelInfoPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMX.ClassificationLabelListConverter.CreateOpenXmlElement<DXO2021MipLabelMeta.ClassificationLabelList>(value);
+       var rootElement = DMX.ClassificationLabelListConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationLabelList>(value);
        if (rootElement != null)
          openXmlElement.ClassificationLabelList = rootElement;
     }

@@ -8,33 +8,33 @@ public static class InvertSolidFillFormatConverter
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ShapeProperties2? GetShapeProperties(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement)
+  private static DMDC.ShapeProperties2? GetShapeProperties(DXO10DC.InvertSolidFillFormat openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawCharts.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10DC.ShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ShapeProperties2Converter.CreateModelElement(element);
+      return DMXDC.ShapeProperties2Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.ShapeProperties2? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO10DC.InvertSolidFillFormat openXmlElement, DMDC.ShapeProperties2? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapeProperties2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawCharts.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapeProperties2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DC.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.ShapeProperties2? value)
+  private static void SetShapeProperties(DXO10DC.InvertSolidFillFormat openXmlElement, DMDC.ShapeProperties2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawCharts.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DC.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ShapeProperties2Converter.CreateOpenXmlElement<DXO2010DrawCharts.ShapeProperties>(value);
+      itemElement = DMXDC.ShapeProperties2Converter.CreateOpenXmlElement<DXO10DC.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? CreateModelElement(DXO2010DrawCharts.InvertSolidFillFormat? openXmlElement)
+  public static DocumentModel.Drawings.Charts.InvertSolidFillFormat? CreateModelElement(DXO10DC.InvertSolidFillFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class InvertSolidFillFormatConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010DrawCharts.InvertSolidFillFormat? openXmlElement, DMDrawsCharts.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DC.InvertSolidFillFormat? openXmlElement, DMDC.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class InvertSolidFillFormatConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.InvertSolidFillFormat value)
-    where OpenXmlElementType: DXO2010DrawCharts.InvertSolidFillFormat, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.InvertSolidFillFormat value)
+    where OpenXmlElementType: DXO10DC.InvertSolidFillFormat, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010DrawCharts.InvertSolidFillFormat openXmlElement, DMDrawsCharts.InvertSolidFillFormat value)
+  public static void UpdateOpenXmlElement(DXO10DC.InvertSolidFillFormat openXmlElement, DMDC.InvertSolidFillFormat value)
   {
     SetShapeProperties(openXmlElement, value?.ShapeProperties);
   }

@@ -5,53 +5,53 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class HeaderShapeDefaultsConverter
 {
-  private static DMVml.ShapeDefaults? GetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement)
+  private static DMV.ShapeDefaults? GetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.ShapeDefaults>();
+    var element = openXmlElement?.GetFirstChild<DXVO.ShapeDefaults>();
     if (element != null)
-      return DMXVml.ShapeDefaultsConverter.CreateModelElement(element);
+      return DMXV.ShapeDefaultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeDefaults? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeDefaults? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ShapeDefaults>(), value, diffs, objName);
+    return DMXV.ShapeDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeDefaults>(), value, diffs, objName);
   }
   
-  private static void SetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeDefaults? value)
+  private static void SetShapeDefaults(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeDefaults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ShapeDefaults>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.ShapeDefaults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ShapeDefaultsConverter.CreateOpenXmlElement<DXVmlO.ShapeDefaults>(value);
+      itemElement = DMXV.ShapeDefaultsConverter.CreateOpenXmlElement<DXVO.ShapeDefaults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.ShapeLayout? GetShapeLayout(DXW.HeaderShapeDefaults openXmlElement)
+  private static DMV.ShapeLayout? GetShapeLayout(DXW.HeaderShapeDefaults openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.ShapeLayout>();
+    var element = openXmlElement?.GetFirstChild<DXVO.ShapeLayout>();
     if (element != null)
-      return DMXVml.ShapeLayoutConverter.CreateModelElement(element);
+      return DMXV.ShapeLayoutConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeLayout? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeLayout? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapeLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ShapeLayout>(), value, diffs, objName);
+    return DMXV.ShapeLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ShapeLayout>(), value, diffs, objName);
   }
   
-  private static void SetShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMVml.ShapeLayout? value)
+  private static void SetShapeLayout(DXW.HeaderShapeDefaults openXmlElement, DMV.ShapeLayout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ShapeLayout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.ShapeLayout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ShapeLayoutConverter.CreateOpenXmlElement<DXVmlO.ShapeLayout>(value);
+      itemElement = DMXV.ShapeLayoutConverter.CreateOpenXmlElement<DXVO.ShapeLayout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

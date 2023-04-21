@@ -52,21 +52,21 @@ public static class ThemePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDraws.Theme? GetTheme(DXPack.ThemePart openXmlElement)
+  private static DMD.Theme? GetTheme(DXPack.ThemePart openXmlElement)
   {
-      return DMXDraws.ThemeConverter.CreateModelElement(openXmlElement?.RootElement as DXDraw.Theme);
+      return DMXD.ThemeConverter.CreateModelElement(openXmlElement?.RootElement as DXD.Theme);
   }
   
-  private static bool CmpTheme(DXPack.ThemePart openXmlElement, DMDraws.Theme? value, DiffList? diffs, string? objName)
+  private static bool CmpTheme(DXPack.ThemePart openXmlElement, DMD.Theme? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetTheme(DXPack.ThemePart openXmlElement, DMDraws.Theme? value)
+  private static void SetTheme(DXPack.ThemePart openXmlElement, DMD.Theme? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDraws.ThemeConverter.CreateOpenXmlElement<DXDraw.Theme>(value);
+       var rootElement = DMXD.ThemeConverter.CreateOpenXmlElement<DXD.Theme>(value);
        if (rootElement != null)
          openXmlElement.Theme = rootElement;
     }

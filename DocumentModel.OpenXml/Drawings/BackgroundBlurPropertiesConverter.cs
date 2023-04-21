@@ -8,33 +8,33 @@ public static class BackgroundBlurPropertiesConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement)
+  private static DMD.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO21DL.BackgroundBlurProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXD.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DL.BackgroundBlurProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO21DL.BackgroundBlurProperties openXmlElement, DMD.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.OfficeArtExtensionList>(value);
+      itemElement = DMXD.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.BackgroundBlurProperties? CreateModelElement(DXO2021DrawLivefeed.BackgroundBlurProperties? openXmlElement)
+  public static DocumentModel.Drawings.BackgroundBlurProperties? CreateModelElement(DXO21DL.BackgroundBlurProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class BackgroundBlurPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawLivefeed.BackgroundBlurProperties? openXmlElement, DMDraws.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DL.BackgroundBlurProperties? openXmlElement, DMD.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class BackgroundBlurPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BackgroundBlurProperties value)
-    where OpenXmlElementType: DXO2021DrawLivefeed.BackgroundBlurProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BackgroundBlurProperties value)
+    where OpenXmlElementType: DXO21DL.BackgroundBlurProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.BackgroundBlurProperties openXmlElement, DMDraws.BackgroundBlurProperties value)
+  public static void UpdateOpenXmlElement(DXO21DL.BackgroundBlurProperties openXmlElement, DMD.BackgroundBlurProperties value)
   {
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);
   }

@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoChildEntitiesConverter
 {
-  private static Collection<DMDrawsChartDraws.GeoHierarchyEntity>? GetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement)
+  private static Collection<DMDCDs.GeoHierarchyEntity>? GetGeoHierarchyEntities(DXO16DCD.GeoChildEntities openXmlElement)
   {
-    var collection = new Collection<DMDrawsChartDraws.GeoHierarchyEntity>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.GeoHierarchyEntity>())
+    var collection = new Collection<DMDCDs.GeoHierarchyEntity>();
+    foreach (var item in openXmlElement.Elements<DXO16DCD.GeoHierarchyEntity>())
     {
-      var newItem = DMXDrawsChartDraws.GeoHierarchyEntityConverter.CreateModelElement(item);
+      var newItem = DMXDCDs.GeoHierarchyEntityConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class GeoChildEntitiesConverter
     return null;
   }
   
-  private static bool CmpGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, Collection<DMDrawsChartDraws.GeoHierarchyEntity>? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoHierarchyEntities(DXO16DCD.GeoChildEntities openXmlElement, Collection<DMDCDs.GeoHierarchyEntity>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.GeoHierarchyEntity>();
+    var origElements = openXmlElement.Elements<DXO16DCD.GeoHierarchyEntity>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class GeoChildEntitiesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsChartDraws.GeoHierarchyEntityConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.GeoHierarchyEntityConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class GeoChildEntitiesConverter
     return false;
   }
   
-  private static void SetGeoHierarchyEntities(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, Collection<DMDrawsChartDraws.GeoHierarchyEntity>? value)
+  private static void SetGeoHierarchyEntities(DXO16DCD.GeoChildEntities openXmlElement, Collection<DMDCDs.GeoHierarchyEntity>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.GeoHierarchyEntity>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.GeoHierarchyEntity>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsChartDraws.GeoHierarchyEntityConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoHierarchyEntity>(item);
+        var newItem = DMXDCDs.GeoHierarchyEntityConverter.CreateOpenXmlElement<DXO16DCD.GeoHierarchyEntity>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntities? CreateModelElement(DXO2016DrawChartDraw.GeoChildEntities? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildEntities? CreateModelElement(DXO16DCD.GeoChildEntities? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class GeoChildEntitiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoChildEntities? openXmlElement, DMDrawsChartDraws.GeoChildEntities? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoChildEntities? openXmlElement, DMDCDs.GeoChildEntities? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class GeoChildEntitiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildEntities value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoChildEntities, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoChildEntities value)
+    where OpenXmlElementType: DXO16DCD.GeoChildEntities, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildEntities openXmlElement, DMDrawsChartDraws.GeoChildEntities value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoChildEntities openXmlElement, DMDCDs.GeoChildEntities value)
   {
     SetGeoHierarchyEntities(openXmlElement, value?.GeoHierarchyEntities);
   }

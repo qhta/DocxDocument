@@ -5,59 +5,59 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class YValuesConverter
 {
-  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.YValues openXmlElement)
+  private static DMDC.NumberReference? GetNumberReference(DXDC.YValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberReference>();
     if (element != null)
-      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+      return DMXDC.NumberReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberReference(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberReference(DXDC.YValues openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName);
+    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName);
   }
   
-  private static void SetNumberReference(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberReference? value)
+  private static void SetNumberReference(DXDC.YValues openXmlElement, DMDC.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
+      itemElement = DMXDC.NumberReferenceConverter.CreateOpenXmlElement<DXDC.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.YValues openXmlElement)
+  private static DMDC.NumberLiteral? GetNumberLiteral(DXDC.YValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberLiteral>();
     if (element != null)
-      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+      return DMXDC.NumberLiteralConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberLiteral(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberLiteral(DXDC.YValues openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName);
+    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName);
   }
   
-  private static void SetNumberLiteral(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDC.YValues openXmlElement, DMDC.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
+      itemElement = DMXDC.NumberLiteralConverter.CreateOpenXmlElement<DXDC.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.YValues? CreateModelElement(DXDrawCharts.YValues? openXmlElement)
+  public static DocumentModel.Drawings.Charts.YValues? CreateModelElement(DXDC.YValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +69,7 @@ public static class YValuesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.YValues? openXmlElement, DMDrawsCharts.YValues? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.YValues? openXmlElement, DMDC.YValues? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -85,15 +85,15 @@ public static class YValuesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.YValues value)
-    where OpenXmlElementType: DXDrawCharts.YValues, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.YValues value)
+    where OpenXmlElementType: DXDC.YValues, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.YValues openXmlElement, DMDrawsCharts.YValues value)
+  public static void UpdateOpenXmlElement(DXDC.YValues openXmlElement, DMDC.YValues value)
   {
     SetNumberReference(openXmlElement, value?.NumberReference);
     SetNumberLiteral(openXmlElement, value?.NumberLiteral);

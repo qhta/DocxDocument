@@ -8,17 +8,17 @@ public static class DiagramConverter
   /// <summary>
   /// Identifier
   /// </summary>
-  private static String? GetId(DXDraw.Diagram openXmlElement)
+  private static String? GetId(DXD.Diagram openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXDraw.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXD.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXDraw.Diagram openXmlElement, String? value)
+  private static void SetId(DXD.Diagram openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class DiagramConverter
   /// <summary>
   /// Animation Build Step
   /// </summary>
-  private static DMDraws.DiagramBuildStepKind? GetBuildStep(DXDraw.Diagram openXmlElement)
+  private static DMD.DiagramBuildStepKind? GetBuildStep(DXD.Diagram openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMD.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value);
   }
   
-  private static bool CmpBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBuildStep(DXD.Diagram openXmlElement, DMD.DiagramBuildStepKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMD.DiagramBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName);
   }
   
-  private static void SetBuildStep(DXDraw.Diagram openXmlElement, DMDraws.DiagramBuildStepKind? value)
+  private static void SetBuildStep(DXD.Diagram openXmlElement, DMD.DiagramBuildStepKind? value)
   {
-    openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMDraws.DiagramBuildStepKind>(value);
+    openXmlElement.BuildStep = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues, DMD.DiagramBuildStepKind>(value);
   }
   
-  public static DocumentModel.Drawings.Diagram? CreateModelElement(DXDraw.Diagram? openXmlElement)
+  public static DocumentModel.Drawings.Diagram? CreateModelElement(DXD.Diagram? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class DiagramConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Diagram? openXmlElement, DMDraws.Diagram? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Diagram? openXmlElement, DMD.Diagram? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class DiagramConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Diagram value)
-    where OpenXmlElementType: DXDraw.Diagram, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Diagram value)
+    where OpenXmlElementType: DXD.Diagram, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Diagram openXmlElement, DMDraws.Diagram value)
+  public static void UpdateOpenXmlElement(DXD.Diagram openXmlElement, DMD.Diagram value)
   {
     SetId(openXmlElement, value?.Id);
     SetBuildStep(openXmlElement, value?.BuildStep);

@@ -8,27 +8,27 @@ public static class RunConverter
   /// <summary>
   /// Text Character Properties.
   /// </summary>
-  private static DMDraws.RunProperties? GetRunProperties(DXDraw.Run openXmlElement)
+  private static DMD.RunProperties? GetRunProperties(DXD.Run openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RunProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.RunProperties>();
     if (element != null)
-      return DMXDraws.RunPropertiesConverter.CreateModelElement(element);
+      return DMXD.RunPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXD.Run openXmlElement, DMD.RunProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RunProperties>(), value, diffs, objName);
+    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName);
   }
   
-  private static void SetRunProperties(DXDraw.Run openXmlElement, DMDraws.RunProperties? value)
+  private static void SetRunProperties(DXD.Run openXmlElement, DMD.RunProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RunProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RunProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RunPropertiesConverter.CreateOpenXmlElement<DXDraw.RunProperties>(value);
+      itemElement = DMXD.RunPropertiesConverter.CreateOpenXmlElement<DXD.RunProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class RunConverter
   /// <summary>
   /// Text String.
   /// </summary>
-  private static String? GetText(DXDraw.Run openXmlElement)
+  private static String? GetText(DXD.Run openXmlElement)
   {
     return openXmlElement?.Text?.Text;
   }
   
-  private static bool CmpText(DXDraw.Run openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXD.Run openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Text?.Text == value) return true;
     diffs?.Add(objName, "Text", openXmlElement?.Text?.Text, value);
     return false;
   }
   
-  private static void SetText(DXDraw.Run openXmlElement, String? value)
+  private static void SetText(DXD.Run openXmlElement, String? value)
   {
     if (value != null)
-      openXmlElement.Text = new DXDraw.Text(value);
+      openXmlElement.Text = new DXD.Text(value);
     else
       openXmlElement.Text = null;
   }
   
-  public static DocumentModel.Drawings.Run? CreateModelElement(DXDraw.Run? openXmlElement)
+  public static DocumentModel.Drawings.Run? CreateModelElement(DXD.Run? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +69,7 @@ public static class RunConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Run? openXmlElement, DMDraws.Run? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Run? openXmlElement, DMD.Run? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -85,15 +85,15 @@ public static class RunConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Run value)
-    where OpenXmlElementType: DXDraw.Run, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Run value)
+    where OpenXmlElementType: DXD.Run, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Run openXmlElement, DMDraws.Run value)
+  public static void UpdateOpenXmlElement(DXD.Run openXmlElement, DMD.Run value)
   {
     SetRunProperties(openXmlElement, value?.RunProperties);
     SetText(openXmlElement, value?.Text);

@@ -8,24 +8,24 @@ public static class ColorTemperatureConverter
   /// <summary>
   /// colorTemp, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement)
+  private static Int32? GetColorTemperatureValue(DXO10D.ColorTemperature openXmlElement)
   {
     return openXmlElement?.ColorTemperatureValue?.Value;
   }
   
-  private static bool CmpColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTemperatureValue(DXO10D.ColorTemperature openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ColorTemperatureValue?.Value == value) return true;
     diffs?.Add(objName, "ColorTemperatureValue", openXmlElement?.ColorTemperatureValue?.Value, value);
     return false;
   }
   
-  private static void SetColorTemperatureValue(DXO2010Draw.ColorTemperature openXmlElement, Int32? value)
+  private static void SetColorTemperatureValue(DXO10D.ColorTemperature openXmlElement, Int32? value)
   {
     openXmlElement.ColorTemperatureValue = value;
   }
   
-  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(DXO2010Draw.ColorTemperature? openXmlElement)
+  public static DocumentModel.Drawings.ColorTemperature? CreateModelElement(DXO10D.ColorTemperature? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class ColorTemperatureConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ColorTemperature? openXmlElement, DMDraws.ColorTemperature? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ColorTemperature? openXmlElement, DMD.ColorTemperature? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class ColorTemperatureConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ColorTemperature value)
-    where OpenXmlElementType: DXO2010Draw.ColorTemperature, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ColorTemperature value)
+    where OpenXmlElementType: DXO10D.ColorTemperature, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ColorTemperature openXmlElement, DMDraws.ColorTemperature value)
+  public static void UpdateOpenXmlElement(DXO10D.ColorTemperature openXmlElement, DMD.ColorTemperature value)
   {
     SetColorTemperatureValue(openXmlElement, value?.ColorTemperatureValue);
   }

@@ -8,50 +8,50 @@ public static class StrDataExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.StrDataExtension openXmlElement)
+  private static String? GetUri(DXDC.StrDataExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.StrDataExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.StrDataExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.StrDataExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.StrDataExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static Boolean? GetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement)
+  private static Boolean? GetAutoGeneneratedCategories(DXDC.StrDataExtension openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null;
+    return openXmlElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>() != null;
   }
   
-  private static bool CmpAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoGeneneratedCategories(DXDC.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>() != null;
+    var val = openXmlElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2013DrawChart.AutoGeneneratedCategories", val, value);
+    diffs?.Add(objName, "DXO13DC.AutoGeneneratedCategories", val, value);
     return false;
   }
   
-  private static void SetAutoGeneneratedCategories(DXDrawCharts.StrDataExtension openXmlElement, Boolean? value)
+  private static void SetAutoGeneneratedCategories(DXDC.StrDataExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AutoGeneneratedCategories>();
+      var itemElement = openXmlElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2013DrawChart.AutoGeneneratedCategories();
+      var itemElement = new DXO13DC.AutoGeneneratedCategories();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StrDataExtension? CreateModelElement(DXDrawCharts.StrDataExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StrDataExtension? CreateModelElement(DXDC.StrDataExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -63,7 +63,7 @@ public static class StrDataExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StrDataExtension? openXmlElement, DMDrawsCharts.StrDataExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StrDataExtension? openXmlElement, DMDC.StrDataExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -79,15 +79,15 @@ public static class StrDataExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StrDataExtension value)
-    where OpenXmlElementType: DXDrawCharts.StrDataExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StrDataExtension value)
+    where OpenXmlElementType: DXDC.StrDataExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StrDataExtension openXmlElement, DMDrawsCharts.StrDataExtension value)
+  public static void UpdateOpenXmlElement(DXDC.StrDataExtension openXmlElement, DMDC.StrDataExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetAutoGeneneratedCategories(openXmlElement, value?.AutoGeneneratedCategories);

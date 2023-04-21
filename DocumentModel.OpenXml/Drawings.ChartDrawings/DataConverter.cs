@@ -8,102 +8,102 @@ public static class DataConverter
   /// <summary>
   /// id, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetId(DXO2016DrawChartDraw.Data openXmlElement)
+  private static UInt32? GetId(DXO16DCD.Data openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO2016DrawChartDraw.Data openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO16DCD.Data openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXO2016DrawChartDraw.Data openXmlElement, UInt32? value)
+  private static void SetId(DXO16DCD.Data openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
   
-  private static DMDrawsChartDraws.NumericDimension? GetNumericDimension(DXO2016DrawChartDraw.Data openXmlElement)
+  private static DMDCDs.NumericDimension? GetNumericDimension(DXO16DCD.Data openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.NumericDimension>();
     if (element != null)
-      return DMXDrawsChartDraws.NumericDimensionConverter.CreateModelElement(element);
+      return DMXDCDs.NumericDimensionConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumericDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.NumericDimension? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericDimension(DXO16DCD.Data openXmlElement, DMDCDs.NumericDimension? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>(), value, diffs, objName);
+    return DMXDCDs.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumericDimension>(), value, diffs, objName);
   }
   
-  private static void SetNumericDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.NumericDimension? value)
+  private static void SetNumericDimension(DXO16DCD.Data openXmlElement, DMDCDs.NumericDimension? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumericDimension>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.NumericDimension>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.NumericDimensionConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.NumericDimension>(value);
+      itemElement = DMXDCDs.NumericDimensionConverter.CreateOpenXmlElement<DXO16DCD.NumericDimension>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraws.StringDimension? GetStringDimension(DXO2016DrawChartDraw.Data openXmlElement)
+  private static DMDCDs.StringDimension? GetStringDimension(DXO16DCD.Data openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.StringDimension>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.StringDimension>();
     if (element != null)
-      return DMXDrawsChartDraws.StringDimensionConverter.CreateModelElement(element);
+      return DMXDCDs.StringDimensionConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStringDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.StringDimension? value, DiffList? diffs, string? objName)
+  private static bool CmpStringDimension(DXO16DCD.Data openXmlElement, DMDCDs.StringDimension? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringDimension>(), value, diffs, objName);
+    return DMXDCDs.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.StringDimension>(), value, diffs, objName);
   }
   
-  private static void SetStringDimension(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.StringDimension? value)
+  private static void SetStringDimension(DXO16DCD.Data openXmlElement, DMDCDs.StringDimension? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.StringDimension>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.StringDimension>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.StringDimensionConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.StringDimension>(value);
+      itemElement = DMXDCDs.StringDimensionConverter.CreateOpenXmlElement<DXO16DCD.StringDimension>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.Data openXmlElement)
+  private static DMDCDs.ExtensionList? GetExtensionList(DXO16DCD.Data openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.Data openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.ExtensionList? value)
+  private static void SetExtensionList(DXO16DCD.Data openXmlElement, DMDCDs.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
+      itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Data? CreateModelElement(DXO2016DrawChartDraw.Data? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Data? CreateModelElement(DXO16DCD.Data? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -117,7 +117,7 @@ public static class DataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Data? openXmlElement, DMDrawsChartDraws.Data? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Data? openXmlElement, DMDCDs.Data? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -137,15 +137,15 @@ public static class DataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Data value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Data, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Data value)
+    where OpenXmlElementType: DXO16DCD.Data, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Data openXmlElement, DMDrawsChartDraws.Data value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Data openXmlElement, DMDCDs.Data value)
   {
     SetId(openXmlElement, value?.Id);
     SetNumericDimension(openXmlElement, value?.NumericDimension);

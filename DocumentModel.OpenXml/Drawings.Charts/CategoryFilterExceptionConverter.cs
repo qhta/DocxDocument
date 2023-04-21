@@ -8,24 +8,24 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  private static String? GetSequenceOfReferences(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static String? GetSequenceOfReferences(DXO13DC.CategoryFilterException openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text;
   }
   
-  private static bool CmpSequenceOfReferences(DXO2013DrawChart.CategoryFilterException openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSequenceOfReferences(DXO13DC.CategoryFilterException openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text == value;
   }
   
-  private static void SetSequenceOfReferences(DXO2013DrawChart.CategoryFilterException openXmlElement, String? value)
+  private static void SetSequenceOfReferences(DXO13DC.CategoryFilterException openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.SequenceOfReferences>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013DrawChart.SequenceOfReferences { Text = value };
+      itemElement = new DXO13DC.SequenceOfReferences { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -33,27 +33,27 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ShapeProperties3? GetShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static DMDC.ShapeProperties3? GetShapeProperties(DXO13DC.CategoryFilterException openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.ShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ShapeProperties3Converter.CreateModelElement(element);
+      return DMXDC.ShapeProperties3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.ShapeProperties3? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO13DC.CategoryFilterException openXmlElement, DMDC.ShapeProperties3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.ShapeProperties3? value)
+  private static void SetShapeProperties(DXO13DC.CategoryFilterException openXmlElement, DMDC.ShapeProperties3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ShapeProperties3Converter.CreateOpenXmlElement<DXO2013DrawChart.ShapeProperties>(value);
+      itemElement = DMXDC.ShapeProperties3Converter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -62,48 +62,48 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// Explosion.
   /// </summary>
-  private static UInt32? GetExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static UInt32? GetExplosion(DXO13DC.CategoryFilterException openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13DC.Explosion>()?.Val);
   }
   
-  private static bool CmpExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpExplosion(DXO13DC.CategoryFilterException openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2013DrawChart.Explosion>()?.Val, value, diffs, objName, "Explosion3");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13DC.Explosion>()?.Val, value, diffs, objName, "Explosion3");
   }
   
-  private static void SetExplosion(DXO2013DrawChart.CategoryFilterException openXmlElement, UInt32? value)
+  private static void SetExplosion(DXO13DC.CategoryFilterException openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXO2013DrawChart.Explosion,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO13DC.Explosion,System.UInt32>(openXmlElement, value);
   }
   
   /// <summary>
   /// InvertIfNegativeBoolean.
   /// </summary>
-  private static Boolean? GetInvertIfNegativeBoolean(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static Boolean? GetInvertIfNegativeBoolean(DXO13DC.CategoryFilterException openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.InvertIfNegativeBoolean>() != null;
+    return openXmlElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>() != null;
   }
   
-  private static bool CmpInvertIfNegativeBoolean(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertIfNegativeBoolean(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.InvertIfNegativeBoolean>() != null;
+    var val = openXmlElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2013DrawChart.InvertIfNegativeBoolean", val, value);
+    diffs?.Add(objName, "DXO13DC.InvertIfNegativeBoolean", val, value);
     return false;
   }
   
-  private static void SetInvertIfNegativeBoolean(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value)
+  private static void SetInvertIfNegativeBoolean(DXO13DC.CategoryFilterException openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.InvertIfNegativeBoolean>();
+      var itemElement = openXmlElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2013DrawChart.InvertIfNegativeBoolean();
+      var itemElement = new DXO13DC.InvertIfNegativeBoolean();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -111,30 +111,30 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// Bubble3D.
   /// </summary>
-  private static Boolean? GetBubble3D(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static Boolean? GetBubble3D(DXO13DC.CategoryFilterException openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2013DrawChart.Bubble3D>() != null;
+    return openXmlElement.GetFirstChild<DXO13DC.Bubble3D>() != null;
   }
   
-  private static bool CmpBubble3D(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBubble3D(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2013DrawChart.Bubble3D>() != null;
+    var val = openXmlElement.GetFirstChild<DXO13DC.Bubble3D>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2013DrawChart.Bubble3D", val, value);
+    diffs?.Add(objName, "DXO13DC.Bubble3D", val, value);
     return false;
   }
   
-  private static void SetBubble3D(DXO2013DrawChart.CategoryFilterException openXmlElement, Boolean? value)
+  private static void SetBubble3D(DXO13DC.CategoryFilterException openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.Bubble3D>();
+      var itemElement = openXmlElement.GetFirstChild<DXO13DC.Bubble3D>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2013DrawChart.Bubble3D();
+      var itemElement = new DXO13DC.Bubble3D();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -142,27 +142,27 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// Marker.
   /// </summary>
-  private static DMDrawsCharts.Marker3? GetMarker(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static DMDC.Marker3? GetMarker(DXO13DC.CategoryFilterException openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.Marker>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.Marker>();
     if (element != null)
-      return DMXDrawsCharts.Marker3Converter.CreateModelElement(element);
+      return DMXDC.Marker3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMarker(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.Marker3? value, DiffList? diffs, string? objName)
+  private static bool CmpMarker(DXO13DC.CategoryFilterException openXmlElement, DMDC.Marker3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.Marker>(), value, diffs, objName);
+    return DMXDC.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.Marker>(), value, diffs, objName);
   }
   
-  private static void SetMarker(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.Marker3? value)
+  private static void SetMarker(DXO13DC.CategoryFilterException openXmlElement, DMDC.Marker3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.Marker>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.Marker>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.Marker3Converter.CreateOpenXmlElement<DXO2013DrawChart.Marker>(value);
+      itemElement = DMXDC.Marker3Converter.CreateOpenXmlElement<DXO13DC.Marker>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -171,33 +171,33 @@ public static class CategoryFilterExceptionConverter
   /// <summary>
   /// DataLabel.
   /// </summary>
-  private static DMDrawsCharts.DataLabel3? GetDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement)
+  private static DMDC.DataLabel3? GetDataLabel(DXO13DC.CategoryFilterException openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabel>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.DataLabel>();
     if (element != null)
-      return DMXDrawsCharts.DataLabel3Converter.CreateModelElement(element);
+      return DMXDC.DataLabel3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.DataLabel3? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabel(DXO13DC.CategoryFilterException openXmlElement, DMDC.DataLabel3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabel>(), value, diffs, objName);
+    return DMXDC.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabel>(), value, diffs, objName);
   }
   
-  private static void SetDataLabel(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.DataLabel3? value)
+  private static void SetDataLabel(DXO13DC.CategoryFilterException openXmlElement, DMDC.DataLabel3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabel>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.DataLabel>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabel3Converter.CreateOpenXmlElement<DXO2013DrawChart.DataLabel>(value);
+      itemElement = DMXDC.DataLabel3Converter.CreateOpenXmlElement<DXO13DC.DataLabel>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryFilterException? CreateModelElement(DXO2013DrawChart.CategoryFilterException? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CategoryFilterException? CreateModelElement(DXO13DC.CategoryFilterException? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -214,7 +214,7 @@ public static class CategoryFilterExceptionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.CategoryFilterException? openXmlElement, DMDrawsCharts.CategoryFilterException? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.CategoryFilterException? openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -240,15 +240,15 @@ public static class CategoryFilterExceptionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterException value)
-    where OpenXmlElementType: DXO2013DrawChart.CategoryFilterException, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.CategoryFilterException value)
+    where OpenXmlElementType: DXO13DC.CategoryFilterException, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.CategoryFilterException openXmlElement, DMDrawsCharts.CategoryFilterException value)
+  public static void UpdateOpenXmlElement(DXO13DC.CategoryFilterException openXmlElement, DMDC.CategoryFilterException value)
   {
     SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
     SetShapeProperties(openXmlElement, value?.ShapeProperties);

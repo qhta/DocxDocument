@@ -8,100 +8,100 @@ public static class SurfaceSerExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.SurfaceSerExtension openXmlElement)
+  private static String? GetUri(DXDC.SurfaceSerExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.SurfaceSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.SurfaceSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.SurfaceSerExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.SurfaceSerExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDrawCharts.SurfaceSerExtension openXmlElement)
+  private static DMDC.FilteredSeriesTitle? GetFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredSeriesTitle>();
     if (element != null)
-      return DMXDrawsCharts.FilteredSeriesTitleConverter.CreateModelElement(element);
+      return DMXDC.FilteredSeriesTitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredSeriesTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>(), value, diffs, objName);
+    return DMXDC.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>(), value, diffs, objName);
   }
   
-  private static void SetFilteredSeriesTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredSeriesTitle? value)
+  private static void SetFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredSeriesTitle>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredSeriesTitleConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredSeriesTitle>(value);
+      itemElement = DMXDC.FilteredSeriesTitleConverter.CreateOpenXmlElement<DXO13DC.FilteredSeriesTitle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDrawCharts.SurfaceSerExtension openXmlElement)
+  private static DMDC.FilteredCategoryTitle? GetFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
     if (element != null)
-      return DMXDrawsCharts.FilteredCategoryTitleConverter.CreateModelElement(element);
+      return DMXDC.FilteredCategoryTitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredCategoryTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>(), value, diffs, objName);
+    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName);
   }
   
-  private static void SetFilteredCategoryTitle(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value)
+  private static void SetFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredCategoryTitle>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredCategoryTitleConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredCategoryTitle>(value);
+      itemElement = DMXDC.FilteredCategoryTitleConverter.CreateOpenXmlElement<DXO13DC.FilteredCategoryTitle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDrawCharts.SurfaceSerExtension openXmlElement)
+  private static DMDC.CategoryFilterExceptions? GetCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
     if (element != null)
-      return DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateModelElement(element);
+      return DMXDC.CategoryFilterExceptionsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCategoryFilterExceptions(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName);
   }
   
-  private static void SetCategoryFilterExceptions(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value)
+  private static void SetCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterExceptions>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DXO2013DrawChart.CategoryFilterExceptions>(value);
+      itemElement = DMXDC.CategoryFilterExceptionsConverter.CreateOpenXmlElement<DXO13DC.CategoryFilterExceptions>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(DXDrawCharts.SurfaceSerExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.SurfaceSerExtension? CreateModelElement(DXDC.SurfaceSerExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -115,7 +115,7 @@ public static class SurfaceSerExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.SurfaceSerExtension? openXmlElement, DMDrawsCharts.SurfaceSerExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SurfaceSerExtension? openXmlElement, DMDC.SurfaceSerExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -135,15 +135,15 @@ public static class SurfaceSerExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.SurfaceSerExtension value)
-    where OpenXmlElementType: DXDrawCharts.SurfaceSerExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.SurfaceSerExtension value)
+    where OpenXmlElementType: DXDC.SurfaceSerExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.SurfaceSerExtension openXmlElement, DMDrawsCharts.SurfaceSerExtension value)
+  public static void UpdateOpenXmlElement(DXDC.SurfaceSerExtension openXmlElement, DMDC.SurfaceSerExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredSeriesTitle(openXmlElement, value?.FilteredSeriesTitle);

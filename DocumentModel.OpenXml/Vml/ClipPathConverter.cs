@@ -8,22 +8,22 @@ public static class ClipPathConverter
   /// <summary>
   /// Path Definition
   /// </summary>
-  private static String? GetValue(DXVmlO.ClipPath openXmlElement)
+  private static String? GetValue(DXVO.ClipPath openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Value);
   }
   
-  private static bool CmpValue(DXVmlO.ClipPath openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpValue(DXVO.ClipPath openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Value, value, diffs, objName, "Type");
   }
   
-  private static void SetValue(DXVmlO.ClipPath openXmlElement, String? value)
+  private static void SetValue(DXVO.ClipPath openXmlElement, String? value)
   {
     openXmlElement.Value = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Vml.ClipPath? CreateModelElement(DXVmlO.ClipPath? openXmlElement)
+  public static DocumentModel.Vml.ClipPath? CreateModelElement(DXVO.ClipPath? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class ClipPathConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.ClipPath? openXmlElement, DMVml.ClipPath? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.ClipPath? openXmlElement, DMV.ClipPath? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class ClipPathConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.ClipPath value)
-    where OpenXmlElementType: DXVmlO.ClipPath, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.ClipPath value)
+    where OpenXmlElementType: DXVO.ClipPath, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.ClipPath openXmlElement, DMVml.ClipPath value)
+  public static void UpdateOpenXmlElement(DXVO.ClipPath openXmlElement, DMV.ClipPath value)
   {
     SetValue(openXmlElement, value?.Value);
   }

@@ -8,17 +8,17 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// dockstate, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static String? GetDockState(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.DockState);
   }
   
-  private static bool CmpDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDockState(DXO13WEP.WebExtensionTaskpane openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.DockState, value, diffs, objName, "DockState");
   }
   
-  private static void SetDockState(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, String? value)
+  private static void SetDockState(DXO13WEP.WebExtensionTaskpane openXmlElement, String? value)
   {
     openXmlElement.DockState = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// visibility, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetVisibility(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static Boolean? GetVisibility(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
     return openXmlElement?.Visibility?.Value;
   }
   
-  private static bool CmpVisibility(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisibility(DXO13WEP.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visibility?.Value == value) return true;
     diffs?.Add(objName, "Visibility", openXmlElement?.Visibility?.Value, value);
     return false;
   }
   
-  private static void SetVisibility(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value)
+  private static void SetVisibility(DXO13WEP.WebExtensionTaskpane openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visibility = new BooleanValue { Value = (Boolean)value };
@@ -49,19 +49,19 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// width, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Double? GetWidth(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static Double? GetWidth(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXO13WEP.WebExtensionTaskpane openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
     return false;
   }
   
-  private static void SetWidth(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Double? value)
+  private static void SetWidth(DXO13WEP.WebExtensionTaskpane openXmlElement, Double? value)
   {
     openXmlElement.Width = value;
   }
@@ -69,19 +69,19 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// row, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetRow(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static UInt32? GetRow(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
     return openXmlElement?.Row?.Value;
   }
   
-  private static bool CmpRow(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRow(DXO13WEP.WebExtensionTaskpane openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Row?.Value == value) return true;
     diffs?.Add(objName, "Row", openXmlElement?.Row?.Value, value);
     return false;
   }
   
-  private static void SetRow(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, UInt32? value)
+  private static void SetRow(DXO13WEP.WebExtensionTaskpane openXmlElement, UInt32? value)
   {
     openXmlElement.Row = value;
   }
@@ -89,19 +89,19 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// locked, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetLocked(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static Boolean? GetLocked(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
     return openXmlElement?.Locked?.Value;
   }
   
-  private static bool CmpLocked(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLocked(DXO13WEP.WebExtensionTaskpane openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Locked?.Value == value) return true;
     diffs?.Add(objName, "Locked", openXmlElement?.Locked?.Value, value);
     return false;
   }
   
-  private static void SetLocked(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, Boolean? value)
+  private static void SetLocked(DXO13WEP.WebExtensionTaskpane openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Locked = new BooleanValue { Value = (Boolean)value };
@@ -112,27 +112,27 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// WebExtensionPartReference.
   /// </summary>
-  private static DMWebExtUI.WebExtensionPartReference? GetWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static DMWEUI.WebExtensionPartReference? GetWebExtensionPartReference(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>();
+    var element = openXmlElement?.GetFirstChild<DXO13WEP.WebExtensionPartReference>();
     if (element != null)
-      return DMXWebExtUI.WebExtensionPartReferenceConverter.CreateModelElement(element);
+      return DMXWEUI.WebExtensionPartReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionPartReference? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionPartReference(DXO13WEP.WebExtensionTaskpane openXmlElement, DMWEUI.WebExtensionPartReference? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExtUI.WebExtensionPartReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>(), value, diffs, objName);
+    return DMXWEUI.WebExtensionPartReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WEP.WebExtensionPartReference>(), value, diffs, objName);
   }
   
-  private static void SetWebExtensionPartReference(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionPartReference? value)
+  private static void SetWebExtensionPartReference(DXO13WEP.WebExtensionTaskpane openXmlElement, DMWEUI.WebExtensionPartReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013WebExtPane.WebExtensionPartReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13WEP.WebExtensionPartReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWebExtUI.WebExtensionPartReferenceConverter.CreateOpenXmlElement<DXO2013WebExtPane.WebExtensionPartReference>(value);
+      itemElement = DMXWEUI.WebExtensionPartReferenceConverter.CreateOpenXmlElement<DXO13WEP.WebExtensionPartReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -141,33 +141,33 @@ public static class WebExtensionTaskpaneConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMWebExtUI.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement)
+  private static DMWEUI.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO13WEP.WebExtensionTaskpane openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO13WEP.OfficeArtExtensionList>();
     if (element != null)
-      return DMXWebExtUI.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXWEUI.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13WEP.WebExtensionTaskpane openXmlElement, DMWEUI.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXWebExtUI.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXWEUI.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WEP.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO13WEP.WebExtensionTaskpane openXmlElement, DMWEUI.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013WebExtPane.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13WEP.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWebExtUI.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013WebExtPane.OfficeArtExtensionList>(value);
+      itemElement = DMXWEUI.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WEP.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.WebExtensions.UI.WebExtensionTaskpane? CreateModelElement(DXO2013WebExtPane.WebExtensionTaskpane? openXmlElement)
+  public static DocumentModel.WebExtensions.UI.WebExtensionTaskpane? CreateModelElement(DXO13WEP.WebExtensionTaskpane? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -184,7 +184,7 @@ public static class WebExtensionTaskpaneConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013WebExtPane.WebExtensionTaskpane? openXmlElement, DMWebExtUI.WebExtensionTaskpane? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WEP.WebExtensionTaskpane? openXmlElement, DMWEUI.WebExtensionTaskpane? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -210,15 +210,15 @@ public static class WebExtensionTaskpaneConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExtUI.WebExtensionTaskpane value)
-    where OpenXmlElementType: DXO2013WebExtPane.WebExtensionTaskpane, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWEUI.WebExtensionTaskpane value)
+    where OpenXmlElementType: DXO13WEP.WebExtensionTaskpane, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013WebExtPane.WebExtensionTaskpane openXmlElement, DMWebExtUI.WebExtensionTaskpane value)
+  public static void UpdateOpenXmlElement(DXO13WEP.WebExtensionTaskpane openXmlElement, DMWEUI.WebExtensionTaskpane value)
   {
     SetDockState(openXmlElement, value?.DockState);
     SetVisibility(openXmlElement, value?.Visibility);

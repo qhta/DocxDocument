@@ -28,21 +28,21 @@ public static class ExtendedChartPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsChartDraws.ChartSpace? GetChartSpace(DXPack.ExtendedChartPart openXmlElement)
+  private static DMDCDs.ChartSpace? GetChartSpace(DXPack.ExtendedChartPart openXmlElement)
   {
-      return DMXDrawsChartDraws.ChartSpaceConverter.CreateModelElement(openXmlElement?.RootElement as DXO2016DrawChartDraw.ChartSpace);
+      return DMXDCDs.ChartSpaceConverter.CreateModelElement(openXmlElement?.RootElement as DXO16DCD.ChartSpace);
   }
   
-  private static bool CmpChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDrawsChartDraws.ChartSpace? value, DiffList? diffs, string? objName)
+  private static bool CmpChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDCDs.ChartSpace? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDrawsChartDraws.ChartSpace? value)
+  private static void SetChartSpace(DXPack.ExtendedChartPart openXmlElement, DMDCDs.ChartSpace? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsChartDraws.ChartSpaceConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ChartSpace>(value);
+       var rootElement = DMXDCDs.ChartSpaceConverter.CreateOpenXmlElement<DXO16DCD.ChartSpace>(value);
        if (rootElement != null)
          openXmlElement.ChartSpace = rootElement;
     }

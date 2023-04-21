@@ -8,391 +8,391 @@ public static class ChartShapePropertiesConverter
   /// <summary>
   /// Black and White Mode
   /// </summary>
-  private static DMDraws.BlackWhiteMode? GetBlackWhiteMode(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.BlackWhiteMode? GetBlackWhiteMode(DXDC.ChartShapeProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXDC.ChartShapeProperties openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
   }
   
-  private static void SetBlackWhiteMode(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.BlackWhiteMode? value)
+  private static void SetBlackWhiteMode(DXDC.ChartShapeProperties openXmlElement, DMD.BlackWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(value);
   }
   
   /// <summary>
   /// 2D Transform for Individual Objects.
   /// </summary>
-  private static DMDraws.Transform2D? GetTransform2D(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.Transform2D? GetTransform2D(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Transform2D>();
+    var element = openXmlElement?.GetFirstChild<DXD.Transform2D>();
     if (element != null)
-      return DMXDraws.Transform2DConverter.CreateModelElement(element);
+      return DMXD.Transform2DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTransform2D(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Transform2D? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform2D(DXDC.ChartShapeProperties openXmlElement, DMD.Transform2D? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Transform2D>(), value, diffs, objName);
+    return DMXD.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Transform2D>(), value, diffs, objName);
   }
   
-  private static void SetTransform2D(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Transform2D? value)
+  private static void SetTransform2D(DXDC.ChartShapeProperties openXmlElement, DMD.Transform2D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Transform2D>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Transform2D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Transform2DConverter.CreateOpenXmlElement<DXDraw.Transform2D>(value);
+      itemElement = DMXD.Transform2DConverter.CreateOpenXmlElement<DXD.Transform2D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.CustomGeometry? GetCustomGeometry(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.CustomGeometry? GetCustomGeometry(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>();
+    var element = openXmlElement?.GetFirstChild<DXD.CustomGeometry>();
     if (element != null)
-      return DMXDraws.CustomGeometryConverter.CreateModelElement(element);
+      return DMXD.CustomGeometryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCustomGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.CustomGeometry? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomGeometry(DXDC.ChartShapeProperties openXmlElement, DMD.CustomGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName);
+    return DMXD.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomGeometry>(), value, diffs, objName);
   }
   
-  private static void SetCustomGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.CustomGeometry? value)
+  private static void SetCustomGeometry(DXDC.ChartShapeProperties openXmlElement, DMD.CustomGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.CustomGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.CustomGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CustomGeometryConverter.CreateOpenXmlElement<DXDraw.CustomGeometry>(value);
+      itemElement = DMXD.CustomGeometryConverter.CreateOpenXmlElement<DXD.CustomGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PresetGeometry? GetPresetGeometry(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.PresetGeometry? GetPresetGeometry(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetGeometry>();
     if (element != null)
-      return DMXDraws.PresetGeometryConverter.CreateModelElement(element);
+      return DMXD.PresetGeometryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PresetGeometry? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetGeometry(DXDC.ChartShapeProperties openXmlElement, DMD.PresetGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName);
+    return DMXD.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetGeometry>(), value, diffs, objName);
   }
   
-  private static void SetPresetGeometry(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PresetGeometry? value)
+  private static void SetPresetGeometry(DXDC.ChartShapeProperties openXmlElement, DMD.PresetGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetGeometryConverter.CreateOpenXmlElement<DXDraw.PresetGeometry>(value);
+      itemElement = DMXD.PresetGeometryConverter.CreateOpenXmlElement<DXD.PresetGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoFill(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static Boolean? GetNoFill(DXDC.ChartShapeProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXDrawCharts.ChartShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXDC.ChartShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    diffs?.Add(objName, "DXD.NoFill", val, value);
     return false;
   }
   
-  private static void SetNoFill(DXDrawCharts.ChartShapeProperties openXmlElement, Boolean? value)
+  private static void SetNoFill(DXDC.ChartShapeProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoFill();
+      var itemElement = new DXD.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SolidFill? GetSolidFill(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.SolidFill? GetSolidFill(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
     if (element != null)
-      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+      return DMXD.SolidFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSolidFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXDC.ChartShapeProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
   }
   
-  private static void SetSolidFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.SolidFill? value)
+  private static void SetSolidFill(DXDC.ChartShapeProperties openXmlElement, DMD.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
+      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.GradientFill? GetGradientFill(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.GradientFill? GetGradientFill(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
     if (element != null)
-      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+      return DMXD.GradientFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGradientFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXDC.ChartShapeProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
   }
   
-  private static void SetGradientFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.GradientFill? value)
+  private static void SetGradientFill(DXDC.ChartShapeProperties openXmlElement, DMD.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
+      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BlipFill? GetBlipFill(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.BlipFill? GetBlipFill(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
     if (element != null)
-      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+      return DMXD.BlipFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlipFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXDC.ChartShapeProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
   }
   
-  private static void SetBlipFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.BlipFill? value)
+  private static void SetBlipFill(DXDC.ChartShapeProperties openXmlElement, DMD.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
+      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PatternFill? GetPatternFill(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.PatternFill? GetPatternFill(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
     if (element != null)
-      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+      return DMXD.PatternFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPatternFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXDC.ChartShapeProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
   }
   
-  private static void SetPatternFill(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.PatternFill? value)
+  private static void SetPatternFill(DXDC.ChartShapeProperties openXmlElement, DMD.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
+      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Outline? GetOutline(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.Outline? GetOutline(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXDraws.OutlineConverter.CreateModelElement(element);
+      return DMXD.OutlineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
+  private static bool CmpOutline(DXDC.ChartShapeProperties openXmlElement, DMD.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
+    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName);
   }
   
-  private static void SetOutline(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Outline? value)
+  private static void SetOutline(DXDC.ChartShapeProperties openXmlElement, DMD.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
+      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectList? GetEffectList(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.EffectList? GetEffectList(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
     if (element != null)
-      return DMXDraws.EffectListConverter.CreateModelElement(element);
+      return DMXD.EffectListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXDC.ChartShapeProperties openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
   }
   
-  private static void SetEffectList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectList? value)
+  private static void SetEffectList(DXDC.ChartShapeProperties openXmlElement, DMD.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
+      itemElement = DMXD.EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectDag? GetEffectDag(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.EffectDag? GetEffectDag(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectDag>();
     if (element != null)
-      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+      return DMXD.EffectDagConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectDag(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXDC.ChartShapeProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
   }
   
-  private static void SetEffectDag(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.EffectDag? value)
+  private static void SetEffectDag(DXDC.ChartShapeProperties openXmlElement, DMD.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
+      itemElement = DMXD.EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Scene3DType? GetScene3DType(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.Scene3DType? GetScene3DType(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Scene3DType>();
+    var element = openXmlElement?.GetFirstChild<DXD.Scene3DType>();
     if (element != null)
-      return DMXDraws.Scene3DTypeConverter.CreateModelElement(element);
+      return DMXD.Scene3DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpScene3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Scene3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3DType(DXDC.ChartShapeProperties openXmlElement, DMD.Scene3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Scene3DType>(), value, diffs, objName);
+    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName);
   }
   
-  private static void SetScene3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Scene3DType? value)
+  private static void SetScene3DType(DXDC.ChartShapeProperties openXmlElement, DMD.Scene3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Scene3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Scene3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Scene3DTypeConverter.CreateOpenXmlElement<DXDraw.Scene3DType>(value);
+      itemElement = DMXD.Scene3DTypeConverter.CreateOpenXmlElement<DXD.Scene3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Shape3DType? GetShape3DType(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.Shape3DType? GetShape3DType(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Shape3DType>();
+    var element = openXmlElement?.GetFirstChild<DXD.Shape3DType>();
     if (element != null)
-      return DMXDraws.Shape3DTypeConverter.CreateModelElement(element);
+      return DMXD.Shape3DTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Shape3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3DType(DXDC.ChartShapeProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Shape3DType>(), value, diffs, objName);
+    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName);
   }
   
-  private static void SetShape3DType(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.Shape3DType? value)
+  private static void SetShape3DType(DXDC.ChartShapeProperties openXmlElement, DMD.Shape3DType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Shape3DType>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Shape3DType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Shape3DTypeConverter.CreateOpenXmlElement<DXDraw.Shape3DType>(value);
+      itemElement = DMXD.Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ExtensionList? GetExtensionList(DXDrawCharts.ChartShapeProperties openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXDC.ChartShapeProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.ChartShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.ChartShapeProperties openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXDC.ChartShapeProperties openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ChartShapeProperties? CreateModelElement(DXDrawCharts.ChartShapeProperties? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ChartShapeProperties? CreateModelElement(DXDC.ChartShapeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -417,7 +417,7 @@ public static class ChartShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ChartShapeProperties? openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ChartShapeProperties? openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -459,15 +459,15 @@ public static class ChartShapePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ChartShapeProperties value)
-    where OpenXmlElementType: DXDrawCharts.ChartShapeProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ChartShapeProperties value)
+    where OpenXmlElementType: DXDC.ChartShapeProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ChartShapeProperties openXmlElement, DMDrawsCharts.ChartShapeProperties value)
+  public static void UpdateOpenXmlElement(DXDC.ChartShapeProperties openXmlElement, DMDC.ChartShapeProperties value)
   {
     SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);
     SetTransform2D(openXmlElement, value?.Transform2D);

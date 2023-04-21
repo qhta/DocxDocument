@@ -8,19 +8,19 @@ public static class ConnectionTypeConverter
   /// <summary>
   /// Identifier
   /// </summary>
-  private static UInt32? GetId(DXDraw.ConnectionType openXmlElement)
+  private static UInt32? GetId(DXD.ConnectionType openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXDraw.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXD.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXDraw.ConnectionType openXmlElement, UInt32? value)
+  private static void SetId(DXD.ConnectionType openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -28,24 +28,24 @@ public static class ConnectionTypeConverter
   /// <summary>
   /// Index
   /// </summary>
-  private static UInt32? GetIndex(DXDraw.ConnectionType openXmlElement)
+  private static UInt32? GetIndex(DXD.ConnectionType openXmlElement)
   {
     return openXmlElement?.Index?.Value;
   }
   
-  private static bool CmpIndex(DXDraw.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXD.ConnectionType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Index?.Value == value) return true;
     diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
     return false;
   }
   
-  private static void SetIndex(DXDraw.ConnectionType openXmlElement, UInt32? value)
+  private static void SetIndex(DXD.ConnectionType openXmlElement, UInt32? value)
   {
     openXmlElement.Index = value;
   }
   
-  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DXDraw.ConnectionType? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionType? CreateModelElement(DXD.ConnectionType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ConnectionTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ConnectionType? openXmlElement, DMDraws.ConnectionType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectionType? openXmlElement, DMD.ConnectionType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ConnectionTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionType value)
-    where OpenXmlElementType: DXDraw.ConnectionType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ConnectionType value)
+    where OpenXmlElementType: DXD.ConnectionType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ConnectionType openXmlElement, DMDraws.ConnectionType value)
+  public static void UpdateOpenXmlElement(DXD.ConnectionType openXmlElement, DMD.ConnectionType value)
   {
     SetId(openXmlElement, value?.Id);
     SetIndex(openXmlElement, value?.Index);

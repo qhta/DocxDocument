@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DateAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.DateAxExtension>? GetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement)
+  private static Collection<DMDC.DateAxExtension>? GetDateAxExtensions(DXDC.DateAxExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.DateAxExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.DateAxExtension>())
+    var collection = new Collection<DMDC.DateAxExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.DateAxExtension>())
     {
-      var newItem = DMXDrawsCharts.DateAxExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.DateAxExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class DateAxExtensionListConverter
     return null;
   }
   
-  private static bool CmpDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpDateAxExtensions(DXDC.DateAxExtensionList openXmlElement, Collection<DMDC.DateAxExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.DateAxExtension>();
+    var origElements = openXmlElement.Elements<DXDC.DateAxExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class DateAxExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.DateAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DateAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class DateAxExtensionListConverter
     return false;
   }
   
-  private static void SetDateAxExtensions(DXDrawCharts.DateAxExtensionList openXmlElement, Collection<DMDrawsCharts.DateAxExtension>? value)
+  private static void SetDateAxExtensions(DXDC.DateAxExtensionList openXmlElement, Collection<DMDC.DateAxExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.DateAxExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.DateAxExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.DateAxExtensionConverter.CreateOpenXmlElement<DXDrawCharts.DateAxExtension>(item);
+        var newItem = DMXDC.DateAxExtensionConverter.CreateOpenXmlElement<DXDC.DateAxExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DateAxExtensionList? CreateModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DateAxExtensionList? CreateModelElement(DXDC.DateAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class DateAxExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DateAxExtensionList? openXmlElement, DMDrawsCharts.DateAxExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DateAxExtensionList? openXmlElement, DMDC.DateAxExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class DateAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DateAxExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.DateAxExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DateAxExtensionList value)
+    where OpenXmlElementType: DXDC.DateAxExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DateAxExtensionList openXmlElement, DMDrawsCharts.DateAxExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.DateAxExtensionList openXmlElement, DMDC.DateAxExtensionList value)
   {
     SetDateAxExtensions(openXmlElement, value?.DateAxExtensions);
   }

@@ -8,53 +8,53 @@ public static class GeographyConverter
   /// <summary>
   /// projectionType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DMDrawsChartDraws.GeoProjectionType? GetProjectionType(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static DMDCDs.GeoProjectionType? GetProjectionType(DXO16DCD.Geography openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDrawsChartDraws.GeoProjectionType>(openXmlElement?.ProjectionType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(openXmlElement?.ProjectionType?.Value);
   }
   
-  private static bool CmpProjectionType(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoProjectionType? value, DiffList? diffs, string? objName)
+  private static bool CmpProjectionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoProjectionType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDrawsChartDraws.GeoProjectionType>(openXmlElement?.ProjectionType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(openXmlElement?.ProjectionType?.Value, value, diffs, objName);
   }
   
-  private static void SetProjectionType(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoProjectionType? value)
+  private static void SetProjectionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoProjectionType? value)
   {
-    openXmlElement.ProjectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDrawsChartDraws.GeoProjectionType>(value);
+    openXmlElement.ProjectionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType, DMDCDs.GeoProjectionType>(value);
   }
   
   /// <summary>
   /// viewedRegionType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DMDrawsChartDraws.GeoMappingLevel? GetViewedRegionType(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static DMDCDs.GeoMappingLevel? GetViewedRegionType(DXO16DCD.Geography openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDrawsChartDraws.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value);
   }
   
-  private static bool CmpViewedRegionType(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoMappingLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpViewedRegionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoMappingLevel? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDrawsChartDraws.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(openXmlElement?.ViewedRegionType?.Value, value, diffs, objName);
   }
   
-  private static void SetViewedRegionType(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoMappingLevel? value)
+  private static void SetViewedRegionType(DXO16DCD.Geography openXmlElement, DMDCDs.GeoMappingLevel? value)
   {
-    openXmlElement.ViewedRegionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDrawsChartDraws.GeoMappingLevel>(value);
+    openXmlElement.ViewedRegionType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel, DMDCDs.GeoMappingLevel>(value);
   }
   
   /// <summary>
   /// cultureLanguage, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static String? GetCultureLanguage(DXO16DCD.Geography openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.CultureLanguage);
   }
   
-  private static bool CmpCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCultureLanguage(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CultureLanguage, value, diffs, objName, "CultureLanguage");
   }
   
-  private static void SetCultureLanguage(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
+  private static void SetCultureLanguage(DXO16DCD.Geography openXmlElement, String? value)
   {
     openXmlElement.CultureLanguage = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class GeographyConverter
   /// <summary>
   /// cultureRegion, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static String? GetCultureRegion(DXO16DCD.Geography openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.CultureRegion);
   }
   
-  private static bool CmpCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCultureRegion(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CultureRegion, value, diffs, objName, "CultureRegion");
   }
   
-  private static void SetCultureRegion(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
+  private static void SetCultureRegion(DXO16DCD.Geography openXmlElement, String? value)
   {
     openXmlElement.CultureRegion = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class GeographyConverter
   /// <summary>
   /// attribution, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetAttribution(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static String? GetAttribution(DXO16DCD.Geography openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Attribution);
   }
   
-  private static bool CmpAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAttribution(DXO16DCD.Geography openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Attribution, value, diffs, objName, "Attribution");
   }
   
-  private static void SetAttribution(DXO2016DrawChartDraw.Geography openXmlElement, String? value)
+  private static void SetAttribution(DXO16DCD.Geography openXmlElement, String? value)
   {
     openXmlElement.Attribution = StringValueConverter.CreateStringValue(value);
   }
@@ -98,33 +98,33 @@ public static class GeographyConverter
   /// <summary>
   /// GeoCache.
   /// </summary>
-  private static DMDrawsChartDraws.GeoCache? GetGeoCache(DXO2016DrawChartDraw.Geography openXmlElement)
+  private static DMDCDs.GeoCache? GetGeoCache(DXO16DCD.Geography openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoCache>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoCache>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoCacheConverter.CreateModelElement(element);
+      return DMXDCDs.GeoCacheConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoCache(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoCache? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoCache(DXO16DCD.Geography openXmlElement, DMDCDs.GeoCache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoCache>(), value, diffs, objName);
+    return DMXDCDs.GeoCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoCache>(), value, diffs, objName);
   }
   
-  private static void SetGeoCache(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.GeoCache? value)
+  private static void SetGeoCache(DXO16DCD.Geography openXmlElement, DMDCDs.GeoCache? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoCache>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoCache>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoCacheConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoCache>(value);
+      itemElement = DMXDCDs.GeoCacheConverter.CreateOpenXmlElement<DXO16DCD.GeoCache>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(DXO2016DrawChartDraw.Geography? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Geography? CreateModelElement(DXO16DCD.Geography? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -140,7 +140,7 @@ public static class GeographyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Geography? openXmlElement, DMDrawsChartDraws.Geography? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Geography? openXmlElement, DMDCDs.Geography? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -164,15 +164,15 @@ public static class GeographyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Geography value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Geography, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Geography value)
+    where OpenXmlElementType: DXO16DCD.Geography, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Geography openXmlElement, DMDrawsChartDraws.Geography value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Geography openXmlElement, DMDCDs.Geography value)
   {
     SetProjectionType(openXmlElement, value?.ProjectionType);
     SetViewedRegionType(openXmlElement, value?.ViewedRegionType);

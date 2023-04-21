@@ -8,17 +8,17 @@ public static class ColorsDefinitionConverter
   /// <summary>
   /// Unique ID
   /// </summary>
-  private static String? GetUniqueId(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static String? GetUniqueId(DXDD.ColorsDefinition openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.UniqueId);
   }
   
-  private static bool CmpUniqueId(DXDrawDgms.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUniqueId(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UniqueId, value, diffs, objName, "UniqueId");
   }
   
-  private static void SetUniqueId(DXDrawDgms.ColorsDefinition openXmlElement, String? value)
+  private static void SetUniqueId(DXDD.ColorsDefinition openXmlElement, String? value)
   {
     openXmlElement.UniqueId = StringValueConverter.CreateStringValue(value);
   }
@@ -26,27 +26,27 @@ public static class ColorsDefinitionConverter
   /// <summary>
   /// Minimum Version
   /// </summary>
-  private static String? GetMinVersion(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static String? GetMinVersion(DXDD.ColorsDefinition openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MinVersion);
   }
   
-  private static bool CmpMinVersion(DXDrawDgms.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinVersion(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinVersion, value, diffs, objName, "MinVersion");
   }
   
-  private static void SetMinVersion(DXDrawDgms.ColorsDefinition openXmlElement, String? value)
+  private static void SetMinVersion(DXDD.ColorsDefinition openXmlElement, String? value)
   {
     openXmlElement.MinVersion = StringValueConverter.CreateStringValue(value);
   }
   
-  private static Collection<DMDrawsDgms.ColorDefinitionTitle>? GetColorDefinitionTitles(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static Collection<DMDD.ColorDefinitionTitle>? GetColorDefinitionTitles(DXDD.ColorsDefinition openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.ColorDefinitionTitle>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.ColorDefinitionTitle>())
+    var collection = new Collection<DMDD.ColorDefinitionTitle>();
+    foreach (var item in openXmlElement.Elements<DXDD.ColorDefinitionTitle>())
     {
-      var newItem = DMXDrawsDgms.ColorDefinitionTitleConverter.CreateModelElement(item);
+      var newItem = DMXDD.ColorDefinitionTitleConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -55,9 +55,9 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorDefinitionTitles(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorDefinitionTitle>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorDefinitionTitles(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorDefinitionTitle>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.ColorDefinitionTitle>();
+    var origElements = openXmlElement.Elements<DXDD.ColorDefinitionTitle>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -73,7 +73,7 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ColorDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -83,26 +83,26 @@ public static class ColorsDefinitionConverter
     return false;
   }
   
-  private static void SetColorDefinitionTitles(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorDefinitionTitle>? value)
+  private static void SetColorDefinitionTitles(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorDefinitionTitle>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.ColorDefinitionTitle>();
+    openXmlElement.RemoveAllChildren<DXDD.ColorDefinitionTitle>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ColorDefinitionTitleConverter.CreateOpenXmlElement<DXDrawDgms.ColorDefinitionTitle>(item);
+        var newItem = DMXDD.ColorDefinitionTitleConverter.CreateOpenXmlElement<DXDD.ColorDefinitionTitle>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static Collection<DMDrawsDgms.ColorTransformDescription>? GetColorTransformDescriptions(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static Collection<DMDD.ColorTransformDescription>? GetColorTransformDescriptions(DXDD.ColorsDefinition openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.ColorTransformDescription>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.ColorTransformDescription>())
+    var collection = new Collection<DMDD.ColorTransformDescription>();
+    foreach (var item in openXmlElement.Elements<DXDD.ColorTransformDescription>())
     {
-      var newItem = DMXDrawsDgms.ColorTransformDescriptionConverter.CreateModelElement(item);
+      var newItem = DMXDD.ColorTransformDescriptionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -111,9 +111,9 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorTransformDescriptions(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorTransformDescription>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformDescriptions(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformDescription>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.ColorTransformDescription>();
+    var origElements = openXmlElement.Elements<DXDD.ColorTransformDescription>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -129,7 +129,7 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ColorTransformDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorTransformDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -139,52 +139,52 @@ public static class ColorsDefinitionConverter
     return false;
   }
   
-  private static void SetColorTransformDescriptions(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorTransformDescription>? value)
+  private static void SetColorTransformDescriptions(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformDescription>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.ColorTransformDescription>();
+    openXmlElement.RemoveAllChildren<DXDD.ColorTransformDescription>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ColorTransformDescriptionConverter.CreateOpenXmlElement<DXDrawDgms.ColorTransformDescription>(item);
+        var newItem = DMXDD.ColorTransformDescriptionConverter.CreateOpenXmlElement<DXDD.ColorTransformDescription>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsDgms.ColorTransformCategories? GetColorTransformCategories(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static DMDD.ColorTransformCategories? GetColorTransformCategories(DXDD.ColorsDefinition openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ColorTransformCategories>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ColorTransformCategories>();
     if (element != null)
-      return DMXDrawsDgms.ColorTransformCategoriesConverter.CreateModelElement(element);
+      return DMXDD.ColorTransformCategoriesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorTransformCategories(DXDrawDgms.ColorsDefinition openXmlElement, DMDrawsDgms.ColorTransformCategories? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformCategories(DXDD.ColorsDefinition openXmlElement, DMDD.ColorTransformCategories? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ColorTransformCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ColorTransformCategories>(), value, diffs, objName);
+    return DMXDD.ColorTransformCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ColorTransformCategories>(), value, diffs, objName);
   }
   
-  private static void SetColorTransformCategories(DXDrawDgms.ColorsDefinition openXmlElement, DMDrawsDgms.ColorTransformCategories? value)
+  private static void SetColorTransformCategories(DXDD.ColorsDefinition openXmlElement, DMDD.ColorTransformCategories? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ColorTransformCategories>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ColorTransformCategories>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ColorTransformCategoriesConverter.CreateOpenXmlElement<DXDrawDgms.ColorTransformCategories>(value);
+      itemElement = DMXDD.ColorTransformCategoriesConverter.CreateOpenXmlElement<DXDD.ColorTransformCategories>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsDgms.ColorTransformStyleLabel>? GetColorTransformStyleLabels(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static Collection<DMDD.ColorTransformStyleLabel>? GetColorTransformStyleLabels(DXDD.ColorsDefinition openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.ColorTransformStyleLabel>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.ColorTransformStyleLabel>())
+    var collection = new Collection<DMDD.ColorTransformStyleLabel>();
+    foreach (var item in openXmlElement.Elements<DXDD.ColorTransformStyleLabel>())
     {
-      var newItem = DMXDrawsDgms.ColorTransformStyleLabelConverter.CreateModelElement(item);
+      var newItem = DMXDD.ColorTransformStyleLabelConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -193,9 +193,9 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorTransformStyleLabels(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorTransformStyleLabel>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformStyleLabels(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformStyleLabel>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.ColorTransformStyleLabel>();
+    var origElements = openXmlElement.Elements<DXDD.ColorTransformStyleLabel>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -211,7 +211,7 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.ColorTransformStyleLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorTransformStyleLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -221,47 +221,47 @@ public static class ColorsDefinitionConverter
     return false;
   }
   
-  private static void SetColorTransformStyleLabels(DXDrawDgms.ColorsDefinition openXmlElement, Collection<DMDrawsDgms.ColorTransformStyleLabel>? value)
+  private static void SetColorTransformStyleLabels(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformStyleLabel>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.ColorTransformStyleLabel>();
+    openXmlElement.RemoveAllChildren<DXDD.ColorTransformStyleLabel>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.ColorTransformStyleLabelConverter.CreateOpenXmlElement<DXDrawDgms.ColorTransformStyleLabel>(item);
+        var newItem = DMXDD.ColorTransformStyleLabelConverter.CreateOpenXmlElement<DXDD.ColorTransformStyleLabel>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.ColorsDefinition openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.ColorsDefinition openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.ColorsDefinition openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.ColorsDefinition openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.ColorsDefinition openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.ColorsDefinition openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.ColorsDefinition? CreateModelElement(DXDrawDgms.ColorsDefinition? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.ColorsDefinition? CreateModelElement(DXDD.ColorsDefinition? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -278,7 +278,7 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.ColorsDefinition? openXmlElement, DMDrawsDgms.ColorsDefinition? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ColorsDefinition? openXmlElement, DMDD.ColorsDefinition? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -304,15 +304,15 @@ public static class ColorsDefinitionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.ColorsDefinition value)
-    where OpenXmlElementType: DXDrawDgms.ColorsDefinition, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.ColorsDefinition value)
+    where OpenXmlElementType: DXDD.ColorsDefinition, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.ColorsDefinition openXmlElement, DMDrawsDgms.ColorsDefinition value)
+  public static void UpdateOpenXmlElement(DXDD.ColorsDefinition openXmlElement, DMDD.ColorsDefinition value)
   {
     SetUniqueId(openXmlElement, value?.UniqueId);
     SetMinVersion(openXmlElement, value?.MinVersion);

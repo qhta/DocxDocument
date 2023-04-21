@@ -8,150 +8,150 @@ public static class LineSketchStylePropertiesConverter
   /// <summary>
   /// sd, this property is only available in Office 2021 and later.
   /// </summary>
-  private static UInt32? GetSd(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static UInt32? GetSd(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
     return openXmlElement?.Sd?.Value;
   }
   
-  private static bool CmpSd(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSd(DXO21DSS.LineSketchStyleProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Sd?.Value == value) return true;
     diffs?.Add(objName, "Sd", openXmlElement?.Sd?.Value, value);
     return false;
   }
   
-  private static void SetSd(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, UInt32? value)
+  private static void SetSd(DXO21DSS.LineSketchStyleProperties openXmlElement, UInt32? value)
   {
     openXmlElement.Sd = value;
   }
   
-  private static DMDraws.CustomGeometry? GetCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static DMD.CustomGeometry? GetCustomGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.CustomGeometry>();
+    var element = openXmlElement?.GetFirstChild<DXD.CustomGeometry>();
     if (element != null)
-      return DMXDraws.CustomGeometryConverter.CreateModelElement(element);
+      return DMXD.CustomGeometryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.CustomGeometry? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.CustomGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.CustomGeometry>(), value, diffs, objName);
+    return DMXD.CustomGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomGeometry>(), value, diffs, objName);
   }
   
-  private static void SetCustomGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.CustomGeometry? value)
+  private static void SetCustomGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.CustomGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.CustomGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.CustomGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CustomGeometryConverter.CreateOpenXmlElement<DXDraw.CustomGeometry>(value);
+      itemElement = DMXD.CustomGeometryConverter.CreateOpenXmlElement<DXD.CustomGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PresetGeometry? GetPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static DMD.PresetGeometry? GetPresetGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetGeometry>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetGeometry>();
     if (element != null)
-      return DMXDraws.PresetGeometryConverter.CreateModelElement(element);
+      return DMXD.PresetGeometryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.PresetGeometry? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.PresetGeometry? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetGeometry>(), value, diffs, objName);
+    return DMXD.PresetGeometryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetGeometry>(), value, diffs, objName);
   }
   
-  private static void SetPresetGeometry(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.PresetGeometry? value)
+  private static void SetPresetGeometry(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.PresetGeometry? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetGeometry>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetGeometry>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetGeometryConverter.CreateOpenXmlElement<DXDraw.PresetGeometry>(value);
+      itemElement = DMXD.PresetGeometryConverter.CreateOpenXmlElement<DXD.PresetGeometry>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.LineSketchTypeProperties? GetLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static DMD.LineSketchTypeProperties? GetLineSketchTypeProperties(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DSS.LineSketchTypeProperties>();
     if (element != null)
-      return DMXDraws.LineSketchTypePropertiesConverter.CreateModelElement(element);
+      return DMXD.LineSketchTypePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchTypeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchTypeProperties(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.LineSketchTypeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LineSketchTypePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>(), value, diffs, objName);
+    return DMXD.LineSketchTypePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DSS.LineSketchTypeProperties>(), value, diffs, objName);
   }
   
-  private static void SetLineSketchTypeProperties(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchTypeProperties? value)
+  private static void SetLineSketchTypeProperties(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.LineSketchTypeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchTypeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DSS.LineSketchTypeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DXO2021DrawSketchyShps.LineSketchTypeProperties>(value);
+      itemElement = DMXD.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DXO21DSS.LineSketchTypeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static String? GetLineSketchSeed(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static String? GetLineSketchSeed(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchSeed>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO21DSS.LineSketchSeed>()?.Text;
   }
   
-  private static bool CmpLineSketchSeed(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchSeed(DXO21DSS.LineSketchStyleProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.LineSketchSeed>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO21DSS.LineSketchSeed>()?.Text == value;
   }
   
-  private static void SetLineSketchSeed(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, String? value)
+  private static void SetLineSketchSeed(DXO21DSS.LineSketchStyleProperties openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.LineSketchSeed>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DSS.LineSketchSeed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2021DrawSketchyShps.LineSketchSeed { Text = value };
+      itemElement = new DXO21DSS.LineSketchSeed { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.OfficeArtExtensionList6? GetOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement)
+  private static DMD.OfficeArtExtensionList6? GetOfficeArtExtensionList(DXO21DSS.LineSketchStyleProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DSS.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDraws.OfficeArtExtensionList6Converter.CreateModelElement(element);
+      return DMXD.OfficeArtExtensionList6Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.OfficeArtExtensionList6? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.OfficeArtExtensionList6? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionList6Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionList6Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DSS.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.OfficeArtExtensionList6? value)
+  private static void SetOfficeArtExtensionList(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.OfficeArtExtensionList6? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawSketchyShps.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DSS.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DXO2021DrawSketchyShps.OfficeArtExtensionList>(value);
+      itemElement = DMXD.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DXO21DSS.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(DXO2021DrawSketchyShps.LineSketchStyleProperties? openXmlElement)
+  public static DocumentModel.Drawings.LineSketchStyleProperties? CreateModelElement(DXO21DSS.LineSketchStyleProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -167,7 +167,7 @@ public static class LineSketchStylePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawSketchyShps.LineSketchStyleProperties? openXmlElement, DMDraws.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DSS.LineSketchStyleProperties? openXmlElement, DMD.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -191,15 +191,15 @@ public static class LineSketchStylePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineSketchStyleProperties value)
-    where OpenXmlElementType: DXO2021DrawSketchyShps.LineSketchStyleProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LineSketchStyleProperties value)
+    where OpenXmlElementType: DXO21DSS.LineSketchStyleProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawSketchyShps.LineSketchStyleProperties openXmlElement, DMDraws.LineSketchStyleProperties value)
+  public static void UpdateOpenXmlElement(DXO21DSS.LineSketchStyleProperties openXmlElement, DMD.LineSketchStyleProperties value)
   {
     SetSd(openXmlElement, value?.Sd);
     SetCustomGeometry(openXmlElement, value?.CustomGeometry);

@@ -8,24 +8,24 @@ public static class FlatTextConverter
   /// <summary>
   /// Z Coordinate
   /// </summary>
-  private static Int64? GetZ(DXDraw.FlatText openXmlElement)
+  private static Int64? GetZ(DXD.FlatText openXmlElement)
   {
     return openXmlElement?.Z?.Value;
   }
   
-  private static bool CmpZ(DXDraw.FlatText openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpZ(DXD.FlatText openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Z?.Value == value) return true;
     diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
     return false;
   }
   
-  private static void SetZ(DXDraw.FlatText openXmlElement, Int64? value)
+  private static void SetZ(DXD.FlatText openXmlElement, Int64? value)
   {
     openXmlElement.Z = value;
   }
   
-  public static DocumentModel.Drawings.FlatText? CreateModelElement(DXDraw.FlatText? openXmlElement)
+  public static DocumentModel.Drawings.FlatText? CreateModelElement(DXD.FlatText? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class FlatTextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.FlatText? openXmlElement, DMDraws.FlatText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FlatText? openXmlElement, DMD.FlatText? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class FlatTextConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.FlatText value)
-    where OpenXmlElementType: DXDraw.FlatText, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.FlatText value)
+    where OpenXmlElementType: DXD.FlatText, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.FlatText openXmlElement, DMDraws.FlatText value)
+  public static void UpdateOpenXmlElement(DXD.FlatText openXmlElement, DMD.FlatText value)
   {
     SetZ(openXmlElement, value?.Z);
   }

@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class CopyrightsConverter
 {
-  private static Collection<String>? GetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement)
+  private static Collection<String>? GetCopyrightXsdstrings(DXO16DCD.Copyrights openXmlElement)
   {
     var collection = new Collection<String>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.CopyrightXsdstring>())
+    foreach (var item in openXmlElement.Elements<DXO16DCD.CopyrightXsdstring>())
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class CopyrightsConverter
     return null;
   }
   
-  private static bool CmpCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
+  private static bool CmpCopyrightXsdstrings(DXO16DCD.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.CopyrightXsdstring>();
+    var origElements = openXmlElement.Elements<DXO16DCD.CopyrightXsdstring>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class CopyrightsConverter
     return false;
   }
   
-  private static void SetCopyrightXsdstrings(DXO2016DrawChartDraw.Copyrights openXmlElement, Collection<String>? value)
+  private static void SetCopyrightXsdstrings(DXO16DCD.Copyrights openXmlElement, Collection<String>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.CopyrightXsdstring>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.CopyrightXsdstring>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = StringValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.CopyrightXsdstring>(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DXO16DCD.CopyrightXsdstring>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Copyrights? CreateModelElement(DXO16DCD.Copyrights? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CopyrightsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Copyrights? openXmlElement, DMDrawsChartDraws.Copyrights? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Copyrights? openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CopyrightsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Copyrights value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Copyrights, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Copyrights value)
+    where OpenXmlElementType: DXO16DCD.Copyrights, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Copyrights openXmlElement, DMDrawsChartDraws.Copyrights value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Copyrights openXmlElement, DMDCDs.Copyrights value)
   {
     SetCopyrightXsdstrings(openXmlElement, value?.CopyrightXsdstrings);
   }

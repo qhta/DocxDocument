@@ -8,40 +8,40 @@ public static class GeoDataEntityQueryConverter
   /// <summary>
   /// entityType, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DMDrawsChartDraws.EntityTypeEnum? GetEntityType(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement)
+  private static DMDCDs.EntityTypeEnum? GetEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static bool CmpEntityType(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.EntityTypeEnum? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName);
   }
   
-  private static void SetEntityType(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement, DMDrawsChartDraws.EntityTypeEnum? value)
+  private static void SetEntityType(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.EntityTypeEnum? value)
   {
-    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDrawsChartDraws.EntityTypeEnum>(value);
+    openXmlElement.EntityType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(value);
   }
   
   /// <summary>
   /// entityId, this property is only available in Office 2016 and later.
   /// </summary>
-  private static String? GetEntityId(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement)
+  private static String? GetEntityId(DXO16DCD.GeoDataEntityQuery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoDataEntityQuery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
   
-  private static void SetEntityId(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement, String? value)
+  private static void SetEntityId(DXO16DCD.GeoDataEntityQuery openXmlElement, String? value)
   {
     openXmlElement.EntityId = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? CreateModelElement(DXO2016DrawChartDraw.GeoDataEntityQuery? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoDataEntityQuery? CreateModelElement(DXO16DCD.GeoDataEntityQuery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class GeoDataEntityQueryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoDataEntityQuery? openXmlElement, DMDrawsChartDraws.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoDataEntityQuery? openXmlElement, DMDCDs.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class GeoDataEntityQueryConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoDataEntityQuery value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoDataEntityQuery, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoDataEntityQuery value)
+    where OpenXmlElementType: DXO16DCD.GeoDataEntityQuery, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoDataEntityQuery openXmlElement, DMDrawsChartDraws.GeoDataEntityQuery value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoDataEntityQuery openXmlElement, DMDCDs.GeoDataEntityQuery value)
   {
     SetEntityType(openXmlElement, value?.EntityType);
     SetEntityId(openXmlElement, value?.EntityId);
