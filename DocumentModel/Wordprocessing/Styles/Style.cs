@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Style Definition.
 /// </summary>
-public partial class Style : IEquatable<Style>
+public partial class Style : ModelElement, IEquatable<Style>
 {
   /// <summary>
   ///   Style Type

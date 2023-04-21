@@ -1,8 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Write Protection.
+///   This element specifies the write protection settings which have been applied to a WordprocessingML document.
+///   Write protection refers to a mode in which the document's contents cannot be edited, and the document cannot
+///   be resaved using the same file name. This setting is independent of the documentProtection (§17.15.1.29)
+///  element, but like document protection, this setting is not intended as a security feature and can be ignored.
 /// </summary>
 public class WriteProtection: ModelElement
 {
@@ -72,7 +74,8 @@ public class WriteProtection: ModelElement
   public Base64Binary? Salt { get; set; }
 
   /// <summary>
-  ///   algorithmName, this property is only available in Office 2010 and later.
+  ///   Specifies the specific cryptographic hashing algorithm which shall be used along with the
+  ///   salt attribute and input password in order to compute the hash value.
   /// </summary>
   public string? AlgorithmName { get; set; }
 
