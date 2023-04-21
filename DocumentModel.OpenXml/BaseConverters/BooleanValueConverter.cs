@@ -153,6 +153,72 @@ public static class BooleanValueConverter
   }
   #endregion
 
+  #region Office2010 OnOffValues conversion.
+  public static Boolean? GetValue(DX.EnumValue<DXO2010W.OnOffValues>? openXmlElement)
+  {
+    if (openXmlElement?.Value != null)
+    {
+      switch (openXmlElement.Value)
+      {
+        case DXO2010W.OnOffValues.True:
+        case DXO2010W.OnOffValues.One:
+          return true;
+        case DXO2010W.OnOffValues.False:
+        case DXO2010W.OnOffValues.Zero:
+          return false;
+      }
+    }
+    return null;
+  }
+
+  public static Boolean CmpValue(DX.EnumValue<DXO2010W.OnOffValues>? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
+  {
+    if (openXmlElement?.Value != null && value != null)
+    {
+      switch (openXmlElement.Value)
+      {
+        case DXO2010W.OnOffValues.True:
+        case DXO2010W.OnOffValues.One:
+          return value == true;
+        case DXO2010W.OnOffValues.False:
+        case DXO2010W.OnOffValues.Zero:
+          return value == false;
+      }
+    }
+    if (openXmlElement?.Value == null && value == null)
+      return true;
+    if (openXmlElement != null && value == true)
+      return true;
+    if (openXmlElement == null && value == false)
+      return true;
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Value, value);
+    return false;
+  }
+
+  //public static void UpdateOpenXmlElement<ElementType>(ElementType openXmlElement, Boolean value)
+  //  where ElementType : DX.OpenXmlElement, new()
+  //{
+  //  var valueProp = typeof(ElementType).GetProperty("Value");
+  //  if (valueProp != null)
+  //    valueProp.SetValue(openXmlElement, value == true);
+  //  else
+  //    throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+  //}
+
+  //public static ElementType CreateOpenXmlElement<ElementType>(Boolean value)
+  //where ElementType : DX.OpenXmlElement, new()
+  //{
+  //  var openXmlElement = new ElementType();
+  //  var valueProp = typeof(ElementType).GetProperty("Value");
+  //  if (valueProp != null)
+  //    valueProp.SetValue(openXmlElement, value == true);
+  //  else
+  //    throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+  //  return openXmlElement;
+  //}
+  #endregion
+
+
   #region Math BooleanValues conversion.
   public static Boolean? GetValue(DX.EnumValue<DXM.BooleanValues>? openXmlElement)
   {

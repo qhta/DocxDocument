@@ -16,8 +16,5 @@ public partial class Styles
   /// </summary>
   public LatentStyles? LatentStyles { get; set; }
 
-  /// <summary>
-  /// Defines Styles.
-  /// </summary>
-  public DefinedStyles DefinedStyles { get; set; } = new DefinedStyles();
+
 }

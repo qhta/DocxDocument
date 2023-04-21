@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 
 namespace DocumentModel.Wordprocessing;
@@ -9,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines Styles.
 /// </summary>
-public partial class DefinedStyles : ObservableCollection<Style>//, IDictionary<string, Style>
+public partial class DefinedStyles : ElementCollection<Style>
 {
   private readonly SortedDictionary<string, Style> _StyleIds = null!;
 

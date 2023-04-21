@@ -27,19 +27,26 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   public StatisticProperties? StatisticProperties { get; set; }
 
   /// <summary>
-  /// Collection of document settings, which represents Word document settings.
+  /// Collection of document settings, which represent Word document settings.
   /// </summary>
   [XmlIgnore]
   public DocumentSettings? DocumentSettings { get; set; }
 
+  /// <summary>
+  /// Collection of web settings, which affect HTML generation.
+  /// </summary>
   [XmlIgnore]
   public WebSettings? WebSettings { get; set; }
 
+  /// <summary>
+  /// Collection of custom-defined document properties.
+  /// </summary>
   [XmlIgnore]
   public CustomProperties? CustomProperties { get; set; }
 
 
 
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
     if (CoreProperties != null)

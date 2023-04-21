@@ -802,9 +802,9 @@ public static class DocumentSettingsConverter
     SimpleValueConverter.SetValue<DXW.ConsecutiveHyphenLimit,System.UInt16>(openXmlElement, value);
   }
   
-  private static String? GetHyphenationZone(DXW.Settings openXmlElement)
+  private static Int32? GetHyphenationZone(DXW.Settings openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.HyphenationZone>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.HyphenationZone>()?.Val);
   }
   
   private static bool CmpHyphenationZone(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
@@ -952,62 +952,62 @@ public static class DocumentSettingsConverter
     SimpleValueConverter.SetValue<DXW.BookFoldPrintingSheets,System.Int16>(openXmlElement, value);
   }
   
-  private static String? GetDrawingGridHorizontalSpacing(DXW.Settings openXmlElement)
+  private static Twips? GetDrawingGridHorizontalSpacing(DXW.Settings openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalSpacing>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalSpacing>()?.Val);
   }
   
-  private static bool CmpDrawingGridHorizontalSpacing(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawingGridHorizontalSpacing(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalSpacing>()?.Val, value, diffs, objName, "DrawingGridHorizontalSpacing");
   }
   
-  private static void SetDrawingGridHorizontalSpacing(DXW.Settings openXmlElement, String? value)
+  private static void SetDrawingGridHorizontalSpacing(DXW.Settings openXmlElement, Twips? value)
   {
     StringValueConverter.SetValue<DXW.DrawingGridHorizontalSpacing>(openXmlElement, value);
   }
   
-  private static String? GetDrawingGridVerticalSpacing(DXW.Settings openXmlElement)
+  private static Twips? GetDrawingGridVerticalSpacing(DXW.Settings openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalSpacing>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalSpacing>()?.Val);
   }
   
-  private static bool CmpDrawingGridVerticalSpacing(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawingGridVerticalSpacing(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalSpacing>()?.Val, value, diffs, objName, "DrawingGridVerticalSpacing");
   }
   
-  private static void SetDrawingGridVerticalSpacing(DXW.Settings openXmlElement, String? value)
+  private static void SetDrawingGridVerticalSpacing(DXW.Settings openXmlElement, Twips? value)
   {
     StringValueConverter.SetValue<DXW.DrawingGridVerticalSpacing>(openXmlElement, value);
   }
   
-  private static Int32? GetDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement)
+  private static Twips? GetDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DisplayHorizontalDrawingGrid>()?.Val);
   }
   
-  private static bool CmpDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DisplayHorizontalDrawingGrid>()?.Val, value, diffs, objName, "DisplayHorizontalDrawingGrid");
   }
   
-  private static void SetDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement, Int32? value)
+  private static void SetDisplayHorizontalDrawingGrid(DXW.Settings openXmlElement, Twips? value)
   {
     SimpleValueConverter.SetValue<DXW.DisplayHorizontalDrawingGrid,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetDisplayVerticalDrawingGrid(DXW.Settings openXmlElement)
+  private static Twips? GetDisplayVerticalDrawingGrid(DXW.Settings openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DisplayVerticalDrawingGrid>()?.Val);
   }
   
-  private static bool CmpDisplayVerticalDrawingGrid(DXW.Settings openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayVerticalDrawingGrid(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DisplayVerticalDrawingGrid>()?.Val, value, diffs, objName, "DisplayVerticalDrawingGrid");
   }
   
-  private static void SetDisplayVerticalDrawingGrid(DXW.Settings openXmlElement, Int32? value)
+  private static void SetDisplayVerticalDrawingGrid(DXW.Settings openXmlElement, Twips? value)
   {
     SimpleValueConverter.SetValue<DXW.DisplayVerticalDrawingGrid,System.Int32>(openXmlElement, value);
   }
@@ -1027,32 +1027,32 @@ public static class DocumentSettingsConverter
     BooleanValueConverter.SetOnOffType<DXW.DoNotUseMarginsForDrawingGridOrigin>(openXmlElement, value);
   }
   
-  private static String? GetDrawingGridHorizontalOrigin(DXW.Settings openXmlElement)
+  private static Twips? GetDrawingGridHorizontalOrigin(DXW.Settings openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalOrigin>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalOrigin>()?.Val);
   }
   
-  private static bool CmpDrawingGridHorizontalOrigin(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawingGridHorizontalOrigin(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DrawingGridHorizontalOrigin>()?.Val, value, diffs, objName, "DrawingGridHorizontalOrigin");
   }
   
-  private static void SetDrawingGridHorizontalOrigin(DXW.Settings openXmlElement, String? value)
+  private static void SetDrawingGridHorizontalOrigin(DXW.Settings openXmlElement, Twips? value)
   {
     StringValueConverter.SetValue<DXW.DrawingGridHorizontalOrigin>(openXmlElement, value);
   }
   
-  private static String? GetDrawingGridVerticalOrigin(DXW.Settings openXmlElement)
+  private static Twips? GetDrawingGridVerticalOrigin(DXW.Settings openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalOrigin>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalOrigin>()?.Val);
   }
   
-  private static bool CmpDrawingGridVerticalOrigin(DXW.Settings openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawingGridVerticalOrigin(DXW.Settings openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DrawingGridVerticalOrigin>()?.Val, value, diffs, objName, "DrawingGridVerticalOrigin");
   }
   
-  private static void SetDrawingGridVerticalOrigin(DXW.Settings openXmlElement, String? value)
+  private static void SetDrawingGridVerticalOrigin(DXW.Settings openXmlElement, Twips? value)
   {
     StringValueConverter.SetValue<DXW.DrawingGridVerticalOrigin>(openXmlElement, value);
   }
@@ -1919,29 +1919,29 @@ public static class DocumentSettingsConverter
     HexIntConverter.SetValue<DXO2010W.DocumentId>(openXmlElement, value);
   }
   
-  private static DMW.OnOffKind? GetDiscardImageEditingData(DXW.Settings openXmlElement)
+  private static bool? GetDiscardImageEditingData(DXW.Settings openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value);
   }
   
-  private static bool CmpDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDiscardImageEditingData(DXW.Settings openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetDiscardImageEditingData(DXW.Settings openXmlElement, DMW.OnOffKind? value)
+  private static void SetDiscardImageEditingData(DXW.Settings openXmlElement, bool? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.DiscardImageEditingData>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(itemElement, (DMW.OnOffKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2010W.DiscardImageEditingData, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO2010W.DiscardImageEditingData>((bool)value));
   }
   
   private static Int32? GetDefaultImageDpi(DXW.Settings openXmlElement)
@@ -1959,29 +1959,29 @@ public static class DocumentSettingsConverter
     SimpleValueConverter.SetValue<DXO2010W.DefaultImageDpi,System.Int32>(openXmlElement, value);
   }
   
-  private static DMW.OnOffKind? GetConflictMode(DXW.Settings openXmlElement)
+  private static bool? GetConflictMode(DXW.Settings openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value);
   }
   
-  private static bool CmpConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpConflictMode(DXW.Settings openXmlElement, bool? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXO2010W.ConflictMode>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetConflictMode(DXW.Settings openXmlElement, DMW.OnOffKind? value)
+  private static void SetConflictMode(DXW.Settings openXmlElement, bool? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO2010W.ConflictMode>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(itemElement, (DMW.OnOffKind)value);
+        BooleanValueConverter.UpdateOpenXmlElement<DXO2010W.ConflictMode>(itemElement, (bool)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO2010W.ConflictMode, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXO2010W.ConflictMode>((bool)value));
   }
   
   private static Boolean? GetChartTrackingRefBased(DXW.Settings openXmlElement)
