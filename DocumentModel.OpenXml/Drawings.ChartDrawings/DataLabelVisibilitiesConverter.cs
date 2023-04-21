@@ -8,19 +8,19 @@ public static class DataLabelVisibilitiesConverter
   /// <summary>
   /// seriesName, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement)
+  private static Boolean? GetSeriesName(DXO16DCD.DataLabelVisibilities openXmlElement)
   {
     return openXmlElement?.SeriesName?.Value;
   }
   
-  private static bool CmpSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SeriesName?.Value == value) return true;
     diffs?.Add(objName, "SeriesName", openXmlElement?.SeriesName?.Value, value);
     return false;
   }
   
-  private static void SetSeriesName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
+  private static void SetSeriesName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SeriesName = new BooleanValue { Value = (Boolean)value };
@@ -31,19 +31,19 @@ public static class DataLabelVisibilitiesConverter
   /// <summary>
   /// categoryName, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement)
+  private static Boolean? GetCategoryName(DXO16DCD.DataLabelVisibilities openXmlElement)
   {
     return openXmlElement?.CategoryName?.Value;
   }
   
-  private static bool CmpCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CategoryName?.Value == value) return true;
     diffs?.Add(objName, "CategoryName", openXmlElement?.CategoryName?.Value, value);
     return false;
   }
   
-  private static void SetCategoryName(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
+  private static void SetCategoryName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.CategoryName = new BooleanValue { Value = (Boolean)value };
@@ -54,19 +54,19 @@ public static class DataLabelVisibilitiesConverter
   /// <summary>
   /// value, this property is only available in Office 2016 and later.
   /// </summary>
-  private static Boolean? GetValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement)
+  private static Boolean? GetValue(DXO16DCD.DataLabelVisibilities openXmlElement)
   {
     return openXmlElement?.Value?.Value;
   }
   
-  private static bool CmpValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpValue(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Value?.Value == value) return true;
     diffs?.Add(objName, "Type", openXmlElement?.Value?.Value, value);
     return false;
   }
   
-  private static void SetValue(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, Boolean? value)
+  private static void SetValue(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Value = new BooleanValue { Value = (Boolean)value };
@@ -74,7 +74,7 @@ public static class DataLabelVisibilitiesConverter
       openXmlElement.Value = null;
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? CreateModelElement(DXO2016DrawChartDraw.DataLabelVisibilities? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.DataLabelVisibilities? CreateModelElement(DXO16DCD.DataLabelVisibilities? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -87,7 +87,7 @@ public static class DataLabelVisibilitiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.DataLabelVisibilities? openXmlElement, DMDrawsChartDraws.DataLabelVisibilities? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.DataLabelVisibilities? openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -105,15 +105,15 @@ public static class DataLabelVisibilitiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabelVisibilities value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.DataLabelVisibilities, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.DataLabelVisibilities value)
+    where OpenXmlElementType: DXO16DCD.DataLabelVisibilities, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabelVisibilities openXmlElement, DMDrawsChartDraws.DataLabelVisibilities value)
+  public static void UpdateOpenXmlElement(DXO16DCD.DataLabelVisibilities openXmlElement, DMDCDs.DataLabelVisibilities value)
   {
     SetSeriesName(openXmlElement, value?.SeriesName);
     SetCategoryName(openXmlElement, value?.CategoryName);

@@ -8,33 +8,33 @@ public static class DialogBoxLauncherConverter
   /// <summary>
   /// ButtonRegular.
   /// </summary>
-  private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement)
+  private static DM.ButtonRegular? GetButtonRegular(DXO10CUI.DialogBoxLauncher openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.ButtonRegular>();
     if (element != null)
       return DMX.ButtonRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpButtonRegular(DXO10CUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName);
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>(), value, diffs, objName);
   }
   
-  private static void SetButtonRegular(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value)
+  private static void SetButtonRegular(DXO10CUI.DialogBoxLauncher openXmlElement, DM.ButtonRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO2010CustUI.ButtonRegular>(value);
+      itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ButtonRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.DialogBoxLauncher? CreateModelElement(DXO2010CustUI.DialogBoxLauncher? openXmlElement)
+  public static DocumentModel.DialogBoxLauncher? CreateModelElement(DXO10CUI.DialogBoxLauncher? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class DialogBoxLauncherConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.DialogBoxLauncher? openXmlElement, DM.DialogBoxLauncher? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.DialogBoxLauncher? openXmlElement, DM.DialogBoxLauncher? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -60,14 +60,14 @@ public static class DialogBoxLauncherConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.DialogBoxLauncher value)
-    where OpenXmlElementType: DXO2010CustUI.DialogBoxLauncher, new()
+    where OpenXmlElementType: DXO10CUI.DialogBoxLauncher, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.DialogBoxLauncher openXmlElement, DM.DialogBoxLauncher value)
+  public static void UpdateOpenXmlElement(DXO10CUI.DialogBoxLauncher openXmlElement, DM.DialogBoxLauncher value)
   {
     SetButtonRegular(openXmlElement, value?.ButtonRegular);
   }

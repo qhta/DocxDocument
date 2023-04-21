@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class ValAxExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.ValAxExtension>? GetValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement)
+  private static Collection<DMDC.ValAxExtension>? GetValAxExtensions(DXDC.ValAxExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.ValAxExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.ValAxExtension>())
+    var collection = new Collection<DMDC.ValAxExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.ValAxExtension>())
     {
-      var newItem = DMXDrawsCharts.ValAxExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.ValAxExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ValAxExtensionListConverter
     return null;
   }
   
-  private static bool CmpValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement, Collection<DMDrawsCharts.ValAxExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpValAxExtensions(DXDC.ValAxExtensionList openXmlElement, Collection<DMDC.ValAxExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.ValAxExtension>();
+    var origElements = openXmlElement.Elements<DXDC.ValAxExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ValAxExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.ValAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.ValAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ValAxExtensionListConverter
     return false;
   }
   
-  private static void SetValAxExtensions(DXDrawCharts.ValAxExtensionList openXmlElement, Collection<DMDrawsCharts.ValAxExtension>? value)
+  private static void SetValAxExtensions(DXDC.ValAxExtensionList openXmlElement, Collection<DMDC.ValAxExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.ValAxExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.ValAxExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.ValAxExtensionConverter.CreateOpenXmlElement<DXDrawCharts.ValAxExtension>(item);
+        var newItem = DMXDC.ValAxExtensionConverter.CreateOpenXmlElement<DXDC.ValAxExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(DXDrawCharts.ValAxExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ValAxExtensionList? CreateModelElement(DXDC.ValAxExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ValAxExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ValAxExtensionList? openXmlElement, DMDrawsCharts.ValAxExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ValAxExtensionList? openXmlElement, DMDC.ValAxExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ValAxExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ValAxExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.ValAxExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ValAxExtensionList value)
+    where OpenXmlElementType: DXDC.ValAxExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ValAxExtensionList openXmlElement, DMDrawsCharts.ValAxExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.ValAxExtensionList openXmlElement, DMDC.ValAxExtensionList value)
   {
     SetValAxExtensions(openXmlElement, value?.ValAxExtensions);
   }

@@ -8,17 +8,17 @@ public static class LayoutNodeConverter
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DXDrawDgms.LayoutNode openXmlElement)
+  private static String? GetName(DXDD.LayoutNode openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXDD.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDrawDgms.LayoutNode openXmlElement, String? value)
+  private static void SetName(DXDD.LayoutNode openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class LayoutNodeConverter
   /// <summary>
   /// Style Label
   /// </summary>
-  private static String? GetStyleLabel(DXDrawDgms.LayoutNode openXmlElement)
+  private static String? GetStyleLabel(DXDD.LayoutNode openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.StyleLabel);
   }
   
-  private static bool CmpStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleLabel(DXDD.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StyleLabel, value, diffs, objName, "StyleLabel");
   }
   
-  private static void SetStyleLabel(DXDrawDgms.LayoutNode openXmlElement, String? value)
+  private static void SetStyleLabel(DXDD.LayoutNode openXmlElement, String? value)
   {
     openXmlElement.StyleLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -44,300 +44,300 @@ public static class LayoutNodeConverter
   /// <summary>
   /// Child Order
   /// </summary>
-  private static DMDrawsDgms.ChildOrderKind? GetChildOrder(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.ChildOrderKind? GetChildOrder(DXDD.LayoutNode openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDrawsDgms.ChildOrderKind>(openXmlElement?.ChildOrder?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDD.ChildOrderKind>(openXmlElement?.ChildOrder?.Value);
   }
   
-  private static bool CmpChildOrder(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ChildOrderKind? value, DiffList? diffs, string? objName)
+  private static bool CmpChildOrder(DXDD.LayoutNode openXmlElement, DMDD.ChildOrderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDrawsDgms.ChildOrderKind>(openXmlElement?.ChildOrder?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDD.ChildOrderKind>(openXmlElement?.ChildOrder?.Value, value, diffs, objName);
   }
   
-  private static void SetChildOrder(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ChildOrderKind? value)
+  private static void SetChildOrder(DXDD.LayoutNode openXmlElement, DMDD.ChildOrderKind? value)
   {
-    openXmlElement.ChildOrder = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDrawsDgms.ChildOrderKind>(value);
+    openXmlElement.ChildOrder = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues, DMDD.ChildOrderKind>(value);
   }
   
   /// <summary>
   /// Move With
   /// </summary>
-  private static String? GetMoveWith(DXDrawDgms.LayoutNode openXmlElement)
+  private static String? GetMoveWith(DXDD.LayoutNode openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.MoveWith);
   }
   
-  private static bool CmpMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveWith(DXDD.LayoutNode openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MoveWith, value, diffs, objName, "MoveWith");
   }
   
-  private static void SetMoveWith(DXDrawDgms.LayoutNode openXmlElement, String? value)
+  private static void SetMoveWith(DXDD.LayoutNode openXmlElement, String? value)
   {
     openXmlElement.MoveWith = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.Algorithm? GetAlgorithm(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Algorithm>();
     if (element != null)
-      return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(element);
+      return DMXDD.AlgorithmConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlgorithm(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
+  private static bool CmpAlgorithm(DXDD.LayoutNode openXmlElement, DMDD.Algorithm? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>(), value, diffs, objName);
+    return DMXDD.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Algorithm>(), value, diffs, objName);
   }
   
-  private static void SetAlgorithm(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Algorithm? value)
+  private static void SetAlgorithm(DXDD.LayoutNode openXmlElement, DMDD.Algorithm? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Algorithm>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.AlgorithmConverter.CreateOpenXmlElement<DXDrawDgms.Algorithm>(value);
+      itemElement = DMXDD.AlgorithmConverter.CreateOpenXmlElement<DXDD.Algorithm>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Shape? GetShape(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.Shape? GetShape(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Shape>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Shape>();
     if (element != null)
-      return DMXDrawsDgms.ShapeConverter.CreateModelElement(element);
+      return DMXDD.ShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDD.LayoutNode openXmlElement, DMDD.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape>(), value, diffs, objName);
+    return DMXDD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Shape>(), value, diffs, objName);
   }
   
-  private static void SetShape(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Shape? value)
+  private static void SetShape(DXDD.LayoutNode openXmlElement, DMDD.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ShapeConverter.CreateOpenXmlElement<DXDrawDgms.Shape>(value);
+      itemElement = DMXDD.ShapeConverter.CreateOpenXmlElement<DXDD.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.PresentationOf? GetPresentationOf(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.PresentationOf? GetPresentationOf(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>();
+    var element = openXmlElement?.GetFirstChild<DXDD.PresentationOf>();
     if (element != null)
-      return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(element);
+      return DMXDD.PresentationOfConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresentationOf(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationOf(DXDD.LayoutNode openXmlElement, DMDD.PresentationOf? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>(), value, diffs, objName);
+    return DMXDD.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationOf>(), value, diffs, objName);
   }
   
-  private static void SetPresentationOf(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.PresentationOf? value)
+  private static void SetPresentationOf(DXDD.LayoutNode openXmlElement, DMDD.PresentationOf? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.PresentationOf>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.PresentationOfConverter.CreateOpenXmlElement<DXDrawDgms.PresentationOf>(value);
+      itemElement = DMXDD.PresentationOfConverter.CreateOpenXmlElement<DXDD.PresentationOf>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Constraints? GetConstraints(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.Constraints? GetConstraints(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Constraints>();
     if (element != null)
-      return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(element);
+      return DMXDD.ConstraintsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConstraints(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
+  private static bool CmpConstraints(DXDD.LayoutNode openXmlElement, DMDD.Constraints? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Constraints>(), value, diffs, objName);
+    return DMXDD.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Constraints>(), value, diffs, objName);
   }
   
-  private static void SetConstraints(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Constraints? value)
+  private static void SetConstraints(DXDD.LayoutNode openXmlElement, DMDD.Constraints? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Constraints>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Constraints>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ConstraintsConverter.CreateOpenXmlElement<DXDrawDgms.Constraints>(value);
+      itemElement = DMXDD.ConstraintsConverter.CreateOpenXmlElement<DXDD.Constraints>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.RuleList? GetRuleList(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.RuleList? GetRuleList(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.RuleList>();
     if (element != null)
-      return DMXDrawsDgms.RuleListConverter.CreateModelElement(element);
+      return DMXDD.RuleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRuleList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
+  private static bool CmpRuleList(DXDD.LayoutNode openXmlElement, DMDD.RuleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.RuleList>(), value, diffs, objName);
+    return DMXDD.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.RuleList>(), value, diffs, objName);
   }
   
-  private static void SetRuleList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.RuleList? value)
+  private static void SetRuleList(DXDD.LayoutNode openXmlElement, DMDD.RuleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.RuleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.RuleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.RuleListConverter.CreateOpenXmlElement<DXDrawDgms.RuleList>(value);
+      itemElement = DMXDD.RuleListConverter.CreateOpenXmlElement<DXDD.RuleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.VariableList? GetVariableList(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.VariableList? GetVariableList(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.VariableList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.VariableList>();
     if (element != null)
-      return DMXDrawsDgms.VariableListConverter.CreateModelElement(element);
+      return DMXDD.VariableListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpVariableList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.VariableList? value, DiffList? diffs, string? objName)
+  private static bool CmpVariableList(DXDD.LayoutNode openXmlElement, DMDD.VariableList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.VariableListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.VariableList>(), value, diffs, objName);
+    return DMXDD.VariableListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.VariableList>(), value, diffs, objName);
   }
   
-  private static void SetVariableList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.VariableList? value)
+  private static void SetVariableList(DXDD.LayoutNode openXmlElement, DMDD.VariableList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.VariableList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.VariableList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.VariableListConverter.CreateOpenXmlElement<DXDrawDgms.VariableList>(value);
+      itemElement = DMXDD.VariableListConverter.CreateOpenXmlElement<DXDD.VariableList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.ForEach? GetForEach(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.ForEach? GetForEach(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ForEach>();
     if (element != null)
-      return DMXDrawsDgms.ForEachConverter.CreateModelElement(element);
+      return DMXDD.ForEachConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpForEach(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ForEach? value, DiffList? diffs, string? objName)
+  private static bool CmpForEach(DXDD.LayoutNode openXmlElement, DMDD.ForEach? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ForEach>(), value, diffs, objName);
+    return DMXDD.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ForEach>(), value, diffs, objName);
   }
   
-  private static void SetForEach(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ForEach? value)
+  private static void SetForEach(DXDD.LayoutNode openXmlElement, DMDD.ForEach? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ForEach>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ForEach>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ForEachConverter.CreateOpenXmlElement<DXDrawDgms.ForEach>(value);
+      itemElement = DMXDD.ForEachConverter.CreateOpenXmlElement<DXDD.ForEach>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.LayoutNode? GetChildLayoutNode(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.LayoutNode? GetChildLayoutNode(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>();
+    var element = openXmlElement?.GetFirstChild<DXDD.LayoutNode>();
     if (element != null)
-      return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(element);
+      return DMXDD.LayoutNodeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChildLayoutNode(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
+  private static bool CmpChildLayoutNode(DXDD.LayoutNode openXmlElement, DMDD.LayoutNode? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName);
+    return DMXDD.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.LayoutNode>(), value, diffs, objName);
   }
   
-  private static void SetChildLayoutNode(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.LayoutNode? value)
+  private static void SetChildLayoutNode(DXDD.LayoutNode openXmlElement, DMDD.LayoutNode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.LayoutNode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.LayoutNodeConverter.CreateOpenXmlElement<DXDrawDgms.LayoutNode>(value);
+      itemElement = DMXDD.LayoutNodeConverter.CreateOpenXmlElement<DXDD.LayoutNode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Choose? GetChoose(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.Choose? GetChoose(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Choose>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Choose>();
     if (element != null)
-      return DMXDrawsDgms.ChooseConverter.CreateModelElement(element);
+      return DMXDD.ChooseConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChoose(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
+  private static bool CmpChoose(DXDD.LayoutNode openXmlElement, DMDD.Choose? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Choose>(), value, diffs, objName);
+    return DMXDD.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Choose>(), value, diffs, objName);
   }
   
-  private static void SetChoose(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.Choose? value)
+  private static void SetChoose(DXDD.LayoutNode openXmlElement, DMDD.Choose? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Choose>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Choose>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ChooseConverter.CreateOpenXmlElement<DXDrawDgms.Choose>(value);
+      itemElement = DMXDD.ChooseConverter.CreateOpenXmlElement<DXDD.Choose>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.LayoutNode openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.LayoutNode openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.LayoutNode openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.LayoutNode openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.LayoutNode? CreateModelElement(DXDrawDgms.LayoutNode? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.LayoutNode? CreateModelElement(DXDD.LayoutNode? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -361,7 +361,7 @@ public static class LayoutNodeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.LayoutNode? openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.LayoutNode? openXmlElement, DMDD.LayoutNode? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -401,15 +401,15 @@ public static class LayoutNodeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.LayoutNode value)
-    where OpenXmlElementType: DXDrawDgms.LayoutNode, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.LayoutNode value)
+    where OpenXmlElementType: DXDD.LayoutNode, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.LayoutNode openXmlElement, DMDrawsDgms.LayoutNode value)
+  public static void UpdateOpenXmlElement(DXDD.LayoutNode openXmlElement, DMDD.LayoutNode value)
   {
     SetName(openXmlElement, value?.Name);
     SetStyleLabel(openXmlElement, value?.StyleLabel);

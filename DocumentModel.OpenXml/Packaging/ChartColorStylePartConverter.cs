@@ -8,21 +8,21 @@ public static class ChartColorStylePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsChartsStyle.ColorStyle? GetColorStyle(DXPack.ChartColorStylePart openXmlElement)
+  private static DMDCS.ColorStyle? GetColorStyle(DXPack.ChartColorStylePart openXmlElement)
   {
-      return DMXDrawsChartsStyle.ColorStyleConverter.CreateModelElement(openXmlElement?.RootElement as DXO2013DrawChartStyle.ColorStyle);
+      return DMXDCS.ColorStyleConverter.CreateModelElement(openXmlElement?.RootElement as DXO13DCS.ColorStyle);
   }
   
-  private static bool CmpColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDrawsChartsStyle.ColorStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDCS.ColorStyle? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDrawsChartsStyle.ColorStyle? value)
+  private static void SetColorStyle(DXPack.ChartColorStylePart openXmlElement, DMDCS.ColorStyle? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsChartsStyle.ColorStyleConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ColorStyle>(value);
+       var rootElement = DMXDCS.ColorStyleConverter.CreateOpenXmlElement<DXO13DCS.ColorStyle>(value);
        if (rootElement != null)
          openXmlElement.ColorStyle = rootElement;
     }

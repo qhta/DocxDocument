@@ -8,33 +8,33 @@ public static class FilteredBarSeriesConverter
   /// <summary>
   /// BarChartSeries.
   /// </summary>
-  private static DMDrawsCharts.BarChartSeries3? GetBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement)
+  private static DMDC.BarChartSeries3? GetBarChartSeries(DXO13DC.FilteredBarSeries openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.BarChartSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.BarChartSeries>();
     if (element != null)
-      return DMXDrawsCharts.BarChartSeries3Converter.CreateModelElement(element);
+      return DMXDC.BarChartSeries3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.BarChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpBarChartSeries(DXO13DC.FilteredBarSeries openXmlElement, DMDC.BarChartSeries3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.BarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.BarChartSeries>(), value, diffs, objName);
+    return DMXDC.BarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.BarChartSeries>(), value, diffs, objName);
   }
   
-  private static void SetBarChartSeries(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.BarChartSeries3? value)
+  private static void SetBarChartSeries(DXO13DC.FilteredBarSeries openXmlElement, DMDC.BarChartSeries3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.BarChartSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.BarChartSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.BarChartSeries3Converter.CreateOpenXmlElement<DXO2013DrawChart.BarChartSeries>(value);
+      itemElement = DMXDC.BarChartSeries3Converter.CreateOpenXmlElement<DXO13DC.BarChartSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(DXO2013DrawChart.FilteredBarSeries? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredBarSeries? CreateModelElement(DXO13DC.FilteredBarSeries? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class FilteredBarSeriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.FilteredBarSeries? openXmlElement, DMDrawsCharts.FilteredBarSeries? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredBarSeries? openXmlElement, DMDC.FilteredBarSeries? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class FilteredBarSeriesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredBarSeries value)
-    where OpenXmlElementType: DXO2013DrawChart.FilteredBarSeries, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.FilteredBarSeries value)
+    where OpenXmlElementType: DXO13DC.FilteredBarSeries, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredBarSeries openXmlElement, DMDrawsCharts.FilteredBarSeries value)
+  public static void UpdateOpenXmlElement(DXO13DC.FilteredBarSeries openXmlElement, DMDC.FilteredBarSeries value)
   {
     SetBarChartSeries(openXmlElement, value?.BarChartSeries);
   }

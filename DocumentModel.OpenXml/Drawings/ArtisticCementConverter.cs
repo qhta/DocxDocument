@@ -8,19 +8,19 @@ public static class ArtisticCementConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticCement openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticCement openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticCement openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticCementConverter
   /// <summary>
   /// crackSpacing, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement)
+  private static Int32? GetCrackSpacing(DXO10D.ArtisticCement openXmlElement)
   {
     return openXmlElement?.CrackSpacing?.Value;
   }
   
-  private static bool CmpCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCrackSpacing(DXO10D.ArtisticCement openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.CrackSpacing?.Value == value) return true;
     diffs?.Add(objName, "CrackSpacing", openXmlElement?.CrackSpacing?.Value, value);
     return false;
   }
   
-  private static void SetCrackSpacing(DXO2010Draw.ArtisticCement openXmlElement, Int32? value)
+  private static void SetCrackSpacing(DXO10D.ArtisticCement openXmlElement, Int32? value)
   {
     openXmlElement.CrackSpacing = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticCement? CreateModelElement(DXO2010Draw.ArtisticCement? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticCement? CreateModelElement(DXO10D.ArtisticCement? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticCementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticCement? openXmlElement, DMDraws.ArtisticCement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticCement? openXmlElement, DMD.ArtisticCement? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticCementConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticCement value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticCement, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticCement value)
+    where OpenXmlElementType: DXO10D.ArtisticCement, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticCement openXmlElement, DMDraws.ArtisticCement value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticCement openXmlElement, DMD.ArtisticCement value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetCrackSpacing(openXmlElement, value?.CrackSpacing);

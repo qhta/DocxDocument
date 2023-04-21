@@ -8,17 +8,17 @@ public static class MenuConverter
   /// <summary>
   /// size
   /// </summary>
-  private static DMUI.SizeKind? GetSize(DXOCustUI.Menu openXmlElement)
+  private static DMUI.SizeKind? GetSize(DXOCUI.Menu openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static bool CmpSize(DXOCustUI.Menu openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXOCUI.Menu openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
-  private static void SetSize(DXOCustUI.Menu openXmlElement, DMUI.SizeKind? value)
+  private static void SetSize(DXOCUI.Menu openXmlElement, DMUI.SizeKind? value)
   {
     openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
   }
@@ -26,17 +26,17 @@ public static class MenuConverter
   /// <summary>
   /// getSize
   /// </summary>
-  private static String? GetGetSize(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetSize(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSize);
   }
   
-  private static bool CmpGetSize(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSize(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSize, value, diffs, objName, "GetSize");
   }
   
-  private static void SetGetSize(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetSize(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetSize = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class MenuConverter
   /// <summary>
   /// itemSize
   /// </summary>
-  private static DMUI.ItemSizeKind? GetItemSize(DXOCustUI.Menu openXmlElement)
+  private static DMUI.ItemSizeKind? GetItemSize(DXOCUI.Menu openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues, DMUI.ItemSizeKind>(openXmlElement?.ItemSize?.Value);
   }
   
-  private static bool CmpItemSize(DXOCustUI.Menu openXmlElement, DMUI.ItemSizeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpItemSize(DXOCUI.Menu openXmlElement, DMUI.ItemSizeKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues, DMUI.ItemSizeKind>(openXmlElement?.ItemSize?.Value, value, diffs, objName);
   }
   
-  private static void SetItemSize(DXOCustUI.Menu openXmlElement, DMUI.ItemSizeKind? value)
+  private static void SetItemSize(DXOCUI.Menu openXmlElement, DMUI.ItemSizeKind? value)
   {
     openXmlElement.ItemSize = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues, DMUI.ItemSizeKind>(value);
   }
@@ -62,17 +62,17 @@ public static class MenuConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DXOCustUI.Menu openXmlElement)
+  private static String? GetDescription(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetDescription(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class MenuConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetDescription(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetDescription(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class MenuConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.Menu openXmlElement)
+  private static String? GetId(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetId(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -116,17 +116,17 @@ public static class MenuConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.Menu openXmlElement)
+  private static String? GetIdQ(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -134,17 +134,17 @@ public static class MenuConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DXOCustUI.Menu openXmlElement)
+  private static String? GetIdMso(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetIdMso(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -152,17 +152,17 @@ public static class MenuConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DXOCustUI.Menu openXmlElement)
+  private static String? GetTag(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetTag(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -170,17 +170,17 @@ public static class MenuConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DXOCustUI.Menu openXmlElement)
+  private static String? GetImage(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetImage(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -188,17 +188,17 @@ public static class MenuConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DXOCustUI.Menu openXmlElement)
+  private static String? GetImageMso(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetImageMso(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -206,17 +206,17 @@ public static class MenuConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetImage(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
-  private static void SetGetImage(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetImage(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
@@ -224,17 +224,17 @@ public static class MenuConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DXOCustUI.Menu openXmlElement)
+  private static String? GetScreentip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetScreentip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -242,17 +242,17 @@ public static class MenuConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetScreentip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -260,17 +260,17 @@ public static class MenuConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DXOCustUI.Menu openXmlElement)
+  private static String? GetSupertip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetSupertip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -278,17 +278,17 @@ public static class MenuConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetSupertip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -296,19 +296,19 @@ public static class MenuConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DXOCustUI.Menu openXmlElement)
+  private static Boolean? GetEnabled(DXOCUI.Menu openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXOCUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXOCustUI.Menu openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCUI.Menu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -319,17 +319,17 @@ public static class MenuConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetEnabled(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class MenuConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.Menu openXmlElement)
+  private static String? GetLabel(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -355,17 +355,17 @@ public static class MenuConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetLabel(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetLabel(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -373,17 +373,17 @@ public static class MenuConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.Menu openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -391,17 +391,17 @@ public static class MenuConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.Menu openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -409,17 +409,17 @@ public static class MenuConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.Menu openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -427,17 +427,17 @@ public static class MenuConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.Menu openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
@@ -445,19 +445,19 @@ public static class MenuConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.Menu openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.Menu openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.Menu openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.Menu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -468,17 +468,17 @@ public static class MenuConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetVisible(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -486,17 +486,17 @@ public static class MenuConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DXOCustUI.Menu openXmlElement)
+  private static String? GetKeytip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetKeytip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -504,17 +504,17 @@ public static class MenuConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetKeytip(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
@@ -522,19 +522,19 @@ public static class MenuConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DXOCustUI.Menu openXmlElement)
+  private static Boolean? GetShowLabel(DXOCUI.Menu openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXOCUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
     return false;
   }
   
-  private static void SetShowLabel(DXOCustUI.Menu openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCUI.Menu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -545,17 +545,17 @@ public static class MenuConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetShowLabel(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
   
-  private static void SetGetShowLabel(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -563,19 +563,19 @@ public static class MenuConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DXOCustUI.Menu openXmlElement)
+  private static Boolean? GetShowImage(DXOCUI.Menu openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static bool CmpShowImage(DXOCustUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowImage(DXOCUI.Menu openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowImage?.Value == value) return true;
     diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
     return false;
   }
   
-  private static void SetShowImage(DXOCustUI.Menu openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCUI.Menu openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -586,256 +586,256 @@ public static class MenuConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DXOCustUI.Menu openXmlElement)
+  private static String? GetGetShowImage(DXOCUI.Menu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowImage);
   }
   
-  private static bool CmpGetShowImage(DXOCustUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowImage(DXOCUI.Menu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowImage, value, diffs, objName, "GetShowImage");
   }
   
-  private static void SetGetShowImage(DXOCustUI.Menu openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCUI.Menu openXmlElement, String? value)
   {
     openXmlElement.GetShowImage = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedControlClone? GetUnsizedControlClone(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedControlClone>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedControlClone>();
     if (element != null)
       return DMXUI.UnsizedControlCloneConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedControlClone(DXOCustUI.Menu openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedControlClone(DXOCUI.Menu openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedControlClone>(), value, diffs, objName);
+    return DMXUI.UnsizedControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedControlClone>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedControlClone(DXOCustUI.Menu openXmlElement, DMUI.UnsizedControlClone? value)
+  private static void SetUnsizedControlClone(DXOCUI.Menu openXmlElement, DMUI.UnsizedControlClone? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedControlClone>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedControlClone>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedControlCloneConverter.CreateOpenXmlElement<DXOCustUI.UnsizedControlClone>(value);
+      itemElement = DMXUI.UnsizedControlCloneConverter.CreateOpenXmlElement<DXOCUI.UnsizedControlClone>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedButton>();
     if (element != null)
       return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>(), value, diffs, objName);
+    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedButton? value)
+  private static void SetUnsizedButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(value);
+      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.CheckBox? GetCheckBox(DXOCustUI.Menu openXmlElement)
+  private static DMUI.CheckBox? GetCheckBox(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.CheckBox>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.CheckBox>();
     if (element != null)
       return DMXUI.CheckBoxConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCheckBox(DXOCustUI.Menu openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckBox(DXOCUI.Menu openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.CheckBox>(), value, diffs, objName);
+    return DMXUI.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.CheckBox>(), value, diffs, objName);
   }
   
-  private static void SetCheckBox(DXOCustUI.Menu openXmlElement, DMUI.CheckBox? value)
+  private static void SetCheckBox(DXOCUI.Menu openXmlElement, DMUI.CheckBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.CheckBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.CheckBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.CheckBoxConverter.CreateOpenXmlElement<DXOCustUI.CheckBox>(value);
+      itemElement = DMXUI.CheckBoxConverter.CreateOpenXmlElement<DXOCUI.CheckBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedGallery? GetUnsizedGallery(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedGallery? GetUnsizedGallery(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedGallery>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedGallery>();
     if (element != null)
       return DMXUI.UnsizedGalleryConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedGallery(DXOCustUI.Menu openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedGallery(DXOCUI.Menu openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedGalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedGallery>(), value, diffs, objName);
+    return DMXUI.UnsizedGalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedGallery>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedGallery(DXOCustUI.Menu openXmlElement, DMUI.UnsizedGallery? value)
+  private static void SetUnsizedGallery(DXOCUI.Menu openXmlElement, DMUI.UnsizedGallery? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedGallery>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedGallery>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedGalleryConverter.CreateOpenXmlElement<DXOCustUI.UnsizedGallery>(value);
+      itemElement = DMXUI.UnsizedGalleryConverter.CreateOpenXmlElement<DXOCUI.UnsizedGallery>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedToggleButton? GetUnsizedToggleButton(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedToggleButton? GetUnsizedToggleButton(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedToggleButton>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedToggleButton>();
     if (element != null)
       return DMXUI.UnsizedToggleButtonConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedToggleButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedToggleButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedToggleButton>(), value, diffs, objName);
+    return DMXUI.UnsizedToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedToggleButton>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedToggleButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedToggleButton? value)
+  private static void SetUnsizedToggleButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedToggleButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedToggleButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedToggleButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedToggleButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedToggleButton>(value);
+      itemElement = DMXUI.UnsizedToggleButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedToggleButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.MenuSeparator? GetMenuSeparator(DXOCustUI.Menu openXmlElement)
+  private static DMUI.MenuSeparator? GetMenuSeparator(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.MenuSeparator>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.MenuSeparator>();
     if (element != null)
       return DMXUI.MenuSeparatorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMenuSeparator(DXOCustUI.Menu openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuSeparator(DXOCUI.Menu openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.MenuSeparator>(), value, diffs, objName);
+    return DMXUI.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.MenuSeparator>(), value, diffs, objName);
   }
   
-  private static void SetMenuSeparator(DXOCustUI.Menu openXmlElement, DMUI.MenuSeparator? value)
+  private static void SetMenuSeparator(DXOCUI.Menu openXmlElement, DMUI.MenuSeparator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.MenuSeparator>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.MenuSeparator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.MenuSeparatorConverter.CreateOpenXmlElement<DXOCustUI.MenuSeparator>(value);
+      itemElement = DMXUI.MenuSeparatorConverter.CreateOpenXmlElement<DXOCUI.MenuSeparator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedSplitButton? GetUnsizedSplitButton(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedSplitButton? GetUnsizedSplitButton(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedSplitButton>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedSplitButton>();
     if (element != null)
       return DMXUI.UnsizedSplitButtonConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedSplitButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedSplitButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedSplitButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedSplitButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedSplitButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedSplitButton>(), value, diffs, objName);
+    return DMXUI.UnsizedSplitButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedSplitButton>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedSplitButton(DXOCustUI.Menu openXmlElement, DMUI.UnsizedSplitButton? value)
+  private static void SetUnsizedSplitButton(DXOCUI.Menu openXmlElement, DMUI.UnsizedSplitButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedSplitButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedSplitButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedSplitButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedSplitButton>(value);
+      itemElement = DMXUI.UnsizedSplitButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedSplitButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedMenu? GetUnsizedMenu(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedMenu? GetUnsizedMenu(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedMenu>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedMenu>();
     if (element != null)
       return DMXUI.UnsizedMenuConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedMenu(DXOCustUI.Menu openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedMenu(DXOCUI.Menu openXmlElement, DMUI.UnsizedMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedMenu>(), value, diffs, objName);
+    return DMXUI.UnsizedMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedMenu>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedMenu(DXOCustUI.Menu openXmlElement, DMUI.UnsizedMenu? value)
+  private static void SetUnsizedMenu(DXOCUI.Menu openXmlElement, DMUI.UnsizedMenu? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedMenu>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedMenu>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedMenuConverter.CreateOpenXmlElement<DXOCustUI.UnsizedMenu>(value);
+      itemElement = DMXUI.UnsizedMenuConverter.CreateOpenXmlElement<DXOCUI.UnsizedMenu>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DXOCustUI.Menu openXmlElement)
+  private static DMUI.UnsizedDynamicMenu? GetUnsizedDynamicMenu(DXOCUI.Menu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedDynamicMenu>();
     if (element != null)
       return DMXUI.UnsizedDynamicMenuConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedDynamicMenu(DXOCustUI.Menu openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedDynamicMenu(DXOCUI.Menu openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedDynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>(), value, diffs, objName);
+    return DMXUI.UnsizedDynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedDynamicMenu>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedDynamicMenu(DXOCustUI.Menu openXmlElement, DMUI.UnsizedDynamicMenu? value)
+  private static void SetUnsizedDynamicMenu(DXOCUI.Menu openXmlElement, DMUI.UnsizedDynamicMenu? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedDynamicMenu>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedDynamicMenu>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedDynamicMenuConverter.CreateOpenXmlElement<DXOCustUI.UnsizedDynamicMenu>(value);
+      itemElement = DMXUI.UnsizedDynamicMenuConverter.CreateOpenXmlElement<DXOCUI.UnsizedDynamicMenu>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.Menu? CreateModelElement(DXOCustUI.Menu? openXmlElement)
+  public static DocumentModel.UI.Menu? CreateModelElement(DXOCUI.Menu? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -886,7 +886,7 @@ public static class MenuConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.Menu? openXmlElement, DMUI.Menu? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.Menu? openXmlElement, DMUI.Menu? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -981,14 +981,14 @@ public static class MenuConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Menu value)
-    where OpenXmlElementType: DXOCustUI.Menu, new()
+    where OpenXmlElementType: DXOCUI.Menu, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.Menu openXmlElement, DMUI.Menu value)
+  public static void UpdateOpenXmlElement(DXOCUI.Menu openXmlElement, DMUI.Menu value)
   {
     SetSize(openXmlElement, value?.Size);
     SetGetSize(openXmlElement, value?.GetSize);

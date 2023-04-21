@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CustomDashConverter
 {
-  private static Collection<DMDraws.DashStop>? GetDashStops(DXDraw.CustomDash openXmlElement)
+  private static Collection<DMD.DashStop>? GetDashStops(DXD.CustomDash openXmlElement)
   {
-    var collection = new Collection<DMDraws.DashStop>();
-    foreach (var item in openXmlElement.Elements<DXDraw.DashStop>())
+    var collection = new Collection<DMD.DashStop>();
+    foreach (var item in openXmlElement.Elements<DXD.DashStop>())
     {
-      var newItem = DMXDraws.DashStopConverter.CreateModelElement(item);
+      var newItem = DMXD.DashStopConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class CustomDashConverter
     return null;
   }
   
-  private static bool CmpDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value, DiffList? diffs, string? objName)
+  private static bool CmpDashStops(DXD.CustomDash openXmlElement, Collection<DMD.DashStop>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.DashStop>();
+    var origElements = openXmlElement.Elements<DXD.DashStop>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class CustomDashConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.DashStopConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.DashStopConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class CustomDashConverter
     return false;
   }
   
-  private static void SetDashStops(DXDraw.CustomDash openXmlElement, Collection<DMDraws.DashStop>? value)
+  private static void SetDashStops(DXD.CustomDash openXmlElement, Collection<DMD.DashStop>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.DashStop>();
+    openXmlElement.RemoveAllChildren<DXD.DashStop>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.DashStopConverter.CreateOpenXmlElement<DXDraw.DashStop>(item);
+        var newItem = DMXD.DashStopConverter.CreateOpenXmlElement<DXD.DashStop>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DXDraw.CustomDash? openXmlElement)
+  public static DocumentModel.Drawings.CustomDash? CreateModelElement(DXD.CustomDash? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CustomDashConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.CustomDash? openXmlElement, DMDraws.CustomDash? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CustomDash? openXmlElement, DMD.CustomDash? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CustomDashConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CustomDash value)
-    where OpenXmlElementType: DXDraw.CustomDash, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CustomDash value)
+    where OpenXmlElementType: DXD.CustomDash, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.CustomDash openXmlElement, DMDraws.CustomDash value)
+  public static void UpdateOpenXmlElement(DXD.CustomDash openXmlElement, DMD.CustomDash value)
   {
     SetDashStops(openXmlElement, value?.DashStops);
   }

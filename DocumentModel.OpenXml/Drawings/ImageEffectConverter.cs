@@ -8,19 +8,19 @@ public static class ImageEffectConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DXO2010Draw.ImageEffect openXmlElement)
+  private static Boolean? GetVisible(DXO10D.ImageEffect openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO2010Draw.ImageEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10D.ImageEffect openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXO2010Draw.ImageEffect openXmlElement, Boolean? value)
+  private static void SetVisible(DXO10D.ImageEffect openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -31,27 +31,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticBlur.
   /// </summary>
-  private static DMDraws.ArtisticBlur? GetArtisticBlur(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticBlur? GetArtisticBlur(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticBlur>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticBlur>();
     if (element != null)
-      return DMXDraws.ArtisticBlurConverter.CreateModelElement(element);
+      return DMXD.ArtisticBlurConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticBlur(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticBlur? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticBlur(DXO10D.ImageEffect openXmlElement, DMD.ArtisticBlur? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticBlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticBlur>(), value, diffs, objName);
+    return DMXD.ArtisticBlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticBlur>(), value, diffs, objName);
   }
   
-  private static void SetArtisticBlur(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticBlur? value)
+  private static void SetArtisticBlur(DXO10D.ImageEffect openXmlElement, DMD.ArtisticBlur? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticBlur>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticBlur>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticBlurConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticBlur>(value);
+      itemElement = DMXD.ArtisticBlurConverter.CreateOpenXmlElement<DXO10D.ArtisticBlur>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -60,27 +60,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCement.
   /// </summary>
-  private static DMDraws.ArtisticCement? GetArtisticCement(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticCement? GetArtisticCement(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCement>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticCement>();
     if (element != null)
-      return DMXDraws.ArtisticCementConverter.CreateModelElement(element);
+      return DMXD.ArtisticCementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticCement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCement? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticCement(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCement? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCement>(), value, diffs, objName);
+    return DMXD.ArtisticCementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticCement>(), value, diffs, objName);
   }
   
-  private static void SetArtisticCement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCement? value)
+  private static void SetArtisticCement(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCement>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticCement>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticCementConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCement>(value);
+      itemElement = DMXD.ArtisticCementConverter.CreateOpenXmlElement<DXO10D.ArtisticCement>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -89,27 +89,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticChalkSketch.
   /// </summary>
-  private static DMDraws.ArtisticChalkSketch? GetArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticChalkSketch? GetArtisticChalkSketch(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticChalkSketch>();
     if (element != null)
-      return DMXDraws.ArtisticChalkSketchConverter.CreateModelElement(element);
+      return DMXD.ArtisticChalkSketchConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticChalkSketch? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticChalkSketch(DXO10D.ImageEffect openXmlElement, DMD.ArtisticChalkSketch? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticChalkSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>(), value, diffs, objName);
+    return DMXD.ArtisticChalkSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticChalkSketch>(), value, diffs, objName);
   }
   
-  private static void SetArtisticChalkSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticChalkSketch? value)
+  private static void SetArtisticChalkSketch(DXO10D.ImageEffect openXmlElement, DMD.ArtisticChalkSketch? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticChalkSketch>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticChalkSketch>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticChalkSketchConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticChalkSketch>(value);
+      itemElement = DMXD.ArtisticChalkSketchConverter.CreateOpenXmlElement<DXO10D.ArtisticChalkSketch>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -118,27 +118,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCrisscrossEtching.
   /// </summary>
-  private static DMDraws.ArtisticCrisscrossEtching? GetArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticCrisscrossEtching? GetArtisticCrisscrossEtching(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticCrisscrossEtching>();
     if (element != null)
-      return DMXDraws.ArtisticCrisscrossEtchingConverter.CreateModelElement(element);
+      return DMXD.ArtisticCrisscrossEtchingConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCrisscrossEtching? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticCrisscrossEtching(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCrisscrossEtching? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCrisscrossEtchingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>(), value, diffs, objName);
+    return DMXD.ArtisticCrisscrossEtchingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticCrisscrossEtching>(), value, diffs, objName);
   }
   
-  private static void SetArtisticCrisscrossEtching(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCrisscrossEtching? value)
+  private static void SetArtisticCrisscrossEtching(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCrisscrossEtching? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCrisscrossEtching>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticCrisscrossEtching>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticCrisscrossEtchingConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCrisscrossEtching>(value);
+      itemElement = DMXD.ArtisticCrisscrossEtchingConverter.CreateOpenXmlElement<DXO10D.ArtisticCrisscrossEtching>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -147,27 +147,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticCutout.
   /// </summary>
-  private static DMDraws.ArtisticCutout? GetArtisticCutout(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticCutout? GetArtisticCutout(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticCutout>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticCutout>();
     if (element != null)
-      return DMXDraws.ArtisticCutoutConverter.CreateModelElement(element);
+      return DMXD.ArtisticCutoutConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticCutout(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCutout? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticCutout(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCutout? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticCutoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCutout>(), value, diffs, objName);
+    return DMXD.ArtisticCutoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticCutout>(), value, diffs, objName);
   }
   
-  private static void SetArtisticCutout(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticCutout? value)
+  private static void SetArtisticCutout(DXO10D.ImageEffect openXmlElement, DMD.ArtisticCutout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticCutout>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticCutout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticCutoutConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticCutout>(value);
+      itemElement = DMXD.ArtisticCutoutConverter.CreateOpenXmlElement<DXO10D.ArtisticCutout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -176,27 +176,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticFilmGrain.
   /// </summary>
-  private static DMDraws.ArtisticFilmGrain? GetArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticFilmGrain? GetArtisticFilmGrain(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticFilmGrain>();
     if (element != null)
-      return DMXDraws.ArtisticFilmGrainConverter.CreateModelElement(element);
+      return DMXD.ArtisticFilmGrainConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticFilmGrain(DXO10D.ImageEffect openXmlElement, DMD.ArtisticFilmGrain? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticFilmGrainConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>(), value, diffs, objName);
+    return DMXD.ArtisticFilmGrainConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticFilmGrain>(), value, diffs, objName);
   }
   
-  private static void SetArtisticFilmGrain(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticFilmGrain? value)
+  private static void SetArtisticFilmGrain(DXO10D.ImageEffect openXmlElement, DMD.ArtisticFilmGrain? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticFilmGrain>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticFilmGrain>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticFilmGrainConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticFilmGrain>(value);
+      itemElement = DMXD.ArtisticFilmGrainConverter.CreateOpenXmlElement<DXO10D.ArtisticFilmGrain>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -205,27 +205,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlass.
   /// </summary>
-  private static DMDraws.ArtisticGlass? GetArtisticGlass(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticGlass? GetArtisticGlass(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlass>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticGlass>();
     if (element != null)
-      return DMXDraws.ArtisticGlassConverter.CreateModelElement(element);
+      return DMXD.ArtisticGlassConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticGlass(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlass? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticGlass(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlass? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlassConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlass>(), value, diffs, objName);
+    return DMXD.ArtisticGlassConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticGlass>(), value, diffs, objName);
   }
   
-  private static void SetArtisticGlass(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlass? value)
+  private static void SetArtisticGlass(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlass? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlass>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticGlass>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticGlassConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlass>(value);
+      itemElement = DMXD.ArtisticGlassConverter.CreateOpenXmlElement<DXO10D.ArtisticGlass>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -234,27 +234,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlowDiffused.
   /// </summary>
-  private static DMDraws.ArtisticGlowDiffused? GetArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticGlowDiffused? GetArtisticGlowDiffused(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticGlowDiffused>();
     if (element != null)
-      return DMXDraws.ArtisticGlowDiffusedConverter.CreateModelElement(element);
+      return DMXD.ArtisticGlowDiffusedConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowDiffused? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticGlowDiffused(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlowDiffused? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlowDiffusedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>(), value, diffs, objName);
+    return DMXD.ArtisticGlowDiffusedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticGlowDiffused>(), value, diffs, objName);
   }
   
-  private static void SetArtisticGlowDiffused(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowDiffused? value)
+  private static void SetArtisticGlowDiffused(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlowDiffused? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowDiffused>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticGlowDiffused>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticGlowDiffusedConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlowDiffused>(value);
+      itemElement = DMXD.ArtisticGlowDiffusedConverter.CreateOpenXmlElement<DXO10D.ArtisticGlowDiffused>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -263,27 +263,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticGlowEdges.
   /// </summary>
-  private static DMDraws.ArtisticGlowEdges? GetArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticGlowEdges? GetArtisticGlowEdges(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticGlowEdges>();
     if (element != null)
-      return DMXDraws.ArtisticGlowEdgesConverter.CreateModelElement(element);
+      return DMXD.ArtisticGlowEdgesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowEdges? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticGlowEdges(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlowEdges? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticGlowEdgesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>(), value, diffs, objName);
+    return DMXD.ArtisticGlowEdgesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticGlowEdges>(), value, diffs, objName);
   }
   
-  private static void SetArtisticGlowEdges(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticGlowEdges? value)
+  private static void SetArtisticGlowEdges(DXO10D.ImageEffect openXmlElement, DMD.ArtisticGlowEdges? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticGlowEdges>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticGlowEdges>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticGlowEdgesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticGlowEdges>(value);
+      itemElement = DMXD.ArtisticGlowEdgesConverter.CreateOpenXmlElement<DXO10D.ArtisticGlowEdges>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -292,27 +292,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticLightScreen.
   /// </summary>
-  private static DMDraws.ArtisticLightScreen? GetArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticLightScreen? GetArtisticLightScreen(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLightScreen>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticLightScreen>();
     if (element != null)
-      return DMXDraws.ArtisticLightScreenConverter.CreateModelElement(element);
+      return DMXD.ArtisticLightScreenConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLightScreen? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticLightScreen(DXO10D.ImageEffect openXmlElement, DMD.ArtisticLightScreen? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticLightScreenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLightScreen>(), value, diffs, objName);
+    return DMXD.ArtisticLightScreenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticLightScreen>(), value, diffs, objName);
   }
   
-  private static void SetArtisticLightScreen(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLightScreen? value)
+  private static void SetArtisticLightScreen(DXO10D.ImageEffect openXmlElement, DMD.ArtisticLightScreen? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLightScreen>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticLightScreen>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticLightScreenConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticLightScreen>(value);
+      itemElement = DMXD.ArtisticLightScreenConverter.CreateOpenXmlElement<DXO10D.ArtisticLightScreen>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -321,27 +321,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticLineDrawing.
   /// </summary>
-  private static DMDraws.ArtisticLineDrawing? GetArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticLineDrawing? GetArtisticLineDrawing(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticLineDrawing>();
     if (element != null)
-      return DMXDraws.ArtisticLineDrawingConverter.CreateModelElement(element);
+      return DMXD.ArtisticLineDrawingConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLineDrawing? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticLineDrawing(DXO10D.ImageEffect openXmlElement, DMD.ArtisticLineDrawing? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticLineDrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>(), value, diffs, objName);
+    return DMXD.ArtisticLineDrawingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticLineDrawing>(), value, diffs, objName);
   }
   
-  private static void SetArtisticLineDrawing(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticLineDrawing? value)
+  private static void SetArtisticLineDrawing(DXO10D.ImageEffect openXmlElement, DMD.ArtisticLineDrawing? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticLineDrawing>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticLineDrawing>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticLineDrawingConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticLineDrawing>(value);
+      itemElement = DMXD.ArtisticLineDrawingConverter.CreateOpenXmlElement<DXO10D.ArtisticLineDrawing>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -350,27 +350,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticMarker.
   /// </summary>
-  private static DMDraws.ArtisticMarker? GetArtisticMarker(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticMarker? GetArtisticMarker(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMarker>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticMarker>();
     if (element != null)
-      return DMXDraws.ArtisticMarkerConverter.CreateModelElement(element);
+      return DMXD.ArtisticMarkerConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticMarker(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMarker? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticMarker(DXO10D.ImageEffect openXmlElement, DMD.ArtisticMarker? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticMarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMarker>(), value, diffs, objName);
+    return DMXD.ArtisticMarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticMarker>(), value, diffs, objName);
   }
   
-  private static void SetArtisticMarker(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMarker? value)
+  private static void SetArtisticMarker(DXO10D.ImageEffect openXmlElement, DMD.ArtisticMarker? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMarker>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticMarker>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticMarkerConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticMarker>(value);
+      itemElement = DMXD.ArtisticMarkerConverter.CreateOpenXmlElement<DXO10D.ArtisticMarker>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -379,27 +379,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticMosaicBubbles.
   /// </summary>
-  private static DMDraws.ArtisticMosaicBubbles? GetArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticMosaicBubbles? GetArtisticMosaicBubbles(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticMosaicBubbles>();
     if (element != null)
-      return DMXDraws.ArtisticMosaicBubblesConverter.CreateModelElement(element);
+      return DMXD.ArtisticMosaicBubblesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMosaicBubbles? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticMosaicBubbles(DXO10D.ImageEffect openXmlElement, DMD.ArtisticMosaicBubbles? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticMosaicBubblesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>(), value, diffs, objName);
+    return DMXD.ArtisticMosaicBubblesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticMosaicBubbles>(), value, diffs, objName);
   }
   
-  private static void SetArtisticMosaicBubbles(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticMosaicBubbles? value)
+  private static void SetArtisticMosaicBubbles(DXO10D.ImageEffect openXmlElement, DMD.ArtisticMosaicBubbles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticMosaicBubbles>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticMosaicBubbles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticMosaicBubblesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticMosaicBubbles>(value);
+      itemElement = DMXD.ArtisticMosaicBubblesConverter.CreateOpenXmlElement<DXO10D.ArtisticMosaicBubbles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -408,27 +408,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPaintStrokes.
   /// </summary>
-  private static DMDraws.ArtisticPaintStrokes? GetArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPaintStrokes? GetArtisticPaintStrokes(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPaintStrokes>();
     if (element != null)
-      return DMXDraws.ArtisticPaintStrokesConverter.CreateModelElement(element);
+      return DMXD.ArtisticPaintStrokesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintStrokes? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPaintStrokes(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPaintStrokes? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPaintStrokesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>(), value, diffs, objName);
+    return DMXD.ArtisticPaintStrokesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPaintStrokes>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPaintStrokes(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintStrokes? value)
+  private static void SetArtisticPaintStrokes(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPaintStrokes? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintStrokes>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPaintStrokes>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPaintStrokesConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPaintStrokes>(value);
+      itemElement = DMXD.ArtisticPaintStrokesConverter.CreateOpenXmlElement<DXO10D.ArtisticPaintStrokes>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -437,27 +437,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPaintBrush.
   /// </summary>
-  private static DMDraws.ArtisticPaintBrush? GetArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPaintBrush? GetArtisticPaintBrush(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPaintBrush>();
     if (element != null)
-      return DMXDraws.ArtisticPaintBrushConverter.CreateModelElement(element);
+      return DMXD.ArtisticPaintBrushConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintBrush? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPaintBrush(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPaintBrush? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPaintBrushConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>(), value, diffs, objName);
+    return DMXD.ArtisticPaintBrushConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPaintBrush>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPaintBrush(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPaintBrush? value)
+  private static void SetArtisticPaintBrush(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPaintBrush? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPaintBrush>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPaintBrush>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPaintBrushConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPaintBrush>(value);
+      itemElement = DMXD.ArtisticPaintBrushConverter.CreateOpenXmlElement<DXO10D.ArtisticPaintBrush>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -466,27 +466,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPastelsSmooth.
   /// </summary>
-  private static DMDraws.ArtisticPastelsSmooth? GetArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPastelsSmooth? GetArtisticPastelsSmooth(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPastelsSmooth>();
     if (element != null)
-      return DMXDraws.ArtisticPastelsSmoothConverter.CreateModelElement(element);
+      return DMXD.ArtisticPastelsSmoothConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPastelsSmooth? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPastelsSmooth(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPastelsSmooth? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPastelsSmoothConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>(), value, diffs, objName);
+    return DMXD.ArtisticPastelsSmoothConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPastelsSmooth>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPastelsSmooth(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPastelsSmooth? value)
+  private static void SetArtisticPastelsSmooth(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPastelsSmooth? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPastelsSmooth>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPastelsSmooth>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPastelsSmoothConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPastelsSmooth>(value);
+      itemElement = DMXD.ArtisticPastelsSmoothConverter.CreateOpenXmlElement<DXO10D.ArtisticPastelsSmooth>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -495,27 +495,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPencilGrayscale.
   /// </summary>
-  private static DMDraws.ArtisticPencilGrayscale? GetArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPencilGrayscale? GetArtisticPencilGrayscale(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPencilGrayscale>();
     if (element != null)
-      return DMXDraws.ArtisticPencilGrayscaleConverter.CreateModelElement(element);
+      return DMXD.ArtisticPencilGrayscaleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilGrayscale? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPencilGrayscale(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPencilGrayscale? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPencilGrayscaleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>(), value, diffs, objName);
+    return DMXD.ArtisticPencilGrayscaleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPencilGrayscale>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPencilGrayscale(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilGrayscale? value)
+  private static void SetArtisticPencilGrayscale(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPencilGrayscale? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilGrayscale>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPencilGrayscale>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPencilGrayscaleConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPencilGrayscale>(value);
+      itemElement = DMXD.ArtisticPencilGrayscaleConverter.CreateOpenXmlElement<DXO10D.ArtisticPencilGrayscale>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -524,27 +524,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPencilSketch.
   /// </summary>
-  private static DMDraws.ArtisticPencilSketch? GetArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPencilSketch? GetArtisticPencilSketch(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPencilSketch>();
     if (element != null)
-      return DMXDraws.ArtisticPencilSketchConverter.CreateModelElement(element);
+      return DMXD.ArtisticPencilSketchConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilSketch? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPencilSketch(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPencilSketch? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPencilSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>(), value, diffs, objName);
+    return DMXD.ArtisticPencilSketchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPencilSketch>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPencilSketch(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPencilSketch? value)
+  private static void SetArtisticPencilSketch(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPencilSketch? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPencilSketch>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPencilSketch>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPencilSketchConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPencilSketch>(value);
+      itemElement = DMXD.ArtisticPencilSketchConverter.CreateOpenXmlElement<DXO10D.ArtisticPencilSketch>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -553,27 +553,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPhotocopy.
   /// </summary>
-  private static DMDraws.ArtisticPhotocopy? GetArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPhotocopy? GetArtisticPhotocopy(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPhotocopy>();
     if (element != null)
-      return DMXDraws.ArtisticPhotocopyConverter.CreateModelElement(element);
+      return DMXD.ArtisticPhotocopyConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPhotocopy? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPhotocopy(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPhotocopy? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPhotocopyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>(), value, diffs, objName);
+    return DMXD.ArtisticPhotocopyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPhotocopy>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPhotocopy(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPhotocopy? value)
+  private static void SetArtisticPhotocopy(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPhotocopy? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPhotocopy>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPhotocopy>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPhotocopyConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPhotocopy>(value);
+      itemElement = DMXD.ArtisticPhotocopyConverter.CreateOpenXmlElement<DXO10D.ArtisticPhotocopy>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -582,27 +582,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticPlasticWrap.
   /// </summary>
-  private static DMDraws.ArtisticPlasticWrap? GetArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticPlasticWrap? GetArtisticPlasticWrap(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticPlasticWrap>();
     if (element != null)
-      return DMXDraws.ArtisticPlasticWrapConverter.CreateModelElement(element);
+      return DMXD.ArtisticPlasticWrapConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPlasticWrap? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticPlasticWrap(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPlasticWrap? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticPlasticWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>(), value, diffs, objName);
+    return DMXD.ArtisticPlasticWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticPlasticWrap>(), value, diffs, objName);
   }
   
-  private static void SetArtisticPlasticWrap(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticPlasticWrap? value)
+  private static void SetArtisticPlasticWrap(DXO10D.ImageEffect openXmlElement, DMD.ArtisticPlasticWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticPlasticWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticPlasticWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticPlasticWrapConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticPlasticWrap>(value);
+      itemElement = DMXD.ArtisticPlasticWrapConverter.CreateOpenXmlElement<DXO10D.ArtisticPlasticWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -611,27 +611,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticTexturizer.
   /// </summary>
-  private static DMDraws.ArtisticTexturizer? GetArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticTexturizer? GetArtisticTexturizer(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticTexturizer>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticTexturizer>();
     if (element != null)
-      return DMXDraws.ArtisticTexturizerConverter.CreateModelElement(element);
+      return DMXD.ArtisticTexturizerConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticTexturizer? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticTexturizer(DXO10D.ImageEffect openXmlElement, DMD.ArtisticTexturizer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticTexturizerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticTexturizer>(), value, diffs, objName);
+    return DMXD.ArtisticTexturizerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticTexturizer>(), value, diffs, objName);
   }
   
-  private static void SetArtisticTexturizer(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticTexturizer? value)
+  private static void SetArtisticTexturizer(DXO10D.ImageEffect openXmlElement, DMD.ArtisticTexturizer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticTexturizer>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticTexturizer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticTexturizerConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticTexturizer>(value);
+      itemElement = DMXD.ArtisticTexturizerConverter.CreateOpenXmlElement<DXO10D.ArtisticTexturizer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -640,27 +640,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ArtisticWatercolorSponge.
   /// </summary>
-  private static DMDraws.ArtisticWatercolorSponge? GetArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ArtisticWatercolorSponge? GetArtisticWatercolorSponge(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ArtisticWatercolorSponge>();
     if (element != null)
-      return DMXDraws.ArtisticWatercolorSpongeConverter.CreateModelElement(element);
+      return DMXD.ArtisticWatercolorSpongeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticWatercolorSponge? value, DiffList? diffs, string? objName)
+  private static bool CmpArtisticWatercolorSponge(DXO10D.ImageEffect openXmlElement, DMD.ArtisticWatercolorSponge? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ArtisticWatercolorSpongeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>(), value, diffs, objName);
+    return DMXD.ArtisticWatercolorSpongeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ArtisticWatercolorSponge>(), value, diffs, objName);
   }
   
-  private static void SetArtisticWatercolorSponge(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ArtisticWatercolorSponge? value)
+  private static void SetArtisticWatercolorSponge(DXO10D.ImageEffect openXmlElement, DMD.ArtisticWatercolorSponge? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ArtisticWatercolorSponge>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ArtisticWatercolorSponge>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ArtisticWatercolorSpongeConverter.CreateOpenXmlElement<DXO2010Draw.ArtisticWatercolorSponge>(value);
+      itemElement = DMXD.ArtisticWatercolorSpongeConverter.CreateOpenXmlElement<DXO10D.ArtisticWatercolorSponge>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -669,27 +669,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// BackgroundRemoval.
   /// </summary>
-  private static DMDraws.BackgroundRemoval? GetBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.BackgroundRemoval? GetBackgroundRemoval(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.BackgroundRemoval>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.BackgroundRemoval>();
     if (element != null)
-      return DMXDraws.BackgroundRemovalConverter.CreateModelElement(element);
+      return DMXD.BackgroundRemovalConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BackgroundRemoval? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundRemoval(DXO10D.ImageEffect openXmlElement, DMD.BackgroundRemoval? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundRemovalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.BackgroundRemoval>(), value, diffs, objName);
+    return DMXD.BackgroundRemovalConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.BackgroundRemoval>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundRemoval(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BackgroundRemoval? value)
+  private static void SetBackgroundRemoval(DXO10D.ImageEffect openXmlElement, DMD.BackgroundRemoval? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.BackgroundRemoval>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.BackgroundRemoval>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundRemovalConverter.CreateOpenXmlElement<DXO2010Draw.BackgroundRemoval>(value);
+      itemElement = DMXD.BackgroundRemovalConverter.CreateOpenXmlElement<DXO10D.BackgroundRemoval>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -698,27 +698,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// BrightnessContrast.
   /// </summary>
-  private static DMDraws.BrightnessContrast? GetBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.BrightnessContrast? GetBrightnessContrast(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.BrightnessContrast>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.BrightnessContrast>();
     if (element != null)
-      return DMXDraws.BrightnessContrastConverter.CreateModelElement(element);
+      return DMXD.BrightnessContrastConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BrightnessContrast? value, DiffList? diffs, string? objName)
+  private static bool CmpBrightnessContrast(DXO10D.ImageEffect openXmlElement, DMD.BrightnessContrast? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BrightnessContrastConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.BrightnessContrast>(), value, diffs, objName);
+    return DMXD.BrightnessContrastConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.BrightnessContrast>(), value, diffs, objName);
   }
   
-  private static void SetBrightnessContrast(DXO2010Draw.ImageEffect openXmlElement, DMDraws.BrightnessContrast? value)
+  private static void SetBrightnessContrast(DXO10D.ImageEffect openXmlElement, DMD.BrightnessContrast? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.BrightnessContrast>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.BrightnessContrast>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BrightnessContrastConverter.CreateOpenXmlElement<DXO2010Draw.BrightnessContrast>(value);
+      itemElement = DMXD.BrightnessContrastConverter.CreateOpenXmlElement<DXO10D.BrightnessContrast>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -727,27 +727,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// ColorTemperature.
   /// </summary>
-  private static DMDraws.ColorTemperature? GetColorTemperature(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.ColorTemperature? GetColorTemperature(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ColorTemperature>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ColorTemperature>();
     if (element != null)
-      return DMXDraws.ColorTemperatureConverter.CreateModelElement(element);
+      return DMXD.ColorTemperatureConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColorTemperature(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ColorTemperature? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTemperature(DXO10D.ImageEffect openXmlElement, DMD.ColorTemperature? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ColorTemperatureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ColorTemperature>(), value, diffs, objName);
+    return DMXD.ColorTemperatureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ColorTemperature>(), value, diffs, objName);
   }
   
-  private static void SetColorTemperature(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ColorTemperature? value)
+  private static void SetColorTemperature(DXO10D.ImageEffect openXmlElement, DMD.ColorTemperature? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ColorTemperature>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ColorTemperature>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ColorTemperatureConverter.CreateOpenXmlElement<DXO2010Draw.ColorTemperature>(value);
+      itemElement = DMXD.ColorTemperatureConverter.CreateOpenXmlElement<DXO10D.ColorTemperature>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -756,27 +756,27 @@ public static class ImageEffectConverter
   /// <summary>
   /// Saturation.
   /// </summary>
-  private static DMDraws.Saturation2? GetSaturation(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.Saturation2? GetSaturation(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.Saturation>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.Saturation>();
     if (element != null)
-      return DMXDraws.Saturation2Converter.CreateModelElement(element);
+      return DMXD.Saturation2Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSaturation(DXO2010Draw.ImageEffect openXmlElement, DMDraws.Saturation2? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXO10D.ImageEffect openXmlElement, DMD.Saturation2? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Saturation2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.Saturation>(), value, diffs, objName);
+    return DMXD.Saturation2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.Saturation>(), value, diffs, objName);
   }
   
-  private static void SetSaturation(DXO2010Draw.ImageEffect openXmlElement, DMDraws.Saturation2? value)
+  private static void SetSaturation(DXO10D.ImageEffect openXmlElement, DMD.Saturation2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.Saturation>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.Saturation>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Saturation2Converter.CreateOpenXmlElement<DXO2010Draw.Saturation>(value);
+      itemElement = DMXD.Saturation2Converter.CreateOpenXmlElement<DXO10D.Saturation>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -785,33 +785,33 @@ public static class ImageEffectConverter
   /// <summary>
   /// SharpenSoften.
   /// </summary>
-  private static DMDraws.SharpenSoften? GetSharpenSoften(DXO2010Draw.ImageEffect openXmlElement)
+  private static DMD.SharpenSoften? GetSharpenSoften(DXO10D.ImageEffect openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.SharpenSoften>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.SharpenSoften>();
     if (element != null)
-      return DMXDraws.SharpenSoftenConverter.CreateModelElement(element);
+      return DMXD.SharpenSoftenConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSharpenSoften(DXO2010Draw.ImageEffect openXmlElement, DMDraws.SharpenSoften? value, DiffList? diffs, string? objName)
+  private static bool CmpSharpenSoften(DXO10D.ImageEffect openXmlElement, DMD.SharpenSoften? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SharpenSoftenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.SharpenSoften>(), value, diffs, objName);
+    return DMXD.SharpenSoftenConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.SharpenSoften>(), value, diffs, objName);
   }
   
-  private static void SetSharpenSoften(DXO2010Draw.ImageEffect openXmlElement, DMDraws.SharpenSoften? value)
+  private static void SetSharpenSoften(DXO10D.ImageEffect openXmlElement, DMD.SharpenSoften? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.SharpenSoften>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.SharpenSoften>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SharpenSoftenConverter.CreateOpenXmlElement<DXO2010Draw.SharpenSoften>(value);
+      itemElement = DMXD.SharpenSoftenConverter.CreateOpenXmlElement<DXO10D.SharpenSoften>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ImageEffect? CreateModelElement(DXO2010Draw.ImageEffect? openXmlElement)
+  public static DocumentModel.Drawings.ImageEffect? CreateModelElement(DXO10D.ImageEffect? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -849,7 +849,7 @@ public static class ImageEffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ImageEffect? openXmlElement, DMDraws.ImageEffect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ImageEffect? openXmlElement, DMD.ImageEffect? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -917,15 +917,15 @@ public static class ImageEffectConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageEffect value)
-    where OpenXmlElementType: DXO2010Draw.ImageEffect, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ImageEffect value)
+    where OpenXmlElementType: DXO10D.ImageEffect, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ImageEffect openXmlElement, DMDraws.ImageEffect value)
+  public static void UpdateOpenXmlElement(DXO10D.ImageEffect openXmlElement, DMD.ImageEffect value)
   {
     SetVisible(openXmlElement, value?.Visible);
     SetArtisticBlur(openXmlElement, value?.ArtisticBlur);

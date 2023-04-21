@@ -8,17 +8,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetScreentip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetScreentip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetScreentip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetScreentip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetSupertip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetSupertip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetSupertip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetSupertip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetId(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetId(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetQualifiedId(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
-  private static void SetQualifiedId(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetQualifiedId(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -116,17 +116,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetTag(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetTag(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -134,17 +134,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetOnAction(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetOnAction(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -152,19 +152,19 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// isDefinitive, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetIsDefinitive(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static Boolean? GetIsDefinitive(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.IsDefinitive?.Value;
   }
   
-  private static bool CmpIsDefinitive(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsDefinitive(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.IsDefinitive?.Value == value) return true;
     diffs?.Add(objName, "IsDefinitive", openXmlElement?.IsDefinitive?.Value, value);
     return false;
   }
   
-  private static void SetIsDefinitive(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
+  private static void SetIsDefinitive(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsDefinitive = new BooleanValue { Value = (Boolean)value };
@@ -175,19 +175,19 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static Boolean? GetEnabled(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -198,17 +198,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetEnabled(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetEnabled(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -216,17 +216,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetLabel(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetLabel(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -234,17 +234,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetLabel(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetLabel(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -252,19 +252,19 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static Boolean? GetVisible(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, Boolean? value)
+  private static void SetVisible(DXO10CUI.BackstageRegularButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -275,17 +275,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetVisible(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetVisible(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -293,17 +293,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetKeytip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetKeytip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -311,17 +311,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetKeytip(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetKeytip(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
@@ -329,17 +329,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetImage(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetImage(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -347,17 +347,17 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetImageMso(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetImageMso(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -365,22 +365,22 @@ public static class BackstageRegularButtonConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement)
+  private static String? GetGetImage(DXO10CUI.BackstageRegularButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.BackstageRegularButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
-  private static void SetGetImage(DXO2010CustUI.BackstageRegularButton openXmlElement, String? value)
+  private static void SetGetImage(DXO10CUI.BackstageRegularButton openXmlElement, String? value)
   {
     openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.BackstageRegularButton? CreateModelElement(DXO2010CustUI.BackstageRegularButton? openXmlElement)
+  public static DocumentModel.BackstageRegularButton? CreateModelElement(DXO10CUI.BackstageRegularButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -410,7 +410,7 @@ public static class BackstageRegularButtonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.BackstageRegularButton? openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.BackstageRegularButton? openXmlElement, DM.BackstageRegularButton? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -463,14 +463,14 @@ public static class BackstageRegularButtonConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.BackstageRegularButton value)
-    where OpenXmlElementType: DXO2010CustUI.BackstageRegularButton, new()
+    where OpenXmlElementType: DXO10CUI.BackstageRegularButton, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.BackstageRegularButton openXmlElement, DM.BackstageRegularButton value)
+  public static void UpdateOpenXmlElement(DXO10CUI.BackstageRegularButton openXmlElement, DM.BackstageRegularButton value)
   {
     SetScreentip(openXmlElement, value?.Screentip);
     SetGetScreentip(openXmlElement, value?.GetScreentip);

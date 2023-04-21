@@ -8,19 +8,19 @@ public static class LinearShadePropertiesConverter
   /// <summary>
   /// ang, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetAngle(DXO2010W.LinearShadeProperties openXmlElement)
+  private static Int32? GetAngle(DXO10W.LinearShadeProperties openXmlElement)
   {
     return openXmlElement?.Angle?.Value;
   }
   
-  private static bool CmpAngle(DXO2010W.LinearShadeProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXO10W.LinearShadeProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Angle?.Value == value) return true;
     diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
     return false;
   }
   
-  private static void SetAngle(DXO2010W.LinearShadeProperties openXmlElement, Int32? value)
+  private static void SetAngle(DXO10W.LinearShadeProperties openXmlElement, Int32? value)
   {
     openXmlElement.Angle = value;
   }
@@ -28,22 +28,22 @@ public static class LinearShadePropertiesConverter
   /// <summary>
   /// scaled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMW.OnOffKind? GetScaled(DXO2010W.LinearShadeProperties openXmlElement)
+  private static DMW.OnOffKind? GetScaled(DXO10W.LinearShadeProperties openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value);
   }
   
-  private static bool CmpScaled(DXO2010W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpScaled(DXO10W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value, value, diffs, objName);
   }
   
-  private static void SetScaled(DXO2010W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value)
+  private static void SetScaled(DXO10W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value)
   {
     openXmlElement.Scaled = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(value);
   }
   
-  public static DMW.LinearShadeProperties? CreateModelElement(DXO2010W.LinearShadeProperties? openXmlElement)
+  public static DMW.LinearShadeProperties? CreateModelElement(DXO10W.LinearShadeProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class LinearShadePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.LinearShadeProperties? openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.LinearShadeProperties? openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -72,14 +72,14 @@ public static class LinearShadePropertiesConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.LinearShadeProperties value)
-    where OpenXmlElementType: DXO2010W.LinearShadeProperties, new()
+    where OpenXmlElementType: DXO10W.LinearShadeProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.LinearShadeProperties openXmlElement, DMW.LinearShadeProperties value)
+  public static void UpdateOpenXmlElement(DXO10W.LinearShadeProperties openXmlElement, DMW.LinearShadeProperties value)
   {
     SetAngle(openXmlElement, value?.Angle);
     SetScaled(openXmlElement, value?.Scaled);

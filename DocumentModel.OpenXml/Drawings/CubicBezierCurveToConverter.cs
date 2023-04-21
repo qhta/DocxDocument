@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class CubicBezierCurveToConverter
 {
-  private static Collection<DMDraws.AdjustPoint2DType>? GetPoints(DXDraw.CubicBezierCurveTo openXmlElement)
+  private static Collection<DMD.AdjustPoint2DType>? GetPoints(DXD.CubicBezierCurveTo openXmlElement)
   {
-    var collection = new Collection<DMDraws.AdjustPoint2DType>();
-    foreach (var item in openXmlElement.Elements<DXDraw.Point>())
+    var collection = new Collection<DMD.AdjustPoint2DType>();
+    foreach (var item in openXmlElement.Elements<DXD.Point>())
     {
-      var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateModelElement(item);
+      var newItem = DMXD.AdjustPoint2DTypeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class CubicBezierCurveToConverter
     return null;
   }
   
-  private static bool CmpPoints(DXDraw.CubicBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
+  private static bool CmpPoints(DXD.CubicBezierCurveTo openXmlElement, Collection<DMD.AdjustPoint2DType>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.Point>();
+    var origElements = openXmlElement.Elements<DXD.Point>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class CubicBezierCurveToConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.AdjustPoint2DTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.AdjustPoint2DTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class CubicBezierCurveToConverter
     return false;
   }
   
-  private static void SetPoints(DXDraw.CubicBezierCurveTo openXmlElement, Collection<DMDraws.AdjustPoint2DType>? value)
+  private static void SetPoints(DXD.CubicBezierCurveTo openXmlElement, Collection<DMD.AdjustPoint2DType>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.Point>();
+    openXmlElement.RemoveAllChildren<DXD.Point>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXDraw.Point>(item);
+        var newItem = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Point>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.CubicBezierCurveTo? CreateModelElement(DXDraw.CubicBezierCurveTo? openXmlElement)
+  public static DocumentModel.Drawings.CubicBezierCurveTo? CreateModelElement(DXD.CubicBezierCurveTo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class CubicBezierCurveToConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.CubicBezierCurveTo? openXmlElement, DMDraws.CubicBezierCurveTo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CubicBezierCurveTo? openXmlElement, DMD.CubicBezierCurveTo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class CubicBezierCurveToConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CubicBezierCurveTo value)
-    where OpenXmlElementType: DXDraw.CubicBezierCurveTo, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CubicBezierCurveTo value)
+    where OpenXmlElementType: DXD.CubicBezierCurveTo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.CubicBezierCurveTo openXmlElement, DMDraws.CubicBezierCurveTo value)
+  public static void UpdateOpenXmlElement(DXD.CubicBezierCurveTo openXmlElement, DMD.CubicBezierCurveTo value)
   {
     SetPoints(openXmlElement, value?.Points);
   }

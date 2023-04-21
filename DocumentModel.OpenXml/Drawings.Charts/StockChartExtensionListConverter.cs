@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class StockChartExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.StockChartExtension>? GetStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement)
+  private static Collection<DMDC.StockChartExtension>? GetStockChartExtensions(DXDC.StockChartExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.StockChartExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.StockChartExtension>())
+    var collection = new Collection<DMDC.StockChartExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.StockChartExtension>())
     {
-      var newItem = DMXDrawsCharts.StockChartExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.StockChartExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class StockChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement, Collection<DMDrawsCharts.StockChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpStockChartExtensions(DXDC.StockChartExtensionList openXmlElement, Collection<DMDC.StockChartExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.StockChartExtension>();
+    var origElements = openXmlElement.Elements<DXDC.StockChartExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class StockChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.StockChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.StockChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class StockChartExtensionListConverter
     return false;
   }
   
-  private static void SetStockChartExtensions(DXDrawCharts.StockChartExtensionList openXmlElement, Collection<DMDrawsCharts.StockChartExtension>? value)
+  private static void SetStockChartExtensions(DXDC.StockChartExtensionList openXmlElement, Collection<DMDC.StockChartExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.StockChartExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.StockChartExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.StockChartExtensionConverter.CreateOpenXmlElement<DXDrawCharts.StockChartExtension>(item);
+        var newItem = DMXDC.StockChartExtensionConverter.CreateOpenXmlElement<DXDC.StockChartExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.StockChartExtensionList? CreateModelElement(DXDrawCharts.StockChartExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StockChartExtensionList? CreateModelElement(DXDC.StockChartExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class StockChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StockChartExtensionList? openXmlElement, DMDrawsCharts.StockChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StockChartExtensionList? openXmlElement, DMDC.StockChartExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class StockChartExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StockChartExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.StockChartExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StockChartExtensionList value)
+    where OpenXmlElementType: DXDC.StockChartExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StockChartExtensionList openXmlElement, DMDrawsCharts.StockChartExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.StockChartExtensionList openXmlElement, DMDC.StockChartExtensionList value)
   {
     SetStockChartExtensions(openXmlElement, value?.StockChartExtensions);
   }

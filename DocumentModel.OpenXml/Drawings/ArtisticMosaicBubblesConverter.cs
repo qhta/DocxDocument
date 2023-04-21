@@ -8,19 +8,19 @@ public static class ArtisticMosaicBubblesConverter
   /// <summary>
   /// trans, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetTransparancy(DXO2010Draw.ArtisticMosaicBubbles openXmlElement)
+  private static Int32? GetTransparancy(DXO10D.ArtisticMosaicBubbles openXmlElement)
   {
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticMosaicBubbles openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
     return false;
   }
   
-  private static void SetTransparancy(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value)
+  private static void SetTransparancy(DXO10D.ArtisticMosaicBubbles openXmlElement, Int32? value)
   {
     openXmlElement.Transparancy = value;
   }
@@ -28,24 +28,24 @@ public static class ArtisticMosaicBubblesConverter
   /// <summary>
   /// pressure, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Int32? GetPressure(DXO2010Draw.ArtisticMosaicBubbles openXmlElement)
+  private static Int32? GetPressure(DXO10D.ArtisticMosaicBubbles openXmlElement)
   {
     return openXmlElement?.Pressure?.Value;
   }
   
-  private static bool CmpPressure(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPressure(DXO10D.ArtisticMosaicBubbles openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Pressure?.Value == value) return true;
     diffs?.Add(objName, "Pressure", openXmlElement?.Pressure?.Value, value);
     return false;
   }
   
-  private static void SetPressure(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, Int32? value)
+  private static void SetPressure(DXO10D.ArtisticMosaicBubbles openXmlElement, Int32? value)
   {
     openXmlElement.Pressure = value;
   }
   
-  public static DocumentModel.Drawings.ArtisticMosaicBubbles? CreateModelElement(DXO2010Draw.ArtisticMosaicBubbles? openXmlElement)
+  public static DocumentModel.Drawings.ArtisticMosaicBubbles? CreateModelElement(DXO10D.ArtisticMosaicBubbles? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class ArtisticMosaicBubblesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ArtisticMosaicBubbles? openXmlElement, DMDraws.ArtisticMosaicBubbles? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticMosaicBubbles? openXmlElement, DMD.ArtisticMosaicBubbles? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class ArtisticMosaicBubblesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ArtisticMosaicBubbles value)
-    where OpenXmlElementType: DXO2010Draw.ArtisticMosaicBubbles, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ArtisticMosaicBubbles value)
+    where OpenXmlElementType: DXO10D.ArtisticMosaicBubbles, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ArtisticMosaicBubbles openXmlElement, DMDraws.ArtisticMosaicBubbles value)
+  public static void UpdateOpenXmlElement(DXO10D.ArtisticMosaicBubbles openXmlElement, DMD.ArtisticMosaicBubbles value)
   {
     SetTransparancy(openXmlElement, value?.Transparancy);
     SetPressure(openXmlElement, value?.Pressure);

@@ -8,19 +8,19 @@ public static class DataLabelConverter
   /// <summary>
   /// idx, this property is only available in Office 2016 and later.
   /// </summary>
-  private static UInt32? GetIdx(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static UInt32? GetIdx(DXO16DCD.DataLabel openXmlElement)
   {
     return openXmlElement?.Idx?.Value;
   }
   
-  private static bool CmpIdx(DXO2016DrawChartDraw.DataLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIdx(DXO16DCD.DataLabel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Idx?.Value == value) return true;
     diffs?.Add(objName, "Idx", openXmlElement?.Idx?.Value, value);
     return false;
   }
   
-  private static void SetIdx(DXO2016DrawChartDraw.DataLabel openXmlElement, UInt32? value)
+  private static void SetIdx(DXO16DCD.DataLabel openXmlElement, UInt32? value)
   {
     openXmlElement.Idx = value;
   }
@@ -28,45 +28,45 @@ public static class DataLabelConverter
   /// <summary>
   /// pos, this property is only available in Office 2016 and later.
   /// </summary>
-  private static DMDrawsChartDraws.DataLabelPos? GetPos(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.DataLabelPos? GetPos(DXO16DCD.DataLabel openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDrawsChartDraws.DataLabelPos>(openXmlElement?.Pos?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(openXmlElement?.Pos?.Value);
   }
   
-  private static bool CmpPos(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabelPos? value, DiffList? diffs, string? objName)
+  private static bool CmpPos(DXO16DCD.DataLabel openXmlElement, DMDCDs.DataLabelPos? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDrawsChartDraws.DataLabelPos>(openXmlElement?.Pos?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(openXmlElement?.Pos?.Value, value, diffs, objName);
   }
   
-  private static void SetPos(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabelPos? value)
+  private static void SetPos(DXO16DCD.DataLabel openXmlElement, DMDCDs.DataLabelPos? value)
   {
-    openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDrawsChartDraws.DataLabelPos>(value);
+    openXmlElement.Pos = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos, DMDCDs.DataLabelPos>(value);
   }
   
   /// <summary>
   /// NumberFormat.
   /// </summary>
-  private static DMDrawsChartDraws.NumberFormat? GetNumberFormat(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.NumberFormat? GetNumberFormat(DXO16DCD.DataLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.NumberFormat>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.NumberFormat>();
     if (element != null)
-      return DMXDrawsChartDraws.NumberFormatConverter.CreateModelElement(element);
+      return DMXDCDs.NumberFormatConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberFormat(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.NumberFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberFormat(DXO16DCD.DataLabel openXmlElement, DMDCDs.NumberFormat? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NumberFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumberFormat>(), value, diffs, objName);
+    return DMXDCDs.NumberFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumberFormat>(), value, diffs, objName);
   }
   
-  private static void SetNumberFormat(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.NumberFormat? value)
+  private static void SetNumberFormat(DXO16DCD.DataLabel openXmlElement, DMDCDs.NumberFormat? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.NumberFormat>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.NumberFormat>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.NumberFormatConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.NumberFormat>(value);
+      itemElement = DMXDCDs.NumberFormatConverter.CreateOpenXmlElement<DXO16DCD.NumberFormat>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -75,27 +75,27 @@ public static class DataLabelConverter
   /// <summary>
   /// ShapeProperties.
   /// </summary>
-  private static DMDrawsChartDraws.ShapeProperties? GetShapeProperties(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.ShapeProperties? GetShapeProperties(DXO16DCD.DataLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ShapeProperties>();
     if (element != null)
-      return DMXDrawsChartDraws.ShapePropertiesConverter.CreateModelElement(element);
+      return DMXDCDs.ShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO16DCD.DataLabel openXmlElement, DMDCDs.ShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>(), value, diffs, objName);
+    return DMXDCDs.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetShapeProperties(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.ShapeProperties? value)
+  private static void SetShapeProperties(DXO16DCD.DataLabel openXmlElement, DMDCDs.ShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ShapePropertiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ShapeProperties>(value);
+      itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -104,27 +104,27 @@ public static class DataLabelConverter
   /// <summary>
   /// TxPrTextBody.
   /// </summary>
-  private static DMDrawsChartDraws.TxPrTextBody? GetTxPrTextBody(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.TxPrTextBody? GetTxPrTextBody(DXO16DCD.DataLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.TxPrTextBody>();
     if (element != null)
-      return DMXDrawsChartDraws.TxPrTextBodyConverter.CreateModelElement(element);
+      return DMXDCDs.TxPrTextBodyConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTxPrTextBody(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.TxPrTextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpTxPrTextBody(DXO16DCD.DataLabel openXmlElement, DMDCDs.TxPrTextBody? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>(), value, diffs, objName);
+    return DMXDCDs.TxPrTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>(), value, diffs, objName);
   }
   
-  private static void SetTxPrTextBody(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.TxPrTextBody? value)
+  private static void SetTxPrTextBody(DXO16DCD.DataLabel openXmlElement, DMDCDs.TxPrTextBody? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.TxPrTextBody>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.TxPrTextBody>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.TxPrTextBodyConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.TxPrTextBody>(value);
+      itemElement = DMXDCDs.TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -133,27 +133,27 @@ public static class DataLabelConverter
   /// <summary>
   /// DataLabelVisibilities.
   /// </summary>
-  private static DMDrawsChartDraws.DataLabelVisibilities? GetDataLabelVisibilities(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.DataLabelVisibilities? GetDataLabelVisibilities(DXO16DCD.DataLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.DataLabelVisibilities>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.DataLabelVisibilities>();
     if (element != null)
-      return DMXDrawsChartDraws.DataLabelVisibilitiesConverter.CreateModelElement(element);
+      return DMXDCDs.DataLabelVisibilitiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabelVisibilities(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabelVisibilities? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelVisibilities(DXO16DCD.DataLabel openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.DataLabelVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.DataLabelVisibilities>(), value, diffs, objName);
+    return DMXDCDs.DataLabelVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.DataLabelVisibilities>(), value, diffs, objName);
   }
   
-  private static void SetDataLabelVisibilities(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabelVisibilities? value)
+  private static void SetDataLabelVisibilities(DXO16DCD.DataLabel openXmlElement, DMDCDs.DataLabelVisibilities? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.DataLabelVisibilities>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.DataLabelVisibilities>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.DataLabelVisibilitiesConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.DataLabelVisibilities>(value);
+      itemElement = DMXDCDs.DataLabelVisibilitiesConverter.CreateOpenXmlElement<DXO16DCD.DataLabelVisibilities>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -162,24 +162,24 @@ public static class DataLabelConverter
   /// <summary>
   /// SeparatorXsdstring.
   /// </summary>
-  private static String? GetSeparatorXsdstring(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static String? GetSeparatorXsdstring(DXO16DCD.DataLabel openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeparatorXsdstring>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO16DCD.SeparatorXsdstring>()?.Text;
   }
   
-  private static bool CmpSeparatorXsdstring(DXO2016DrawChartDraw.DataLabel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparatorXsdstring(DXO16DCD.DataLabel openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.SeparatorXsdstring>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO16DCD.SeparatorXsdstring>()?.Text == value;
   }
   
-  private static void SetSeparatorXsdstring(DXO2016DrawChartDraw.DataLabel openXmlElement, String? value)
+  private static void SetSeparatorXsdstring(DXO16DCD.DataLabel openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.SeparatorXsdstring>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.SeparatorXsdstring>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2016DrawChartDraw.SeparatorXsdstring { Text = value };
+      itemElement = new DXO16DCD.SeparatorXsdstring { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -187,33 +187,33 @@ public static class DataLabelConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDrawsChartDraws.ExtensionList? GetExtensionList(DXO2016DrawChartDraw.DataLabel openXmlElement)
+  private static DMDCDs.ExtensionList? GetExtensionList(DXO16DCD.DataLabel openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.ExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.DataLabel openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.ExtensionList? value)
+  private static void SetExtensionList(DXO16DCD.DataLabel openXmlElement, DMDCDs.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ExtensionListConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.ExtensionList>(value);
+      itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.DataLabel? CreateModelElement(DXO2016DrawChartDraw.DataLabel? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.DataLabel? CreateModelElement(DXO16DCD.DataLabel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -231,7 +231,7 @@ public static class DataLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.DataLabel? openXmlElement, DMDrawsChartDraws.DataLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.DataLabel? openXmlElement, DMDCDs.DataLabel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -259,15 +259,15 @@ public static class DataLabelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.DataLabel value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.DataLabel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.DataLabel value)
+    where OpenXmlElementType: DXO16DCD.DataLabel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.DataLabel openXmlElement, DMDrawsChartDraws.DataLabel value)
+  public static void UpdateOpenXmlElement(DXO16DCD.DataLabel openXmlElement, DMDCDs.DataLabel value)
   {
     SetIdx(openXmlElement, value?.Idx);
     SetPos(openXmlElement, value?.Pos);

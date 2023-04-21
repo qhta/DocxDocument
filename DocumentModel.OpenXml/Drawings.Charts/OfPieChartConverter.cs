@@ -8,68 +8,68 @@ public static class OfPieChartConverter
   /// <summary>
   /// Pie of Pie or Bar of Pie Type.
   /// </summary>
-  private static DMDrawsCharts.OfPieKind? GetOfPieType(DXDrawCharts.OfPieChart openXmlElement)
+  private static DMDC.OfPieKind? GetOfPieType(DXDC.OfPieChart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>(openXmlElement.GetFirstChild<DXDC.OfPieType>()?.Val?.Value);
   }
   
-  private static bool CmpOfPieType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOfPieType(DXDC.OfPieChart openXmlElement, DMDC.OfPieKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>(openXmlElement.GetFirstChild<DXDC.OfPieType>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetOfPieType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieKind? value)
+  private static void SetOfPieType(DXDC.OfPieChart openXmlElement, DMDC.OfPieKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.OfPieType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.OfPieType>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>(itemElement, (DMDrawsCharts.OfPieKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>(itemElement, (DMDC.OfPieKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDrawsCharts.OfPieKind>((DMDrawsCharts.OfPieKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>((DMDC.OfPieKind)value));
   }
   
   /// <summary>
   /// VaryColors.
   /// </summary>
-  private static Boolean? GetVaryColors(DXDrawCharts.OfPieChart openXmlElement)
+  private static Boolean? GetVaryColors(DXDC.OfPieChart openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    return openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
   }
   
-  private static bool CmpVaryColors(DXDrawCharts.OfPieChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVaryColors(DXDC.OfPieChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.VaryColors", val, value);
+    diffs?.Add(objName, "DXDC.VaryColors", val, value);
     return false;
   }
   
-  private static void SetVaryColors(DXDrawCharts.OfPieChart openXmlElement, Boolean? value)
+  private static void SetVaryColors(DXDC.OfPieChart openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.VaryColors>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.VaryColors>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.VaryColors();
+      var itemElement = new DXDC.VaryColors();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsCharts.PieChartSeries>? GetPieChartSeries(DXDrawCharts.OfPieChart openXmlElement)
+  private static Collection<DMDC.PieChartSeries>? GetPieChartSeries(DXDC.OfPieChart openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.PieChartSeries>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.PieChartSeries>())
+    var collection = new Collection<DMDC.PieChartSeries>();
+    foreach (var item in openXmlElement.Elements<DXDC.PieChartSeries>())
     {
-      var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateModelElement(item);
+      var newItem = DMXDC.PieChartSeriesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -78,9 +78,9 @@ public static class OfPieChartConverter
     return null;
   }
   
-  private static bool CmpPieChartSeries(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpPieChartSeries(DXDC.OfPieChart openXmlElement, Collection<DMDC.PieChartSeries>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.PieChartSeries>();
+    var origElements = openXmlElement.Elements<DXDC.PieChartSeries>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -96,7 +96,7 @@ public static class OfPieChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.PieChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.PieChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -106,148 +106,148 @@ public static class OfPieChartConverter
     return false;
   }
   
-  private static void SetPieChartSeries(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.PieChartSeries>? value)
+  private static void SetPieChartSeries(DXDC.OfPieChart openXmlElement, Collection<DMDC.PieChartSeries>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.PieChartSeries>();
+    openXmlElement.RemoveAllChildren<DXDC.PieChartSeries>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.PieChartSeriesConverter.CreateOpenXmlElement<DXDrawCharts.PieChartSeries>(item);
+        var newItem = DMXDC.PieChartSeriesConverter.CreateOpenXmlElement<DXDC.PieChartSeries>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.DataLabels? GetDataLabels(DXDrawCharts.OfPieChart openXmlElement)
+  private static DMDC.DataLabels? GetDataLabels(DXDC.OfPieChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.DataLabels>();
+    var element = openXmlElement?.GetFirstChild<DXDC.DataLabels>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabels(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXDC.OfPieChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
   }
   
-  private static void SetDataLabels(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.DataLabels? value)
+  private static void SetDataLabels(DXDC.OfPieChart openXmlElement, DMDC.DataLabels? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.DataLabels>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.DataLabels>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsConverter.CreateOpenXmlElement<DXDrawCharts.DataLabels>(value);
+      itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt16? GetGapWidth(DXDrawCharts.OfPieChart openXmlElement)
+  private static UInt16? GetGapWidth(DXDC.OfPieChart openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val);
   }
   
-  private static bool CmpGapWidth(DXDrawCharts.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpGapWidth(DXDC.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.GapWidth>()?.Val, value, diffs, objName, "GapWidth");
   }
   
-  private static void SetGapWidth(DXDrawCharts.OfPieChart openXmlElement, UInt16? value)
+  private static void SetGapWidth(DXDC.OfPieChart openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.GapWidth,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.GapWidth,System.UInt16>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.SplitKind? GetSplitType(DXDrawCharts.OfPieChart openXmlElement)
+  private static DMDC.SplitKind? GetSplitType(DXDC.OfPieChart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(openXmlElement.GetFirstChild<DXDrawCharts.SplitType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>(openXmlElement.GetFirstChild<DXDC.SplitType>()?.Val?.Value);
   }
   
-  private static bool CmpSplitType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.SplitKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSplitType(DXDC.OfPieChart openXmlElement, DMDC.SplitKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(openXmlElement.GetFirstChild<DXDrawCharts.SplitType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>(openXmlElement.GetFirstChild<DXDC.SplitType>()?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetSplitType(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.SplitKind? value)
+  private static void SetSplitType(DXDC.OfPieChart openXmlElement, DMDC.SplitKind? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.SplitType>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.SplitType>();
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>(itemElement, (DMDrawsCharts.SplitKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>(itemElement, (DMDC.SplitKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDrawCharts.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDrawsCharts.SplitKind>((DMDrawsCharts.SplitKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>((DMDC.SplitKind)value));
   }
   
-  private static Double? GetSplitPosition(DXDrawCharts.OfPieChart openXmlElement)
+  private static Double? GetSplitPosition(DXDC.OfPieChart openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.SplitPosition>()?.Val);
   }
   
-  private static bool CmpSplitPosition(DXDrawCharts.OfPieChart openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpSplitPosition(DXDC.OfPieChart openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.SplitPosition>()?.Val, value, diffs, objName, "SplitPosition");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.SplitPosition>()?.Val, value, diffs, objName, "SplitPosition");
   }
   
-  private static void SetSplitPosition(DXDrawCharts.OfPieChart openXmlElement, Double? value)
+  private static void SetSplitPosition(DXDC.OfPieChart openXmlElement, Double? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.SplitPosition,System.Double>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.SplitPosition,System.Double>(openXmlElement, value);
   }
   
-  private static DMDrawsCharts.CustomSplit? GetCustomSplit(DXDrawCharts.OfPieChart openXmlElement)
+  private static DMDC.CustomSplit? GetCustomSplit(DXDC.OfPieChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.CustomSplit>();
+    var element = openXmlElement?.GetFirstChild<DXDC.CustomSplit>();
     if (element != null)
-      return DMXDrawsCharts.CustomSplitConverter.CreateModelElement(element);
+      return DMXDC.CustomSplitConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCustomSplit(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.CustomSplit? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomSplit(DXDC.OfPieChart openXmlElement, DMDC.CustomSplit? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CustomSplitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.CustomSplit>(), value, diffs, objName);
+    return DMXDC.CustomSplitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.CustomSplit>(), value, diffs, objName);
   }
   
-  private static void SetCustomSplit(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.CustomSplit? value)
+  private static void SetCustomSplit(DXDC.OfPieChart openXmlElement, DMDC.CustomSplit? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.CustomSplit>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.CustomSplit>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.CustomSplitConverter.CreateOpenXmlElement<DXDrawCharts.CustomSplit>(value);
+      itemElement = DMXDC.CustomSplitConverter.CreateOpenXmlElement<DXDC.CustomSplit>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static UInt16? GetSecondPieSize(DXDrawCharts.OfPieChart openXmlElement)
+  private static UInt16? GetSecondPieSize(DXDC.OfPieChart openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.SecondPieSize>()?.Val);
   }
   
-  private static bool CmpSecondPieSize(DXDrawCharts.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondPieSize(DXDC.OfPieChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.SecondPieSize>()?.Val, value, diffs, objName, "SecondPieSize");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.SecondPieSize>()?.Val, value, diffs, objName, "SecondPieSize");
   }
   
-  private static void SetSecondPieSize(DXDrawCharts.OfPieChart openXmlElement, UInt16? value)
+  private static void SetSecondPieSize(DXDC.OfPieChart openXmlElement, UInt16? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.SecondPieSize,System.UInt16>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.SecondPieSize,System.UInt16>(openXmlElement, value);
   }
   
-  private static Collection<DMDrawsCharts.SeriesLines>? GetSeriesLines(DXDrawCharts.OfPieChart openXmlElement)
+  private static Collection<DMDC.SeriesLines>? GetSeriesLines(DXDC.OfPieChart openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.SeriesLines>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.SeriesLines>())
+    var collection = new Collection<DMDC.SeriesLines>();
+    foreach (var item in openXmlElement.Elements<DXDC.SeriesLines>())
     {
-      var newItem = DMXDrawsCharts.SeriesLinesConverter.CreateModelElement(item);
+      var newItem = DMXDC.SeriesLinesConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -256,9 +256,9 @@ public static class OfPieChartConverter
     return null;
   }
   
-  private static bool CmpSeriesLines(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesLines(DXDC.OfPieChart openXmlElement, Collection<DMDC.SeriesLines>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.SeriesLines>();
+    var origElements = openXmlElement.Elements<DXDC.SeriesLines>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -274,7 +274,7 @@ public static class OfPieChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.SeriesLinesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.SeriesLinesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -284,47 +284,47 @@ public static class OfPieChartConverter
     return false;
   }
   
-  private static void SetSeriesLines(DXDrawCharts.OfPieChart openXmlElement, Collection<DMDrawsCharts.SeriesLines>? value)
+  private static void SetSeriesLines(DXDC.OfPieChart openXmlElement, Collection<DMDC.SeriesLines>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.SeriesLines>();
+    openXmlElement.RemoveAllChildren<DXDC.SeriesLines>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.SeriesLinesConverter.CreateOpenXmlElement<DXDrawCharts.SeriesLines>(item);
+        var newItem = DMXDC.SeriesLinesConverter.CreateOpenXmlElement<DXDC.SeriesLines>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.OfPieChart openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.OfPieChart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.OfPieChart openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.OfPieChart openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(DXDrawCharts.OfPieChart? openXmlElement)
+  public static DocumentModel.Drawings.Charts.OfPieChart? CreateModelElement(DXDC.OfPieChart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -345,7 +345,7 @@ public static class OfPieChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.OfPieChart? openXmlElement, DMDrawsCharts.OfPieChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.OfPieChart? openXmlElement, DMDC.OfPieChart? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -379,15 +379,15 @@ public static class OfPieChartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.OfPieChart value)
-    where OpenXmlElementType: DXDrawCharts.OfPieChart, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.OfPieChart value)
+    where OpenXmlElementType: DXDC.OfPieChart, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.OfPieChart openXmlElement, DMDrawsCharts.OfPieChart value)
+  public static void UpdateOpenXmlElement(DXDC.OfPieChart openXmlElement, DMDC.OfPieChart value)
   {
     SetOfPieType(openXmlElement, value?.OfPieType);
     SetVaryColors(openXmlElement, value?.VaryColors);

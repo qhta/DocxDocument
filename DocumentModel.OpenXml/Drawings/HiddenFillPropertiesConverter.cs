@@ -8,30 +8,30 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// NoFill.
   /// </summary>
-  private static Boolean? GetNoFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static Boolean? GetNoFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    diffs?.Add(objName, "DXD.NoFill", val, value);
     return false;
   }
   
-  private static void SetNoFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value)
+  private static void SetNoFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoFill();
+      var itemElement = new DXD.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -39,27 +39,27 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// SolidFill.
   /// </summary>
-  private static DMDraws.SolidFill? GetSolidFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static DMD.SolidFill? GetSolidFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
     if (element != null)
-      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+      return DMXD.SolidFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSolidFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXO10D.HiddenFillProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
   }
   
-  private static void SetSolidFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.SolidFill? value)
+  private static void SetSolidFill(DXO10D.HiddenFillProperties openXmlElement, DMD.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
+      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -68,27 +68,27 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// GradientFill.
   /// </summary>
-  private static DMDraws.GradientFill? GetGradientFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static DMD.GradientFill? GetGradientFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
     if (element != null)
-      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+      return DMXD.GradientFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGradientFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXO10D.HiddenFillProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
   }
   
-  private static void SetGradientFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.GradientFill? value)
+  private static void SetGradientFill(DXO10D.HiddenFillProperties openXmlElement, DMD.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
+      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -97,27 +97,27 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// BlipFill.
   /// </summary>
-  private static DMDraws.BlipFill? GetBlipFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static DMD.BlipFill? GetBlipFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
     if (element != null)
-      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+      return DMXD.BlipFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlipFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXO10D.HiddenFillProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
   }
   
-  private static void SetBlipFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.BlipFill? value)
+  private static void SetBlipFill(DXO10D.HiddenFillProperties openXmlElement, DMD.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
+      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -126,27 +126,27 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  private static DMDraws.PatternFill? GetPatternFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static DMD.PatternFill? GetPatternFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
     if (element != null)
-      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+      return DMXD.PatternFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPatternFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXO10D.HiddenFillProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
   }
   
-  private static void SetPatternFill(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.PatternFill? value)
+  private static void SetPatternFill(DXO10D.HiddenFillProperties openXmlElement, DMD.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
+      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -155,35 +155,35 @@ public static class HiddenFillPropertiesConverter
   /// <summary>
   /// Group Fill.
   /// </summary>
-  private static Boolean? GetGroupFill(DXO2010Draw.HiddenFillProperties openXmlElement)
+  private static Boolean? GetGroupFill(DXO10D.HiddenFillProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    diffs?.Add(objName, "DXD.GroupFill", val, value);
     return false;
   }
   
-  private static void SetGroupFill(DXO2010Draw.HiddenFillProperties openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXO10D.HiddenFillProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.GroupFill();
+      var itemElement = new DXD.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.HiddenFillProperties? CreateModelElement(DXO2010Draw.HiddenFillProperties? openXmlElement)
+  public static DocumentModel.Drawings.HiddenFillProperties? CreateModelElement(DXO10D.HiddenFillProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -199,7 +199,7 @@ public static class HiddenFillPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.HiddenFillProperties? openXmlElement, DMDraws.HiddenFillProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.HiddenFillProperties? openXmlElement, DMD.HiddenFillProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -223,15 +223,15 @@ public static class HiddenFillPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HiddenFillProperties value)
-    where OpenXmlElementType: DXO2010Draw.HiddenFillProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.HiddenFillProperties value)
+    where OpenXmlElementType: DXO10D.HiddenFillProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.HiddenFillProperties openXmlElement, DMDraws.HiddenFillProperties value)
+  public static void UpdateOpenXmlElement(DXO10D.HiddenFillProperties openXmlElement, DMD.HiddenFillProperties value)
   {
     SetNoFill(openXmlElement, value?.NoFill);
     SetSolidFill(openXmlElement, value?.SolidFill);

@@ -8,33 +8,33 @@ public static class FilteredCategoryTitleConverter
   /// <summary>
   /// AxisDataSourceType.
   /// </summary>
-  private static DMDrawsCharts.AxisDataSourceType3? GetAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement)
+  private static DMDC.AxisDataSourceType3? GetAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.AxisDataSourceType>();
     if (element != null)
-      return DMXDrawsCharts.AxisDataSourceType3Converter.CreateModelElement(element);
+      return DMXDC.AxisDataSourceType3Converter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.AxisDataSourceType3? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.AxisDataSourceType3? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>(), value, diffs, objName);
+    return DMXDC.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.AxisDataSourceType>(), value, diffs, objName);
   }
   
-  private static void SetAxisDataSourceType(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.AxisDataSourceType3? value)
+  private static void SetAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.AxisDataSourceType3? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.AxisDataSourceType>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.AxisDataSourceType>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.AxisDataSourceType3Converter.CreateOpenXmlElement<DXO2013DrawChart.AxisDataSourceType>(value);
+      itemElement = DMXDC.AxisDataSourceType3Converter.CreateOpenXmlElement<DXO13DC.AxisDataSourceType>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? CreateModelElement(DXO2013DrawChart.FilteredCategoryTitle? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FilteredCategoryTitle? CreateModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class FilteredCategoryTitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.FilteredCategoryTitle? openXmlElement, DMDrawsCharts.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class FilteredCategoryTitleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FilteredCategoryTitle value)
-    where OpenXmlElementType: DXO2013DrawChart.FilteredCategoryTitle, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.FilteredCategoryTitle value)
+    where OpenXmlElementType: DXO13DC.FilteredCategoryTitle, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.FilteredCategoryTitle openXmlElement, DMDrawsCharts.FilteredCategoryTitle value)
+  public static void UpdateOpenXmlElement(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.FilteredCategoryTitle value)
   {
     SetAxisDataSourceType(openXmlElement, value?.AxisDataSourceType);
   }

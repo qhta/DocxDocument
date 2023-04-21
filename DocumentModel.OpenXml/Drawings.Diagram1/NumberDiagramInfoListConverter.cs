@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagram1;
 /// </summary>
 public static class NumberDiagramInfoListConverter
 {
-  private static Collection<DMDrawsDgm1.NumberDiagramInfo>? GetNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement)
+  private static Collection<DMDD1.NumberDiagramInfo>? GetNumberDiagramInfos(DXO19DD11.NumberDiagramInfoList openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgm1.NumberDiagramInfo>();
-    foreach (var item in openXmlElement.Elements<DXO2019DrawDgm11.NumberDiagramInfo>())
+    var collection = new Collection<DMDD1.NumberDiagramInfo>();
+    foreach (var item in openXmlElement.Elements<DXO19DD11.NumberDiagramInfo>())
     {
-      var newItem = DMXDrawsDgm1.NumberDiagramInfoConverter.CreateModelElement(item);
+      var newItem = DMXDD1.NumberDiagramInfoConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class NumberDiagramInfoListConverter
     return null;
   }
   
-  private static bool CmpNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement, Collection<DMDrawsDgm1.NumberDiagramInfo>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberDiagramInfos(DXO19DD11.NumberDiagramInfoList openXmlElement, Collection<DMDD1.NumberDiagramInfo>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2019DrawDgm11.NumberDiagramInfo>();
+    var origElements = openXmlElement.Elements<DXO19DD11.NumberDiagramInfo>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class NumberDiagramInfoListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgm1.NumberDiagramInfoConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD1.NumberDiagramInfoConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class NumberDiagramInfoListConverter
     return false;
   }
   
-  private static void SetNumberDiagramInfos(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement, Collection<DMDrawsDgm1.NumberDiagramInfo>? value)
+  private static void SetNumberDiagramInfos(DXO19DD11.NumberDiagramInfoList openXmlElement, Collection<DMDD1.NumberDiagramInfo>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2019DrawDgm11.NumberDiagramInfo>();
+    openXmlElement.RemoveAllChildren<DXO19DD11.NumberDiagramInfo>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgm1.NumberDiagramInfoConverter.CreateOpenXmlElement<DXO2019DrawDgm11.NumberDiagramInfo>(item);
+        var newItem = DMXDD1.NumberDiagramInfoConverter.CreateOpenXmlElement<DXO19DD11.NumberDiagramInfo>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? CreateModelElement(DXO2019DrawDgm11.NumberDiagramInfoList? openXmlElement)
+  public static DocumentModel.Drawings.Diagram1.NumberDiagramInfoList? CreateModelElement(DXO19DD11.NumberDiagramInfoList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class NumberDiagramInfoListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2019DrawDgm11.NumberDiagramInfoList? openXmlElement, DMDrawsDgm1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19DD11.NumberDiagramInfoList? openXmlElement, DMDD1.NumberDiagramInfoList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class NumberDiagramInfoListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgm1.NumberDiagramInfoList value)
-    where OpenXmlElementType: DXO2019DrawDgm11.NumberDiagramInfoList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD1.NumberDiagramInfoList value)
+    where OpenXmlElementType: DXO19DD11.NumberDiagramInfoList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2019DrawDgm11.NumberDiagramInfoList openXmlElement, DMDrawsDgm1.NumberDiagramInfoList value)
+  public static void UpdateOpenXmlElement(DXO19DD11.NumberDiagramInfoList openXmlElement, DMDD1.NumberDiagramInfoList value)
   {
     SetNumberDiagramInfos(openXmlElement, value?.NumberDiagramInfos);
   }

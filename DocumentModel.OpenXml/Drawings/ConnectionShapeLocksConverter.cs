@@ -8,19 +8,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  private static Boolean? GetNoGrouping(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoGrouping(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
     return false;
   }
   
-  private static void SetNoGrouping(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoGrouping(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
@@ -31,19 +31,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  private static Boolean? GetNoSelection(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoSelection(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
     return false;
   }
   
-  private static void SetNoSelection(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoSelection(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
@@ -54,19 +54,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  private static Boolean? GetNoRotation(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoRotation(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
   
-  private static bool CmpNoRotation(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoRotation(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoRotation?.Value == value) return true;
     diffs?.Add(objName, "NoRotation", openXmlElement?.NoRotation?.Value, value);
     return false;
   }
   
-  private static void SetNoRotation(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoRotation(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoRotation = new BooleanValue { Value = (Boolean)value };
@@ -77,19 +77,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  private static Boolean? GetNoChangeAspect(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoChangeAspect(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeAspect(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeAspect(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
@@ -100,19 +100,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  private static Boolean? GetNoMove(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoMove(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
     return false;
   }
   
-  private static void SetNoMove(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoMove(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
@@ -123,19 +123,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  private static Boolean? GetNoResize(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoResize(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
     return false;
   }
   
-  private static void SetNoResize(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoResize(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
@@ -146,19 +146,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Point Editing
   /// </summary>
-  private static Boolean? GetNoEditPoints(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoEditPoints(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoEditPoints?.Value;
   }
   
-  private static bool CmpNoEditPoints(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoEditPoints(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoEditPoints?.Value == value) return true;
     diffs?.Add(objName, "NoEditPoints", openXmlElement?.NoEditPoints?.Value, value);
     return false;
   }
   
-  private static void SetNoEditPoints(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoEditPoints(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
@@ -169,19 +169,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Showing Adjust Handles
   /// </summary>
-  private static Boolean? GetNoAdjustHandles(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoAdjustHandles(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoAdjustHandles?.Value;
   }
   
-  private static bool CmpNoAdjustHandles(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoAdjustHandles(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoAdjustHandles?.Value == value) return true;
     diffs?.Add(objName, "NoAdjustHandles", openXmlElement?.NoAdjustHandles?.Value, value);
     return false;
   }
   
-  private static void SetNoAdjustHandles(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoAdjustHandles(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
@@ -192,19 +192,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Arrowhead Changes
   /// </summary>
-  private static Boolean? GetNoChangeArrowheads(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoChangeArrowheads(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
   
-  private static bool CmpNoChangeArrowheads(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeArrowheads(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeArrowheads?.Value == value) return true;
     diffs?.Add(objName, "NoChangeArrowheads", openXmlElement?.NoChangeArrowheads?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeArrowheads(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeArrowheads(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
@@ -215,19 +215,19 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// Disallow Shape Type Change
   /// </summary>
-  private static Boolean? GetNoChangeShapeType(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static Boolean? GetNoChangeShapeType(DXD.ConnectionShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeShapeType?.Value;
   }
   
-  private static bool CmpNoChangeShapeType(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeShapeType(DXD.ConnectionShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeShapeType?.Value == value) return true;
     diffs?.Add(objName, "NoChangeShapeType", openXmlElement?.NoChangeShapeType?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeShapeType(DXDraw.ConnectionShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeShapeType(DXD.ConnectionShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
@@ -238,33 +238,33 @@ public static class ConnectionShapeLocksConverter
   /// <summary>
   /// ConnectorLockingExtensionList.
   /// </summary>
-  private static DMDraws.ConnectorLockingExtensionList? GetConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement)
+  private static DMD.ConnectorLockingExtensionList? GetConnectorLockingExtensionList(DXD.ConnectionShapeLocks openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ConnectorLockingExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ConnectorLockingExtensionList>();
     if (element != null)
-      return DMXDraws.ConnectorLockingExtensionListConverter.CreateModelElement(element);
+      return DMXD.ConnectorLockingExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectorLockingExtensionList(DXD.ConnectionShapeLocks openXmlElement, DMD.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ConnectorLockingExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ConnectorLockingExtensionList>(), value, diffs, objName);
+    return DMXD.ConnectorLockingExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ConnectorLockingExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetConnectorLockingExtensionList(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectorLockingExtensionList? value)
+  private static void SetConnectorLockingExtensionList(DXD.ConnectionShapeLocks openXmlElement, DMD.ConnectorLockingExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ConnectorLockingExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ConnectorLockingExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DXDraw.ConnectorLockingExtensionList>(value);
+      itemElement = DMXD.ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DXD.ConnectorLockingExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(DXDraw.ConnectionShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.ConnectionShapeLocks? CreateModelElement(DXD.ConnectionShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -285,7 +285,7 @@ public static class ConnectionShapeLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ConnectionShapeLocks? openXmlElement, DMDraws.ConnectionShapeLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectionShapeLocks? openXmlElement, DMD.ConnectionShapeLocks? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -319,15 +319,15 @@ public static class ConnectionShapeLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectionShapeLocks value)
-    where OpenXmlElementType: DXDraw.ConnectionShapeLocks, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ConnectionShapeLocks value)
+    where OpenXmlElementType: DXD.ConnectionShapeLocks, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ConnectionShapeLocks openXmlElement, DMDraws.ConnectionShapeLocks value)
+  public static void UpdateOpenXmlElement(DXD.ConnectionShapeLocks openXmlElement, DMD.ConnectionShapeLocks value)
   {
     SetNoGrouping(openXmlElement, value?.NoGrouping);
     SetNoSelection(openXmlElement, value?.NoSelection);

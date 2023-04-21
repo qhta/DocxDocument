@@ -5,589 +5,589 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class DefaultRunPropertiesConverter
 {
-  private static DMDraws.Outline? GetOutline(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.Outline? GetOutline(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXDraws.OutlineConverter.CreateModelElement(element);
+      return DMXD.OutlineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
+  private static bool CmpOutline(DXD.DefaultRunProperties openXmlElement, DMD.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
+    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName);
   }
   
-  private static void SetOutline(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Outline? value)
+  private static void SetOutline(DXD.DefaultRunProperties openXmlElement, DMD.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
+      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetNoFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static Boolean? GetNoFill(DXD.DefaultRunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXDraw.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    diffs?.Add(objName, "DXD.NoFill", val, value);
     return false;
   }
   
-  private static void SetNoFill(DXDraw.DefaultRunProperties openXmlElement, Boolean? value)
+  private static void SetNoFill(DXD.DefaultRunProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoFill();
+      var itemElement = new DXD.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SolidFill? GetSolidFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.SolidFill? GetSolidFill(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
     if (element != null)
-      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+      return DMXD.SolidFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSolidFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXD.DefaultRunProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
   }
   
-  private static void SetSolidFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.SolidFill? value)
+  private static void SetSolidFill(DXD.DefaultRunProperties openXmlElement, DMD.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
+      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.GradientFill? GetGradientFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.GradientFill? GetGradientFill(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
     if (element != null)
-      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+      return DMXD.GradientFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGradientFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXD.DefaultRunProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
   }
   
-  private static void SetGradientFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.GradientFill? value)
+  private static void SetGradientFill(DXD.DefaultRunProperties openXmlElement, DMD.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
+      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BlipFill? GetBlipFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.BlipFill? GetBlipFill(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
     if (element != null)
-      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+      return DMXD.BlipFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlipFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXD.DefaultRunProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
   }
   
-  private static void SetBlipFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.BlipFill? value)
+  private static void SetBlipFill(DXD.DefaultRunProperties openXmlElement, DMD.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
+      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PatternFill? GetPatternFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.PatternFill? GetPatternFill(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
     if (element != null)
-      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+      return DMXD.PatternFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPatternFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXD.DefaultRunProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
   }
   
-  private static void SetPatternFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.PatternFill? value)
+  private static void SetPatternFill(DXD.DefaultRunProperties openXmlElement, DMD.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
+      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetGroupFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static Boolean? GetGroupFill(DXD.DefaultRunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXDraw.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    diffs?.Add(objName, "DXD.GroupFill", val, value);
     return false;
   }
   
-  private static void SetGroupFill(DXDraw.DefaultRunProperties openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXD.DefaultRunProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.GroupFill();
+      var itemElement = new DXD.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectList? GetEffectList(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.EffectList? GetEffectList(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
     if (element != null)
-      return DMXDraws.EffectListConverter.CreateModelElement(element);
+      return DMXD.EffectListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectList(DXDraw.DefaultRunProperties openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXD.DefaultRunProperties openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
   }
   
-  private static void SetEffectList(DXDraw.DefaultRunProperties openXmlElement, DMDraws.EffectList? value)
+  private static void SetEffectList(DXD.DefaultRunProperties openXmlElement, DMD.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
+      itemElement = DMXD.EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectDag? GetEffectDag(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.EffectDag? GetEffectDag(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectDag>();
     if (element != null)
-      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+      return DMXD.EffectDagConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectDag(DXDraw.DefaultRunProperties openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXD.DefaultRunProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
   }
   
-  private static void SetEffectDag(DXDraw.DefaultRunProperties openXmlElement, DMDraws.EffectDag? value)
+  private static void SetEffectDag(DXD.DefaultRunProperties openXmlElement, DMD.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
+      itemElement = DMXD.EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Highlight? GetHighlight(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.Highlight? GetHighlight(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Highlight>();
+    var element = openXmlElement?.GetFirstChild<DXD.Highlight>();
     if (element != null)
-      return DMXDraws.HighlightConverter.CreateModelElement(element);
+      return DMXD.HighlightConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHighlight(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Highlight? value, DiffList? diffs, string? objName)
+  private static bool CmpHighlight(DXD.DefaultRunProperties openXmlElement, DMD.Highlight? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HighlightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Highlight>(), value, diffs, objName);
+    return DMXD.HighlightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Highlight>(), value, diffs, objName);
   }
   
-  private static void SetHighlight(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Highlight? value)
+  private static void SetHighlight(DXD.DefaultRunProperties openXmlElement, DMD.Highlight? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Highlight>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Highlight>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HighlightConverter.CreateOpenXmlElement<DXDraw.Highlight>(value);
+      itemElement = DMXD.HighlightConverter.CreateOpenXmlElement<DXD.Highlight>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetUnderlineFollowsText(DXDraw.DefaultRunProperties openXmlElement)
+  private static Boolean? GetUnderlineFollowsText(DXD.DefaultRunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null;
+    return openXmlElement.GetFirstChild<DXD.UnderlineFollowsText>() != null;
   }
   
-  private static bool CmpUnderlineFollowsText(DXDraw.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFollowsText(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.UnderlineFollowsText>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.UnderlineFollowsText", val, value);
+    diffs?.Add(objName, "DXD.UnderlineFollowsText", val, value);
     return false;
   }
   
-  private static void SetUnderlineFollowsText(DXDraw.DefaultRunProperties openXmlElement, Boolean? value)
+  private static void SetUnderlineFollowsText(DXD.DefaultRunProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.UnderlineFollowsText>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.UnderlineFollowsText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.UnderlineFollowsText();
+      var itemElement = new DXD.UnderlineFollowsText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Underline? GetUnderline(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.Underline? GetUnderline(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Underline>();
+    var element = openXmlElement?.GetFirstChild<DXD.Underline>();
     if (element != null)
-      return DMXDraws.UnderlineConverter.CreateModelElement(element);
+      return DMXD.UnderlineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnderline(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Underline? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderline(DXD.DefaultRunProperties openXmlElement, DMD.Underline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Underline>(), value, diffs, objName);
+    return DMXD.UnderlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Underline>(), value, diffs, objName);
   }
   
-  private static void SetUnderline(DXDraw.DefaultRunProperties openXmlElement, DMDraws.Underline? value)
+  private static void SetUnderline(DXD.DefaultRunProperties openXmlElement, DMD.Underline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Underline>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Underline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.UnderlineConverter.CreateOpenXmlElement<DXDraw.Underline>(value);
+      itemElement = DMXD.UnderlineConverter.CreateOpenXmlElement<DXD.Underline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetUnderlineFillText(DXDraw.DefaultRunProperties openXmlElement)
+  private static Boolean? GetUnderlineFillText(DXD.DefaultRunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null;
+    return openXmlElement.GetFirstChild<DXD.UnderlineFillText>() != null;
   }
   
-  private static bool CmpUnderlineFillText(DXDraw.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFillText(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.UnderlineFillText>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.UnderlineFillText", val, value);
+    diffs?.Add(objName, "DXD.UnderlineFillText", val, value);
     return false;
   }
   
-  private static void SetUnderlineFillText(DXDraw.DefaultRunProperties openXmlElement, Boolean? value)
+  private static void SetUnderlineFillText(DXD.DefaultRunProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.UnderlineFillText>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.UnderlineFillText>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.UnderlineFillText();
+      var itemElement = new DXD.UnderlineFillText();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.UnderlineFill? GetUnderlineFill(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.UnderlineFill? GetUnderlineFill(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.UnderlineFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.UnderlineFill>();
     if (element != null)
-      return DMXDraws.UnderlineFillConverter.CreateModelElement(element);
+      return DMXD.UnderlineFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnderlineFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.UnderlineFill? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.UnderlineFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.UnderlineFill>(), value, diffs, objName);
+    return DMXD.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UnderlineFill>(), value, diffs, objName);
   }
   
-  private static void SetUnderlineFill(DXDraw.DefaultRunProperties openXmlElement, DMDraws.UnderlineFill? value)
+  private static void SetUnderlineFill(DXD.DefaultRunProperties openXmlElement, DMD.UnderlineFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.UnderlineFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.UnderlineFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.UnderlineFillConverter.CreateOpenXmlElement<DXDraw.UnderlineFill>(value);
+      itemElement = DMXD.UnderlineFillConverter.CreateOpenXmlElement<DXD.UnderlineFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TextFontType? GetLatinFont(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.TextFontType? GetLatinFont(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.LatinFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.LatinFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLatinFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpLatinFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.LatinFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LatinFont>(), value, diffs, objName);
   }
   
-  private static void SetLatinFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value)
+  private static void SetLatinFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.LatinFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.LatinFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.LatinFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.LatinFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TextFontType? GetEastAsianFont(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.TextFontType? GetEastAsianFont(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EastAsianFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.EastAsianFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEastAsianFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsianFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EastAsianFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EastAsianFont>(), value, diffs, objName);
   }
   
-  private static void SetEastAsianFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value)
+  private static void SetEastAsianFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EastAsianFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EastAsianFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.EastAsianFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.EastAsianFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TextFontType? GetComplexScriptFont(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.TextFontType? GetComplexScriptFont(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ComplexScriptFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.ComplexScriptFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpComplexScriptFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpComplexScriptFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ComplexScriptFont>(), value, diffs, objName);
   }
   
-  private static void SetComplexScriptFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value)
+  private static void SetComplexScriptFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ComplexScriptFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ComplexScriptFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.ComplexScriptFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.ComplexScriptFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.TextFontType? GetSymbolFont(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.TextFontType? GetSymbolFont(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SymbolFont>();
+    var element = openXmlElement?.GetFirstChild<DXD.SymbolFont>();
     if (element != null)
-      return DMXDraws.TextFontTypeConverter.CreateModelElement(element);
+      return DMXD.TextFontTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSymbolFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbolFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SymbolFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SymbolFont>(), value, diffs, objName);
   }
   
-  private static void SetSymbolFont(DXDraw.DefaultRunProperties openXmlElement, DMDraws.TextFontType? value)
+  private static void SetSymbolFont(DXD.DefaultRunProperties openXmlElement, DMD.TextFontType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SymbolFont>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SymbolFont>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.TextFontTypeConverter.CreateOpenXmlElement<DXDraw.SymbolFont>(value);
+      itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.SymbolFont>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.HyperlinkOnClick? GetHyperlinkOnClick(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkOnClick>();
     if (element != null)
-      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(element);
+      return DMXD.HyperlinkOnClickConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkOnClick(DXDraw.DefaultRunProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnClick(DXD.DefaultRunProperties openXmlElement, DMD.HyperlinkOnClick? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName);
+    return DMXD.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkOnClick(DXDraw.DefaultRunProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
+  private static void SetHyperlinkOnClick(DXD.DefaultRunProperties openXmlElement, DMD.HyperlinkOnClick? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HyperlinkOnClickConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnClick>(value);
+      itemElement = DMXD.HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.HyperlinkOnMouseOver? GetHyperlinkOnMouseOver(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnMouseOver>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkOnMouseOver>();
     if (element != null)
-      return DMXDraws.HyperlinkOnMouseOverConverter.CreateModelElement(element);
+      return DMXD.HyperlinkOnMouseOverConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkOnMouseOver(DXDraw.DefaultRunProperties openXmlElement, DMDraws.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnMouseOver(DXD.DefaultRunProperties openXmlElement, DMD.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnMouseOver>(), value, diffs, objName);
+    return DMXD.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnMouseOver>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkOnMouseOver(DXDraw.DefaultRunProperties openXmlElement, DMDraws.HyperlinkOnMouseOver? value)
+  private static void SetHyperlinkOnMouseOver(DXD.DefaultRunProperties openXmlElement, DMD.HyperlinkOnMouseOver? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnMouseOver>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkOnMouseOver>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnMouseOver>(value);
+      itemElement = DMXD.HyperlinkOnMouseOverConverter.CreateOpenXmlElement<DXD.HyperlinkOnMouseOver>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetRightToLeft(DXDraw.DefaultRunProperties openXmlElement)
+  private static Boolean? GetRightToLeft(DXD.DefaultRunProperties openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null;
+    return openXmlElement.GetFirstChild<DXD.RightToLeft>() != null;
   }
   
-  private static bool CmpRightToLeft(DXDraw.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRightToLeft(DXD.DefaultRunProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.RightToLeft>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.RightToLeft>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.RightToLeft", val, value);
+    diffs?.Add(objName, "DXD.RightToLeft", val, value);
     return false;
   }
   
-  private static void SetRightToLeft(DXDraw.DefaultRunProperties openXmlElement, Boolean? value)
+  private static void SetRightToLeft(DXD.DefaultRunProperties openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.RightToLeft>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.RightToLeft>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.RightToLeft();
+      var itemElement = new DXD.RightToLeft();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.DefaultRunProperties openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.DefaultRunProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.DefaultRunProperties openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.DefaultRunProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.DefaultRunProperties openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.DefaultRunProperties openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.DefaultRunProperties? CreateModelElement(DXDraw.DefaultRunProperties? openXmlElement)
+  public static DocumentModel.Drawings.DefaultRunProperties? CreateModelElement(DXD.DefaultRunProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -619,7 +619,7 @@ public static class DefaultRunPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.DefaultRunProperties? openXmlElement, DMDraws.DefaultRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.DefaultRunProperties? openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -675,15 +675,15 @@ public static class DefaultRunPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.DefaultRunProperties value)
-    where OpenXmlElementType: DXDraw.DefaultRunProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.DefaultRunProperties value)
+    where OpenXmlElementType: DXD.DefaultRunProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.DefaultRunProperties openXmlElement, DMDraws.DefaultRunProperties value)
+  public static void UpdateOpenXmlElement(DXD.DefaultRunProperties openXmlElement, DMD.DefaultRunProperties value)
   {
     SetOutline(openXmlElement, value?.Outline);
     SetNoFill(openXmlElement, value?.NoFill);

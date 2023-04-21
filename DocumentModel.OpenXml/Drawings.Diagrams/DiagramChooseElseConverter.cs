@@ -8,256 +8,256 @@ public static class DiagramChooseElseConverter
   /// <summary>
   /// Name
   /// </summary>
-  private static String? GetName(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static String? GetName(DXDD.DiagramChooseElse openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDrawDgms.DiagramChooseElse openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXDD.DiagramChooseElse openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXDrawDgms.DiagramChooseElse openXmlElement, String? value)
+  private static void SetName(DXDD.DiagramChooseElse openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsDgms.Algorithm? GetAlgorithm(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.Algorithm? GetAlgorithm(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Algorithm>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Algorithm>();
     if (element != null)
-      return DMXDrawsDgms.AlgorithmConverter.CreateModelElement(element);
+      return DMXDD.AlgorithmConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAlgorithm(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Algorithm? value, DiffList? diffs, string? objName)
+  private static bool CmpAlgorithm(DXDD.DiagramChooseElse openXmlElement, DMDD.Algorithm? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>(), value, diffs, objName);
+    return DMXDD.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Algorithm>(), value, diffs, objName);
   }
   
-  private static void SetAlgorithm(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Algorithm? value)
+  private static void SetAlgorithm(DXDD.DiagramChooseElse openXmlElement, DMDD.Algorithm? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Algorithm>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Algorithm>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.AlgorithmConverter.CreateOpenXmlElement<DXDrawDgms.Algorithm>(value);
+      itemElement = DMXDD.AlgorithmConverter.CreateOpenXmlElement<DXDD.Algorithm>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Shape? GetShape(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.Shape? GetShape(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Shape>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Shape>();
     if (element != null)
-      return DMXDrawsDgms.ShapeConverter.CreateModelElement(element);
+      return DMXDD.ShapeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShape(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDD.DiagramChooseElse openXmlElement, DMDD.Shape? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Shape>(), value, diffs, objName);
+    return DMXDD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Shape>(), value, diffs, objName);
   }
   
-  private static void SetShape(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Shape? value)
+  private static void SetShape(DXDD.DiagramChooseElse openXmlElement, DMDD.Shape? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Shape>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Shape>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ShapeConverter.CreateOpenXmlElement<DXDrawDgms.Shape>(value);
+      itemElement = DMXDD.ShapeConverter.CreateOpenXmlElement<DXDD.Shape>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.PresentationOf? GetPresentationOf(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.PresentationOf? GetPresentationOf(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.PresentationOf>();
+    var element = openXmlElement?.GetFirstChild<DXDD.PresentationOf>();
     if (element != null)
-      return DMXDrawsDgms.PresentationOfConverter.CreateModelElement(element);
+      return DMXDD.PresentationOfConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresentationOf(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.PresentationOf? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationOf(DXDD.DiagramChooseElse openXmlElement, DMDD.PresentationOf? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>(), value, diffs, objName);
+    return DMXDD.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationOf>(), value, diffs, objName);
   }
   
-  private static void SetPresentationOf(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.PresentationOf? value)
+  private static void SetPresentationOf(DXDD.DiagramChooseElse openXmlElement, DMDD.PresentationOf? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.PresentationOf>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.PresentationOf>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.PresentationOfConverter.CreateOpenXmlElement<DXDrawDgms.PresentationOf>(value);
+      itemElement = DMXDD.PresentationOfConverter.CreateOpenXmlElement<DXDD.PresentationOf>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Constraints? GetConstraints(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.Constraints? GetConstraints(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Constraints>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Constraints>();
     if (element != null)
-      return DMXDrawsDgms.ConstraintsConverter.CreateModelElement(element);
+      return DMXDD.ConstraintsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpConstraints(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Constraints? value, DiffList? diffs, string? objName)
+  private static bool CmpConstraints(DXDD.DiagramChooseElse openXmlElement, DMDD.Constraints? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Constraints>(), value, diffs, objName);
+    return DMXDD.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Constraints>(), value, diffs, objName);
   }
   
-  private static void SetConstraints(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Constraints? value)
+  private static void SetConstraints(DXDD.DiagramChooseElse openXmlElement, DMDD.Constraints? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Constraints>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Constraints>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ConstraintsConverter.CreateOpenXmlElement<DXDrawDgms.Constraints>(value);
+      itemElement = DMXDD.ConstraintsConverter.CreateOpenXmlElement<DXDD.Constraints>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.RuleList? GetRuleList(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.RuleList? GetRuleList(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.RuleList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.RuleList>();
     if (element != null)
-      return DMXDrawsDgms.RuleListConverter.CreateModelElement(element);
+      return DMXDD.RuleListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRuleList(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.RuleList? value, DiffList? diffs, string? objName)
+  private static bool CmpRuleList(DXDD.DiagramChooseElse openXmlElement, DMDD.RuleList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.RuleList>(), value, diffs, objName);
+    return DMXDD.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.RuleList>(), value, diffs, objName);
   }
   
-  private static void SetRuleList(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.RuleList? value)
+  private static void SetRuleList(DXDD.DiagramChooseElse openXmlElement, DMDD.RuleList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.RuleList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.RuleList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.RuleListConverter.CreateOpenXmlElement<DXDrawDgms.RuleList>(value);
+      itemElement = DMXDD.RuleListConverter.CreateOpenXmlElement<DXDD.RuleList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.ForEach? GetForEach(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.ForEach? GetForEach(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ForEach>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ForEach>();
     if (element != null)
-      return DMXDrawsDgms.ForEachConverter.CreateModelElement(element);
+      return DMXDD.ForEachConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpForEach(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.ForEach? value, DiffList? diffs, string? objName)
+  private static bool CmpForEach(DXDD.DiagramChooseElse openXmlElement, DMDD.ForEach? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ForEach>(), value, diffs, objName);
+    return DMXDD.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ForEach>(), value, diffs, objName);
   }
   
-  private static void SetForEach(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.ForEach? value)
+  private static void SetForEach(DXDD.DiagramChooseElse openXmlElement, DMDD.ForEach? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ForEach>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ForEach>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ForEachConverter.CreateOpenXmlElement<DXDrawDgms.ForEach>(value);
+      itemElement = DMXDD.ForEachConverter.CreateOpenXmlElement<DXDD.ForEach>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.LayoutNode? GetLayoutNode(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.LayoutNode? GetLayoutNode(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.LayoutNode>();
+    var element = openXmlElement?.GetFirstChild<DXDD.LayoutNode>();
     if (element != null)
-      return DMXDrawsDgms.LayoutNodeConverter.CreateModelElement(element);
+      return DMXDD.LayoutNodeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLayoutNode(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.LayoutNode? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutNode(DXDD.DiagramChooseElse openXmlElement, DMDD.LayoutNode? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>(), value, diffs, objName);
+    return DMXDD.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.LayoutNode>(), value, diffs, objName);
   }
   
-  private static void SetLayoutNode(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.LayoutNode? value)
+  private static void SetLayoutNode(DXDD.DiagramChooseElse openXmlElement, DMDD.LayoutNode? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.LayoutNode>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.LayoutNode>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.LayoutNodeConverter.CreateOpenXmlElement<DXDrawDgms.LayoutNode>(value);
+      itemElement = DMXDD.LayoutNodeConverter.CreateOpenXmlElement<DXDD.LayoutNode>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.Choose? GetChoose(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.Choose? GetChoose(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.Choose>();
+    var element = openXmlElement?.GetFirstChild<DXDD.Choose>();
     if (element != null)
-      return DMXDrawsDgms.ChooseConverter.CreateModelElement(element);
+      return DMXDD.ChooseConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChoose(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Choose? value, DiffList? diffs, string? objName)
+  private static bool CmpChoose(DXDD.DiagramChooseElse openXmlElement, DMDD.Choose? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.Choose>(), value, diffs, objName);
+    return DMXDD.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Choose>(), value, diffs, objName);
   }
   
-  private static void SetChoose(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.Choose? value)
+  private static void SetChoose(DXDD.DiagramChooseElse openXmlElement, DMDD.Choose? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.Choose>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.Choose>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ChooseConverter.CreateOpenXmlElement<DXDrawDgms.Choose>(value);
+      itemElement = DMXDD.ChooseConverter.CreateOpenXmlElement<DXDD.Choose>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsDgms.ExtensionList? GetExtensionList(DXDrawDgms.DiagramChooseElse openXmlElement)
+  private static DMDD.ExtensionList? GetExtensionList(DXDD.DiagramChooseElse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDD.ExtensionList>();
     if (element != null)
-      return DMXDrawsDgms.ExtensionListConverter.CreateModelElement(element);
+      return DMXDD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.DiagramChooseElse openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsDgms.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.ExtensionList? value)
+  private static void SetExtensionList(DXDD.DiagramChooseElse openXmlElement, DMDD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawDgms.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsDgms.ExtensionListConverter.CreateOpenXmlElement<DXDrawDgms.ExtensionList>(value);
+      itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.DiagramChooseElse? CreateModelElement(DXDrawDgms.DiagramChooseElse? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.DiagramChooseElse? CreateModelElement(DXDD.DiagramChooseElse? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -277,7 +277,7 @@ public static class DiagramChooseElseConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.DiagramChooseElse? openXmlElement, DMDrawsDgms.DiagramChooseElse? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DiagramChooseElse? openXmlElement, DMDD.DiagramChooseElse? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -309,15 +309,15 @@ public static class DiagramChooseElseConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.DiagramChooseElse value)
-    where OpenXmlElementType: DXDrawDgms.DiagramChooseElse, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.DiagramChooseElse value)
+    where OpenXmlElementType: DXDD.DiagramChooseElse, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.DiagramChooseElse openXmlElement, DMDrawsDgms.DiagramChooseElse value)
+  public static void UpdateOpenXmlElement(DXDD.DiagramChooseElse openXmlElement, DMDD.DiagramChooseElse value)
   {
     SetName(openXmlElement, value?.Name);
     SetAlgorithm(openXmlElement, value?.Algorithm);

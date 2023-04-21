@@ -8,27 +8,27 @@ public static class TextBodyConverter
   /// <summary>
   /// Body Properties.
   /// </summary>
-  private static DMDraws.BodyProperties? GetBodyProperties(DXDrawChartDraw.TextBody openXmlElement)
+  private static DMD.BodyProperties? GetBodyProperties(DXDCD.TextBody openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BodyProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.BodyProperties>();
     if (element != null)
-      return DMXDraws.BodyPropertiesConverter.CreateModelElement(element);
+      return DMXD.BodyPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBodyProperties(DXDCD.TextBody openXmlElement, DMD.BodyProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BodyProperties>(), value, diffs, objName);
+    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName);
   }
   
-  private static void SetBodyProperties(DXDrawChartDraw.TextBody openXmlElement, DMDraws.BodyProperties? value)
+  private static void SetBodyProperties(DXDCD.TextBody openXmlElement, DMD.BodyProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BodyProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BodyProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BodyPropertiesConverter.CreateOpenXmlElement<DXDraw.BodyProperties>(value);
+      itemElement = DMXD.BodyPropertiesConverter.CreateOpenXmlElement<DXD.BodyProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,59 +37,59 @@ public static class TextBodyConverter
   /// <summary>
   /// Text List Styles.
   /// </summary>
-  private static DMDraws.ListStyle? GetListStyle(DXDrawChartDraw.TextBody openXmlElement)
+  private static DMD.ListStyle? GetListStyle(DXDCD.TextBody openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ListStyle>();
+    var element = openXmlElement?.GetFirstChild<DXD.ListStyle>();
     if (element != null)
-      return DMXDraws.ListStyleConverter.CreateModelElement(element);
+      return DMXD.ListStyleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpListStyle(DXDCD.TextBody openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ListStyle>(), value, diffs, objName);
+    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName);
   }
   
-  private static void SetListStyle(DXDrawChartDraw.TextBody openXmlElement, DMDraws.ListStyle? value)
+  private static void SetListStyle(DXDCD.TextBody openXmlElement, DMD.ListStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ListStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ListStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ListStyleConverter.CreateOpenXmlElement<DXDraw.ListStyle>(value);
+      itemElement = DMXD.ListStyleConverter.CreateOpenXmlElement<DXD.ListStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.Paragraph? GetParagraph(DXDrawChartDraw.TextBody openXmlElement)
+  private static DMD.Paragraph? GetParagraph(DXDCD.TextBody openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Paragraph>();
+    var element = openXmlElement?.GetFirstChild<DXD.Paragraph>();
     if (element != null)
-      return DMXDraws.ParagraphConverter.CreateModelElement(element);
+      return DMXD.ParagraphConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraph(DXDCD.TextBody openXmlElement, DMD.Paragraph? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Paragraph>(), value, diffs, objName);
+    return DMXD.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Paragraph>(), value, diffs, objName);
   }
   
-  private static void SetParagraph(DXDrawChartDraw.TextBody openXmlElement, DMDraws.Paragraph? value)
+  private static void SetParagraph(DXDCD.TextBody openXmlElement, DMD.Paragraph? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Paragraph>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Paragraph>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ParagraphConverter.CreateOpenXmlElement<DXDraw.Paragraph>(value);
+      itemElement = DMXD.ParagraphConverter.CreateOpenXmlElement<DXD.Paragraph>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawing.TextBody? CreateModelElement(DXDrawChartDraw.TextBody? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawing.TextBody? CreateModelElement(DXDCD.TextBody? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -102,7 +102,7 @@ public static class TextBodyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawChartDraw.TextBody? openXmlElement, DMDrawsChartDraw.TextBody? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.TextBody? openXmlElement, DMDCD.TextBody? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -120,15 +120,15 @@ public static class TextBodyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraw.TextBody value)
-    where OpenXmlElementType: DXDrawChartDraw.TextBody, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCD.TextBody value)
+    where OpenXmlElementType: DXDCD.TextBody, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawChartDraw.TextBody openXmlElement, DMDrawsChartDraw.TextBody value)
+  public static void UpdateOpenXmlElement(DXDCD.TextBody openXmlElement, DMDCD.TextBody value)
   {
     SetBodyProperties(openXmlElement, value?.BodyProperties);
     SetListStyle(openXmlElement, value?.ListStyle);

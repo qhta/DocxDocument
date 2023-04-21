@@ -8,40 +8,40 @@ public static class FillExtendedPropertiesConverter
   /// <summary>
   /// VML Extension Handling Behavior
   /// </summary>
-  private static DMVml.ExtensionHandlingBehaviorKind? GetExtension(DXVmlO.FillExtendedProperties openXmlElement)
+  private static DMV.ExtensionHandlingBehaviorKind? GetExtension(DXVO.FillExtendedProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVmlO.FillExtendedProperties openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.FillExtendedProperties openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
   }
   
-  private static void SetExtension(DXVmlO.FillExtendedProperties openXmlElement, DMVml.ExtensionHandlingBehaviorKind? value)
+  private static void SetExtension(DXVO.FillExtendedProperties openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
   {
-    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMVml.ExtensionHandlingBehaviorKind>(value);
+    openXmlElement.Extension = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(value);
   }
   
   /// <summary>
   /// Fill Type
   /// </summary>
-  private static DMVml.FillKind? GetType(DXVmlO.FillExtendedProperties openXmlElement)
+  private static DMV.FillKind? GetType(DXVO.FillExtendedProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMVml.FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXVmlO.FillExtendedProperties openXmlElement, DMVml.FillKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXVO.FillExtendedProperties openXmlElement, DMV.FillKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMVml.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXVmlO.FillExtendedProperties openXmlElement, DMVml.FillKind? value)
+  private static void SetType(DXVO.FillExtendedProperties openXmlElement, DMV.FillKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMVml.FillKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(value);
   }
   
-  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DXVmlO.FillExtendedProperties? openXmlElement)
+  public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DXVO.FillExtendedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class FillExtendedPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVmlO.FillExtendedProperties? openXmlElement, DMVml.FillExtendedProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.FillExtendedProperties? openXmlElement, DMV.FillExtendedProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class FillExtendedPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.FillExtendedProperties value)
-    where OpenXmlElementType: DXVmlO.FillExtendedProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.FillExtendedProperties value)
+    where OpenXmlElementType: DXVO.FillExtendedProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVmlO.FillExtendedProperties openXmlElement, DMVml.FillExtendedProperties value)
+  public static void UpdateOpenXmlElement(DXVO.FillExtendedProperties openXmlElement, DMV.FillExtendedProperties value)
   {
     SetExtension(openXmlElement, value?.Extension);
     SetType(openXmlElement, value?.Type);

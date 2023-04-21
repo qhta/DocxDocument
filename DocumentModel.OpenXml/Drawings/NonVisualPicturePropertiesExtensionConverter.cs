@@ -8,126 +8,126 @@ public static class NonVisualPicturePropertiesExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
+  private static String? GetUri(DXD.NonVisualPicturePropertiesExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.NonVisualPicturePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, String? value)
+  private static void SetUri(DXD.NonVisualPicturePropertiesExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDraws.CameraTool? GetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMD.CameraTool? GetCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.CameraTool>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.CameraTool>();
     if (element != null)
-      return DMXDraws.CameraToolConverter.CreateModelElement(element);
+      return DMXD.CameraToolConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.CameraTool? value, DiffList? diffs, string? objName)
+  private static bool CmpCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.CameraTool? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.CameraToolConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.CameraTool>(), value, diffs, objName);
+    return DMXD.CameraToolConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.CameraTool>(), value, diffs, objName);
   }
   
-  private static void SetCameraTool(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.CameraTool? value)
+  private static void SetCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.CameraTool? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.CameraTool>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.CameraTool>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.CameraToolConverter.CreateOpenXmlElement<DXO2010Draw.CameraTool>(value);
+      itemElement = DMXD.CameraToolConverter.CreateOpenXmlElement<DXO10D.CameraTool>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SignatureLine? GetSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMD.SignatureLine? GetSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013Draw.SignatureLine>();
+    var element = openXmlElement?.GetFirstChild<DXO13D.SignatureLine>();
     if (element != null)
-      return DMXDraws.SignatureLineConverter.CreateModelElement(element);
+      return DMXD.SignatureLineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.SignatureLine? value, DiffList? diffs, string? objName)
+  private static bool CmpSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.SignatureLine? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Draw.SignatureLine>(), value, diffs, objName);
+    return DMXD.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.SignatureLine>(), value, diffs, objName);
   }
   
-  private static void SetSignatureLine(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.SignatureLine? value)
+  private static void SetSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.SignatureLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.SignatureLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13D.SignatureLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SignatureLineConverter.CreateOpenXmlElement<DXO2013Draw.SignatureLine>(value);
+      itemElement = DMXD.SignatureLineConverter.CreateOpenXmlElement<DXO13D.SignatureLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.ObjectProperties? GetObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMD.ObjectProperties? GetObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013Draw.ObjectProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO13D.ObjectProperties>();
     if (element != null)
-      return DMXDraws.ObjectPropertiesConverter.CreateModelElement(element);
+      return DMXD.ObjectPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.ObjectProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.ObjectProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ObjectPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Draw.ObjectProperties>(), value, diffs, objName);
+    return DMXD.ObjectPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.ObjectProperties>(), value, diffs, objName);
   }
   
-  private static void SetObjectProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.ObjectProperties? value)
+  private static void SetObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.ObjectProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013Draw.ObjectProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13D.ObjectProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ObjectPropertiesConverter.CreateOpenXmlElement<DXO2013Draw.ObjectProperties>(value);
+      itemElement = DMXD.ObjectPropertiesConverter.CreateOpenXmlElement<DXO13D.ObjectProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.LiveFeedProperties? GetLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement)
+  private static DMD.LiveFeedProperties? GetLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.LiveFeedProperties>();
     if (element != null)
-      return DMXDraws.LiveFeedPropertiesConverter.CreateModelElement(element);
+      return DMXD.LiveFeedPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.LiveFeedProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.LiveFeedProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LiveFeedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>(), value, diffs, objName);
+    return DMXD.LiveFeedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.LiveFeedProperties>(), value, diffs, objName);
   }
   
-  private static void SetLiveFeedProperties(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.LiveFeedProperties? value)
+  private static void SetLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.LiveFeedProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.LiveFeedProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.LiveFeedProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LiveFeedPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.LiveFeedProperties>(value);
+      itemElement = DMXD.LiveFeedPropertiesConverter.CreateOpenXmlElement<DXO21DL.LiveFeedProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DXDraw.NonVisualPicturePropertiesExtension? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualPicturePropertiesExtension? CreateModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -142,7 +142,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.NonVisualPicturePropertiesExtension? openXmlElement, DMDraws.NonVisualPicturePropertiesExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement, DMD.NonVisualPicturePropertiesExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -164,15 +164,15 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualPicturePropertiesExtension value)
-    where OpenXmlElementType: DXDraw.NonVisualPicturePropertiesExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.NonVisualPicturePropertiesExtension value)
+    where OpenXmlElementType: DXD.NonVisualPicturePropertiesExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.NonVisualPicturePropertiesExtension openXmlElement, DMDraws.NonVisualPicturePropertiesExtension value)
+  public static void UpdateOpenXmlElement(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.NonVisualPicturePropertiesExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetCameraTool(openXmlElement, value?.CameraTool);

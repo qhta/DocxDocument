@@ -8,85 +8,85 @@ public static class WholeConverter
   /// <summary>
   /// Outline.
   /// </summary>
-  private static DMDraws.Outline? GetOutline(DXDrawDgms.Whole openXmlElement)
+  private static DMD.Outline? GetOutline(DXDD.Whole openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Outline>();
+    var element = openXmlElement?.GetFirstChild<DXD.Outline>();
     if (element != null)
-      return DMXDraws.OutlineConverter.CreateModelElement(element);
+      return DMXD.OutlineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOutline(DXDrawDgms.Whole openXmlElement, DMDraws.Outline? value, DiffList? diffs, string? objName)
+  private static bool CmpOutline(DXDD.Whole openXmlElement, DMD.Outline? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Outline>(), value, diffs, objName);
+    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName);
   }
   
-  private static void SetOutline(DXDrawDgms.Whole openXmlElement, DMDraws.Outline? value)
+  private static void SetOutline(DXDD.Whole openXmlElement, DMD.Outline? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Outline>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Outline>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OutlineConverter.CreateOpenXmlElement<DXDraw.Outline>(value);
+      itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectList? GetEffectList(DXDrawDgms.Whole openXmlElement)
+  private static DMD.EffectList? GetEffectList(DXDD.Whole openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectList>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectList>();
     if (element != null)
-      return DMXDraws.EffectListConverter.CreateModelElement(element);
+      return DMXD.EffectListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectList(DXDrawDgms.Whole openXmlElement, DMDraws.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXDD.Whole openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
   }
   
-  private static void SetEffectList(DXDrawDgms.Whole openXmlElement, DMDraws.EffectList? value)
+  private static void SetEffectList(DXDD.Whole openXmlElement, DMD.EffectList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectListConverter.CreateOpenXmlElement<DXDraw.EffectList>(value);
+      itemElement = DMXD.EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.EffectDag? GetEffectDag(DXDrawDgms.Whole openXmlElement)
+  private static DMD.EffectDag? GetEffectDag(DXDD.Whole openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectDag>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectDag>();
     if (element != null)
-      return DMXDraws.EffectDagConverter.CreateModelElement(element);
+      return DMXD.EffectDagConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectDag(DXDrawDgms.Whole openXmlElement, DMDraws.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXDD.Whole openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
   }
   
-  private static void SetEffectDag(DXDrawDgms.Whole openXmlElement, DMDraws.EffectDag? value)
+  private static void SetEffectDag(DXDD.Whole openXmlElement, DMD.EffectDag? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectDag>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectDag>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectDagConverter.CreateOpenXmlElement<DXDraw.EffectDag>(value);
+      itemElement = DMXD.EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Whole? CreateModelElement(DXDrawDgms.Whole? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Whole? CreateModelElement(DXDD.Whole? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,7 +99,7 @@ public static class WholeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.Whole? openXmlElement, DMDrawsDgms.Whole? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Whole? openXmlElement, DMDD.Whole? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -117,15 +117,15 @@ public static class WholeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Whole value)
-    where OpenXmlElementType: DXDrawDgms.Whole, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.Whole value)
+    where OpenXmlElementType: DXDD.Whole, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.Whole openXmlElement, DMDrawsDgms.Whole value)
+  public static void UpdateOpenXmlElement(DXDD.Whole openXmlElement, DMDD.Whole value)
   {
     SetOutline(openXmlElement, value?.Outline);
     SetEffectList(openXmlElement, value?.EffectList);

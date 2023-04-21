@@ -28,21 +28,21 @@ public static class ChartPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsCharts.ChartSpace? GetChartSpace(DXPack.ChartPart openXmlElement)
+  private static DMDC.ChartSpace? GetChartSpace(DXPack.ChartPart openXmlElement)
   {
-      return DMXDrawsCharts.ChartSpaceConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawCharts.ChartSpace);
+      return DMXDC.ChartSpaceConverter.CreateModelElement(openXmlElement?.RootElement as DXDC.ChartSpace);
   }
   
-  private static bool CmpChartSpace(DXPack.ChartPart openXmlElement, DMDrawsCharts.ChartSpace? value, DiffList? diffs, string? objName)
+  private static bool CmpChartSpace(DXPack.ChartPart openXmlElement, DMDC.ChartSpace? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetChartSpace(DXPack.ChartPart openXmlElement, DMDrawsCharts.ChartSpace? value)
+  private static void SetChartSpace(DXPack.ChartPart openXmlElement, DMDC.ChartSpace? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsCharts.ChartSpaceConverter.CreateOpenXmlElement<DXDrawCharts.ChartSpace>(value);
+       var rootElement = DMXDC.ChartSpaceConverter.CreateOpenXmlElement<DXDC.ChartSpace>(value);
        if (rootElement != null)
          openXmlElement.ChartSpace = rootElement;
     }

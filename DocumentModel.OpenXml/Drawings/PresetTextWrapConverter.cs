@@ -8,51 +8,51 @@ public static class PresetTextWrapConverter
   /// <summary>
   /// Preset Warp Shape
   /// </summary>
-  private static DMDraws.TextShapeKind? GetPreset(DXDraw.PresetTextWrap openXmlElement)
+  private static DMD.TextShapeKind? GetPreset(DXD.PresetTextWrap openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMD.TextShapeKind>(openXmlElement?.Preset?.Value);
   }
   
-  private static bool CmpPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPreset(DXD.PresetTextWrap openXmlElement, DMD.TextShapeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMD.TextShapeKind>(openXmlElement?.Preset?.Value, value, diffs, objName);
   }
   
-  private static void SetPreset(DXDraw.PresetTextWrap openXmlElement, DMDraws.TextShapeKind? value)
+  private static void SetPreset(DXD.PresetTextWrap openXmlElement, DMD.TextShapeKind? value)
   {
-    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMDraws.TextShapeKind>(value);
+    openXmlElement.Preset = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextShapeValues, DMD.TextShapeKind>(value);
   }
   
   /// <summary>
   /// Adjust Value List.
   /// </summary>
-  private static DMDraws.AdjustValueList? GetAdjustValueList(DXDraw.PresetTextWrap openXmlElement)
+  private static DMD.AdjustValueList? GetAdjustValueList(DXD.PresetTextWrap openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.AdjustValueList>();
+    var element = openXmlElement?.GetFirstChild<DXD.AdjustValueList>();
     if (element != null)
-      return DMXDraws.AdjustValueListConverter.CreateModelElement(element);
+      return DMXD.AdjustValueListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustValueList(DXD.PresetTextWrap openXmlElement, DMD.AdjustValueList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.AdjustValueList>(), value, diffs, objName);
+    return DMXD.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustValueList>(), value, diffs, objName);
   }
   
-  private static void SetAdjustValueList(DXDraw.PresetTextWrap openXmlElement, DMDraws.AdjustValueList? value)
+  private static void SetAdjustValueList(DXD.PresetTextWrap openXmlElement, DMD.AdjustValueList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.AdjustValueList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.AdjustValueList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.AdjustValueListConverter.CreateOpenXmlElement<DXDraw.AdjustValueList>(value);
+      itemElement = DMXD.AdjustValueListConverter.CreateOpenXmlElement<DXD.AdjustValueList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PresetTextWrap? CreateModelElement(DXDraw.PresetTextWrap? openXmlElement)
+  public static DocumentModel.Drawings.PresetTextWrap? CreateModelElement(DXD.PresetTextWrap? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -64,7 +64,7 @@ public static class PresetTextWrapConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.PresetTextWrap? openXmlElement, DMDraws.PresetTextWrap? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PresetTextWrap? openXmlElement, DMD.PresetTextWrap? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -80,15 +80,15 @@ public static class PresetTextWrapConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PresetTextWrap value)
-    where OpenXmlElementType: DXDraw.PresetTextWrap, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.PresetTextWrap value)
+    where OpenXmlElementType: DXD.PresetTextWrap, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.PresetTextWrap openXmlElement, DMDraws.PresetTextWrap value)
+  public static void UpdateOpenXmlElement(DXD.PresetTextWrap openXmlElement, DMD.PresetTextWrap value)
   {
     SetPreset(openXmlElement, value?.Preset);
     SetAdjustValueList(openXmlElement, value?.AdjustValueList);

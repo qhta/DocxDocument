@@ -8,17 +8,17 @@ public static class ExternalDataConverter
   /// <summary>
   /// Relationship Reference
   /// </summary>
-  private static String? GetId(DXDrawCharts.ExternalData openXmlElement)
+  private static String? GetId(DXDC.ExternalData openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXDrawCharts.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXDC.ExternalData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXDrawCharts.ExternalData openXmlElement, String? value)
+  private static void SetId(DXDC.ExternalData openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,35 +26,35 @@ public static class ExternalDataConverter
   /// <summary>
   /// Update Automatically.
   /// </summary>
-  private static Boolean? GetAutoUpdate(DXDrawCharts.ExternalData openXmlElement)
+  private static Boolean? GetAutoUpdate(DXDC.ExternalData openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>() != null;
+    return openXmlElement.GetFirstChild<DXDC.AutoUpdate>() != null;
   }
   
-  private static bool CmpAutoUpdate(DXDrawCharts.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoUpdate(DXDC.ExternalData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.AutoUpdate>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.AutoUpdate", val, value);
+    diffs?.Add(objName, "DXDC.AutoUpdate", val, value);
     return false;
   }
   
-  private static void SetAutoUpdate(DXDrawCharts.ExternalData openXmlElement, Boolean? value)
+  private static void SetAutoUpdate(DXDC.ExternalData openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.AutoUpdate>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.AutoUpdate>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.AutoUpdate();
+      var itemElement = new DXDC.AutoUpdate();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.ExternalData? CreateModelElement(DXDrawCharts.ExternalData? openXmlElement)
+  public static DocumentModel.Drawings.Charts.ExternalData? CreateModelElement(DXDC.ExternalData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -66,7 +66,7 @@ public static class ExternalDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.ExternalData? openXmlElement, DMDrawsCharts.ExternalData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ExternalData? openXmlElement, DMDC.ExternalData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -82,15 +82,15 @@ public static class ExternalDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.ExternalData value)
-    where OpenXmlElementType: DXDrawCharts.ExternalData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.ExternalData value)
+    where OpenXmlElementType: DXDC.ExternalData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.ExternalData openXmlElement, DMDrawsCharts.ExternalData value)
+  public static void UpdateOpenXmlElement(DXDC.ExternalData openXmlElement, DMDC.ExternalData value)
   {
     SetId(openXmlElement, value?.Id);
     SetAutoUpdate(openXmlElement, value?.AutoUpdate);

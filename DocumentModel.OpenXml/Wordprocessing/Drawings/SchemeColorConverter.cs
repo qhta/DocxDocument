@@ -8,172 +8,172 @@ public static class SchemeColorConverter
   /// <summary>
   /// val, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMW.SchemeColorKind? GetVal(DXO2010W.SchemeColor openXmlElement)
+  private static DMW.SchemeColorKind? GetVal(DXO10W.SchemeColor openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO10W.SchemeColor openXmlElement, DMW.SchemeColorKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
-  private static void SetVal(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColorKind? value)
+  private static void SetVal(DXO10W.SchemeColor openXmlElement, DMW.SchemeColorKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues, DMW.SchemeColorKind>(value);
   }
   
-  private static Int32? GetTint(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetTint(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.Tint>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.Tint>()?.Val);
   }
   
-  private static bool CmpTint(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTint(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.Tint>()?.Val, value, diffs, objName, "Tint");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.Tint>()?.Val, value, diffs, objName, "Tint");
   }
   
-  private static void SetTint(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetTint(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.Tint,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.Tint,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetShade(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetShade(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.Shade>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.Shade>()?.Val);
   }
   
-  private static bool CmpShade(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpShade(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.Shade>()?.Val, value, diffs, objName, "Shade");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.Shade>()?.Val, value, diffs, objName, "Shade");
   }
   
-  private static void SetShade(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetShade(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.Shade,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.Shade,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetAlpha(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetAlpha(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.Alpha>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.Alpha>()?.Val);
   }
   
-  private static bool CmpAlpha(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.Alpha>()?.Val, value, diffs, objName, "Alpha");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.Alpha>()?.Val, value, diffs, objName, "Alpha");
   }
   
-  private static void SetAlpha(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetAlpha(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.Alpha,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.Alpha,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetHueModulation(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetHueModulation(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.HueModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.HueModulation>()?.Val);
   }
   
-  private static bool CmpHueModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueModulation(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.HueModulation>()?.Val, value, diffs, objName, "HueModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.HueModulation>()?.Val, value, diffs, objName, "HueModulation");
   }
   
-  private static void SetHueModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetHueModulation(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.HueModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.HueModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturation(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetSaturation(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.Saturation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.Saturation>()?.Val);
   }
   
-  private static bool CmpSaturation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.Saturation>()?.Val, value, diffs, objName, "Saturation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.Saturation>()?.Val, value, diffs, objName, "Saturation");
   }
   
-  private static void SetSaturation(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturation(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.Saturation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.Saturation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturationOffset(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetSaturationOffset(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.SaturationOffset>()?.Val);
   }
   
-  private static bool CmpSaturationOffset(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationOffset(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.SaturationOffset>()?.Val, value, diffs, objName, "SaturationOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.SaturationOffset>()?.Val, value, diffs, objName, "SaturationOffset");
   }
   
-  private static void SetSaturationOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturationOffset(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.SaturationOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.SaturationOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSaturationModulation(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetSaturationModulation(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.SaturationModulation>()?.Val);
   }
   
-  private static bool CmpSaturationModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationModulation(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.SaturationModulation>()?.Val, value, diffs, objName, "SaturationModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.SaturationModulation>()?.Val, value, diffs, objName, "SaturationModulation");
   }
   
-  private static void SetSaturationModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetSaturationModulation(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.SaturationModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.SaturationModulation,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminance(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetLuminance(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.Luminance>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.Luminance>()?.Val);
   }
   
-  private static bool CmpLuminance(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.Luminance>()?.Val, value, diffs, objName, "Luminance");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.Luminance>()?.Val, value, diffs, objName, "Luminance");
   }
   
-  private static void SetLuminance(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminance(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.Luminance,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.Luminance,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminanceOffset(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetLuminanceOffset(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.LuminanceOffset>()?.Val);
   }
   
-  private static bool CmpLuminanceOffset(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceOffset(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.LuminanceOffset>()?.Val, value, diffs, objName, "LuminanceOffset");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.LuminanceOffset>()?.Val, value, diffs, objName, "LuminanceOffset");
   }
   
-  private static void SetLuminanceOffset(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminanceOffset(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.LuminanceOffset,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.LuminanceOffset,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetLuminanceModulation(DXO2010W.SchemeColor openXmlElement)
+  private static Int32? GetLuminanceModulation(DXO10W.SchemeColor openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO10W.LuminanceModulation>()?.Val);
   }
   
-  private static bool CmpLuminanceModulation(DXO2010W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceModulation(DXO10W.SchemeColor openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO2010W.LuminanceModulation>()?.Val, value, diffs, objName, "LuminanceModulation");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO10W.LuminanceModulation>()?.Val, value, diffs, objName, "LuminanceModulation");
   }
   
-  private static void SetLuminanceModulation(DXO2010W.SchemeColor openXmlElement, Int32? value)
+  private static void SetLuminanceModulation(DXO10W.SchemeColor openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXO2010W.LuminanceModulation,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXO10W.LuminanceModulation,System.Int32>(openXmlElement, value);
   }
   
-  public static DMW.SchemeColor? CreateModelElement(DXO2010W.SchemeColor? openXmlElement)
+  public static DMW.SchemeColor? CreateModelElement(DXO10W.SchemeColor? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -194,7 +194,7 @@ public static class SchemeColorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010W.SchemeColor? openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.SchemeColor? openXmlElement, DMW.SchemeColor? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -229,14 +229,14 @@ public static class SchemeColorConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SchemeColor value)
-    where OpenXmlElementType: DXO2010W.SchemeColor, new()
+    where OpenXmlElementType: DXO10W.SchemeColor, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010W.SchemeColor openXmlElement, DMW.SchemeColor value)
+  public static void UpdateOpenXmlElement(DXO10W.SchemeColor openXmlElement, DMW.SchemeColor value)
   {
     SetVal(openXmlElement, value?.Val);
     SetTint(openXmlElement, value?.Tint);

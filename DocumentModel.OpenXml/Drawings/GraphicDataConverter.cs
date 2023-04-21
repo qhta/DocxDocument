@@ -8,22 +8,22 @@ public static class GraphicDataConverter
   /// <summary>
   /// Uniform Resource Identifier
   /// </summary>
-  private static String? GetUri(DXDraw.GraphicData openXmlElement)
+  private static String? GetUri(DXD.GraphicData openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.GraphicData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.GraphicData openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.GraphicData openXmlElement, String? value)
+  private static void SetUri(DXD.GraphicData openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DXDraw.GraphicData? openXmlElement)
+  public static DocumentModel.Drawings.GraphicData? CreateModelElement(DXD.GraphicData? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class GraphicDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.GraphicData? openXmlElement, DMDraws.GraphicData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.GraphicData? openXmlElement, DMD.GraphicData? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class GraphicDataConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GraphicData value)
-    where OpenXmlElementType: DXDraw.GraphicData, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.GraphicData value)
+    where OpenXmlElementType: DXD.GraphicData, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.GraphicData openXmlElement, DMDraws.GraphicData value)
+  public static void UpdateOpenXmlElement(DXD.GraphicData openXmlElement, DMD.GraphicData value)
   {
     SetUri(openXmlElement, value?.Uri);
   }

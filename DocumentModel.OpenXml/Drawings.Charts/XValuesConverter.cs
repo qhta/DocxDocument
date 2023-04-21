@@ -5,137 +5,137 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class XValuesConverter
 {
-  private static DMDrawsCharts.MultiLevelStringReference? GetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement)
+  private static DMDC.MultiLevelStringReference? GetMultiLevelStringReference(DXDC.XValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
+    var element = openXmlElement?.GetFirstChild<DXDC.MultiLevelStringReference>();
     if (element != null)
-      return DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateModelElement(element);
+      return DMXDC.MultiLevelStringReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMultiLevelStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.MultiLevelStringReference? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLevelStringReference(DXDC.XValues openXmlElement, DMDC.MultiLevelStringReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.MultiLevelStringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.MultiLevelStringReference>(), value, diffs, objName);
+    return DMXDC.MultiLevelStringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLevelStringReference>(), value, diffs, objName);
   }
   
-  private static void SetMultiLevelStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.MultiLevelStringReference? value)
+  private static void SetMultiLevelStringReference(DXDC.XValues openXmlElement, DMDC.MultiLevelStringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.MultiLevelStringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.MultiLevelStringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.MultiLevelStringReference>(value);
+      itemElement = DMXDC.MultiLevelStringReferenceConverter.CreateOpenXmlElement<DXDC.MultiLevelStringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.NumberReference? GetNumberReference(DXDrawCharts.XValues openXmlElement)
+  private static DMDC.NumberReference? GetNumberReference(DXDC.XValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberReference>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberReference>();
     if (element != null)
-      return DMXDrawsCharts.NumberReferenceConverter.CreateModelElement(element);
+      return DMXDC.NumberReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberReference(DXDC.XValues openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>(), value, diffs, objName);
+    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName);
   }
   
-  private static void SetNumberReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberReference? value)
+  private static void SetNumberReference(DXDC.XValues openXmlElement, DMDC.NumberReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberReferenceConverter.CreateOpenXmlElement<DXDrawCharts.NumberReference>(value);
+      itemElement = DMXDC.NumberReferenceConverter.CreateOpenXmlElement<DXDC.NumberReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.NumberLiteral? GetNumberLiteral(DXDrawCharts.XValues openXmlElement)
+  private static DMDC.NumberLiteral? GetNumberLiteral(DXDC.XValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberLiteral>();
     if (element != null)
-      return DMXDrawsCharts.NumberLiteralConverter.CreateModelElement(element);
+      return DMXDC.NumberLiteralConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberLiteral(DXDC.XValues openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>(), value, diffs, objName);
+    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName);
   }
   
-  private static void SetNumberLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.NumberLiteral? value)
+  private static void SetNumberLiteral(DXDC.XValues openXmlElement, DMDC.NumberLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberLiteralConverter.CreateOpenXmlElement<DXDrawCharts.NumberLiteral>(value);
+      itemElement = DMXDC.NumberLiteralConverter.CreateOpenXmlElement<DXDC.NumberLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.StringReference? GetStringReference(DXDrawCharts.XValues openXmlElement)
+  private static DMDC.StringReference? GetStringReference(DXDC.XValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringReference>();
+    var element = openXmlElement?.GetFirstChild<DXDC.StringReference>();
     if (element != null)
-      return DMXDrawsCharts.StringReferenceConverter.CreateModelElement(element);
+      return DMXDC.StringReferenceConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringReference? value, DiffList? diffs, string? objName)
+  private static bool CmpStringReference(DXDC.XValues openXmlElement, DMDC.StringReference? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StringReference>(), value, diffs, objName);
+    return DMXDC.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringReference>(), value, diffs, objName);
   }
   
-  private static void SetStringReference(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringReference? value)
+  private static void SetStringReference(DXDC.XValues openXmlElement, DMDC.StringReference? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringReference>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.StringReference>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.StringReferenceConverter.CreateOpenXmlElement<DXDrawCharts.StringReference>(value);
+      itemElement = DMXDC.StringReferenceConverter.CreateOpenXmlElement<DXDC.StringReference>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsCharts.StringLiteral? GetStringLiteral(DXDrawCharts.XValues openXmlElement)
+  private static DMDC.StringLiteral? GetStringLiteral(DXDC.XValues openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.StringLiteral>();
+    var element = openXmlElement?.GetFirstChild<DXDC.StringLiteral>();
     if (element != null)
-      return DMXDrawsCharts.StringLiteralConverter.CreateModelElement(element);
+      return DMXDC.StringLiteralConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStringLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpStringLiteral(DXDC.XValues openXmlElement, DMDC.StringLiteral? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.StringLiteral>(), value, diffs, objName);
+    return DMXDC.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringLiteral>(), value, diffs, objName);
   }
   
-  private static void SetStringLiteral(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.StringLiteral? value)
+  private static void SetStringLiteral(DXDC.XValues openXmlElement, DMDC.StringLiteral? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.StringLiteral>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.StringLiteral>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.StringLiteralConverter.CreateOpenXmlElement<DXDrawCharts.StringLiteral>(value);
+      itemElement = DMXDC.StringLiteralConverter.CreateOpenXmlElement<DXDC.StringLiteral>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.XValues? CreateModelElement(DXDrawCharts.XValues? openXmlElement)
+  public static DocumentModel.Drawings.Charts.XValues? CreateModelElement(DXDC.XValues? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -150,7 +150,7 @@ public static class XValuesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.XValues? openXmlElement, DMDrawsCharts.XValues? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.XValues? openXmlElement, DMDC.XValues? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -172,15 +172,15 @@ public static class XValuesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.XValues value)
-    where OpenXmlElementType: DXDrawCharts.XValues, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.XValues value)
+    where OpenXmlElementType: DXDC.XValues, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.XValues openXmlElement, DMDrawsCharts.XValues value)
+  public static void UpdateOpenXmlElement(DXDC.XValues openXmlElement, DMDC.XValues value)
   {
     SetMultiLevelStringReference(openXmlElement, value?.MultiLevelStringReference);
     SetNumberReference(openXmlElement, value?.NumberReference);

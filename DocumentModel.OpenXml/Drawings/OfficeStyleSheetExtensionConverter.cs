@@ -8,48 +8,48 @@ public static class OfficeStyleSheetExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.OfficeStyleSheetExtension openXmlElement)
+  private static String? GetUri(DXD.OfficeStyleSheetExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.OfficeStyleSheetExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.OfficeStyleSheetExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.OfficeStyleSheetExtension openXmlElement, String? value)
+  private static void SetUri(DXD.OfficeStyleSheetExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DM.ThemeFamily? GetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement)
+  private static DM.ThemeFamily? GetThemeFamily(DXD.OfficeStyleSheetExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013Theme.ThemeFamily>();
+    var element = openXmlElement?.GetFirstChild<DXO13T.ThemeFamily>();
     if (element != null)
       return DMX.ThemeFamilyConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeFamily(DXD.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
   {
-    return DMX.ThemeFamilyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013Theme.ThemeFamily>(), value, diffs, objName);
+    return DMX.ThemeFamilyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13T.ThemeFamily>(), value, diffs, objName);
   }
   
-  private static void SetThemeFamily(DXDraw.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value)
+  private static void SetThemeFamily(DXD.OfficeStyleSheetExtension openXmlElement, DM.ThemeFamily? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013Theme.ThemeFamily>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13T.ThemeFamily>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ThemeFamilyConverter.CreateOpenXmlElement<DXO2013Theme.ThemeFamily>(value);
+      itemElement = DMX.ThemeFamilyConverter.CreateOpenXmlElement<DXO13T.ThemeFamily>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.OfficeStyleSheetExtension? CreateModelElement(DXDraw.OfficeStyleSheetExtension? openXmlElement)
+  public static DocumentModel.Drawings.OfficeStyleSheetExtension? CreateModelElement(DXD.OfficeStyleSheetExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class OfficeStyleSheetExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.OfficeStyleSheetExtension? openXmlElement, DMDraws.OfficeStyleSheetExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.OfficeStyleSheetExtension? openXmlElement, DMD.OfficeStyleSheetExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class OfficeStyleSheetExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.OfficeStyleSheetExtension value)
-    where OpenXmlElementType: DXDraw.OfficeStyleSheetExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.OfficeStyleSheetExtension value)
+    where OpenXmlElementType: DXD.OfficeStyleSheetExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.OfficeStyleSheetExtension openXmlElement, DMDraws.OfficeStyleSheetExtension value)
+  public static void UpdateOpenXmlElement(DXD.OfficeStyleSheetExtension openXmlElement, DMD.OfficeStyleSheetExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetThemeFamily(openXmlElement, value?.ThemeFamily);

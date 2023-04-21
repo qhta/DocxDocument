@@ -8,33 +8,33 @@ public static class ImagePropertiesConverter
   /// <summary>
   /// ImageLayer.
   /// </summary>
-  private static DMDraws.ImageLayer? GetImageLayer(DXO2010Draw.ImageProperties openXmlElement)
+  private static DMD.ImageLayer? GetImageLayer(DXO10D.ImageProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ImageLayer>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ImageLayer>();
     if (element != null)
-      return DMXDraws.ImageLayerConverter.CreateModelElement(element);
+      return DMXD.ImageLayerConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value, DiffList? diffs, string? objName)
+  private static bool CmpImageLayer(DXO10D.ImageProperties openXmlElement, DMD.ImageLayer? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ImageLayerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ImageLayer>(), value, diffs, objName);
+    return DMXD.ImageLayerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageLayer>(), value, diffs, objName);
   }
   
-  private static void SetImageLayer(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageLayer? value)
+  private static void SetImageLayer(DXO10D.ImageProperties openXmlElement, DMD.ImageLayer? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ImageLayer>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ImageLayer>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ImageLayerConverter.CreateOpenXmlElement<DXO2010Draw.ImageLayer>(value);
+      itemElement = DMXD.ImageLayerConverter.CreateOpenXmlElement<DXO10D.ImageLayer>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DXO2010Draw.ImageProperties? openXmlElement)
+  public static DocumentModel.Drawings.ImageProperties? CreateModelElement(DXO10D.ImageProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class ImagePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.ImageProperties? openXmlElement, DMDraws.ImageProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ImageProperties? openXmlElement, DMD.ImageProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class ImagePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ImageProperties value)
-    where OpenXmlElementType: DXO2010Draw.ImageProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ImageProperties value)
+    where OpenXmlElementType: DXO10D.ImageProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.ImageProperties openXmlElement, DMDraws.ImageProperties value)
+  public static void UpdateOpenXmlElement(DXO10D.ImageProperties openXmlElement, DMD.ImageProperties value)
   {
     SetImageLayer(openXmlElement, value?.ImageLayer);
   }

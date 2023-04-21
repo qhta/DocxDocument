@@ -8,22 +8,22 @@ public static class StringDataTypeConverter
   /// <summary>
   /// PointCount.
   /// </summary>
-  private static UInt32? GetPointCount(DXDrawCharts.StringDataType openXmlElement)
+  private static UInt32? GetPointCount(DXDC.StringDataType openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val);
   }
   
-  private static bool CmpPointCount(DXDrawCharts.StringDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPointCount(DXDC.StringDataType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDrawCharts.PointCount>()?.Val, value, diffs, objName, "PointCount");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PointCount>()?.Val, value, diffs, objName, "PointCount");
   }
   
-  private static void SetPointCount(DXDrawCharts.StringDataType openXmlElement, UInt32? value)
+  private static void SetPointCount(DXDC.StringDataType openXmlElement, UInt32? value)
   {
-    SimpleValueConverter.SetValue<DXDrawCharts.PointCount,System.UInt32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXDC.PointCount,System.UInt32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DXDrawCharts.StringDataType? openXmlElement)
+  public static DocumentModel.Drawings.Charts.StringDataType? CreateModelElement(DXDC.StringDataType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -34,7 +34,7 @@ public static class StringDataTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.StringDataType? openXmlElement, DMDrawsCharts.StringDataType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StringDataType? openXmlElement, DMDC.StringDataType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -48,15 +48,15 @@ public static class StringDataTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.StringDataType value)
-    where OpenXmlElementType: DXDrawCharts.StringDataType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.StringDataType value)
+    where OpenXmlElementType: DXDC.StringDataType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.StringDataType openXmlElement, DMDrawsCharts.StringDataType value)
+  public static void UpdateOpenXmlElement(DXDC.StringDataType openXmlElement, DMDC.StringDataType value)
   {
     SetPointCount(openXmlElement, value?.PointCount);
   }

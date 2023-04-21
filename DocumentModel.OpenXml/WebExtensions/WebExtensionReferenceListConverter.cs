@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.WebExtensions;
 /// </summary>
 public static class WebExtensionReferenceListConverter
 {
-  private static Collection<DMWebExt.WebExtensionStoreReference>? GetWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement)
+  private static Collection<DMWE.WebExtensionStoreReference>? GetWebExtensionStoreReferences(DXO13WE.WebExtensionReferenceList openXmlElement)
   {
-    var collection = new Collection<DMWebExt.WebExtensionStoreReference>();
-    foreach (var item in openXmlElement.Elements<DXO2013WebExt.WebExtensionStoreReference>())
+    var collection = new Collection<DMWE.WebExtensionStoreReference>();
+    foreach (var item in openXmlElement.Elements<DXO13WE.WebExtensionStoreReference>())
     {
-      var newItem = DMXWebExt.WebExtensionStoreReferenceConverter.CreateModelElement(item);
+      var newItem = DMXWE.WebExtensionStoreReferenceConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class WebExtensionReferenceListConverter
     return null;
   }
   
-  private static bool CmpWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement, Collection<DMWebExt.WebExtensionStoreReference>? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionStoreReferences(DXO13WE.WebExtensionReferenceList openXmlElement, Collection<DMWE.WebExtensionStoreReference>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013WebExt.WebExtensionStoreReference>();
+    var origElements = openXmlElement.Elements<DXO13WE.WebExtensionStoreReference>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class WebExtensionReferenceListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXWebExt.WebExtensionStoreReferenceConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXWE.WebExtensionStoreReferenceConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class WebExtensionReferenceListConverter
     return false;
   }
   
-  private static void SetWebExtensionStoreReferences(DXO2013WebExt.WebExtensionReferenceList openXmlElement, Collection<DMWebExt.WebExtensionStoreReference>? value)
+  private static void SetWebExtensionStoreReferences(DXO13WE.WebExtensionReferenceList openXmlElement, Collection<DMWE.WebExtensionStoreReference>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013WebExt.WebExtensionStoreReference>();
+    openXmlElement.RemoveAllChildren<DXO13WE.WebExtensionStoreReference>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXWebExt.WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DXO2013WebExt.WebExtensionStoreReference>(item);
+        var newItem = DMXWE.WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DXO13WE.WebExtensionStoreReference>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.WebExtensions.WebExtensionReferenceList? CreateModelElement(DXO2013WebExt.WebExtensionReferenceList? openXmlElement)
+  public static DocumentModel.WebExtensions.WebExtensionReferenceList? CreateModelElement(DXO13WE.WebExtensionReferenceList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class WebExtensionReferenceListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013WebExt.WebExtensionReferenceList? openXmlElement, DMWebExt.WebExtensionReferenceList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.WebExtensionReferenceList? openXmlElement, DMWE.WebExtensionReferenceList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class WebExtensionReferenceListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWebExt.WebExtensionReferenceList value)
-    where OpenXmlElementType: DXO2013WebExt.WebExtensionReferenceList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMWE.WebExtensionReferenceList value)
+    where OpenXmlElementType: DXO13WE.WebExtensionReferenceList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013WebExt.WebExtensionReferenceList openXmlElement, DMWebExt.WebExtensionReferenceList value)
+  public static void UpdateOpenXmlElement(DXO13WE.WebExtensionReferenceList openXmlElement, DMWE.WebExtensionReferenceList value)
   {
     SetWebExtensionStoreReferences(openXmlElement, value?.WebExtensionStoreReferences);
   }

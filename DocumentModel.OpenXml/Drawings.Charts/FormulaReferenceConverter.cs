@@ -8,29 +8,29 @@ public static class FormulaReferenceConverter
   /// <summary>
   /// SequenceOfReferences.
   /// </summary>
-  private static String? GetSequenceOfReferences(DXO2013DrawChart.FormulaReference openXmlElement)
+  private static String? GetSequenceOfReferences(DXO13DC.FormulaReference openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text;
   }
   
-  private static bool CmpSequenceOfReferences(DXO2013DrawChart.FormulaReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSequenceOfReferences(DXO13DC.FormulaReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text == value;
   }
   
-  private static void SetSequenceOfReferences(DXO2013DrawChart.FormulaReference openXmlElement, String? value)
+  private static void SetSequenceOfReferences(DXO13DC.FormulaReference openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.SequenceOfReferences>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.SequenceOfReferences>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013DrawChart.SequenceOfReferences { Text = value };
+      itemElement = new DXO13DC.SequenceOfReferences { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.FormulaReference? CreateModelElement(DXO2013DrawChart.FormulaReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.FormulaReference? CreateModelElement(DXO13DC.FormulaReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -41,7 +41,7 @@ public static class FormulaReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.FormulaReference? openXmlElement, DMDrawsCharts.FormulaReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FormulaReference? openXmlElement, DMDC.FormulaReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -55,15 +55,15 @@ public static class FormulaReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.FormulaReference value)
-    where OpenXmlElementType: DXO2013DrawChart.FormulaReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.FormulaReference value)
+    where OpenXmlElementType: DXO13DC.FormulaReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.FormulaReference openXmlElement, DMDrawsCharts.FormulaReference value)
+  public static void UpdateOpenXmlElement(DXO13DC.FormulaReference openXmlElement, DMDC.FormulaReference value)
   {
     SetSequenceOfReferences(openXmlElement, value?.SequenceOfReferences);
   }

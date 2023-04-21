@@ -8,206 +8,206 @@ public static class BlipExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.BlipExtension openXmlElement)
+  private static String? GetUri(DXD.BlipExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.BlipExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.BlipExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.BlipExtension openXmlElement, String? value)
+  private static void SetUri(DXD.BlipExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDraws.ImageProperties? GetImageProperties(DXDraw.BlipExtension openXmlElement)
+  private static DMD.ImageProperties? GetImageProperties(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.ImageProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.ImageProperties>();
     if (element != null)
-      return DMXDraws.ImagePropertiesConverter.CreateModelElement(element);
+      return DMXD.ImagePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpImageProperties(DXD.BlipExtension openXmlElement, DMD.ImageProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ImagePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.ImageProperties>(), value, diffs, objName);
+    return DMXD.ImagePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageProperties>(), value, diffs, objName);
   }
   
-  private static void SetImageProperties(DXDraw.BlipExtension openXmlElement, DMDraws.ImageProperties? value)
+  private static void SetImageProperties(DXD.BlipExtension openXmlElement, DMD.ImageProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ImageProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.ImageProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ImagePropertiesConverter.CreateOpenXmlElement<DXO2010Draw.ImageProperties>(value);
+      itemElement = DMXD.ImagePropertiesConverter.CreateOpenXmlElement<DXO10D.ImageProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetUseLocalDpi(DXDraw.BlipExtension openXmlElement)
+  private static Boolean? GetUseLocalDpi(DXD.BlipExtension openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>() != null;
+    return openXmlElement.GetFirstChild<DXO10D.UseLocalDpi>() != null;
   }
   
-  private static bool CmpUseLocalDpi(DXDraw.BlipExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseLocalDpi(DXD.BlipExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>() != null;
+    var val = openXmlElement.GetFirstChild<DXO10D.UseLocalDpi>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2010Draw.UseLocalDpi", val, value);
+    diffs?.Add(objName, "DXO10D.UseLocalDpi", val, value);
     return false;
   }
   
-  private static void SetUseLocalDpi(DXDraw.BlipExtension openXmlElement, Boolean? value)
+  private static void SetUseLocalDpi(DXD.BlipExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.UseLocalDpi>();
+      var itemElement = openXmlElement.GetFirstChild<DXO10D.UseLocalDpi>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2010Draw.UseLocalDpi();
+      var itemElement = new DXO10D.UseLocalDpi();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsW.WebVideoProperty? GetWebVideoProperty(DXDraw.BlipExtension openXmlElement)
+  private static DMDW.WebVideoProperty? GetWebVideoProperty(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013WDraw.WebVideoProperty>();
+    var element = openXmlElement?.GetFirstChild<DXO13WD.WebVideoProperty>();
     if (element != null)
-      return DMXDrawsW.WebVideoPropertyConverter.CreateModelElement(element);
+      return DMXDW.WebVideoPropertyConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value, DiffList? diffs, string? objName)
+  private static bool CmpWebVideoProperty(DXD.BlipExtension openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsW.WebVideoPropertyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013WDraw.WebVideoProperty>(), value, diffs, objName);
+    return DMXDW.WebVideoPropertyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WD.WebVideoProperty>(), value, diffs, objName);
   }
   
-  private static void SetWebVideoProperty(DXDraw.BlipExtension openXmlElement, DMDrawsW.WebVideoProperty? value)
+  private static void SetWebVideoProperty(DXD.BlipExtension openXmlElement, DMDW.WebVideoProperty? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013WDraw.WebVideoProperty>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13WD.WebVideoProperty>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsW.WebVideoPropertyConverter.CreateOpenXmlElement<DXO2013WDraw.WebVideoProperty>(value);
+      itemElement = DMXDW.WebVideoPropertyConverter.CreateOpenXmlElement<DXO13WD.WebVideoProperty>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsSVG.SVGBlip? GetSVGBlip(DXDraw.BlipExtension openXmlElement)
+  private static DMDSVG.SVGBlip? GetSVGBlip(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2019DrawSVG.SVGBlip>();
+    var element = openXmlElement?.GetFirstChild<DXO19DSVG.SVGBlip>();
     if (element != null)
-      return DMXDrawsSVG.SVGBlipConverter.CreateModelElement(element);
+      return DMXDSVG.SVGBlipConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value, DiffList? diffs, string? objName)
+  private static bool CmpSVGBlip(DXD.BlipExtension openXmlElement, DMDSVG.SVGBlip? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsSVG.SVGBlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019DrawSVG.SVGBlip>(), value, diffs, objName);
+    return DMXDSVG.SVGBlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DSVG.SVGBlip>(), value, diffs, objName);
   }
   
-  private static void SetSVGBlip(DXDraw.BlipExtension openXmlElement, DMDrawsSVG.SVGBlip? value)
+  private static void SetSVGBlip(DXD.BlipExtension openXmlElement, DMDSVG.SVGBlip? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2019DrawSVG.SVGBlip>();
+    var itemElement = openXmlElement.GetFirstChild<DXO19DSVG.SVGBlip>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsSVG.SVGBlipConverter.CreateOpenXmlElement<DXO2019DrawSVG.SVGBlip>(value);
+      itemElement = DMXDSVG.SVGBlipConverter.CreateOpenXmlElement<DXO19DSVG.SVGBlip>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PictureAttributionSourceURL? GetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement)
+  private static DMD.PictureAttributionSourceURL? GetPictureAttributionSourceURL(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>();
+    var element = openXmlElement?.GetFirstChild<DXO19D.PictureAttributionSourceURL>();
     if (element != null)
-      return DMXDraws.PictureAttributionSourceURLConverter.CreateModelElement(element);
+      return DMXD.PictureAttributionSourceURLConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureAttributionSourceURL(DXD.BlipExtension openXmlElement, DMD.PictureAttributionSourceURL? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>(), value, diffs, objName);
+    return DMXD.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19D.PictureAttributionSourceURL>(), value, diffs, objName);
   }
   
-  private static void SetPictureAttributionSourceURL(DXDraw.BlipExtension openXmlElement, DMDraws.PictureAttributionSourceURL? value)
+  private static void SetPictureAttributionSourceURL(DXD.BlipExtension openXmlElement, DMD.PictureAttributionSourceURL? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2019Draw.PictureAttributionSourceURL>();
+    var itemElement = openXmlElement.GetFirstChild<DXO19D.PictureAttributionSourceURL>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PictureAttributionSourceURLConverter.CreateOpenXmlElement<DXO2019Draw.PictureAttributionSourceURL>(value);
+      itemElement = DMXD.PictureAttributionSourceURLConverter.CreateOpenXmlElement<DXO19D.PictureAttributionSourceURL>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWOEmb.OEmbed? GetOEmbed(DXDraw.BlipExtension openXmlElement)
+  private static DMWOE.OEmbed? GetOEmbed(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOWY2020OEmb.OEmbed>();
+    var element = openXmlElement?.GetFirstChild<DXOSWY20OE.OEmbed>();
     if (element != null)
-      return DMXWOEmb.OEmbedConverter.CreateModelElement(element);
+      return DMXWOE.OEmbedConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbed(DXD.BlipExtension openXmlElement, DMWOE.OEmbed? value, DiffList? diffs, string? objName)
   {
-    return DMXWOEmb.OEmbedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOWY2020OEmb.OEmbed>(), value, diffs, objName);
+    return DMXWOE.OEmbedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOSWY20OE.OEmbed>(), value, diffs, objName);
   }
   
-  private static void SetOEmbed(DXDraw.BlipExtension openXmlElement, DMWOEmb.OEmbed? value)
+  private static void SetOEmbed(DXD.BlipExtension openXmlElement, DMWOE.OEmbed? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOWY2020OEmb.OEmbed>();
+    var itemElement = openXmlElement.GetFirstChild<DXOSWY20OE.OEmbed>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWOEmb.OEmbedConverter.CreateOpenXmlElement<DXOWY2020OEmb.OEmbed>(value);
+      itemElement = DMXWOE.OEmbedConverter.CreateOpenXmlElement<DXOSWY20OE.OEmbed>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDrawsOOEmb.OEmbedShared? GetOEmbedShared(DXDraw.BlipExtension openXmlElement)
+  private static DMDOOE.OEmbedShared? GetOEmbedShared(DXD.BlipExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>();
+    var element = openXmlElement?.GetFirstChild<DXODY21OE.OEmbedShared>();
     if (element != null)
-      return DMXDrawsOOEmb.OEmbedSharedConverter.CreateModelElement(element);
+      return DMXDOOEmb.OEmbedSharedConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbedShared(DXD.BlipExtension openXmlElement, DMDOOE.OEmbedShared? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>(), value, diffs, objName);
+    return DMXDOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21OE.OEmbedShared>(), value, diffs, objName);
   }
   
-  private static void SetOEmbedShared(DXDraw.BlipExtension openXmlElement, DMDrawsOOEmb.OEmbedShared? value)
+  private static void SetOEmbedShared(DXD.BlipExtension openXmlElement, DMDOOE.OEmbedShared? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXODrawY2021OEmb.OEmbedShared>();
+    var itemElement = openXmlElement.GetFirstChild<DXODY21OE.OEmbedShared>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsOOEmb.OEmbedSharedConverter.CreateOpenXmlElement<DXODrawY2021OEmb.OEmbedShared>(value);
+      itemElement = DMXDOOEmb.OEmbedSharedConverter.CreateOpenXmlElement<DXODY21OE.OEmbedShared>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.BlipExtension? CreateModelElement(DXDraw.BlipExtension? openXmlElement)
+  public static DocumentModel.Drawings.BlipExtension? CreateModelElement(DXD.BlipExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -225,7 +225,7 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.BlipExtension? openXmlElement, DMDraws.BlipExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BlipExtension? openXmlElement, DMD.BlipExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -253,15 +253,15 @@ public static class BlipExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BlipExtension value)
-    where OpenXmlElementType: DXDraw.BlipExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BlipExtension value)
+    where OpenXmlElementType: DXD.BlipExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.BlipExtension openXmlElement, DMDraws.BlipExtension value)
+  public static void UpdateOpenXmlElement(DXD.BlipExtension openXmlElement, DMD.BlipExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetImageProperties(openXmlElement, value?.ImageProperties);

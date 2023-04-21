@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class EffectStyleListConverter
 {
-  private static DMDraws.EffectStyle? GetEffectStyle(DXDraw.EffectStyleList openXmlElement)
+  private static DMD.EffectStyle? GetEffectStyle(DXD.EffectStyleList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.EffectStyle>();
+    var element = openXmlElement?.GetFirstChild<DXD.EffectStyle>();
     if (element != null)
-      return DMXDraws.EffectStyleConverter.CreateModelElement(element);
+      return DMXD.EffectStyleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectStyle(DXD.EffectStyleList openXmlElement, DMD.EffectStyle? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EffectStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.EffectStyle>(), value, diffs, objName);
+    return DMXD.EffectStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyle>(), value, diffs, objName);
   }
   
-  private static void SetEffectStyle(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyle? value)
+  private static void SetEffectStyle(DXD.EffectStyleList openXmlElement, DMD.EffectStyle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.EffectStyle>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.EffectStyle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EffectStyleConverter.CreateOpenXmlElement<DXDraw.EffectStyle>(value);
+      itemElement = DMXD.EffectStyleConverter.CreateOpenXmlElement<DXD.EffectStyle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.EffectStyleList? CreateModelElement(DXDraw.EffectStyleList? openXmlElement)
+  public static DocumentModel.Drawings.EffectStyleList? CreateModelElement(DXD.EffectStyleList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class EffectStyleListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.EffectStyleList? openXmlElement, DMDraws.EffectStyleList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectStyleList? openXmlElement, DMD.EffectStyleList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class EffectStyleListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.EffectStyleList value)
-    where OpenXmlElementType: DXDraw.EffectStyleList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.EffectStyleList value)
+    where OpenXmlElementType: DXD.EffectStyleList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.EffectStyleList openXmlElement, DMDraws.EffectStyleList value)
+  public static void UpdateOpenXmlElement(DXD.EffectStyleList openXmlElement, DMD.EffectStyleList value)
   {
     SetEffectStyle(openXmlElement, value?.EffectStyle);
   }

@@ -5,85 +5,85 @@ namespace DocumentModel.OpenXml.UI;
 /// </summary>
 public static class DocumentSpecificQuickAccessToolbarControlsConverter
 {
-  private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
+  private static DMUI.QuickAccessToolbarControlClone? GetQuickAccessToolbarControlClone(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.QuickAccessToolbarControlClone>();
     if (element != null)
       return DMXUI.QuickAccessToolbarControlCloneConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickAccessToolbarControlClone(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>(), value, diffs, objName);
+    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.QuickAccessToolbarControlClone>(), value, diffs, objName);
   }
   
-  private static void SetQuickAccessToolbarControlClone(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value)
+  private static void SetQuickAccessToolbarControlClone(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.QuickAccessToolbarControlClone>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.QuickAccessToolbarControlClone>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DXOCustUI.QuickAccessToolbarControlClone>(value);
+      itemElement = DMXUI.QuickAccessToolbarControlCloneConverter.CreateOpenXmlElement<DXOCUI.QuickAccessToolbarControlClone>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
+  private static DMUI.UnsizedButton? GetUnsizedButton(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.UnsizedButton>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.UnsizedButton>();
     if (element != null)
       return DMXUI.UnsizedButtonConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnsizedButton(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedButton(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>(), value, diffs, objName);
+    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName);
   }
   
-  private static void SetUnsizedButton(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.UnsizedButton? value)
+  private static void SetUnsizedButton(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.UnsizedButton? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.UnsizedButton>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(value);
+      itemElement = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedButton>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
+  private static DMUI.VerticalSeparator? GetVerticalSeparator(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXOCustUI.VerticalSeparator>();
+    var element = openXmlElement?.GetFirstChild<DXOCUI.VerticalSeparator>();
     if (element != null)
       return DMXUI.VerticalSeparatorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpVerticalSeparator(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSeparator(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
   {
-    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCustUI.VerticalSeparator>(), value, diffs, objName);
+    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.VerticalSeparator>(), value, diffs, objName);
   }
   
-  private static void SetVerticalSeparator(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.VerticalSeparator? value)
+  private static void SetVerticalSeparator(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.VerticalSeparator? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXOCustUI.VerticalSeparator>();
+    var itemElement = openXmlElement.GetFirstChild<DXOCUI.VerticalSeparator>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXUI.VerticalSeparatorConverter.CreateOpenXmlElement<DXOCustUI.VerticalSeparator>(value);
+      itemElement = DMXUI.VerticalSeparatorConverter.CreateOpenXmlElement<DXOCUI.VerticalSeparator>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
+  public static DocumentModel.UI.DocumentSpecificQuickAccessToolbarControls? CreateModelElement(DXOCUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,7 +96,7 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.DocumentSpecificQuickAccessToolbarControls? openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -115,14 +115,14 @@ public static class DocumentSpecificQuickAccessToolbarControlsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.DocumentSpecificQuickAccessToolbarControls value)
-    where OpenXmlElementType: DXOCustUI.DocumentSpecificQuickAccessToolbarControls, new()
+    where OpenXmlElementType: DXOCUI.DocumentSpecificQuickAccessToolbarControls, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls value)
+  public static void UpdateOpenXmlElement(DXOCUI.DocumentSpecificQuickAccessToolbarControls openXmlElement, DMUI.DocumentSpecificQuickAccessToolbarControls value)
   {
     SetQuickAccessToolbarControlClone(openXmlElement, value?.QuickAccessToolbarControlClone);
     SetUnsizedButton(openXmlElement, value?.UnsizedButton);

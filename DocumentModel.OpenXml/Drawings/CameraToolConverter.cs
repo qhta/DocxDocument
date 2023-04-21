@@ -8,17 +8,17 @@ public static class CameraToolConverter
   /// <summary>
   /// cellRange, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetCellRange(DXO2010Draw.CameraTool openXmlElement)
+  private static String? GetCellRange(DXO10D.CameraTool openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.CellRange);
   }
   
-  private static bool CmpCellRange(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCellRange(DXO10D.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CellRange, value, diffs, objName, "CellRange");
   }
   
-  private static void SetCellRange(DXO2010Draw.CameraTool openXmlElement, String? value)
+  private static void SetCellRange(DXO10D.CameraTool openXmlElement, String? value)
   {
     openXmlElement.CellRange = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class CameraToolConverter
   /// <summary>
   /// spid, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetShapeId(DXO2010Draw.CameraTool openXmlElement)
+  private static String? GetShapeId(DXO10D.CameraTool openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ShapeId);
   }
   
-  private static bool CmpShapeId(DXO2010Draw.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeId(DXO10D.CameraTool openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ShapeId, value, diffs, objName, "ShapeId");
   }
   
-  private static void SetShapeId(DXO2010Draw.CameraTool openXmlElement, String? value)
+  private static void SetShapeId(DXO10D.CameraTool openXmlElement, String? value)
   {
     openXmlElement.ShapeId = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.CameraTool? CreateModelElement(DXO2010Draw.CameraTool? openXmlElement)
+  public static DocumentModel.Drawings.CameraTool? CreateModelElement(DXO10D.CameraTool? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class CameraToolConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010Draw.CameraTool? openXmlElement, DMDraws.CameraTool? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.CameraTool? openXmlElement, DMD.CameraTool? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class CameraToolConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.CameraTool value)
-    where OpenXmlElementType: DXO2010Draw.CameraTool, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.CameraTool value)
+    where OpenXmlElementType: DXO10D.CameraTool, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010Draw.CameraTool openXmlElement, DMDraws.CameraTool value)
+  public static void UpdateOpenXmlElement(DXO10D.CameraTool openXmlElement, DMD.CameraTool value)
   {
     SetCellRange(openXmlElement, value?.CellRange);
     SetShapeId(openXmlElement, value?.ShapeId);

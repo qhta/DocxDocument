@@ -8,19 +8,19 @@ public static class Point2DTypeConverter
   /// <summary>
   /// X-Axis Coordinate
   /// </summary>
-  private static Int64? GetX(DXDrawW.Point2DType openXmlElement)
+  private static Int64? GetX(DXDW.Point2DType openXmlElement)
   {
     return openXmlElement?.X?.Value;
   }
   
-  private static bool CmpX(DXDrawW.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpX(DXDW.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.X?.Value == value) return true;
     diffs?.Add(objName, "Cx", openXmlElement?.X?.Value, value);
     return false;
   }
   
-  private static void SetX(DXDrawW.Point2DType openXmlElement, Int64? value)
+  private static void SetX(DXDW.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.X = value;
   }
@@ -28,24 +28,24 @@ public static class Point2DTypeConverter
   /// <summary>
   /// Y-Axis Coordinate
   /// </summary>
-  private static Int64? GetY(DXDrawW.Point2DType openXmlElement)
+  private static Int64? GetY(DXDW.Point2DType openXmlElement)
   {
     return openXmlElement?.Y?.Value;
   }
   
-  private static bool CmpY(DXDrawW.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpY(DXDW.Point2DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Y?.Value == value) return true;
     diffs?.Add(objName, "Cy", openXmlElement?.Y?.Value, value);
     return false;
   }
   
-  private static void SetY(DXDrawW.Point2DType openXmlElement, Int64? value)
+  private static void SetY(DXDW.Point2DType openXmlElement, Int64? value)
   {
     openXmlElement.Y = value;
   }
   
-  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(DXDrawW.Point2DType? openXmlElement)
+  public static DocumentModel.Drawings.Wordprocessing.Point2DType? CreateModelElement(DXDW.Point2DType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class Point2DTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawW.Point2DType? openXmlElement, DMDrawsW.Point2DType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.Point2DType? openXmlElement, DMDW.Point2DType? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -73,15 +73,15 @@ public static class Point2DTypeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsW.Point2DType value)
-    where OpenXmlElementType: DXDrawW.Point2DType, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDW.Point2DType value)
+    where OpenXmlElementType: DXDW.Point2DType, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawW.Point2DType openXmlElement, DMDrawsW.Point2DType value)
+  public static void UpdateOpenXmlElement(DXDW.Point2DType openXmlElement, DMDW.Point2DType value)
   {
     SetX(openXmlElement, value?.X);
     SetY(openXmlElement, value?.Y);

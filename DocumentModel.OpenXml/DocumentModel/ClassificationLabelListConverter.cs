@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ClassificationLabelListConverter
 {
-  private static Collection<DM.ClassificationLabel>? GetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
+  private static Collection<DM.ClassificationLabel>? GetClassificationLabels(DXO21MLMD.ClassificationLabelList openXmlElement)
   {
     var collection = new Collection<DM.ClassificationLabel>();
-    foreach (var item in openXmlElement.Elements<DXO2021MipLabelMeta.ClassificationLabel>())
+    foreach (var item in openXmlElement.Elements<DXO21MLMD.ClassificationLabel>())
     {
       var newItem = DMX.ClassificationLabelConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  private static bool CmpClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs, string? objName)
+  private static bool CmpClassificationLabels(DXO21MLMD.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2021MipLabelMeta.ClassificationLabel>();
+    var origElements = openXmlElement.Elements<DXO21MLMD.ClassificationLabel>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,47 +47,47 @@ public static class ClassificationLabelListConverter
     return false;
   }
   
-  private static void SetClassificationLabels(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value)
+  private static void SetClassificationLabels(DXO21MLMD.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2021MipLabelMeta.ClassificationLabel>();
+    openXmlElement.RemoveAllChildren<DXO21MLMD.ClassificationLabel>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.ClassificationLabelConverter.CreateOpenXmlElement<DXO2021MipLabelMeta.ClassificationLabel>(item);
+        var newItem = DMX.ClassificationLabelConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationLabel>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DM.ClassificationExtensionList? GetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement)
+  private static DM.ClassificationExtensionList? GetClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21MLMD.ClassificationExtensionList>();
     if (element != null)
       return DMX.ClassificationExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>(), value, diffs, objName);
+    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21MLMD.ClassificationExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetClassificationExtensionList(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)
+  private static void SetClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021MipLabelMeta.ClassificationExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21MLMD.ClassificationExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ClassificationExtensionListConverter.CreateOpenXmlElement<DXO2021MipLabelMeta.ClassificationExtensionList>(value);
+      itemElement = DMX.ClassificationExtensionListConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.ClassificationLabelList? CreateModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement)
+  public static DocumentModel.ClassificationLabelList? CreateModelElement(DXO21MLMD.ClassificationLabelList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -99,7 +99,7 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021MipLabelMeta.ClassificationLabelList? openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21MLMD.ClassificationLabelList? openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -116,14 +116,14 @@ public static class ClassificationLabelListConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ClassificationLabelList value)
-    where OpenXmlElementType: DXO2021MipLabelMeta.ClassificationLabelList, new()
+    where OpenXmlElementType: DXO21MLMD.ClassificationLabelList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021MipLabelMeta.ClassificationLabelList openXmlElement, DM.ClassificationLabelList value)
+  public static void UpdateOpenXmlElement(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationLabelList value)
   {
     SetClassificationLabels(openXmlElement, value?.ClassificationLabels);
     SetClassificationExtensionList(openXmlElement, value?.ClassificationExtensionList);

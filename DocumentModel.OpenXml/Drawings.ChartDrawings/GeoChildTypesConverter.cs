@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml.Drawings.ChartDrawings;
 /// </summary>
 public static class GeoChildTypesConverter
 {
-  private static Collection<String>? GetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement)
+  private static Collection<String>? GetEntityTypes(DXO16DCD.GeoChildTypes openXmlElement)
   {
     var collection = new Collection<String>();
-    foreach (var item in openXmlElement.Elements<DXO2016DrawChartDraw.EntityType>())
+    foreach (var item in openXmlElement.Elements<DXO16DCD.EntityType>())
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class GeoChildTypesConverter
     return null;
   }
   
-  private static bool CmpEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityTypes(DXO16DCD.GeoChildTypes openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2016DrawChartDraw.EntityType>();
+    var origElements = openXmlElement.Elements<DXO16DCD.EntityType>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class GeoChildTypesConverter
     return false;
   }
   
-  private static void SetEntityTypes(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, Collection<String>? value)
+  private static void SetEntityTypes(DXO16DCD.GeoChildTypes openXmlElement, Collection<String>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2016DrawChartDraw.EntityType>();
+    openXmlElement.RemoveAllChildren<DXO16DCD.EntityType>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = StringValueConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.EntityType>(item);
+        var newItem = StringValueConverter.CreateOpenXmlElement<DXO16DCD.EntityType>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(DXO2016DrawChartDraw.GeoChildTypes? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.GeoChildTypes? CreateModelElement(DXO16DCD.GeoChildTypes? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class GeoChildTypesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.GeoChildTypes? openXmlElement, DMDrawsChartDraws.GeoChildTypes? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoChildTypes? openXmlElement, DMDCDs.GeoChildTypes? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class GeoChildTypesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.GeoChildTypes value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.GeoChildTypes, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.GeoChildTypes value)
+    where OpenXmlElementType: DXO16DCD.GeoChildTypes, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.GeoChildTypes openXmlElement, DMDrawsChartDraws.GeoChildTypes value)
+  public static void UpdateOpenXmlElement(DXO16DCD.GeoChildTypes openXmlElement, DMDCDs.GeoChildTypes value)
   {
     SetEntityTypes(openXmlElement, value?.EntityTypes);
   }

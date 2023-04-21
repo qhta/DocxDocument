@@ -8,24 +8,24 @@ public static class DataLabelsRangeConverter
   /// <summary>
   /// Formula.
   /// </summary>
-  private static String? GetFormula(DXO2013DrawChart.DataLabelsRange openXmlElement)
+  private static String? GetFormula(DXO13DC.DataLabelsRange openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.Formula>()?.Text;
+      return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXO2013DrawChart.DataLabelsRange openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO13DC.DataLabelsRange openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXO2013DrawChart.Formula>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text == value;
   }
   
-  private static void SetFormula(DXO2013DrawChart.DataLabelsRange openXmlElement, String? value)
+  private static void SetFormula(DXO13DC.DataLabelsRange openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.Formula>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.Formula>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXO2013DrawChart.Formula { Text = value };
+      itemElement = new DXO13DC.Formula { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -33,33 +33,33 @@ public static class DataLabelsRangeConverter
   /// <summary>
   /// DataLabelsRangeChache.
   /// </summary>
-  private static DMDrawsCharts.DataLabelsRangeChache? GetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement)
+  private static DMDC.DataLabelsRangeChache? GetDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.DataLabelsRangeChache>();
     if (element != null)
-      return DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateModelElement(element);
+      return DMXDC.DataLabelsRangeChacheConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRangeChache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>(), value, diffs, objName);
+    return DMXDC.DataLabelsRangeChacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRangeChache>(), value, diffs, objName);
   }
   
-  private static void SetDataLabelsRangeChache(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRangeChache? value)
+  private static void SetDataLabelsRangeChache(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRangeChache? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.DataLabelsRangeChache>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.DataLabelsRangeChache>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.DataLabelsRangeChacheConverter.CreateOpenXmlElement<DXO2013DrawChart.DataLabelsRangeChache>(value);
+      itemElement = DMXDC.DataLabelsRangeChacheConverter.CreateOpenXmlElement<DXO13DC.DataLabelsRangeChache>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DXO2013DrawChart.DataLabelsRange? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataLabelsRange? CreateModelElement(DXO13DC.DataLabelsRange? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -71,7 +71,7 @@ public static class DataLabelsRangeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.DataLabelsRange? openXmlElement, DMDrawsCharts.DataLabelsRange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabelsRange? openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,15 +87,15 @@ public static class DataLabelsRangeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataLabelsRange value)
-    where OpenXmlElementType: DXO2013DrawChart.DataLabelsRange, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DataLabelsRange value)
+    where OpenXmlElementType: DXO13DC.DataLabelsRange, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.DataLabelsRange openXmlElement, DMDrawsCharts.DataLabelsRange value)
+  public static void UpdateOpenXmlElement(DXO13DC.DataLabelsRange openXmlElement, DMDC.DataLabelsRange value)
   {
     SetFormula(openXmlElement, value?.Formula);
     SetDataLabelsRangeChache(openXmlElement, value?.DataLabelsRangeChache);

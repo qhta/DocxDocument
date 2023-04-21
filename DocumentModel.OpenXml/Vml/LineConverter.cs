@@ -8,17 +8,17 @@ public static class LineConverter
   /// <summary>
   /// Unique Identifier
   /// </summary>
-  private static String? GetId(DXVml.Line openXmlElement)
+  private static String? GetId(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXVml.Line openXmlElement, String? value)
+  private static void SetId(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,17 +26,17 @@ public static class LineConverter
   /// <summary>
   /// Shape Styling Properties
   /// </summary>
-  private static String? GetStyle(DXVml.Line openXmlElement)
+  private static String? GetStyle(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
-  private static bool CmpStyle(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
   
-  private static void SetStyle(DXVml.Line openXmlElement, String? value)
+  private static void SetStyle(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Style = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class LineConverter
   /// <summary>
   /// Hyperlink Target
   /// </summary>
-  private static String? GetHref(DXVml.Line openXmlElement)
+  private static String? GetHref(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Href);
   }
   
-  private static bool CmpHref(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHref(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Href, value, diffs, objName, "Href");
   }
   
-  private static void SetHref(DXVml.Line openXmlElement, String? value)
+  private static void SetHref(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Href = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class LineConverter
   /// <summary>
   /// Hyperlink Display Target
   /// </summary>
-  private static String? GetTarget(DXVml.Line openXmlElement)
+  private static String? GetTarget(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Target);
   }
   
-  private static bool CmpTarget(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTarget(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Target, value, diffs, objName, "Target");
   }
   
-  private static void SetTarget(DXVml.Line openXmlElement, String? value)
+  private static void SetTarget(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Target = StringValueConverter.CreateStringValue(value);
   }
@@ -80,17 +80,17 @@ public static class LineConverter
   /// <summary>
   /// CSS Reference
   /// </summary>
-  private static String? GetClass(DXVml.Line openXmlElement)
+  private static String? GetClass(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Class);
   }
   
-  private static bool CmpClass(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpClass(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Class, value, diffs, objName, "Class");
   }
   
-  private static void SetClass(DXVml.Line openXmlElement, String? value)
+  private static void SetClass(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Class = StringValueConverter.CreateStringValue(value);
   }
@@ -98,17 +98,17 @@ public static class LineConverter
   /// <summary>
   /// Shape Title
   /// </summary>
-  private static String? GetTitle(DXVml.Line openXmlElement)
+  private static String? GetTitle(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
-  private static void SetTitle(DXVml.Line openXmlElement, String? value)
+  private static void SetTitle(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
@@ -116,17 +116,17 @@ public static class LineConverter
   /// <summary>
   /// Alternate Text
   /// </summary>
-  private static String? GetAlternate(DXVml.Line openXmlElement)
+  private static String? GetAlternate(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Alternate);
   }
   
-  private static bool CmpAlternate(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternate(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Alternate, value, diffs, objName, "Alternate");
   }
   
-  private static void SetAlternate(DXVml.Line openXmlElement, String? value)
+  private static void SetAlternate(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.Alternate = StringValueConverter.CreateStringValue(value);
   }
@@ -134,17 +134,17 @@ public static class LineConverter
   /// <summary>
   /// Coordinate Space Size
   /// </summary>
-  private static String? GetCoordinateSize(DXVml.Line openXmlElement)
+  private static String? GetCoordinateSize(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.CoordinateSize);
   }
   
-  private static bool CmpCoordinateSize(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCoordinateSize(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CoordinateSize, value, diffs, objName, "CoordinateSize");
   }
   
-  private static void SetCoordinateSize(DXVml.Line openXmlElement, String? value)
+  private static void SetCoordinateSize(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.CoordinateSize = StringValueConverter.CreateStringValue(value);
   }
@@ -152,17 +152,17 @@ public static class LineConverter
   /// <summary>
   /// Coordinate Space Origin
   /// </summary>
-  private static String? GetCoordinateOrigin(DXVml.Line openXmlElement)
+  private static String? GetCoordinateOrigin(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.CoordinateOrigin);
   }
   
-  private static bool CmpCoordinateOrigin(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCoordinateOrigin(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CoordinateOrigin, value, diffs, objName, "CoordinateOrigin");
   }
   
-  private static void SetCoordinateOrigin(DXVml.Line openXmlElement, String? value)
+  private static void SetCoordinateOrigin(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.CoordinateOrigin = StringValueConverter.CreateStringValue(value);
   }
@@ -170,17 +170,17 @@ public static class LineConverter
   /// <summary>
   /// Shape Bounding Polygon
   /// </summary>
-  private static String? GetWrapCoordinates(DXVml.Line openXmlElement)
+  private static String? GetWrapCoordinates(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.WrapCoordinates);
   }
   
-  private static bool CmpWrapCoordinates(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWrapCoordinates(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.WrapCoordinates, value, diffs, objName, "WrapCoordinates");
   }
   
-  private static void SetWrapCoordinates(DXVml.Line openXmlElement, String? value)
+  private static void SetWrapCoordinates(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.WrapCoordinates = StringValueConverter.CreateStringValue(value);
   }
@@ -188,19 +188,19 @@ public static class LineConverter
   /// <summary>
   /// Print Toggle
   /// </summary>
-  private static Boolean? GetPrint(DXVml.Line openXmlElement)
+  private static Boolean? GetPrint(DXV.Line openXmlElement)
   {
     return openXmlElement?.Print?.Value;
   }
   
-  private static bool CmpPrint(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPrint(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Print?.Value == value) return true;
     diffs?.Add(objName, "Print", openXmlElement?.Print?.Value, value);
     return false;
   }
   
-  private static void SetPrint(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetPrint(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Print = value;
@@ -211,17 +211,17 @@ public static class LineConverter
   /// <summary>
   /// Optional String
   /// </summary>
-  private static String? GetOptionalString(DXVml.Line openXmlElement)
+  private static String? GetOptionalString(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OptionalString);
   }
   
-  private static bool CmpOptionalString(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOptionalString(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OptionalString, value, diffs, objName, "OptionalString");
   }
   
-  private static void SetOptionalString(DXVml.Line openXmlElement, String? value)
+  private static void SetOptionalString(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.OptionalString = StringValueConverter.CreateStringValue(value);
   }
@@ -229,19 +229,19 @@ public static class LineConverter
   /// <summary>
   /// Shape Handle Toggle
   /// </summary>
-  private static Boolean? GetOned(DXVml.Line openXmlElement)
+  private static Boolean? GetOned(DXV.Line openXmlElement)
   {
     return openXmlElement?.Oned?.Value;
   }
   
-  private static bool CmpOned(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOned(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Oned?.Value == value) return true;
     diffs?.Add(objName, "Oned", openXmlElement?.Oned?.Value, value);
     return false;
   }
   
-  private static void SetOned(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetOned(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Oned = value;
@@ -252,19 +252,19 @@ public static class LineConverter
   /// <summary>
   /// Regroup ID
   /// </summary>
-  private static Int64? GetRegroupId(DXVml.Line openXmlElement)
+  private static Int64? GetRegroupId(DXV.Line openXmlElement)
   {
     return openXmlElement?.RegroupId?.Value;
   }
   
-  private static bool CmpRegroupId(DXVml.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRegroupId(DXV.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.RegroupId?.Value == value) return true;
     diffs?.Add(objName, "RegroupId", openXmlElement?.RegroupId?.Value, value);
     return false;
   }
   
-  private static void SetRegroupId(DXVml.Line openXmlElement, Int64? value)
+  private static void SetRegroupId(DXV.Line openXmlElement, Int64? value)
   {
     openXmlElement.RegroupId = value;
   }
@@ -272,19 +272,19 @@ public static class LineConverter
   /// <summary>
   /// Double-click Notification Toggle
   /// </summary>
-  private static Boolean? GetDoubleClickNotify(DXVml.Line openXmlElement)
+  private static Boolean? GetDoubleClickNotify(DXV.Line openXmlElement)
   {
     return openXmlElement?.DoubleClickNotify?.Value;
   }
   
-  private static bool CmpDoubleClickNotify(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDoubleClickNotify(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DoubleClickNotify?.Value == value) return true;
     diffs?.Add(objName, "DoubleClickNotify", openXmlElement?.DoubleClickNotify?.Value, value);
     return false;
   }
   
-  private static void SetDoubleClickNotify(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetDoubleClickNotify(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.DoubleClickNotify = value;
@@ -295,19 +295,19 @@ public static class LineConverter
   /// <summary>
   /// Button Behavior Toggle
   /// </summary>
-  private static Boolean? GetButton(DXVml.Line openXmlElement)
+  private static Boolean? GetButton(DXV.Line openXmlElement)
   {
     return openXmlElement?.Button?.Value;
   }
   
-  private static bool CmpButton(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpButton(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Button?.Value == value) return true;
     diffs?.Add(objName, "Button", openXmlElement?.Button?.Value, value);
     return false;
   }
   
-  private static void SetButton(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetButton(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Button = value;
@@ -318,19 +318,19 @@ public static class LineConverter
   /// <summary>
   /// Hide Script Anchors
   /// </summary>
-  private static Boolean? GetUserHidden(DXVml.Line openXmlElement)
+  private static Boolean? GetUserHidden(DXV.Line openXmlElement)
   {
     return openXmlElement?.UserHidden?.Value;
   }
   
-  private static bool CmpUserHidden(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUserHidden(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.UserHidden?.Value == value) return true;
     diffs?.Add(objName, "UserHidden", openXmlElement?.UserHidden?.Value, value);
     return false;
   }
   
-  private static void SetUserHidden(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetUserHidden(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserHidden = value;
@@ -341,19 +341,19 @@ public static class LineConverter
   /// <summary>
   /// Graphical Bullet
   /// </summary>
-  private static Boolean? GetBullet(DXVml.Line openXmlElement)
+  private static Boolean? GetBullet(DXV.Line openXmlElement)
   {
     return openXmlElement?.Bullet?.Value;
   }
   
-  private static bool CmpBullet(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBullet(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Bullet?.Value == value) return true;
     diffs?.Add(objName, "Bullet", openXmlElement?.Bullet?.Value, value);
     return false;
   }
   
-  private static void SetBullet(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetBullet(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Bullet = value;
@@ -364,19 +364,19 @@ public static class LineConverter
   /// <summary>
   /// Horizontal Rule Toggle
   /// </summary>
-  private static Boolean? GetHorizontal(DXVml.Line openXmlElement)
+  private static Boolean? GetHorizontal(DXV.Line openXmlElement)
   {
     return openXmlElement?.Horizontal?.Value;
   }
   
-  private static bool CmpHorizontal(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontal(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Horizontal?.Value == value) return true;
     diffs?.Add(objName, "Horizontal", openXmlElement?.Horizontal?.Value, value);
     return false;
   }
   
-  private static void SetHorizontal(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetHorizontal(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Horizontal = value;
@@ -387,19 +387,19 @@ public static class LineConverter
   /// <summary>
   /// Horizontal Rule Standard Display Toggle
   /// </summary>
-  private static Boolean? GetHorizontalStandard(DXVml.Line openXmlElement)
+  private static Boolean? GetHorizontalStandard(DXV.Line openXmlElement)
   {
     return openXmlElement?.HorizontalStandard?.Value;
   }
   
-  private static bool CmpHorizontalStandard(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalStandard(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.HorizontalStandard?.Value == value) return true;
     diffs?.Add(objName, "HorizontalStandard", openXmlElement?.HorizontalStandard?.Value, value);
     return false;
   }
   
-  private static void SetHorizontalStandard(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetHorizontalStandard(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalStandard = value;
@@ -410,19 +410,19 @@ public static class LineConverter
   /// <summary>
   /// Horizontal Rule 3D Shading Toggle
   /// </summary>
-  private static Boolean? GetHorizontalNoShade(DXVml.Line openXmlElement)
+  private static Boolean? GetHorizontalNoShade(DXV.Line openXmlElement)
   {
     return openXmlElement?.HorizontalNoShade?.Value;
   }
   
-  private static bool CmpHorizontalNoShade(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalNoShade(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.HorizontalNoShade?.Value == value) return true;
     diffs?.Add(objName, "HorizontalNoShade", openXmlElement?.HorizontalNoShade?.Value, value);
     return false;
   }
   
-  private static void SetHorizontalNoShade(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetHorizontalNoShade(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.HorizontalNoShade = value;
@@ -433,19 +433,19 @@ public static class LineConverter
   /// <summary>
   /// Horizontal Rule Length Percentage
   /// </summary>
-  private static Single? GetHorizontalPercentage(DXVml.Line openXmlElement)
+  private static Single? GetHorizontalPercentage(DXV.Line openXmlElement)
   {
     return openXmlElement?.HorizontalPercentage?.Value;
   }
   
-  private static bool CmpHorizontalPercentage(DXVml.Line openXmlElement, Single? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalPercentage(DXV.Line openXmlElement, Single? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.HorizontalPercentage?.Value == value) return true;
     diffs?.Add(objName, "HorizontalPercentage", openXmlElement?.HorizontalPercentage?.Value, value);
     return false;
   }
   
-  private static void SetHorizontalPercentage(DXVml.Line openXmlElement, Single? value)
+  private static void SetHorizontalPercentage(DXV.Line openXmlElement, Single? value)
   {
     openXmlElement.HorizontalPercentage = value;
   }
@@ -453,37 +453,37 @@ public static class LineConverter
   /// <summary>
   /// Horizontal Rule Alignment
   /// </summary>
-  private static DMVml.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DXVml.Line openXmlElement)
+  private static DMV.HorizontalRuleAlignmentKind? GetHorizontalAlignment(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMV.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value);
   }
   
-  private static bool CmpHorizontalAlignment(DXVml.Line openXmlElement, DMVml.HorizontalRuleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalAlignment(DXV.Line openXmlElement, DMV.HorizontalRuleAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMV.HorizontalRuleAlignmentKind>(openXmlElement?.HorizontalAlignment?.Value, value, diffs, objName);
   }
   
-  private static void SetHorizontalAlignment(DXVml.Line openXmlElement, DMVml.HorizontalRuleAlignmentKind? value)
+  private static void SetHorizontalAlignment(DXV.Line openXmlElement, DMV.HorizontalRuleAlignmentKind? value)
   {
-    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMVml.HorizontalRuleAlignmentKind>(value);
+    openXmlElement.HorizontalAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues, DMV.HorizontalRuleAlignmentKind>(value);
   }
   
   /// <summary>
   /// Allow in Table Cell
   /// </summary>
-  private static Boolean? GetAllowInCell(DXVml.Line openXmlElement)
+  private static Boolean? GetAllowInCell(DXV.Line openXmlElement)
   {
     return openXmlElement?.AllowInCell?.Value;
   }
   
-  private static bool CmpAllowInCell(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAllowInCell(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AllowInCell?.Value == value) return true;
     diffs?.Add(objName, "AllowInCell", openXmlElement?.AllowInCell?.Value, value);
     return false;
   }
   
-  private static void SetAllowInCell(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetAllowInCell(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowInCell = value;
@@ -494,19 +494,19 @@ public static class LineConverter
   /// <summary>
   /// Allow Shape Overlap
   /// </summary>
-  private static Boolean? GetAllowOverlap(DXVml.Line openXmlElement)
+  private static Boolean? GetAllowOverlap(DXV.Line openXmlElement)
   {
     return openXmlElement?.AllowOverlap?.Value;
   }
   
-  private static bool CmpAllowOverlap(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAllowOverlap(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.AllowOverlap?.Value == value) return true;
     diffs?.Add(objName, "AllowOverlap", openXmlElement?.AllowOverlap?.Value, value);
     return false;
   }
   
-  private static void SetAllowOverlap(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetAllowOverlap(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.AllowOverlap = value;
@@ -517,19 +517,19 @@ public static class LineConverter
   /// <summary>
   /// Exists In Master Slide
   /// </summary>
-  private static Boolean? GetUserDrawn(DXVml.Line openXmlElement)
+  private static Boolean? GetUserDrawn(DXV.Line openXmlElement)
   {
     return openXmlElement?.UserDrawn?.Value;
   }
   
-  private static bool CmpUserDrawn(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUserDrawn(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.UserDrawn?.Value == value) return true;
     diffs?.Add(objName, "UserDrawn", openXmlElement?.UserDrawn?.Value, value);
     return false;
   }
   
-  private static void SetUserDrawn(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetUserDrawn(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.UserDrawn = value;
@@ -540,17 +540,17 @@ public static class LineConverter
   /// <summary>
   /// Border Top Color
   /// </summary>
-  private static String? GetBorderTopColor(DXVml.Line openXmlElement)
+  private static String? GetBorderTopColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.BorderTopColor);
   }
   
-  private static bool CmpBorderTopColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderTopColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.BorderTopColor, value, diffs, objName, "BorderTopColor");
   }
   
-  private static void SetBorderTopColor(DXVml.Line openXmlElement, String? value)
+  private static void SetBorderTopColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.BorderTopColor = StringValueConverter.CreateStringValue(value);
   }
@@ -558,17 +558,17 @@ public static class LineConverter
   /// <summary>
   /// Border Left Color
   /// </summary>
-  private static String? GetBorderLeftColor(DXVml.Line openXmlElement)
+  private static String? GetBorderLeftColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.BorderLeftColor);
   }
   
-  private static bool CmpBorderLeftColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderLeftColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.BorderLeftColor, value, diffs, objName, "BorderLeftColor");
   }
   
-  private static void SetBorderLeftColor(DXVml.Line openXmlElement, String? value)
+  private static void SetBorderLeftColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.BorderLeftColor = StringValueConverter.CreateStringValue(value);
   }
@@ -576,17 +576,17 @@ public static class LineConverter
   /// <summary>
   /// Bottom Border Color
   /// </summary>
-  private static String? GetBorderBottomColor(DXVml.Line openXmlElement)
+  private static String? GetBorderBottomColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.BorderBottomColor);
   }
   
-  private static bool CmpBorderBottomColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderBottomColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.BorderBottomColor, value, diffs, objName, "BorderBottomColor");
   }
   
-  private static void SetBorderBottomColor(DXVml.Line openXmlElement, String? value)
+  private static void SetBorderBottomColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.BorderBottomColor = StringValueConverter.CreateStringValue(value);
   }
@@ -594,17 +594,17 @@ public static class LineConverter
   /// <summary>
   /// Border Right Color
   /// </summary>
-  private static String? GetBorderRightColor(DXVml.Line openXmlElement)
+  private static String? GetBorderRightColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.BorderRightColor);
   }
   
-  private static bool CmpBorderRightColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBorderRightColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.BorderRightColor, value, diffs, objName, "BorderRightColor");
   }
   
-  private static void SetBorderRightColor(DXVml.Line openXmlElement, String? value)
+  private static void SetBorderRightColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.BorderRightColor = StringValueConverter.CreateStringValue(value);
   }
@@ -612,19 +612,19 @@ public static class LineConverter
   /// <summary>
   /// Diagram Node Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayout(DXVml.Line openXmlElement)
+  private static Int64? GetDiagramLayout(DXV.Line openXmlElement)
   {
     return openXmlElement?.DiagramLayout?.Value;
   }
   
-  private static bool CmpDiagramLayout(DXVml.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramLayout(DXV.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DiagramLayout?.Value == value) return true;
     diffs?.Add(objName, "DiagramLayout", openXmlElement?.DiagramLayout?.Value, value);
     return false;
   }
   
-  private static void SetDiagramLayout(DXVml.Line openXmlElement, Int64? value)
+  private static void SetDiagramLayout(DXV.Line openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayout = value;
   }
@@ -632,19 +632,19 @@ public static class LineConverter
   /// <summary>
   /// Diagram Node Identifier
   /// </summary>
-  private static Int64? GetDiagramNodeKind(DXVml.Line openXmlElement)
+  private static Int64? GetDiagramNodeKind(DXV.Line openXmlElement)
   {
     return openXmlElement?.DiagramNodeKind?.Value;
   }
   
-  private static bool CmpDiagramNodeKind(DXVml.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramNodeKind(DXV.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DiagramNodeKind?.Value == value) return true;
     diffs?.Add(objName, "DiagramNodeKind", openXmlElement?.DiagramNodeKind?.Value, value);
     return false;
   }
   
-  private static void SetDiagramNodeKind(DXVml.Line openXmlElement, Int64? value)
+  private static void SetDiagramNodeKind(DXV.Line openXmlElement, Int64? value)
   {
     openXmlElement.DiagramNodeKind = value;
   }
@@ -652,19 +652,19 @@ public static class LineConverter
   /// <summary>
   /// Diagram Node Recent Layout Identifier
   /// </summary>
-  private static Int64? GetDiagramLayoutMostRecentUsed(DXVml.Line openXmlElement)
+  private static Int64? GetDiagramLayoutMostRecentUsed(DXV.Line openXmlElement)
   {
     return openXmlElement?.DiagramLayoutMostRecentUsed?.Value;
   }
   
-  private static bool CmpDiagramLayoutMostRecentUsed(DXVml.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramLayoutMostRecentUsed(DXV.Line openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DiagramLayoutMostRecentUsed?.Value == value) return true;
     diffs?.Add(objName, "DiagramLayoutMostRecentUsed", openXmlElement?.DiagramLayoutMostRecentUsed?.Value, value);
     return false;
   }
   
-  private static void SetDiagramLayoutMostRecentUsed(DXVml.Line openXmlElement, Int64? value)
+  private static void SetDiagramLayoutMostRecentUsed(DXV.Line openXmlElement, Int64? value)
   {
     openXmlElement.DiagramLayoutMostRecentUsed = value;
   }
@@ -672,37 +672,37 @@ public static class LineConverter
   /// <summary>
   /// Text Inset Mode
   /// </summary>
-  private static DMVml.InsetMarginKind? GetInsetMode(DXVml.Line openXmlElement)
+  private static DMV.InsetMarginKind? GetInsetMode(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMV.InsetMarginKind>(openXmlElement?.InsetMode?.Value);
   }
   
-  private static bool CmpInsetMode(DXVml.Line openXmlElement, DMVml.InsetMarginKind? value, DiffList? diffs, string? objName)
+  private static bool CmpInsetMode(DXV.Line openXmlElement, DMV.InsetMarginKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(openXmlElement?.InsetMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMV.InsetMarginKind>(openXmlElement?.InsetMode?.Value, value, diffs, objName);
   }
   
-  private static void SetInsetMode(DXVml.Line openXmlElement, DMVml.InsetMarginKind? value)
+  private static void SetInsetMode(DXV.Line openXmlElement, DMV.InsetMarginKind? value)
   {
-    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMVml.InsetMarginKind>(value);
+    openXmlElement.InsetMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.InsetMarginValues, DMV.InsetMarginKind>(value);
   }
   
   /// <summary>
   /// Shape Fill Toggle
   /// </summary>
-  private static Boolean? GetFilled(DXVml.Line openXmlElement)
+  private static Boolean? GetFilled(DXV.Line openXmlElement)
   {
     return openXmlElement?.Filled?.Value;
   }
   
-  private static bool CmpFilled(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFilled(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Filled?.Value == value) return true;
     diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
     return false;
   }
   
-  private static void SetFilled(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetFilled(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Filled = value;
@@ -713,17 +713,17 @@ public static class LineConverter
   /// <summary>
   /// Fill Color
   /// </summary>
-  private static String? GetFillColor(DXVml.Line openXmlElement)
+  private static String? GetFillColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.FillColor);
   }
   
-  private static bool CmpFillColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFillColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FillColor, value, diffs, objName, "FillColor");
   }
   
-  private static void SetFillColor(DXVml.Line openXmlElement, String? value)
+  private static void SetFillColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.FillColor = StringValueConverter.CreateStringValue(value);
   }
@@ -731,19 +731,19 @@ public static class LineConverter
   /// <summary>
   /// Shape Stroke Toggle
   /// </summary>
-  private static Boolean? GetStroked(DXVml.Line openXmlElement)
+  private static Boolean? GetStroked(DXV.Line openXmlElement)
   {
     return openXmlElement?.Stroked?.Value;
   }
   
-  private static bool CmpStroked(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStroked(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Stroked?.Value == value) return true;
     diffs?.Add(objName, "Stroked", openXmlElement?.Stroked?.Value, value);
     return false;
   }
   
-  private static void SetStroked(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetStroked(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Stroked = value;
@@ -754,17 +754,17 @@ public static class LineConverter
   /// <summary>
   /// Shape Stroke Color
   /// </summary>
-  private static String? GetStrokeColor(DXVml.Line openXmlElement)
+  private static String? GetStrokeColor(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.StrokeColor);
   }
   
-  private static bool CmpStrokeColor(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStrokeColor(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StrokeColor, value, diffs, objName, "StrokeColor");
   }
   
-  private static void SetStrokeColor(DXVml.Line openXmlElement, String? value)
+  private static void SetStrokeColor(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.StrokeColor = StringValueConverter.CreateStringValue(value);
   }
@@ -772,17 +772,17 @@ public static class LineConverter
   /// <summary>
   /// Shape Stroke Weight
   /// </summary>
-  private static String? GetStrokeWeight(DXVml.Line openXmlElement)
+  private static String? GetStrokeWeight(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.StrokeWeight);
   }
   
-  private static bool CmpStrokeWeight(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStrokeWeight(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StrokeWeight, value, diffs, objName, "StrokeWeight");
   }
   
-  private static void SetStrokeWeight(DXVml.Line openXmlElement, String? value)
+  private static void SetStrokeWeight(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.StrokeWeight = StringValueConverter.CreateStringValue(value);
   }
@@ -790,19 +790,19 @@ public static class LineConverter
   /// <summary>
   /// Inset Border From Path
   /// </summary>
-  private static Boolean? GetInsetPen(DXVml.Line openXmlElement)
+  private static Boolean? GetInsetPen(DXV.Line openXmlElement)
   {
     return openXmlElement?.InsetPen?.Value;
   }
   
-  private static bool CmpInsetPen(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInsetPen(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.InsetPen?.Value == value) return true;
     diffs?.Add(objName, "InsetPen", openXmlElement?.InsetPen?.Value, value);
     return false;
   }
   
-  private static void SetInsetPen(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetInsetPen(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InsetPen = value;
@@ -813,19 +813,19 @@ public static class LineConverter
   /// <summary>
   /// Optional Number
   /// </summary>
-  private static Int32? GetOptionalNumber(DXVml.Line openXmlElement)
+  private static Int32? GetOptionalNumber(DXV.Line openXmlElement)
   {
     return openXmlElement?.OptionalNumber?.Value;
   }
   
-  private static bool CmpOptionalNumber(DXVml.Line openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpOptionalNumber(DXV.Line openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.OptionalNumber?.Value == value) return true;
     diffs?.Add(objName, "OptionalNumber", openXmlElement?.OptionalNumber?.Value, value);
     return false;
   }
   
-  private static void SetOptionalNumber(DXVml.Line openXmlElement, Int32? value)
+  private static void SetOptionalNumber(DXV.Line openXmlElement, Int32? value)
   {
     openXmlElement.OptionalNumber = value;
   }
@@ -833,91 +833,91 @@ public static class LineConverter
   /// <summary>
   /// Shape Connector Type
   /// </summary>
-  private static DMVml.ConnectorKind? GetConnectorType(DXVml.Line openXmlElement)
+  private static DMV.ConnectorKind? GetConnectorType(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMV.ConnectorKind>(openXmlElement?.ConnectorType?.Value);
   }
   
-  private static bool CmpConnectorType(DXVml.Line openXmlElement, DMVml.ConnectorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectorType(DXV.Line openXmlElement, DMV.ConnectorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(openXmlElement?.ConnectorType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMV.ConnectorKind>(openXmlElement?.ConnectorType?.Value, value, diffs, objName);
   }
   
-  private static void SetConnectorType(DXVml.Line openXmlElement, DMVml.ConnectorKind? value)
+  private static void SetConnectorType(DXV.Line openXmlElement, DMV.ConnectorKind? value)
   {
-    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMVml.ConnectorKind>(value);
+    openXmlElement.ConnectorType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.ConnectorValues, DMV.ConnectorKind>(value);
   }
   
   /// <summary>
   /// Black-and-White Mode
   /// </summary>
-  private static DMVml.BlackAndWhiteMode? GetBlackWhiteMode(DXVml.Line openXmlElement)
+  private static DMV.BlackAndWhiteMode? GetBlackWhiteMode(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
   }
   
-  private static void SetBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value)
+  private static void SetBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Pure Black-and-White Mode
   /// </summary>
-  private static DMVml.BlackAndWhiteMode? GetPureBlackWhiteMode(DXVml.Line openXmlElement)
+  private static DMV.BlackAndWhiteMode? GetPureBlackWhiteMode(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
   
-  private static bool CmpPureBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpPureBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value, value, diffs, objName);
   }
   
-  private static void SetPureBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value)
+  private static void SetPureBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value)
   {
-    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
+    openXmlElement.PureBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Normal Black-and-White Mode
   /// </summary>
-  private static DMVml.BlackAndWhiteMode? GetNormalBlackWhiteMode(DXVml.Line openXmlElement)
+  private static DMV.BlackAndWhiteMode? GetNormalBlackWhiteMode(DXV.Line openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
   
-  private static bool CmpNormalBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpNormalBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value, value, diffs, objName);
   }
   
-  private static void SetNormalBlackWhiteMode(DXVml.Line openXmlElement, DMVml.BlackAndWhiteMode? value)
+  private static void SetNormalBlackWhiteMode(DXV.Line openXmlElement, DMV.BlackAndWhiteMode? value)
   {
-    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMVml.BlackAndWhiteMode>(value);
+    openXmlElement.NormalBlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(value);
   }
   
   /// <summary>
   /// Force Dashed Outline
   /// </summary>
-  private static Boolean? GetForceDash(DXVml.Line openXmlElement)
+  private static Boolean? GetForceDash(DXV.Line openXmlElement)
   {
     return openXmlElement?.ForceDash?.Value;
   }
   
-  private static bool CmpForceDash(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpForceDash(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ForceDash?.Value == value) return true;
     diffs?.Add(objName, "ForceDash", openXmlElement?.ForceDash?.Value, value);
     return false;
   }
   
-  private static void SetForceDash(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetForceDash(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ForceDash = value;
@@ -928,19 +928,19 @@ public static class LineConverter
   /// <summary>
   /// Embedded Object Icon Toggle
   /// </summary>
-  private static Boolean? GetOleIcon(DXVml.Line openXmlElement)
+  private static Boolean? GetOleIcon(DXV.Line openXmlElement)
   {
     return openXmlElement?.OleIcon?.Value;
   }
   
-  private static bool CmpOleIcon(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOleIcon(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.OleIcon?.Value == value) return true;
     diffs?.Add(objName, "OleIcon", openXmlElement?.OleIcon?.Value, value);
     return false;
   }
   
-  private static void SetOleIcon(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetOleIcon(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.OleIcon = value;
@@ -951,19 +951,19 @@ public static class LineConverter
   /// <summary>
   /// Embedded Object Toggle
   /// </summary>
-  private static Boolean? GetOle(DXVml.Line openXmlElement)
+  private static Boolean? GetOle(DXV.Line openXmlElement)
   {
     return openXmlElement?.Ole?.Value;
   }
   
-  private static bool CmpOle(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOle(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Ole?.Value == value) return true;
     diffs?.Add(objName, "Ole", openXmlElement?.Ole?.Value, value);
     return false;
   }
   
-  private static void SetOle(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetOle(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Ole = value;
@@ -974,19 +974,19 @@ public static class LineConverter
   /// <summary>
   /// Relative Resize Toggle
   /// </summary>
-  private static Boolean? GetPreferRelative(DXVml.Line openXmlElement)
+  private static Boolean? GetPreferRelative(DXV.Line openXmlElement)
   {
     return openXmlElement?.PreferRelative?.Value;
   }
   
-  private static bool CmpPreferRelative(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPreferRelative(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.PreferRelative?.Value == value) return true;
     diffs?.Add(objName, "PreferRelative", openXmlElement?.PreferRelative?.Value, value);
     return false;
   }
   
-  private static void SetPreferRelative(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetPreferRelative(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.PreferRelative = value;
@@ -997,19 +997,19 @@ public static class LineConverter
   /// <summary>
   /// Clip to Wrapping Polygon
   /// </summary>
-  private static Boolean? GetClipToWrap(DXVml.Line openXmlElement)
+  private static Boolean? GetClipToWrap(DXV.Line openXmlElement)
   {
     return openXmlElement?.ClipToWrap?.Value;
   }
   
-  private static bool CmpClipToWrap(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpClipToWrap(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ClipToWrap?.Value == value) return true;
     diffs?.Add(objName, "ClipToWrap", openXmlElement?.ClipToWrap?.Value, value);
     return false;
   }
   
-  private static void SetClipToWrap(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetClipToWrap(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ClipToWrap = value;
@@ -1020,19 +1020,19 @@ public static class LineConverter
   /// <summary>
   /// Clipping Toggle
   /// </summary>
-  private static Boolean? GetClip(DXVml.Line openXmlElement)
+  private static Boolean? GetClip(DXV.Line openXmlElement)
   {
     return openXmlElement?.Clip?.Value;
   }
   
-  private static bool CmpClip(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpClip(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Clip?.Value == value) return true;
     diffs?.Add(objName, "Clip", openXmlElement?.Clip?.Value, value);
     return false;
   }
   
-  private static void SetClip(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetClip(DXV.Line openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Clip = value;
@@ -1043,14 +1043,14 @@ public static class LineConverter
   /// <summary>
   /// Encoded Package
   /// </summary>
-  private static DM.Base64Binary? GetGfxdata(DXVml.Line openXmlElement)
+  private static DM.Base64Binary? GetGfxdata(DXV.Line openXmlElement)
   {
     if (openXmlElement?.Gfxdata?.Value != null)
       return Convert.FromBase64String(openXmlElement.Gfxdata.Value);
     return null;
   }
   
-  private static bool CmpGfxdata(DXVml.Line openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
+  private static bool CmpGfxdata(DXV.Line openXmlElement, DM.Base64Binary? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Gfxdata?.Value != null && value != null)
       if (Convert.FromBase64String(openXmlElement.Gfxdata.Value).SequenceEqual((byte[])value))
@@ -1060,7 +1060,7 @@ public static class LineConverter
     return false;
   }
   
-  private static void SetGfxdata(DXVml.Line openXmlElement, DM.Base64Binary? value)
+  private static void SetGfxdata(DXV.Line openXmlElement, DM.Base64Binary? value)
   {
     if (value != null)
       openXmlElement.Gfxdata = Convert.ToBase64String(value);
@@ -1071,17 +1071,17 @@ public static class LineConverter
   /// <summary>
   /// Line Start
   /// </summary>
-  private static String? GetFrom(DXVml.Line openXmlElement)
+  private static String? GetFrom(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.From);
   }
   
-  private static bool CmpFrom(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFrom(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.From, value, diffs, objName, "From");
   }
   
-  private static void SetFrom(DXVml.Line openXmlElement, String? value)
+  private static void SetFrom(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.From = StringValueConverter.CreateStringValue(value);
   }
@@ -1089,570 +1089,570 @@ public static class LineConverter
   /// <summary>
   /// Line End Point
   /// </summary>
-  private static String? GetTo(DXVml.Line openXmlElement)
+  private static String? GetTo(DXV.Line openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.To);
   }
   
-  private static bool CmpTo(DXVml.Line openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTo(DXV.Line openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.To, value, diffs, objName, "To");
   }
   
-  private static void SetTo(DXVml.Line openXmlElement, String? value)
+  private static void SetTo(DXV.Line openXmlElement, String? value)
   {
     openXmlElement.To = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMVml.Path? GetPath(DXVml.Line openXmlElement)
+  private static DMV.Path? GetPath(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Path>();
+    var element = openXmlElement?.GetFirstChild<DXV.Path>();
     if (element != null)
-      return DMXVml.PathConverter.CreateModelElement(element);
+      return DMXV.PathConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPath(DXVml.Line openXmlElement, DMVml.Path? value, DiffList? diffs, string? objName)
+  private static bool CmpPath(DXV.Line openXmlElement, DMV.Path? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.PathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Path>(), value, diffs, objName);
+    return DMXV.PathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Path>(), value, diffs, objName);
   }
   
-  private static void SetPath(DXVml.Line openXmlElement, DMVml.Path? value)
+  private static void SetPath(DXV.Line openXmlElement, DMV.Path? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Path>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Path>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.PathConverter.CreateOpenXmlElement<DXVml.Path>(value);
+      itemElement = DMXV.PathConverter.CreateOpenXmlElement<DXV.Path>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Formulas? GetFormulas(DXVml.Line openXmlElement)
+  private static DMV.Formulas? GetFormulas(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Formulas>();
+    var element = openXmlElement?.GetFirstChild<DXV.Formulas>();
     if (element != null)
-      return DMXVml.FormulasConverter.CreateModelElement(element);
+      return DMXV.FormulasConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFormulas(DXVml.Line openXmlElement, DMVml.Formulas? value, DiffList? diffs, string? objName)
+  private static bool CmpFormulas(DXV.Line openXmlElement, DMV.Formulas? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.FormulasConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Formulas>(), value, diffs, objName);
+    return DMXV.FormulasConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Formulas>(), value, diffs, objName);
   }
   
-  private static void SetFormulas(DXVml.Line openXmlElement, DMVml.Formulas? value)
+  private static void SetFormulas(DXV.Line openXmlElement, DMV.Formulas? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Formulas>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Formulas>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.FormulasConverter.CreateOpenXmlElement<DXVml.Formulas>(value);
+      itemElement = DMXV.FormulasConverter.CreateOpenXmlElement<DXV.Formulas>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.ShapeHandles? GetShapeHandles(DXVml.Line openXmlElement)
+  private static DMV.ShapeHandles? GetShapeHandles(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.ShapeHandles>();
+    var element = openXmlElement?.GetFirstChild<DXV.ShapeHandles>();
     if (element != null)
-      return DMXVml.ShapeHandlesConverter.CreateModelElement(element);
+      return DMXV.ShapeHandlesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShapeHandles(DXVml.Line openXmlElement, DMVml.ShapeHandles? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeHandles(DXV.Line openXmlElement, DMV.ShapeHandles? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShapeHandlesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.ShapeHandles>(), value, diffs, objName);
+    return DMXV.ShapeHandlesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.ShapeHandles>(), value, diffs, objName);
   }
   
-  private static void SetShapeHandles(DXVml.Line openXmlElement, DMVml.ShapeHandles? value)
+  private static void SetShapeHandles(DXV.Line openXmlElement, DMV.ShapeHandles? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.ShapeHandles>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.ShapeHandles>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ShapeHandlesConverter.CreateOpenXmlElement<DXVml.ShapeHandles>(value);
+      itemElement = DMXV.ShapeHandlesConverter.CreateOpenXmlElement<DXV.ShapeHandles>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Fill? GetFill(DXVml.Line openXmlElement)
+  private static DMV.Fill? GetFill(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Fill>();
+    var element = openXmlElement?.GetFirstChild<DXV.Fill>();
     if (element != null)
-      return DMXVml.FillConverter.CreateModelElement(element);
+      return DMXV.FillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFill(DXVml.Line openXmlElement, DMVml.Fill? value, DiffList? diffs, string? objName)
+  private static bool CmpFill(DXV.Line openXmlElement, DMV.Fill? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Fill>(), value, diffs, objName);
+    return DMXV.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Fill>(), value, diffs, objName);
   }
   
-  private static void SetFill(DXVml.Line openXmlElement, DMVml.Fill? value)
+  private static void SetFill(DXV.Line openXmlElement, DMV.Fill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Fill>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Fill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.FillConverter.CreateOpenXmlElement<DXVml.Fill>(value);
+      itemElement = DMXV.FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Stroke? GetStroke(DXVml.Line openXmlElement)
+  private static DMV.Stroke? GetStroke(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Stroke>();
+    var element = openXmlElement?.GetFirstChild<DXV.Stroke>();
     if (element != null)
-      return DMXVml.StrokeConverter.CreateModelElement(element);
+      return DMXV.StrokeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpStroke(DXVml.Line openXmlElement, DMVml.Stroke? value, DiffList? diffs, string? objName)
+  private static bool CmpStroke(DXV.Line openXmlElement, DMV.Stroke? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.StrokeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Stroke>(), value, diffs, objName);
+    return DMXV.StrokeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Stroke>(), value, diffs, objName);
   }
   
-  private static void SetStroke(DXVml.Line openXmlElement, DMVml.Stroke? value)
+  private static void SetStroke(DXV.Line openXmlElement, DMV.Stroke? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Stroke>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Stroke>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.StrokeConverter.CreateOpenXmlElement<DXVml.Stroke>(value);
+      itemElement = DMXV.StrokeConverter.CreateOpenXmlElement<DXV.Stroke>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Shadow? GetShadow(DXVml.Line openXmlElement)
+  private static DMV.Shadow? GetShadow(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.Shadow>();
+    var element = openXmlElement?.GetFirstChild<DXV.Shadow>();
     if (element != null)
-      return DMXVml.ShadowConverter.CreateModelElement(element);
+      return DMXV.ShadowConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpShadow(DXVml.Line openXmlElement, DMVml.Shadow? value, DiffList? diffs, string? objName)
+  private static bool CmpShadow(DXV.Line openXmlElement, DMV.Shadow? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.Shadow>(), value, diffs, objName);
+    return DMXV.ShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Shadow>(), value, diffs, objName);
   }
   
-  private static void SetShadow(DXVml.Line openXmlElement, DMVml.Shadow? value)
+  private static void SetShadow(DXV.Line openXmlElement, DMV.Shadow? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.Shadow>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.Shadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ShadowConverter.CreateOpenXmlElement<DXVml.Shadow>(value);
+      itemElement = DMXV.ShadowConverter.CreateOpenXmlElement<DXV.Shadow>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.TextBox? GetTextBox(DXVml.Line openXmlElement)
+  private static DMV.TextBox? GetTextBox(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.TextBox>();
+    var element = openXmlElement?.GetFirstChild<DXV.TextBox>();
     if (element != null)
-      return DMXVml.TextBoxConverter.CreateModelElement(element);
+      return DMXV.TextBoxConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextBox(DXVml.Line openXmlElement, DMVml.TextBox? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBox(DXV.Line openXmlElement, DMV.TextBox? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.TextBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.TextBox>(), value, diffs, objName);
+    return DMXV.TextBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.TextBox>(), value, diffs, objName);
   }
   
-  private static void SetTextBox(DXVml.Line openXmlElement, DMVml.TextBox? value)
+  private static void SetTextBox(DXV.Line openXmlElement, DMV.TextBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.TextBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.TextBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.TextBoxConverter.CreateOpenXmlElement<DXVml.TextBox>(value);
+      itemElement = DMXV.TextBoxConverter.CreateOpenXmlElement<DXV.TextBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.TextPath? GetTextPath(DXVml.Line openXmlElement)
+  private static DMV.TextPath? GetTextPath(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.TextPath>();
+    var element = openXmlElement?.GetFirstChild<DXV.TextPath>();
     if (element != null)
-      return DMXVml.TextPathConverter.CreateModelElement(element);
+      return DMXV.TextPathConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextPath(DXVml.Line openXmlElement, DMVml.TextPath? value, DiffList? diffs, string? objName)
+  private static bool CmpTextPath(DXV.Line openXmlElement, DMV.TextPath? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.TextPathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.TextPath>(), value, diffs, objName);
+    return DMXV.TextPathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.TextPath>(), value, diffs, objName);
   }
   
-  private static void SetTextPath(DXVml.Line openXmlElement, DMVml.TextPath? value)
+  private static void SetTextPath(DXV.Line openXmlElement, DMV.TextPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.TextPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.TextPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.TextPathConverter.CreateOpenXmlElement<DXVml.TextPath>(value);
+      itemElement = DMXV.TextPathConverter.CreateOpenXmlElement<DXV.TextPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.ImageData? GetImageData(DXVml.Line openXmlElement)
+  private static DMV.ImageData? GetImageData(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVml.ImageData>();
+    var element = openXmlElement?.GetFirstChild<DXV.ImageData>();
     if (element != null)
-      return DMXVml.ImageDataConverter.CreateModelElement(element);
+      return DMXV.ImageDataConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpImageData(DXVml.Line openXmlElement, DMVml.ImageData? value, DiffList? diffs, string? objName)
+  private static bool CmpImageData(DXV.Line openXmlElement, DMV.ImageData? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ImageDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVml.ImageData>(), value, diffs, objName);
+    return DMXV.ImageDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.ImageData>(), value, diffs, objName);
   }
   
-  private static void SetImageData(DXVml.Line openXmlElement, DMVml.ImageData? value)
+  private static void SetImageData(DXV.Line openXmlElement, DMV.ImageData? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVml.ImageData>();
+    var itemElement = openXmlElement.GetFirstChild<DXV.ImageData>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ImageDataConverter.CreateOpenXmlElement<DXVml.ImageData>(value);
+      itemElement = DMXV.ImageDataConverter.CreateOpenXmlElement<DXV.ImageData>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Skew? GetSkew(DXVml.Line openXmlElement)
+  private static DMV.Skew? GetSkew(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.Skew>();
+    var element = openXmlElement?.GetFirstChild<DXVO.Skew>();
     if (element != null)
-      return DMXVml.SkewConverter.CreateModelElement(element);
+      return DMXV.SkewConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSkew(DXVml.Line openXmlElement, DMVml.Skew? value, DiffList? diffs, string? objName)
+  private static bool CmpSkew(DXV.Line openXmlElement, DMV.Skew? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.SkewConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Skew>(), value, diffs, objName);
+    return DMXV.SkewConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Skew>(), value, diffs, objName);
   }
   
-  private static void SetSkew(DXVml.Line openXmlElement, DMVml.Skew? value)
+  private static void SetSkew(DXV.Line openXmlElement, DMV.Skew? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Skew>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.Skew>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.SkewConverter.CreateOpenXmlElement<DXVmlO.Skew>(value);
+      itemElement = DMXV.SkewConverter.CreateOpenXmlElement<DXVO.Skew>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Extrusion? GetExtrusion(DXVml.Line openXmlElement)
+  private static DMV.Extrusion? GetExtrusion(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.Extrusion>();
+    var element = openXmlElement?.GetFirstChild<DXVO.Extrusion>();
     if (element != null)
-      return DMXVml.ExtrusionConverter.CreateModelElement(element);
+      return DMXV.ExtrusionConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtrusion(DXVml.Line openXmlElement, DMVml.Extrusion? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusion(DXV.Line openXmlElement, DMV.Extrusion? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ExtrusionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Extrusion>(), value, diffs, objName);
+    return DMXV.ExtrusionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Extrusion>(), value, diffs, objName);
   }
   
-  private static void SetExtrusion(DXVml.Line openXmlElement, DMVml.Extrusion? value)
+  private static void SetExtrusion(DXV.Line openXmlElement, DMV.Extrusion? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Extrusion>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.Extrusion>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ExtrusionConverter.CreateOpenXmlElement<DXVmlO.Extrusion>(value);
+      itemElement = DMXV.ExtrusionConverter.CreateOpenXmlElement<DXVO.Extrusion>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Callout? GetCallout(DXVml.Line openXmlElement)
+  private static DMV.Callout? GetCallout(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.Callout>();
+    var element = openXmlElement?.GetFirstChild<DXVO.Callout>();
     if (element != null)
-      return DMXVml.CalloutConverter.CreateModelElement(element);
+      return DMXV.CalloutConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCallout(DXVml.Line openXmlElement, DMVml.Callout? value, DiffList? diffs, string? objName)
+  private static bool CmpCallout(DXV.Line openXmlElement, DMV.Callout? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.CalloutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Callout>(), value, diffs, objName);
+    return DMXV.CalloutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Callout>(), value, diffs, objName);
   }
   
-  private static void SetCallout(DXVml.Line openXmlElement, DMVml.Callout? value)
+  private static void SetCallout(DXV.Line openXmlElement, DMV.Callout? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Callout>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.Callout>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.CalloutConverter.CreateOpenXmlElement<DXVmlO.Callout>(value);
+      itemElement = DMXV.CalloutConverter.CreateOpenXmlElement<DXVO.Callout>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.Lock? GetLock(DXVml.Line openXmlElement)
+  private static DMV.Lock? GetLock(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.Lock>();
+    var element = openXmlElement?.GetFirstChild<DXVO.Lock>();
     if (element != null)
-      return DMXVml.LockConverter.CreateModelElement(element);
+      return DMXV.LockConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLock(DXVml.Line openXmlElement, DMVml.Lock? value, DiffList? diffs, string? objName)
+  private static bool CmpLock(DXV.Line openXmlElement, DMV.Lock? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.LockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.Lock>(), value, diffs, objName);
+    return DMXV.LockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.Lock>(), value, diffs, objName);
   }
   
-  private static void SetLock(DXVml.Line openXmlElement, DMVml.Lock? value)
+  private static void SetLock(DXV.Line openXmlElement, DMV.Lock? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.Lock>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.Lock>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.LockConverter.CreateOpenXmlElement<DXVmlO.Lock>(value);
+      itemElement = DMXV.LockConverter.CreateOpenXmlElement<DXVO.Lock>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.ClipPath? GetClipPath(DXVml.Line openXmlElement)
+  private static DMV.ClipPath? GetClipPath(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.ClipPath>();
+    var element = openXmlElement?.GetFirstChild<DXVO.ClipPath>();
     if (element != null)
-      return DMXVml.ClipPathConverter.CreateModelElement(element);
+      return DMXV.ClipPathConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpClipPath(DXVml.Line openXmlElement, DMVml.ClipPath? value, DiffList? diffs, string? objName)
+  private static bool CmpClipPath(DXV.Line openXmlElement, DMV.ClipPath? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.ClipPathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.ClipPath>(), value, diffs, objName);
+    return DMXV.ClipPathConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.ClipPath>(), value, diffs, objName);
   }
   
-  private static void SetClipPath(DXVml.Line openXmlElement, DMVml.ClipPath? value)
+  private static void SetClipPath(DXV.Line openXmlElement, DMV.ClipPath? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.ClipPath>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.ClipPath>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.ClipPathConverter.CreateOpenXmlElement<DXVmlO.ClipPath>(value);
+      itemElement = DMXV.ClipPathConverter.CreateOpenXmlElement<DXVO.ClipPath>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMVml.SignatureLine? GetSignatureLine(DXVml.Line openXmlElement)
+  private static DMV.SignatureLine? GetSignatureLine(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlO.SignatureLine>();
+    var element = openXmlElement?.GetFirstChild<DXVO.SignatureLine>();
     if (element != null)
-      return DMXVml.SignatureLineConverter.CreateModelElement(element);
+      return DMXV.SignatureLineConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSignatureLine(DXVml.Line openXmlElement, DMVml.SignatureLine? value, DiffList? diffs, string? objName)
+  private static bool CmpSignatureLine(DXV.Line openXmlElement, DMV.SignatureLine? value, DiffList? diffs, string? objName)
   {
-    return DMXVml.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlO.SignatureLine>(), value, diffs, objName);
+    return DMXV.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.SignatureLine>(), value, diffs, objName);
   }
   
-  private static void SetSignatureLine(DXVml.Line openXmlElement, DMVml.SignatureLine? value)
+  private static void SetSignatureLine(DXV.Line openXmlElement, DMV.SignatureLine? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlO.SignatureLine>();
+    var itemElement = openXmlElement.GetFirstChild<DXVO.SignatureLine>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXVml.SignatureLineConverter.CreateOpenXmlElement<DXVmlO.SignatureLine>(value);
+      itemElement = DMXV.SignatureLineConverter.CreateOpenXmlElement<DXVO.SignatureLine>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWVml.TextWrap? GetTextWrap(DXVml.Line openXmlElement)
+  private static DMWV.TextWrap? GetTextWrap(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlW.TextWrap>();
+    var element = openXmlElement?.GetFirstChild<DXVW.TextWrap>();
     if (element != null)
-      return DMXWVml.TextWrapConverter.CreateModelElement(element);
+      return DMXWV.TextWrapConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextWrap(DXVml.Line openXmlElement, DMWVml.TextWrap? value, DiffList? diffs, string? objName)
+  private static bool CmpTextWrap(DXV.Line openXmlElement, DMWV.TextWrap? value, DiffList? diffs, string? objName)
   {
-    return DMXWVml.TextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlW.TextWrap>(), value, diffs, objName);
+    return DMXWV.TextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVW.TextWrap>(), value, diffs, objName);
   }
   
-  private static void SetTextWrap(DXVml.Line openXmlElement, DMWVml.TextWrap? value)
+  private static void SetTextWrap(DXV.Line openXmlElement, DMWV.TextWrap? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TextWrap>();
+    var itemElement = openXmlElement.GetFirstChild<DXVW.TextWrap>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWVml.TextWrapConverter.CreateOpenXmlElement<DXVmlW.TextWrap>(value);
+      itemElement = DMXWV.TextWrapConverter.CreateOpenXmlElement<DXVW.TextWrap>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetAnchorLock(DXVml.Line openXmlElement)
+  private static Boolean? GetAnchorLock(DXV.Line openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    return openXmlElement.GetFirstChild<DXVW.AnchorLock>() != null;
   }
   
-  private static bool CmpAnchorLock(DXVml.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorLock(DXV.Line openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>() != null;
+    var val = openXmlElement.GetFirstChild<DXVW.AnchorLock>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXVmlW.AnchorLock", val, value);
+    diffs?.Add(objName, "DXVW.AnchorLock", val, value);
     return false;
   }
   
-  private static void SetAnchorLock(DXVml.Line openXmlElement, Boolean? value)
+  private static void SetAnchorLock(DXV.Line openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXVmlW.AnchorLock>();
+      var itemElement = openXmlElement.GetFirstChild<DXVW.AnchorLock>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXVmlW.AnchorLock();
+      var itemElement = new DXVW.AnchorLock();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWVml.BorderType? GetTopBorder(DXVml.Line openXmlElement)
+  private static DMWV.BorderType? GetTopBorder(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlW.TopBorder>();
+    var element = openXmlElement?.GetFirstChild<DXVW.TopBorder>();
     if (element != null)
-      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+      return DMXWV.BorderTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTopBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXV.Line openXmlElement, DMWV.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXWVml.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlW.TopBorder>(), value, diffs, objName);
+    return DMXWV.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVW.TopBorder>(), value, diffs, objName);
   }
   
-  private static void SetTopBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value)
+  private static void SetTopBorder(DXV.Line openXmlElement, DMWV.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlW.TopBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVW.TopBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.TopBorder>(value);
+      itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.TopBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWVml.BorderType? GetBottomBorder(DXVml.Line openXmlElement)
+  private static DMWV.BorderType? GetBottomBorder(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlW.BottomBorder>();
+    var element = openXmlElement?.GetFirstChild<DXVW.BottomBorder>();
     if (element != null)
-      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+      return DMXWV.BorderTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBottomBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXV.Line openXmlElement, DMWV.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXWVml.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlW.BottomBorder>(), value, diffs, objName);
+    return DMXWV.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVW.BottomBorder>(), value, diffs, objName);
   }
   
-  private static void SetBottomBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value)
+  private static void SetBottomBorder(DXV.Line openXmlElement, DMWV.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlW.BottomBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVW.BottomBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.BottomBorder>(value);
+      itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.BottomBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWVml.BorderType? GetLeftBorder(DXVml.Line openXmlElement)
+  private static DMWV.BorderType? GetLeftBorder(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlW.LeftBorder>();
+    var element = openXmlElement?.GetFirstChild<DXVW.LeftBorder>();
     if (element != null)
-      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+      return DMXWV.BorderTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLeftBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXV.Line openXmlElement, DMWV.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXWVml.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlW.LeftBorder>(), value, diffs, objName);
+    return DMXWV.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVW.LeftBorder>(), value, diffs, objName);
   }
   
-  private static void SetLeftBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value)
+  private static void SetLeftBorder(DXV.Line openXmlElement, DMWV.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlW.LeftBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVW.LeftBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.LeftBorder>(value);
+      itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.LeftBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMWVml.BorderType? GetRightBorder(DXVml.Line openXmlElement)
+  private static DMWV.BorderType? GetRightBorder(DXV.Line openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXVmlW.RightBorder>();
+    var element = openXmlElement?.GetFirstChild<DXVW.RightBorder>();
     if (element != null)
-      return DMXWVml.BorderTypeConverter.CreateModelElement(element);
+      return DMXWV.BorderTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRightBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXV.Line openXmlElement, DMWV.BorderType? value, DiffList? diffs, string? objName)
   {
-    return DMXWVml.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVmlW.RightBorder>(), value, diffs, objName);
+    return DMXWV.BorderTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVW.RightBorder>(), value, diffs, objName);
   }
   
-  private static void SetRightBorder(DXVml.Line openXmlElement, DMWVml.BorderType? value)
+  private static void SetRightBorder(DXV.Line openXmlElement, DMWV.BorderType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXVmlW.RightBorder>();
+    var itemElement = openXmlElement.GetFirstChild<DXVW.RightBorder>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXWVml.BorderTypeConverter.CreateOpenXmlElement<DXVmlW.RightBorder>(value);
+      itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.RightBorder>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Vml.Line? CreateModelElement(DXVml.Line? openXmlElement)
+  public static DocumentModel.Vml.Line? CreateModelElement(DXV.Line? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1737,7 +1737,7 @@ public static class LineConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVml.Line? openXmlElement, DMVml.Line? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.Line? openXmlElement, DMV.Line? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -1899,15 +1899,15 @@ public static class LineConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Line value)
-    where OpenXmlElementType: DXVml.Line, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.Line value)
+    where OpenXmlElementType: DXV.Line, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVml.Line openXmlElement, DMVml.Line value)
+  public static void UpdateOpenXmlElement(DXV.Line openXmlElement, DMV.Line value)
   {
     SetId(openXmlElement, value?.Id);
     SetStyle(openXmlElement, value?.Style);

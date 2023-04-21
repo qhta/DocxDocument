@@ -8,30 +8,30 @@ public static class DataTableConverter
   /// <summary>
   /// Show Horizontal Border.
   /// </summary>
-  private static Boolean? GetShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement)
+  private static Boolean? GetShowHorizontalBorder(DXDC.DataTable openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ShowHorizontalBorder>() != null;
   }
   
-  private static bool CmpShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowHorizontalBorder(DXDC.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ShowHorizontalBorder>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ShowHorizontalBorder", val, value);
+    diffs?.Add(objName, "DXDC.ShowHorizontalBorder", val, value);
     return false;
   }
   
-  private static void SetShowHorizontalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
+  private static void SetShowHorizontalBorder(DXDC.DataTable openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowHorizontalBorder>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ShowHorizontalBorder>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ShowHorizontalBorder();
+      var itemElement = new DXDC.ShowHorizontalBorder();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -39,30 +39,30 @@ public static class DataTableConverter
   /// <summary>
   /// Show Vertical Border.
   /// </summary>
-  private static Boolean? GetShowVerticalBorder(DXDrawCharts.DataTable openXmlElement)
+  private static Boolean? GetShowVerticalBorder(DXDC.DataTable openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ShowVerticalBorder>() != null;
   }
   
-  private static bool CmpShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowVerticalBorder(DXDC.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ShowVerticalBorder>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ShowVerticalBorder", val, value);
+    diffs?.Add(objName, "DXDC.ShowVerticalBorder", val, value);
     return false;
   }
   
-  private static void SetShowVerticalBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
+  private static void SetShowVerticalBorder(DXDC.DataTable openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowVerticalBorder>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ShowVerticalBorder>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ShowVerticalBorder();
+      var itemElement = new DXDC.ShowVerticalBorder();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -70,30 +70,30 @@ public static class DataTableConverter
   /// <summary>
   /// Show Outline Border.
   /// </summary>
-  private static Boolean? GetShowOutlineBorder(DXDrawCharts.DataTable openXmlElement)
+  private static Boolean? GetShowOutlineBorder(DXDC.DataTable openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ShowOutlineBorder>() != null;
   }
   
-  private static bool CmpShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowOutlineBorder(DXDC.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ShowOutlineBorder>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ShowOutlineBorder", val, value);
+    diffs?.Add(objName, "DXDC.ShowOutlineBorder", val, value);
     return false;
   }
   
-  private static void SetShowOutlineBorder(DXDrawCharts.DataTable openXmlElement, Boolean? value)
+  private static void SetShowOutlineBorder(DXDC.DataTable openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowOutlineBorder>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ShowOutlineBorder>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ShowOutlineBorder();
+      var itemElement = new DXDC.ShowOutlineBorder();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -101,30 +101,30 @@ public static class DataTableConverter
   /// <summary>
   /// Show Legend Keys.
   /// </summary>
-  private static Boolean? GetShowKeys(DXDrawCharts.DataTable openXmlElement)
+  private static Boolean? GetShowKeys(DXDC.DataTable openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null;
+    return openXmlElement.GetFirstChild<DXDC.ShowKeys>() != null;
   }
   
-  private static bool CmpShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowKeys(DXDC.DataTable openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>() != null;
+    var val = openXmlElement.GetFirstChild<DXDC.ShowKeys>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDrawCharts.ShowKeys", val, value);
+    diffs?.Add(objName, "DXDC.ShowKeys", val, value);
     return false;
   }
   
-  private static void SetShowKeys(DXDrawCharts.DataTable openXmlElement, Boolean? value)
+  private static void SetShowKeys(DXDC.DataTable openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ShowKeys>();
+      var itemElement = openXmlElement.GetFirstChild<DXDC.ShowKeys>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDrawCharts.ShowKeys();
+      var itemElement = new DXDC.ShowKeys();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -132,27 +132,27 @@ public static class DataTableConverter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DataTable openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.DataTable openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DataTable openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.DataTable openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -161,27 +161,27 @@ public static class DataTableConverter
   /// <summary>
   /// Text Properties.
   /// </summary>
-  private static DMDrawsCharts.TextProperties? GetTextProperties(DXDrawCharts.DataTable openXmlElement)
+  private static DMDC.TextProperties? GetTextProperties(DXDC.DataTable openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.TextProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.TextProperties>();
     if (element != null)
-      return DMXDrawsCharts.TextPropertiesConverter.CreateModelElement(element);
+      return DMXDC.TextPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.DataTable openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
   }
   
-  private static void SetTextProperties(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.TextProperties? value)
+  private static void SetTextProperties(DXDC.DataTable openXmlElement, DMDC.TextProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.TextProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.TextProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.TextPropertiesConverter.CreateOpenXmlElement<DXDrawCharts.TextProperties>(value);
+      itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -190,33 +190,33 @@ public static class DataTableConverter
   /// <summary>
   /// Chart Extensibility.
   /// </summary>
-  private static DMDrawsCharts.ExtensionList? GetExtensionList(DXDrawCharts.DataTable openXmlElement)
+  private static DMDC.ExtensionList? GetExtensionList(DXDC.DataTable openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.ExtensionListConverter.CreateModelElement(element);
+      return DMXDC.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.DataTable openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.ExtensionList? value)
+  private static void SetExtensionList(DXDC.DataTable openXmlElement, DMDC.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.ExtensionList>(value);
+      itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DataTable? CreateModelElement(DXDrawCharts.DataTable? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DataTable? CreateModelElement(DXDC.DataTable? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -233,7 +233,7 @@ public static class DataTableConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DataTable? openXmlElement, DMDrawsCharts.DataTable? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DataTable? openXmlElement, DMDC.DataTable? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -259,15 +259,15 @@ public static class DataTableConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DataTable value)
-    where OpenXmlElementType: DXDrawCharts.DataTable, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DataTable value)
+    where OpenXmlElementType: DXDC.DataTable, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DataTable openXmlElement, DMDrawsCharts.DataTable value)
+  public static void UpdateOpenXmlElement(DXDC.DataTable openXmlElement, DMDC.DataTable value)
   {
     SetShowHorizontalBorder(openXmlElement, value?.ShowHorizontalBorder);
     SetShowVerticalBorder(openXmlElement, value?.ShowVerticalBorder);

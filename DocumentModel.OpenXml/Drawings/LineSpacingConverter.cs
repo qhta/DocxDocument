@@ -5,37 +5,37 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LineSpacingConverter
 {
-  private static Int32? GetSpacingPercent(DXDraw.LineSpacing openXmlElement)
+  private static Int32? GetSpacingPercent(DXD.LineSpacing openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val);
   }
   
-  private static bool CmpSpacingPercent(DXDraw.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPercent(DXD.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPercent>()?.Val, value, diffs, objName, "SpacingPercent");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val, value, diffs, objName, "SpacingPercent");
   }
   
-  private static void SetSpacingPercent(DXDraw.LineSpacing openXmlElement, Int32? value)
+  private static void SetSpacingPercent(DXD.LineSpacing openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SpacingPercent,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SpacingPercent,System.Int32>(openXmlElement, value);
   }
   
-  private static Int32? GetSpacingPoints(DXDraw.LineSpacing openXmlElement)
+  private static Int32? GetSpacingPoints(DXD.LineSpacing openXmlElement)
   {
-    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val);
+    return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val);
   }
   
-  private static bool CmpSpacingPoints(DXDraw.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPoints(DXD.LineSpacing openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDraw.SpacingPoints>()?.Val, value, diffs, objName, "SpacingPoints");
+    return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val, value, diffs, objName, "SpacingPoints");
   }
   
-  private static void SetSpacingPoints(DXDraw.LineSpacing openXmlElement, Int32? value)
+  private static void SetSpacingPoints(DXD.LineSpacing openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXDraw.SpacingPoints,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXD.SpacingPoints,System.Int32>(openXmlElement, value);
   }
   
-  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DXDraw.LineSpacing? openXmlElement)
+  public static DocumentModel.Drawings.LineSpacing? CreateModelElement(DXD.LineSpacing? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -47,7 +47,7 @@ public static class LineSpacingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.LineSpacing? openXmlElement, DMDraws.LineSpacing? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LineSpacing? openXmlElement, DMD.LineSpacing? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -63,15 +63,15 @@ public static class LineSpacingConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LineSpacing value)
-    where OpenXmlElementType: DXDraw.LineSpacing, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LineSpacing value)
+    where OpenXmlElementType: DXD.LineSpacing, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.LineSpacing openXmlElement, DMDraws.LineSpacing value)
+  public static void UpdateOpenXmlElement(DXD.LineSpacing openXmlElement, DMD.LineSpacing value)
   {
     SetSpacingPercent(openXmlElement, value?.SpacingPercent);
     SetSpacingPoints(openXmlElement, value?.SpacingPoints);

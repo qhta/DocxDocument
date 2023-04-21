@@ -8,17 +8,17 @@ public static class NumberingFormatConverter
   /// <summary>
   /// Number Format Code
   /// </summary>
-  private static String? GetFormatCode(DXDrawCharts.NumberingFormat openXmlElement)
+  private static String? GetFormatCode(DXDC.NumberingFormat openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
-  private static bool CmpFormatCode(DXDrawCharts.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
   
-  private static void SetFormatCode(DXDrawCharts.NumberingFormat openXmlElement, String? value)
+  private static void SetFormatCode(DXDC.NumberingFormat openXmlElement, String? value)
   {
     openXmlElement.FormatCode = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class NumberingFormatConverter
   /// <summary>
   /// Linked to Source
   /// </summary>
-  private static Boolean? GetSourceLinked(DXDrawCharts.NumberingFormat openXmlElement)
+  private static Boolean? GetSourceLinked(DXDC.NumberingFormat openXmlElement)
   {
     return openXmlElement?.SourceLinked?.Value;
   }
   
-  private static bool CmpSourceLinked(DXDrawCharts.NumberingFormat openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceLinked(DXDC.NumberingFormat openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.SourceLinked?.Value == value) return true;
     diffs?.Add(objName, "SourceLinked", openXmlElement?.SourceLinked?.Value, value);
     return false;
   }
   
-  private static void SetSourceLinked(DXDrawCharts.NumberingFormat openXmlElement, Boolean? value)
+  private static void SetSourceLinked(DXDC.NumberingFormat openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.SourceLinked = new BooleanValue { Value = (Boolean)value };
@@ -46,7 +46,7 @@ public static class NumberingFormatConverter
       openXmlElement.SourceLinked = null;
   }
   
-  public static DocumentModel.Drawings.Charts.NumberingFormat? CreateModelElement(DXDrawCharts.NumberingFormat? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberingFormat? CreateModelElement(DXDC.NumberingFormat? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -58,7 +58,7 @@ public static class NumberingFormatConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.NumberingFormat? openXmlElement, DMDrawsCharts.NumberingFormat? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberingFormat? openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -74,15 +74,15 @@ public static class NumberingFormatConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberingFormat value)
-    where OpenXmlElementType: DXDrawCharts.NumberingFormat, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.NumberingFormat value)
+    where OpenXmlElementType: DXDC.NumberingFormat, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.NumberingFormat openXmlElement, DMDrawsCharts.NumberingFormat value)
+  public static void UpdateOpenXmlElement(DXDC.NumberingFormat openXmlElement, DMDC.NumberingFormat value)
   {
     SetFormatCode(openXmlElement, value?.FormatCode);
     SetSourceLinked(openXmlElement, value?.SourceLinked);

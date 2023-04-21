@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class CategoryFilterExceptionsConverter
 {
-  private static DMDrawsCharts.CategoryFilterException? GetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement)
+  private static DMDC.CategoryFilterException? GetCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.CategoryFilterException>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.CategoryFilterException>();
     if (element != null)
-      return DMXDrawsCharts.CategoryFilterExceptionConverter.CreateModelElement(element);
+      return DMXDC.CategoryFilterExceptionConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterException>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterException>(), value, diffs, objName);
   }
   
-  private static void SetCategoryFilterException(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterException? value)
+  private static void SetCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterException? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.CategoryFilterException>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.CategoryFilterException>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.CategoryFilterExceptionConverter.CreateOpenXmlElement<DXO2013DrawChart.CategoryFilterException>(value);
+      itemElement = DMXDC.CategoryFilterExceptionConverter.CreateOpenXmlElement<DXO13DC.CategoryFilterException>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? CreateModelElement(DXO2013DrawChart.CategoryFilterExceptions? openXmlElement)
+  public static DocumentModel.Drawings.Charts.CategoryFilterExceptions? CreateModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class CategoryFilterExceptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.CategoryFilterExceptions? openXmlElement, DMDrawsCharts.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class CategoryFilterExceptionsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.CategoryFilterExceptions value)
-    where OpenXmlElementType: DXO2013DrawChart.CategoryFilterExceptions, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.CategoryFilterExceptions value)
+    where OpenXmlElementType: DXO13DC.CategoryFilterExceptions, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.CategoryFilterExceptions openXmlElement, DMDrawsCharts.CategoryFilterExceptions value)
+  public static void UpdateOpenXmlElement(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterExceptions value)
   {
     SetCategoryFilterException(openXmlElement, value?.CategoryFilterException);
   }

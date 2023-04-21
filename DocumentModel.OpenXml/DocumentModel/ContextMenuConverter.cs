@@ -8,256 +8,256 @@ public static class ContextMenuConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DXO2010CustUI.ContextMenu openXmlElement)
+  private static String? GetIdMso(DXO10CUI.ContextMenu openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.ContextMenu openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXO2010CustUI.ContextMenu openXmlElement, String? value)
+  private static void SetIdMso(DXO10CUI.ContextMenu openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DM.ControlCloneRegular? GetControlCloneRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.ControlCloneRegular? GetControlCloneRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ControlCloneRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.ControlCloneRegular>();
     if (element != null)
       return DMX.ControlCloneRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpControlCloneRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpControlCloneRegular(DXO10CUI.ContextMenu openXmlElement, DM.ControlCloneRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ControlCloneRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneRegular>(), value, diffs, objName);
+    return DMX.ControlCloneRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ControlCloneRegular>(), value, diffs, objName);
   }
   
-  private static void SetControlCloneRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ControlCloneRegular? value)
+  private static void SetControlCloneRegular(DXO10CUI.ContextMenu openXmlElement, DM.ControlCloneRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ControlCloneRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.ControlCloneRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ControlCloneRegularConverter.CreateOpenXmlElement<DXO2010CustUI.ControlCloneRegular>(value);
+      itemElement = DMX.ControlCloneRegularConverter.CreateOpenXmlElement<DXO10CUI.ControlCloneRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.ButtonRegular? GetButtonRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.ButtonRegular? GetButtonRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.ButtonRegular>();
     if (element != null)
       return DMX.ButtonRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.ButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>(), value, diffs, objName);
+    return DMX.ButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>(), value, diffs, objName);
   }
   
-  private static void SetButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ButtonRegular? value)
+  private static void SetButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.ButtonRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ButtonRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.ButtonRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO2010CustUI.ButtonRegular>(value);
+      itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ButtonRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.CheckBox? GetCheckBox(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.CheckBox? GetCheckBox(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.CheckBox>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.CheckBox>();
     if (element != null)
       return DMX.CheckBoxConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpCheckBox(DXO2010CustUI.ContextMenu openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckBox(DXO10CUI.ContextMenu openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
   {
-    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.CheckBox>(), value, diffs, objName);
+    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.CheckBox>(), value, diffs, objName);
   }
   
-  private static void SetCheckBox(DXO2010CustUI.ContextMenu openXmlElement, DM.CheckBox? value)
+  private static void SetCheckBox(DXO10CUI.ContextMenu openXmlElement, DM.CheckBox? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.CheckBox>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.CheckBox>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.CheckBoxConverter.CreateOpenXmlElement<DXO2010CustUI.CheckBox>(value);
+      itemElement = DMX.CheckBoxConverter.CreateOpenXmlElement<DXO10CUI.CheckBox>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.GalleryRegular? GetGalleryRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.GalleryRegular? GetGalleryRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.GalleryRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.GalleryRegular>();
     if (element != null)
       return DMX.GalleryRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGalleryRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.GalleryRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpGalleryRegular(DXO10CUI.ContextMenu openXmlElement, DM.GalleryRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.GalleryRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.GalleryRegular>(), value, diffs, objName);
+    return DMX.GalleryRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.GalleryRegular>(), value, diffs, objName);
   }
   
-  private static void SetGalleryRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.GalleryRegular? value)
+  private static void SetGalleryRegular(DXO10CUI.ContextMenu openXmlElement, DM.GalleryRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.GalleryRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.GalleryRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.GalleryRegularConverter.CreateOpenXmlElement<DXO2010CustUI.GalleryRegular>(value);
+      itemElement = DMX.GalleryRegularConverter.CreateOpenXmlElement<DXO10CUI.GalleryRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.ToggleButtonRegular? GetToggleButtonRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.ToggleButtonRegular? GetToggleButtonRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.ToggleButtonRegular>();
     if (element != null)
       return DMX.ToggleButtonRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpToggleButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ToggleButtonRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpToggleButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.ToggleButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.ToggleButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>(), value, diffs, objName);
+    return DMX.ToggleButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ToggleButtonRegular>(), value, diffs, objName);
   }
   
-  private static void SetToggleButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.ToggleButtonRegular? value)
+  private static void SetToggleButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.ToggleButtonRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.ToggleButtonRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.ToggleButtonRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ToggleButtonRegularConverter.CreateOpenXmlElement<DXO2010CustUI.ToggleButtonRegular>(value);
+      itemElement = DMX.ToggleButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ToggleButtonRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.SplitButtonRegular? GetSplitButtonRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.SplitButtonRegular? GetSplitButtonRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.SplitButtonRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.SplitButtonRegular>();
     if (element != null)
       return DMX.SplitButtonRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSplitButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.SplitButtonRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpSplitButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.SplitButtonRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.SplitButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.SplitButtonRegular>(), value, diffs, objName);
+    return DMX.SplitButtonRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SplitButtonRegular>(), value, diffs, objName);
   }
   
-  private static void SetSplitButtonRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.SplitButtonRegular? value)
+  private static void SetSplitButtonRegular(DXO10CUI.ContextMenu openXmlElement, DM.SplitButtonRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.SplitButtonRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.SplitButtonRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.SplitButtonRegularConverter.CreateOpenXmlElement<DXO2010CustUI.SplitButtonRegular>(value);
+      itemElement = DMX.SplitButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.SplitButtonRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.MenuRegular? GetMenuRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.MenuRegular? GetMenuRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.MenuRegular>();
     if (element != null)
       return DMX.MenuRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMenuRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuRegular(DXO10CUI.ContextMenu openXmlElement, DM.MenuRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuRegular>(), value, diffs, objName);
+    return DMX.MenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.MenuRegular>(), value, diffs, objName);
   }
   
-  private static void SetMenuRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.MenuRegular? value)
+  private static void SetMenuRegular(DXO10CUI.ContextMenu openXmlElement, DM.MenuRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.MenuRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.MenuRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.MenuRegularConverter.CreateOpenXmlElement<DXO2010CustUI.MenuRegular>(value);
+      itemElement = DMX.MenuRegularConverter.CreateOpenXmlElement<DXO10CUI.MenuRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.DynamicMenuRegular? GetDynamicMenuRegular(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.DynamicMenuRegular? GetDynamicMenuRegular(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.DynamicMenuRegular>();
     if (element != null)
       return DMX.DynamicMenuRegularConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDynamicMenuRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.DynamicMenuRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpDynamicMenuRegular(DXO10CUI.ContextMenu openXmlElement, DM.DynamicMenuRegular? value, DiffList? diffs, string? objName)
   {
-    return DMX.DynamicMenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>(), value, diffs, objName);
+    return DMX.DynamicMenuRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DynamicMenuRegular>(), value, diffs, objName);
   }
   
-  private static void SetDynamicMenuRegular(DXO2010CustUI.ContextMenu openXmlElement, DM.DynamicMenuRegular? value)
+  private static void SetDynamicMenuRegular(DXO10CUI.ContextMenu openXmlElement, DM.DynamicMenuRegular? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.DynamicMenuRegular>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.DynamicMenuRegular>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.DynamicMenuRegularConverter.CreateOpenXmlElement<DXO2010CustUI.DynamicMenuRegular>(value);
+      itemElement = DMX.DynamicMenuRegularConverter.CreateOpenXmlElement<DXO10CUI.DynamicMenuRegular>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.MenuSeparatorNoTitle? GetMenuSeparatorNoTitle(DXO2010CustUI.ContextMenu openXmlElement)
+  private static DM.MenuSeparatorNoTitle? GetMenuSeparatorNoTitle(DXO10CUI.ContextMenu openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010CustUI.MenuSeparatorNoTitle>();
+    var element = openXmlElement?.GetFirstChild<DXO10CUI.MenuSeparatorNoTitle>();
     if (element != null)
       return DMX.MenuSeparatorNoTitleConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpMenuSeparatorNoTitle(DXO2010CustUI.ContextMenu openXmlElement, DM.MenuSeparatorNoTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuSeparatorNoTitle(DXO10CUI.ContextMenu openXmlElement, DM.MenuSeparatorNoTitle? value, DiffList? diffs, string? objName)
   {
-    return DMX.MenuSeparatorNoTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010CustUI.MenuSeparatorNoTitle>(), value, diffs, objName);
+    return DMX.MenuSeparatorNoTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.MenuSeparatorNoTitle>(), value, diffs, objName);
   }
   
-  private static void SetMenuSeparatorNoTitle(DXO2010CustUI.ContextMenu openXmlElement, DM.MenuSeparatorNoTitle? value)
+  private static void SetMenuSeparatorNoTitle(DXO10CUI.ContextMenu openXmlElement, DM.MenuSeparatorNoTitle? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010CustUI.MenuSeparatorNoTitle>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10CUI.MenuSeparatorNoTitle>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.MenuSeparatorNoTitleConverter.CreateOpenXmlElement<DXO2010CustUI.MenuSeparatorNoTitle>(value);
+      itemElement = DMX.MenuSeparatorNoTitleConverter.CreateOpenXmlElement<DXO10CUI.MenuSeparatorNoTitle>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.ContextMenu? CreateModelElement(DXO2010CustUI.ContextMenu? openXmlElement)
+  public static DocumentModel.ContextMenu? CreateModelElement(DXO10CUI.ContextMenu? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -277,7 +277,7 @@ public static class ContextMenuConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.ContextMenu? openXmlElement, DM.ContextMenu? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ContextMenu? openXmlElement, DM.ContextMenu? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -310,14 +310,14 @@ public static class ContextMenuConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ContextMenu value)
-    where OpenXmlElementType: DXO2010CustUI.ContextMenu, new()
+    where OpenXmlElementType: DXO10CUI.ContextMenu, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.ContextMenu openXmlElement, DM.ContextMenu value)
+  public static void UpdateOpenXmlElement(DXO10CUI.ContextMenu openXmlElement, DM.ContextMenu value)
   {
     SetIdMso(openXmlElement, value?.IdMso);
     SetControlCloneRegular(openXmlElement, value?.ControlCloneRegular);

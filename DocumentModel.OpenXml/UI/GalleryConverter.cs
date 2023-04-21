@@ -8,17 +8,17 @@ public static class GalleryConverter
   /// <summary>
   /// size
   /// </summary>
-  private static DMUI.SizeKind? GetSize(DXOCustUI.Gallery openXmlElement)
+  private static DMUI.SizeKind? GetSize(DXOCUI.Gallery openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static bool CmpSize(DXOCustUI.Gallery openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXOCUI.Gallery openXmlElement, DMUI.SizeKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
-  private static void SetSize(DXOCustUI.Gallery openXmlElement, DMUI.SizeKind? value)
+  private static void SetSize(DXOCUI.Gallery openXmlElement, DMUI.SizeKind? value)
   {
     openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office.CustomUI.SizeValues, DMUI.SizeKind>(value);
   }
@@ -26,17 +26,17 @@ public static class GalleryConverter
   /// <summary>
   /// getSize
   /// </summary>
-  private static String? GetGetSize(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetSize(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSize);
   }
   
-  private static bool CmpGetSize(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSize(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSize, value, diffs, objName, "GetSize");
   }
   
-  private static void SetGetSize(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetSize(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetSize = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class GalleryConverter
   /// <summary>
   /// description
   /// </summary>
-  private static String? GetDescription(DXOCustUI.Gallery openXmlElement)
+  private static String? GetDescription(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetDescription(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class GalleryConverter
   /// <summary>
   /// getDescription
   /// </summary>
-  private static String? GetGetDescription(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetDescription(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetDescription(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -80,19 +80,19 @@ public static class GalleryConverter
   /// <summary>
   /// invalidateContentOnDrop
   /// </summary>
-  private static Boolean? GetInvalidateContentOnDrop(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetInvalidateContentOnDrop(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.InvalidateContentOnDrop?.Value;
   }
   
-  private static bool CmpInvalidateContentOnDrop(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvalidateContentOnDrop(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.InvalidateContentOnDrop?.Value == value) return true;
     diffs?.Add(objName, "InvalidateContentOnDrop", openXmlElement?.InvalidateContentOnDrop?.Value, value);
     return false;
   }
   
-  private static void SetInvalidateContentOnDrop(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetInvalidateContentOnDrop(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.InvalidateContentOnDrop = new BooleanValue { Value = (Boolean)value };
@@ -103,19 +103,19 @@ public static class GalleryConverter
   /// <summary>
   /// columns
   /// </summary>
-  private static Int64? GetColumns(DXOCustUI.Gallery openXmlElement)
+  private static Int64? GetColumns(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.Columns?.Value;
   }
   
-  private static bool CmpColumns(DXOCustUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpColumns(DXOCUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Columns?.Value == value) return true;
     diffs?.Add(objName, "Columns", openXmlElement?.Columns?.Value, value);
     return false;
   }
   
-  private static void SetColumns(DXOCustUI.Gallery openXmlElement, Int64? value)
+  private static void SetColumns(DXOCUI.Gallery openXmlElement, Int64? value)
   {
     openXmlElement.Columns = value;
   }
@@ -123,19 +123,19 @@ public static class GalleryConverter
   /// <summary>
   /// rows
   /// </summary>
-  private static Int64? GetRows(DXOCustUI.Gallery openXmlElement)
+  private static Int64? GetRows(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.Rows?.Value;
   }
   
-  private static bool CmpRows(DXOCustUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRows(DXOCUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Rows?.Value == value) return true;
     diffs?.Add(objName, "Rows", openXmlElement?.Rows?.Value, value);
     return false;
   }
   
-  private static void SetRows(DXOCustUI.Gallery openXmlElement, Int64? value)
+  private static void SetRows(DXOCUI.Gallery openXmlElement, Int64? value)
   {
     openXmlElement.Rows = value;
   }
@@ -143,19 +143,19 @@ public static class GalleryConverter
   /// <summary>
   /// itemWidth
   /// </summary>
-  private static Int64? GetItemWidth(DXOCustUI.Gallery openXmlElement)
+  private static Int64? GetItemWidth(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ItemWidth?.Value;
   }
   
-  private static bool CmpItemWidth(DXOCustUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpItemWidth(DXOCUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ItemWidth?.Value == value) return true;
     diffs?.Add(objName, "ItemWidth", openXmlElement?.ItemWidth?.Value, value);
     return false;
   }
   
-  private static void SetItemWidth(DXOCustUI.Gallery openXmlElement, Int64? value)
+  private static void SetItemWidth(DXOCUI.Gallery openXmlElement, Int64? value)
   {
     openXmlElement.ItemWidth = value;
   }
@@ -163,19 +163,19 @@ public static class GalleryConverter
   /// <summary>
   /// itemHeight
   /// </summary>
-  private static Int64? GetItemHeight(DXOCustUI.Gallery openXmlElement)
+  private static Int64? GetItemHeight(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ItemHeight?.Value;
   }
   
-  private static bool CmpItemHeight(DXOCustUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpItemHeight(DXOCUI.Gallery openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ItemHeight?.Value == value) return true;
     diffs?.Add(objName, "ItemHeight", openXmlElement?.ItemHeight?.Value, value);
     return false;
   }
   
-  private static void SetItemHeight(DXOCustUI.Gallery openXmlElement, Int64? value)
+  private static void SetItemHeight(DXOCUI.Gallery openXmlElement, Int64? value)
   {
     openXmlElement.ItemHeight = value;
   }
@@ -183,17 +183,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemWidth
   /// </summary>
-  private static String? GetGetItemWidth(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemWidth(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemWidth);
   }
   
-  private static bool CmpGetItemWidth(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemWidth(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemWidth, value, diffs, objName, "GetItemWidth");
   }
   
-  private static void SetGetItemWidth(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemWidth(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemWidth = StringValueConverter.CreateStringValue(value);
   }
@@ -201,17 +201,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemHeight
   /// </summary>
-  private static String? GetGetItemHeight(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemHeight(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemHeight);
   }
   
-  private static bool CmpGetItemHeight(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemHeight(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemHeight, value, diffs, objName, "GetItemHeight");
   }
   
-  private static void SetGetItemHeight(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemHeight(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemHeight = StringValueConverter.CreateStringValue(value);
   }
@@ -219,19 +219,19 @@ public static class GalleryConverter
   /// <summary>
   /// showItemLabel
   /// </summary>
-  private static Boolean? GetShowItemLabel(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetShowItemLabel(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ShowItemLabel?.Value;
   }
   
-  private static bool CmpShowItemLabel(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowItemLabel(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowItemLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowItemLabel", openXmlElement?.ShowItemLabel?.Value, value);
     return false;
   }
   
-  private static void SetShowItemLabel(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetShowItemLabel(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowItemLabel = new BooleanValue { Value = (Boolean)value };
@@ -242,17 +242,17 @@ public static class GalleryConverter
   /// <summary>
   /// onAction
   /// </summary>
-  private static String? GetOnAction(DXOCustUI.Gallery openXmlElement)
+  private static String? GetOnAction(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetOnAction(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -260,19 +260,19 @@ public static class GalleryConverter
   /// <summary>
   /// enabled
   /// </summary>
-  private static Boolean? GetEnabled(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetEnabled(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetEnabled(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -283,17 +283,17 @@ public static class GalleryConverter
   /// <summary>
   /// getEnabled
   /// </summary>
-  private static String? GetGetEnabled(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetEnabled(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetEnabled(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -301,17 +301,17 @@ public static class GalleryConverter
   /// <summary>
   /// image
   /// </summary>
-  private static String? GetImage(DXOCustUI.Gallery openXmlElement)
+  private static String? GetImage(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetImage(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -319,17 +319,17 @@ public static class GalleryConverter
   /// <summary>
   /// imageMso
   /// </summary>
-  private static String? GetImageMso(DXOCustUI.Gallery openXmlElement)
+  private static String? GetImageMso(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetImageMso(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class GalleryConverter
   /// <summary>
   /// getImage
   /// </summary>
-  private static String? GetGetImage(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetImage(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
-  private static void SetGetImage(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetImage(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
@@ -355,19 +355,19 @@ public static class GalleryConverter
   /// <summary>
   /// showItemImage
   /// </summary>
-  private static Boolean? GetShowItemImage(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetShowItemImage(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ShowItemImage?.Value;
   }
   
-  private static bool CmpShowItemImage(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowItemImage(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowItemImage?.Value == value) return true;
     diffs?.Add(objName, "ShowItemImage", openXmlElement?.ShowItemImage?.Value, value);
     return false;
   }
   
-  private static void SetShowItemImage(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetShowItemImage(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowItemImage = new BooleanValue { Value = (Boolean)value };
@@ -378,17 +378,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemCount
   /// </summary>
-  private static String? GetGetItemCount(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemCount(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemCount);
   }
   
-  private static bool CmpGetItemCount(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemCount(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemCount, value, diffs, objName, "GetItemCount");
   }
   
-  private static void SetGetItemCount(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemCount(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemCount = StringValueConverter.CreateStringValue(value);
   }
@@ -396,17 +396,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemLabel
   /// </summary>
-  private static String? GetGetItemLabel(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemLabel(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemLabel);
   }
   
-  private static bool CmpGetItemLabel(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemLabel(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemLabel, value, diffs, objName, "GetItemLabel");
   }
   
-  private static void SetGetItemLabel(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemLabel(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -414,17 +414,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemScreentip
   /// </summary>
-  private static String? GetGetItemScreentip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemScreentip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemScreentip);
   }
   
-  private static bool CmpGetItemScreentip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemScreentip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemScreentip, value, diffs, objName, "GetItemScreentip");
   }
   
-  private static void SetGetItemScreentip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemScreentip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -432,17 +432,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemSupertip
   /// </summary>
-  private static String? GetGetItemSupertip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemSupertip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemSupertip);
   }
   
-  private static bool CmpGetItemSupertip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemSupertip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemSupertip, value, diffs, objName, "GetItemSupertip");
   }
   
-  private static void SetGetItemSupertip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemSupertip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -450,17 +450,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemImage
   /// </summary>
-  private static String? GetGetItemImage(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemImage(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemImage);
   }
   
-  private static bool CmpGetItemImage(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemImage(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemImage, value, diffs, objName, "GetItemImage");
   }
   
-  private static void SetGetItemImage(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemImage(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemImage = StringValueConverter.CreateStringValue(value);
   }
@@ -468,17 +468,17 @@ public static class GalleryConverter
   /// <summary>
   /// getItemID
   /// </summary>
-  private static String? GetGetItemID(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetItemID(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetItemID);
   }
   
-  private static bool CmpGetItemID(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemID(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemID, value, diffs, objName, "GetItemID");
   }
   
-  private static void SetGetItemID(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetItemID(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetItemID = StringValueConverter.CreateStringValue(value);
   }
@@ -486,17 +486,17 @@ public static class GalleryConverter
   /// <summary>
   /// sizeString
   /// </summary>
-  private static String? GetSizeString(DXOCustUI.Gallery openXmlElement)
+  private static String? GetSizeString(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.SizeString);
   }
   
-  private static bool CmpSizeString(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSizeString(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SizeString, value, diffs, objName, "SizeString");
   }
   
-  private static void SetSizeString(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetSizeString(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.SizeString = StringValueConverter.CreateStringValue(value);
   }
@@ -504,17 +504,17 @@ public static class GalleryConverter
   /// <summary>
   /// getSelectedItemID
   /// </summary>
-  private static String? GetGetSelectedItemID(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetSelectedItemID(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSelectedItemID);
   }
   
-  private static bool CmpGetSelectedItemID(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSelectedItemID(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSelectedItemID, value, diffs, objName, "GetSelectedItemID");
   }
   
-  private static void SetGetSelectedItemID(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetSelectedItemID(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetSelectedItemID = StringValueConverter.CreateStringValue(value);
   }
@@ -522,17 +522,17 @@ public static class GalleryConverter
   /// <summary>
   /// getSelectedItemIndex
   /// </summary>
-  private static String? GetGetSelectedItemIndex(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetSelectedItemIndex(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSelectedItemIndex);
   }
   
-  private static bool CmpGetSelectedItemIndex(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSelectedItemIndex(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSelectedItemIndex, value, diffs, objName, "GetSelectedItemIndex");
   }
   
-  private static void SetGetSelectedItemIndex(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetSelectedItemIndex(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetSelectedItemIndex = StringValueConverter.CreateStringValue(value);
   }
@@ -540,17 +540,17 @@ public static class GalleryConverter
   /// <summary>
   /// id
   /// </summary>
-  private static String? GetId(DXOCustUI.Gallery openXmlElement)
+  private static String? GetId(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetId(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -558,17 +558,17 @@ public static class GalleryConverter
   /// <summary>
   /// idQ
   /// </summary>
-  private static String? GetIdQ(DXOCustUI.Gallery openXmlElement)
+  private static String? GetIdQ(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdQ);
   }
   
-  private static bool CmpIdQ(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdQ(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdQ, value, diffs, objName, "IdQ");
   }
   
-  private static void SetIdQ(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetIdQ(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.IdQ = StringValueConverter.CreateStringValue(value);
   }
@@ -576,17 +576,17 @@ public static class GalleryConverter
   /// <summary>
   /// idMso
   /// </summary>
-  private static String? GetIdMso(DXOCustUI.Gallery openXmlElement)
+  private static String? GetIdMso(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetIdMso(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -594,17 +594,17 @@ public static class GalleryConverter
   /// <summary>
   /// tag
   /// </summary>
-  private static String? GetTag(DXOCustUI.Gallery openXmlElement)
+  private static String? GetTag(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetTag(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -612,17 +612,17 @@ public static class GalleryConverter
   /// <summary>
   /// screentip
   /// </summary>
-  private static String? GetScreentip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetScreentip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetScreentip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -630,17 +630,17 @@ public static class GalleryConverter
   /// <summary>
   /// getScreentip
   /// </summary>
-  private static String? GetGetScreentip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetScreentip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetScreentip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -648,17 +648,17 @@ public static class GalleryConverter
   /// <summary>
   /// supertip
   /// </summary>
-  private static String? GetSupertip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetSupertip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetSupertip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -666,17 +666,17 @@ public static class GalleryConverter
   /// <summary>
   /// getSupertip
   /// </summary>
-  private static String? GetGetSupertip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetSupertip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetSupertip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -684,17 +684,17 @@ public static class GalleryConverter
   /// <summary>
   /// label
   /// </summary>
-  private static String? GetLabel(DXOCustUI.Gallery openXmlElement)
+  private static String? GetLabel(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetLabel(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -702,17 +702,17 @@ public static class GalleryConverter
   /// <summary>
   /// getLabel
   /// </summary>
-  private static String? GetGetLabel(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetLabel(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetLabel(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -720,17 +720,17 @@ public static class GalleryConverter
   /// <summary>
   /// insertAfterMso
   /// </summary>
-  private static String? GetInsertAfterMso(DXOCustUI.Gallery openXmlElement)
+  private static String? GetInsertAfterMso(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -738,17 +738,17 @@ public static class GalleryConverter
   /// <summary>
   /// insertBeforeMso
   /// </summary>
-  private static String? GetInsertBeforeMso(DXOCustUI.Gallery openXmlElement)
+  private static String? GetInsertBeforeMso(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -756,17 +756,17 @@ public static class GalleryConverter
   /// <summary>
   /// insertAfterQ
   /// </summary>
-  private static String? GetInsertAfterQ(DXOCustUI.Gallery openXmlElement)
+  private static String? GetInsertAfterQ(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQ);
   }
   
-  private static bool CmpInsertAfterQ(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQ(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQ, value, diffs, objName, "InsertAfterQ");
   }
   
-  private static void SetInsertAfterQ(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetInsertAfterQ(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQ = StringValueConverter.CreateStringValue(value);
   }
@@ -774,17 +774,17 @@ public static class GalleryConverter
   /// <summary>
   /// insertBeforeQ
   /// </summary>
-  private static String? GetInsertBeforeQ(DXOCustUI.Gallery openXmlElement)
+  private static String? GetInsertBeforeQ(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQ);
   }
   
-  private static bool CmpInsertBeforeQ(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQ(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQ, value, diffs, objName, "InsertBeforeQ");
   }
   
-  private static void SetInsertBeforeQ(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetInsertBeforeQ(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQ = StringValueConverter.CreateStringValue(value);
   }
@@ -792,19 +792,19 @@ public static class GalleryConverter
   /// <summary>
   /// visible
   /// </summary>
-  private static Boolean? GetVisible(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetVisible(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetVisible(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -815,17 +815,17 @@ public static class GalleryConverter
   /// <summary>
   /// getVisible
   /// </summary>
-  private static String? GetGetVisible(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetVisible(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetVisible(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -833,17 +833,17 @@ public static class GalleryConverter
   /// <summary>
   /// keytip
   /// </summary>
-  private static String? GetKeytip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetKeytip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetKeytip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -851,17 +851,17 @@ public static class GalleryConverter
   /// <summary>
   /// getKeytip
   /// </summary>
-  private static String? GetGetKeytip(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetKeytip(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetKeytip(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
@@ -869,19 +869,19 @@ public static class GalleryConverter
   /// <summary>
   /// showLabel
   /// </summary>
-  private static Boolean? GetShowLabel(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetShowLabel(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
     return false;
   }
   
-  private static void SetShowLabel(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -892,17 +892,17 @@ public static class GalleryConverter
   /// <summary>
   /// getShowLabel
   /// </summary>
-  private static String? GetGetShowLabel(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetShowLabel(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
   
-  private static void SetGetShowLabel(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetShowLabel(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -910,19 +910,19 @@ public static class GalleryConverter
   /// <summary>
   /// showImage
   /// </summary>
-  private static Boolean? GetShowImage(DXOCustUI.Gallery openXmlElement)
+  private static Boolean? GetShowImage(DXOCUI.Gallery openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static bool CmpShowImage(DXOCustUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowImage(DXOCUI.Gallery openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowImage?.Value == value) return true;
     diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
     return false;
   }
   
-  private static void SetShowImage(DXOCustUI.Gallery openXmlElement, Boolean? value)
+  private static void SetShowImage(DXOCUI.Gallery openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -933,25 +933,25 @@ public static class GalleryConverter
   /// <summary>
   /// getShowImage
   /// </summary>
-  private static String? GetGetShowImage(DXOCustUI.Gallery openXmlElement)
+  private static String? GetGetShowImage(DXOCUI.Gallery openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowImage);
   }
   
-  private static bool CmpGetShowImage(DXOCustUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowImage(DXOCUI.Gallery openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowImage, value, diffs, objName, "GetShowImage");
   }
   
-  private static void SetGetShowImage(DXOCustUI.Gallery openXmlElement, String? value)
+  private static void SetGetShowImage(DXOCUI.Gallery openXmlElement, String? value)
   {
     openXmlElement.GetShowImage = StringValueConverter.CreateStringValue(value);
   }
   
-  private static Collection<DMUI.Item>? GetItems(DXOCustUI.Gallery openXmlElement)
+  private static Collection<DMUI.Item>? GetItems(DXOCUI.Gallery openXmlElement)
   {
     var collection = new Collection<DMUI.Item>();
-    foreach (var item in openXmlElement.Elements<DXOCustUI.Item>())
+    foreach (var item in openXmlElement.Elements<DXOCUI.Item>())
     {
       var newItem = DMXUI.ItemConverter.CreateModelElement(item);
       if (newItem != null)
@@ -962,9 +962,9 @@ public static class GalleryConverter
     return null;
   }
   
-  private static bool CmpItems(DXOCustUI.Gallery openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXOCUI.Gallery openXmlElement, Collection<DMUI.Item>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXOCustUI.Item>();
+    var origElements = openXmlElement.Elements<DXOCUI.Item>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -990,24 +990,24 @@ public static class GalleryConverter
     return false;
   }
   
-  private static void SetItems(DXOCustUI.Gallery openXmlElement, Collection<DMUI.Item>? value)
+  private static void SetItems(DXOCUI.Gallery openXmlElement, Collection<DMUI.Item>? value)
   {
-    openXmlElement.RemoveAllChildren<DXOCustUI.Item>();
+    openXmlElement.RemoveAllChildren<DXOCUI.Item>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCustUI.Item>(item);
+        var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCUI.Item>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static Collection<DMUI.UnsizedButton>? GetUnsizedButtons(DXOCustUI.Gallery openXmlElement)
+  private static Collection<DMUI.UnsizedButton>? GetUnsizedButtons(DXOCUI.Gallery openXmlElement)
   {
     var collection = new Collection<DMUI.UnsizedButton>();
-    foreach (var item in openXmlElement.Elements<DXOCustUI.UnsizedButton>())
+    foreach (var item in openXmlElement.Elements<DXOCUI.UnsizedButton>())
     {
       var newItem = DMXUI.UnsizedButtonConverter.CreateModelElement(item);
       if (newItem != null)
@@ -1018,9 +1018,9 @@ public static class GalleryConverter
     return null;
   }
   
-  private static bool CmpUnsizedButtons(DXOCustUI.Gallery openXmlElement, Collection<DMUI.UnsizedButton>? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedButtons(DXOCUI.Gallery openXmlElement, Collection<DMUI.UnsizedButton>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXOCustUI.UnsizedButton>();
+    var origElements = openXmlElement.Elements<DXOCUI.UnsizedButton>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -1046,21 +1046,21 @@ public static class GalleryConverter
     return false;
   }
   
-  private static void SetUnsizedButtons(DXOCustUI.Gallery openXmlElement, Collection<DMUI.UnsizedButton>? value)
+  private static void SetUnsizedButtons(DXOCUI.Gallery openXmlElement, Collection<DMUI.UnsizedButton>? value)
   {
-    openXmlElement.RemoveAllChildren<DXOCustUI.UnsizedButton>();
+    openXmlElement.RemoveAllChildren<DXOCUI.UnsizedButton>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCustUI.UnsizedButton>(item);
+        var newItem = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedButton>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.UI.Gallery? CreateModelElement(DXOCustUI.Gallery? openXmlElement)
+  public static DocumentModel.UI.Gallery? CreateModelElement(DXOCUI.Gallery? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -1122,7 +1122,7 @@ public static class GalleryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCustUI.Gallery? openXmlElement, DMUI.Gallery? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.Gallery? openXmlElement, DMUI.Gallery? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -1239,14 +1239,14 @@ public static class GalleryConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMUI.Gallery value)
-    where OpenXmlElementType: DXOCustUI.Gallery, new()
+    where OpenXmlElementType: DXOCUI.Gallery, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXOCustUI.Gallery openXmlElement, DMUI.Gallery value)
+  public static void UpdateOpenXmlElement(DXOCUI.Gallery openXmlElement, DMUI.Gallery value)
   {
     SetSize(openXmlElement, value?.Size);
     SetGetSize(openXmlElement, value?.GetSize);

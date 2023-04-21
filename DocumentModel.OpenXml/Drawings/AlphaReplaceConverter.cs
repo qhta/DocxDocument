@@ -8,24 +8,24 @@ public static class AlphaReplaceConverter
   /// <summary>
   /// Alpha
   /// </summary>
-  private static Int32? GetAlpha(DXDraw.AlphaReplace openXmlElement)
+  private static Int32? GetAlpha(DXD.AlphaReplace openXmlElement)
   {
     return openXmlElement?.Alpha?.Value;
   }
   
-  private static bool CmpAlpha(DXDraw.AlphaReplace openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXD.AlphaReplace openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Alpha?.Value == value) return true;
     diffs?.Add(objName, "Alpha", openXmlElement?.Alpha?.Value, value);
     return false;
   }
   
-  private static void SetAlpha(DXDraw.AlphaReplace openXmlElement, Int32? value)
+  private static void SetAlpha(DXD.AlphaReplace openXmlElement, Int32? value)
   {
     openXmlElement.Alpha = value;
   }
   
-  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(DXDraw.AlphaReplace? openXmlElement)
+  public static DocumentModel.Drawings.AlphaReplace? CreateModelElement(DXD.AlphaReplace? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class AlphaReplaceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AlphaReplace? openXmlElement, DMDraws.AlphaReplace? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaReplace? openXmlElement, DMD.AlphaReplace? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class AlphaReplaceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaReplace value)
-    where OpenXmlElementType: DXDraw.AlphaReplace, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AlphaReplace value)
+    where OpenXmlElementType: DXD.AlphaReplace, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AlphaReplace openXmlElement, DMDraws.AlphaReplace value)
+  public static void UpdateOpenXmlElement(DXD.AlphaReplace openXmlElement, DMD.AlphaReplace value)
   {
     SetAlpha(openXmlElement, value?.Alpha);
   }

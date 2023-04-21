@@ -5,137 +5,137 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class LiveFeedBackgroundPropertiesConverter
 {
-  private static DMDraws.BackgroundNormalProperties? GetBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)
+  private static DMD.BackgroundNormalProperties? GetBackgroundNormalProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundNormalProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.BackgroundNormalProperties>();
     if (element != null)
-      return DMXDraws.BackgroundNormalPropertiesConverter.CreateModelElement(element);
+      return DMXD.BackgroundNormalPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundNormalProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundNormalProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundNormalProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundNormalPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundNormalProperties>(), value, diffs, objName);
+    return DMXD.BackgroundNormalPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.BackgroundNormalProperties>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundNormalProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundNormalProperties? value)
+  private static void SetBackgroundNormalProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundNormalProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundNormalProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.BackgroundNormalProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundNormalPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.BackgroundNormalProperties>(value);
+      itemElement = DMXD.BackgroundNormalPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundNormalProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BackgroundRemovedProperties? GetBackgroundRemovedProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)
+  private static DMD.BackgroundRemovedProperties? GetBackgroundRemovedProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundRemovedProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.BackgroundRemovedProperties>();
     if (element != null)
-      return DMXDraws.BackgroundRemovedPropertiesConverter.CreateModelElement(element);
+      return DMXD.BackgroundRemovedPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundRemovedProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundRemovedProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundRemovedProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundRemovedProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundRemovedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundRemovedProperties>(), value, diffs, objName);
+    return DMXD.BackgroundRemovedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.BackgroundRemovedProperties>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundRemovedProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundRemovedProperties? value)
+  private static void SetBackgroundRemovedProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundRemovedProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundRemovedProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.BackgroundRemovedProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundRemovedPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.BackgroundRemovedProperties>(value);
+      itemElement = DMXD.BackgroundRemovedPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundRemovedProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BackgroundBlurProperties? GetBackgroundBlurProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)
+  private static DMD.BackgroundBlurProperties? GetBackgroundBlurProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundBlurProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.BackgroundBlurProperties>();
     if (element != null)
-      return DMXDraws.BackgroundBlurPropertiesConverter.CreateModelElement(element);
+      return DMXD.BackgroundBlurPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundBlurProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundBlurProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundBlurProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundBlurPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundBlurProperties>(), value, diffs, objName);
+    return DMXD.BackgroundBlurPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.BackgroundBlurProperties>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundBlurProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundBlurProperties? value)
+  private static void SetBackgroundBlurProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundBlurProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundBlurProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.BackgroundBlurProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundBlurPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.BackgroundBlurProperties>(value);
+      itemElement = DMXD.BackgroundBlurPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundBlurProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.BackgroundCustomProperties? GetBackgroundCustomProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)
+  private static DMD.BackgroundCustomProperties? GetBackgroundCustomProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.BackgroundCustomProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.BackgroundCustomProperties>();
     if (element != null)
-      return DMXDraws.BackgroundCustomPropertiesConverter.CreateModelElement(element);
+      return DMXD.BackgroundCustomPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBackgroundCustomProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundCustomProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundCustomProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundCustomProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BackgroundCustomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundCustomProperties>(), value, diffs, objName);
+    return DMXD.BackgroundCustomPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.BackgroundCustomProperties>(), value, diffs, objName);
   }
   
-  private static void SetBackgroundCustomProperties(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.BackgroundCustomProperties? value)
+  private static void SetBackgroundCustomProperties(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.BackgroundCustomProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.BackgroundCustomProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.BackgroundCustomProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BackgroundCustomPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.BackgroundCustomProperties>(value);
+      itemElement = DMXD.BackgroundCustomPropertiesConverter.CreateOpenXmlElement<DXO21DL.BackgroundCustomProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement)
+  private static DMD.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO21DL.LiveFeedBackgroundProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXD.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.OfficeArtExtensionList>(value);
+      itemElement = DMXD.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.LiveFeedBackgroundProperties? CreateModelElement(DXO2021DrawLivefeed.LiveFeedBackgroundProperties? openXmlElement)
+  public static DocumentModel.Drawings.LiveFeedBackgroundProperties? CreateModelElement(DXO21DL.LiveFeedBackgroundProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -150,7 +150,7 @@ public static class LiveFeedBackgroundPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawLivefeed.LiveFeedBackgroundProperties? openXmlElement, DMDraws.LiveFeedBackgroundProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DL.LiveFeedBackgroundProperties? openXmlElement, DMD.LiveFeedBackgroundProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -172,15 +172,15 @@ public static class LiveFeedBackgroundPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LiveFeedBackgroundProperties value)
-    where OpenXmlElementType: DXO2021DrawLivefeed.LiveFeedBackgroundProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LiveFeedBackgroundProperties value)
+    where OpenXmlElementType: DXO21DL.LiveFeedBackgroundProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.LiveFeedBackgroundProperties openXmlElement, DMDraws.LiveFeedBackgroundProperties value)
+  public static void UpdateOpenXmlElement(DXO21DL.LiveFeedBackgroundProperties openXmlElement, DMD.LiveFeedBackgroundProperties value)
   {
     SetBackgroundNormalProperties(openXmlElement, value?.BackgroundNormalProperties);
     SetBackgroundRemovedProperties(openXmlElement, value?.BackgroundRemovedProperties);

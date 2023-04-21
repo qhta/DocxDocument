@@ -8,17 +8,17 @@ public static class TitleConverter
   /// <summary>
   /// Language
   /// </summary>
-  private static String? GetLanguage(DXDrawDgms.Title openXmlElement)
+  private static String? GetLanguage(DXDD.Title openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
-  private static bool CmpLanguage(DXDrawDgms.Title openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguage(DXDD.Title openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
   
-  private static void SetLanguage(DXDrawDgms.Title openXmlElement, String? value)
+  private static void SetLanguage(DXDD.Title openXmlElement, String? value)
   {
     openXmlElement.Language = StringValueConverter.CreateStringValue(value);
   }
@@ -26,22 +26,22 @@ public static class TitleConverter
   /// <summary>
   /// Value
   /// </summary>
-  private static String? GetVal(DXDrawDgms.Title openXmlElement)
+  private static String? GetVal(DXDD.Title openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXDrawDgms.Title openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXDD.Title openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
   
-  private static void SetVal(DXDrawDgms.Title openXmlElement, String? value)
+  private static void SetVal(DXDD.Title openXmlElement, String? value)
   {
     openXmlElement.Val = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(DXDrawDgms.Title? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Title? CreateModelElement(DXDD.Title? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -53,7 +53,7 @@ public static class TitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.Title? openXmlElement, DMDrawsDgms.Title? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Title? openXmlElement, DMDD.Title? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -69,15 +69,15 @@ public static class TitleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Title value)
-    where OpenXmlElementType: DXDrawDgms.Title, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.Title value)
+    where OpenXmlElementType: DXDD.Title, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.Title openXmlElement, DMDrawsDgms.Title value)
+  public static void UpdateOpenXmlElement(DXDD.Title openXmlElement, DMDD.Title value)
   {
     SetLanguage(openXmlElement, value?.Language);
     SetVal(openXmlElement, value?.Val);

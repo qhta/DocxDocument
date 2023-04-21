@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ConnectorLockingExtensionListConverter
 {
-  private static Collection<DMDraws.ConnectorLockingExtension>? GetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement)
+  private static Collection<DMD.ConnectorLockingExtension>? GetConnectorLockingExtensions(DXD.ConnectorLockingExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.ConnectorLockingExtension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.ConnectorLockingExtension>())
+    var collection = new Collection<DMD.ConnectorLockingExtension>();
+    foreach (var item in openXmlElement.Elements<DXD.ConnectorLockingExtension>())
     {
-      var newItem = DMXDraws.ConnectorLockingExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.ConnectorLockingExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ConnectorLockingExtensionListConverter
     return null;
   }
   
-  private static bool CmpConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement, Collection<DMDraws.ConnectorLockingExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectorLockingExtensions(DXD.ConnectorLockingExtensionList openXmlElement, Collection<DMD.ConnectorLockingExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.ConnectorLockingExtension>();
+    var origElements = openXmlElement.Elements<DXD.ConnectorLockingExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ConnectorLockingExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ConnectorLockingExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ConnectorLockingExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ConnectorLockingExtensionListConverter
     return false;
   }
   
-  private static void SetConnectorLockingExtensions(DXDraw.ConnectorLockingExtensionList openXmlElement, Collection<DMDraws.ConnectorLockingExtension>? value)
+  private static void SetConnectorLockingExtensions(DXD.ConnectorLockingExtensionList openXmlElement, Collection<DMD.ConnectorLockingExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.ConnectorLockingExtension>();
+    openXmlElement.RemoveAllChildren<DXD.ConnectorLockingExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ConnectorLockingExtensionConverter.CreateOpenXmlElement<DXDraw.ConnectorLockingExtension>(item);
+        var newItem = DMXD.ConnectorLockingExtensionConverter.CreateOpenXmlElement<DXD.ConnectorLockingExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ConnectorLockingExtensionList? CreateModelElement(DXDraw.ConnectorLockingExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.ConnectorLockingExtensionList? CreateModelElement(DXD.ConnectorLockingExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ConnectorLockingExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ConnectorLockingExtensionList? openXmlElement, DMDraws.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectorLockingExtensionList? openXmlElement, DMD.ConnectorLockingExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ConnectorLockingExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectorLockingExtensionList value)
-    where OpenXmlElementType: DXDraw.ConnectorLockingExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ConnectorLockingExtensionList value)
+    where OpenXmlElementType: DXD.ConnectorLockingExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ConnectorLockingExtensionList openXmlElement, DMDraws.ConnectorLockingExtensionList value)
+  public static void UpdateOpenXmlElement(DXD.ConnectorLockingExtensionList openXmlElement, DMD.ConnectorLockingExtensionList value)
   {
     SetConnectorLockingExtensions(openXmlElement, value?.ConnectorLockingExtensions);
   }

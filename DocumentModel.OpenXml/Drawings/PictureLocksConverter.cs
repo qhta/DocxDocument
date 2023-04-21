@@ -8,19 +8,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  private static Boolean? GetNoGrouping(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoGrouping(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
     return false;
   }
   
-  private static void SetNoGrouping(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoGrouping(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
@@ -31,19 +31,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  private static Boolean? GetNoSelection(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoSelection(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
     return false;
   }
   
-  private static void SetNoSelection(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoSelection(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
@@ -54,19 +54,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  private static Boolean? GetNoRotation(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoRotation(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
   
-  private static bool CmpNoRotation(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoRotation(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoRotation?.Value == value) return true;
     diffs?.Add(objName, "NoRotation", openXmlElement?.NoRotation?.Value, value);
     return false;
   }
   
-  private static void SetNoRotation(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoRotation(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoRotation = new BooleanValue { Value = (Boolean)value };
@@ -77,19 +77,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  private static Boolean? GetNoChangeAspect(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoChangeAspect(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeAspect(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeAspect(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
@@ -100,19 +100,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Movement
   /// </summary>
-  private static Boolean? GetNoMove(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoMove(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
     return false;
   }
   
-  private static void SetNoMove(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoMove(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
@@ -123,19 +123,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Resize
   /// </summary>
-  private static Boolean? GetNoResize(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoResize(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
     return false;
   }
   
-  private static void SetNoResize(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoResize(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
@@ -146,19 +146,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Point Editing
   /// </summary>
-  private static Boolean? GetNoEditPoints(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoEditPoints(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoEditPoints?.Value;
   }
   
-  private static bool CmpNoEditPoints(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoEditPoints(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoEditPoints?.Value == value) return true;
     diffs?.Add(objName, "NoEditPoints", openXmlElement?.NoEditPoints?.Value, value);
     return false;
   }
   
-  private static void SetNoEditPoints(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoEditPoints(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoEditPoints = new BooleanValue { Value = (Boolean)value };
@@ -169,19 +169,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Showing Adjust Handles
   /// </summary>
-  private static Boolean? GetNoAdjustHandles(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoAdjustHandles(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoAdjustHandles?.Value;
   }
   
-  private static bool CmpNoAdjustHandles(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoAdjustHandles(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoAdjustHandles?.Value == value) return true;
     diffs?.Add(objName, "NoAdjustHandles", openXmlElement?.NoAdjustHandles?.Value, value);
     return false;
   }
   
-  private static void SetNoAdjustHandles(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoAdjustHandles(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoAdjustHandles = new BooleanValue { Value = (Boolean)value };
@@ -192,19 +192,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Arrowhead Changes
   /// </summary>
-  private static Boolean? GetNoChangeArrowheads(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoChangeArrowheads(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
   
-  private static bool CmpNoChangeArrowheads(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeArrowheads(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeArrowheads?.Value == value) return true;
     diffs?.Add(objName, "NoChangeArrowheads", openXmlElement?.NoChangeArrowheads?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeArrowheads(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeArrowheads(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeArrowheads = new BooleanValue { Value = (Boolean)value };
@@ -215,19 +215,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Shape Type Change
   /// </summary>
-  private static Boolean? GetNoChangeShapeType(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoChangeShapeType(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoChangeShapeType?.Value;
   }
   
-  private static bool CmpNoChangeShapeType(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeShapeType(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeShapeType?.Value == value) return true;
     diffs?.Add(objName, "NoChangeShapeType", openXmlElement?.NoChangeShapeType?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeShapeType(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeShapeType(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeShapeType = new BooleanValue { Value = (Boolean)value };
@@ -238,19 +238,19 @@ public static class PictureLocksConverter
   /// <summary>
   /// Disallow Crop Changes
   /// </summary>
-  private static Boolean? GetNoCrop(DXDraw.PictureLocks openXmlElement)
+  private static Boolean? GetNoCrop(DXD.PictureLocks openXmlElement)
   {
     return openXmlElement?.NoCrop?.Value;
   }
   
-  private static bool CmpNoCrop(DXDraw.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoCrop(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoCrop?.Value == value) return true;
     diffs?.Add(objName, "NoCrop", openXmlElement?.NoCrop?.Value, value);
     return false;
   }
   
-  private static void SetNoCrop(DXDraw.PictureLocks openXmlElement, Boolean? value)
+  private static void SetNoCrop(DXD.PictureLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoCrop = new BooleanValue { Value = (Boolean)value };
@@ -261,33 +261,33 @@ public static class PictureLocksConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.PictureLocks openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.PictureLocks openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.PictureLocks openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.PictureLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.PictureLocks openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.PictureLocks openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.PictureLocks? CreateModelElement(DXDraw.PictureLocks? openXmlElement)
+  public static DocumentModel.Drawings.PictureLocks? CreateModelElement(DXD.PictureLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -309,7 +309,7 @@ public static class PictureLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.PictureLocks? openXmlElement, DMDraws.PictureLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PictureLocks? openXmlElement, DMD.PictureLocks? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -345,15 +345,15 @@ public static class PictureLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.PictureLocks value)
-    where OpenXmlElementType: DXDraw.PictureLocks, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.PictureLocks value)
+    where OpenXmlElementType: DXD.PictureLocks, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.PictureLocks openXmlElement, DMDraws.PictureLocks value)
+  public static void UpdateOpenXmlElement(DXD.PictureLocks openXmlElement, DMD.PictureLocks value)
   {
     SetNoGrouping(openXmlElement, value?.NoGrouping);
     SetNoSelection(openXmlElement, value?.NoSelection);

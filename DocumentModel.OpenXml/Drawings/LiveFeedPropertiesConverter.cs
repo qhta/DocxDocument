@@ -8,27 +8,27 @@ public static class LiveFeedPropertiesConverter
   /// <summary>
   /// LiveFeedBackgroundProperties.
   /// </summary>
-  private static DMDraws.LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement)
+  private static DMD.LiveFeedBackgroundProperties? GetLiveFeedBackgroundProperties(DXO21DL.LiveFeedProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.LiveFeedBackgroundProperties>();
     if (element != null)
-      return DMXDraws.LiveFeedBackgroundPropertiesConverter.CreateModelElement(element);
+      return DMXD.LiveFeedBackgroundPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLiveFeedBackgroundProperties(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.LiveFeedBackgroundProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLiveFeedBackgroundProperties(DXO21DL.LiveFeedProperties openXmlElement, DMD.LiveFeedBackgroundProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.LiveFeedBackgroundPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>(), value, diffs, objName);
+    return DMXD.LiveFeedBackgroundPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.LiveFeedBackgroundProperties>(), value, diffs, objName);
   }
   
-  private static void SetLiveFeedBackgroundProperties(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.LiveFeedBackgroundProperties? value)
+  private static void SetLiveFeedBackgroundProperties(DXO21DL.LiveFeedProperties openXmlElement, DMD.LiveFeedBackgroundProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.LiveFeedBackgroundProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.LiveFeedBackgroundProperties>(value);
+      itemElement = DMXD.LiveFeedBackgroundPropertiesConverter.CreateOpenXmlElement<DXO21DL.LiveFeedBackgroundProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,33 +37,33 @@ public static class LiveFeedPropertiesConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement)
+  private static DMD.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO21DL.LiveFeedProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXD.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DL.LiveFeedProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO21DL.LiveFeedProperties openXmlElement, DMD.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DrawLivefeed.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2021DrawLivefeed.OfficeArtExtensionList>(value);
+      itemElement = DMXD.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO21DL.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DXO2021DrawLivefeed.LiveFeedProperties? openXmlElement)
+  public static DocumentModel.Drawings.LiveFeedProperties? CreateModelElement(DXO21DL.LiveFeedProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -75,7 +75,7 @@ public static class LiveFeedPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DrawLivefeed.LiveFeedProperties? openXmlElement, DMDraws.LiveFeedProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DL.LiveFeedProperties? openXmlElement, DMD.LiveFeedProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -91,15 +91,15 @@ public static class LiveFeedPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.LiveFeedProperties value)
-    where OpenXmlElementType: DXO2021DrawLivefeed.LiveFeedProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.LiveFeedProperties value)
+    where OpenXmlElementType: DXO21DL.LiveFeedProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DrawLivefeed.LiveFeedProperties openXmlElement, DMDraws.LiveFeedProperties value)
+  public static void UpdateOpenXmlElement(DXO21DL.LiveFeedProperties openXmlElement, DMD.LiveFeedProperties value)
   {
     SetLiveFeedBackgroundProperties(openXmlElement, value?.LiveFeedBackgroundProperties);
     SetOfficeArtExtensionList(openXmlElement, value?.OfficeArtExtensionList);

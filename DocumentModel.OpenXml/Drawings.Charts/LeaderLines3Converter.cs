@@ -8,33 +8,33 @@ public static class LeaderLines3Converter
   /// <summary>
   /// ChartShapeProperties.
   /// </summary>
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXO2013DrawChart.LeaderLines openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXO13DC.LeaderLines openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXO2013DrawChart.LeaderLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXO13DC.LeaderLines openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXO2013DrawChart.LeaderLines openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXO13DC.LeaderLines openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.LeaderLines3? CreateModelElement(DXO2013DrawChart.LeaderLines? openXmlElement)
+  public static DocumentModel.Drawings.Charts.LeaderLines3? CreateModelElement(DXO13DC.LeaderLines? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -45,7 +45,7 @@ public static class LeaderLines3Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChart.LeaderLines? openXmlElement, DMDrawsCharts.LeaderLines3? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.LeaderLines? openXmlElement, DMDC.LeaderLines3? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -59,15 +59,15 @@ public static class LeaderLines3Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.LeaderLines3 value)
-    where OpenXmlElementType: DXO2013DrawChart.LeaderLines, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.LeaderLines3 value)
+    where OpenXmlElementType: DXO13DC.LeaderLines, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChart.LeaderLines openXmlElement, DMDrawsCharts.LeaderLines3 value)
+  public static void UpdateOpenXmlElement(DXO13DC.LeaderLines openXmlElement, DMDC.LeaderLines3 value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
   }

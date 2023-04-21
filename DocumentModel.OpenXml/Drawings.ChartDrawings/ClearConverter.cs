@@ -8,27 +8,27 @@ public static class ClearConverter
   /// <summary>
   /// GeoLocationQueryResults.
   /// </summary>
-  private static DMDrawsChartDraws.GeoLocationQueryResults? GetGeoLocationQueryResults(DXO2016DrawChartDraw.Clear openXmlElement)
+  private static DMDCDs.GeoLocationQueryResults? GetGeoLocationQueryResults(DXO16DCD.Clear openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoLocationQueryResults>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoLocationQueryResults>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoLocationQueryResultsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoLocationQueryResultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoLocationQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoLocationQueryResults? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoLocationQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoLocationQueryResults? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoLocationQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocationQueryResults>(), value, diffs, objName);
+    return DMXDCDs.GeoLocationQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocationQueryResults>(), value, diffs, objName);
   }
   
-  private static void SetGeoLocationQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoLocationQueryResults? value)
+  private static void SetGeoLocationQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoLocationQueryResults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoLocationQueryResults>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoLocationQueryResults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoLocationQueryResultsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoLocationQueryResults>(value);
+      itemElement = DMXDCDs.GeoLocationQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoLocationQueryResults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class ClearConverter
   /// <summary>
   /// GeoDataEntityQueryResults.
   /// </summary>
-  private static DMDrawsChartDraws.GeoDataEntityQueryResults? GetGeoDataEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement)
+  private static DMDCDs.GeoDataEntityQueryResults? GetGeoDataEntityQueryResults(DXO16DCD.Clear openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQueryResults>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoDataEntityQueryResults>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoDataEntityQueryResultsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoDataEntityQueryResultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoDataEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoDataEntityQueryResults? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoDataEntityQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoDataEntityQueryResults? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoDataEntityQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQueryResults>(), value, diffs, objName);
+    return DMXDCDs.GeoDataEntityQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoDataEntityQueryResults>(), value, diffs, objName);
   }
   
-  private static void SetGeoDataEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoDataEntityQueryResults? value)
+  private static void SetGeoDataEntityQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoDataEntityQueryResults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoDataEntityQueryResults>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoDataEntityQueryResults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoDataEntityQueryResultsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoDataEntityQueryResults>(value);
+      itemElement = DMXDCDs.GeoDataEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataEntityQueryResults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class ClearConverter
   /// <summary>
   /// GeoDataPointToEntityQueryResults.
   /// </summary>
-  private static DMDrawsChartDraws.GeoDataPointToEntityQueryResults? GetGeoDataPointToEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement)
+  private static DMDCDs.GeoDataPointToEntityQueryResults? GetGeoDataPointToEntityQueryResults(DXO16DCD.Clear openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoDataPointToEntityQueryResults>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoDataPointToEntityQueryResultsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoDataPointToEntityQueryResultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoDataPointToEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQueryResults? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoDataPointToEntityQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoDataPointToEntityQueryResults? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoDataPointToEntityQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults>(), value, diffs, objName);
+    return DMXDCDs.GeoDataPointToEntityQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoDataPointToEntityQueryResults>(), value, diffs, objName);
   }
   
-  private static void SetGeoDataPointToEntityQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoDataPointToEntityQueryResults? value)
+  private static void SetGeoDataPointToEntityQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoDataPointToEntityQueryResults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoDataPointToEntityQueryResults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoDataPointToEntityQueryResultsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoDataPointToEntityQueryResults>(value);
+      itemElement = DMXDCDs.GeoDataPointToEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataPointToEntityQueryResults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,27 +95,27 @@ public static class ClearConverter
   /// <summary>
   /// GeoChildEntitiesQueryResults.
   /// </summary>
-  private static DMDrawsChartDraws.GeoChildEntitiesQueryResults? GetGeoChildEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement)
+  private static DMDCDs.GeoChildEntitiesQueryResults? GetGeoChildEntitiesQueryResults(DXO16DCD.Clear openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQueryResults>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoChildEntitiesQueryResults>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoChildEntitiesQueryResultsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoChildEntitiesQueryResultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoChildEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQueryResults? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoChildEntitiesQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoChildEntitiesQueryResults? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoChildEntitiesQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQueryResults>(), value, diffs, objName);
+    return DMXDCDs.GeoChildEntitiesQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoChildEntitiesQueryResults>(), value, diffs, objName);
   }
   
-  private static void SetGeoChildEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoChildEntitiesQueryResults? value)
+  private static void SetGeoChildEntitiesQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoChildEntitiesQueryResults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoChildEntitiesQueryResults>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoChildEntitiesQueryResults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoChildEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoChildEntitiesQueryResults>(value);
+      itemElement = DMXDCDs.GeoChildEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoChildEntitiesQueryResults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -124,33 +124,33 @@ public static class ClearConverter
   /// <summary>
   /// GeoParentEntitiesQueryResults.
   /// </summary>
-  private static DMDrawsChartDraws.GeoParentEntitiesQueryResults? GetGeoParentEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement)
+  private static DMDCDs.GeoParentEntitiesQueryResults? GetGeoParentEntitiesQueryResults(DXO16DCD.Clear openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQueryResults>();
+    var element = openXmlElement?.GetFirstChild<DXO16DCD.GeoParentEntitiesQueryResults>();
     if (element != null)
-      return DMXDrawsChartDraws.GeoParentEntitiesQueryResultsConverter.CreateModelElement(element);
+      return DMXDCDs.GeoParentEntitiesQueryResultsConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGeoParentEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQueryResults? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoParentEntitiesQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoParentEntitiesQueryResults? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.GeoParentEntitiesQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQueryResults>(), value, diffs, objName);
+    return DMXDCDs.GeoParentEntitiesQueryResultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoParentEntitiesQueryResults>(), value, diffs, objName);
   }
   
-  private static void SetGeoParentEntitiesQueryResults(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.GeoParentEntitiesQueryResults? value)
+  private static void SetGeoParentEntitiesQueryResults(DXO16DCD.Clear openXmlElement, DMDCDs.GeoParentEntitiesQueryResults? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2016DrawChartDraw.GeoParentEntitiesQueryResults>();
+    var itemElement = openXmlElement.GetFirstChild<DXO16DCD.GeoParentEntitiesQueryResults>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.GeoParentEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO2016DrawChartDraw.GeoParentEntitiesQueryResults>(value);
+      itemElement = DMXDCDs.GeoParentEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntitiesQueryResults>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.Clear? CreateModelElement(DXO2016DrawChartDraw.Clear? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.Clear? CreateModelElement(DXO16DCD.Clear? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -165,7 +165,7 @@ public static class ClearConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2016DrawChartDraw.Clear? openXmlElement, DMDrawsChartDraws.Clear? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Clear? openXmlElement, DMDCDs.Clear? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -187,15 +187,15 @@ public static class ClearConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.Clear value)
-    where OpenXmlElementType: DXO2016DrawChartDraw.Clear, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.Clear value)
+    where OpenXmlElementType: DXO16DCD.Clear, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2016DrawChartDraw.Clear openXmlElement, DMDrawsChartDraws.Clear value)
+  public static void UpdateOpenXmlElement(DXO16DCD.Clear openXmlElement, DMDCDs.Clear value)
   {
     SetGeoLocationQueryResults(openXmlElement, value?.GeoLocationQueryResults);
     SetGeoDataEntityQueryResults(openXmlElement, value?.GeoDataEntityQueryResults);

@@ -8,19 +8,19 @@ public static class TaskHistoryEventConverter
   /// <summary>
   /// time, this property is only available in Office 2021 and later.
   /// </summary>
-  private static DateTime? GetTime(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DateTime? GetTime(DXO21DT.TaskHistoryEvent openXmlElement)
   {
     return openXmlElement?.Time?.Value;
   }
   
-  private static bool CmpTime(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpTime(DXO21DT.TaskHistoryEvent openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Time?.Value == value) return true;
     diffs?.Add(objName, "Time", openXmlElement?.Time?.Value, value);
     return false;
   }
   
-  private static void SetTime(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DateTime? value)
+  private static void SetTime(DXO21DT.TaskHistoryEvent openXmlElement, DateTime? value)
   {
     openXmlElement.Time = value;
   }
@@ -28,17 +28,17 @@ public static class TaskHistoryEventConverter
   /// <summary>
   /// id, this property is only available in Office 2021 and later.
   /// </summary>
-  private static String? GetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static String? GetId(DXO21DT.TaskHistoryEvent openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO21DT.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2021DocTasks.TaskHistoryEvent openXmlElement, String? value)
+  private static void SetId(DXO21DT.TaskHistoryEvent openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -46,27 +46,27 @@ public static class TaskHistoryEventConverter
   /// <summary>
   /// AttributionTaskUser.
   /// </summary>
-  private static DM.OpenXmlTaskUserElement? GetAttributionTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.OpenXmlTaskUserElement? GetAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.AttributionTaskUser>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.AttributionTaskUser>();
     if (element != null)
       return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAttributionTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.AttributionTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AttributionTaskUser>(), value, diffs, objName);
   }
   
-  private static void SetAttributionTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
+  private static void SetAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.AttributionTaskUser>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.AttributionTaskUser>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO2021DocTasks.AttributionTaskUser>(value);
+      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.AttributionTaskUser>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -75,353 +75,353 @@ public static class TaskHistoryEventConverter
   /// <summary>
   /// TaskAnchor.
   /// </summary>
-  private static DM.TaskAnchor? GetTaskAnchor(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskAnchor? GetTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskAnchor>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskAnchor>();
     if (element != null)
       return DMX.TaskAnchorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskAnchor(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskAnchor>(), value, diffs, objName);
+    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>(), value, diffs, objName);
   }
   
-  private static void SetTaskAnchor(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value)
+  private static void SetTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskAnchor>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskAnchorConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskAnchor>(value);
+      itemElement = DMX.TaskAnchorConverter.CreateOpenXmlElement<DXO21DT.TaskAnchor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.OpenXmlTaskUserElement? GetAssignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.OpenXmlTaskUserElement? GetAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.AssignTaskUser>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.AssignTaskUser>();
     if (element != null)
       return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpAssignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.AssignTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AssignTaskUser>(), value, diffs, objName);
   }
   
-  private static void SetAssignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
+  private static void SetAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.AssignTaskUser>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.AssignTaskUser>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO2021DocTasks.AssignTaskUser>(value);
+      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.AssignTaskUser>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.OpenXmlTaskUserElement? GetUnassignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.OpenXmlTaskUserElement? GetUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.UnassignTaskUser>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.UnassignTaskUser>();
     if (element != null)
       return DMX.OpenXmlTaskUserElementConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpUnassignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.UnassignTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.UnassignTaskUser>(), value, diffs, objName);
   }
   
-  private static void SetUnassignTaskUser(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
+  private static void SetUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.UnassignTaskUser>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.UnassignTaskUser>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO2021DocTasks.UnassignTaskUser>(value);
+      itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.UnassignTaskUser>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetTaskCreateEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static Boolean? GetTaskCreateEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskCreateEventInfo>() != null;
+    return openXmlElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>() != null;
   }
   
-  private static bool CmpTaskCreateEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskCreateEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskCreateEventInfo>() != null;
+    var val = openXmlElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2021DocTasks.TaskCreateEventInfo", val, value);
+    diffs?.Add(objName, "DXO21DT.TaskCreateEventInfo", val, value);
     return false;
   }
   
-  private static void SetTaskCreateEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
+  private static void SetTaskCreateEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskCreateEventInfo>();
+      var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2021DocTasks.TaskCreateEventInfo();
+      var itemElement = new DXO21DT.TaskCreateEventInfo();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskTitleEventInfo? GetTaskTitleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskTitleEventInfo? GetTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskTitleEventInfo>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskTitleEventInfo>();
     if (element != null)
       return DMX.TaskTitleEventInfoConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskTitleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskTitleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskTitleEventInfo>(), value, diffs, objName);
+    return DMX.TaskTitleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskTitleEventInfo>(), value, diffs, objName);
   }
   
-  private static void SetTaskTitleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value)
+  private static void SetTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskTitleEventInfo>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskTitleEventInfo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskTitleEventInfoConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskTitleEventInfo>(value);
+      itemElement = DMX.TaskTitleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskTitleEventInfo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskScheduleEventInfo? GetTaskScheduleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskScheduleEventInfo? GetTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskScheduleEventInfo>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskScheduleEventInfo>();
     if (element != null)
       return DMX.TaskScheduleEventInfoConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskScheduleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskScheduleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskScheduleEventInfo>(), value, diffs, objName);
+    return DMX.TaskScheduleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskScheduleEventInfo>(), value, diffs, objName);
   }
   
-  private static void SetTaskScheduleEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value)
+  private static void SetTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskScheduleEventInfo>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskScheduleEventInfo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskScheduleEventInfoConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskScheduleEventInfo>(value);
+      itemElement = DMX.TaskScheduleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskScheduleEventInfo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskProgressEventInfo? GetTaskProgressEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskProgressEventInfo? GetTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskProgressEventInfo>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskProgressEventInfo>();
     if (element != null)
       return DMX.TaskProgressEventInfoConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskProgressEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskProgressEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskProgressEventInfo>(), value, diffs, objName);
+    return DMX.TaskProgressEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskProgressEventInfo>(), value, diffs, objName);
   }
   
-  private static void SetTaskProgressEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value)
+  private static void SetTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskProgressEventInfo>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskProgressEventInfo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskProgressEventInfoConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskProgressEventInfo>(value);
+      itemElement = DMX.TaskProgressEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskProgressEventInfo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskPriorityEventInfo? GetTaskPriorityEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskPriorityEventInfo? GetTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskPriorityEventInfo>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskPriorityEventInfo>();
     if (element != null)
       return DMX.TaskPriorityEventInfoConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskPriorityEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskPriorityEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskPriorityEventInfo>(), value, diffs, objName);
+    return DMX.TaskPriorityEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskPriorityEventInfo>(), value, diffs, objName);
   }
   
-  private static void SetTaskPriorityEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value)
+  private static void SetTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskPriorityEventInfo>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskPriorityEventInfo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskPriorityEventInfoConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskPriorityEventInfo>(value);
+      itemElement = DMX.TaskPriorityEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskPriorityEventInfo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetTaskDeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static Boolean? GetTaskDeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskDeleteEventInfo>() != null;
+    return openXmlElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>() != null;
   }
   
-  private static bool CmpTaskDeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskDeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskDeleteEventInfo>() != null;
+    var val = openXmlElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2021DocTasks.TaskDeleteEventInfo", val, value);
+    diffs?.Add(objName, "DXO21DT.TaskDeleteEventInfo", val, value);
     return false;
   }
   
-  private static void SetTaskDeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
+  private static void SetTaskDeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskDeleteEventInfo>();
+      var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2021DocTasks.TaskDeleteEventInfo();
+      var itemElement = new DXO21DT.TaskDeleteEventInfo();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetTaskUndeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static Boolean? GetTaskUndeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndeleteEventInfo>() != null;
+    return openXmlElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>() != null;
   }
   
-  private static bool CmpTaskUndeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUndeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndeleteEventInfo>() != null;
+    var val = openXmlElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2021DocTasks.TaskUndeleteEventInfo", val, value);
+    diffs?.Add(objName, "DXO21DT.TaskUndeleteEventInfo", val, value);
     return false;
   }
   
-  private static void SetTaskUndeleteEventInfo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
+  private static void SetTaskUndeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndeleteEventInfo>();
+      var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2021DocTasks.TaskUndeleteEventInfo();
+      var itemElement = new DXO21DT.TaskUndeleteEventInfo();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetTaskUnassignAll(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static Boolean? GetTaskUnassignAll(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUnassignAll>() != null;
+    return openXmlElement.GetFirstChild<DXO21DT.TaskUnassignAll>() != null;
   }
   
-  private static bool CmpTaskUnassignAll(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUnassignAll(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUnassignAll>() != null;
+    var val = openXmlElement.GetFirstChild<DXO21DT.TaskUnassignAll>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2021DocTasks.TaskUnassignAll", val, value);
+    diffs?.Add(objName, "DXO21DT.TaskUnassignAll", val, value);
     return false;
   }
   
-  private static void SetTaskUnassignAll(DXO2021DocTasks.TaskHistoryEvent openXmlElement, Boolean? value)
+  private static void SetTaskUnassignAll(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUnassignAll>();
+      var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskUnassignAll>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2021DocTasks.TaskUnassignAll();
+      var itemElement = new DXO21DT.TaskUnassignAll();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.TaskUndo? GetTaskUndo(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.TaskUndo? GetTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.TaskUndo>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.TaskUndo>();
     if (element != null)
       return DMX.TaskUndoConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTaskUndo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskUndo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskUndo? value, DiffList? diffs, string? objName)
   {
-    return DMX.TaskUndoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndo>(), value, diffs, objName);
+    return DMX.TaskUndoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskUndo>(), value, diffs, objName);
   }
   
-  private static void SetTaskUndo(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskUndo? value)
+  private static void SetTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskUndo? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.TaskUndo>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.TaskUndo>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.TaskUndoConverter.CreateOpenXmlElement<DXO2021DocTasks.TaskUndo>(value);
+      itemElement = DMX.TaskUndoConverter.CreateOpenXmlElement<DXO21DT.TaskUndo>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DM.ExtensionList? GetExtensionList(DXO2021DocTasks.TaskHistoryEvent openXmlElement)
+  private static DM.ExtensionList? GetExtensionList(DXO21DT.TaskHistoryEvent openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO21DT.ExtensionList>();
     if (element != null)
       return DMX.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21DT.TaskHistoryEvent openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>(), value, diffs, objName);
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.ExtensionList? value)
+  private static void SetExtensionList(DXO21DT.TaskHistoryEvent openXmlElement, DM.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2021DocTasks.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO21DT.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO2021DocTasks.ExtensionList>(value);
+      itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.TaskHistoryEvent? CreateModelElement(DXO2021DocTasks.TaskHistoryEvent? openXmlElement)
+  public static DocumentModel.TaskHistoryEvent? CreateModelElement(DXO21DT.TaskHistoryEvent? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -447,7 +447,7 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.TaskHistoryEvent? openXmlElement, DM.TaskHistoryEvent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskHistoryEvent? openXmlElement, DM.TaskHistoryEvent? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -492,14 +492,14 @@ public static class TaskHistoryEventConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskHistoryEvent value)
-    where OpenXmlElementType: DXO2021DocTasks.TaskHistoryEvent, new()
+    where OpenXmlElementType: DXO21DT.TaskHistoryEvent, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskHistoryEvent openXmlElement, DM.TaskHistoryEvent value)
+  public static void UpdateOpenXmlElement(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskHistoryEvent value)
   {
     SetTime(openXmlElement, value?.Time);
     SetId(openXmlElement, value?.Id);

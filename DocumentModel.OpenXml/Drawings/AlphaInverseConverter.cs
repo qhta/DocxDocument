@@ -8,27 +8,27 @@ public static class AlphaInverseConverter
   /// <summary>
   /// RGB Color Model - Percentage Variant.
   /// </summary>
-  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.RgbColorModelPercentage? GetRgbColorModelPercentage(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (element != null)
-      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelPercentageConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXDraw.AlphaInverse openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.AlphaInverse openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelPercentage(DXDraw.AlphaInverse openXmlElement, DMDraws.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXD.AlphaInverse openXmlElement, DMD.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
+      itemElement = DMXD.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class AlphaInverseConverter
   /// <summary>
   /// RGB Color Model - Hex Variant.
   /// </summary>
-  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.RgbColorModelHex? GetRgbColorModelHex(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelHex>();
     if (element != null)
-      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelHexConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXDraw.AlphaInverse openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.AlphaInverse openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelHex(DXDraw.AlphaInverse openXmlElement, DMDraws.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXD.AlphaInverse openXmlElement, DMD.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
+      itemElement = DMXD.RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class AlphaInverseConverter
   /// <summary>
   /// Hue, Saturation, Luminance Color Model.
   /// </summary>
-  private static DMDraws.HslColor? GetHslColor(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.HslColor? GetHslColor(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.HslColor>();
     if (element != null)
-      return DMXDraws.HslColorConverter.CreateModelElement(element);
+      return DMXD.HslColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHslColor(DXDraw.AlphaInverse openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.AlphaInverse openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
   }
   
-  private static void SetHslColor(DXDraw.AlphaInverse openXmlElement, DMDraws.HslColor? value)
+  private static void SetHslColor(DXD.AlphaInverse openXmlElement, DMD.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
+      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,27 +95,27 @@ public static class AlphaInverseConverter
   /// <summary>
   /// System Color.
   /// </summary>
-  private static DMDraws.SystemColor? GetSystemColor(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.SystemColor? GetSystemColor(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SystemColor>();
     if (element != null)
-      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+      return DMXD.SystemColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSystemColor(DXDraw.AlphaInverse openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.AlphaInverse openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
   }
   
-  private static void SetSystemColor(DXDraw.AlphaInverse openXmlElement, DMDraws.SystemColor? value)
+  private static void SetSystemColor(DXD.AlphaInverse openXmlElement, DMD.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
+      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -124,27 +124,27 @@ public static class AlphaInverseConverter
   /// <summary>
   /// Scheme Color.
   /// </summary>
-  private static DMDraws.SchemeColor? GetSchemeColor(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.SchemeColor? GetSchemeColor(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SchemeColor>();
     if (element != null)
-      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+      return DMXD.SchemeColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSchemeColor(DXDraw.AlphaInverse openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXD.AlphaInverse openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
   }
   
-  private static void SetSchemeColor(DXDraw.AlphaInverse openXmlElement, DMDraws.SchemeColor? value)
+  private static void SetSchemeColor(DXD.AlphaInverse openXmlElement, DMD.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SchemeColorConverter.CreateOpenXmlElement<DXDraw.SchemeColor>(value);
+      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement<DXD.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -153,33 +153,33 @@ public static class AlphaInverseConverter
   /// <summary>
   /// Preset Color.
   /// </summary>
-  private static DMDraws.PresetColor? GetPresetColor(DXDraw.AlphaInverse openXmlElement)
+  private static DMD.PresetColor? GetPresetColor(DXD.AlphaInverse openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetColor>();
     if (element != null)
-      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+      return DMXD.PresetColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetColor(DXDraw.AlphaInverse openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.AlphaInverse openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
   }
   
-  private static void SetPresetColor(DXDraw.AlphaInverse openXmlElement, DMDraws.PresetColor? value)
+  private static void SetPresetColor(DXD.AlphaInverse openXmlElement, DMD.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
+      itemElement = DMXD.PresetColorConverter.CreateOpenXmlElement<DXD.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.AlphaInverse? CreateModelElement(DXDraw.AlphaInverse? openXmlElement)
+  public static DocumentModel.Drawings.AlphaInverse? CreateModelElement(DXD.AlphaInverse? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -195,7 +195,7 @@ public static class AlphaInverseConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AlphaInverse? openXmlElement, DMDraws.AlphaInverse? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaInverse? openXmlElement, DMD.AlphaInverse? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -219,15 +219,15 @@ public static class AlphaInverseConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaInverse value)
-    where OpenXmlElementType: DXDraw.AlphaInverse, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AlphaInverse value)
+    where OpenXmlElementType: DXD.AlphaInverse, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AlphaInverse openXmlElement, DMDraws.AlphaInverse value)
+  public static void UpdateOpenXmlElement(DXD.AlphaInverse openXmlElement, DMD.AlphaInverse value)
   {
     SetRgbColorModelPercentage(openXmlElement, value?.RgbColorModelPercentage);
     SetRgbColorModelHex(openXmlElement, value?.RgbColorModelHex);

@@ -8,19 +8,19 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Application defined unique identifier.
   /// </summary>
-  private static UInt32? GetId(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static UInt32? GetId(DXOD.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXODraw.NonVisualDrawingProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXOD.NonVisualDrawingProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXODraw.NonVisualDrawingProperties openXmlElement, UInt32? value)
+  private static void SetId(DXOD.NonVisualDrawingProperties openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
@@ -28,17 +28,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Name compatible with Object Model (non-unique).
   /// </summary>
-  private static String? GetName(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static String? GetName(DXOD.NonVisualDrawingProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXODraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXOD.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
   
-  private static void SetName(DXODraw.NonVisualDrawingProperties openXmlElement, String? value)
+  private static void SetName(DXOD.NonVisualDrawingProperties openXmlElement, String? value)
   {
     openXmlElement.Name = StringValueConverter.CreateStringValue(value);
   }
@@ -46,17 +46,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Description of the drawing element.
   /// </summary>
-  private static String? GetDescription(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static String? GetDescription(DXOD.NonVisualDrawingProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXODraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXOD.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXODraw.NonVisualDrawingProperties openXmlElement, String? value)
+  private static void SetDescription(DXOD.NonVisualDrawingProperties openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -64,19 +64,19 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Flag determining to show or hide this element.
   /// </summary>
-  private static Boolean? GetHidden(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static Boolean? GetHidden(DXOD.NonVisualDrawingProperties openXmlElement)
   {
     return openXmlElement?.Hidden?.Value;
   }
   
-  private static bool CmpHidden(DXODraw.NonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHidden(DXOD.NonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Hidden?.Value == value) return true;
     diffs?.Add(objName, "GlyphHidden", openXmlElement?.Hidden?.Value, value);
     return false;
   }
   
-  private static void SetHidden(DXODraw.NonVisualDrawingProperties openXmlElement, Boolean? value)
+  private static void SetHidden(DXOD.NonVisualDrawingProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Hidden = new BooleanValue { Value = (Boolean)value };
@@ -87,17 +87,17 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Title
   /// </summary>
-  private static String? GetTitle(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static String? GetTitle(DXOD.NonVisualDrawingProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXODraw.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXOD.NonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
   
-  private static void SetTitle(DXODraw.NonVisualDrawingProperties openXmlElement, String? value)
+  private static void SetTitle(DXOD.NonVisualDrawingProperties openXmlElement, String? value)
   {
     openXmlElement.Title = StringValueConverter.CreateStringValue(value);
   }
@@ -105,27 +105,27 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Hyperlink associated with clicking or selecting the element..
   /// </summary>
-  private static DMDraws.HyperlinkOnClick? GetHyperlinkOnClick(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static DMD.HyperlinkOnClick? GetHyperlinkOnClick(DXOD.NonVisualDrawingProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkOnClick>();
     if (element != null)
-      return DMXDraws.HyperlinkOnClickConverter.CreateModelElement(element);
+      return DMXD.HyperlinkOnClickConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkOnClick(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnClick? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnClick(DXOD.NonVisualDrawingProperties openXmlElement, DMD.HyperlinkOnClick? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>(), value, diffs, objName);
+    return DMXD.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkOnClick(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnClick? value)
+  private static void SetHyperlinkOnClick(DXOD.NonVisualDrawingProperties openXmlElement, DMD.HyperlinkOnClick? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnClick>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HyperlinkOnClickConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnClick>(value);
+      itemElement = DMXD.HyperlinkOnClickConverter.CreateOpenXmlElement<DXD.HyperlinkOnClick>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -134,27 +134,27 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Hyperlink associated with hovering over the element..
   /// </summary>
-  private static DMDraws.HyperlinkOnHover? GetHyperlinkOnHover(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static DMD.HyperlinkOnHover? GetHyperlinkOnHover(DXOD.NonVisualDrawingProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkOnHover>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkOnHover>();
     if (element != null)
-      return DMXDraws.HyperlinkOnHoverConverter.CreateModelElement(element);
+      return DMXD.HyperlinkOnHoverConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkOnHover(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnHover? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnHover(DXOD.NonVisualDrawingProperties openXmlElement, DMD.HyperlinkOnHover? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkOnHoverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkOnHover>(), value, diffs, objName);
+    return DMXD.HyperlinkOnHoverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnHover>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkOnHover(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.HyperlinkOnHover? value)
+  private static void SetHyperlinkOnHover(DXOD.NonVisualDrawingProperties openXmlElement, DMD.HyperlinkOnHover? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkOnHover>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkOnHover>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HyperlinkOnHoverConverter.CreateOpenXmlElement<DXDraw.HyperlinkOnHover>(value);
+      itemElement = DMXD.HyperlinkOnHoverConverter.CreateOpenXmlElement<DXD.HyperlinkOnHover>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -163,33 +163,33 @@ public static class NonVisualDrawingPropertiesConverter
   /// <summary>
   /// Future extension.
   /// </summary>
-  private static DMDraws.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DXODraw.NonVisualDrawingProperties openXmlElement)
+  private static DMD.NonVisualDrawingPropertiesExtensionList? GetNonVisualDrawingPropertiesExtensionList(DXOD.NonVisualDrawingProperties openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
     if (element != null)
-      return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(element);
+      return DMXD.NonVisualDrawingPropertiesExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualDrawingPropertiesExtensionList(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingPropertiesExtensionList(DXOD.NonVisualDrawingProperties openXmlElement, DMD.NonVisualDrawingPropertiesExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>(), value, diffs, objName);
+    return DMXD.NonVisualDrawingPropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualDrawingPropertiesExtensionList(DXODraw.NonVisualDrawingProperties openXmlElement, DMDraws.NonVisualDrawingPropertiesExtensionList? value)
+  private static void SetNonVisualDrawingPropertiesExtensionList(DXOD.NonVisualDrawingProperties openXmlElement, DMD.NonVisualDrawingPropertiesExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.NonVisualDrawingPropertiesExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.NonVisualDrawingPropertiesExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DXDraw.NonVisualDrawingPropertiesExtensionList>(value);
+      itemElement = DMXD.NonVisualDrawingPropertiesExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualDrawingPropertiesExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Office.NonVisualDrawingProperties? CreateModelElement(DXODraw.NonVisualDrawingProperties? openXmlElement)
+  public static DocumentModel.Drawings.Office.NonVisualDrawingProperties? CreateModelElement(DXOD.NonVisualDrawingProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -207,7 +207,7 @@ public static class NonVisualDrawingPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODraw.NonVisualDrawingProperties? openXmlElement, DMDrawsO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.NonVisualDrawingProperties? openXmlElement, DMDO.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -235,15 +235,15 @@ public static class NonVisualDrawingPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsO.NonVisualDrawingProperties value)
-    where OpenXmlElementType: DXODraw.NonVisualDrawingProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDO.NonVisualDrawingProperties value)
+    where OpenXmlElementType: DXOD.NonVisualDrawingProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXODraw.NonVisualDrawingProperties openXmlElement, DMDrawsO.NonVisualDrawingProperties value)
+  public static void UpdateOpenXmlElement(DXOD.NonVisualDrawingProperties openXmlElement, DMDO.NonVisualDrawingProperties value)
   {
     SetId(openXmlElement, value?.Id);
     SetName(openXmlElement, value?.Name);

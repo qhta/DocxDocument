@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class TabStopListConverter
 {
-  private static Collection<DMDraws.TabStop>? GetTabStops(DXDraw.TabStopList openXmlElement)
+  private static Collection<DMD.TabStop>? GetTabStops(DXD.TabStopList openXmlElement)
   {
-    var collection = new Collection<DMDraws.TabStop>();
-    foreach (var item in openXmlElement.Elements<DXDraw.TabStop>())
+    var collection = new Collection<DMD.TabStop>();
+    foreach (var item in openXmlElement.Elements<DXD.TabStop>())
     {
-      var newItem = DMXDraws.TabStopConverter.CreateModelElement(item);
+      var newItem = DMXD.TabStopConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class TabStopListConverter
     return null;
   }
   
-  private static bool CmpTabStops(DXDraw.TabStopList openXmlElement, Collection<DMDraws.TabStop>? value, DiffList? diffs, string? objName)
+  private static bool CmpTabStops(DXD.TabStopList openXmlElement, Collection<DMD.TabStop>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.TabStop>();
+    var origElements = openXmlElement.Elements<DXD.TabStop>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class TabStopListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.TabStopConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.TabStopConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class TabStopListConverter
     return false;
   }
   
-  private static void SetTabStops(DXDraw.TabStopList openXmlElement, Collection<DMDraws.TabStop>? value)
+  private static void SetTabStops(DXD.TabStopList openXmlElement, Collection<DMD.TabStop>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.TabStop>();
+    openXmlElement.RemoveAllChildren<DXD.TabStop>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.TabStopConverter.CreateOpenXmlElement<DXDraw.TabStop>(item);
+        var newItem = DMXD.TabStopConverter.CreateOpenXmlElement<DXD.TabStop>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.TabStopList? CreateModelElement(DXDraw.TabStopList? openXmlElement)
+  public static DocumentModel.Drawings.TabStopList? CreateModelElement(DXD.TabStopList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class TabStopListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.TabStopList? openXmlElement, DMDraws.TabStopList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TabStopList? openXmlElement, DMD.TabStopList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class TabStopListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStopList value)
-    where OpenXmlElementType: DXDraw.TabStopList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.TabStopList value)
+    where OpenXmlElementType: DXD.TabStopList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.TabStopList openXmlElement, DMDraws.TabStopList value)
+  public static void UpdateOpenXmlElement(DXD.TabStopList openXmlElement, DMD.TabStopList value)
   {
     SetTabStops(openXmlElement, value?.TabStops);
   }

@@ -8,19 +8,19 @@ public static class TabStopConverter
   /// <summary>
   /// Tab Position
   /// </summary>
-  private static Int32? GetPosition(DXDraw.TabStop openXmlElement)
+  private static Int32? GetPosition(DXD.TabStop openXmlElement)
   {
     return openXmlElement?.Position?.Value;
   }
   
-  private static bool CmpPosition(DXDraw.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Position?.Value == value) return true;
     diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
     return false;
   }
   
-  private static void SetPosition(DXDraw.TabStop openXmlElement, Int32? value)
+  private static void SetPosition(DXD.TabStop openXmlElement, Int32? value)
   {
     openXmlElement.Position = value;
   }
@@ -28,22 +28,22 @@ public static class TabStopConverter
   /// <summary>
   /// Tab Alignment
   /// </summary>
-  private static DMDraws.TextTabAlignmentKind? GetAlignment(DXDraw.TabStop openXmlElement)
+  private static DMD.TextTabAlignmentKind? GetAlignment(DXD.TabStop openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXDraw.TabStop openXmlElement, DMDraws.TextTabAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.TabStop openXmlElement, DMD.TextTabAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
   }
   
-  private static void SetAlignment(DXDraw.TabStop openXmlElement, DMDraws.TextTabAlignmentKind? value)
+  private static void SetAlignment(DXD.TabStop openXmlElement, DMD.TextTabAlignmentKind? value)
   {
-    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMDraws.TextTabAlignmentKind>(value);
+    openXmlElement.Alignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(value);
   }
   
-  public static DocumentModel.Drawings.TabStop? CreateModelElement(DXDraw.TabStop? openXmlElement)
+  public static DocumentModel.Drawings.TabStop? CreateModelElement(DXD.TabStop? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -55,7 +55,7 @@ public static class TabStopConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.TabStop? openXmlElement, DMDraws.TabStop? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TabStop? openXmlElement, DMD.TabStop? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -71,15 +71,15 @@ public static class TabStopConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.TabStop value)
-    where OpenXmlElementType: DXDraw.TabStop, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.TabStop value)
+    where OpenXmlElementType: DXD.TabStop, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.TabStop openXmlElement, DMDraws.TabStop value)
+  public static void UpdateOpenXmlElement(DXD.TabStop openXmlElement, DMD.TabStop value)
   {
     SetPosition(openXmlElement, value?.Position);
     SetAlignment(openXmlElement, value?.Alignment);

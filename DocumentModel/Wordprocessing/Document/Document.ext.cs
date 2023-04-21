@@ -28,7 +28,7 @@ public partial class Document
   /// <summary>
   /// Set if color and font themes.
   /// </summary>
-  public DMDraws.Theme? Theme
+  public DMD.Theme? Theme
   { 
     get => _Theme; 
     set
@@ -38,7 +38,7 @@ public partial class Document
         _Theme.Parent = this;
     }
   }
-  private DMDraws.Theme? _Theme;
+  private DMD.Theme? _Theme;
 
   /// <summary>
   /// Font table
@@ -63,11 +63,46 @@ public partial class Document
   /// <summary>
   /// Numbering definitions.
   /// </summary>
-  public Numbering? Numbering { get; set; }
+  public Numbering? Numbering 
+  { 
+    get => _Numbering; 
+    set
+    {
+      _Numbering = value;
+      if (_Numbering != null)
+        _Numbering.Parent = this;
+    }
+  }
+  private Numbering? _Numbering;
 
   /// <summary>
   /// Comment annotations.
   /// </summary>
-  public DocComments? Comments { get; set; }
+  public DocComments? Comments
+  { 
+    get => _Comments; 
+    set
+    {
+      _Comments = value;
+      if (_Comments != null)
+        _Comments.Parent = this;
+    }
+  }
+  private DocComments? _Comments;
 
+
+  /// <summary>
+  /// Document background.
+  /// </summary>
+  public DocumentBackground? Background
+  { 
+    get => _Background; 
+    set
+    {
+      _Background = value;
+      if (_Background != null)
+        _Background.Parent = this;
+    }
+  }
+  private DocumentBackground? _Background;
 }

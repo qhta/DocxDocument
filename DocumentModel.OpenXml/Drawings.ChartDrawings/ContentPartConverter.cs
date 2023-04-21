@@ -8,17 +8,17 @@ public static class ContentPartConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static String? GetRelationshipId(DXO10DCD.ContentPart openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.RelationshipId);
   }
   
-  private static bool CmpRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipId(DXO10DCD.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RelationshipId, value, diffs, objName, "RelationshipId");
   }
   
-  private static void SetRelationshipId(DXO2010DrawChartDraw.ContentPart openXmlElement, String? value)
+  private static void SetRelationshipId(DXO10DCD.ContentPart openXmlElement, String? value)
   {
     openXmlElement.RelationshipId = StringValueConverter.CreateStringValue(value);
   }
@@ -26,45 +26,45 @@ public static class ContentPartConverter
   /// <summary>
   /// bwMode, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DMDraws.BlackWhiteMode? GetBlackWhiteMode(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static DMD.BlackWhiteMode? GetBlackWhiteMode(DXO10DCD.ContentPart openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDraws.BlackWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXO10DCD.ContentPart openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
   }
   
-  private static void SetBlackWhiteMode(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDraws.BlackWhiteMode? value)
+  private static void SetBlackWhiteMode(DXO10DCD.ContentPart openXmlElement, DMD.BlackWhiteMode? value)
   {
-    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMDraws.BlackWhiteMode>(value);
+    openXmlElement.BlackWhiteMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(value);
   }
   
   /// <summary>
   /// NonVisualContentPartProperties.
   /// </summary>
-  private static DMDrawsChartDraws.NonVisualContentPartProperties? GetNonVisualContentPartProperties(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static DMDCDs.NonVisualContentPartProperties? GetNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.NonVisualContentPartProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>();
     if (element != null)
-      return DMXDrawsChartDraws.NonVisualContentPartPropertiesConverter.CreateModelElement(element);
+      return DMXDCDs.NonVisualContentPartPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNonVisualContentPartProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.NonVisualContentPartProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.NonVisualContentPartProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.NonVisualContentPartProperties>(), value, diffs, objName);
+    return DMXDCDs.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>(), value, diffs, objName);
   }
   
-  private static void SetNonVisualContentPartProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.NonVisualContentPartProperties? value)
+  private static void SetNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.NonVisualContentPartProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawChartDraw.NonVisualContentPartProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.NonVisualContentPartPropertiesConverter.CreateOpenXmlElement<DXO2010DrawChartDraw.NonVisualContentPartProperties>(value);
+      itemElement = DMXDCDs.NonVisualContentPartPropertiesConverter.CreateOpenXmlElement<DXO10DCD.NonVisualContentPartProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -73,27 +73,27 @@ public static class ContentPartConverter
   /// <summary>
   /// ApplicationNonVisualDrawingProperties.
   /// </summary>
-  private static DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? GetApplicationNonVisualDrawingProperties(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static DMDCDs.ApplicationNonVisualDrawingProperties? GetApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>();
     if (element != null)
-      return DMXDrawsChartDraws.ApplicationNonVisualDrawingPropertiesConverter.CreateModelElement(element);
+      return DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpApplicationNonVisualDrawingProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>(), value, diffs, objName);
   }
   
-  private static void SetApplicationNonVisualDrawingProperties(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ApplicationNonVisualDrawingProperties? value)
+  private static void SetApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.ApplicationNonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO2010DrawChartDraw.ApplicationNonVisualDrawingProperties>(value);
+      itemElement = DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DCD.ApplicationNonVisualDrawingProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -102,27 +102,27 @@ public static class ContentPartConverter
   /// <summary>
   /// Transform2D.
   /// </summary>
-  private static DMDrawsChartDraws.Transform2D? GetTransform2D(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static DMDCDs.Transform2D? GetTransform2D(DXO10DCD.ContentPart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.Transform2D>();
+    var element = openXmlElement?.GetFirstChild<DXO10DCD.Transform2D>();
     if (element != null)
-      return DMXDrawsChartDraws.Transform2DConverter.CreateModelElement(element);
+      return DMXDCDs.Transform2DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpTransform2D(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.Transform2D? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform2D(DXO10DCD.ContentPart openXmlElement, DMDCDs.Transform2D? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.Transform2D>(), value, diffs, objName);
+    return DMXDCDs.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.Transform2D>(), value, diffs, objName);
   }
   
-  private static void SetTransform2D(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.Transform2D? value)
+  private static void SetTransform2D(DXO10DCD.ContentPart openXmlElement, DMDCDs.Transform2D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawChartDraw.Transform2D>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DCD.Transform2D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.Transform2DConverter.CreateOpenXmlElement<DXO2010DrawChartDraw.Transform2D>(value);
+      itemElement = DMXDCDs.Transform2DConverter.CreateOpenXmlElement<DXO10DCD.Transform2D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -131,33 +131,33 @@ public static class ContentPartConverter
   /// <summary>
   /// OfficeArtExtensionList.
   /// </summary>
-  private static DMDrawsChartDraws.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2010DrawChartDraw.ContentPart openXmlElement)
+  private static DMDCDs.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010DrawChartDraw.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO10DCD.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsChartDraws.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDCDs.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement, DMDCDs.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartDraws.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010DrawChartDraw.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDCDs.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement, DMDCDs.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010DrawChartDraw.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10DCD.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartDraws.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2010DrawChartDraw.OfficeArtExtensionList>(value);
+      itemElement = DMXDCDs.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO10DCD.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartDrawings.ContentPart? CreateModelElement(DXO2010DrawChartDraw.ContentPart? openXmlElement)
+  public static DocumentModel.Drawings.ChartDrawings.ContentPart? CreateModelElement(DXO10DCD.ContentPart? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -173,7 +173,7 @@ public static class ContentPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010DrawChartDraw.ContentPart? openXmlElement, DMDrawsChartDraws.ContentPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.ContentPart? openXmlElement, DMDCDs.ContentPart? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -197,15 +197,15 @@ public static class ContentPartConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartDraws.ContentPart value)
-    where OpenXmlElementType: DXO2010DrawChartDraw.ContentPart, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCDs.ContentPart value)
+    where OpenXmlElementType: DXO10DCD.ContentPart, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010DrawChartDraw.ContentPart openXmlElement, DMDrawsChartDraws.ContentPart value)
+  public static void UpdateOpenXmlElement(DXO10DCD.ContentPart openXmlElement, DMDCDs.ContentPart value)
   {
     SetRelationshipId(openXmlElement, value?.RelationshipId);
     SetBlackWhiteMode(openXmlElement, value?.BlackWhiteMode);

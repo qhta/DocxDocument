@@ -8,24 +8,24 @@ public static class NumberReferenceConverter
   /// <summary>
   /// Formula.
   /// </summary>
-  private static String? GetFormula(DXDrawCharts.NumberReference openXmlElement)
+  private static String? GetFormula(DXDC.NumberReference openXmlElement)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.Formula>()?.Text;
+      return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXDrawCharts.NumberReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXDC.NumberReference openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-      return openXmlElement?.GetFirstChild<DXDrawCharts.Formula>()?.Text == value;
+      return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text == value;
   }
   
-  private static void SetFormula(DXDrawCharts.NumberReference openXmlElement, String? value)
+  private static void SetFormula(DXDC.NumberReference openXmlElement, String? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.Formula>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.Formula>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXDrawCharts.Formula { Text = value };
+      itemElement = new DXDC.Formula { Text = value };
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -33,27 +33,27 @@ public static class NumberReferenceConverter
   /// <summary>
   /// NumberingCache.
   /// </summary>
-  private static DMDrawsCharts.NumberingCache? GetNumberingCache(DXDrawCharts.NumberReference openXmlElement)
+  private static DMDC.NumberingCache? GetNumberingCache(DXDC.NumberReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumberingCache>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumberingCache>();
     if (element != null)
-      return DMXDrawsCharts.NumberingCacheConverter.CreateModelElement(element);
+      return DMXDC.NumberingCacheConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumberingCache(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumberingCache? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingCache(DXDC.NumberReference openXmlElement, DMDC.NumberingCache? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumberingCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumberingCache>(), value, diffs, objName);
+    return DMXDC.NumberingCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingCache>(), value, diffs, objName);
   }
   
-  private static void SetNumberingCache(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumberingCache? value)
+  private static void SetNumberingCache(DXDC.NumberReference openXmlElement, DMDC.NumberingCache? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumberingCache>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumberingCache>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumberingCacheConverter.CreateOpenXmlElement<DXDrawCharts.NumberingCache>(value);
+      itemElement = DMXDC.NumberingCacheConverter.CreateOpenXmlElement<DXDC.NumberingCache>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -62,33 +62,33 @@ public static class NumberReferenceConverter
   /// <summary>
   /// NumRefExtensionList.
   /// </summary>
-  private static DMDrawsCharts.NumRefExtensionList? GetNumRefExtensionList(DXDrawCharts.NumberReference openXmlElement)
+  private static DMDC.NumRefExtensionList? GetNumRefExtensionList(DXDC.NumberReference openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.NumRefExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXDC.NumRefExtensionList>();
     if (element != null)
-      return DMXDrawsCharts.NumRefExtensionListConverter.CreateModelElement(element);
+      return DMXDC.NumRefExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpNumRefExtensionList(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumRefExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpNumRefExtensionList(DXDC.NumberReference openXmlElement, DMDC.NumRefExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.NumRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.NumRefExtensionList>(), value, diffs, objName);
+    return DMXDC.NumRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumRefExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetNumRefExtensionList(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumRefExtensionList? value)
+  private static void SetNumRefExtensionList(DXDC.NumberReference openXmlElement, DMDC.NumRefExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.NumRefExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.NumRefExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.NumRefExtensionListConverter.CreateOpenXmlElement<DXDrawCharts.NumRefExtensionList>(value);
+      itemElement = DMXDC.NumRefExtensionListConverter.CreateOpenXmlElement<DXDC.NumRefExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(DXDrawCharts.NumberReference? openXmlElement)
+  public static DocumentModel.Drawings.Charts.NumberReference? CreateModelElement(DXDC.NumberReference? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -101,7 +101,7 @@ public static class NumberReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.NumberReference? openXmlElement, DMDrawsCharts.NumberReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberReference? openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -119,15 +119,15 @@ public static class NumberReferenceConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.NumberReference value)
-    where OpenXmlElementType: DXDrawCharts.NumberReference, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.NumberReference value)
+    where OpenXmlElementType: DXDC.NumberReference, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.NumberReference openXmlElement, DMDrawsCharts.NumberReference value)
+  public static void UpdateOpenXmlElement(DXDC.NumberReference openXmlElement, DMDC.NumberReference value)
   {
     SetFormula(openXmlElement, value?.Formula);
     SetNumberingCache(openXmlElement, value?.NumberingCache);

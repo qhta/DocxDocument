@@ -8,24 +8,24 @@ public static class BiLevelConverter
   /// <summary>
   /// Threshold
   /// </summary>
-  private static Int32? GetThreshold(DXDraw.BiLevel openXmlElement)
+  private static Int32? GetThreshold(DXD.BiLevel openXmlElement)
   {
     return openXmlElement?.Threshold?.Value;
   }
   
-  private static bool CmpThreshold(DXDraw.BiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpThreshold(DXD.BiLevel openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Threshold?.Value == value) return true;
     diffs?.Add(objName, "Threshold", openXmlElement?.Threshold?.Value, value);
     return false;
   }
   
-  private static void SetThreshold(DXDraw.BiLevel openXmlElement, Int32? value)
+  private static void SetThreshold(DXD.BiLevel openXmlElement, Int32? value)
   {
     openXmlElement.Threshold = value;
   }
   
-  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DXDraw.BiLevel? openXmlElement)
+  public static DocumentModel.Drawings.BiLevel? CreateModelElement(DXD.BiLevel? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class BiLevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.BiLevel? openXmlElement, DMDraws.BiLevel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BiLevel? openXmlElement, DMD.BiLevel? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class BiLevelConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.BiLevel value)
-    where OpenXmlElementType: DXDraw.BiLevel, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.BiLevel value)
+    where OpenXmlElementType: DXD.BiLevel, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.BiLevel openXmlElement, DMDraws.BiLevel value)
+  public static void UpdateOpenXmlElement(DXD.BiLevel openXmlElement, DMD.BiLevel value)
   {
     SetThreshold(openXmlElement, value?.Threshold);
   }

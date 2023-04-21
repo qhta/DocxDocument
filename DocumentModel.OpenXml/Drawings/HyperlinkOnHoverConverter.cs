@@ -5,59 +5,59 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class HyperlinkOnHoverConverter
 {
-  private static DMDraws.EmbeddedWavAudioFileType? GetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement)
+  private static DMD.EmbeddedWavAudioFileType? GetHyperlinkSound(DXD.HyperlinkOnHover openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkSound>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkSound>();
     if (element != null)
-      return DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateModelElement(element);
+      return DMXD.EmbeddedWavAudioFileTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkSound(DXD.HyperlinkOnHover openXmlElement, DMD.EmbeddedWavAudioFileType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkSound>(), value, diffs, objName);
+    return DMXD.EmbeddedWavAudioFileTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkSound>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkSound(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.EmbeddedWavAudioFileType? value)
+  private static void SetHyperlinkSound(DXD.HyperlinkOnHover openXmlElement, DMD.EmbeddedWavAudioFileType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkSound>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkSound>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DXDraw.HyperlinkSound>(value);
+      itemElement = DMXD.EmbeddedWavAudioFileTypeConverter.CreateOpenXmlElement<DXD.HyperlinkSound>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HyperlinkExtensionList? GetHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement)
+  private static DMD.HyperlinkExtensionList? GetHyperlinkExtensionList(DXD.HyperlinkOnHover openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HyperlinkExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.HyperlinkExtensionList>();
     if (element != null)
-      return DMXDraws.HyperlinkExtensionListConverter.CreateModelElement(element);
+      return DMXD.HyperlinkExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkExtensionList(DXD.HyperlinkOnHover openXmlElement, DMD.HyperlinkExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HyperlinkExtensionList>(), value, diffs, objName);
+    return DMXD.HyperlinkExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetHyperlinkExtensionList(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkExtensionList? value)
+  private static void SetHyperlinkExtensionList(DXD.HyperlinkOnHover openXmlElement, DMD.HyperlinkExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HyperlinkExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HyperlinkExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HyperlinkExtensionListConverter.CreateOpenXmlElement<DXDraw.HyperlinkExtensionList>(value);
+      itemElement = DMXD.HyperlinkExtensionListConverter.CreateOpenXmlElement<DXD.HyperlinkExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.HyperlinkOnHover? CreateModelElement(DXDraw.HyperlinkOnHover? openXmlElement)
+  public static DocumentModel.Drawings.HyperlinkOnHover? CreateModelElement(DXD.HyperlinkOnHover? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -69,7 +69,7 @@ public static class HyperlinkOnHoverConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.HyperlinkOnHover? openXmlElement, DMDraws.HyperlinkOnHover? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.HyperlinkOnHover? openXmlElement, DMD.HyperlinkOnHover? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -85,15 +85,15 @@ public static class HyperlinkOnHoverConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.HyperlinkOnHover value)
-    where OpenXmlElementType: DXDraw.HyperlinkOnHover, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.HyperlinkOnHover value)
+    where OpenXmlElementType: DXD.HyperlinkOnHover, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.HyperlinkOnHover openXmlElement, DMDraws.HyperlinkOnHover value)
+  public static void UpdateOpenXmlElement(DXD.HyperlinkOnHover openXmlElement, DMD.HyperlinkOnHover value)
   {
     SetHyperlinkSound(openXmlElement, value?.HyperlinkSound);
     SetHyperlinkExtensionList(openXmlElement, value?.HyperlinkExtensionList);

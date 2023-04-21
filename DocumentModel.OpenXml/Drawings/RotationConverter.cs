@@ -8,19 +8,19 @@ public static class RotationConverter
   /// <summary>
   /// Latitude
   /// </summary>
-  private static Int32? GetLatitude(DXDraw.Rotation openXmlElement)
+  private static Int32? GetLatitude(DXD.Rotation openXmlElement)
   {
     return openXmlElement?.Latitude?.Value;
   }
   
-  private static bool CmpLatitude(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLatitude(DXD.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Latitude?.Value == value) return true;
     diffs?.Add(objName, "Latitude", openXmlElement?.Latitude?.Value, value);
     return false;
   }
   
-  private static void SetLatitude(DXDraw.Rotation openXmlElement, Int32? value)
+  private static void SetLatitude(DXD.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Latitude = value;
   }
@@ -28,19 +28,19 @@ public static class RotationConverter
   /// <summary>
   /// Longitude
   /// </summary>
-  private static Int32? GetLongitude(DXDraw.Rotation openXmlElement)
+  private static Int32? GetLongitude(DXD.Rotation openXmlElement)
   {
     return openXmlElement?.Longitude?.Value;
   }
   
-  private static bool CmpLongitude(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLongitude(DXD.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Longitude?.Value == value) return true;
     diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
     return false;
   }
   
-  private static void SetLongitude(DXDraw.Rotation openXmlElement, Int32? value)
+  private static void SetLongitude(DXD.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Longitude = value;
   }
@@ -48,24 +48,24 @@ public static class RotationConverter
   /// <summary>
   /// Revolution
   /// </summary>
-  private static Int32? GetRevolution(DXDraw.Rotation openXmlElement)
+  private static Int32? GetRevolution(DXD.Rotation openXmlElement)
   {
     return openXmlElement?.Revolution?.Value;
   }
   
-  private static bool CmpRevolution(DXDraw.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRevolution(DXD.Rotation openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Revolution?.Value == value) return true;
     diffs?.Add(objName, "Revolution", openXmlElement?.Revolution?.Value, value);
     return false;
   }
   
-  private static void SetRevolution(DXDraw.Rotation openXmlElement, Int32? value)
+  private static void SetRevolution(DXD.Rotation openXmlElement, Int32? value)
   {
     openXmlElement.Revolution = value;
   }
   
-  public static DocumentModel.Drawings.Rotation? CreateModelElement(DXDraw.Rotation? openXmlElement)
+  public static DocumentModel.Drawings.Rotation? CreateModelElement(DXD.Rotation? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -78,7 +78,7 @@ public static class RotationConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Rotation? openXmlElement, DMDraws.Rotation? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Rotation? openXmlElement, DMD.Rotation? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -96,15 +96,15 @@ public static class RotationConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Rotation value)
-    where OpenXmlElementType: DXDraw.Rotation, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Rotation value)
+    where OpenXmlElementType: DXD.Rotation, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Rotation openXmlElement, DMDraws.Rotation value)
+  public static void UpdateOpenXmlElement(DXD.Rotation openXmlElement, DMD.Rotation value)
   {
     SetLatitude(openXmlElement, value?.Latitude);
     SetLongitude(openXmlElement, value?.Longitude);

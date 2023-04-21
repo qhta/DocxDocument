@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Vml;
 /// </summary>
 public static class FormulasConverter
 {
-  private static Collection<DMVml.Formula>? GetItems(DXVml.Formulas openXmlElement)
+  private static Collection<DMV.Formula>? GetItems(DXV.Formulas openXmlElement)
   {
-    var collection = new Collection<DMVml.Formula>();
-    foreach (var item in openXmlElement.Elements<DXVml.Formula>())
+    var collection = new Collection<DMV.Formula>();
+    foreach (var item in openXmlElement.Elements<DXV.Formula>())
     {
-      var newItem = DMXVml.FormulaConverter.CreateModelElement(item);
+      var newItem = DMXV.FormulaConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class FormulasConverter
     return null;
   }
   
-  private static bool CmpItems(DXVml.Formulas openXmlElement, Collection<DMVml.Formula>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXV.Formulas openXmlElement, Collection<DMV.Formula>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXVml.Formula>();
+    var origElements = openXmlElement.Elements<DXV.Formula>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class FormulasConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXVml.FormulaConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXV.FormulaConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class FormulasConverter
     return false;
   }
   
-  private static void SetItems(DXVml.Formulas openXmlElement, Collection<DMVml.Formula>? value)
+  private static void SetItems(DXV.Formulas openXmlElement, Collection<DMV.Formula>? value)
   {
-    openXmlElement.RemoveAllChildren<DXVml.Formula>();
+    openXmlElement.RemoveAllChildren<DXV.Formula>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXVml.FormulaConverter.CreateOpenXmlElement<DXVml.Formula>(item);
+        var newItem = DMXV.FormulaConverter.CreateOpenXmlElement<DXV.Formula>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Vml.Formulas? CreateModelElement(DXVml.Formulas? openXmlElement)
+  public static DocumentModel.Vml.Formulas? CreateModelElement(DXV.Formulas? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class FormulasConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVml.Formulas? openXmlElement, DMVml.Formulas? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.Formulas? openXmlElement, DMV.Formulas? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class FormulasConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMVml.Formulas value)
-    where OpenXmlElementType: DXVml.Formulas, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMV.Formulas value)
+    where OpenXmlElementType: DXV.Formulas, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXVml.Formulas openXmlElement, DMVml.Formulas value)
+  public static void UpdateOpenXmlElement(DXV.Formulas openXmlElement, DMV.Formulas value)
   {
     SetItems(openXmlElement, value?.Items);
   }

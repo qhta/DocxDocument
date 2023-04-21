@@ -8,19 +8,19 @@ public static class Shape3DConverter
   /// <summary>
   /// Shape Depth
   /// </summary>
-  private static Int64? GetZ(DXDrawDgms.Shape3D openXmlElement)
+  private static Int64? GetZ(DXDD.Shape3D openXmlElement)
   {
     return openXmlElement?.Z?.Value;
   }
   
-  private static bool CmpZ(DXDrawDgms.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpZ(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Z?.Value == value) return true;
     diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
     return false;
   }
   
-  private static void SetZ(DXDrawDgms.Shape3D openXmlElement, Int64? value)
+  private static void SetZ(DXDD.Shape3D openXmlElement, Int64? value)
   {
     openXmlElement.Z = value;
   }
@@ -28,19 +28,19 @@ public static class Shape3DConverter
   /// <summary>
   /// Extrusion Height
   /// </summary>
-  private static Int64? GetExtrusionHeight(DXDrawDgms.Shape3D openXmlElement)
+  private static Int64? GetExtrusionHeight(DXDD.Shape3D openXmlElement)
   {
     return openXmlElement?.ExtrusionHeight?.Value;
   }
   
-  private static bool CmpExtrusionHeight(DXDrawDgms.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionHeight(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ExtrusionHeight?.Value == value) return true;
     diffs?.Add(objName, "ExtrusionHeight", openXmlElement?.ExtrusionHeight?.Value, value);
     return false;
   }
   
-  private static void SetExtrusionHeight(DXDrawDgms.Shape3D openXmlElement, Int64? value)
+  private static void SetExtrusionHeight(DXDD.Shape3D openXmlElement, Int64? value)
   {
     openXmlElement.ExtrusionHeight = value;
   }
@@ -48,19 +48,19 @@ public static class Shape3DConverter
   /// <summary>
   /// Contour Width
   /// </summary>
-  private static Int64? GetContourWidth(DXDrawDgms.Shape3D openXmlElement)
+  private static Int64? GetContourWidth(DXDD.Shape3D openXmlElement)
   {
     return openXmlElement?.ContourWidth?.Value;
   }
   
-  private static bool CmpContourWidth(DXDrawDgms.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpContourWidth(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ContourWidth?.Value == value) return true;
     diffs?.Add(objName, "ContourWidth", openXmlElement?.ContourWidth?.Value, value);
     return false;
   }
   
-  private static void SetContourWidth(DXDrawDgms.Shape3D openXmlElement, Int64? value)
+  private static void SetContourWidth(DXDD.Shape3D openXmlElement, Int64? value)
   {
     openXmlElement.ContourWidth = value;
   }
@@ -68,45 +68,45 @@ public static class Shape3DConverter
   /// <summary>
   /// Preset Material Type
   /// </summary>
-  private static DMDraws.PresetMaterialKind? GetPresetMaterial(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.PresetMaterialKind? GetPresetMaterial(DXDD.Shape3D openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMDraws.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value);
   }
   
-  private static bool CmpPresetMaterial(DXDrawDgms.Shape3D openXmlElement, DMDraws.PresetMaterialKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetMaterial(DXDD.Shape3D openXmlElement, DMD.PresetMaterialKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMDraws.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName);
   }
   
-  private static void SetPresetMaterial(DXDrawDgms.Shape3D openXmlElement, DMDraws.PresetMaterialKind? value)
+  private static void SetPresetMaterial(DXDD.Shape3D openXmlElement, DMD.PresetMaterialKind? value)
   {
-    openXmlElement.PresetMaterial = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMDraws.PresetMaterialKind>(value);
+    openXmlElement.PresetMaterial = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(value);
   }
   
   /// <summary>
   /// Top Bevel.
   /// </summary>
-  private static DMDraws.BevelType? GetBevelTop(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.BevelType? GetBevelTop(DXDD.Shape3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BevelTop>();
+    var element = openXmlElement?.GetFirstChild<DXD.BevelTop>();
     if (element != null)
-      return DMXDraws.BevelTypeConverter.CreateModelElement(element);
+      return DMXD.BevelTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBevelTop(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
+  private static bool CmpBevelTop(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelTop>(), value, diffs, objName);
+    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelTop>(), value, diffs, objName);
   }
   
-  private static void SetBevelTop(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value)
+  private static void SetBevelTop(DXDD.Shape3D openXmlElement, DMD.BevelType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BevelTop>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BevelTop>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BevelTypeConverter.CreateOpenXmlElement<DXDraw.BevelTop>(value);
+      itemElement = DMXD.BevelTypeConverter.CreateOpenXmlElement<DXD.BevelTop>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -115,27 +115,27 @@ public static class Shape3DConverter
   /// <summary>
   /// Bottom Bevel.
   /// </summary>
-  private static DMDraws.BevelType? GetBevelBottom(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.BevelType? GetBevelBottom(DXDD.Shape3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BevelBottom>();
+    var element = openXmlElement?.GetFirstChild<DXD.BevelBottom>();
     if (element != null)
-      return DMXDraws.BevelTypeConverter.CreateModelElement(element);
+      return DMXD.BevelTypeConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBevelBottom(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value, DiffList? diffs, string? objName)
+  private static bool CmpBevelBottom(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BevelBottom>(), value, diffs, objName);
+    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelBottom>(), value, diffs, objName);
   }
   
-  private static void SetBevelBottom(DXDrawDgms.Shape3D openXmlElement, DMDraws.BevelType? value)
+  private static void SetBevelBottom(DXDD.Shape3D openXmlElement, DMD.BevelType? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BevelBottom>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BevelBottom>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BevelTypeConverter.CreateOpenXmlElement<DXDraw.BevelBottom>(value);
+      itemElement = DMXD.BevelTypeConverter.CreateOpenXmlElement<DXD.BevelBottom>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -144,27 +144,27 @@ public static class Shape3DConverter
   /// <summary>
   /// Extrusion Color.
   /// </summary>
-  private static DMDraws.ExtrusionColor? GetExtrusionColor(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.ExtrusionColor? GetExtrusionColor(DXDD.Shape3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtrusionColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtrusionColor>();
     if (element != null)
-      return DMXDraws.ExtrusionColorConverter.CreateModelElement(element);
+      return DMXD.ExtrusionColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtrusionColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtrusionColor? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionColor(DXDD.Shape3D openXmlElement, DMD.ExtrusionColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtrusionColor>(), value, diffs, objName);
+    return DMXD.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtrusionColor>(), value, diffs, objName);
   }
   
-  private static void SetExtrusionColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtrusionColor? value)
+  private static void SetExtrusionColor(DXDD.Shape3D openXmlElement, DMD.ExtrusionColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtrusionColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtrusionColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtrusionColorConverter.CreateOpenXmlElement<DXDraw.ExtrusionColor>(value);
+      itemElement = DMXD.ExtrusionColorConverter.CreateOpenXmlElement<DXD.ExtrusionColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -173,27 +173,27 @@ public static class Shape3DConverter
   /// <summary>
   /// Contour Color.
   /// </summary>
-  private static DMDraws.ContourColor? GetContourColor(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.ContourColor? GetContourColor(DXDD.Shape3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ContourColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.ContourColor>();
     if (element != null)
-      return DMXDraws.ContourColorConverter.CreateModelElement(element);
+      return DMXD.ContourColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpContourColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ContourColor? value, DiffList? diffs, string? objName)
+  private static bool CmpContourColor(DXDD.Shape3D openXmlElement, DMD.ContourColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ContourColor>(), value, diffs, objName);
+    return DMXD.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ContourColor>(), value, diffs, objName);
   }
   
-  private static void SetContourColor(DXDrawDgms.Shape3D openXmlElement, DMDraws.ContourColor? value)
+  private static void SetContourColor(DXDD.Shape3D openXmlElement, DMD.ContourColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ContourColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ContourColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ContourColorConverter.CreateOpenXmlElement<DXDraw.ContourColor>(value);
+      itemElement = DMXD.ContourColorConverter.CreateOpenXmlElement<DXD.ContourColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -202,33 +202,33 @@ public static class Shape3DConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDrawDgms.Shape3D openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXDD.Shape3D openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Shape3D openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDrawDgms.Shape3D openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXDD.Shape3D openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.Shape3D? CreateModelElement(DXDrawDgms.Shape3D? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.Shape3D? CreateModelElement(DXDD.Shape3D? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -247,7 +247,7 @@ public static class Shape3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.Shape3D? openXmlElement, DMDrawsDgms.Shape3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Shape3D? openXmlElement, DMDD.Shape3D? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -277,15 +277,15 @@ public static class Shape3DConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.Shape3D value)
-    where OpenXmlElementType: DXDrawDgms.Shape3D, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.Shape3D value)
+    where OpenXmlElementType: DXDD.Shape3D, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.Shape3D openXmlElement, DMDrawsDgms.Shape3D value)
+  public static void UpdateOpenXmlElement(DXDD.Shape3D openXmlElement, DMDD.Shape3D value)
   {
     SetZ(openXmlElement, value?.Z);
     SetExtrusionHeight(openXmlElement, value?.ExtrusionHeight);

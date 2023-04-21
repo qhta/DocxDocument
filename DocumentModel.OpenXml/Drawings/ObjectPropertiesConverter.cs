@@ -8,17 +8,17 @@ public static class ObjectPropertiesConverter
   /// <summary>
   /// objectId, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetId(DXO2013Draw.ObjectProperties openXmlElement)
+  private static String? GetId(DXO13D.ObjectProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2013Draw.ObjectProperties openXmlElement, String? value)
+  private static void SetId(DXO13D.ObjectProperties openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class ObjectPropertiesConverter
   /// <summary>
   /// isActiveX, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetIsActiveX(DXO2013Draw.ObjectProperties openXmlElement)
+  private static Boolean? GetIsActiveX(DXO13D.ObjectProperties openXmlElement)
   {
     return openXmlElement?.IsActiveX?.Value;
   }
   
-  private static bool CmpIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsActiveX(DXO13D.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.IsActiveX?.Value == value) return true;
     diffs?.Add(objName, "IsActiveX", openXmlElement?.IsActiveX?.Value, value);
     return false;
   }
   
-  private static void SetIsActiveX(DXO2013Draw.ObjectProperties openXmlElement, Boolean? value)
+  private static void SetIsActiveX(DXO13D.ObjectProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsActiveX = new BooleanValue { Value = (Boolean)value };
@@ -49,22 +49,22 @@ public static class ObjectPropertiesConverter
   /// <summary>
   /// linkType, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetLinkType(DXO2013Draw.ObjectProperties openXmlElement)
+  private static String? GetLinkType(DXO13D.ObjectProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.LinkType);
   }
   
-  private static bool CmpLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLinkType(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LinkType, value, diffs, objName, "LinkType");
   }
   
-  private static void SetLinkType(DXO2013Draw.ObjectProperties openXmlElement, String? value)
+  private static void SetLinkType(DXO13D.ObjectProperties openXmlElement, String? value)
   {
     openXmlElement.LinkType = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DXO2013Draw.ObjectProperties? openXmlElement)
+  public static DocumentModel.Drawings.ObjectProperties? CreateModelElement(DXO13D.ObjectProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -77,7 +77,7 @@ public static class ObjectPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013Draw.ObjectProperties? openXmlElement, DMDraws.ObjectProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13D.ObjectProperties? openXmlElement, DMD.ObjectProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -95,15 +95,15 @@ public static class ObjectPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ObjectProperties value)
-    where OpenXmlElementType: DXO2013Draw.ObjectProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ObjectProperties value)
+    where OpenXmlElementType: DXO13D.ObjectProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013Draw.ObjectProperties openXmlElement, DMDraws.ObjectProperties value)
+  public static void UpdateOpenXmlElement(DXO13D.ObjectProperties openXmlElement, DMD.ObjectProperties value)
   {
     SetId(openXmlElement, value?.Id);
     SetIsActiveX(openXmlElement, value?.IsActiveX);

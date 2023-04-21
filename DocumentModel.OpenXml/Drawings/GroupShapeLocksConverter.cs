@@ -8,19 +8,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Shape Grouping
   /// </summary>
-  private static Boolean? GetNoGrouping(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoGrouping(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
     return false;
   }
   
-  private static void SetNoGrouping(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoGrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoGrouping = new BooleanValue { Value = (Boolean)value };
@@ -31,19 +31,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Shape Ungrouping
   /// </summary>
-  private static Boolean? GetNoUngrouping(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoUngrouping(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoUngrouping?.Value;
   }
   
-  private static bool CmpNoUngrouping(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoUngrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoUngrouping?.Value == value) return true;
     diffs?.Add(objName, "NoUngrouping", openXmlElement?.NoUngrouping?.Value, value);
     return false;
   }
   
-  private static void SetNoUngrouping(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoUngrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoUngrouping = new BooleanValue { Value = (Boolean)value };
@@ -54,19 +54,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Shape Selection
   /// </summary>
-  private static Boolean? GetNoSelection(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoSelection(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
     return false;
   }
   
-  private static void SetNoSelection(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoSelection(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoSelection = new BooleanValue { Value = (Boolean)value };
@@ -77,19 +77,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Shape Rotation
   /// </summary>
-  private static Boolean? GetNoRotation(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoRotation(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoRotation?.Value;
   }
   
-  private static bool CmpNoRotation(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoRotation(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoRotation?.Value == value) return true;
     diffs?.Add(objName, "NoRotation", openXmlElement?.NoRotation?.Value, value);
     return false;
   }
   
-  private static void SetNoRotation(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoRotation(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoRotation = new BooleanValue { Value = (Boolean)value };
@@ -100,19 +100,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Aspect Ratio Change
   /// </summary>
-  private static Boolean? GetNoChangeAspect(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoChangeAspect(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
     return false;
   }
   
-  private static void SetNoChangeAspect(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoChangeAspect(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoChangeAspect = new BooleanValue { Value = (Boolean)value };
@@ -123,19 +123,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Moving Shape
   /// </summary>
-  private static Boolean? GetNoMove(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoMove(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
     return false;
   }
   
-  private static void SetNoMove(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoMove(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoMove = new BooleanValue { Value = (Boolean)value };
@@ -146,19 +146,19 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// Disallow Shape Resizing
   /// </summary>
-  private static Boolean? GetNoResize(DXDraw.GroupShapeLocks openXmlElement)
+  private static Boolean? GetNoResize(DXD.GroupShapeLocks openXmlElement)
   {
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXDraw.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
     return false;
   }
   
-  private static void SetNoResize(DXDraw.GroupShapeLocks openXmlElement, Boolean? value)
+  private static void SetNoResize(DXD.GroupShapeLocks openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.NoResize = new BooleanValue { Value = (Boolean)value };
@@ -169,33 +169,33 @@ public static class GroupShapeLocksConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.GroupShapeLocks openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.GroupShapeLocks openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.GroupShapeLocks openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.GroupShapeLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.GroupShapeLocks openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.GroupShapeLocks openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.GroupShapeLocks? CreateModelElement(DXDraw.GroupShapeLocks? openXmlElement)
+  public static DocumentModel.Drawings.GroupShapeLocks? CreateModelElement(DXD.GroupShapeLocks? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -213,7 +213,7 @@ public static class GroupShapeLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.GroupShapeLocks? openXmlElement, DMDraws.GroupShapeLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.GroupShapeLocks? openXmlElement, DMD.GroupShapeLocks? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -241,15 +241,15 @@ public static class GroupShapeLocksConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.GroupShapeLocks value)
-    where OpenXmlElementType: DXDraw.GroupShapeLocks, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.GroupShapeLocks value)
+    where OpenXmlElementType: DXD.GroupShapeLocks, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.GroupShapeLocks openXmlElement, DMDraws.GroupShapeLocks value)
+  public static void UpdateOpenXmlElement(DXD.GroupShapeLocks openXmlElement, DMD.GroupShapeLocks value)
   {
     SetNoGrouping(openXmlElement, value?.NoGrouping);
     SetNoUngrouping(openXmlElement, value?.NoUngrouping);

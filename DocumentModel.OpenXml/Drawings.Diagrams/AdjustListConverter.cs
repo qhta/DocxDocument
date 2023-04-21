@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class AdjustListConverter
 {
-  private static Collection<DMDrawsDgms.Adjust>? GetAdjusts(DXDrawDgms.AdjustList openXmlElement)
+  private static Collection<DMDD.Adjust>? GetAdjusts(DXDD.AdjustList openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.Adjust>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.Adjust>())
+    var collection = new Collection<DMDD.Adjust>();
+    foreach (var item in openXmlElement.Elements<DXDD.Adjust>())
     {
-      var newItem = DMXDrawsDgms.AdjustConverter.CreateModelElement(item);
+      var newItem = DMXDD.AdjustConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class AdjustListConverter
     return null;
   }
   
-  private static bool CmpAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjusts(DXDD.AdjustList openXmlElement, Collection<DMDD.Adjust>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.Adjust>();
+    var origElements = openXmlElement.Elements<DXDD.Adjust>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class AdjustListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.AdjustConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.AdjustConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class AdjustListConverter
     return false;
   }
   
-  private static void SetAdjusts(DXDrawDgms.AdjustList openXmlElement, Collection<DMDrawsDgms.Adjust>? value)
+  private static void SetAdjusts(DXDD.AdjustList openXmlElement, Collection<DMDD.Adjust>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.Adjust>();
+    openXmlElement.RemoveAllChildren<DXDD.Adjust>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.AdjustConverter.CreateOpenXmlElement<DXDrawDgms.Adjust>(item);
+        var newItem = DMXDD.AdjustConverter.CreateOpenXmlElement<DXDD.Adjust>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DXDrawDgms.AdjustList? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.AdjustList? CreateModelElement(DXDD.AdjustList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class AdjustListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.AdjustList? openXmlElement, DMDrawsDgms.AdjustList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.AdjustList? openXmlElement, DMDD.AdjustList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class AdjustListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.AdjustList value)
-    where OpenXmlElementType: DXDrawDgms.AdjustList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.AdjustList value)
+    where OpenXmlElementType: DXDD.AdjustList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.AdjustList openXmlElement, DMDrawsDgms.AdjustList value)
+  public static void UpdateOpenXmlElement(DXDD.AdjustList openXmlElement, DMDD.AdjustList value)
   {
     SetAdjusts(openXmlElement, value?.Adjusts);
   }

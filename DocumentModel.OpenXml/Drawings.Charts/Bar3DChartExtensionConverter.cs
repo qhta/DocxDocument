@@ -8,48 +8,48 @@ public static class Bar3DChartExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDrawCharts.Bar3DChartExtension openXmlElement)
+  private static String? GetUri(DXDC.Bar3DChartExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDrawCharts.Bar3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.Bar3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDrawCharts.Bar3DChartExtension openXmlElement, String? value)
+  private static void SetUri(DXDC.Bar3DChartExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDrawsCharts.FilteredBarSeries? GetFilteredBarSeries(DXDrawCharts.Bar3DChartExtension openXmlElement)
+  private static DMDC.FilteredBarSeries? GetFilteredBarSeries(DXDC.Bar3DChartExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>();
+    var element = openXmlElement?.GetFirstChild<DXO13DC.FilteredBarSeries>();
     if (element != null)
-      return DMXDrawsCharts.FilteredBarSeriesConverter.CreateModelElement(element);
+      return DMXDC.FilteredBarSeriesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpFilteredBarSeries(DXDrawCharts.Bar3DChartExtension openXmlElement, DMDrawsCharts.FilteredBarSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredBarSeries(DXDC.Bar3DChartExtension openXmlElement, DMDC.FilteredBarSeries? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.FilteredBarSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>(), value, diffs, objName);
+    return DMXDC.FilteredBarSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredBarSeries>(), value, diffs, objName);
   }
   
-  private static void SetFilteredBarSeries(DXDrawCharts.Bar3DChartExtension openXmlElement, DMDrawsCharts.FilteredBarSeries? value)
+  private static void SetFilteredBarSeries(DXDC.Bar3DChartExtension openXmlElement, DMDC.FilteredBarSeries? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChart.FilteredBarSeries>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DC.FilteredBarSeries>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.FilteredBarSeriesConverter.CreateOpenXmlElement<DXO2013DrawChart.FilteredBarSeries>(value);
+      itemElement = DMXDC.FilteredBarSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredBarSeries>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.Bar3DChartExtension? CreateModelElement(DXDrawCharts.Bar3DChartExtension? openXmlElement)
+  public static DocumentModel.Drawings.Charts.Bar3DChartExtension? CreateModelElement(DXDC.Bar3DChartExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class Bar3DChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.Bar3DChartExtension? openXmlElement, DMDrawsCharts.Bar3DChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Bar3DChartExtension? openXmlElement, DMDC.Bar3DChartExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class Bar3DChartExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.Bar3DChartExtension value)
-    where OpenXmlElementType: DXDrawCharts.Bar3DChartExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.Bar3DChartExtension value)
+    where OpenXmlElementType: DXDC.Bar3DChartExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.Bar3DChartExtension openXmlElement, DMDrawsCharts.Bar3DChartExtension value)
+  public static void UpdateOpenXmlElement(DXDC.Bar3DChartExtension openXmlElement, DMDC.Bar3DChartExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetFilteredBarSeries(openXmlElement, value?.FilteredBarSeries);

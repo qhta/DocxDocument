@@ -8,17 +8,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// size, this property is only available in Office 2010 and later.
   /// </summary>
-  private static DM.SizeKind? GetSize(DXO2010CustUI.ToggleButton openXmlElement)
+  private static DM.SizeKind? GetSize(DXO10CUI.ToggleButton openXmlElement)
   {
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value);
   }
   
-  private static bool CmpSize(DXO2010CustUI.ToggleButton openXmlElement, DM.SizeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXO10CUI.ToggleButton openXmlElement, DM.SizeKind? value, DiffList? diffs, string? objName)
   {
     return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(openXmlElement?.Size?.Value, value, diffs, objName);
   }
   
-  private static void SetSize(DXO2010CustUI.ToggleButton openXmlElement, DM.SizeKind? value)
+  private static void SetSize(DXO10CUI.ToggleButton openXmlElement, DM.SizeKind? value)
   {
     openXmlElement.Size = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues, DM.SizeKind>(value);
   }
@@ -26,17 +26,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getSize, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSize(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetSize(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSize);
   }
   
-  private static bool CmpGetSize(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSize(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSize, value, diffs, objName, "GetSize");
   }
   
-  private static void SetGetSize(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetSize(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetSize = StringValueConverter.CreateStringValue(value);
   }
@@ -44,17 +44,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getPressed, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetPressed(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetPressed(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetPressed);
   }
   
-  private static bool CmpGetPressed(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetPressed(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetPressed, value, diffs, objName, "GetPressed");
   }
   
-  private static void SetGetPressed(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetPressed(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetPressed = StringValueConverter.CreateStringValue(value);
   }
@@ -62,17 +62,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetOnAction(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetOnAction(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -80,19 +80,19 @@ public static class ToggleButtonConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DXO2010CustUI.ToggleButton openXmlElement)
+  private static Boolean? GetEnabled(DXO10CUI.ToggleButton openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO10CUI.ToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -103,17 +103,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetEnabled(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetEnabled(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -121,17 +121,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// description, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetDescription(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetDescription(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Description);
   }
   
-  private static bool CmpDescription(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Description, value, diffs, objName, "Description");
   }
   
-  private static void SetDescription(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetDescription(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Description = StringValueConverter.CreateStringValue(value);
   }
@@ -139,17 +139,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getDescription, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetDescription(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetDescription(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetDescription);
   }
   
-  private static bool CmpGetDescription(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetDescription(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetDescription, value, diffs, objName, "GetDescription");
   }
   
-  private static void SetGetDescription(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetDescription(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetDescription = StringValueConverter.CreateStringValue(value);
   }
@@ -157,17 +157,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// image, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImage(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetImage(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
   
-  private static void SetImage(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetImage(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Image = StringValueConverter.CreateStringValue(value);
   }
@@ -175,17 +175,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// imageMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetImageMso(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetImageMso(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
   
-  private static void SetImageMso(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetImageMso(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.ImageMso = StringValueConverter.CreateStringValue(value);
   }
@@ -193,17 +193,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetImage(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetImage(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
   
-  private static void SetGetImage(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetImage(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetImage = StringValueConverter.CreateStringValue(value);
   }
@@ -211,17 +211,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// id, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetId(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetId(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
   
-  private static void SetId(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetId(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
@@ -229,17 +229,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// idQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetQualifiedId(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetQualifiedId(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
   
-  private static void SetQualifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetQualifiedId(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.QualifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -247,17 +247,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// tag, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetTag(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetTag(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
   
-  private static void SetTag(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetTag(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Tag = StringValueConverter.CreateStringValue(value);
   }
@@ -265,17 +265,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetIdMso(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetIdMso(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
@@ -283,17 +283,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// screentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetScreentip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetScreentip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
   
-  private static void SetScreentip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetScreentip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Screentip = StringValueConverter.CreateStringValue(value);
   }
@@ -301,17 +301,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getScreentip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetScreentip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetScreentip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
   
-  private static void SetGetScreentip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetScreentip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetScreentip = StringValueConverter.CreateStringValue(value);
   }
@@ -319,17 +319,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// supertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetSupertip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetSupertip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
   
-  private static void SetSupertip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetSupertip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Supertip = StringValueConverter.CreateStringValue(value);
   }
@@ -337,17 +337,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getSupertip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetSupertip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetSupertip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
   
-  private static void SetGetSupertip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetSupertip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetSupertip = StringValueConverter.CreateStringValue(value);
   }
@@ -355,17 +355,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// label, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetLabel(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetLabel(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
   
-  private static void SetLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetLabel(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Label = StringValueConverter.CreateStringValue(value);
   }
@@ -373,17 +373,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetLabel(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetLabel(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
   
-  private static void SetGetLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetLabel(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -391,17 +391,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// insertAfterMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterMso(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetInsertAfterMso(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
   
-  private static void SetInsertAfterMso(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetInsertAfterMso(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertAfterMso = StringValueConverter.CreateStringValue(value);
   }
@@ -409,17 +409,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// insertBeforeMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeMso(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetInsertBeforeMso(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
   
-  private static void SetInsertBeforeMso(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetInsertBeforeMso(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeMso = StringValueConverter.CreateStringValue(value);
   }
@@ -427,17 +427,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// insertAfterQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertAfterQulifiedId(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetInsertAfterQulifiedId(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
   
-  private static void SetInsertAfterQulifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetInsertAfterQulifiedId(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertAfterQulifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -445,17 +445,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// insertBeforeQ, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetInsertBeforeQulifiedId(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetInsertBeforeQulifiedId(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
   
-  private static void SetInsertBeforeQulifiedId(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetInsertBeforeQulifiedId(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.InsertBeforeQulifiedId = StringValueConverter.CreateStringValue(value);
   }
@@ -463,19 +463,19 @@ public static class ToggleButtonConverter
   /// <summary>
   /// visible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetVisible(DXO2010CustUI.ToggleButton openXmlElement)
+  private static Boolean? GetVisible(DXO10CUI.ToggleButton openXmlElement)
   {
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
     return false;
   }
   
-  private static void SetVisible(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value)
+  private static void SetVisible(DXO10CUI.ToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Visible = new BooleanValue { Value = (Boolean)value };
@@ -486,17 +486,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getVisible, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetVisible(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetVisible(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
   
-  private static void SetGetVisible(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetVisible(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetVisible = StringValueConverter.CreateStringValue(value);
   }
@@ -504,17 +504,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// keytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetKeytip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetKeytip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
   
-  private static void SetKeytip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetKeytip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.Keytip = StringValueConverter.CreateStringValue(value);
   }
@@ -522,17 +522,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getKeytip, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetKeytip(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetKeytip(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
   
-  private static void SetGetKeytip(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetKeytip(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetKeytip = StringValueConverter.CreateStringValue(value);
   }
@@ -540,19 +540,19 @@ public static class ToggleButtonConverter
   /// <summary>
   /// showLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetShowLabel(DXO2010CustUI.ToggleButton openXmlElement)
+  private static Boolean? GetShowLabel(DXO10CUI.ToggleButton openXmlElement)
   {
     return openXmlElement?.ShowLabel?.Value;
   }
   
-  private static bool CmpShowLabel(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowLabel(DXO10CUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowLabel?.Value == value) return true;
     diffs?.Add(objName, "ShowLabel", openXmlElement?.ShowLabel?.Value, value);
     return false;
   }
   
-  private static void SetShowLabel(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value)
+  private static void SetShowLabel(DXO10CUI.ToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowLabel = new BooleanValue { Value = (Boolean)value };
@@ -563,17 +563,17 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getShowLabel, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetShowLabel(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetShowLabel(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowLabel);
   }
   
-  private static bool CmpGetShowLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowLabel(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowLabel, value, diffs, objName, "GetShowLabel");
   }
   
-  private static void SetGetShowLabel(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetShowLabel(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetShowLabel = StringValueConverter.CreateStringValue(value);
   }
@@ -581,19 +581,19 @@ public static class ToggleButtonConverter
   /// <summary>
   /// showImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetShowImage(DXO2010CustUI.ToggleButton openXmlElement)
+  private static Boolean? GetShowImage(DXO10CUI.ToggleButton openXmlElement)
   {
     return openXmlElement?.ShowImage?.Value;
   }
   
-  private static bool CmpShowImage(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowImage(DXO10CUI.ToggleButton openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.ShowImage?.Value == value) return true;
     diffs?.Add(objName, "ShowImage", openXmlElement?.ShowImage?.Value, value);
     return false;
   }
   
-  private static void SetShowImage(DXO2010CustUI.ToggleButton openXmlElement, Boolean? value)
+  private static void SetShowImage(DXO10CUI.ToggleButton openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.ShowImage = new BooleanValue { Value = (Boolean)value };
@@ -604,22 +604,22 @@ public static class ToggleButtonConverter
   /// <summary>
   /// getShowImage, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetShowImage(DXO2010CustUI.ToggleButton openXmlElement)
+  private static String? GetGetShowImage(DXO10CUI.ToggleButton openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetShowImage);
   }
   
-  private static bool CmpGetShowImage(DXO2010CustUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetShowImage(DXO10CUI.ToggleButton openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetShowImage, value, diffs, objName, "GetShowImage");
   }
   
-  private static void SetGetShowImage(DXO2010CustUI.ToggleButton openXmlElement, String? value)
+  private static void SetGetShowImage(DXO10CUI.ToggleButton openXmlElement, String? value)
   {
     openXmlElement.GetShowImage = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.ToggleButton? CreateModelElement(DXO2010CustUI.ToggleButton? openXmlElement)
+  public static DocumentModel.ToggleButton? CreateModelElement(DXO10CUI.ToggleButton? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -662,7 +662,7 @@ public static class ToggleButtonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.ToggleButton? openXmlElement, DM.ToggleButton? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ToggleButton? openXmlElement, DM.ToggleButton? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -741,14 +741,14 @@ public static class ToggleButtonConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ToggleButton value)
-    where OpenXmlElementType: DXO2010CustUI.ToggleButton, new()
+    where OpenXmlElementType: DXO10CUI.ToggleButton, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.ToggleButton openXmlElement, DM.ToggleButton value)
+  public static void UpdateOpenXmlElement(DXO10CUI.ToggleButton openXmlElement, DM.ToggleButton value)
   {
     SetSize(openXmlElement, value?.Size);
     SetGetSize(openXmlElement, value?.GetSize);

@@ -8,180 +8,180 @@ public static class ShapePropertiesExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static String? GetUri(DXD.ShapePropertiesExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.ShapePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.ShapePropertiesExtension openXmlElement, String? value)
+  private static void SetUri(DXD.ShapePropertiesExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDraws.HiddenFillProperties? GetHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static DMD.HiddenFillProperties? GetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenFillProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.HiddenFillProperties>();
     if (element != null)
-      return DMXDraws.HiddenFillPropertiesConverter.CreateModelElement(element);
+      return DMXD.HiddenFillPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenFillProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenFillProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HiddenFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.HiddenFillProperties>(), value, diffs, objName);
+    return DMXD.HiddenFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenFillProperties>(), value, diffs, objName);
   }
   
-  private static void SetHiddenFillProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenFillProperties? value)
+  private static void SetHiddenFillProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenFillProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.HiddenFillProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenFillProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HiddenFillPropertiesConverter.CreateOpenXmlElement<DXO2010Draw.HiddenFillProperties>(value);
+      itemElement = DMXD.HiddenFillPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenFillProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HiddenLineProperties? GetHiddenLineProperties(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static DMD.HiddenLineProperties? GetHiddenLineProperties(DXD.ShapePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenLineProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.HiddenLineProperties>();
     if (element != null)
-      return DMXDraws.HiddenLinePropertiesConverter.CreateModelElement(element);
+      return DMXD.HiddenLinePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenLineProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenLineProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpHiddenLineProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenLineProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HiddenLinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.HiddenLineProperties>(), value, diffs, objName);
+    return DMXD.HiddenLinePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenLineProperties>(), value, diffs, objName);
   }
   
-  private static void SetHiddenLineProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenLineProperties? value)
+  private static void SetHiddenLineProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenLineProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.HiddenLineProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenLineProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HiddenLinePropertiesConverter.CreateOpenXmlElement<DXO2010Draw.HiddenLineProperties>(value);
+      itemElement = DMXD.HiddenLinePropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenLineProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HiddenEffectsProperties? GetHiddenEffectsProperties(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static DMD.HiddenEffectsProperties? GetHiddenEffectsProperties(DXD.ShapePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenEffectsProperties>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.HiddenEffectsProperties>();
     if (element != null)
-      return DMXDraws.HiddenEffectsPropertiesConverter.CreateModelElement(element);
+      return DMXD.HiddenEffectsPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenEffectsProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpHiddenEffectsProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HiddenEffectsPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.HiddenEffectsProperties>(), value, diffs, objName);
+    return DMXD.HiddenEffectsPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenEffectsProperties>(), value, diffs, objName);
   }
   
-  private static void SetHiddenEffectsProperties(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenEffectsProperties? value)
+  private static void SetHiddenEffectsProperties(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenEffectsProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.HiddenEffectsProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenEffectsProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DXO2010Draw.HiddenEffectsProperties>(value);
+      itemElement = DMXD.HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenEffectsProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HiddenScene3D? GetHiddenScene3D(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static DMD.HiddenScene3D? GetHiddenScene3D(DXD.ShapePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenScene3D>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.HiddenScene3D>();
     if (element != null)
-      return DMXDraws.HiddenScene3DConverter.CreateModelElement(element);
+      return DMXD.HiddenScene3DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenScene3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenScene3D? value, DiffList? diffs, string? objName)
+  private static bool CmpHiddenScene3D(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenScene3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HiddenScene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.HiddenScene3D>(), value, diffs, objName);
+    return DMXD.HiddenScene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenScene3D>(), value, diffs, objName);
   }
   
-  private static void SetHiddenScene3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenScene3D? value)
+  private static void SetHiddenScene3D(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenScene3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.HiddenScene3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenScene3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HiddenScene3DConverter.CreateOpenXmlElement<DXO2010Draw.HiddenScene3D>(value);
+      itemElement = DMXD.HiddenScene3DConverter.CreateOpenXmlElement<DXO10D.HiddenScene3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HiddenShape3D? GetHiddenShape3D(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static DMD.HiddenShape3D? GetHiddenShape3D(DXD.ShapePropertiesExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010Draw.HiddenShape3D>();
+    var element = openXmlElement?.GetFirstChild<DXO10D.HiddenShape3D>();
     if (element != null)
-      return DMXDraws.HiddenShape3DConverter.CreateModelElement(element);
+      return DMXD.HiddenShape3DConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHiddenShape3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenShape3D? value, DiffList? diffs, string? objName)
+  private static bool CmpHiddenShape3D(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenShape3D? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HiddenShape3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010Draw.HiddenShape3D>(), value, diffs, objName);
+    return DMXD.HiddenShape3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.HiddenShape3D>(), value, diffs, objName);
   }
   
-  private static void SetHiddenShape3D(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.HiddenShape3D? value)
+  private static void SetHiddenShape3D(DXD.ShapePropertiesExtension openXmlElement, DMD.HiddenShape3D? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.HiddenShape3D>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10D.HiddenShape3D>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HiddenShape3DConverter.CreateOpenXmlElement<DXO2010Draw.HiddenShape3D>(value);
+      itemElement = DMXD.HiddenShape3DConverter.CreateOpenXmlElement<DXO10D.HiddenShape3D>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Boolean? GetShadowObscured(DXDraw.ShapePropertiesExtension openXmlElement)
+  private static Boolean? GetShadowObscured(DXD.ShapePropertiesExtension openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXO2010Draw.ShadowObscured>() != null;
+    return openXmlElement.GetFirstChild<DXO10D.ShadowObscured>() != null;
   }
   
-  private static bool CmpShadowObscured(DXDraw.ShapePropertiesExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShadowObscured(DXD.ShapePropertiesExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXO2010Draw.ShadowObscured>() != null;
+    var val = openXmlElement.GetFirstChild<DXO10D.ShadowObscured>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXO2010Draw.ShadowObscured", val, value);
+    diffs?.Add(objName, "DXO10D.ShadowObscured", val, value);
     return false;
   }
   
-  private static void SetShadowObscured(DXDraw.ShapePropertiesExtension openXmlElement, Boolean? value)
+  private static void SetShadowObscured(DXD.ShapePropertiesExtension openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXO2010Draw.ShadowObscured>();
+      var itemElement = openXmlElement.GetFirstChild<DXO10D.ShadowObscured>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXO2010Draw.ShadowObscured();
+      var itemElement = new DXO10D.ShadowObscured();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(DXDraw.ShapePropertiesExtension? openXmlElement)
+  public static DocumentModel.Drawings.ShapePropertiesExtension? CreateModelElement(DXD.ShapePropertiesExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -198,7 +198,7 @@ public static class ShapePropertiesExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ShapePropertiesExtension? openXmlElement, DMDraws.ShapePropertiesExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ShapePropertiesExtension? openXmlElement, DMD.ShapePropertiesExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -224,15 +224,15 @@ public static class ShapePropertiesExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ShapePropertiesExtension value)
-    where OpenXmlElementType: DXDraw.ShapePropertiesExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ShapePropertiesExtension value)
+    where OpenXmlElementType: DXD.ShapePropertiesExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ShapePropertiesExtension openXmlElement, DMDraws.ShapePropertiesExtension value)
+  public static void UpdateOpenXmlElement(DXD.ShapePropertiesExtension openXmlElement, DMD.ShapePropertiesExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetHiddenFillProperties(openXmlElement, value?.HiddenFillProperties);

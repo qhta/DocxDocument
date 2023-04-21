@@ -52,21 +52,21 @@ public static class ThemeOverridePartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDraws.ThemeOverride? GetThemeOverride(DXPack.ThemeOverridePart openXmlElement)
+  private static DMD.ThemeOverride? GetThemeOverride(DXPack.ThemeOverridePart openXmlElement)
   {
-      return DMXDraws.ThemeOverrideConverter.CreateModelElement(openXmlElement?.RootElement as DXDraw.ThemeOverride);
+      return DMXD.ThemeOverrideConverter.CreateModelElement(openXmlElement?.RootElement as DXD.ThemeOverride);
   }
   
-  private static bool CmpThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMDraws.ThemeOverride? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMD.ThemeOverride? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMDraws.ThemeOverride? value)
+  private static void SetThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMD.ThemeOverride? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDraws.ThemeOverrideConverter.CreateOpenXmlElement<DXDraw.ThemeOverride>(value);
+       var rootElement = DMXD.ThemeOverrideConverter.CreateOpenXmlElement<DXD.ThemeOverride>(value);
        if (rootElement != null)
          openXmlElement.ThemeOverride = rootElement;
     }

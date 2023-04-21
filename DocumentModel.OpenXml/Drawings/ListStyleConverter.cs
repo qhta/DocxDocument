@@ -8,27 +8,27 @@ public static class ListStyleConverter
   /// <summary>
   /// Default Paragraph Style.
   /// </summary>
-  private static DMDraws.DefaultParagraphProperties? GetDefaultParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.DefaultParagraphProperties? GetDefaultParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.DefaultParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.DefaultParagraphProperties>();
     if (element != null)
-      return DMXDraws.DefaultParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.DefaultParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpDefaultParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultParagraphProperties(DXD.ListStyle openXmlElement, DMD.DefaultParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.DefaultParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.DefaultParagraphProperties>(), value, diffs, objName);
+    return DMXD.DefaultParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetDefaultParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.DefaultParagraphProperties? value)
+  private static void SetDefaultParagraphProperties(DXD.ListStyle openXmlElement, DMD.DefaultParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.DefaultParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.DefaultParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.DefaultParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.DefaultParagraphProperties>(value);
+      itemElement = DMXD.DefaultParagraphPropertiesConverter.CreateOpenXmlElement<DXD.DefaultParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -37,27 +37,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 1 Text Style.
   /// </summary>
-  private static DMDraws.Level1ParagraphProperties? GetLevel1ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level1ParagraphProperties? GetLevel1ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level1ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level1ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level1ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level1ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel1ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level1ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel1ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level1ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level1ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level1ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level1ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level1ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel1ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level1ParagraphProperties? value)
+  private static void SetLevel1ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level1ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level1ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level1ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level1ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level1ParagraphProperties>(value);
+      itemElement = DMXD.Level1ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level1ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -66,27 +66,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 2 Text Style.
   /// </summary>
-  private static DMDraws.Level2ParagraphProperties? GetLevel2ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level2ParagraphProperties? GetLevel2ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level2ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level2ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level2ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level2ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel2ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level2ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel2ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level2ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level2ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level2ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level2ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level2ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel2ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level2ParagraphProperties? value)
+  private static void SetLevel2ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level2ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level2ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level2ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level2ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level2ParagraphProperties>(value);
+      itemElement = DMXD.Level2ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level2ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -95,27 +95,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 3 Text Style.
   /// </summary>
-  private static DMDraws.Level3ParagraphProperties? GetLevel3ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level3ParagraphProperties? GetLevel3ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level3ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level3ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level3ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level3ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel3ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel3ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level3ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level3ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level3ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level3ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level3ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel3ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level3ParagraphProperties? value)
+  private static void SetLevel3ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level3ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level3ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level3ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level3ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level3ParagraphProperties>(value);
+      itemElement = DMXD.Level3ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level3ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -124,27 +124,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 4 Text Style.
   /// </summary>
-  private static DMDraws.Level4ParagraphProperties? GetLevel4ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level4ParagraphProperties? GetLevel4ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level4ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level4ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level4ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level4ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel4ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level4ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel4ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level4ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level4ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level4ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level4ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level4ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel4ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level4ParagraphProperties? value)
+  private static void SetLevel4ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level4ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level4ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level4ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level4ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level4ParagraphProperties>(value);
+      itemElement = DMXD.Level4ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level4ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -153,27 +153,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 5 Text Style.
   /// </summary>
-  private static DMDraws.Level5ParagraphProperties? GetLevel5ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level5ParagraphProperties? GetLevel5ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level5ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level5ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level5ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level5ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel5ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level5ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel5ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level5ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level5ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level5ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level5ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level5ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel5ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level5ParagraphProperties? value)
+  private static void SetLevel5ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level5ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level5ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level5ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level5ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level5ParagraphProperties>(value);
+      itemElement = DMXD.Level5ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level5ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -182,27 +182,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 6 Text Style.
   /// </summary>
-  private static DMDraws.Level6ParagraphProperties? GetLevel6ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level6ParagraphProperties? GetLevel6ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level6ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level6ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level6ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level6ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel6ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level6ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel6ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level6ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level6ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level6ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level6ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level6ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel6ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level6ParagraphProperties? value)
+  private static void SetLevel6ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level6ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level6ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level6ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level6ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level6ParagraphProperties>(value);
+      itemElement = DMXD.Level6ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level6ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -211,27 +211,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 7 Text Style.
   /// </summary>
-  private static DMDraws.Level7ParagraphProperties? GetLevel7ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level7ParagraphProperties? GetLevel7ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level7ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level7ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level7ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level7ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel7ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level7ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel7ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level7ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level7ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level7ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level7ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level7ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel7ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level7ParagraphProperties? value)
+  private static void SetLevel7ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level7ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level7ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level7ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level7ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level7ParagraphProperties>(value);
+      itemElement = DMXD.Level7ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level7ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -240,27 +240,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 8 Text Style.
   /// </summary>
-  private static DMDraws.Level8ParagraphProperties? GetLevel8ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level8ParagraphProperties? GetLevel8ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level8ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level8ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level8ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level8ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel8ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level8ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel8ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level8ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level8ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level8ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level8ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level8ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel8ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level8ParagraphProperties? value)
+  private static void SetLevel8ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level8ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level8ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level8ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level8ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level8ParagraphProperties>(value);
+      itemElement = DMXD.Level8ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level8ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -269,27 +269,27 @@ public static class ListStyleConverter
   /// <summary>
   /// List Level 9 Text Style.
   /// </summary>
-  private static DMDraws.Level9ParagraphProperties? GetLevel9ParagraphProperties(DXDraw.ListStyle openXmlElement)
+  private static DMD.Level9ParagraphProperties? GetLevel9ParagraphProperties(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Level9ParagraphProperties>();
+    var element = openXmlElement?.GetFirstChild<DXD.Level9ParagraphProperties>();
     if (element != null)
-      return DMXDraws.Level9ParagraphPropertiesConverter.CreateModelElement(element);
+      return DMXD.Level9ParagraphPropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpLevel9ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level9ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLevel9ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level9ParagraphProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.Level9ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Level9ParagraphProperties>(), value, diffs, objName);
+    return DMXD.Level9ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Level9ParagraphProperties>(), value, diffs, objName);
   }
   
-  private static void SetLevel9ParagraphProperties(DXDraw.ListStyle openXmlElement, DMDraws.Level9ParagraphProperties? value)
+  private static void SetLevel9ParagraphProperties(DXD.ListStyle openXmlElement, DMD.Level9ParagraphProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Level9ParagraphProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Level9ParagraphProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.Level9ParagraphPropertiesConverter.CreateOpenXmlElement<DXDraw.Level9ParagraphProperties>(value);
+      itemElement = DMXD.Level9ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.Level9ParagraphProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -298,33 +298,33 @@ public static class ListStyleConverter
   /// <summary>
   /// ExtensionList.
   /// </summary>
-  private static DMDraws.ExtensionList? GetExtensionList(DXDraw.ListStyle openXmlElement)
+  private static DMD.ExtensionList? GetExtensionList(DXD.ListStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.ExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXD.ExtensionList>();
     if (element != null)
-      return DMXDraws.ExtensionListConverter.CreateModelElement(element);
+      return DMXD.ExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpExtensionList(DXDraw.ListStyle openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ListStyle openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetExtensionList(DXDraw.ListStyle openXmlElement, DMDraws.ExtensionList? value)
+  private static void SetExtensionList(DXD.ListStyle openXmlElement, DMD.ExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.ExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.ExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.ExtensionListConverter.CreateOpenXmlElement<DXDraw.ExtensionList>(value);
+      itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ListStyle? CreateModelElement(DXDraw.ListStyle? openXmlElement)
+  public static DocumentModel.Drawings.ListStyle? CreateModelElement(DXD.ListStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -345,7 +345,7 @@ public static class ListStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ListStyle? openXmlElement, DMDraws.ListStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ListStyle? openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -379,15 +379,15 @@ public static class ListStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ListStyle value)
-    where OpenXmlElementType: DXDraw.ListStyle, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ListStyle value)
+    where OpenXmlElementType: DXD.ListStyle, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ListStyle openXmlElement, DMDraws.ListStyle value)
+  public static void UpdateOpenXmlElement(DXD.ListStyle openXmlElement, DMD.ListStyle value)
   {
     SetDefaultParagraphProperties(openXmlElement, value?.DefaultParagraphProperties);
     SetLevel1ParagraphProperties(openXmlElement, value?.Level1ParagraphProperties);

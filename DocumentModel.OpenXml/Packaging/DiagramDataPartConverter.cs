@@ -20,21 +20,21 @@ public static class DiagramDataPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsDgms.DataModelRoot? GetDataModelRoot(DXPack.DiagramDataPart openXmlElement)
+  private static DMDD.DataModelRoot? GetDataModelRoot(DXPack.DiagramDataPart openXmlElement)
   {
-      return DMXDrawsDgms.DataModelRootConverter.CreateModelElement(openXmlElement?.RootElement as DXDrawDgms.DataModelRoot);
+      return DMXDD.DataModelRootConverter.CreateModelElement(openXmlElement?.RootElement as DXDD.DataModelRoot);
   }
   
-  private static bool CmpDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDrawsDgms.DataModelRoot? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDD.DataModelRoot? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDrawsDgms.DataModelRoot? value)
+  private static void SetDataModelRoot(DXPack.DiagramDataPart openXmlElement, DMDD.DataModelRoot? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsDgms.DataModelRootConverter.CreateOpenXmlElement<DXDrawDgms.DataModelRoot>(value);
+       var rootElement = DMXDD.DataModelRootConverter.CreateOpenXmlElement<DXDD.DataModelRoot>(value);
        if (rootElement != null)
          openXmlElement.DataModelRoot = rootElement;
     }

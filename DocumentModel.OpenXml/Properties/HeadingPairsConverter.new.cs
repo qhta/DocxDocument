@@ -16,12 +16,12 @@ public static class HeadingPairsConverter
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(value);
   }
 
-  public static DMProps.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+  public static DMPr.HeadingPairs? GetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement?.VTVector == null) return null;
     var vector = VTVectorConverter.CreateModelElement(openXmlElement?.VTVector);
     if (vector == null) return null;
-    var result = new DMProps.HeadingPairs();
+    var result = new DMPr.HeadingPairs();
     for (var i = 0; i < vector.Count; i++)
     {
       var str = (string?)Convert.ChangeType(vector[i], typeof(string));
@@ -35,7 +35,7 @@ public static class HeadingPairsConverter
     return result;
   }
 
-  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DMProps.HeadingPairs? value)
+  public static void SetHeadingPairs(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement, DMPr.HeadingPairs? value)
   {
     if (openXmlElement != null && value != null)
     {
@@ -49,7 +49,7 @@ public static class HeadingPairsConverter
     }
   }
 
-  public static DMProps.HeadingPairs? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
+  public static DMPr.HeadingPairs? CreateModelElement(DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -59,7 +59,7 @@ public static class HeadingPairsConverter
     return null;
   }
 
-  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DMProps.HeadingPairs? value)
+  public static DocumentFormat.OpenXml.ExtendedProperties.HeadingPairs? CreateOpenXmlElement(DMPr.HeadingPairs? value)
   {
     if (value != null)
     {

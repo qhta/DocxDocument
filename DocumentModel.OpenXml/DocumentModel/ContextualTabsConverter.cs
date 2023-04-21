@@ -5,10 +5,10 @@ namespace DocumentModel.OpenXml;
 /// </summary>
 public static class ContextualTabsConverter
 {
-  private static Collection<DM.TabSet>? GetTabSets(DXO2010CustUI.ContextualTabs openXmlElement)
+  private static Collection<DM.TabSet>? GetTabSets(DXO10CUI.ContextualTabs openXmlElement)
   {
     var collection = new Collection<DM.TabSet>();
-    foreach (var item in openXmlElement.Elements<DXO2010CustUI.TabSet>())
+    foreach (var item in openXmlElement.Elements<DXO10CUI.TabSet>())
     {
       var newItem = DMX.TabSetConverter.CreateModelElement(item);
       if (newItem != null)
@@ -19,9 +19,9 @@ public static class ContextualTabsConverter
     return null;
   }
   
-  private static bool CmpTabSets(DXO2010CustUI.ContextualTabs openXmlElement, Collection<DM.TabSet>? value, DiffList? diffs, string? objName)
+  private static bool CmpTabSets(DXO10CUI.ContextualTabs openXmlElement, Collection<DM.TabSet>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2010CustUI.TabSet>();
+    var origElements = openXmlElement.Elements<DXO10CUI.TabSet>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -47,21 +47,21 @@ public static class ContextualTabsConverter
     return false;
   }
   
-  private static void SetTabSets(DXO2010CustUI.ContextualTabs openXmlElement, Collection<DM.TabSet>? value)
+  private static void SetTabSets(DXO10CUI.ContextualTabs openXmlElement, Collection<DM.TabSet>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2010CustUI.TabSet>();
+    openXmlElement.RemoveAllChildren<DXO10CUI.TabSet>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMX.TabSetConverter.CreateOpenXmlElement<DXO2010CustUI.TabSet>(item);
+        var newItem = DMX.TabSetConverter.CreateOpenXmlElement<DXO10CUI.TabSet>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.ContextualTabs? CreateModelElement(DXO2010CustUI.ContextualTabs? openXmlElement)
+  public static DocumentModel.ContextualTabs? CreateModelElement(DXO10CUI.ContextualTabs? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ContextualTabsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.ContextualTabs? openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ContextualTabs? openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -87,14 +87,14 @@ public static class ContextualTabsConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.ContextualTabs value)
-    where OpenXmlElementType: DXO2010CustUI.ContextualTabs, new()
+    where OpenXmlElementType: DXO10CUI.ContextualTabs, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.ContextualTabs openXmlElement, DM.ContextualTabs value)
+  public static void UpdateOpenXmlElement(DXO10CUI.ContextualTabs openXmlElement, DM.ContextualTabs value)
   {
     SetTabSets(openXmlElement, value?.TabSets);
   }

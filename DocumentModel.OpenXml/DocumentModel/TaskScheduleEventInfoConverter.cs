@@ -8,19 +8,19 @@ public static class TaskScheduleEventInfoConverter
   /// <summary>
   /// startDate, this property is only available in Office 2021 and later.
   /// </summary>
-  private static DateTime? GetStartDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement)
+  private static DateTime? GetStartDate(DXO21DT.TaskScheduleEventInfo openXmlElement)
   {
     return openXmlElement?.StartDate?.Value;
   }
   
-  private static bool CmpStartDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpStartDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.StartDate?.Value == value) return true;
     diffs?.Add(objName, "StartDate", openXmlElement?.StartDate?.Value, value);
     return false;
   }
   
-  private static void SetStartDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DateTime? value)
+  private static void SetStartDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value)
   {
     openXmlElement.StartDate = value;
   }
@@ -28,24 +28,24 @@ public static class TaskScheduleEventInfoConverter
   /// <summary>
   /// dueDate, this property is only available in Office 2021 and later.
   /// </summary>
-  private static DateTime? GetDueDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement)
+  private static DateTime? GetDueDate(DXO21DT.TaskScheduleEventInfo openXmlElement)
   {
     return openXmlElement?.DueDate?.Value;
   }
   
-  private static bool CmpDueDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpDueDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.DueDate?.Value == value) return true;
     diffs?.Add(objName, "DueDate", openXmlElement?.DueDate?.Value, value);
     return false;
   }
   
-  private static void SetDueDate(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DateTime? value)
+  private static void SetDueDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value)
   {
     openXmlElement.DueDate = value;
   }
   
-  public static DocumentModel.TaskScheduleEventInfo? CreateModelElement(DXO2021DocTasks.TaskScheduleEventInfo? openXmlElement)
+  public static DocumentModel.TaskScheduleEventInfo? CreateModelElement(DXO21DT.TaskScheduleEventInfo? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -57,7 +57,7 @@ public static class TaskScheduleEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2021DocTasks.TaskScheduleEventInfo? openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskScheduleEventInfo? openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -74,14 +74,14 @@ public static class TaskScheduleEventInfoConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.TaskScheduleEventInfo value)
-    where OpenXmlElementType: DXO2021DocTasks.TaskScheduleEventInfo, new()
+    where OpenXmlElementType: DXO21DT.TaskScheduleEventInfo, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2021DocTasks.TaskScheduleEventInfo openXmlElement, DM.TaskScheduleEventInfo value)
+  public static void UpdateOpenXmlElement(DXO21DT.TaskScheduleEventInfo openXmlElement, DM.TaskScheduleEventInfo value)
   {
     SetStartDate(openXmlElement, value?.StartDate);
     SetDueDate(openXmlElement, value?.DueDate);

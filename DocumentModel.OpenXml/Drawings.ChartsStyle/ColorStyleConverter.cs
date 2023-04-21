@@ -8,17 +8,17 @@ public static class ColorStyleConverter
   /// <summary>
   /// meth, this property is only available in Office 2013 and later.
   /// </summary>
-  private static String? GetMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static String? GetMethod(DXO13DCS.ColorStyle openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
-  private static bool CmpMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXO13DCS.ColorStyle openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
   
-  private static void SetMethod(DXO2013DrawChartStyle.ColorStyle openXmlElement, String? value)
+  private static void SetMethod(DXO13DCS.ColorStyle openXmlElement, String? value)
   {
     openXmlElement.Method = StringValueConverter.CreateStringValue(value);
   }
@@ -26,185 +26,185 @@ public static class ColorStyleConverter
   /// <summary>
   /// id, this property is only available in Office 2013 and later.
   /// </summary>
-  private static UInt32? GetId(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static UInt32? GetId(DXO13DCS.ColorStyle openXmlElement)
   {
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO2013DrawChartStyle.ColorStyle openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13DCS.ColorStyle openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXO2013DrawChartStyle.ColorStyle openXmlElement, UInt32? value)
+  private static void SetId(DXO13DCS.ColorStyle openXmlElement, UInt32? value)
   {
     openXmlElement.Id = value;
   }
   
-  private static DMDraws.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.RgbColorModelPercentage? GetRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (element != null)
-      return DMXDraws.RgbColorModelPercentageConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelPercentageConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelPercentage(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelPercentage? value)
+  private static void SetRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelPercentage? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelPercentage>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXDraw.RgbColorModelPercentage>(value);
+      itemElement = DMXD.RgbColorModelPercentageConverter.CreateOpenXmlElement<DXD.RgbColorModelPercentage>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.RgbColorModelHex? GetRgbColorModelHex(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.RgbColorModelHex? GetRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var element = openXmlElement?.GetFirstChild<DXD.RgbColorModelHex>();
     if (element != null)
-      return DMXDraws.RgbColorModelHexConverter.CreateModelElement(element);
+      return DMXD.RgbColorModelHexConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
   }
   
-  private static void SetRgbColorModelHex(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.RgbColorModelHex? value)
+  private static void SetRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelHex? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.RgbColorModelHex>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.RgbColorModelHex>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.RgbColorModelHexConverter.CreateOpenXmlElement<DXDraw.RgbColorModelHex>(value);
+      itemElement = DMXD.RgbColorModelHexConverter.CreateOpenXmlElement<DXD.RgbColorModelHex>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.HslColor? GetHslColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.HslColor? GetHslColor(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.HslColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.HslColor>();
     if (element != null)
-      return DMXDraws.HslColorConverter.CreateModelElement(element);
+      return DMXD.HslColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpHslColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXO13DCS.ColorStyle openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
   }
   
-  private static void SetHslColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.HslColor? value)
+  private static void SetHslColor(DXO13DCS.ColorStyle openXmlElement, DMD.HslColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.HslColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.HslColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.HslColorConverter.CreateOpenXmlElement<DXDraw.HslColor>(value);
+      itemElement = DMXD.HslColorConverter.CreateOpenXmlElement<DXD.HslColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SystemColor? GetSystemColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.SystemColor? GetSystemColor(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SystemColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SystemColor>();
     if (element != null)
-      return DMXDraws.SystemColorConverter.CreateModelElement(element);
+      return DMXD.SystemColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSystemColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXO13DCS.ColorStyle openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
   }
   
-  private static void SetSystemColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SystemColor? value)
+  private static void SetSystemColor(DXO13DCS.ColorStyle openXmlElement, DMD.SystemColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SystemColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SystemColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SystemColorConverter.CreateOpenXmlElement<DXDraw.SystemColor>(value);
+      itemElement = DMXD.SystemColorConverter.CreateOpenXmlElement<DXD.SystemColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.SchemeColor? GetSchemeColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.SchemeColor? GetSchemeColor(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SchemeColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.SchemeColor>();
     if (element != null)
-      return DMXDraws.SchemeColorConverter.CreateModelElement(element);
+      return DMXD.SchemeColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSchemeColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXO13DCS.ColorStyle openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
   }
   
-  private static void SetSchemeColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.SchemeColor? value)
+  private static void SetSchemeColor(DXO13DCS.ColorStyle openXmlElement, DMD.SchemeColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SchemeColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SchemeColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SchemeColorConverter.CreateOpenXmlElement<DXDraw.SchemeColor>(value);
+      itemElement = DMXD.SchemeColorConverter.CreateOpenXmlElement<DXD.SchemeColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static DMDraws.PresetColor? GetPresetColor(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMD.PresetColor? GetPresetColor(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PresetColor>();
+    var element = openXmlElement?.GetFirstChild<DXD.PresetColor>();
     if (element != null)
-      return DMXDraws.PresetColorConverter.CreateModelElement(element);
+      return DMXD.PresetColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPresetColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXO13DCS.ColorStyle openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
   }
   
-  private static void SetPresetColor(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDraws.PresetColor? value)
+  private static void SetPresetColor(DXO13DCS.ColorStyle openXmlElement, DMD.PresetColor? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PresetColor>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PresetColor>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PresetColorConverter.CreateOpenXmlElement<DXDraw.PresetColor>(value);
+      itemElement = DMXD.PresetColorConverter.CreateOpenXmlElement<DXD.PresetColor>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  private static Collection<DMDrawsChartsStyle.ColorStyleVariation>? GetColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static Collection<DMDCS.ColorStyleVariation>? GetColorStyleVariations(DXO13DCS.ColorStyle openXmlElement)
   {
-    var collection = new Collection<DMDrawsChartsStyle.ColorStyleVariation>();
-    foreach (var item in openXmlElement.Elements<DXO2013DrawChartStyle.ColorStyleVariation>())
+    var collection = new Collection<DMDCS.ColorStyleVariation>();
+    foreach (var item in openXmlElement.Elements<DXO13DCS.ColorStyleVariation>())
     {
-      var newItem = DMXDrawsChartsStyle.ColorStyleVariationConverter.CreateModelElement(item);
+      var newItem = DMXDCS.ColorStyleVariationConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -213,9 +213,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement, Collection<DMDrawsChartsStyle.ColorStyleVariation>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorStyleVariations(DXO13DCS.ColorStyle openXmlElement, Collection<DMDCS.ColorStyleVariation>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXO2013DrawChartStyle.ColorStyleVariation>();
+    var origElements = openXmlElement.Elements<DXO13DCS.ColorStyleVariation>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -231,7 +231,7 @@ public static class ColorStyleConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsChartsStyle.ColorStyleVariationConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCS.ColorStyleVariationConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -241,47 +241,47 @@ public static class ColorStyleConverter
     return false;
   }
   
-  private static void SetColorStyleVariations(DXO2013DrawChartStyle.ColorStyle openXmlElement, Collection<DMDrawsChartsStyle.ColorStyleVariation>? value)
+  private static void SetColorStyleVariations(DXO13DCS.ColorStyle openXmlElement, Collection<DMDCS.ColorStyleVariation>? value)
   {
-    openXmlElement.RemoveAllChildren<DXO2013DrawChartStyle.ColorStyleVariation>();
+    openXmlElement.RemoveAllChildren<DXO13DCS.ColorStyleVariation>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsChartsStyle.ColorStyleVariationConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.ColorStyleVariation>(item);
+        var newItem = DMXDCS.ColorStyleVariationConverter.CreateOpenXmlElement<DXO13DCS.ColorStyleVariation>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  private static DMDrawsChartsStyle.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO2013DrawChartStyle.ColorStyle openXmlElement)
+  private static DMDCS.OfficeArtExtensionList? GetOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    var element = openXmlElement?.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
     if (element != null)
-      return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateModelElement(element);
+      return DMXDCS.OfficeArtExtensionListConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement, DMDCS.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDCS.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>(), value, diffs, objName);
   }
   
-  private static void SetOfficeArtExtensionList(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDrawsChartsStyle.OfficeArtExtensionList? value)
+  private static void SetOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement, DMDCS.OfficeArtExtensionList? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2013DrawChartStyle.OfficeArtExtensionList>();
+    var itemElement = openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsChartsStyle.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO2013DrawChartStyle.OfficeArtExtensionList>(value);
+      itemElement = DMXDCS.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13DCS.OfficeArtExtensionList>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ChartsStyle.ColorStyle? CreateModelElement(DXO2013DrawChartStyle.ColorStyle? openXmlElement)
+  public static DocumentModel.Drawings.ChartsStyle.ColorStyle? CreateModelElement(DXO13DCS.ColorStyle? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -301,7 +301,7 @@ public static class ColorStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013DrawChartStyle.ColorStyle? openXmlElement, DMDrawsChartsStyle.ColorStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.ColorStyle? openXmlElement, DMDCS.ColorStyle? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -333,15 +333,15 @@ public static class ColorStyleConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsChartsStyle.ColorStyle value)
-    where OpenXmlElementType: DXO2013DrawChartStyle.ColorStyle, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDCS.ColorStyle value)
+    where OpenXmlElementType: DXO13DCS.ColorStyle, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013DrawChartStyle.ColorStyle openXmlElement, DMDrawsChartsStyle.ColorStyle value)
+  public static void UpdateOpenXmlElement(DXO13DCS.ColorStyle openXmlElement, DMDCS.ColorStyle value)
   {
     SetMethod(openXmlElement, value?.Method);
     SetId(openXmlElement, value?.Id);

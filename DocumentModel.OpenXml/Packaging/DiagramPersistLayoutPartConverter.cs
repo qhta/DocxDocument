@@ -20,21 +20,21 @@ public static class DiagramPersistLayoutPartConverter
   /// <summary>
   /// Gets or sets the root element of this part.
   /// </summary>
-  private static DMDrawsO.Drawing? GetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement)
+  private static DMDO.Drawing? GetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement)
   {
-      return DMXDrawsO.DrawingConverter.CreateModelElement(openXmlElement?.RootElement as DXODraw.Drawing);
+      return DMXDO.DrawingConverter.CreateModelElement(openXmlElement?.RootElement as DXOD.Drawing);
   }
   
-  private static bool CmpDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDrawsO.Drawing? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDO.Drawing? value, DiffList? diffs, string? objName)
   {
       return true;
   }
   
-  private static void SetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDrawsO.Drawing? value)
+  private static void SetDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDO.Drawing? value)
   {
     if (value != null)
     {
-       var rootElement = DMXDrawsO.DrawingConverter.CreateOpenXmlElement<DXODraw.Drawing>(value);
+       var rootElement = DMXDO.DrawingConverter.CreateOpenXmlElement<DXOD.Drawing>(value);
        if (rootElement != null)
          openXmlElement.Drawing = rootElement;
     }

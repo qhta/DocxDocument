@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class RadarSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.RadarSerExtension>? GetRadarSerExtensions(DXDrawCharts.RadarSerExtensionList openXmlElement)
+  private static Collection<DMDC.RadarSerExtension>? GetRadarSerExtensions(DXDC.RadarSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.RadarSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.RadarSerExtension>())
+    var collection = new Collection<DMDC.RadarSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.RadarSerExtension>())
     {
-      var newItem = DMXDrawsCharts.RadarSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.RadarSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class RadarSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpRadarSerExtensions(DXDrawCharts.RadarSerExtensionList openXmlElement, Collection<DMDrawsCharts.RadarSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpRadarSerExtensions(DXDC.RadarSerExtensionList openXmlElement, Collection<DMDC.RadarSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.RadarSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.RadarSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class RadarSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.RadarSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.RadarSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class RadarSerExtensionListConverter
     return false;
   }
   
-  private static void SetRadarSerExtensions(DXDrawCharts.RadarSerExtensionList openXmlElement, Collection<DMDrawsCharts.RadarSerExtension>? value)
+  private static void SetRadarSerExtensions(DXDC.RadarSerExtensionList openXmlElement, Collection<DMDC.RadarSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.RadarSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.RadarSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.RadarSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.RadarSerExtension>(item);
+        var newItem = DMXDC.RadarSerExtensionConverter.CreateOpenXmlElement<DXDC.RadarSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.RadarSerExtensionList? CreateModelElement(DXDrawCharts.RadarSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.RadarSerExtensionList? CreateModelElement(DXDC.RadarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class RadarSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.RadarSerExtensionList? openXmlElement, DMDrawsCharts.RadarSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.RadarSerExtensionList? openXmlElement, DMDC.RadarSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class RadarSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.RadarSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.RadarSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.RadarSerExtensionList value)
+    where OpenXmlElementType: DXDC.RadarSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.RadarSerExtensionList openXmlElement, DMDrawsCharts.RadarSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.RadarSerExtensionList openXmlElement, DMDC.RadarSerExtensionList value)
   {
     SetRadarSerExtensions(openXmlElement, value?.RadarSerExtensions);
   }

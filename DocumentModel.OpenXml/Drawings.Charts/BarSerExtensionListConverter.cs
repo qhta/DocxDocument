@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class BarSerExtensionListConverter
 {
-  private static Collection<DMDrawsCharts.BarSerExtension>? GetBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement)
+  private static Collection<DMDC.BarSerExtension>? GetBarSerExtensions(DXDC.BarSerExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDrawsCharts.BarSerExtension>();
-    foreach (var item in openXmlElement.Elements<DXDrawCharts.BarSerExtension>())
+    var collection = new Collection<DMDC.BarSerExtension>();
+    foreach (var item in openXmlElement.Elements<DXDC.BarSerExtension>())
     {
-      var newItem = DMXDrawsCharts.BarSerExtensionConverter.CreateModelElement(item);
+      var newItem = DMXDC.BarSerExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class BarSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement, Collection<DMDrawsCharts.BarSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpBarSerExtensions(DXDC.BarSerExtensionList openXmlElement, Collection<DMDC.BarSerExtension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawCharts.BarSerExtension>();
+    var origElements = openXmlElement.Elements<DXDC.BarSerExtension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class BarSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsCharts.BarSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.BarSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class BarSerExtensionListConverter
     return false;
   }
   
-  private static void SetBarSerExtensions(DXDrawCharts.BarSerExtensionList openXmlElement, Collection<DMDrawsCharts.BarSerExtension>? value)
+  private static void SetBarSerExtensions(DXDC.BarSerExtensionList openXmlElement, Collection<DMDC.BarSerExtension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawCharts.BarSerExtension>();
+    openXmlElement.RemoveAllChildren<DXDC.BarSerExtension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsCharts.BarSerExtensionConverter.CreateOpenXmlElement<DXDrawCharts.BarSerExtension>(item);
+        var newItem = DMXDC.BarSerExtensionConverter.CreateOpenXmlElement<DXDC.BarSerExtension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(DXDrawCharts.BarSerExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.Charts.BarSerExtensionList? CreateModelElement(DXDC.BarSerExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class BarSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.BarSerExtensionList? openXmlElement, DMDrawsCharts.BarSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BarSerExtensionList? openXmlElement, DMDC.BarSerExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class BarSerExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.BarSerExtensionList value)
-    where OpenXmlElementType: DXDrawCharts.BarSerExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.BarSerExtensionList value)
+    where OpenXmlElementType: DXDC.BarSerExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.BarSerExtensionList openXmlElement, DMDrawsCharts.BarSerExtensionList value)
+  public static void UpdateOpenXmlElement(DXDC.BarSerExtensionList openXmlElement, DMDC.BarSerExtensionList value)
   {
     SetBarSerExtensions(openXmlElement, value?.BarSerExtensions);
   }

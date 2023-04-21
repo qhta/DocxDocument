@@ -5,33 +5,33 @@ namespace DocumentModel.OpenXml.Drawings.Charts;
 /// </summary>
 public static class DownBarsConverter
 {
-  private static DMDrawsCharts.ChartShapeProperties? GetChartShapeProperties(DXDrawCharts.DownBars openXmlElement)
+  private static DMDC.ChartShapeProperties? GetChartShapeProperties(DXDC.DownBars openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var element = openXmlElement?.GetFirstChild<DXDC.ChartShapeProperties>();
     if (element != null)
-      return DMXDrawsCharts.ChartShapePropertiesConverter.CreateModelElement(element);
+      return DMXDC.ChartShapePropertiesConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DownBars openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
   {
-    return DMXDrawsCharts.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
   }
   
-  private static void SetChartShapeProperties(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.ChartShapeProperties? value)
+  private static void SetChartShapeProperties(DXDC.DownBars openXmlElement, DMDC.ChartShapeProperties? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDrawCharts.ChartShapeProperties>();
+    var itemElement = openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDrawsCharts.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDrawCharts.ChartShapeProperties>(value);
+      itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DXDrawCharts.DownBars? openXmlElement)
+  public static DocumentModel.Drawings.Charts.DownBars? CreateModelElement(DXDC.DownBars? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -42,7 +42,7 @@ public static class DownBarsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawCharts.DownBars? openXmlElement, DMDrawsCharts.DownBars? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DownBars? openXmlElement, DMDC.DownBars? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -56,15 +56,15 @@ public static class DownBarsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsCharts.DownBars value)
-    where OpenXmlElementType: DXDrawCharts.DownBars, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDC.DownBars value)
+    where OpenXmlElementType: DXDC.DownBars, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawCharts.DownBars openXmlElement, DMDrawsCharts.DownBars value)
+  public static void UpdateOpenXmlElement(DXDC.DownBars openXmlElement, DMDC.DownBars value)
   {
     SetChartShapeProperties(openXmlElement, value?.ChartShapeProperties);
   }

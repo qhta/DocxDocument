@@ -8,19 +8,19 @@ public static class NonVisualGroupPropertiesConverter
   /// <summary>
   /// isLegacyGroup, this property is only available in Office 2013 and later.
   /// </summary>
-  private static Boolean? GetIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement)
+  private static Boolean? GetIsLegacyGroup(DXO13D.NonVisualGroupProperties openXmlElement)
   {
     return openXmlElement?.IsLegacyGroup?.Value;
   }
   
-  private static bool CmpIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsLegacyGroup(DXO13D.NonVisualGroupProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.IsLegacyGroup?.Value == value) return true;
     diffs?.Add(objName, "IsLegacyGroup", openXmlElement?.IsLegacyGroup?.Value, value);
     return false;
   }
   
-  private static void SetIsLegacyGroup(DXO2013Draw.NonVisualGroupProperties openXmlElement, Boolean? value)
+  private static void SetIsLegacyGroup(DXO13D.NonVisualGroupProperties openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.IsLegacyGroup = new BooleanValue { Value = (Boolean)value };
@@ -28,7 +28,7 @@ public static class NonVisualGroupPropertiesConverter
       openXmlElement.IsLegacyGroup = null;
   }
   
-  public static DocumentModel.Drawings.NonVisualGroupProperties? CreateModelElement(DXO2013Draw.NonVisualGroupProperties? openXmlElement)
+  public static DocumentModel.Drawings.NonVisualGroupProperties? CreateModelElement(DXO13D.NonVisualGroupProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -39,7 +39,7 @@ public static class NonVisualGroupPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2013Draw.NonVisualGroupProperties? openXmlElement, DMDraws.NonVisualGroupProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13D.NonVisualGroupProperties? openXmlElement, DMD.NonVisualGroupProperties? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -53,15 +53,15 @@ public static class NonVisualGroupPropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.NonVisualGroupProperties value)
-    where OpenXmlElementType: DXO2013Draw.NonVisualGroupProperties, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.NonVisualGroupProperties value)
+    where OpenXmlElementType: DXO13D.NonVisualGroupProperties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2013Draw.NonVisualGroupProperties openXmlElement, DMDraws.NonVisualGroupProperties value)
+  public static void UpdateOpenXmlElement(DXO13D.NonVisualGroupProperties openXmlElement, DMD.NonVisualGroupProperties value)
   {
     SetIsLegacyGroup(openXmlElement, value?.IsLegacyGroup);
   }

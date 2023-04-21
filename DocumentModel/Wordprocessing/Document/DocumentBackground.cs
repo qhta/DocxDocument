@@ -1,5 +1,3 @@
-using DocumentModel.Vml;
-
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -16,5 +14,5 @@ public class DocumentBackground: ModelElement
   /// <summary>
   ///   Background.
   /// </summary>
-  public Background? Background { get; set; }
+  public DMV.Background? Background { get; set; }
 }

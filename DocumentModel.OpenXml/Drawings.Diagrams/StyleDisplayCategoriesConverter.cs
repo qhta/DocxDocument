@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings.Diagrams;
 /// </summary>
 public static class StyleDisplayCategoriesConverter
 {
-  private static Collection<DMDrawsDgms.StyleDisplayCategory>? GetItems(DXDrawDgms.StyleDisplayCategories openXmlElement)
+  private static Collection<DMDD.StyleDisplayCategory>? GetItems(DXDD.StyleDisplayCategories openXmlElement)
   {
-    var collection = new Collection<DMDrawsDgms.StyleDisplayCategory>();
-    foreach (var item in openXmlElement.Elements<DXDrawDgms.StyleDisplayCategory>())
+    var collection = new Collection<DMDD.StyleDisplayCategory>();
+    foreach (var item in openXmlElement.Elements<DXDD.StyleDisplayCategory>())
     {
-      var newItem = DMXDrawsDgms.StyleDisplayCategoryConverter.CreateModelElement(item);
+      var newItem = DMXDD.StyleDisplayCategoryConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class StyleDisplayCategoriesConverter
     return null;
   }
   
-  private static bool CmpItems(DXDrawDgms.StyleDisplayCategories openXmlElement, Collection<DMDrawsDgms.StyleDisplayCategory>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXDD.StyleDisplayCategories openXmlElement, Collection<DMDD.StyleDisplayCategory>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDrawDgms.StyleDisplayCategory>();
+    var origElements = openXmlElement.Elements<DXDD.StyleDisplayCategory>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class StyleDisplayCategoriesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDrawsDgms.StyleDisplayCategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.StyleDisplayCategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class StyleDisplayCategoriesConverter
     return false;
   }
   
-  private static void SetItems(DXDrawDgms.StyleDisplayCategories openXmlElement, Collection<DMDrawsDgms.StyleDisplayCategory>? value)
+  private static void SetItems(DXDD.StyleDisplayCategories openXmlElement, Collection<DMDD.StyleDisplayCategory>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDrawDgms.StyleDisplayCategory>();
+    openXmlElement.RemoveAllChildren<DXDD.StyleDisplayCategory>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDrawsDgms.StyleDisplayCategoryConverter.CreateOpenXmlElement<DXDrawDgms.StyleDisplayCategory>(item);
+        var newItem = DMXDD.StyleDisplayCategoryConverter.CreateOpenXmlElement<DXDD.StyleDisplayCategory>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? CreateModelElement(DXDrawDgms.StyleDisplayCategories? openXmlElement)
+  public static DocumentModel.Drawings.Diagrams.StyleDisplayCategories? CreateModelElement(DXDD.StyleDisplayCategories? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class StyleDisplayCategoriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDrawDgms.StyleDisplayCategories? openXmlElement, DMDrawsDgms.StyleDisplayCategories? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.StyleDisplayCategories? openXmlElement, DMDD.StyleDisplayCategories? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class StyleDisplayCategoriesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDrawsDgms.StyleDisplayCategories value)
-    where OpenXmlElementType: DXDrawDgms.StyleDisplayCategories, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDD.StyleDisplayCategories value)
+    where OpenXmlElementType: DXDD.StyleDisplayCategories, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDrawDgms.StyleDisplayCategories openXmlElement, DMDrawsDgms.StyleDisplayCategories value)
+  public static void UpdateOpenXmlElement(DXDD.StyleDisplayCategories openXmlElement, DMDD.StyleDisplayCategories value)
   {
     SetItems(openXmlElement, value?.Items);
   }

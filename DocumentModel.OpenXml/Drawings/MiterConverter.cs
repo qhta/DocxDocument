@@ -8,24 +8,24 @@ public static class MiterConverter
   /// <summary>
   /// Miter Join Limit
   /// </summary>
-  private static Int32? GetLimit(DXDraw.Miter openXmlElement)
+  private static Int32? GetLimit(DXD.Miter openXmlElement)
   {
     return openXmlElement?.Limit?.Value;
   }
   
-  private static bool CmpLimit(DXDraw.Miter openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLimit(DXD.Miter openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Limit?.Value == value) return true;
     diffs?.Add(objName, "Limit", openXmlElement?.Limit?.Value, value);
     return false;
   }
   
-  private static void SetLimit(DXDraw.Miter openXmlElement, Int32? value)
+  private static void SetLimit(DXD.Miter openXmlElement, Int32? value)
   {
     openXmlElement.Limit = value;
   }
   
-  public static DocumentModel.Drawings.Miter? CreateModelElement(DXDraw.Miter? openXmlElement)
+  public static DocumentModel.Drawings.Miter? CreateModelElement(DXD.Miter? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class MiterConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.Miter? openXmlElement, DMDraws.Miter? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Miter? openXmlElement, DMD.Miter? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class MiterConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.Miter value)
-    where OpenXmlElementType: DXDraw.Miter, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Miter value)
+    where OpenXmlElementType: DXD.Miter, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.Miter openXmlElement, DMDraws.Miter value)
+  public static void UpdateOpenXmlElement(DXD.Miter openXmlElement, DMD.Miter value)
   {
     SetLimit(openXmlElement, value?.Limit);
   }

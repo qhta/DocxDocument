@@ -8,48 +8,48 @@ public static class ConnectorLockingExtensionConverter
   /// <summary>
   /// URI
   /// </summary>
-  private static String? GetUri(DXDraw.ConnectorLockingExtension openXmlElement)
+  private static String? GetUri(DXD.ConnectorLockingExtension openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDraw.ConnectorLockingExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.ConnectorLockingExtension openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXDraw.ConnectorLockingExtension openXmlElement, String? value)
+  private static void SetUri(DXD.ConnectorLockingExtension openXmlElement, String? value)
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
   
-  private static DMDraws.Graphic? GetGraphic(DXDraw.ConnectorLockingExtension openXmlElement)
+  private static DMD.Graphic? GetGraphic(DXD.ConnectorLockingExtension openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.Graphic>();
+    var element = openXmlElement?.GetFirstChild<DXD.Graphic>();
     if (element != null)
-      return DMXDraws.GraphicConverter.CreateModelElement(element);
+      return DMXD.GraphicConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGraphic(DXDraw.ConnectorLockingExtension openXmlElement, DMDraws.Graphic? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphic(DXD.ConnectorLockingExtension openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.Graphic>(), value, diffs, objName);
+    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName);
   }
   
-  private static void SetGraphic(DXDraw.ConnectorLockingExtension openXmlElement, DMDraws.Graphic? value)
+  private static void SetGraphic(DXD.ConnectorLockingExtension openXmlElement, DMD.Graphic? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.Graphic>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.Graphic>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GraphicConverter.CreateOpenXmlElement<DXDraw.Graphic>(value);
+      itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.ConnectorLockingExtension? CreateModelElement(DXDraw.ConnectorLockingExtension? openXmlElement)
+  public static DocumentModel.Drawings.ConnectorLockingExtension? CreateModelElement(DXD.ConnectorLockingExtension? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -61,7 +61,7 @@ public static class ConnectorLockingExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ConnectorLockingExtension? openXmlElement, DMDraws.ConnectorLockingExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectorLockingExtension? openXmlElement, DMD.ConnectorLockingExtension? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -77,15 +77,15 @@ public static class ConnectorLockingExtensionConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ConnectorLockingExtension value)
-    where OpenXmlElementType: DXDraw.ConnectorLockingExtension, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ConnectorLockingExtension value)
+    where OpenXmlElementType: DXD.ConnectorLockingExtension, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ConnectorLockingExtension openXmlElement, DMDraws.ConnectorLockingExtension value)
+  public static void UpdateOpenXmlElement(DXD.ConnectorLockingExtension openXmlElement, DMD.ConnectorLockingExtension value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetGraphic(openXmlElement, value?.Graphic);

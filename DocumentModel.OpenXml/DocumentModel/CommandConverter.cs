@@ -8,17 +8,17 @@ public static class CommandConverter
   /// <summary>
   /// onAction, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetOnAction(DXO2010CustUI.Command openXmlElement)
+  private static String? GetOnAction(DXO10CUI.Command openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.OnAction);
   }
   
-  private static bool CmpOnAction(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnAction(DXO10CUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnAction, value, diffs, objName, "OnAction");
   }
   
-  private static void SetOnAction(DXO2010CustUI.Command openXmlElement, String? value)
+  private static void SetOnAction(DXO10CUI.Command openXmlElement, String? value)
   {
     openXmlElement.OnAction = StringValueConverter.CreateStringValue(value);
   }
@@ -26,19 +26,19 @@ public static class CommandConverter
   /// <summary>
   /// enabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static Boolean? GetEnabled(DXO2010CustUI.Command openXmlElement)
+  private static Boolean? GetEnabled(DXO10CUI.Command openXmlElement)
   {
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.Command openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
     return false;
   }
   
-  private static void SetEnabled(DXO2010CustUI.Command openXmlElement, Boolean? value)
+  private static void SetEnabled(DXO10CUI.Command openXmlElement, Boolean? value)
   {
     if (value != null)
       openXmlElement.Enabled = new BooleanValue { Value = (Boolean)value };
@@ -49,17 +49,17 @@ public static class CommandConverter
   /// <summary>
   /// getEnabled, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetGetEnabled(DXO2010CustUI.Command openXmlElement)
+  private static String? GetGetEnabled(DXO10CUI.Command openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
   
-  private static void SetGetEnabled(DXO2010CustUI.Command openXmlElement, String? value)
+  private static void SetGetEnabled(DXO10CUI.Command openXmlElement, String? value)
   {
     openXmlElement.GetEnabled = StringValueConverter.CreateStringValue(value);
   }
@@ -67,22 +67,22 @@ public static class CommandConverter
   /// <summary>
   /// idMso, this property is only available in Office 2010 and later.
   /// </summary>
-  private static String? GetIdMso(DXO2010CustUI.Command openXmlElement)
+  private static String? GetIdMso(DXO10CUI.Command openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO2010CustUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.Command openXmlElement, String? value, DiffList? diffs, string? objName)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
   
-  private static void SetIdMso(DXO2010CustUI.Command openXmlElement, String? value)
+  private static void SetIdMso(DXO10CUI.Command openXmlElement, String? value)
   {
     openXmlElement.IdMso = StringValueConverter.CreateStringValue(value);
   }
   
-  public static DocumentModel.Command? CreateModelElement(DXO2010CustUI.Command? openXmlElement)
+  public static DocumentModel.Command? CreateModelElement(DXO10CUI.Command? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -96,7 +96,7 @@ public static class CommandConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO2010CustUI.Command? openXmlElement, DM.Command? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Command? openXmlElement, DM.Command? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -117,14 +117,14 @@ public static class CommandConverter
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.Command value)
-    where OpenXmlElementType: DXO2010CustUI.Command, new()
+    where OpenXmlElementType: DXO10CUI.Command, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO2010CustUI.Command openXmlElement, DM.Command value)
+  public static void UpdateOpenXmlElement(DXO10CUI.Command openXmlElement, DM.Command value)
   {
     SetOnAction(openXmlElement, value?.OnAction);
     SetEnabled(openXmlElement, value?.Enabled);

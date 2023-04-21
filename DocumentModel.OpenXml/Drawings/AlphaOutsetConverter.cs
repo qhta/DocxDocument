@@ -8,24 +8,24 @@ public static class AlphaOutsetConverter
   /// <summary>
   /// Radius
   /// </summary>
-  private static Int64? GetRadius(DXDraw.AlphaOutset openXmlElement)
+  private static Int64? GetRadius(DXD.AlphaOutset openXmlElement)
   {
     return openXmlElement?.Radius?.Value;
   }
   
-  private static bool CmpRadius(DXDraw.AlphaOutset openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRadius(DXD.AlphaOutset openXmlElement, Int64? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Radius?.Value == value) return true;
     diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
     return false;
   }
   
-  private static void SetRadius(DXDraw.AlphaOutset openXmlElement, Int64? value)
+  private static void SetRadius(DXD.AlphaOutset openXmlElement, Int64? value)
   {
     openXmlElement.Radius = value;
   }
   
-  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DXDraw.AlphaOutset? openXmlElement)
+  public static DocumentModel.Drawings.AlphaOutset? CreateModelElement(DXD.AlphaOutset? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -36,7 +36,7 @@ public static class AlphaOutsetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.AlphaOutset? openXmlElement, DMDraws.AlphaOutset? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaOutset? openXmlElement, DMD.AlphaOutset? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -50,15 +50,15 @@ public static class AlphaOutsetConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.AlphaOutset value)
-    where OpenXmlElementType: DXDraw.AlphaOutset, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.AlphaOutset value)
+    where OpenXmlElementType: DXD.AlphaOutset, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.AlphaOutset openXmlElement, DMDraws.AlphaOutset value)
+  public static void UpdateOpenXmlElement(DXD.AlphaOutset openXmlElement, DMD.AlphaOutset value)
   {
     SetRadius(openXmlElement, value?.Radius);
   }

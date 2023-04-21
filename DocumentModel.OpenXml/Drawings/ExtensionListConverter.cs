@@ -5,12 +5,12 @@ namespace DocumentModel.OpenXml.Drawings;
 /// </summary>
 public static class ExtensionListConverter
 {
-  private static Collection<DMDraws.Extension>? GetExtensions(DXDraw.ExtensionList openXmlElement)
+  private static Collection<DMD.Extension>? GetExtensions(DXD.ExtensionList openXmlElement)
   {
-    var collection = new Collection<DMDraws.Extension>();
-    foreach (var item in openXmlElement.Elements<DXDraw.Extension>())
+    var collection = new Collection<DMD.Extension>();
+    foreach (var item in openXmlElement.Elements<DXD.Extension>())
     {
-      var newItem = DMXDraws.ExtensionConverter.CreateModelElement(item);
+      var newItem = DMXD.ExtensionConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -19,9 +19,9 @@ public static class ExtensionListConverter
     return null;
   }
   
-  private static bool CmpExtensions(DXDraw.ExtensionList openXmlElement, Collection<DMDraws.Extension>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensions(DXD.ExtensionList openXmlElement, Collection<DMD.Extension>? value, DiffList? diffs, string? objName)
   {
-    var origElements = openXmlElement.Elements<DXDraw.Extension>();
+    var origElements = openXmlElement.Elements<DXD.Extension>();
     var origElementsCount = origElements.Count();
     var modelElementsCount = value?.Count() ?? 0;
     if (value != null)
@@ -37,7 +37,7 @@ public static class ExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDraws.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -47,21 +47,21 @@ public static class ExtensionListConverter
     return false;
   }
   
-  private static void SetExtensions(DXDraw.ExtensionList openXmlElement, Collection<DMDraws.Extension>? value)
+  private static void SetExtensions(DXD.ExtensionList openXmlElement, Collection<DMD.Extension>? value)
   {
-    openXmlElement.RemoveAllChildren<DXDraw.Extension>();
+    openXmlElement.RemoveAllChildren<DXD.Extension>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXDraws.ExtensionConverter.CreateOpenXmlElement<DXDraw.Extension>(item);
+        var newItem = DMXD.ExtensionConverter.CreateOpenXmlElement<DXD.Extension>(item);
         if (newItem != null)
           openXmlElement.AddChild(newItem);
       }
     }
   }
   
-  public static DocumentModel.Drawings.ExtensionList? CreateModelElement(DXDraw.ExtensionList? openXmlElement)
+  public static DocumentModel.Drawings.ExtensionList? CreateModelElement(DXD.ExtensionList? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -72,7 +72,7 @@ public static class ExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.ExtensionList? openXmlElement, DMDraws.ExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ExtensionList? openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -86,15 +86,15 @@ public static class ExtensionListConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.ExtensionList value)
-    where OpenXmlElementType: DXDraw.ExtensionList, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.ExtensionList value)
+    where OpenXmlElementType: DXD.ExtensionList, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.ExtensionList openXmlElement, DMDraws.ExtensionList value)
+  public static void UpdateOpenXmlElement(DXD.ExtensionList openXmlElement, DMD.ExtensionList value)
   {
     SetExtensions(openXmlElement, value?.Extensions);
   }

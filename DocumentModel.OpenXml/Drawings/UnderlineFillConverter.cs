@@ -8,30 +8,30 @@ public static class UnderlineFillConverter
   /// <summary>
   /// NoFill.
   /// </summary>
-  private static Boolean? GetNoFill(DXDraw.UnderlineFill openXmlElement)
+  private static Boolean? GetNoFill(DXD.UnderlineFill openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXDraw.UnderlineFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXD.UnderlineFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.NoFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.NoFill", val, value);
+    diffs?.Add(objName, "DXD.NoFill", val, value);
     return false;
   }
   
-  private static void SetNoFill(DXDraw.UnderlineFill openXmlElement, Boolean? value)
+  private static void SetNoFill(DXD.UnderlineFill openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.NoFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.NoFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.NoFill();
+      var itemElement = new DXD.NoFill();
       openXmlElement.AddChild(itemElement);
     }
   }
@@ -39,27 +39,27 @@ public static class UnderlineFillConverter
   /// <summary>
   /// SolidFill.
   /// </summary>
-  private static DMDraws.SolidFill? GetSolidFill(DXDraw.UnderlineFill openXmlElement)
+  private static DMD.SolidFill? GetSolidFill(DXD.UnderlineFill openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.SolidFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.SolidFill>();
     if (element != null)
-      return DMXDraws.SolidFillConverter.CreateModelElement(element);
+      return DMXD.SolidFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpSolidFill(DXDraw.UnderlineFill openXmlElement, DMDraws.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXD.UnderlineFill openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
   }
   
-  private static void SetSolidFill(DXDraw.UnderlineFill openXmlElement, DMDraws.SolidFill? value)
+  private static void SetSolidFill(DXD.UnderlineFill openXmlElement, DMD.SolidFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.SolidFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.SolidFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.SolidFillConverter.CreateOpenXmlElement<DXDraw.SolidFill>(value);
+      itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -68,27 +68,27 @@ public static class UnderlineFillConverter
   /// <summary>
   /// GradientFill.
   /// </summary>
-  private static DMDraws.GradientFill? GetGradientFill(DXDraw.UnderlineFill openXmlElement)
+  private static DMD.GradientFill? GetGradientFill(DXD.UnderlineFill openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.GradientFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.GradientFill>();
     if (element != null)
-      return DMXDraws.GradientFillConverter.CreateModelElement(element);
+      return DMXD.GradientFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpGradientFill(DXDraw.UnderlineFill openXmlElement, DMDraws.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXD.UnderlineFill openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
   }
   
-  private static void SetGradientFill(DXDraw.UnderlineFill openXmlElement, DMDraws.GradientFill? value)
+  private static void SetGradientFill(DXD.UnderlineFill openXmlElement, DMD.GradientFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.GradientFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.GradientFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.GradientFillConverter.CreateOpenXmlElement<DXDraw.GradientFill>(value);
+      itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -97,27 +97,27 @@ public static class UnderlineFillConverter
   /// <summary>
   /// BlipFill.
   /// </summary>
-  private static DMDraws.BlipFill? GetBlipFill(DXDraw.UnderlineFill openXmlElement)
+  private static DMD.BlipFill? GetBlipFill(DXD.UnderlineFill openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.BlipFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.BlipFill>();
     if (element != null)
-      return DMXDraws.BlipFillConverter.CreateModelElement(element);
+      return DMXD.BlipFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpBlipFill(DXDraw.UnderlineFill openXmlElement, DMDraws.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXD.UnderlineFill openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
   }
   
-  private static void SetBlipFill(DXDraw.UnderlineFill openXmlElement, DMDraws.BlipFill? value)
+  private static void SetBlipFill(DXD.UnderlineFill openXmlElement, DMD.BlipFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.BlipFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.BlipFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.BlipFillConverter.CreateOpenXmlElement<DXDraw.BlipFill>(value);
+      itemElement = DMXD.BlipFillConverter.CreateOpenXmlElement<DXD.BlipFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -126,27 +126,27 @@ public static class UnderlineFillConverter
   /// <summary>
   /// Pattern Fill.
   /// </summary>
-  private static DMDraws.PatternFill? GetPatternFill(DXDraw.UnderlineFill openXmlElement)
+  private static DMD.PatternFill? GetPatternFill(DXD.UnderlineFill openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXDraw.PatternFill>();
+    var element = openXmlElement?.GetFirstChild<DXD.PatternFill>();
     if (element != null)
-      return DMXDraws.PatternFillConverter.CreateModelElement(element);
+      return DMXD.PatternFillConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpPatternFill(DXDraw.UnderlineFill openXmlElement, DMDraws.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXD.UnderlineFill openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
   {
-    return DMXDraws.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDraw.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
   }
   
-  private static void SetPatternFill(DXDraw.UnderlineFill openXmlElement, DMDraws.PatternFill? value)
+  private static void SetPatternFill(DXD.UnderlineFill openXmlElement, DMD.PatternFill? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXDraw.PatternFill>();
+    var itemElement = openXmlElement.GetFirstChild<DXD.PatternFill>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXDraws.PatternFillConverter.CreateOpenXmlElement<DXDraw.PatternFill>(value);
+      itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -155,35 +155,35 @@ public static class UnderlineFillConverter
   /// <summary>
   /// Group Fill.
   /// </summary>
-  private static Boolean? GetGroupFill(DXDraw.UnderlineFill openXmlElement)
+  private static Boolean? GetGroupFill(DXD.UnderlineFill openXmlElement)
   {
-    return openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXDraw.UnderlineFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXD.UnderlineFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
   {
-    var val = openXmlElement.GetFirstChild<DXDraw.GroupFill>() != null;
+    var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
-    diffs?.Add(objName, "DXDraw.GroupFill", val, value);
+    diffs?.Add(objName, "DXD.GroupFill", val, value);
     return false;
   }
   
-  private static void SetGroupFill(DXDraw.UnderlineFill openXmlElement, Boolean? value)
+  private static void SetGroupFill(DXD.UnderlineFill openXmlElement, Boolean? value)
   {
     if (value == false)
     {
-      var itemElement = openXmlElement.GetFirstChild<DXDraw.GroupFill>();
+      var itemElement = openXmlElement.GetFirstChild<DXD.GroupFill>();
       if (itemElement != null)
         itemElement.Remove();
     }
     if (value == true)
     {
-      var itemElement = new DXDraw.GroupFill();
+      var itemElement = new DXD.GroupFill();
       openXmlElement.AddChild(itemElement);
     }
   }
   
-  public static DocumentModel.Drawings.UnderlineFill? CreateModelElement(DXDraw.UnderlineFill? openXmlElement)
+  public static DocumentModel.Drawings.UnderlineFill? CreateModelElement(DXD.UnderlineFill? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -199,7 +199,7 @@ public static class UnderlineFillConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDraw.UnderlineFill? openXmlElement, DMDraws.UnderlineFill? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.UnderlineFill? openXmlElement, DMD.UnderlineFill? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -223,15 +223,15 @@ public static class UnderlineFillConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMDraws.UnderlineFill value)
-    where OpenXmlElementType: DXDraw.UnderlineFill, new()
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.UnderlineFill value)
+    where OpenXmlElementType: DXD.UnderlineFill, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXDraw.UnderlineFill openXmlElement, DMDraws.UnderlineFill value)
+  public static void UpdateOpenXmlElement(DXD.UnderlineFill openXmlElement, DMD.UnderlineFill value)
   {
     SetNoFill(openXmlElement, value?.NoFill);
     SetSolidFill(openXmlElement, value?.SolidFill);

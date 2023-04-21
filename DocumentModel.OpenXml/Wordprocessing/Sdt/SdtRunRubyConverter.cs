@@ -504,7 +504,7 @@ public static class SdtRunRubyConverter
   
   private static DMW.CustomXmlConflictInsertionRangeStart? GetCustomXmlConflictInsertionRangeStart(DXW.SdtRunRuby openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeStart>();
     if (element != null)
       return DMXW.TrackChangeType2Converter.CreateModelElement(element);
     return null;
@@ -512,17 +512,17 @@ public static class SdtRunRubyConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeStart(DXW.SdtRunRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictInsertionRangeStart(DXW.SdtRunRuby openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeStart>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictInsertionRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -530,7 +530,7 @@ public static class SdtRunRubyConverter
   
   private static DMW.CustomXmlConflictInsertionRangeEnd? GetCustomXmlConflictInsertionRangeEnd(DXW.SdtRunRuby openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeEnd>();
     if (element != null)
       return DMXW.MarkupType2Converter.CreateModelElement(element);
     return null;
@@ -538,17 +538,17 @@ public static class SdtRunRubyConverter
   
   private static bool CmpCustomXmlConflictInsertionRangeEnd(DXW.SdtRunRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName);
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictInsertionRangeEnd(DXW.SdtRunRuby openXmlElement, DMW.MarkupType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictInsertionRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictInsertionRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictInsertionRangeEnd>(value);
+      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictInsertionRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -556,7 +556,7 @@ public static class SdtRunRubyConverter
   
   private static DMW.CustomXmlConflictDeletionRangeStart? GetCustomXmlConflictDeletionRangeStart(DXW.SdtRunRuby openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeStart>();
     if (element != null)
       return DMXW.TrackChangeType2Converter.CreateModelElement(element);
     return null;
@@ -564,17 +564,17 @@ public static class SdtRunRubyConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeStart(DXW.SdtRunRuby openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeStart>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictDeletionRangeStart(DXW.SdtRunRuby openXmlElement, DMW.TrackChangeType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeStart>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeStart>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeStart>(value);
+      itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictDeletionRangeStart>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -582,7 +582,7 @@ public static class SdtRunRubyConverter
   
   private static DMW.CustomXmlConflictDeletionRangeEnd? GetCustomXmlConflictDeletionRangeEnd(DXW.SdtRunRuby openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    var element = openXmlElement?.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeEnd>();
     if (element != null)
       return DMXW.MarkupType2Converter.CreateModelElement(element);
     return null;
@@ -590,17 +590,17 @@ public static class SdtRunRubyConverter
   
   private static bool CmpCustomXmlConflictDeletionRangeEnd(DXW.SdtRunRuby openXmlElement, DMW.MarkupType2? value, DiffList? diffs, string? objName)
   {
-    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName);
+    return DMXW.MarkupType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeEnd>(), value, diffs, objName);
   }
   
   private static void SetCustomXmlConflictDeletionRangeEnd(DXW.SdtRunRuby openXmlElement, DMW.MarkupType2? value)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXO2010W.CustomXmlConflictDeletionRangeEnd>();
+    var itemElement = openXmlElement.GetFirstChild<DXO10W.CustomXmlConflictDeletionRangeEnd>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO2010W.CustomXmlConflictDeletionRangeEnd>(value);
+      itemElement = DMXW.MarkupType2Converter.CreateOpenXmlElement<DXO10W.CustomXmlConflictDeletionRangeEnd>(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
