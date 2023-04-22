@@ -10,17 +10,17 @@ public static class StyleConverter
   /// </summary>
   private static DMW.StyleKind? GetType(DXW.Style openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.Style openXmlElement, DMW.StyleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.StyleValues, DMW.StyleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.Style openXmlElement, DMW.StyleKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.StyleValues, DMW.StyleKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.StyleValues, DMW.StyleKind>(value);
   }
   
   /// <summary>

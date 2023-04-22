@@ -7,7 +7,12 @@ namespace DocumentModel.Wordprocessing;
 ///   A run allows the producer to specify a single set of formatting properties, 
 ///   applying the same information to all the contents of the run. .
 /// </summary>
-public class Run: ElementCollection<IRunContent>, IParagraphContent, ISdtRunContent, IBidirectionalContent, IMathArgumentContent
+public class Run: ElementCollection<IRunContent>, 
+  IParagraphContent, 
+  ISdtRunContent, 
+  IRubyContent,
+  IBidirectionalContent, 
+  IMathArgumentContent
 {
   /// <summary>
   ///   Revision Identifier for Run Properties

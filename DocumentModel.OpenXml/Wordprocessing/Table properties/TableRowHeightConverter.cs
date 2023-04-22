@@ -27,17 +27,17 @@ public static class TableRowHeightConverter
   #region HeightType conversion.
   private static DMW.HeightRuleKind? GetHeightType(DXW.TableRowHeight openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
+    return EnumValueConverter.GetValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
   }
   
   private static bool CmpHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName);
   }
   
   private static void SetHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value)
   {
-    openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues, DMW.HeightRuleKind>(value);
+    openXmlElement.HeightType = EnumValueConverter.CreateEnumValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(value);
   }
   #endregion
 

@@ -85,51 +85,51 @@ public static class TablePositionPropertiesConverter
   /// Table Vertical Anchor
   private static DMW.VerticalAnchorKind? GetVerticalAnchor(DXW.TablePositionProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
+    return EnumValueConverter.GetValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value);
   }
   
   private static bool CmpVerticalAnchor(DXW.TablePositionProperties openXmlElement, DMW.VerticalAnchorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalAnchor?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalAnchor(DXW.TablePositionProperties openXmlElement, DMW.VerticalAnchorKind? value)
   {
-    openXmlElement.VerticalAnchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues, DMW.VerticalAnchorKind>(value);
+    openXmlElement.VerticalAnchor = EnumValueConverter.CreateEnumValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(value);
   }
   
   /// <summary>
   /// Table Horizontal Anchor
   private static DMW.HorizontalAnchorKind? GetHorizontalAnchor(DXW.TablePositionProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
+    return EnumValueConverter.GetValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value);
   }
   
   private static bool CmpHorizontalAnchor(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAnchorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalAnchor?.Value, value, diffs, objName);
   }
   
   private static void SetHorizontalAnchor(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAnchorKind? value)
   {
-    openXmlElement.HorizontalAnchor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(value);
+    openXmlElement.HorizontalAnchor = EnumValueConverter.CreateEnumValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(value);
   }
   
   /// <summary>
   /// Relative Horizontal Alignment From Anchor
   private static DMW.HorizontalAlignmentKind? GetTablePositionXAlignment(DXW.TablePositionProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
+    return EnumValueConverter.GetValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value);
   }
   
   private static bool CmpTablePositionXAlignment(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.TablePositionXAlignment?.Value, value, diffs, objName);
   }
   
   private static void SetTablePositionXAlignment(DXW.TablePositionProperties openXmlElement, DMW.HorizontalAlignmentKind? value)
   {
-    openXmlElement.TablePositionXAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(value);
+    openXmlElement.TablePositionXAlignment = EnumValueConverter.CreateEnumValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(value);
   }
   
   /// <summary>
@@ -155,17 +155,17 @@ public static class TablePositionPropertiesConverter
   /// Relative Vertical Alignment from Anchor
   private static DMW.VerticalAlignmentKind? GetTablePositionYAlignment(DXW.TablePositionProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
+    return EnumValueConverter.GetValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value);
   }
   
   private static bool CmpTablePositionYAlignment(DXW.TablePositionProperties openXmlElement, DMW.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.TablePositionYAlignment?.Value, value, diffs, objName);
   }
   
   private static void SetTablePositionYAlignment(DXW.TablePositionProperties openXmlElement, DMW.VerticalAlignmentKind? value)
   {
-    openXmlElement.TablePositionYAlignment = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(value);
+    openXmlElement.TablePositionYAlignment = EnumValueConverter.CreateEnumValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(value);
   }
   
   /// <summary>

@@ -8,17 +8,17 @@ public static class BidirectionalEmbeddingConverter
   #region Type conversion.
   private static DMW.DirectionKind? GetVal(DXW.BidirectionalEmbedding openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value);
   }
   
   private static bool CmpVal(DXW.BidirectionalEmbedding openXmlElement, DMW.DirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.BidirectionalEmbedding openXmlElement, DMW.DirectionKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DirectionValues, DMW.DirectionKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.DirectionValues, DMW.DirectionKind>(value);
   }
   #endregion
 

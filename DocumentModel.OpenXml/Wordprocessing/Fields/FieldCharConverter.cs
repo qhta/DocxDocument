@@ -10,17 +10,17 @@ public static class FieldCharConverter
   /// </summary>
   private static DMW.FieldCharKind? GetFieldCharType(DXW.FieldChar openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
+    return EnumValueConverter.GetValue<DXW.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
   }
   
   private static bool CmpFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName);
   }
   
   private static void SetFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value)
   {
-    openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.FieldCharValues, DMW.FieldCharKind>(value);
+    openXmlElement.FieldCharType = EnumValueConverter.CreateEnumValue<DXW.FieldCharValues, DMW.FieldCharKind>(value);
   }
   
   /// <summary>

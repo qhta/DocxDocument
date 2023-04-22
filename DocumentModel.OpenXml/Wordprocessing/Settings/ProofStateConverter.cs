@@ -10,17 +10,17 @@ public static class ProofStateConverter
   /// </summary>
   private static DMW.ProofingStateKind? GetSpelling(DXW.ProofState openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value);
+    return EnumValueConverter.GetValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value);
   }
   
   private static bool CmpSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName);
   }
   
   private static void SetSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
   {
-    openXmlElement.Spelling = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(value);
+    openXmlElement.Spelling = EnumValueConverter.CreateEnumValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(value);
   }
   
   /// <summary>
@@ -28,17 +28,17 @@ public static class ProofStateConverter
   /// </summary>
   private static DMW.ProofingStateKind? GetGrammar(DXW.ProofState openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value);
+    return EnumValueConverter.GetValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value);
   }
   
   private static bool CmpGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName);
   }
   
   private static void SetGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
   {
-    openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues, DMW.ProofingStateKind>(value);
+    openXmlElement.Grammar = EnumValueConverter.CreateEnumValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(value);
   }
   
   public static DMW.ProofState? CreateModelElement(DXW.ProofState? openXmlElement)

@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Phonetic Guide Properties.
@@ -14,7 +13,7 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Text Font Size.
   /// </summary>
-  public string? PhoneticGuideTextFontSize { get; set; }
+  public Hps? PhoneticGuideTextFontSize { get; set; }
 
   /// <summary>
   ///   Distance Between Phonetic Guide Text and Phonetic Guide Base Text.
@@ -24,7 +23,7 @@ public class RubyProperties: ModelElement
   /// <summary>
   ///   Phonetic Guide Base Text Font Size.
   /// </summary>
-  public string? PhoneticGuideBaseTextSize { get; set; }
+  public Hps? PhoneticGuideBaseTextSize { get; set; }
 
   /// <summary>
   ///   Language ID for Phonetic Guide.

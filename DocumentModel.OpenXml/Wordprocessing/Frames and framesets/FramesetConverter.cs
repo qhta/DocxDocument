@@ -67,12 +67,12 @@ public static class FramesetConverter
   /// </summary>
   private static DMW.FrameLayoutKind? GetFrameLayout(DXW.Frameset openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(openXmlElement.GetFirstChild<DXW.FrameLayout>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.FrameLayoutValues, DMW.FrameLayoutKind>(openXmlElement.GetFirstChild<DXW.FrameLayout>()?.Val?.Value);
   }
   
   private static bool CmpFrameLayout(DXW.Frameset openXmlElement, DMW.FrameLayoutKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(openXmlElement.GetFirstChild<DXW.FrameLayout>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FrameLayoutValues, DMW.FrameLayoutKind>(openXmlElement.GetFirstChild<DXW.FrameLayout>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetFrameLayout(DXW.Frameset openXmlElement, DMW.FrameLayoutKind? value)
@@ -81,13 +81,13 @@ public static class FramesetConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>(itemElement, (DMW.FrameLayoutKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.FrameLayoutValues, DMW.FrameLayoutKind>(itemElement, (DMW.FrameLayoutKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DXW.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
   }
   
   private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)

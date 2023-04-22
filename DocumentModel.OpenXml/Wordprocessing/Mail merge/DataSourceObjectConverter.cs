@@ -113,12 +113,12 @@ public static class DataSourceObjectConverter
   /// </summary>
   private static DMW.MailMergeSourceKind? GetMailMergeSource(DXW.DataSourceObject openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value);
   }
   
   private static bool CmpMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value)
@@ -127,13 +127,13 @@ public static class DataSourceObjectConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>(itemElement, (DMW.MailMergeSourceKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(itemElement, (DMW.MailMergeSourceKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeSource, DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues, DMW.MailMergeSourceKind>((DMW.MailMergeSourceKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeSource, DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>((DMW.MailMergeSourceKind)value));
   }
   
   /// <summary>
