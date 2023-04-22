@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Phonetic Guide.
+/// <see cref="DMW.Ruby"/> class from/to OpenXml converter.
 /// </summary>
 public static class RubyConverter
 {
-  /// <summary>
-  /// Phonetic Guide Properties.
-  /// </summary>
+  #region RubyProperties conversion.
   private static DMW.RubyProperties? GetRubyProperties(DXW.Ruby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RubyProperties>();
@@ -33,10 +31,9 @@ public static class RubyConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Phonetic Guide Text.
-  /// </summary>
+  #endregion
+
+  #region RubyContent conversion.
   private static DMW.RubyContent? GetRubyContent(DXW.Ruby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RubyContent>();
@@ -62,10 +59,9 @@ public static class RubyConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Phonetic Guide Base Text.
-  /// </summary>
+  #endregion
+
+  #region RubyBase conversion.
   private static DMW.RubyBase? GetRubyBase(DXW.Ruby openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.RubyBase>();
@@ -86,55 +82,58 @@ public static class RubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.RubyBaseConverter.CreateOpenXmlElement<DXW.RubyBase>(value);
+      itemElement = DMXW.RubyBaseConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
   }
-  
+  #endregion
+
+  #region Ruby model conversion.
   public static DMW.Ruby? CreateModelElement(DXW.Ruby? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Ruby();
-      value.RubyProperties = GetRubyProperties(openXmlElement);
-      value.RubyContent = GetRubyContent(openXmlElement);
-      value.RubyBase = GetRubyBase(openXmlElement);
-      return value;
+      var model = new DMW.Ruby();
+      model.RubyProperties = GetRubyProperties(openXmlElement);
+      model.RubyContent = GetRubyContent(openXmlElement);
+      model.RubyBase = GetRubyBase(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Ruby? openXmlElement, DMW.Ruby? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Ruby? openXmlElement, DMW.Ruby? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpRubyProperties(openXmlElement, value.RubyProperties, diffs, objName))
+      if (!CmpRubyProperties(openXmlElement, model.RubyProperties, diffs, objName))
         ok = false;
-      if (!CmpRubyContent(openXmlElement, value.RubyContent, diffs, objName))
+      if (!CmpRubyContent(openXmlElement, model.RubyContent, diffs, objName))
         ok = false;
-      if (!CmpRubyBase(openXmlElement, value.RubyBase, diffs, objName))
+      if (!CmpRubyBase(openXmlElement, model.RubyBase, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static DXW.Ruby CreateOpenXmlElement(DMW.Ruby value)
+  public static DXW.Ruby CreateOpenXmlElement(DMW.Ruby model)
   {
     var openXmlElement = new DXW.Ruby();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static bool UpdateOpenXmlElement(DXW.Ruby openXmlElement, DMW.Ruby value)
+  public static bool UpdateOpenXmlElement(DXW.Ruby openXmlElement, DMW.Ruby model)
   {
-    SetRubyProperties(openXmlElement, value?.RubyProperties);
-    SetRubyContent(openXmlElement, value?.RubyContent);
-    SetRubyBase(openXmlElement, value?.RubyBase);
+    SetRubyProperties(openXmlElement, model?.RubyProperties);
+    SetRubyContent(openXmlElement, model?.RubyContent);
+    SetRubyBase(openXmlElement, model?.RubyBase);
     return true;
   }
+  #endregion
 }

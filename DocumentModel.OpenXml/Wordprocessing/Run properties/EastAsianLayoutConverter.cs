@@ -48,17 +48,17 @@ public static class EastAsianLayoutConverter
   /// </summary>
   private static DMW.CombineBracketKind? GetCombineBrackets(DXW.EastAsianLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value);
+    return EnumValueConverter.GetValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value);
   }
   
   private static bool CmpCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName);
   }
   
   private static void SetCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value)
   {
-    openXmlElement.CombineBrackets = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues, DMW.CombineBracketKind>(value);
+    openXmlElement.CombineBrackets = EnumValueConverter.CreateEnumValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(value);
   }
   
   /// <summary>

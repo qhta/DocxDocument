@@ -10,17 +10,17 @@ public static class ProofErrorConverter
   /// </summary>
   private static DMW.ProofingErrorKind? GetType(DXW.ProofError openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues, DMW.ProofingErrorKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(value);
   }
   
   public static DMW.ProofError? CreateModelElement(DXW.ProofError? openXmlElement)

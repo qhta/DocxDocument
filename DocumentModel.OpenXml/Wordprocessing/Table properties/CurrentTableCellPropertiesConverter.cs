@@ -81,12 +81,12 @@ public static class CurrentTableCellPropertiesConverter
   #region HorizontalMerge conversion.
   private static DMW.MergedCellKind? GetHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value);
   }
 
   private static bool CmpHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value)
@@ -95,25 +95,25 @@ public static class CurrentTableCellPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(itemElement, (DMW.MergedCellKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MergedCellValues, DMW.MergedCellKind>(itemElement, (DMW.MergedCellKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
   #endregion
 
   #region VerticalMerge conversion.
   private static DMW.MergedCellKind? GetVerticalMerge(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value);
   }
 
   private static bool CmpVerticalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetVerticalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value)
@@ -122,13 +122,13 @@ public static class CurrentTableCellPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>(itemElement, (DMW.MergedCellKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MergedCellValues, DMW.MergedCellKind>(itemElement, (DMW.MergedCellKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DocumentFormat.OpenXml.Wordprocessing.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
   #endregion
 
@@ -163,12 +163,12 @@ public static class CurrentTableCellPropertiesConverter
   #region TextDirection conversion.
   private static DMW.TextDirectionKind? GetTextDirection(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
   }
 
   private static bool CmpTextDirection(DX.OpenXmlCompositeElement openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetTextDirection(DX.OpenXmlCompositeElement openXmlElement, DMW.TextDirectionKind? value)
@@ -177,13 +177,13 @@ public static class CurrentTableCellPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>(itemElement, (DMW.TextDirectionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.TextDirectionValues, DMW.TextDirectionKind>(itemElement, (DMW.TextDirectionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DXW.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
   #endregion
 

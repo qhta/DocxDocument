@@ -10,17 +10,17 @@ public static class DocumentConverter
   /// </summary>
   private static DMW.DocumentConformance? GetConformance(DXW.Document openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value);
+    return EnumValueConverter.GetValue<DXW.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value);
   }
   
   private static bool CmpConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName);
   }
   
   private static void SetConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value)
   {
-    openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentConformance, DMW.DocumentConformance>(value);
+    openXmlElement.Conformance = EnumValueConverter.CreateEnumValue<DXW.DocumentConformance, DMW.DocumentConformance>(value);
   }
   
   /// <summary>

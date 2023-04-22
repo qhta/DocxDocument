@@ -25,12 +25,12 @@ public static class DocPartTypesConverter
   
   private static DMW.DocPartKind? GetDocPartType(DXW.DocPartTypes openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value);
   }
   
   private static bool CmpDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value)
@@ -39,13 +39,13 @@ public static class DocPartTypesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>(itemElement, (DMW.DocPartKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.DocPartValues, DMW.DocPartKind>(itemElement, (DMW.DocPartKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DocumentFormat.OpenXml.Wordprocessing.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DXW.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
   }
   
   public static DMW.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)

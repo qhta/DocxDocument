@@ -10,17 +10,17 @@ public static class ZoomConverter
   /// </summary>
   private static DMW.PresetZoomKind? GetVal(DXW.Zoom openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value);
   }
   
   private static bool CmpVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.Zoom openXmlElement, DMW.PresetZoomKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues, DMW.PresetZoomKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.PresetZoomValues, DMW.PresetZoomKind>(value);
   }
   
   /// <summary>

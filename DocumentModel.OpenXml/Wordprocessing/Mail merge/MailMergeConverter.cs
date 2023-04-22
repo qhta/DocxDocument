@@ -10,12 +10,12 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.MailMergeDocumentKind? GetMainDocumentType(DXW.MailMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value);
   }
   
   private static bool CmpMainDocumentType(DXW.MailMerge openXmlElement, DMW.MailMergeDocumentKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMainDocumentType(DXW.MailMerge openXmlElement, DMW.MailMergeDocumentKind? value)
@@ -24,13 +24,13 @@ public static class MailMergeConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(itemElement, (DMW.MailMergeDocumentKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(itemElement, (DMW.MailMergeDocumentKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MainDocumentType, DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues, DMW.MailMergeDocumentKind>((DMW.MailMergeDocumentKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MainDocumentType, DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>((DMW.MailMergeDocumentKind)value));
   }
   
   /// <summary>
@@ -56,12 +56,12 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.MailMergeDataKind? GetDataType(DXW.MailMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value);
   }
   
   private static bool CmpDataType(DXW.MailMerge openXmlElement, DMW.MailMergeDataKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDataType(DXW.MailMerge openXmlElement, DMW.MailMergeDataKind? value)
@@ -70,13 +70,13 @@ public static class MailMergeConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>(itemElement, (DMW.MailMergeDataKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(itemElement, (DMW.MailMergeDataKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DataType, DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues, DMW.MailMergeDataKind>((DMW.MailMergeDataKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DataType, DXW.MailMergeDataValues, DMW.MailMergeDataKind>((DMW.MailMergeDataKind)value));
   }
   
   /// <summary>
@@ -216,12 +216,12 @@ public static class MailMergeConverter
   /// </summary>
   private static DMW.MailMergeDestinationKind? GetDestination(DXW.MailMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value);
   }
   
   private static bool CmpDestination(DXW.MailMerge openXmlElement, DMW.MailMergeDestinationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetDestination(DXW.MailMerge openXmlElement, DMW.MailMergeDestinationKind? value)
@@ -230,13 +230,13 @@ public static class MailMergeConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(itemElement, (DMW.MailMergeDestinationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(itemElement, (DMW.MailMergeDestinationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Destination, DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues, DMW.MailMergeDestinationKind>((DMW.MailMergeDestinationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Destination, DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>((DMW.MailMergeDestinationKind)value));
   }
   
   /// <summary>

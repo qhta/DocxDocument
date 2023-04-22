@@ -25,17 +25,17 @@ public static class Color3Converter
   #region ThemeColor conversion.
   private static DMW.ThemeColorKind? GetThemeColor(DXO13W.Color openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
   private static bool CmpThemeColor(DXO13W.Color openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXO13W.Color openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   #endregion
 

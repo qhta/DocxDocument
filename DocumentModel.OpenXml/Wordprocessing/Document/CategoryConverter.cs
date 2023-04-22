@@ -38,12 +38,12 @@ public static class CategoryConverter
   /// </summary>
   private static DMW.DocPartGalleryKind? GetGallery(DXW.Category openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value);
   }
   
   private static bool CmpGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value)
@@ -52,13 +52,13 @@ public static class CategoryConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>(itemElement, (DMW.DocPartGalleryKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(itemElement, (DMW.DocPartGalleryKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
   }
   
   public static DMW.Category? CreateModelElement(DXW.Category? openXmlElement)

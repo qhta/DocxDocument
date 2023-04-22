@@ -1,13 +1,3 @@
-using System.Reflection;
-
-using DocumentFormat.OpenXml.Wordprocessing;
-
-using DocumentModel;
-using DocumentModel.OpenXml;
-using DocumentModel.OpenXml.Wordprocessing;
-
-using Qhta.Xml.Serialization;
-
 namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>
@@ -78,18 +68,18 @@ public class TestStyles : TestBase
     if (showDetails)
       WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var diffs = new DiffList();
-    if (!StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))
+    if (!DMXW.StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     Assert.That(modelDefinedStylesCount, Is.EqualTo(origDefinedStylesCount), "Invalid defined styles count");
 
     var modelLatentStyles = document.Styles.LatentStyles;
     int modelLatentStylesCount = modelLatentStyles?.Count ?? 0;
     var origLatentStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles;
-    int origLatentStylesCount = origLatentStyles?.Elements<LatentStyleExceptionInfo>().Count() ?? 0;
+    int origLatentStylesCount = origLatentStyles?.Elements<DXW.LatentStyleExceptionInfo>().Count() ?? 0;
     if (showDetails)
       WriteLine($"  Document Lantent Styles: found {modelLatentStylesCount}, expected {origLatentStylesCount}");
     diffs = new DiffList();
-    if (!LatentStylesConverter.CompareModelElement(origLatentStyles, modelLatentStyles, diffs, null))
+    if (!DMXW.LatentStylesConverter.CompareModelElement(origLatentStyles, modelLatentStyles, diffs, null))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     Assert.That(modelLatentStylesCount, Is.EqualTo(origLatentStylesCount), "Invalid latent styles count");
 
@@ -192,7 +182,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!DefaultParagraphPropertiesConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
+      if (!DMXW.DefaultParagraphPropertiesConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
@@ -209,7 +199,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!DefaultRunPropertiesConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
+      if (!DMXW.DefaultRunPropertiesConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
@@ -242,7 +232,7 @@ public class TestStyles : TestBase
     if (oldStyles == null)
       return;
     var textWriter = new StringWriter();
-    var serializer = new QXmlSerializer(typeof(Styles), extraTypes.ToArray(),
+    var serializer = new QXmlSerializer(typeof(DMW.Styles), extraTypes.ToArray(),
       new SerializationOptions { AcceptAllProperties = true });
     serializer.Serialize(textWriter, oldStyles);
     textWriter.Flush();

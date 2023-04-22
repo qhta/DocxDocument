@@ -10,17 +10,17 @@ public static class CellMergeConverter
   /// </summary>
   private static DMW.VerticalMergeRevisionKind? GetVerticalMerge(DXW.CellMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value);
+    return EnumValueConverter.GetValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value);
   }
   
   private static bool CmpVerticalMerge(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMerge?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalMerge(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
   {
-    openXmlElement.VerticalMerge = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
+    openXmlElement.VerticalMerge = EnumValueConverter.CreateEnumValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
   }
   
   /// <summary>
@@ -28,17 +28,17 @@ public static class CellMergeConverter
   /// </summary>
   private static DMW.VerticalMergeRevisionKind? GetVerticalMergeOriginal(DXW.CellMerge openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value);
+    return EnumValueConverter.GetValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value);
   }
   
   private static bool CmpVerticalMergeOriginal(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(openXmlElement?.VerticalMergeOriginal?.Value, value, diffs, objName);
   }
   
   private static void SetVerticalMergeOriginal(DXW.CellMerge openXmlElement, DMW.VerticalMergeRevisionKind? value)
   {
-    openXmlElement.VerticalMergeOriginal = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
+    openXmlElement.VerticalMergeOriginal = EnumValueConverter.CreateEnumValue<DXW.VerticalMergeRevisionValues, DMW.VerticalMergeRevisionKind>(value);
   }
   
   /// <summary>

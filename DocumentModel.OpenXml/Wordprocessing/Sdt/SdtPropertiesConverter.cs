@@ -58,12 +58,12 @@ public static class SdtPropertiesConverter
   
   private static DMW.LockingKind? GetLock(DXW.SdtProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value);
   }
   
   private static bool CmpLock(DXW.SdtProperties openXmlElement, DMW.LockingKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LockingValues, DMW.LockingKind>(openXmlElement.GetFirstChild<DXW.Lock>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetLock(DXW.SdtProperties openXmlElement, DMW.LockingKind? value)
@@ -72,13 +72,13 @@ public static class SdtPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>(itemElement, (DMW.LockingKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.LockingValues, DMW.LockingKind>(itemElement, (DMW.LockingKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Lock, DocumentFormat.OpenXml.Wordprocessing.LockingValues, DMW.LockingKind>((DMW.LockingKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Lock, DXW.LockingValues, DMW.LockingKind>((DMW.LockingKind)value));
   }
   
   private static DMW.SdtPlaceholder? GetSdtPlaceholder(DXW.SdtProperties openXmlElement)

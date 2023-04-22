@@ -7,12 +7,12 @@ public static class BehaviorsConverter
 {
   private static DMW.DocPartBehaviorKind? GetBehavior(DXW.Behaviors openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value);
   }
   
   private static bool CmpBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(openXmlElement.GetFirstChild<DXW.Behavior>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetBehavior(DXW.Behaviors openXmlElement, DMW.DocPartBehaviorKind? value)
@@ -21,13 +21,13 @@ public static class BehaviorsConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(itemElement, (DMW.DocPartBehaviorKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.DocPartBehaviorValues, DMW.DocPartBehaviorKind>(itemElement, (DMW.DocPartBehaviorKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues, DMW.DocPartBehaviorKind>((DMW.DocPartBehaviorKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Behavior, DXW.DocPartBehaviorValues, DMW.DocPartBehaviorKind>((DMW.DocPartBehaviorKind)value));
   }
   
   public static DMW.Behaviors? CreateModelElement(DXW.Behaviors? openXmlElement)

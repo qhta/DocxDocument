@@ -50,17 +50,17 @@ public static class PageSizeConverter
   /// </summary>
   private static DMW.PageOrientationKind? GetOrient(DXW.PageSize openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value);
+    return EnumValueConverter.GetValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value);
   }
   
   private static bool CmpOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName);
   }
   
   private static void SetOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value)
   {
-    openXmlElement.Orient = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues, DMW.PageOrientationKind>(value);
+    openXmlElement.Orient = EnumValueConverter.CreateEnumValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(value);
   }
   
   /// <summary>

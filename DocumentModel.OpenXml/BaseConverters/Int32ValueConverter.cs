@@ -1,6 +1,4 @@
-﻿using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 /// <summary>
 /// Converter of Int32 values
@@ -62,7 +60,7 @@ public static class Int32ValueConverter
   /// </summary>
   /// <param name="hpsValue">HpsMeasureType to Convert</param>
   /// <returns>Int32 value of element content (or <c>null</c> if element has no content or conversion is impossible).</returns>
-  public static Int32? GetValue(HpsMeasureType? hpsValue)
+  public static Int32? GetValue(DXW.HpsMeasureType? hpsValue)
   {
     if (hpsValue?.Val != null)
     {
@@ -80,7 +78,7 @@ public static class Int32ValueConverter
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the values are equal or both are null, <c>false</c> otherwise</returns>
-  public static bool CmpValue(HpsMeasureType? element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static bool CmpValue(DXW.HpsMeasureType? element, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (GetValue(element) == value) return true;
     diffs?.Add(objName, propName ?? element?.GetType().ToString() ?? "HpsMeasureType", element?.Val, value);
@@ -94,7 +92,7 @@ public static class Int32ValueConverter
   /// <param name="value">value to convert</param>
   /// <returns>Newly created OpenXmlElement (or <c>null</c> if conversion is impossible</returns>
   public static void SetHpsMeasureType<OpenXmlElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
-    where OpenXmlElementType : HpsMeasureType, new()
+    where OpenXmlElementType : DXW.HpsMeasureType, new()
   {
     var element = openXmlElement.GetFirstChild<OpenXmlElementType>();
     if (element!=null && value!=null)

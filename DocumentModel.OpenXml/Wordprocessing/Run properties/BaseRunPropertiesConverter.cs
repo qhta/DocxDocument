@@ -453,12 +453,12 @@ public static class BaseRunPropertiesConverter
   #region TextEffect conversion.
   public static DMW.TextEffectKind? GetTextEffect(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value);
   }
 
   public static bool CmpTextEffect(DX.OpenXmlCompositeElement openXmlElement, DMW.TextEffectKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextEffectValues, DMW.TextEffectKind>(openXmlElement.GetFirstChild<DXW.TextEffect>()?.Val?.Value, value, diffs, objName);
   }
 
   public static void SetTextEffect(DX.OpenXmlCompositeElement openXmlElement, DMW.TextEffectKind? value)
@@ -467,13 +467,13 @@ public static class BaseRunPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>(itemElement, (DMW.TextEffectKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.TextEffectValues, DMW.TextEffectKind>(itemElement, (DMW.TextEffectKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DocumentFormat.OpenXml.Wordprocessing.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DXW.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
   }
   #endregion
 
@@ -566,12 +566,12 @@ public static class BaseRunPropertiesConverter
   #region VerticalTextAlignment conversion.
   public static DMW.VerticalPositionKind? GetVerticalTextAlignment(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value);
   }
 
   public static bool CmpVerticalTextAlignment(DX.OpenXmlCompositeElement openXmlElement, DMW.VerticalPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalPositionValues, DMW.VerticalPositionKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignment>()?.Val?.Value, value, diffs, objName);
   }
 
   public static void SetVerticalTextAlignment(DX.OpenXmlCompositeElement openXmlElement, DMW.VerticalPositionKind? value)
@@ -580,13 +580,13 @@ public static class BaseRunPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement, (DMW.VerticalPositionKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.VerticalPositionValues, DMW.VerticalPositionKind>(itemElement, (DMW.VerticalPositionKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DXW.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
   }
 
   #endregion
@@ -594,12 +594,12 @@ public static class BaseRunPropertiesConverter
   #region Emphasis conversion.
   public static DMW.EmphasisMarkKind? GetEmphasis(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value);
   }
 
   public static bool CmpEmphasis(DX.OpenXmlCompositeElement openXmlElement, DMW.EmphasisMarkKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>(openXmlElement.GetFirstChild<DXW.Emphasis>()?.Val?.Value, value, diffs, objName);
   }
 
   public static void SetEmphasis(DX.OpenXmlCompositeElement openXmlElement, DMW.EmphasisMarkKind? value)
@@ -608,13 +608,13 @@ public static class BaseRunPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement, (DMW.EmphasisMarkKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>(itemElement, (DMW.EmphasisMarkKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
   }
 
   #endregion

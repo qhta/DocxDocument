@@ -10,17 +10,17 @@ public static class ObjectLinkConverter
   /// </summary>
   private static DMW.ObjectUpdateMode? GetUpdateMode(DXW.ObjectLink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value);
+    return EnumValueConverter.GetValue<DXW.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value);
   }
   
   private static bool CmpUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ObjectUpdateMode, DMW.ObjectUpdateMode>(openXmlElement?.UpdateMode?.Value, value, diffs, objName);
   }
   
   private static void SetUpdateMode(DXW.ObjectLink openXmlElement, DMW.ObjectUpdateMode? value)
   {
-    openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode, DMW.ObjectUpdateMode>(value);
+    openXmlElement.UpdateMode = EnumValueConverter.CreateEnumValue<DXW.ObjectUpdateMode, DMW.ObjectUpdateMode>(value);
   }
   
   /// <summary>
@@ -46,17 +46,17 @@ public static class ObjectLinkConverter
   /// </summary>
   private static DMW.ObjectDrawAspect? GetdrawAspect(DXW.ObjectLink openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
+    return EnumValueConverter.GetValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value);
   }
   
   private static bool CmpdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(openXmlElement?.drawAspect?.Value, value, diffs, objName);
   }
   
   private static void SetdrawAspect(DXW.ObjectLink openXmlElement, DMW.ObjectDrawAspect? value)
   {
-    openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect, DMW.ObjectDrawAspect>(value);
+    openXmlElement.drawAspect = EnumValueConverter.CreateEnumValue<DXW.ObjectDrawAspect, DMW.ObjectDrawAspect>(value);
   }
   
   /// <summary>

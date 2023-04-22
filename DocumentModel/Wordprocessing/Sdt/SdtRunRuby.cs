@@ -1,57 +1,18 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the SdtRunRuby Class.
+///   Counterpart of <see cref="SdtRun"/> class in Ruby domain.
 /// </summary>
-public class SdtRunRuby: ModelElement
+public class SdtRunRuby: ElementCollection<IRubyContent>, IRubyContent
 {
   /// <summary>
-  ///   SdtContentRunRuby.
+  ///  Specifies the set of properties which shall be applied to this structured document tag.
   /// </summary>
-  public SdtContentRunRuby? SdtContentRunRuby { get; set; }
-
   public SdtProperties? SdtProperties { get; set; }
 
+  /// <summary>
+  /// Specifies the properties which shall be applied to the physical character which delimits the end of a structured document tag.
+  /// </summary>
   public SdtEndCharProperties? SdtEndCharProperties { get; set; }
 
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
-
-  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
-
-  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
-
-  public MoveToRangeStart? MoveToRangeStart { get; set; }
-
-  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
-
-  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
-
-  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
-
-  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
-
-  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
-
-  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
-
-  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
-
-  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
-
-  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
-
-  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
-
-  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
-
-  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
-
-  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
 }

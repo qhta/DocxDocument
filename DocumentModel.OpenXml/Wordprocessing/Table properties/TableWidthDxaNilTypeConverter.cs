@@ -27,21 +27,21 @@ public static class TableWidthDxaNilTypeConverter
   #region Type conversion.
   private static DMW.TableWidthKind? GetType(DXW.TableWidthDxaNilType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
   {
     DMW.TableWidthKind? kind = (value == DocumentModel.Wordprocessing.TableWidthUnitType.Nil) ? DocumentModel.Wordprocessing.TableWidthKind.Nil 
       : (value == DocumentModel.Wordprocessing.TableWidthUnitType.Twips) ? DocumentModel.Wordprocessing.TableWidthKind.Twips : null;
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value, kind, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value, kind, diffs, objName);
   }
   
   private static void SetType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthUnitType? value)
   {
     DMW.TableWidthKind? kind = (value == DocumentModel.Wordprocessing.TableWidthUnitType.Nil) ? DocumentModel.Wordprocessing.TableWidthKind.Nil 
       : (value == DocumentModel.Wordprocessing.TableWidthUnitType.Twips) ? DocumentModel.Wordprocessing.TableWidthKind.Twips : null;
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthValues, DMW.TableWidthKind>(kind);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.TableWidthValues, DMW.TableWidthKind>(kind);
   }
   #endregion
 

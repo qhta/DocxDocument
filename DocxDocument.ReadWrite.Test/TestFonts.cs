@@ -1,5 +1,3 @@
-using DocumentFormat.OpenXml.Wordprocessing;
-
 namespace DocxDocument.ReadWrite.Test;
 
 /// <summary>

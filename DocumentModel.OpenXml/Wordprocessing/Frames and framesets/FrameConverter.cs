@@ -121,12 +121,12 @@ public static class FrameConverter
   /// </summary>
   private static DMW.FrameScrollbarVisibilityKind? GetScrollbarVisibility(DXW.Frame openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value);
   }
   
   private static bool CmpScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(openXmlElement.GetFirstChild<DXW.ScrollbarVisibility>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetScrollbarVisibility(DXW.Frame openXmlElement, DMW.FrameScrollbarVisibilityKind? value)
@@ -135,13 +135,13 @@ public static class FrameConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(itemElement, (DMW.FrameScrollbarVisibilityKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>(itemElement, (DMW.FrameScrollbarVisibilityKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.ScrollbarVisibility, DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>((DMW.FrameScrollbarVisibilityKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.ScrollbarVisibility, DXW.FrameScrollbarVisibilityValues, DMW.FrameScrollbarVisibilityKind>((DMW.FrameScrollbarVisibilityKind)value));
   }
   
   /// <summary>

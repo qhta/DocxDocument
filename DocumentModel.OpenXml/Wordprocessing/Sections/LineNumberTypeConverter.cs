@@ -68,17 +68,17 @@ public static class LineNumberTypeConverter
   /// </summary>
   private static DMW.LineNumberRestartKind? GetRestart(DXW.LineNumberType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
+    return EnumValueConverter.GetValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value);
   }
   
   private static bool CmpRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(openXmlElement?.Restart?.Value, value, diffs, objName);
   }
   
   private static void SetRestart(DXW.LineNumberType openXmlElement, DMW.LineNumberRestartKind? value)
   {
-    openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues, DMW.LineNumberRestartKind>(value);
+    openXmlElement.Restart = EnumValueConverter.CreateEnumValue<DXW.LineNumberRestartValues, DMW.LineNumberRestartKind>(value);
   }
   
   public static DMW.LineNumberType? CreateModelElement(DXW.LineNumberType? openXmlElement)

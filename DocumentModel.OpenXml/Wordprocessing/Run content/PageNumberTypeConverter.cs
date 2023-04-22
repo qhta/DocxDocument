@@ -10,17 +10,17 @@ public static class PageNumberTypeConverter
   /// </summary>
   private static DMW.NumberFormatKind? GetFormat(DXW.PageNumberType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value);
+    return EnumValueConverter.GetValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value);
   }
   
   private static bool CmpFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName);
   }
   
   private static void SetFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value)
   {
-    openXmlElement.Format = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
+    openXmlElement.Format = EnumValueConverter.CreateEnumValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(value);
   }
   
   /// <summary>
@@ -68,17 +68,17 @@ public static class PageNumberTypeConverter
   /// </summary>
   private static DMW.ChapterSeparatorKind? GetChapterSeparator(DXW.PageNumberType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value);
+    return EnumValueConverter.GetValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value);
   }
   
   private static bool CmpChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName);
   }
   
   private static void SetChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value)
   {
-    openXmlElement.ChapterSeparator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
+    openXmlElement.ChapterSeparator = EnumValueConverter.CreateEnumValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
   public static DMW.PageNumberType? CreateModelElement(DXW.PageNumberType? openXmlElement)

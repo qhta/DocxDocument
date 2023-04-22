@@ -28,17 +28,17 @@ public static class CaptionConverter
   /// </summary>
   private static DMW.CaptionPositionKind? GetPosition(DXW.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value);
+    return EnumValueConverter.GetValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value);
   }
   
   private static bool CmpPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName);
   }
   
   private static void SetPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value)
   {
-    openXmlElement.Position = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues, DMW.CaptionPositionKind>(value);
+    openXmlElement.Position = EnumValueConverter.CreateEnumValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(value);
   }
   
   /// <summary>
@@ -102,17 +102,17 @@ public static class CaptionConverter
   /// </summary>
   private static DMW.NumberFormatKind? GetNumberFormat(DXW.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
+    return EnumValueConverter.GetValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
   }
   
   private static bool CmpNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName);
   }
   
   private static void SetNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value)
   {
-    openXmlElement.NumberFormat = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues, DMW.NumberFormatKind>(value);
+    openXmlElement.NumberFormat = EnumValueConverter.CreateEnumValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(value);
   }
   
   /// <summary>
@@ -120,17 +120,17 @@ public static class CaptionConverter
   /// </summary>
   private static DMW.ChapterSeparatorKind? GetSeparator(DXW.Caption openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
+    return EnumValueConverter.GetValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
   }
   
   private static bool CmpSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName);
   }
   
   private static void SetSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value)
   {
-    openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
+    openXmlElement.Separator = EnumValueConverter.CreateEnumValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(value);
   }
   
   public static DMW.Caption? CreateModelElement(DXW.Caption? openXmlElement)

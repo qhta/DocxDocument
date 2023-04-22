@@ -6,7 +6,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the CustomXmlRuby Class.
 /// </summary>
-public class CustomXmlRuby: ModelElement
+public class CustomXmlRuby: ModelElement, IRubyContent
 {
   public CustomXmlProperties? CustomXmlProperties { get; set; }
 

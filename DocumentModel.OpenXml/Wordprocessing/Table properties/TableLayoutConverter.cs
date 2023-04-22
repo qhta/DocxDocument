@@ -8,17 +8,17 @@ public static class TableLayoutConverter
   #region Table Layout Setting conversion.
   private static DMW.TableLayoutKind? GetType(DXW.TableLayout openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues, DMW.TableLayoutKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(value);
   }
   
   public static DMW.TableLayoutKind? CreateModelElement(DXW.TableLayout? openXmlElement)

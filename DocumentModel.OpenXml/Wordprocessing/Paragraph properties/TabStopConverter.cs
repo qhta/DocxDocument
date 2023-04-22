@@ -10,17 +10,17 @@ public static class TabStopConverter
   /// </summary>
   private static DMW.TabStopKind? GetVal(DXW.TabStop openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value);
   }
   
   private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName, string? propName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
+    return EnumValueConverter.CmpValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TabStopValues, DMW.TabStopKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.TabStopValues, DMW.TabStopKind>(value);
   }
   
   /// <summary>
@@ -28,17 +28,17 @@ public static class TabStopConverter
   /// </summary>
   private static DMW.TabStopLeaderCharKind? GetLeader(DXW.TabStop openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value);
+    return EnumValueConverter.GetValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value);
   }
   
   private static bool CmpLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(openXmlElement?.Leader?.Value, value, diffs, objName);
   }
   
   private static void SetLeader(DXW.TabStop openXmlElement, DMW.TabStopLeaderCharKind? value)
   {
-    openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(value);
+    openXmlElement.Leader = EnumValueConverter.CreateEnumValue<DXW.TabStopLeaderCharValues, DMW.TabStopLeaderCharKind>(value);
   }
   
   /// <summary>

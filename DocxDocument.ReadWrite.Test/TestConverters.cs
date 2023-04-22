@@ -1,17 +1,7 @@
-using System.Reflection;
-using System.Security.AccessControl;
-
 using DocumentFormat.OpenXml;
 using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Presentation;
-using DocumentFormat.OpenXml.Wordprocessing;
 
-using DocumentModel;
 using DocumentModel.OpenXml;
-
-using DocxDocument.Reader;
-
-using Qhta.TypeUtils;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -150,8 +140,8 @@ public class TestConverters : TestBase
   /// <param name="showDetails">if set to <c>true</c> [show details].</param>
   public void TestHexIntConverterOfExtendendProperties(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
-    //DocumentFormat.OpenXml.Wordprocessing.Style.Rsid
-    //DocumentFormat.OpenXml.Wordprocessing.Rsids.RsidRoot
+    //DXW.Style.Rsid
+    //DXW.Rsids.RsidRoot
     var origRsIds = wordprocessingDocument.MainDocumentPart?.DocumentSettingsPart?.Settings.GetFirstChild<DXW.Rsids>();
     if (origRsIds != null)
     {
@@ -161,15 +151,15 @@ public class TestConverters : TestBase
       if (showDetails)
         WriteLine($"  RsidRoot={origRsIds.RsidRoot?.Val?.Value}");
       var modelId = HexIntConverter.GetValue(origId);
-      var backId = HexIntConverter.CreateOpenXmlElement<RsidRoot>(modelId);
+      var backId = HexIntConverter.CreateOpenXmlElement<DXW.RsidRoot>(modelId);
       Assert.That(backId?.Val?.Value, Is.EqualTo(origId?.Val?.Value));
 
-      foreach (var origId1 in origRsIds.Elements<Rsid>())
+      foreach (var origId1 in origRsIds.Elements<DXW.Rsid>())
       {
         if (showDetails)
           WriteLine($"   Rsid={origId1?.Val?.Value}");
         var modelId1 = HexIntConverter.GetValue(origId1);
-        var backId1 = HexIntConverter.CreateOpenXmlElement<Rsid>(modelId1);
+        var backId1 = HexIntConverter.CreateOpenXmlElement<DXW.Rsid>(modelId1);
         Assert.That(backId1?.Val?.Value, Is.EqualTo(origId1?.Val?.Value));
       }
     }
@@ -182,9 +172,9 @@ public class TestConverters : TestBase
   /// <param name="showDetails">if set to <c>true</c> [show details].</param>
   public void TestHexIntConverterOfNumberingDefinitions(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
-    //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.Nsid
-    //DocumentFormat.OpenXml.Wordprocessing.AbstractNum.TemplateCode
-    var origNumDefs = wordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering?.Elements<AbstractNum>();
+    //DXW.AbstractNum.Nsid
+    //DXW.AbstractNum.TemplateCode
+    var origNumDefs = wordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering?.Elements<DXW.AbstractNum>();
     if (origNumDefs != null)
     {
       if (showDetails)
@@ -195,11 +185,11 @@ public class TestConverters : TestBase
           WriteLine($"   Nsid={item.Nsid?.Val?.Value}  TemplateCode={item.TemplateCode?.Val?.Value}");
         var origId1 = item.Nsid;
         var modelId1 = HexIntConverter.GetValue(origId1);
-        var backId1 = HexIntConverter.CreateOpenXmlElement<Nsid>(modelId1);
+        var backId1 = HexIntConverter.CreateOpenXmlElement<DXW.Nsid>(modelId1);
         Assert.That(backId1?.Val?.Value, Is.EqualTo(origId1?.Val?.Value));
         var origId2 = item.TemplateCode;
         var modelId2 = HexIntConverter.GetValue(origId2);
-        var backId2 = HexIntConverter.CreateOpenXmlElement<TemplateCode>(modelId2);
+        var backId2 = HexIntConverter.CreateOpenXmlElement<DXW.TemplateCode>(modelId2);
         Assert.That(backId2?.Val?.Value, Is.EqualTo(origId2?.Val?.Value));
       }
     }
@@ -277,52 +267,52 @@ public class TestConverters : TestBase
     //DocumentFormat.OpenXml.Office2010.Excel.BarAxisColor.Rgb
     //DocumentFormat.OpenXml.Office2010.Excel.ColorType.Rgb
     //DocumentFormat.OpenXml.Office2010.Excel.ProtectedRange.Password
-    //DocumentFormat.OpenXml.Wordprocessing.TableLook.Val
-    //DocumentFormat.OpenXml.Wordprocessing.SymbolChar.Char
-    //DocumentFormat.OpenXml.Wordprocessing.EmbeddedObject.AnchorId
-    //DocumentFormat.OpenXml.Wordprocessing.Picture.AnchorId
-    //DocumentFormat.OpenXml.Wordprocessing.Run.RsidRunProperties
-    //DocumentFormat.OpenXml.Wordprocessing.Run.RsidRunDeletion
-    //DocumentFormat.OpenXml.Wordprocessing.Run.RsidRunAddition
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphMarkRevision
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphAddition
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphDeletion
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphProperties
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidRunAdditionDefault
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.ParagraphId
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.TextId
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.RsidTableRowMarkRevision
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.RsidTableRowAddition
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.RsidTableRowDeletion
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.RsidTableRowProperties
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.ParagraphId
-    //DocumentFormat.OpenXml.Wordprocessing.TableRow.TextId
-    //DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties.RsidRPr
-    //DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties.RsidDel
-    //DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties.RsidR
-    //DocumentFormat.OpenXml.Wordprocessing.PreviousSectionProperties.RsidSect
-    //DocumentFormat.OpenXml.Wordprocessing.SectionProperties.RsidRPr
-    //DocumentFormat.OpenXml.Wordprocessing.SectionProperties.RsidDel
-    //DocumentFormat.OpenXml.Wordprocessing.SectionProperties.RsidR
-    //DocumentFormat.OpenXml.Wordprocessing.SectionProperties.RsidSect
-    //DocumentFormat.OpenXml.Wordprocessing.RsidRoot.Val
-    //DocumentFormat.OpenXml.Wordprocessing.Rsid.Val
-    //DocumentFormat.OpenXml.Wordprocessing.Nsid.Val
-    //DocumentFormat.OpenXml.Wordprocessing.TemplateCode.Val
-    //DocumentFormat.OpenXml.Wordprocessing.LongHexNumberType.Val
-    //DocumentFormat.OpenXml.Wordprocessing.Level.TemplateCode
-    //DocumentFormat.OpenXml.Wordprocessing.WriteProtection.AlgorithmIdExtensibility
-    //DocumentFormat.OpenXml.Wordprocessing.WriteProtection.CryptographicProviderTypeExtensibility
-    //DocumentFormat.OpenXml.Wordprocessing.StylePaneFormatFilter.Val
-    //DocumentFormat.OpenXml.Wordprocessing.DocumentProtection.AlgorithmIdExtensibility
-    //DocumentFormat.OpenXml.Wordprocessing.DocumentProtection.CryptographicProviderTypeExtensibility
-    //DocumentFormat.OpenXml.Wordprocessing.Panose1Number.Val
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature0
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature1
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature2
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature3
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.CodePageSignature0
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.CodePageSignature1
+    //DXW.TableLook.Val
+    //DXW.SymbolChar.Char
+    //DXW.EmbeddedObject.AnchorId
+    //DXW.Picture.AnchorId
+    //DXW.Run.RsidRunProperties
+    //DXW.Run.RsidRunDeletion
+    //DXW.Run.RsidRunAddition
+    //DXW.Paragraph.RsidParagraphMarkRevision
+    //DXW.Paragraph.RsidParagraphAddition
+    //DXW.Paragraph.RsidParagraphDeletion
+    //DXW.Paragraph.RsidParagraphProperties
+    //DXW.Paragraph.RsidRunAdditionDefault
+    //DXW.Paragraph.ParagraphId
+    //DXW.Paragraph.TextId
+    //DXW.TableRow.RsidTableRowMarkRevision
+    //DXW.TableRow.RsidTableRowAddition
+    //DXW.TableRow.RsidTableRowDeletion
+    //DXW.TableRow.RsidTableRowProperties
+    //DXW.TableRow.ParagraphId
+    //DXW.TableRow.TextId
+    //DXW.PreviousSectionProperties.RsidRPr
+    //DXW.PreviousSectionProperties.RsidDel
+    //DXW.PreviousSectionProperties.RsidR
+    //DXW.PreviousSectionProperties.RsidSect
+    //DXW.SectionProperties.RsidRPr
+    //DXW.SectionProperties.RsidDel
+    //DXW.SectionProperties.RsidR
+    //DXW.SectionProperties.RsidSect
+    //DXW.RsidRoot.Val
+    //DXW.Rsid.Val
+    //DXW.Nsid.Val
+    //DXW.TemplateCode.Val
+    //DXW.LongHexNumberType.Val
+    //DXW.Level.TemplateCode
+    //DXW.WriteProtection.AlgorithmIdExtensibility
+    //DXW.WriteProtection.CryptographicProviderTypeExtensibility
+    //DXW.StylePaneFormatFilter.Val
+    //DXW.DocumentProtection.AlgorithmIdExtensibility
+    //DXW.DocumentProtection.CryptographicProviderTypeExtensibility
+    //DXW.Panose1Number.Val
+    //DXW.FontSignature.UnicodeSignature0
+    //DXW.FontSignature.UnicodeSignature1
+    //DXW.FontSignature.UnicodeSignature2
+    //DXW.FontSignature.UnicodeSignature3
+    //DXW.FontSignature.CodePageSignature0
+    //DXW.FontSignature.CodePageSignature1
     //DocumentFormat.OpenXml.Spreadsheet.MissingItem.BackgroundColor
     //DocumentFormat.OpenXml.Spreadsheet.MissingItem.ForegroundColor
     //DocumentFormat.OpenXml.Spreadsheet.NumberItem.BackgroundColor
@@ -386,14 +376,14 @@ public class TestConverters : TestBase
   /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverterInFontTable(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
-    //DocumentFormat.OpenXml.Wordprocessing.Panose1Number.Val
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature0
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature1
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature2
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.UnicodeSignature3
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.CodePageSignature0
-    //DocumentFormat.OpenXml.Wordprocessing.FontSignature.CodePageSignature1
-    var origFontDefs = wordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts?.Elements<DocumentFormat.OpenXml.Wordprocessing.Font>();
+    //DXW.Panose1Number.Val
+    //DXW.FontSignature.UnicodeSignature0
+    //DXW.FontSignature.UnicodeSignature1
+    //DXW.FontSignature.UnicodeSignature2
+    //DXW.FontSignature.UnicodeSignature3
+    //DXW.FontSignature.CodePageSignature0
+    //DXW.FontSignature.CodePageSignature1
+    var origFontDefs = wordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts?.Elements<DXW.Font>();
     if (origFontDefs != null)
     {
       if (showDetails)
@@ -437,7 +427,7 @@ public class TestConverters : TestBase
         }
         var origValue7 = item.Panose1Number?.Val?.Value;
         var modelValue7 = HexBinaryConverter.GetValue(origValue7);
-        var backValue7 = HexBinaryConverter.CreateOpenXmlElement<Panose1Number>(modelValue7);
+        var backValue7 = HexBinaryConverter.CreateOpenXmlElement<DXW.Panose1Number>(modelValue7);
         Assert.That(backValue7?.Val?.Value, Is.EqualTo(origValue7));
       }
     }
@@ -451,14 +441,14 @@ public class TestConverters : TestBase
   /// <param name="showDetails">Specifies if test details should be shown.</param>
   public void TestHexBinaryConverterInParagraphs(WordprocessingDocument wordprocessingDocument, bool showDetails = false)
   {
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphMarkRevision
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphAddition
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphDeletion
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidParagraphProperties
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.RsidRunAdditionDefault
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.ParagraphId
-    //DocumentFormat.OpenXml.Wordprocessing.Paragraph.TextId
-    var origParagraphs = wordprocessingDocument.MainDocumentPart?.Document?.Body?.Elements<DocumentFormat.OpenXml.Wordprocessing.Paragraph>();
+    //DXW.Paragraph.RsidParagraphMarkRevision
+    //DXW.Paragraph.RsidParagraphAddition
+    //DXW.Paragraph.RsidParagraphDeletion
+    //DXW.Paragraph.RsidParagraphProperties
+    //DXW.Paragraph.RsidRunAdditionDefault
+    //DXW.Paragraph.ParagraphId
+    //DXW.Paragraph.TextId
+    var origParagraphs = wordprocessingDocument.MainDocumentPart?.Document?.Body?.Elements<DXW.Paragraph>();
     if (origParagraphs != null)
     {
       if (showDetails)

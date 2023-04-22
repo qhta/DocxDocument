@@ -10,17 +10,17 @@ public static class BorderConverter
   /// </summary>
   private static DMW.BorderKind? GetVal(DXW.BorderType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value);
   }
   
   private static bool CmpVal(DXW.BorderType openXmlElement, DMW.BorderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.BorderType openXmlElement, DMW.BorderKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BorderValues, DMW.BorderKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.BorderValues, DMW.BorderKind>(value);
   }
   
   /// <summary>
@@ -46,17 +46,17 @@ public static class BorderConverter
   /// </summary>
   private static DMW.ThemeColorKind? GetThemeColor(DXW.BorderType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
   private static bool CmpThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>

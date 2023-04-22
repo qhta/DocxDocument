@@ -10,17 +10,17 @@ public static class BreakConverter
   #region BreakKind conversion
   private static DMW.BreakKind? GetType(DXW.Break openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value);
   }
 
   private static bool CmpType(DXW.Break openXmlElement, DMW.BreakKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DXW.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
 
   private static void SetType(DXW.Break openXmlElement, DMW.BreakKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakValues, DMW.BreakKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.BreakValues, DMW.BreakKind>(value);
   }
 
   #endregion
@@ -28,17 +28,17 @@ public static class BreakConverter
   #region BreakTextStartLocationKind conversion
   private static DMW.BreakTextRestartLocationKind? GetClear(DXW.Break openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value);
+    return EnumValueConverter.GetValue<DXW.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value);
   }
 
   private static bool CmpClear(DXW.Break openXmlElement, DMW.BreakTextRestartLocationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
+    return EnumValueConverter.CmpValue<DXW.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
 
   private static void SetClear(DXW.Break openXmlElement, DMW.BreakTextRestartLocationKind? value)
   {
-    openXmlElement.Clear = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(value);
+    openXmlElement.Clear = EnumValueConverter.CreateEnumValue<DXW.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(value);
   }
   #endregion
 

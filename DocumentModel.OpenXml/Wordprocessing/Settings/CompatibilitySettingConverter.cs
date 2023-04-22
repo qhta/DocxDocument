@@ -10,17 +10,17 @@ public static class CompatibilitySettingConverter
   /// </summary>
   private static DMW.CompatSettingNameKind? GetName(DXW.CompatibilitySetting openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value);
+    return EnumValueConverter.GetValue<DXW.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value);
   }
   
   private static bool CmpName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CompatSettingNameValues, DMW.CompatSettingNameKind>(openXmlElement?.Name?.Value, value, diffs, objName);
   }
   
   private static void SetName(DXW.CompatibilitySetting openXmlElement, DMW.CompatSettingNameKind? value)
   {
-    openXmlElement.Name = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues, DMW.CompatSettingNameKind>(value);
+    openXmlElement.Name = EnumValueConverter.CreateEnumValue<DXW.CompatSettingNameValues, DMW.CompatSettingNameKind>(value);
   }
   
   /// <summary>

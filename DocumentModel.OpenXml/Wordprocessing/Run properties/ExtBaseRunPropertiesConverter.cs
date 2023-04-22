@@ -61,12 +61,12 @@ public static class ExtBaseRunPropertiesConverter
   #region Highlight conversion.
   public static DMW.HighlightColorKind? GetHighlight(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value);
   }
 
   public static bool CmpHighlight(DX.OpenXmlCompositeElement openXmlElement, DMW.HighlightColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HighlightColorValues, DMW.HighlightColorKind>(openXmlElement.GetFirstChild<DXW.Highlight>()?.Val?.Value, value, diffs, objName);
   }
 
   public static void SetHighlight(DX.OpenXmlCompositeElement openXmlElement, DMW.HighlightColorKind? value)
@@ -75,13 +75,13 @@ public static class ExtBaseRunPropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>(itemElement, (DMW.HighlightColorKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.HighlightColorValues, DMW.HighlightColorKind>(itemElement, (DMW.HighlightColorKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Highlight, DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues, DMW.HighlightColorKind>((DMW.HighlightColorKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Highlight, DXW.HighlightColorValues, DMW.HighlightColorKind>((DMW.HighlightColorKind)value));
   }
   #endregion
 

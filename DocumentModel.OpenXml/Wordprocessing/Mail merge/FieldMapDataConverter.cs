@@ -10,12 +10,12 @@ public static class FieldMapDataConverter
   /// </summary>
   private static DMW.MailMergeOdsoFieldKind? GetMailMergeFieldType(DXW.FieldMapData openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value);
   }
   
   private static bool CmpMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(openXmlElement.GetFirstChild<DXW.MailMergeFieldType>()?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetMailMergeFieldType(DXW.FieldMapData openXmlElement, DMW.MailMergeOdsoFieldKind? value)
@@ -24,13 +24,13 @@ public static class FieldMapDataConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(itemElement, (DMW.MailMergeOdsoFieldKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>(itemElement, (DMW.MailMergeOdsoFieldKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>((DMW.MailMergeOdsoFieldKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>((DMW.MailMergeOdsoFieldKind)value));
   }
   
   /// <summary>

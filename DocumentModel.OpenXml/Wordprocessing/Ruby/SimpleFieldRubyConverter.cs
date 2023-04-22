@@ -104,7 +104,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlRubyConverter.CreateOpenXmlElement<DXW.CustomXmlRuby>(value);
+      itemElement = DMXW.CustomXmlRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -130,7 +130,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement<DXW.SimpleFieldRuby>(value);
+      itemElement = DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -156,7 +156,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.HyperlinkRubyConverter.CreateOpenXmlElement<DXW.HyperlinkRuby>(value);
+      itemElement = DMXW.HyperlinkRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -208,7 +208,7 @@ public static class SimpleFieldRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtRunRubyConverter.CreateOpenXmlElement<DXW.SdtRunRuby>(value);
+      itemElement = DMXW.SdtRunRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1713,15 +1713,14 @@ public static class SimpleFieldRubyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.SimpleFieldRuby value)
-    where OpenXmlElementType: DXW.SimpleFieldRuby, new()
+  public static DXW.SimpleFieldRuby CreateOpenXmlElement(DMW.SimpleFieldRuby value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.SimpleFieldRuby();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.SimpleFieldRuby openXmlElement, DMW.SimpleFieldRuby value)
+  public static bool UpdateOpenXmlElement(DXW.SimpleFieldRuby openXmlElement, DMW.SimpleFieldRuby value)
   {
     SetInstruction(openXmlElement, value?.Instruction);
     SetFieldLock(openXmlElement, value?.FieldLock);
@@ -1782,5 +1781,6 @@ public static class SimpleFieldRubyConverter
     SetSubscript(openXmlElement, value?.Subscript);
     SetSubSuperscript(openXmlElement, value?.SubSuperscript);
     SetSuperscript(openXmlElement, value?.Superscript);
+    return true;
   }
 }

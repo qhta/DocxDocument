@@ -7,17 +7,17 @@
 [TypeConverter(typeof(FontSizesTypeConverter))]
 public record FontSizes
 {
-  private readonly Twips? _Val, _ValCS;
+  private readonly Hps? _Val, _ValCS;
 
   /// <summary>
   /// Value for regular script.
   /// </summary>
-  public Twips? Val { get => _Val; }
+  public Hps? Val { get => _Val; }
 
   /// <summary>
   /// Value for complex script.
   /// </summary>
-  public Twips? ValCS { get => _ValCS; }
+  public Hps? ValCS { get => _ValCS; }
 
   /// <summary>
   /// Create dual value from a string. 
@@ -29,12 +29,12 @@ public record FontSizes
     if (ss.Length <= 2)
     {
       if (ss[0]!="")
-        _Val = new Twips(ss[0]);
+        _Val = new Hps(ss[0]);
     }
     if (ss.Length == 2)
     {
       if (ss[1]!="")
-        _ValCS = new Twips(ss[1]);
+        _ValCS = new Hps(ss[1]);
     }
     else
       _ValCS = _Val;
@@ -69,8 +69,8 @@ public record FontSizes
 
   public string? ToString(string? unit)
   {
-    var str = (Val is not null) ? ((Twips)Val).ToString(unit) : null;
-    var str2 = (ValCS is not null) ? ((Twips)ValCS).ToString(unit) : null;
+    var str = (Val is not null) ? ((Hps)Val).ToString(unit) : null;
+    var str2 = (ValCS is not null) ? ((Hps)ValCS).ToString(unit) : null;
     if (str2!=str)
       str +=";"+str2;
     return str;

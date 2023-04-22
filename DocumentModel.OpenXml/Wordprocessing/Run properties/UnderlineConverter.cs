@@ -10,17 +10,17 @@ public static class UnderlineConverter
   /// </summary>
   private static DMW.UnderlineKind? GetVal(DXW.Underline openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value);
   }
   
   private static bool CmpVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.UnderlineValues, DMW.UnderlineKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.Underline openXmlElement, DMW.UnderlineKind? value)
   {
-    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.UnderlineValues, DMW.UnderlineKind>(value);
+    openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.UnderlineValues, DMW.UnderlineKind>(value);
   }
   
   /// <summary>
@@ -46,17 +46,17 @@ public static class UnderlineConverter
   /// </summary>
   private static DMW.ThemeColorKind? GetThemeColor(DXW.Underline openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
   }
   
   private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
   private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues, DMW.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
   }
   
   /// <summary>

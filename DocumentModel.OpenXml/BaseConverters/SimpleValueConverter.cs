@@ -1,9 +1,4 @@
-﻿using System.Diagnostics;
-
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class SimpleValueConverter
 {
