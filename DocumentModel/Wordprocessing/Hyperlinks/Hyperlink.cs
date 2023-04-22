@@ -6,7 +6,12 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Hyperlink Class.
 /// </summary>
-public class Hyperlink: ModelElement, IParagraphContent, ISdtRunContent, IBidirectionalContent, DMM.IMathArgumentContent
+public class Hyperlink: ElementCollection<IHyperlinkContent>, 
+  IParagraphContent, 
+  ISdtRunContent, 
+  IBidirectionalContent, 
+  DMM.IMathArgumentContent,
+  IHyperlinkContent
 {
   /// <summary>
   ///   Hyperlink Target Frame
@@ -46,111 +51,11 @@ public class Hyperlink: ModelElement, IParagraphContent, ISdtRunContent, IBidire
 
   public SdtRun? SdtRun { get; set; }
 
-  public ProofError? ProofError { get; set; }
-
-  public PermStart? PermStart { get; set; }
-
-  public PermEnd? PermEnd { get; set; }
-
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
-
-  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
-
-  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
-
-  public MoveToRangeStart? MoveToRangeStart { get; set; }
-
-  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
-
-  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
-
-  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
-
-  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
-
-  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
-
-  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
-
-  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
-
-  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
-
-  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
-
-  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
-
-  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
-
-  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
-
-  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
-
-  public InsertedRun? InsertedRun { get; set; }
-
-  public DeletedRun? DeletedRun { get; set; }
-
-  public MoveFromRun? MoveFromRun { get; set; }
-
-  public MoveToRun? MoveToRun { get; set; }
-
-  public RunConflictInsertion? RunConflictInsertion { get; set; }
-
-  public RunConflictDeletion? RunConflictDeletion { get; set; }
-
-  public Math.Paragraph? Paragraph { get; set; }
-
-  public OfficeMath? OfficeMath { get; set; }
-
-  public Accent? Accent { get; set; }
-
-  public Bar? Bar { get; set; }
-
-  public Math.Box? Box { get; set; }
-
-  public BorderBox? BorderBox { get; set; }
-
-  public Delimiter? Delimiter { get; set; }
-
-  public EquationArray? EquationArray { get; set; }
-
-  public Fraction? Fraction { get; set; }
-
-  public Function? MathFunction { get; set; }
-
-  public GroupChar? GroupChar { get; set; }
-
-  public LimitLower? LimitLower { get; set; }
-
-  public LimitUpper? LimitUpper { get; set; }
-
-  public Matrix? Matrix { get; set; }
-
-  public Nary? Nary { get; set; }
-
-  public Phantom? Phantom { get; set; }
-
-  public Radical? Radical { get; set; }
-
-  public PreSubSuper? PreSubSuper { get; set; }
-
-  public Subscript? Subscript { get; set; }
-
-  public SubSuperscript? SubSuperscript { get; set; }
-
-  public Superscript? Superscript { get; set; }
-
   public Math.Run? Run { get; set; }
 
   public BidirectionalOverride? BidirectionalOverride { get; set; }
 
   public BidirectionalEmbedding? BidirectionalEmbedding { get; set; }
 
-  public RelationshipType? SubDocumentReference { get; set; }
+  public SubDocumentReference? SubDocumentReference { get; set; }
 }

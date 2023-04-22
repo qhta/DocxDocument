@@ -5,9 +5,8 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class SimpleFieldRubyConverter
 {
-  /// <summary>
-  /// instr
-  /// </summary>
+
+  #region instr conversion.
   private static String? GetInstruction(DXW.SimpleFieldRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Instruction);
@@ -22,10 +21,9 @@ public static class SimpleFieldRubyConverter
   {
     openXmlElement.Instruction = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// fldLock
-  /// </summary>
+  #endregion
+
+  #region fldLock conversion.
   private static Boolean? GetFieldLock(DXW.SimpleFieldRuby openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.FieldLock);
@@ -40,10 +38,9 @@ public static class SimpleFieldRubyConverter
   {
     openXmlElement.FieldLock = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// dirty
-  /// </summary>
+  #endregion
+
+  #region dirty conversion.
   private static Boolean? GetDirty(DXW.SimpleFieldRuby openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.Dirty);
@@ -58,10 +55,9 @@ public static class SimpleFieldRubyConverter
   {
     openXmlElement.Dirty = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// FieldData.
-  /// </summary>
+  #endregion
+
+  #region FieldData. conversion.
   private static String? GetFieldData(DXW.SimpleFieldRuby openXmlElement)
   {
       return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text;
@@ -1783,4 +1779,5 @@ public static class SimpleFieldRubyConverter
     SetSuperscript(openXmlElement, value?.Superscript);
     return true;
   }
+  #endregion
 }

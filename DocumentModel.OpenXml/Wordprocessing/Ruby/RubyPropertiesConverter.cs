@@ -50,7 +50,6 @@ public static class RubyPropertiesConverter
   #endregion
 
   #region Distance Between Phonetic Guide Text and Phonetic Guide Base Text conversion.
-  /// </summary>
   private static Int16? GetPhoneticGuideRaise(DXW.RubyProperties openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.PhoneticGuideRaise>()?.Val);
@@ -85,7 +84,6 @@ public static class RubyPropertiesConverter
   #endregion
 
   #region Language ID for Phonetic Guide conversion.
-  /// </summary>
   private static String? GetLanguageId(DXW.RubyProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.LanguageId>()?.Val);
