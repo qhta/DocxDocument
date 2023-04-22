@@ -15,6 +15,7 @@ public interface ICommonContent: IBodyContent, IParagraphContent, ITableContent,
   IBidirectionalContent,
   IMathArgumentContent,
   IOfficeMathContent,
-  IMathParagraphContent
+  IMathParagraphContent,
+  IHyperlinkContent
 {
 }

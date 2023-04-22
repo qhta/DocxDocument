@@ -5,9 +5,8 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class HyperlinkRubyConverter
 {
-  /// <summary>
-  /// tgtFrame
-  /// </summary>
+
+  #region tgtFrame conversion.
   private static String? GetTargetFrame(DXW.HyperlinkRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
@@ -22,10 +21,9 @@ public static class HyperlinkRubyConverter
   {
     openXmlElement.TargetFrame = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// tooltip
-  /// </summary>
+  #endregion
+
+  #region tooltip conversion.
   private static String? GetTooltip(DXW.HyperlinkRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Tooltip);
@@ -40,10 +38,9 @@ public static class HyperlinkRubyConverter
   {
     openXmlElement.Tooltip = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// docLocation
-  /// </summary>
+  #endregion
+
+  #region docLocation conversion.
   private static String? GetDocLocation(DXW.HyperlinkRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.DocLocation);
@@ -58,10 +55,9 @@ public static class HyperlinkRubyConverter
   {
     openXmlElement.DocLocation = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// history
-  /// </summary>
+  #endregion
+
+  #region history conversion.
   private static Boolean? GetHistory(DXW.HyperlinkRuby openXmlElement)
   {
     return BooleanValueConverter.GetValue(openXmlElement?.History);
@@ -76,10 +72,9 @@ public static class HyperlinkRubyConverter
   {
     openXmlElement.History = BooleanValueConverter.CreateOnOffValue(value);
   }
-  
-  /// <summary>
-  /// anchor
-  /// </summary>
+  #endregion
+
+  #region anchor conversion.
   private static String? GetAnchor(DXW.HyperlinkRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Anchor);
@@ -94,10 +89,9 @@ public static class HyperlinkRubyConverter
   {
     openXmlElement.Anchor = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// id
-  /// </summary>
+  #endregion
+
+  #region id conversion.
   private static String? GetId(DXW.HyperlinkRuby openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -1820,4 +1814,5 @@ public static class HyperlinkRubyConverter
     SetSuperscript(openXmlElement, value?.Superscript);
     return true;
   }
+  #endregion
 }

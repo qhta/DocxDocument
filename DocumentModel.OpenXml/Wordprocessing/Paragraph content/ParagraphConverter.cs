@@ -1,5 +1,3 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -206,21 +204,6 @@ public static class ParagraphConverter
   }
   #endregion
 
-  #region Paragraph content conversion
-  public static DM.IModelElement? CreateParagraphContent(DX.OpenXmlElement? openXmlElement)
-    => ParagraphContentConverter.CreateParagraphContent(openXmlElement);
-
-  public static bool CompareParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
-    => ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs, objName);
-
-  public static OpenXmlElement CreateOpenXmlParagraphContent(DM.IModelElement model)
-    => ParagraphContentConverter.CreateOpenXmlParagraphContent(model);
-
-  public static bool UpdateOpenXmlParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
-    => UpdateOpenXmlParagraphContent(openXmlElement, model);
-
-  #endregion
-
   #region Paragraph conversion
   public static DMW.Paragraph? CreateModelElement(DXW.Paragraph? openXmlElement)
   {
@@ -236,9 +219,9 @@ public static class ParagraphConverter
       model.TextId = GetTextId(openXmlElement);
       model.NoSpellError = GetNoSpellError(openXmlElement);
       model.ParagraphProperties = GetParagraphProperties(openXmlElement);
-      ElementCollectionConverter<IParagraphContent>.FillModelElementCollection(
+      ElementCollectionConverter<DMW.IParagraphContent>.FillModelElementCollection(
         openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
-        CreateParagraphContent);
+        ParagraphContentConverter.CreateParagraphContent);
       return model;
     }
     return null;
@@ -267,9 +250,9 @@ public static class ParagraphConverter
         ok = false;
       if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<IParagraphContent>.CompareOpenXmlElementCollection(
+      if (!ElementCollectionConverter<DMW.IParagraphContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
-        CompareParagraphContent, diffs, objName))
+        ParagraphContentConverter.CompareParagraphContent, diffs, objName))
         ok = false;
       return ok;
     }
@@ -296,10 +279,10 @@ public static class ParagraphConverter
     SetTextId(openXmlElement, model.TextId);
     SetNoSpellError(openXmlElement, model.NoSpellError);
     SetParagraphProperties(openXmlElement, model.ParagraphProperties);
-    return ElementCollectionConverter<IParagraphContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      CompareParagraphContent,
-      UpdateOpenXmlParagraphContent,
-      CreateOpenXmlParagraphContent);
+    return ElementCollectionConverter<DMW.IParagraphContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      ParagraphContentConverter.CompareParagraphContent,
+      ParagraphContentConverter.UpdateOpenXmlParagraphContent,
+      ParagraphContentConverter.CreateOpenXmlParagraphContent);
   }
   #endregion
 }
