@@ -53,12 +53,12 @@ public static class ExtBaseTablePropertiesConverter
   #region TableOverlap conversion.
   private static DMW.TableOverlapKind? GetTableOverlap(DX.OpenXmlCompositeElement openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value);
   }
 
   private static bool CmpTableOverlap(DX.OpenXmlCompositeElement openXmlElement, DMW.TableOverlapKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableOverlapValues, DMW.TableOverlapKind>(openXmlElement.GetFirstChild<DXW.TableOverlap>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetTableOverlap(DX.OpenXmlCompositeElement openXmlElement, DMW.TableOverlapKind? value)
@@ -67,13 +67,13 @@ public static class ExtBaseTablePropertiesConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>(itemElement, (DMW.TableOverlapKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.TableOverlapValues, DMW.TableOverlapKind>(itemElement, (DMW.TableOverlapKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableOverlap, DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues, DMW.TableOverlapKind>((DMW.TableOverlapKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableOverlap, DXW.TableOverlapValues, DMW.TableOverlapKind>((DMW.TableOverlapKind)value));
   }
   #endregion
 

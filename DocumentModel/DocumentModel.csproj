@@ -35,7 +35,6 @@
     <Compile Remove="BaseTypes\EighthPoints.cs" />
     <Compile Remove="BaseTypes\EighthPointsTypeConverter.cs" />
     <Compile Remove="BaseTypes\HalfPoints.cs" />
-    <Compile Remove="BaseTypes\HalfPointsTypeConverter.cs" />
     <Compile Remove="BaseTypes\VectorVariantJsonConverter.cs" />
     <Compile Remove="Drawings.ChartDrawing\Classes\Extent.cs" />
     <Compile Remove="Math\Classes\OfficeMathArgumentType.cs" />

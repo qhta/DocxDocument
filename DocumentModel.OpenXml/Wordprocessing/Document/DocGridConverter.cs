@@ -10,17 +10,17 @@ public static class DocGridConverter
   /// </summary>
   private static DMW.DocGridKind? GetType(DXW.DocGrid openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocGridValues, DMW.DocGridKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.DocGridValues, DMW.DocGridKind>(value);
   }
   
   /// <summary>

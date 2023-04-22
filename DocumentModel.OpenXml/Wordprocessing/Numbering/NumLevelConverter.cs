@@ -163,12 +163,12 @@ public static class LevelConverter
   #region LevelSuffix conversion.
   private static DMW.LevelSuffixKind? GetLevelSuffix(DXW.Level openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(openXmlElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.LevelSuffixValues, DMW.LevelSuffixKind>(openXmlElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value);
   }
 
   private static bool CmpLevelSuffix(DXW.Level openXmlElement, DMW.LevelSuffixKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(openXmlElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LevelSuffixValues, DMW.LevelSuffixKind>(openXmlElement.GetFirstChild<DXW.LevelSuffix>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetLevelSuffix(DXW.Level openXmlElement, DMW.LevelSuffixKind? value)
@@ -177,13 +177,13 @@ public static class LevelConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>(itemElement, (DMW.LevelSuffixKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.LevelSuffixValues, DMW.LevelSuffixKind>(itemElement, (DMW.LevelSuffixKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues, DMW.LevelSuffixKind>((DMW.LevelSuffixKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DXW.LevelSuffixValues, DMW.LevelSuffixKind>((DMW.LevelSuffixKind)value));
   }
   #endregion
 
@@ -263,12 +263,12 @@ public static class LevelConverter
   #region LevelJustification conversion.
   private static DMW.LevelJustificationKind? GetLevelJustification(DXW.Level openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(openXmlElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value);
+    return EnumValueConverter.GetValue<DXW.LevelJustificationValues, DMW.LevelJustificationKind>(openXmlElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value);
   }
 
   private static bool CmpLevelJustification(DXW.Level openXmlElement, DMW.LevelJustificationKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(openXmlElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LevelJustificationValues, DMW.LevelJustificationKind>(openXmlElement.GetFirstChild<DXW.LevelJustification>()?.Val?.Value, value, diffs, objName);
   }
 
   private static void SetLevelJustification(DXW.Level openXmlElement, DMW.LevelJustificationKind? value)
@@ -277,13 +277,13 @@ public static class LevelConverter
     if (itemElement != null)
     {
       if (value != null)
-        EnumValueConverter.UpdateOpenXmlElement<DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>(itemElement, (DMW.LevelJustificationKind)value);
+        EnumValueConverter.UpdateOpenXmlElement<DXW.LevelJustificationValues, DMW.LevelJustificationKind>(itemElement, (DMW.LevelJustificationKind)value);
       else
         itemElement.Remove();
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues, DMW.LevelJustificationKind>((DMW.LevelJustificationKind)value));
+      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DXW.LevelJustificationValues, DMW.LevelJustificationKind>((DMW.LevelJustificationKind)value));
   }
   #endregion
 

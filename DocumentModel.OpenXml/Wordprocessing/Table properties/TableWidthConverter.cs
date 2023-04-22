@@ -25,17 +25,17 @@ public static class TableWidthTypeConverter
   #region Type conversion.
   private static DMW.TableWidthUnitType? GetType(DXW.TableWidthType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.TableWidthType openXmlElement, DMW.TableWidthUnitType? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(value);
   }
   #endregion
 

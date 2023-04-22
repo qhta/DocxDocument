@@ -133,7 +133,7 @@ public static class HyperlinkRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.CustomXmlRubyConverter.CreateOpenXmlElement<DXW.CustomXmlRuby>(value);
+      itemElement = DMXW.CustomXmlRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -159,7 +159,7 @@ public static class HyperlinkRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement<DXW.SimpleFieldRuby>(value);
+      itemElement = DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -185,7 +185,7 @@ public static class HyperlinkRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.HyperlinkRubyConverter.CreateOpenXmlElement<DXW.HyperlinkRuby>(value);
+      itemElement = DMXW.HyperlinkRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -237,7 +237,7 @@ public static class HyperlinkRubyConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.SdtRunRubyConverter.CreateOpenXmlElement<DXW.SdtRunRuby>(value);
+      itemElement = DMXW.SdtRunRubyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }
@@ -1748,15 +1748,14 @@ public static class HyperlinkRubyConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.HyperlinkRuby value)
-    where OpenXmlElementType: DXW.HyperlinkRuby, new()
+  public static DXW.HyperlinkRuby CreateOpenXmlElement(DMW.HyperlinkRuby value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.HyperlinkRuby();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.HyperlinkRuby openXmlElement, DMW.HyperlinkRuby value)
+  public static bool UpdateOpenXmlElement(DXW.HyperlinkRuby openXmlElement, DMW.HyperlinkRuby value)
   {
     SetTargetFrame(openXmlElement, value?.TargetFrame);
     SetTooltip(openXmlElement, value?.Tooltip);
@@ -1819,5 +1818,6 @@ public static class HyperlinkRubyConverter
     SetSubscript(openXmlElement, value?.Subscript);
     SetSubSuperscript(openXmlElement, value?.SubSuperscript);
     SetSuperscript(openXmlElement, value?.Superscript);
+    return true;
   }
 }

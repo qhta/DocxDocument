@@ -10,17 +10,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static DMW.DocumentProtectionKind? GetEdit(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DMW.DocumentProtectionKind>(openXmlElement?.Edit?.Value);
+    return EnumValueConverter.GetValue<DXW.DocumentProtectionValues, DMW.DocumentProtectionKind>(openXmlElement?.Edit?.Value);
   }
   
   private static bool CmpEdit(DXW.DocumentProtection openXmlElement, DMW.DocumentProtectionKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DMW.DocumentProtectionKind>(openXmlElement?.Edit?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocumentProtectionValues, DMW.DocumentProtectionKind>(openXmlElement?.Edit?.Value, value, diffs, objName);
   }
   
   private static void SetEdit(DXW.DocumentProtection openXmlElement, DMW.DocumentProtectionKind? value)
   {
-    openXmlElement.Edit = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues, DMW.DocumentProtectionKind>(value);
+    openXmlElement.Edit = EnumValueConverter.CreateEnumValue<DXW.DocumentProtectionValues, DMW.DocumentProtectionKind>(value);
   }
   
   /// <summary>
@@ -64,17 +64,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static DMW.CryptProviderKind? GetCryptographicProviderType(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DMW.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value);
+    return EnumValueConverter.GetValue<DXW.CryptProviderValues, DMW.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value);
   }
   
   private static bool CmpCryptographicProviderType(DXW.DocumentProtection openXmlElement, DMW.CryptProviderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DMW.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CryptProviderValues, DMW.CryptProviderKind>(openXmlElement?.CryptographicProviderType?.Value, value, diffs, objName);
   }
   
   private static void SetCryptographicProviderType(DXW.DocumentProtection openXmlElement, DMW.CryptProviderKind? value)
   {
-    openXmlElement.CryptographicProviderType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues, DMW.CryptProviderKind>(value);
+    openXmlElement.CryptographicProviderType = EnumValueConverter.CreateEnumValue<DXW.CryptProviderValues, DMW.CryptProviderKind>(value);
   }
   
   /// <summary>
@@ -82,17 +82,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static DMW.CryptAlgorithmClassKind? GetCryptographicAlgorithmClass(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value);
+    return EnumValueConverter.GetValue<DXW.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value);
   }
   
   private static bool CmpCryptographicAlgorithmClass(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmClassKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(openXmlElement?.CryptographicAlgorithmClass?.Value, value, diffs, objName);
   }
   
   private static void SetCryptographicAlgorithmClass(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmClassKind? value)
   {
-    openXmlElement.CryptographicAlgorithmClass = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(value);
+    openXmlElement.CryptographicAlgorithmClass = EnumValueConverter.CreateEnumValue<DXW.CryptAlgorithmClassValues, DMW.CryptAlgorithmClassKind>(value);
   }
   
   /// <summary>
@@ -100,17 +100,17 @@ public static class DocumentProtectionConverter
   /// </summary>
   private static DMW.CryptAlgorithmKind? GetCryptographicAlgorithmType(DXW.DocumentProtection openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value);
+    return EnumValueConverter.GetValue<DXW.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value);
   }
   
   private static bool CmpCryptographicAlgorithmType(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(openXmlElement?.CryptographicAlgorithmType?.Value, value, diffs, objName);
   }
   
   private static void SetCryptographicAlgorithmType(DXW.DocumentProtection openXmlElement, DMW.CryptAlgorithmKind? value)
   {
-    openXmlElement.CryptographicAlgorithmType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(value);
+    openXmlElement.CryptographicAlgorithmType = EnumValueConverter.CreateEnumValue<DXW.CryptAlgorithmValues, DMW.CryptAlgorithmKind>(value);
   }
   
   /// <summary>

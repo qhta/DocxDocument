@@ -10,17 +10,17 @@ public static class PageBordersConverter
   /// </summary>
   private static DMW.PageBorderZOrderKind? GetZOrder(DXW.PageBorders openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
+    return EnumValueConverter.GetValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value);
   }
   
   private static bool CmpZOrder(DXW.PageBorders openXmlElement, DMW.PageBorderZOrderKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(openXmlElement?.ZOrder?.Value, value, diffs, objName);
   }
   
   private static void SetZOrder(DXW.PageBorders openXmlElement, DMW.PageBorderZOrderKind? value)
   {
-    openXmlElement.ZOrder = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(value);
+    openXmlElement.ZOrder = EnumValueConverter.CreateEnumValue<DXW.PageBorderZOrderValues, DMW.PageBorderZOrderKind>(value);
   }
   
   /// <summary>
@@ -28,17 +28,17 @@ public static class PageBordersConverter
   /// </summary>
   private static DMW.PageBorderDisplayKind? GetDisplay(DXW.PageBorders openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value);
+    return EnumValueConverter.GetValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value);
   }
   
   private static bool CmpDisplay(DXW.PageBorders openXmlElement, DMW.PageBorderDisplayKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(openXmlElement?.Display?.Value, value, diffs, objName);
   }
   
   private static void SetDisplay(DXW.PageBorders openXmlElement, DMW.PageBorderDisplayKind? value)
   {
-    openXmlElement.Display = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(value);
+    openXmlElement.Display = EnumValueConverter.CreateEnumValue<DXW.PageBorderDisplayValues, DMW.PageBorderDisplayKind>(value);
   }
   
   /// <summary>
@@ -46,17 +46,17 @@ public static class PageBordersConverter
   /// </summary>
   private static DMW.PageBorderOffsetKind? GetOffsetFrom(DXW.PageBorders openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
+    return EnumValueConverter.GetValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value);
   }
   
   private static bool CmpOffsetFrom(DXW.PageBorders openXmlElement, DMW.PageBorderOffsetKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(openXmlElement?.OffsetFrom?.Value, value, diffs, objName);
   }
   
   private static void SetOffsetFrom(DXW.PageBorders openXmlElement, DMW.PageBorderOffsetKind? value)
   {
-    openXmlElement.OffsetFrom = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(value);
+    openXmlElement.OffsetFrom = EnumValueConverter.CreateEnumValue<DXW.PageBorderOffsetValues, DMW.PageBorderOffsetKind>(value);
   }
   
   /// <summary>

@@ -1,10 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-using DocumentFormat.OpenXml;
-using DocumentFormat.OpenXml.Office2016.Drawing.Command;
-using DocumentFormat.OpenXml.Wordprocessing;
-
-namespace DocumentModel.OpenXml;
+﻿namespace DocumentModel.OpenXml;
 
 public static class BooleanValueConverter
 {
@@ -29,34 +23,34 @@ public static class BooleanValueConverter
   #endregion
 
   #region OnOffOnlyValue conversion.
-  public static Boolean? GetValue(OnOffOnlyValues? element)
+  public static Boolean? GetValue(DXW.OnOffOnlyValues? element)
   {
     if (element == null) return null;
-    return element == OnOffOnlyValues.On;
+    return element == DXW.OnOffOnlyValues.On;
   }
 
-  public static Boolean CmpValue(OnOffOnlyValues? element, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static Boolean CmpValue(DXW.OnOffOnlyValues? element, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element != null && value != null)
     {
-      if ((element == OnOffOnlyValues.On) && value == true) return true;
-      if ((element == OnOffOnlyValues.Off) && value == false) return true;
+      if ((element == DXW.OnOffOnlyValues.On) && value == true) return true;
+      if ((element == DXW.OnOffOnlyValues.Off) && value == false) return true;
     }
     if (element == null && value == null) return true;
     diffs?.Add(objName, propName ?? element?.GetType().Name, element, value);
     return false;
   }
 
-  public static OnOffOnlyValues? CreateOnOffOnlyValue(Boolean? value)
+  public static DXW.OnOffOnlyValues? CreateOnOffOnlyValue(Boolean? value)
   {
-    if (value == true) return OnOffOnlyValues.On;
-    if (value == false) return OnOffOnlyValues.Off;
+    if (value == true) return DXW.OnOffOnlyValues.On;
+    if (value == false) return DXW.OnOffOnlyValues.Off;
     return null;
   }
   #endregion
 
   #region OnOffType conversion.
-  public static Boolean? GetValue(OnOffType? openXmlElement)
+  public static Boolean? GetValue(DXW.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
       return openXmlElement.Val.Value;
@@ -64,7 +58,7 @@ public static class BooleanValueConverter
     return null;
   }
 
-  public static Boolean CmpValue(OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  public static Boolean CmpValue(DXW.OnOffType? openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null && value != null)
     {
@@ -84,7 +78,7 @@ public static class BooleanValueConverter
   }
 
   public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
-    where ElementType : OnOffType, new()
+    where ElementType : DXW.OnOffType, new()
   {
     if (openXmlElement != null)
     {
@@ -104,22 +98,22 @@ public static class BooleanValueConverter
   #endregion
 
   #region OnOffOnlyType conversion.
-  public static Boolean GetValue(OnOffOnlyType? openXmlElement)
+  public static Boolean GetValue(DXW.OnOffOnlyType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
       return openXmlElement.Val.Value == DXW.OnOffOnlyValues.On;
     return openXmlElement != null;
   }
 
-  public static Boolean CmpValue(OnOffOnlyType? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
+  public static Boolean CmpValue(DXW.OnOffOnlyType? openXmlElement, Boolean? value, DiffList? diffs, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null && value != null)
     {
-      if (openXmlElement.Val.Value == OnOffOnlyValues.On && value == true)
+      if (openXmlElement.Val.Value == DXW.OnOffOnlyValues.On && value == true)
         return true;
-      if (openXmlElement.Val.Value == OnOffOnlyValues.Off && value == false)
+      if (openXmlElement.Val.Value == DXW.OnOffOnlyValues.Off && value == false)
         return true;
-      diffs?.Add(objName, propName ?? openXmlElement.GetType().Name, openXmlElement.Val.Value == OnOffOnlyValues.On, value);
+      diffs?.Add(objName, propName ?? openXmlElement.GetType().Name, openXmlElement.Val.Value == DXW.OnOffOnlyValues.On, value);
       return false;
     }
     if (openXmlElement?.Val?.Value == null && value == null)
@@ -128,12 +122,12 @@ public static class BooleanValueConverter
       return true;
     if (openXmlElement == null && value == false)
       return true;
-    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Val?.Value == OnOffOnlyValues.On, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement?.Val?.Value == DXW.OnOffOnlyValues.On, value);
     return false;
   }
 
   public static void SetOnOffOnlyType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
-    where ElementType : OnOffOnlyType, new()
+    where ElementType : DXW.OnOffOnlyType, new()
   {
     if (openXmlElement != null)
     {
@@ -153,7 +147,7 @@ public static class BooleanValueConverter
   }
   #endregion
 
-  #region Office2010 OnOffValues conversion.
+  #region Office2010 Word OnOffValues conversion.
   public static Boolean? GetValue(DX.EnumValue<DXO10W.OnOffValues>? openXmlElement)
   {
     if (openXmlElement?.Value != null)
@@ -218,7 +212,7 @@ public static class BooleanValueConverter
   //}
   #endregion
 
-  #region OnOffType conversion.
+  #region Office2013 Word OnOffType conversion.
   public static Boolean? GetValue(DXO13W.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -368,7 +362,7 @@ public static class BooleanValueConverter
       var element = new OpenXmlElementType();
       var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
       if (valProperty != null)
-        valProperty.SetValue(element, (bool)value ? OnOffOnlyValues.On : OnOffOnlyValues.Off);
+        valProperty.SetValue(element, (bool)value ? DXW.OnOffOnlyValues.On : DXW.OnOffOnlyValues.Off);
       else if (element is DX.TypedOpenXmlLeafTextElement textElement)
         textElement.Text = (bool)value ? "true" : "false";
       return element;

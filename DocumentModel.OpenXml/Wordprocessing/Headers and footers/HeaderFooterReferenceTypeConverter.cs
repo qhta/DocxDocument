@@ -10,17 +10,17 @@ public static class HeaderFooterReferenceTypeConverter
   /// </summary>
   private static DMW.HeaderFooterKind? GetType(DXW.HeaderFooterReferenceType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HeaderFooterValues, DMW.HeaderFooterKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.HeaderFooterReferenceType openXmlElement, DMW.HeaderFooterKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues, DMW.HeaderFooterKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.HeaderFooterValues, DMW.HeaderFooterKind>(value);
   }
   
   /// <summary>

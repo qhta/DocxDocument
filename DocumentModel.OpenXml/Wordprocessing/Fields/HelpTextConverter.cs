@@ -10,17 +10,17 @@ public static class HelpTextConverter
   /// </summary>
   private static DMW.InfoTextKind? GetType(DXW.HelpText openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DXW.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value);
   }
   
   private static bool CmpType(DXW.HelpText openXmlElement, DMW.InfoTextKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.InfoTextValues, DMW.InfoTextKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
   private static void SetType(DXW.HelpText openXmlElement, DMW.InfoTextKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Wordprocessing.InfoTextValues, DMW.InfoTextKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DXW.InfoTextValues, DMW.InfoTextKind>(value);
   }
   
   /// <summary>
