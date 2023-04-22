@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 ///   applying the same information to all the contents of the run. .
 /// </summary>
 public class Run: ElementCollection<IRunContent>, 
-  IParagraphContent, 
+  IParagraphContent,
   ISdtRunContent, 
   IRubyContent,
   IBidirectionalContent, 

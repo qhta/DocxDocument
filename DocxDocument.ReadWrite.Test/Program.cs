@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestStyles();
+    RunTestBody();
   }
 
     private static void RunTestBackground()
@@ -38,8 +38,8 @@ internal class Program
   {
     var testInstance = new TestBody();
     testInstance.Setup();
-    testInstance.TestReadDocumentBody("Math.docx", true);
-    testInstance.TestReadBodyXmlSerialization("Math.docx", true);
+    //testInstance.TestReadDocumentBody("Math.docx", true);
+    testInstance.TestReadBodyXmlSerialization("_Jakość oprogramowania.docx", true);
     Console.WriteLine("\nTest passed");
   }
 
