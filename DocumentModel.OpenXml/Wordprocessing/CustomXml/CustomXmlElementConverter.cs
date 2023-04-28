@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines CustomXmlElement - the base class for the customXml elements.
+/// <see cref="DMW.CustomXmlElement"/> class from/to OpenXml converter.
 /// </summary>
 public static class CustomXmlElementConverter
 {
-  /// <summary>
-  /// Gets or sets the custom XML Markup Namespace.
-  /// </summary>
+  #region Uri conversion.
   private static String? GetUri(DXW.CustomXmlElement openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Uri);
@@ -22,10 +20,9 @@ public static class CustomXmlElementConverter
   {
     openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Gets or sets the element name.
-  /// </summary>
+  #endregion
+
+  #region Element conversion.
   private static String? GetElement(DXW.CustomXmlElement openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Element);
@@ -40,10 +37,9 @@ public static class CustomXmlElementConverter
   {
     openXmlElement.Element = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// Gets or sets the CustomXmlProperties which represents the element tag in schema: w:customXmlPr.
-  /// </summary>
+  #endregion
+
+  #region CustomXmlProperties conversion.
   private static DMW.CustomXmlProperties? GetCustomXmlProperties(DXW.CustomXmlElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.CustomXmlProperties>();
@@ -69,50 +65,54 @@ public static class CustomXmlElementConverter
         openXmlElement.AddChild(itemElement);
     }
   }
-  
-  public static DMW.CustomXmlElement? CreateModelElement(DXW.CustomXmlElement? openXmlElement)
+  #endregion
+
+  #region CustomXmlElement model conversion.
+  public static ElementType? CreateModelElement<ElementType>(DXW.CustomXmlElement? openXmlElement)
+    where ElementType : DMW.CustomXmlElement, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.CustomXmlElement();
-      value.Uri = GetUri(openXmlElement);
-      value.Element = GetElement(openXmlElement);
-      value.CustomXmlProperties = GetCustomXmlProperties(openXmlElement);
-      return value;
+      var model = new ElementType();
+      model.Uri = GetUri(openXmlElement);
+      model.Element = GetElement(openXmlElement);
+      model.CustomXmlProperties = GetCustomXmlProperties(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.CustomXmlElement? openXmlElement, DMW.CustomXmlElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlElement? openXmlElement, DMW.CustomXmlElement? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, model.Uri, diffs, objName))
         ok = false;
-      if (!CmpElement(openXmlElement, value.Element, diffs, objName))
+      if (!CmpElement(openXmlElement, model.Element, diffs, objName))
         ok = false;
-      if (!CmpCustomXmlProperties(openXmlElement, value.CustomXmlProperties, diffs, objName))
+      if (!CmpCustomXmlProperties(openXmlElement, model.CustomXmlProperties, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CustomXmlElement model)
     where OpenXmlElementType: DXW.CustomXmlElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlElement value)
+  public static void UpdateOpenXmlElement(DXW.CustomXmlElement openXmlElement, DMW.CustomXmlElement model)
   {
-    SetUri(openXmlElement, value?.Uri);
-    SetElement(openXmlElement, value?.Element);
-    SetCustomXmlProperties(openXmlElement, value?.CustomXmlProperties);
+    SetUri(openXmlElement, model?.Uri);
+    SetElement(openXmlElement, model?.Element);
+    SetCustomXmlProperties(openXmlElement, model?.CustomXmlProperties);
   }
+  #endregion
 }

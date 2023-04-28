@@ -1,12 +1,13 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the CustomXmlRun Class.
+///   Custom XML markup allows the application of the XML elements defined in any schema syntax (XML Schema, NVDL, etc.) 
+///   to be applied to the contents of a WordprocessingML document in two types of location: 
+///   around a paragraph or set of paragraphs (at the block level); 
+///   or around an arbitrary run or set of runs within a document (at the inline level) 
+///   to provide semantics to that content within the context and structures defined by the associated schema definition.
 /// </summary>
-public class CustomXmlRun: ModelElement, 
+public class CustomXmlRun: CustomXmlElement, 
   IParagraphContent, 
   IRunContent, 
   ISdtRunContent, 
@@ -14,121 +15,4 @@ public class CustomXmlRun: ModelElement,
   IBidirectionalContent, 
   DMM.IMathArgumentContent
 {
-  public CustomXmlProperties? CustomXmlProperties { get; set; }
-
-  public CustomXmlRun? ChildCustomXmlRun { get; set; }
-
-  public Collection<SimpleField>? SimpleFields { get; set; }
-
-  public Hyperlink? Hyperlink { get; set; }
-
-  public SdtRun? SdtRun { get; set; }
-
-  public ProofError? ProofError { get; set; }
-
-  public PermStart? PermStart { get; set; }
-
-  public PermEnd? PermEnd { get; set; }
-
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
-
-  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
-
-  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
-
-  public MoveToRangeStart? MoveToRangeStart { get; set; }
-
-  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
-
-  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
-
-  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
-
-  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
-
-  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
-
-  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
-
-  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
-
-  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
-
-  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
-
-  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
-
-  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
-
-  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
-
-  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
-
-  public InsertedRun? InsertedRun { get; set; }
-
-  public DeletedRun? DeletedRun { get; set; }
-
-  public MoveFromRun? MoveFromRun { get; set; }
-
-  public MoveToRun? MoveToRun { get; set; }
-
-  public RunConflictInsertion? RunConflictInsertion { get; set; }
-
-  public RunConflictDeletion? RunConflictDeletion { get; set; }
-
-  public Math.Paragraph? Paragraph { get; set; }
-
-  public OfficeMath? OfficeMath { get; set; }
-
-  public Accent? Accent { get; set; }
-
-  public Bar? Bar { get; set; }
-
-  public Math.Box? Box { get; set; }
-
-  public BorderBox? BorderBox { get; set; }
-
-  public Delimiter? Delimiter { get; set; }
-
-  public EquationArray? EquationArray { get; set; }
-
-  public Fraction? Fraction { get; set; }
-
-  public Function? MathFunction { get; set; }
-
-  public GroupChar? GroupChar { get; set; }
-
-  public LimitLower? LimitLower { get; set; }
-
-  public LimitUpper? LimitUpper { get; set; }
-
-  public Matrix? Matrix { get; set; }
-
-  public Nary? Nary { get; set; }
-
-  public Phantom? Phantom { get; set; }
-
-  public Radical? Radical { get; set; }
-
-  public PreSubSuper? PreSubSuper { get; set; }
-
-  public Subscript? Subscript { get; set; }
-
-  public SubSuperscript? SubSuperscript { get; set; }
-
-  public Superscript? Superscript { get; set; }
-
-  public Math.Run? Run { get; set; }
-
-  public BidirectionalOverride? BidirectionalOverride { get; set; }
-
-  public BidirectionalEmbedding? BidirectionalEmbedding { get; set; }
-
-  public RelationshipType? SubDocumentReference { get; set; }
 }

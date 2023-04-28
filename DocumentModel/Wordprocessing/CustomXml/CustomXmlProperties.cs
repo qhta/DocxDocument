@@ -1,15 +1,15 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Custom XML Element Properties.
+///   This element specifies the set of properties which shall be applied to the parent custom XML element.
 /// </summary>
-public class CustomXmlProperties: ModelElement
+public class CustomXmlProperties: ElementCollection<CustomXmlAttribute>
 {
   /// <summary>
-  ///   Custom XML Element Placeholder Text.
+  ///   Specifies the placeholder text which shall be displayed in place of this custom XML element 
+  ///   when the contents of this custom XML markup are empty 
+  ///   (i.e. there are no runs of text within the current custom XML element).
   /// </summary>
   public string? CustomXmlPlaceholder { get; set; }
 
-  public Collection<CustomXmlAttribute>? CustomXmlAttributes { get; set; }
 }

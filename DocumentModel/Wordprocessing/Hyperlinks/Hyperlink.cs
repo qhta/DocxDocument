@@ -1,17 +1,13 @@
-using DocumentModel.Math;
-
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Hyperlink Class.
 /// </summary>
-public class Hyperlink: ElementCollection<IHyperlinkContent>, 
+public class Hyperlink: ElementCollection<IModelElement>, 
   IParagraphContent, 
   ISdtRunContent, 
   IBidirectionalContent, 
-  DMM.IMathArgumentContent,
-  IHyperlinkContent
+  DMM.IMathArgumentContent
 {
   /// <summary>
   ///   Hyperlink Target Frame
@@ -43,19 +39,4 @@ public class Hyperlink: ElementCollection<IHyperlinkContent>,
   /// </summary>
   public string? Id { get; set; }
 
-  public CustomXmlRun? CustomXmlRun { get; set; }
-
-  public Collection<SimpleField>? SimpleFields { get; set; }
-
-  public Hyperlink? ChildHyperlink { get; set; }
-
-  public SdtRun? SdtRun { get; set; }
-
-  public Math.Run? Run { get; set; }
-
-  public BidirectionalOverride? BidirectionalOverride { get; set; }
-
-  public BidirectionalEmbedding? BidirectionalEmbedding { get; set; }
-
-  public SubDocumentReference? SubDocumentReference { get; set; }
 }
