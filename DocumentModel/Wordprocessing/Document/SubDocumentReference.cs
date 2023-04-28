@@ -8,7 +8,6 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class SubDocumentReference: RelationshipType, 
   IParagraphContent, 
-  IHyperlinkContent,
   ISdtRunContent, 
   IBidirectionalContent
 {
