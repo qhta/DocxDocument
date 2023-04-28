@@ -332,7 +332,7 @@ public static class TableRowConverter
     return openXmlElement;
   }
 
-  public static void UpdateOpenXmlElement(DXW.TableRow openXmlElement, DMW.TableRow value)
+  public static bool UpdateOpenXmlElement(DXW.TableRow openXmlElement, DMW.TableRow value)
   {
     SetRsidTableRowMarkRevision(openXmlElement, value.RsidTableRowMarkRevision);
     SetRsidTableRowAddition(openXmlElement, value.RsidTableRowAddition);
@@ -355,6 +355,7 @@ public static class TableRowConverter
         openXmlElement.AddChild(element);
       }
     }
+    return true;
   }
   #endregion
 }

@@ -154,7 +154,7 @@ public static class TableCellConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TableCell openXmlElement, DMW.TableCell value)
+  public static bool UpdateOpenXmlElement(DXW.TableCell openXmlElement, DMW.TableCell value)
   {
     SetTableCellProperties(openXmlElement, value.TableCellProperties);
     var tableCellItems = value.ToArray();
@@ -170,6 +170,7 @@ public static class TableCellConverter
         openXmlElement.AddChild(element);
       }
     }
+    return true;
   }
   #endregion
 }

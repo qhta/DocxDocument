@@ -120,7 +120,7 @@ public static class HyperlinkConverter
       model.History = GetHistory(openXmlElement);
       model.Anchor = GetAnchor(openXmlElement);
       model.Id = GetId(openXmlElement);
-      ElementCollectionConverter<DMW.IHyperlinkContent>.FillModelElementCollection(
+      ElementCollectionConverter<DM.IModelElement>.FillModelElementCollection(
         openXmlElement.Where(item=>item is not DXW.ParagraphProperties), model,
         ParagraphContentConverter.CreateParagraphContent);
       return model;
@@ -145,7 +145,7 @@ public static class HyperlinkConverter
         ok = false;
       if (!CmpId(openXmlElement, model.Id, diffs, objName))
         ok = false;
-      if (!ElementCollectionConverter<DMW.IHyperlinkContent>.CompareOpenXmlElementCollection(
+      if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
         ParagraphContentConverter.CompareParagraphContent, diffs, objName))
         ok = false;
@@ -171,7 +171,7 @@ public static class HyperlinkConverter
     SetHistory(openXmlElement, model.History);
     SetAnchor(openXmlElement, model.Anchor);
     SetId(openXmlElement, model.Id);
-    return ElementCollectionConverter<DMW.IHyperlinkContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
+    return ElementCollectionConverter<DM.IModelElement>.UpdateOpenXmlElementCollection(openXmlElement, model,
       ParagraphContentConverter.CompareParagraphContent,
       ParagraphContentConverter.UpdateOpenXmlParagraphContent,
       ParagraphContentConverter.CreateOpenXmlParagraphContent);

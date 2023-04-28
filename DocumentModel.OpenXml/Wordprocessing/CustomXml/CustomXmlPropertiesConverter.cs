@@ -5,9 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class CustomXmlPropertiesConverter
 {
-  /// <summary>
-  /// Custom XML Element Placeholder Text.
-  /// </summary>
+  #region CustomXmlPlaceholder conversion
   private static String? GetCustomXmlPlaceholder(DXW.CustomXmlProperties openXmlElement)
   {
     return openXmlElement.GetFirstChild<DXW.CustomXmlPlaceholder>()?.Val?.Value;
@@ -32,22 +30,20 @@ public static class CustomXmlPropertiesConverter
       openXmlElement.AddChild(itemElement);
     }
   }
-  
-  private static Collection<DMW.CustomXmlAttribute>? GetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement)
+  #endregion
+
+  #region CustomXmlAttributes conversion
+  private static void GetCustomXmlAttributes(ICollection<DMW.CustomXmlAttribute> collection, DXW.CustomXmlProperties openXmlElement)
   {
-    var collection = new Collection<DMW.CustomXmlAttribute>();
     foreach (var item in openXmlElement.Elements<DXW.CustomXmlAttribute>())
     {
       var newItem = DMXW.CustomXmlAttributeConverter.CreateModelElement(item);
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
-      return collection;
-    return null;
   }
   
-  private static bool CmpCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, ICollection<DMW.CustomXmlAttribute>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.CustomXmlAttribute>();
     var origElementsCount = origElements.Count();
@@ -75,7 +71,7 @@ public static class CustomXmlPropertiesConverter
     return false;
   }
   
-  private static void SetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, Collection<DMW.CustomXmlAttribute>? value)
+  private static void SetCustomXmlAttributes(DXW.CustomXmlProperties openXmlElement, ICollection<DMW.CustomXmlAttribute>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.CustomXmlAttribute>();
     if (value != null)
@@ -88,14 +84,15 @@ public static class CustomXmlPropertiesConverter
       }
     }
   }
-  
+  #endregion
+
   public static DMW.CustomXmlProperties? CreateModelElement(DXW.CustomXmlProperties? openXmlElement)
   {
     if (openXmlElement != null)
     {
       var value = new DMW.CustomXmlProperties();
       value.CustomXmlPlaceholder = GetCustomXmlPlaceholder(openXmlElement);
-      value.CustomXmlAttributes = GetCustomXmlAttributes(openXmlElement);
+      GetCustomXmlAttributes(value, openXmlElement);
       return value;
     }
     return null;
@@ -108,7 +105,7 @@ public static class CustomXmlPropertiesConverter
       var ok = true;
       if (!CmpCustomXmlPlaceholder(openXmlElement, value.CustomXmlPlaceholder, diffs, objName))
         ok = false;
-      if (!CmpCustomXmlAttributes(openXmlElement, value.CustomXmlAttributes, diffs, objName))
+      if (!CmpCustomXmlAttributes(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
     }
@@ -127,7 +124,7 @@ public static class CustomXmlPropertiesConverter
   
   public static void UpdateOpenXmlElement(DXW.CustomXmlProperties openXmlElement, DMW.CustomXmlProperties value)
   {
-    SetCustomXmlPlaceholder(openXmlElement, value?.CustomXmlPlaceholder);
-    SetCustomXmlAttributes(openXmlElement, value?.CustomXmlAttributes);
+    SetCustomXmlPlaceholder(openXmlElement, value.CustomXmlPlaceholder);
+    SetCustomXmlAttributes(openXmlElement, value);
   }
 }

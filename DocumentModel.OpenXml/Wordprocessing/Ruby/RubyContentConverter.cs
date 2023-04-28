@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class RubyContentConverter
 {
-  #region SdtContentRun elements conversion.
+  #region RubyContent elements conversion.
   /// <summary>
   /// Creates item model element for RubyContent element item
   /// </summary>
@@ -16,14 +16,10 @@ public static class RubyContentConverter
   {
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
-    if (openXmlElement is DXW.SdtRunRuby SdtRunRuby)
-      return DMXW.SdtRunRubyConverter.CreateModelElement(SdtRunRuby);
-    if (openXmlElement is DXW.CustomXmlRuby customXmlRun)
-      return DMXW.CustomXmlRubyConverter.CreateModelElement(customXmlRun);
-    if (openXmlElement is DXW.SimpleFieldRuby simpleField)
-      return DMXW.SimpleFieldRubyConverter.CreateModelElement(simpleField);
-    if (openXmlElement is DXW.HyperlinkRuby hyperlink)
-      return DMXW.HyperlinkRubyConverter.CreateModelElement(hyperlink);
+    var hyperlinkGroupModel = RubyContentElementsConverter.CreateModelElement(openXmlElement);
+    if (hyperlinkGroupModel != null)
+      return hyperlinkGroupModel;
+
 
    var model = CommonMarkersConverter.CreateModelElement(openXmlElement);
     if (model != null)
@@ -52,14 +48,12 @@ public static class RubyContentConverter
     {
       if (openXmlElement is DXW.Run run && model is DMW.Run runModel)
         return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName);
-      if (openXmlElement is DXW.SdtRunRuby SdtRunRuby && model is DMW.SdtRunRuby SdtRunRubyModel)
-        return DMXW.SdtRunRubyConverter.CompareModelElement(SdtRunRuby, SdtRunRubyModel, diffs, objName);
-      if (openXmlElement is DXW.CustomXmlRuby customXmlRun && model is DMW.CustomXmlRuby customXmlRunModel)
-        return DMXW.CustomXmlRubyConverter.CompareModelElement(customXmlRun, customXmlRunModel, diffs, objName);
-      if (openXmlElement is DXW.SimpleFieldRuby simpleField && model is DMW.SimpleFieldRuby simpleFieldModel)
-        return DMXW.SimpleFieldRubyConverter.CompareModelElement(simpleField, simpleFieldModel, diffs, objName);
-      if (openXmlElement is DXW.HyperlinkRuby hyperlink && model is DMW.HyperlinkRuby hyperlinkModel)
-        return DMXW.HyperlinkRubyConverter.CompareModelElement(hyperlink, hyperlinkModel, diffs, objName);
+      if (model is DMW.IRubyContent rubyCuntentElement)
+      {
+        var result = RubyContentElementsConverter.CompareModelElement(openXmlElement, rubyCuntentElement, diffs, objName);
+        if (result != null)
+          return (bool)result;
+      }
 
       if (model is DMW.ICommonContent commonElementModel)
       {
@@ -90,20 +84,15 @@ public static class RubyContentConverter
   {
     if (model is DMW.Run run)
       return DMXW.RunConverter.CreateOpenXmlElement(run);
-    if (model is DMW.SdtRunRuby SdtRunRuby)
-      return DMXW.SdtRunRubyConverter.CreateOpenXmlElement(SdtRunRuby);
-    if (model is DMW.CustomXmlRuby customXmlRun)
-      return DMXW.CustomXmlRubyConverter.CreateOpenXmlElement(customXmlRun);
-    if (model is DMW.SimpleFieldRuby simpleField)
-      return DMXW.SimpleFieldRubyConverter.CreateOpenXmlElement(simpleField);
-    if (model is DMW.HyperlinkRuby hyperlink)
-      return DMXW.HyperlinkRubyConverter.CreateOpenXmlElement(hyperlink);
 
-    var result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
+    var result = RubyContentElementsConverter.CreateOpenXmlElement(model as DMW.IRubyContent);
     if (result != null) return result;
 
-    var mathResult = DMXM.CommonMathConverter.CreateOpenXmlElement(model as DMM.ICommonMathContent);
-    if (mathResult != null) return mathResult;
+    result = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
+    if (result != null) return result;
+
+    result = DMXM.CommonMathConverter.CreateOpenXmlElement(model as DMM.ICommonMathContent);
+    if (result != null) return result;
 
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in SdtRunRubyConverter.CreateOpenXmlParagraphContent method");
   }
