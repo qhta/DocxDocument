@@ -1,76 +1,11 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Footer.
+///   This element specifies the content for a single footer for use within one or more sections of a WordprocessingML document.
+///   Within the ftr element, the content of the element is similar to the content of the body (§17.2.2) element, 
+///   and contains what is referred to as block-level markup - markup which can exist as a sibling element 
+///   to paragraphs in a WordprocessingML document.
 /// </summary>
-public class Footer: ModelElement
+public class Footer: Story
 {
-  public Collection<AltChunk>? AltChunks { get; set; }
-
-  public CustomXmlBlock? CustomXmlBlock { get; set; }
-
-  public SdtBlock? SdtBlock { get; set; }
-
-  public Collection<Paragraph>? Paragraphs { get; set; }
-
-  public Collection<Table>? Tables { get; set; }
-
-  public ProofError? ProofError { get; set; }
-
-  public PermStart? PermStart { get; set; }
-
-  public PermEnd? PermEnd { get; set; }
-
-  public BookmarkStart? BookmarkStart { get; set; }
-
-  public BookmarkEnd? BookmarkEnd { get; set; }
-
-  public CommentRangeStart? CommentRangeStart { get; set; }
-
-  public CommentRangeEnd? CommentRangeEnd { get; set; }
-
-  public MoveFromRangeStart? MoveFromRangeStart { get; set; }
-
-  public MoveFromRangeEnd? MoveFromRangeEnd { get; set; }
-
-  public MoveToRangeStart? MoveToRangeStart { get; set; }
-
-  public MoveToRangeEnd? MoveToRangeEnd { get; set; }
-
-  public CustomXmlInsRangeStart? CustomXmlInsRangeStart { get; set; }
-
-  public CustomXmlInsRangeEnd? CustomXmlInsRangeEnd { get; set; }
-
-  public CustomXmlDelRangeStart? CustomXmlDelRangeStart { get; set; }
-
-  public CustomXmlDelRangeEnd? CustomXmlDelRangeEnd { get; set; }
-
-  public CustomXmlMoveFromRangeStart? CustomXmlMoveFromRangeStart { get; set; }
-
-  public CustomXmlMoveFromRangeEnd? CustomXmlMoveFromRangeEnd { get; set; }
-
-  public CustomXmlMoveToRangeStart? CustomXmlMoveToRangeStart { get; set; }
-
-  public CustomXmlMoveToRangeEnd? CustomXmlMoveToRangeEnd { get; set; }
-
-  public CustomXmlConflictInsertionRangeStart? CustomXmlConflictInsertionRangeStart { get; set; }
-
-  public CustomXmlConflictInsertionRangeEnd? CustomXmlConflictInsertionRangeEnd { get; set; }
-
-  public CustomXmlConflictDeletionRangeStart? CustomXmlConflictDeletionRangeStart { get; set; }
-
-  public CustomXmlConflictDeletionRangeEnd? CustomXmlConflictDeletionRangeEnd { get; set; }
-
-  public InsertedRun? InsertedRun { get; set; }
-
-  public DeletedRun? DeletedRun { get; set; }
-
-  public MoveFromRun? MoveFromRun { get; set; }
-
-  public MoveToRun? MoveToRun { get; set; }
-
-  public RunConflictInsertion? RunConflictInsertion { get; set; }
-
-  public RunConflictDeletion? RunConflictDeletion { get; set; }
 }
