@@ -16,7 +16,7 @@ public class Section : LinkedList<IStoryContent>
   /// Iterates until a paragraph with SectionProperties is found.
   /// </summary>
   /// <returns></returns>
-  public int FillBackward(Body aBody, int index)
+  public int FillBackward(BodyType aBody, int index)
   {
     while (index >= 0 && index < aBody.Count)
     {

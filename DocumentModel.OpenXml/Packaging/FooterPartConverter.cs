@@ -254,7 +254,7 @@ public static class FooterPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.FooterConverter.CreateOpenXmlElement<DXW.Footer>(value);
+       var rootElement = DMXW.FooterConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Footer = rootElement;
     }

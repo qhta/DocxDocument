@@ -8,7 +8,7 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class SectionsCollection : LinkedList<Section>
 {
-  public static SectionsCollection Create(Body aBody)
+  public static SectionsCollection Create(BodyType aBody)
   {
     var sections = new SectionsCollection();
     var lastSectionProperties = aBody.LastOrDefault() as SectionProperties;

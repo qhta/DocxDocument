@@ -8,46 +8,22 @@ public static class EndnoteConverter
   #region Endnote model conversion.
   public static DMW.Endnote? CreateModelElement(DXW.Endnote? openXmlElement)
   {
-    if (openXmlElement != null)
-    {
-      var model = new DMW.Endnote();
-      ElementCollectionConverter<DMW.IStoryContent>.FillModelElementCollection(openXmlElement, model,
-        BlockLevelElementsConverter.CreateBlockLevelElement);
-      return model;
-    }
-    return null;
+    return FootnoteEndnoteTypeConverter.CreateModelElement<DMW.Endnote>(openXmlElement);
   }
 
   public static bool CompareModelElement(DXW.Endnote? openXmlElement, DMW.Endnote? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && model != null)
-    {
-      var ok = true;
-      if (!ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
-         (openXmlElement, model,
-         BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName))
-        ok = false;
-      return ok;
-    }
-    if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
-    return false;
+    return FootnoteEndnoteTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnote model)
-    where OpenXmlElementType : DXW.Endnote, new()
+  public static DXW.Endnote CreateOpenXmlElement(DMW.Endnote model)
   {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, model);
-    return openXmlElement;
+    return FootnoteEndnoteTypeConverter.CreateOpenXmlElement<DXW.Endnote>(model);
   }
 
   public static bool UpdateOpenXmlElement(DXW.Endnote openXmlElement, DMW.Endnote model)
   {
-    return ElementCollectionConverter<DMW.IStoryContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
-      BlockLevelElementsConverter.CompareBlockLevelElement,
-      BlockLevelElementsConverter.UpdateOpenXmlElement,
-      BlockLevelElementsConverter.CreateOpenXmlElement);
+    return FootnoteEndnoteTypeConverter.UpdateOpenXmlElement(openXmlElement, model);
   }
   #endregion
 }
