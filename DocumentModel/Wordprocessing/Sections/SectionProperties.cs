@@ -7,7 +7,7 @@ namespace DocumentModel.Wordprocessing;
 ///   For any other section the properties are stored as a child element of the paragraph element 
 ///   corresponding to the last paragraph in the given section.
 /// </summary>
-public partial class SectionProperties : ModelElement, IBodyContent
+public partial class SectionProperties : ModelElement, IStoryContent
 {
   /// <summary>
   ///   Physical Section Mark Character Revision ID

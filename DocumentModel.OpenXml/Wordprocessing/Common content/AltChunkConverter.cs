@@ -87,9 +87,10 @@ public static class AltChunkConverter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.AltChunk openXmlElement, DMW.AltChunk value)
+  public static bool UpdateOpenXmlElement(DXW.AltChunk openXmlElement, DMW.AltChunk value)
   {
     SetId(openXmlElement, value?.Id);
     SetAltChunkProperties(openXmlElement, value?.AltChunkProperties);
+    return true;
   }
 }

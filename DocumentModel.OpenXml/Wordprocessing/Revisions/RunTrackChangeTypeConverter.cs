@@ -1,13 +1,11 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RunTrackChangeType Class.
+/// <see cref="DMW.RunTrackChangeType"/> class from/to OpenXml converter.
 /// </summary>
 public static class RunTrackChangeTypeConverter
 {
-  /// <summary>
-  /// author
-  /// </summary>
+  #region Author conversion.
   private static String? GetAuthor(DXW.RunTrackChangeType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Author);
@@ -22,10 +20,9 @@ public static class RunTrackChangeTypeConverter
   {
     openXmlElement.Author = StringValueConverter.CreateStringValue(value);
   }
-  
-  /// <summary>
-  /// date
-  /// </summary>
+  #endregion
+
+  #region Date conversion.
   private static DateTime? GetDate(DXW.RunTrackChangeType openXmlElement)
   {
     return openXmlElement?.Date?.Value;
@@ -42,10 +39,10 @@ public static class RunTrackChangeTypeConverter
   {
     openXmlElement.Date = value;
   }
-  
-  /// <summary>
-  /// Annotation Identifier
-  /// </summary>
+  #endregion
+
+
+  #region Annotation Identifier conversion.
   private static String? GetId(DXW.RunTrackChangeType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
@@ -60,50 +57,63 @@ public static class RunTrackChangeTypeConverter
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
-  public static DMW.RunTrackChangeType? CreateModelElement(DXW.RunTrackChangeType? openXmlElement)
+  #endregion
+
+  public static ElementType? CreateModelElement<ElementType>(DXW.RunTrackChangeType? openXmlElement)
+    where ElementType : DMW.RunTrackChangeType, new ()
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.RunTrackChangeType();
-      value.Author = GetAuthor(openXmlElement);
-      value.Date = GetDate(openXmlElement);
-      value.Id = GetId(openXmlElement);
-      return value;
+      var model = new ElementType();
+      model.Author = GetAuthor(openXmlElement);
+      model.Date = GetDate(openXmlElement);
+      model.Id = GetId(openXmlElement);
+      ElementCollectionConverter<DMW.IParagraphContent>.FillModelElementCollection(
+        openXmlElement, model,
+        ParagraphContentConverter.CreateParagraphContent);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RunTrackChangeType? openXmlElement, DMW.RunTrackChangeType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunTrackChangeType? openXmlElement, DMW.RunTrackChangeType? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
         ok = false;
-      if (!CmpDate(openXmlElement, value.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+        ok = false;
+      if (!ElementCollectionConverter<DMW.IParagraphContent>.CompareOpenXmlElementCollection(
+        openXmlElement, model,
+        ParagraphContentConverter.CompareParagraphContent, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunTrackChangeType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunTrackChangeType model)
     where OpenXmlElementType: DXW.RunTrackChangeType, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.RunTrackChangeType openXmlElement, DMW.RunTrackChangeType value)
+  public static bool UpdateOpenXmlElement(DXW.RunTrackChangeType openXmlElement, DMW.RunTrackChangeType model)
   {
-    SetAuthor(openXmlElement, value?.Author);
-    SetDate(openXmlElement, value?.Date);
-    SetId(openXmlElement, value?.Id);
+    SetAuthor(openXmlElement, model.Author);
+    SetDate(openXmlElement, model.Date);
+    SetId(openXmlElement, model.Id);
+    return ElementCollectionConverter<DMW.IParagraphContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      ParagraphContentConverter.CompareParagraphContent,
+      ParagraphContentConverter.UpdateOpenXmlParagraphContent,
+      ParagraphContentConverter.CreateOpenXmlParagraphContent);
   }
 }

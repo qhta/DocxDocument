@@ -1,88 +1,29 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the Body class conversion methods
+/// <see cref="DMW.Body"/> class from/to OpenXml converter.
 /// </summary>
 public static class BodyConverter
 {
-  #region Body elements conversion
-  public static DMW.IBodyContent? CreateBodyElement(DX.OpenXmlElement? openXmlElement)
+  #region Body content elements conversion
+  public static DMW.IStoryContent? CreateBodyContentElement(DX.OpenXmlElement? openXmlElement)
   {
-    if (openXmlElement is DXW.Paragraph paragraph)
-      return DMXW.ParagraphConverter.CreateModelElement(paragraph);
-    if (openXmlElement is DXW.Table table)
-      return DMXW.TableConverter.CreateModelElement(table);
-    if (openXmlElement is DXW.AltChunk altChunk)
-      return DMXW.AltChunkConverter.CreateModelElement(altChunk);
-    if (openXmlElement is DXW.CustomXmlBlock customXmlBlock)
-      return DMXW.CustomXmlBlockConverter.CreateModelElement(customXmlBlock);
-    if (openXmlElement is DXW.SdtBlock stdBlock)
-      return DMXW.SdtBlockConverter.CreateModelElement(stdBlock);
     if (openXmlElement is DXW.SectionProperties sectionProperties)
       return DMXW.SectionPropertiesConverter.CreateModelElement(sectionProperties);
-
-    var commonMarker = CommonMarkersConverter.CreateModelElement(openXmlElement);
-    if (commonMarker != null)
-      return commonMarker;
-
-
-    if (openXmlElement != null)
-      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in Body.CreateModelElement method");
-    return null;
+    return BlockLevelElementsConverter.CreateBlockLevelElement(openXmlElement);
   }
 
-  public static bool CompareBodyElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareBodyContentElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
   {
-    if (openXmlElement != null && model != null)
-    {
-      if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
-      if (openXmlElement is DXW.Table table && model is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
-      if (openXmlElement is DXW.AltChunk altChunk && model is DMW.AltChunk altChunkModel)
-        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
-      if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
-      if (openXmlElement is DXW.SdtBlock stdBlock && model is DMW.SdtBlock stdBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(stdBlock, stdBlockModel, diffs, objName);
-      if (openXmlElement is DXW.SectionProperties sectionProperties && model is DMW.SectionProperties sectionPropertiesModel)
-        return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName);
-
-      if (model is DMW.ICommonContent commonElementModel)
-      {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
-        if (result != null)
-          return (bool)result;
-      }
-      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
-      return false;
-
-    }
-    if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
-    return false;
+    if (openXmlElement is DXW.SectionProperties sectionProperties && model is DMW.SectionProperties sectionPropertiesModel)
+      return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName);
+    return BlockLevelElementsConverter.CompareBlockLevelElement(openXmlElement, model, diffs, objName);
   }
-  public static OpenXmlElement CreateOpenXmlElement(DMW.IBodyContent model)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IStoryContent model)
   {
-    if (model is DMW.Paragraph paragraph)
-      return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
-    if (model is DMW.Table table)
-      return DMXW.TableConverter.CreateOpenXmlElement(table);
-    if (model is DMW.AltChunk altChunk)
-      return DMXW.AltChunkConverter.CreateOpenXmlElement(altChunk);
-    if (model is DMW.CustomXmlBlock customXmlBlock)
-      return DMXW.CustomXmlBlockConverter.CreateOpenXmlElement(customXmlBlock);
-    if (model is DMW.SdtBlock stdBlock)
-      return DMXW.SdtBlockConverter.CreateOpenXmlElement(stdBlock);
     if (model is DMW.SectionProperties sectionProperties)
       return DMXW.SectionPropertiesConverter.CreateOpenXmlElement(sectionProperties);
-
-    var commonMarker = CommonMarkersConverter.CreateOpenXmlElement(model as DMW.ICommonContent);
-    if (commonMarker != null) return commonMarker;
-
-    throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in BodyConverter.CreateOpenXmlParagraphContent method");
+    return BlockLevelElementsConverter.CreateOpenXmlElement(model);
   }
   #endregion
 
@@ -92,8 +33,8 @@ public static class BodyConverter
     if (openXmlElement != null)
     {
       var model = new DMW.Body();
-      ElementCollectionConverter<DMW.IBodyContent>.FillModelElementCollection(openXmlElement, model,
-        CreateBodyElement);
+      ElementCollectionConverter<DMW.IStoryContent>.FillModelElementCollection(openXmlElement, model,
+        CreateBodyContentElement);
       return model;
     }
     return null;
@@ -101,8 +42,8 @@ public static class BodyConverter
 
   public static bool CompareModelElement(DXW.Body? openXmlElement, DMW.Body? model, DiffList? diffs, string? objName)
   {
-     return ElementCollectionConverter<IBodyContent>.CompareOpenXmlElementCollection
-        (openXmlElement, model, CompareBodyElement, diffs, objName);
+     return ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
+        (openXmlElement, model, CompareBodyContentElement, diffs, objName);
   }
 
   public static DXW.Body CreateOpenXmlElement(DMW.Body value)
