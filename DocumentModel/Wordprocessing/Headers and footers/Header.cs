@@ -6,6 +6,6 @@ namespace DocumentModel.Wordprocessing;
 ///   and contains what is referred to as block-level markup - markup which can exist as a sibling element 
 ///   to paragraphs in a WordprocessingML document.
 /// </summary>
-public class Header: Story
+public class Header: HeaderFooter
 {
 }

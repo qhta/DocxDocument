@@ -57,7 +57,7 @@ public static class DocPartConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.DocPartBodyConverter.CreateOpenXmlElement<DXW.DocPartBody>(value);
+      itemElement = DMXW.DocPartBodyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

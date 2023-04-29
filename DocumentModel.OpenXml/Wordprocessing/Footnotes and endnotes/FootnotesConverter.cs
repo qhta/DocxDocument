@@ -25,7 +25,7 @@ public static class FootnotesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.FootnoteConverter.CreateOpenXmlElement<DXW.Footnote>(value);
+      itemElement = DMXW.FootnoteConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

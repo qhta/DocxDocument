@@ -254,7 +254,7 @@ public static class HeaderPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.HeaderConverter.CreateOpenXmlElement<DXW.Header>(value);
+       var rootElement = DMXW.HeaderConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Header = rootElement;
     }

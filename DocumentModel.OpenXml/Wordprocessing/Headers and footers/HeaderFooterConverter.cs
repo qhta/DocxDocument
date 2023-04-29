@@ -1,23 +1,25 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// <see cref="DMW.TextBoxContent"/> class from/to OpenXml converter.
+/// <see cref="DMW.HeaderFooter"/> class from/to OpenXml converter.
 /// </summary>
-public static class TextBoxContentConverter
+public static class HeaderFooterConverter
 {
-  public static DMW.TextBoxContent? CreateModelElement(DXW.TextBoxContent? openXmlElement)
+  #region Header model conversion.
+  public static ElementType? CreateModelElement<ElementType>(DX.TypedOpenXmlPartRootElement? openXmlElement)
+    where ElementType : DMW.HeaderFooter, new()
   {
     if (openXmlElement != null)
     {
-      var model = new DMW.TextBoxContent();
+      var model = new ElementType();
       ElementCollectionConverter<DMW.IStoryContent>.FillModelElementCollection(openXmlElement, model,
         BlockLevelElementsConverter.CreateBlockLevelElement);
       return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXW.TextBoxContent? openXmlElement, DMW.TextBoxContent? model, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DX.TypedOpenXmlPartRootElement? openXmlElement, DMW.HeaderFooter? model, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && model != null)
     {
@@ -25,26 +27,28 @@ public static class TextBoxContentConverter
       if (!ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
          (openXmlElement, model,
          BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName))
+        ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TextBoxContent model)
-    where OpenXmlElementType: DXW.TextBoxContent, new()
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.HeaderFooter model)
+    where OpenXmlElementType : DX.TypedOpenXmlPartRootElement, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static bool UpdateOpenXmlElement(DXW.TextBoxContent openXmlElement, DMW.TextBoxContent model)
+
+  public static bool UpdateOpenXmlElement(DX.TypedOpenXmlPartRootElement openXmlElement, DMW.HeaderFooter model)
   {
     return ElementCollectionConverter<DMW.IStoryContent>.UpdateOpenXmlElementCollection(openXmlElement, model,
       BlockLevelElementsConverter.CompareBlockLevelElement,
       BlockLevelElementsConverter.UpdateOpenXmlElement,
       BlockLevelElementsConverter.CreateOpenXmlElement);
   }
+  #endregion
 }
