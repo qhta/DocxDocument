@@ -1,7 +1,8 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// <see cref="DMW.RunTrackChangeType"/> class from/to OpenXml converter.
+/// <see cref="DMW.RunTrackChangeType"/> class from/to OpenXml converter
+/// using <see cref="DXW.RunTrackChangeType"/>.
 /// </summary>
 public static class RunTrackChangeTypeConverter
 {
