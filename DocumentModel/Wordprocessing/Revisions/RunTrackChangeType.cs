@@ -1,10 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the RunTrackChangeType Class.
+///   Common base class for 
+///   <see cref="InsertedRun"/>, <see cref="DeletedRun"/>, <see cref="MoveFromRun"/>, <see cref="MoveToRun"/> classes.
 /// </summary>
-public class RunTrackChangeType: ModelElement
+public abstract class RunTrackChangeType: ElementCollection<IParagraphContent>, ICommonContent
 {
   /// <summary>
   ///   author

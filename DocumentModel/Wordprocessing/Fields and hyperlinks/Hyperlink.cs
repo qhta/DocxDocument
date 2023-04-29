@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the Hyperlink Class.
+///   This element specifies the presence of a hyperlink at the current location in the document.
 /// </summary>
 public class Hyperlink: ElementCollection<IModelElement>, 
   IParagraphContent, 
