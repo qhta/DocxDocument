@@ -1,7 +1,7 @@
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
-///   Defines the HyperlinkRuby Class.
+///   Ruby counterpart of <see cref="Hyperlink"/> class.
 /// </summary>
 public class HyperlinkRuby: Hyperlink, IRubyContent
 {
