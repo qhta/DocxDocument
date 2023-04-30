@@ -8,20 +8,9 @@ public class Rsids : ValueCollection<HexInt>
 {
   /// <summary>
   ///   Original Document Revision Save ID.
-  /// </summary>
-  public HexInt? RsidRoot { get; set; }
+  /// </summary> 
+  [XmlAttribute]
+  public HexInt? RsidRoot { get; 
+    set; }
 
-  //public new Collection<HexInt>? Items
-  //{
-  //  get => this;
-  //  set
-  //  {
-  //    if (value != null)
-  //    {
-  //      Clear();
-  //      foreach (var item in value)
-  //        Add(item);
-  //    }
-  //  }
-  //}
 }

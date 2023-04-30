@@ -11,7 +11,6 @@ namespace DocxDocument.ReadWrite.Test;
 /// <seealso cref="DocxDocument.ReadWrite.Test.TestBase" />
 public class TestProperties : TestBase
 {
-
   #region DocumentProperties test.
   /// <summary>
   /// Names of the extended properties that are treated as statistic properties.
@@ -297,6 +296,8 @@ public class TestProperties : TestBase
   [Test]
   public void TestReadPropertiesXmlSerialization()
   {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestReadPropertiesXmlSerialization(filename);
   }
 
   /// <summary>
@@ -305,8 +306,43 @@ public class TestProperties : TestBase
   /// </summary>
   public void TestReadPropertiesXmlSerialization(string filename, bool showDetails = false)
   {
+    TestReadWritePropertiesXmlSerialization(false, filename, showDetails);
+  }
+
+  /// <summary>
+  /// Tests properties Xml copying by reading files,
+  /// serialize and deserialize properties 
+  /// and write properties to new file.
+  /// </summary>
+  [Test]
+  public void TestCopyProperties()
+  {
+    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
+      TestCopyProperties(filename);
+  }
+
+  /// <summary>
+  /// Tests properties copy by reading files,
+  /// serialize and deserialize properties
+  /// and write them to file copy.
+  /// </summary>
+  public void TestCopyProperties(string filename, bool showDetails = false)
+  {
+    TestReadWritePropertiesXmlSerialization(true, filename, showDetails);
+  }
+
+  /// <summary>
+  /// Tests properties copy by reading files,
+  /// serialize and deserialize properties
+  /// and write them to file copy.
+  /// </summary>
+  private void TestReadWritePropertiesXmlSerialization(bool write, string filename, bool showDetails = false)
+  {
     filename = Path.Combine(TestPath, filename);
-    WriteLine($"Testing properties serialization of: {filename}");
+    if (write)
+      WriteLine($"Testing properties copy of: {filename}");
+    else
+      WriteLine($"Testing properties serialization of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.AllDocumentProperties);
     var oldProperties = document.Properties;//TestReadProperties(filename, true);
@@ -318,14 +354,14 @@ public class TestProperties : TestBase
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
       new SerializationOptions { AcceptAllProperties = true });
-    try
+    //try
     {
       serializer.Serialize(textWriter, oldProperties);
     }
-    catch (Exception ex)
-    {
-      Console.WriteLine(ex.Message);
-    }
+    //catch (Exception ex)
+    //{
+    //  Console.WriteLine(ex.Message);
+    //}
     textWriter.Flush();
     string str = textWriter.ToString();
     if (showDetails)
@@ -344,6 +380,7 @@ public class TestProperties : TestBase
         WriteLine(diff.ToString());
     Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
   }
+
   #endregion
 
   #region DocumentBackground test

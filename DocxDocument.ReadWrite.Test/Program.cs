@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestProperties();
   }
 
     private static void RunTestBackground()
@@ -85,8 +85,8 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestReadProperties("Comments.docx", true);
-    testInstance.TestReadPropertiesXmlSerialization();
+    //testInstance.TestReadProperties("BackgroundColor.docx", true);
+    testInstance.TestReadPropertiesXmlSerialization("BackgroundColor.docx", true);
     Console.WriteLine("Test passed");
   }
 
