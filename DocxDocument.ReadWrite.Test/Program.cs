@@ -86,7 +86,7 @@ internal class Program
     var testInstance = new TestProperties();
     testInstance.Setup();
     //testInstance.TestReadProperties("BackgroundColor.docx", true);
-    testInstance.TestReadPropertiesXmlSerialization("BackgroundColor.docx", true);
+    testInstance.TestReadPropertiesXmlSerialization("DocumentProperties.docx", true);
     Console.WriteLine("Test passed");
   }
 
