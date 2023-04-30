@@ -10,7 +10,6 @@ public class Rsids : ValueCollection<HexInt>
   ///   Original Document Revision Save ID.
   /// </summary> 
   [XmlAttribute]
-  public HexInt? RsidRoot { get; 
-    set; }
+  public HexInt? RsidRoot { get;  set; }
 
 }
