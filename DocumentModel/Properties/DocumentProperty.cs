@@ -54,8 +54,9 @@ public partial class DocumentProperty : ModelElement
   private object? _value;
 
   /// <summary>
-  ///   Expected value type name
+  ///   Expected value type
   /// </summary>
+  [TypeConverter(typeof(TypeNameConverter))]
    public Type? Type { get; set; }
 
   /// <summary>
