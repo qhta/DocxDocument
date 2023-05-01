@@ -107,8 +107,6 @@ public static class CustomDocumentPropertyConverter
       value.PropertyId = GetPropertyId(openXmlElement);
       value.Name = GetName(openXmlElement);
       value.LinkTarget = GetLinkTarget(openXmlElement);
-      //if (value.Name=="Ukończono")
-      //  TestTools.Stop();
       value.Value = GetValue(openXmlElement);
     }
     return value;

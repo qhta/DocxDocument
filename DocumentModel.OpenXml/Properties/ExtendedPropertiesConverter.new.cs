@@ -451,88 +451,98 @@ public static class ExtendedPropertiesConverter
 
   public static ContentProperties? GetContentProperties(DXEP.Properties? openXmlElement)
   {
-    var value = new ContentProperties();
+    var model = new ContentProperties();
     if (openXmlElement != null)
     {
-      value.Template = GetTemplate(openXmlElement);
-      value.Manager = GetManager(openXmlElement);
-      value.Company = GetCompany(openXmlElement);
-      value.PresentationFormat = GetPresentationFormat(openXmlElement);
-      value.ScaleCrop = GetScaleCrop(openXmlElement);
-      value.HeadingPairs = GetHeadingPairs(openXmlElement);
-      value.TitlesOfParts = GetTitlesOfParts(openXmlElement);
-      value.LinksUpToDate = GetLinksUpToDate(openXmlElement);
-      value.SharedDocument = GetSharedDocument(openXmlElement);
-      value.HyperlinkBase = GetHyperlinkBase(openXmlElement);
-      value.HyperlinkList = GetHyperlinkList(openXmlElement);
-      value.HyperlinksChanged = GetHyperlinksChanged(openXmlElement);
-      value.DigitalSignature = GetDigitalSignature(openXmlElement);
-      value.Application = GetApplication(openXmlElement);
-      value.ApplicationVersion = GetApplicationVersion(openXmlElement);
-      value.DocumentSecurity = GetDocumentSecurity(openXmlElement);
+      model.Template = GetTemplate(openXmlElement);
+      model.Manager = GetManager(openXmlElement);
+      model.Company = GetCompany(openXmlElement);
+      model.PresentationFormat = GetPresentationFormat(openXmlElement);
+      model.ScaleCrop = GetScaleCrop(openXmlElement);
+      model.HeadingPairs = GetHeadingPairs(openXmlElement);
+      model.TitlesOfParts = GetTitlesOfParts(openXmlElement);
+      model.LinksUpToDate = GetLinksUpToDate(openXmlElement);
+      model.SharedDocument = GetSharedDocument(openXmlElement);
+      model.HyperlinkBase = GetHyperlinkBase(openXmlElement);
+      model.HyperlinkList = GetHyperlinkList(openXmlElement);
+      model.HyperlinksChanged = GetHyperlinksChanged(openXmlElement);
+      model.DigitalSignature = GetDigitalSignature(openXmlElement);
+      model.Application = GetApplication(openXmlElement);
+      model.ApplicationVersion = GetApplicationVersion(openXmlElement);
+      model.DocumentSecurity = GetDocumentSecurity(openXmlElement);
     }
-    return value;
+    return model;
   }
 
   public static StatisticProperties? GetStatisticProperties(DXEP.Properties? openXmlElement)
   {
-    var value = new StatisticProperties();
+    var model = new StatisticProperties();
     if (openXmlElement != null)
     {
-      value.Pages = GetPages(openXmlElement);
-      value.Words = GetWords(openXmlElement);
-      value.Characters = GetCharacters(openXmlElement);
-      value.CharactersWithSpaces = GetCharactersWithSpaces(openXmlElement);
-      value.Lines = GetLines(openXmlElement);
-      value.Paragraphs = GetParagraphs(openXmlElement);
-      value.Slides = GetSlides(openXmlElement);
-      value.Notes = GetNotes(openXmlElement);
-      value.HiddenSlides = GetHiddenSlides(openXmlElement);
-      value.MultimediaClips = GetMultimediaClips(openXmlElement);
-      value.TotalTime = GetTotalTime(openXmlElement);
+      model.Pages = GetPages(openXmlElement);
+      model.Words = GetWords(openXmlElement);
+      model.Characters = GetCharacters(openXmlElement);
+      model.CharactersWithSpaces = GetCharactersWithSpaces(openXmlElement);
+      model.Lines = GetLines(openXmlElement);
+      model.Paragraphs = GetParagraphs(openXmlElement);
+      model.Slides = GetSlides(openXmlElement);
+      model.Notes = GetNotes(openXmlElement);
+      model.HiddenSlides = GetHiddenSlides(openXmlElement);
+      model.MultimediaClips = GetMultimediaClips(openXmlElement);
+      model.TotalTime = GetTotalTime(openXmlElement);
     }
-    return value;
+    return model;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(ContentProperties? value1, StatisticProperties? value2)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(ContentProperties? model1, StatisticProperties? model2)
     where OpenXmlElementType : DXEP.Properties, new()
   {
     var openXmlElement = new OpenXmlElementType();
     {
-      if (value1 != null)
+      if (model1 != null)
       {
-        SetTemplate(openXmlElement, value1.Template);
-        SetManager(openXmlElement, value1.Manager);
-        SetCompany(openXmlElement, value1.Company);
-        SetPresentationFormat(openXmlElement, value1.PresentationFormat);
-        SetScaleCrop(openXmlElement, value1.ScaleCrop);
-        SetHeadingPairs(openXmlElement, value1.HeadingPairs);
-        SetTitlesOfParts(openXmlElement, value1.TitlesOfParts);
-        SetLinksUpToDate(openXmlElement, value1.LinksUpToDate);
-        SetSharedDocument(openXmlElement, value1.SharedDocument);
-        SetHyperlinkBase(openXmlElement, value1.HyperlinkBase);
-        SetHyperlinkList(openXmlElement, value1.HyperlinkList);
-        SetHyperlinksChanged(openXmlElement, value1.HyperlinksChanged);
-        SetDigitalSignature(openXmlElement, value1.DigitalSignature);
-        SetApplication(openXmlElement, value1.Application);
-        SetApplicationVersion(openXmlElement, value1.ApplicationVersion);
-        SetDocumentSecurity(openXmlElement, value1.DocumentSecurity);
+        SetContentProperties(openXmlElement, model1);
       }
-      if (value2 != null)
+      if (model2 != null)
       {
-        SetPages(openXmlElement, value2.Pages);
-        SetWords(openXmlElement, value2.Words);
-        SetCharacters(openXmlElement, value2.Characters);
-        SetCharactersWithSpaces(openXmlElement, value2.CharactersWithSpaces);
-        SetLines(openXmlElement, value2.Lines);
-        SetParagraphs(openXmlElement, value2.Paragraphs);
-        SetSlides(openXmlElement, value2.Slides);
-        SetNotes(openXmlElement, value2.Notes);
-        SetTotalTime(openXmlElement, value2.TotalTime);
-        SetHiddenSlides(openXmlElement, value2.HiddenSlides);
-        SetMultimediaClips(openXmlElement, value2.MultimediaClips);
+        SetStatisticProperties(openXmlElement, model2);
       }
     }
     return openXmlElement;
+  }
+
+  public static void SetContentProperties(DXEP.Properties openXmlElement, ContentProperties model)
+  {
+    SetTemplate(openXmlElement, model.Template);
+    SetManager(openXmlElement, model.Manager);
+    SetCompany(openXmlElement, model.Company);
+    SetPresentationFormat(openXmlElement, model.PresentationFormat);
+    SetScaleCrop(openXmlElement, model.ScaleCrop);
+    SetHeadingPairs(openXmlElement, model.HeadingPairs);
+    SetTitlesOfParts(openXmlElement, model.TitlesOfParts);
+    SetLinksUpToDate(openXmlElement, model.LinksUpToDate);
+    SetSharedDocument(openXmlElement, model.SharedDocument);
+    SetHyperlinkBase(openXmlElement, model.HyperlinkBase);
+    SetHyperlinkList(openXmlElement, model.HyperlinkList);
+    SetHyperlinksChanged(openXmlElement, model.HyperlinksChanged);
+    SetDigitalSignature(openXmlElement, model.DigitalSignature);
+    SetApplication(openXmlElement, model.Application);
+    SetApplicationVersion(openXmlElement, model.ApplicationVersion);
+    SetDocumentSecurity(openXmlElement, model.DocumentSecurity);
+  }
+
+  public static void SetStatisticProperties(DXEP.Properties openXmlElement, StatisticProperties model)
+  {
+    SetPages(openXmlElement, model.Pages);
+    SetWords(openXmlElement, model.Words);
+    SetCharacters(openXmlElement, model.Characters);
+    SetCharactersWithSpaces(openXmlElement, model.CharactersWithSpaces);
+    SetLines(openXmlElement, model.Lines);
+    SetParagraphs(openXmlElement, model.Paragraphs);
+    SetSlides(openXmlElement, model.Slides);
+    SetNotes(openXmlElement, model.Notes);
+    SetTotalTime(openXmlElement, model.TotalTime);
+    SetHiddenSlides(openXmlElement, model.HiddenSlides);
+    SetMultimediaClips(openXmlElement, model.MultimediaClips);
   }
 }

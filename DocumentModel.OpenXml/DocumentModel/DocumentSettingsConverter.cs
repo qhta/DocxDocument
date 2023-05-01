@@ -2367,10 +2367,9 @@ public static class DocumentSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.DocumentSettings value)
-    where OpenXmlElementType: DXW.Settings, new()
+  public static DXW.Settings CreateOpenXmlElement(DM.DocumentSettings value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Settings();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
