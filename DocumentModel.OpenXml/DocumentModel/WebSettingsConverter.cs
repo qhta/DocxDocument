@@ -321,10 +321,9 @@ public static class WebSettingsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DM.WebSettings value)
-    where OpenXmlElementType: DXW.WebSettings, new()
+  public static DXW.WebSettings CreateOpenXmlElement(DM.WebSettings value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.WebSettings();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

@@ -6,6 +6,7 @@ global using System.Globalization;
 global using System.Linq;
 global using System.Reflection;
 global using Qhta.DeepCompare;
+global using Qhta.DeepCopy;
 global using Qhta.TypeUtils;
 global using Qhta.Xml.Serialization;
 #if NET7_0_OR_GREATER

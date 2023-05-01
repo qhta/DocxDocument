@@ -40,8 +40,6 @@ public class NameIndexedCollection<T> : ICollection, ICollection<T>, IEnumerable
   {
     n++;
     var name = item.Name;
-    //if (name=="Dark1Color")
-    //  TestTools.Stop();
     if (name == null)
       throw new InvalidOperationException($"{item.GetType()} must have a name to be added to named collection");
     if (!TryAdd(name, item))

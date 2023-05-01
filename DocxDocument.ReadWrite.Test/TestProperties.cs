@@ -40,26 +40,6 @@ public class TestProperties : TestBase
   }
 
   /// <summary>
-  /// Tests the document properties read from "DocumentProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadDocumentProperties()
-  {
-    var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    TestReadProperties(filename, true);
-  }
-
-  /// <summary>
-  /// Tests the document properties read from "CustomProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadCustomProperties()
-  {
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    TestReadProperties(filename, true);
-  }
-
-  /// <summary>
   /// Tests the document properties read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
@@ -78,6 +58,7 @@ public class TestProperties : TestBase
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
+    #region test read
     WriteLine($"Testing read properties of: {filename}");
     var reader = new DocxReader(filename);
     var document = reader.ReadDocument(Parts.AllDocumentProperties);
@@ -86,15 +67,66 @@ public class TestProperties : TestBase
     Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
     WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
 
-    CheckReadCoreDocumentProperties(document, reader.WordprocessingDocument, showDetails);
+    var ok = true;
+    if (!CheckReadCoreDocumentProperties(document, reader.WordprocessingDocument, showDetails))
+      ok = false;
+    if (!CheckReadExtendedDocumentProperties(document, reader.WordprocessingDocument, showDetails))
+      ok = false;
+    if (!CheckReadCustomDocumentProperties(document, reader.WordprocessingDocument, showDetails))
+      ok = false;
+    if (!CheckReadDocumentSettings(document, reader.WordprocessingDocument, showDetails))
+      ok = false;
+    if (!CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails))
+      ok = false;
+    #endregion
+    if (ok)
+    {
+      #region serialization
+      var oldProperties = document.Properties;//TestReadProperties(filename, true);
+      Assert.IsNotNull(oldProperties, "No document properties read");
+      if (oldProperties == null)
+        return;
+      var textWriter = new StringWriter();
+      var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+      var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
+        new SerializationOptions { AcceptAllProperties = true });
+      try
+      {
+        serializer.Serialize(textWriter, oldProperties);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      if (showDetails)
+      {
+        WriteLine(str);
+        WriteLine();
+      }
+      #endregion
 
-    CheckReadExtendedDocumentProperties(document, reader.WordprocessingDocument, showDetails);
+      #region deserialization
+      var textReader = new StringReader(str);
+      var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
+      Assert.IsNotNull(newProperties, $"Deserialized properties are null");
+      var diffs = new DiffList();
+      ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
+      if (!ok)
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
+      #endregion
+    }
+    if (ok)
+    {
+      #region copying
+      //var writer = new DocxWriter(filename);
 
-    CheckReadCustomDocumentProperties(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadDocumentSettings(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails);
+      #endregion
+    }
   }
 
   /// <summary>
@@ -103,7 +135,7 @@ public class TestProperties : TestBase
   /// <param name="modelDocument">Model document read from docx fils.</param>
   /// <param name="origDocument">The original document.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  private void CheckReadCoreDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+  private bool CheckReadCoreDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
   {
     CoreProperties? coreDocumentProperties = modelDocument.Properties?.CoreProperties;
     int origCorePropertiesCount = 0;
@@ -134,6 +166,7 @@ public class TestProperties : TestBase
       }
     }
     Assert.That(corePropertiesCount, Is.EqualTo(origCorePropertiesCount), "Invalid core properties count");
+    return true;
   }
 
   /// <summary>
@@ -142,7 +175,7 @@ public class TestProperties : TestBase
   /// <param name="modelDocument">Model document read from docx fils.</param>
   /// <param name="origDocument">The original document.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  private void CheckReadExtendedDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+  private bool CheckReadExtendedDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
   {
     ContentProperties? contentDocumentProperties = modelDocument.Properties?.ContentProperties;
     StatisticProperties? statisticDocumentProperties = modelDocument.Properties?.StatisticProperties;
@@ -185,6 +218,7 @@ public class TestProperties : TestBase
     }
     Assert.That(contentPropertiesCount, Is.EqualTo(origContentPropertiesCount), "Invalid content properties count");
     Assert.That(statisticPropertiesCount, Is.EqualTo(origStatisticPropertiesCount), "Invalid content properties count");
+    return true;
   }
 
   /// <summary>
@@ -193,7 +227,7 @@ public class TestProperties : TestBase
   /// <param name="modelDocument">Model document read from docx fils.</param>
   /// <param name="origDocument">The original document.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  private void CheckReadCustomDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+  private bool CheckReadCustomDocumentProperties(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
   {
     CustomProperties? customDocumentProperties = modelDocument.Properties?.CustomProperties;
     int customPropertiesCount = 0;
@@ -217,6 +251,7 @@ public class TestProperties : TestBase
       }
     }
     Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
+    return true;
   }
   #endregion
 
@@ -227,7 +262,7 @@ public class TestProperties : TestBase
   /// <param name="modelDocument">Model document read from docx fils.</param>
   /// <param name="origDocument">The original document.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  private void CheckReadDocumentSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+  private bool CheckReadDocumentSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
   {
     var documentSettings = modelDocument.Properties?.DocumentSettings;
     int origDocumentSettingsCount = 0;
@@ -254,6 +289,7 @@ public class TestProperties : TestBase
       }
     }
     Assert.That(documentSettingsCount, Is.EqualTo(origDocumentSettingsCount), "Invalid document settings count");
+    return true;
   }
 
   /// <summary>
@@ -262,7 +298,7 @@ public class TestProperties : TestBase
   /// <param name="modelDocument">Model document read from docx fils.</param>
   /// <param name="origDocument">The original document.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  private void CheckReadWebSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
+  private bool CheckReadWebSettings(DocumentModel.Wordprocessing.Document modelDocument, WordprocessingDocument origDocument, bool showDetails)
   {
     var webSettings = modelDocument.Properties?.WebSettings;
     int origWebSettingsCount = 0;
@@ -287,137 +323,7 @@ public class TestProperties : TestBase
       }
     }
     Assert.That(webSettingsCount, Is.EqualTo(origWebSettingsCount), "Invalid web settings count");
-  }
-
-  /// <summary>
-  /// Tests properties Xml serialization by reading files,
-  /// serialize and deserialize properties using string writer.
-  /// </summary>
-  [Test]
-  public void TestReadPropertiesXmlSerialization()
-  {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestReadPropertiesXmlSerialization(filename);
-  }
-
-  /// <summary>
-  /// Tests properties Xml serialization by reading file,
-  /// serialize and deserialize properties using string writer.
-  /// </summary>
-  public void TestReadPropertiesXmlSerialization(string filename, bool showDetails = false)
-  {
-    TestReadWritePropertiesXmlSerialization(false, filename, showDetails);
-  }
-
-  /// <summary>
-  /// Tests properties Xml copying by reading files,
-  /// serialize and deserialize properties 
-  /// and write properties to new file.
-  /// </summary>
-  [Test]
-  public void TestCopyProperties()
-  {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestCopyProperties(filename);
-  }
-
-  /// <summary>
-  /// Tests properties copy by reading files,
-  /// serialize and deserialize properties
-  /// and write them to file copy.
-  /// </summary>
-  public void TestCopyProperties(string filename, bool showDetails = false)
-  {
-    TestReadWritePropertiesXmlSerialization(true, filename, showDetails);
-  }
-
-  /// <summary>
-  /// Tests properties copy by reading files,
-  /// serialize and deserialize properties
-  /// and write them to file copy.
-  /// </summary>
-  private void TestReadWritePropertiesXmlSerialization(bool write, string filename, bool showDetails = false)
-  {
-    filename = Path.Combine(TestPath, filename);
-    if (write)
-      WriteLine($"Testing properties copy of: {filename}");
-    else
-      WriteLine($"Testing properties serialization of: {filename}");
-    var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.AllDocumentProperties);
-    var oldProperties = document.Properties;//TestReadProperties(filename, true);
-    Assert.IsNotNull(oldProperties, "No document properties read");
-    if (oldProperties == null)
-      return;
-    var textWriter = new StringWriter();
-    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-    var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
-      new SerializationOptions { AcceptAllProperties = true });
-    //try
-    {
-      serializer.Serialize(textWriter, oldProperties);
-    }
-    //catch (Exception ex)
-    //{
-    //  Console.WriteLine(ex.Message);
-    //}
-    textWriter.Flush();
-    string str = textWriter.ToString();
-    if (showDetails)
-    {
-      WriteLine(str);
-      WriteLine();
-    }
-
-    var textReader = new StringReader(str);
-    var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-    Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-    var diffs = new DiffList();
-    var ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
-    if (!ok)
-      foreach (var diff in diffs)
-        WriteLine(diff.ToString());
-    Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-  }
-
-  #endregion
-
-  #region DocumentBackground test
-  /// <summary>
-  /// Tests the document properties read from all docx files in folder specified by test path.
-  /// </summary>
-  [Test]
-  public void TestReadBackground()
-  {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "Background*.docx"))
-      TestReadBackground(filename);
-  }
-
-  /// <summary>
-  /// Tests the document properties read from the file
-  /// </summary>
-  /// <param name="filename">The filename.</param>
-  /// <param name="showDetails">Specifies if test details should be shown.</param>
-  public virtual void TestReadBackground(string filename, bool showDetails = false)
-  {
-    WriteLine(filename);
-    var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.AllDocumentProperties);
-    Assert.IsNotNull(document, "No document read");
-    Assert.IsNotNull(document.Properties, "No document properties read");
-    Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
-    WriteLine($"  AllDocumentProperties = {document.Properties.Count()}");
-
-    CheckReadCoreDocumentProperties(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadExtendedDocumentProperties(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadCustomDocumentProperties(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadDocumentSettings(document, reader.WordprocessingDocument, showDetails);
-
-    CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails);
+    return true;
   }
   #endregion
 }

@@ -186,10 +186,9 @@ public static class DocumentBackgroundConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DocumentBackground model)
-    where OpenXmlElementType: DXW.DocumentBackground, new()
+  public static DXW.DocumentBackground CreateOpenXmlElement(DMW.DocumentBackground model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.DocumentBackground();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }

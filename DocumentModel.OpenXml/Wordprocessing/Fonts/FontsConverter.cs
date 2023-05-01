@@ -86,10 +86,9 @@ public static class FontsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Fonts model)
-    where OpenXmlElementType: DXW.Fonts, new()
+  public static DXW.Fonts CreateOpenXmlElement(DMW.Fonts model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Fonts();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }

@@ -42,8 +42,6 @@ internal class DocumentPropertyValueXmlConverter : ValueTypeConverter, IXmlConve
     if (value != null)
     {
       var valueType = value.GetType();
-      if (!valueType.IsSimple())
-        TestTools.Stop();
       var valueTypeConverter = new ValueTypeConverter(valueType, options : new ConversionOptions{ UseEscapeSequences = true, UseHtmlEntities=true});
       if (valueTypeConverter.CanConvertTo(typeof(string)))
       {
