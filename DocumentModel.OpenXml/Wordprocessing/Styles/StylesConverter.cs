@@ -143,12 +143,11 @@ public static class StylesConverter
     return false;
   }
   
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(DMW.Styles? value)
-    where OpenXmlElementType: DXW.Styles, new()
+  public static DXW.Styles? CreateOpenXmlElement(DMW.Styles? value)
   {
     if (value != null)
     {
-      var openXmlElement = new OpenXmlElementType();
+      var openXmlElement = new DXW.Styles();
       SetDocDefaults(openXmlElement, value?.DocDefaults);
       SetLatentStyles(openXmlElement, value?.LatentStyles);
       SetItems(openXmlElement, value?.DefinedStyles);

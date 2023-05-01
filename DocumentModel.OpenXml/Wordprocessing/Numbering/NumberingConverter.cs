@@ -231,10 +231,9 @@ public static class NumberingConverter
     return false;
   }
 
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Numbering model)
-    where OpenXmlElementType : DXW.Numbering, new()
+  public static DXW.Numbering CreateOpenXmlElement(DMW.Numbering model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Numbering();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }

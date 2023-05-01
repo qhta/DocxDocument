@@ -1,4 +1,4 @@
-﻿namespace DocxDocument.Reader;
+﻿namespace DocxDocument.ReadWrite;
 
 public partial class DocxReader
 {

@@ -229,10 +229,9 @@ public static class ThemeConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMD.Theme value)
-    where OpenXmlElementType: DXD.Theme, new()
+  public static DXD.Theme CreateOpenXmlElement(DMD.Theme value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXD.Theme();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }

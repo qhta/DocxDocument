@@ -1,6 +1,6 @@
 ﻿using DocumentFormat.OpenXml.Packaging;
 
-namespace DocxDocument.Reader;
+namespace DocxDocument.ReadWrite;
 
 [Flags]
 public enum Parts : Int64
@@ -16,8 +16,8 @@ public enum Parts : Int64
   Theme                  = 0x000400,
   FontTable              = 0x000800,
   EmbeddedFonts          = 0x001800,
-  Stylistics             = 0x001F00,
   Background             = 0x002000,
+  Stylistics             = 0x003F00,
 
   Comments               = 0x004000,
 
@@ -90,27 +90,27 @@ public partial class DocxReader
     //var t0 = DateTime.Now;
     var document = new DMW.Document();
     if (parts.HasFlag(Parts.AllDocumentProperties))
-      document.Properties = ReadDocumentProperties(parts);
+      document.Properties = GetDocumentProperties(parts);
     if (parts.HasFlag(Parts.StyleDefinitions))
-      document.Styles = ReadStyles();
+      document.Styles = GetStyles();
     if (parts.HasFlag(Parts.NumberingDefinitions))
-      document.Numbering = ReadNumbering();
+      document.Numbering = GetNumbering();
     if (parts.HasFlag(Parts.Theme))
-      document.Theme = ReadTheme();
+      document.Theme = GetTheme();
     if (parts.HasFlag(Parts.FontTable))
-      document.Fonts = ReadFonts();
+      document.Fonts = GetFonts();
     if (parts.HasFlag(Parts.EmbeddedFonts))
-      document.EmbeddedFonts = ReadEmbedFonts();
+      document.EmbeddedFonts = GetEmbedFonts();
     if (parts.HasFlag(Parts.Background))
-      document.Background = ReadBackground();
+      document.Background = GetBackground();
     if (parts.HasFlag(Parts.Comments))
-      document.Comments = ReadDocComments();
+      document.Comments = GetDocComments();
     if (parts.HasFlag(Parts.Body))
-      document.Body = ReadBody(parts);
+      document.Body = GetBody(parts);
     return document;
   }
 
-  private DM.DocumentProperties ReadDocumentProperties(Parts parts)
+  private DM.DocumentProperties GetDocumentProperties(Parts parts)
   {
     var properties = new DM.DocumentProperties();
     if (parts.HasFlag(Parts.CoreFileProperties))
@@ -137,7 +137,7 @@ public partial class DocxReader
     return properties;
   }
 
-  private DMW.Styles ReadStyles()
+  private DMW.Styles GetStyles()
   {
     DMW.Styles styleDefinitions;
     var stylesOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<StylesPart>()?.FirstOrDefault()?.Styles;
@@ -148,7 +148,7 @@ public partial class DocxReader
     return styleDefinitions;
   }
 
-  private DMW.Numbering ReadNumbering()
+  private DMW.Numbering GetNumbering()
   {
     DMW.Numbering numbering;
     var numberingOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<NumberingDefinitionsPart>()?.FirstOrDefault()?.Numbering;
@@ -159,7 +159,7 @@ public partial class DocxReader
     return numbering;
   }
 
-  private DMD.Theme ReadTheme()
+  private DMD.Theme GetTheme()
   {
     DMD.Theme theme;
     var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.GetPartsOfType<ThemePart>()?.FirstOrDefault()?.Theme;
@@ -170,18 +170,16 @@ public partial class DocxReader
     return theme;
   }
 
-  private DMW.DocumentBackground ReadBackground()
+  private DMW.DocumentBackground? GetBackground()
   {
-    DMW.DocumentBackground background;
-    var themeOpenXmlElement = WordprocessingDocument.MainDocumentPart?.Document?.DocumentBackground;
-    if (themeOpenXmlElement != null)
-      background = DMXW.DocumentBackgroundConverter.CreateModelElement(themeOpenXmlElement) ?? new();
-    else
-      background = new();
+    DMW.DocumentBackground? background = null;
+    var backgroundElement = WordprocessingDocument.MainDocumentPart?.Document?.DocumentBackground;
+    if (backgroundElement != null)
+      background = DMXW.DocumentBackgroundConverter.CreateModelElement(backgroundElement);
     return background;
   }
 
-  private DMW.Fonts ReadFonts()
+  private DMW.Fonts GetFonts()
   {
     DMW.Fonts fonts;
     var fontsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts;
@@ -192,7 +190,7 @@ public partial class DocxReader
     return fonts;
   }
 
-  private DMW.EmbedFontData? ReadEmbedFonts()
+  private DMW.EmbedFontData? GetEmbedFonts()
   {
     var fontsParts = WordprocessingDocument.MainDocumentPart?.FontTablePart?.FontParts;
     if (fontsParts != null)
@@ -217,7 +215,7 @@ public partial class DocxReader
     return null;
   }
 
-  private DMW.Body ReadBody(Parts parts)
+  private DMW.Body GetBody(Parts parts)
   {
     DMW.Body body;
     var bodyOpenXmlElement = WordprocessingDocument.MainDocumentPart?.Document.Body;
@@ -228,7 +226,7 @@ public partial class DocxReader
     return body;
   }
 
-  private DMW.DocComments ReadDocComments()
+  private DMW.DocComments GetDocComments()
   {
     DMW.DocComments docComments;
     var commentsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsPart?.Comments;
