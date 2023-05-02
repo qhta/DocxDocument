@@ -50,7 +50,14 @@ public static class CommentsExtensibleConverter
     return false;
   }
 
-  public static void SetCommentsExtensibles(DXO21WCE.CommentsExtensible openXmlElement, DMW.CommentsExtensible collection)
+  public static DXO21WCE.CommentsExtensible CreateOpenXmlElement(DMW.CommentsExtensible collection)
+  {
+    var openXmlElement = new DXO21WCE.CommentsExtensible();
+    UpdateOpenXmlElement(openXmlElement, collection);
+    return openXmlElement;
+  }
+
+  public static void UpdateOpenXmlElement(DXO21WCE.CommentsExtensible openXmlElement, DMW.CommentsExtensible collection)
   {
     openXmlElement.RemoveAllChildren<DXO21WCE.CommentExtensible>();
     if (collection != null)

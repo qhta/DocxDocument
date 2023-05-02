@@ -46,7 +46,7 @@ public static class WebSettingsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMX.WebSettingsConverter.CreateOpenXmlElement<DXW.WebSettings>(value);
+       var rootElement = DMX.WebSettingsConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.WebSettings = rootElement;
     }

@@ -35,7 +35,7 @@ public class TestBody : TestBase
       filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing body read of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Body);
+    var document = reader.GetDocument(PartsMask.Body);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Body, "No document body read");
     var modelBody = document.Body;
@@ -76,10 +76,10 @@ public class TestBody : TestBase
     WriteLine($"Testing body serialization of: {filename}");
     var reader = new DocxReader(filename);
     var t0 = DateTime.Now;
-    var document = reader.ReadDocument(Parts.Body);
+    var document = reader.GetDocument(PartsMask.Body);
     var t1 = DateTime.Now;
     if (showDetails)
-      WriteLine($"ReadDocument time = {(t1 - t0).TotalSeconds} s");
+      WriteLine($"GetDocument time = {(t1 - t0).TotalSeconds} s");
     var oldBody = document.Body ?? new();
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
@@ -145,7 +145,7 @@ public class TestBody : TestBase
 
     filename = Path.Combine(TestPath, filename);
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Body);
+    var document = reader.GetDocument(PartsMask.Body);
     var oldBody = document.Body ?? new();
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)

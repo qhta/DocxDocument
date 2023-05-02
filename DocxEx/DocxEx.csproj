@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <RootNamespace>DocumentModel</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml" Version="2.20.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Qhta.DeepCompare">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.DeepCompare.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.SystemUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.SystemUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TextUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
+    </Reference>
+    <Reference Include="Qhta.TypeUtils">
+      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TypeUtils.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

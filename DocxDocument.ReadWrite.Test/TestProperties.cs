@@ -54,14 +54,15 @@ public class TestProperties : TestBase
   /// </summary>
   /// <param name="filename">The filename.</param>
   /// <param name="showDetails">Specifies if test details should be shown.</param>
-  public virtual void TestReadProperties(string filename, bool showDetails = false)
+  /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
+  public virtual void TestReadProperties(string filename, bool showDetails = false, bool openWord = false)
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
     #region test read
     WriteLine($"Testing read properties of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.AllDocumentProperties);
+    var document = reader.GetDocument(PartsMask.AllDocumentProperties);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Properties, "No document properties read");
     Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
@@ -119,13 +120,26 @@ public class TestProperties : TestBase
           WriteLine(diff.ToString());
       Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
       #endregion
-    }
-    if (ok)
-    {
-      #region copying
-      //var writer = new DocxWriter(filename);
+      if (ok)
+      {
+        #region copy back
+        if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+          filename = Path.Combine(TestPath, filename);
+        var newFilename = Path.Combine(Path.GetDirectoryName(filename) ?? "", Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
+        File.Copy(filename, newFilename, true);
+        filename = newFilename;
+        using (var writer = new DocxWriter(filename))
+        {
+          writer.SetDocumentProperties(newProperties, PartsMask.AllDocumentProperties);
+        }
+        if (openWord)
+        {
+          var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
+          Process.Start(processStartInfo);
+        }
 
-      #endregion
+        #endregion
+      }
     }
   }
 

@@ -5,4 +5,4 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:DocxDocument.Reader.DocxRead.ReadDocument(DocumentFormat.OpenXml.Packaging.WordprocessingDocument)~DocxDocument.Model.Document")]
+[assembly: SuppressMessage("Style", "IDE0017:Simplify object initialization", Justification = "<Pending>", Scope = "member", Target = "~M:DocxDocument.Reader.DocxRead.GetDocument(DocumentFormat.OpenXml.Packaging.WordprocessingDocument)~DocxDocument.Model.Document")]

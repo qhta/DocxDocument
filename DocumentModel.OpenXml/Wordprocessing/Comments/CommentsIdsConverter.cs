@@ -88,10 +88,9 @@ public static class CommentsIdsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.CommentsIds model)
-    where OpenXmlElementType: DXO19WCid.CommentsIds, new()
+  public static DXO19WCid.CommentsIds CreateOpenXmlElement(DMW.CommentsIds model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXO19WCid.CommentsIds();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
