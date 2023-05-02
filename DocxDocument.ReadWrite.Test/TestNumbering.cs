@@ -59,7 +59,7 @@ public class TestNumbering : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read numbering of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.NumberingDefinitions);
+    var document = reader.GetDocument(PartsMask.NumberingDefinitions);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Numbering, "No document numbering read");
     var modelNumbering = document.Numbering;
@@ -98,7 +98,7 @@ public class TestNumbering : TestBase
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.NumberingDefinitions);
+    var document = reader.GetDocument(PartsMask.NumberingDefinitions);
     var oldNumbering = document.Numbering ?? new();
     Assert.IsNotNull(oldNumbering, "No document numbering read");
     if (oldNumbering == null)

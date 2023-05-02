@@ -85,10 +85,9 @@ public static class CommentsConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Comments model)
-    where OpenXmlElementType: DXW.Comments, new()
+  public static DXW.Comments CreateOpenXmlElement(DMW.Comments model)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.Comments();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }

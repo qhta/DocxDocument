@@ -30,7 +30,7 @@ public class TestBackground : TestBase
       filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing background read of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Background);
+    var document = reader.GetDocument(PartsMask.Background);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Background, "No document Background read");
     var modelBackground = document.Background;
@@ -69,7 +69,7 @@ public class TestBackground : TestBase
       filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing background serialization of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Background);
+    var document = reader.GetDocument(PartsMask.Background);
     DMW.DocumentBackground oldBackground = document.Background ?? new DMW.DocumentBackground();
     Assert.IsNotNull(oldBackground, "No document Background read");
     if (oldBackground == null)

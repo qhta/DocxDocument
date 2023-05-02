@@ -1,4 +1,6 @@
-﻿namespace DocumentModel.OpenXml;
+﻿using DocumentFormat.OpenXml;
+
+namespace DocumentModel.OpenXml;
 
 public static class BooleanValueConverter
 {
@@ -306,25 +308,24 @@ public static class BooleanValueConverter
     return false;
   }
 
-  public static void UpdateOpenXmlElement<ElementType>(ElementType openXmlElement, Boolean value)
+  public static void UpdateOpenXmlElement<ElementType>(ElementType openXmlElement, OnOffValue value)
     where ElementType : DX.OpenXmlElement, new()
   {
     var valueProp = typeof(ElementType).GetProperty("Value");
-    if (valueProp != null)
-      valueProp.SetValue(openXmlElement, value == true);
-    else
+    if (valueProp == null)
       throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+    else
+      valueProp.SetValue(openXmlElement, value == true);
   }
 
-  public static ElementType CreateOpenXmlElement<ElementType>(Boolean value)
+  public static ElementType CreateOpenXmlElement<ElementType>(OnOffValue value)
   where ElementType : DX.OpenXmlElement, new()
   {
     var openXmlElement = new ElementType();
-    var valueProp = typeof(ElementType).GetProperty("Value");
-    if (valueProp != null)
-      valueProp.SetValue(openXmlElement, value == true);
-    else
+    var valueProp = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
+    if (valueProp == null)
       throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+    valueProp.SetValue(openXmlElement, value);
     return openXmlElement;
   }
   #endregion
@@ -354,20 +355,40 @@ public static class BooleanValueConverter
     return false;
   }
 
-  public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Boolean? value)
-  where OpenXmlElementType : OpenXmlElement, new()
+  public static OpenXmlElementType? CreateOpenXmlLeafTextElement<OpenXmlElementType>(bool? value)
+  where OpenXmlElementType : OpenXmlLeafTextElement, new()
   {
     if (value != null)
     {
       var element = new OpenXmlElementType();
-      var valProperty = typeof(OpenXmlElementType).GetProperty("Value");
-      if (valProperty != null)
-        valProperty.SetValue(element, (bool)value ? DXW.OnOffOnlyValues.On : DXW.OnOffOnlyValues.Off);
-      else if (element is DX.TypedOpenXmlLeafTextElement textElement)
-        textElement.Text = (bool)value ? "true" : "false";
+      if (value == true)
+      {
+        element.Text = "1";
+      }
+      else
+      if (value == false)
+      {
+        element.Text = "0";
+      }
       return element;
     }
     return null;
   }
   #endregion
+
+
+  public static ElementType CreateMathOpenXmlElement<ElementType>(Boolean value)
+  where ElementType : DX.OpenXmlElement, new()
+  {
+    var openXmlElement = new ElementType();
+    var valueProp = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
+    if (valueProp == null)
+      throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+    if (value==true)
+      valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.One));
+    else
+    if (value==false)
+      valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.Zero));
+    return openXmlElement;
+  }
 }

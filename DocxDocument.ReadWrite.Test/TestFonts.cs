@@ -57,7 +57,7 @@ public class TestFonts : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read fonts of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.FontTable);
+    var document = reader.GetDocument(PartsMask.FontTable);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     var modelFonts = document.Fonts;
@@ -94,7 +94,7 @@ public class TestFonts : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read fonts of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.FontTable | Parts.EmbeddedFonts);
+    var document = reader.GetDocument(PartsMask.FontTable | PartsMask.EmbeddedFonts);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     var modelFonts = document.EmbeddedFonts;
@@ -142,7 +142,7 @@ public class TestFonts : TestBase
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.FontTable);
+    var document = reader.GetDocument(PartsMask.FontTable);
     var oldFonts = document.Fonts ?? new();
     Assert.IsNotNull(oldFonts, "No document fonts read");
     if (oldFonts == null)
@@ -198,7 +198,7 @@ public class TestFonts : TestBase
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.EmbeddedFonts);
+    var document = reader.GetDocument(PartsMask.EmbeddedFonts);
     var oldFonts = document.EmbeddedFonts ?? new();
     if (oldFonts == null)
       return;

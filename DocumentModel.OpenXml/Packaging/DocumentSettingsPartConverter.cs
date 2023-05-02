@@ -66,7 +66,7 @@ public static class DocumentSettingsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMX.DocumentSettingsConverter.CreateOpenXmlElement<DXW.Settings>(value);
+       var rootElement = DMX.DocumentSettingsConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Settings = rootElement;
     }

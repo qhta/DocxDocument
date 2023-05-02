@@ -54,7 +54,7 @@ public static class NumberingDefinitionsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.NumberingConverter.CreateOpenXmlElement<DXW.Numbering>(value);
+       var rootElement = DMXW.NumberingConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Numbering = rootElement;
     }

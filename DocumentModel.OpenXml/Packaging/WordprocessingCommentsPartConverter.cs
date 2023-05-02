@@ -62,7 +62,7 @@ public static class WordprocessingCommentsPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.CommentsConverter.CreateOpenXmlElement<DXW.Comments>(value);
+       var rootElement = DMXW.CommentsConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Comments = rootElement;
     }

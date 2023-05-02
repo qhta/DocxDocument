@@ -46,7 +46,7 @@ public static class DocumentConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement<DXW.DocumentBackground>(value);
+      itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AddChild(itemElement);
     }

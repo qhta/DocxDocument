@@ -22,7 +22,7 @@ public static class StylesPartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.StylesConverter.CreateOpenXmlElement<DXW.Styles>(value);
+       var rootElement = DMXW.StylesConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Styles = rootElement;
     }

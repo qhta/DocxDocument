@@ -60,7 +60,7 @@ public class TestTheme : TestBase
       filename = Path.Combine(TestPath, filename);
     WriteLine(filename);
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Theme);
+    var document = reader.GetDocument(PartsMask.Theme);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Theme, "No document Theme read");
     var modelTheme = document.Theme;
@@ -101,7 +101,7 @@ public class TestTheme : TestBase
     WriteLine(filename);
 
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Theme);
+    var document = reader.GetDocument(PartsMask.Theme);
     DMD.Theme oldTheme = document.Theme ?? new DMD.Theme();
     Assert.IsNotNull(oldTheme, "No document theme read");
     if (oldTheme == null)

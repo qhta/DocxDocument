@@ -57,7 +57,7 @@ public class TestStyles : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read styles of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.StyleDefinitions);
+    var document = reader.GetDocument(PartsMask.StyleDefinitions);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Styles, "No document styles read");
     var modelStyles = document.Styles;
@@ -226,7 +226,7 @@ public class TestStyles : TestBase
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.StyleDefinitions);
+    var document = reader.GetDocument(PartsMask.StyleDefinitions);
     DMW.Styles oldStyles = document.Styles ?? new DMW.Styles();//TestReadProperties(filename, true);
     Assert.IsNotNull(oldStyles, "No document styles read");
     if (oldStyles == null)

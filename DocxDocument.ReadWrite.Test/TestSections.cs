@@ -30,7 +30,7 @@ public class TestSections : TestBase
       filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing sections read of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Body);
+    var document = reader.GetDocument(PartsMask.Body);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Body, "No document body read");
     var modelBody = document.Body;
@@ -78,7 +78,7 @@ public class TestSections : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing sections serialization of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Body);
+    var document = reader.GetDocument(PartsMask.Body);
     var oldBody = document.Body ?? new();
     Assert.IsNotNull(oldBody, "No document body read");
     if (oldBody == null)
