@@ -49,7 +49,7 @@ public class TestComments : TestBase
     filename = Path.Combine(TestPath, filename);
     WriteLine($"Testing read comments of: {filename}");
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Comments);
+    var document = reader.GetDocument(PartsMask.Comments);
     Assert.IsNotNull(document, "No document read");
     Assert.IsNotNull(document.Comments, "No document comments read");
     var modelComments = document.Comments;
@@ -99,7 +99,7 @@ public class TestComments : TestBase
     var extraTypes = Assembly.Load("DocumentModel").GetTypes()
       .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
     var reader = new DocxReader(filename);
-    var document = reader.ReadDocument(Parts.Comments);
+    var document = reader.GetDocument(PartsMask.Comments);
     var oldComments = document.Comments ?? new();
     Assert.IsNotNull(oldComments, "No document comments read");
     if (oldComments == null)

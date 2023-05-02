@@ -99,7 +99,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.SmallFraction>((bool)value));
+      openXmlElement.AddChild(BooleanValueConverter.CreateMathOpenXmlElement<DXM.SmallFraction>((bool)value));
   }
   #endregion
 

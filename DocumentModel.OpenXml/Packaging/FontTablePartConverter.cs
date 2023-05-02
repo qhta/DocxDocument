@@ -54,7 +54,7 @@ public static class FontTablePartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXW.FontsConverter.CreateOpenXmlElement<DXW.Fonts>(value);
+       var rootElement = DMXW.FontsConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Fonts = rootElement;
     }

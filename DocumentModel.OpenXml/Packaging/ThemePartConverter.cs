@@ -66,7 +66,7 @@ public static class ThemePartConverter
   {
     if (value != null)
     {
-       var rootElement = DMXD.ThemeConverter.CreateOpenXmlElement<DXD.Theme>(value);
+       var rootElement = DMXD.ThemeConverter.CreateOpenXmlElement(value);
        if (rootElement != null)
          openXmlElement.Theme = rootElement;
     }

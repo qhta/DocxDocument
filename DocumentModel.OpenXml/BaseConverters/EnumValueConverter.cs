@@ -97,14 +97,13 @@ public static class EnumValueConverter
   {
     var n = (int)Convert.ChangeType(value, typeof(int));
     var val = (OpenXmlEnumType)Enum.ToObject(typeof(OpenXmlEnumType), n);
-    var valueProperty = element.GetType().GetProperty("Type");
-    if (valueProperty == null)
-      valueProperty = element.GetType().GetProperty("Value");
-    if (valueProperty == null)
-      valueProperty = element.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(OpenXmlEnumType));
-    if (valueProperty == null || valueProperty.PropertyType != typeof(OpenXmlEnumType))
+    var valueProperty = element.GetType().GetProperty("Type") ??
+      element.GetType().GetProperty("Value") ?? element.GetType().GetProperty("Val");
+    //if (valueProperty == null)
+    //  valueProperty = element.GetType().GetProperties().FirstOrDefault(item => item.PropertyType == typeof(OpenXmlEnumType));
+    if (valueProperty == null /*|| valueProperty.PropertyType != typeof(OpenXmlEnumType)*/)
       throw new InvalidOperationException($"Type \"{element.GetType()}\" does not have a property of \"{typeof(OpenXmlEnumType)}\" type");
     if (valueProperty != null)
-      valueProperty.SetValue(element, val);
+      valueProperty.SetValue(element, new DocumentFormat.OpenXml.EnumValue<OpenXmlEnumType>(val));
   }
 }

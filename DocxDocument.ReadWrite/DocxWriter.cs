@@ -4,7 +4,7 @@ using DocumentModel;
 
 namespace DocxDocument.ReadWrite;
 
-public partial class DocxWriter
+public partial class DocxWriter: IDisposable
 {
   public WordprocessingDocument WordprocessingDocument { get; private set; }
 
@@ -13,44 +13,41 @@ public partial class DocxWriter
   {
   }
 
-
   public DocxWriter(WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
   }
 
-  public void WriteDocument(DMW.Document document)
+  public void SetDocument(DMW.Document document)
   {
-    WriteDocument(document, Parts.All);
+    SetDocument(document, PartsMask.All);
   }
 
-  public DMW.Document WriteDocument(DMW.Document document, Parts parts)
+  public DMW.Document SetDocument(DMW.Document document, PartsMask parts)
   {
     //var t0 = DateTime.Now;
-    if (parts.HasFlag(Parts.AllDocumentProperties) && document.Properties != null)
+    if (parts.HasFlag(PartsMask.AllDocumentProperties) && document.Properties != null)
       SetDocumentProperties(document.Properties, parts);
-    if (parts.HasFlag(Parts.StyleDefinitions) && document.Styles != null)
+    if (parts.HasFlag(PartsMask.StyleDefinitions) && document.Styles != null)
       SetStyles(document.Styles);
-    if (parts.HasFlag(Parts.NumberingDefinitions) && document.Numbering != null)
+    if (parts.HasFlag(PartsMask.NumberingDefinitions) && document.Numbering != null)
       SetNumbering(document.Numbering);
-    if (parts.HasFlag(Parts.Theme) && document.Theme != null)
+    if (parts.HasFlag(PartsMask.Theme) && document.Theme != null)
       SetTheme(document.Theme);
-    if (parts.HasFlag(Parts.FontTable) && document.Fonts != null)
-      SetFonts(document.Fonts);
-    if (parts.HasFlag(Parts.EmbeddedFonts) && document.EmbeddedFonts != null)
-       SetEmbedFonts(document.EmbeddedFonts);
-    if (parts.HasFlag(Parts.Background) && document.Background != null)
-       SetBackground(document.Background);
-    if (parts.HasFlag(Parts.Comments) && document.Comments != null)
+    if (parts.HasFlag(PartsMask.FontTable) && document.Fonts != null)
+      SetFonts(document.Fonts, document.EmbeddedFonts);
+    if (parts.HasFlag(PartsMask.Background) && document.Background != null)
+      SetBackground(document.Background);
+    if (parts.HasFlag(PartsMask.Comments) && document.Comments != null)
       SetDocComments(document.Comments);
-    if (parts.HasFlag(Parts.Body) && document.Body !=null)
-      SetBody(document.Body, parts);
+    if (parts.HasFlag(PartsMask.Body) && document.Body != null)
+      SetBody(document.Body);
     return document;
   }
 
-  private void SetDocumentProperties(DM.DocumentProperties properties, Parts parts)
+  public void SetDocumentProperties(DM.DocumentProperties properties, PartsMask parts)
   {
-    if (parts.HasFlag(Parts.CoreFileProperties))
+    if (parts.HasFlag(PartsMask.CoreFileProperties))
     {
       var packageProperties = WordprocessingDocument.PackageProperties;
       if (packageProperties == null)
@@ -61,7 +58,7 @@ public partial class DocxWriter
       DMXP.CorePropertiesConverter.SetValue(packageProperties, properties.CoreProperties);
     }
 
-    if (parts.HasFlag(Parts.ExtendedFileProperties) && (properties.ContentProperties != null || properties.StatisticProperties != null))
+    if (parts.HasFlag(PartsMask.ExtendedFileProperties) && (properties.ContentProperties != null || properties.StatisticProperties != null))
     {
       var extFileProperties = WordprocessingDocument.ExtendedFilePropertiesPart?.Properties;
       if (extFileProperties == null)
@@ -82,7 +79,7 @@ public partial class DocxWriter
         DMXP.ExtendedPropertiesConverter.SetStatisticProperties(extFileProperties, properties.StatisticProperties);
     }
 
-    if (parts.HasFlag(Parts.CustomFileProperties) && properties.CustomProperties != null)
+    if (parts.HasFlag(PartsMask.CustomFileProperties) && properties.CustomProperties != null)
     {
       var customFilePropertiesPart = WordprocessingDocument.CustomFilePropertiesPart;
       if (customFilePropertiesPart == null)
@@ -90,7 +87,7 @@ public partial class DocxWriter
       customFilePropertiesPart.Properties = DMXP.CustomPropertiesConverter.CreateOpenXmlElement(properties.CustomProperties) ?? new();
     }
 
-    if (parts.HasFlag(Parts.DocumentSettings) && properties.DocumentSettings != null)
+    if (parts.HasFlag(PartsMask.DocumentSettings) && properties.DocumentSettings != null)
     {
       var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
       if (mainDocumentPart == null)
@@ -99,23 +96,23 @@ public partial class DocxWriter
       }
       var docSettingsPart = mainDocumentPart.DocumentSettingsPart;
       if (docSettingsPart == null)
-        docSettingsPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.DocumentSettingsPart>();
+        docSettingsPart = mainDocumentPart.AddNewPart<DXPack.DocumentSettingsPart>();
       docSettingsPart.Settings = DMX.DocumentSettingsConverter.CreateOpenXmlElement(properties.DocumentSettings);
     }
 
-    if (parts.HasFlag(Parts.DocumentSettings) && properties.WebSettings != null)
+    if (parts.HasFlag(PartsMask.DocumentSettings) && properties.WebSettings != null)
     {
       var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
       if (mainDocumentPart == null)
         mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
       var webSettingsPart = mainDocumentPart.WebSettingsPart;
       if (webSettingsPart == null)
-        webSettingsPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.WebSettingsPart>();
+        webSettingsPart = mainDocumentPart.AddNewPart<DXPack.WebSettingsPart>();
       webSettingsPart.WebSettings = DMX.WebSettingsConverter.CreateOpenXmlElement(properties.WebSettings);
     }
   }
 
-  private void SetStyles(DMW.Styles styleDefinitions)
+  public void SetStyles(DMW.Styles styleDefinitions)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
@@ -127,7 +124,7 @@ public partial class DocxWriter
     stylesPart.Styles = DMXW.StylesConverter.CreateOpenXmlElement(styleDefinitions);
   }
 
-  private void SetNumbering(DMW.Numbering numbering)
+  public void SetNumbering(DMW.Numbering numbering)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
@@ -139,7 +136,7 @@ public partial class DocxWriter
     numberingPart.Numbering = DMXW.NumberingConverter.CreateOpenXmlElement(numbering);
   }
 
-  private void SetTheme(DMD.Theme theme)
+  public void SetTheme(DMD.Theme theme)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
@@ -151,7 +148,7 @@ public partial class DocxWriter
     themePart.Theme = DMXD.ThemeConverter.CreateOpenXmlElement(theme);
   }
 
-  private void SetBackground(DMW.DocumentBackground background)
+  public void SetBackground(DMW.DocumentBackground background)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
@@ -162,45 +159,38 @@ public partial class DocxWriter
     docElement.DocumentBackground = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(background);
   }
 
-  private void SetFonts(DMW.Fonts fonts)
+  public void SetFonts(DMW.Fonts fonts, DMW.EmbedFontData? embeddedFonts)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
       mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
 
-    var fontPart = mainDocumentPart.FontTablePart;
-    if (fontPart == null)
-      fontPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.FontTablePart>();
-    fontPart.Fonts = DMXW.FontsConverter.CreateOpenXmlElement(fonts);
+    var fontTablePart = mainDocumentPart.FontTablePart;
+    if (fontTablePart == null)
+    {
+      fontTablePart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.FontTablePart>();
+      mainDocumentPart.CreateRelationshipToPart(fontTablePart);
+    }
+    fontTablePart.Fonts = DMXW.FontsConverter.CreateOpenXmlElement(fonts);
+    if (embeddedFonts != null)
+    {
+      foreach (var embeddedFont in embeddedFonts)
+      {
+        var id = embeddedFont.Key;
+        var bytes = embeddedFont.Value;
+        var fontPart = mainDocumentPart.OpenXmlPackage.AddExtendedPart(
+          "http://schemas.openxmlformats.org/officeDocument/2006/relationships/font",
+          "application/x-font-truetype", ".odttf", "id");
+        using (var stream = fontPart.GetStream())
+        {
+          stream.Write(bytes, 0, bytes.Length);
+        }
+      }
+    }
   }
 
-  private void SetEmbedFonts(DMW.EmbedFontData embeddedFonts)
-  {
-    //var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
-    //if (mainDocumentPart == null)
-    //  mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
 
-    //var fontsParts = mainDocumentPart.FontTablePart?.FontParts;
-    //if (fontsParts != null)
-    //{
-    //  fontsParts.
-    //  foreach (var fontPart in fontsParts)
-    //  {
-    //    var fontPartId = WordprocessingDocument.MainDocumentPart?.FontTablePart?.GetIdOfPart(fontPart);
-    //    if (fontPartId != null)
-    //    {
-    //      using (var stream = fontPart.GetStream())
-    //      {
-    //        var bytes = new byte[stream.Length];
-    //        stream.Read(bytes, 0, bytes.Length);
-    //        embeddedFonts.Add(fontPartId, bytes);
-    //      }
-    //    }
-    //  }
-    //}
-  }
-
-  private void SetBody(DMW.Body body, Parts parts)
+  public void SetBody(DMW.Body body)
   {
     var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
     if (mainDocumentPart == null)
@@ -212,27 +202,87 @@ public partial class DocxWriter
     docElement.Body = DMXW.BodyConverter.CreateOpenXmlElement(body);
   }
 
-  private void SetDocComments(DMW.DocComments docComments)
+  public void SetDocComments(DMW.DocComments docComments)
   {
-    //var commentsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsPart?.Comments;
-    //if (commentsOpenXmlElement != null)
-    //{
-    //  docComments = new();
-    //  docComments.Comments = DMXW.CommentsConverter.CreateModelElement(commentsOpenXmlElement) ?? new();
-    //}
-    //else
-    //{
-    //  docComments = new();
-    //  docComments.Comments = new();
-    //}
-    //var commentsExOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsExPart?.CommentsEx;
-    //if (commentsExOpenXmlElement != null)
-    //  docComments.CommentsEx = DMXW.CommentsExConverter.CreateModelElement(commentsExOpenXmlElement) ?? new();
-    //var commentsIdsOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordprocessingCommentsIdsPart?.CommentsIds;
-    //if (commentsIdsOpenXmlElement != null)
-    //  docComments.CommentsIds = DMXW.CommentsIdsConverter.CreateModelElement(commentsIdsOpenXmlElement) ?? new();
-    //var commentsExtensibleOpenXmlElement = WordprocessingDocument.MainDocumentPart?.WordCommentsExtensiblePart?.CommentsExtensible;
-    //if (commentsExtensibleOpenXmlElement != null)
-    //  docComments.CommentsExtensible = DMXW.CommentsExtensibleConverter.GetCommentsExtensibles(commentsExtensibleOpenXmlElement);
+    var mainDocumentPart = WordprocessingDocument.MainDocumentPart;
+    if (mainDocumentPart == null)
+      mainDocumentPart = WordprocessingDocument.AddMainDocumentPart();
+
+    if (docComments.Comments != null)
+    {
+      var commentsPart = mainDocumentPart.WordprocessingCommentsPart;
+      if (commentsPart == null)
+      {
+        commentsPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.WordprocessingCommentsPart>();
+        mainDocumentPart.CreateRelationshipToPart(commentsPart);
+      }
+      commentsPart.Comments = DMXW.CommentsConverter.CreateOpenXmlElement(docComments.Comments);
+    }
+
+    if (docComments.CommentsEx != null)
+    {
+      var commentsExPart = mainDocumentPart.WordprocessingCommentsExPart;
+      if (commentsExPart == null)
+      {
+        commentsExPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.WordprocessingCommentsExPart>();
+        mainDocumentPart.CreateRelationshipToPart(commentsExPart);
+      }
+      commentsExPart.CommentsEx = DMXW.CommentsExConverter.CreateOpenXmlElement(docComments.CommentsEx);
+    }
+
+    if (docComments.CommentsIds != null)
+    {
+      var CommentsIdsPart = mainDocumentPart.WordprocessingCommentsIdsPart;
+      if (CommentsIdsPart == null)
+      {
+        CommentsIdsPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.WordprocessingCommentsIdsPart>();
+        mainDocumentPart.CreateRelationshipToPart(CommentsIdsPart);
+      }
+      CommentsIdsPart.CommentsIds = DMXW.CommentsIdsConverter.CreateOpenXmlElement(docComments.CommentsIds);
+    }
+
+    if (docComments.CommentsExtensible != null)
+    {
+      var CommentsExtensiblePart = mainDocumentPart.WordCommentsExtensiblePart;
+      if (CommentsExtensiblePart == null)
+      {
+        CommentsExtensiblePart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.WordCommentsExtensiblePart>();
+        mainDocumentPart.CreateRelationshipToPart(CommentsExtensiblePart);
+      }
+      CommentsExtensiblePart.CommentsExtensible = DMXW.CommentsExtensibleConverter.CreateOpenXmlElement(docComments.CommentsExtensible);
+    }
+
+  }
+
+  public bool disposedValue;
+
+  protected virtual void Dispose(bool disposing)
+  {
+    if (!disposedValue)
+    {
+      if (disposing)
+      {
+        WordprocessingDocument.Save();
+        WordprocessingDocument.Dispose();
+      }
+
+      // TODO: free unmanaged resources (unmanaged objects) and override finalizer
+      // TODO: set large fields to null
+      disposedValue = true;
+    }
+  }
+
+  // // TODO: override finalizer only if 'Dispose(bool disposing)' has code to free unmanaged resources
+  // ~DocxWriter()
+  // {
+  //     // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+  //     Dispose(disposing: false);
+  // }
+
+  public void Dispose()
+  {
+    // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
+    Dispose(disposing: true);
+    GC.SuppressFinalize(this);
   }
 }

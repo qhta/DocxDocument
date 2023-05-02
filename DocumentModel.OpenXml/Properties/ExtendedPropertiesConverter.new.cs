@@ -250,7 +250,7 @@ public static class ExtendedPropertiesConverter
 
   public static void SetScaleCrop(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.ScaleCrop = BooleanValueConverter.CreateOpenXmlElement<DXEP.ScaleCrop>(value);
+    openXmlElement.ScaleCrop = BooleanValueConverter.CreateOpenXmlLeafTextElement<DXEP.ScaleCrop>(value);
   }
 
   /// <summary>
@@ -291,7 +291,7 @@ public static class ExtendedPropertiesConverter
 
   public static void SetLinksUpToDate(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.LinksUpToDate = BooleanValueConverter.CreateOpenXmlElement<DXEP.LinksUpToDate>(value);
+    openXmlElement.LinksUpToDate = BooleanValueConverter.CreateOpenXmlLeafTextElement<DXEP.LinksUpToDate>(value);
   }
 
   /// <summary>
@@ -318,7 +318,7 @@ public static class ExtendedPropertiesConverter
 
   public static void SetSharedDocument(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.SharedDocument = BooleanValueConverter.CreateOpenXmlElement<DXEP.SharedDocument>(value);
+    openXmlElement.SharedDocument = BooleanValueConverter.CreateOpenXmlLeafTextElement<DXEP.SharedDocument>(value);
 
   }
 
@@ -365,12 +365,12 @@ public static class ExtendedPropertiesConverter
   /// </summary>
   public static Boolean? GetHyperlinksChanged(DXEP.Properties? openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement?.LinksUpToDate);
+    return BooleanValueConverter.GetValue(openXmlElement?.HyperlinksChanged);
   }
 
   public static void SetHyperlinksChanged(DXEP.Properties openXmlElement, Boolean? value)
   {
-    openXmlElement.HyperlinksChanged = BooleanValueConverter.CreateOpenXmlElement<DXEP.HyperlinksChanged>(value);
+    openXmlElement.HyperlinksChanged = BooleanValueConverter.CreateOpenXmlLeafTextElement<DXEP.HyperlinksChanged>(value);
 
   }
 

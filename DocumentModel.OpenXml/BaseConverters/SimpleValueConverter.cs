@@ -24,7 +24,7 @@ public static class SimpleValueConverter
     where ElementType: OpenXmlElement, new()
      where T : struct, IComparable, IComparable<T>, IEquatable<T>
   {
-    var valProperty = typeof(ElementType).GetProperty("Value");
+    var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
     Debug.Assert(valProperty!=null);
     var itemElement = openXmlElement.GetFirstChild<ElementType>();
     if (itemElement != null)
@@ -38,7 +38,13 @@ public static class SimpleValueConverter
     if (value != null)
     {
       itemElement = new ElementType();
-      valProperty.SetValue(itemElement, value);
+      if (typeof(T) == typeof(Int16))
+        valProperty.SetValue(itemElement, new Int16Value(Convert.ToInt16(value)));
+      else
+      if (typeof(T) == typeof(UInt32))
+        valProperty.SetValue(itemElement, new UInt32Value(Convert.ToUInt32(value)));
+      else
+        valProperty.SetValue(itemElement, value);
       openXmlElement.AddChild(itemElement);
     }
   }
