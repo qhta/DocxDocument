@@ -120,7 +120,7 @@ public partial class DocxWriter: IDisposable
 
     var stylesPart = mainDocumentPart.GetPartsOfType<StyleDefinitionsPart>()?.FirstOrDefault();
     if (stylesPart == null)
-      stylesPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.StyleDefinitionsPart>();
+      stylesPart = mainDocumentPart.AddNewPart<DXPack.StyleDefinitionsPart>();
     stylesPart.Styles = DMXW.StylesConverter.CreateOpenXmlElement(styleDefinitions);
   }
 
@@ -132,7 +132,7 @@ public partial class DocxWriter: IDisposable
 
     var numberingPart = mainDocumentPart.GetPartsOfType<NumberingDefinitionsPart>()?.FirstOrDefault();
     if (numberingPart == null)
-      numberingPart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.NumberingDefinitionsPart>();
+      numberingPart = mainDocumentPart.AddNewPart<DXPack.NumberingDefinitionsPart>();
     numberingPart.Numbering = DMXW.NumberingConverter.CreateOpenXmlElement(numbering);
   }
 
@@ -144,7 +144,7 @@ public partial class DocxWriter: IDisposable
 
     var themePart = mainDocumentPart.GetPartsOfType<ThemePart>()?.FirstOrDefault();
     if (themePart == null)
-      themePart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.ThemePart>();
+      themePart = mainDocumentPart.AddNewPart<DXPack.ThemePart>();
     themePart.Theme = DMXD.ThemeConverter.CreateOpenXmlElement(theme);
   }
 
@@ -168,7 +168,7 @@ public partial class DocxWriter: IDisposable
     var fontTablePart = mainDocumentPart.FontTablePart;
     if (fontTablePart == null)
     {
-      fontTablePart = mainDocumentPart.OpenXmlPackage.AddNewPart<DXPack.FontTablePart>();
+      fontTablePart = mainDocumentPart.AddNewPart<DXPack.FontTablePart>();
       mainDocumentPart.CreateRelationshipToPart(fontTablePart);
     }
     fontTablePart.Fonts = DMXW.FontsConverter.CreateOpenXmlElement(fonts);
@@ -178,7 +178,7 @@ public partial class DocxWriter: IDisposable
       {
         var id = embeddedFont.Key;
         var bytes = embeddedFont.Value;
-        var fontPart = mainDocumentPart.OpenXmlPackage.AddExtendedPart(
+        var fontPart = mainDocumentPart.AddExtendedPart(
           "http://schemas.openxmlformats.org/officeDocument/2006/relationships/font",
           "application/x-font-truetype", ".odttf", "id");
         using (var stream = fontPart.GetStream())
