@@ -85,9 +85,12 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestReadProperties("DocumentProperties.docx", true);
+    var ok = testInstance.TestReadProperties("DocumentProperties.docx", true);
     //testInstance.TestReadPropertiesXmlSerialization("DocumentProperties.docx", true);
-    Console.WriteLine("Test passed");
+    if (ok)
+      Console.WriteLine("Test passed");
+    else
+      Console.WriteLine("Test failed");
   }
 
   private static void RunTestConverters()

@@ -1,21 +1,30 @@
-﻿using DocumentFormat.OpenXml.Packaging;
+﻿using System.Runtime.InteropServices;
+
+using DocumentFormat.OpenXml.Packaging;
 
 using DocumentModel;
 
 namespace DocxDocument.ReadWrite;
 
-public partial class DocxWriter: IDisposable
+public partial class DocxWriter : IDisposable
 {
   public WordprocessingDocument WordprocessingDocument { get; private set; }
-
-  public DocxWriter(string filename, WordprocessingDocumentType type = WordprocessingDocumentType.Document) :
-    this(WordprocessingDocument.Create(filename, (DocumentFormat.OpenXml.WordprocessingDocumentType)type))
-  {
-  }
 
   public DocxWriter(WordprocessingDocument wordprocessingDocument)
   {
     WordprocessingDocument = wordprocessingDocument;
+  }
+
+  public static DocxWriter Create(string filename, WordprocessingDocumentType type = WordprocessingDocumentType.Document)
+  {
+    var wordprocessingDocument = WordprocessingDocument.Create(filename, (DocumentFormat.OpenXml.WordprocessingDocumentType)type);
+    return new DocxWriter(wordprocessingDocument);
+  }
+
+  public static DocxWriter Open(string filename)
+  {
+    var wordprocessingDocument = WordprocessingDocument.Open(filename, true);
+    return new DocxWriter(wordprocessingDocument);
   }
 
   public void SetDocument(DMW.Document document)
@@ -47,15 +56,10 @@ public partial class DocxWriter: IDisposable
 
   public void SetDocumentProperties(DM.DocumentProperties properties, PartsMask parts)
   {
-    if (parts.HasFlag(PartsMask.CoreFileProperties))
+    if (parts.HasFlag(PartsMask.CoreFileProperties) && properties.CoreProperties != null)
     {
-      var packageProperties = WordprocessingDocument.PackageProperties;
-      if (packageProperties == null)
-      {
-        WordprocessingDocument.AddCoreFilePropertiesPart();
-        packageProperties = WordprocessingDocument.PackageProperties;
-      }
-      DMXP.CorePropertiesConverter.SetValue(packageProperties, properties.CoreProperties);
+      var coreFileProperties = WordprocessingDocument.Package.PackageProperties;
+      DMXP.CorePropertiesConverter.SetValue(coreFileProperties, properties.CoreProperties);
     }
 
     if (parts.HasFlag(PartsMask.ExtendedFileProperties) && (properties.ContentProperties != null || properties.StatisticProperties != null))
