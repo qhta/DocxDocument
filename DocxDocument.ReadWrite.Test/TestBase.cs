@@ -1,7 +1,10 @@
 ﻿using System.Collections;
+using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Reflection;
 using System.Xml.Serialization;
+
+using Qhta.TestHelper;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -111,7 +114,7 @@ public class TestBase
       ShowObject($"[{itemCount++}] {item.GetType().Name}", item, indent + 1);
   }
 
-    /// <summary>
+  /// <summary>
   /// Dumps the enumerable collection to test explorer output window.
   /// </summary>
   /// <param name="value">Collection to dump.</param>
@@ -126,4 +129,186 @@ public class TestBase
     foreach (var item in value)
       ShowObject($"[{itemCount++}] {item.GetType().Name}", item, indent + 1);
   }
+
+  /// <summary>
+  /// Unpacks file package to filename.unzip folder.
+  /// </summary>
+  /// <param name="filename">Full package filename to unpack.</param>
+  protected void UnzipFile(string filename)
+  {
+    using (var newPackage = ZipPackage.Open(filename))
+    {
+      var unzipPath = filename + ".unzip";
+      Directory.Delete(unzipPath, true);
+      foreach (var part in newPackage.GetParts())
+      {
+        var path = filename + ".unzip" + part.Uri.OriginalString.Replace("/", "\\");
+        Directory.CreateDirectory(Path.GetDirectoryName(path)!);
+        using (var outStream = File.Create(path))
+        {
+          var inStream = part.GetStream();
+          inStream.CopyTo(outStream);
+        }
+      }
+    }
+  }
+
+  /// <summary>
+  /// Tests if two directory structures are the same.
+  /// </summary>
+  /// <param name="origDirectory">Original directory to compare.</param>
+  /// <param name="newDirectory">New directory to compare.</param>
+  /// <param name="showDetails">Whether to show comparison details</param>
+  /// <returns></returns>
+  protected bool TestDirectories(string origDirectory, string newDirectory, bool showDetails)
+  {
+    var ok = CompareDirectories(origDirectory, newDirectory, out var missingFiles, out var excessiveFiles);
+    if (!ok)
+    {
+      if (missingFiles.Count > 0)
+      {
+        WriteLine("MissingFiles:");
+        foreach (var file in missingFiles)
+          WriteLine($"  {file}");
+      }
+      if (excessiveFiles.Count > 0)
+      {
+        WriteLine("ExcessiveFiles:");
+        foreach (var file in excessiveFiles)
+          WriteLine($"  {file}");
+      }
+      return false;
+    }
+    if (!CompareFiles(origDirectory, newDirectory, showDetails))
+      return false;
+    return true;
+  }
+
+  /// <summary>
+  ///  Compares two directory structures.
+  /// </summary>
+  /// <param name="origDirectory">Original directory to compare.</param>
+  /// <param name="newDirectory">New directory to compare.</param>
+  /// <param name="missingFiles">Files existing in original directory that do not exist in new directory.</param>
+  /// <param name="excessiveFiles">Files existing in new directory that do not exist in original directory.</param>
+  /// <returns></returns>
+  protected bool CompareDirectories(string origDirectory, string newDirectory,
+    out List<string> missingFiles, out List<string> excessiveFiles)
+  {
+    missingFiles = new List<string>();
+    excessiveFiles = new List<string>();
+    return InternalCompareDirectories(origDirectory, newDirectory, missingFiles, excessiveFiles);
+  }
+
+  /// <summary>
+  ///  Recursive implementation of two directories comparing.
+  /// </summary>
+  /// <param name="origDirectory">Original directory to compare.</param>
+  /// <param name="newDirectory">New directory to compare.</param>
+  /// <param name="missingFiles">Files existing in original directory that do not exist in new directory.</param>
+  /// <param name="excessiveFiles">Files existing in new directory that do not exist in original directory.</param>
+  /// <returns></returns>
+  private bool InternalCompareDirectories(string origDirectory, string newDirectory,
+    List<string> missingFiles, List<string> excessiveFiles)
+  {
+    var ok = true;
+    var origFiles = Directory.GetFiles(origDirectory).Select(item => Path.GetFileName(item)).ToList();
+    var newFiles = Directory.GetFiles(newDirectory).Select(item => Path.GetFileName(item)).ToList();
+    origFiles.Sort();
+    newFiles.Sort();
+    foreach (var origFile in origFiles)
+      if (!newFiles.Contains(origFile))
+      {
+        missingFiles.Add(Path.Combine(newDirectory, origFile));
+        ok = false;
+      }
+    foreach (var newFile in newFiles)
+      if (!origFiles.Contains(newFile))
+      {
+        excessiveFiles.Add(Path.Combine(newDirectory, newFile));
+        ok = false;
+      }
+    var origDirs = Directory.GetDirectories(origDirectory).Select(item => Path.GetFileName(item)).ToList();
+    var newDirs = Directory.GetDirectories(newDirectory).Select(item => Path.GetFileName(item)).ToList();
+    origDirs.Sort();
+    newDirs.Sort();
+    foreach (var origDir in origDirs)
+      if (!newDirs.Contains(origDir))
+      {
+        missingFiles.Add(Path.Combine(newDirectory, origDir));
+        ok = false;
+      }
+      else
+        if (!InternalCompareDirectories(Path.Combine(origDirectory, origDir),
+          Path.Combine(newDirectory, origDir), missingFiles, excessiveFiles))
+        ok = false;
+    foreach (var newDir in newDirs)
+      if (!origDirs.Contains(newDir))
+      {
+        excessiveFiles.Add(Path.Combine(newDirectory, newDir));
+        ok = false;
+      }
+    return ok;
+  }
+
+  /// <summary>
+  ///  Compares files in directory structures.
+  /// </summary>
+  /// <param name="origDirectory">Original directory to compare.</param>
+  /// <param name="newDirectory">New directory to compare.</param>
+  /// <param name="showDetails">Whether to show comparison details</param>
+  /// <returns></returns>
+  protected bool CompareFiles(string origDirectory, string newDirectory, bool showDetails)
+  {
+    TraceTextWriter? traceWriter = null;
+    if (showDetails)
+    {
+      traceWriter = new TraceTextWriter(true, false);
+    }
+    var xmlComparer = new XmlFileComparer(new FileCompareOptions(), traceWriter);
+    return InternalCompareFiles(origDirectory, newDirectory, xmlComparer, showDetails);
+  }
+
+  /// <summary>
+  ///  Compares files in directory structures.
+  /// </summary>
+  /// <param name="origDirectory">Original directory to compare.</param>
+  /// <param name="newDirectory">New directory to compare.</param>
+  /// <param name="xmlComparer">Comparer for XmlFiles</param>
+  /// <param name="showDetails">Whether to show comparison details</param>
+  /// <returns></returns>
+  private bool InternalCompareFiles(string origDirectory, string newDirectory, XmlFileComparer xmlComparer, bool showDetails)
+  {
+    var ok = true;
+    var origFiles = Directory.GetFiles(origDirectory).Select(item => Path.GetFileName(item)).ToList();
+    var newFiles = Directory.GetFiles(newDirectory).Select(item => Path.GetFileName(item)).ToList();
+    origFiles.Sort();
+    newFiles.Sort();
+    foreach (var origFile in origFiles)
+    {
+      var origFilePath = Path.Combine(origDirectory, origFile);
+      var newFilePath = Path.Combine(newDirectory, origFile);
+      if (showDetails)
+        xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length+1)}");
+
+      if (!xmlComparer.CompareFiles(origFilePath, newFilePath))
+      {
+        ok = false;
+        return false;
+      }
+    }
+    var origDirs = Directory.GetDirectories(origDirectory).Select(item => Path.GetFileName(item)).ToList();
+    var newDirs = Directory.GetDirectories(newDirectory).Select(item => Path.GetFileName(item)).ToList();
+    origDirs.Sort();
+    newDirs.Sort();
+    foreach (var origDir in origDirs)
+      if (!InternalCompareFiles(Path.Combine(origDirectory, origDir),
+        Path.Combine(newDirectory, origDir), xmlComparer, showDetails))
+      {
+        ok = false;
+        return false;
+      }
+    return ok;
+  }
+
 }
