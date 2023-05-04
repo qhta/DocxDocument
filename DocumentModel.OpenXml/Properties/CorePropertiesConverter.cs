@@ -258,26 +258,27 @@ public static class CorePropertiesConverter
     return null;
   }
 
-  public static void SetValue(PackageProperties? openXmlElement, CoreProperties? value)
+
+  public static void SetValue(PackageProperties openXmlElement, CoreProperties value)
   {
     if (openXmlElement != null)
     {
-      SetTitle(openXmlElement, value?.Title);
-      SetSubject(openXmlElement, value?.Subject);
-      SetCreator(openXmlElement, value?.Creator);
-      SetKeywords(openXmlElement, value?.Keywords);
-      SetDescription(openXmlElement, value?.Description);
-      SetLastModifiedBy(openXmlElement, value?.LastModifiedBy);
-      SetRevision(openXmlElement, value?.Revision);
-      SetLastPrinted(openXmlElement, value?.LastPrinted);
-      SetCreated(openXmlElement, value?.Created);
-      SetModified(openXmlElement, value?.Modified);
-      SetCategory(openXmlElement, value?.Category);
-      SetIdentifier(openXmlElement, value?.Identifier);
-      SetContentType(openXmlElement, value?.ContentType);
-      SetLanguage(openXmlElement, value?.Language);
-      SetVersion(openXmlElement, value?.Version);
-      SetContentStatus(openXmlElement, value?.ContentStatus);
+      SetTitle(openXmlElement, value.Title);
+      SetSubject(openXmlElement, value.Subject);
+      SetCreator(openXmlElement, value.Creator);
+      SetKeywords(openXmlElement, value.Keywords);
+      SetDescription(openXmlElement, value.Description);
+      SetLastModifiedBy(openXmlElement, value.LastModifiedBy);
+      SetRevision(openXmlElement, value.Revision);
+      SetLastPrinted(openXmlElement, value.LastPrinted);
+      SetCreated(openXmlElement, value.Created);
+      SetModified(openXmlElement, value.Modified);
+      SetCategory(openXmlElement, value.Category);
+      SetIdentifier(openXmlElement, value.Identifier);
+      SetContentType(openXmlElement, value.ContentType);
+      SetLanguage(openXmlElement, value.Language);
+      SetVersion(openXmlElement, value.Version);
+      SetContentStatus(openXmlElement, value.ContentStatus);
     }
   }
 }

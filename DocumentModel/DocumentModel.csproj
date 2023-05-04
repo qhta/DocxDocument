@@ -62,9 +62,6 @@
     <Reference Include="Qhta.Conversion">
       <HintPath>..\..\MyLib\Qhta.Conversion\bin\Debug\net6.0\Qhta.Conversion.dll</HintPath>
     </Reference>
-    <Reference Include="Qhta.TestHelper">
-      <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TestHelper.dll</HintPath>
-    </Reference>
     <Reference Include="Qhta.TextUtils">
       <HintPath>..\..\MyLib\bin\Debug\net6.0\Qhta.TextUtils.dll</HintPath>
     </Reference>
