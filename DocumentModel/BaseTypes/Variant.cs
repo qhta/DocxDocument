@@ -656,7 +656,13 @@ public class Variant : IConvertible, IEquatable<Variant>
 
     if (value is string vString)
     {
-      VariantType = VariantType.Lpwstr;
+      //if (vString.IsAscii())
+       VariantType = VariantType.Lpstr;
+      //else
+      //if (vString.IsUnicode())
+      // VariantType = VariantType.Lpwstr;
+      //else
+      // VariantType = VariantType.Bstr;
       _Value = vString;
       return;
     }

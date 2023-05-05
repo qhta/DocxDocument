@@ -27,6 +27,24 @@ public static class VTVectorConverter
     { VectorBaseValues.Variant, VariantType.Variant }
   };
 
+  public static UInt32? GetSize(VTVector openXmlElement)
+  {
+    if (openXmlElement.Size?.Value != null)
+      return openXmlElement.Size?.Value;
+    return null;
+  }
+
+  public static void SetSize(VTVector openXmlElement, UInt32? value)
+  {
+    if (openXmlElement != null)
+    {
+      if (value != null)
+        openXmlElement.Size = value;
+      else
+        openXmlElement.Size = null;;
+    }
+  }
+
   public static VariantType? GetBaseType(VTVector openXmlElement)
   {
     if (openXmlElement.BaseType?.Value != null)
@@ -121,6 +139,7 @@ public static class VTVectorConverter
     var openXmlElement = new VTVector();
     if (value != null)
     {
+      SetSize(openXmlElement, (uint)value.Count);
       SetBaseType(openXmlElement, value.BaseType);
       SetValue(openXmlElement, value);
     }
