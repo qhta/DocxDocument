@@ -54,13 +54,16 @@ public static class CustomDocumentPropertyConverter
   /// </summary>
   public static String? GetLinkTarget(CustomDocumentProperty openXmlElement)
   {
-    return openXmlElement?.LinkTarget;
+    return openXmlElement?.LinkTarget?.Value;
   }
 
   public static void SetLinkTarget(CustomDocumentProperty openXmlElement, String? value)
   {
     if (openXmlElement != null)
-      openXmlElement.LinkTarget = value;
+    {
+      if (value!=null)
+        openXmlElement.LinkTarget = value;
+    }
   }
 
   /// <summary>
@@ -91,7 +94,7 @@ public static class CustomDocumentPropertyConverter
         valueElement.Remove();
       if (value != null)
       {
-        valueElement = VariantConverter.CreateOpenXmlElement(value);
+        valueElement = VariantConverter.CreateOpenXmlElement(new Variant(VariantType.Lpwstr,value));
         if (valueElement != null)
           openXmlElement.AddChild(valueElement);
       }

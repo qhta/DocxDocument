@@ -92,7 +92,7 @@ public static class BooleanValueConverter
       }
       if (value == true)
       {
-        var itemElement = new ElementType { Val = value };
+        var itemElement = new ElementType();
         openXmlElement.AddChild(itemElement);
       }
     }
