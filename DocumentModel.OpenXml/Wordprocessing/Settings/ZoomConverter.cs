@@ -49,7 +49,7 @@ public static class ZoomConverter
   private static void SetPercent(DXW.Zoom openXmlElement, int? value)
   {
     if (value != null)
-      openXmlElement.Percent = new StringValue { Value = (value != null) ? (value.ToString() + "%") : null };
+      openXmlElement.Percent = new StringValue { Value = (value != null) ? (value.ToString()) : null };
     else
       openXmlElement.Percent = null;
   }

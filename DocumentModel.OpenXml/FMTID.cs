@@ -15,5 +15,5 @@ public static class FMTIDS
   /// <summary>
   /// The DocumentSummaryInformation and UserDefined Property Sets
   /// </summary>
-  public const string UserDefinedProperties = "D5CDD505-2E9C-101B-9397-08002B2CF9AE}";
+  public const string UserDefinedProperties = "{D5CDD505-2E9C-101B-9397-08002B2CF9AE}";
 }
