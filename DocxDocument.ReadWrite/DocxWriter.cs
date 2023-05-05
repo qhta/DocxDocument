@@ -58,8 +58,10 @@ public partial class DocxWriter : IDisposable
   {
     if (parts.HasFlag(PartsMask.CoreFileProperties) && properties.CoreProperties != null)
     {
-      var coreFileProperties = WordprocessingDocument.Package.PackageProperties;
-      DMXP.CorePropertiesConverter.SetValue(coreFileProperties, properties.CoreProperties);
+      using (var coreFileProperties = WordprocessingDocument.PackageProperties)
+      {
+        DMXP.CorePropertiesConverter.SetValue(coreFileProperties, properties.CoreProperties);
+      }
     }
 
     if (parts.HasFlag(PartsMask.ExtendedFileProperties) && (properties.ContentProperties != null || properties.StatisticProperties != null))

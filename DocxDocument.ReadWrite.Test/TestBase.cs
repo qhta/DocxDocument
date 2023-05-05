@@ -291,7 +291,7 @@ public class TestBase
       if (showDetails)
         xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length+1)}");
 
-      if (!xmlComparer.CompareFiles(origFilePath, newFilePath))
+      if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
       {
         ok = false;
         return false;
