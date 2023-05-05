@@ -20,13 +20,13 @@ public static class OpenXmlPackageConverter
     return openXmlElement?.StrictRelationshipFound;
   }
 
-  /// <summary>
-  ///   Gets the package of the document.
-  /// </summary>
-  public static Package? GetPackage(OpenXmlPackage? openXmlElement)
-  {
-    return openXmlElement?.Package;
-  }
+  ///// <summary>
+  /////   Gets the package of the document.
+  ///// </summary>
+  //public static Package? GetPackage(OpenXmlPackage? openXmlElement)
+  //{
+  //  return openXmlElement?.Package;
+  //}
 
   /// <summary>
   ///   Gets the FileAccess setting for the document.
@@ -116,7 +116,7 @@ public static class OpenXmlPackageConverter
     {
       var value = new DocumentModel.Packaging.OpenXmlPackage();
       value.StrictRelationshipFound = GetStrictRelationshipFound(openXmlElement);
-      value.Package = GetPackage(openXmlElement);
+      //value.Package = GetPackage(openXmlElement);
       value.FileOpenAccess = GetFileOpenAccess(openXmlElement);
       value.PackageProperties = GetPackageProperties(openXmlElement);
       value.CompressionOption = GetCompressionOption(openXmlElement);

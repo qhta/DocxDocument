@@ -40,10 +40,11 @@ public static class HeadingPairsConverter
     if (openXmlElement != null && value != null)
     {
       var vector = new VectorVariant();
+      vector.BaseType = VariantType.Variant;
       foreach (var item in value)
       {
-        vector.Add(item.Str);
-        vector.Add(item.Num);
+        vector.Add(new Variant(new Variant(item.Str)));
+        vector.Add(new Variant(new Variant(item.Num)));
       }
       openXmlElement.VTVector = VTVectorConverter.CreateOpenXmlElement(vector);
     }
