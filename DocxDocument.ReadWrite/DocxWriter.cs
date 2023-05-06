@@ -18,6 +18,8 @@ public partial class DocxWriter : IDisposable
   public static DocxWriter Create(string filename, WordprocessingDocumentType type = WordprocessingDocumentType.Document)
   {
     var wordprocessingDocument = WordprocessingDocument.Create(filename, (DocumentFormat.OpenXml.WordprocessingDocumentType)type);
+    wordprocessingDocument.AddMainDocumentPart();
+    wordprocessingDocument.PackageProperties.Created = DateTime.Now;
     return new DocxWriter(wordprocessingDocument);
   }
 

@@ -47,7 +47,7 @@ public partial class CoreProperties: KnownDocumentProperties
   ///   The revision number. This value might indicate the number of saves or revisions, 
   ///   provided the application updates it after each revision.
   /// </summary>
-  public string? Revision { get; set; }
+  public int? Revision { get; set; }
 
   /// <summary>
   ///   The date and time of the last printing.
