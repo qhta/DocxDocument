@@ -45,7 +45,7 @@ public static class PtExtensionConverter
     {
       itemElement = DMXDD.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

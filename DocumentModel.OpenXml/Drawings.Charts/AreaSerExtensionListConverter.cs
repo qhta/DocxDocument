@@ -56,7 +56,7 @@ public static class AreaSerExtensionListConverter
       {
         var newItem = DMXDC.AreaSerExtensionConverter.CreateOpenXmlElement<DXDC.AreaSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -45,7 +45,7 @@ public static class Pie3DChartExtensionConverter
     {
       itemElement = DMXDC.FilteredPieSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredPieSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

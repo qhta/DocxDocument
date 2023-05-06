@@ -133,7 +133,7 @@ public static class PathConverter
     if (value == true)
     {
       var itemElement = new DXD.CloseShapePath();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -159,7 +159,7 @@ public static class PathConverter
     {
       itemElement = DMXD.MoveToConverter.CreateOpenXmlElement<DXD.MoveTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -185,7 +185,7 @@ public static class PathConverter
     {
       itemElement = DMXD.LineToConverter.CreateOpenXmlElement<DXD.LineTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -211,7 +211,7 @@ public static class PathConverter
     {
       itemElement = DMXD.ArcToConverter.CreateOpenXmlElement<DXD.ArcTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -237,7 +237,7 @@ public static class PathConverter
     {
       itemElement = DMXD.QuadraticBezierCurveToConverter.CreateOpenXmlElement<DXD.QuadraticBezierCurveTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -263,7 +263,7 @@ public static class PathConverter
     {
       itemElement = DMXD.CubicBezierCurveToConverter.CreateOpenXmlElement<DXD.CubicBezierCurveTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

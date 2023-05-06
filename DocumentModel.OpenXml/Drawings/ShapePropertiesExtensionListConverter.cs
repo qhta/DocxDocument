@@ -56,7 +56,7 @@ public static class ShapePropertiesExtensionListConverter
       {
         var newItem = DMXD.ShapePropertiesExtensionConverter.CreateOpenXmlElement<DXD.ShapePropertiesExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

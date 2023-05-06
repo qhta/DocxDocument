@@ -56,7 +56,7 @@ public static class PointListConverter
       {
         var newItem = DMXDD.PointConverter.CreateOpenXmlElement<DXDD.Point>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

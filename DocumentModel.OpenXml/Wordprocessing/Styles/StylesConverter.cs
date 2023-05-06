@@ -27,7 +27,7 @@ public static class StylesConverter
     {
       itemElement = DMXW.DocDefaultsConverter.CreateOpenXmlElement<DXW.DocDefaults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class StylesConverter
     {
       itemElement = DMXW.LatentStylesConverter.CreateOpenXmlElement<DXW.LatentStyles>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -107,7 +107,7 @@ public static class StylesConverter
       {
         var newItem = DMXW.StyleConverter.CreateOpenXmlElement<DXW.Style>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

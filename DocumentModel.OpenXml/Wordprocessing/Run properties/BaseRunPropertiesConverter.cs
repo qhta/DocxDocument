@@ -31,7 +31,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.RunFontsConverter.CreateOpenXmlElement<DXW.RunFonts>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -335,7 +335,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.ColorConverter.CreateOpenXmlElement<DXW.Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -413,7 +413,7 @@ public static class BaseRunPropertiesConverter
     {
       element = new DXW.Position();
       element.Val = ((Int32)value/10).ToString();
-      openXmlElement.AddChild(element);
+      openXmlElement.AppendChild(element);
     }
     else if (element!=null && value==null)
     {
@@ -445,7 +445,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.UnderlineConverter.CreateOpenXmlElement<DXW.Underline>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -473,7 +473,7 @@ public static class BaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DXW.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextEffect, DXW.TextEffectValues, DMW.TextEffectKind>((DMW.TextEffectKind)value));
   }
   #endregion
 
@@ -500,7 +500,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.Border>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -528,7 +528,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
 
@@ -557,7 +557,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.FitTextConverter.CreateOpenXmlElement<DXW.FitText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
 
@@ -586,7 +586,7 @@ public static class BaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DXW.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalTextAlignment, DXW.VerticalPositionValues, DMW.VerticalPositionKind>((DMW.VerticalPositionKind)value));
   }
 
   #endregion
@@ -614,7 +614,7 @@ public static class BaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Emphasis, DXW.EmphasisMarkValues, DMW.EmphasisMarkKind>((DMW.EmphasisMarkKind)value));
   }
 
   #endregion
@@ -642,7 +642,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.LanguageTypeConverter.CreateOpenXmlElement<DXW.Languages>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
 
@@ -671,7 +671,7 @@ public static class BaseRunPropertiesConverter
     {
       itemElement = DMXW.EastAsianLayoutConverter.CreateOpenXmlElement<DXW.EastAsianLayout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
 

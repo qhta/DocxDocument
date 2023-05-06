@@ -56,7 +56,7 @@ public static class PieChartExtensionListConverter
       {
         var newItem = DMXDC.PieChartExtensionConverter.CreateOpenXmlElement<DXDC.PieChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

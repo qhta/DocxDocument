@@ -56,7 +56,7 @@ public static class FormulasConverter
       {
         var newItem = DMXV.FormulaConverter.CreateOpenXmlElement<DXV.Formula>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

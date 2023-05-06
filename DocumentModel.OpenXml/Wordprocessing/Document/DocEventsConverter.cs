@@ -26,7 +26,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocNewXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -51,7 +51,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocOpenXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -76,7 +76,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocCloseXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -101,7 +101,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocSyncXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -126,7 +126,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocXmlAfterInsertXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -151,7 +151,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocXmlBeforeDeleteXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -176,7 +176,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocContentControlAfterInsertXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -201,7 +201,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocContentControlBeforeDeleteXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -226,7 +226,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocContentControlOnExistXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -251,7 +251,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocContentControlOnEnterXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -276,7 +276,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocStoreUpdateXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -301,7 +301,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocContentControlUpdateXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -326,7 +326,7 @@ public static class DocEventsConverter
     if (value != null)
     {
       itemElement = new DXOW.EventDocBuildingBlockAfterInsertXsdString { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

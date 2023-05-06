@@ -56,7 +56,7 @@ public static class DataModelExtensionListConverter
       {
         var newItem = DMXD.DataModelExtensionConverter.CreateOpenXmlElement<DXD.DataModelExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

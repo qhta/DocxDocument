@@ -30,7 +30,7 @@ public static class TextInputConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxFormFieldType, DXW.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>((DMW.TextBoxFormFieldKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxFormFieldType, DXW.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>((DMW.TextBoxFormFieldKind)value));
   }
   
   /// <summary>

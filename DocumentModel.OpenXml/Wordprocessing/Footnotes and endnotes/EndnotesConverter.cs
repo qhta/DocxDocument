@@ -27,7 +27,7 @@ public static class EndnotesConverter
     {
       itemElement = DMXW.EndnoteConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -28,7 +28,7 @@ public static class RubyPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.RubyAlign, DXW.RubyAlignValues, DMW.RubyAlignKind>((DMW.RubyAlignKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.RubyAlign, DXW.RubyAlignValues, DMW.RubyAlignKind>((DMW.RubyAlignKind)value));
   }
   #endregion
 

@@ -56,7 +56,7 @@ public static class CustomDashConverter
       {
         var newItem = DMXD.DashStopConverter.CreateOpenXmlElement<DXD.DashStop>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

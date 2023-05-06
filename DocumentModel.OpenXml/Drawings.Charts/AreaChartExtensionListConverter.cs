@@ -56,7 +56,7 @@ public static class AreaChartExtensionListConverter
       {
         var newItem = DMXDC.AreaChartExtensionConverter.CreateOpenXmlElement<DXDC.AreaChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

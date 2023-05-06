@@ -46,7 +46,7 @@ public static class StringPointConverter
     if (value != null)
     {
       itemElement = new DXDC.NumericValue { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

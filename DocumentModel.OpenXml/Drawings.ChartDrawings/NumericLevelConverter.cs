@@ -112,7 +112,7 @@ public static class NumericLevelConverter
       {
         var newItem = DMXDCDs.NumericValueConverter.CreateOpenXmlElement<DXO16DCD.NumericValue>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

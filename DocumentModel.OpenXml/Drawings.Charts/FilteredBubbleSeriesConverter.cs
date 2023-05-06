@@ -30,7 +30,7 @@ public static class FilteredBubbleSeriesConverter
     {
       itemElement = DMXDC.BubbleChartSeries3Converter.CreateOpenXmlElement<DXO13DC.BubbleChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

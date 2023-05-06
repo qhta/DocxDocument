@@ -28,7 +28,7 @@ public static class FractionPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionKind>((DMM.FractionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.FractionType, DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionKind>((DMM.FractionKind)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class FractionPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

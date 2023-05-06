@@ -66,7 +66,7 @@ public static class CustomUIConverter
     {
       itemElement = DMXUI.RepurposedCommandsConverter.CreateOpenXmlElement<DXOCUI.RepurposedCommands>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class CustomUIConverter
     {
       itemElement = DMXUI.RibbonConverter.CreateOpenXmlElement<DXOCUI.Ribbon>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

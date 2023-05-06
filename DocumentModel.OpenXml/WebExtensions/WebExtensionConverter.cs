@@ -94,7 +94,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.WebExtensionStoreReferenceConverter.CreateOpenXmlElement<DXO13WE.WebExtensionStoreReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.WebExtensionReferenceListConverter.CreateOpenXmlElement<DXO13WE.WebExtensionReferenceList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -152,7 +152,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.WebExtensionPropertyBagConverter.CreateOpenXmlElement<DXO13WE.WebExtensionPropertyBag>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -181,7 +181,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.WebExtensionBindingListConverter.CreateOpenXmlElement<DXO13WE.WebExtensionBindingList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -210,7 +210,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.SnapshotConverter.CreateOpenXmlElement<DXO13WE.Snapshot>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -239,7 +239,7 @@ public static class WebExtensionConverter
     {
       itemElement = DMXWE.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WE.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

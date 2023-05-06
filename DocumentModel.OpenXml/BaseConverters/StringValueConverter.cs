@@ -120,7 +120,7 @@ public static class StringValueConverter
     {
       itemElement = new ElementType();
       valProperty.SetValue(itemElement, new StringValue(value));
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

@@ -56,7 +56,7 @@ public static class ContextMenusConverter
       {
         var newItem = DMX.ContextMenuConverter.CreateOpenXmlElement<DXO10CUI.ContextMenu>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

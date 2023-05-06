@@ -1162,7 +1162,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.PathConverter.CreateOpenXmlElement<DXV.Path>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1188,7 +1188,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.FormulasConverter.CreateOpenXmlElement<DXV.Formulas>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1214,7 +1214,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.ShapeHandlesConverter.CreateOpenXmlElement<DXV.ShapeHandles>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1240,7 +1240,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1266,7 +1266,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.StrokeConverter.CreateOpenXmlElement<DXV.Stroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1292,7 +1292,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.ShadowConverter.CreateOpenXmlElement<DXV.Shadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1318,7 +1318,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.TextBoxConverter.CreateOpenXmlElement<DXV.TextBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1344,7 +1344,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.TextPathConverter.CreateOpenXmlElement<DXV.TextPath>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1370,7 +1370,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.ImageDataConverter.CreateOpenXmlElement<DXV.ImageData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1396,7 +1396,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.SkewConverter.CreateOpenXmlElement<DXVO.Skew>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1422,7 +1422,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.ExtrusionConverter.CreateOpenXmlElement<DXVO.Extrusion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1448,7 +1448,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.CalloutConverter.CreateOpenXmlElement<DXVO.Callout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1474,7 +1474,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.LockConverter.CreateOpenXmlElement<DXVO.Lock>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1500,7 +1500,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.ClipPathConverter.CreateOpenXmlElement<DXVO.ClipPath>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1526,7 +1526,7 @@ public static class CurveConverter
     {
       itemElement = DMXV.SignatureLineConverter.CreateOpenXmlElement<DXVO.SignatureLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1552,7 +1552,7 @@ public static class CurveConverter
     {
       itemElement = DMXWV.TextWrapConverter.CreateOpenXmlElement<DXVW.TextWrap>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1580,7 +1580,7 @@ public static class CurveConverter
     if (value == true)
     {
       var itemElement = new DXVW.AnchorLock();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1606,7 +1606,7 @@ public static class CurveConverter
     {
       itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.TopBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1632,7 +1632,7 @@ public static class CurveConverter
     {
       itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.BottomBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1658,7 +1658,7 @@ public static class CurveConverter
     {
       itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.LeftBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1684,7 +1684,7 @@ public static class CurveConverter
     {
       itemElement = DMXWV.BorderTypeConverter.CreateOpenXmlElement<DXVW.RightBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

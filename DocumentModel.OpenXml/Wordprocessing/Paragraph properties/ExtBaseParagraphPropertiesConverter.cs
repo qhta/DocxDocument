@@ -27,7 +27,7 @@ public static class ExtBaseParagraphPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.ParagraphStyleId { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -72,7 +72,7 @@ public static class ExtBaseParagraphPropertiesConverter
     {
       itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>((DMW.ConditionalFormatFlags)value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

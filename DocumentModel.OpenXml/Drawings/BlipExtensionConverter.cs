@@ -45,7 +45,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXD.ImagePropertiesConverter.CreateOpenXmlElement<DXO10D.ImageProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class BlipExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO10D.UseLocalDpi();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -99,7 +99,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXDW.WebVideoPropertyConverter.CreateOpenXmlElement<DXO13WD.WebVideoProperty>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXDSVG.SVGBlipConverter.CreateOpenXmlElement<DXO19DSVG.SVGBlip>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -151,7 +151,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXD.PictureAttributionSourceURLConverter.CreateOpenXmlElement<DXO19D.PictureAttributionSourceURL>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXWOE.OEmbedConverter.CreateOpenXmlElement<DXOSWY20OE.OEmbed>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -203,7 +203,7 @@ public static class BlipExtensionConverter
     {
       itemElement = DMXDOOEmb.OEmbedSharedConverter.CreateOpenXmlElement<DXODY21OE.OEmbedShared>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

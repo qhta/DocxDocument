@@ -48,7 +48,7 @@ public static class ScalingConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Orientation, DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDC.OrientationKind>((DMDC.OrientationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Orientation, DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDC.OrientationKind>((DMDC.OrientationKind)value));
   }
   
   /// <summary>
@@ -112,7 +112,7 @@ public static class ScalingConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

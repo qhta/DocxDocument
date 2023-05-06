@@ -45,7 +45,7 @@ public static class ConnectorLockingExtensionConverter
     {
       itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

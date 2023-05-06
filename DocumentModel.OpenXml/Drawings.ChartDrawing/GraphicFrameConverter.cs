@@ -71,7 +71,7 @@ public static class GraphicFrameConverter
     {
       itemElement = DMXDCD.NonVisualGraphicFramePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualGraphicFrameProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -100,7 +100,7 @@ public static class GraphicFrameConverter
     {
       itemElement = DMXDCD.TransformConverter.CreateOpenXmlElement<DXDCD.Transform>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -129,7 +129,7 @@ public static class GraphicFrameConverter
     {
       itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

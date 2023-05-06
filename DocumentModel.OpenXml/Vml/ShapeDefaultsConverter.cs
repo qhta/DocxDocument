@@ -232,7 +232,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -261,7 +261,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ImageDataConverter.CreateOpenXmlElement<DXV.ImageData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -290,7 +290,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.StrokeConverter.CreateOpenXmlElement<DXV.Stroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -319,7 +319,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.TextBoxConverter.CreateOpenXmlElement<DXV.TextBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -348,7 +348,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ShadowConverter.CreateOpenXmlElement<DXV.Shadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -377,7 +377,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.SkewConverter.CreateOpenXmlElement<DXVO.Skew>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -406,7 +406,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ExtrusionConverter.CreateOpenXmlElement<DXVO.Extrusion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -435,7 +435,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.CalloutConverter.CreateOpenXmlElement<DXVO.Callout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -464,7 +464,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.LockConverter.CreateOpenXmlElement<DXVO.Lock>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -493,7 +493,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ColorMostRecentlyUsedConverter.CreateOpenXmlElement<DXVO.ColorMostRecentlyUsed>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -522,7 +522,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ColorMenuConverter.CreateOpenXmlElement<DXVO.ColorMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

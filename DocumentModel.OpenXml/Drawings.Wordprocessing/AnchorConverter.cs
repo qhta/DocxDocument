@@ -314,7 +314,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.Point2DTypeConverter.CreateOpenXmlElement<DXDW.SimplePosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -343,7 +343,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.HorizontalPositionConverter.CreateOpenXmlElement<DXDW.HorizontalPosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -372,7 +372,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.VerticalPositionConverter.CreateOpenXmlElement<DXDW.VerticalPosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -401,7 +401,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.ExtentConverter.CreateOpenXmlElement<DXDW.Extent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -430,7 +430,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.EffectExtentConverter.CreateOpenXmlElement<DXDW.EffectExtent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -458,7 +458,7 @@ public static class AnchorConverter
     if (value == true)
     {
       var itemElement = new DXDW.WrapNone();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -484,7 +484,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.WrapSquareConverter.CreateOpenXmlElement<DXDW.WrapSquare>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -510,7 +510,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.WrapTightConverter.CreateOpenXmlElement<DXDW.WrapTight>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -536,7 +536,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.WrapThroughConverter.CreateOpenXmlElement<DXDW.WrapThrough>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -562,7 +562,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.WrapTopBottomConverter.CreateOpenXmlElement<DXDW.WrapTopBottom>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -588,7 +588,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.DocPropertiesConverter.CreateOpenXmlElement<DXDW.DocProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -614,7 +614,7 @@ public static class AnchorConverter
     {
       itemElement = DMXDW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDW.NonVisualGraphicFrameDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -640,7 +640,7 @@ public static class AnchorConverter
     {
       itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -666,7 +666,7 @@ public static class AnchorConverter
     {
       itemElement = DMXWD.RelativeWidthConverter.CreateOpenXmlElement<DXO10WD.RelativeWidth>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

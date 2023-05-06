@@ -68,7 +68,7 @@ public static class NumberDiagramInfoConverter
     {
       itemElement = DMXDD1.DiagramAutoBulletConverter.CreateOpenXmlElement<DXO19DD11.DiagramAutoBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

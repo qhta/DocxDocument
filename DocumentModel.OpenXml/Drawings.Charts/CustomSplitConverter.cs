@@ -56,7 +56,7 @@ public static class CustomSplitConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.SecondPiePoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

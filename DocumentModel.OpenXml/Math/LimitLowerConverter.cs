@@ -28,7 +28,7 @@ public static class LimitLowerConverter
     {
       itemElement = DMXM.LimitLowerPropertiesConverter.CreateOpenXmlElement<DXM.LimitLowerProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class LimitLowerConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class LimitLowerConverter
     {
       itemElement = DMXM.LimitConverter.CreateOpenXmlElement<DXM.Limit>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

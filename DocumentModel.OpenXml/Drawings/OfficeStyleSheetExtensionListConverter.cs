@@ -56,7 +56,7 @@ public static class OfficeStyleSheetExtensionListConverter
       {
         var newItem = DMXD.OfficeStyleSheetExtensionConverter.CreateOpenXmlElement<DXD.OfficeStyleSheetExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -56,7 +56,7 @@ public static class GeoLocationQueryResultsConverter
       {
         var newItem = DMXDCDs.GeoLocationQueryResultConverter.CreateOpenXmlElement<DXO16DCD.GeoLocationQueryResult>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

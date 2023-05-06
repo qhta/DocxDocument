@@ -30,7 +30,7 @@ public static class ManualLayoutConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>((DMDC.LayoutTargetKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LayoutTarget, DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>((DMDC.LayoutTargetKind)value));
   }
   
   /// <summary>
@@ -58,7 +58,7 @@ public static class ManualLayoutConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LeftMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
@@ -86,7 +86,7 @@ public static class ManualLayoutConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TopMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
@@ -114,7 +114,7 @@ public static class ManualLayoutConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.WidthMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
@@ -142,7 +142,7 @@ public static class ManualLayoutConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.HeightMode, DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>((DMDC.LayoutMode)value));
   }
   
   /// <summary>
@@ -242,7 +242,7 @@ public static class ManualLayoutConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

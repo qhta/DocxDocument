@@ -42,7 +42,7 @@ public static class DisplayUnitsConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>((DMDC.BuiltInUnitKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BuiltInUnit, DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues, DMDC.BuiltInUnitKind>((DMDC.BuiltInUnitKind)value));
   }
   
   private static DMDC.DisplayUnitsLabel? GetDisplayUnitsLabel(DXDC.DisplayUnits openXmlElement)
@@ -67,7 +67,7 @@ public static class DisplayUnitsConverter
     {
       itemElement = DMXDC.DisplayUnitsLabelConverter.CreateOpenXmlElement<DXDC.DisplayUnitsLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -93,7 +93,7 @@ public static class DisplayUnitsConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

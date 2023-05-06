@@ -73,7 +73,7 @@ public static class BlipFillConverter
     {
       itemElement = DMXD.BlipConverter.CreateOpenXmlElement<DXD.Blip>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -102,7 +102,7 @@ public static class BlipFillConverter
     {
       itemElement = DMXD.RelativeRectangleTypeConverter.CreateOpenXmlElement<DXD.SourceRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -128,7 +128,7 @@ public static class BlipFillConverter
     {
       itemElement = DMXD.TileConverter.CreateOpenXmlElement<DXD.Tile>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class BlipFillConverter
     {
       itemElement = DMXD.StretchConverter.CreateOpenXmlElement<DXD.Stretch>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

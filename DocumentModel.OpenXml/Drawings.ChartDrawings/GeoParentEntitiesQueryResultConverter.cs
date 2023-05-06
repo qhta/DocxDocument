@@ -30,7 +30,7 @@ public static class GeoParentEntitiesQueryResultConverter
     {
       itemElement = DMXDCDs.GeoParentEntitiesQueryConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntitiesQuery>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class GeoParentEntitiesQueryResultConverter
     {
       itemElement = DMXDCDs.GeoEntityConverter.CreateOpenXmlElement<DXO16DCD.GeoEntity>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class GeoParentEntitiesQueryResultConverter
     {
       itemElement = DMXDCDs.GeoParentEntityConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntity>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

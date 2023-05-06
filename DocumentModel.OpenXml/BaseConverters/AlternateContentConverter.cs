@@ -31,7 +31,7 @@ public static class AlternateContentConverter
       {
         var newElement = AlternateContentChoiceConverter.CreateOpenXmlElement(value);
         if (newElement != null)
-          openXmlElement.AddChild(newElement);
+          openXmlElement.AppendChild(newElement);
       }
     }
   }
@@ -61,7 +61,7 @@ public static class AlternateContentConverter
       {
         var newElement = AlternateContentFallbackConverter.CreateOpenXmlElement(value);
         if (newElement != null)
-          openXmlElement.AddChild(newElement);
+          openXmlElement.AppendChild(newElement);
       }
     }
   }

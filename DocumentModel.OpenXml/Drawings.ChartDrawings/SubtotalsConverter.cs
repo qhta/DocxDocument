@@ -56,7 +56,7 @@ public static class SubtotalsConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXO16DCD.UnsignedIntegerType>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -30,7 +30,7 @@ public static class NonVisualConnectionShapePropertiesConverter
     {
       itemElement = DMXD.ConnectionShapeLocksConverter.CreateOpenXmlElement<DXD.ConnectionShapeLocks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class NonVisualConnectionShapePropertiesConverter
     {
       itemElement = DMXD.ConnectionTypeConverter.CreateOpenXmlElement<DXD.StartConnection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class NonVisualConnectionShapePropertiesConverter
     {
       itemElement = DMXD.ConnectionTypeConverter.CreateOpenXmlElement<DXD.EndConnection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class NonVisualConnectionShapePropertiesConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

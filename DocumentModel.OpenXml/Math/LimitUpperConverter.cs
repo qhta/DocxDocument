@@ -28,7 +28,7 @@ public static class LimitUpperConverter
     {
       itemElement = DMXM.LimitUpperPropertiesConverter.CreateOpenXmlElement<DXM.LimitUpperProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class LimitUpperConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class LimitUpperConverter
     {
       itemElement = DMXM.LimitConverter.CreateOpenXmlElement<DXM.Limit>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

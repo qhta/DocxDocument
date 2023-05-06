@@ -56,7 +56,7 @@ public static class CatAxExtensionListConverter
       {
         var newItem = DMXDC.CatAxExtensionConverter.CreateOpenXmlElement<DXDC.CatAxExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

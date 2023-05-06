@@ -32,7 +32,7 @@ public static class PivotOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.DropZoneFilter();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class PivotOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.DropZoneCategories();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class PivotOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.DropZoneData();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class PivotOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.DropZoneSeries();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -156,7 +156,7 @@ public static class PivotOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.DropZonesVisible();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

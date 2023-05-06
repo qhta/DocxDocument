@@ -45,7 +45,7 @@ public static class DocPartTypesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DXW.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.DocPartType, DXW.DocPartValues, DMW.DocPartKind>((DMW.DocPartKind)value));
   }
   
   public static DMW.DocPartTypes? CreateModelElement(DXW.DocPartTypes? openXmlElement)

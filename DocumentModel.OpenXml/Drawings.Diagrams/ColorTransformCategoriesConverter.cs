@@ -56,7 +56,7 @@ public static class ColorTransformCategoriesConverter
       {
         var newItem = DMXDD.ColorTransformCategoryConverter.CreateOpenXmlElement<DXDD.ColorTransformCategory>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

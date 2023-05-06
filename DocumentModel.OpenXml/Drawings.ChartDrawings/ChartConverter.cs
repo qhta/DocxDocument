@@ -30,7 +30,7 @@ public static class ChartConverter
     {
       itemElement = DMXDCDs.ChartTitleConverter.CreateOpenXmlElement<DXO16DCD.ChartTitle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ChartConverter
     {
       itemElement = DMXDCDs.PlotAreaConverter.CreateOpenXmlElement<DXO16DCD.PlotArea>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ChartConverter
     {
       itemElement = DMXDCDs.LegendConverter.CreateOpenXmlElement<DXO16DCD.Legend>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class ChartConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

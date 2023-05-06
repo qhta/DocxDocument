@@ -66,7 +66,7 @@ public static class PersonConverter
     {
       itemElement = DMXW.PresenceInfoConverter.CreateOpenXmlElement<DXO13W.PresenceInfo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -32,7 +32,7 @@ public static class SingleDataSourceRecordConverter
     if (value == true)
     {
       var itemElement = new DXOW.RecordIncluded();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

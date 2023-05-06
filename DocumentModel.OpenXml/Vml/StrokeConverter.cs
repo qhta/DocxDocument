@@ -554,7 +554,7 @@ public static class StrokeConverter
     {
       itemElement = DMXV.StrokeChildTypeConverter.CreateOpenXmlElement<DXVO.LeftStroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -583,7 +583,7 @@ public static class StrokeConverter
     {
       itemElement = DMXV.StrokeChildTypeConverter.CreateOpenXmlElement<DXVO.TopStroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -612,7 +612,7 @@ public static class StrokeConverter
     {
       itemElement = DMXV.StrokeChildTypeConverter.CreateOpenXmlElement<DXVO.RightStroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -641,7 +641,7 @@ public static class StrokeConverter
     {
       itemElement = DMXV.StrokeChildTypeConverter.CreateOpenXmlElement<DXVO.BottomStroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -670,7 +670,7 @@ public static class StrokeConverter
     {
       itemElement = DMXV.StrokeChildTypeConverter.CreateOpenXmlElement<DXVO.ColumnStroke>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

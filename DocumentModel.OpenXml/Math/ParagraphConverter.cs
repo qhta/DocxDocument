@@ -28,7 +28,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXM.ParagraphPropertiesConverter.CreateOpenXmlElement<DXM.ParagraphProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

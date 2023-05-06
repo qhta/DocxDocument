@@ -75,7 +75,7 @@ public static class SimpleFieldConverter
     if (value != null)
     {
       itemElement = new DXW.FieldData { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

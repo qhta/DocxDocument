@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Math;
 /// </summary>
 public static class MathPropertiesConverter
 {
-  #region Math Font. conversion.
+  #region MathFont conversion.
   private static String? GetMathFont(DXM.MathProperties openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.MathFont>()?.Val);
@@ -45,7 +45,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>((DMM.BreakBinaryOperatorKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinary, DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues, DMM.BreakBinaryOperatorKind>((DMM.BreakBinaryOperatorKind)value));
   }
   #endregion
 
@@ -72,7 +72,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>((DMM.BreakBinarySubtractionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.BreakBinarySubtraction, DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues, DMM.BreakBinarySubtractionKind>((DMM.BreakBinarySubtractionKind)value));
   }
   #endregion
 
@@ -99,14 +99,14 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateMathOpenXmlElement<DXM.SmallFraction>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateMathOpenXmlElement<DXM.SmallFraction>((bool)value));
   }
   #endregion
 
   #region Use Display Math Defaults conversion.
   private static bool? GetDisplayDefaults(DXM.MathProperties openXmlElement)
   {
-    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.DisplayDefaults>()?.Val?.Value);
+    return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.DisplayDefaults>());
   }
   
   private static bool CmpDisplayDefaults(DXM.MathProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
@@ -126,7 +126,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.DisplayDefaults>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateMathOpenXmlElement<DXM.DisplayDefaults>((bool)value));
   }
   #endregion
 
@@ -187,7 +187,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.DefaultJustification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
   }
   #endregion
 
@@ -295,7 +295,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.WrapRight>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.WrapRight>((bool)value));
   }
   
   private static DMM.LimitLocationKind? GetIntegralLimitLocation(DXM.MathProperties openXmlElement)
@@ -320,7 +320,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.IntegralLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
   }
   
   private static DMM.LimitLocationKind? GetNaryLimitLocation(DXM.MathProperties openXmlElement)
@@ -345,7 +345,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.NaryLimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
   }
   #endregion
 

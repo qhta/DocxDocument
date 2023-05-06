@@ -45,7 +45,7 @@ public static class OfficeStyleSheetExtensionConverter
     {
       itemElement = DMX.ThemeFamilyConverter.CreateOpenXmlElement<DXO13T.ThemeFamily>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

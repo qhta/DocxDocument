@@ -29,7 +29,7 @@ public static class MaxValueColorEndPositionConverter
     if (value == true)
     {
       var itemElement = new DXO16DCD.ExtremeValueColorPosition();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

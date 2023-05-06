@@ -28,7 +28,7 @@ public static class RadicalConverter
     {
       itemElement = DMXM.RadicalPropertiesConverter.CreateOpenXmlElement<DXM.RadicalProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class RadicalConverter
     {
       itemElement = DMXM.DegreeConverter.CreateOpenXmlElement<DXM.Degree>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class RadicalConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

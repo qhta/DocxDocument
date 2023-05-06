@@ -32,7 +32,7 @@ public static class ProtectionConverter
     if (value == true)
     {
       var itemElement = new DXDC.ChartObject();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class ProtectionConverter
     if (value == true)
     {
       var itemElement = new DXDC.Data();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class ProtectionConverter
     if (value == true)
     {
       var itemElement = new DXDC.Formatting();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class ProtectionConverter
     if (value == true)
     {
       var itemElement = new DXDC.Selection();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -156,7 +156,7 @@ public static class ProtectionConverter
     if (value == true)
     {
       var itemElement = new DXDC.UserInterface();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

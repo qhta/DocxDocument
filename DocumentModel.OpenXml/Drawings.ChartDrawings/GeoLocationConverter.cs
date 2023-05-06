@@ -106,7 +106,7 @@ public static class GeoLocationConverter
     {
       itemElement = DMXDCDs.AddressConverter.CreateOpenXmlElement<DXO16DCD.Address>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

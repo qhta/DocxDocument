@@ -26,7 +26,7 @@ public static class PivotSourceConverter
     if (value != null)
     {
       itemElement = new DXDC.PivotTableName { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class PivotSourceConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

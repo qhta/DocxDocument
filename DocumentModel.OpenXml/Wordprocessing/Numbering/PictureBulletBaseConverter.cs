@@ -27,7 +27,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.GroupConverter.CreateOpenXmlElement<DXV.Group>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.ImageFileConverter.CreateOpenXmlElement<DXV.ImageFile>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.LineConverter.CreateOpenXmlElement<DXV.Line>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.OvalConverter.CreateOpenXmlElement<DXV.Oval>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -131,7 +131,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.PolyLineConverter.CreateOpenXmlElement<DXV.PolyLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -157,7 +157,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.RectangleConverter.CreateOpenXmlElement<DXV.Rectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -183,7 +183,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.RoundRectangleConverter.CreateOpenXmlElement<DXV.RoundRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -209,7 +209,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.ShapeConverter.CreateOpenXmlElement<DXV.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -235,7 +235,7 @@ public static class PictureBulletBaseConverter
     {
       itemElement = DMXV.ShapetypeConverter.CreateOpenXmlElement<DXV.Shapetype>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

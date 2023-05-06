@@ -47,7 +47,7 @@ public class DigitalSignature : ModelElementImpl
         {
           var newItem = VariantConverter.CreateOpenXmlElement(value);
           if (newItem != null)
-            OpenXmlElement.AddChild(newItem);
+            OpenXmlElement.AppendChild(newItem);
         }
       }
     }

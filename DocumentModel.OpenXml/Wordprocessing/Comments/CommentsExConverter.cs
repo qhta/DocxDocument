@@ -53,7 +53,7 @@ public static class CommentsExConverter
       {
         var newItem = DMXW.CommentExConverter.CreateOpenXmlElement<DXO13W.CommentEx>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

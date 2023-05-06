@@ -30,7 +30,7 @@ public static class ObjectDefaultsConverter
     {
       itemElement = DMXD.ShapeDefaultConverter.CreateOpenXmlElement<DXD.ShapeDefault>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ObjectDefaultsConverter
     {
       itemElement = DMXD.LineDefaultConverter.CreateOpenXmlElement<DXD.LineDefault>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ObjectDefaultsConverter
     {
       itemElement = DMXD.TextDefaultConverter.CreateOpenXmlElement<DXD.TextDefault>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class ObjectDefaultsConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

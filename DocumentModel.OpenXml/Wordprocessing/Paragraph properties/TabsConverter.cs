@@ -21,7 +21,7 @@ public static class TabsConverter
   //{
   //    itemElement = DMXW.TabStopConverter.CreateOpenXmlElement<DXW.TabStop>(value);
   //    if (itemElement != null)
-  //      openXmlElement.AddChild(itemElement);
+  //      openXmlElement.AppendChild(itemElement);
   //  }
   //}
 

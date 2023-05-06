@@ -719,7 +719,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.GroupConverter.CreateOpenXmlElement<DXV.Group>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -745,7 +745,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.ShapeConverter.CreateOpenXmlElement<DXV.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -771,7 +771,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.ShapetypeConverter.CreateOpenXmlElement<DXV.Shapetype>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -797,7 +797,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.ArcConverter.CreateOpenXmlElement<DXV.Arc>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -823,7 +823,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.CurveConverter.CreateOpenXmlElement<DXV.Curve>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -849,7 +849,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.ImageFileConverter.CreateOpenXmlElement<DXV.ImageFile>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -875,7 +875,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.LineConverter.CreateOpenXmlElement<DXV.Line>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -901,7 +901,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.OvalConverter.CreateOpenXmlElement<DXV.Oval>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -927,7 +927,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.PolyLineConverter.CreateOpenXmlElement<DXV.PolyLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -953,7 +953,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.RectangleConverter.CreateOpenXmlElement<DXV.Rectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -979,7 +979,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.RoundRectangleConverter.CreateOpenXmlElement<DXV.RoundRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1005,7 +1005,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.DiagramConverter.CreateOpenXmlElement<DXVO.Diagram>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1031,7 +1031,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.LockConverter.CreateOpenXmlElement<DXVO.Lock>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1057,7 +1057,7 @@ public static class GroupConverter
     {
       itemElement = DMXV.ClipPathConverter.CreateOpenXmlElement<DXVO.ClipPath>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1083,7 +1083,7 @@ public static class GroupConverter
     {
       itemElement = DMXWV.TextWrapConverter.CreateOpenXmlElement<DXVW.TextWrap>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -1111,7 +1111,7 @@ public static class GroupConverter
     if (value == true)
     {
       var itemElement = new DXVW.AnchorLock();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

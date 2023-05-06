@@ -235,7 +235,7 @@ public static class DiagramConverter
     {
       itemElement = DMXV.RelationTableConverter.CreateOpenXmlElement<DXVO.RelationTable>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

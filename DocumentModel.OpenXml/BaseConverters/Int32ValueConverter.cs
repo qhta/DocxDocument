@@ -47,9 +47,10 @@ public static class Int32ValueConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
     where OpenXmlElementType : OpenXmlLeafTextElement, new()
   {
+    if (value == null)
+      return null;
     var element = new OpenXmlElementType();
-    if (value != null)
-      element.Text = ((Int32)value).ToString();
+    element.Text = ((Int32)value).ToString();
     return element;
   }
   #endregion
@@ -95,17 +96,17 @@ public static class Int32ValueConverter
     where OpenXmlElementType : DXW.HpsMeasureType, new()
   {
     var element = openXmlElement.GetFirstChild<OpenXmlElementType>();
-    if (element!=null && value!=null)
+    if (element != null && value != null)
     {
       element.Val = ((Int32)value).ToString();
     }
-    else if (element==null && value!=null)
+    else if (element == null && value != null)
     {
       element = new OpenXmlElementType();
       element.Val = ((Int32)value).ToString();
-      openXmlElement.AddChild(element);
+      openXmlElement.AppendChild(element);
     }
-    else if (element!=null && value==null)
+    else if (element != null && value == null)
     {
       element.Remove();
     }

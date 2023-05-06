@@ -56,7 +56,7 @@ public static class RuleListConverter
       {
         var newItem = DMXDD.RuleConverter.CreateOpenXmlElement<DXDD.Rule>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

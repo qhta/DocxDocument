@@ -45,7 +45,7 @@ public static class StringDimensionConverter
     {
       itemElement = DMXDCDs.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO16DCD.Formula>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class StringDimensionConverter
     {
       itemElement = DMXDCDs.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO16DCD.NfFormula>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -126,7 +126,7 @@ public static class StringDimensionConverter
       {
         var newItem = DMXDCDs.StringLevelConverter.CreateOpenXmlElement<DXO16DCD.StringLevel>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -153,7 +153,7 @@ public static class StringDimensionConverter
     {
       itemElement = DMXDCDs.StringLevelConverter.CreateOpenXmlElement<DXO16DCD.StringLevel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

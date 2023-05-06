@@ -56,7 +56,7 @@ public static class BubbleSerExtensionListConverter
       {
         var newItem = DMXDC.BubbleSerExtensionConverter.CreateOpenXmlElement<DXDC.BubbleSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

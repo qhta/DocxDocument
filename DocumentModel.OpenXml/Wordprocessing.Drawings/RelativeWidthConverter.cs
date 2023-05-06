@@ -44,7 +44,7 @@ public static class RelativeWidthConverter
     if (value != null)
     {
       itemElement = new DXO10WD.PercentageWidth { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

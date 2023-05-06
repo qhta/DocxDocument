@@ -56,7 +56,7 @@ public static class SurfaceChartExtensionListConverter
       {
         var newItem = DMXDC.SurfaceChartExtensionConverter.CreateOpenXmlElement<DXDC.SurfaceChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

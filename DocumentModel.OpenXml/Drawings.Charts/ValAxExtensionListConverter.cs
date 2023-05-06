@@ -56,7 +56,7 @@ public static class ValAxExtensionListConverter
       {
         var newItem = DMXDC.ValAxExtensionConverter.CreateOpenXmlElement<DXDC.ValAxExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

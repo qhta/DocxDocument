@@ -56,7 +56,7 @@ public static class ConnectionSiteListConverter
       {
         var newItem = DMXD.ConnectionSiteConverter.CreateOpenXmlElement<DXD.ConnectionSite>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -28,7 +28,7 @@ public static class MatrixColumnConverter
     {
       itemElement = DMXM.MatrixColumnPropertiesConverter.CreateOpenXmlElement<DXM.MatrixColumnProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

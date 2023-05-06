@@ -56,7 +56,7 @@ public static class BubbleChartExtensionListConverter
       {
         var newItem = DMXDC.BubbleChartExtensionConverter.CreateOpenXmlElement<DXDC.BubbleChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

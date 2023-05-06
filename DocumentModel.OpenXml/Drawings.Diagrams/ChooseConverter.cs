@@ -45,7 +45,7 @@ public static class ChooseConverter
     {
       itemElement = DMXDD.DiagramChooseIfConverter.CreateOpenXmlElement<DXDD.DiagramChooseIf>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class ChooseConverter
     {
       itemElement = DMXDD.DiagramChooseElseConverter.CreateOpenXmlElement<DXDD.DiagramChooseElse>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -45,7 +45,7 @@ public static class BubbleChartExtensionConverter
     {
       itemElement = DMXDC.FilteredBubbleSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredBubbleSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

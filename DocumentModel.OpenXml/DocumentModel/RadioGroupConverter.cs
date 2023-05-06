@@ -390,7 +390,7 @@ public static class RadioGroupConverter
       {
         var newItem = DMX.BackstageItemTypeConverter.CreateOpenXmlElement<DXO10CUI.RadioButtonBackstageItem>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

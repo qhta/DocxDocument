@@ -56,7 +56,7 @@ public static class DateAxExtensionListConverter
       {
         var newItem = DMXDC.DateAxExtensionConverter.CreateOpenXmlElement<DXDC.DateAxExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

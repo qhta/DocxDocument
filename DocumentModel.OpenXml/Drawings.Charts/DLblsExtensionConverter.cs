@@ -45,7 +45,7 @@ public static class DLblsExtensionConverter
     {
       itemElement = DMXDC.ChartText3Converter.CreateOpenXmlElement<DXO13DC.ChartText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class DLblsExtensionConverter
     {
       itemElement = DMXDC.DataLabelFieldTableConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTable>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -99,7 +99,7 @@ public static class DLblsExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.ShowDataLabelsRange();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class DLblsExtensionConverter
     {
       itemElement = DMXDC.ShapeProperties3Converter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -151,7 +151,7 @@ public static class DLblsExtensionConverter
     {
       itemElement = DMXDC.Layout3Converter.CreateOpenXmlElement<DXO13DC.Layout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -179,7 +179,7 @@ public static class DLblsExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.ShowLeaderLines();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -205,7 +205,7 @@ public static class DLblsExtensionConverter
     {
       itemElement = DMXDC.LeaderLines3Converter.CreateOpenXmlElement<DXO13DC.LeaderLines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class AudioFromCDConverter
     {
       itemElement = DMXD.AudioCDTimeTypeConverter.CreateOpenXmlElement<DXD.StartTime>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class AudioFromCDConverter
     {
       itemElement = DMXD.AudioCDTimeTypeConverter.CreateOpenXmlElement<DXD.EndTime>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class AudioFromCDConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

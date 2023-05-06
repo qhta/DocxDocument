@@ -28,7 +28,7 @@ public static class TablePropertyExceptionsConverter
     {
       itemElement = DMXW.TablePropertyExceptionsChangeConverter.CreateOpenXmlElement<DXW.TablePropertyExceptionsChange>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

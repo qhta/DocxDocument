@@ -48,7 +48,7 @@ public static class AxisUnitsConverter
     {
       itemElement = DMXDCDs.AxisUnitsLabelConverter.CreateOpenXmlElement<DXO16DCD.AxisUnitsLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class AxisUnitsConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

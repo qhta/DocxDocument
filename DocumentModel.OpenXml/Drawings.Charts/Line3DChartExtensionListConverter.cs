@@ -56,7 +56,7 @@ public static class Line3DChartExtensionListConverter
       {
         var newItem = DMXDC.Line3DChartExtensionConverter.CreateOpenXmlElement<DXDC.Line3DChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

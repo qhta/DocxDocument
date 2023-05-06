@@ -56,7 +56,7 @@ public static class BandFormatsConverter
       {
         var newItem = DMXDC.BandFormatConverter.CreateOpenXmlElement<DXDC.BandFormat>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -115,7 +115,7 @@ public static class ContextualTabSetConverter
       {
         var newItem = DMXUI.TabConverter.CreateOpenXmlElement<DXOCUI.Tab>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

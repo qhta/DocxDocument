@@ -56,7 +56,7 @@ public static class DataLabelFieldTableConverter
       {
         var newItem = DMXDC.DataLabelFieldTableEntryConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTableEntry>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

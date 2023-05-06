@@ -47,7 +47,7 @@ public class VectorVariantType : ModelElementImpl
         {
           var vtVector = VTVectorConverter.CreateOpenXmlElement(value);
           if (vtVector != null)
-            OpenXmlElement.AddChild(vtVector);
+            OpenXmlElement.AppendChild(vtVector);
         }
       }
     }

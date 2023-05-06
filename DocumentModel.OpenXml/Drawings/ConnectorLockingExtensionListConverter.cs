@@ -56,7 +56,7 @@ public static class ConnectorLockingExtensionListConverter
       {
         var newItem = DMXD.ConnectorLockingExtensionConverter.CreateOpenXmlElement<DXD.ConnectorLockingExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -30,7 +30,7 @@ public static class EndnotePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.EndnotePosition, DXW.EndnotePositionValues, DMW.EndnotePositionKind>((DMW.EndnotePositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.EndnotePosition, DXW.EndnotePositionValues, DMW.EndnotePositionKind>((DMW.EndnotePositionKind)value));
   }
   
   /// <summary>
@@ -58,7 +58,7 @@ public static class EndnotePropertiesConverter
     {
       itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class EndnotePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
   public static DMW.EndnoteProperties? CreateModelElement(DXW.EndnoteProperties? openXmlElement)

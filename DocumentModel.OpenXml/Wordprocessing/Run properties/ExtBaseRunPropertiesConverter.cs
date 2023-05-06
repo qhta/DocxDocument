@@ -81,7 +81,7 @@ public static class ExtBaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Highlight, DXW.HighlightColorValues, DMW.HighlightColorKind>((DMW.HighlightColorKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Highlight, DXW.HighlightColorValues, DMW.HighlightColorKind>((DMW.HighlightColorKind)value));
   }
   #endregion
 
@@ -108,7 +108,7 @@ public static class ExtBaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.ContextualAlternatives, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.ContextualAlternatives, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
   }
   #endregion
 
@@ -135,7 +135,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.GlowConverter.CreateOpenXmlElement<DXO10W.Glow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -163,7 +163,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.Shadow2Converter.CreateOpenXmlElement<DXO10W.Shadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -191,7 +191,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.ReflectionConverter.CreateOpenXmlElement<DXO10W.Reflection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -219,7 +219,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.TextOutlineEffectConverter.CreateOpenXmlElement<DXO10W.TextOutlineEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -247,7 +247,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.FillTextEffectConverter.CreateOpenXmlElement<DXO10W.FillTextEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -275,7 +275,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.Scene3DConverter.CreateOpenXmlElement<DXO10W.Scene3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -303,7 +303,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.Properties3DConverter.CreateOpenXmlElement<DXO10W.Properties3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -331,7 +331,7 @@ public static class ExtBaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.Ligatures, DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>((DMW.LigaturesKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.Ligatures, DocumentFormat.OpenXml.Office2010.Word.LigaturesValues, DMW.LigaturesKind>((DMW.LigaturesKind)value));
   }
   #endregion
 
@@ -358,7 +358,7 @@ public static class ExtBaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.NumberingFormat, DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>((DMW.NumberFormKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.NumberingFormat, DocumentFormat.OpenXml.Office2010.Word.NumberFormValues, DMW.NumberFormKind>((DMW.NumberFormKind)value));
   }
   #endregion
 
@@ -385,7 +385,7 @@ public static class ExtBaseRunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.NumberSpacing, DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>((DMW.NumberSpacingKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.NumberSpacing, DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues, DMW.NumberSpacingKind>((DMW.NumberSpacingKind)value));
   }
   #endregion
 
@@ -412,7 +412,7 @@ public static class ExtBaseRunPropertiesConverter
     {
       itemElement = DMXW.StylisticSetsConverter.CreateOpenXmlElement<DXO10W.StylisticSets>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

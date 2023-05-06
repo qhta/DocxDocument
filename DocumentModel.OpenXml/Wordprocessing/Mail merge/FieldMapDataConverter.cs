@@ -30,7 +30,7 @@ public static class FieldMapDataConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>((DMW.MailMergeOdsoFieldKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.MailMergeFieldType, DXW.MailMergeOdsoFieldValues, DMW.MailMergeOdsoFieldKind>((DMW.MailMergeOdsoFieldKind)value));
   }
   
   /// <summary>
@@ -57,7 +57,7 @@ public static class FieldMapDataConverter
     if (value != null)
     {
       itemElement = new DXW.Name { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -85,7 +85,7 @@ public static class FieldMapDataConverter
     if (value != null)
     {
       itemElement = new DXW.MappedName { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

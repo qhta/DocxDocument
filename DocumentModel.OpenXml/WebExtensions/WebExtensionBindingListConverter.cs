@@ -56,7 +56,7 @@ public static class WebExtensionBindingListConverter
       {
         var newItem = DMXWE.WebExtensionBindingConverter.CreateOpenXmlElement<DXO13WE.WebExtensionBinding>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

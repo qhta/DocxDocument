@@ -135,7 +135,7 @@ public static class BackstageMenuGroupConverter
     {
       itemElement = DMX.BackstageMenuButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageMenuButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -161,7 +161,7 @@ public static class BackstageMenuGroupConverter
     {
       itemElement = DMX.BackstageMenuCheckBoxConverter.CreateOpenXmlElement<DXO10CUI.BackstageMenuCheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -187,7 +187,7 @@ public static class BackstageMenuGroupConverter
     {
       itemElement = DMX.BackstageSubMenuConverter.CreateOpenXmlElement<DXO10CUI.BackstageSubMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -213,7 +213,7 @@ public static class BackstageMenuGroupConverter
     {
       itemElement = DMX.BackstageMenuToggleButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageMenuToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

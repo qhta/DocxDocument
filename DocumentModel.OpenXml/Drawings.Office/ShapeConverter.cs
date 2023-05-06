@@ -48,7 +48,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.ShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXOD.ShapeNonVisualProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.ShapePropertiesConverter.CreateOpenXmlElement<DXOD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.ShapeStyleConverter.CreateOpenXmlElement<DXOD.ShapeStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.TextBodyConverter.CreateOpenXmlElement<DXOD.TextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -164,7 +164,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.Transform2DConverter.CreateOpenXmlElement<DXOD.Transform2D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -193,7 +193,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDO.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

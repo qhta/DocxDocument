@@ -48,7 +48,7 @@ public static class PatternFillConverter
     {
       itemElement = DMXD.ForegroundColorConverter.CreateOpenXmlElement<DXD.ForegroundColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class PatternFillConverter
     {
       itemElement = DMXD.BackgroundColorConverter.CreateOpenXmlElement<DXD.BackgroundColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

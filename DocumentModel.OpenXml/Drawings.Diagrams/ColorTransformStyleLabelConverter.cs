@@ -48,7 +48,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.FillColorListConverter.CreateOpenXmlElement<DXDD.FillColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.LineColorListConverter.CreateOpenXmlElement<DXDD.LineColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.EffectColorListConverter.CreateOpenXmlElement<DXDD.EffectColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.TextLineColorListConverter.CreateOpenXmlElement<DXDD.TextLineColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -164,7 +164,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.TextFillColorListConverter.CreateOpenXmlElement<DXDD.TextFillColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -193,7 +193,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.TextEffectColorListConverter.CreateOpenXmlElement<DXDD.TextEffectColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -222,7 +222,7 @@ public static class ColorTransformStyleLabelConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

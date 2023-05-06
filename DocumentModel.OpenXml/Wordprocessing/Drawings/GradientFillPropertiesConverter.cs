@@ -30,7 +30,7 @@ public static class GradientFillPropertiesConverter
     {
       itemElement = DMXW.GradientStopListConverter.CreateOpenXmlElement<DXO10W.GradientStopList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -56,7 +56,7 @@ public static class GradientFillPropertiesConverter
     {
       itemElement = DMXW.LinearShadePropertiesConverter.CreateOpenXmlElement<DXO10W.LinearShadeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class GradientFillPropertiesConverter
     {
       itemElement = DMXW.PathShadePropertiesConverter.CreateOpenXmlElement<DXO10W.PathShadeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

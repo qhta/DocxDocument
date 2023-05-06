@@ -56,7 +56,7 @@ public static class PieSerExtensionListConverter
       {
         var newItem = DMXDC.PieSerExtensionConverter.CreateOpenXmlElement<DXDC.PieSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

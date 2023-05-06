@@ -94,7 +94,7 @@ public static class StringLevelConverter
       {
         var newItem = DMXDCDs.ChartStringValueConverter.CreateOpenXmlElement<DXO16DCD.ChartStringValue>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

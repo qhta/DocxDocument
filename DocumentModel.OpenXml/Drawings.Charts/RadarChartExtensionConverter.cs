@@ -45,7 +45,7 @@ public static class RadarChartExtensionConverter
     {
       itemElement = DMXDC.FilteredRadarSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredRadarSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

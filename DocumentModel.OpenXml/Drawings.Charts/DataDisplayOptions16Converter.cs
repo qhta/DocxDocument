@@ -32,7 +32,7 @@ public static class DataDisplayOptions16Converter
     if (value == true)
     {
       var itemElement = new DXO19DC.BooleanFalse();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

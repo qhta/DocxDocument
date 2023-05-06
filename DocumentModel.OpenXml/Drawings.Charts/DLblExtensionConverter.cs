@@ -45,7 +45,7 @@ public static class DLblExtensionConverter
     {
       itemElement = DMXDC.DataLabelFieldTableConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTable>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class DLblExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.ExceptionForSave();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -101,7 +101,7 @@ public static class DLblExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.ShowDataLabelsRange();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -127,7 +127,7 @@ public static class DLblExtensionConverter
     {
       itemElement = DMXDC.ShapeProperties3Converter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -153,7 +153,7 @@ public static class DLblExtensionConverter
     {
       itemElement = DMXDC.Layout3Converter.CreateOpenXmlElement<DXO13DC.Layout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

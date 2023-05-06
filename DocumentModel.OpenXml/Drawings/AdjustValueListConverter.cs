@@ -56,7 +56,7 @@ public static class AdjustValueListConverter
       {
         var newItem = DMXD.ShapeGuideConverter.CreateOpenXmlElement<DXD.ShapeGuide>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

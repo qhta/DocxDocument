@@ -30,7 +30,7 @@ public static class GraphicConverter
     {
       itemElement = DMXD.GraphicDataConverter.CreateOpenXmlElement<DXD.GraphicData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

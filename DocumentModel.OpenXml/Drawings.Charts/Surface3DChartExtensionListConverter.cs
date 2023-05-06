@@ -56,7 +56,7 @@ public static class Surface3DChartExtensionListConverter
       {
         var newItem = DMXDC.Surface3DChartExtensionConverter.CreateOpenXmlElement<DXDC.Surface3DChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

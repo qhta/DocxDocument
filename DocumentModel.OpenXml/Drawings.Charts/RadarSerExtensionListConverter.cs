@@ -56,7 +56,7 @@ public static class RadarSerExtensionListConverter
       {
         var newItem = DMXDC.RadarSerExtensionConverter.CreateOpenXmlElement<DXDC.RadarSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

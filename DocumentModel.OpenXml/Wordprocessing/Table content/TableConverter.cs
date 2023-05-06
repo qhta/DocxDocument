@@ -30,7 +30,7 @@ public static class TableConverter
     {
       itemElement = DMXW.TablePropertiesConverter.CreateOpenXmlElement<DXW.TableProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -58,7 +58,7 @@ public static class TableConverter
     {
       itemElement = DMXW.TableGridConverter.CreateOpenXmlElement<DXW.TableGrid>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -193,7 +193,7 @@ public static class TableConverter
       if (element == null)
       {
         element = CreateOpenXmlElement(item);
-        openXmlElement.AddChild(element);
+        openXmlElement.AppendChild(element);
       }
     }
     return true;

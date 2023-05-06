@@ -84,7 +84,7 @@ public static class PointConverter
     {
       itemElement = DMXDD.PropertySetConverter.CreateOpenXmlElement<DXDD.PropertySet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -113,7 +113,7 @@ public static class PointConverter
     {
       itemElement = DMXDD.ShapePropertiesConverter.CreateOpenXmlElement<DXDD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -142,7 +142,7 @@ public static class PointConverter
     {
       itemElement = DMXDD.TextBodyConverter.CreateOpenXmlElement<DXDD.TextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -171,7 +171,7 @@ public static class PointConverter
     {
       itemElement = DMXDD.PtExtensionListConverter.CreateOpenXmlElement<DXDD.PtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

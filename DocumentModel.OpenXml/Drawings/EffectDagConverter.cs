@@ -27,7 +27,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.EffectContainerConverter.CreateOpenXmlElement<DXD.EffectContainer>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.EffectConverter.CreateOpenXmlElement<DXD.Effect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaBiLevelConverter.CreateOpenXmlElement<DXD.AlphaBiLevel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -107,7 +107,7 @@ public static class EffectDagConverter
     if (value == true)
     {
       var itemElement = new DXD.AlphaCeiling();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class EffectDagConverter
     if (value == true)
     {
       var itemElement = new DXD.AlphaFloor();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -161,7 +161,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaInverseConverter.CreateOpenXmlElement<DXD.AlphaInverse>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -187,7 +187,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaModulationEffectConverter.CreateOpenXmlElement<DXD.AlphaModulationEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -213,7 +213,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaModulationFixedConverter.CreateOpenXmlElement<DXD.AlphaModulationFixed>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -239,7 +239,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaOutsetConverter.CreateOpenXmlElement<DXD.AlphaOutset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -265,7 +265,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.AlphaReplaceConverter.CreateOpenXmlElement<DXD.AlphaReplace>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -291,7 +291,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.BiLevelConverter.CreateOpenXmlElement<DXD.BiLevel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -317,7 +317,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.BlendConverter.CreateOpenXmlElement<DXD.Blend>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -343,7 +343,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.BlurConverter.CreateOpenXmlElement<DXD.Blur>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -369,7 +369,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.ColorChangeConverter.CreateOpenXmlElement<DXD.ColorChange>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -395,7 +395,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.ColorReplacementConverter.CreateOpenXmlElement<DXD.ColorReplacement>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -421,7 +421,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.DuotoneConverter.CreateOpenXmlElement<DXD.Duotone>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -447,7 +447,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.FillConverter.CreateOpenXmlElement<DXD.Fill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -473,7 +473,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.FillOverlayConverter.CreateOpenXmlElement<DXD.FillOverlay>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -499,7 +499,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.GlowConverter.CreateOpenXmlElement<DXD.Glow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -527,7 +527,7 @@ public static class EffectDagConverter
     if (value == true)
     {
       var itemElement = new DXD.Grayscale();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -553,7 +553,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.HslConverter.CreateOpenXmlElement<DXD.Hsl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -579,7 +579,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.InnerShadowConverter.CreateOpenXmlElement<DXD.InnerShadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -605,7 +605,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.LuminanceEffectConverter.CreateOpenXmlElement<DXD.LuminanceEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -631,7 +631,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.OuterShadowConverter.CreateOpenXmlElement<DXD.OuterShadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -657,7 +657,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.PresetShadowConverter.CreateOpenXmlElement<DXD.PresetShadow>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -683,7 +683,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.ReflectionConverter.CreateOpenXmlElement<DXD.Reflection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -709,7 +709,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.RelativeOffsetConverter.CreateOpenXmlElement<DXD.RelativeOffset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -735,7 +735,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.SoftEdgeConverter.CreateOpenXmlElement<DXD.SoftEdge>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -761,7 +761,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.TintEffectConverter.CreateOpenXmlElement<DXD.TintEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -787,7 +787,7 @@ public static class EffectDagConverter
     {
       itemElement = DMXD.TransformEffectConverter.CreateOpenXmlElement<DXD.TransformEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

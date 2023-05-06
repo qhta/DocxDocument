@@ -63,7 +63,7 @@ public static class BackstageConverter
     {
       itemElement = DMX.BackstageTabConverter.CreateOpenXmlElement<DXO10CUI.BackstageTab>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -89,7 +89,7 @@ public static class BackstageConverter
     {
       itemElement = DMX.BackstageFastCommandButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageFastCommandButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

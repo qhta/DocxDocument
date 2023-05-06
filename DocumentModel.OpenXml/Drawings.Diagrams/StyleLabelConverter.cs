@@ -48,7 +48,7 @@ public static class StyleLabelConverter
     {
       itemElement = DMXDD.Scene3DConverter.CreateOpenXmlElement<DXDD.Scene3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class StyleLabelConverter
     {
       itemElement = DMXDD.Shape3DConverter.CreateOpenXmlElement<DXDD.Shape3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class StyleLabelConverter
     {
       itemElement = DMXDD.TextPropertiesConverter.CreateOpenXmlElement<DXDD.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class StyleLabelConverter
     {
       itemElement = DMXDD.StyleConverter.CreateOpenXmlElement<DXDD.Style>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -164,7 +164,7 @@ public static class StyleLabelConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

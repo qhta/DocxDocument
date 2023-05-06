@@ -56,7 +56,7 @@ public static class DLblExtensionListConverter
       {
         var newItem = DMXDC.DLblExtensionConverter.CreateOpenXmlElement<DXDC.DLblExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

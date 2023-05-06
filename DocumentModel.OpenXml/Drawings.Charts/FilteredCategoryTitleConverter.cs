@@ -30,7 +30,7 @@ public static class FilteredCategoryTitleConverter
     {
       itemElement = DMXDC.AxisDataSourceType3Converter.CreateOpenXmlElement<DXO13DC.AxisDataSourceType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

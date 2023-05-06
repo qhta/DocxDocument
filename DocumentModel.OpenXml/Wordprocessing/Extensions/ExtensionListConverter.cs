@@ -60,7 +60,7 @@ public static class ExtensionListConverter
       {
         var newItem = DMXW.ExtensionConverter.CreateOpenXmlElement<DXO21WEL.Extension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

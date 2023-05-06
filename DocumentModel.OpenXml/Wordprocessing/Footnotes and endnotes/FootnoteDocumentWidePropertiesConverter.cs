@@ -30,7 +30,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FootnotePosition, DXW.FootnotePositionValues, DMW.FootnotePositionKind>((DMW.FootnotePositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.FootnotePosition, DXW.FootnotePositionValues, DMW.FootnotePositionKind>((DMW.FootnotePositionKind)value));
   }
   
   /// <summary>
@@ -58,7 +58,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     {
       itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
   private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
@@ -159,7 +159,7 @@ public static class FootnoteDocumentWidePropertiesConverter
       {
         var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<DXW.FootnoteSpecialReference>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

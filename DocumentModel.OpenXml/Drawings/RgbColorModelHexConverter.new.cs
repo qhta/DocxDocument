@@ -78,7 +78,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Tint{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -103,7 +103,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Shade{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -131,7 +131,7 @@ public static class RgbColorModelHexConverter
     if (value == true)
     {
       var itemElement = new DXD.Complement();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -159,7 +159,7 @@ public static class RgbColorModelHexConverter
     if (value == true)
     {
       var itemElement = new DXD.Inverse();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -187,7 +187,7 @@ public static class RgbColorModelHexConverter
     if (value == true)
     {
       var itemElement = new DXD.Gray();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -212,7 +212,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Alpha{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -237,7 +237,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.AlphaOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -262,7 +262,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.AlphaModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -287,7 +287,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Hue{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -312,7 +312,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.HueOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -337,7 +337,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.HueModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -362,7 +362,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Saturation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -387,7 +387,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.SaturationOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -412,7 +412,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.SaturationModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -437,7 +437,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Luminance{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -462,7 +462,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.LuminanceOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -487,7 +487,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.LuminanceModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -512,7 +512,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Red{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -537,7 +537,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.RedOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -562,7 +562,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.RedModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -587,7 +587,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Green{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -612,7 +612,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.GreenOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -637,7 +637,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.GreenModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -662,7 +662,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.Blue{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -687,7 +687,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.BlueOffset{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -712,7 +712,7 @@ public static class RgbColorModelHexConverter
     if (value != null)
     {
       itemElement = new DXD.BlueModulation{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -740,7 +740,7 @@ public static class RgbColorModelHexConverter
     if (value == true)
     {
       var itemElement = new DXD.Gamma();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -768,7 +768,7 @@ public static class RgbColorModelHexConverter
     if (value == true)
     {
       var itemElement = new DXD.InverseGamma();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

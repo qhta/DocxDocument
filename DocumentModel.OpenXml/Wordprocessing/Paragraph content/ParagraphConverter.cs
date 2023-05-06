@@ -182,7 +182,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXW.ParagraphPropertiesConverter.CreateOpenXmlElement(model);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

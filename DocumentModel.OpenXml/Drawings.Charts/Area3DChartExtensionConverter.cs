@@ -45,7 +45,7 @@ public static class Area3DChartExtensionConverter
     {
       itemElement = DMXDC.FilteredAreaSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredAreaSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -56,7 +56,7 @@ public static class TaskpanesConverter
       {
         var newItem = DMXWEUI.WebExtensionTaskpaneConverter.CreateOpenXmlElement<DXO13WEP.WebExtensionTaskpane>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

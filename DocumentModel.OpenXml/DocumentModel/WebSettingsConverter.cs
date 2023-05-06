@@ -30,7 +30,7 @@ public static class WebSettingsConverter
     {
       itemElement = DMXW.FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class WebSettingsConverter
     {
       itemElement = DMXW.DivsConverter.CreateOpenXmlElement<DXW.Divs>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class WebSettingsConverter
     if (value != null)
     {
       itemElement = new DXW.WebPageEncoding { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -260,7 +260,7 @@ public static class WebSettingsConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TargetScreenSize, DXW.TargetScreenSizeValues, DMW.TargetScreenSizeKind>((DMW.TargetScreenSizeKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TargetScreenSize, DXW.TargetScreenSizeValues, DMW.TargetScreenSizeKind>((DMW.TargetScreenSizeKind)value));
   }
   
   public static DocumentModel.WebSettings? CreateModelElement(DXW.WebSettings? openXmlElement)

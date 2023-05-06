@@ -47,7 +47,7 @@ public class TitlesOfParts : ModelElementImpl
         {
           var vtVector = VTVectorConverter.CreateOpenXmlElement(value);
           if (vtVector != null)
-            OpenXmlElement.AddChild(vtVector);
+            OpenXmlElement.AppendChild(vtVector);
         }
       }
     }

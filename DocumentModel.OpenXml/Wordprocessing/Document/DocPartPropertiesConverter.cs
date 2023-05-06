@@ -30,7 +30,7 @@ public static class DocPartPropertiesConverter
     {
       itemElement = DMXW.DocPartNameConverter.CreateOpenXmlElement<DXW.DocPartName>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -58,7 +58,7 @@ public static class DocPartPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.StyleId { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class DocPartPropertiesConverter
     {
       itemElement = DMXW.CategoryConverter.CreateOpenXmlElement<DXW.Category>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -116,7 +116,7 @@ public static class DocPartPropertiesConverter
     {
       itemElement = DMXW.DocPartTypesConverter.CreateOpenXmlElement<DXW.DocPartTypes>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -145,7 +145,7 @@ public static class DocPartPropertiesConverter
     {
       itemElement = DMXW.BehaviorsConverter.CreateOpenXmlElement<DXW.Behaviors>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -173,7 +173,7 @@ public static class DocPartPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.Description { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

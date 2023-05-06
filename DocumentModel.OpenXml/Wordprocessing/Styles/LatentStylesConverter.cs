@@ -168,7 +168,7 @@ public static class LatentStylesConverter
       {
         var newItem = DMXW.LatentStyleExceptionInfoConverter.CreateOpenXmlElement<DXW.LatentStyleExceptionInfo>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

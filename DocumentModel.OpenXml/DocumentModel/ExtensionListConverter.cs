@@ -56,7 +56,7 @@ public static class ExtensionListConverter
       {
         var newItem = DMX.ExtensionConverter.CreateOpenXmlElement<DXO21OEL.Extension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

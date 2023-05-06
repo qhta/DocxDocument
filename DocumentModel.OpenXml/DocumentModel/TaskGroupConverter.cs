@@ -372,7 +372,7 @@ public static class TaskGroupConverter
       {
         var newItem = DMX.TaskGroupCategoryConverter.CreateOpenXmlElement<DXO10CUI.TaskGroupCategory>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -36,7 +36,7 @@ public static class RecipientDataConverter
     if (value == true)
     {
       var itemElement = new DXW.Active();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -64,7 +64,7 @@ public static class RecipientDataConverter
     if (value != null)
     {
       itemElement = new DXW.ColumnIndex{ Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -90,7 +90,7 @@ public static class RecipientDataConverter
     {
       itemElement = DMX.HexBinaryConverter.CreateOpenXmlElement<DXW.UniqueTag>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

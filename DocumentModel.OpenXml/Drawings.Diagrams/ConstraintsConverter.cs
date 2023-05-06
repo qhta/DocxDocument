@@ -56,7 +56,7 @@ public static class ConstraintsConverter
       {
         var newItem = DMXDD.ConstraintConverter.CreateOpenXmlElement<DXDD.Constraint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

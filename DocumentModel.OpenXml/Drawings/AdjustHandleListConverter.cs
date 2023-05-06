@@ -27,7 +27,7 @@ public static class AdjustHandleListConverter
     {
       itemElement = DMXD.AdjustHandleXYConverter.CreateOpenXmlElement<DXD.AdjustHandleXY>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class AdjustHandleListConverter
     {
       itemElement = DMXD.AdjustHandlePolarConverter.CreateOpenXmlElement<DXD.AdjustHandlePolar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

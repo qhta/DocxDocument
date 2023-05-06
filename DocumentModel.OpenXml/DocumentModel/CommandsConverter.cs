@@ -56,7 +56,7 @@ public static class CommandsConverter
       {
         var newItem = DMX.CommandConverter.CreateOpenXmlElement<DXO10CUI.Command>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

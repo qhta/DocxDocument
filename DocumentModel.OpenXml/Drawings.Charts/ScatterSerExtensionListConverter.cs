@@ -56,7 +56,7 @@ public static class ScatterSerExtensionListConverter
       {
         var newItem = DMXDC.ScatterSerExtensionConverter.CreateOpenXmlElement<DXDC.ScatterSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -74,7 +74,7 @@ public static class SdtContentComboBoxConverter
       {
         var newItem = DMXW.ListItemConverter.CreateOpenXmlElement<DXW.ListItem>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

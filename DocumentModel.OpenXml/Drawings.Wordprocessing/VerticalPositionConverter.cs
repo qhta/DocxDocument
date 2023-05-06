@@ -44,7 +44,7 @@ public static class VerticalPositionConverter
     if (value != null)
     {
       itemElement = new DXDW.VerticalAlignment { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -69,7 +69,7 @@ public static class VerticalPositionConverter
     if (value != null)
     {
       itemElement = new DXDW.PositionOffset { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class VerticalPositionConverter
     if (value != null)
     {
       itemElement = new DXO10WD.PercentagePositionVerticalOffset { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

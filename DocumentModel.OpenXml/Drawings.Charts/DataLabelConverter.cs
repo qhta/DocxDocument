@@ -47,7 +47,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.Delete();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -99,7 +99,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.ChartTextConverter.CreateOpenXmlElement<DXDC.ChartText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.NumberingFormatConverter.CreateOpenXmlElement<DXDC.NumberingFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -151,7 +151,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -203,7 +203,7 @@ public static class DataLabelConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.DataLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDC.DataLabelPositionKind>((DMDC.DataLabelPositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.DataLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues, DMDC.DataLabelPositionKind>((DMDC.DataLabelPositionKind)value));
   }
   
   private static Boolean? GetShowLegendKey(DXDC.DataLabel openXmlElement)
@@ -230,7 +230,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowLegendKey();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -258,7 +258,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowValue();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -286,7 +286,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowCategoryName();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -314,7 +314,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowSeriesName();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -342,7 +342,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowPercent();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -370,7 +370,7 @@ public static class DataLabelConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowBubbleSize();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -392,7 +392,7 @@ public static class DataLabelConverter
     if (value != null)
     {
       itemElement = new DXDC.Separator { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -418,7 +418,7 @@ public static class DataLabelConverter
     {
       itemElement = DMXDC.DLblExtensionListConverter.CreateOpenXmlElement<DXDC.DLblExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

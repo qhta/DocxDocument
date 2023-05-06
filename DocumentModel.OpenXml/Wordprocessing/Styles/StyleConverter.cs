@@ -390,7 +390,7 @@ public static class StyleConverter
     {
       itemElement = DMXW.StyleParagraphPropertiesConverter.CreateOpenXmlElement<DXW.StyleParagraphProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -419,7 +419,7 @@ public static class StyleConverter
     {
       itemElement = DMXW.StyleRunPropertiesConverter.CreateOpenXmlElement<DXW.StyleRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -448,7 +448,7 @@ public static class StyleConverter
     {
       itemElement = DMXW.StyleTablePropertiesConverter.CreateOpenXmlElement<DXW.StyleTableProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -477,7 +477,7 @@ public static class StyleConverter
     {
       itemElement = DMXW.TableStyleConditionalFormattingTableRowPropertiesConverter.CreateOpenXmlElement<DXW.TableStyleConditionalFormattingTableRowProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -506,7 +506,7 @@ public static class StyleConverter
     {
       itemElement = DMXW.StyleTableCellPropertiesConverter.CreateOpenXmlElement<DXW.StyleTableCellProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -561,7 +561,7 @@ public static class StyleConverter
       {
         var newItem = DMXW.TableStylePropertiesConverter.CreateOpenXmlElement<DXW.TableStyleProperties>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

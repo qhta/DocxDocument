@@ -366,7 +366,7 @@ public static class SplitButtonConverter
     {
       itemElement = DMX.VisibleButtonConverter.CreateOpenXmlElement<DXO10CUI.VisibleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -392,7 +392,7 @@ public static class SplitButtonConverter
     {
       itemElement = DMX.VisibleToggleButtonConverter.CreateOpenXmlElement<DXO10CUI.VisibleToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -418,7 +418,7 @@ public static class SplitButtonConverter
     {
       itemElement = DMX.MenuRegularConverter.CreateOpenXmlElement<DXO10CUI.MenuRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

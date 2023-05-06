@@ -57,7 +57,7 @@ public static class CommentsIdsConverter
       {
         var newItem = DMXW.CommentIdConverter.CreateOpenXmlElement<DXO19WCid.CommentId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -56,7 +56,7 @@ public static class LineChartExtensionListConverter
       {
         var newItem = DMXDC.LineChartExtensionConverter.CreateOpenXmlElement<DXDC.LineChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

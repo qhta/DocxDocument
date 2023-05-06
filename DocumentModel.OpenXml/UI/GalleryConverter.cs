@@ -999,7 +999,7 @@ public static class GalleryConverter
       {
         var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCUI.Item>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -1055,7 +1055,7 @@ public static class GalleryConverter
       {
         var newItem = DMXUI.UnsizedButtonConverter.CreateOpenXmlElement<DXOCUI.UnsizedButton>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

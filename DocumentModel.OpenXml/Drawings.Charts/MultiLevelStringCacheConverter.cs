@@ -74,7 +74,7 @@ public static class MultiLevelStringCacheConverter
       {
         var newItem = DMXDC.LevelConverter.CreateOpenXmlElement<DXDC.Level>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -101,7 +101,7 @@ public static class MultiLevelStringCacheConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

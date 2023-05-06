@@ -30,7 +30,7 @@ public static class StretchConverter
     {
       itemElement = DMXD.RelativeRectangleTypeConverter.CreateOpenXmlElement<DXD.FillRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

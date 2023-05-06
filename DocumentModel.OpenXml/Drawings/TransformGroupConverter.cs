@@ -96,7 +96,7 @@ public static class TransformGroupConverter
     {
       itemElement = DMXD.Point2DTypeConverter.CreateOpenXmlElement<DXD.Offset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class TransformGroupConverter
     {
       itemElement = DMXD.PositiveSize2DTypeConverter.CreateOpenXmlElement<DXD.Extents>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class TransformGroupConverter
     {
       itemElement = DMXD.Point2DTypeConverter.CreateOpenXmlElement<DXD.ChildOffset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -183,7 +183,7 @@ public static class TransformGroupConverter
     {
       itemElement = DMXD.PositiveSize2DTypeConverter.CreateOpenXmlElement<DXD.ChildExtents>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

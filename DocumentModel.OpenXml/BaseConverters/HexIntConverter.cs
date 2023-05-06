@@ -40,7 +40,7 @@ public static class HexIntConverter
     {
       itemElement = new ElementType();
       valProperty.SetValue(itemElement, new HexBinaryValue(value.ToString()));
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

@@ -45,7 +45,7 @@ public static class NaryPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.LimitLocation, DocumentFormat.OpenXml.Math.LimitLocationValues, DMM.LimitLocationKind>((DMM.LimitLocationKind)value));
   }
   #endregion
 
@@ -72,7 +72,7 @@ public static class NaryPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
   }
   #endregion
 
@@ -99,7 +99,7 @@ public static class NaryPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSubArgument>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSubArgument>((bool)value));
   }
   #endregion
 
@@ -126,7 +126,7 @@ public static class NaryPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSuperArgument>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideSuperArgument>((bool)value));
   }
   #endregion
 
@@ -153,7 +153,7 @@ public static class NaryPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

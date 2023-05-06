@@ -212,7 +212,7 @@ public static class BoxConverter
     {
       itemElement = DMX.ControlCloneConverter.CreateOpenXmlElement<DXO10CUI.ControlClone>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -238,7 +238,7 @@ public static class BoxConverter
     {
       itemElement = DMX.LabelControlConverter.CreateOpenXmlElement<DXO10CUI.LabelControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -264,7 +264,7 @@ public static class BoxConverter
     {
       itemElement = DMX.ButtonConverter.CreateOpenXmlElement<DXO10CUI.Button>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -290,7 +290,7 @@ public static class BoxConverter
     {
       itemElement = DMX.ToggleButtonConverter.CreateOpenXmlElement<DXO10CUI.ToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -316,7 +316,7 @@ public static class BoxConverter
     {
       itemElement = DMX.CheckBoxConverter.CreateOpenXmlElement<DXO10CUI.CheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -342,7 +342,7 @@ public static class BoxConverter
     {
       itemElement = DMX.EditBoxConverter.CreateOpenXmlElement<DXO10CUI.EditBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -368,7 +368,7 @@ public static class BoxConverter
     {
       itemElement = DMX.ComboBoxConverter.CreateOpenXmlElement<DXO10CUI.ComboBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -394,7 +394,7 @@ public static class BoxConverter
     {
       itemElement = DMX.DropDownRegularConverter.CreateOpenXmlElement<DXO10CUI.DropDownRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -420,7 +420,7 @@ public static class BoxConverter
     {
       itemElement = DMX.GalleryConverter.CreateOpenXmlElement<DXO10CUI.Gallery>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -446,7 +446,7 @@ public static class BoxConverter
     {
       itemElement = DMX.MenuConverter.CreateOpenXmlElement<DXO10CUI.Menu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -472,7 +472,7 @@ public static class BoxConverter
     {
       itemElement = DMX.DynamicMenuConverter.CreateOpenXmlElement<DXO10CUI.DynamicMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -498,7 +498,7 @@ public static class BoxConverter
     {
       itemElement = DMX.SplitButtonConverter.CreateOpenXmlElement<DXO10CUI.SplitButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -524,7 +524,7 @@ public static class BoxConverter
     {
       itemElement = DMX.BoxConverter.CreateOpenXmlElement<DXO10CUI.Box>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -550,7 +550,7 @@ public static class BoxConverter
     {
       itemElement = DMX.ButtonGroupConverter.CreateOpenXmlElement<DXO10CUI.ButtonGroup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

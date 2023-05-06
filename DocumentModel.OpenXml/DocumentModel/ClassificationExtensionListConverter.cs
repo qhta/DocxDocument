@@ -56,7 +56,7 @@ public static class ClassificationExtensionListConverter
       {
         var newItem = DMX.ClassificationExtensionConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

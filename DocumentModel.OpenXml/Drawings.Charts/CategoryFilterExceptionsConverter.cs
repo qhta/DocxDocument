@@ -27,7 +27,7 @@ public static class CategoryFilterExceptionsConverter
     {
       itemElement = DMXDC.CategoryFilterExceptionConverter.CreateOpenXmlElement<DXO13DC.CategoryFilterException>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

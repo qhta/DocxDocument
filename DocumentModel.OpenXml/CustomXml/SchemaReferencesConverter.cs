@@ -56,7 +56,7 @@ public static class SchemaReferencesConverter
       {
         var newItem = DMXCX.SchemaReferenceConverter.CreateOpenXmlElement<DXCXDP.SchemaReference>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

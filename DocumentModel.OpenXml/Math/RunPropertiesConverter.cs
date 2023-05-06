@@ -28,7 +28,7 @@ public static class RunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Literal>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Literal>((bool)value));
   }
   
   private static bool? GetNormalText(DXM.RunProperties openXmlElement)
@@ -53,7 +53,7 @@ public static class RunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.NormalText>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.NormalText>((bool)value));
   }
   
   private static DMM.ScriptKind? GetScript(DXM.RunProperties openXmlElement)
@@ -78,7 +78,7 @@ public static class RunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMM.ScriptKind>((DMM.ScriptKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.Script, DocumentFormat.OpenXml.Math.ScriptValues, DMM.ScriptKind>((DMM.ScriptKind)value));
   }
   
   private static DMM.StyleKind? GetStyle(DXM.RunProperties openXmlElement)
@@ -103,7 +103,7 @@ public static class RunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Style, DocumentFormat.OpenXml.Math.StyleValues, DMM.StyleKind>((DMM.StyleKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.Style, DocumentFormat.OpenXml.Math.StyleValues, DMM.StyleKind>((DMM.StyleKind)value));
   }
   
   private static DMM.Break? GetBreak(DXM.RunProperties openXmlElement)
@@ -128,7 +128,7 @@ public static class RunPropertiesConverter
     {
       itemElement = DMXM.BreakConverter.CreateOpenXmlElement<DXM.Break>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class RunPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Alignment>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Alignment>((bool)value));
   }
   #endregion
 

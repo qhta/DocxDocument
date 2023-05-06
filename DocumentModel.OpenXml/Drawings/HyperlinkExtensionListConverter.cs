@@ -56,7 +56,7 @@ public static class HyperlinkExtensionListConverter
       {
         var newItem = DMXD.HyperlinkExtensionConverter.CreateOpenXmlElement<DXD.HyperlinkExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

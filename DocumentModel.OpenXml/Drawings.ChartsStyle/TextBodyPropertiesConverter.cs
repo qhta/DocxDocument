@@ -421,7 +421,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.PresetTextWrapConverter.CreateOpenXmlElement<DXD.PresetTextWrap>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -449,7 +449,7 @@ public static class TextBodyPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.NoAutoFit();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -475,7 +475,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.NormalAutoFitConverter.CreateOpenXmlElement<DXD.NormalAutoFit>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -503,7 +503,7 @@ public static class TextBodyPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.ShapeAutoFit();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -529,7 +529,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.Scene3DTypeConverter.CreateOpenXmlElement<DXD.Scene3DType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -555,7 +555,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -581,7 +581,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.FlatTextConverter.CreateOpenXmlElement<DXD.FlatText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -607,7 +607,7 @@ public static class TextBodyPropertiesConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -161,7 +161,7 @@ public static class BackgroundConverter
     {
       itemElement = DMXV.FillConverter.CreateOpenXmlElement<DXV.Fill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

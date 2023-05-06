@@ -50,7 +50,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.AxisTitleConverter.CreateOpenXmlElement<DXO13DCS.AxisTitle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.CategoryAxisConverter.CreateOpenXmlElement<DXO13DCS.CategoryAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -108,7 +108,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.ChartAreaConverter.CreateOpenXmlElement<DXO13DCS.ChartArea>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -137,7 +137,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataLabelConverter.CreateOpenXmlElement<DXO13DCS.DataLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -166,7 +166,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataLabelCalloutConverter.CreateOpenXmlElement<DXO13DCS.DataLabelCallout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -195,7 +195,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataPointConverter.CreateOpenXmlElement<DXO13DCS.DataPoint>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -224,7 +224,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataPoint3DConverter.CreateOpenXmlElement<DXO13DCS.DataPoint3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -253,7 +253,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataPointLineConverter.CreateOpenXmlElement<DXO13DCS.DataPointLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -282,7 +282,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataPointMarkerConverter.CreateOpenXmlElement<DXO13DCS.DataPointMarker>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -311,7 +311,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.MarkerLayoutPropertiesConverter.CreateOpenXmlElement<DXO13DCS.MarkerLayoutProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -340,7 +340,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataPointWireframeConverter.CreateOpenXmlElement<DXO13DCS.DataPointWireframe>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -369,7 +369,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DataTableStyleConverter.CreateOpenXmlElement<DXO13DCS.DataTableStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -398,7 +398,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DownBarConverter.CreateOpenXmlElement<DXO13DCS.DownBar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -427,7 +427,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.DropLineConverter.CreateOpenXmlElement<DXO13DCS.DropLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -456,7 +456,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.ErrorBarConverter.CreateOpenXmlElement<DXO13DCS.ErrorBar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -485,7 +485,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.FloorConverter.CreateOpenXmlElement<DXO13DCS.Floor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -514,7 +514,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.GridlineMajorConverter.CreateOpenXmlElement<DXO13DCS.GridlineMajor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -543,7 +543,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.GridlineMinorConverter.CreateOpenXmlElement<DXO13DCS.GridlineMinor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -572,7 +572,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.HiLoLineConverter.CreateOpenXmlElement<DXO13DCS.HiLoLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -601,7 +601,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.LeaderLineConverter.CreateOpenXmlElement<DXO13DCS.LeaderLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -630,7 +630,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.LegendStyleConverter.CreateOpenXmlElement<DXO13DCS.LegendStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -659,7 +659,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.PlotAreaConverter.CreateOpenXmlElement<DXO13DCS.PlotArea>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -688,7 +688,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.PlotArea3DConverter.CreateOpenXmlElement<DXO13DCS.PlotArea3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -717,7 +717,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.SeriesAxisConverter.CreateOpenXmlElement<DXO13DCS.SeriesAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -746,7 +746,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.SeriesLineConverter.CreateOpenXmlElement<DXO13DCS.SeriesLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -775,7 +775,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.TitleStyleConverter.CreateOpenXmlElement<DXO13DCS.TitleStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -804,7 +804,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.TrendlineStyleConverter.CreateOpenXmlElement<DXO13DCS.TrendlineStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -833,7 +833,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.TrendlineLabelConverter.CreateOpenXmlElement<DXO13DCS.TrendlineLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -862,7 +862,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.UpBarConverter.CreateOpenXmlElement<DXO13DCS.UpBar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -891,7 +891,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.ValueAxisConverter.CreateOpenXmlElement<DXO13DCS.ValueAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -920,7 +920,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.WallConverter.CreateOpenXmlElement<DXO13DCS.Wall>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -949,7 +949,7 @@ public static class ChartStyleConverter
     {
       itemElement = DMXDCS.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13DCS.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

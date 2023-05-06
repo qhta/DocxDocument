@@ -28,7 +28,7 @@ public static class DelimiterConverter
     {
       itemElement = DMXM.DelimiterPropertiesConverter.CreateOpenXmlElement<DXM.DelimiterProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

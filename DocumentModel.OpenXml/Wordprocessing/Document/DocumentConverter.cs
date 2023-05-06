@@ -48,7 +48,7 @@ public static class DocumentConverter
     {
       itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class DocumentConverter
     {
       itemElement = DMXW.BodyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

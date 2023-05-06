@@ -32,7 +32,7 @@ public static class BubbleChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class BubbleChartConverter
       {
         var newItem = DMXDC.BubbleChartSeriesConverter.CreateOpenXmlElement<DXDC.BubbleChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -114,7 +114,7 @@ public static class BubbleChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -142,7 +142,7 @@ public static class BubbleChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.Bubble3D();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -185,7 +185,7 @@ public static class BubbleChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowNegativeBubbles();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -211,7 +211,7 @@ public static class BubbleChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SizeRepresents, DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDC.SizeRepresentsKind>((DMDC.SizeRepresentsKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SizeRepresents, DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues, DMDC.SizeRepresentsKind>((DMDC.SizeRepresentsKind)value));
   }
   
   private static Collection<UInt32>? GetAxisIds(DXDC.BubbleChart openXmlElement)
@@ -265,7 +265,7 @@ public static class BubbleChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -292,7 +292,7 @@ public static class BubbleChartConverter
     {
       itemElement = DMXDC.BubbleChartExtensionListConverter.CreateOpenXmlElement<DXDC.BubbleChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

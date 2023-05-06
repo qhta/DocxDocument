@@ -30,7 +30,7 @@ public static class ArgumentConverter
     {
       itemElement = DMXM.ArgumentPropertiesConverter.CreateOpenXmlElement<DXM.ArgumentProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -58,7 +58,7 @@ public static class ArgumentConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

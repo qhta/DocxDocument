@@ -27,7 +27,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.Template { Text = value });
+        openXmlElement?.AppendChild(new DXEP.Template { Text = value });
     }
   }
 
@@ -51,7 +51,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.Manager { Text = value });
+        openXmlElement?.AppendChild(new DXEP.Manager { Text = value });
     }
   }
 
@@ -75,7 +75,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.Company { Text = value });
+        openXmlElement?.AppendChild(new DXEP.Company { Text = value });
     }
   }
 
@@ -139,7 +139,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.PresentationFormat { Text = value });
+        openXmlElement?.AppendChild(new DXEP.PresentationFormat { Text = value });
     }
   }
 
@@ -342,7 +342,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.HyperlinkBase { Text = value });
+        openXmlElement?.AppendChild(new DXEP.HyperlinkBase { Text = value });
     }
   }
 
@@ -408,7 +408,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.Application { Text = value });
+        openXmlElement?.AppendChild(new DXEP.Application { Text = value });
     }
   }
 
@@ -432,7 +432,7 @@ public static class ExtendedPropertiesConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new DXEP.ApplicationVersion { Text = value });
+        openXmlElement?.AppendChild(new DXEP.ApplicationVersion { Text = value });
     }
   }
 

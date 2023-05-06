@@ -27,7 +27,7 @@ public static class GradientStopListConverter
     {
       itemElement = DMXD.GradientStopConverter.CreateOpenXmlElement<DXD.GradientStop>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

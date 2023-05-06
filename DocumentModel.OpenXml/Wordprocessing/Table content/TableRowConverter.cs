@@ -163,7 +163,7 @@ public static class TableRowConverter
     {
       itemElement = DMXW.TablePropertyExceptionsConverter.CreateOpenXmlElement<DXW.TablePropertyExceptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -191,7 +191,7 @@ public static class TableRowConverter
     {
       itemElement = DMXW.TableRowPropertiesConverter.CreateOpenXmlElement<DXW.TableRowProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -352,7 +352,7 @@ public static class TableRowConverter
       if (element == null)
       {
         element = CreateOpenXmlElement(item);
-        openXmlElement.AddChild(element);
+        openXmlElement.AppendChild(element);
       }
     }
     return true;

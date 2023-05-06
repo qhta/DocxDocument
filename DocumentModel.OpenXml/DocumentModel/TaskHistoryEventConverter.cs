@@ -68,7 +68,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.AttributionTaskUser>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskAnchorConverter.CreateOpenXmlElement<DXO21DT.TaskAnchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.AssignTaskUser>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -149,7 +149,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.OpenXmlTaskUserElementConverter.CreateOpenXmlElement<DXO21DT.UnassignTaskUser>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class TaskHistoryEventConverter
     if (value == true)
     {
       var itemElement = new DXO21DT.TaskCreateEventInfo();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -203,7 +203,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskTitleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskTitleEventInfo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -229,7 +229,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskScheduleEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskScheduleEventInfo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -255,7 +255,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskProgressEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskProgressEventInfo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -281,7 +281,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskPriorityEventInfoConverter.CreateOpenXmlElement<DXO21DT.TaskPriorityEventInfo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -309,7 +309,7 @@ public static class TaskHistoryEventConverter
     if (value == true)
     {
       var itemElement = new DXO21DT.TaskDeleteEventInfo();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -337,7 +337,7 @@ public static class TaskHistoryEventConverter
     if (value == true)
     {
       var itemElement = new DXO21DT.TaskUndeleteEventInfo();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -365,7 +365,7 @@ public static class TaskHistoryEventConverter
     if (value == true)
     {
       var itemElement = new DXO21DT.TaskUnassignAll();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -391,7 +391,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.TaskUndoConverter.CreateOpenXmlElement<DXO21DT.TaskUndo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -417,7 +417,7 @@ public static class TaskHistoryEventConverter
     {
       itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

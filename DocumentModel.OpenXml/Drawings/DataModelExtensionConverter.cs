@@ -45,7 +45,7 @@ public static class DataModelExtensionConverter
     {
       itemElement = DMXDO.DataModelExtensionBlockConverter.CreateOpenXmlElement<DXOD.DataModelExtensionBlock>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class DataModelExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO10DD.RecolorImages();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

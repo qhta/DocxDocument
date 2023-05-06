@@ -27,7 +27,7 @@ public static class DigitalSignatureConverter
     else
     {
       if (value != null)
-        openXmlElement?.AddChild(new VTBlob { Text = Convert.ToBase64String(value) });
+        openXmlElement?.AppendChild(new VTBlob { Text = Convert.ToBase64String(value) });
     }
   }
 

@@ -48,7 +48,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.ScalingConverter.CreateOpenXmlElement<DXDC.Scaling>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class DateAxisConverter
     if (value == true)
     {
       var itemElement = new DXDC.Delete();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -108,7 +108,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>((DMDC.AxisPositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.AxisPosition, DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>((DMDC.AxisPositionKind)value));
   }
   
   /// <summary>
@@ -136,7 +136,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.MajorGridlinesConverter.CreateOpenXmlElement<DXDC.MajorGridlines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -165,7 +165,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.MinorGridlinesConverter.CreateOpenXmlElement<DXDC.MinorGridlines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -194,7 +194,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.TitleConverter.CreateOpenXmlElement<DXDC.Title>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -223,7 +223,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.NumberingFormatConverter.CreateOpenXmlElement<DXDC.NumberingFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -252,7 +252,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MajorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
   }
   
   /// <summary>
@@ -280,7 +280,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MinorTickMark, DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>((DMDC.TickMarkKind)value));
   }
   
   /// <summary>
@@ -308,7 +308,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>((DMDC.TickLabelPositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TickLabelPosition, DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>((DMDC.TickLabelPositionKind)value));
   }
   
   /// <summary>
@@ -336,7 +336,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -365,7 +365,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -409,7 +409,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>((DMDC.CrossesKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Crosses, DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>((DMDC.CrossesKind)value));
   }
   
   private static Double? GetCrossesAt(DXDC.DateAxis openXmlElement)
@@ -451,7 +451,7 @@ public static class DateAxisConverter
     if (value == true)
     {
       var itemElement = new DXDC.AutoLabeled();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -492,7 +492,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BaseTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.BaseTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
   }
   
   private static Double? GetMajorUnit(DXDC.DateAxis openXmlElement)
@@ -532,7 +532,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MajorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MajorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
   }
   
   private static Double? GetMinorUnit(DXDC.DateAxis openXmlElement)
@@ -572,7 +572,7 @@ public static class DateAxisConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MinorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.MinorTimeUnit, DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues, DMDC.TimeUnitKind>((DMDC.TimeUnitKind)value));
   }
   
   private static DMDC.DateAxExtensionList? GetDateAxExtensionList(DXDC.DateAxis openXmlElement)
@@ -597,7 +597,7 @@ public static class DateAxisConverter
     {
       itemElement = DMXDC.DateAxExtensionListConverter.CreateOpenXmlElement<DXDC.DateAxExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -48,7 +48,7 @@ public static class UpDownBarsConverter
     {
       itemElement = DMXDC.UpBarsConverter.CreateOpenXmlElement<DXDC.UpBars>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class UpDownBarsConverter
     {
       itemElement = DMXDC.DownBarsConverter.CreateOpenXmlElement<DXDC.DownBars>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class UpDownBarsConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

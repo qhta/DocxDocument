@@ -56,7 +56,7 @@ public static class SurfaceSerExtensionListConverter
       {
         var newItem = DMXDC.SurfaceSerExtensionConverter.CreateOpenXmlElement<DXDC.SurfaceSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

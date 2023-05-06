@@ -50,7 +50,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.GroupConverter.CreateOpenXmlElement<DXV.Group>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -76,7 +76,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.ImageFileConverter.CreateOpenXmlElement<DXV.ImageFile>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -102,7 +102,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.LineConverter.CreateOpenXmlElement<DXV.Line>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -128,7 +128,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.OvalConverter.CreateOpenXmlElement<DXV.Oval>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.PolyLineConverter.CreateOpenXmlElement<DXV.PolyLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -180,7 +180,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.RectangleConverter.CreateOpenXmlElement<DXV.Rectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -206,7 +206,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.RoundRectangleConverter.CreateOpenXmlElement<DXV.RoundRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -232,7 +232,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.ShapeConverter.CreateOpenXmlElement<DXV.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -258,7 +258,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.ShapetypeConverter.CreateOpenXmlElement<DXV.Shapetype>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -284,7 +284,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.ArcConverter.CreateOpenXmlElement<DXV.Arc>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -310,7 +310,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.CurveConverter.CreateOpenXmlElement<DXV.Curve>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -336,7 +336,7 @@ public static class PictureConverter
     {
       itemElement = DMXV.OleObjectConverter.CreateOpenXmlElement<DXVO.OleObject>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -362,7 +362,7 @@ public static class PictureConverter
     {
       itemElement = DMXW.RelationshipTypeConverter.CreateOpenXmlElement<DXW.MovieReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -388,7 +388,7 @@ public static class PictureConverter
     {
       itemElement = DMXW.ControlConverter.CreateOpenXmlElement<DXW.Control>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

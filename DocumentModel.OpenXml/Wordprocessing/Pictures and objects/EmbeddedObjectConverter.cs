@@ -86,7 +86,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.GroupConverter.CreateOpenXmlElement<DXV.Group>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -112,7 +112,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.ImageFileConverter.CreateOpenXmlElement<DXV.ImageFile>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -138,7 +138,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.LineConverter.CreateOpenXmlElement<DXV.Line>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -164,7 +164,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.OvalConverter.CreateOpenXmlElement<DXV.Oval>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -190,7 +190,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.PolyLineConverter.CreateOpenXmlElement<DXV.PolyLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -216,7 +216,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.RectangleConverter.CreateOpenXmlElement<DXV.Rectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -242,7 +242,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.RoundRectangleConverter.CreateOpenXmlElement<DXV.RoundRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -268,7 +268,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.ShapeConverter.CreateOpenXmlElement<DXV.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -294,7 +294,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.ShapetypeConverter.CreateOpenXmlElement<DXV.Shapetype>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -320,7 +320,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.ArcConverter.CreateOpenXmlElement<DXV.Arc>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -346,7 +346,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.CurveConverter.CreateOpenXmlElement<DXV.Curve>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -372,7 +372,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXV.OleObjectConverter.CreateOpenXmlElement<DXVO.OleObject>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -398,7 +398,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXW.DrawingConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -424,7 +424,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXW.ControlConverter.CreateOpenXmlElement<DXW.Control>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -450,7 +450,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXW.ObjectEmbedConverter.CreateOpenXmlElement<DXW.ObjectEmbed>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -476,7 +476,7 @@ public static class EmbeddedObjectConverter
     {
       itemElement = DMXW.ObjectLinkConverter.CreateOpenXmlElement<DXW.ObjectLink>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

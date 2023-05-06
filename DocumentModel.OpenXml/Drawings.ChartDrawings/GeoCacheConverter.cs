@@ -41,7 +41,7 @@ public static class GeoCacheConverter
     if (value != null)
     {
       itemElement = new DXO16DCD.Xsdbase64Binary { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -67,7 +67,7 @@ public static class GeoCacheConverter
     {
       itemElement = DMXDCDs.ClearConverter.CreateOpenXmlElement<DXO16DCD.Clear>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

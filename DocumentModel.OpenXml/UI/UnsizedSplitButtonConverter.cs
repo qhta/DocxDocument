@@ -330,7 +330,7 @@ public static class UnsizedSplitButtonConverter
     {
       itemElement = DMXUI.VisibleButtonConverter.CreateOpenXmlElement<DXOCUI.VisibleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -356,7 +356,7 @@ public static class UnsizedSplitButtonConverter
     {
       itemElement = DMXUI.VisibleToggleButtonConverter.CreateOpenXmlElement<DXOCUI.VisibleToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -382,7 +382,7 @@ public static class UnsizedSplitButtonConverter
     {
       itemElement = DMXUI.UnsizedMenuConverter.CreateOpenXmlElement<DXOCUI.UnsizedMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

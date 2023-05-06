@@ -30,7 +30,7 @@ public static class LegendConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LegendPosition, DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDC.LegendPositionKind>((DMDC.LegendPositionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.LegendPosition, DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDC.LegendPositionKind>((DMDC.LegendPositionKind)value));
   }
   
   private static Collection<DMDC.LegendEntry>? GetLegendEntries(DXDC.Legend openXmlElement)
@@ -84,7 +84,7 @@ public static class LegendConverter
       {
         var newItem = DMXDC.LegendEntryConverter.CreateOpenXmlElement<DXDC.LegendEntry>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -111,7 +111,7 @@ public static class LegendConverter
     {
       itemElement = DMXDC.LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -139,7 +139,7 @@ public static class LegendConverter
     if (value == true)
     {
       var itemElement = new DXDC.Overlay();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -165,7 +165,7 @@ public static class LegendConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -191,7 +191,7 @@ public static class LegendConverter
     {
       itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -217,7 +217,7 @@ public static class LegendConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

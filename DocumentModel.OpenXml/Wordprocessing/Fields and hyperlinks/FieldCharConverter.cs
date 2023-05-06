@@ -80,7 +80,7 @@ public static class FieldCharConverter
     if (value != null)
     {
       itemElement = new DXW.FieldData { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -109,7 +109,7 @@ public static class FieldCharConverter
     {
       itemElement = DMXW.FormFieldDataConverter.CreateOpenXmlElement<DXW.FormFieldData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -138,7 +138,7 @@ public static class FieldCharConverter
     {
       itemElement = DMXW.NumberingChangeConverter.CreateOpenXmlElement<DXW.NumberingChange>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

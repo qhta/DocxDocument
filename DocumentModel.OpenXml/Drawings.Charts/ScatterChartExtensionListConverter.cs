@@ -56,7 +56,7 @@ public static class ScatterChartExtensionListConverter
       {
         var newItem = DMXDC.ScatterChartExtensionConverter.CreateOpenXmlElement<DXDC.ScatterChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

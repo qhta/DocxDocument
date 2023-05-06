@@ -53,7 +53,7 @@ public static class FontsConverter
       {
         var newItem = DMXW.FontConverter.CreateOpenXmlElement<DXW.Font>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

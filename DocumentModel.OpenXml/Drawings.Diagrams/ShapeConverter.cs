@@ -175,7 +175,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDD.AdjustListConverter.CreateOpenXmlElement<DXDD.AdjustList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -204,7 +204,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

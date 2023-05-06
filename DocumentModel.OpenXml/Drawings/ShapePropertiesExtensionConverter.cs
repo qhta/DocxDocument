@@ -45,7 +45,7 @@ public static class ShapePropertiesExtensionConverter
     {
       itemElement = DMXD.HiddenFillPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class ShapePropertiesExtensionConverter
     {
       itemElement = DMXD.HiddenLinePropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenLineProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class ShapePropertiesExtensionConverter
     {
       itemElement = DMXD.HiddenEffectsPropertiesConverter.CreateOpenXmlElement<DXO10D.HiddenEffectsProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class ShapePropertiesExtensionConverter
     {
       itemElement = DMXD.HiddenScene3DConverter.CreateOpenXmlElement<DXO10D.HiddenScene3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -149,7 +149,7 @@ public static class ShapePropertiesExtensionConverter
     {
       itemElement = DMXD.HiddenShape3DConverter.CreateOpenXmlElement<DXO10D.HiddenShape3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class ShapePropertiesExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO10D.ShadowObscured();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

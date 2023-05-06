@@ -56,7 +56,7 @@ public static class CubicBezierCurveToConverter
       {
         var newItem = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Point>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -56,7 +56,7 @@ public static class ExtensionListConverter
       {
         var newItem = DMXDCDs.Extension2Converter.CreateOpenXmlElement<DXO16DCD.Extension2>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

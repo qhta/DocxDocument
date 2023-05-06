@@ -47,7 +47,7 @@ public static class DataConverter
     {
       itemElement = DMXDCDs.NumericDimensionConverter.CreateOpenXmlElement<DXO16DCD.NumericDimension>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class DataConverter
     {
       itemElement = DMXDCDs.StringDimensionConverter.CreateOpenXmlElement<DXO16DCD.StringDimension>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -99,7 +99,7 @@ public static class DataConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

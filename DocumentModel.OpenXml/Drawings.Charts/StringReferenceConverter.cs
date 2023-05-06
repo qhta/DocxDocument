@@ -26,7 +26,7 @@ public static class StringReferenceConverter
     if (value != null)
     {
       itemElement = new DXDC.Formula { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class StringReferenceConverter
     {
       itemElement = DMXDC.StringCacheConverter.CreateOpenXmlElement<DXDC.StringCache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -84,7 +84,7 @@ public static class StringReferenceConverter
     {
       itemElement = DMXDC.StrRefExtensionListConverter.CreateOpenXmlElement<DXDC.StrRefExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

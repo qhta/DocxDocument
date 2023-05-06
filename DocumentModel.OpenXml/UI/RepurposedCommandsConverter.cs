@@ -56,7 +56,7 @@ public static class RepurposedCommandsConverter
       {
         var newItem = DMXUI.RepurposedCommandConverter.CreateOpenXmlElement<DXOCUI.RepurposedCommand>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

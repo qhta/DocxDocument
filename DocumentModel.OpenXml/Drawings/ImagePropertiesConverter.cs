@@ -30,7 +30,7 @@ public static class ImagePropertiesConverter
     {
       itemElement = DMXD.ImageLayerConverter.CreateOpenXmlElement<DXO10D.ImageLayer>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

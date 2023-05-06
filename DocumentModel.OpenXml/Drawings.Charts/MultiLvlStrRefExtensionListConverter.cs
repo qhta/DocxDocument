@@ -56,7 +56,7 @@ public static class MultiLvlStrRefExtensionListConverter
       {
         var newItem = DMXDC.MultiLvlStrRefExtensionConverter.CreateOpenXmlElement<DXDC.MultiLvlStrRefExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

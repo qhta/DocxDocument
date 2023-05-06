@@ -53,7 +53,7 @@ public static class NonVisualInkContentPartPropertiesConverter
     {
       itemElement = DMXD.ContentPartLocksConverter.CreateOpenXmlElement<DXO10D.ContentPartLocks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class NonVisualInkContentPartPropertiesConverter
     {
       itemElement = DMXD.OfficeArtExtensionList2Converter.CreateOpenXmlElement<DXO10D.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

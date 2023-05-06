@@ -77,7 +77,7 @@ public static class SchemeColorConverter
     if (value == true)
     {
       var itemElement = new DXD.Complement();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class SchemeColorConverter
     if (value == true)
     {
       var itemElement = new DXD.Inverse();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -133,7 +133,7 @@ public static class SchemeColorConverter
     if (value == true)
     {
       var itemElement = new DXD.Gray();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -476,7 +476,7 @@ public static class SchemeColorConverter
     if (value == true)
     {
       var itemElement = new DXD.Gamma();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -504,7 +504,7 @@ public static class SchemeColorConverter
     if (value == true)
     {
       var itemElement = new DXD.InverseGamma();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -49,7 +49,7 @@ public static class SdtContentDateConverter
     if (value != null)
     {
       itemElement = new DXW.DateFormat { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -96,7 +96,7 @@ public static class SdtContentDateConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.SdtDateMappingType, DXW.DateFormatValues, DMW.DateFormatKind>((DMW.DateFormatKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.SdtDateMappingType, DXW.DateFormatValues, DMW.DateFormatKind>((DMW.DateFormatKind)value));
   }
   
   /// <summary>
@@ -124,7 +124,7 @@ public static class SdtContentDateConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Calendar, DXW.CalendarValues, DMW.CalendarKind>((DMW.CalendarKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Calendar, DXW.CalendarValues, DMW.CalendarKind>((DMW.CalendarKind)value));
   }
   
   public static DMW.SdtContentDate? CreateModelElement(DXW.SdtContentDate? openXmlElement)

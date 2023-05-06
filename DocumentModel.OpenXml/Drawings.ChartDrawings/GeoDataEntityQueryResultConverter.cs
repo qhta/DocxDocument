@@ -30,7 +30,7 @@ public static class GeoDataEntityQueryResultConverter
     {
       itemElement = DMXDCDs.GeoDataEntityQueryConverter.CreateOpenXmlElement<DXO16DCD.GeoDataEntityQuery>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class GeoDataEntityQueryResultConverter
     {
       itemElement = DMXDCDs.GeoDataConverter.CreateOpenXmlElement<DXO16DCD.GeoData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -56,7 +56,7 @@ public static class BarChartExtensionListConverter
       {
         var newItem = DMXDC.BarChartExtensionConverter.CreateOpenXmlElement<DXDC.BarChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

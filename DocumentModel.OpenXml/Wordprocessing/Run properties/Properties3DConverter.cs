@@ -88,7 +88,7 @@ public static class Properties3DConverter
     {
       itemElement = DMXW.BevelTypeConverter.CreateOpenXmlElement<DXO10W.BevelTop>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class Properties3DConverter
     {
       itemElement = DMXW.BevelTypeConverter.CreateOpenXmlElement<DXO10W.BevelBottom>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class Properties3DConverter
     {
       itemElement = DMXW.ExtrusionColorConverter.CreateOpenXmlElement<DXO10W.ExtrusionColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -175,7 +175,7 @@ public static class Properties3DConverter
     {
       itemElement = DMXW.ContourColorConverter.CreateOpenXmlElement<DXO10W.ContourColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

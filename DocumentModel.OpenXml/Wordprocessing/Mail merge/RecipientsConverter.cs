@@ -27,7 +27,7 @@ public static class RecipientsConverter
     {
       itemElement = DMXW.RecipientDataConverter.CreateOpenXmlElement<DXW.RecipientData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

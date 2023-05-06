@@ -30,7 +30,7 @@ public static class DocPartConverter
     {
       itemElement = DMXW.DocPartPropertiesConverter.CreateOpenXmlElement<DXW.DocPartProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class DocPartConverter
     {
       itemElement = DMXW.DocPartBodyConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

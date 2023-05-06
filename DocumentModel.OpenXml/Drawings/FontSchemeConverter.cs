@@ -48,7 +48,7 @@ public static class FontSchemeConverter
     {
       itemElement = DMXD.MajorFontConverter.CreateOpenXmlElement<DXD.MajorFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class FontSchemeConverter
     {
       itemElement = DMXD.MinorFontConverter.CreateOpenXmlElement<DXD.MinorFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class FontSchemeConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

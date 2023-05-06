@@ -66,7 +66,7 @@ public static class ThemeConverter
     {
       itemElement = DMXD.ThemeElementsConverter.CreateOpenXmlElement<DXD.ThemeElements>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class ThemeConverter
     {
       itemElement = DMXD.ObjectDefaultsConverter.CreateOpenXmlElement<DXD.ObjectDefaults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -124,7 +124,7 @@ public static class ThemeConverter
     {
       itemElement = DMXD.ExtraColorSchemeListConverter.CreateOpenXmlElement<DXD.ExtraColorSchemeList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -153,7 +153,7 @@ public static class ThemeConverter
     {
       itemElement = DMXD.CustomColorListConverter.CreateOpenXmlElement<DXD.CustomColorList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -182,7 +182,7 @@ public static class ThemeConverter
     {
       itemElement = DMXD.OfficeStyleSheetExtensionListConverter.CreateOpenXmlElement<DXD.OfficeStyleSheetExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

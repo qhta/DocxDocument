@@ -48,7 +48,7 @@ public static class ScriptLinkConverter
     {
       itemElement = DMXDOScptLnk.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODY21SL.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -361,7 +361,7 @@ public static class BackstageGroupConverter
     {
       itemElement = DMX.PrimaryItemConverter.CreateOpenXmlElement<DXO10CUI.PrimaryItem>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -387,7 +387,7 @@ public static class BackstageGroupConverter
     {
       itemElement = DMX.TopItemsGroupControlsConverter.CreateOpenXmlElement<DXO10CUI.TopItemsGroupControls>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -413,7 +413,7 @@ public static class BackstageGroupConverter
     {
       itemElement = DMX.BottomItemsGroupControlsConverter.CreateOpenXmlElement<DXO10CUI.BottomItemsGroupControls>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

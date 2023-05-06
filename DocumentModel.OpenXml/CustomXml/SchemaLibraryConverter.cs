@@ -56,7 +56,7 @@ public static class SchemaLibraryConverter
       {
         var newItem = DMXCX.SchemaConverter.CreateOpenXmlElement<DXCXSR.Schema>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

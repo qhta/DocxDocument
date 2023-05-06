@@ -56,7 +56,7 @@ public static class StylisticSetsConverter
       {
         var newItem = DMXW.StyleSetConverter.CreateOpenXmlElement<DXO10W.StyleSet>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

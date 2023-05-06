@@ -26,7 +26,7 @@ public static class CategoryFilterExceptionConverter
     if (value != null)
     {
       itemElement = new DXO13DC.SequenceOfReferences { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class CategoryFilterExceptionConverter
     {
       itemElement = DMXDC.ShapeProperties3Converter.CreateOpenXmlElement<DXO13DC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -104,7 +104,7 @@ public static class CategoryFilterExceptionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.InvertIfNegativeBoolean();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class CategoryFilterExceptionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.Bubble3D();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -164,7 +164,7 @@ public static class CategoryFilterExceptionConverter
     {
       itemElement = DMXDC.Marker3Converter.CreateOpenXmlElement<DXO13DC.Marker>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -193,7 +193,7 @@ public static class CategoryFilterExceptionConverter
     {
       itemElement = DMXDC.DataLabel3Converter.CreateOpenXmlElement<DXO13DC.DataLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -102,7 +102,7 @@ public static class FormFieldDataConverter
     {
       itemElement = DMXW.HelpTextConverter.CreateOpenXmlElement<DXW.HelpText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -128,7 +128,7 @@ public static class FormFieldDataConverter
     {
       itemElement = DMXW.StatusTextConverter.CreateOpenXmlElement<DXW.StatusText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class FormFieldDataConverter
     {
       itemElement = DMXW.CheckBoxConverter.CreateOpenXmlElement<DXW.CheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -180,7 +180,7 @@ public static class FormFieldDataConverter
     {
       itemElement = DMXW.DropDownListFormFieldConverter.CreateOpenXmlElement<DXW.DropDownListFormField>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -206,7 +206,7 @@ public static class FormFieldDataConverter
     {
       itemElement = DMXW.TextInputConverter.CreateOpenXmlElement<DXW.TextInput>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

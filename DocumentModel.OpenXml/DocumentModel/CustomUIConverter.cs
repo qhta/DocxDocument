@@ -66,7 +66,7 @@ public static class CustomUIConverter
     {
       itemElement = DMX.CommandsConverter.CreateOpenXmlElement<DXO10CUI.Commands>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class CustomUIConverter
     {
       itemElement = DMX.RibbonConverter.CreateOpenXmlElement<DXO10CUI.Ribbon>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -124,7 +124,7 @@ public static class CustomUIConverter
     {
       itemElement = DMX.BackstageConverter.CreateOpenXmlElement<DXO10CUI.Backstage>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -153,7 +153,7 @@ public static class CustomUIConverter
     {
       itemElement = DMX.ContextMenusConverter.CreateOpenXmlElement<DXO10CUI.ContextMenus>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

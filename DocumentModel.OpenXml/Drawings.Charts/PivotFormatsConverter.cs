@@ -56,7 +56,7 @@ public static class PivotFormatsConverter
       {
         var newItem = DMXDC.PivotFormatConverter.CreateOpenXmlElement<DXDC.PivotFormat>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

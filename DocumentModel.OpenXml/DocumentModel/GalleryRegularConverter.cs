@@ -981,7 +981,7 @@ public static class GalleryRegularConverter
       {
         var newItem = DMX.ItemConverter.CreateOpenXmlElement<DXO10CUI.Item>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -1037,7 +1037,7 @@ public static class GalleryRegularConverter
       {
         var newItem = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ButtonRegular>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -26,7 +26,7 @@ public static class DataLabelFieldTableEntryConverter
     if (value != null)
     {
       itemElement = new DXO13DC.TextFieldGuid { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -51,7 +51,7 @@ public static class DataLabelFieldTableEntryConverter
     if (value != null)
     {
       itemElement = new DXO13DC.Formula { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -80,7 +80,7 @@ public static class DataLabelFieldTableEntryConverter
     {
       itemElement = DMXDC.DataLabelFieldTableCacheConverter.CreateOpenXmlElement<DXO13DC.DataLabelFieldTableCache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

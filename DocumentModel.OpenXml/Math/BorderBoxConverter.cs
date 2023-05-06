@@ -28,7 +28,7 @@ public static class BorderBoxConverter
     {
       itemElement = DMXM.BorderBoxPropertiesConverter.CreateOpenXmlElement<DXM.BorderBoxProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class BorderBoxConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

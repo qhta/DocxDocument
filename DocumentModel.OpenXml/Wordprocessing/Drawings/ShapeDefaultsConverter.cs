@@ -27,7 +27,7 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ShapeDefaultsConverter.CreateOpenXmlElement<DXVO.ShapeDefaults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,10 +53,11 @@ public static class ShapeDefaultsConverter
     {
       itemElement = DMXV.ShapeLayoutConverter.CreateOpenXmlElement<DXVO.ShapeLayout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
-  
+
+  #region ShapeDefaults model conversion.
   public static DMW.ShapeDefaults? CreateModelElement(DXW.ShapeDefaults? openXmlElement)
   {
     if (openXmlElement != null)
@@ -98,4 +99,5 @@ public static class ShapeDefaultsConverter
     SetChildShapeDefaults(openXmlElement, value?.ChildShapeDefaults);
     SetShapeLayout(openXmlElement, value?.ShapeLayout);
   }
+  #endregion
 }

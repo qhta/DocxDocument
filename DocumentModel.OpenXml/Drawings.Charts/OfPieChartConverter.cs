@@ -30,7 +30,7 @@ public static class OfPieChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>((DMDC.OfPieKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.OfPieType, DocumentFormat.OpenXml.Drawing.Charts.OfPieValues, DMDC.OfPieKind>((DMDC.OfPieKind)value));
   }
   
   /// <summary>
@@ -60,7 +60,7 @@ public static class OfPieChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -115,7 +115,7 @@ public static class OfPieChartConverter
       {
         var newItem = DMXDC.PieChartSeriesConverter.CreateOpenXmlElement<DXDC.PieChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -142,7 +142,7 @@ public static class OfPieChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -183,7 +183,7 @@ public static class OfPieChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>((DMDC.SplitKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.SplitType, DocumentFormat.OpenXml.Drawing.Charts.SplitValues, DMDC.SplitKind>((DMDC.SplitKind)value));
   }
   
   private static Double? GetSplitPosition(DXDC.OfPieChart openXmlElement)
@@ -223,7 +223,7 @@ public static class OfPieChartConverter
     {
       itemElement = DMXDC.CustomSplitConverter.CreateOpenXmlElement<DXDC.CustomSplit>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -293,7 +293,7 @@ public static class OfPieChartConverter
       {
         var newItem = DMXDC.SeriesLinesConverter.CreateOpenXmlElement<DXDC.SeriesLines>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -320,7 +320,7 @@ public static class OfPieChartConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
