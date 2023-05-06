@@ -30,7 +30,7 @@ public static class ClearConverter
     {
       itemElement = DMXDCDs.GeoLocationQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoLocationQueryResults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ClearConverter
     {
       itemElement = DMXDCDs.GeoDataEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataEntityQueryResults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ClearConverter
     {
       itemElement = DMXDCDs.GeoDataPointToEntityQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoDataPointToEntityQueryResults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class ClearConverter
     {
       itemElement = DMXDCDs.GeoChildEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoChildEntitiesQueryResults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class ClearConverter
     {
       itemElement = DMXDCDs.GeoParentEntitiesQueryResultsConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntitiesQueryResults>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

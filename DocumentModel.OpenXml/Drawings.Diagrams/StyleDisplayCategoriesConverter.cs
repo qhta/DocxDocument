@@ -56,7 +56,7 @@ public static class StyleDisplayCategoriesConverter
       {
         var newItem = DMXDD.StyleDisplayCategoryConverter.CreateOpenXmlElement<DXDD.StyleDisplayCategory>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

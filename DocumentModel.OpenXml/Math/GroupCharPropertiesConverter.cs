@@ -45,7 +45,7 @@ public static class GroupCharPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.Position, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
   }
   #endregion
 
@@ -72,7 +72,7 @@ public static class GroupCharPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.VerticalJustification, DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>((DMM.VerticalJustificationKind)value));
   }
   #endregion
 
@@ -99,7 +99,7 @@ public static class GroupCharPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

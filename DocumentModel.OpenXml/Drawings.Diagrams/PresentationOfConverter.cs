@@ -156,7 +156,7 @@ public static class PresentationOfConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

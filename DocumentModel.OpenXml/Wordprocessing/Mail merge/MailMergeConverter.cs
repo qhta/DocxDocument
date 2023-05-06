@@ -30,7 +30,7 @@ public static class MailMergeConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MainDocumentType, DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>((DMW.MailMergeDocumentKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.MainDocumentType, DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>((DMW.MailMergeDocumentKind)value));
   }
   
   /// <summary>
@@ -76,7 +76,7 @@ public static class MailMergeConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.DataType, DXW.MailMergeDataValues, DMW.MailMergeDataKind>((DMW.MailMergeDataKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.DataType, DXW.MailMergeDataValues, DMW.MailMergeDataKind>((DMW.MailMergeDataKind)value));
   }
   
   /// <summary>
@@ -103,7 +103,7 @@ public static class MailMergeConverter
     if (value != null)
     {
       itemElement = new DXW.ConnectString { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -131,7 +131,7 @@ public static class MailMergeConverter
     if (value != null)
     {
       itemElement = new DXW.Query { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -160,7 +160,7 @@ public static class MailMergeConverter
     {
       itemElement = DMXW.RelationshipTypeConverter.CreateOpenXmlElement<DXW.DataSourceReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -189,7 +189,7 @@ public static class MailMergeConverter
     {
       itemElement = DMXW.RelationshipTypeConverter.CreateOpenXmlElement<DXW.HeaderSource>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -236,7 +236,7 @@ public static class MailMergeConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Destination, DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>((DMW.MailMergeDestinationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Destination, DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>((DMW.MailMergeDestinationKind)value));
   }
   
   /// <summary>
@@ -263,7 +263,7 @@ public static class MailMergeConverter
     if (value != null)
     {
       itemElement = new DXW.AddressFieldName { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -291,7 +291,7 @@ public static class MailMergeConverter
     if (value != null)
     {
       itemElement = new DXW.MailSubject { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -392,7 +392,7 @@ public static class MailMergeConverter
     {
       itemElement = DMXW.DataSourceObjectConverter.CreateOpenXmlElement<DXW.DataSourceObject>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

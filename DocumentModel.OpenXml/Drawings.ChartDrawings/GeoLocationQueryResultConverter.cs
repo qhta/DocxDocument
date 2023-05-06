@@ -30,7 +30,7 @@ public static class GeoLocationQueryResultConverter
     {
       itemElement = DMXDCDs.GeoLocationQueryConverter.CreateOpenXmlElement<DXO16DCD.GeoLocationQuery>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class GeoLocationQueryResultConverter
     {
       itemElement = DMXDCDs.GeoLocationsConverter.CreateOpenXmlElement<DXO16DCD.GeoLocations>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

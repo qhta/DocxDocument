@@ -56,7 +56,7 @@ public static class TabStopListConverter
       {
         var newItem = DMXD.TabStopConverter.CreateOpenXmlElement<DXD.TabStop>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

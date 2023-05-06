@@ -30,7 +30,7 @@ public static class TextPropertiesConverter
     {
       itemElement = DMXD.Shape3DTypeConverter.CreateOpenXmlElement<DXD.Shape3DType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class TextPropertiesConverter
     {
       itemElement = DMXD.FlatTextConverter.CreateOpenXmlElement<DXD.FlatText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -79,7 +79,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.FramePropertiesConverter.CreateOpenXmlElement<DXW.FrameProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -124,7 +124,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.NumberingPropertiesConverter.CreateOpenXmlElement<DXW.NumberingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -169,7 +169,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.ParagraphBordersConverter.CreateOpenXmlElement<DXW.ParagraphBorders>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -197,7 +197,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -225,7 +225,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.TabsConverter.CreateOpenXmlElement<DXW.Tabs>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -423,7 +423,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.SpacingBetweenLinesConverter.CreateOpenXmlElement<DXW.SpacingBetweenLines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -451,7 +451,7 @@ public static class BaseParagraphPropertiesConverter
     {
       itemElement = DMXW.IndentationConverter.CreateOpenXmlElement<DXW.Indentation>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -530,7 +530,7 @@ public static class BaseParagraphPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Justification, DXW.JustificationValues, DMW.JustificationKind>((DMW.JustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Justification, DXW.JustificationValues, DMW.JustificationKind>((DMW.JustificationKind)value));
   }
   #endregion
 
@@ -557,7 +557,7 @@ public static class BaseParagraphPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DXW.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DXW.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
   #endregion
 
@@ -584,7 +584,7 @@ public static class BaseParagraphPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextAlignment, DXW.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>((DMW.VerticalTextAlignmentKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextAlignment, DXW.VerticalTextAlignmentValues, DMW.VerticalTextAlignmentKind>((DMW.VerticalTextAlignmentKind)value));
   }
   #endregion
 
@@ -611,7 +611,7 @@ public static class BaseParagraphPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxTightWrap, DXW.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>((DMW.TextBoxTightWrapKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextBoxTightWrap, DXW.TextBoxTightWrapValues, DMW.TextBoxTightWrapKind>((DMW.TextBoxTightWrapKind)value));
   }
   #endregion
 

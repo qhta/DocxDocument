@@ -30,7 +30,7 @@ public static class NonVisualGroupShapeDrawingPropertiesConverter
     {
       itemElement = DMXD.GroupShapeLocksConverter.CreateOpenXmlElement<DXD.GroupShapeLocks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class NonVisualGroupShapeDrawingPropertiesConverter
     {
       itemElement = DMXD.NonVisualGroupDrawingShapePropsExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualGroupDrawingShapePropsExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -48,7 +48,7 @@ public static class FormatSchemeConverter
     {
       itemElement = DMXD.FillStyleListConverter.CreateOpenXmlElement<DXD.FillStyleList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class FormatSchemeConverter
     {
       itemElement = DMXD.LineStyleListConverter.CreateOpenXmlElement<DXD.LineStyleList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class FormatSchemeConverter
     {
       itemElement = DMXD.EffectStyleListConverter.CreateOpenXmlElement<DXD.EffectStyleList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class FormatSchemeConverter
     {
       itemElement = DMXD.BackgroundFillStyleListConverter.CreateOpenXmlElement<DXD.BackgroundFillStyleList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

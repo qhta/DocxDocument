@@ -30,7 +30,7 @@ public static class FilteredAreaSeriesConverter
     {
       itemElement = DMXDC.AreaChartSeries3Converter.CreateOpenXmlElement<DXO13DC.AreaChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

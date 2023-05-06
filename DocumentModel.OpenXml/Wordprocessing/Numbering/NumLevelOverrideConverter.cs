@@ -64,7 +64,7 @@ public static class LevelOverrideConverter
     {
       itemElement = DMXW.LevelConverter.CreateOpenXmlElement<DXW.Level>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

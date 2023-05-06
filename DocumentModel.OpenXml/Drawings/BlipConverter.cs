@@ -81,7 +81,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.AlphaBiLevelConverter.CreateOpenXmlElement<DXD.AlphaBiLevel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -109,7 +109,7 @@ public static class BlipConverter
     if (value == true)
     {
       var itemElement = new DXD.AlphaCeiling();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -137,7 +137,7 @@ public static class BlipConverter
     if (value == true)
     {
       var itemElement = new DXD.AlphaFloor();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -163,7 +163,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.AlphaInverseConverter.CreateOpenXmlElement<DXD.AlphaInverse>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -189,7 +189,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.AlphaModulationEffectConverter.CreateOpenXmlElement<DXD.AlphaModulationEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -215,7 +215,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.AlphaModulationFixedConverter.CreateOpenXmlElement<DXD.AlphaModulationFixed>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -241,7 +241,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.AlphaReplaceConverter.CreateOpenXmlElement<DXD.AlphaReplace>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -267,7 +267,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.BiLevelConverter.CreateOpenXmlElement<DXD.BiLevel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -293,7 +293,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.BlurConverter.CreateOpenXmlElement<DXD.Blur>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -319,7 +319,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.ColorChangeConverter.CreateOpenXmlElement<DXD.ColorChange>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -345,7 +345,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.ColorReplacementConverter.CreateOpenXmlElement<DXD.ColorReplacement>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -371,7 +371,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.DuotoneConverter.CreateOpenXmlElement<DXD.Duotone>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -397,7 +397,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.FillOverlayConverter.CreateOpenXmlElement<DXD.FillOverlay>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -425,7 +425,7 @@ public static class BlipConverter
     if (value == true)
     {
       var itemElement = new DXD.Grayscale();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -451,7 +451,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.HslConverter.CreateOpenXmlElement<DXD.Hsl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -477,7 +477,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.LuminanceEffectConverter.CreateOpenXmlElement<DXD.LuminanceEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -503,7 +503,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.TintEffectConverter.CreateOpenXmlElement<DXD.TintEffect>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -529,7 +529,7 @@ public static class BlipConverter
     {
       itemElement = DMXD.BlipExtensionListConverter.CreateOpenXmlElement<DXD.BlipExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -74,7 +74,7 @@ public static class RelationTableConverter
       {
         var newItem = DMXV.RelationConverter.CreateOpenXmlElement<DXVO.Relation>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

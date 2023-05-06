@@ -410,7 +410,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.ControlCloneConverter.CreateOpenXmlElement<DXOCUI.ControlClone>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -436,7 +436,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.TextLabelConverter.CreateOpenXmlElement<DXOCUI.TextLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -462,7 +462,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.ButtonConverter.CreateOpenXmlElement<DXOCUI.Button>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -488,7 +488,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.ToggleButtonConverter.CreateOpenXmlElement<DXOCUI.ToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -514,7 +514,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.CheckBoxConverter.CreateOpenXmlElement<DXOCUI.CheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -540,7 +540,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.EditBoxConverter.CreateOpenXmlElement<DXOCUI.EditBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -566,7 +566,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.ComboBoxConverter.CreateOpenXmlElement<DXOCUI.ComboBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -592,7 +592,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.DropDownConverter.CreateOpenXmlElement<DXOCUI.DropDown>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -618,7 +618,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.GalleryConverter.CreateOpenXmlElement<DXOCUI.Gallery>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -644,7 +644,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.MenuConverter.CreateOpenXmlElement<DXOCUI.Menu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -670,7 +670,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.DynamicMenuConverter.CreateOpenXmlElement<DXOCUI.DynamicMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -696,7 +696,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.SplitButtonConverter.CreateOpenXmlElement<DXOCUI.SplitButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -722,7 +722,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.BoxConverter.CreateOpenXmlElement<DXOCUI.Box>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -748,7 +748,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.ButtonGroupConverter.CreateOpenXmlElement<DXOCUI.ButtonGroup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -774,7 +774,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.VerticalSeparatorConverter.CreateOpenXmlElement<DXOCUI.VerticalSeparator>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -800,7 +800,7 @@ public static class GroupConverter
     {
       itemElement = DMXUI.DialogBoxLauncherConverter.CreateOpenXmlElement<DXOCUI.DialogBoxLauncher>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

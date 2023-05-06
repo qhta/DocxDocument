@@ -56,7 +56,7 @@ public static class GradientStopListConverter
       {
         var newItem = DMXW.GradientStopConverter.CreateOpenXmlElement<DXO10W.GradientStop>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

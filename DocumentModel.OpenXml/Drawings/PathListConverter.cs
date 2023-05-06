@@ -56,7 +56,7 @@ public static class PathListConverter
       {
         var newItem = DMXD.PathConverter.CreateOpenXmlElement<DXD.Path>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

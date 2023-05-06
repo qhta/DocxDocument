@@ -284,7 +284,7 @@ public static class TabConverter
     {
       itemElement = DMXUI.GroupConverter.CreateOpenXmlElement<DXOCUI.Group>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

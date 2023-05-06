@@ -464,7 +464,7 @@ public static class BackstageTabConverter
     {
       itemElement = DMX.BackstageGroupsConverter.CreateOpenXmlElement<DXO10CUI.BackstageGroups>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -493,7 +493,7 @@ public static class BackstageTabConverter
     {
       itemElement = DMX.SimpleGroupsConverter.CreateOpenXmlElement<DXO10CUI.SimpleGroups>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -56,7 +56,7 @@ public static class GeoChildTypesConverter
       {
         var newItem = StringValueConverter.CreateOpenXmlElement<DXO16DCD.EntityType>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

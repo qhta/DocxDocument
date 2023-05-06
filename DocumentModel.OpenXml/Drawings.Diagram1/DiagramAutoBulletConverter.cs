@@ -73,7 +73,7 @@ public static class DiagramAutoBulletConverter
     if (value == true)
     {
       var itemElement = new DXD.NoBullet();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -102,7 +102,7 @@ public static class DiagramAutoBulletConverter
     {
       itemElement = DMXD.AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -131,7 +131,7 @@ public static class DiagramAutoBulletConverter
     {
       itemElement = DMXD.CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -160,7 +160,7 @@ public static class DiagramAutoBulletConverter
     {
       itemElement = DMXD.PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -28,7 +28,7 @@ public static class BaseTablePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DXW.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableJustification, DXW.TableRowAlignmentValues, DMW.TableRowAlignmentKind>((DMW.TableRowAlignmentKind)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class BaseTablePropertiesConverter
     {
       itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableCellSpacing>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -83,7 +83,7 @@ public static class BaseTablePropertiesConverter
     {
       itemElement = DMXW.TableIndentationConverter.CreateOpenXmlElement<DXW.TableIndentation>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -111,7 +111,7 @@ public static class BaseTablePropertiesConverter
     {
       itemElement = DMXW.TableBordersConverter.CreateOpenXmlElement<DXW.TableBorders>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -139,7 +139,7 @@ public static class BaseTablePropertiesConverter
     {
       itemElement = DMXW.ShadingConverter.CreateOpenXmlElement<DXW.Shading>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -167,7 +167,7 @@ public static class BaseTablePropertiesConverter
     {
       itemElement = DMXW.DefaultTableCellMarginConverter.CreateOpenXmlElement<DXW.TableCellMarginDefault>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

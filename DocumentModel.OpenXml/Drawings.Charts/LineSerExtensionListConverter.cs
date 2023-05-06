@@ -56,7 +56,7 @@ public static class LineSerExtensionListConverter
       {
         var newItem = DMXDC.LineSerExtensionConverter.CreateOpenXmlElement<DXDC.LineSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

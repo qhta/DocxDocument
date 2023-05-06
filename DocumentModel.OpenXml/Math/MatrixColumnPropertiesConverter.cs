@@ -45,7 +45,7 @@ public static class MatrixColumnPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>((DMM.HorizontalAlignmentKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.MatrixColumnJustification, DocumentFormat.OpenXml.Math.HorizontalAlignmentValues, DMM.HorizontalAlignmentKind>((DMM.HorizontalAlignmentKind)value));
   }
   #endregion
 

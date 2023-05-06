@@ -88,7 +88,7 @@ public static class WrapTightConverter
     {
       itemElement = DMXDW.WrapPolygonConverter.CreateOpenXmlElement<DXDW.WrapPolygon>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -28,7 +28,7 @@ public static class RadicalPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideDegree>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideDegree>((bool)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class RadicalPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

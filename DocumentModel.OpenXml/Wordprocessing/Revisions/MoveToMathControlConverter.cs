@@ -27,7 +27,7 @@ public static class MoveToMathControlConverter
     {
       itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class MoveToMathControlConverter
     {
       itemElement = DMXW.InsertedMathControlConverter.CreateOpenXmlElement<DXW.InsertedMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class MoveToMathControlConverter
     {
       itemElement = DMXW.DeletedMathControlConverter.CreateOpenXmlElement<DXW.DeletedMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

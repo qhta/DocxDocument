@@ -156,7 +156,7 @@ public static class InlineConverter
     {
       itemElement = DMXDW.ExtentConverter.CreateOpenXmlElement<DXDW.Extent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -185,7 +185,7 @@ public static class InlineConverter
     {
       itemElement = DMXDW.EffectExtentConverter.CreateOpenXmlElement<DXDW.EffectExtent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -214,7 +214,7 @@ public static class InlineConverter
     {
       itemElement = DMXDW.DocPropertiesConverter.CreateOpenXmlElement<DXDW.DocProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -243,7 +243,7 @@ public static class InlineConverter
     {
       itemElement = DMXDW.NonVisualGraphicFrameDrawingPropertiesConverter.CreateOpenXmlElement<DXDW.NonVisualGraphicFrameDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -272,7 +272,7 @@ public static class InlineConverter
     {
       itemElement = DMXD.GraphicConverter.CreateOpenXmlElement<DXD.Graphic>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

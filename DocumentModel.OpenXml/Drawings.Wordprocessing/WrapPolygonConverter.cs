@@ -53,7 +53,7 @@ public static class WrapPolygonConverter
     {
       itemElement = DMXDW.Point2DTypeConverter.CreateOpenXmlElement<DXDW.StartPoint>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class WrapPolygonConverter
     {
       itemElement = DMXDW.Point2DTypeConverter.CreateOpenXmlElement<DXDW.LineTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -129,7 +129,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.TextConverter.CreateOpenXmlElement<DXO16DCD.Text>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -158,7 +158,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -187,7 +187,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.ValueColorsConverter.CreateOpenXmlElement<DXO16DCD.ValueColors>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -216,7 +216,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.ValueColorPositionsConverter.CreateOpenXmlElement<DXO16DCD.ValueColorPositions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -271,7 +271,7 @@ public static class SeriesConverter
       {
         var newItem = DMXDCDs.DataPointConverter.CreateOpenXmlElement<DXO16DCD.DataPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -298,7 +298,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.DataLabelsConverter.CreateOpenXmlElement<DXO16DCD.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -339,7 +339,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.SeriesLayoutPropertiesConverter.CreateOpenXmlElement<DXO16DCD.SeriesLayoutProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -394,7 +394,7 @@ public static class SeriesConverter
       {
         var newItem = StringValueConverter.CreateOpenXmlElement<DXO16DCD.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -421,7 +421,7 @@ public static class SeriesConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

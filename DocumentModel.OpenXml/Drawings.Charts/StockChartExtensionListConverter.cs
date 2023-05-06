@@ -56,7 +56,7 @@ public static class StockChartExtensionListConverter
       {
         var newItem = DMXDC.StockChartExtensionConverter.CreateOpenXmlElement<DXDC.StockChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

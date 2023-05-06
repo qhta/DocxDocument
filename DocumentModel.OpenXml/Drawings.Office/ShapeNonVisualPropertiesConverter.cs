@@ -30,7 +30,7 @@ public static class ShapeNonVisualPropertiesConverter
     {
       itemElement = DMXDO.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ShapeNonVisualPropertiesConverter
     {
       itemElement = DMXDO.NonVisualDrawingShapePropertiesConverter.CreateOpenXmlElement<DXOD.NonVisualDrawingShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

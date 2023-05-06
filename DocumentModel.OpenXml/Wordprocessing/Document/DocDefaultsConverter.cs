@@ -30,7 +30,7 @@ public static class DocDefaultsConverter
     {
       itemElement = DMXW.DefaultRunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class DocDefaultsConverter
     {
       itemElement = DMXW.DefaultParagraphPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

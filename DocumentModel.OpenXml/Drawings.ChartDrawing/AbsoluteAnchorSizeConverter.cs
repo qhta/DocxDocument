@@ -32,7 +32,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.FromAnchorConverter.CreateOpenXmlElement<DXDCD.FromAnchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -61,7 +61,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.ExtentConverter.CreateOpenXmlElement<DXDCD.Extent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.ShapeConverter.CreateOpenXmlElement<DXDCD.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -113,7 +113,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.GroupShapeConverter.CreateOpenXmlElement<DXDCD.GroupShape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -139,7 +139,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.GraphicFrameConverter.CreateOpenXmlElement<DXDCD.GraphicFrame>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -165,7 +165,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.ConnectionShapeConverter.CreateOpenXmlElement<DXDCD.ConnectionShape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -191,7 +191,7 @@ public static class AbsoluteAnchorSizeConverter
     {
       itemElement = DMXDCD.PictureConverter.CreateOpenXmlElement<DXDCD.Picture>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

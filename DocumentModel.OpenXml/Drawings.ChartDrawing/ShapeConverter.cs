@@ -112,7 +112,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDCD.NonVisualShapePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -141,7 +141,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDCD.ShapePropertiesConverter.CreateOpenXmlElement<DXDCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -170,7 +170,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDCD.StyleConverter.CreateOpenXmlElement<DXDCD.Style>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -199,7 +199,7 @@ public static class ShapeConverter
     {
       itemElement = DMXDCD.TextBodyConverter.CreateOpenXmlElement<DXDCD.TextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

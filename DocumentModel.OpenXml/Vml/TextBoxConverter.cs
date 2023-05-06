@@ -104,7 +104,7 @@ public static class TextBoxConverter
     {
       itemElement = DMXW.TextBoxContentConverter.CreateOpenXmlElement<DXW.TextBoxContent>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

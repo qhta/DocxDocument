@@ -74,7 +74,7 @@ public static class RegroupTableConverter
       {
         var newItem = DMXV.EntryConverter.CreateOpenXmlElement<DXVO.Entry>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

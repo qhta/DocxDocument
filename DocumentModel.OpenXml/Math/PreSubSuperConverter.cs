@@ -28,7 +28,7 @@ public static class PreSubSuperConverter
     {
       itemElement = DMXM.PreSubSuperPropertiesConverter.CreateOpenXmlElement<DXM.PreSubSuperProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class PreSubSuperConverter
     {
       itemElement = DMXM.SubArgumentConverter.CreateOpenXmlElement<DXM.SubArgument>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class PreSubSuperConverter
     {
       itemElement = DMXM.SuperArgumentConverter.CreateOpenXmlElement<DXM.SuperArgument>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -112,7 +112,7 @@ public static class PreSubSuperConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

@@ -30,7 +30,7 @@ public static class WholeConverter
     {
       itemElement = DMXD.OutlineConverter.CreateOpenXmlElement<DXD.Outline>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -56,7 +56,7 @@ public static class WholeConverter
     {
       itemElement = DMXD.EffectListConverter.CreateOpenXmlElement<DXD.EffectList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class WholeConverter
     {
       itemElement = DMXD.EffectDagConverter.CreateOpenXmlElement<DXD.EffectDag>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

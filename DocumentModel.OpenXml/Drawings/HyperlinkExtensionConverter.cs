@@ -45,7 +45,7 @@ public static class HyperlinkExtensionConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO19DHLC.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>((DMD.HyperlinkColorEnum)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO19DHLC.HyperlinkColor, DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum, DMD.HyperlinkColorEnum>((DMD.HyperlinkColorEnum)value));
   }
   
   public static DocumentModel.Drawings.HyperlinkExtension? CreateModelElement(DXD.HyperlinkExtension? openXmlElement)

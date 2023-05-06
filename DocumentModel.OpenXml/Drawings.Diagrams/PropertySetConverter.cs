@@ -585,7 +585,7 @@ public static class PropertySetConverter
     {
       itemElement = DMXDD.PresentationLayoutVariablesConverter.CreateOpenXmlElement<DXDD.PresentationLayoutVariables>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -614,7 +614,7 @@ public static class PropertySetConverter
     {
       itemElement = DMXDD.StyleConverter.CreateOpenXmlElement<DXDD.Style>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

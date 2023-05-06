@@ -66,7 +66,7 @@ public static class LightRigConverter
     {
       itemElement = DMXW.SphereCoordinatesConverter.CreateOpenXmlElement<DXO10W.SphereCoordinates>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

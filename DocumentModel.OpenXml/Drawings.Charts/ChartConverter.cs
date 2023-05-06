@@ -30,7 +30,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.TitleConverter.CreateOpenXmlElement<DXDC.Title>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -61,7 +61,7 @@ public static class ChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.AutoTitleDeleted();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -90,7 +90,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.PivotFormatsConverter.CreateOpenXmlElement<DXDC.PivotFormats>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -119,7 +119,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.View3DConverter.CreateOpenXmlElement<DXDC.View3D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -148,7 +148,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.FloorConverter.CreateOpenXmlElement<DXDC.Floor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.SideWallConverter.CreateOpenXmlElement<DXDC.SideWall>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -206,7 +206,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.BackWallConverter.CreateOpenXmlElement<DXDC.BackWall>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -235,7 +235,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.PlotAreaConverter.CreateOpenXmlElement<DXDC.PlotArea>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -264,7 +264,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.LegendConverter.CreateOpenXmlElement<DXDC.Legend>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -295,7 +295,7 @@ public static class ChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.PlotVisibleOnly();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -324,7 +324,7 @@ public static class ChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>((DMDC.DisplayBlanksAsKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.DisplayBlanksAs, DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues, DMDC.DisplayBlanksAsKind>((DMDC.DisplayBlanksAsKind)value));
   }
   
   /// <summary>
@@ -354,7 +354,7 @@ public static class ChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowDataLabelsOverMaximum();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -383,7 +383,7 @@ public static class ChartConverter
     {
       itemElement = DMXDC.ChartExtensionListConverter.CreateOpenXmlElement<DXDC.ChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

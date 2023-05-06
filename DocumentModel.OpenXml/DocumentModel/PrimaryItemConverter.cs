@@ -30,7 +30,7 @@ public static class PrimaryItemConverter
     {
       itemElement = DMX.BackstageRegularButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageRegularButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class PrimaryItemConverter
     {
       itemElement = DMX.BackstagePrimaryMenuConverter.CreateOpenXmlElement<DXO10CUI.BackstagePrimaryMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

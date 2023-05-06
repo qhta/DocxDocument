@@ -28,7 +28,7 @@ public static class ParagraphPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.Justification, DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>((DMM.JustificationKind)value));
   }
   #endregion
 

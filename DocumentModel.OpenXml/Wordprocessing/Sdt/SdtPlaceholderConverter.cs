@@ -29,7 +29,7 @@ public static class SdtPlaceholderConverter
     if (value != null)
     {
       itemElement = new DXW.DocPartReference { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

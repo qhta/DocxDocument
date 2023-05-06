@@ -48,7 +48,7 @@ public static class TaskConverter
     {
       itemElement = DMX.TaskAnchorConverter.CreateOpenXmlElement<DXO21DT.TaskAnchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class TaskConverter
     {
       itemElement = DMX.TaskHistoryConverter.CreateOpenXmlElement<DXO21DT.TaskHistory>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class TaskConverter
     {
       itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

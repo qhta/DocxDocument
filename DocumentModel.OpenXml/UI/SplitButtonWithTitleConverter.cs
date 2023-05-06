@@ -330,7 +330,7 @@ public static class SplitButtonWithTitleConverter
     {
       itemElement = DMXUI.VisibleButtonConverter.CreateOpenXmlElement<DXOCUI.VisibleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -356,7 +356,7 @@ public static class SplitButtonWithTitleConverter
     {
       itemElement = DMXUI.VisibleToggleButtonConverter.CreateOpenXmlElement<DXOCUI.VisibleToggleButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -382,7 +382,7 @@ public static class SplitButtonWithTitleConverter
     {
       itemElement = DMXUI.MenuWithTitleConverter.CreateOpenXmlElement<DXOCUI.MenuWithTitle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

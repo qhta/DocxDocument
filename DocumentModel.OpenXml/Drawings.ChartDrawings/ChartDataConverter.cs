@@ -30,7 +30,7 @@ public static class ChartDataConverter
     {
       itemElement = DMXDCDs.ExternalDataConverter.CreateOpenXmlElement<DXO16DCD.ExternalData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -56,7 +56,7 @@ public static class ChartDataConverter
     {
       itemElement = DMXDCDs.DataConverter.CreateOpenXmlElement<DXO16DCD.Data>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class ChartDataConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -277,7 +277,7 @@ public static class TaskFormGroupCategoryConverter
       {
         var newItem = DMX.TaskFormGroupTaskConverter.CreateOpenXmlElement<DXO10CUI.TaskFormGroupTask>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

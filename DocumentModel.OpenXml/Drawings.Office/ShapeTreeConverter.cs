@@ -27,7 +27,7 @@ public static class ShapeTreeConverter
     {
       itemElement = DMXDO.GroupShapeNonVisualPropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeNonVisualProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class ShapeTreeConverter
     {
       itemElement = DMXDO.GroupShapePropertiesConverter.CreateOpenXmlElement<DXOD.GroupShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class ShapeTreeConverter
     {
       itemElement = DMXDO.ShapeConverter.CreateOpenXmlElement<DXOD.Shape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class ShapeTreeConverter
     {
       itemElement = DMXDO.GroupShapeConverter.CreateOpenXmlElement<DXOD.GroupShape>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -131,7 +131,7 @@ public static class ShapeTreeConverter
     {
       itemElement = DMXDO.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXOD.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

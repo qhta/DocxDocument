@@ -75,7 +75,7 @@ public static class AbstractNumConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.MultiLevelType, DXW.MultiLevelValues, DMW.MultiLevelKind>((DMW.MultiLevelKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.MultiLevelType, DXW.MultiLevelValues, DMW.MultiLevelKind>((DMW.MultiLevelKind)value));
   }
   #endregion
 
@@ -209,7 +209,7 @@ public static class AbstractNumConverter
       {
         var newItem = DMXW.LevelConverter.CreateOpenXmlElement<DXW.Level>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

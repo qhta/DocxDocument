@@ -30,7 +30,7 @@ public static class NonVisualPicturePropertiesConverter
     {
       itemElement = DMXDCD.NonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class NonVisualPicturePropertiesConverter
     {
       itemElement = DMXDCD.NonVisualPictureDrawingPropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualPictureDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

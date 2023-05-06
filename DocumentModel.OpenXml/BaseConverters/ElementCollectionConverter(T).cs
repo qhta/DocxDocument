@@ -337,7 +337,7 @@ public static class ElementCollectionConverter<T>
             }
           }
         }
-        compositeElement.AddChild(createElementMethod(modelElement));
+        compositeElement.AppendChild(createElementMethod(modelElement));
       }
     }
     return true;

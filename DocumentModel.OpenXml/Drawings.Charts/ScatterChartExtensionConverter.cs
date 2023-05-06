@@ -45,7 +45,7 @@ public static class ScatterChartExtensionConverter
     {
       itemElement = DMXDC.FilteredScatterSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredScatterSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

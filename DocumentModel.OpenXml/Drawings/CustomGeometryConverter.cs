@@ -30,7 +30,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.AdjustValueListConverter.CreateOpenXmlElement<DXD.AdjustValueList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.ShapeGuideListConverter.CreateOpenXmlElement<DXD.ShapeGuideList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.AdjustHandleListConverter.CreateOpenXmlElement<DXD.AdjustHandleList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.ConnectionSiteListConverter.CreateOpenXmlElement<DXD.ConnectionSiteList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.RectangleConverter.CreateOpenXmlElement<DXD.Rectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -175,7 +175,7 @@ public static class CustomGeometryConverter
     {
       itemElement = DMXD.PathListConverter.CreateOpenXmlElement<DXD.PathList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

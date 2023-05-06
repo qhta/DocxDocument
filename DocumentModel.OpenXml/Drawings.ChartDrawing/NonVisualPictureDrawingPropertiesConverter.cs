@@ -53,7 +53,7 @@ public static class NonVisualPictureDrawingPropertiesConverter
     {
       itemElement = DMXD.PictureLocksConverter.CreateOpenXmlElement<DXD.PictureLocks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class NonVisualPictureDrawingPropertiesConverter
     {
       itemElement = DMXD.NonVisualPicturePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.NonVisualPicturePropertiesExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXD.ParagraphPropertiesConverter.CreateOpenXmlElement<DXD.ParagraphProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -56,7 +56,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXD.RunConverter.CreateOpenXmlElement<DXD.Run>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXD.BreakConverter.CreateOpenXmlElement<DXD.Break>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -108,7 +108,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXD.FieldConverter.CreateOpenXmlElement<DXD.Field>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -136,7 +136,7 @@ public static class ParagraphConverter
     if (value == true)
     {
       var itemElement = new DXO10D.TextMath();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -162,7 +162,7 @@ public static class ParagraphConverter
     {
       itemElement = DMXD.EndParagraphRunPropertiesConverter.CreateOpenXmlElement<DXD.EndParagraphRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -27,7 +27,7 @@ public static class DocumentControlsQatItemsConverter
     {
       itemElement = DMX.ControlCloneQatConverter.CreateOpenXmlElement<DXO10CUI.ControlCloneQat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class DocumentControlsQatItemsConverter
     {
       itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ButtonRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class DocumentControlsQatItemsConverter
     {
       itemElement = DMX.SeparatorConverter.CreateOpenXmlElement<DXO10CUI.Separator>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -48,7 +48,7 @@ public static class PathShadePropertiesConverter
     {
       itemElement = DMXW.FillToRectangleConverter.CreateOpenXmlElement<DXO10W.FillToRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

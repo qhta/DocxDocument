@@ -56,7 +56,7 @@ public static class PeopleConverter
       {
         var newItem = DMXW.PersonConverter.CreateOpenXmlElement<DXO13W.Person>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -56,7 +56,7 @@ public static class AdjustListConverter
       {
         var newItem = DMXDD.AdjustConverter.CreateOpenXmlElement<DXDD.Adjust>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -194,7 +194,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.ControlCloneRegularConverter.CreateOpenXmlElement<DXO10CUI.ControlCloneRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -220,7 +220,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.ButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ButtonRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -246,7 +246,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.ToggleButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.ToggleButtonRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -272,7 +272,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.GalleryRegularConverter.CreateOpenXmlElement<DXO10CUI.GalleryRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -298,7 +298,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.MenuRegularConverter.CreateOpenXmlElement<DXO10CUI.MenuRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -324,7 +324,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.DynamicMenuRegularConverter.CreateOpenXmlElement<DXO10CUI.DynamicMenuRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -350,7 +350,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.SplitButtonRegularConverter.CreateOpenXmlElement<DXO10CUI.SplitButtonRegular>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -376,7 +376,7 @@ public static class ButtonGroupConverter
     {
       itemElement = DMX.SeparatorConverter.CreateOpenXmlElement<DXO10CUI.Separator>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

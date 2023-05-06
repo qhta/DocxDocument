@@ -104,7 +104,7 @@ public static class LevelConverter
     {
       itemElement = DMXW.NumberingFormatConverter.CreateOpenXmlElement<DXW.NumberingFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -183,7 +183,7 @@ public static class LevelConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DXW.LevelSuffixValues, DMW.LevelSuffixKind>((DMW.LevelSuffixKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelSuffix, DXW.LevelSuffixValues, DMW.LevelSuffixKind>((DMW.LevelSuffixKind)value));
   }
   #endregion
 
@@ -210,7 +210,7 @@ public static class LevelConverter
     {
       itemElement = DMXW.LevelTextConverter.CreateOpenXmlElement<DXW.LevelText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -255,7 +255,7 @@ public static class LevelConverter
     {
       itemElement = DMXW.LegacyNumberingConverter.CreateOpenXmlElement<DXW.LegacyNumbering>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -283,7 +283,7 @@ public static class LevelConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DXW.LevelJustificationValues, DMW.LevelJustificationKind>((DMW.LevelJustificationKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.LevelJustification, DXW.LevelJustificationValues, DMW.LevelJustificationKind>((DMW.LevelJustificationKind)value));
   }
   #endregion
 
@@ -310,7 +310,7 @@ public static class LevelConverter
     {
       itemElement = DMXW.PreviousParagraphPropertiesConverter.CreateOpenXmlElement<DXW.PreviousParagraphProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -338,7 +338,7 @@ public static class LevelConverter
     {
       itemElement = DMXW.NumberingSymbolRunPropertiesConverter.CreateOpenXmlElement<DXW.NumberingSymbolRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

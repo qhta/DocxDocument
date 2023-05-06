@@ -56,7 +56,7 @@ public static class ExtraColorSchemeListConverter
       {
         var newItem = DMXD.ExtraColorSchemeConverter.CreateOpenXmlElement<DXD.ExtraColorScheme>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

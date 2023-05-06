@@ -26,7 +26,7 @@ public static class NumberDataTypeConverter
     if (value != null)
     {
       itemElement = new DXDC.FormatCode { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

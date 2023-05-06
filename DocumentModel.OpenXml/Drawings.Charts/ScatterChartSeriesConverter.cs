@@ -66,7 +66,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -124,7 +124,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.MarkerConverter.CreateOpenXmlElement<DXDC.Marker>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -179,7 +179,7 @@ public static class ScatterChartSeriesConverter
       {
         var newItem = DMXDC.DataPointConverter.CreateOpenXmlElement<DXDC.DataPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -206,7 +206,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -261,7 +261,7 @@ public static class ScatterChartSeriesConverter
       {
         var newItem = DMXDC.TrendlineConverter.CreateOpenXmlElement<DXDC.Trendline>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -317,7 +317,7 @@ public static class ScatterChartSeriesConverter
       {
         var newItem = DMXDC.ErrorBarsConverter.CreateOpenXmlElement<DXDC.ErrorBars>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -344,7 +344,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.XValuesConverter.CreateOpenXmlElement<DXDC.XValues>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -370,7 +370,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.YValuesConverter.CreateOpenXmlElement<DXDC.YValues>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -398,7 +398,7 @@ public static class ScatterChartSeriesConverter
     if (value == true)
     {
       var itemElement = new DXDC.Smooth();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -424,7 +424,7 @@ public static class ScatterChartSeriesConverter
     {
       itemElement = DMXDC.ScatterSerExtensionListConverter.CreateOpenXmlElement<DXDC.ScatterSerExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

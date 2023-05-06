@@ -28,7 +28,7 @@ public static class SubscriptConverter
     {
       itemElement = DMXM.SubscriptPropertiesConverter.CreateOpenXmlElement<DXM.SubscriptProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class SubscriptConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class SubscriptConverter
     {
       itemElement = DMXM.SubArgumentConverter.CreateOpenXmlElement<DXM.SubArgument>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

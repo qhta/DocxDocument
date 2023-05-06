@@ -153,7 +153,7 @@ public static class DocumentBackgroundConverter
     {
       itemElement = DMXV.BackgroundConverter.CreateOpenXmlElement<DXV.Background>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
 #endregion

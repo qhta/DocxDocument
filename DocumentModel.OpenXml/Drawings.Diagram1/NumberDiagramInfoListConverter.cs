@@ -56,7 +56,7 @@ public static class NumberDiagramInfoListConverter
       {
         var newItem = DMXDD1.NumberDiagramInfoConverter.CreateOpenXmlElement<DXO19DD11.NumberDiagramInfo>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

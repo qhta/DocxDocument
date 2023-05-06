@@ -56,7 +56,7 @@ public static class NonVisualGroupDrawingShapePropsExtensionListConverter
       {
         var newItem = DMXD.NonVisualGroupDrawingShapePropsExtensionConverter.CreateOpenXmlElement<DXD.NonVisualGroupDrawingShapePropsExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

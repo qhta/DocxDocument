@@ -53,7 +53,7 @@ public static class MatrixRowConverter
       {
         var newItem = DMXM.ArgumentConverter.CreateOpenXmlElement(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

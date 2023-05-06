@@ -95,7 +95,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.OddHeader { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -120,7 +120,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.OddFooter { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -145,7 +145,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.EvenHeader { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -170,7 +170,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.EvenFooter { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -195,7 +195,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.FirstHeader { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -220,7 +220,7 @@ public static class HeaderFooterConverter
     if (value != null)
     {
       itemElement = new DXDC.FirstFooter { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

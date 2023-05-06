@@ -56,7 +56,7 @@ public static class ChartExtensionListConverter
       {
         var newItem = DMXDC.DataDisplayOptions16Converter.CreateOpenXmlElement<DXDC.DataDisplayOptions16>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

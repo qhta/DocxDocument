@@ -30,7 +30,7 @@ public static class PictureBulletConverter
     {
       itemElement = DMXD.BlipConverter.CreateOpenXmlElement<DXD.Blip>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

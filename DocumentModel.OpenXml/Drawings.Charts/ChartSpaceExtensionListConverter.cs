@@ -56,7 +56,7 @@ public static class ChartSpaceExtensionListConverter
       {
         var newItem = DMXDC.ChartSpaceExtensionConverter.CreateOpenXmlElement<DXDC.ChartSpaceExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -27,7 +27,7 @@ public static class MailMergeRecipientsConverter
     {
       itemElement = DMXW.SingleDataSourceRecordConverter.CreateOpenXmlElement<DXOW.SingleDataSourceRecord>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

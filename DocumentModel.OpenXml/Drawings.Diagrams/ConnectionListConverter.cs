@@ -56,7 +56,7 @@ public static class ConnectionListConverter
       {
         var newItem = DMXDD.ConnectionConverter.CreateOpenXmlElement<DXDD.Connection>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

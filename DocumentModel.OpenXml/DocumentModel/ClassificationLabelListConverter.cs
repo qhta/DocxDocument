@@ -56,7 +56,7 @@ public static class ClassificationLabelListConverter
       {
         var newItem = DMX.ClassificationLabelConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationLabel>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -83,7 +83,7 @@ public static class ClassificationLabelListConverter
     {
       itemElement = DMX.ClassificationExtensionListConverter.CreateOpenXmlElement<DXO21MLMD.ClassificationExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

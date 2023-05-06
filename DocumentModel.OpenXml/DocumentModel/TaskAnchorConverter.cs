@@ -30,7 +30,7 @@ public static class TaskAnchorConverter
     {
       itemElement = DMX.CommentAnchorConverter.CreateOpenXmlElement<DXO21DT.CommentAnchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class TaskAnchorConverter
     {
       itemElement = DMX.ExtensionListConverter.CreateOpenXmlElement<DXO21DT.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

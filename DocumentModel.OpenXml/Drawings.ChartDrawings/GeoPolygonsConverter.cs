@@ -56,7 +56,7 @@ public static class GeoPolygonsConverter
       {
         var newItem = DMXDCDs.GeoPolygonConverter.CreateOpenXmlElement<DXO16DCD.GeoPolygon>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

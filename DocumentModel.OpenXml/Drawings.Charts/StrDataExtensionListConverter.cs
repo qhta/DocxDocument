@@ -56,7 +56,7 @@ public static class StrDataExtensionListConverter
       {
         var newItem = DMXDC.StrDataExtensionConverter.CreateOpenXmlElement<DXDC.StrDataExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

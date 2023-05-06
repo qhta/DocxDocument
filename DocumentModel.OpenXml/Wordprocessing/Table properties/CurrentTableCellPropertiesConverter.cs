@@ -28,7 +28,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.ConditionalFormatStyleConverter.CreateOpenXmlElement<DXW.ConditionalFormatStyle>((DMW.ConditionalFormatFlags)value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableCellWidth>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -101,7 +101,7 @@ public static class CurrentTableCellPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.HorizontalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
   #endregion
 
@@ -128,7 +128,7 @@ public static class CurrentTableCellPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.VerticalMerge, DXW.MergedCellValues, DMW.MergedCellKind>((DMW.MergedCellKind)value));
   }
   #endregion
 
@@ -155,7 +155,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.TableCellBordersConverter.CreateOpenXmlElement<DXW.TableCellBorders>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -183,7 +183,7 @@ public static class CurrentTableCellPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DXW.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TextDirection, DXW.TextDirectionValues, DMW.TextDirectionKind>((DMW.TextDirectionKind)value));
   }
   #endregion
 
@@ -244,7 +244,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CellInsertion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -272,7 +272,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.CellDeletion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -300,7 +300,7 @@ public static class CurrentTableCellPropertiesConverter
     {
       itemElement = DMXW.CellMergeConverter.CreateOpenXmlElement<DXW.CellMerge>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

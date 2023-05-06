@@ -66,7 +66,7 @@ public static class CommentsExtensibleConverter
       {
         var newItem = DMXW.CommentExtensibleConverter.CreateOpenXmlElement<DXO21WCE.CommentExtensible>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -95,7 +95,7 @@ public static class CommentsExtensibleConverter
     {
       itemElement = DMXW.ExtensionListConverter.CreateOpenXmlElement<DXO21WCE.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

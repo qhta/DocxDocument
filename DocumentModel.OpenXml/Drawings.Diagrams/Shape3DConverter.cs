@@ -108,7 +108,7 @@ public static class Shape3DConverter
     {
       itemElement = DMXD.BevelTypeConverter.CreateOpenXmlElement<DXD.BevelTop>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -137,7 +137,7 @@ public static class Shape3DConverter
     {
       itemElement = DMXD.BevelTypeConverter.CreateOpenXmlElement<DXD.BevelBottom>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -166,7 +166,7 @@ public static class Shape3DConverter
     {
       itemElement = DMXD.ExtrusionColorConverter.CreateOpenXmlElement<DXD.ExtrusionColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -195,7 +195,7 @@ public static class Shape3DConverter
     {
       itemElement = DMXD.ContourColorConverter.CreateOpenXmlElement<DXD.ContourColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -224,7 +224,7 @@ public static class Shape3DConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

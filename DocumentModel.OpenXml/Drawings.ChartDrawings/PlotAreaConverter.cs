@@ -30,7 +30,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDCDs.PlotAreaRegionConverter.CreateOpenXmlElement<DXO16DCD.PlotAreaRegion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -85,7 +85,7 @@ public static class PlotAreaConverter
       {
         var newItem = DMXDCDs.AxisConverter.CreateOpenXmlElement<DXO16DCD.Axis>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -112,7 +112,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -138,7 +138,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

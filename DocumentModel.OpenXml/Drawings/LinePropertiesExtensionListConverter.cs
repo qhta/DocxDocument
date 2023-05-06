@@ -56,7 +56,7 @@ public static class LinePropertiesExtensionListConverter
       {
         var newItem = DMXD.LinePropertiesExtensionConverter.CreateOpenXmlElement<DXD.LinePropertiesExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

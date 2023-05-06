@@ -74,7 +74,7 @@ public static class RulesConverter
       {
         var newItem = DMXV.RuleConverter.CreateOpenXmlElement<DXVO.Rule>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

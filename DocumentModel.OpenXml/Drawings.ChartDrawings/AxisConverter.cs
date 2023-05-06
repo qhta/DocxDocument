@@ -70,7 +70,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.CategoryAxisScalingConverter.CreateOpenXmlElement<DXO16DCD.CategoryAxisScaling>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -96,7 +96,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.ValueAxisScalingConverter.CreateOpenXmlElement<DXO16DCD.ValueAxisScaling>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -122,7 +122,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.AxisTitleConverter.CreateOpenXmlElement<DXO16DCD.AxisTitle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -148,7 +148,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.AxisUnitsConverter.CreateOpenXmlElement<DXO16DCD.AxisUnits>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -174,7 +174,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.MajorGridlinesGridlinesConverter.CreateOpenXmlElement<DXO16DCD.MajorGridlinesGridlines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -200,7 +200,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.MinorGridlinesGridlinesConverter.CreateOpenXmlElement<DXO16DCD.MinorGridlinesGridlines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -226,7 +226,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.MajorTickMarksTickMarksConverter.CreateOpenXmlElement<DXO16DCD.MajorTickMarksTickMarks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -252,7 +252,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.MinorTickMarksTickMarksConverter.CreateOpenXmlElement<DXO16DCD.MinorTickMarksTickMarks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -278,7 +278,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.TickLabelsConverter.CreateOpenXmlElement<DXO16DCD.TickLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -304,7 +304,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.NumberFormatConverter.CreateOpenXmlElement<DXO16DCD.NumberFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -330,7 +330,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -356,7 +356,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -382,7 +382,7 @@ public static class AxisConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

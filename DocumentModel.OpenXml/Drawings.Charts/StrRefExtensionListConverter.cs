@@ -56,7 +56,7 @@ public static class StrRefExtensionListConverter
       {
         var newItem = DMXDC.StrRefExtensionConverter.CreateOpenXmlElement<DXDC.StrRefExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

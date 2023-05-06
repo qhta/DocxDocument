@@ -103,7 +103,7 @@ public static class TextOutlineEffectConverter
     if (value == true)
     {
       var itemElement = new DXO10W.NoFillEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -129,7 +129,7 @@ public static class TextOutlineEffectConverter
     {
       itemElement = DMXW.SolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO10W.SolidColorFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -155,7 +155,7 @@ public static class TextOutlineEffectConverter
     {
       itemElement = DMXW.GradientFillPropertiesConverter.CreateOpenXmlElement<DXO10W.GradientFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -181,7 +181,7 @@ public static class TextOutlineEffectConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.PresetLineDashProperties, DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>((DMW.PresetLineDashKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.PresetLineDashProperties, DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues, DMW.PresetLineDashKind>((DMW.PresetLineDashKind)value));
   }
   
   private static Boolean? GetRoundEmpty(DXO10W.TextOutlineEffect openXmlElement)
@@ -208,7 +208,7 @@ public static class TextOutlineEffectConverter
     if (value == true)
     {
       var itemElement = new DXO10W.RoundEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -236,7 +236,7 @@ public static class TextOutlineEffectConverter
     if (value == true)
     {
       var itemElement = new DXO10W.BevelEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -262,7 +262,7 @@ public static class TextOutlineEffectConverter
     {
       itemElement = DMXW.LineJoinMiterPropertiesConverter.CreateOpenXmlElement<DXO10W.LineJoinMiterProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

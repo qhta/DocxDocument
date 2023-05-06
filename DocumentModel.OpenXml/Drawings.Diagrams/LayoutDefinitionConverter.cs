@@ -110,7 +110,7 @@ public static class LayoutDefinitionConverter
       {
         var newItem = DMXDD.TitleConverter.CreateOpenXmlElement<DXDD.Title>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -166,7 +166,7 @@ public static class LayoutDefinitionConverter
       {
         var newItem = DMXDD.DescriptionConverter.CreateOpenXmlElement<DXDD.Description>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -193,7 +193,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.CategoryListConverter.CreateOpenXmlElement<DXDD.CategoryList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -219,7 +219,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.SampleDataConverter.CreateOpenXmlElement<DXDD.SampleData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -245,7 +245,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.StyleDataConverter.CreateOpenXmlElement<DXDD.StyleData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -271,7 +271,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.ColorDataConverter.CreateOpenXmlElement<DXDD.ColorData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -297,7 +297,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.LayoutNodeConverter.CreateOpenXmlElement<DXDD.LayoutNode>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -323,7 +323,7 @@ public static class LayoutDefinitionConverter
     {
       itemElement = DMXDD.DiagramDefinitionExtensionListConverter.CreateOpenXmlElement<DXDD.DiagramDefinitionExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

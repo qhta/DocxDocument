@@ -45,7 +45,7 @@ public static class DiagramDefinitionExtensionConverter
     {
       itemElement = DMXDD1.NumberDiagramInfoListConverter.CreateOpenXmlElement<DXO19DD11.NumberDiagramInfoList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class DiagramDefinitionExtensionConverter
     {
       itemElement = DMXDD2.TextListStyleTypeConverter.CreateOpenXmlElement<DXO19DD12.TextListStyleType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

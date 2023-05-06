@@ -134,7 +134,7 @@ public static class WebExtensionTaskpaneConverter
     {
       itemElement = DMXWEUI.WebExtensionPartReferenceConverter.CreateOpenXmlElement<DXO13WEP.WebExtensionPartReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -163,7 +163,7 @@ public static class WebExtensionTaskpaneConverter
     {
       itemElement = DMXWEUI.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13WEP.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

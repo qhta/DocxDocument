@@ -53,7 +53,7 @@ public static class NonVisualShapeDrawingPropertiesConverter
     {
       itemElement = DMXD.ShapeLocksConverter.CreateOpenXmlElement<DXD.ShapeLocks>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class NonVisualShapeDrawingPropertiesConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

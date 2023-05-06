@@ -32,7 +32,7 @@ public static class PictureOptionsConverter
     if (value == true)
     {
       var itemElement = new DXDC.ApplyToFront();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class PictureOptionsConverter
     if (value == true)
     {
       var itemElement = new DXDC.ApplyToSides();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class PictureOptionsConverter
     if (value == true)
     {
       var itemElement = new DXDC.ApplyToEnd();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class PictureOptionsConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>((DMDC.PictureFormatKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.PictureFormat, DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>((DMDC.PictureFormatKind)value));
   }
   
   /// <summary>

@@ -30,7 +30,7 @@ public static class FilteredBarSeriesConverter
     {
       itemElement = DMXDC.BarChartSeries3Converter.CreateOpenXmlElement<DXO13DC.BarChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

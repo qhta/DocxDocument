@@ -66,7 +66,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -126,7 +126,7 @@ public static class BarChartSeries3Converter
     if (value == true)
     {
       var itemElement = new DXDC.InvertIfNegative();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -155,7 +155,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -210,7 +210,7 @@ public static class BarChartSeries3Converter
       {
         var newItem = DMXDC.DataPointConverter.CreateOpenXmlElement<DXDC.DataPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -237,7 +237,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -292,7 +292,7 @@ public static class BarChartSeries3Converter
       {
         var newItem = DMXDC.TrendlineConverter.CreateOpenXmlElement<DXDC.Trendline>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -319,7 +319,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.ErrorBarsConverter.CreateOpenXmlElement<DXDC.ErrorBars>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -345,7 +345,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.CategoryAxisDataConverter.CreateOpenXmlElement<DXDC.CategoryAxisData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -371,7 +371,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.ValuesConverter.CreateOpenXmlElement<DXDC.Values>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -397,7 +397,7 @@ public static class BarChartSeries3Converter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>((DMDC.ShapeKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Shape, DocumentFormat.OpenXml.Drawing.Charts.ShapeValues, DMDC.ShapeKind>((DMDC.ShapeKind)value));
   }
   
   private static DMDC.BarSerExtensionList? GetBarSerExtensionList(DXO13DC.BarChartSeries openXmlElement)
@@ -422,7 +422,7 @@ public static class BarChartSeries3Converter
     {
       itemElement = DMXDC.BarSerExtensionListConverter.CreateOpenXmlElement<DXDC.BarSerExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

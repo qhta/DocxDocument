@@ -53,7 +53,7 @@ public static class MatrixColumnsConverter
       {
         var newItem = DMXM.MatrixColumnConverter.CreateOpenXmlElement<DXM.MatrixColumn>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

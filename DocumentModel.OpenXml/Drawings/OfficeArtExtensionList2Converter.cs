@@ -56,7 +56,7 @@ public static class OfficeArtExtensionList2Converter
       {
         var newItem = DMXD.ExtensionConverter.CreateOpenXmlElement<DXD.Extension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

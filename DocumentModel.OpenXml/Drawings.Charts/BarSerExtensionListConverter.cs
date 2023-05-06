@@ -56,7 +56,7 @@ public static class BarSerExtensionListConverter
       {
         var newItem = DMXDC.BarSerExtensionConverter.CreateOpenXmlElement<DXDC.BarSerExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

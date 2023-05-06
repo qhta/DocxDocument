@@ -81,7 +81,7 @@ public static class TablePropertiesChangeConverter
     {
       itemElement = DMXW.PreviousTablePropertiesConverter.CreateOpenXmlElement<DXW.PreviousTableProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

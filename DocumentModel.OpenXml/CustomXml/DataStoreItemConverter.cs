@@ -48,7 +48,7 @@ public static class DataStoreItemConverter
     {
       itemElement = DMXCX.SchemaReferencesConverter.CreateOpenXmlElement<DXCXDP.SchemaReferences>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

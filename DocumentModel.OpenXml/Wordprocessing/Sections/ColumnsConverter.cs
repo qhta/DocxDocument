@@ -130,7 +130,7 @@ public static class ColumnsConverter
       {
         var newItem = DMXW.ColumnConverter.CreateOpenXmlElement<DXW.Column>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

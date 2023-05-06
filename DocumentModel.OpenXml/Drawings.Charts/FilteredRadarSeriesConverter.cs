@@ -30,7 +30,7 @@ public static class FilteredRadarSeriesConverter
     {
       itemElement = DMXDC.RadarChartSeries3Converter.CreateOpenXmlElement<DXO13DC.RadarChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -45,7 +45,7 @@ public static class Bar3DChartExtensionConverter
     {
       itemElement = DMXDC.FilteredBarSeriesConverter.CreateOpenXmlElement<DXO13DC.FilteredBarSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

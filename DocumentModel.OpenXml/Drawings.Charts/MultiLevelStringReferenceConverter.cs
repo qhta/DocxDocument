@@ -26,7 +26,7 @@ public static class MultiLevelStringReferenceConverter
     if (value != null)
     {
       itemElement = new DXDC.Formula { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class MultiLevelStringReferenceConverter
     {
       itemElement = DMXDC.MultiLevelStringCacheConverter.CreateOpenXmlElement<DXDC.MultiLevelStringCache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -84,7 +84,7 @@ public static class MultiLevelStringReferenceConverter
     {
       itemElement = DMXDC.MultiLvlStrRefExtensionListConverter.CreateOpenXmlElement<DXDC.MultiLvlStrRefExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

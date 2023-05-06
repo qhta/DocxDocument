@@ -56,7 +56,7 @@ public static class Area3DChartExtensionListConverter
       {
         var newItem = DMXDC.Area3DChartExtensionConverter.CreateOpenXmlElement<DXDC.Area3DChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

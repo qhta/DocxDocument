@@ -56,7 +56,7 @@ public static class CategoryListConverter
       {
         var newItem = DMXDD.CategoryConverter.CreateOpenXmlElement<DXDD.Category>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

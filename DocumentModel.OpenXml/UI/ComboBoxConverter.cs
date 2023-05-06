@@ -790,7 +790,7 @@ public static class ComboBoxConverter
       {
         var newItem = DMXUI.ItemConverter.CreateOpenXmlElement<DXOCUI.Item>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -28,7 +28,7 @@ public static class MathFunctionConverter
     {
       itemElement = DMXM.FunctionPropertiesConverter.CreateOpenXmlElement<DXM.FunctionProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class MathFunctionConverter
     {
       itemElement = DMXM.FunctionNameConverter.CreateOpenXmlElement<DXM.FunctionName>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class MathFunctionConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

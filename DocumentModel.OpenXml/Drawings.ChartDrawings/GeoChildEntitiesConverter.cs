@@ -56,7 +56,7 @@ public static class GeoChildEntitiesConverter
       {
         var newItem = DMXDCDs.GeoHierarchyEntityConverter.CreateOpenXmlElement<DXO16DCD.GeoHierarchyEntity>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

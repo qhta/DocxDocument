@@ -45,7 +45,7 @@ public static class ChartSpaceExtensionConverter
     {
       itemElement = DMXDC.PivotOptionsConverter.CreateOpenXmlElement<DXO10DC.PivotOptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class ChartSpaceExtensionConverter
     {
       itemElement = DMXDC.SketchOptionsConverter.CreateOpenXmlElement<DXO10DC.SketchOptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class ChartSpaceExtensionConverter
     {
       itemElement = DMXDC.PivotSource3Converter.CreateOpenXmlElement<DXO13DC.PivotSource>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

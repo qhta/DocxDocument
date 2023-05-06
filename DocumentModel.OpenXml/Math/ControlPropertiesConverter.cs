@@ -28,7 +28,7 @@ public static class ControlPropertiesConverter
     {
       itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -54,7 +54,7 @@ public static class ControlPropertiesConverter
     {
       itemElement = DMXW.InsertedMathControlConverter.CreateOpenXmlElement<DXW.InsertedMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -80,7 +80,7 @@ public static class ControlPropertiesConverter
     {
       itemElement = DMXW.DeletedMathControlConverter.CreateOpenXmlElement<DXW.DeletedMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class ControlPropertiesConverter
     {
       itemElement = DMXW.MoveFromMathControlConverter.CreateOpenXmlElement<DXW.MoveFromMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -132,7 +132,7 @@ public static class ControlPropertiesConverter
     {
       itemElement = DMXW.MoveToMathControlConverter.CreateOpenXmlElement<DXW.MoveToMathControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

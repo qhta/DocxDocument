@@ -27,7 +27,7 @@ public static class TextDataConverter
     {
       itemElement = DMXDCDs.OpenXmlFormulaElementConverter.CreateOpenXmlElement<DXO16DCD.Formula>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -49,7 +49,7 @@ public static class TextDataConverter
     if (value != null)
     {
       itemElement = new DXO16DCD.VXsdstring { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

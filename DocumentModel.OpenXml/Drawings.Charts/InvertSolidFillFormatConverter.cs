@@ -30,7 +30,7 @@ public static class InvertSolidFillFormatConverter
     {
       itemElement = DMXDC.ShapeProperties2Converter.CreateOpenXmlElement<DXO10DC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

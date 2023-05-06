@@ -50,7 +50,7 @@ public static class ValueColorPositionsConverter
     {
       itemElement = DMXDCDs.MinValueColorEndPositionConverter.CreateOpenXmlElement<DXO16DCD.MinValueColorEndPosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class ValueColorPositionsConverter
     {
       itemElement = DMXDCDs.ValueColorMiddlePositionConverter.CreateOpenXmlElement<DXO16DCD.ValueColorMiddlePosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -108,7 +108,7 @@ public static class ValueColorPositionsConverter
     {
       itemElement = DMXDCDs.MaxValueColorEndPositionConverter.CreateOpenXmlElement<DXO16DCD.MaxValueColorEndPosition>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

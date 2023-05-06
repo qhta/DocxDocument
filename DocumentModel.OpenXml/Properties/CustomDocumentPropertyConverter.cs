@@ -94,9 +94,18 @@ public static class CustomDocumentPropertyConverter
         valueElement.Remove();
       if (value != null)
       {
-        valueElement = VariantConverter.CreateOpenXmlElement(new Variant(VariantType.Lpwstr,value));
+        if (value is string)
+          valueElement = VariantConverter.CreateOpenXmlElement(new Variant(VariantType.Lpwstr,value));
+        else
+        if (value is DateTime)
+          valueElement = VariantConverter.CreateOpenXmlElement(new Variant(VariantType.DateTime,value));
+        else
+        if (value is Single || value is Double || value is Decimal)
+          valueElement = VariantConverter.CreateOpenXmlElement(new Variant(VariantType.Double,value));
+        else
+          valueElement = VariantConverter.CreateOpenXmlElement(value);
         if (valueElement != null)
-          openXmlElement.AddChild(valueElement);
+          openXmlElement.AppendChild(valueElement);
       }
     }
   }

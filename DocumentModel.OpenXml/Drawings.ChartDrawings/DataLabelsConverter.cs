@@ -48,7 +48,7 @@ public static class DataLabelsConverter
     {
       itemElement = DMXDCDs.NumberFormatConverter.CreateOpenXmlElement<DXO16DCD.NumberFormat>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class DataLabelsConverter
     {
       itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class DataLabelsConverter
     {
       itemElement = DMXDCDs.TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class DataLabelsConverter
     {
       itemElement = DMXDCDs.DataLabelVisibilitiesConverter.CreateOpenXmlElement<DXO16DCD.DataLabelVisibilities>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -160,7 +160,7 @@ public static class DataLabelsConverter
     if (value != null)
     {
       itemElement = new DXO16DCD.SeparatorXsdstring { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -215,7 +215,7 @@ public static class DataLabelsConverter
       {
         var newItem = DMXDCDs.DataLabelConverter.CreateOpenXmlElement<DXO16DCD.DataLabel>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -271,7 +271,7 @@ public static class DataLabelsConverter
       {
         var newItem = DMXDCDs.DataLabelHiddenConverter.CreateOpenXmlElement<DXO16DCD.DataLabelHidden>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -298,7 +298,7 @@ public static class DataLabelsConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

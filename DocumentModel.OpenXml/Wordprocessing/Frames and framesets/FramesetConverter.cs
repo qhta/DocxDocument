@@ -29,7 +29,7 @@ public static class FramesetConverter
     if (value != null)
     {
       itemElement = new DXW.FrameSize { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -58,7 +58,7 @@ public static class FramesetConverter
     {
       itemElement = DMXW.FramesetSplitbarConverter.CreateOpenXmlElement<DXW.FramesetSplitbar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class FramesetConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DXW.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DXW.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
   }
   
   private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)
@@ -112,7 +112,7 @@ public static class FramesetConverter
     {
       itemElement = DMXW.FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -138,7 +138,7 @@ public static class FramesetConverter
     {
       itemElement = DMXW.FrameConverter.CreateOpenXmlElement<DXW.Frame>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -26,7 +26,7 @@ public static class MarkerTypeConverter
     if (value != null)
     {
       itemElement = new DXDCD.XPosition { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -51,7 +51,7 @@ public static class MarkerTypeConverter
     if (value != null)
     {
       itemElement = new DXDCD.YPosition { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

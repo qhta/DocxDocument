@@ -30,7 +30,7 @@ public static class LineToConverter
     {
       itemElement = DMXD.AdjustPoint2DTypeConverter.CreateOpenXmlElement<DXD.Point>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

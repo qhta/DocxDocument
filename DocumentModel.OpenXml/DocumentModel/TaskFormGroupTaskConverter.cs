@@ -444,7 +444,7 @@ public static class TaskFormGroupTaskConverter
       {
         var newItem = DMX.BackstageGroupConverter.CreateOpenXmlElement<DXO10CUI.BackstageGroup>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

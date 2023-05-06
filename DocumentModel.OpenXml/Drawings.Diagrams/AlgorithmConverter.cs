@@ -94,7 +94,7 @@ public static class AlgorithmConverter
       {
         var newItem = DMXDD.ParameterConverter.CreateOpenXmlElement<DXDD.Parameter>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -121,7 +121,7 @@ public static class AlgorithmConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

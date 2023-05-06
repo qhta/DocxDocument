@@ -71,7 +71,7 @@ public static class GradientFillConverter
     {
       itemElement = DMXD.GradientStopListConverter.CreateOpenXmlElement<DXD.GradientStopList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class GradientFillConverter
     {
       itemElement = DMXD.LinearGradientFillConverter.CreateOpenXmlElement<DXD.LinearGradientFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class GradientFillConverter
     {
       itemElement = DMXD.PathGradientFillConverter.CreateOpenXmlElement<DXD.PathGradientFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -149,7 +149,7 @@ public static class GradientFillConverter
     {
       itemElement = DMXD.RelativeRectangleTypeConverter.CreateOpenXmlElement<DXD.TileRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

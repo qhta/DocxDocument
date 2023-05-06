@@ -71,7 +71,7 @@ public static class DataLabelFieldTableCacheConverter
       {
         var newItem = DMXDC.StringPointConverter.CreateOpenXmlElement<DXDC.StringPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -98,7 +98,7 @@ public static class DataLabelFieldTableCacheConverter
     {
       itemElement = DMXDC.StrDataExtensionListConverter.CreateOpenXmlElement<DXDC.StrDataExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

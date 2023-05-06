@@ -30,7 +30,7 @@ public static class FilteredSurfaceSeriesConverter
     {
       itemElement = DMXDC.SurfaceChartSeries3Converter.CreateOpenXmlElement<DXO13DC.SurfaceChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

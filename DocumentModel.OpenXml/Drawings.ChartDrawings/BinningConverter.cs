@@ -80,7 +80,7 @@ public static class BinningConverter
     if (value != null)
     {
       itemElement = new DXO16DCD.Xsddouble { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -105,7 +105,7 @@ public static class BinningConverter
     if (value != null)
     {
       itemElement = new DXO16DCD.BinCountXsdunsignedInt { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

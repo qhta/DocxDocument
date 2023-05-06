@@ -26,7 +26,7 @@ public static class TrendlineConverter
     if (value != null)
     {
       itemElement = new DXDC.TrendlineName { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class TrendlineConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -84,7 +84,7 @@ public static class TrendlineConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>((DMDC.TrendlineKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.TrendlineType, DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>((DMDC.TrendlineKind)value));
   }
   
   /// <summary>
@@ -204,7 +204,7 @@ public static class TrendlineConverter
     if (value == true)
     {
       var itemElement = new DXDC.DisplayRSquaredValue();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -235,7 +235,7 @@ public static class TrendlineConverter
     if (value == true)
     {
       var itemElement = new DXDC.DisplayEquation();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -264,7 +264,7 @@ public static class TrendlineConverter
     {
       itemElement = DMXDC.TrendlineLabelConverter.CreateOpenXmlElement<DXDC.TrendlineLabel>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -293,7 +293,7 @@ public static class TrendlineConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

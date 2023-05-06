@@ -30,7 +30,7 @@ public static class FilteredLineSeriesExtensionConverter
     {
       itemElement = DMXDC.LineChartSeries3Converter.CreateOpenXmlElement<DXO13DC.LineChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

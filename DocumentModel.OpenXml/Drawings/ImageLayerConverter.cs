@@ -74,7 +74,7 @@ public static class ImageLayerConverter
       {
         var newItem = DMXD.ImageEffectConverter.CreateOpenXmlElement<DXO10D.ImageEffect>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

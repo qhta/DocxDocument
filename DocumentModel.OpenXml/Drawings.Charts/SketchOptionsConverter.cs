@@ -32,7 +32,7 @@ public static class SketchOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.InSketchMode();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class SketchOptionsConverter
     if (value == true)
     {
       var itemElement = new DXO10DC.ShowSketchButton();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

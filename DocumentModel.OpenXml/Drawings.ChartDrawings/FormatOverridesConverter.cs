@@ -56,7 +56,7 @@ public static class FormatOverridesConverter
       {
         var newItem = DMXDCDs.FormatOverrideConverter.CreateOpenXmlElement<DXO16DCD.FormatOverride>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

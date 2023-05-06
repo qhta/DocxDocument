@@ -81,7 +81,7 @@ public static class RunPropertiesChangeConverter
     {
       itemElement = DMXW.PreviousRunPropertiesConverter.CreateOpenXmlElement<DXW.PreviousRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

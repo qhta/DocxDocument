@@ -30,7 +30,7 @@ public static class FilteredScatterSeriesConverter
     {
       itemElement = DMXDC.ScatterChartSeries3Converter.CreateOpenXmlElement<DXO13DC.ScatterChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

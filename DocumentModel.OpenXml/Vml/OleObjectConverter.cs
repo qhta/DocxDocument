@@ -152,7 +152,7 @@ public static class OleObjectConverter
     if (value != null)
     {
       itemElement = new DXVO.LinkType { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class OleObjectConverter
     if (value != null)
     {
       itemElement = new DXVO.LockedField { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -202,7 +202,7 @@ public static class OleObjectConverter
     if (value != null)
     {
       itemElement = new DXVO.FieldCodes { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

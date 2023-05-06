@@ -96,7 +96,7 @@ public static class RunConverter
     {
       itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(model);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

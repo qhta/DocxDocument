@@ -26,7 +26,7 @@ public static class DataLabelsRangeConverter
     if (value != null)
     {
       itemElement = new DXO13DC.Formula { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class DataLabelsRangeConverter
     {
       itemElement = DMXDC.DataLabelsRangeChacheConverter.CreateOpenXmlElement<DXO13DC.DataLabelsRangeChache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -56,7 +56,7 @@ public static class ShapeHandlesConverter
       {
         var newItem = DMXV.ShapeHandleConverter.CreateOpenXmlElement<DXV.ShapeHandle>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

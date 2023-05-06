@@ -32,7 +32,7 @@ public static class ChartSpaceConverter
     if (value == true)
     {
       var itemElement = new DXDC.Date1904();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -81,7 +81,7 @@ public static class ChartSpaceConverter
     if (value == true)
     {
       var itemElement = new DXDC.RoundedCorners();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -122,7 +122,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ColorMapOverrideConverter.CreateOpenXmlElement<DXDC.ColorMapOverride>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -148,7 +148,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.PivotSourceConverter.CreateOpenXmlElement<DXDC.PivotSource>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -174,7 +174,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ProtectionConverter.CreateOpenXmlElement<DXDC.Protection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -200,7 +200,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ChartConverter.CreateOpenXmlElement<DXDC.Chart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -226,7 +226,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -252,7 +252,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -278,7 +278,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ExternalDataConverter.CreateOpenXmlElement<DXDC.ExternalData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -304,7 +304,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.PrintSettingsConverter.CreateOpenXmlElement<DXDC.PrintSettings>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -330,7 +330,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.RelationshipIdTypeConverter.CreateOpenXmlElement<DXDC.UserShapesReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -356,7 +356,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDC.ChartSpaceExtensionListConverter.CreateOpenXmlElement<DXDC.ChartSpaceExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

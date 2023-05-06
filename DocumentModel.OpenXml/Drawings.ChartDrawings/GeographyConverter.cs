@@ -120,7 +120,7 @@ public static class GeographyConverter
     {
       itemElement = DMXDCDs.GeoCacheConverter.CreateOpenXmlElement<DXO16DCD.GeoCache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
