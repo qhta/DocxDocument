@@ -26,7 +26,7 @@ public static class SdtContentDocPartListConverter
     if (value != null)
     {
       itemElement = new DXW.DocPartGallery { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -51,7 +51,7 @@ public static class SdtContentDocPartListConverter
     if (value != null)
     {
       itemElement = new DXW.DocPartCategory { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

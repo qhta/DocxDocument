@@ -56,7 +56,7 @@ public static class CopyrightsConverter
       {
         var newItem = StringValueConverter.CreateOpenXmlElement<DXO16DCD.CopyrightXsdstring>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -56,7 +56,7 @@ public static class NonVisualDrawingPropertiesExtensionListConverter
       {
         var newItem = DMXD.NonVisualDrawingPropertiesExtensionConverter.CreateOpenXmlElement<DXD.NonVisualDrawingPropertiesExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -48,7 +48,7 @@ public static class DefaultRunPropertiesConverter
     else
     {
       element = BaseRunPropertiesConverter.CreateOpenXmlElement(model);
-      openXmlElement.AddChild(element);
+      openXmlElement.AppendChild(element);
     }
   }
   #endregion

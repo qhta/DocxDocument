@@ -30,7 +30,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXW.CameraConverter.CreateOpenXmlElement<DXO10W.Camera>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXW.LightRigConverter.CreateOpenXmlElement<DXO10W.LightRig>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

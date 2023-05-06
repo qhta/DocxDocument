@@ -27,7 +27,7 @@ public static class DivsChildConverter
     {
       itemElement = DMXW.DivConverter.CreateOpenXmlElement<DXW.Div>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

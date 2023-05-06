@@ -30,7 +30,7 @@ public static class GeoLocationsConverter
     {
       itemElement = DMXDCDs.GeoLocationConverter.CreateOpenXmlElement<DXO16DCD.GeoLocation>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class FilteredPieSeriesConverter
     {
       itemElement = DMXDC.PieChartSeries3Converter.CreateOpenXmlElement<DXO13DC.PieChartSeries>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

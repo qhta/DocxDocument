@@ -28,7 +28,7 @@ public static class SuperscriptConverter
     {
       itemElement = DMXM.SuperscriptPropertiesConverter.CreateOpenXmlElement<DXM.SuperscriptProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class SuperscriptConverter
     {
       itemElement = DMXM.ArgumentConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class SuperscriptConverter
     {
       itemElement = DMXM.SuperArgumentConverter.CreateOpenXmlElement<DXM.SuperArgument>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

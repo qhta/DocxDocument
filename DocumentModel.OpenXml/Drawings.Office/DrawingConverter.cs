@@ -30,7 +30,7 @@ public static class DrawingConverter
     {
       itemElement = DMXDO.ShapeTreeConverter.CreateOpenXmlElement<DXOD.ShapeTree>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

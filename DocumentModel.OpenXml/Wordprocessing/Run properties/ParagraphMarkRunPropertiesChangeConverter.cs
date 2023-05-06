@@ -81,7 +81,7 @@ public static class ParagraphMarkRunPropertiesChangeConverter
     {
       itemElement = DMXW.PreviousParagraphMarkRunPropertiesConverter.CreateOpenXmlElement<DXW.PreviousParagraphMarkRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

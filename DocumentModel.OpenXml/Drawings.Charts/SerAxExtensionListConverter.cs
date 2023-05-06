@@ -56,7 +56,7 @@ public static class SerAxExtensionListConverter
       {
         var newItem = DMXDC.SerAxExtensionConverter.CreateOpenXmlElement<DXDC.SerAxExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

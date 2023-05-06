@@ -30,7 +30,7 @@ public static class SdtContentCheckBoxConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.Checked, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO10W.Checked, DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>((DMW.OnOffKind)value));
   }
   
   /// <summary>
@@ -58,7 +58,7 @@ public static class SdtContentCheckBoxConverter
     {
       itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO10W.CheckedState>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -87,7 +87,7 @@ public static class SdtContentCheckBoxConverter
     {
       itemElement = DMXW.CheckBoxSymbolTypeConverter.CreateOpenXmlElement<DXO10W.UncheckedState>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

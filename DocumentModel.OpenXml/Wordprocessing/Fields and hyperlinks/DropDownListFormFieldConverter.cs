@@ -92,7 +92,7 @@ public static class DropDownListFormFieldConverter
       {
         var newItem = StringValueConverter.CreateOpenXmlElement<DXW.ListEntryFormField>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

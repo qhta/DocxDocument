@@ -27,7 +27,7 @@ public static class EffectStyleListConverter
     {
       itemElement = DMXD.EffectStyleConverter.CreateOpenXmlElement<DXD.EffectStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class QuickAccessToolbarConverter
     {
       itemElement = DMXUI.SharedQatControlsConverter.CreateOpenXmlElement<DXOCUI.SharedQatControls>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class QuickAccessToolbarConverter
     {
       itemElement = DMXUI.DocumentSpecificQuickAccessToolbarControlsConverter.CreateOpenXmlElement<DXOCUI.DocumentSpecificQuickAccessToolbarControls>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -56,7 +56,7 @@ public static class GeoParentEntitiesQueryResultsConverter
       {
         var newItem = DMXDCDs.GeoParentEntitiesQueryResultConverter.CreateOpenXmlElement<DXO16DCD.GeoParentEntitiesQueryResult>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -29,7 +29,7 @@ public static class CategoryConverter
     if (value != null)
     {
       itemElement = new DXW.Name { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -58,7 +58,7 @@ public static class CategoryConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Gallery, DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>((DMW.DocPartGalleryKind)value));
   }
   
   public static DMW.Category? CreateModelElement(DXW.Category? openXmlElement)

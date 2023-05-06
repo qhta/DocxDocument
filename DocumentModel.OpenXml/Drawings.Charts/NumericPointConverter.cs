@@ -64,7 +64,7 @@ public static class NumericPointConverter
     if (value != null)
     {
       itemElement = new DXDC.NumericValue { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

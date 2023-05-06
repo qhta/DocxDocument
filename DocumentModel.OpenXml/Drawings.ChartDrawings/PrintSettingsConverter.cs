@@ -30,7 +30,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDCDs.HeaderFooterConverter.CreateOpenXmlElement<DXO16DCD.HeaderFooter>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDCDs.PageMarginsConverter.CreateOpenXmlElement<DXO16DCD.PageMargins>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDCDs.PageSetupConverter.CreateOpenXmlElement<DXO16DCD.PageSetup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

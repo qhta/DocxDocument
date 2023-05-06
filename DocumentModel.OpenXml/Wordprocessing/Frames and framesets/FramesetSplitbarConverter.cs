@@ -48,7 +48,7 @@ public static class FramesetSplitbarConverter
     {
       itemElement = DMXW.ColorConverter.CreateOpenXmlElement<DXW.Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -53,7 +53,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticBlurConverter.CreateOpenXmlElement<DXO10D.ArtisticBlur>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticCementConverter.CreateOpenXmlElement<DXO10D.ArtisticCement>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -111,7 +111,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticChalkSketchConverter.CreateOpenXmlElement<DXO10D.ArtisticChalkSketch>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -140,7 +140,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticCrisscrossEtchingConverter.CreateOpenXmlElement<DXO10D.ArtisticCrisscrossEtching>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -169,7 +169,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticCutoutConverter.CreateOpenXmlElement<DXO10D.ArtisticCutout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -198,7 +198,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticFilmGrainConverter.CreateOpenXmlElement<DXO10D.ArtisticFilmGrain>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -227,7 +227,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticGlassConverter.CreateOpenXmlElement<DXO10D.ArtisticGlass>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -256,7 +256,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticGlowDiffusedConverter.CreateOpenXmlElement<DXO10D.ArtisticGlowDiffused>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -285,7 +285,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticGlowEdgesConverter.CreateOpenXmlElement<DXO10D.ArtisticGlowEdges>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -314,7 +314,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticLightScreenConverter.CreateOpenXmlElement<DXO10D.ArtisticLightScreen>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -343,7 +343,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticLineDrawingConverter.CreateOpenXmlElement<DXO10D.ArtisticLineDrawing>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -372,7 +372,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticMarkerConverter.CreateOpenXmlElement<DXO10D.ArtisticMarker>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -401,7 +401,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticMosaicBubblesConverter.CreateOpenXmlElement<DXO10D.ArtisticMosaicBubbles>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -430,7 +430,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPaintStrokesConverter.CreateOpenXmlElement<DXO10D.ArtisticPaintStrokes>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -459,7 +459,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPaintBrushConverter.CreateOpenXmlElement<DXO10D.ArtisticPaintBrush>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -488,7 +488,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPastelsSmoothConverter.CreateOpenXmlElement<DXO10D.ArtisticPastelsSmooth>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -517,7 +517,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPencilGrayscaleConverter.CreateOpenXmlElement<DXO10D.ArtisticPencilGrayscale>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -546,7 +546,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPencilSketchConverter.CreateOpenXmlElement<DXO10D.ArtisticPencilSketch>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -575,7 +575,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPhotocopyConverter.CreateOpenXmlElement<DXO10D.ArtisticPhotocopy>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -604,7 +604,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticPlasticWrapConverter.CreateOpenXmlElement<DXO10D.ArtisticPlasticWrap>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -633,7 +633,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticTexturizerConverter.CreateOpenXmlElement<DXO10D.ArtisticTexturizer>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -662,7 +662,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ArtisticWatercolorSpongeConverter.CreateOpenXmlElement<DXO10D.ArtisticWatercolorSponge>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -691,7 +691,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.BackgroundRemovalConverter.CreateOpenXmlElement<DXO10D.BackgroundRemoval>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -720,7 +720,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.BrightnessContrastConverter.CreateOpenXmlElement<DXO10D.BrightnessContrast>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -749,7 +749,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.ColorTemperatureConverter.CreateOpenXmlElement<DXO10D.ColorTemperature>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -778,7 +778,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.Saturation2Converter.CreateOpenXmlElement<DXO10D.Saturation>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -807,7 +807,7 @@ public static class ImageEffectConverter
     {
       itemElement = DMXD.SharpenSoftenConverter.CreateOpenXmlElement<DXO10D.SharpenSoften>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

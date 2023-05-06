@@ -32,7 +32,7 @@ public static class Surface3DChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.Wireframe();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class Surface3DChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -118,7 +118,7 @@ public static class Surface3DChartConverter
       {
         var newItem = DMXDC.SurfaceChartSeriesConverter.CreateOpenXmlElement<DXDC.SurfaceChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -145,7 +145,7 @@ public static class Surface3DChartConverter
     {
       itemElement = DMXDC.BandFormatsConverter.CreateOpenXmlElement<DXDC.BandFormats>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -200,7 +200,7 @@ public static class Surface3DChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -227,7 +227,7 @@ public static class Surface3DChartConverter
     {
       itemElement = DMXDC.Surface3DChartExtensionListConverter.CreateOpenXmlElement<DXDC.Surface3DChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

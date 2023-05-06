@@ -56,7 +56,7 @@ public static class DiagramDefinitionExtensionListConverter
       {
         var newItem = DMXDD.DiagramDefinitionExtensionConverter.CreateOpenXmlElement<DXDD.DiagramDefinitionExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -30,7 +30,7 @@ public static class CurrentTablePropertiesConverter
     {
       itemElement = DMXW.TableWidthTypeConverter.CreateOpenXmlElement<DXW.TableWidth>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -58,7 +58,7 @@ public static class CurrentTablePropertiesConverter
     {
       itemElement = DMXW.TableLayoutConverter.CreateOpenXmlElement<DXW.TableLayout>((DMW.TableLayoutKind)value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -86,7 +86,7 @@ public static class CurrentTablePropertiesConverter
     {
       itemElement = DMXW.TableLookConverter.CreateOpenXmlElement<DXW.TableLook>((DMW.TableLookFlags)value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

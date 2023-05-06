@@ -48,7 +48,7 @@ public static class GeoChildEntitiesQueryConverter
     {
       itemElement = DMXDCDs.GeoChildTypesConverter.CreateOpenXmlElement<DXO16DCD.GeoChildTypes>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

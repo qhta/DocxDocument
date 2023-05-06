@@ -128,7 +128,7 @@ public static class RuleConverter
       {
         var newItem = DMXV.ProxyConverter.CreateOpenXmlElement<DXVO.Proxy>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

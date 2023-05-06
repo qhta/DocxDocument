@@ -480,7 +480,7 @@ public static class BackstageDropDownConverter
       {
         var newItem = DMX.BackstageItemTypeConverter.CreateOpenXmlElement<DXO10CUI.ItemBackstageItem>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

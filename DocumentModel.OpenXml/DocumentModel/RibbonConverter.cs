@@ -53,7 +53,7 @@ public static class RibbonConverter
     {
       itemElement = DMX.QuickAccessToolbarConverter.CreateOpenXmlElement<DXO10CUI.QuickAccessToolbar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class RibbonConverter
     {
       itemElement = DMX.TabsConverter.CreateOpenXmlElement<DXO10CUI.Tabs>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -111,7 +111,7 @@ public static class RibbonConverter
     {
       itemElement = DMX.ContextualTabsConverter.CreateOpenXmlElement<DXO10CUI.ContextualTabs>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

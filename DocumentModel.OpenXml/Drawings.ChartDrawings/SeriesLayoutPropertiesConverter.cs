@@ -30,7 +30,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.ParentLabelLayoutConverter.CreateOpenXmlElement<DXO16DCD.ParentLabelLayout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class SeriesLayoutPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO16DCD.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDCDs.RegionLabelLayoutEnum>((DMDCDs.RegionLabelLayoutEnum)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO16DCD.RegionLabelLayout, DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDCDs.RegionLabelLayoutEnum>((DMDCDs.RegionLabelLayoutEnum)value));
   }
   
   /// <summary>
@@ -87,7 +87,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.SeriesElementVisibilitiesConverter.CreateOpenXmlElement<DXO16DCD.SeriesElementVisibilities>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -115,7 +115,7 @@ public static class SeriesLayoutPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO16DCD.Aggregation();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -141,7 +141,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.BinningConverter.CreateOpenXmlElement<DXO16DCD.Binning>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -167,7 +167,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.GeographyConverter.CreateOpenXmlElement<DXO16DCD.Geography>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -193,7 +193,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.StatisticsConverter.CreateOpenXmlElement<DXO16DCD.Statistics>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -219,7 +219,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.SubtotalsConverter.CreateOpenXmlElement<DXO16DCD.Subtotals>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -245,7 +245,7 @@ public static class SeriesLayoutPropertiesConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

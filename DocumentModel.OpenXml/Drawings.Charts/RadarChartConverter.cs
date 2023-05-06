@@ -30,7 +30,7 @@ public static class RadarChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.RadarStyle, DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDC.RadarStyleKind>((DMDC.RadarStyleKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.RadarStyle, DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues, DMDC.RadarStyleKind>((DMDC.RadarStyleKind)value));
   }
   
   /// <summary>
@@ -60,7 +60,7 @@ public static class RadarChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -115,7 +115,7 @@ public static class RadarChartConverter
       {
         var newItem = DMXDC.RadarChartSeriesConverter.CreateOpenXmlElement<DXDC.RadarChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -142,7 +142,7 @@ public static class RadarChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -197,7 +197,7 @@ public static class RadarChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -224,7 +224,7 @@ public static class RadarChartConverter
     {
       itemElement = DMXDC.RadarChartExtensionListConverter.CreateOpenXmlElement<DXDC.RadarChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

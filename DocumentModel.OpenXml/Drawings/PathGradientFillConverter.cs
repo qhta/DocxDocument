@@ -48,7 +48,7 @@ public static class PathGradientFillConverter
     {
       itemElement = DMXD.RelativeRectangleTypeConverter.CreateOpenXmlElement<DXD.FillToRectangle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

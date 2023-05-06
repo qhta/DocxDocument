@@ -56,7 +56,7 @@ public static class TabsConverter
       {
         var newItem = DMX.TabConverter.CreateOpenXmlElement<DXO10CUI.Tab>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

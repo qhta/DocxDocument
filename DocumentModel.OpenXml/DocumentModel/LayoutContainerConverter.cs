@@ -135,7 +135,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageGroupButtonConverter.CreateOpenXmlElement<DXO10CUI.BackstageGroupButton>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -161,7 +161,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageCheckBoxConverter.CreateOpenXmlElement<DXO10CUI.BackstageCheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -187,7 +187,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageEditBoxConverter.CreateOpenXmlElement<DXO10CUI.BackstageEditBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -213,7 +213,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageDropDownConverter.CreateOpenXmlElement<DXO10CUI.BackstageDropDown>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -239,7 +239,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.RadioGroupConverter.CreateOpenXmlElement<DXO10CUI.RadioGroup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -265,7 +265,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageComboBoxConverter.CreateOpenXmlElement<DXO10CUI.BackstageComboBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -291,7 +291,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.HyperlinkConverter.CreateOpenXmlElement<DXO10CUI.Hyperlink>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -317,7 +317,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.BackstageLabelControlConverter.CreateOpenXmlElement<DXO10CUI.BackstageLabelControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -343,7 +343,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.GroupBoxConverter.CreateOpenXmlElement<DXO10CUI.GroupBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -369,7 +369,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.LayoutContainerConverter.CreateOpenXmlElement<DXO10CUI.LayoutContainer>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -395,7 +395,7 @@ public static class LayoutContainerConverter
     {
       itemElement = DMX.ImageControlConverter.CreateOpenXmlElement<DXO10CUI.ImageControl>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

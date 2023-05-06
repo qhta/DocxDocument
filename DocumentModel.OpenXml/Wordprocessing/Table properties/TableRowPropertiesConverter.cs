@@ -28,7 +28,7 @@ public static class TableRowPropertiesConverter
     {
       itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.Inserted>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class TableRowPropertiesConverter
     {
       itemElement = DMXW.TrackChangeTypeConverter.CreateOpenXmlElement<DXW.Deleted>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class TableRowPropertiesConverter
     {
       itemElement = DMXW.TableRowPropertiesChangeConverter.CreateOpenXmlElement<DXW.TableRowPropertiesChange>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -112,7 +112,7 @@ public static class TableRowPropertiesConverter
     {
       itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.ConflictInsertion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -140,7 +140,7 @@ public static class TableRowPropertiesConverter
     {
       itemElement = DMXW.TrackChangeType2Converter.CreateOpenXmlElement<DXO10W.ConflictDeletion>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

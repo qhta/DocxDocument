@@ -56,7 +56,7 @@ public static class McdsConverter
       {
         var newItem = DMXW.McdConverter.CreateOpenXmlElement<DXOW.Mcd>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

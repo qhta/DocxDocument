@@ -56,7 +56,7 @@ public static class ExtensionListConverter
       {
         var newItem = DMXDC.ExtensionConverter.CreateOpenXmlElement<DXDC.Extension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

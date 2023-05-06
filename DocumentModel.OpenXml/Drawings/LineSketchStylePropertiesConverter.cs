@@ -47,7 +47,7 @@ public static class LineSketchStylePropertiesConverter
     {
       itemElement = DMXD.CustomGeometryConverter.CreateOpenXmlElement<DXD.CustomGeometry>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -73,7 +73,7 @@ public static class LineSketchStylePropertiesConverter
     {
       itemElement = DMXD.PresetGeometryConverter.CreateOpenXmlElement<DXD.PresetGeometry>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -99,7 +99,7 @@ public static class LineSketchStylePropertiesConverter
     {
       itemElement = DMXD.LineSketchTypePropertiesConverter.CreateOpenXmlElement<DXO21DSS.LineSketchTypeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -121,7 +121,7 @@ public static class LineSketchStylePropertiesConverter
     if (value != null)
     {
       itemElement = new DXO21DSS.LineSketchSeed { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -147,7 +147,7 @@ public static class LineSketchStylePropertiesConverter
     {
       itemElement = DMXD.OfficeArtExtensionList6Converter.CreateOpenXmlElement<DXO21DSS.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class TextConverter
     {
       itemElement = DMXDCDs.TextDataConverter.CreateOpenXmlElement<DXO16DCD.TextData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class TextConverter
     {
       itemElement = DMXDCDs.RichTextBodyConverter.CreateOpenXmlElement<DXO16DCD.RichTextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class DrawingConverter
     {
       itemElement = DMXDW.AnchorConverter.CreateOpenXmlElement<DXDW.Anchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class DrawingConverter
     {
       itemElement = DMXDW.InlineConverter.CreateOpenXmlElement<DXDW.Inline>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

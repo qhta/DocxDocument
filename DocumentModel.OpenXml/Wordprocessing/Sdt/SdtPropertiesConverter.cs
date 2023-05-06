@@ -27,7 +27,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.RunPropertiesConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -52,7 +52,7 @@ public static class SdtPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.SdtAlias { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -78,7 +78,7 @@ public static class SdtPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Lock, DXW.LockingValues, DMW.LockingKind>((DMW.LockingKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Lock, DXW.LockingValues, DMW.LockingKind>((DMW.LockingKind)value));
   }
   
   private static DMW.SdtPlaceholder? GetSdtPlaceholder(DXW.SdtProperties openXmlElement)
@@ -103,7 +103,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtPlaceholderConverter.CreateOpenXmlElement<DXW.SdtPlaceholder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -144,7 +144,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.DataBindingConverter.CreateOpenXmlElement<DXW.DataBinding>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -202,7 +202,7 @@ public static class SdtPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.Tag { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -228,7 +228,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.Color3Converter.CreateOpenXmlElement<DXO13W.Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -254,7 +254,7 @@ public static class SdtPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXO13W.Appearance, DXO13W.SdtAppearance, DMW.AppearanceKind>((DMW.AppearanceKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXO13W.Appearance, DXO13W.SdtAppearance, DMW.AppearanceKind>((DMW.AppearanceKind)value));
   }
   
   private static Boolean? GetWebExtensionLinked(DXW.SdtProperties openXmlElement)
@@ -281,7 +281,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO13W.WebExtensionLinked();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -309,7 +309,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO13W.WebExtensionCreated();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -339,7 +339,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentEquation();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -365,7 +365,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentComboBoxConverter.CreateOpenXmlElement<DXW.SdtContentComboBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -391,7 +391,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentDateConverter.CreateOpenXmlElement<DXW.SdtContentDate>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -417,7 +417,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentDocPartObjectConverter.CreateOpenXmlElement<DXW.SdtContentDocPartObject>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -443,7 +443,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentDocPartListConverter.CreateOpenXmlElement<DXW.SdtContentDocPartList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -469,7 +469,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentDropDownListConverter.CreateOpenXmlElement<DXW.SdtContentDropDownList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -499,7 +499,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentPicture();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -529,7 +529,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentRichText();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -555,7 +555,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentTextConverter.CreateOpenXmlElement<DXW.SdtContentText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -585,7 +585,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentCitation();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -615,7 +615,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentGroup();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -645,7 +645,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXW.SdtContentBibliography();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -673,7 +673,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO10W.EntityPickerEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -699,7 +699,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtContentCheckBoxConverter.CreateOpenXmlElement<DXO10W.SdtContentCheckBox>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -725,7 +725,7 @@ public static class SdtPropertiesConverter
     {
       itemElement = DMXW.SdtRepeatedSectionConverter.CreateOpenXmlElement<DXO13W.SdtRepeatedSection>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -753,7 +753,7 @@ public static class SdtPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO13W.SdtRepeatedSectionItem();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

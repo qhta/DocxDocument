@@ -32,7 +32,7 @@ public static class DataTableConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowHorizontalBorder();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class DataTableConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowVerticalBorder();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class DataTableConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowOutlineBorder();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class DataTableConverter
     if (value == true)
     {
       var itemElement = new DXDC.ShowKeys();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class DataTableConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -183,7 +183,7 @@ public static class DataTableConverter
     {
       itemElement = DMXDC.TextPropertiesConverter.CreateOpenXmlElement<DXDC.TextProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -212,7 +212,7 @@ public static class DataTableConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

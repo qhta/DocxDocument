@@ -66,7 +66,7 @@ public static class ContentPartConverter
     {
       itemElement = DMXDCDs.NonVisualContentPartPropertiesConverter.CreateOpenXmlElement<DXO10DCD.NonVisualContentPartProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class ContentPartConverter
     {
       itemElement = DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CreateOpenXmlElement<DXO10DCD.ApplicationNonVisualDrawingProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -124,7 +124,7 @@ public static class ContentPartConverter
     {
       itemElement = DMXDCDs.Transform2DConverter.CreateOpenXmlElement<DXO10DCD.Transform2D>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -153,7 +153,7 @@ public static class ContentPartConverter
     {
       itemElement = DMXDCDs.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO10DCD.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

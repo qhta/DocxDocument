@@ -30,7 +30,7 @@ public static class DefaultShapeDefinitionTypeConverter
     {
       itemElement = DMXD.ShapePropertiesConverter.CreateOpenXmlElement<DXD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class DefaultShapeDefinitionTypeConverter
     {
       itemElement = DMXD.BodyPropertiesConverter.CreateOpenXmlElement<DXD.BodyProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class DefaultShapeDefinitionTypeConverter
     {
       itemElement = DMXD.ListStyleConverter.CreateOpenXmlElement<DXD.ListStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class DefaultShapeDefinitionTypeConverter
     {
       itemElement = DMXD.ShapeStyleConverter.CreateOpenXmlElement<DXD.ShapeStyle>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class DefaultShapeDefinitionTypeConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

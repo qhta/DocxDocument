@@ -70,7 +70,7 @@ public static class RsidsConverter
       {
         var newItem = HexIntConverter.CreateOpenXmlElement<DXW.Rsid>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

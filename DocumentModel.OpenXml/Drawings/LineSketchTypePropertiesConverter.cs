@@ -32,7 +32,7 @@ public static class LineSketchTypePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO21DSS.LineSketchNoneEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -63,7 +63,7 @@ public static class LineSketchTypePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO21DSS.LineSketchCurvedEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -94,7 +94,7 @@ public static class LineSketchTypePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO21DSS.LineSketchFreehandEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -125,7 +125,7 @@ public static class LineSketchTypePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXO21DSS.LineSketchScribbleEmpty();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

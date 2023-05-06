@@ -27,7 +27,7 @@ public static class CustomXmlPropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.CustomXmlPlaceholder { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -80,7 +80,7 @@ public static class CustomXmlPropertiesConverter
       {
         var newItem = DMXW.CustomXmlAttributeConverter.CreateOpenXmlElement<DXW.CustomXmlAttribute>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

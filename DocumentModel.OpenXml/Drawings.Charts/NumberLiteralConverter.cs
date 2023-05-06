@@ -23,7 +23,7 @@ public static class NumberLiteralConverter
     if (value != null)
     {
       itemElement = new DXDC.FormatCode { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -93,7 +93,7 @@ public static class NumberLiteralConverter
       {
         var newItem = DMXDC.NumericPointConverter.CreateOpenXmlElement<DXDC.NumericPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -120,7 +120,7 @@ public static class NumberLiteralConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

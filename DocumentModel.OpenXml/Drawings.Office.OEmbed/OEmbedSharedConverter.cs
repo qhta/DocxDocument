@@ -66,7 +66,7 @@ public static class OEmbedSharedConverter
     {
       itemElement = DMXDOOEmb.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXODY21OE.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

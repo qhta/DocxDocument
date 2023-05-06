@@ -50,7 +50,7 @@ public static class ExternalDataConverter
     if (value == true)
     {
       var itemElement = new DXDC.AutoUpdate();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

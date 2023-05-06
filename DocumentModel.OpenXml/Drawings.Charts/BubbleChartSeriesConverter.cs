@@ -66,7 +66,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.SeriesTextConverter.CreateOpenXmlElement<DXDC.SeriesText>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -95,7 +95,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.ChartShapePropertiesConverter.CreateOpenXmlElement<DXDC.ChartShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -124,7 +124,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.PictureOptionsConverter.CreateOpenXmlElement<DXDC.PictureOptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -155,7 +155,7 @@ public static class BubbleChartSeriesConverter
     if (value == true)
     {
       var itemElement = new DXDC.InvertIfNegative();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -210,7 +210,7 @@ public static class BubbleChartSeriesConverter
       {
         var newItem = DMXDC.DataPointConverter.CreateOpenXmlElement<DXDC.DataPoint>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -237,7 +237,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -292,7 +292,7 @@ public static class BubbleChartSeriesConverter
       {
         var newItem = DMXDC.TrendlineConverter.CreateOpenXmlElement<DXDC.Trendline>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -348,7 +348,7 @@ public static class BubbleChartSeriesConverter
       {
         var newItem = DMXDC.ErrorBarsConverter.CreateOpenXmlElement<DXDC.ErrorBars>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -375,7 +375,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.XValuesConverter.CreateOpenXmlElement<DXDC.XValues>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -401,7 +401,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.YValuesConverter.CreateOpenXmlElement<DXDC.YValues>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -427,7 +427,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.BubbleSizeConverter.CreateOpenXmlElement<DXDC.BubbleSize>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -455,7 +455,7 @@ public static class BubbleChartSeriesConverter
     if (value == true)
     {
       var itemElement = new DXDC.Bubble3D();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -481,7 +481,7 @@ public static class BubbleChartSeriesConverter
     {
       itemElement = DMXDC.BubbleSerExtensionListConverter.CreateOpenXmlElement<DXDC.BubbleSerExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -79,7 +79,7 @@ public static class DelimiterPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.GrowOperators>((bool)value));
   }
   #endregion
 
@@ -106,7 +106,7 @@ public static class DelimiterPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>((DMM.ShapeDelimiterKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.Shape, DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>((DMM.ShapeDelimiterKind)value));
   }
   #endregion
 
@@ -133,7 +133,7 @@ public static class DelimiterPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

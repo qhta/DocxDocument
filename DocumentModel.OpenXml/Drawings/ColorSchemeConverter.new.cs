@@ -50,7 +50,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Dark1Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -76,7 +76,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Light1Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -102,7 +102,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Dark2Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -128,7 +128,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Light2Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -154,7 +154,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent1Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -180,7 +180,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent2Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -206,7 +206,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent3Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -232,7 +232,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent4Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -258,7 +258,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent5Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -284,7 +284,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Accent6Color>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -310,7 +310,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.Hyperlink>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -336,7 +336,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ThemeColorConverter.CreateOpenXmlElement<DXD.FollowedHyperlinkColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -362,7 +362,7 @@ public static class ColorSchemeConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

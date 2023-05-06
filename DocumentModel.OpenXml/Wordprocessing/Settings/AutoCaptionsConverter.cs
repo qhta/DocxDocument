@@ -27,7 +27,7 @@ public static class AutoCaptionsConverter
     {
       itemElement = DMXW.AutoCaptionConverter.CreateOpenXmlElement<DXW.AutoCaption>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

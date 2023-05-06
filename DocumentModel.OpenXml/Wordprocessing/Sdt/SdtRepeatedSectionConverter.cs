@@ -50,7 +50,7 @@ public static class SdtRepeatedSectionConverter
     if (value == true)
     {
       var itemElement = new DXO13W.DoNotAllowInsertDeleteSection();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

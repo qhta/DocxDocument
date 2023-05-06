@@ -44,7 +44,7 @@ public static class FontConverter
     if (value != null)
     {
       itemElement = new DXW.AltName { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -72,7 +72,7 @@ public static class FontConverter
     {
       itemElement = DMX.HexBinaryConverter.CreateOpenXmlElement<DXW.Panose1Number>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -100,7 +100,7 @@ public static class FontConverter
     {
       itemElement = DMXW.CharsetConverter.CreateOpenXmlElement<DXW.FontCharSet>((DMW.Charset)value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -128,7 +128,7 @@ public static class FontConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.FontFamily, DXW.FontFamilyValues, DMW.FontFamilyKind>((DMW.FontFamilyKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.FontFamily, DXW.FontFamilyValues, DMW.FontFamilyKind>((DMW.FontFamilyKind)value));
   }
   #endregion
 
@@ -172,7 +172,7 @@ public static class FontConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.Pitch, DXW.FontPitchValues, DMW.FontPitchKind>((DMW.FontPitchKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.Pitch, DXW.FontPitchValues, DMW.FontPitchKind>((DMW.FontPitchKind)value));
   }
   #endregion
 
@@ -199,7 +199,7 @@ public static class FontConverter
     {
       itemElement = DMXW.FontSignatureConverter.CreateOpenXmlElement<DXW.FontSignature>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -227,7 +227,7 @@ public static class FontConverter
     {
       itemElement = DMXW.EmbeddedFontConverter.CreateOpenXmlElement<DXW.EmbedRegularFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -255,7 +255,7 @@ public static class FontConverter
     {
       itemElement = DMXW.EmbeddedFontConverter.CreateOpenXmlElement<DXW.EmbedBoldFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -283,7 +283,7 @@ public static class FontConverter
     {
       itemElement = DMXW.EmbeddedFontConverter.CreateOpenXmlElement<DXW.EmbedItalicFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -311,7 +311,7 @@ public static class FontConverter
     {
       itemElement = DMXW.EmbeddedFontConverter.CreateOpenXmlElement<DXW.EmbedBoldItalicFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

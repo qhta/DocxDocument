@@ -325,7 +325,7 @@ public static class BackstageSubMenuConverter
     {
       itemElement = DMX.BackstageMenuGroupConverter.CreateOpenXmlElement<DXO10CUI.BackstageMenuGroup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

@@ -30,7 +30,7 @@ public static class Area3DChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>((DMDC.GroupingKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.Grouping, DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>((DMDC.GroupingKind)value));
   }
   
   /// <summary>
@@ -60,7 +60,7 @@ public static class Area3DChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -115,7 +115,7 @@ public static class Area3DChartConverter
       {
         var newItem = DMXDC.AreaChartSeriesConverter.CreateOpenXmlElement<DXDC.AreaChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -142,7 +142,7 @@ public static class Area3DChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -168,7 +168,7 @@ public static class Area3DChartConverter
     {
       itemElement = DMXDC.DropLinesConverter.CreateOpenXmlElement<DXDC.DropLines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -238,7 +238,7 @@ public static class Area3DChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -265,7 +265,7 @@ public static class Area3DChartConverter
     {
       itemElement = DMXDC.Area3DChartExtensionListConverter.CreateOpenXmlElement<DXDC.Area3DChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

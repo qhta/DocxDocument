@@ -30,7 +30,7 @@ public static class ValueColorsConverter
     {
       itemElement = DMXDCDs.MinColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MinColorSolidColorFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ValueColorsConverter
     {
       itemElement = DMXDCDs.MidColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MidColorSolidColorFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ValueColorsConverter
     {
       itemElement = DMXDCDs.MaxColorSolidColorFillPropertiesConverter.CreateOpenXmlElement<DXO16DCD.MaxColorSolidColorFillProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

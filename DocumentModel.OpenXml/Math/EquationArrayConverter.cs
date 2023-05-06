@@ -28,7 +28,7 @@ public static class EquationArrayConverter
     {
       itemElement = DMXM.EquationArrayPropertiesConverter.CreateOpenXmlElement<DXM.EquationArrayProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

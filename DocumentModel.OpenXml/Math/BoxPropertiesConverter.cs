@@ -28,7 +28,7 @@ public static class BoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.OperatorEmulator>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.OperatorEmulator>((bool)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class BoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.NoBreak>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.NoBreak>((bool)value));
   }
   #endregion
 
@@ -82,7 +82,7 @@ public static class BoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Differential>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Differential>((bool)value));
   }
   #endregion
 
@@ -109,7 +109,7 @@ public static class BoxPropertiesConverter
     {
       itemElement = DMXM.BreakConverter.CreateOpenXmlElement<DXM.Break>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -137,7 +137,7 @@ public static class BoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Alignment>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Alignment>((bool)value));
   }
   #endregion
 
@@ -164,7 +164,7 @@ public static class BoxPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

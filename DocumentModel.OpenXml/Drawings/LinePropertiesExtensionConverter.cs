@@ -45,7 +45,7 @@ public static class LinePropertiesExtensionConverter
     {
       itemElement = DMXD.LineSketchStylePropertiesConverter.CreateOpenXmlElement<DXO21DSS.LineSketchStyleProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

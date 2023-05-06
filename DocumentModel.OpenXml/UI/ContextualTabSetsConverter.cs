@@ -56,7 +56,7 @@ public static class ContextualTabSetsConverter
       {
         var newItem = DMXUI.ContextualTabSetConverter.CreateOpenXmlElement<DXOCUI.ContextualTabSet>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

@@ -30,7 +30,7 @@ public static class BackdropConverter
     {
       itemElement = DMXD.AnchorConverter.CreateOpenXmlElement<DXD.Anchor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class BackdropConverter
     {
       itemElement = DMXD.Vector3DTypeConverter.CreateOpenXmlElement<DXD.Normal>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class BackdropConverter
     {
       itemElement = DMXD.Vector3DTypeConverter.CreateOpenXmlElement<DXD.UpVector>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class BackdropConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

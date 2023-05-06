@@ -146,7 +146,7 @@ public static class GeoDataConverter
     {
       itemElement = DMXDCDs.GeoPolygonsConverter.CreateOpenXmlElement<DXO16DCD.GeoPolygons>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -175,7 +175,7 @@ public static class GeoDataConverter
     {
       itemElement = DMXDCDs.CopyrightsConverter.CreateOpenXmlElement<DXO16DCD.Copyrights>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

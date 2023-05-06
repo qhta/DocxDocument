@@ -48,7 +48,7 @@ public static class ShapeLayoutConverter
     {
       itemElement = DMXV.ShapeIdMapConverter.CreateOpenXmlElement<DXVO.ShapeIdMap>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -77,7 +77,7 @@ public static class ShapeLayoutConverter
     {
       itemElement = DMXV.RegroupTableConverter.CreateOpenXmlElement<DXVO.RegroupTable>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -106,7 +106,7 @@ public static class ShapeLayoutConverter
     {
       itemElement = DMXV.RulesConverter.CreateOpenXmlElement<DXVO.Rules>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

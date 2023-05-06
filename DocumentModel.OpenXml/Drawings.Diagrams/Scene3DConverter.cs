@@ -30,7 +30,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXD.CameraConverter.CreateOpenXmlElement<DXD.Camera>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXD.LightRigConverter.CreateOpenXmlElement<DXD.LightRig>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXD.BackdropConverter.CreateOpenXmlElement<DXD.Backdrop>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class Scene3DConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

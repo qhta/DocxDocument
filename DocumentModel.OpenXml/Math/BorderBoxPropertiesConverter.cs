@@ -28,7 +28,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideTop>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideTop>((bool)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideBottom>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideBottom>((bool)value));
   }
   #endregion
 
@@ -82,7 +82,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideLeft>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideLeft>((bool)value));
   }
   #endregion
 
@@ -109,7 +109,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideRight>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HideRight>((bool)value));
   }
   #endregion
 
@@ -136,7 +136,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeHorizontal>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeHorizontal>((bool)value));
   }
   #endregion
 
@@ -163,7 +163,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeVertical>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeVertical>((bool)value));
   }
   #endregion
 
@@ -190,7 +190,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeBottomLeftToTopRight>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeBottomLeftToTopRight>((bool)value));
   }
   #endregion
 
@@ -217,7 +217,7 @@ public static class BorderBoxPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeTopLeftToBottomRight>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.StrikeTopLeftToBottomRight>((bool)value));
   }
   #endregion
 
@@ -244,7 +244,7 @@ public static class BorderBoxPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

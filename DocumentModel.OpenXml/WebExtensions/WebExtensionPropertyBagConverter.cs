@@ -56,7 +56,7 @@ public static class WebExtensionPropertyBagConverter
       {
         var newItem = DMXWE.WebExtensionPropertyConverter.CreateOpenXmlElement<DXO13WE.WebExtensionProperty>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

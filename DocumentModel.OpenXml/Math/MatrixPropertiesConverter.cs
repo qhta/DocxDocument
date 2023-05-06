@@ -28,7 +28,7 @@ public static class MatrixPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXM.BaseJustification, DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>((DMM.VerticalAlignmentKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXM.BaseJustification, DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>((DMM.VerticalAlignmentKind)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class MatrixPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HidePlaceholder>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.HidePlaceholder>((bool)value));
   }
   #endregion
 
@@ -212,7 +212,7 @@ public static class MatrixPropertiesConverter
     {
       itemElement = DMXM.MatrixColumnsConverter.CreateOpenXmlElement<DXM.MatrixColumns>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -240,7 +240,7 @@ public static class MatrixPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

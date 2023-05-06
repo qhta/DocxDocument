@@ -27,7 +27,7 @@ public static class CaptionsConverter
     {
       itemElement = DMXW.CaptionConverter.CreateOpenXmlElement<DXW.Caption>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class CaptionsConverter
     {
       itemElement = DMXW.AutoCaptionsConverter.CreateOpenXmlElement<DXW.AutoCaptions>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

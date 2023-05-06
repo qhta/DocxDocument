@@ -56,7 +56,7 @@ public static class TaskHistoryConverter
       {
         var newItem = DMX.TaskHistoryEventConverter.CreateOpenXmlElement<DXO21DT.TaskHistoryEvent>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

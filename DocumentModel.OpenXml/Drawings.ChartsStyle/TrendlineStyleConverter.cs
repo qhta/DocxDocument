@@ -27,7 +27,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.LineReferenceConverter.CreateOpenXmlElement<DXO13DCS.LineReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -49,7 +49,7 @@ public static class TrendlineStyleConverter
     if (value != null)
     {
       itemElement = new DXO13DCS.LineWidthScale { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -75,7 +75,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.FillReferenceConverter.CreateOpenXmlElement<DXO13DCS.FillReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -101,7 +101,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.EffectReferenceConverter.CreateOpenXmlElement<DXO13DCS.EffectReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -127,7 +127,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.FontReferenceConverter.CreateOpenXmlElement<DXO13DCS.FontReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -153,7 +153,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.ShapePropertiesConverter.CreateOpenXmlElement<DXO13DCS.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -179,7 +179,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.TextCharacterPropertiesTypeConverter.CreateOpenXmlElement<DXO13DCS.TextCharacterPropertiesType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -205,7 +205,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.TextBodyPropertiesConverter.CreateOpenXmlElement<DXO13DCS.TextBodyProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -231,7 +231,7 @@ public static class TrendlineStyleConverter
     {
       itemElement = DMXDCS.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13DCS.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

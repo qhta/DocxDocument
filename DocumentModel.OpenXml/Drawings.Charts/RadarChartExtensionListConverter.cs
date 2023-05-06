@@ -56,7 +56,7 @@ public static class RadarChartExtensionListConverter
       {
         var newItem = DMXDC.RadarChartExtensionConverter.CreateOpenXmlElement<DXDC.RadarChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

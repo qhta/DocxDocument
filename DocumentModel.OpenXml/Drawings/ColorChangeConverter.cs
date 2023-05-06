@@ -53,7 +53,7 @@ public static class ColorChangeConverter
     {
       itemElement = DMXD.ColorFromConverter.CreateOpenXmlElement<DXD.ColorFrom>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class ColorChangeConverter
     {
       itemElement = DMXD.ColorToConverter.CreateOpenXmlElement<DXD.ColorTo>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

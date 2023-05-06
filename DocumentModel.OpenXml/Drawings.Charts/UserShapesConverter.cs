@@ -27,7 +27,7 @@ public static class UserShapesConverter
     {
       itemElement = DMXDCD.RelativeAnchorSizeConverter.CreateOpenXmlElement<DXDCD.RelativeAnchorSize>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class UserShapesConverter
     {
       itemElement = DMXDCD.AbsoluteAnchorSizeConverter.CreateOpenXmlElement<DXDCD.AbsoluteAnchorSize>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

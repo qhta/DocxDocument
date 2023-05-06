@@ -103,7 +103,7 @@ public static class HiddenLinePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.NoFill();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -129,7 +129,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.SolidFillConverter.CreateOpenXmlElement<DXD.SolidFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -155,7 +155,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.GradientFillConverter.CreateOpenXmlElement<DXD.GradientFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -181,7 +181,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.PatternFillConverter.CreateOpenXmlElement<DXD.PatternFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -207,7 +207,7 @@ public static class HiddenLinePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXD.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>((DMD.PresetLineDashKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXD.PresetDash, DocumentFormat.OpenXml.Drawing.PresetLineDashValues, DMD.PresetLineDashKind>((DMD.PresetLineDashKind)value));
   }
   
   private static DMD.CustomDash? GetCustomDash(DXO10D.HiddenLineProperties openXmlElement)
@@ -232,7 +232,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.CustomDashConverter.CreateOpenXmlElement<DXD.CustomDash>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -260,7 +260,7 @@ public static class HiddenLinePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.Round();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -288,7 +288,7 @@ public static class HiddenLinePropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.LineJoinBevel();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -314,7 +314,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.MiterConverter.CreateOpenXmlElement<DXD.Miter>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -340,7 +340,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.HeadEnd>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -366,7 +366,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.LineEndPropertiesTypeConverter.CreateOpenXmlElement<DXD.TailEnd>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -392,7 +392,7 @@ public static class HiddenLinePropertiesConverter
     {
       itemElement = DMXD.LinePropertiesExtensionListConverter.CreateOpenXmlElement<DXD.LinePropertiesExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

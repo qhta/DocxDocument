@@ -525,7 +525,7 @@ public static class FillConverter
     {
       itemElement = DMXV.FillExtendedPropertiesConverter.CreateOpenXmlElement<DXVO.FillExtendedProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

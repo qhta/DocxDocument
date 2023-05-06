@@ -92,7 +92,7 @@ public static class ColorsDefinitionConverter
       {
         var newItem = DMXDD.ColorDefinitionTitleConverter.CreateOpenXmlElement<DXDD.ColorDefinitionTitle>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -148,7 +148,7 @@ public static class ColorsDefinitionConverter
       {
         var newItem = DMXDD.ColorTransformDescriptionConverter.CreateOpenXmlElement<DXDD.ColorTransformDescription>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -175,7 +175,7 @@ public static class ColorsDefinitionConverter
     {
       itemElement = DMXDD.ColorTransformCategoriesConverter.CreateOpenXmlElement<DXDD.ColorTransformCategories>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -230,7 +230,7 @@ public static class ColorsDefinitionConverter
       {
         var newItem = DMXDD.ColorTransformStyleLabelConverter.CreateOpenXmlElement<DXDD.ColorTransformStyleLabel>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -257,7 +257,7 @@ public static class ColorsDefinitionConverter
     {
       itemElement = DMXDD.ExtensionListConverter.CreateOpenXmlElement<DXDD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

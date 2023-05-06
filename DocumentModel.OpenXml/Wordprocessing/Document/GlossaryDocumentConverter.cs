@@ -30,7 +30,7 @@ public static class GlossaryDocumentConverter
     {
       itemElement = DMXW.DocumentBackgroundConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class GlossaryDocumentConverter
     {
       itemElement = DMXW.DocPartsConverter.CreateOpenXmlElement<DXW.DocParts>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

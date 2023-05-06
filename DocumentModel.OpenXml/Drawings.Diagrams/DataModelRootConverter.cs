@@ -30,7 +30,7 @@ public static class DataModelRootConverter
     {
       itemElement = DMXDD.PointListConverter.CreateOpenXmlElement<DXDD.PointList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class DataModelRootConverter
     {
       itemElement = DMXDD.ConnectionListConverter.CreateOpenXmlElement<DXDD.ConnectionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class DataModelRootConverter
     {
       itemElement = DMXDD.BackgroundConverter.CreateOpenXmlElement<DXDD.Background>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class DataModelRootConverter
     {
       itemElement = DMXDD.WholeConverter.CreateOpenXmlElement<DXDD.Whole>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class DataModelRootConverter
     {
       itemElement = DMXDD.DataModelExtensionListConverter.CreateOpenXmlElement<DXDD.DataModelExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

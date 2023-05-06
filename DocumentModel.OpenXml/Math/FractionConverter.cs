@@ -28,7 +28,7 @@ public static class FractionConverter
     {
       itemElement = DMXM.FractionPropertiesConverter.CreateOpenXmlElement<DXM.FractionProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -56,7 +56,7 @@ public static class FractionConverter
     {
       itemElement = DMXM.NumeratorConverter.CreateOpenXmlElement<DXM.Numerator>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -84,7 +84,7 @@ public static class FractionConverter
     {
       itemElement = DMXM.DenominatorConverter.CreateOpenXmlElement<DXM.Denominator>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

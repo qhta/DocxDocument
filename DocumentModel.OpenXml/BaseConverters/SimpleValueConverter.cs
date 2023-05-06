@@ -45,7 +45,7 @@ public static class SimpleValueConverter
         valProperty.SetValue(itemElement, new UInt32Value(Convert.ToUInt32(value)));
       else
         valProperty.SetValue(itemElement, value);
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)

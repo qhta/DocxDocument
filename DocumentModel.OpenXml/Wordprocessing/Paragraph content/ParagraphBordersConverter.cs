@@ -30,7 +30,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.TopBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.LeftBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.BottomBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.RightBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.BetweenBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -175,7 +175,7 @@ public static class ParagraphBordersConverter
     {
       itemElement = DMXW.BorderConverter.CreateOpenXmlElement<DXW.BarBorder>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

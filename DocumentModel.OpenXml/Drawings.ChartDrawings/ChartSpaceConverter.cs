@@ -30,7 +30,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.ChartDataConverter.CreateOpenXmlElement<DXO16DCD.ChartData>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.ChartConverter.CreateOpenXmlElement<DXO16DCD.Chart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.ShapePropertiesConverter.CreateOpenXmlElement<DXO16DCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.TxPrTextBodyConverter.CreateOpenXmlElement<DXO16DCD.TxPrTextBody>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -146,7 +146,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.ColorMappingTypeConverter.CreateOpenXmlElement<DXO16DCD.ColorMappingType>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -175,7 +175,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.FormatOverridesConverter.CreateOpenXmlElement<DXO16DCD.FormatOverrides>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -204,7 +204,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.PrintSettingsConverter.CreateOpenXmlElement<DXO16DCD.PrintSettings>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -233,7 +233,7 @@ public static class ChartSpaceConverter
     {
       itemElement = DMXDCDs.ExtensionListConverter.CreateOpenXmlElement<DXO16DCD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

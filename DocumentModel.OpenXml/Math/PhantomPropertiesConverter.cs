@@ -28,7 +28,7 @@ public static class PhantomPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ShowPhantom>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ShowPhantom>((bool)value));
   }
   #endregion
 
@@ -55,7 +55,7 @@ public static class PhantomPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroWidth>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroWidth>((bool)value));
   }
   #endregion
 
@@ -82,7 +82,7 @@ public static class PhantomPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroAscent>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroAscent>((bool)value));
   }
   #endregion
 
@@ -109,7 +109,7 @@ public static class PhantomPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroDescent>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.ZeroDescent>((bool)value));
   }
   #endregion
 
@@ -136,7 +136,7 @@ public static class PhantomPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Transparent>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.Transparent>((bool)value));
   }
   #endregion
 
@@ -163,7 +163,7 @@ public static class PhantomPropertiesConverter
     {
       itemElement = DMXM.ControlPropertiesConverter.CreateOpenXmlElement<DXM.ControlProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

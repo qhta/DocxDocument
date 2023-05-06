@@ -136,7 +136,7 @@ public static class BackgroundRemovalConverter
       {
         var newItem = DMXD.ForegroundMarkConverter.CreateOpenXmlElement<DXO10D.ForegroundMark>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -192,7 +192,7 @@ public static class BackgroundRemovalConverter
       {
         var newItem = DMXD.BackgroundMarkConverter.CreateOpenXmlElement<DXO10D.BackgroundMark>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

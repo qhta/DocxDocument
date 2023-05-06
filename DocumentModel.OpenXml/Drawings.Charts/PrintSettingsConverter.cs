@@ -30,7 +30,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDC.HeaderFooterConverter.CreateOpenXmlElement<DXDC.HeaderFooter>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -59,7 +59,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDC.PageMarginsConverter.CreateOpenXmlElement<DXDC.PageMargins>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -88,7 +88,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDC.PageSetupConverter.CreateOpenXmlElement<DXDC.PageSetup>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -117,7 +117,7 @@ public static class PrintSettingsConverter
     {
       itemElement = DMXDC.RelationshipIdTypeConverter.CreateOpenXmlElement<DXDC.LegacyDrawingHeaderFooter>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

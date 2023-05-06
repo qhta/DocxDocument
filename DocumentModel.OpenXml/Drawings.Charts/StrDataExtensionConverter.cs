@@ -47,7 +47,7 @@ public static class StrDataExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO13DC.AutoGeneneratedCategories();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

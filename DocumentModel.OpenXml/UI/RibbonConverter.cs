@@ -53,7 +53,7 @@ public static class RibbonConverter
     {
       itemElement = DMXUI.OfficeMenuConverter.CreateOpenXmlElement<DXOCUI.OfficeMenu>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class RibbonConverter
     {
       itemElement = DMXUI.QuickAccessToolbarConverter.CreateOpenXmlElement<DXOCUI.QuickAccessToolbar>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -111,7 +111,7 @@ public static class RibbonConverter
     {
       itemElement = DMXUI.TabsConverter.CreateOpenXmlElement<DXOCUI.Tabs>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -140,7 +140,7 @@ public static class RibbonConverter
     {
       itemElement = DMXUI.ContextualTabSetsConverter.CreateOpenXmlElement<DXOCUI.ContextualTabSets>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

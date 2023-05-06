@@ -27,7 +27,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.LineSpacingConverter.CreateOpenXmlElement<DXD.LineSpacing>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -53,7 +53,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.SpaceBeforeConverter.CreateOpenXmlElement<DXD.SpaceBefore>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -79,7 +79,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.SpaceAfterConverter.CreateOpenXmlElement<DXD.SpaceAfter>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -107,7 +107,7 @@ public static class Level5ParagraphPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.BulletColorText();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -133,7 +133,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.BulletColorConverter.CreateOpenXmlElement<DXD.BulletColor>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -161,7 +161,7 @@ public static class Level5ParagraphPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.BulletSizeText();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -219,7 +219,7 @@ public static class Level5ParagraphPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.BulletFontText();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -245,7 +245,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.TextFontTypeConverter.CreateOpenXmlElement<DXD.BulletFont>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -273,7 +273,7 @@ public static class Level5ParagraphPropertiesConverter
     if (value == true)
     {
       var itemElement = new DXD.NoBullet();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -299,7 +299,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.AutoNumberedBulletConverter.CreateOpenXmlElement<DXD.AutoNumberedBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -325,7 +325,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.CharacterBulletConverter.CreateOpenXmlElement<DXD.CharacterBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -351,7 +351,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.PictureBulletConverter.CreateOpenXmlElement<DXD.PictureBullet>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -377,7 +377,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.TabStopListConverter.CreateOpenXmlElement<DXD.TabStopList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -403,7 +403,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.DefaultRunPropertiesConverter.CreateOpenXmlElement<DXD.DefaultRunProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -429,7 +429,7 @@ public static class Level5ParagraphPropertiesConverter
     {
       itemElement = DMXD.ExtensionListConverter.CreateOpenXmlElement<DXD.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

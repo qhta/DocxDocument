@@ -45,7 +45,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXD.CompatExtensionConverter.CreateOpenXmlElement<DXO10D.CompatExtension>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXD.BackgroundPropertiesConverter.CreateOpenXmlElement<DXO13D.BackgroundProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXD.CreationIdConverter.CreateOpenXmlElement<DXO16D.CreationId>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXD.PredecessorDrawingElementReferenceConverter.CreateOpenXmlElement<DXO16D.PredecessorDrawingElementReference>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -151,7 +151,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     if (value == true)
     {
       var itemElement = new DXO19D.Decorative();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -177,7 +177,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXD.ClassificationOutcomeConverter.CreateOpenXmlElement<DXO21DDC.ClassificationOutcome>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -203,7 +203,7 @@ public static class NonVisualDrawingPropertiesExtensionConverter
     {
       itemElement = DMXDOScptLnk.ScriptLinkConverter.CreateOpenXmlElement<DXODY21SL.ScriptLink>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

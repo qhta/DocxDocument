@@ -66,7 +66,7 @@ public static class LightRigConverter
     {
       itemElement = DMXD.RotationConverter.CreateOpenXmlElement<DXD.Rotation>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

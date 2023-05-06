@@ -56,7 +56,7 @@ public static class CustomColorListConverter
       {
         var newItem = DMXD.CustomColorConverter.CreateOpenXmlElement<DXD.CustomColor>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

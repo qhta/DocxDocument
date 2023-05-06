@@ -30,7 +30,7 @@ public static class ScatterChartConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXDC.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDC.ScatterStyleKind>((DMDC.ScatterStyleKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXDC.ScatterStyle, DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues, DMDC.ScatterStyleKind>((DMDC.ScatterStyleKind)value));
   }
   
   /// <summary>
@@ -60,7 +60,7 @@ public static class ScatterChartConverter
     if (value == true)
     {
       var itemElement = new DXDC.VaryColors();
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -115,7 +115,7 @@ public static class ScatterChartConverter
       {
         var newItem = DMXDC.ScatterChartSeriesConverter.CreateOpenXmlElement<DXDC.ScatterChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -142,7 +142,7 @@ public static class ScatterChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -197,7 +197,7 @@ public static class ScatterChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -224,7 +224,7 @@ public static class ScatterChartConverter
     {
       itemElement = DMXDC.ScatterChartExtensionListConverter.CreateOpenXmlElement<DXDC.ScatterChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

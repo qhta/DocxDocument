@@ -56,7 +56,7 @@ public static class Pie3DChartExtensionListConverter
       {
         var newItem = DMXDC.Pie3DChartExtensionConverter.CreateOpenXmlElement<DXDC.Pie3DChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

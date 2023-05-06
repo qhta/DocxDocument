@@ -30,7 +30,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.LayoutConverter.CreateOpenXmlElement<DXDC.Layout>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -56,7 +56,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.AreaChartConverter.CreateOpenXmlElement<DXDC.AreaChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -82,7 +82,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.Area3DChartConverter.CreateOpenXmlElement<DXDC.Area3DChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -108,7 +108,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.LineChartConverter.CreateOpenXmlElement<DXDC.LineChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -134,7 +134,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.Line3DChartConverter.CreateOpenXmlElement<DXDC.Line3DChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -160,7 +160,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.StockChartConverter.CreateOpenXmlElement<DXDC.StockChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -186,7 +186,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.RadarChartConverter.CreateOpenXmlElement<DXDC.RadarChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -212,7 +212,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.ScatterChartConverter.CreateOpenXmlElement<DXDC.ScatterChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -238,7 +238,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.PieChartConverter.CreateOpenXmlElement<DXDC.PieChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -264,7 +264,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.Pie3DChartConverter.CreateOpenXmlElement<DXDC.Pie3DChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -290,7 +290,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.DoughnutChartConverter.CreateOpenXmlElement<DXDC.DoughnutChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -316,7 +316,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.BarChartConverter.CreateOpenXmlElement<DXDC.BarChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -342,7 +342,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.Bar3DChartConverter.CreateOpenXmlElement<DXDC.Bar3DChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -368,7 +368,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.OfPieChartConverter.CreateOpenXmlElement<DXDC.OfPieChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -394,7 +394,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.SurfaceChartConverter.CreateOpenXmlElement<DXDC.SurfaceChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -420,7 +420,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.Surface3DChartConverter.CreateOpenXmlElement<DXDC.Surface3DChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -446,7 +446,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.BubbleChartConverter.CreateOpenXmlElement<DXDC.BubbleChart>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -472,7 +472,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.ValueAxisConverter.CreateOpenXmlElement<DXDC.ValueAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -498,7 +498,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.CategoryAxisConverter.CreateOpenXmlElement<DXDC.CategoryAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -524,7 +524,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.DateAxisConverter.CreateOpenXmlElement<DXDC.DateAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -550,7 +550,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.SeriesAxisConverter.CreateOpenXmlElement<DXDC.SeriesAxis>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -576,7 +576,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.DataTableConverter.CreateOpenXmlElement<DXDC.DataTable>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -602,7 +602,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.ShapePropertiesConverter.CreateOpenXmlElement<DXDC.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -628,7 +628,7 @@ public static class PlotAreaConverter
     {
       itemElement = DMXDC.ExtensionListConverter.CreateOpenXmlElement<DXDC.ExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

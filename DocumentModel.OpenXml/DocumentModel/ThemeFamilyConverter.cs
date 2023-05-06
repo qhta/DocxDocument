@@ -84,7 +84,7 @@ public static class ThemeFamilyConverter
     {
       itemElement = DMX.OfficeArtExtensionListConverter.CreateOpenXmlElement<DXO13T.OfficeArtExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

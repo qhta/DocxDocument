@@ -71,7 +71,7 @@ public static class PictureConverter
     {
       itemElement = DMXDCD.NonVisualPicturePropertiesConverter.CreateOpenXmlElement<DXDCD.NonVisualPictureProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -100,7 +100,7 @@ public static class PictureConverter
     {
       itemElement = DMXDCD.BlipFillConverter.CreateOpenXmlElement<DXDCD.BlipFill>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -129,7 +129,7 @@ public static class PictureConverter
     {
       itemElement = DMXDCD.ShapePropertiesConverter.CreateOpenXmlElement<DXDCD.ShapeProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -158,7 +158,7 @@ public static class PictureConverter
     {
       itemElement = DMXDCD.StyleConverter.CreateOpenXmlElement<DXDCD.Style>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

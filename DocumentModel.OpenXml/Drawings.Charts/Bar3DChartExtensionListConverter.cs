@@ -56,7 +56,7 @@ public static class Bar3DChartExtensionListConverter
       {
         var newItem = DMXDC.Bar3DChartExtensionConverter.CreateOpenXmlElement<DXDC.Bar3DChartExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

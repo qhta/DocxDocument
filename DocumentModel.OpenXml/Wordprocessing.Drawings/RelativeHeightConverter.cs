@@ -44,7 +44,7 @@ public static class RelativeHeightConverter
     if (value != null)
     {
       itemElement = new DXO10WD.PercentageHeight { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

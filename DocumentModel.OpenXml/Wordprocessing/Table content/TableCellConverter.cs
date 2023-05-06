@@ -28,7 +28,7 @@ public static class TableCellConverter
     {
       itemElement = DMXW.TableCellPropertiesConverter.CreateOpenXmlElement<DXW.TableCellProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -167,7 +167,7 @@ public static class TableCellConverter
       if (element == null)
       {
         element = CreateOpenXmlElement(item);
-        openXmlElement.AddChild(element);
+        openXmlElement.AppendChild(element);
       }
     }
     return true;

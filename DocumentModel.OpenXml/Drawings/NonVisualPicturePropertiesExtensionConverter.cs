@@ -45,7 +45,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     {
       itemElement = DMXD.CameraToolConverter.CreateOpenXmlElement<DXO10D.CameraTool>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -71,7 +71,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     {
       itemElement = DMXD.SignatureLineConverter.CreateOpenXmlElement<DXO13D.SignatureLine>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -97,7 +97,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     {
       itemElement = DMXD.ObjectPropertiesConverter.CreateOpenXmlElement<DXO13D.ObjectProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -123,7 +123,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     {
       itemElement = DMXD.LiveFeedPropertiesConverter.CreateOpenXmlElement<DXO21DL.LiveFeedProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

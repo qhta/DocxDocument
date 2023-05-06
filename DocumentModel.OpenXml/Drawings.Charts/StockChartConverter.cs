@@ -56,7 +56,7 @@ public static class StockChartConverter
       {
         var newItem = DMXDC.LineChartSeriesConverter.CreateOpenXmlElement<DXDC.LineChartSeries>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -83,7 +83,7 @@ public static class StockChartConverter
     {
       itemElement = DMXDC.DataLabelsConverter.CreateOpenXmlElement<DXDC.DataLabels>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -109,7 +109,7 @@ public static class StockChartConverter
     {
       itemElement = DMXDC.DropLinesConverter.CreateOpenXmlElement<DXDC.DropLines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -135,7 +135,7 @@ public static class StockChartConverter
     {
       itemElement = DMXDC.HighLowLinesConverter.CreateOpenXmlElement<DXDC.HighLowLines>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -161,7 +161,7 @@ public static class StockChartConverter
     {
       itemElement = DMXDC.UpDownBarsConverter.CreateOpenXmlElement<DXDC.UpDownBars>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -216,7 +216,7 @@ public static class StockChartConverter
       {
         var newItem = UInt32ValueConverter.CreateOpenXmlElement<DXDC.AxisId>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }
@@ -243,7 +243,7 @@ public static class StockChartConverter
     {
       itemElement = DMXDC.StockChartExtensionListConverter.CreateOpenXmlElement<DXDC.StockChartExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

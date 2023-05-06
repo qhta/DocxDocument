@@ -45,7 +45,7 @@ public static class ExtBaseTablePropertiesConverter
     {
       itemElement = DMXW.TablePositionPropertiesConverter.CreateOpenXmlElement<DXW.TablePositionProperties>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -73,7 +73,7 @@ public static class ExtBaseTablePropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AddChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableOverlap, DXW.TableOverlapValues, DMW.TableOverlapKind>((DMW.TableOverlapKind)value));
+      openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.TableOverlap, DXW.TableOverlapValues, DMW.TableOverlapKind>((DMW.TableOverlapKind)value));
   }
   #endregion
 
@@ -116,7 +116,7 @@ public static class ExtBaseTablePropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.TableCaption { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion
@@ -143,7 +143,7 @@ public static class ExtBaseTablePropertiesConverter
     if (value != null)
     {
       itemElement = new DXW.TableDescription { Val = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   #endregion

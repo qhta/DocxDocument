@@ -26,7 +26,7 @@ public static class LevelReferenceConverter
     if (value != null)
     {
       itemElement = new DXO13DC.SequenceOfReferences { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   

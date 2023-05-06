@@ -2,6 +2,8 @@
 using System.Collections.Immutable;
 using System.Diagnostics;
 using System.Reflection;
+using System.Xml;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 using Qhta.TestHelper;
@@ -144,14 +146,26 @@ public class TestBase
       {
         var path = filename + ".unzip" + part.Uri.OriginalString.Replace("/", "\\");
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
-        using (var outStream = File.Create(path))
+        if (Path.GetExtension(path) is ".xml" or ".rels")
         {
-          var inStream = part.GetStream();
-          inStream.CopyTo(outStream);
+          using (var xmlWriter = XmlWriter.Create(path, new XmlWriterSettings { Indent = true }))
+          {
+            var xmlDocument = XDocument.Load(part.GetStream());
+            xmlDocument.Save(xmlWriter);
+          }
+        }
+        else
+        {
+          using (var outStream = File.Create(path))
+          {
+            var inStream = part.GetStream();
+            inStream.CopyTo(outStream);
+          }
         }
       }
     }
   }
+
 
   /// <summary>
   /// Tests if two directory structures are the same.
@@ -263,7 +277,7 @@ public class TestBase
     TraceTextWriter? traceWriter = null;
     if (showDetails)
     {
-      traceWriter = new TraceTextWriter(true, false);
+      traceWriter = new TraceTextWriter(true, true);
     }
     var xmlComparer = new XmlFileComparer(new FileCompareOptions(), traceWriter);
     return InternalCompareFiles(origDirectory, newDirectory, xmlComparer, showDetails);
@@ -289,7 +303,7 @@ public class TestBase
       var origFilePath = Path.Combine(origDirectory, origFile);
       var newFilePath = Path.Combine(newDirectory, origFile);
       if (showDetails)
-        xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length+1)}");
+        xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length + 1)}");
 
       if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
       {

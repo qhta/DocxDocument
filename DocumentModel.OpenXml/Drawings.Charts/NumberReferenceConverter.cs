@@ -26,7 +26,7 @@ public static class NumberReferenceConverter
     if (value != null)
     {
       itemElement = new DXDC.Formula { Text = value };
-      openXmlElement.AddChild(itemElement);
+      openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -55,7 +55,7 @@ public static class NumberReferenceConverter
     {
       itemElement = DMXDC.NumberingCacheConverter.CreateOpenXmlElement<DXDC.NumberingCache>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   
@@ -84,7 +84,7 @@ public static class NumberReferenceConverter
     {
       itemElement = DMXDC.NumRefExtensionListConverter.CreateOpenXmlElement<DXDC.NumRefExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

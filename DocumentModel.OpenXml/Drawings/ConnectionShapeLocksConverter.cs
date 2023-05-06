@@ -260,7 +260,7 @@ public static class ConnectionShapeLocksConverter
     {
       itemElement = DMXD.ConnectorLockingExtensionListConverter.CreateOpenXmlElement<DXD.ConnectorLockingExtensionList>(value);
       if (itemElement != null)
-        openXmlElement.AddChild(itemElement);
+        openXmlElement.AppendChild(itemElement);
     }
   }
   

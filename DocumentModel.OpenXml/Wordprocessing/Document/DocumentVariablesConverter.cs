@@ -56,7 +56,7 @@ public static class DocumentVariablesConverter
       {
         var newItem = DMXW.DocumentVariableConverter.CreateOpenXmlElement<DXW.DocumentVariable>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

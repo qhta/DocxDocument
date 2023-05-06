@@ -56,7 +56,7 @@ public static class BlipExtensionListConverter
       {
         var newItem = DMXD.BlipExtensionConverter.CreateOpenXmlElement<DXD.BlipExtension>(item);
         if (newItem != null)
-          openXmlElement.AddChild(newItem);
+          openXmlElement.AppendChild(newItem);
       }
     }
   }

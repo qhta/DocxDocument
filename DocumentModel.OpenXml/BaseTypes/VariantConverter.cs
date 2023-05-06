@@ -343,7 +343,7 @@ public static class VariantConverter
         return vClipboardDataVariant;
       case VariantType.Variant:
         var variantVariant = new VTVariant();
-        if (variant.Value is Variant variantValue) variantVariant.AddChild(CreateOpenXmlElement(variantValue));
+        if (variant.Value is Variant variantValue) variantVariant.AppendChild(CreateOpenXmlElement(variantValue));
         ;
         return variantVariant;
       case VariantType.Vector:
