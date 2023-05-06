@@ -95,15 +95,17 @@ public static class CorePropertiesConverter
   /// <summary>
   ///   The revision number. This value indicates the number of saves or
   /// </summary>
-  public static String? GetRevision(PackageProperties? openXmlElement)
+  public static int? GetRevision(PackageProperties? openXmlElement)
   {
-    return openXmlElement?.Revision;
+    if (int.TryParse(openXmlElement?.Revision, out var revision))
+      return revision;
+    return null;
   }
 
-  public static void SetRevision(PackageProperties? openXmlElement, String? value)
+  public static void SetRevision(PackageProperties? openXmlElement, int? value)
   {
     if (openXmlElement != null)
-      openXmlElement.Revision = value;
+      openXmlElement.Revision = value?.ToString();
   }
 
   /// <summary>

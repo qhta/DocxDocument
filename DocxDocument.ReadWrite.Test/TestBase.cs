@@ -1,10 +1,9 @@
 ﻿using System.Collections;
-using System.Collections.Immutable;
-using System.Diagnostics;
-using System.Reflection;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Serialization;
+
+using DocumentFormat.OpenXml.Packaging;
 
 using Qhta.TestHelper;
 
@@ -141,14 +140,16 @@ public class TestBase
     using (var newPackage = ZipPackage.Open(filename))
     {
       var unzipPath = filename + ".unzip";
-      Directory.Delete(unzipPath, true);
+      if (Directory.Exists(unzipPath))
+        Directory.Delete(unzipPath, true);
       foreach (var part in newPackage.GetParts())
       {
         var path = filename + ".unzip" + part.Uri.OriginalString.Replace("/", "\\");
         Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         if (Path.GetExtension(path) is ".xml" or ".rels")
         {
-          using (var xmlWriter = XmlWriter.Create(path, new XmlWriterSettings { Indent = true }))
+          using (var xmlWriter = XmlWriter.Create(path, new XmlWriterSettings
+          { Indent = true, NamespaceHandling = NamespaceHandling.OmitDuplicates }))
           {
             var xmlDocument = XDocument.Load(part.GetStream());
             xmlDocument.Save(xmlWriter);
@@ -325,4 +326,59 @@ public class TestBase
     return ok;
   }
 
+  /// <summary>
+  /// Random generator
+  /// </summary>
+  protected Random Random = new Random();
+
+  private static int[] MonthDays = new[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+  /// <summary>
+  /// Helper method to generate random date-time value.
+  /// </summary>
+  /// <returns></returns>
+  protected DateTime RandomDateTime()
+  {
+    var year = Random.Next(2000, 2025);
+    var month = Random.Next(1, 12);
+    var day = Random.Next(1, MonthDays[month-1]);
+    var hour = Random.Next(0, 23);
+    var min = Random.Next(0, 59);
+    var sec = Random.Next(0, 59);
+    var ms = Random.Next(0, 999);
+    return new DateTime(year, month, day, hour, min, sec, ms);
+  }
+
+  /// <summary>
+  /// Creates empty wordprocessing document
+  /// </summary>
+  /// <param name="filepath"></param>
+  public static void CreateWordprocessingDocument(string filepath)
+  {
+    // Create a document by supplying the filepath. 
+    using (WordprocessingDocument wordprocessingDocument =
+        WordprocessingDocument.Create(filepath, DX.WordprocessingDocumentType.Document))
+    {
+      // Add a main document part. 
+      MainDocumentPart mainPart = wordprocessingDocument.AddMainDocumentPart();
+
+      // Create the document structure and add some text.
+      mainPart.Document = new DXW.Document();
+      var body = mainPart.Document.AppendChild(new DXW.Body());
+      CoreFilePropertiesPart coreFilePropPart = wordprocessingDocument.AddCoreFilePropertiesPart();
+      using (var writer = new XmlTextWriter(coreFilePropPart.GetStream(FileMode.Create), System.Text.Encoding.UTF8))
+      {
+        var dt = DateTime.Now;
+        var dts = dt.ToString("yyyy-MM-ddThh:mm:00Z");
+        writer.WriteRaw("<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>\r\n" +
+          "<cp:coreProperties xmlns:cp=\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\"" +
+          " xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:dcterms=\"http://purl.org/dc/terms/\"" +
+          " xmlns:dcmitype=\"http://purl.org/dc/dcmitype/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n" +
+          $"  <dcterms:created xsi:type=\"dcterms:W3CDTF\">{dts}</dcterms:created>\r\n" +
+          $"  <dcterms:modified xsi:type=\"dcterms:W3CDTF\">{dts}</dcterms:modified>\r\n" +
+
+          "</cp:coreProperties>");
+        writer.Flush();
+      }
+    }
+  }
 }

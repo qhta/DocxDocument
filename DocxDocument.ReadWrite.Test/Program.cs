@@ -85,8 +85,11 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    var ok = testInstance.TestReadProperties("DocumentProperties.docx", true, true);
-    //testInstance.TestReadPropertiesXmlSerialization("DocumentProperties.docx", true);
+    var ok = true;
+    //if (ok)
+    //  ok = testInstance.TestReadProperties("DocumentProperties.docx", true, true);
+    if (ok)
+      ok = testInstance.TestGenProperties("DocumentProperties.docx", true, true);
     if (ok)
       Console.WriteLine("Test passed");
     else
