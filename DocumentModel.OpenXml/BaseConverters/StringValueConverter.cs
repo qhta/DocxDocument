@@ -72,10 +72,15 @@ public static class StringValueConverter
   public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(string value) where OpenXmlElementType : DX.OpenXmlElement, new()
   {
     var element = new OpenXmlElementType();
-    var valProperty = typeof(OpenXmlElementType).GetProperty("Value") ??
-                      typeof(OpenXmlElementType).GetProperty("Text");
+    var valProperty = typeof(OpenXmlElementType).GetProperty("Val") ?? typeof(OpenXmlElementType).GetProperty("Value");
     if (valProperty != null)
-      valProperty.SetValue(element, value);
+      valProperty.SetValue(element, new StringValue(value));
+    else
+    {
+      var textProperty = typeof(OpenXmlElementType).GetProperty("Text");
+      if (textProperty != null)
+        textProperty.SetValue(element, value);
+    }
     return element;
   }
   #endregion
@@ -103,10 +108,10 @@ public static class StringValueConverter
   //}
 
   public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, String? value)
-    where ElementType: TypedOpenXmlLeafElement, new()
+    where ElementType : TypedOpenXmlLeafElement, new()
   {
     var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
-    Debug.Assert(valProperty!=null);
+    Debug.Assert(valProperty != null);
     var itemElement = openXmlElement.GetFirstChild<ElementType>();
     if (itemElement != null)
     {

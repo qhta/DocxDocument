@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:removeDateAndTime />
+  <w:doNotDisplayPageBoundaries />
+  <w:displayBackgroundShape />
+  <w:printFormsData />
+  <w:embedTrueTypeFonts />
+  <w:embedSystemFonts />
+  <w:mirrorMargins />
+  <w:bordersDoNotSurroundFooter />
+  <w:gutterAtTop />
+  <w:hideSpellingErrors />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="1641781422" w:nlCheck="1" w:checkStyle="1" w:appName="ApplicationName" />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="706983869" w:nlCheck="1" w:checkStyle="1" w:appName="ApplicationName" />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="1370345607" w:nlCheck="1" w:checkStyle="0" w:appName="ApplicationName" />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="1805240044" w:nlCheck="0" w:checkStyle="0" w:appName="ApplicationName" />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="1792597772" w:nlCheck="0" w:checkStyle="1" w:appName="ApplicationName" />
+  <w:activeWritingStyle w:lang="Language" w:dllVersion="1262384399" w:nlCheck="1" w:checkStyle="1" w:appName="ApplicationName" />
+  <w:proofState w:grammar="clean" />
+  <w:attachedTemplate r:id="Id1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+  <w:linkStyles />
+  <w:documentType w:val="notSpecified" />
+  <w:revisionView w:markup="0" w:comments="1" w:insDel="0" w:formatting="1" w:inkAnnotations="1" />
+  <w:doNotTrackMoves />
+  <w:doNotTrackFormatting />
+  <w:documentProtection w:edit="comments" w:formatting="0" w:enforcement="1" w:cryptProviderType="rsaAES" w:cryptAlgorithmClass="hash" w:cryptAlgorithmType="typeAny" w:cryptAlgorithmSid="1995650452" w:cryptProvider="CryptographicProvider" w:algIdExtSource="AlgorithmIdExtensibilitySource" w:cryptProviderTypeExtSource="CryptographicProviderTypeExtSource" w:algorithmName="AlgorithmName" />
+  <w:autoHyphenation />
+  <w:doNotHyphenateCaps />
+  <w:clickAndTypeStyle w:val="ClickAndTypeStyle" />
+  <w:defaultTableStyle w:val="DefaultTableStyle" />
+  <w:evenAndOddHeaders />
+  <w:bookFoldPrinting />
+  <w:displayHorizontalDrawingGridEvery w:val="102208775" />
+  <w:displayVerticalDrawingGridEvery w:val="2145190139" />
+  <w:doNotUseMarginsForDrawingGridOrigin />
+  <w:doNotShadeFormData />
+  <w:noPunctuationKerning />
+  <w:characterSpacingControl w:val="doNotCompress" />
+  <w:noLineBreaksAfter w:lang="Language" />
+  <w:noLineBreaksBefore w:lang="Language" />
+  <w:ignoreMixedContent />
+  <w:doNotDemarcateInvalidXml />
+  <w:hdrShapeDefaults />
+  <w:endnotePr>
+    <w:pos w:val="sectEnd" />
+    <w:numFmt w:format="Custom" />
+    <w:numRestart w:val="eachSect" />
+  </w:endnotePr>
+  <w:compat>
+    <w:noTabHangInd />
+    <w:balanceSingleByteDoubleByteWidth />
+    <w:doNotLeaveBackslashAlone />
+    <w:lineWrapLikeWord6 />
+    <w:footnoteLayoutLikeWW8 />
+    <w:noSpaceRaiseLower />
+    <w:doNotUseHTMLParagraphAutoSpacing />
+    <w:layoutRawTableWidth />
+    <w:doNotBreakWrappedTables />
+    <w:doNotUseEastAsianBreakRules />
+    <w:doNotUseIndentAsNumberingTabStop />
+    <w:allowSpaceOfSameStyleInTable />
+    <w:displayHangulFixedWidth />
+    <w:doNotVertAlignCellWithSp />
+    <w:doNotBreakConstrainedForcedTable />
+    <w:doNotVertAlignInTxbx />
+    <w:cachedColBalance />
+    <w:compatSetting w:name="overrideTableStyleFontSizeAndJustification" />
+    <w:compatSetting w:name="differentiateMultirowTableHeaders" />
+    <w:compatSetting w:name="compatibilityMode" />
+    <w:compatSetting w:name="enableOpenTypeFeatures" />
+  </w:compat>
+  <w:docVars>
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+    <w:docVar w:name="Name" />
+  </w:docVars>
+  <w:rsids />
+  <m:mathPr xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+    <m:mathFont m:val="MathFont" />
+    <m:brkBin m:val="after" />
+    <m:brkBinSub m:val="-+" />
+    <m:dispDef m:val="0" />
+    <m:defJc m:val="center" />
+    <m:intLim m:val="undOvr" />
+    <m:naryLim m:val="undOvr" />
+  </m:mathPr>
+  <w:clrSchemeMapping w:bg1="light1" w:bg2="light1" w:accent1="accent5" w:accent2="light2" w:accent3="accent4" w:accent4="accent4" w:accent5="light1" w:accent6="light2" w:hyperlink="accent4" w:followedHyperlink="accent5" />
+  <w:forceUpgrade />
+  <w:captions>
+    <w:caption w:name="Name" w:pos="above" w:chapNum="1" w:heading="1339588593" w:noLabel="0" w:numFmt="decimal" />
+    <w:autoCaptions>
+      <w:autoCaption w:name="Name" w:caption="Caption" />
+    </w:autoCaptions>
+  </w:captions>
+  <w:readModeInkLockDown w:fontSz="FontSize" />
+  <w:decimalSymbol w:val="DecimalSymbol" />
+  <w:listSeparator w:val="ListSeparator" />
+  <w14:discardImageEditingData w14:val="0" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" />
+  <w14:defaultImageDpi w14:val="818074145" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" />
+  <w14:conflictMode w14:val="0" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" />
+  <w15:chartTrackingRefBased xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" />
+</w:settings>

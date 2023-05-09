@@ -1,35 +1,36 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the FootnoteEndnoteSeparatorReferenceType Class.
+/// <see cref="DMW.FootnoteEndnoteSeparatorReferenceType"/> from/to OpenXml converter.
 /// </summary>
 public static class FootnoteEndnoteSeparatorReferenceTypeConverter
 {
-  /// <summary>
-  /// Footnote/Endnote ID
-  /// </summary>
-  private static Int64? GetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement)
+  #region Footnote/Endnote ID
+  private static Int32? GetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement)
   {
-    return openXmlElement?.Id?.Value;
+    return (Int32?)openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int64? value)
+  private static void SetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
   }
-  
-  public static DMW.FootnoteEndnoteSeparatorReferenceType? CreateModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+  #endregion
+
+  #region FootnoteEndnoteSeparatorReferenceType model conversion.
+  public static ElementType? CreateModelElement<ElementType>(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement)
+    where ElementType : DMW.FootnoteEndnoteSeparatorReferenceType, new()
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.FootnoteEndnoteSeparatorReferenceType();
+      var value = new ElementType();
       value.Id = GetId(openXmlElement);
       return value;
     }
@@ -62,4 +63,5 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
   {
     SetId(openXmlElement, value?.Id);
   }
+  #endregion
 }

@@ -55,7 +55,7 @@ public class DocumentSettings : KnownDocumentProperties
   /// These customXML schemas can then be used to validate the structure of the custom XML markup in the document, etc.
   /// </summary>
   [Category("CustomXml")]
-  public Collection<string>? AttachedSchemas { get; set; }
+  public AttachedSchemas? AttachedSchemas { get; set; }
 
   /// <summary>
   /// This element specifies the location of a document template which shall be attached to the current WordprocessingML document 
@@ -63,7 +63,7 @@ public class DocumentSettings : KnownDocumentProperties
   /// Specifically, this element's val attribute shall contain the file path of the associated document template.  
   /// </summary>
   [Category("Template")]
-  public RelationshipType? AttachedTemplate { get; set; }
+  public AttachedTemplate? AttachedTemplate { get; set; }
 
   /// <summary>
   /// This element specifies whether formatting automatically applied by an application 

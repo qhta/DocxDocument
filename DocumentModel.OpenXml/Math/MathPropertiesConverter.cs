@@ -295,7 +295,7 @@ public static class MathPropertiesConverter
     }
     else
     if (value != null)
-      openXmlElement.AppendChild(BooleanValueConverter.CreateOpenXmlElement<DXM.WrapRight>((bool)value));
+      openXmlElement.AppendChild(BooleanValueConverter.CreateMathOpenXmlElement<DXM.WrapRight>((bool)value));
   }
   
   private static DMM.LimitLocationKind? GetIntegralLimitLocation(DXM.MathProperties openXmlElement)

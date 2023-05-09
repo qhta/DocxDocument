@@ -373,9 +373,10 @@ public static class BooleanValueConverter
     var valueProp = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
     if (valueProp == null)
       throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
-    valueProp.SetValue(openXmlElement, value);
+   valueProp.SetValue(openXmlElement, value);
     return openXmlElement;
   }
+
   #endregion
 
   #region TypedOpenXmlLeafTextElement conversion.
@@ -425,6 +426,22 @@ public static class BooleanValueConverter
   #endregion
 
 
+  #region Specific Boolean values element conversion.
+  public static ElementType CreateWordOpenXmlElement<ElementType>(Boolean value)
+  where ElementType : DXO10W.OnOffType, new()
+  {
+    var openXmlElement = new ElementType();
+    var valueProp = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
+    if (valueProp == null)
+      throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
+    //if (value==true)
+    //  valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.One));
+    //else
+    if (value==false)
+      valueProp.SetValue(openXmlElement, new DX.EnumValue<DXO10W.OnOffValues>(DXO10W.OnOffValues.Zero));
+    return openXmlElement;
+  }
+
   public static ElementType CreateMathOpenXmlElement<ElementType>(Boolean value)
   where ElementType : DX.OpenXmlElement, new()
   {
@@ -439,4 +456,5 @@ public static class BooleanValueConverter
       valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.Zero));
     return openXmlElement;
   }
+  #endregion
 }
