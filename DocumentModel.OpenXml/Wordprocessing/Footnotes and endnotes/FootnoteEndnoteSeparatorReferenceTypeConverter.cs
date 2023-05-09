@@ -30,38 +30,38 @@ public static class FootnoteEndnoteSeparatorReferenceTypeConverter
   {
     if (openXmlElement != null)
     {
-      var value = new ElementType();
-      value.Id = GetId(openXmlElement);
-      return value;
+      var model = new ElementType();
+      model.Id = GetId(openXmlElement);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteEndnoteSeparatorReferenceType? openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteSeparatorReferenceType value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteEndnoteSeparatorReferenceType model)
     where OpenXmlElementType: DXW.FootnoteEndnoteSeparatorReferenceType, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType value)
+  public static void UpdateOpenXmlElement(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, DMW.FootnoteEndnoteSeparatorReferenceType model)
   {
-    SetId(openXmlElement, value?.Id);
+    SetId(openXmlElement, model?.Id);
   }
   #endregion
 }
