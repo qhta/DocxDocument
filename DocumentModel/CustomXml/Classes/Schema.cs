@@ -1,5 +1,4 @@
 namespace DocumentModel.CustomXml;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Custom XML Schema Reference.
@@ -20,4 +19,13 @@ public class Schema: ModelElement
   ///   Custom XML Schema Location
   /// </summary>
   public string? SchemaLocation { get; set; }
+
+  /// <summary>
+  /// Modified for tests.
+  /// </summary>
+  /// <returns></returns>
+  public override string ToString()
+  {
+    return $"{Uri}";
+  }
 }

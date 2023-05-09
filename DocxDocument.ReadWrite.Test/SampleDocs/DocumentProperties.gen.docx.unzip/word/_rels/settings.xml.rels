@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate" Target="C:\Users\qhta1\AppData\Roaming\Microsoft\Templates\Pdf.dotx" TargetMode="External" Id="Id1" />
+</Relationships>

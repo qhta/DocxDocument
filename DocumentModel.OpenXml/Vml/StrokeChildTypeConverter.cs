@@ -236,19 +236,19 @@ public static class StrokeChildTypeConverter
   /// <summary>
   /// Stroke Image Style
   /// </summary>
-  private static DMV.FillKind? GetFillType(DXVO.StrokeChildType openXmlElement)
+  private static DMV.FillTypeKind? GetFillType(DXVO.StrokeChildType openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(openXmlElement?.FillType?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.FillType?.Value);
   }
   
-  private static bool CmpFillType(DXVO.StrokeChildType openXmlElement, DMV.FillKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFillType(DXVO.StrokeChildType openXmlElement, DMV.FillTypeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(openXmlElement?.FillType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.FillType?.Value, value, diffs, objName);
   }
   
-  private static void SetFillType(DXVO.StrokeChildType openXmlElement, DMV.FillKind? value)
+  private static void SetFillType(DXVO.StrokeChildType openXmlElement, DMV.FillTypeKind? value)
   {
-    openXmlElement.FillType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(value);
+    openXmlElement.FillType = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(value);
   }
   
   /// <summary>

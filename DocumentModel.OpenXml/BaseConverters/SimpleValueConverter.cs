@@ -41,6 +41,9 @@ public static class SimpleValueConverter
       if (typeof(T) == typeof(Int16))
         valProperty.SetValue(itemElement, new Int16Value(Convert.ToInt16(value)));
       else
+      if (typeof(T) == typeof(Int32))
+        valProperty.SetValue(itemElement, new Int32Value(Convert.ToInt32(value)));
+      else
       if (typeof(T) == typeof(UInt32))
         valProperty.SetValue(itemElement, new UInt32Value(Convert.ToUInt32(value)));
       else
@@ -48,49 +51,15 @@ public static class SimpleValueConverter
       openXmlElement.AppendChild(itemElement);
     }
   }
-  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
-  //  where OpenXmlElementType : OpenXmlElement, new()
-  //{
-  //  var element = new OpenXmlElementType();
-  //  var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
-  //  if (valProperty != null)
-  //    valProperty.SetValue(element, value);
-  //  else if (element is OpenXmlLeafTextElement textElement)
-  //    if (value!=null)
-  //      textElement.Text = ((Int32)value).ToString();
-  //  return element;
-  //}
+
+  public static void SetNullValue<ElementType>(OpenXmlCompositeElement openXmlElement)
+    where ElementType: OpenXmlElement, new()
+  {
+    var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
+    Debug.Assert(valProperty!=null);
+    var itemElement = openXmlElement.GetFirstChild<ElementType>();
+    if (itemElement != null)
+        itemElement.Remove();
+  }
   #endregion
-
-  //#region OpenXmlLeafTextElement
-  //public static Int32? GetValue(OpenXmlLeafTextElement? element)
-  //{
-  //  if (element?.Text != null)
-  //  {
-  //    if (Int32.TryParse(element.Text, out var value)) 
-  //     return value;
-  //  }
-  //  return null;
-  //}
-
-  //public static bool CmpValue(OpenXmlLeafTextElement element, Int32? value, DiffList? diffs = null, string? objName = null)
-  //{
-  //  if (GetValue(element) == value)
-  //    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
-  //  return false;
-  //}
-
-  //public static OpenXmlElementType? CreateOpenXmlElement<OpenXmlElementType>(Int32? value)
-  //  where OpenXmlElementType : OpenXmlElement, new()
-  //{
-  //  var element = new OpenXmlElementType();
-  //  var valProperty = typeof(OpenXmlElementType).GetProperty("Val");
-  //  if (valProperty != null)
-  //    valProperty.SetValue(element, value);
-  //  else if (element is OpenXmlLeafTextElement textElement)
-  //    if (value!=null)
-  //      textElement.Text = ((Int32)value).ToString();
-  //  return element;
-  //}
-  //#endregion
 }

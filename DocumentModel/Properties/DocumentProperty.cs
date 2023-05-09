@@ -71,6 +71,9 @@ public partial class DocumentProperty : ModelElement
 
   public override string ToString()
   {
+    if (Value is IEnumerable<string> strings)
+      return $"DocumentProperty({Name} = ({string.Join(",", strings)}))";
+
     return $"DocumentProperty({Name} = {Value})";
   }
 

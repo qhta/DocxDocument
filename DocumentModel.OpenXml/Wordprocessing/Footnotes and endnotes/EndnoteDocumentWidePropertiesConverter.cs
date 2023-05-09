@@ -1,3 +1,5 @@
+using DocumentModel.Wordprocessing;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -108,12 +110,12 @@ public static class EndnoteDocumentWidePropertiesConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
-  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement)
+  private static DMW.EndnoteSeparators? GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement)
   {
-    var collection = new Collection<DMW.FootnoteEndnoteSeparatorReferenceType>();
+    var collection = new DMW.EndnoteSeparators();
     foreach (var item in openXmlElement.Elements<DXW.EndnoteSpecialReference>())
     {
-      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement(item);
+      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement<EndnoteSeparator>(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -122,7 +124,7 @@ public static class EndnoteDocumentWidePropertiesConverter
     return null;
   }
   
-  private static bool CmpEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value, DiffList? diffs, string? objName)
+  private static bool CmpEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteSeparators? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.EndnoteSpecialReference>();
     var origElementsCount = origElements.Count();
@@ -150,7 +152,7 @@ public static class EndnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  private static void SetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value)
+  private static void SetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteSeparators? value)
   {
     openXmlElement.RemoveAllChildren<DXW.EndnoteSpecialReference>();
     if (value != null)

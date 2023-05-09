@@ -162,4 +162,12 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   }
 
   #endregion
+
+  /// <summary>
+  /// Modified for tests.
+  /// </summary>
+  public override string ToString()
+  {
+    return String.Join(", ", this.Select(item=>item.ToString()));
+  }
 }
