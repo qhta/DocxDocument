@@ -108,12 +108,12 @@ public static class FootnoteDocumentWidePropertiesConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
-  private static Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
+  private static DMW.FootnoteSeparators? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
   {
-    var collection = new Collection<DMW.FootnoteEndnoteSeparatorReferenceType>();
+    var collection = new DMW.FootnoteSeparators();
     foreach (var item in openXmlElement.Elements<DXW.FootnoteSpecialReference>())
     {
-      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement(item);
+      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement<DMW.FootnoteSeparator>(item);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -122,7 +122,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     return null;
   }
   
-  private static bool CmpFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value, DiffList? diffs, string? objName)
+  private static bool CmpFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteSeparators? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.FootnoteSpecialReference>();
     var origElementsCount = origElements.Count();
@@ -150,7 +150,7 @@ public static class FootnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  private static void SetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, Collection<DMW.FootnoteEndnoteSeparatorReferenceType>? value)
+  private static void SetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteSeparators? value)
   {
     openXmlElement.RemoveAllChildren<DXW.FootnoteSpecialReference>();
     if (value != null)

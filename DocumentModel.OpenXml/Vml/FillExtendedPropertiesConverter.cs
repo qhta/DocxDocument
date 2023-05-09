@@ -26,19 +26,19 @@ public static class FillExtendedPropertiesConverter
   /// <summary>
   /// Fill Type
   /// </summary>
-  private static DMV.FillKind? GetType(DXVO.FillExtendedProperties openXmlElement)
+  private static DMV.FillTypeKind? GetType(DXVO.FillExtendedProperties openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXVO.FillExtendedProperties openXmlElement, DMV.FillKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXVO.FillExtendedProperties openXmlElement, DMV.FillTypeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXVO.FillExtendedProperties openXmlElement, DMV.FillKind? value)
+  private static void SetType(DXVO.FillExtendedProperties openXmlElement, DMV.FillTypeKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.Office.FillValues, DMV.FillTypeKind>(value);
   }
   
   public static DocumentModel.Vml.FillExtendedProperties? CreateModelElement(DXVO.FillExtendedProperties? openXmlElement)

@@ -26,19 +26,19 @@ public static class FillConverter
   /// <summary>
   /// Fill Type
   /// </summary>
-  private static DMV.FillKind? GetType(DXV.Fill openXmlElement)
+  private static DMV.FillTypeKind? GetType(DXV.Fill openXmlElement)
   {
-    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(openXmlElement?.Type?.Value);
+    return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXV.Fill openXmlElement, DMV.FillKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXV.Fill openXmlElement, DMV.FillTypeKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value, value, diffs, objName);
   }
   
-  private static void SetType(DXV.Fill openXmlElement, DMV.FillKind? value)
+  private static void SetType(DXV.Fill openXmlElement, DMV.FillTypeKind? value)
   {
-    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillKind>(value);
+    openXmlElement.Type = EnumValueConverter.CreateEnumValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(value);
   }
   
   /// <summary>
@@ -642,32 +642,32 @@ public static class FillConverter
   
   public static void UpdateOpenXmlElement(DXV.Fill openXmlElement, DMV.Fill value)
   {
-    SetId(openXmlElement, value?.Id);
-    SetType(openXmlElement, value?.Type);
-    SetOn(openXmlElement, value?.On);
-    SetColor(openXmlElement, value?.Color);
-    SetOpacity(openXmlElement, value?.Opacity);
-    SetColor2(openXmlElement, value?.Color2);
-    SetSource(openXmlElement, value?.Source);
-    SetHref(openXmlElement, value?.Href);
-    SetAlternateImageReference(openXmlElement, value?.AlternateImageReference);
-    SetSize(openXmlElement, value?.Size);
-    SetOrigin(openXmlElement, value?.Origin);
-    SetPosition(openXmlElement, value?.Position);
-    SetAspect(openXmlElement, value?.Aspect);
-    SetColors(openXmlElement, value?.Colors);
-    SetAngle(openXmlElement, value?.Angle);
-    SetAlignShape(openXmlElement, value?.AlignShape);
-    SetFocus(openXmlElement, value?.Focus);
-    SetFocusSize(openXmlElement, value?.FocusSize);
-    SetFocusPosition(openXmlElement, value?.FocusPosition);
-    SetMethod(openXmlElement, value?.Method);
-    SetDetectMouseClick(openXmlElement, value?.DetectMouseClick);
-    SetTitle(openXmlElement, value?.Title);
-    SetOpacity2(openXmlElement, value?.Opacity2);
-    SetRecolor(openXmlElement, value?.Recolor);
-    SetRotate(openXmlElement, value?.Rotate);
-    SetRelationshipId(openXmlElement, value?.RelationshipId);
-    SetFillExtendedProperties(openXmlElement, value?.FillExtendedProperties);
+    SetId(openXmlElement, value.Id);
+    SetType(openXmlElement, value.Type);
+    SetOn(openXmlElement, value.On);
+    SetColor(openXmlElement, value.Color);
+    SetOpacity(openXmlElement, value.Opacity);
+    SetColor2(openXmlElement, value.Color2);
+    SetSource(openXmlElement, value.Source);
+    SetHref(openXmlElement, value.Href);
+    SetAlternateImageReference(openXmlElement, value.AlternateImageReference);
+    SetSize(openXmlElement, value.Size);
+    SetOrigin(openXmlElement, value.Origin);
+    SetPosition(openXmlElement, value.Position);
+    SetAspect(openXmlElement, value.Aspect);
+    SetColors(openXmlElement, value.Colors);
+    SetAngle(openXmlElement, value.Angle);
+    SetAlignShape(openXmlElement, value.AlignShape);
+    SetFocus(openXmlElement, value.Focus);
+    SetFocusSize(openXmlElement, value.FocusSize);
+    SetFocusPosition(openXmlElement, value.FocusPosition);
+    SetMethod(openXmlElement, value.Method);
+    SetDetectMouseClick(openXmlElement, value.DetectMouseClick);
+    SetTitle(openXmlElement, value.Title);
+    SetOpacity2(openXmlElement, value.Opacity2);
+    SetRecolor(openXmlElement, value.Recolor);
+    SetRotate(openXmlElement, value.Rotate);
+    SetRelationshipId(openXmlElement, value.RelationshipId);
+    SetFillExtendedProperties(openXmlElement, value.FillExtendedProperties);
   }
 }

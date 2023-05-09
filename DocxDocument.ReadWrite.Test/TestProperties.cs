@@ -1,9 +1,13 @@
 
+using System.Xml.Serialization;
+
 using DocumentFormat.OpenXml.Packaging;
-using System.Xml;
+using DocumentFormat.OpenXml.Wordprocessing;
+
 using DocumentModel;
-using Qhta.TypeUtils;
-using NUnit.Framework.Internal;
+using DocumentModel.Math;
+
+using NUnit.Framework.Constraints;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -155,52 +159,7 @@ public class TestProperties : TestBase
     }
     return ok;
   }
-  #endregion
 
-  #region test properties generation
-  /// <summary>
-  /// Tests generation of properties
-  /// </summary>
-  /// <param name="filename">The filename.</param>
-  /// <param name="showDetails">Specifies if test details should be shown.</param>
-  /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
-  public virtual bool TestGenProperties(string filename, bool showDetails = false, bool openWord = false)
-  {
-    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
-      filename = Path.Combine(TestPath, filename);
-    var ok = true;
-
-    WriteLine($"Testing generating properties of: {filename}");
-
-    filename = Path.Combine(Path.GetDirectoryName(filename) ?? "", Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
-    CreateWordprocessingDocument(filename);
-
-    var document = new DMW.Document();
-
-    GenerateCoreDocumentProperties(document, showDetails);
-    GenerateContentDocumentProperties(document, showDetails);
-
-    var docProperties = document.Properties;
-    if (docProperties != null)
-    {
-      using (var writer = DocxWriter.Open(filename))
-      {
-        writer.SetDocumentProperties(docProperties, PartsMask.AllDocumentProperties);
-      }
-    }
-    UnzipFile(filename);
-    if (openWord)
-    {
-      var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
-      Process.Start(processStartInfo);
-    }
-    return ok;
-  }
-  #endregion
-
-
-
-  #region Core properties test methods
   /// <summary>
   /// Checks whether the core document properties read from the file are equal to origin ones.
   /// </summary>
@@ -226,7 +185,7 @@ public class TestProperties : TestBase
       {
         WriteLine(
           $"  CoreProperties: defined {coreProperties.Count()} loaded {corePropertiesCount} expected {origCorePropertiesCount}");
-        DumpCoreDocumentProperties(modelDocument);
+        DumpProperties(modelDocument, typeof(ContentProperties).GetProperties());
       }
       foreach (var prop in coreProperties.Where(item => item.CanWrite))
         if (prop.GetValue(coreDocumentProperties, null) != null)
@@ -236,75 +195,6 @@ public class TestProperties : TestBase
     return true;
   }
 
-  private void DumpCoreDocumentProperties(DMW.Document modelDocument)
-  {
-    var coreProperties = typeof(CoreProperties).GetProperties();
-    foreach (var prop in coreProperties.Where(item => item.CanWrite))
-    {
-      var documentProperty = modelDocument.Properties?.GetProperty(prop.Name);
-      if (documentProperty != null)
-        WriteLine($"    {documentProperty}");
-    }
-  }
-
-  private void SetRandomProperties(object obj)
-  {
-    foreach (var prop in obj.GetType()
-      .GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-      .Where(item => item.CanWrite))
-    {
-      var propType = prop.PropertyType;
-      propType = propType.GetNotNullableType();
-      if (prop.Name==nameof(ContentProperties.Template))
-        prop.SetValue(obj, "Normal.dotm", null);
-      else
-      if (prop.Name==nameof(ContentProperties.DocumentSecurity))
-      {
-        //prop.SetValue(obj, "Normal.dotm", null);
-      }
-      else
-      if (prop.Name==nameof(ContentProperties.Application))
-        prop.SetValue(obj, "Microsoft Office Word", null);
-      else
-      if (prop.Name==nameof(ContentProperties.ApplicationVersion))
-        prop.SetValue(obj, "16.0000", null);
-      else
-      if (propType == typeof(string))
-        prop.SetValue(obj, prop.Name, null);
-      else if (propType == typeof(int))
-        prop.SetValue(obj, Random.Next(), null);
-      else if (propType == typeof(Boolean))
-        prop.SetValue(obj, Random.NextDouble()>=0.5, null);
-      else if (propType == typeof(DateTime))
-        prop.SetValue(obj, RandomDateTime(), null);
-    }
-  }
-
-  /// <summary>
-  /// Generate core document properties.
-  /// </summary>
-  /// <param name="modelDocument">New model document.</param>
-  /// <param name="showDetails">Specifies whether to show generated properties</param>
-  private void GenerateCoreDocumentProperties(DMW.Document modelDocument, bool showDetails)
-  {
-    var documentProperties = modelDocument.Properties;
-    if (documentProperties == null)
-      documentProperties = modelDocument.Properties = new DocumentProperties();
-    var coreProperties = documentProperties.CoreProperties;
-    if (coreProperties == null)
-      coreProperties = documentProperties.CoreProperties = new CoreProperties();
-    SetRandomProperties(coreProperties);
-    if (showDetails)
-    {
-      WriteLine(
-        $"  CoreProperties generated {coreProperties.Count()}");
-      DumpCoreDocumentProperties(modelDocument);
-    }
-  }
-
-  #endregion
-
-  #region Extended properties test methods
   /// <summary>
   /// Checks whether the extended document properties (content and statistic) read from the file are equal to origin ones.
   /// </summary>
@@ -342,10 +232,10 @@ public class TestProperties : TestBase
       {
         WriteLine(
           $"  ContentProperties: defined {contentProperties.Count()} loaded {contentPropertiesCount} expected {origContentPropertiesCount}");
-        DumpContentDocumentProperties(modelDocument);
+        DumpProperties(modelDocument, typeof(ContentProperties).GetProperties());
         WriteLine(
           $"  StatisticProperties: defined {statisticProperties.Count()} loaded {statisticPropertiesCount} expected {origStatisticPropertiesCount}");
-        DumpStatisticDocumentProperties(modelDocument);
+        DumpProperties(modelDocument, typeof(StatisticProperties).GetProperties());
       }
 
       if (showDetails)
@@ -363,52 +253,6 @@ public class TestProperties : TestBase
     return true;
   }
 
-  private void DumpContentDocumentProperties(DMW.Document modelDocument)
-  {
-    var contentProperties = typeof(ContentProperties).GetProperties();
-    foreach (var prop in contentProperties.Where(item => item.CanWrite))
-    {
-      var documentProperty = modelDocument.Properties?.GetProperty(prop.Name);
-      if (documentProperty != null)
-        WriteLine($"    {documentProperty}");
-    }
-  }
-
-  private void DumpStatisticDocumentProperties(DMW.Document modelDocument)
-  {
-    var statisticProperties = typeof(StatisticProperties).GetProperties();
-    foreach (var prop in statisticProperties.Where(item => item.CanWrite))
-    {
-      var documentProperty = modelDocument.Properties?.GetProperty(prop.Name);
-      if (documentProperty != null)
-        WriteLine($"    {documentProperty}");
-    }
-  }
-
-  /// <summary>
-  /// Generate extended document properties.
-  /// </summary>
-  /// <param name="modelDocument">New model document.</param>
-  /// <param name="showDetails">Specifies whether to show generated properties</param>
-  private void GenerateContentDocumentProperties(DMW.Document modelDocument, bool showDetails)
-  {
-    var documentProperties = modelDocument.Properties;
-    if (documentProperties == null)
-      documentProperties = modelDocument.Properties = new DocumentProperties();
-    var contentProperties = documentProperties.ContentProperties;
-    if (contentProperties == null)
-      contentProperties = documentProperties.ContentProperties = new ContentProperties();
-    SetRandomProperties(contentProperties);
-    if (showDetails)
-    {
-      WriteLine(
-        $"  ContentProperties generated {contentProperties.Count()}");
-      DumpContentDocumentProperties(modelDocument);
-    }
-  }
-  #endregion
-
-  #region Custom properties test methods
   /// <summary>
   /// Checks whether the custom document properties read from the file are equal to origin ones.
   /// </summary>
@@ -441,9 +285,7 @@ public class TestProperties : TestBase
     Assert.That(customPropertiesCount, Is.EqualTo(origCustomPropertiesCount), "Invalid custom properties count");
     return true;
   }
-  #endregion
 
-  #region Document settings test methods.
   /// <summary>
   /// Checks whether the document settings read from the file are equal to origin ones.
   /// </summary>
@@ -479,9 +321,7 @@ public class TestProperties : TestBase
     Assert.That(documentSettingsCount, Is.EqualTo(origDocumentSettingsCount), "Invalid document settings count");
     return true;
   }
-  #endregion
 
-  #region Web settings test methods
   /// <summary>
   /// Checks whether the web settings read from the file are equal to origin ones.
   /// </summary>
@@ -517,4 +357,287 @@ public class TestProperties : TestBase
   }
   #endregion
 
+  #region test properties generation
+  /// <summary>
+  /// Tests generation of properties
+  /// </summary>
+  /// <param name="filename">The filename.</param>
+  /// <param name="showDetails">Specifies if test details should be shown.</param>
+  /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
+  public virtual bool TestGenProperties(string filename, bool showDetails = false, bool openWord = false)
+  {
+    if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+      filename = Path.Combine(TestPath, filename);
+    var ok = true;
+
+    WriteLine($"Testing generating properties of: {filename}");
+
+    filename = Path.Combine(Path.GetDirectoryName(filename) ?? "", Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
+    CreateWordprocessingDocument(filename);
+
+    var document = new DMW.Document();
+
+    GenerateCoreDocumentProperties(document, showDetails);
+    GenerateContentDocumentProperties(document, showDetails);
+    GenerateStatisticDocumentProperties(document, showDetails);
+    GenerateDocumentSettings(document, showDetails);
+
+    var docProperties = document.Properties;
+    if (docProperties != null)
+    {
+      using (var writer = DocxWriter.Open(filename))
+      {
+        writer.SetDocumentProperties(docProperties, PartsMask.AllDocumentProperties);
+      }
+    }
+    UnzipFile(filename);
+    if (openWord)
+    {
+      var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
+      Process.Start(processStartInfo);
+    }
+    return ok;
+  }
+
+  /// <summary>
+  /// Generate core document properties.
+  /// </summary>
+  /// <param name="modelDocument">New model document.</param>
+  /// <param name="showDetails">Specifies whether to show generated properties</param>
+  private void GenerateCoreDocumentProperties(DMW.Document modelDocument, bool showDetails)
+  {
+    var documentProperties = modelDocument.Properties;
+    if (documentProperties == null)
+      documentProperties = modelDocument.Properties = new DocumentProperties();
+    var coreProperties = documentProperties.CoreProperties;
+    if (coreProperties == null)
+      coreProperties = documentProperties.CoreProperties = new CoreProperties();
+    SetRandomProperties(coreProperties);
+    if (showDetails)
+    {
+      WriteLine(
+        $"  CoreProperties generated {coreProperties.Count()}");
+      DumpProperties(modelDocument, typeof(ContentProperties).GetProperties());
+    }
+  }
+
+  /// <summary>
+  /// Generate content document properties.
+  /// </summary>
+  /// <param name="modelDocument">New model document.</param>
+  /// <param name="showDetails">Specifies whether to show generated properties</param>
+  private void GenerateContentDocumentProperties(DMW.Document modelDocument, bool showDetails)
+  {
+    var documentProperties = modelDocument.Properties;
+    if (documentProperties == null)
+      documentProperties = modelDocument.Properties = new DocumentProperties();
+    var contentProperties = documentProperties.ContentProperties;
+    if (contentProperties == null)
+      contentProperties = documentProperties.ContentProperties = new ContentProperties();
+    SetRandomProperties(contentProperties);
+    if (showDetails)
+    {
+      WriteLine(
+        $"  ContentProperties generated {contentProperties.Count()}");
+      DumpProperties(modelDocument, typeof(ContentProperties).GetProperties());
+    }
+  }
+
+  /// <summary>
+  /// Generate statistic document properties.
+  /// </summary>
+  /// <param name="modelDocument">New model document.</param>
+  /// <param name="showDetails">Specifies whether to show generated properties</param>
+  private void GenerateStatisticDocumentProperties(DMW.Document modelDocument, bool showDetails)
+  {
+    var documentProperties = modelDocument.Properties;
+    if (documentProperties == null)
+      documentProperties = modelDocument.Properties = new DocumentProperties();
+    var statisticProperties = documentProperties.StatisticProperties;
+    if (statisticProperties == null)
+      statisticProperties = documentProperties.StatisticProperties = new StatisticProperties();
+    SetRandomProperties(statisticProperties);
+    if (showDetails)
+    {
+      WriteLine(
+        $"  StatisticProperties generated {statisticProperties.Count()}");
+      DumpProperties(modelDocument, typeof(StatisticProperties).GetProperties());
+    }
+  }
+
+  /// <summary>
+  /// Generate document settings.
+  /// </summary>
+  /// <param name="modelDocument">New model document.</param>
+  /// <param name="showDetails">Specifies whether to show generated properties</param>
+  private void GenerateDocumentSettings(DMW.Document modelDocument, bool showDetails)
+  {
+    var documentProperties = modelDocument.Properties;
+    if (documentProperties == null)
+      documentProperties = modelDocument.Properties = new DocumentProperties();
+    var docSettings = documentProperties.DocumentSettings;
+    if (docSettings == null)
+      docSettings = documentProperties.DocumentSettings = new DocumentSettings();
+    SetRandomProperties(docSettings, 
+      (propInfo)=>
+      { 
+        var ch = propInfo.Name.First();
+        var start2 = propInfo.Name.Substring(0,2);
+        //var start3 = propInfo.Name.Substring(0,Math.Min(3, propInfo.Name.Length));
+        if (ch >= 'A' && ch <= 'R' 
+        //&& propInfo.Name!=nameof(DocumentSettings.EndnoteDocumentWideProperties)
+        && propInfo.Name!=nameof(DocumentSettings.FootnoteDocumentWideProperties)
+        //&& String.Compare(start2,"Sa")<=0
+        //&& String.Compare(start3,"Sha")<0
+        //&& !propInfo.Name.StartsWith("Shape")
+        //&& propInfo.Name!=nameof(DocumentSettings.SaveThroughXslt)
+        //&& !propInfo.Name.StartsWith("Save")
+        //&& propInfo.Name!=nameof(DocumentSettings.SchemaLibrary)
+        //&& propInfo.Name!=nameof(DocumentSettings.ShapeDefaults)
+        //&& propInfo.Name!=nameof(DocumentSettings.ShowEnvelope)
+        //&& propInfo.Name!=nameof(DocumentSettings.ShowXmlTags)
+        //&& propInfo.Name!=nameof(DocumentSettings.StrictFirstAndLastChars)
+        //&& propInfo.Name!=nameof(DocumentSettings.StylePaneFormatFilter)
+        //&& propInfo.Name!=nameof(DocumentSettings.StylePaneSortMethods)
+        )
+          return true;
+        return false;
+      });
+    docSettings.AttachedTemplate =
+      new DMW.AttachedTemplate { Id = "Id1", Uri = new Uri("C:\\Users\\qhta1\\AppData\\Roaming\\Microsoft\\Templates\\Pdf.dotx") };
+    if (showDetails)
+    {
+      WriteLine(
+        $"  DocumentSettings generated {docSettings.Count()}");
+      DumpProperties(modelDocument, typeof(DocumentSettings).GetProperties());
+    }
+  }
+  #endregion
+
+  #region helper methods
+
+  private static int LastRelId = 0;
+
+  private void DumpProperties(DMW.Document modelDocument, IEnumerable<PropertyInfo> properties)
+  {
+    foreach (var prop in properties.Where(item => item.CanWrite))
+    {
+      var documentProperty = modelDocument.Properties?.GetProperty(prop.Name);
+      if (documentProperty != null)
+      {
+        WriteLine($"    {documentProperty}");
+      }
+    }
+  }
+
+  private void SetRandomValues(object obj, string propName, Predicate<PropertyInfo>? predicate = null)
+  {
+    if (obj.GetType().IsCollection(out var itemType))
+    {
+      SetRandomItems(obj, itemType, propName, predicate);
+    }
+    SetRandomProperties(obj, predicate);
+  }
+
+  private void SetRandomProperties(object obj, Predicate<PropertyInfo>? predicate = null)
+  {
+    var objType = obj.GetType();
+    foreach (var prop in objType
+      .GetProperties()
+      .Where(item => item.CanWrite && !item.IsIndexer() && item.PropertyType != objType && item.GetCustomAttribute<XmlIgnoreAttribute>()==null))
+    {
+      if (predicate == null || predicate(prop))
+      {
+        var propType = prop.PropertyType;
+        var val = GetRandomValue(propType, prop.Name, predicate);
+        if (val != null)
+          prop.SetValue(obj, val);
+      }
+    }
+  }
+
+  private object? GetRandomValue(Type propType, string propName, Predicate<PropertyInfo>? predicate = null)
+  {
+    propType = propType.GetNotNullableType();
+    if (propName == nameof(ContentProperties.Template))
+      return "Normal.dotm";
+
+    if (propName == nameof(ContentProperties.DocumentSecurity)
+     || propName == nameof(ContentProperties.HeadingPairs)
+     || propName == nameof(DocumentSettings.MailMerge)
+     || propName == nameof(DocumentSettings.WriteProtection))
+    {
+      // omit these properties
+      return null;
+    }
+
+    //if (propName == nameof(DMW.ExternalFile.Uri))
+    //  return "http://www.example.com/" + propName;
+
+    if (propName == nameof(ContentProperties.Application))
+      return "Microsoft Office Word";
+
+    if (propName == nameof(ContentProperties.ApplicationVersion))
+      return "16.0000";
+
+    if (propType == typeof(string))
+    {
+      if (propName == nameof(DMW.RelationshipType.Id))
+        return "Id" + (++LastRelId).ToString();
+      return propName;
+    }
+    if (propType == typeof(int))
+      return Rnd.Next();
+    if (propType == typeof(bool))
+      return Rnd.NextDouble() >= 0.5;
+    if (propType == typeof(DateTime))
+      return RandomDateTime();
+    if (propType.IsEnum)
+    {
+      var maxEnum = 0;
+      foreach (var enumVal in propType.GetEnumValues())
+      {
+        var enumValue = (int)Convert.ChangeType(enumVal, typeof(int));
+        if (enumValue > maxEnum)
+          maxEnum = enumValue;
+      }
+      var randomInt = Rnd.Next(0, maxEnum);
+      var setVal = Enum.ToObject(propType, randomInt);
+      return setVal;
+    }
+    if (propType == typeof(Uri))
+    {
+      return new Uri("http://www.example.com/" + propName);
+    }
+    if (propType.IsClass/* && propName?.First() <= 'A'*/)
+    {
+      var constructor = propType.GetConstructor(new Type[0]);
+      if (constructor != null)
+      {
+        var propValue = constructor.Invoke(new object[0]);
+        SetRandomValues(propValue, propName, predicate);
+        return propValue;
+      }
+    }
+    return null;
+  }
+
+  private void SetRandomItems(object collection, Type itemType, string propName, Predicate<PropertyInfo>? predicate)
+  {
+    if (itemType == typeof(string))
+      Debug.Assert(true);
+    var addMethod = collection.GetType().GetMethod("Add", new Type[] { itemType });
+    if (addMethod != null)
+    {
+      var itemCount = Rnd.Next(0, 10);
+      for (int i = 1; i <= itemCount; i++)
+      {
+        var item = GetRandomValue(itemType, propName + i.ToString(), predicate);
+        if (item != null)
+          addMethod.Invoke(collection, new object[] { item });
+      }
+    }
+  }
+
+  #endregion
 }

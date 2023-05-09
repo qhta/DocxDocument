@@ -329,7 +329,7 @@ public class TestBase
   /// <summary>
   /// Random generator
   /// </summary>
-  protected Random Random = new Random();
+  protected Random Rnd = new Random();
 
   private static int[] MonthDays = new[] { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
   /// <summary>
@@ -338,13 +338,13 @@ public class TestBase
   /// <returns></returns>
   protected DateTime RandomDateTime()
   {
-    var year = Random.Next(2000, 2025);
-    var month = Random.Next(1, 12);
-    var day = Random.Next(1, MonthDays[month-1]);
-    var hour = Random.Next(0, 23);
-    var min = Random.Next(0, 59);
-    var sec = Random.Next(0, 59);
-    var ms = Random.Next(0, 999);
+    var year = Rnd.Next(2000, 2025);
+    var month = Rnd.Next(1, 12);
+    var day = Rnd.Next(1, MonthDays[month-1]);
+    var hour = Rnd.Next(0, 23);
+    var min = Rnd.Next(0, 59);
+    var sec = Rnd.Next(0, 59);
+    var ms = Rnd.Next(0, 999);
     return new DateTime(year, month, day, hour, min, sec, ms);
   }
 

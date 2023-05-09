@@ -105,7 +105,10 @@ public partial class DocxWriter : IDisposable
       var docSettingsPart = mainDocumentPart.DocumentSettingsPart;
       if (docSettingsPart == null)
         docSettingsPart = mainDocumentPart.AddNewPart<DXPack.DocumentSettingsPart>();
-      docSettingsPart.Settings = DMX.DocumentSettingsConverter.CreateOpenXmlElement(properties.DocumentSettings);
+      var settings = docSettingsPart.Settings;
+      docSettingsPart.Settings = new DXW.Settings();
+      DMX.DocumentSettingsConverter.UpdateOpenXmlElement(docSettingsPart.Settings, properties.DocumentSettings);
+
     }
 
     if (parts.HasFlag(PartsMask.DocumentSettings) && properties.WebSettings != null)

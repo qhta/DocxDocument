@@ -69,7 +69,7 @@ public class StrokeChildType: ModelElement
   /// <summary>
   ///   Stroke Image Style
   /// </summary>
-  public FillKind? FillType { get; set; }
+  public FillTypeKind? FillType { get; set; }
 
   /// <summary>
   ///   Stroke Image Location

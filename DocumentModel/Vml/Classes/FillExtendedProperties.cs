@@ -14,5 +14,5 @@ public class FillExtendedProperties: ModelElement
   /// <summary>
   ///   Fill Type
   /// </summary>
-  public FillKind? Type { get; set; }
+  public FillTypeKind? Type { get; set; }
 }
