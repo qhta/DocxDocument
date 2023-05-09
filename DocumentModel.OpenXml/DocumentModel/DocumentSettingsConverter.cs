@@ -1586,15 +1586,15 @@ public static class DocumentSettingsConverter
     if (element is not null)
     {
       var result = DMXW.EndnoteDocumentWidePropertiesConverter.CreateModelElement(element);
-      if (result is not null)
-        if (openXmlElement?.DocumentSettingsPart is not null && element.Id?.Value is not null)
-        {
-          var relationship = openXmlElement.DocumentSettingsPart.GetExternalRelationship(element.Id.Value);
-          if (relationship is not null)
-          {
-            result.Uri = relationship.Uri;
-          }
-        }
+      //if (result is not null)
+      //  if (openXmlElement?.DocumentSettingsPart is not null && result.EndnoteSpecialReferences!=null)
+      //  {
+      //    var relationship = openXmlElement.DocumentSettingsPart.GetExternalRelationship(element.Id.Value);
+      //    if (relationship is not null)
+      //    {
+      //      result.Uri = relationship.Uri;
+      //    }
+      //  }
       return result;
     }
     return null;
