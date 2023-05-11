@@ -478,31 +478,7 @@ public class TestProperties : TestBase
     var docSettings = documentProperties.DocumentSettings;
     if (docSettings == null)
       docSettings = documentProperties.DocumentSettings = new DocumentSettings();
-    SetRandomProperties(docSettings, 
-      (propInfo)=>
-      { 
-        var ch = propInfo.Name.First();
-        var start2 = propInfo.Name.Substring(0,2);
-        //var start3 = propInfo.Name.Substring(0,Math.Min(3, propInfo.Name.Length));
-        if (ch >= 'A' && ch <= 'R' 
-        //&& propInfo.Name!=nameof(DocumentSettings.EndnoteDocumentWideProperties)
-        && propInfo.Name!=nameof(DocumentSettings.FootnoteDocumentWideProperties)
-        //&& String.Compare(start2,"Sa")<=0
-        //&& String.Compare(start3,"Sha")<0
-        //&& !propInfo.Name.StartsWith("Shape")
-        //&& propInfo.Name!=nameof(DocumentSettings.SaveThroughXslt)
-        //&& !propInfo.Name.StartsWith("Save")
-        //&& propInfo.Name!=nameof(DocumentSettings.SchemaLibrary)
-        //&& propInfo.Name!=nameof(DocumentSettings.ShapeDefaults)
-        //&& propInfo.Name!=nameof(DocumentSettings.ShowEnvelope)
-        //&& propInfo.Name!=nameof(DocumentSettings.ShowXmlTags)
-        //&& propInfo.Name!=nameof(DocumentSettings.StrictFirstAndLastChars)
-        //&& propInfo.Name!=nameof(DocumentSettings.StylePaneFormatFilter)
-        //&& propInfo.Name!=nameof(DocumentSettings.StylePaneSortMethods)
-        )
-          return true;
-        return false;
-      });
+    SetRandomProperties(docSettings);
     docSettings.AttachedTemplate =
       new DMW.AttachedTemplate { Id = "Id1", Uri = new Uri("C:\\Users\\qhta1\\AppData\\Roaming\\Microsoft\\Templates\\Pdf.dotx") };
     if (showDetails)
@@ -544,7 +520,9 @@ public class TestProperties : TestBase
     var objType = obj.GetType();
     foreach (var prop in objType
       .GetProperties()
-      .Where(item => item.CanWrite && !item.IsIndexer() && item.PropertyType != objType && item.GetCustomAttribute<XmlIgnoreAttribute>()==null))
+      .Where(item => item.CanWrite && !item.IsIndexer() && item.PropertyType != objType 
+      && item.GetCustomAttribute<XmlIgnoreAttribute>() == null 
+      && item.GetCustomAttribute<ObsoleteAttribute>() == null))
     {
       if (predicate == null || predicate(prop))
       {
@@ -570,9 +548,6 @@ public class TestProperties : TestBase
       // omit these properties
       return null;
     }
-
-    //if (propName == nameof(DMW.ExternalFile.Uri))
-    //  return "http://www.example.com/" + propName;
 
     if (propName == nameof(ContentProperties.Application))
       return "Microsoft Office Word";
@@ -609,13 +584,17 @@ public class TestProperties : TestBase
     {
       return new Uri("http://www.example.com/" + propName);
     }
-    if (propType.IsClass/* && propName?.First() <= 'A'*/)
+    if (propType.IsClass)
     {
       var constructor = propType.GetConstructor(new Type[0]);
       if (constructor != null)
       {
         var propValue = constructor.Invoke(new object[0]);
-        SetRandomValues(propValue, propName, predicate);
+        var initMethod = propType.GetMethod("Init");
+        if (initMethod != null)
+          initMethod.Invoke(propValue, new object[0]);
+        else
+          SetRandomValues(propValue, propName, predicate);
         return propValue;
       }
     }
@@ -624,8 +603,8 @@ public class TestProperties : TestBase
 
   private void SetRandomItems(object collection, Type itemType, string propName, Predicate<PropertyInfo>? predicate)
   {
-    if (itemType == typeof(string))
-      Debug.Assert(true);
+    //if (itemType == typeof(string))
+    //  Debug.Assert(true);
     var addMethod = collection.GetType().GetMethod("Add", new Type[] { itemType });
     if (addMethod != null)
     {

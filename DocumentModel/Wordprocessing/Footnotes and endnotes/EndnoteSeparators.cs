@@ -5,4 +5,12 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class EndnoteSeparators: ElementCollection<EndnoteSeparator>
 {
+  /// <summary>
+  /// Creates default separators.
+  /// </summary>
+  public void Init()
+  {
+    Add(new EndnoteSeparator { Id = -1});
+    Add(new EndnoteSeparator { Id = 0});
+  }
 }

@@ -1,28 +1,28 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Defines the RelationshipType Class.
+/// <see cref="DMW.RelationshipType"/> class from/to OpenXml converter.
 /// </summary>
 public static class RelationshipTypeConverter
 {
-  /// <summary>
-  /// Relationship to Part
-  /// </summary>
-  private static String? GetId(DXW.RelationshipType openXmlElement)
+  #region Relationship Id conversion.
+  public static String? GetId(DXW.RelationshipType openXmlElement)
   {
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.RelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  public static bool CmpId(DXW.RelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
+    return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
   
-  private static void SetId(DXW.RelationshipType openXmlElement, String? value)
+  public static void SetId(DXW.RelationshipType openXmlElement, String? value)
   {
     openXmlElement.Id = StringValueConverter.CreateStringValue(value);
   }
-  
+  #endregion
+
+  #region RelationshipType model convertion.
   public static DMW.RelationshipType? CreateModelElement(DXW.RelationshipType? openXmlElement)
   {
     if (openXmlElement != null)
@@ -105,4 +105,5 @@ public static class RelationshipTypeConverter
     SetId(openXmlElement, value?.Id);
     return true;
   }
+  #endregion
 }

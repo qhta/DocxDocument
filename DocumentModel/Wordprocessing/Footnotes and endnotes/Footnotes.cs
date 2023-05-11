@@ -1,10 +1,27 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Document Footnotes.
 /// </summary>
-public class Footnotes: ModelElement
+public class Footnotes: ElementCollection<Footnote>
 {
-  public Footnote? Footnote { get; set; }
+  /// <summary>
+  /// Creates default separators.
+  /// </summary>
+  public void Init()
+  {
+    Add(CreateSpecialItem(-1, FootnoteEndnoteKind.Separator));
+    Add(CreateSpecialItem(0, FootnoteEndnoteKind.ContinuationSeparator));
+  }
+
+  private Footnote CreateSpecialItem(int id, FootnoteEndnoteKind type)
+  {
+    var item = new Footnote
+    { 
+      Id = id,
+      Type = type
+    };
+    item.Add(new Paragraph(new Run(new DMW.SeparatorMark{ Continuation = type == FootnoteEndnoteKind.ContinuationSeparator })));
+    return item;
+  }
 }

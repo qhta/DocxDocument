@@ -17,6 +17,6 @@ public class SeparatorMark : ModelElement, IRunContent
   /// <summary>
   /// Specifies whether this instance is continuation separator mark.
   /// </summary>
-   public bool IsContinuation { get; set;}
+   public bool Continuation { get; set;}
 
 }

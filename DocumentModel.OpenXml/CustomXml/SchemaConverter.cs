@@ -8,19 +8,21 @@ public static class SchemaConverter
   /// <summary>
   /// Custom XML Schema Namespace
   /// </summary>
-  private static String? GetUri(DXCXSR.Schema openXmlElement)
+  private static Uri? GetUri(DXCXSR.Schema openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.Uri);
+    if (openXmlElement?.Uri?.Value is not null)
+      return new Uri(openXmlElement.Uri.Value);
+    return null;
   }
   
-  private static bool CmpUri(DXCXSR.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXCXSR.Schema openXmlElement, Uri? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
+    return StringValueConverter.CmpValue(openXmlElement?.Uri, value?.ToString(), diffs, objName, "Uri");
   }
   
-  private static void SetUri(DXCXSR.Schema openXmlElement, String? value)
+  private static void SetUri(DXCXSR.Schema openXmlElement, Uri? value)
   {
-    openXmlElement.Uri = StringValueConverter.CreateStringValue(value);
+    openXmlElement.Uri = StringValueConverter.CreateStringValue(value?.ToString());
   }
   
   /// <summary>
@@ -90,18 +92,18 @@ public static class SchemaConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCX.Schema value)
-    where OpenXmlElementType: DXCXSR.Schema, new()
+  public static DXCXSR.Schema CreateOpenXmlElement(DMCX.Schema value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXCXSR.Schema();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXCXSR.Schema openXmlElement, DMCX.Schema value)
+  public static bool UpdateOpenXmlElement(DXCXSR.Schema openXmlElement, DMCX.Schema value)
   {
     SetUri(openXmlElement, value?.Uri);
     SetManifestLocation(openXmlElement, value?.ManifestLocation);
     SetSchemaLocation(openXmlElement, value?.SchemaLocation);
+    return true;
   }
 }

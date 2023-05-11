@@ -5,97 +5,75 @@ namespace DocumentModel.OpenXml.CustomXml;
 /// </summary>
 public static class SchemaLibraryConverter
 {
-  private static Collection<DMCX.Schema>? GetSchemas(DXCXSR.SchemaLibrary openXmlElement)
+  #region item conversion
+  private static DM.IModelElement? GetSchema(DX.OpenXmlElement openXmlElement)
   {
-    var collection = new Collection<DMCX.Schema>();
-    foreach (var item in openXmlElement.Elements<DXCXSR.Schema>())
-    {
-      var newItem = DMXCX.SchemaConverter.CreateModelElement(item);
-      if (newItem != null)
-        collection.Add(newItem);
-    }
-    if (collection.Count>0)
-      return collection;
-    return null;
+    return DMXCX.SchemaConverter.CreateModelElement(openXmlElement as DXCXSR.Schema);
   }
-  
-  private static bool CmpSchemas(DXCXSR.SchemaLibrary openXmlElement, Collection<DMCX.Schema>? value, DiffList? diffs, string? objName)
+
+  private static bool CmpSchema(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
   {
-    var origElements = openXmlElement.Elements<DXCXSR.Schema>();
-    var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
-    if (value != null)
-    {
-      if (origElementsCount != modelElementsCount)
-      {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
-        return false;
-      }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!DMXCX.SchemaConverter.CompareModelElement(origItem, modelItem, diffs, objName))
-          ok = false;
-      }
-      return ok;
-    }
-    if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    return DMXCX.SchemaConverter.CompareModelElement(openXmlElement as DXCXSR.Schema, value as DMCX.Schema, diffs, objName);
+  }
+
+  private static bool UpdateSchema(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
+  {
+    if (openXmlElement is DXCXSR.Schema schemaElement && model is DMCX.Schema schemaModel)
+      return DMXCX.SchemaConverter.UpdateOpenXmlElement(schemaElement, schemaModel);
     return false;
   }
-  
-  private static void SetSchemas(DXCXSR.SchemaLibrary openXmlElement, Collection<DMCX.Schema>? value)
+
+  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model)
   {
-    openXmlElement.RemoveAllChildren<DXCXSR.Schema>();
-    if (value != null)
+    if (model is DMCX.Schema modelElement)
     {
-      foreach (var item in value)
-      {
-        var newItem = DMXCX.SchemaConverter.CreateOpenXmlElement<DXCXSR.Schema>(item);
-        if (newItem != null)
-          openXmlElement.AppendChild(newItem);
-      }
+     return DMXCX.SchemaConverter.CreateOpenXmlElement(modelElement);
     }
+    return null!;
   }
-  
-  public static DocumentModel.CustomXml.SchemaLibrary? CreateModelElement(DXCXSR.SchemaLibrary? openXmlElement)
+  #endregion
+
+  #region model conversion
+  public static DMCX.SchemaLibrary? CreateModelElement(DXCXSR.SchemaLibrary? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DocumentModel.CustomXml.SchemaLibrary();
-      value.Schemas = GetSchemas(openXmlElement);
-      return value;
+      var model = new DMCX.SchemaLibrary();
+      ElementCollectionConverter<DMCX.Schema>.FillModelElementCollection(
+      openXmlElement.Elements<DXW.Endnote>(), model, GetSchema);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXCXSR.SchemaLibrary? openXmlElement, DMCX.SchemaLibrary? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXCXSR.SchemaLibrary? openXmlElement, DMCX.SchemaLibrary? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpSchemas(openXmlElement, value.Schemas, diffs, objName))
-        ok = false;
-      return ok;
+      if (!ElementCollectionConverter<DMCX.Schema>.CompareOpenXmlElementCollection(
+        openXmlElement, model,
+        CmpSchema, diffs, objName))
+        return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMCX.SchemaLibrary value)
-    where OpenXmlElementType: DXCXSR.SchemaLibrary, new()
+
+  public static DXCXSR.SchemaLibrary CreateOpenXmlElement(DMCX.SchemaLibrary model)
   {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXCXSR.SchemaLibrary();
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXCXSR.SchemaLibrary openXmlElement, DMCX.SchemaLibrary value)
+
+  public static bool UpdateOpenXmlElement(DXCXSR.SchemaLibrary openXmlElement, DMCX.SchemaLibrary model)
   {
-    SetSchemas(openXmlElement, value?.Schemas);
+    return ElementCollectionConverter<DMCX.Schema>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      CmpSchema,
+      UpdateSchema,
+      CreateEndnoteElement);
   }
+  #endregion
 }

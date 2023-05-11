@@ -6,19 +6,19 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class FootnoteEndnoteSeparatorReferenceTypeConverter
 {
   #region Footnote/Endnote ID
-  private static Int32? GetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement)
+  public static Int32? GetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement)
   {
     return (Int32?)openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  public static bool CmpId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
     return false;
   }
   
-  private static void SetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value)
+  public static void SetId(DXW.FootnoteEndnoteSeparatorReferenceType openXmlElement, Int32? value)
   {
     openXmlElement.Id = value;
   }

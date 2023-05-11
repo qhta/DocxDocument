@@ -1,9 +1,7 @@
-using DocumentModel.Wordprocessing;
-
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document-Wide Endnote Properties.
+/// <see cref="DMW.EndnoteDocumentWideProperties"/> class from/to OpenXml converter.
 /// </summary>
 public static class EndnoteDocumentWidePropertiesConverter
 {
@@ -110,12 +108,12 @@ public static class EndnoteDocumentWidePropertiesConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
-  private static DMW.EndnoteSeparators? GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement)
+  private static DMW.EndnoteSeparators? GetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, DXW.Settings? settings)
   {
     var collection = new DMW.EndnoteSeparators();
     foreach (var item in openXmlElement.Elements<DXW.EndnoteSpecialReference>())
     {
-      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement<EndnoteSeparator>(item);
+      var newItem = DMXW.EndnoteSeparatorConverter.CreateModelElement(item, settings);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -142,7 +140,7 @@ public static class EndnoteDocumentWidePropertiesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.EndnoteSeparatorConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -152,21 +150,23 @@ public static class EndnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  private static void SetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteSeparators? value)
+  private static void SetEndnoteSpecialReferences(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteSeparators? value, 
+    DXW.Settings? settings)
   {
     openXmlElement.RemoveAllChildren<DXW.EndnoteSpecialReference>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<DXW.EndnoteSpecialReference>(item);
+        var newItem = DMXW.EndnoteSeparatorConverter.CreateOpenXmlElement(item, settings);
         if (newItem != null)
           openXmlElement.AppendChild(newItem);
       }
     }
   }
   
-  public static DMW.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement)
+  public static DMW.EndnoteDocumentWideProperties? CreateModelElement(DXW.EndnoteDocumentWideProperties? openXmlElement, 
+    DXW.Settings? settings)
   {
     if (openXmlElement != null)
     {
@@ -175,7 +175,7 @@ public static class EndnoteDocumentWidePropertiesConverter
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);
       value.NumberingRestart = GetNumberingRestart(openXmlElement);
-      value.EndnoteSpecialReferences = GetEndnoteSpecialReferences(openXmlElement);
+      value.EndnoteSeparators = GetEndnoteSpecialReferences(openXmlElement, settings);
       return value;
     }
     return null;
@@ -194,7 +194,7 @@ public static class EndnoteDocumentWidePropertiesConverter
         ok = false;
       if (!CmpNumberingRestart(openXmlElement, value.NumberingRestart, diffs, objName))
         ok = false;
-      if (!CmpEndnoteSpecialReferences(openXmlElement, value.EndnoteSpecialReferences, diffs, objName))
+      if (!CmpEndnoteSpecialReferences(openXmlElement, value.EndnoteSeparators, diffs, objName))
         ok = false;
       return ok;
     }
@@ -203,20 +203,20 @@ public static class EndnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.EndnoteDocumentWideProperties value)
-    where OpenXmlElementType: DXW.EndnoteDocumentWideProperties, new()
+  public static DXW.EndnoteDocumentWideProperties CreateOpenXmlElement(DMW.EndnoteDocumentWideProperties value, DXW.Settings? settings = null)
   {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXW.EndnoteDocumentWideProperties();
+    UpdateOpenXmlElement(openXmlElement, value, settings);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteDocumentWideProperties value)
+  public static void UpdateOpenXmlElement(DXW.EndnoteDocumentWideProperties openXmlElement, DMW.EndnoteDocumentWideProperties value,
+    DXW.Settings? settings)
   {
     SetEndnotePosition(openXmlElement, value?.EndnotePosition);
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);
     SetNumberingStart(openXmlElement, value?.NumberingStart);
     SetNumberingRestart(openXmlElement, value?.NumberingRestart);
-    SetEndnoteSpecialReferences(openXmlElement, value?.EndnoteSpecialReferences);
+    SetEndnoteSpecialReferences(openXmlElement, value?.EndnoteSeparators, settings);
   }
 }

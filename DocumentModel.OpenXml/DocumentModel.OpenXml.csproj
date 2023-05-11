@@ -34,6 +34,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\MyLib\Qhta.DeepCompare\Qhta.DeepCompare.csproj" />
+    <ProjectReference Include="..\..\MyLib\Qhta.OpenXMLTools\Qhta.OpenXMLTools.csproj" />
     <ProjectReference Include="..\DocumentModel\DocumentModel.csproj" />
   </ItemGroup>
 
@@ -41,7 +42,6 @@
     <Folder Include="Wordprocessing\Frames and framesets\" />
     <Folder Include="Wordprocessing\VBA\" />
     <Folder Include="Wordprocessing\Ruby\" />
-    <Folder Include="Wordprocessing\Settings\" />
   </ItemGroup>
 
 </Project>

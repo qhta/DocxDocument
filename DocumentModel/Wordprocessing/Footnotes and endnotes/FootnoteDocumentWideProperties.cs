@@ -5,6 +5,15 @@ namespace DocumentModel.Wordprocessing;
 public class FootnoteDocumentWideProperties: ModelElement
 {
   /// <summary>
+  /// Initializes <see cref="DMW.FootnoteSeparators"/>
+  /// </summary>
+  public void Init()
+  {
+    FootnoteSeparators = new FootnoteSeparators();
+    FootnoteSeparators.Init();
+  }
+
+  /// <summary>
   ///   Footnote Placement.
   /// </summary>
   public FootnotePositionKind? FootnotePosition { get; set; }
@@ -27,5 +36,5 @@ public class FootnoteDocumentWideProperties: ModelElement
   /// <summary>
   /// Footnote special references
   /// </summary>
-  public FootnoteSeparators? FootnoteSpecialReferences { get; set; }
+  public FootnoteSeparators? FootnoteSeparators { get; set; }
 }

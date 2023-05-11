@@ -505,17 +505,7 @@ public static class DocumentSettingsConverter
     var element = openXmlElement?.GetFirstChild<DXW.AttachedTemplate>();
     if (element is not null)
     {
-      var result = DMXW.RelationshipTypeConverter.CreateModelElement<DMW.AttachedTemplate>(element);
-      if (result is not null)
-        if (openXmlElement?.DocumentSettingsPart is not null && element.Id?.Value is not null)
-        {
-          var relationship = openXmlElement.DocumentSettingsPart.GetExternalRelationship(element.Id.Value);
-          if (relationship is not null)
-          {
-            result.Uri = relationship.Uri;
-          }
-        }
-      return result;
+      return DMXW.AttachedTemplateConverter.CreateModelElement(element, openXmlElement);
     }
     return null;
   }
@@ -532,28 +522,10 @@ public static class DocumentSettingsConverter
       itemElement.Remove();
     if (value is not null)
     {
-      itemElement = DMXW.RelationshipTypeConverter.CreateOpenXmlElement<DXW.AttachedTemplate>(value);
+      itemElement = DMXW.AttachedTemplateConverter.CreateOpenXmlElement(value, openXmlElement);
       if (itemElement is not null)
       {
         openXmlElement.AppendChild(itemElement);
-        if (value.Uri is not null)
-        {
-          if (openXmlElement?.DocumentSettingsPart is not null && itemElement.Id?.Value is not null)
-          {
-          //  var relationship = openXmlElement.DocumentSettingsPart.GetExternalRelationship(itemElement.Id.Value);
-          //  if (relationship is not null)
-          //  {
-          //    if (!relationship.IsExternal || relationship.Uri != value.Uri)
-          //    {
-          //      openXmlElement.DocumentSettingsPart.DeleteExternalRelationship(itemElement.Id.Value);
-          //      openXmlElement.DocumentSettingsPart.AddExternalRelationship(itemElement.Id.Value, value.Uri);
-          //    }
-          //  }
-          //  else
-              openXmlElement.DocumentSettingsPart.AddExternalRelationship
-              ("http://schemas.openxmlformats.org/officeDocument/2006/relationships/attachedTemplate", value.Uri, itemElement.Id.Value);
-          }
-        }
       }
     }
   }
@@ -1449,7 +1421,7 @@ public static class DocumentSettingsConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.SaveThroughXslt>();
     if (element is not null)
-      return DMXW.SaveThroughXsltConverter.CreateModelElement(element);
+      return DMXW.SaveThroughXsltConverter.CreateModelElement(element, openXmlElement);
     return null;
   }
 
@@ -1465,7 +1437,7 @@ public static class DocumentSettingsConverter
       itemElement.Remove();
     if (value is not null)
     {
-      itemElement = DMXW.SaveThroughXsltConverter.CreateOpenXmlElement<DXW.SaveThroughXslt>(value);
+      itemElement = DMXW.SaveThroughXsltConverter.CreateOpenXmlElement(value, openXmlElement);
       if (itemElement is not null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -1556,7 +1528,7 @@ public static class DocumentSettingsConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.FootnoteDocumentWideProperties>();
     if (element is not null)
-      return DMXW.FootnoteDocumentWidePropertiesConverter.CreateModelElement(element);
+      return DMXW.FootnoteDocumentWidePropertiesConverter.CreateModelElement(element, openXmlElement);
     return null;
   }
 
@@ -1572,7 +1544,7 @@ public static class DocumentSettingsConverter
       itemElement.Remove();
     if (value is not null)
     {
-      itemElement = DMXW.FootnoteDocumentWidePropertiesConverter.CreateOpenXmlElement<DXW.FootnoteDocumentWideProperties>(value);
+      itemElement = DMXW.FootnoteDocumentWidePropertiesConverter.CreateOpenXmlElement(value, openXmlElement);
       if (itemElement is not null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -1585,17 +1557,7 @@ public static class DocumentSettingsConverter
     var element = openXmlElement?.GetFirstChild<DXW.EndnoteDocumentWideProperties>();
     if (element is not null)
     {
-      var result = DMXW.EndnoteDocumentWidePropertiesConverter.CreateModelElement(element);
-      //if (result is not null)
-      //  if (openXmlElement?.DocumentSettingsPart is not null && result.EndnoteSpecialReferences!=null)
-      //  {
-      //    var relationship = openXmlElement.DocumentSettingsPart.GetExternalRelationship(element.Id.Value);
-      //    if (relationship is not null)
-      //    {
-      //      result.Uri = relationship.Uri;
-      //    }
-      //  }
-      return result;
+      return DMXW.EndnoteDocumentWidePropertiesConverter.CreateModelElement(element, openXmlElement);
     }
     return null;
   }
@@ -1612,7 +1574,7 @@ public static class DocumentSettingsConverter
       itemElement.Remove();
     if (value is not null)
     {
-      itemElement = DMXW.EndnoteDocumentWidePropertiesConverter.CreateOpenXmlElement<DXW.EndnoteDocumentWideProperties>(value);
+      itemElement = DMXW.EndnoteDocumentWidePropertiesConverter.CreateOpenXmlElement(value, openXmlElement);
       if (itemElement is not null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -1756,7 +1718,7 @@ public static class DocumentSettingsConverter
     {
       var newItem = StringValueConverter.GetValue(item);
       if (newItem is not null)
-        collection.Add(new DMCX.Schema { Uri = newItem });
+        collection.Add(new DMCX.Schema { Uri = new Uri(newItem) });
     }
     if (collection.Count > 0)
       return collection;
@@ -1781,7 +1743,7 @@ public static class DocumentSettingsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!StringValueConverter.CmpValue(origItem.Val?.Value, modelItem.Uri, diffs, objName))
+        if (!StringValueConverter.CmpValue(origItem.Val?.Value, modelItem.Uri?.ToString(), diffs, objName))
           ok = false;
       }
       return ok;
@@ -2008,7 +1970,7 @@ public static class DocumentSettingsConverter
       itemElement.Remove();
     if (value is not null)
     {
-      itemElement = DMXCX.SchemaLibraryConverter.CreateOpenXmlElement<DXCXSR.SchemaLibrary>(value);
+      itemElement = DMXCX.SchemaLibraryConverter.CreateOpenXmlElement(value);
       if (itemElement is not null)
         openXmlElement.AppendChild(itemElement);
     }
