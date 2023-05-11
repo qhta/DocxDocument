@@ -473,6 +473,7 @@ public class DocumentSettings : KnownDocumentProperties
   /// inserted in the header and footer of a WordprocessingML document. 
   /// </summary>
   [Category("VML")]
+  [Obsolete]
   public HeaderShapeDefaults? HeaderShapeDefaults { get; set; }
 
   /// <summary>
@@ -713,6 +714,7 @@ public class DocumentSettings : KnownDocumentProperties
   /// This element specifies the defaults that are used when creating new shapes. These defaults are stored once per document.
   /// </summary>
   [Category("VML")]
+  [Obsolete]
   public ShapeDefaults? ShapeDefaults { get; set; }
 
   /// <summary>

@@ -8,6 +8,20 @@ public partial class Paragraph: ElementCollection<IParagraphContent>,
   IStoryContent, ITableCellContent, ISdtBlockContent, ICommentContent, IBidirectionalContent
 {
   /// <summary>
+  /// Default constructor
+  /// </summary>
+  public Paragraph() { }
+
+  /// <summary>
+  /// Constructor for short content creation.
+  /// </summary>
+  public Paragraph(params IParagraphContent[] content) 
+  { 
+    foreach (var contentItem in content) 
+      Add(contentItem);
+  }
+
+  /// <summary>
   ///   Specifies an identifier for a paragraph that is unique within the document part, 
   ///   with the exception that it need not be unique across the choices or fallback of an Alternate Content block. 
   ///   Values MUST be greater than 0 and less than 0x80000000. 

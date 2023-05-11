@@ -5,5 +5,8 @@ namespace DocumentModel.Wordprocessing;
 /// </summary>
 public class EndnoteSeparator: FootnoteEndnoteSeparatorReferenceType
 {
-
+  /// <summary>
+  /// Target Endnote.
+  /// </summary>
+  public Endnote? Endnote {get; set; }
 }

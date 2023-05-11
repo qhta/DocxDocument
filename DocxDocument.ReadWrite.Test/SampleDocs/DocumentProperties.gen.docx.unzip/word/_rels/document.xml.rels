@@ -1,4 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="/word/settings.xml" Id="R58307381b92042d9" />
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="/word/settings.xml" Id="R63ad2dfbf6564bc0" />
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes" Target="/word/footnotes.xml" Id="Rc5dbe4a92a324da2" />
+  <Relationship Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes" Target="/word/endnotes.xml" Id="Re291c7e8ead54952" />
 </Relationships>

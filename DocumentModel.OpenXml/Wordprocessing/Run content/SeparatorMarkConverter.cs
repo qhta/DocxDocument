@@ -19,7 +19,7 @@ public static class SeparatorMarkConverter
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.SeparatorMark{ IsContinuation = true };
+      var value = new DMW.SeparatorMark{ Continuation = true };
       return value;
     }
     return null;
@@ -30,7 +30,7 @@ public static class SeparatorMarkConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!BooleanValueConverter.CmpValue(IsContinuation, value.IsContinuation, diffs, objName, "IsContinuation"))
+      if (!BooleanValueConverter.CmpValue(IsContinuation, value.Continuation, diffs, objName, "Continuation"))
         ok = false;
       return ok;
     }
@@ -47,7 +47,7 @@ public static class SeparatorMarkConverter
 
   public static DX.OpenXmlElement CreateOpenXmlElement(DMW.SeparatorMark value)
   {
-    if (value.IsContinuation)
+    if (value.Continuation)
       return new DXW.ContinuationSeparatorMark();
     else
       return new DXW.SeparatorMark();

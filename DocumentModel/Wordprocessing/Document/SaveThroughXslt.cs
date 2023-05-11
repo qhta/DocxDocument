@@ -3,12 +3,8 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Custom XSL Transform To Use When Saving As XML File.
 /// </summary>
-public class SaveThroughXslt: ModelElement
+public class SaveThroughXslt: ExternalFile
 {
-  /// <summary>
-  ///   XSL Transformation Location
-  /// </summary>
-  public string? Id { get; set; }
 
   /// <summary>
   ///   Local Identifier for XSL Transform
