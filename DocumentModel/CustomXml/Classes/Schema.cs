@@ -8,7 +8,7 @@ public class Schema: ModelElement
   /// <summary>
   ///   Custom XML Schema Namespace
   /// </summary>
-  public string? Uri { get; set; }
+  public Uri? Uri { get; set; }
 
   /// <summary>
   ///   Resource File Location

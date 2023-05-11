@@ -1,71 +1,80 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Endnotes.
+/// <see cref="DMW.Endnotes"/> class from/to OpenXml converter.
 /// </summary>
 public static class EndnotesConverter
 {
-  private static DMW.Endnote? GetEndnote(DXW.Endnotes openXmlElement)
+  #region item conversion
+  private static DM.IModelElement? GetEndnote(DX.OpenXmlElement openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXW.Endnote>();
-    if (element != null)
-      return DMXW.EndnoteConverter.CreateModelElement(element);
-    return null;
+    return DMXW.EndnoteConverter.CreateModelElement(openXmlElement as DXW.Endnote);
   }
-  
-  private static bool CmpEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value, DiffList? diffs, string? objName)
+
+  private static bool CmpEndnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
   {
-    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Endnote>(), value, diffs, objName);
+    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement as DXW.Endnote, value as DMW.Endnote, diffs, objName);
   }
-  
-  private static void SetEndnote(DXW.Endnotes openXmlElement, DMW.Endnote? value)
+
+  private static bool UpdateEndnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Endnote>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    if (openXmlElement is DXW.Endnote endnoteElement && model is DMW.Endnote endnoteModel)
+      return DMXW.EndnoteConverter.UpdateOpenXmlElement(endnoteElement, endnoteModel);
+    return false;
+  }
+
+  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model)
+  {
+    if (model is DMW.Endnote modelElement)
     {
-      itemElement = DMXW.EndnoteConverter.CreateOpenXmlElement(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
+     return DMXW.EndnoteConverter.CreateOpenXmlElement(modelElement);
     }
+    return null!;
   }
-  
+  #endregion
+
+  #region model conversion
   public static DMW.Endnotes? CreateModelElement(DXW.Endnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Endnotes();
-      value.Endnote = GetEndnote(openXmlElement);
-      return value;
+      var model = new DMW.Endnotes();
+      ElementCollectionConverter<DMW.Endnote>.FillModelElementCollection(
+      openXmlElement.Elements<DXW.Endnote>(), model, GetEndnote);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXW.Endnotes? openXmlElement, DMW.Endnotes? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXW.Endnotes? openXmlElement, DMW.Endnotes? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpEndnote(openXmlElement, value.Endnote, diffs, objName))
-        ok = false;
-      return ok;
+      if (!ElementCollectionConverter<DMW.Endnote>.CompareOpenXmlElementCollection(
+        openXmlElement, model,
+        CmpEndnote, diffs, objName))
+        return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnotes value)
-    where OpenXmlElementType: DXW.Endnotes, new()
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Endnotes model)
+    where OpenXmlElementType : DXW.Endnotes, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXW.Endnotes openXmlElement, DMW.Endnotes value)
+
+  public static bool UpdateOpenXmlElement(DXW.Endnotes openXmlElement, DMW.Endnotes model)
   {
-    SetEndnote(openXmlElement, value?.Endnote);
+    return ElementCollectionConverter<DMW.Endnote>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      CmpEndnote,
+      UpdateEndnote,
+      CreateEndnoteElement);
   }
+  #endregion
 }

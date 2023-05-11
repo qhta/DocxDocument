@@ -6,6 +6,15 @@ namespace DocumentModel.Wordprocessing;
 public class EndnoteDocumentWideProperties: ModelElement
 {
   /// <summary>
+  /// Initializes <see cref="EndnoteSeparators"/>
+  /// </summary>
+  public void Init()
+  {
+    EndnoteSeparators = new EndnoteSeparators();
+    EndnoteSeparators.Init();
+  }
+
+  /// <summary>
   ///   Endnote Placement.
   /// </summary>
   public EndnotePositionKind? EndnotePosition { get; set; }
@@ -28,8 +37,7 @@ public class EndnoteDocumentWideProperties: ModelElement
   /// <summary>
   /// Endnote special references.
   /// </summary>
-  [XmlIgnore]
-  public EndnoteSeparators? EndnoteSpecialReferences { get; set; }
+  public EndnoteSeparators? EndnoteSeparators { get; set; }
 
   /// <summary>
   /// Modified for tests.

@@ -1,71 +1,80 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Document Footnotes.
+/// <see cref="DMW.Footnotes"/> class from/to OpenXml converter.
 /// </summary>
 public static class FootnotesConverter
 {
-  private static DMW.Footnote? GetFootnote(DXW.Footnotes openXmlElement)
+  #region item conversion
+  private static DM.IModelElement? GetFootnote(DX.OpenXmlElement openXmlElement)
   {
-    var element = openXmlElement?.GetFirstChild<DXW.Footnote>();
-    if (element != null)
-      return DMXW.FootnoteConverter.CreateModelElement(element);
-    return null;
+    return DMXW.FootnoteConverter.CreateModelElement(openXmlElement as DXW.Footnote);
   }
-  
-  private static bool CmpFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value, DiffList? diffs, string? objName)
+
+  private static bool CmpFootnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
   {
-    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Footnote>(), value, diffs, objName);
+    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement as DXW.Footnote, value as DMW.Footnote, diffs, objName);
   }
-  
-  private static void SetFootnote(DXW.Footnotes openXmlElement, DMW.Footnote? value)
+
+  private static bool UpdateFootnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
   {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Footnote>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
+    if (openXmlElement is DXW.Footnote endnoteElement && model is DMW.Footnote endnoteModel)
+      return DMXW.FootnoteConverter.UpdateOpenXmlElement(endnoteElement, endnoteModel);
+    return false;
+  }
+
+  private static OpenXmlElement CreateFootnoteElement(DM.IModelElement model)
+  {
+    if (model is DMW.Footnote modelElement)
     {
-      itemElement = DMXW.FootnoteConverter.CreateOpenXmlElement(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
+     return DMXW.FootnoteConverter.CreateOpenXmlElement(modelElement);
     }
+    return null!;
   }
-  
+  #endregion
+
+  #region model conversion
   public static DMW.Footnotes? CreateModelElement(DXW.Footnotes? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Footnotes();
-      value.Footnote = GetFootnote(openXmlElement);
-      return value;
+      var model = new DMW.Footnotes();
+      ElementCollectionConverter<DMW.Footnote>.FillModelElementCollection(
+      openXmlElement.Elements<DXW.Footnote>(), model, GetFootnote);
+      return model;
     }
     return null;
   }
-  
-  public static bool CompareModelElement(DXW.Footnotes? openXmlElement, DMW.Footnotes? value, DiffList? diffs, string? objName)
+
+  public static bool CompareModelElement(DXW.Footnotes? openXmlElement, DMW.Footnotes? model, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFootnote(openXmlElement, value.Footnote, diffs, objName))
-        ok = false;
-      return ok;
+      if (!ElementCollectionConverter<DMW.Footnote>.CompareOpenXmlElementCollection(
+        openXmlElement, model,
+        CmpFootnote, diffs, objName))
+        return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
-  
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes value)
-    where OpenXmlElementType: DXW.Footnotes, new()
+
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Footnotes model)
+    where OpenXmlElementType : DXW.Footnotes, new()
   {
     var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
-  
-  public static void UpdateOpenXmlElement(DXW.Footnotes openXmlElement, DMW.Footnotes value)
+
+  public static bool UpdateOpenXmlElement(DXW.Footnotes openXmlElement, DMW.Footnotes model)
   {
-    SetFootnote(openXmlElement, value?.Footnote);
+    return ElementCollectionConverter<DMW.Footnote>.UpdateOpenXmlElementCollection(openXmlElement, model,
+      CmpFootnote,
+      UpdateFootnote,
+      CreateFootnoteElement);
   }
+  #endregion
 }

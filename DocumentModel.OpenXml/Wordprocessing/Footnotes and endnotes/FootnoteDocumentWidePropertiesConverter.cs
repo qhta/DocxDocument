@@ -108,12 +108,12 @@ public static class FootnoteDocumentWidePropertiesConverter
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.NumberingRestart, DXW.RestartNumberValues, DMW.RestartNumberKind>((DMW.RestartNumberKind)value));
   }
   
-  private static DMW.FootnoteSeparators? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement)
+  private static DMW.FootnoteSeparators? GetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, DXW.Settings? settings)
   {
     var collection = new DMW.FootnoteSeparators();
     foreach (var item in openXmlElement.Elements<DXW.FootnoteSpecialReference>())
     {
-      var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateModelElement<DMW.FootnoteSeparator>(item);
+      var newItem = DMXW.FootnoteSeparatorConverter.CreateModelElement(item, settings);
       if (newItem != null)
         collection.Add(newItem);
     }
@@ -140,7 +140,7 @@ public static class FootnoteDocumentWidePropertiesConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.FootnoteSeparatorConverter.CompareModelElement(origItem, modelItem, diffs, objName))
           ok = false;
       }
       return ok;
@@ -150,21 +150,21 @@ public static class FootnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  private static void SetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteSeparators? value)
+  private static void SetFootnoteSpecialReferences(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteSeparators? value, DXW.Settings? settings)
   {
     openXmlElement.RemoveAllChildren<DXW.FootnoteSpecialReference>();
     if (value != null)
     {
       foreach (var item in value)
       {
-        var newItem = DMXW.FootnoteEndnoteSeparatorReferenceTypeConverter.CreateOpenXmlElement<DXW.FootnoteSpecialReference>(item);
+        var newItem = DMXW.FootnoteSeparatorConverter.CreateOpenXmlElement(item, settings);
         if (newItem != null)
           openXmlElement.AppendChild(newItem);
       }
     }
   }
   
-  public static DMW.FootnoteDocumentWideProperties? CreateModelElement(DXW.FootnoteDocumentWideProperties? openXmlElement)
+  public static DMW.FootnoteDocumentWideProperties? CreateModelElement(DXW.FootnoteDocumentWideProperties? openXmlElement, DXW.Settings? settings)
   {
     if (openXmlElement != null)
     {
@@ -173,7 +173,7 @@ public static class FootnoteDocumentWidePropertiesConverter
       value.NumberingFormat = GetNumberingFormat(openXmlElement);
       value.NumberingStart = GetNumberingStart(openXmlElement);
       value.NumberingRestart = GetNumberingRestart(openXmlElement);
-      value.FootnoteSpecialReferences = GetFootnoteSpecialReferences(openXmlElement);
+      value.FootnoteSeparators = GetFootnoteSpecialReferences(openXmlElement, settings);
       return value;
     }
     return null;
@@ -192,7 +192,7 @@ public static class FootnoteDocumentWidePropertiesConverter
         ok = false;
       if (!CmpNumberingRestart(openXmlElement, value.NumberingRestart, diffs, objName))
         ok = false;
-      if (!CmpFootnoteSpecialReferences(openXmlElement, value.FootnoteSpecialReferences, diffs, objName))
+      if (!CmpFootnoteSpecialReferences(openXmlElement, value.FootnoteSeparators, diffs, objName))
         ok = false;
       return ok;
     }
@@ -201,20 +201,19 @@ public static class FootnoteDocumentWidePropertiesConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.FootnoteDocumentWideProperties value)
-    where OpenXmlElementType: DXW.FootnoteDocumentWideProperties, new()
+  public static DXW.FootnoteDocumentWideProperties CreateOpenXmlElement(DMW.FootnoteDocumentWideProperties value, DXW.Settings? settings)
   {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXW.FootnoteDocumentWideProperties();
+    UpdateOpenXmlElement(openXmlElement, value, settings);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteDocumentWideProperties value)
+  public static void UpdateOpenXmlElement(DXW.FootnoteDocumentWideProperties openXmlElement, DMW.FootnoteDocumentWideProperties value, DXW.Settings? settings)
   {
     SetFootnotePosition(openXmlElement, value?.FootnotePosition);
     SetNumberingFormat(openXmlElement, value?.NumberingFormat);
     SetNumberingStart(openXmlElement, value?.NumberingStart);
     SetNumberingRestart(openXmlElement, value?.NumberingRestart);
-    SetFootnoteSpecialReferences(openXmlElement, value?.FootnoteSpecialReferences);
+    SetFootnoteSpecialReferences(openXmlElement, value?.FootnoteSeparators, settings);
   }
 }
