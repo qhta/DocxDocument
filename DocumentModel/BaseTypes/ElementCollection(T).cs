@@ -168,6 +168,6 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   /// </summary>
   public override string ToString()
   {
-    return String.Join(", ", this.Select(item=>item.ToString()));
+    return "("+String.Join(", ", this.Select(item=>item.ToString()))+")";
   }
 }

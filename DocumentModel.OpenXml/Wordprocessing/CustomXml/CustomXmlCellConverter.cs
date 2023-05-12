@@ -7,7 +7,7 @@ public static class CustomXmlCellConverter
 {
 
   #region CustomXmlCell content conversion
-  public static DM.IModelElement? CreateCustomXmlCellContent(DX.OpenXmlElement openXmlElement)
+  public static DM.IModelElement? CreateCustomXmlCellContent(DX.OpenXmlElement openXmlElement, object? data = null)
   {
     if (openXmlElement is DXW.CustomXmlCell CustomXmlCell)
       return DMXW.CustomXmlCellConverter.CreateModelElement(CustomXmlCell);
@@ -27,7 +27,8 @@ public static class CustomXmlCellConverter
     return null;
   }
 
-  public static bool CompareCustomXmlCellContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareCustomXmlCellContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -56,7 +57,7 @@ public static class CustomXmlCellConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlCellContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlCellContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMW.CustomXmlCell CustomXmlCell)
       return DMXW.CustomXmlCellConverter.CreateOpenXmlElement(CustomXmlCell);
@@ -73,7 +74,7 @@ public static class CustomXmlCellConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in ParagraphContentConverter.CreateOpenXmlParagraphContent method");
   }
 
-  public static bool UpdateOpenXmlCellContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlCellContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

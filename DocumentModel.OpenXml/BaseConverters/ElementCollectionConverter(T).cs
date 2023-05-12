@@ -8,8 +8,9 @@ namespace DocumentModel.OpenXml;
 /// Used in collection object conversion methods to pass a specific method to create a model element from an openXml element.
 /// </summary>
 /// <param name="openXmlElement">OpenXml element read from DocumentFormat.OpenXml document.</param>
+/// <param name="data">Additional parameter</param>
 /// <returns>Newly created model element (or <c>null</c> if openXmlElement is not recognized)</returns>
-public delegate DM.IModelElement? CreateModelElementMethod(DX.OpenXmlElement openXmlElement);
+public delegate DM.IModelElement? CreateModelElementMethod(DX.OpenXmlElement openXmlElement, object? data = null);
 
 /// <summary>
 /// Used in collection object conversion methods to pass a specific method to compare an openXml element 
@@ -19,24 +20,28 @@ public delegate DM.IModelElement? CreateModelElementMethod(DX.OpenXmlElement ope
 /// <param name="model">A model element created from the openXmlElement.</param>
 /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
 /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+/// <param name="data">Additional parameter</param>
 /// <returns><c>True</c> if the model element is equivalent to openXmlElement, <c>false</c> otherwise</returns>
-public delegate bool CompareOpenXmlElementMethod(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null);
+public delegate bool CompareOpenXmlElementMethod(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model,
+  DiffList? diffs = null, string? objName = null, object? data = null);
 
 
 /// <summary>
 /// Used in collection object conversion methods to pass a specific method to create an openXml element based on a model element.
 /// </summary>
 /// <param name="model">A model element with valid content.</param>
+/// <param name="data">Additional parameter</param>
 /// <returns>Newly created openXml element</returns>
-public delegate OpenXmlElement CreateOpenXmlElementMethod(DM.IModelElement model);
+public delegate OpenXmlElement CreateOpenXmlElementMethod(DM.IModelElement model, object? data = null);
 
 /// <summary>
 /// Used in collection object conversion methods to pass a specific method to update an openXml element based on a model element.
 /// </summary>
 /// <param name="openXmlElement">OpenXml element to update.</param>
 /// <param name="model">A model element with valid content.</param>
+/// <param name="data">Additional parameter</param>
 /// <returns><c>True</c> if the openXml element was updated succesfully, <c>false</c> otherwise</returns>
-public delegate bool UpdateOpenXmlElementMethod(DX.OpenXmlElement openXmlElement, DM.IModelElement model);
+public delegate bool UpdateOpenXmlElementMethod(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null);
 
 #endregion
 
@@ -124,8 +129,8 @@ public static class ElementCollectionConverter<T>
         var openXmlItem = openXmlEnumerator.Current;
         var modelItem = modelElementEnumerator.Current;
         var ok1 = converterMethod.Invoke(null, new object?[] { openXmlItem, modelItem, diffs, objName });
-       if (ok1 is bool bv && bv==false)
-         ok = false;
+        if (ok1 is bool bv && bv == false)
+          ok = false;
       }
       var openXmlItemCount = compositeElement.Count();
       var modelItemCount = modelElementCollection.Count();
@@ -189,47 +194,25 @@ public static class ElementCollectionConverter<T>
 
   #region collection items conversion methods with delegate parameters
 
-  ///// <summary>
-  ///// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
-  ///// </summary>
-  ///// <param name="compositeElement">Composite openXml element read from DocumentFormat.OpenXml document.</param>
-  ///// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
-  ///// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
-  ///// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
-  //public static bool FillModelElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T> modelElementCollection,
-  //  CreateModelElementMethod createElementMethod)
-  //{
-  //  if (compositeElement != null)
-  //  {
-  //    var elements = compositeElement.Elements().ToArray();
-  //    foreach (var element in elements)
-  //    {
-  //      var item = createElementMethod(element);
-  //      if (item is T modelElement)
-  //        modelElementCollection.Add(modelElement);
-  //    }
-  //  }
-  //  return true;
-  //}
-
   /// <summary>
   /// Reads all elements contained in a composite openXml element, converts them to model elements and fills a model element collection.
   /// </summary>
   /// <param name="elements">A collection of openXml element read from DocumentFormat.OpenXml document.</param>
   /// <param name="modelElementCollection">A model element collection to fill with newly created model elements.</param>
   /// <param name="createElementMethod">Delegate to a method to convert openXml elements to model elements.</param>
+  /// <param name="data">Additional parameter passed to <see cref="CreateModelElementMethod"/> method.</param>
   /// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
   public static bool FillModelElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<T> modelElementCollection,
-    CreateModelElementMethod createElementMethod)
+    CreateModelElementMethod createElementMethod, object? data = null)
   {
     if (elements != null)
     {
       foreach (var element in elements)
       {
-        var item = createElementMethod(element);
+        var item = createElementMethod(element, data);
         if (item is T modelElement)
           modelElementCollection.Add(modelElement);
-        else if (item!=null)
+        else if (item != null)
           throw new InvalidOperationException($"Type {item.GetType()} does not implement {typeof(T)}");
       }
     }
@@ -244,16 +227,17 @@ public static class ElementCollectionConverter<T>
   /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <param name="data">Additional parameter passed to <see cref="CompareOpenXmlElementMethod"/> method.</param>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareOpenXmlElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<T>? collection,
-  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName, object? data = null)
   {
-    if (compositeElement != null && collection!=null)
+    if (compositeElement != null && collection != null)
     {
       var elements = compositeElement.Elements();
-      return CompareOpenXmlElementCollection(elements, collection, compareElementMethod, diffs, objName);
+      return CompareOpenXmlElementCollection(elements, collection, compareElementMethod, diffs, objName, data);
     }
-    if (compositeElement ==null && collection == null)
+    if (compositeElement == null && collection == null)
       return true;
     diffs?.Add(objName, compositeElement?.GetType().Name, compositeElement, collection);
     return false;
@@ -267,9 +251,10 @@ public static class ElementCollectionConverter<T>
   /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
+  /// <param name="data">Additional parameter passed to <see cref="CompareOpenXmlElementMethod"/> method.</param>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareOpenXmlElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<T> models,
-  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName, object? data = null)
   {
     if (elements != null)
     {
@@ -285,7 +270,7 @@ public static class ElementCollectionConverter<T>
           OpenXmlElement? openXmlElement = elementsEnumerator.Current;
           if (openXmlElement != null && modelElement != null)
           {
-            if (!compareElementMethod(openXmlElement, modelElement, diffs, (objName!=null) ? $"{objName}[{i}]" : $"Item[{i}]"))
+            if (!compareElementMethod(openXmlElement, modelElement, diffs, (objName != null) ? $"{objName}[{i}]" : $"Item[{i}]", data))
               ok = false;
           }
         }
@@ -298,7 +283,7 @@ public static class ElementCollectionConverter<T>
         if (!Int32ValueConverter.CmpValue(elements.Count(), models.Count(), diffs, objName, "Count"))
           ok = false;
         return ok;
-       }
+      }
     }
     return true;
   }
@@ -311,35 +296,72 @@ public static class ElementCollectionConverter<T>
   /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
   /// <param name="updateElementMethod">Delegate to a method to update openXml elements based on model elements.</param>
   /// <param name="createElementMethod">Delegate to a method to create openXml elements from model elements.</param>
+  /// <param name="data">Additional parameter passed to delegate methods.</param>
   /// <returns><c>True</c> if update was successfull, <c>false</c> otherwise.</returns>
   public static bool UpdateOpenXmlElementCollection(DX.OpenXmlCompositeElement compositeElement, DM.ElementCollection<T> modelElementCollection,
-    CompareOpenXmlElementMethod compareElementMethod, UpdateOpenXmlElementMethod updateElementMethod, CreateOpenXmlElementMethod createElementMethod)
+    CompareOpenXmlElementMethod compareElementMethod,
+    UpdateOpenXmlElementMethod updateElementMethod,
+    CreateOpenXmlElementMethod createElementMethod,
+    object? data = null)
   {
-    var elements = compositeElement.Elements();
-    var elementsEnumerator = elements.GetEnumerator();
-    var modelEnumerator = modelElementCollection.GetEnumerator();
-    while (elementsEnumerator.MoveNext() && modelEnumerator.MoveNext())
+    return UpdateOpenXmlElementCollection(compositeElement, null, modelElementCollection,
+      compareElementMethod, updateElementMethod, createElementMethod, data);
+  }
+
+  /// <summary>
+  /// Updates the content of a composite openXml element based on model elements contained in model element collection.
+  /// First, if filter is supplied, then child elements of composite openXml element are qualified to form a list.
+  /// If there is no filter, then all child elements are qualified.
+  /// Second, the qualified list of openXml elements is compared to model element collection (item by item).
+  /// If all the items are equal, then then nothing is done and this method returns true.
+  /// If diffs are found, then further processing is as following: Different openXml element is tried to update.
+  /// Remaining openXml elements are removed. Remaining model elements create new openXml elements, which are added to 
+  /// the composite element.
+  /// </summary>
+  /// <param name="compositeElement">Composite openXmlElement to update.</param>
+  /// <param name="filter">Predicate to qualify openXmlElement. If null then all child element are qualified to update</param>
+  /// <param name="modelElementCollection">Model element collection with valid items</param>
+  /// <param name="compareElementMethod">Delegate to a method to compare openXml elements to model elements.</param>
+  /// <param name="updateElementMethod">Delegate to a method to update openXml elements based on model elements.</param>
+  /// <param name="createElementMethod">Delegate to a method to create openXml elements from model elements.</param>
+  /// <param name="data">Additional parameter passed to delegate methods.</param>
+  /// <returns><c>True</c> if update was successfull, <c>false</c> otherwise.</returns>
+  public static bool UpdateOpenXmlElementCollection(DX.OpenXmlCompositeElement compositeElement,
+    Predicate<DX.OpenXmlElement>? filter,
+    DM.ElementCollection<T> modelElementCollection,
+    CompareOpenXmlElementMethod compareElementMethod,
+    UpdateOpenXmlElementMethod updateElementMethod,
+    CreateOpenXmlElementMethod createElementMethod,
+    object? data = null)
+  {
+    var qualifiedElements = (filter != null)
+      ? compositeElement.Elements().Where(item=>filter(item)).ToList()
+      : compositeElement.Elements().ToList();
+    var modelElements = new List<T>(modelElementCollection);
+
+    var sameElementsCount = 0;
+    for (int i=0; i < qualifiedElements.Count && i< modelElements.Count; i++)
     {
-      var modelElement = modelEnumerator.Current;
-      OpenXmlElement? openXmlElement = elementsEnumerator.Current;
-      if (openXmlElement != null && modelElement != null)
-      {
-        var diffs = new DiffList();
-        if (!compareElementMethod(openXmlElement, modelElement, diffs, "Item"))
-        {
-          var diff = diffs.FirstOrDefault();
-          if (diff != null && diff.ObjectName == "Item")
-          {
-            if (diff.PropertyName != "@Type" && diff.PropertyName?.EndsWith("AnnotationId") != true)
-            {
-              updateElementMethod(openXmlElement, modelElement);
-              continue;
-            }
-          }
-        }
-        compositeElement.AppendChild(createElementMethod(modelElement));
-      }
+      var openXmlElement = qualifiedElements[i];
+      var modelElement = modelElements[i];
+      if (!compareElementMethod(openXmlElement, modelElement, null, null, data)
+        && !updateElementMethod(openXmlElement, modelElement, data))
+        break;
+      else
+        sameElementsCount++;
     }
+    if (sameElementsCount == qualifiedElements.Count && sameElementsCount ==  modelElements.Count)
+      return true;
+    if (sameElementsCount < qualifiedElements.Count)
+      foreach (var openXmlElement in qualifiedElements.GetRange(sameElementsCount, qualifiedElements.Count-sameElementsCount))
+        openXmlElement.Remove();
+    if (sameElementsCount < modelElements.Count)
+      foreach (var modelElement in modelElements.GetRange(sameElementsCount, modelElements.Count-sameElementsCount))
+      {
+        var openXmlElement = createElementMethod(modelElement, data);
+        if (openXmlElement!=null)
+         compositeElement.AppendChild(openXmlElement);
+      }
     return true;
   }
 

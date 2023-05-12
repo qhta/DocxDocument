@@ -15,6 +15,7 @@ public class WebSettings: KnownDocumentProperties
     /// <summary>
     ///   Divs.
     /// </summary>
+    [Obsolete]
     public Divs? Divs { get; set; }
 
     /// <summary>

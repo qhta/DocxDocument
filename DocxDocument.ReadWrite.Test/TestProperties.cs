@@ -6,6 +6,7 @@ using DocumentFormat.OpenXml.Wordprocessing;
 
 using DocumentModel;
 using DocumentModel.Math;
+using DocumentModel.Wordprocessing;
 
 using NUnit.Framework.Constraints;
 
@@ -377,10 +378,11 @@ public class TestProperties : TestBase
 
     var document = new DMW.Document();
 
-    GenerateCoreDocumentProperties(document, showDetails);
-    GenerateContentDocumentProperties(document, showDetails);
-    GenerateStatisticDocumentProperties(document, showDetails);
-    GenerateDocumentSettings(document, showDetails);
+    //GenerateCoreDocumentProperties(document, showDetails);
+    //GenerateContentDocumentProperties(document, showDetails);
+    //GenerateStatisticDocumentProperties(document, showDetails);
+    //GenerateDocumentSettings(document, showDetails);
+    GenerateWebSettings(document, showDetails);
 
     var docProperties = document.Properties;
     if (docProperties != null)
@@ -485,7 +487,38 @@ public class TestProperties : TestBase
     {
       WriteLine(
         $"  DocumentSettings generated {docSettings.Count()}");
-      DumpProperties(modelDocument, typeof(DocumentSettings).GetProperties());
+      Serialize(modelDocument.Properties);
+      //DumpProperties(modelDocument, typeof(DocumentSettings).GetProperties());
+    }
+  }
+
+  /// <summary>
+  /// Generate document settings.
+  /// </summary>
+  /// <param name="modelDocument">New model document.</param>
+  /// <param name="showDetails">Specifies whether to show generated properties</param>
+  private void GenerateWebSettings(DMW.Document modelDocument, bool showDetails)
+  {
+    var documentProperties = modelDocument.Properties;
+    if (documentProperties == null)
+      documentProperties = modelDocument.Properties = new DocumentProperties();
+    var webSettings = documentProperties.WebSettings;
+    if (webSettings == null)
+      webSettings = documentProperties.WebSettings = new DM.WebSettings();
+    SetRandomProperties(webSettings);
+    var frameset = webSettings.Frameset;
+    if (frameset != null)
+    {
+      var frame = new DMW.Frame();
+      SetRandomProperties(frame);
+      frameset.Add(frame);
+    }
+    if (showDetails)
+    {
+      WriteLine(
+        $"  DWebSettings generated {webSettings.Count()}");
+      Serialize(modelDocument.Properties);
+      //DumpProperties(modelDocument, typeof(DM.WebSettings).GetProperties());
     }
   }
   #endregion
@@ -520,8 +553,8 @@ public class TestProperties : TestBase
     var objType = obj.GetType();
     foreach (var prop in objType
       .GetProperties()
-      .Where(item => item.CanWrite && !item.IsIndexer() && item.PropertyType != objType 
-      && item.GetCustomAttribute<XmlIgnoreAttribute>() == null 
+      .Where(item => item.CanWrite && !item.IsIndexer() && item.PropertyType != objType
+      && item.GetCustomAttribute<XmlIgnoreAttribute>() == null
       && item.GetCustomAttribute<ObsoleteAttribute>() == null))
     {
       if (predicate == null || predicate(prop))
@@ -563,6 +596,8 @@ public class TestProperties : TestBase
     }
     if (propType == typeof(int))
       return Rnd.Next();
+    if (propType == typeof(uint))
+      return (uint)Rnd.Next();
     if (propType == typeof(bool))
       return Rnd.NextDouble() >= 0.5;
     if (propType == typeof(DateTime))
@@ -583,6 +618,14 @@ public class TestProperties : TestBase
     if (propType == typeof(Uri))
     {
       return new Uri("http://www.example.com/" + propName);
+    }
+    if (propType == typeof(Twips))
+    {
+      return new Twips(Rnd.Next());
+    }
+    if (propType == typeof(DMW.Color))
+    {
+      return new DMW.Color(Rnd.Next());
     }
     if (propType.IsClass)
     {
@@ -618,5 +661,29 @@ public class TestProperties : TestBase
     }
   }
 
+  private string Serialize(DocumentProperties? properties)
+  {
+    if (properties == null)
+      return null;
+    var textWriter = new StringWriter();
+    var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+      .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+    var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
+      new SerializationOptions { AcceptAllProperties = true });
+    try
+    {
+      serializer.Serialize(textWriter, properties);
+    }
+    catch (Exception ex)
+    {
+      Console.WriteLine(ex.Message);
+    }
+    textWriter.Flush();
+    string str = textWriter.ToString();
+    WriteLine(str);
+    WriteLine();
+    return str;
+  }
   #endregion
+
 }

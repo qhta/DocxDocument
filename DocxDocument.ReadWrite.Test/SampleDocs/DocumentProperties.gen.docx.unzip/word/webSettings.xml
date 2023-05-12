@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:webSettings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:frameset>
+    <w:sz w:val="773396298" />
+    <w:framesetSplitbar>
+      <w:w w:val="628939371" />
+      <w:color w:val="E35653" />
+    </w:framesetSplitbar>
+    <w:frameLayout w:val="rows" />
+    <w:frame>
+      <w:sz w:val="1019614507" />
+      <w:name w:val="FrameName" />
+      <w:sourceFileName r:id="Id1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
+      <w:marW w:val="1570484624" />
+      <w:marH w:val="958098296" />
+      <w:scrollbar w:val="on" />
+    </w:frame>
+  </w:frameset>
+  <w:encoding w:val="WebPageEncoding" />
+  <w:relyOnVML />
+  <w:allowPNG />
+  <w:doNotRelyOnCSS />
+  <w:doNotSaveAsSingleFile />
+  <w:doNotOrganizeInFolder />
+  <w:pixelsPerInch w:val="756274797" />
+  <w:targetScreenSz w:val="640x480" />
+</w:webSettings>
