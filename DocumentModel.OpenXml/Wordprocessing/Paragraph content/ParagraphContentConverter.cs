@@ -9,7 +9,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class ParagraphContentConverter
 {
   #region Paragraph content conversion
-  public static DM.IModelElement? CreateParagraphContent(DX.OpenXmlElement? openXmlElement)
+  public static DM.IModelElement? CreateParagraphContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXW.Run run)
       return DMXW.RunConverter.CreateModelElement(run);
@@ -35,7 +35,8 @@ public static class ParagraphContentConverter
     return null;
   }
 
-  public static bool CompareParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -71,7 +72,7 @@ public static class ParagraphContentConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlParagraphContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlParagraphContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMW.Run run)
       return DMXW.RunConverter.CreateOpenXmlElement(run);
@@ -91,7 +92,7 @@ public static class ParagraphContentConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in ParagraphContentConverter.CreateOpenXmlParagraphContent method");
   }
 
-  public static bool UpdateOpenXmlParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

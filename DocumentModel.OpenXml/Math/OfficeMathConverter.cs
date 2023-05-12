@@ -7,14 +7,15 @@ public static class OfficeMathConverter
 {
 
   #region OfficeMath content conversion
-  public static DM.IModelElement? CreateOfficeMathContent(DX.OpenXmlElement? openXmlElement)
+  public static DM.IModelElement? CreateOfficeMathContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXM.Run run)
       return DMXM.RunConverter.CreateModelElement(run);
     return DMXW.ParagraphContentConverter.CreateParagraphContent(openXmlElement);
   }
 
-  public static bool CompareOfficeMathContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareOfficeMathContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -24,14 +25,14 @@ public static class OfficeMathConverter
     return DMXW.ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs);
   }
 
-  public static OpenXmlElement CreateOpenXmlOfficeMathContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlOfficeMathContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMM.Run run)
       return DMXM.RunConverter.CreateOpenXmlElement(run);
     return DMXW.ParagraphContentConverter.CreateOpenXmlParagraphContent(model);
   }
 
-  public static bool UpdateOpenXmlOfficeMathContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlOfficeMathContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

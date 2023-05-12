@@ -1,15 +1,19 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Nested Frameset Definition.
+///   Frameset Definition.
 /// </summary>
-public class Frameset: ModelElement
+public class Frameset: ElementCollection<IFramesetItem>, IFramesetItem
 {
+  ///// <summary>
+  /////   Advisory information about the frameset.
+  ///// </summary>
+  //public String? Title { get; set; }
+
   /// <summary>
   ///   Nested Frameset Size.
   /// </summary>
-  public string? FrameSize { get; set; }
+  public UInt32? FrameSize { get; set; }
 
   /// <summary>
   ///   Frameset Splitter Properties.
@@ -21,7 +25,4 @@ public class Frameset: ModelElement
   /// </summary>
   public FrameLayoutKind? FrameLayout { get; set; }
 
-  public Frameset? ChildFrameset { get; set; }
-
-  public Frame? Frame { get; set; }
 }

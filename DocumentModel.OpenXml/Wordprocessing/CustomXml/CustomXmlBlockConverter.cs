@@ -7,7 +7,7 @@ public static class CustomXmlBlockConverter
 {
 
   #region CustomXmlBlock content conversion
-  public static DM.IModelElement? CreateCustomXmlBlockContent(DX.OpenXmlElement openXmlElement)
+  public static DM.IModelElement? CreateCustomXmlBlockContent(DX.OpenXmlElement openXmlElement, object? data = null)
   {
     if (openXmlElement is DXW.CustomXmlBlock customXmlBlock)
       return DMXW.CustomXmlBlockConverter.CreateModelElement(customXmlBlock);
@@ -30,7 +30,8 @@ public static class CustomXmlBlockConverter
     return null;
   }
 
-  public static bool CompareCustomXmlBlockContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareCustomXmlBlockContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -62,7 +63,7 @@ public static class CustomXmlBlockConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlBlockContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlBlockContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMW.CustomXmlBlock customXmlBlock)
       return DMXW.CustomXmlBlockConverter.CreateOpenXmlElement(customXmlBlock);
@@ -82,7 +83,7 @@ public static class CustomXmlBlockConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in ParagraphContentConverter.CreateOpenXmlParagraphContent method");
   }
 
-  public static bool UpdateOpenXmlBlockContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlBlockContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

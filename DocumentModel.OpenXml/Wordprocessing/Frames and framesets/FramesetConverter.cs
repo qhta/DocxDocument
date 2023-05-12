@@ -1,41 +1,97 @@
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
-/// Nested Frameset Definition.
+/// <see cref="DMW.Frameset"/> class from/to OpenXml converter.
 /// </summary>
 public static class FramesetConverter
 {
-  /// <summary>
-  /// Nested Frameset Size.
-  /// </summary>
-  private static String? GetFrameSize(DXW.Frameset openXmlElement)
+  #region item conversion
+  private static DM.IModelElement? GetItem(DX.OpenXmlElement openXmlElement, object? data = null)
   {
-    return openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value;
+    var settings = data as DXW.WebSettings;
+    if (openXmlElement is DXW.Frameset frameset)
+      return CreateModelElement(frameset, settings);
+    if (openXmlElement is DXW.Frame frame)
+      return FrameConverter.CreateModelElement(frame, settings);
+
+    if (openXmlElement != null)
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in ParagraphContentConverter.CreateModelElement method");
+    return null;
+
+  }
+
+  private static bool CmpItem(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
+  {
+    var settings = data as DXW.WebSettings;
+    if (openXmlElement != null && model != null)
+    {
+      if (openXmlElement is DXW.Frameset framesetElement && model is DMW.Frameset framesetModel)
+        return CompareModelElement(framesetElement, framesetModel, diffs, objName, settings);
+
+      if (openXmlElement is DXW.Frame frameElement && model is DMW.Frame frameModel)
+        return FrameConverter.CompareModelElement(frameElement, frameModel, diffs, objName, settings);
+
+      diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
+      return false;
+
+    }
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    return false;  }
+
+  private static bool UpdateItem(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
+  {
+    var settings = data as DXW.WebSettings;
+    if (openXmlElement is DXW.Frameset framesetElement && model is DMW.Frameset framesetModel)
+      return UpdateOpenXmlElement(framesetElement, framesetModel, settings);
+
+    if (openXmlElement is DXW.Frame frameElement && model is DMW.Frame frameModel)
+      return FrameConverter.UpdateOpenXmlElement(frameElement, frameModel, settings);
+    return false;
+  }
+
+  private static OpenXmlElement CreateItemElement(DM.IModelElement model, object? data = null)
+  {
+    var settings = data as DXW.WebSettings;
+    if (model is DMW.Frameset framesetModel)
+     return CreateOpenXmlElement(framesetModel, settings);
+
+    if (model is DMW.Frame frameModel)
+     return FrameConverter.CreateOpenXmlElement(frameModel, settings);
+
+    return null!;
+  }
+  #endregion
+
+  #region FrameSize conversion.
+  private static UInt32? GetFrameSize(DXW.Frameset openXmlElement)
+  {
+    return UInt32ValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FrameSize>()?.Val?.Value);
   }
   
-  private static bool CmpFrameSize(DXW.Frameset openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFrameSize(DXW.Frameset openXmlElement, UInt32? value, DiffList? diffs, string? objName)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
-    if (itemElement?.Val?.Value == value) return true;
+    if (itemElement?.Val?.Value == value.ToString()) return true;
     diffs?.Add(objName, "FrameSize", itemElement?.Val?.Value, value);
     return false;
   }
   
-  private static void SetFrameSize(DXW.Frameset openXmlElement, String? value)
+  private static void SetFrameSize(DXW.Frameset openXmlElement, UInt32? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.FrameSize>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = new DXW.FrameSize { Val = value };
+      itemElement = new DXW.FrameSize { Val = value.ToString() };
       openXmlElement.AppendChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Frameset Splitter Properties.
-  /// </summary>
+  #endregion
+
+  #region FramesetSplitbar conversion.
   private static DMW.FramesetSplitbar? GetFramesetSplitbar(DXW.Frameset openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.FramesetSplitbar>();
@@ -61,9 +117,9 @@ public static class FramesetConverter
         openXmlElement.AppendChild(itemElement);
     }
   }
-  
-  /// <summary>
-  /// Frameset Layout.
+  #endregion
+
+  #region FrameLayout conversion.
   /// </summary>
   private static DMW.FrameLayoutKind? GetFrameLayout(DXW.Frameset openXmlElement)
   {
@@ -89,110 +145,68 @@ public static class FramesetConverter
     if (value != null)
       openXmlElement.AppendChild(EnumValueConverter.CreateOpenXmlElement<DXW.FrameLayout, DXW.FrameLayoutValues, DMW.FrameLayoutKind>((DMW.FrameLayoutKind)value));
   }
-  
-  private static DMW.Frameset? GetChildFrameset(DXW.Frameset openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXW.Frameset>();
-    if (element != null)
-      return DMXW.FramesetConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
-  {
-    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName);
-  }
-  
-  private static void SetChildFrameset(DXW.Frameset openXmlElement, DMW.Frameset? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Frameset>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXW.FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  private static DMW.Frame? GetFrame(DXW.Frameset openXmlElement)
-  {
-    var element = openXmlElement?.GetFirstChild<DXW.Frame>();
-    if (element != null)
-      return DMXW.FrameConverter.CreateModelElement(element);
-    return null;
-  }
-  
-  private static bool CmpFrame(DXW.Frameset openXmlElement, DMW.Frame? value, DiffList? diffs, string? objName)
-  {
-    return DMXW.FrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frame>(), value, diffs, objName);
-  }
-  
-  private static void SetFrame(DXW.Frameset openXmlElement, DMW.Frame? value)
-  {
-    var itemElement = openXmlElement.GetFirstChild<DXW.Frame>();
-    if (itemElement != null)
-      itemElement.Remove();
-    if (value != null)
-    {
-      itemElement = DMXW.FrameConverter.CreateOpenXmlElement<DXW.Frame>(value);
-      if (itemElement != null)
-        openXmlElement.AppendChild(itemElement);
-    }
-  }
-  
-  public static DMW.Frameset? CreateModelElement(DXW.Frameset? openXmlElement)
+  #endregion
+
+  #region Frameset model conversion.
+  public static DMW.Frameset? CreateModelElement(DXW.Frameset? openXmlElement, DXW.WebSettings? settings)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Frameset();
-      value.FrameSize = GetFrameSize(openXmlElement);
-      value.FramesetSplitbar = GetFramesetSplitbar(openXmlElement);
-      value.FrameLayout = GetFrameLayout(openXmlElement);
-      value.ChildFrameset = GetChildFrameset(openXmlElement);
-      value.Frame = GetFrame(openXmlElement);
-      return value;
+      var model = new DMW.Frameset();
+      model.FrameSize = GetFrameSize(openXmlElement);
+      model.FramesetSplitbar = GetFramesetSplitbar(openXmlElement);
+      model.FrameLayout = GetFrameLayout(openXmlElement);
+      ElementCollectionConverter<DMW.IFramesetItem>.FillModelElementCollection(
+        openXmlElement.Where(item=>item is DXW.Frameset or DXW.Frame), model,
+        GetItem, settings);
+      return model;
     }
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Frameset? openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Frameset? openXmlElement, DMW.Frameset? model, DiffList? diffs, string? objName, DXW.WebSettings? settings)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFrameSize(openXmlElement, value.FrameSize, diffs, objName))
+      if (!CmpFrameSize(openXmlElement, model.FrameSize, diffs, objName))
         ok = false;
-      if (!CmpFramesetSplitbar(openXmlElement, value.FramesetSplitbar, diffs, objName))
+      if (!CmpFramesetSplitbar(openXmlElement, model.FramesetSplitbar, diffs, objName))
         ok = false;
-      if (!CmpFrameLayout(openXmlElement, value.FrameLayout, diffs, objName))
+      if (!CmpFrameLayout(openXmlElement, model.FrameLayout, diffs, objName))
         ok = false;
-      if (!CmpChildFrameset(openXmlElement, value.ChildFrameset, diffs, objName))
-        ok = false;
-      if (!CmpFrame(openXmlElement, value.Frame, diffs, objName))
+      if (!ElementCollectionConverter<DMW.IFramesetItem>.CompareOpenXmlElementCollection(
+        openXmlElement.Where(item=>item is DXW.Frameset or DXW.Frame), model,
+        CmpItem, diffs, objName, settings))
         ok = false;
       return ok;
     }
-    if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    if (openXmlElement == null && model == null) return true;
+    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Frameset value)
-    where OpenXmlElementType: DXW.Frameset, new()
+  public static DXW.Frameset CreateOpenXmlElement(DMW.Frameset model, DXW.WebSettings? settings)
   {
-    var openXmlElement = new OpenXmlElementType();
-    UpdateOpenXmlElement(openXmlElement, value);
+    var openXmlElement = new DXW.Frameset();
+    UpdateOpenXmlElement(openXmlElement, model, settings);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.Frameset openXmlElement, DMW.Frameset value)
+  public static bool UpdateOpenXmlElement(DXW.Frameset openXmlElement, DMW.Frameset model, DXW.WebSettings? settings)
   {
-    SetFrameSize(openXmlElement, value?.FrameSize);
-    SetFramesetSplitbar(openXmlElement, value?.FramesetSplitbar);
-    SetFrameLayout(openXmlElement, value?.FrameLayout);
-    SetChildFrameset(openXmlElement, value?.ChildFrameset);
-    SetFrame(openXmlElement, value?.Frame);
+    SetFrameSize(openXmlElement, model.FrameSize);
+    SetFramesetSplitbar(openXmlElement, model.FramesetSplitbar);
+    SetFrameLayout(openXmlElement, model.FrameLayout);
+    return ElementCollectionConverter<DMW.IFramesetItem>.UpdateOpenXmlElementCollection(
+      openXmlElement,
+      (item=>item is DXW.Frameset or DXW.Frame),
+      model,
+      CmpItem,
+      UpdateItem,
+      CreateItemElement,
+      settings
+    );
   }
+  #endregion
 }

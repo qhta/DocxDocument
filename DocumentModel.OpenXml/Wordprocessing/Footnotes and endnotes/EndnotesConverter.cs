@@ -6,24 +6,25 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class EndnotesConverter
 {
   #region item conversion
-  private static DM.IModelElement? GetEndnote(DX.OpenXmlElement openXmlElement)
+  private static DM.IModelElement? GetEndnote(DX.OpenXmlElement openXmlElement, object? data = null)
   {
     return DMXW.EndnoteConverter.CreateModelElement(openXmlElement as DXW.Endnote);
   }
 
-  private static bool CmpEndnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
+  private static bool CmpEndnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     return DMXW.EndnoteConverter.CompareModelElement(openXmlElement as DXW.Endnote, value as DMW.Endnote, diffs, objName);
   }
 
-  private static bool UpdateEndnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
+  private static bool UpdateEndnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
   {
     if (openXmlElement is DXW.Endnote endnoteElement && model is DMW.Endnote endnoteModel)
       return DMXW.EndnoteConverter.UpdateOpenXmlElement(endnoteElement, endnoteModel);
     return false;
   }
 
-  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model)
+  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model, object? data = null)
   {
     if (model is DMW.Endnote modelElement)
     {

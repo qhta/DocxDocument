@@ -1,5 +1,4 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Frameset Splitter Properties.
@@ -9,7 +8,7 @@ public class FramesetSplitbar: ModelElement
   /// <summary>
   ///   Frameset Splitter Width.
   /// </summary>
-  public string? Width { get; set; }
+  public Twips? Width { get; set; }
 
   /// <summary>
   ///   Frameset Splitter Color.

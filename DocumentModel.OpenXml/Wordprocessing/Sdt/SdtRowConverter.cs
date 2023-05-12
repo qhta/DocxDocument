@@ -15,7 +15,7 @@ public static class SdtRowConverter
   /// <param name="openXmlElement">Item element of SdtContentRow element</param>
   /// <returns>Newly created model element (or <c>null</c> if openXml element is <c>null</c>).</returns>
   /// <exception cref="InvalidOperationException">Thrown if openXml element type is not recognized.</exception>
-  public static DMW.ISdtRowContent? CreateSdtContentRowModelElement(DX.OpenXmlElement? openXmlElement)
+  public static DMW.ISdtRowContent? CreateSdtContentRowModelElement(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXW.TableRow tableRow)
       return DMXW.TableRowConverter.CreateModelElement(tableRow);
@@ -40,7 +40,8 @@ public static class SdtRowConverter
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to the openXmlElement, <c>false</c> otherwise</returns>
-  public static bool CompareSdtContentRowElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareSdtContentRowElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -70,7 +71,7 @@ public static class SdtRowConverter
   /// <param name="model">A model element with valid content.</param>
   /// <returns>Newly created openXml element</returns>
   /// <exception cref="InvalidOperationException">Thrown if a model element type is not recognized.</exception>
-  public static OpenXmlElement CreateSdtContentRowOpenXmlElement(IModelElement model)
+  public static OpenXmlElement CreateSdtContentRowOpenXmlElement(IModelElement model, object? data = null)
   {
     if (model is DMW.TableRow tableRow)
       return DMXW.TableRowConverter.CreateOpenXmlElement(tableRow);
@@ -90,7 +91,7 @@ public static class SdtRowConverter
   /// <param name="openXmlElement">An openXml element to update.</param>
   /// <param name="model">A model element with valid content.</param>
   /// <returns><c>True</c> if the openXml element was updated succesfully, <c>false</c> otherwise</returns>
-  public static bool UpdateSdtContentRowOpenXmlElement(DX.OpenXmlElement openXmlElement, IModelElement model)
+  public static bool UpdateSdtContentRowOpenXmlElement(DX.OpenXmlElement openXmlElement, IModelElement model, object? data = null)
   {
     if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
       return DMXW.ParagraphConverter.UpdateOpenXmlElement(paragraph, paragraphModel);

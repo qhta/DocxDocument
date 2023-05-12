@@ -23,22 +23,23 @@ public static class BidirectionalOverrideConverter
   #endregion
 
   #region BidirectionalOverride elements conversion
-  public static DMW.IBidirectionalContent? CreateBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IBidirectionalContent? CreateBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     return ParagraphContentConverter.CreateParagraphContent(openXmlElement) as DMW.IBidirectionalContent;
   }
 
-  public static bool CompareBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     return ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs, objName);
   }
 
-  public static OpenXmlElement CreateOpenXmlBidirectionalOverrideContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlBidirectionalOverrideContent(DM.IModelElement model, object? data = null)
   {
     return ParagraphContentConverter.CreateOpenXmlParagraphContent(model);
   }
 
-  public static bool UpdateOpenXmlBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlBidirectionalOverrideContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     return ParagraphContentConverter.UpdateOpenXmlParagraphContent(openXmlElement, model);
   }

@@ -6,24 +6,24 @@ namespace DocumentModel.OpenXml.CustomXml;
 public static class SchemaLibraryConverter
 {
   #region item conversion
-  private static DM.IModelElement? GetSchema(DX.OpenXmlElement openXmlElement)
+  private static DM.IModelElement? GetSchema(DX.OpenXmlElement openXmlElement, object? data = null)
   {
     return DMXCX.SchemaConverter.CreateModelElement(openXmlElement as DXCXSR.Schema);
   }
 
-  private static bool CmpSchema(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
+  private static bool CmpSchema(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null, object? data = null)
   {
     return DMXCX.SchemaConverter.CompareModelElement(openXmlElement as DXCXSR.Schema, value as DMCX.Schema, diffs, objName);
   }
 
-  private static bool UpdateSchema(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
+  private static bool UpdateSchema(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
   {
     if (openXmlElement is DXCXSR.Schema schemaElement && model is DMCX.Schema schemaModel)
       return DMXCX.SchemaConverter.UpdateOpenXmlElement(schemaElement, schemaModel);
     return false;
   }
 
-  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model)
+  private static OpenXmlElement CreateEndnoteElement(DM.IModelElement model, object? data = null)
   {
     if (model is DMCX.Schema modelElement)
     {

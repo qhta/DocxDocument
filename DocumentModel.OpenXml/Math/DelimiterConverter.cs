@@ -34,7 +34,7 @@ public static class DelimiterConverter
   #endregion
 
   #region Base element conversion.
-  private static DMM.Argument? CreateBaseElement(DX.OpenXmlElement? openXmlElement)
+  private static DMM.Argument? CreateBaseElement(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXM.Base baseElement)
       return DMXM.ArgumentConverter.CreateModelElement(baseElement);
@@ -44,7 +44,8 @@ public static class DelimiterConverter
     return null;
   }
 
-  public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -59,7 +60,7 @@ public static class DelimiterConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlBaseElement(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlBaseElement(DM.IModelElement model, object? data = null)
   {
     if (model is DMM.Argument baseModel)
       return DMXM.ArgumentConverter.CreateOpenXmlElement(baseModel);
@@ -67,7 +68,7 @@ public static class DelimiterConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in DelimiterConverter.CreateOpenXmlArgumentContent method");
   }
 
-  public static bool UpdateOpenXmlBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

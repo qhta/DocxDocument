@@ -12,13 +12,13 @@ public static class WebSettingsConverter
   {
     var element = openXmlElement?.GetFirstChild<DXW.Frameset>();
     if (element != null)
-      return DMXW.FramesetConverter.CreateModelElement(element);
+      return DMXW.FramesetConverter.CreateModelElement(element, openXmlElement);
     return null;
   }
   
   private static bool CmpFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value, DiffList? diffs, string? objName)
   {
-    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName);
+    return DMXW.FramesetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Frameset>(), value, diffs, objName, openXmlElement);
   }
   
   private static void SetFrameset(DXW.WebSettings openXmlElement, DMW.Frameset? value)
@@ -28,7 +28,7 @@ public static class WebSettingsConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.FramesetConverter.CreateOpenXmlElement<DXW.Frameset>(value);
+      itemElement = DMXW.FramesetConverter.CreateOpenXmlElement(value, openXmlElement);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

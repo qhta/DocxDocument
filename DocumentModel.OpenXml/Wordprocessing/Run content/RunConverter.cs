@@ -102,7 +102,7 @@ public static class RunConverter
   #endregion
 
   #region Run content conversion
-  public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXW.Text text)
       return DMXW.TextTypeConverter.CreateModelElement(text);
@@ -178,7 +178,8 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -265,7 +266,7 @@ public static class RunConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model, object? data = null)
   {
     if (model is DMW.Text text)
       return DMXW.TextTypeConverter.CreateOpenXmlElement(text);
@@ -320,7 +321,7 @@ public static class RunConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in Run.CreateOpenXmlParagraphContent method");
   }
 
-  public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

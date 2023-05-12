@@ -1,15 +1,14 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Single Frame Properties.
 /// </summary>
-public class Frame: ModelElement
+public class Frame: ModelElement, IFramesetItem
 {
   /// <summary>
   ///   Frame Size.
   /// </summary>
-  public string? FrameSize { get; set; }
+  public UInt32? FrameSize { get; set; }
 
   /// <summary>
   ///   Frame Name.
@@ -19,7 +18,7 @@ public class Frame: ModelElement
   /// <summary>
   ///   Source File for Frame.
   /// </summary>
-  public RelationshipType? SourceFileReference { get; set; }
+  public FrameSourceFile? FrameSourceFile { get; set; }
 
   /// <summary>
   ///   Left and Right Margin for Frame.

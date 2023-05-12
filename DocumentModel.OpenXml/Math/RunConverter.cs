@@ -62,14 +62,15 @@ public static class RunConverter
   #endregion
 
   #region Run content conversion.
-  public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement)
+  public static DMW.IRunContent? CreateRunContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXM.Text text)
       return DMXW.TextTypeConverter.CreateModelElement(text);
     return DMXW.RunConverter.CreateRunContent(openXmlElement);
   }
 
-  public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -79,7 +80,7 @@ public static class RunConverter
     return DMXW.RunConverter.CompareRunContent(openXmlElement, model, diffs, objName);
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model, object? data = null)
   {
     if (model is DMM.Text text)
       return DMXW.TextTypeConverter.CreateOpenXmlElement(text);

@@ -6,6 +6,20 @@ namespace DocumentModel.Wordprocessing;
 public class Color: ModelElement
 {
   /// <summary>
+  /// Default contructor.
+  /// </summary>
+  public Color(){ }
+
+  /// <summary>
+  /// Initializes color as RGB value.
+  /// </summary>
+  /// <param name="rgb"></param>
+  public Color(int rgb)
+  { 
+    RGB = rgb;
+  }
+
+  /// <summary>
   ///   Run Content Color
   /// </summary>
   public RGB? RGB { get; set; }

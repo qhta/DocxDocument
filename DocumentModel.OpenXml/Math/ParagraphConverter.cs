@@ -34,7 +34,7 @@ public static class ParagraphConverter
   #endregion
 
   #region MathParagraph content conversion
-  public static DM.IModelElement? CreateMathParagraphContent(DX.OpenXmlElement? openXmlElement)
+  public static DM.IModelElement? CreateMathParagraphContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXM.OfficeMath oMath)
       return DMXM.OfficeMathConverter.CreateModelElement(oMath);
@@ -43,7 +43,8 @@ public static class ParagraphConverter
     return DMXW.ParagraphContentConverter.CreateParagraphContent(openXmlElement);
   }
 
-  public static bool CompareMathParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareMathParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -55,7 +56,7 @@ public static class ParagraphConverter
     return DMXW.ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs);
   }
 
-  public static OpenXmlElement CreateOpenXmlMathParagraphContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlMathParagraphContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMM.OfficeMath oMath)
       return DMXM.OfficeMathConverter.CreateOpenXmlElement(oMath);
@@ -64,7 +65,7 @@ public static class ParagraphConverter
     return DMXW.ParagraphContentConverter.CreateOpenXmlParagraphContent(model);
   }
 
-  public static bool UpdateOpenXmlMathParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlMathParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {

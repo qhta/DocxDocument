@@ -119,7 +119,10 @@ public partial class DocxWriter : IDisposable
       var webSettingsPart = mainDocumentPart.WebSettingsPart;
       if (webSettingsPart == null)
         webSettingsPart = mainDocumentPart.AddNewPart<DXPack.WebSettingsPart>();
-      webSettingsPart.WebSettings = DMX.WebSettingsConverter.CreateOpenXmlElement(properties.WebSettings);
+      var settings = webSettingsPart.WebSettings;
+      webSettingsPart.WebSettings = new DXW.WebSettings();
+      DMX.WebSettingsConverter.UpdateOpenXmlElement(webSettingsPart.WebSettings, properties.WebSettings);
+      //webSettingsPart.WebSettings = DMX.WebSettingsConverter.CreateOpenXmlElement(properties.WebSettings);
     }
   }
 
