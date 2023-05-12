@@ -8,19 +8,19 @@ public static class FramesetSplitbarConverter
   /// <summary>
   /// Frameset Splitter Width.
   /// </summary>
-  private static String? GetWidth(DXW.FramesetSplitbar openXmlElement)
+  private static Twips? GetWidth(DXW.FramesetSplitbar openXmlElement)
   {
-    return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val);
+    return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value);
   }
   
-  private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val, value, diffs, objName, "Value");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value, value, diffs, objName, "Value");
   }
   
-  private static void SetWidth(DXW.FramesetSplitbar openXmlElement, String? value)
+  private static void SetWidth(DXW.FramesetSplitbar openXmlElement, Twips? value)
   {
-    StringValueConverter.SetValue<DXW.Width>(openXmlElement, value);
+    Int32ValueConverter.SetValue<DXW.Width>(openXmlElement, value);
   }
   
   /// <summary>

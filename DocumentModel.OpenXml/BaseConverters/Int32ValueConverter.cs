@@ -7,7 +7,6 @@ public static class Int32ValueConverter
 {
 
   #region OpenXmlLeafTextElement conversion.
-
   /// <summary>
   /// Converts text content of LeafTextElement to Int32.
   /// </summary>
@@ -185,6 +184,28 @@ public static class Int32ValueConverter
   {
     if (value == null) return null;
     return new StringValue { Value = value.ToString() };
+  }
+
+  public static void SetValue<ElementType>(OpenXmlCompositeElement openXmlElement, Int32? value)
+    where ElementType : TypedOpenXmlLeafElement, new()
+  {
+    var valProperty = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
+    Debug.Assert(valProperty != null);
+    var itemElement = openXmlElement.GetFirstChild<ElementType>();
+    if (itemElement != null)
+    {
+      if (value != null)
+        valProperty.SetValue(itemElement, value);
+      else
+        itemElement.Remove();
+    }
+    else
+    if (value != null)
+    {
+      itemElement = new ElementType();
+      valProperty.SetValue(itemElement, new StringValue(value.ToString()));
+      openXmlElement.AppendChild(itemElement);
+    }
   }
   #endregion
 

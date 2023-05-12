@@ -23,6 +23,7 @@
     <Compile Remove="Wordprocessing\CommonRunConverter.cs" />
     <Compile Remove="Wordprocessing\ContentBlockContentConverter.cs" />
     <Compile Remove="Wordprocessing\DataBinding3Converter.cs" />
+    <Compile Remove="Wordprocessing\Document\ExternalFileConverter.cs" />
   </ItemGroup>
 
   <ItemGroup>

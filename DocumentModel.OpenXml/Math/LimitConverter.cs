@@ -70,7 +70,7 @@ public static class LimitConverter
   #endregion
 
   #region Limit content conversion
-  public static DMM.IMathArgumentContent? CreateLimitContent(DX.OpenXmlElement? openXmlElement)
+  public static DMM.IMathArgumentContent? CreateLimitContent(DX.OpenXmlElement? openXmlElement, object? data = null)
   {
     if (openXmlElement is DXM.Run run)
       return DMXM.RunConverter.CreateModelElement(run);
@@ -100,7 +100,8 @@ public static class LimitConverter
     return null;
   }
 
-  public static bool CompareLimitContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool CompareLimitContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
+    DiffList? diffs = null, string? objName = null, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -140,7 +141,7 @@ public static class LimitConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlLimitContent(DM.IModelElement model)
+  public static OpenXmlElement CreateOpenXmlLimitContent(DM.IModelElement model, object? data = null)
   {
     if (model is DMM.Run run)
       return DMXM.RunConverter.CreateOpenXmlElement(run);
@@ -166,7 +167,7 @@ public static class LimitConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in LimitContentConverter.CreateOpenXmlLimitContent method");
   }
 
-  public static bool UpdateOpenXmlLimitContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
+  public static bool UpdateOpenXmlLimitContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
   {
     if (openXmlElement != null && model != null)
     {
