@@ -25,7 +25,6 @@ public static class FrameSourceFileConverter
     return null;
   }
 
-
   public static bool CompareModelElement(DXW.SourceFileReference? openXmlElement, DMW.FrameSourceFile? model, 
     DiffList? diffs, string? objName, DXW.WebSettings? settings)
   {

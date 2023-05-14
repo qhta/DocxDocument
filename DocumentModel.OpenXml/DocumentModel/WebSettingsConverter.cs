@@ -57,7 +57,7 @@ public static class WebSettingsConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.DivsConverter.CreateOpenXmlElement<DXW.Divs>(value);
+      itemElement = DMXW.DivsConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

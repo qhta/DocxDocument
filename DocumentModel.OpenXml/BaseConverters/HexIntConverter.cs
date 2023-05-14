@@ -88,6 +88,12 @@ public static class HexIntConverter
     return null;
   }
 
+  public static StringValue? CreateStringValue(HexInt? value)
+  {
+    if (value == null) return null;
+    return new StringValue { Value = value.ToString() };
+  }
+
   public static HexBinaryType? CreateValue<HexBinaryType>(HexInt? value)
     where HexBinaryType : DXW.LongHexNumberType, new()
   {
@@ -110,4 +116,5 @@ public static class HexIntConverter
       valProperty.SetValue(element, newValue);
     return element;
   }
+
 }

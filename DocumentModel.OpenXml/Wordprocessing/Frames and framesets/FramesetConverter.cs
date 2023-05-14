@@ -15,7 +15,7 @@ public static class FramesetConverter
       return FrameConverter.CreateModelElement(frame, settings);
 
     if (openXmlElement != null)
-      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in ParagraphContentConverter.CreateModelElement method");
+      throw new InvalidOperationException($"Element \"{openXmlElement.GetType()}\" not recognized in FramesetConverter.CreateModelElement method");
     return null;
 
   }

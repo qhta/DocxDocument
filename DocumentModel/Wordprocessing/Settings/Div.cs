@@ -9,7 +9,7 @@ public class Div: ModelElement
   /// <summary>
   ///   div Data ID
   /// </summary>
-  public string? Id { get; set; }
+  public Int32? Id { get; set; }
 
   /// <summary>
   ///   Data for HTML blockquote Element.
@@ -24,27 +24,30 @@ public class Div: ModelElement
   /// <summary>
   ///   Left Margin for HTML div.
   /// </summary>
-  public string? LeftMarginDiv { get; set; }
+  public Twips? LeftMarginDiv { get; set; }
 
   /// <summary>
   ///   Right Margin for HTML div.
   /// </summary>
-  public string? RightMarginDiv { get; set; }
+  public Twips? RightMarginDiv { get; set; }
 
   /// <summary>
   ///   Top Margin for HTML div.
   /// </summary>
-  public string? TopMarginDiv { get; set; }
+  public Twips? TopMarginDiv { get; set; }
 
   /// <summary>
   ///   Bottom Margin for HTML div.
   /// </summary>
-  public string? BottomMarginDiv { get; set; }
+  public Twips? BottomMarginDiv { get; set; }
 
   /// <summary>
   ///   Set of Borders for HTML div.
   /// </summary>
   public DivBorder? DivBorder { get; set; }
 
-  public Collection<DivsChild>? DivsChilds { get; set; }
+  /// <summary>
+  /// Child divs.
+  /// </summary>
+  public Divs? Children { get; set; }
 }
