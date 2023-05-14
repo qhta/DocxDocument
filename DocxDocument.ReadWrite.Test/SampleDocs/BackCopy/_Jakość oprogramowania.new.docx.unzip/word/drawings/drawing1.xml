@@ -1,0 +1,1235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<c:userShapes xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.67621</cdr:x>
+      <cdr:y>0.75323</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.85472</cdr:x>
+      <cdr:y>0.86477</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="14" name="Dowolny kształt: kształt 13" />
+        <cdr:cNvSpPr />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3156026" y="2109312" />
+          <a:ext cx="833170" cy="312341" />
+        </a:xfrm>
+        <a:custGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:avLst />
+          <a:gdLst>
+            <a:gd name="connsiteX0" fmla="*/ 0 w 828989" />
+            <a:gd name="connsiteY0" fmla="*/ 316523 h 316523" />
+            <a:gd name="connsiteX1" fmla="*/ 5024 w 828989" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 316523" />
+            <a:gd name="connsiteX2" fmla="*/ 145701 w 828989" />
+            <a:gd name="connsiteY2" fmla="*/ 120581 h 316523" />
+            <a:gd name="connsiteX3" fmla="*/ 291402 w 828989" />
+            <a:gd name="connsiteY3" fmla="*/ 200967 h 316523" />
+            <a:gd name="connsiteX4" fmla="*/ 417006 w 828989" />
+            <a:gd name="connsiteY4" fmla="*/ 241161 h 316523" />
+            <a:gd name="connsiteX5" fmla="*/ 597877 w 828989" />
+            <a:gd name="connsiteY5" fmla="*/ 291403 h 316523" />
+            <a:gd name="connsiteX6" fmla="*/ 733530 w 828989" />
+            <a:gd name="connsiteY6" fmla="*/ 301451 h 316523" />
+            <a:gd name="connsiteX7" fmla="*/ 828989 w 828989" />
+            <a:gd name="connsiteY7" fmla="*/ 311499 h 316523" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 828989" />
+            <a:gd name="connsiteY8" fmla="*/ 316523 h 316523" />
+            <a:gd name="connsiteX0" fmla="*/ 5306 w 834295" />
+            <a:gd name="connsiteY0" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX1" fmla="*/ 221 w 834295" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 326571" />
+            <a:gd name="connsiteX2" fmla="*/ 151007 w 834295" />
+            <a:gd name="connsiteY2" fmla="*/ 130629 h 326571" />
+            <a:gd name="connsiteX3" fmla="*/ 296708 w 834295" />
+            <a:gd name="connsiteY3" fmla="*/ 211015 h 326571" />
+            <a:gd name="connsiteX4" fmla="*/ 422312 w 834295" />
+            <a:gd name="connsiteY4" fmla="*/ 251209 h 326571" />
+            <a:gd name="connsiteX5" fmla="*/ 603183 w 834295" />
+            <a:gd name="connsiteY5" fmla="*/ 301451 h 326571" />
+            <a:gd name="connsiteX6" fmla="*/ 738836 w 834295" />
+            <a:gd name="connsiteY6" fmla="*/ 311499 h 326571" />
+            <a:gd name="connsiteX7" fmla="*/ 834295 w 834295" />
+            <a:gd name="connsiteY7" fmla="*/ 321547 h 326571" />
+            <a:gd name="connsiteX8" fmla="*/ 5306 w 834295" />
+            <a:gd name="connsiteY8" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 320434 h 321547" />
+            <a:gd name="connsiteX1" fmla="*/ 4176 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 321547" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 130629 h 321547" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 211015 h 321547" />
+            <a:gd name="connsiteX4" fmla="*/ 426267 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 251209 h 321547" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 301451 h 321547" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 311499 h 321547" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 321547 h 321547" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 320434 h 321547" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 320434 h 321547" />
+            <a:gd name="connsiteX1" fmla="*/ 4176 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 321547" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 130629 h 321547" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 211015 h 321547" />
+            <a:gd name="connsiteX4" fmla="*/ 420093 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 260414 h 321547" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 301451 h 321547" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 311499 h 321547" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 321547 h 321547" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 320434 h 321547" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 311228 h 312341" />
+            <a:gd name="connsiteX1" fmla="*/ 4176 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 312341" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 121423 h 312341" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 201809 h 312341" />
+            <a:gd name="connsiteX4" fmla="*/ 420093 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 251208 h 312341" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 292245 h 312341" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 302293 h 312341" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 312341 h 312341" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 311228 h 312341" />
+          </a:gdLst>
+          <a:ahLst />
+          <a:cxnLst>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX0" y="connsiteY0" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX1" y="connsiteY1" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX2" y="connsiteY2" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX3" y="connsiteY3" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX4" y="connsiteY4" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX5" y="connsiteY5" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX6" y="connsiteY6" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX7" y="connsiteY7" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX8" y="connsiteY8" />
+            </a:cxn>
+          </a:cxnLst>
+          <a:rect l="l" t="t" r="r" b="b" />
+          <a:pathLst>
+            <a:path w="838250" h="312341">
+              <a:moveTo>
+                <a:pt x="0" y="311228" />
+              </a:moveTo>
+              <a:cubicBezTo>
+                <a:pt x="1675" y="205720" />
+                <a:pt x="2501" y="105508" />
+                <a:pt x="4176" y="0" />
+              </a:cubicBezTo>
+              <a:lnTo>
+                <a:pt x="154962" y="121423" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="300663" y="201809" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="420093" y="251208" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="607138" y="292245" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="742791" y="302293" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="838250" y="312341" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="0" y="311228" />
+              </a:lnTo>
+              <a:close />
+            </a:path>
+          </a:pathLst>
+        </a:custGeom>
+        <a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:schemeClr val="bg1">
+            <a:lumMod val="85000" />
+          </a:schemeClr>
+        </a:solidFill>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:noFill />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="2">
+          <a:schemeClr val="accent1">
+            <a:shade val="50000" />
+          </a:schemeClr>
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="accent1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="accent1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="lt1" />
+        </a:fontRef>
+      </cdr:style>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:endParaRPr lang="pl-PL" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.48367</cdr:x>
+      <cdr:y>0.87372</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.52857</cdr:x>
+      <cdr:y>0.95904</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="2" name="Pole tekstowe 1" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="2257425" y="2493880" />
+          <a:ext cx="209550" cy="243543" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>μ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.50011</cdr:x>
+      <cdr:y>0.09471</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.50011</cdr:x>
+      <cdr:y>0.86528</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="4" name="Łącznik prosty 3" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="2334148" y="270345" />
+          <a:ext cx="0" cy="2199432" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="12700">
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.67562</cdr:x>
+      <cdr:y>0.10029</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.67562</cdr:x>
+      <cdr:y>0.86528</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="5" name="Łącznik prosty 4" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3153298" y="286247" />
+          <a:ext cx="0" cy="2183530" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="12700">
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.32449</cdr:x>
+      <cdr:y>0.0975</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.32449</cdr:x>
+      <cdr:y>0.86348</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="6" name="Łącznik prosty 5" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="1514475" y="278296" />
+          <a:ext cx="0" cy="2186360" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="12700">
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.54501</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.5856</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="8" name="Pole tekstowe 7" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="2543698" y="2436804" />
+          <a:ext cx="189454" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>1</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.59883</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.63943</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="9" name="Pole tekstowe 8" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="2794907" y="2436804" />
+          <a:ext cx="189454" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>2</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.65589</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.69648</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="10" name="Pole tekstowe 9" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3061189" y="2436804" />
+          <a:ext cx="189454" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>3</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.41691</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.46611</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="11" name="Pole tekstowe 10" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="1945822" y="2436804" />
+          <a:ext cx="229646" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>-1</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.36416</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.40475</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="12" name="Pole tekstowe 11" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="1699637" y="2436804" />
+          <a:ext cx="189454" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>-2</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.30034</cdr:x>
+      <cdr:y>0.87018</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.34663</cdr:x>
+      <cdr:y>1</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="13" name="Pole tekstowe 12" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="1401745" y="2436804" />
+          <a:ext cx="216041" cy="363546" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>-3</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="el-GR" sz="1100">
+              <a:latin typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+              <a:cs typeface="Calibri" panose="020F0502020204030204" pitchFamily="34" charset="0" />
+            </a:rPr>
+            <a:t>σ</a:t>
+          </a:r>
+          <a:endParaRPr lang="pl-PL" sz="1100" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.14485</cdr:x>
+      <cdr:y>0.75403</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.32337</cdr:x>
+      <cdr:y>0.86517</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="15" name="Dowolny kształt: kształt 14" />
+        <cdr:cNvSpPr />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" flipH="1">
+          <a:off x="676059" y="2111536" />
+          <a:ext cx="833170" cy="311229" />
+        </a:xfrm>
+        <a:custGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:avLst />
+          <a:gdLst>
+            <a:gd name="connsiteX0" fmla="*/ 0 w 828989" />
+            <a:gd name="connsiteY0" fmla="*/ 316523 h 316523" />
+            <a:gd name="connsiteX1" fmla="*/ 5024 w 828989" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 316523" />
+            <a:gd name="connsiteX2" fmla="*/ 145701 w 828989" />
+            <a:gd name="connsiteY2" fmla="*/ 120581 h 316523" />
+            <a:gd name="connsiteX3" fmla="*/ 291402 w 828989" />
+            <a:gd name="connsiteY3" fmla="*/ 200967 h 316523" />
+            <a:gd name="connsiteX4" fmla="*/ 417006 w 828989" />
+            <a:gd name="connsiteY4" fmla="*/ 241161 h 316523" />
+            <a:gd name="connsiteX5" fmla="*/ 597877 w 828989" />
+            <a:gd name="connsiteY5" fmla="*/ 291403 h 316523" />
+            <a:gd name="connsiteX6" fmla="*/ 733530 w 828989" />
+            <a:gd name="connsiteY6" fmla="*/ 301451 h 316523" />
+            <a:gd name="connsiteX7" fmla="*/ 828989 w 828989" />
+            <a:gd name="connsiteY7" fmla="*/ 311499 h 316523" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 828989" />
+            <a:gd name="connsiteY8" fmla="*/ 316523 h 316523" />
+            <a:gd name="connsiteX0" fmla="*/ 5306 w 834295" />
+            <a:gd name="connsiteY0" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX1" fmla="*/ 221 w 834295" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 326571" />
+            <a:gd name="connsiteX2" fmla="*/ 151007 w 834295" />
+            <a:gd name="connsiteY2" fmla="*/ 130629 h 326571" />
+            <a:gd name="connsiteX3" fmla="*/ 296708 w 834295" />
+            <a:gd name="connsiteY3" fmla="*/ 211015 h 326571" />
+            <a:gd name="connsiteX4" fmla="*/ 422312 w 834295" />
+            <a:gd name="connsiteY4" fmla="*/ 251209 h 326571" />
+            <a:gd name="connsiteX5" fmla="*/ 603183 w 834295" />
+            <a:gd name="connsiteY5" fmla="*/ 301451 h 326571" />
+            <a:gd name="connsiteX6" fmla="*/ 738836 w 834295" />
+            <a:gd name="connsiteY6" fmla="*/ 311499 h 326571" />
+            <a:gd name="connsiteX7" fmla="*/ 834295 w 834295" />
+            <a:gd name="connsiteY7" fmla="*/ 321547 h 326571" />
+            <a:gd name="connsiteX8" fmla="*/ 5306 w 834295" />
+            <a:gd name="connsiteY8" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX1" fmla="*/ 4176 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 326571" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 130629 h 326571" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 211015 h 326571" />
+            <a:gd name="connsiteX4" fmla="*/ 426267 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 251209 h 326571" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 301451 h 326571" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 311499 h 326571" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 321547 h 326571" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 326571 h 326571" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 311229 h 311229" />
+            <a:gd name="connsiteX1" fmla="*/ 1089 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 311229" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 115287 h 311229" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 195673 h 311229" />
+            <a:gd name="connsiteX4" fmla="*/ 426267 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 235867 h 311229" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 286109 h 311229" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 296157 h 311229" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 306205 h 311229" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 311229 h 311229" />
+            <a:gd name="connsiteX0" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY0" fmla="*/ 311229 h 311229" />
+            <a:gd name="connsiteX1" fmla="*/ 1089 w 838250" />
+            <a:gd name="connsiteY1" fmla="*/ 0 h 311229" />
+            <a:gd name="connsiteX2" fmla="*/ 154962 w 838250" />
+            <a:gd name="connsiteY2" fmla="*/ 115287 h 311229" />
+            <a:gd name="connsiteX3" fmla="*/ 300663 w 838250" />
+            <a:gd name="connsiteY3" fmla="*/ 195673 h 311229" />
+            <a:gd name="connsiteX4" fmla="*/ 426267 w 838250" />
+            <a:gd name="connsiteY4" fmla="*/ 245072 h 311229" />
+            <a:gd name="connsiteX5" fmla="*/ 607138 w 838250" />
+            <a:gd name="connsiteY5" fmla="*/ 286109 h 311229" />
+            <a:gd name="connsiteX6" fmla="*/ 742791 w 838250" />
+            <a:gd name="connsiteY6" fmla="*/ 296157 h 311229" />
+            <a:gd name="connsiteX7" fmla="*/ 838250 w 838250" />
+            <a:gd name="connsiteY7" fmla="*/ 306205 h 311229" />
+            <a:gd name="connsiteX8" fmla="*/ 0 w 838250" />
+            <a:gd name="connsiteY8" fmla="*/ 311229 h 311229" />
+          </a:gdLst>
+          <a:ahLst />
+          <a:cxnLst>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX0" y="connsiteY0" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX1" y="connsiteY1" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX2" y="connsiteY2" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX3" y="connsiteY3" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX4" y="connsiteY4" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX5" y="connsiteY5" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX6" y="connsiteY6" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX7" y="connsiteY7" />
+            </a:cxn>
+            <a:cxn ang="0">
+              <a:pos x="connsiteX8" y="connsiteY8" />
+            </a:cxn>
+          </a:cxnLst>
+          <a:rect l="l" t="t" r="r" b="b" />
+          <a:pathLst>
+            <a:path w="838250" h="311229">
+              <a:moveTo>
+                <a:pt x="0" y="311229" />
+              </a:moveTo>
+              <a:cubicBezTo>
+                <a:pt x="1675" y="205721" />
+                <a:pt x="-586" y="105508" />
+                <a:pt x="1089" y="0" />
+              </a:cubicBezTo>
+              <a:lnTo>
+                <a:pt x="154962" y="115287" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="300663" y="195673" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="426267" y="245072" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="607138" y="286109" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="742791" y="296157" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="838250" y="306205" />
+              </a:lnTo>
+              <a:lnTo>
+                <a:pt x="0" y="311229" />
+              </a:lnTo>
+              <a:close />
+            </a:path>
+          </a:pathLst>
+        </a:custGeom>
+        <a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:schemeClr val="bg1">
+            <a:lumMod val="85000" />
+          </a:schemeClr>
+        </a:solidFill>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:noFill />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="2">
+          <a:schemeClr val="accent1">
+            <a:shade val="50000" />
+          </a:schemeClr>
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="accent1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="accent1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="lt1" />
+        </a:fontRef>
+      </cdr:style>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:endParaRPr lang="pl-PL" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.6912</cdr:x>
+      <cdr:y>0.16157</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.96235</cdr:x>
+      <cdr:y>0.42543</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="28" name="Pole tekstowe 27" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3226003" y="461175" />
+          <a:ext cx="1265530" cy="753147" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+        <a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:schemeClr val="bg1" />
+        </a:solidFill>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="288000" rIns="0" bIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:r>
+            <a:rPr lang="pl-PL" sz="800" />
+            <a:t>zmienność</a:t>
+          </a:r>
+          <a:r>
+            <a:rPr lang="pl-PL" sz="800" baseline="0" />
+            <a:t> zbyt duża zmienność docelowa</a:t>
+          </a:r>
+        </a:p>
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:r>
+            <a:rPr lang="pl-PL" sz="800" baseline="0" />
+            <a:t>cel chybiony</a:t>
+          </a:r>
+        </a:p>
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:r>
+            <a:rPr lang="pl-PL" sz="800" baseline="0" />
+            <a:t>efekty poza zakresem tolerancji</a:t>
+          </a:r>
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.6815</cdr:x>
+      <cdr:y>0.20555</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.74265</cdr:x>
+      <cdr:y>0.20555</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="31" name="Łącznik prosty 30" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3180717" y="586696" />
+          <a:ext cx="285419" cy="0" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="19050">
+          <a:prstDash val="sysDash" />
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.6815</cdr:x>
+      <cdr:y>0.24629</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.74265</cdr:x>
+      <cdr:y>0.24629</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="33" name="Łącznik prosty 32" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3180717" y="702978" />
+          <a:ext cx="285419" cy="0" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="19050">
+          <a:prstDash val="solid" />
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.6815</cdr:x>
+      <cdr:y>0.28888</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.74265</cdr:x>
+      <cdr:y>0.28888</cdr:y>
+    </cdr:to>
+    <cdr:cxnSp macro="">
+      <cdr:nvCxnSpPr>
+        <cdr:cNvPr id="34" name="Łącznik prosty 33" />
+        <cdr:cNvCxnSpPr />
+      </cdr:nvCxnSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3180717" y="824546" />
+          <a:ext cx="285419" cy="0" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="line">
+          <a:avLst />
+        </a:prstGeom>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" w="19050">
+          <a:prstDash val="sysDot" />
+          <a:headEnd type="none" w="med" len="med" />
+          <a:tailEnd type="none" w="med" len="med" />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="dk1" />
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="dk1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="tx1" />
+        </a:fontRef>
+      </cdr:style>
+    </cdr:cxnSp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.68807</cdr:x>
+      <cdr:y>0.31779</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.74135</cdr:x>
+      <cdr:y>0.37161</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="35" name="Prostokąt 34" />
+        <cdr:cNvSpPr />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="3211373" y="907085" />
+          <a:ext cx="248716" cy="153619" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+        <a:solidFill xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:schemeClr val="bg1">
+            <a:lumMod val="85000" />
+          </a:schemeClr>
+        </a:solidFill>
+        <a:ln xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:noFill />
+        </a:ln>
+      </cdr:spPr>
+      <cdr:style>
+        <a:lnRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="2">
+          <a:schemeClr val="accent1">
+            <a:shade val="50000" />
+          </a:schemeClr>
+        </a:lnRef>
+        <a:fillRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="1">
+          <a:schemeClr val="accent1" />
+        </a:fillRef>
+        <a:effectRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="0">
+          <a:schemeClr val="accent1" />
+        </a:effectRef>
+        <a:fontRef xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" idx="minor">
+          <a:schemeClr val="lt1" />
+        </a:fontRef>
+      </cdr:style>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:endParaRPr lang="pl-PL" />
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.64026</cdr:x>
+      <cdr:y>0.00769</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.71837</cdr:x>
+      <cdr:y>0.13751</cdr:y>
+    </cdr:to>
+    <mc:AlternateContent xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:a14="http://schemas.microsoft.com/office/drawing/2010/main">
+      <mc:Choice Requires="a14">
+        <cdr:sp macro="" textlink="">
+          <cdr:nvSpPr>
+            <cdr:cNvPr id="36" name="Pole tekstowe 35" />
+            <cdr:cNvSpPr txBox="1" />
+          </cdr:nvSpPr>
+          <cdr:spPr>
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:off x="2988266" y="21950" />
+              <a:ext cx="364534" cy="370548" />
+            </a:xfrm>
+            <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+              <a:avLst />
+            </a:prstGeom>
+          </cdr:spPr>
+          <cdr:txBody>
+            <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+            <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:pPr algn="ctr" />
+              <a:r>
+                <a:rPr lang="pl-PL" sz="1100" />
+                <a:t>USL</a:t>
+              </a:r>
+            </a:p>
+          </cdr:txBody>
+        </cdr:sp>
+      </mc:Choice>
+      <mc:Fallback>
+        <cdr:sp macro="" textlink="">
+          <cdr:nvSpPr>
+            <cdr:cNvPr id="36" name="Pole tekstowe 35" />
+            <cdr:cNvSpPr txBox="1" />
+          </cdr:nvSpPr>
+          <cdr:spPr>
+            <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:off x="3075819" y="21945" />
+              <a:ext cx="189454" cy="370553" />
+            </a:xfrm>
+            <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+              <a:avLst />
+            </a:prstGeom>
+          </cdr:spPr>
+          <cdr:txBody>
+            <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+            <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+            <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+              <a:pPr algn="ctr" />
+              <a:r>
+                <a:rPr lang="pl-PL" sz="1100" i="0">
+                  <a:latin typeface="Cambria Math" panose="02040503050406030204" pitchFamily="18" charset="0" />
+                </a:rPr>
+                <a:t>𝑆</a:t>
+              </a:r>
+              <a:r>
+                <a:rPr lang="pl-PL" sz="1100" b="0" i="0">
+                  <a:latin typeface="Cambria Math" panose="02040503050406030204" pitchFamily="18" charset="0" />
+                </a:rPr>
+                <a:t>_𝑈</a:t>
+              </a:r>
+              <a:endParaRPr lang="pl-PL" sz="1100" />
+            </a:p>
+          </cdr:txBody>
+        </cdr:sp>
+      </mc:Fallback>
+    </mc:AlternateContent>
+  </cdr:relSizeAnchor>
+  <cdr:relSizeAnchor xmlns:cdr="http://schemas.openxmlformats.org/drawingml/2006/chartDrawing">
+    <cdr:from>
+      <cdr:x>0.28108</cdr:x>
+      <cdr:y>0.00769</cdr:y>
+    </cdr:from>
+    <cdr:to>
+      <cdr:x>0.35918</cdr:x>
+      <cdr:y>0.13751</cdr:y>
+    </cdr:to>
+    <cdr:sp macro="" textlink="">
+      <cdr:nvSpPr>
+        <cdr:cNvPr id="23" name="Pole tekstowe 22" />
+        <cdr:cNvSpPr txBox="1" />
+      </cdr:nvSpPr>
+      <cdr:spPr>
+        <a:xfrm xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:off x="1311866" y="21950" />
+          <a:ext cx="364534" cy="370548" />
+        </a:xfrm>
+        <a:prstGeom xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" prst="rect">
+          <a:avLst />
+        </a:prstGeom>
+      </cdr:spPr>
+      <cdr:txBody>
+        <a:bodyPr xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" vertOverflow="clip" wrap="square" lIns="0" rIns="0" rtlCol="0" />
+        <a:lstStyle xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" />
+        <a:p xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+          <a:pPr algn="ctr" />
+          <a:r>
+            <a:rPr lang="pl-PL" sz="1100" />
+            <a:t>LSL</a:t>
+          </a:r>
+        </a:p>
+      </cdr:txBody>
+    </cdr:sp>
+  </cdr:relSizeAnchor>
+</c:userShapes>

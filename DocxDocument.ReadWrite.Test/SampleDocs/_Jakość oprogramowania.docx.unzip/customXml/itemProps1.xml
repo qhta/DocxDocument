@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<ds:datastoreItem ds:itemID="{988E22D9-4CEB-46B3-BEB8-8717CF30606D}" xmlns:ds="http://schemas.openxmlformats.org/officeDocument/2006/customXml">
+  <ds:schemaRefs>
+    <ds:schemaRef ds:uri="http://schemas.openxmlformats.org/officeDocument/2006/bibliography" />
+  </ds:schemaRefs>
+</ds:datastoreItem>

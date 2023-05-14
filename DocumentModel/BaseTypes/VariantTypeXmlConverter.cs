@@ -35,6 +35,12 @@ internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
         writer.WriteValue(valueStr);
       writer.WriteEndElement("Variant");
     }
+    else if (value is Char charVal)
+    {
+      var valueStr = ((UInt16)charVal).ToString("X4");
+      if (valueStr != null)
+        writer.WriteValue(valueStr);
+    }
     else
     {
       var valueStr = base.ConvertToInvariantString(value);
@@ -71,6 +77,12 @@ internal class VariantTypeXmlConverter : VariantTypeConverter, IXmlConverter
         }
         var str = reader.ReadElementContentAsString();
         Variant variant;
+        if (aType == typeof(Char))
+        {
+          var val = (char)(UInt16.Parse(str, NumberStyles.HexNumber));
+          variant = new Variant(variantType, aType, val);
+        }
+        else
         if (aType!=null && serializer?.TryGetTypeConverter(aType, out var converter)==true)
         {
           var val = converter.ConvertFrom(str);

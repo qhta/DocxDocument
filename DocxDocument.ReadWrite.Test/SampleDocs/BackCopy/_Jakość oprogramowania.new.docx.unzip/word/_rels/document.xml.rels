@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+  <Relationship Id="rId117" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing8.xml" />
+  <Relationship Id="rId299" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/31919.html" TargetMode="External" />
+  <Relationship Id="rId21" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing1.xml" />
+  <Relationship Id="rId63" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image22.emf" />
+  <Relationship Id="rId159" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document7.docx" />
+  <Relationship Id="rId324" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77451.html" TargetMode="External" />
+  <Relationship Id="rId366" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71579.html" TargetMode="External" />
+  <Relationship Id="rId170" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63712.html" TargetMode="External" />
+  <Relationship Id="rId226" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24907.html" TargetMode="External" />
+  <Relationship Id="rId433" Type="http://schemas.microsoft.com/office/2011/relationships/people" Target="people.xml" />
+  <Relationship Id="rId268" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54195.html" TargetMode="External" />
+  <Relationship Id="rId32" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image6.png" />
+  <Relationship Id="rId74" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image30.png" />
+  <Relationship Id="rId128" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data11.xml" />
+  <Relationship Id="rId335" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77735.html" TargetMode="External" />
+  <Relationship Id="rId377" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/45692.html" TargetMode="External" />
+  <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/webSettings" Target="webSettings.xml" />
+  <Relationship Id="rId181" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72896.html" TargetMode="External" />
+  <Relationship Id="rId237" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74569.html" TargetMode="External" />
+  <Relationship Id="rId402" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image71.png" />
+  <Relationship Id="rId279" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/73567.html" TargetMode="External" />
+  <Relationship Id="rId43" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto3.wdp" />
+  <Relationship Id="rId139" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image44.emf" />
+  <Relationship Id="rId290" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60245.html" TargetMode="External" />
+  <Relationship Id="rId304" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35603.html" TargetMode="External" />
+  <Relationship Id="rId346" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77615.html" TargetMode="External" />
+  <Relationship Id="rId388" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image58.svg" />
+  <Relationship Id="rId85" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image40.emf" />
+  <Relationship Id="rId150" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto8.wdp" />
+  <Relationship Id="rId192" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71955.html" TargetMode="External" />
+  <Relationship Id="rId206" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43090.html" TargetMode="External" />
+  <Relationship Id="rId413" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image74.emf" />
+  <Relationship Id="rId248" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63831.html" TargetMode="External" />
+  <Relationship Id="rId12" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/comments" Target="comments.xml" />
+  <Relationship Id="rId108" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data7.xml" />
+  <Relationship Id="rId315" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/68291.html" TargetMode="External" />
+  <Relationship Id="rId357" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data15.xml" />
+  <Relationship Id="rId54" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors3.xml" />
+  <Relationship Id="rId96" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors4.xml" />
+  <Relationship Id="rId161" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document8.docx" />
+  <Relationship Id="rId217" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43119.html" TargetMode="External" />
+  <Relationship Id="rId399" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image68.png" />
+  <Relationship Id="rId259" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/45248.html" TargetMode="External" />
+  <Relationship Id="rId424" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://en.wikipedia.org/wiki/Feature-driven_development" TargetMode="External" />
+  <Relationship Id="rId23" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout2.xml" />
+  <Relationship Id="rId119" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout9.xml" />
+  <Relationship Id="rId270" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55121.html" TargetMode="External" />
+  <Relationship Id="rId326" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62711.html" TargetMode="External" />
+  <Relationship Id="rId65" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image24.emf" />
+  <Relationship Id="rId130" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle11.xml" />
+  <Relationship Id="rId368" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71581.html" TargetMode="External" />
+  <Relationship Id="rId172" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/39064.html" TargetMode="External" />
+  <Relationship Id="rId228" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64787.html" TargetMode="External" />
+  <Relationship Id="rId281" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64842.html" TargetMode="External" />
+  <Relationship Id="rId337" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60389.html" TargetMode="External" />
+  <Relationship Id="rId34" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image8.emf" />
+  <Relationship Id="rId76" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image32.svg" />
+  <Relationship Id="rId141" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data13.xml" />
+  <Relationship Id="rId379" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/21231.html" TargetMode="External" />
+  <Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/endnotes" Target="endnotes.xml" />
+  <Relationship Id="rId183" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54995.html" TargetMode="External" />
+  <Relationship Id="rId239" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35765.html" TargetMode="External" />
+  <Relationship Id="rId390" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer7.xml" />
+  <Relationship Id="rId404" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data16.xml" />
+  <Relationship Id="rId250" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/37458.html" TargetMode="External" />
+  <Relationship Id="rId292" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64901.html" TargetMode="External" />
+  <Relationship Id="rId306" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/56418.html" TargetMode="External" />
+  <Relationship Id="rId45" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto4.wdp" />
+  <Relationship Id="rId87" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image41.emf" />
+  <Relationship Id="rId110" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle7.xml" />
+  <Relationship Id="rId348" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60100.html" TargetMode="External" />
+  <Relationship Id="rId152" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto9.wdp" />
+  <Relationship Id="rId194" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71957.html" TargetMode="External" />
+  <Relationship Id="rId208" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69530.html" TargetMode="External" />
+  <Relationship Id="rId415" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image75.emf" />
+  <Relationship Id="rId261" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54176.html" TargetMode="External" />
+  <Relationship Id="rId14" Type="http://schemas.microsoft.com/office/2016/09/relationships/commentsIds" Target="commentsIds.xml" />
+  <Relationship Id="rId56" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image17.emf" />
+  <Relationship Id="rId317" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77741.html" TargetMode="External" />
+  <Relationship Id="rId359" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle15.xml" />
+  <Relationship Id="rId98" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data5.xml" />
+  <Relationship Id="rId121" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors9.xml" />
+  <Relationship Id="rId163" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image55.emf" />
+  <Relationship Id="rId219" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43121.html" TargetMode="External" />
+  <Relationship Id="rId370" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70398.html" TargetMode="External" />
+  <Relationship Id="rId426" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image83.svg" />
+  <Relationship Id="rId230" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35735.html" TargetMode="External" />
+  <Relationship Id="rId25" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors2.xml" />
+  <Relationship Id="rId67" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer5.xml" />
+  <Relationship Id="rId272" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55144.html" TargetMode="External" />
+  <Relationship Id="rId328" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64779.html" TargetMode="External" />
+  <Relationship Id="rId132" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing11.xml" />
+  <Relationship Id="rId174" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74909.html" TargetMode="External" />
+  <Relationship Id="rId381" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/36674.html" TargetMode="External" />
+  <Relationship Id="rId241" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35770.html" TargetMode="External" />
+  <Relationship Id="rId36" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image9.emf" />
+  <Relationship Id="rId283" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74396.html" TargetMode="External" />
+  <Relationship Id="rId339" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69603.html" TargetMode="External" />
+  <Relationship Id="rId78" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image34.emf" />
+  <Relationship Id="rId101" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors5.xml" />
+  <Relationship Id="rId143" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle13.xml" />
+  <Relationship Id="rId185" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/56887.html" TargetMode="External" />
+  <Relationship Id="rId350" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/67407.html" TargetMode="External" />
+  <Relationship Id="rId406" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle16.xml" />
+  <Relationship Id="rId9" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer1.xml" />
+  <Relationship Id="rId210" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43112.html" TargetMode="External" />
+  <Relationship Id="rId392" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image61.png" />
+  <Relationship Id="rId252" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/37462.html" TargetMode="External" />
+  <Relationship Id="rId294" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71197.html" TargetMode="External" />
+  <Relationship Id="rId308" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60190.html" TargetMode="External" />
+  <Relationship Id="rId47" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image15.png" />
+  <Relationship Id="rId89" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image42.emf" />
+  <Relationship Id="rId112" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing7.xml" />
+  <Relationship Id="rId154" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto10.wdp" />
+  <Relationship Id="rId361" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing15.xml" />
+  <Relationship Id="rId196" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74393.html" TargetMode="External" />
+  <Relationship Id="rId417" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image77.emf" />
+  <Relationship Id="rId16" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer4.xml" />
+  <Relationship Id="rId221" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24902.html" TargetMode="External" />
+  <Relationship Id="rId263" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54178.html" TargetMode="External" />
+  <Relationship Id="rId319" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77997.html" TargetMode="External" />
+  <Relationship Id="rId58" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image19.emf" />
+  <Relationship Id="rId123" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data10.xml" />
+  <Relationship Id="rId330" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71951.html" TargetMode="External" />
+  <Relationship Id="rId165" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data14.xml" />
+  <Relationship Id="rId372" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70400.html" TargetMode="External" />
+  <Relationship Id="rId428" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image85.png" />
+  <Relationship Id="rId232" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72117.html" TargetMode="External" />
+  <Relationship Id="rId274" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55151.html" TargetMode="External" />
+  <Relationship Id="rId27" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image2.png" />
+  <Relationship Id="rId69" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart2.xml" />
+  <Relationship Id="rId134" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout12.xml" />
+  <Relationship Id="rId80" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image36.emf" />
+  <Relationship Id="rId176" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74371.html" TargetMode="External" />
+  <Relationship Id="rId341" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62741.html" TargetMode="External" />
+  <Relationship Id="rId383" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/46233.html" TargetMode="External" />
+  <Relationship Id="rId201" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/51042.html" TargetMode="External" />
+  <Relationship Id="rId243" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35786.html" TargetMode="External" />
+  <Relationship Id="rId285" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75421.html" TargetMode="External" />
+  <Relationship Id="rId38" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image10.emf" />
+  <Relationship Id="rId103" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data6.xml" />
+  <Relationship Id="rId310" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63700.html" TargetMode="External" />
+  <Relationship Id="rId91" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image43.emf" />
+  <Relationship Id="rId145" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing13.xml" />
+  <Relationship Id="rId187" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/66433.html" TargetMode="External" />
+  <Relationship Id="rId352" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62644.html" TargetMode="External" />
+  <Relationship Id="rId394" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image63.png" />
+  <Relationship Id="rId408" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing16.xml" />
+  <Relationship Id="rId212" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69531.html" TargetMode="External" />
+  <Relationship Id="rId254" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/61492.html" TargetMode="External" />
+  <Relationship Id="rId28" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto1.wdp" />
+  <Relationship Id="rId49" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://en.wikipedia.org/wiki/Data_corruption" TargetMode="External" />
+  <Relationship Id="rId114" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout8.xml" />
+  <Relationship Id="rId275" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55154.html" TargetMode="External" />
+  <Relationship Id="rId296" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/59977.html" TargetMode="External" />
+  <Relationship Id="rId300" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/39986.html" TargetMode="External" />
+  <Relationship Id="rId60" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto5.wdp" />
+  <Relationship Id="rId81" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image37.emf" />
+  <Relationship Id="rId135" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle12.xml" />
+  <Relationship Id="rId156" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image51.emf" />
+  <Relationship Id="rId177" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/41977.html" TargetMode="External" />
+  <Relationship Id="rId198" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/73436.html" TargetMode="External" />
+  <Relationship Id="rId321" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72088.html" TargetMode="External" />
+  <Relationship Id="rId342" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69049.html" TargetMode="External" />
+  <Relationship Id="rId363" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62085.html" TargetMode="External" />
+  <Relationship Id="rId384" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69979.html" TargetMode="External" />
+  <Relationship Id="rId419" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image78.png" />
+  <Relationship Id="rId202" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/68955.html" TargetMode="External" />
+  <Relationship Id="rId223" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24904.html" TargetMode="External" />
+  <Relationship Id="rId244" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43046.html" TargetMode="External" />
+  <Relationship Id="rId430" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image87.png" />
+  <Relationship Id="rId18" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout1.xml" />
+  <Relationship Id="rId39" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject" Target="embeddings/oleObject3.bin" />
+  <Relationship Id="rId265" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55106.html" TargetMode="External" />
+  <Relationship Id="rId286" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/78180.html" TargetMode="External" />
+  <Relationship Id="rId50" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://en.wikipedia.org/wiki/Interchangeable_parts" TargetMode="External" />
+  <Relationship Id="rId104" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout6.xml" />
+  <Relationship Id="rId125" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle10.xml" />
+  <Relationship Id="rId146" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image45.PNG" />
+  <Relationship Id="rId167" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle14.xml" />
+  <Relationship Id="rId188" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75404.html" TargetMode="External" />
+  <Relationship Id="rId311" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/68531.html" TargetMode="External" />
+  <Relationship Id="rId332" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64781.html" TargetMode="External" />
+  <Relationship Id="rId353" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71952.html" TargetMode="External" />
+  <Relationship Id="rId374" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/26978.html" TargetMode="External" />
+  <Relationship Id="rId395" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image64.png" />
+  <Relationship Id="rId409" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image72.emf" />
+  <Relationship Id="rId71" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image27.png" />
+  <Relationship Id="rId92" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document4.docx" />
+  <Relationship Id="rId213" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43115.html" TargetMode="External" />
+  <Relationship Id="rId234" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35746.html" TargetMode="External" />
+  <Relationship Id="rId420" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto11.wdp" />
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml" />
+  <Relationship Id="rId29" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image3.png" />
+  <Relationship Id="rId255" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/50519.html" TargetMode="External" />
+  <Relationship Id="rId276" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70803.html" TargetMode="External" />
+  <Relationship Id="rId297" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/52325.html" TargetMode="External" />
+  <Relationship Id="rId40" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image11.png" />
+  <Relationship Id="rId115" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle8.xml" />
+  <Relationship Id="rId136" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors12.xml" />
+  <Relationship Id="rId157" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document6.docx" />
+  <Relationship Id="rId178" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75276.html" TargetMode="External" />
+  <Relationship Id="rId301" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60176.html" TargetMode="External" />
+  <Relationship Id="rId322" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/67417.html" TargetMode="External" />
+  <Relationship Id="rId343" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/66342.html" TargetMode="External" />
+  <Relationship Id="rId364" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/66204.html" TargetMode="External" />
+  <Relationship Id="rId61" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image21.png" />
+  <Relationship Id="rId82" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image38.emf" />
+  <Relationship Id="rId199" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43189.html" TargetMode="External" />
+  <Relationship Id="rId203" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75420.html" TargetMode="External" />
+  <Relationship Id="rId385" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35651.html" TargetMode="External" />
+  <Relationship Id="rId19" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle1.xml" />
+  <Relationship Id="rId224" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24905.html" TargetMode="External" />
+  <Relationship Id="rId245" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35789.html" TargetMode="External" />
+  <Relationship Id="rId266" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55108.html" TargetMode="External" />
+  <Relationship Id="rId287" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/45142.html" TargetMode="External" />
+  <Relationship Id="rId410" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document10.docx" />
+  <Relationship Id="rId431" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart4.xml" />
+  <Relationship Id="rId30" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image4.png" />
+  <Relationship Id="rId105" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle6.xml" />
+  <Relationship Id="rId126" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors10.xml" />
+  <Relationship Id="rId147" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image46.png" />
+  <Relationship Id="rId168" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors14.xml" />
+  <Relationship Id="rId312" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/65666.html" TargetMode="External" />
+  <Relationship Id="rId333" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64782.html" TargetMode="External" />
+  <Relationship Id="rId354" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/53241.html" TargetMode="External" />
+  <Relationship Id="rId51" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data3.xml" />
+  <Relationship Id="rId72" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image28.svg" />
+  <Relationship Id="rId93" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data4.xml" />
+  <Relationship Id="rId189" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75405.html" TargetMode="External" />
+  <Relationship Id="rId375" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75736.html" TargetMode="External" />
+  <Relationship Id="rId396" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image65.png" />
+  <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml" />
+  <Relationship Id="rId214" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43116.html" TargetMode="External" />
+  <Relationship Id="rId235" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35747.html" TargetMode="External" />
+  <Relationship Id="rId256" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/50625.html" TargetMode="External" />
+  <Relationship Id="rId277" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55164.html" TargetMode="External" />
+  <Relationship Id="rId298" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/31918.html" TargetMode="External" />
+  <Relationship Id="rId400" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image69.png" />
+  <Relationship Id="rId421" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image79.png" />
+  <Relationship Id="rId116" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors8.xml" />
+  <Relationship Id="rId137" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing12.xml" />
+  <Relationship Id="rId158" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image52.emf" />
+  <Relationship Id="rId302" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54849.html" TargetMode="External" />
+  <Relationship Id="rId323" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43073.html" TargetMode="External" />
+  <Relationship Id="rId344" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63371.html" TargetMode="External" />
+  <Relationship Id="rId20" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors1.xml" />
+  <Relationship Id="rId41" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto2.wdp" />
+  <Relationship Id="rId62" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto6.wdp" />
+  <Relationship Id="rId83" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image39.emf" />
+  <Relationship Id="rId179" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72089.html" TargetMode="External" />
+  <Relationship Id="rId365" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70397.html" TargetMode="External" />
+  <Relationship Id="rId386" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image56.emf" />
+  <Relationship Id="rId190" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/51041.html" TargetMode="External" />
+  <Relationship Id="rId204" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75943.html" TargetMode="External" />
+  <Relationship Id="rId225" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24906.html" TargetMode="External" />
+  <Relationship Id="rId246" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35790.html" TargetMode="External" />
+  <Relationship Id="rId267" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55109.html" TargetMode="External" />
+  <Relationship Id="rId288" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/56736.html" TargetMode="External" />
+  <Relationship Id="rId411" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image73.emf" />
+  <Relationship Id="rId432" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/fontTable" Target="fontTable.xml" />
+  <Relationship Id="rId106" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors6.xml" />
+  <Relationship Id="rId127" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing10.xml" />
+  <Relationship Id="rId313" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/52293.html" TargetMode="External" />
+  <Relationship Id="rId10" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer2.xml" />
+  <Relationship Id="rId31" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image5.svg" />
+  <Relationship Id="rId52" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout3.xml" />
+  <Relationship Id="rId73" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image29.png" />
+  <Relationship Id="rId94" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout4.xml" />
+  <Relationship Id="rId148" Type="http://schemas.microsoft.com/office/2007/relationships/hdphoto" Target="media/hdphoto7.wdp" />
+  <Relationship Id="rId169" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing14.xml" />
+  <Relationship Id="rId334" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/67223.html" TargetMode="External" />
+  <Relationship Id="rId355" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75341.html" TargetMode="External" />
+  <Relationship Id="rId376" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/37263.html" TargetMode="External" />
+  <Relationship Id="rId397" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image66.png" />
+  <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml" />
+  <Relationship Id="rId180" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/53223.html" TargetMode="External" />
+  <Relationship Id="rId215" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43117.html" TargetMode="External" />
+  <Relationship Id="rId236" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35749.html" TargetMode="External" />
+  <Relationship Id="rId257" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/51684.html" TargetMode="External" />
+  <Relationship Id="rId278" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55165.html" TargetMode="External" />
+  <Relationship Id="rId401" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image70.png" />
+  <Relationship Id="rId422" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image80.svg" />
+  <Relationship Id="rId303" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/51717.html" TargetMode="External" />
+  <Relationship Id="rId42" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image12.png" />
+  <Relationship Id="rId84" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document.docx" />
+  <Relationship Id="rId138" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer6.xml" />
+  <Relationship Id="rId345" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72897.html" TargetMode="External" />
+  <Relationship Id="rId387" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image57.png" />
+  <Relationship Id="rId191" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/53815.html" TargetMode="External" />
+  <Relationship Id="rId205" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/76517.html" TargetMode="External" />
+  <Relationship Id="rId247" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72189.html" TargetMode="External" />
+  <Relationship Id="rId412" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document11.docx" />
+  <Relationship Id="rId107" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing6.xml" />
+  <Relationship Id="rId289" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/56737.html" TargetMode="External" />
+  <Relationship Id="rId11" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer3.xml" />
+  <Relationship Id="rId53" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle3.xml" />
+  <Relationship Id="rId149" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image47.png" />
+  <Relationship Id="rId314" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/68431.html" TargetMode="External" />
+  <Relationship Id="rId356" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74348.html" TargetMode="External" />
+  <Relationship Id="rId398" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image67.png" />
+  <Relationship Id="rId95" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle4.xml" />
+  <Relationship Id="rId160" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image53.emf" />
+  <Relationship Id="rId216" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43118.html" TargetMode="External" />
+  <Relationship Id="rId423" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image81.png" />
+  <Relationship Id="rId258" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54537.html" TargetMode="External" />
+  <Relationship Id="rId22" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data2.xml" />
+  <Relationship Id="rId64" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image23.emf" />
+  <Relationship Id="rId118" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data9.xml" />
+  <Relationship Id="rId325" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70880.html" TargetMode="External" />
+  <Relationship Id="rId367" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71580.html" TargetMode="External" />
+  <Relationship Id="rId171" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/73446.html" TargetMode="External" />
+  <Relationship Id="rId227" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/64764.html" TargetMode="External" />
+  <Relationship Id="rId269" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/78526.html" TargetMode="External" />
+  <Relationship Id="rId434" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml" />
+  <Relationship Id="rId33" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image7.svg" />
+  <Relationship Id="rId129" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout11.xml" />
+  <Relationship Id="rId280" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/52926.html" TargetMode="External" />
+  <Relationship Id="rId336" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69048.html" TargetMode="External" />
+  <Relationship Id="rId75" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image31.png" />
+  <Relationship Id="rId140" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document5.docx" />
+  <Relationship Id="rId182" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70816.html" TargetMode="External" />
+  <Relationship Id="rId378" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/75233.html" TargetMode="External" />
+  <Relationship Id="rId403" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart3.xml" />
+  <Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footnotes" Target="footnotes.xml" />
+  <Relationship Id="rId238" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72116.html" TargetMode="External" />
+  <Relationship Id="rId291" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62821.html" TargetMode="External" />
+  <Relationship Id="rId305" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72505.html" TargetMode="External" />
+  <Relationship Id="rId347" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63611.html" TargetMode="External" />
+  <Relationship Id="rId44" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image13.png" />
+  <Relationship Id="rId86" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document1.docx" />
+  <Relationship Id="rId151" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image48.png" />
+  <Relationship Id="rId389" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image59.png" />
+  <Relationship Id="rId193" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71956.html" TargetMode="External" />
+  <Relationship Id="rId207" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69529.html" TargetMode="External" />
+  <Relationship Id="rId249" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/38932.html" TargetMode="External" />
+  <Relationship Id="rId414" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document12.docx" />
+  <Relationship Id="rId13" Type="http://schemas.microsoft.com/office/2011/relationships/commentsExtended" Target="commentsExtended.xml" />
+  <Relationship Id="rId109" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout7.xml" />
+  <Relationship Id="rId260" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54175.html" TargetMode="External" />
+  <Relationship Id="rId316" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72588.html" TargetMode="External" />
+  <Relationship Id="rId55" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing3.xml" />
+  <Relationship Id="rId97" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing4.xml" />
+  <Relationship Id="rId120" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle9.xml" />
+  <Relationship Id="rId358" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout15.xml" />
+  <Relationship Id="rId162" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image54.emf" />
+  <Relationship Id="rId218" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43120.html" TargetMode="External" />
+  <Relationship Id="rId425" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image82.png" />
+  <Relationship Id="rId271" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55142.html" TargetMode="External" />
+  <Relationship Id="rId24" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle2.xml" />
+  <Relationship Id="rId66" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image25.emf" />
+  <Relationship Id="rId131" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors11.xml" />
+  <Relationship Id="rId327" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62712.html" TargetMode="External" />
+  <Relationship Id="rId369" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/71582.html" TargetMode="External" />
+  <Relationship Id="rId173" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63711.html" TargetMode="External" />
+  <Relationship Id="rId229" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35733.html" TargetMode="External" />
+  <Relationship Id="rId380" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69459.html" TargetMode="External" />
+  <Relationship Id="rId240" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35766.html" TargetMode="External" />
+  <Relationship Id="rId35" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject" Target="embeddings/oleObject1.bin" />
+  <Relationship Id="rId77" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image33.png" />
+  <Relationship Id="rId100" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramQuickStyle" Target="diagrams/quickStyle5.xml" />
+  <Relationship Id="rId282" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/59927.html" TargetMode="External" />
+  <Relationship Id="rId338" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/51153.html" TargetMode="External" />
+  <Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image1.jpg" />
+  <Relationship Id="rId142" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout13.xml" />
+  <Relationship Id="rId184" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77698.html" TargetMode="External" />
+  <Relationship Id="rId391" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image60.png" />
+  <Relationship Id="rId405" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout16.xml" />
+  <Relationship Id="rId251" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/37454.html" TargetMode="External" />
+  <Relationship Id="rId46" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image14.png" />
+  <Relationship Id="rId293" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/25492.html" TargetMode="External" />
+  <Relationship Id="rId307" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/74062.html" TargetMode="External" />
+  <Relationship Id="rId349" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/67604.html" TargetMode="External" />
+  <Relationship Id="rId88" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document2.docx" />
+  <Relationship Id="rId111" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors7.xml" />
+  <Relationship Id="rId153" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image49.png" />
+  <Relationship Id="rId195" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/50508.html" TargetMode="External" />
+  <Relationship Id="rId209" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43111.html" TargetMode="External" />
+  <Relationship Id="rId360" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors15.xml" />
+  <Relationship Id="rId416" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image76.png" />
+  <Relationship Id="rId220" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43139.html" TargetMode="External" />
+  <Relationship Id="rId15" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/header" Target="header1.xml" />
+  <Relationship Id="rId57" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image18.emf" />
+  <Relationship Id="rId262" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54177.html" TargetMode="External" />
+  <Relationship Id="rId318" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/57922.html" TargetMode="External" />
+  <Relationship Id="rId99" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout5.xml" />
+  <Relationship Id="rId122" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing9.xml" />
+  <Relationship Id="rId164" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document9.docx" />
+  <Relationship Id="rId371" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70376.html" TargetMode="External" />
+  <Relationship Id="rId427" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image84.png" />
+  <Relationship Id="rId26" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing2.xml" />
+  <Relationship Id="rId231" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/35736.html" TargetMode="External" />
+  <Relationship Id="rId273" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55145.html" TargetMode="External" />
+  <Relationship Id="rId329" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62713.html" TargetMode="External" />
+  <Relationship Id="rId68" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart1.xml" />
+  <Relationship Id="rId133" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data12.xml" />
+  <Relationship Id="rId175" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/40723.html" TargetMode="External" />
+  <Relationship Id="rId340" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/72898.html" TargetMode="External" />
+  <Relationship Id="rId200" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43184.html" TargetMode="External" />
+  <Relationship Id="rId382" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/77577.html" TargetMode="External" />
+  <Relationship Id="rId242" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/61579.html" TargetMode="External" />
+  <Relationship Id="rId284" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/69724.html" TargetMode="External" />
+  <Relationship Id="rId37" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/oleObject" Target="embeddings/oleObject2.bin" />
+  <Relationship Id="rId79" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image35.emf" />
+  <Relationship Id="rId102" Type="http://schemas.microsoft.com/office/2007/relationships/diagramDrawing" Target="diagrams/drawing5.xml" />
+  <Relationship Id="rId144" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors13.xml" />
+  <Relationship Id="rId90" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/package" Target="embeddings/Microsoft_Word_Document3.docx" />
+  <Relationship Id="rId186" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60062.html" TargetMode="External" />
+  <Relationship Id="rId351" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62440.html" TargetMode="External" />
+  <Relationship Id="rId393" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image62.png" />
+  <Relationship Id="rId407" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramColors" Target="diagrams/colors16.xml" />
+  <Relationship Id="rId211" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/43113.html" TargetMode="External" />
+  <Relationship Id="rId253" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/60555.html" TargetMode="External" />
+  <Relationship Id="rId295" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/38931.html" TargetMode="External" />
+  <Relationship Id="rId309" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/63699.html" TargetMode="External" />
+  <Relationship Id="rId48" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image16.png" />
+  <Relationship Id="rId113" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data8.xml" />
+  <Relationship Id="rId320" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/70879.html" TargetMode="External" />
+  <Relationship Id="rId155" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image50.png" />
+  <Relationship Id="rId197" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/68982.html" TargetMode="External" />
+  <Relationship Id="rId362" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/45481.html" TargetMode="External" />
+  <Relationship Id="rId418" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/footer" Target="footer8.xml" />
+  <Relationship Id="rId222" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/24903.html" TargetMode="External" />
+  <Relationship Id="rId264" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54186.html" TargetMode="External" />
+  <Relationship Id="rId17" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramData" Target="diagrams/data1.xml" />
+  <Relationship Id="rId59" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image20.png" />
+  <Relationship Id="rId124" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout10.xml" />
+  <Relationship Id="rId70" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image26.png" />
+  <Relationship Id="rId166" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/diagramLayout" Target="diagrams/layout14.xml" />
+  <Relationship Id="rId331" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/62732.html" TargetMode="External" />
+  <Relationship Id="rId373" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/54081.html" TargetMode="External" />
+  <Relationship Id="rId429" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image86.svg" />
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/customXml" Target="../customXml/item1.xml" />
+  <Relationship Id="rId233" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink" Target="https://www.iso.org/standard/55477.html" TargetMode="External" />
+</Relationships>

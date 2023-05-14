@@ -56,10 +56,11 @@ internal class Program
   {
     var testInstance = new TestFonts();
     testInstance.Setup();
-    testInstance.TestReadDocumentFonts();
-    testInstance.TestReadFontsXmlSerialization("Font embedding.docx", true);
-    testInstance.TestReadEmbedFonts("Font embedding.docx", true);
-    testInstance.TestReadEmbedFontsXmlSerialization("Font embedding.docx", true);
+    testInstance.TestNormalTemplateFonts();
+    testInstance.TestReadFonts();
+    testInstance.TestReadFontsXmlSerialization(/*"Font embedding.docx", true*/);
+    testInstance.TestReadEmbedFonts(/*"Font embedding.docx", true*/);
+    testInstance.TestReadEmbedFontsXmlSerialization(/*"Font embedding.docx", true*/);
     Console.WriteLine("\nTest passed");
   }
 
@@ -67,7 +68,7 @@ internal class Program
   {
     var testInstance = new TestTheme();
     testInstance.Setup();
-    //testInstance.TestReadDocumentTheme();
+    testInstance.TestReadTheme();
     testInstance.TestReadThemeXmlSerialization();
     Console.WriteLine("\nTest passed");
   }
@@ -85,15 +86,9 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    var ok = true;
-    //if (ok)
-    //  ok = testInstance.TestReadProperties("DocumentProperties.docx", true, true);
-    if (ok)
-      ok = testInstance.TestGenProperties("DocumentProperties.docx", true, true);
-    if (ok)
-      Console.WriteLine("Test passed");
-    else
-      Console.WriteLine("Test failed");
+    testInstance.TestReadProperties();
+    testInstance.TestGenProperties("DocumentProperties.docx", true, true);
+    Console.WriteLine("Test passed");
   }
 
   private static void RunTestConverters()
@@ -108,8 +103,8 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    testInstance.TestEnumVariantType();
-    testInstance.TestVariantXmlSerialization(null, true);
+    //testInstance.TestEnumVariantType();
+    //testInstance.TestVariantXmlSerialization(null, true);
     testInstance.TestVectorXmlSerialization(null,true);
     Console.WriteLine("Test passed");
   }

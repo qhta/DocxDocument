@@ -1,0 +1,596 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
+  <w:body>
+    <w:p w14:paraId="4EA26548" w14:textId="4D082F0A" w:rsidR="00831E97" w:rsidRDefault="00831E97" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00831E97" w:rsidSect="00831E97">
+          <w:pgSz w:w="12240" w:h="15840" w:code="1" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:t>Letter (21,59 x 27,94cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4E017D41" w14:textId="0966915A" w:rsidR="00831E97" w:rsidRDefault="00831E97" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00831E97" w:rsidSect="00831E97">
+          <w:pgSz w:w="12240" w:h="20160" w:code="5" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Legal (21,59 x 35,56cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3EE2D454" w14:textId="6EF13177" w:rsidR="00831E97" w:rsidRDefault="00831E97" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00831E97" w:rsidSect="00831E97">
+          <w:pgSz w:w="7920" w:h="12240" w:code="6" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Statement (13,97 x 21,59cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3A1C6BBB" w14:textId="006BC0C1" w:rsidR="009B4CB0" w:rsidRDefault="009B4CB0" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="009B4CB0">
+          <w:pgSz w:w="11906" w:h="16838" w:code="9" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>A4 (21 x 29,7cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4CA17B61" w14:textId="431B1119" w:rsidR="009B4CB0" w:rsidRDefault="009B4CB0" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="009B4CB0">
+          <w:pgSz w:w="8391" w:h="11906" w:code="11" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>A5(14,8 x 21cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="75CB153A" w14:textId="1B0C3259" w:rsidR="009B4CB0" w:rsidRDefault="009B4CB0" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="009B4CB0">
+          <w:pgSz w:w="5954" w:h="8392" w:code="70" />
+          <w:pgMar w:top="1418" w:right="1418" w:bottom="1418" w:left="1418" w:header="709" w:footer="709" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>A6 (10,5 x 14,8cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6088CA05" w14:textId="265AAEED" w:rsidR="002C4800" w:rsidRDefault="002C4800" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="002C4800" w:rsidSect="002C4800">
+          <w:pgSz w:w="9978" w:h="14173" w:code="137" />
+          <w:pgMar w:top="1418" w:right="1418" w:bottom="1418" w:left="1418" w:header="709" w:footer="709" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>B5 ISO (17,6 x 25cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="155368D6" w14:textId="3C67432C" w:rsidR="009B4CB0" w:rsidRDefault="009B4CB0" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="009B4CB0">
+          <w:pgSz w:w="10319" w:h="14572" w:code="13" />
+          <w:pgMar w:top="1418" w:right="1418" w:bottom="1418" w:left="1418" w:header="709" w:footer="709" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>B5 JIS (18,2 x 25,7cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="498826D6" w14:textId="77777777" w:rsidR="00DB7EB9" w:rsidRDefault="009B4CB0" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00DB7EB9" w:rsidSect="009B4CB0">
+          <w:pgSz w:w="5940" w:h="13680" w:code="20" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta #10 (10,48</w:t>
+      </w:r>
+      <w:r w:rsidR="00510FCE">
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:t xml:space="preserve"> x 24,13</w:t>
+      </w:r>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:t>cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0AFA575E" w14:textId="77777777" w:rsidR="00DB7EB9" w:rsidRDefault="00DB7EB9" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00DB7EB9" w:rsidSect="00DB7EB9">
+          <w:pgSz w:w="6236" w:h="12472" w:code="27" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta  DL (11 x 22cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4FADD1DB" w14:textId="77777777" w:rsidR="00DB7EB9" w:rsidRDefault="00DB7EB9" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00DB7EB9" w:rsidSect="00DB7EB9">
+          <w:pgSz w:w="9184" w:h="12983" w:code="28" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta C5 (16,2 x 22,9cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="238D694D" w14:textId="77777777" w:rsidR="007C183A" w:rsidRDefault="00DB7EB9" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="007C183A" w:rsidSect="00DB7EB9">
+          <w:pgSz w:w="6463" w:h="9184" w:code="31" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta C6 (11,4 x 16,2cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="14F721C3" w14:textId="0B8C64B6" w:rsidR="00B61022" w:rsidRDefault="007C183A" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00B61022" w:rsidSect="007C183A">
+          <w:pgSz w:w="5580" w:h="10800" w:code="37" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta Monarch (9,84 x 10,95cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6AD8E15D" w14:textId="77777777" w:rsidR="00F4191C" w:rsidRDefault="00B61022" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00F4191C" w:rsidSect="00B61022">
+          <w:pgSz w:w="5220" w:h="9360" w:code="38" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta 6 3/4 (9,21 x 16,52cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3485BDA0" w14:textId="77777777" w:rsidR="00152056" w:rsidRDefault="00F4191C" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00152056" w:rsidSect="00F4191C">
+          <w:pgSz w:w="5669" w:h="8391" w:code="43" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Karta pocztówka japońska (10 x 14,8cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="377F2477" w14:textId="77777777" w:rsidR="00152056" w:rsidRDefault="00152056" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00152056" w:rsidSect="00152056">
+          <w:pgSz w:w="6803" w:h="13323" w:code="73" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta japońska Chou #3 (12 x 23,5cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6A04C2EE" w14:textId="77777777" w:rsidR="00C01077" w:rsidRDefault="00152056" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00C01077" w:rsidSect="00152056">
+          <w:pgSz w:w="5102" w:h="11622" w:code="74" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta japońska  Chou #4 (9 x 20,5cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="78ACD295" w14:textId="77777777" w:rsidR="00F752F6" w:rsidRDefault="00C01077" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00F752F6" w:rsidSect="00C01077">
+          <w:pgSz w:w="5760" w:h="8640" w:code="125" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>4x6 cali/10x15cm (10,16x15,24cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7C17CF4A" w14:textId="77777777" w:rsidR="00621746" w:rsidRDefault="00F752F6" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00621746" w:rsidSect="00F752F6">
+          <w:pgSz w:w="7200" w:h="10080" w:code="126" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>5x7 cali/13x18 cm (12,7 x 17,78cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="4F69DBDA" w14:textId="77777777" w:rsidR="0043034D" w:rsidRDefault="00621746" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="0043034D" w:rsidSect="00621746">
+          <w:pgSz w:w="5040" w:h="7200" w:code="127" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>3,5x5 cali/L 89x127mm (8,89 x 12,7cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6BC3F592" w14:textId="2F07EA48" w:rsidR="009B4CB0" w:rsidRDefault="0043034D" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="0043034D">
+          <w:pgSz w:w="7200" w:h="10080" w:code="128" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>2L 127x178mm (12,7x17,8cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="7FCA38E8" w14:textId="161F0303" w:rsidR="009B4CB0" w:rsidRDefault="002C4800" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="009B4CB0" w:rsidSect="002C4800">
+          <w:pgSz w:w="11520" w:h="14400" w:code="129" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>8x10 cali (20,32 x 25,4cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="0FE6A38C" w14:textId="77777777" w:rsidR="005F709D" w:rsidRDefault="00E721F8" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="005F709D" w:rsidSect="00E721F8">
+          <w:pgSz w:w="12240" w:h="18720" w:code="136" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>8,5 x 13 cali (21,59 x 33,02cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="1D1A544C" w14:textId="77777777" w:rsidR="00203EF6" w:rsidRDefault="005F709D" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00203EF6" w:rsidSect="005F709D">
+          <w:pgSz w:w="8385" w:h="11333" w:orient="landscape" w:code="130" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Ofuku hagaki 200x148mm (19,99 x 14,79cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="143940BF" w14:textId="77777777" w:rsidR="00D95214" w:rsidRDefault="00203EF6" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00D95214" w:rsidSect="00203EF6">
+          <w:pgSz w:w="6287" w:h="8271" w:code="131" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Koperta A2 (11,09 x 14,59 cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="51D19F77" w14:textId="77777777" w:rsidR="00F9303D" w:rsidRDefault="00D95214" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00F9303D" w:rsidSect="00D95214">
+          <w:pgSz w:w="5760" w:h="8640" w:code="132" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Karta katalogowa 4x6 cali (10,16 x 15,24 cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="6AFFE5B5" w14:textId="77777777" w:rsidR="00006D96" w:rsidRDefault="00F9303D" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00006D96" w:rsidSect="00F9303D">
+          <w:pgSz w:w="7200" w:h="11520" w:code="133" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Karta katalogowa 5x8 cali (12,7 x 20,32cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="3F7C57DC" w14:textId="77777777" w:rsidR="00006D96" w:rsidRDefault="00006D96" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:sectPr w:rsidR="00006D96" w:rsidSect="00006D96">
+          <w:pgSz w:w="12240" w:h="15840" w:code="134" />
+          <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+          <w:cols w:space="708" />
+          <w:docGrid w:linePitch="360" />
+        </w:sectPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Karta indeks. Letter 8,5x11 cali (21,59 x 27,94cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:p w14:paraId="5BF52D69" w14:textId="7B9004BD" w:rsidR="009B4CB0" w:rsidRPr="009B4CB0" w:rsidRDefault="00006D96" w:rsidP="009B4CB0">
+      <w:pPr>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:lang w:val="pl-PL" />
+        </w:rPr>
+        <w:lastRenderedPageBreak />
+        <w:t>Karta indeks. A4 8,27x11,69" (20,99 x 29,69cm)</w:t>
+      </w:r>
+    </w:p>
+    <w:sectPr w:rsidR="009B4CB0" w:rsidRPr="009B4CB0" w:rsidSect="00006D96">
+      <w:pgSz w:w="11900" w:h="16832" w:code="135" />
+      <w:pgMar w:top="1417" w:right="1417" w:bottom="1417" w:left="1417" w:header="708" w:footer="708" w:gutter="0" />
+      <w:cols w:space="708" />
+      <w:docGrid w:linePitch="360" />
+    </w:sectPr>
+  </w:body>
+</w:document>
