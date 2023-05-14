@@ -505,13 +505,23 @@ public class TestProperties : TestBase
     var webSettings = documentProperties.WebSettings;
     if (webSettings == null)
       webSettings = documentProperties.WebSettings = new DM.WebSettings();
-    SetRandomProperties(webSettings);
+    SetRandomProperties(webSettings, prop => prop.PropertyType != typeof(DMW.Divs));
     var frameset = webSettings.Frameset;
     if (frameset != null)
     {
       var frame = new DMW.Frame();
       SetRandomProperties(frame);
       frameset.Add(frame);
+    }
+    var divs = webSettings.Divs = new DMW.Divs();
+    {
+      var div = new DMW.Div();
+      SetRandomProperties(div, prop => prop.PropertyType != typeof(DMW.Divs));
+      var div2 = new DMW.Div();
+      div.Children = new DMW.Divs();
+      div.Children.Add(div2);
+      SetRandomProperties(div2, prop => prop.PropertyType != typeof(DMW.Divs));
+      divs.Add(div);
     }
     if (showDetails)
     {
@@ -594,6 +604,8 @@ public class TestProperties : TestBase
         return "Id" + (++LastRelId).ToString();
       return propName;
     }
+    if (propType == typeof(HexInt))
+      return new HexInt(Rnd.Next());
     if (propType == typeof(int))
       return Rnd.Next();
     if (propType == typeof(uint))
@@ -661,7 +673,7 @@ public class TestProperties : TestBase
     }
   }
 
-  private string Serialize(DocumentProperties? properties)
+  private string? Serialize(DocumentProperties? properties)
   {
     if (properties == null)
       return null;
