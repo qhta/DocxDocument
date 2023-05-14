@@ -20,26 +20,6 @@ public class TestNumbering : TestBase
   }
 
   /// <summary>
-  /// Tests the numbering read from "DocumentProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadDocumentPropertiesNumbering()
-  {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestReadNumbering(filename, false);
-  }
-
-  /// <summary>
-  /// Tests the numbering read from "CustomProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadCustomPropertiesNumbering()
-  {
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    TestReadNumbering(filename, true);
-  }
-
-  /// <summary>
   /// Tests the numbering read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
@@ -64,16 +44,19 @@ public class TestNumbering : TestBase
     Assert.IsNotNull(document.Numbering, "No document numbering read");
     var modelNumbering = document.Numbering;
     var origNumbering = reader.WordprocessingDocument.MainDocumentPart?.NumberingDefinitionsPart?.Numbering;
-    var diffs = new DiffList();
-    var ok = DMXW.NumberingConverter.CompareModelElement(origNumbering, modelNumbering, diffs, null);
-    if (!ok && showDetails)
+    if (origNumbering != null)
     {
-      WriteLine("Read numbering differences found:");
-      foreach (var diff in diffs)
-        WriteLine(diff.ToString());
+      var diffs = new DiffList();
+      var ok = DMXW.NumberingConverter.CompareModelElement(origNumbering, modelNumbering, diffs, null);
+      if (!ok && showDetails)
+      {
+        WriteLine("Read numbering differences found:");
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      }
+      if (!ok)
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
-    if (!ok)
-      Assert.Fail(diffs.FirstOrDefault()?.ToString());
   }
 
   /// <summary>

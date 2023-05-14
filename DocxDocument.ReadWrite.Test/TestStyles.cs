@@ -18,26 +18,6 @@ public class TestStyles : TestBase
   }
 
   /// <summary>
-  /// Tests the style definitions read from "DocumentProperties.docx".
-  /// </summary>
-  [Test]
-  public void TestReadDocumentStyles()
-  {
-    var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    TestReadStyles(filename, true);
-  }
-
-  /// <summary>
-  /// Tests the style definitions read from "CustomProperties.docx".
-  /// </summary>
-  [Test]
-  public void TestReadCustomStyles()
-  {
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    TestReadStyles(filename, true);
-  }
-
-  /// <summary>
   /// Tests the style definitions read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
@@ -64,6 +44,8 @@ public class TestStyles : TestBase
     var modelDefinedStyles = document.Styles.DefinedStyles;
     int modelDefinedStylesCount = modelDefinedStyles?.Count ?? 0;
     var origDefinedStyles = reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles;
+    if (origDefinedStyles != null)
+    {
     int origDefinedStylesCount = origDefinedStyles?.Elements<DXW.Style>().Count() ?? 0;
     if (showDetails)
       WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
@@ -134,6 +116,7 @@ public class TestStyles : TestBase
 
     CheckReadDocDefaults(document.Styles.DocDefaults, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.DocDefaults);
     TestLatentStyleDefaults(document.Styles.LatentStyles, reader.WordprocessingDocument.MainDocumentPart?.StyleDefinitionsPart?.Styles?.LatentStyles);
+    }
   }
 
   /// <summary>

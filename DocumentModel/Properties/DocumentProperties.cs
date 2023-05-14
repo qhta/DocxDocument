@@ -66,8 +66,8 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
         yield return property;
     if (CustomProperties != null)
       foreach (var property in CustomProperties)
-        yield return property;  
-    }
+        yield return property;
+  }
 
   IEnumerator IEnumerable.GetEnumerator()
   {
@@ -76,36 +76,36 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
 
   public void Add(DocumentProperty item)
   {
-    if (CoreProperties == null)
-      CoreProperties = new CoreProperties();
-    if (ContentProperties == null)
-      ContentProperties = new ContentProperties();
-    if (StatisticProperties == null)
-      StatisticProperties = new StatisticProperties();
-    if (DocumentSettings == null)
-      DocumentSettings = new DocumentSettings();
-    if (WebSettings == null)
-      WebSettings = new WebSettings();
     if (item.Name != null)
     {
-      if (CoreProperties.GetKnownProperties().ContainsKey(item.Name))
+      if (CoreProperties.GetKnownProperties(typeof(CoreProperties)).ContainsKey(item.Name))
       {
+        if (CoreProperties == null)
+          CoreProperties = new CoreProperties();
         CoreProperties.Set(item.Name, item.Value);
       }
-      else if (ContentProperties.GetKnownProperties().ContainsKey(item.Name))
+      else if (ContentProperties.GetKnownProperties(typeof(ContentProperties)).ContainsKey(item.Name))
       {
+        if (ContentProperties == null)
+          ContentProperties = new ContentProperties();
         ContentProperties.Set(item.Name, item.Value);
       }
-      else if (StatisticProperties.GetKnownProperties().ContainsKey(item.Name))
+      else if (StatisticProperties.GetKnownProperties(typeof(StatisticProperties)).ContainsKey(item.Name))
       {
+        if (StatisticProperties == null)
+          StatisticProperties = new StatisticProperties();
         StatisticProperties.Set(item.Name, item.Value);
       }
-      else if (DocumentSettings.GetKnownProperties().ContainsKey(item.Name))
+      else if (DocumentSettings.GetKnownProperties(typeof(DocumentSettings)).ContainsKey(item.Name))
       {
+        if (DocumentSettings == null)
+          DocumentSettings = new DocumentSettings();
         DocumentSettings.Set(item.Name, item.Value);
       }
-      else if (WebSettings.GetKnownProperties().ContainsKey(item.Name))
+      else if (WebSettings.GetKnownProperties(typeof(WebSettings)).ContainsKey(item.Name))
       {
+        if (WebSettings == null)
+          WebSettings = new WebSettings();
         WebSettings.Set(item.Name, item.Value);
       }
       else
@@ -251,7 +251,7 @@ public partial class DocumentProperties : ICollection<DocumentProperty>
   public object? GetValue(string propName)
   {
     object? result;
-    if (CoreProperties!=null && CoreProperties.GetKnownProperties().ContainsKey(propName))
+    if (CoreProperties != null && CoreProperties.GetKnownProperties().ContainsKey(propName))
       result = CoreProperties.GetValue(propName);
     else
     if (ContentProperties != null && ContentProperties.GetKnownProperties().ContainsKey(propName))

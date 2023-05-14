@@ -18,26 +18,6 @@ public class TestFonts : TestBase
   }
 
   /// <summary>
-  /// Tests the fonts read from "DocumentProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadDocumentFonts()
-  {
-    var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    TestReadFonts(filename, true);
-  }
-
-  /// <summary>
-  /// Tests the fonts read from "CustomProperties.docx" file.
-  /// </summary>
-  [Test]
-  public void TestReadCustomFonts()
-  {
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    TestReadFonts(filename, true);
-  }
-
-  /// <summary>
   /// Tests the fonts read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
@@ -62,16 +42,19 @@ public class TestFonts : TestBase
     Assert.IsNotNull(document.Fonts, "No document fonts read");
     var modelFonts = document.Fonts;
     var origFonts = reader.WordprocessingDocument.MainDocumentPart?.FontTablePart?.Fonts;
-    var diffs = new DiffList();
-    var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
-    if (!ok && showDetails)
+    if (origFonts != null)
     {
-      WriteLine("Read fonts differences found:");
-      foreach (var diff in diffs)
-        WriteLine(diff.ToString());
+      var diffs = new DiffList();
+      var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
+      if (!ok && showDetails)
+      {
+        WriteLine("Read fonts differences found:");
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      }
+      if (!ok)
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
-    if (!ok)
-      Assert.Fail(diffs.FirstOrDefault()?.ToString());
   }
 
   /// <summary>

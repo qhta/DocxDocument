@@ -2,13 +2,8 @@
 using System.Xml.Serialization;
 
 using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Wordprocessing;
 
 using DocumentModel;
-using DocumentModel.Math;
-using DocumentModel.Wordprocessing;
-
-using NUnit.Framework.Constraints;
 
 namespace DocxDocument.ReadWrite.Test;
 
@@ -137,7 +132,8 @@ public class TestProperties : TestBase
           #region copy back
           if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
             filename = Path.Combine(TestPath, filename);
-          newFilename = Path.Combine(Path.GetDirectoryName(filename) ?? "", Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
+          newFilename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "BackCopy"),
+            Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
           File.Copy(filename, newFilename, true);
           using (var writer = DocxWriter.Open(newFilename))
           {
@@ -211,7 +207,7 @@ public class TestProperties : TestBase
     int origExtendedPropertiesCount = 0;
     int origContentPropertiesCount = 0;
     int origStatisticPropertiesCount = 0;
-    if (contentDocumentProperties != null)
+    if (contentDocumentProperties != null && origDocument.ExtendedFilePropertiesPart!=null)
     {
       origExtendedPropertiesCount = origDocument.ExtendedFilePropertiesPart?.Properties?.Elements().Count() ?? 0;
       origStatisticPropertiesCount = origDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
@@ -373,7 +369,7 @@ public class TestProperties : TestBase
 
     WriteLine($"Testing generating properties of: {filename}");
 
-    filename = Path.Combine(Path.GetDirectoryName(filename) ?? "", Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
+    filename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "Generated") , Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
     CreateWordprocessingDocument(filename);
 
     var document = new DMW.Document();

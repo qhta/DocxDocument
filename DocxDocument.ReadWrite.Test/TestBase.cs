@@ -305,11 +305,14 @@ public class TestBase
       var newFilePath = Path.Combine(newDirectory, origFile);
       if (showDetails)
         xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length + 1)}");
-
-      if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
+      var ext = Path.GetExtension(newFilePath);
+      if (ext == ".xml" || ext == ".rels")
       {
-        ok = false;
-        return false;
+        if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
+        {
+          ok = false;
+          return false;
+        }
       }
     }
     var origDirs = Directory.GetDirectories(origDirectory).Select(item => Path.GetFileName(item)).ToList();
@@ -340,7 +343,7 @@ public class TestBase
   {
     var year = Rnd.Next(2000, 2025);
     var month = Rnd.Next(1, 12);
-    var day = Rnd.Next(1, MonthDays[month-1]);
+    var day = Rnd.Next(1, MonthDays[month - 1]);
     var hour = Rnd.Next(0, 23);
     var min = Rnd.Next(0, 59);
     var sec = Rnd.Next(0, 59);

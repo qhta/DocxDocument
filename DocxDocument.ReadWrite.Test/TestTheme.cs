@@ -20,30 +20,10 @@ public class TestTheme : TestBase
   }
 
   /// <summary>
-  /// Tests the theme read from "DocumentProperties.docx".
-  /// </summary>
-  [Test]
-  public void TestReadDocumentTheme()
-  {
-    var filename = Path.Combine(TestPath, "DocumentProperties.docx");
-    ReadReadTheme(filename, true);
-  }
-
-  /// <summary>
-  /// Tests the theme read from "CustomProperties.docx".
-  /// </summary>
-  [Test]
-  public void TestCustomTheme()
-  {
-    var filename = Path.Combine(TestPath, "CustomProperties.docx");
-    ReadReadTheme(filename, true);
-  }
-
-  /// <summary>
   /// Tests the theme read from all docx files in folder specified by test path.
   /// </summary>
   [Test]
-  public void TestSampleDocsTheme()
+  public void TestReadTheme()
   {
     foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
       ReadReadTheme(filename);
@@ -65,17 +45,19 @@ public class TestTheme : TestBase
     Assert.IsNotNull(document.Theme, "No document Theme read");
     var modelTheme = document.Theme;
     var originTheme = reader.WordprocessingDocument.MainDocumentPart?.ThemePart?.Theme;
-
-    var diffs = new DiffList();
-    if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null))
+    if (originTheme != null)
     {
-      if (showDetails)
+      var diffs = new DiffList();
+      if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null))
       {
-        WriteLine("Read theme differences found:");
-        foreach (var diff in diffs)
-          WriteLine(diff.ToString());
+        if (showDetails)
+        {
+          WriteLine("Read theme differences found:");
+          foreach (var diff in diffs)
+            WriteLine(diff.ToString());
+        }
+        Assert.Fail(diffs.FirstOrDefault()?.ToString());
       }
-      Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
 

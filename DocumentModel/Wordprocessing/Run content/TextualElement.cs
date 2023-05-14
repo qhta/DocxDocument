@@ -13,6 +13,6 @@ public abstract class TextualElement: ModelElement, IRunContent
 
   /// <summary>
   /// Represents the text itself.
-  /// </summary>
-  [XmlText] public string Text { get; set; } = string.Empty;
+  /// </summary>  
+  [XmlText] public virtual string Text { get; set; } = string.Empty;
 }
