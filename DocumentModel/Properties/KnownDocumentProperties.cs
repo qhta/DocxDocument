@@ -3,12 +3,9 @@
 
 public class KnownDocumentProperties : ICollection<DocumentProperty>
 {
-
-  private Dictionary<string, PropertyInfo> _properties = null!;
-
   public IEnumerator<DocumentProperty> GetEnumerator()
   {
-    foreach (var prop in GetKnownProperties().Values)
+    foreach (var prop in GetKnownProperties(this).Values)
     {
       string name = prop.Name;
       var value = GetValue(name);
@@ -35,12 +32,12 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public void Clear()
   {
-    foreach (var prop in GetKnownProperties().Values) Set(prop.Name, null);
+    foreach (var prop in GetKnownProperties(this).Values) Set(prop.Name, null);
   }
 
   public bool Contains(DocumentProperty item)
   {
-    if (item.Name != null && GetKnownProperties().ContainsKey(item.Name))
+    if (item.Name != null && GetKnownProperties(this).ContainsKey(item.Name))
       return GetValue(item.Name) != null;
     return false;
   }
@@ -54,7 +51,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public bool Remove(DocumentProperty item)
   {
-    if (item.Name != null && GetKnownProperties().ContainsKey(item.Name))
+    if (item.Name != null && GetKnownProperties(this).ContainsKey(item.Name))
     {
       Set(item.Name, null);
       return true;
@@ -69,7 +66,7 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
   public int Count()
   {
     var knownPropertiesCount = 0;
-    foreach (var name in GetKnownProperties().Keys)
+    foreach (var name in GetKnownProperties(this).Keys)
     {
       var item = GetValue(name);
       if (item != null)
@@ -80,13 +77,13 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
 
   public object? GetValue(string propName)
   {
-    var prop = GetKnownProperties()[propName];
+    var prop = GetKnownProperties(this)[propName];
     return prop?.GetValue(this, null);
   }
 
   public DocumentProperty? GetProperty(string propName)
   {
-    var prop = GetKnownProperties()[propName];
+    var prop = GetKnownProperties(this)[propName];
     var value = prop?.GetValue(this, null);
     return new DocumentProperty(propName, prop?.PropertyType, value);
   }
@@ -110,12 +107,26 @@ public class KnownDocumentProperties : ICollection<DocumentProperty>
     return false;
   }
 
+  static Dictionary<Type, Dictionary<string, PropertyInfo>> _knownTypeProperties = new();
+  public static Dictionary<string, PropertyInfo> GetKnownProperties(object obj)
+  {
+    return GetKnownProperties(obj.GetType());
+  }
+
+  public static Dictionary<string, PropertyInfo> GetKnownProperties(Type ofType)
+  {
+    if (!_knownTypeProperties.TryGetValue(ofType, out var _properties))
+    {
+      _properties = ofType.GetProperties()
+        .Where(item => item.Name != "Count" || item.Name != "IsReadOnly").ToDictionary(item => item.Name);
+      _knownTypeProperties.Add(ofType, _properties);
+    }
+    return _properties;
+  }
+
   public Dictionary<string, PropertyInfo> GetKnownProperties()
   {
-    if (_properties == null)
-      _properties = this.GetType().GetProperties()
-        .Where(item => item.Name != "Count" || item.Name != "IsReadOnly").ToDictionary(item => item.Name);
-    return _properties;
+    return GetKnownProperties(this.GetType());
   }
 
   public void Add(object item)

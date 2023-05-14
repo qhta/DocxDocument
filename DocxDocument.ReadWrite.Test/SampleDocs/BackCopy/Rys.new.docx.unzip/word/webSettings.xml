@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:webSettings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:optimizeForBrowser w:val="true" />
+  <w:allowPNG w:val="true" />
+</w:webSettings>

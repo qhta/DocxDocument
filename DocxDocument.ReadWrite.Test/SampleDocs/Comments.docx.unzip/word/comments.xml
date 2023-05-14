@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<w:comments xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
+  <w:comment w:id="223" w:author="Jarosław Kuchta" w:date="2023-01-19T10:31:00Z" w:initials="JK">
+    <w:p w14:paraId="0FF85BE3" w14:textId="46045747" w:rsidR="00993125" w:rsidRDefault="00993125">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Konsekwentnie małymi literami ***</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="292" w:author="Jarosław Kuchta" w:date="2023-01-19T10:15:00Z" w:initials="JK">
+    <w:p w14:paraId="142DBAEB" w14:textId="4CB68ECC" w:rsidR="00EC21FD" w:rsidRDefault="00EC21FD">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Sformatować jak powyżej.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="293" w:author="Jarosław Kuchta" w:date="2023-01-19T10:16:00Z" w:initials="JK">
+    <w:p w14:paraId="3A64BF55" w14:textId="7541F58A" w:rsidR="00EC21FD" w:rsidRDefault="00EC21FD">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:proofErr w:type="spellStart" />
+      <w:r>
+        <w:t>j.w</w:t>
+      </w:r>
+      <w:proofErr w:type="spellEnd" />
+      <w:r>
+        <w:t>.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="296" w:author="Jarosław Kuchta" w:date="2023-01-19T10:16:00Z" w:initials="JK">
+    <w:p w14:paraId="7A8F8E8B" w14:textId="63B174EA" w:rsidR="00EC21FD" w:rsidRDefault="00EC21FD">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>zmienić szyk</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="301" w:author="Jarosław Kuchta" w:date="2023-01-19T10:27:00Z" w:initials="JK">
+    <w:p w14:paraId="43443701" w14:textId="1B1988DA" w:rsidR="00993125" w:rsidRDefault="00993125">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Nazwy połączyć z opisami w jednym wierszu. **</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="302" w:author="Jarosław Kuchta" w:date="2023-01-19T10:21:00Z" w:initials="JK">
+    <w:p w14:paraId="3616C848" w14:textId="50FD0684" w:rsidR="009553DC" w:rsidRDefault="009553DC" w:rsidP="00993125">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+        <w:jc w:val="both" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t xml:space="preserve">Usunąć typy wyników konstruktorów i </w:t>
+      </w:r>
+      <w:proofErr w:type="spellStart" />
+      <w:r>
+        <w:t>void</w:t>
+      </w:r>
+      <w:proofErr w:type="spellEnd" />
+      <w:r>
+        <w:t>. Jak widać może to powodować nieczytelne przenoszenie części sygnatury operacji do następnego wiersza.</w:t>
+      </w:r>
+      <w:r w:rsidR="00993125">
+        <w:t xml:space="preserve"> **</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="303" w:author="Jarosław Kuchta" w:date="2023-01-19T10:24:00Z" w:initials="JK">
+    <w:p w14:paraId="1B61ABD6" w14:textId="18E430C0" w:rsidR="00993125" w:rsidRDefault="00993125">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>To są chyba operacje konstruktora, a nie kreatora. ***</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="326" w:author="Jarosław Kuchta" w:date="2023-01-19T10:29:00Z" w:initials="JK">
+    <w:p w14:paraId="75F7952E" w14:textId="6427A926" w:rsidR="00993125" w:rsidRDefault="00993125">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Konsekwentnie małymi literami ***</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="327" w:author="Jarosław Kuchta" w:date="2023-01-16T16:47:00Z" w:initials="JK">
+    <w:p w14:paraId="7ED05F37" w14:textId="305ACC1F" w:rsidR="00F4236E" w:rsidRDefault="00F4236E">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Cały podrozdział 4.2 sprawdzę jeszcze raz po poprawieniu.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="411" w:author="Jarosław Kuchta" w:date="2023-01-19T10:37:00Z" w:initials="JK">
+    <w:p w14:paraId="65C194DE" w14:textId="522F31FF" w:rsidR="00086DCA" w:rsidRDefault="00086DCA">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Przerobić na tryb bezosobowy.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="415" w:author="Jarosław Kuchta" w:date="2023-01-16T17:01:00Z" w:initials="JK">
+    <w:p w14:paraId="0C18219F" w14:textId="432FB9CA" w:rsidR="00D76A33" w:rsidRDefault="00D76A33">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>I które podejście wybrano?</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="416" w:author="Daniel Pater" w:date="2023-01-18T22:27:00Z" w:initials="DP">
+    <w:p w14:paraId="613BC753" w14:textId="77777777" w:rsidR="001774AD" w:rsidRDefault="001774AD">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Odpowiedź w trakcie pisania</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="429" w:author="Jarosław Kuchta" w:date="2023-01-19T10:42:00Z" w:initials="JK">
+    <w:p w14:paraId="77FD751B" w14:textId="71AA5C71" w:rsidR="00086DCA" w:rsidRDefault="00086DCA">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Od małej litery, przecinki na końcu punktu.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="430" w:author="Jarosław Kuchta" w:date="2023-01-19T10:44:00Z" w:initials="JK">
+    <w:p w14:paraId="319292C7" w14:textId="213F3D2F" w:rsidR="00361A7F" w:rsidRDefault="00361A7F">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Bez wytłuszczenia, ale za to kursywą. ***</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="431" w:author="Jarosław Kuchta" w:date="2023-01-19T10:46:00Z" w:initials="JK">
+    <w:p w14:paraId="48267643" w14:textId="2B219DF0" w:rsidR="0047698B" w:rsidRDefault="0047698B">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>To są zdania, a więc od wielkiej litery.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="454" w:author="Jarosław Kuchta" w:date="2023-01-19T11:20:00Z" w:initials="JK">
+    <w:p w14:paraId="793F12DC" w14:textId="179369FD" w:rsidR="00842FB1" w:rsidRDefault="00842FB1">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Konsekwentnie wyrównać lewą stronę do pozostałych akapitów. **</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="474" w:author="Jarosław Kuchta" w:date="2023-01-19T11:23:00Z" w:initials="JK">
+    <w:p w14:paraId="0E0CD332" w14:textId="72CEB100" w:rsidR="00842FB1" w:rsidRDefault="00842FB1">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>To nie pasuje do pracy inżynierskiej.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+  <w:comment w:id="484" w:author="Jarosław Kuchta" w:date="2023-01-19T11:24:00Z" w:initials="JK">
+    <w:p w14:paraId="7AC67835" w14:textId="4BF9AB82" w:rsidR="00842FB1" w:rsidRDefault="00842FB1">
+      <w:pPr>
+        <w:pStyle w:val="Tekstkomentarza" />
+      </w:pPr>
+      <w:r>
+        <w:rPr>
+          <w:rStyle w:val="Odwoaniedokomentarza" />
+        </w:rPr>
+        <w:annotationRef />
+      </w:r>
+      <w:r>
+        <w:t>Potrzebne krótkie (1-2 zdania) podsumowanie tego rozdziału.</w:t>
+      </w:r>
+    </w:p>
+  </w:comment>
+</w:comments>
