@@ -90,16 +90,18 @@ public static class BooleanValueConverter
         if (itemElement != null)
           itemElement.Remove();
       }
-      if (value == true)
+      if (value != null)
       {
         var itemElement = new ElementType();
+        itemElement.Val = value;
         openXmlElement.AppendChild(itemElement);
       }
     }
   }
+
   #endregion
 
-  #region OnOffType conversion.
+  #region Math OnOffType conversion.
   public static Boolean? GetValue(DXM.OnOffType? openXmlElement)
   {
     if (openXmlElement?.Val?.Value != null)
@@ -373,7 +375,7 @@ public static class BooleanValueConverter
     var valueProp = typeof(ElementType).GetProperty("Val") ?? typeof(ElementType).GetProperty("Value");
     if (valueProp == null)
       throw new InvalidProgramException($"Property \"Value\" not found in type {typeof(ElementType)}");
-   valueProp.SetValue(openXmlElement, value);
+    valueProp.SetValue(openXmlElement, value);
     return openXmlElement;
   }
 
@@ -437,7 +439,7 @@ public static class BooleanValueConverter
     //if (value==true)
     //  valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.One));
     //else
-    if (value==false)
+    if (value == false)
       valueProp.SetValue(openXmlElement, new DX.EnumValue<DXO10W.OnOffValues>(DXO10W.OnOffValues.Zero));
     return openXmlElement;
   }
@@ -452,7 +454,7 @@ public static class BooleanValueConverter
     //if (value==true)
     //  valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.One));
     //else
-    if (value==false)
+    if (value == false)
       valueProp.SetValue(openXmlElement, new DX.EnumValue<DXM.BooleanValues>(DXM.BooleanValues.Zero));
     return openXmlElement;
   }
