@@ -35,7 +35,7 @@ public static class DivConverter
 
   private static void SetBlockQuote(DXW.Div openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BlockQuote>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BlockQuote>(openXmlElement, value, null, "1");
   }
   #endregion
 
@@ -52,7 +52,7 @@ public static class DivConverter
 
   private static void SetBodyDiv(DXW.Div openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BodyDiv>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BodyDiv>(openXmlElement, value, null, "1");
   }
   #endregion
 

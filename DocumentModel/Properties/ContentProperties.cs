@@ -67,7 +67,7 @@ public partial class ContentProperties: KnownDocumentProperties
   /// <summary>
   ///   The set of hyperlinks that were in this document when last saved.
   /// </summary>
-  public StringList? HyperlinkList { get; set; }
+  public DMPr.HyperlinkList? HyperlinkList { get; set; }
 
   /// <summary>
   ///   Specifies that one or more hyperlinks in this part were updated exclusively in this part by a producer. 

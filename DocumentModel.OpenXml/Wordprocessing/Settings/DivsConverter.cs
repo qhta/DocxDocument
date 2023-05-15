@@ -46,7 +46,6 @@ public static class DivsConverter
 
   public static OpenXmlElement CreateItemElement(DM.IModelElement model, object? data = null)
   {
-    var settings = data as DXW.WebSettings;
     if (model is DMW.Div divModel)
       return DivConverter.CreateOpenXmlElement(divModel);
 
