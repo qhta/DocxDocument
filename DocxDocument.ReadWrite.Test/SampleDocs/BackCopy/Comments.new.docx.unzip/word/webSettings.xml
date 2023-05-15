@@ -2,7 +2,7 @@
 <w:webSettings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:divs>
     <w:div w:id="5257358">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -15,7 +15,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="32779025">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -28,7 +28,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="39593055">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -41,7 +41,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="89394088">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -54,7 +54,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="104811338">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -67,7 +67,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="108135397">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -80,7 +80,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="126360641">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -93,7 +93,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="128324380">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -106,7 +106,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="166209667">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -119,7 +119,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="167718041">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -132,7 +132,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="227419095">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -145,7 +145,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="244270581">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -158,7 +158,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="322129706">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -171,7 +171,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="337931434">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -184,7 +184,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="476530561">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -197,7 +197,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="500702354">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -210,7 +210,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="608658440">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -223,7 +223,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="787284461">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -236,7 +236,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="872377644">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -249,7 +249,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="978532368">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -262,7 +262,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1008020637">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -275,7 +275,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1046367120">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -288,7 +288,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1144348636">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -301,7 +301,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1213687426">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -314,7 +314,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1219591754">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -327,7 +327,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1223904752">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -340,7 +340,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1324159098">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -353,7 +353,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1342582761">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -366,7 +366,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1500076907">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -379,7 +379,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1776172402">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -392,7 +392,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1809279249">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -405,7 +405,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="1855991648">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -418,7 +418,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="2014457734">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -431,7 +431,7 @@
       </w:divBdr>
     </w:div>
     <w:div w:id="2050451470">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -445,7 +445,7 @@
     </w:div>
   </w:divs>
   <w:encoding w:val="windows-1252" />
-  <w:optimizeForBrowser w:val="true" />
-  <w:relyOnVML w:val="true" />
-  <w:allowPNG w:val="true" />
+  <w:optimizeForBrowser />
+  <w:relyOnVML />
+  <w:allowPNG />
 </w:webSettings>

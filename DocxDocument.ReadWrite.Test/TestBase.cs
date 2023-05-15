@@ -35,6 +35,21 @@ public class TestBase
   public string TestPath { get; set; } = string.Empty;
 
   /// <summary>
+  /// Collects and returns the list of document files in the <paramref name="testPath"/>"/>.
+  /// All *.docx, *.dotx and *.dotm files are collected.
+  /// </summary>
+  /// <returns>
+  /// List of full filenames.
+  /// </returns>
+  protected List<string> GetTestFilenames(string testPath)
+  {
+    var result = Directory.EnumerateFiles(testPath, "*.docx").ToList();
+    result.AddRange(Directory.EnumerateFiles(testPath, "*.dotm"));
+    result.AddRange(Directory.EnumerateFiles(testPath, "*.dotx"));
+    return result;
+  }
+
+  /// <summary>
   /// Writes the line to debug output window and test explorer output window.
   /// </summary>
   /// <param name="str">Line of text. Can be empty</param>
@@ -140,8 +155,15 @@ public class TestBase
     using (var newPackage = ZipPackage.Open(filename))
     {
       var unzipPath = filename + ".unzip";
-      if (Directory.Exists(unzipPath))
-        Directory.Delete(unzipPath, true);
+      try
+      {
+        if (Directory.Exists(unzipPath))
+          Directory.Delete(unzipPath, true);
+      }
+      catch
+      {
+        WriteLine($"Can't delete directory {unzipPath}. Some old files can remain.");
+      }
       foreach (var part in newPackage.GetParts())
       {
         var path = filename + ".unzip" + part.Uri.OriginalString.Replace("/", "\\");
@@ -194,7 +216,7 @@ public class TestBase
       }
       return false;
     }
-    if (!CompareFiles(origDirectory, newDirectory, showDetails))
+    if (!CompareDirectories(origDirectory, newDirectory, showDetails))
       return false;
     return true;
   }
@@ -273,28 +295,8 @@ public class TestBase
   /// <param name="newDirectory">New directory to compare.</param>
   /// <param name="showDetails">Whether to show comparison details</param>
   /// <returns></returns>
-  protected bool CompareFiles(string origDirectory, string newDirectory, bool showDetails)
+  protected bool CompareDirectories(string origDirectory, string newDirectory, bool showDetails)
   {
-    TraceTextWriter? traceWriter = null;
-    if (showDetails)
-    {
-      traceWriter = new TraceTextWriter(true, true);
-    }
-    var xmlComparer = new XmlFileComparer(new FileCompareOptions(), traceWriter);
-    return InternalCompareFiles(origDirectory, newDirectory, xmlComparer, showDetails);
-  }
-
-  /// <summary>
-  ///  Compares files in directory structures.
-  /// </summary>
-  /// <param name="origDirectory">Original directory to compare.</param>
-  /// <param name="newDirectory">New directory to compare.</param>
-  /// <param name="xmlComparer">Comparer for XmlFiles</param>
-  /// <param name="showDetails">Whether to show comparison details</param>
-  /// <returns></returns>
-  private bool InternalCompareFiles(string origDirectory, string newDirectory, XmlFileComparer xmlComparer, bool showDetails)
-  {
-    var ok = true;
     var origFiles = Directory.GetFiles(origDirectory).Select(item => Path.GetFileName(item)).ToList();
     var newFiles = Directory.GetFiles(newDirectory).Select(item => Path.GetFileName(item)).ToList();
     origFiles.Sort();
@@ -303,29 +305,48 @@ public class TestBase
     {
       var origFilePath = Path.Combine(origDirectory, origFile);
       var newFilePath = Path.Combine(newDirectory, origFile);
-      if (showDetails)
-        xmlComparer.Writer?.WriteLine($"Verifying {newFilePath.Substring(TestPath.Length + 1)}");
-      var ext = Path.GetExtension(newFilePath);
-      if (ext == ".xml" || ext == ".rels")
-      {
-        if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
-        {
-          ok = false;
-          return false;
-        }
-      }
+      if (!CompareFiles(origFilePath, newFilePath, showDetails))
+        return false;
     }
     var origDirs = Directory.GetDirectories(origDirectory).Select(item => Path.GetFileName(item)).ToList();
     var newDirs = Directory.GetDirectories(newDirectory).Select(item => Path.GetFileName(item)).ToList();
     origDirs.Sort();
     newDirs.Sort();
     foreach (var origDir in origDirs)
-      if (!InternalCompareFiles(Path.Combine(origDirectory, origDir),
-        Path.Combine(newDirectory, origDir), xmlComparer, showDetails))
+      if (!CompareDirectories(Path.Combine(origDirectory, origDir),
+        Path.Combine(newDirectory, origDir), showDetails))
       {
-        ok = false;
         return false;
       }
+    return true;
+  }
+
+  /// <summary>
+  ///  Compares pair of files.
+  /// </summary>
+  /// <param name="origFilePath">Original file to compare.</param>
+  /// <param name="newFilePath">New file to compare.</param>
+  /// <param name="showDetails">Whether to show comparison details</param>
+  /// <returns></returns>
+  private bool CompareFiles(string origFilePath, string newFilePath, bool showDetails)
+  {
+    var ok = true;
+    TraceTextWriter? traceWriter = null;
+    traceWriter = new TraceTextWriter(true, true, true);
+    var ext = Path.GetExtension(newFilePath);
+    if (ext == ".xml" || ext == ".rels")
+    {
+      var xmlComparer = new XmlFileComparer(new FileCompareOptions(), traceWriter);
+      var startOfFileMsg = $"Verifying {newFilePath.Substring(TestPath.Length + 1)}";
+      if (showDetails) 
+        traceWriter?.WriteLine(startOfFileMsg);
+      else
+        xmlComparer.Options.StartOfFile = startOfFileMsg;
+      if (!xmlComparer.CompareFiles(newFilePath, origFilePath))
+      {
+        return false;
+      }
+    }
     return ok;
   }
 

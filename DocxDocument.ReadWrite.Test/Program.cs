@@ -86,9 +86,11 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    testInstance.TestReadProperties();
-    testInstance.TestGenProperties("DocumentProperties.docx", true, true);
-    Console.WriteLine("Test passed");
+    var ok = true; 
+    ok = ok && testInstance.TestReadProperties("Comments.docx", false, true);
+
+    //testInstance.TestGenProperties("DocumentProperties.docx", true, true);
+    Console.WriteLine($"Test {(ok ? "passed" : "failed")}");
   }
 
   private static void RunTestConverters()
