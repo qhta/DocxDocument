@@ -79,7 +79,8 @@ public static class BooleanValueConverter
     return false;
   }
 
-  public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value)
+  public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value, 
+    params string?[] boolStrings)
     where ElementType : DXW.OnOffType, new()
   {
     if (openXmlElement != null)
@@ -92,9 +93,22 @@ public static class BooleanValueConverter
       }
       if (value != null)
       {
-        var itemElement = new ElementType();
-        itemElement.Val = value;
-        openXmlElement.AppendChild(itemElement);
+        string? valStr = null;
+        if (boolStrings != null)
+        {
+          if (value == false && boolStrings.Length > 0)
+            valStr = boolStrings[0];
+          if (value == true && boolStrings.Length > 1)
+            valStr = boolStrings[1];
+        }
+        if (valStr != null || value==true)
+        {
+          var itemElement = new ElementType();
+          if (valStr!=null)
+            itemElement.SetAttribute(new OpenXmlAttribute{ 
+              NamespaceUri = openXmlElement.NamespaceUri, LocalName = "val", Value = valStr });
+          openXmlElement.AppendChild(itemElement);
+        }
       }
     }
   }

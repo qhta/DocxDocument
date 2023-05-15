@@ -2,7 +2,7 @@
 <w:webSettings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:divs>
     <w:div w:id="122358570">
-      <w:bodyDiv w:val="true" />
+      <w:bodyDiv w:val="1" />
       <w:marLeft w:val="0" />
       <w:marRight w:val="0" />
       <w:marTop w:val="0" />
@@ -15,6 +15,6 @@
       </w:divBdr>
     </w:div>
   </w:divs>
-  <w:optimizeForBrowser w:val="true" />
-  <w:allowPNG w:val="true" />
+  <w:optimizeForBrowser />
+  <w:allowPNG />
 </w:webSettings>

@@ -34,32 +34,39 @@ public class TestProperties : TestBase
 
   #region test properties read
   /// <summary>
-  /// Tests the read normal template properties.
+  /// Tests the document properties read from all docx files in folder specified by test path.
   /// </summary>
-  [Test]
-  public void TestReadNormalTemplateProperties()
+  [Test(ExpectedResult =true)]
+  public bool TestReadProperties()
   {
-    var filename = Path.Combine(TestPath, "Normal.dotm");
-    TestReadProperties(filename, true);
+    foreach (var filename in GetTestFilenames(TestPath))
+      if (!TestReadProperties(filename))
+        return false;
+    return true;
   }
 
   /// <summary>
   /// Tests the document properties read from all docx files in folder specified by test path.
   /// </summary>
-  [Test]
-  public void TestReadProperties()
+  /// <param name="showDetails">Specifies whether test details should be shown.</param>
+  /// <param name="copyBack">Specifies whether test document should be copied back and modified with deserialized data</param>
+  /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
+  public bool TestReadProperties(bool showDetails = false, bool copyBack = false, bool openWord = false)
   {
-    foreach (var filename in Directory.EnumerateFiles(TestPath, "*.docx"))
-      TestReadProperties(filename);
+    foreach (var filename in GetTestFilenames(TestPath))
+      if (!TestReadProperties(filename, showDetails, copyBack, openWord))
+        return false;
+    return true;
   }
 
   /// <summary>
   /// Tests the document properties read from the file
   /// </summary>
   /// <param name="filename">The filename.</param>
-  /// <param name="showDetails">Specifies if test details should be shown.</param>
+  /// <param name="showDetails">Specifies whether test details should be shown.</param>
+  /// <param name="copyBack">Specifies whether test document should be copied back and modified with deserialized data</param>
   /// <param name="openWord">Specifies that new document should be opened in MS Word</param>
-  public virtual bool TestReadProperties(string filename, bool showDetails = false, bool openWord = false)
+  public virtual bool TestReadProperties(string filename, bool showDetails = false, bool copyBack = false, bool openWord = false)
   {
     if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
       filename = Path.Combine(TestPath, filename);
@@ -68,9 +75,10 @@ public class TestProperties : TestBase
 
     #region test read
     WriteLine($"Testing read properties of: {filename}");
+    DocumentModel.Wordprocessing.Document document;
     using (var reader = new DocxReader(filename))
     {
-      var document = reader.GetDocument(PartsMask.AllDocumentProperties);
+      document = reader.GetDocument(PartsMask.AllDocumentProperties);
       Assert.IsNotNull(document, "No document read");
       Assert.IsNotNull(document.Properties, "No document properties read");
       Assert.That(document.Properties.Count(), Is.GreaterThan(0), "Document properties count is 0");
@@ -87,71 +95,69 @@ public class TestProperties : TestBase
       if (!CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails))
         ok = false;
       #endregion
-      if (ok)
+    }
+    if (ok)
+    {
+      #region serialization
+      var oldProperties = document.Properties;//TestReadProperties(filename, true);
+      Assert.IsNotNull(oldProperties, "No document properties read");
+      if (oldProperties == null)
+        return false;
+      var textWriter = new StringWriter();
+      var extraTypes = Assembly.Load("DocumentModel").GetTypes()
+        .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
+      var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
+        new SerializationOptions { AcceptAllProperties = true });
+      try
       {
-        #region serialization
-        var oldProperties = document.Properties;//TestReadProperties(filename, true);
-        Assert.IsNotNull(oldProperties, "No document properties read");
-        if (oldProperties == null)
-          return false;
-        var textWriter = new StringWriter();
-        var extraTypes = Assembly.Load("DocumentModel").GetTypes()
-          .Where(item => item.IsPublic && !item.IsGenericType).ToArray();
-        var serializer = new QXmlSerializer(typeof(DocumentProperties), extraTypes.ToArray(),
-          new SerializationOptions { AcceptAllProperties = true });
-        try
+        serializer.Serialize(textWriter, oldProperties);
+      }
+      catch (Exception ex)
+      {
+        Console.WriteLine(ex.Message);
+      }
+      textWriter.Flush();
+      string str = textWriter.ToString();
+      if (showDetails)
+      {
+        WriteLine(str);
+        WriteLine();
+      }
+      #endregion
+
+      #region deserialization
+      var textReader = new StringReader(str);
+      var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
+      Assert.IsNotNull(newProperties, $"Deserialized properties are null");
+      var diffs = new DiffList();
+      ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
+      if (!ok)
+        foreach (var diff in diffs)
+          WriteLine(diff.ToString());
+      Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
+      #endregion
+      if (ok && copyBack)
+      {
+        #region copy back
+        if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
+          filename = Path.Combine(TestPath, filename);
+        newFilename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "BackCopy"),
+          Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
+        File.Copy(filename, newFilename, true);
+        using (var writer = DocxWriter.Open(newFilename))
         {
-          serializer.Serialize(textWriter, oldProperties);
+          writer.SetDocumentProperties(newProperties, PartsMask.AllDocumentProperties);
         }
-        catch (Exception ex)
-        {
-          Console.WriteLine(ex.Message);
-        }
-        textWriter.Flush();
-        string str = textWriter.ToString();
-        if (showDetails)
-        {
-          WriteLine(str);
-          WriteLine();
-        }
+        UnzipFile(filename);
+        UnzipFile(newFilename);
+        ok = TestDirectories(filename + ".unzip", newFilename + ".unzip", showDetails);
         #endregion
 
-        #region deserialization
-        var textReader = new StringReader(str);
-        var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
-        Assert.IsNotNull(newProperties, $"Deserialized properties are null");
-        var diffs = new DiffList();
-        ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
-        if (!ok)
-          foreach (var diff in diffs)
-            WriteLine(diff.ToString());
-        Assert.That(ok, $"Deserialized {diffs.AssertMessage}");
-        #endregion
-        if (ok)
+        if (ok && openWord)
         {
-          #region copy back
-          if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
-            filename = Path.Combine(TestPath, filename);
-          newFilename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "BackCopy"),
-            Path.GetFileNameWithoutExtension(filename) + ".new" + Path.GetExtension(filename));
-          File.Copy(filename, newFilename, true);
-          using (var writer = DocxWriter.Open(newFilename))
-          {
-            writer.SetDocumentProperties(newProperties, PartsMask.AllDocumentProperties);
-          }
-          #endregion
+          var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
+          Process.Start(processStartInfo);
         }
-      }
-    }
-    if (ok && newFilename != null)
-    {
-      UnzipFile(filename);
-      UnzipFile(newFilename);
-      ok = TestDirectories(filename + ".unzip", newFilename + ".unzip", showDetails);
-      if (ok && openWord)
-      {
-        var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
-        Process.Start(processStartInfo);
       }
     }
     return ok;
@@ -207,7 +213,7 @@ public class TestProperties : TestBase
     int origExtendedPropertiesCount = 0;
     int origContentPropertiesCount = 0;
     int origStatisticPropertiesCount = 0;
-    if (contentDocumentProperties != null && origDocument.ExtendedFilePropertiesPart!=null)
+    if (contentDocumentProperties != null && origDocument.ExtendedFilePropertiesPart != null)
     {
       origExtendedPropertiesCount = origDocument.ExtendedFilePropertiesPart?.Properties?.Elements().Count() ?? 0;
       origStatisticPropertiesCount = origDocument.ExtendedFilePropertiesPart?.Properties?.Elements()
@@ -369,7 +375,7 @@ public class TestProperties : TestBase
 
     WriteLine($"Testing generating properties of: {filename}");
 
-    filename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "Generated") , Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
+    filename = Path.Combine(Path.Combine(Path.GetDirectoryName(filename) ?? "", "Generated"), Path.GetFileNameWithoutExtension(filename) + ".gen" + Path.GetExtension(filename));
     CreateWordprocessingDocument(filename);
 
     var document = new DMW.Document();

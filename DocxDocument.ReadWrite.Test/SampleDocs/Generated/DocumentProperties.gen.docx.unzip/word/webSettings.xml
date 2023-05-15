@@ -1,62 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <w:webSettings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:frameset>
-    <w:sz w:val="2076991603" />
+    <w:sz w:val="554265910" />
     <w:framesetSplitbar>
-      <w:w w:val="655947521" />
-      <w:color w:val="37F994" />
+      <w:w w:val="1517338938" />
+      <w:color w:val="4FED28" />
       <w:flatBorders />
     </w:framesetSplitbar>
     <w:frameLayout w:val="rows" />
     <w:frame>
-      <w:sz w:val="189959230" />
+      <w:sz w:val="1119964097" />
       <w:name w:val="FrameName" />
       <w:sourceFileName r:id="Id1" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" />
-      <w:marW w:val="137579023" />
-      <w:marH w:val="557927316" />
-      <w:scrollbar w:val="on" />
+      <w:marW w:val="651050720" />
+      <w:marH w:val="1101626299" />
+      <w:scrollbar w:val="off" />
       <w:noResizeAllowed />
       <w:linkedToFile />
     </w:frame>
   </w:frameset>
   <w:divs>
-    <w:div w:id="1393921423">
-      <w:blockQuote w:val="true" />
-      <w:bodyDiv w:val="false" />
-      <w:marLeft w:val="640131271" />
-      <w:marRight w:val="994553748" />
-      <w:marTop w:val="73981254" />
-      <w:marBottom w:val="640025449" />
+    <w:div w:id="1725315717">
+      <w:marLeft w:val="1578727081" />
+      <w:marRight w:val="1057392639" />
+      <w:marTop w:val="1556739355" />
+      <w:marBottom w:val="1302166482" />
       <w:divBdr>
-        <w:top w:val="waveline" w:color="22F5C6" w:sz="245117036" w:space="181604785" w:shadow="1" w:frame="1" />
-        <w:left w:val="basicBlackDots" w:color="8AA54F" w:sz="99827735" w:space="292326686" w:shadow="0" w:frame="1" />
-        <w:bottom w:val="weavingRibbon" w:color="36A7DE" w:sz="134067326" w:space="109122639" w:shadow="0" w:frame="0" />
-        <w:right w:val="paperClips" w:color="85EDED" w:sz="2834539" w:space="104668047" w:shadow="0" w:frame="0" />
+        <w:top w:val="decoArch" w:color="470C6A" w:sz="8030557" w:space="420464062" w:shadow="0" w:frame="0" />
+        <w:left w:val="partyGlass" w:color="7CF52F" w:sz="83435047" w:space="220992360" w:shadow="1" w:frame="0" />
+        <w:bottom w:val="confettiStreamers" w:color="C0525F" w:sz="150917398" w:space="176804912" w:shadow="1" w:frame="1" />
+        <w:right w:val="twistedLines2" w:color="728CB6" w:sz="15396344" w:space="411358133" w:shadow="0" w:frame="1" />
       </w:divBdr>
-      <w:div w:id="770514023">
-        <w:blockQuote w:val="true" />
-        <w:bodyDiv w:val="true" />
-        <w:marLeft w:val="486959826" />
-        <w:marRight w:val="828064055" />
-        <w:marTop w:val="1428248796" />
-        <w:marBottom w:val="240413285" />
+      <w:div w:id="466201295">
+        <w:marLeft w:val="1944023114" />
+        <w:marRight w:val="1925615989" />
+        <w:marTop w:val="2022338064" />
+        <w:marBottom w:val="811063262" />
         <w:divBdr>
-          <w:top w:val="tribal1" w:color="8359BC" w:sz="408055719" w:space="208083108" w:shadow="1" w:frame="0" />
-          <w:left w:val="thick" w:color="57C7B0" w:sz="311499403" w:space="365668998" w:shadow="0" w:frame="0" />
-          <w:bottom w:val="basicWhiteDashes" w:color="56AA90" w:sz="230410030" w:space="70837800" w:shadow="0" w:frame="1" />
-          <w:right w:val="thickThinMediumGap" w:color="D010D6" w:sz="180542863" w:space="43398398" w:shadow="0" w:frame="0" />
+          <w:top w:val="paperClips" w:color="DA2C87" w:sz="161758376" w:space="197282453" w:shadow="1" w:frame="0" />
+          <w:left w:val="birdsFlight" w:color="724EFD" w:sz="235604981" w:space="149967979" w:shadow="1" w:frame="0" />
+          <w:bottom w:val="firecrackers" w:color="186C7E" w:sz="46489100" w:space="112621483" w:shadow="0" w:frame="1" />
+          <w:right w:val="stars3d" w:color="39E6F8" w:sz="346735652" w:space="371672155" w:shadow="1" w:frame="1" />
         </w:divBdr>
       </w:div>
     </w:div>
   </w:divs>
   <w:encoding w:val="WebPageEncoding" />
-  <w:optimizeForBrowser w:val="false" />
-  <w:relyOnVML w:val="false" />
-  <w:allowPNG w:val="true" />
-  <w:doNotRelyOnCSS w:val="true" />
-  <w:doNotSaveAsSingleFile w:val="true" />
-  <w:doNotOrganizeInFolder w:val="true" />
-  <w:doNotUseLongFileNames w:val="true" />
-  <w:pixelsPerInch w:val="824124613" />
-  <w:targetScreenSz w:val="640x480" />
+  <w:allowPNG />
+  <w:doNotRelyOnCSS />
+  <w:doNotOrganizeInFolder />
+  <w:doNotUseLongFileNames />
+  <w:pixelsPerInch w:val="452563373" />
+  <w:targetScreenSz w:val="1800x1440" />
 </w:webSettings>

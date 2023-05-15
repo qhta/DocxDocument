@@ -141,7 +141,8 @@ public static class VTVectorConverter
     {
       SetSize(openXmlElement, (uint)value.Count);
       SetBaseType(openXmlElement, value.BaseType);
-      SetValue(openXmlElement, value);
+      foreach (var item in value)
+        openXmlElement.AppendChild(VariantConverter.CreateOpenXmlElement(item));
     }
     return openXmlElement;
   }
@@ -151,6 +152,7 @@ public static class VTVectorConverter
     var openXmlElement = new VTVector();
     if (value != null)
     {
+      SetSize(openXmlElement, (uint)value.Count);
       SetBaseType(openXmlElement, VariantType.Lpwstr);
       SetStringList(openXmlElement, value);
     }

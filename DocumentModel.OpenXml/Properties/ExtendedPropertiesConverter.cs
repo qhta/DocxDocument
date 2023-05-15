@@ -1,4 +1,5 @@
 using DocumentModel;
+using DocumentModel.Properties;
 
 namespace DocumentModel.OpenXml.Properties;
 
@@ -349,15 +350,15 @@ public static class ExtendedPropertiesConverter
   /// <summary>
   ///   Hyperlink List.
   /// </summary>
-  public static StringList? GetHyperlinkList(DXEP.Properties? openXmlElement)
+  public static HyperlinkList? GetHyperlinkList(DXEP.Properties? openXmlElement)
   {
-    return HyperlinkListConverter.GetStrings(openXmlElement?.HyperlinkList);
+    return HyperlinkListConverter.CreateModelElement(openXmlElement?.HyperlinkList);
   }
 
-  public static void SetHyperlinkList(DXEP.Properties openXmlElement, StringList? value)
+  public static void SetHyperlinkList(DXEP.Properties openXmlElement, HyperlinkList? value)
   {
     if (openXmlElement != null)
-      HyperlinkListConverter.SetStrings(openXmlElement.HyperlinkList, value);
+      openXmlElement.HyperlinkList = HyperlinkListConverter.CreateOpenXmlElement(value);
   }
 
   /// <summary>

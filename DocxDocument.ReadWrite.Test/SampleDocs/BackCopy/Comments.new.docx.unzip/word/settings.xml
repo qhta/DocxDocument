@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:zoom w:percent="110" />
-  <w:mirrorMargins w:val="true" />
+  <w:mirrorMargins />
   <w:proofState w:spelling="clean" w:grammar="clean" />
-  <w:trackRevisions w:val="true" />
+  <w:trackRevisions />
   <w:defaultTabStop w:val="709" />
   <w:hyphenationZone w:val="425" />
   <w:characterSpacingControl w:val="doNotCompress" />
