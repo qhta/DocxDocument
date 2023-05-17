@@ -1,8 +1,11 @@
 ﻿namespace DocumentModel;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
+/// <summary>
+/// XML converter for RGB type. Helps to read/write RGB values from/to XML.
+/// </summary>
 internal class RGBTypeXmlConverter : TypeConverter, IXmlConverter
 {
+#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
   public override bool CanConvertFrom(ITypeDescriptorContext? context, Type sourceType)
   {
     if (sourceType == typeof(string))

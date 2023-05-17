@@ -42,6 +42,7 @@
     <Compile Remove="Properties\DigitalSignature.cs" />
     <Compile Remove="Properties\VectorVariantType.cs" />
     <Compile Remove="Vml\Enums\FillKind.cs" />
+    <Compile Remove="Wordprocessing\Drawings\Color.cs" />
     <Compile Remove="Wordprocessing\Interfaces\ICommonRunContent.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyle.cs" />
     <Compile Remove="Wordprocessing\Table properties\ConditionalFormatStyleTypeConverter.cs" />

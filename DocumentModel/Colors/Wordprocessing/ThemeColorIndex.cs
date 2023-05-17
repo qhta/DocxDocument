@@ -1,11 +1,10 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the ThemeColorValues enumeration.
 /// </summary>
 [JsonConverter(typeof(StringEnumConverter))]
-public enum ThemeColorKind
+public enum ThemeColorIndex
 {
   /// <summary>
   ///   Dark 1 Theme Color.
