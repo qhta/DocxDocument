@@ -519,8 +519,8 @@ public class TestProperties : TestBase
     {
       var div = new DMW.Div();
       SetRandomProperties(div, prop => prop.PropertyType != typeof(DMW.Divs));
-      var div2 = new DMW.Div();
-      div.Children = new DMW.Divs();
+      var div2 = new DMW.Divs();
+      div.Children = new DMW.DivsChildren();
       div.Children.Add(div2);
       SetRandomProperties(div2, prop => prop.PropertyType != typeof(DMW.Divs));
       divs.Add(div);

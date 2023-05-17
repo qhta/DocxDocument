@@ -36,9 +36,6 @@ public static class DivsConverter
 
   public static bool UpdateItem(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
   {
-    if (openXmlElement is DXW.Divs divsetElement && model is DMW.Divs divsetModel)
-      return UpdateOpenXmlElement(divsetElement, divsetModel);
-
     if (openXmlElement is DXW.Div divElement && model is DMW.Div divModel)
       return DivConverter.UpdateOpenXmlElement(divElement, divModel);
     return false;
@@ -55,7 +52,7 @@ public static class DivsConverter
 
 
   #region Divs model conversion.
-  public static DMW.Divs? CreateModelElement(DXW.Divs? openXmlElement)
+  public static DMW.Divs? CreateModelElement(DXW.DivsType? openXmlElement)
   {
     if (openXmlElement != null)
     {
@@ -68,7 +65,7 @@ public static class DivsConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Divs? openXmlElement, DMW.Divs? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DivsType? openXmlElement, DMW.Divs? model, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && model != null)
     {
@@ -84,14 +81,15 @@ public static class DivsConverter
     return false;
   }
 
-  public static DXW.Divs CreateOpenXmlElement(DMW.Divs model)
+  public static ElementType CreateOpenXmlElement<ElementType>(DMW.Divs model)
+    where ElementType : DXW.DivsType, new()
   {
-    var openXmlElement = new DXW.Divs();
+    var openXmlElement = new ElementType();
     UpdateOpenXmlElement(openXmlElement, model);
     return openXmlElement;
   }
 
-  public static bool UpdateOpenXmlElement(DXW.Divs openXmlElement, DMW.Divs model)
+  public static bool UpdateOpenXmlElement(DXW.DivsType openXmlElement, DMW.Divs model)
   {
     return ElementCollectionConverter<DMW.Div>.UpdateOpenXmlElementCollection(
       openXmlElement,
