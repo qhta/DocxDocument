@@ -26,7 +26,7 @@ public static class FramesetSplitbarConverter
   /// <summary>
   /// Frameset Splitter Color.
   /// </summary>
-  private static DMW.Color? GetColor(DXW.FramesetSplitbar openXmlElement)
+  private static DM.Color? GetColor(DXW.FramesetSplitbar openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Color>();
     if (element != null)
@@ -34,12 +34,12 @@ public static class FramesetSplitbarConverter
     return null;
   }
   
-  private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DM.Color? value, DiffList? diffs, string? objName)
   {
     return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
   }
   
-  private static void SetColor(DXW.FramesetSplitbar openXmlElement, DMW.Color? value)
+  private static void SetColor(DXW.FramesetSplitbar openXmlElement, DM.Color? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Color>();
     if (itemElement != null)

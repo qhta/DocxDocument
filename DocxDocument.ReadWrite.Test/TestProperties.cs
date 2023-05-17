@@ -637,9 +637,9 @@ public class TestProperties : TestBase
     {
       return new Twips(Rnd.Next());
     }
-    if (propType == typeof(DMW.Color))
+    if (propType == typeof(DM.Color))
     {
-      return new DMW.Color(Rnd.Next());
+      return new DM.Color(Rnd.Next());
     }
     if (propType.IsClass)
     {

@@ -14,7 +14,7 @@ public class Border: ModelElement
   /// <summary>
   ///   Border Color
   /// </summary>
-  public Color? Color { get; set; }
+  public DM.Color? Color { get; set; }
 
   /// <summary>
   ///   Border Width

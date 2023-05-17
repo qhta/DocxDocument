@@ -64,7 +64,7 @@ public class SdtProperties : ModelElement, IStoryContent
   /// </summary>
   public string? Tag { get; set; }
 
-  public Color? Color { get; set; }
+  public DM.Color? Color { get; set; }
 
   public AppearanceKind? Appearance { get; set; }
 

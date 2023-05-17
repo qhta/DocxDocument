@@ -111,7 +111,7 @@ public abstract class BaseRunProperties: ModelElement
   ///   This color can be explicitly specified, or set to allow the consumer to automatically choose 
   ///   an appropriate color based on the background color behind the run's content. 
   /// </summary>
-  public Color? Color { get; set; }
+  public DM.Color? Color { get; set; }
 
   /// <summary>
   ///   Specifies the amount of character pitch which shall be added or removed after each character in this run 

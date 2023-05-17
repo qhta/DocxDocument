@@ -206,27 +206,27 @@ public static class SdtPropertiesConverter
     }
   }
   
-  private static DMW.Color? GetColor(DXW.SdtProperties openXmlElement)
+  private static DM.Color? GetColor(DXW.SdtProperties openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO13W.Color>();
     if (element != null)
-      return DMXW.Color3Converter.CreateModelElement(element);
+      return DMXW.DMO13WColorConverter.CreateModelElement(element);
     return null;
   }
   
-  private static bool CmpColor(DXW.SdtProperties openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXW.SdtProperties openXmlElement, DM.Color? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Color3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13W.Color>(), value, diffs, objName);
+    return DMXW.DMO13WColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13W.Color>(), value, diffs, objName);
   }
   
-  private static void SetColor(DXW.SdtProperties openXmlElement, DMW.Color? value)
+  private static void SetColor(DXW.SdtProperties openXmlElement, DM.Color? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO13W.Color>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.Color3Converter.CreateOpenXmlElement<DXO13W.Color>(value);
+      itemElement = DMXW.DMO13WColorConverter.CreateOpenXmlElement<DXO13W.Color>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

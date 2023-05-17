@@ -13,7 +13,7 @@ public class FramesetSplitbar: ModelElement
   /// <summary>
   ///   Frameset Splitter Color.
   /// </summary>
-  public Color? Color { get; set; }
+  public DM.Color? Color { get; set; }
 
   /// <summary>
   ///   Do Not Display Frameset Splitters.

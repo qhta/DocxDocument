@@ -1,3 +1,5 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -21,78 +23,6 @@ public static class BorderConverter
   private static void SetVal(DXW.BorderType openXmlElement, DMW.BorderKind? value)
   {
     openXmlElement.Val = EnumValueConverter.CreateEnumValue<DXW.BorderValues, DMW.BorderKind>(value);
-  }
-  
-  /// <summary>
-  /// Border Color
-  /// </summary>
-  private static RGB? GetColor(DXW.BorderType openXmlElement)
-  {
-    return ColorValueConverter.GetValue(openXmlElement?.Color);
-  }
-  
-  private static bool CmpColor(DXW.BorderType openXmlElement, RGB? value, DiffList? diffs, string? objName)
-  {
-    return ColorValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
-  }
-  
-  private static void SetColor(DXW.BorderType openXmlElement, RGB? value)
-  {
-    openXmlElement.Color = ColorValueConverter.CreateStringValue(value);
-  }
-  
-  /// <summary>
-  /// Border Theme Color
-  /// </summary>
-  private static DMW.ThemeColorKind? GetThemeColor(DXW.BorderType openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
-  }
-  
-  private static bool CmpThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
-  }
-  
-  private static void SetThemeColor(DXW.BorderType openXmlElement, DMW.ThemeColorKind? value)
-  {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
-  }
-  
-  /// <summary>
-  /// Border Theme Color Tint
-  /// </summary>
-  private static Percent? GetThemeTint(DXW.BorderType openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
-  }
-  
-  private static bool CmpThemeTint(DXW.BorderType openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
-  }
-  
-  private static void SetThemeTint(DXW.BorderType openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
-  }
-  
-  /// <summary>
-  /// Border Theme Color Shade
-  /// </summary>
-  private static Percent? GetThemeShade(DXW.BorderType openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
-  }
-  
-  private static bool CmpThemeShade(DXW.BorderType openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
-  }
-  
-  private static void SetThemeShade(DXW.BorderType openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
   }
   
   /// <summary>
@@ -187,13 +117,7 @@ public static class BorderConverter
     {
       var value = new DMW.Border();
       value.Type = GetVal(openXmlElement);
-      var color = new DMW.Color();
-      color.RGB = GetColor(openXmlElement);
-      color.ThemeColor = GetThemeColor(openXmlElement);
-      color.ThemeTint = GetThemeTint(openXmlElement);
-      color.ThemeShade = GetThemeShade(openXmlElement);
-      if (!color.IsEmpty())
-        value.Color = color;
+      value.Color = BorderTypeColorConverter.CreateModelElement(openXmlElement);
       value.Width = GetSize(openXmlElement);
       value.Space = GetSpace(openXmlElement);
       value.Shadow = GetShadow(openXmlElement);
@@ -210,13 +134,7 @@ public static class BorderConverter
       var ok = true;
       if (!CmpVal(openXmlElement, value.Type, diffs, objName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.Color?.RGB, diffs, objName))
-        ok = false;
-      if (!CmpThemeColor(openXmlElement, value.Color?.ThemeColor, diffs, objName))
-        ok = false;
-      if (!CmpThemeTint(openXmlElement, value.Color?.ThemeTint, diffs, objName))
-        ok = false;
-      if (!CmpThemeShade(openXmlElement, value.Color?.ThemeShade, diffs, objName))
+      if (!BorderTypeColorConverter.CompareModelElement(openXmlElement, value.Color, diffs, objName))
         ok = false;
       if (!CmpSize(openXmlElement, value.Width, diffs, objName))
         ok = false;
@@ -243,14 +161,11 @@ public static class BorderConverter
   
   public static void UpdateOpenXmlElement(DXW.BorderType openXmlElement, DMW.Border value)
   {
-    SetVal(openXmlElement, value?.Type);
-    SetColor(openXmlElement, value?.Color?.RGB);
-    SetThemeColor(openXmlElement, value?.Color?.ThemeColor);
-    SetThemeTint(openXmlElement, value?.Color?.ThemeTint);
-    SetThemeShade(openXmlElement, value?.Color?.ThemeShade);
-    SetSize(openXmlElement, value?.Width);
-    SetSpace(openXmlElement, value?.Space);
-    SetShadow(openXmlElement, value?.Shadow);
-    SetFrame(openXmlElement, value?.Frame);
+    SetVal(openXmlElement, value.Type);
+    BorderTypeColorConverter.UpdateOpenXmlElement(openXmlElement, value.Color);
+    SetSize(openXmlElement, value.Width);
+    SetSpace(openXmlElement, value.Space);
+    SetShadow(openXmlElement, value.Shadow);
+    SetFrame(openXmlElement, value.Frame);
   }
 }
