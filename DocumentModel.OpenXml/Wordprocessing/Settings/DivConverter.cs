@@ -152,6 +152,34 @@ public static class DivConverter
   }
   #endregion
 
+  #region DivsChild conversion.
+  private static DM.IModelElement? GetDivsChild(DX.OpenXmlElement openXmlElement, object? data = null)
+  {
+    return DivsConverter.CreateModelElement(openXmlElement as DXW.DivsChild);
+  }
+
+  private static bool CmpDivsChild(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value,
+    DiffList? diffs = null, string? objName = null, object? data = null)
+  {
+    return DivsConverter.CompareModelElement(openXmlElement as DXW.DivsChild, value as DMW.Divs, diffs, objName);
+  }
+
+  public static bool UpdateDivsChild(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
+  {
+    if (openXmlElement is DXW.DivsChild divElement && model is DMW.Divs divModel)
+      return DivsConverter.UpdateOpenXmlElement(divElement, divModel);
+    return false;
+  }
+
+  public static OpenXmlElement CreateDivsChild(DM.IModelElement model, object? data = null)
+  {
+    if (model is DMW.Divs divModel)
+      return DivsConverter.CreateOpenXmlElement<DXW.DivsChild>(divModel);
+    return null!;
+  }
+
+  #endregion
+
   #region Div model conversion.
   public static DMW.Div? CreateModelElement(DXW.Div? openXmlElement)
   {
@@ -166,13 +194,13 @@ public static class DivConverter
       model.TopMarginDiv = GetTopMarginDiv(openXmlElement);
       model.BottomMarginDiv = GetBottomMarginDiv(openXmlElement);
       model.DivBorder = GetDivBorder(openXmlElement);
-      var divItems = openXmlElement.Elements<DXW.Div>();
+      var divItems = openXmlElement.Elements<DXW.DivsChild>();
       if (divItems != null && divItems.Count() > 0)
       {
-        model.Children = new DMW.Divs { Parent = model };
-        ElementCollectionConverter<DMW.Div>.FillModelElementCollection(
+        model.Children = new DMW.DivsChildren { Parent = model };
+        ElementCollectionConverter<DMW.Divs>.FillModelElementCollection(
           divItems, model.Children,
-          DivsConverter.GetItem);
+          GetDivsChild);
       }
       return model;
     }
@@ -200,14 +228,14 @@ public static class DivConverter
         ok = false;
       if (!CmpDivBorder(openXmlElement, model.DivBorder, diffs, objName))
         ok = false;
-      var divItems = openXmlElement.Elements<DXW.Div>();
+      var divItems = openXmlElement.Elements<DXW.DivsChild>();
       if (divItems != null && divItems.Count() > 0)
       {
         if (model.Children != null)
         {
-          if (!ElementCollectionConverter<DMW.Div>.CompareOpenXmlElementCollection(
+          if (!ElementCollectionConverter<DMW.Divs>.CompareOpenXmlElementCollection(
             divItems, model.Children,
-            DivsConverter.CmpItem, diffs, objName))
+            CmpDivsChild, diffs, objName))
             ok = false;
         }
         else
@@ -248,18 +276,19 @@ public static class DivConverter
     SetTopMarginDiv(openXmlElement, model.TopMarginDiv);
     SetBottomMarginDiv(openXmlElement, model.BottomMarginDiv);
     SetDivBorder(openXmlElement, model.DivBorder);
-    var divItems = openXmlElement.Elements<DXW.Div>();
-    var children = model.Children;
-    if (children == null)
-      children = new DMW.Divs();
-    return ElementCollectionConverter<DMW.Div>.UpdateOpenXmlElementCollection(
-      openXmlElement,
-      item => item is DXW.Div,
-      children,
-      DivsConverter.CmpItem,
-      DivsConverter.UpdateItem,
-      DivsConverter.CreateItemElement
-    );
+    if (model.Children != null && model.Children.Count > 0)
+    {
+      var divItems = openXmlElement.Elements<DXW.DivsChild>();
+      return ElementCollectionConverter<DMW.Divs>.UpdateOpenXmlElementCollection(
+        openXmlElement,
+        item => item is DXW.DivsChild,
+        model.Children,
+        CmpDivsChild,
+        UpdateDivsChild,
+        CreateDivsChild
+      );
+    }
+    return true;
   }
   #endregion
 }

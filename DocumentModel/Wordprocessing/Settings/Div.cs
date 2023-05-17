@@ -49,5 +49,5 @@ public class Div: ModelElement
   /// <summary>
   /// Child divs.
   /// </summary>
-  public Divs? Children { get; set; }
+  public DivsChildren? Children { get; set; }
 }
