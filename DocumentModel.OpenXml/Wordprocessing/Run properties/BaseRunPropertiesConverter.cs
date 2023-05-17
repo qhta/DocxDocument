@@ -313,7 +313,7 @@ public static class BaseRunPropertiesConverter
   #endregion
 
   #region Color conversion.
-  public static DMW.Color? GetColor(DX.OpenXmlCompositeElement openXmlElement)
+  public static DM.Color? GetColor(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXW.Color>();
     if (element != null)
@@ -321,12 +321,12 @@ public static class BaseRunPropertiesConverter
     return null;
   }
 
-  public static bool CmpColor(DX.OpenXmlCompositeElement openXmlElement, DMW.Color? value, DiffList? diffs, string? objName)
+  public static bool CmpColor(DX.OpenXmlCompositeElement openXmlElement, DM.Color? value, DiffList? diffs, string? objName)
   {
     return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
   }
 
-  public static void SetColor(DX.OpenXmlCompositeElement openXmlElement, DMW.Color? value)
+  public static void SetColor(DX.OpenXmlCompositeElement openXmlElement, DM.Color? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Color>();
     if (itemElement != null)

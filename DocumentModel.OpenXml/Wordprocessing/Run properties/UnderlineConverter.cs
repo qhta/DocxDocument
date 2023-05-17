@@ -44,19 +44,19 @@ public static class UnderlineConverter
   /// <summary>
   /// Underline Theme Color
   /// </summary>
-  private static DMW.ThemeColorKind? GetThemeColor(DXW.Underline openXmlElement)
+  private static DMW.ThemeColorIndex? GetThemeColor(DXW.Underline openXmlElement)
   {
-    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
+    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value);
   }
   
-  private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorIndex? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
   }
   
-  private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorKind? value)
+  private static void SetThemeColor(DXW.Underline openXmlElement, DMW.ThemeColorIndex? value)
   {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
+    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(value);
   }
   
   /// <summary>
@@ -69,7 +69,7 @@ public static class UnderlineConverter
   
   private static bool CmpThemeTint(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "Tint");
   }
   
   private static void SetThemeTint(DXW.Underline openXmlElement, String? value)
@@ -87,7 +87,7 @@ public static class UnderlineConverter
   
   private static bool CmpThemeShade(DXW.Underline openXmlElement, String? value, DiffList? diffs, string? objName)
   {
-    return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
+    return StringValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "Shade");
   }
   
   private static void SetThemeShade(DXW.Underline openXmlElement, String? value)

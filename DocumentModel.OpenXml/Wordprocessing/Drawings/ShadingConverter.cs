@@ -22,142 +22,7 @@ public static class ShadingConverter
   }
   #endregion
  
-  #region RGB Color conversion.
-  private static RGB? GetColor(DXW.Shading openXmlElement)
-  {
-    return ColorValueConverter.GetValue(openXmlElement?.Color);
-  }
-  
-  private static bool CmpColor(DXW.Shading openXmlElement, RGB? value, DiffList? diffs, string? objName)
-  {
-    return ColorValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Value");
-  }
-  
-  private static void SetColor(DXW.Shading openXmlElement, RGB? value)
-  {
-    openXmlElement.Color = ColorValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
-  #region Shading Pattern Theme Color conversion
-  private static DMW.ThemeColorKind? GetThemeColor(DXW.Shading openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value);
-  }
-  
-  private static bool CmpThemeColor(DXW.Shading openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeColor?.Value, value, diffs, objName);
-  }
-  
-  private static void SetThemeColor(DXW.Shading openXmlElement, DMW.ThemeColorKind? value)
-  {
-    openXmlElement.ThemeColor = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
-  }
-  #endregion
-  
-  #region ThemeTint conversion
-  private static Percent? GetThemeTint(DXW.Shading openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeTint);
-  }
-  
-  private static bool CmpThemeTint(DXW.Shading openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeTint, value, diffs, objName, "ThemeTint");
-  }
-  
-  private static void SetThemeTint(DXW.Shading openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeTint = BytePercentValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
-  #region ThemeShade conversion
-  private static Percent? GetThemeShade(DXW.Shading openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeShade);
-  }
-  
-  private static bool CmpThemeShade(DXW.Shading openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeShade, value, diffs, objName, "ThemeShade");
-  }
-  
-  private static void SetThemeShade(DXW.Shading openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeShade = BytePercentValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
-  #region Shading Background Color conversion
-  private static RGB? GetFill(DXW.Shading openXmlElement)
-  {
-    return ColorValueConverter.GetValue(openXmlElement?.Fill);
-  }
-  
-  private static bool CmpFill(DXW.Shading openXmlElement, RGB? value, DiffList? diffs, string? objName)
-  {
-    return ColorValueConverter.CmpValue(openXmlElement?.Fill, value, diffs, objName, "Fill");
-  }
-  
-  private static void SetFill(DXW.Shading openXmlElement, RGB? value)
-  {
-    openXmlElement.Fill = ColorValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
-  #region Shading Background Theme Color conversion
-  private static DMW.ThemeColorKind? GetThemeFill(DXW.Shading openXmlElement)
-  {
-    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeFill?.Value);
-  }
-  
-  private static bool CmpThemeFill(DXW.Shading openXmlElement, DMW.ThemeColorKind? value, DiffList? diffs, string? objName)
-  {
-    return EnumValueConverter.CmpValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(openXmlElement?.ThemeFill?.Value, value, diffs, objName);
-  }
-  
-  private static void SetThemeFill(DXW.Shading openXmlElement, DMW.ThemeColorKind? value)
-  {
-    openXmlElement.ThemeFill = EnumValueConverter.CreateEnumValue<DXW.ThemeColorValues, DMW.ThemeColorKind>(value);
-  }
-  #endregion
-
-  #region Shading Background Theme Color Tint
-  private static Percent? GetThemeFillTint(DXW.Shading openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeFillTint);
-  }
-  
-  private static bool CmpThemeFillTint(DXW.Shading openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeFillTint, value, diffs, objName, "ThemeFillTint");
-  }
-  
-  private static void SetThemeFillTint(DXW.Shading openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeFillTint = BytePercentValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
-  #region Shading Background Theme Color Shade
-  private static Percent? GetThemeFillShade(DXW.Shading openXmlElement)
-  {
-    return BytePercentValueConverter.GetValue(openXmlElement?.ThemeFillShade);
-  }
-  
-  private static bool CmpThemeFillShade(DXW.Shading openXmlElement, Percent? value, DiffList? diffs, string? objName)
-  {
-    return BytePercentValueConverter.CmpValue(openXmlElement?.ThemeFillShade, value, diffs, objName, "ThemeFillShade");
-  }
-  
-  private static void SetThemeFillShade(DXW.Shading openXmlElement, Percent? value)
-  {
-    openXmlElement.ThemeFillShade = BytePercentValueConverter.CreateStringValue(value);
-  }
-  #endregion
-
+ 
   #region Shading model conversion
   public static DMW.Shading? CreateModelElement(DXW.Shading? openXmlElement)
   {
@@ -165,20 +30,8 @@ public static class ShadingConverter
     {
       var value = new DMW.Shading();
       value.Pattern = GetVal(openXmlElement);
-      var foregroundColor = new DMW.Color();
-      foregroundColor.RGB = GetColor(openXmlElement);
-      foregroundColor.ThemeColor = GetThemeColor(openXmlElement);
-      foregroundColor.ThemeTint = GetThemeTint(openXmlElement);
-      foregroundColor.ThemeShade = GetThemeShade(openXmlElement);
-      if (!foregroundColor.IsEmpty())
-        value.ForegroundColor = foregroundColor;
-      var backgroundColor = new DMW.Color();
-      backgroundColor.RGB = GetFill(openXmlElement);
-      backgroundColor.ThemeColor = GetThemeFill(openXmlElement);
-      backgroundColor.ThemeTint = GetThemeFillTint(openXmlElement);
-      backgroundColor.ThemeShade = GetThemeFillShade(openXmlElement);
-      if (!backgroundColor.IsEmpty())
-        value.BackgroundColor = backgroundColor;
+      var foregroundColor = ShadingColorConverter.CreateModelElement(openXmlElement);
+      var backgroundColor = ShadingFillColorConverter.CreateModelElement(openXmlElement);
       return value;
     }
     return null;
@@ -191,21 +44,9 @@ public static class ShadingConverter
       var ok = true;
       if (!CmpVal(openXmlElement, value.Pattern, diffs, objName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.ForegroundColor?.RGB, diffs, objName))
+      if (!ShadingColorConverter.CompareModelElement(openXmlElement, value.ForegroundColor, diffs, objName))
         ok = false;
-      if (!CmpThemeColor(openXmlElement, value.ForegroundColor?.ThemeColor, diffs, objName))
-        ok = false;
-      if (!CmpThemeTint(openXmlElement, value.ForegroundColor?.ThemeTint, diffs, objName))
-        ok = false;
-      if (!CmpThemeShade(openXmlElement, value.ForegroundColor?.ThemeShade, diffs, objName))
-        ok = false;
-      if (!CmpFill(openXmlElement, value.BackgroundColor?.RGB, diffs, objName))
-        ok = false;
-      if (!CmpThemeFill(openXmlElement, value.BackgroundColor?.ThemeColor, diffs, objName))
-        ok = false;
-      if (!CmpThemeFillTint(openXmlElement, value.BackgroundColor?.ThemeTint, diffs, objName))
-        ok = false;
-      if (!CmpThemeFillShade(openXmlElement, value.BackgroundColor?.ThemeShade, diffs, objName))
+      if (!ShadingFillColorConverter.CompareModelElement(openXmlElement, value.BackgroundColor, diffs, objName))
         ok = false;
       return ok;
     }
@@ -225,14 +66,8 @@ public static class ShadingConverter
   public static void UpdateOpenXmlElement(DXW.Shading openXmlElement, DMW.Shading value)
   {
     SetVal(openXmlElement, value?.Pattern);
-    SetColor(openXmlElement, value?.ForegroundColor?.RGB);
-    SetThemeColor(openXmlElement, value?.ForegroundColor?.ThemeColor);
-    SetThemeTint(openXmlElement, value?.ForegroundColor?.ThemeTint);
-    SetThemeShade(openXmlElement, value?.ForegroundColor?.ThemeShade);
-    SetFill(openXmlElement, value?.BackgroundColor?.RGB);
-    SetThemeFill(openXmlElement, value?.BackgroundColor?.ThemeColor);
-    SetThemeFillTint(openXmlElement, value?.BackgroundColor?.ThemeTint);
-    SetThemeFillShade(openXmlElement, value?.BackgroundColor?.ThemeShade);
+    ShadingColorConverter.UpdateOpenXmlElement(openXmlElement, value?.ForegroundColor);
+    ShadingFillColorConverter.UpdateOpenXmlElement(openXmlElement, value?.BackgroundColor);
   }
   #endregion
 }

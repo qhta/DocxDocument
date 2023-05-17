@@ -19,7 +19,7 @@ public class Underline: ModelElement
   /// <summary>
   ///   Underline Theme Color
   /// </summary>
-  public ThemeColorKind? ThemeColor { get; set; }
+  public ThemeColorIndex? ThemeColor { get; set; }
 
   /// <summary>
   ///   Underline Theme Color Tint

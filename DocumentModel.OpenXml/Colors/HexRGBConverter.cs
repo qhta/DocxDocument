@@ -1,5 +1,8 @@
 ﻿namespace DocumentModel.OpenXml;
 
+/// <summary>
+/// <see cref="DM.Color"/> class converter from/to <see cref="DX.HexBinaryValue"/>
+/// </summary>
 public static class HexRGBConverter
 {
   public static RGB? GetValue(DX.HexBinaryValue? element)
