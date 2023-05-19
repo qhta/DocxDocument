@@ -64,7 +64,7 @@ public static class DivConverter
 
   private static bool CmpLeftMarginDiv(DXW.Div openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LeftMarginDiv>()?.Val, value, diffs, objName, "LeftMarginDiv");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.LeftMarginDiv>()?.Val, value, diffs, objName, "LeftMargin");
   }
 
   private static void SetLeftMarginDiv(DXW.Div openXmlElement, Twips? value)
@@ -81,7 +81,7 @@ public static class DivConverter
 
   private static bool CmpRightMarginDiv(DXW.Div openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RightMarginDiv>()?.Val, value, diffs, objName, "RightMarginDiv");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RightMarginDiv>()?.Val, value, diffs, objName, "RightMargin");
   }
 
   private static void SetRightMarginDiv(DXW.Div openXmlElement, Twips? value)
@@ -98,7 +98,7 @@ public static class DivConverter
 
   private static bool CmpTopMarginDiv(DXW.Div openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TopMarginDiv>()?.Val, value, diffs, objName, "TopMarginDiv");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.TopMarginDiv>()?.Val, value, diffs, objName, "TopMargin");
   }
 
   private static void SetTopMarginDiv(DXW.Div openXmlElement, Twips? value)
@@ -115,7 +115,7 @@ public static class DivConverter
 
   private static bool CmpBottomMarginDiv(DXW.Div openXmlElement, Twips? value, DiffList? diffs, string? objName)
   {
-    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.BottomMarginDiv>()?.Val, value, diffs, objName, "BottomMarginDiv");
+    return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.BottomMarginDiv>()?.Val, value, diffs, objName, "BottomMargin");
   }
 
   private static void SetBottomMarginDiv(DXW.Div openXmlElement, Twips? value)
@@ -153,25 +153,25 @@ public static class DivConverter
   #endregion
 
   #region DivsChild conversion.
-  private static DM.IModelElement? GetDivsChild(DX.OpenXmlElement openXmlElement, object? data = null)
+  private static DM.IModelElement? GetDivsChild(DX.OpenXmlElement openXmlElement)
   {
     return DivsConverter.CreateModelElement(openXmlElement as DXW.DivsChild);
   }
 
   private static bool CmpDivsChild(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value,
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     return DivsConverter.CompareModelElement(openXmlElement as DXW.DivsChild, value as DMW.Divs, diffs, objName);
   }
 
-  public static bool UpdateDivsChild(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
+  public static bool UpdateDivsChild(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
   {
     if (openXmlElement is DXW.DivsChild divElement && model is DMW.Divs divModel)
       return DivsConverter.UpdateOpenXmlElement(divElement, divModel);
     return false;
   }
 
-  public static OpenXmlElement CreateDivsChild(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateDivsChild(DM.IModelElement model)
   {
     if (model is DMW.Divs divModel)
       return DivsConverter.CreateOpenXmlElement<DXW.DivsChild>(divModel);
@@ -187,12 +187,12 @@ public static class DivConverter
     {
       var model = new DMW.Div();
       model.Id = GetId(openXmlElement);
-      model.BlockQuote = GetBlockQuote(openXmlElement);
-      model.BodyDiv = GetBodyDiv(openXmlElement);
-      model.LeftMarginDiv = GetLeftMarginDiv(openXmlElement);
-      model.RightMarginDiv = GetRightMarginDiv(openXmlElement);
-      model.TopMarginDiv = GetTopMarginDiv(openXmlElement);
-      model.BottomMarginDiv = GetBottomMarginDiv(openXmlElement);
+      model.IsBlockQuote = GetBlockQuote(openXmlElement);
+      model.IsBody = GetBodyDiv(openXmlElement);
+      model.LeftMargin = GetLeftMarginDiv(openXmlElement);
+      model.RightMargin = GetRightMarginDiv(openXmlElement);
+      model.TopMargin = GetTopMarginDiv(openXmlElement);
+      model.BottomMargin = GetBottomMarginDiv(openXmlElement);
       model.DivBorder = GetDivBorder(openXmlElement);
       var divItems = openXmlElement.Elements<DXW.DivsChild>();
       if (divItems != null && divItems.Count() > 0)
@@ -214,17 +214,17 @@ public static class DivConverter
       var ok = true;
       if (!CmpId(openXmlElement, model.Id, diffs, objName))
         ok = false;
-      if (!CmpBlockQuote(openXmlElement, model.BlockQuote, diffs, objName))
+      if (!CmpBlockQuote(openXmlElement, model.IsBlockQuote, diffs, objName))
         ok = false;
-      if (!CmpBodyDiv(openXmlElement, model.BodyDiv, diffs, objName))
+      if (!CmpBodyDiv(openXmlElement, model.IsBody, diffs, objName))
         ok = false;
-      if (!CmpLeftMarginDiv(openXmlElement, model.LeftMarginDiv, diffs, objName))
+      if (!CmpLeftMarginDiv(openXmlElement, model.LeftMargin, diffs, objName))
         ok = false;
-      if (!CmpRightMarginDiv(openXmlElement, model.RightMarginDiv, diffs, objName))
+      if (!CmpRightMarginDiv(openXmlElement, model.RightMargin, diffs, objName))
         ok = false;
-      if (!CmpTopMarginDiv(openXmlElement, model.TopMarginDiv, diffs, objName))
+      if (!CmpTopMarginDiv(openXmlElement, model.TopMargin, diffs, objName))
         ok = false;
-      if (!CmpBottomMarginDiv(openXmlElement, model.BottomMarginDiv, diffs, objName))
+      if (!CmpBottomMarginDiv(openXmlElement, model.BottomMargin, diffs, objName))
         ok = false;
       if (!CmpDivBorder(openXmlElement, model.DivBorder, diffs, objName))
         ok = false;
@@ -269,12 +269,12 @@ public static class DivConverter
   public static bool UpdateOpenXmlElement(DXW.Div openXmlElement, DMW.Div model)
   {
     SetId(openXmlElement, model.Id);
-    SetBlockQuote(openXmlElement, model.BlockQuote);
-    SetBodyDiv(openXmlElement, model.BodyDiv);
-    SetLeftMarginDiv(openXmlElement, model.LeftMarginDiv);
-    SetRightMarginDiv(openXmlElement, model.RightMarginDiv);
-    SetTopMarginDiv(openXmlElement, model.TopMarginDiv);
-    SetBottomMarginDiv(openXmlElement, model.BottomMarginDiv);
+    SetBlockQuote(openXmlElement, model.IsBlockQuote);
+    SetBodyDiv(openXmlElement, model.IsBody);
+    SetLeftMarginDiv(openXmlElement, model.LeftMargin);
+    SetRightMarginDiv(openXmlElement, model.RightMargin);
+    SetTopMarginDiv(openXmlElement, model.TopMargin);
+    SetBottomMarginDiv(openXmlElement, model.BottomMargin);
     SetDivBorder(openXmlElement, model.DivBorder);
     if (model.Children != null && model.Children.Count > 0)
     {

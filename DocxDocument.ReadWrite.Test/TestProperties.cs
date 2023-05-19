@@ -94,8 +94,8 @@ public class TestProperties : TestBase
         ok = false;
       if (!CheckReadWebSettings(document, reader.WordprocessingDocument, showDetails))
         ok = false;
-      #endregion
     }
+    #endregion
     if (ok)
     {
       #region serialization
@@ -155,8 +155,10 @@ public class TestProperties : TestBase
 
         if (ok && openWord)
         {
+          #region openWord
           var processStartInfo = new ProcessStartInfo("C:\\Program Files\\Microsoft Office\\root\\Office16\\WINWORD.EXE", "\"" + filename + "\"");
           Process.Start(processStartInfo);
+          #endregion
         }
       }
     }

@@ -13,9 +13,9 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName, string? propName)
+  private static bool CmpVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value, DiffList? diffs, string? objName)
   {
-    return EnumValueConverter.CmpValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
+    return EnumValueConverter.CmpValue<DXW.TabStopValues, DMW.TabStopKind>(openXmlElement?.Val?.Value, value, diffs, objName);
   }
   
   private static void SetVal(DXW.TabStop openXmlElement, DMW.TabStopKind? value)
@@ -74,12 +74,12 @@ public static class TabStopConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TabStop? openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName, string? propName)
+  public static bool CompareModelElement(DXW.TabStop? openXmlElement, DMW.TabStop? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
         ok = false;
       if (!CmpLeader(openXmlElement, value.Leader, diffs, objName))
         ok = false;
@@ -92,18 +92,18 @@ public static class TabStopConverter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TabStop value)
-    where OpenXmlElementType: DXW.TabStop, new()
+  public static DXW.TabStop CreateOpenXmlElement(DMW.TabStop value)
   {
-    var openXmlElement = new OpenXmlElementType();
+    var openXmlElement = new DXW.TabStop();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXW.TabStop openXmlElement, DMW.TabStop value)
+  public static bool UpdateOpenXmlElement(DXW.TabStop openXmlElement, DMW.TabStop value)
   {
     SetVal(openXmlElement, value?.Val);
     SetLeader(openXmlElement, value?.Leader);
     SetPosition(openXmlElement, value?.Position);
+    return true;
   }
 }

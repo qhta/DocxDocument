@@ -5,7 +5,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// </summary>
 public static class BlockLevelElementsConverter
 {
-  public static DMW.IStoryContent? CreateBlockLevelElement(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMW.IStoryContent? CreateBlockLevelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -29,7 +29,7 @@ public static class BlockLevelElementsConverter
   }
 
   public static bool CompareBlockLevelElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -59,7 +59,7 @@ public static class BlockLevelElementsConverter
     return false;
   }
 
-  public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
+  public static bool UpdateOpenXmlElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
   {
     if (openXmlElement != null && model != null)
     {
@@ -88,7 +88,7 @@ public static class BlockLevelElementsConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model)
   {
     if (model is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);

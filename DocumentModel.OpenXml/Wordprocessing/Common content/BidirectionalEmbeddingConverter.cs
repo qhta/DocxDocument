@@ -23,23 +23,23 @@ public static class BidirectionalEmbeddingConverter
   #endregion
 
   #region BidirectionalEmbedding elements conversion
-  public static DMW.IBidirectionalContent? CreateBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMW.IBidirectionalContent? CreateBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement)
   {
     return ParagraphContentConverter.CreateParagraphContent(openXmlElement) as DMW.IBidirectionalContent;
   }
 
   public static bool CompareBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     return ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs, objName);
   }
 
-  public static OpenXmlElement CreateOpenXmlBidirectionalEmbeddingContent(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateOpenXmlBidirectionalEmbeddingContent(DM.IModelElement model)
   {
     return ParagraphContentConverter.CreateOpenXmlParagraphContent(model);
   }
 
-  public static bool UpdateOpenXmlBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
+  public static bool UpdateOpenXmlBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
   {
     return ParagraphContentConverter.UpdateOpenXmlParagraphContent(openXmlElement, model);
   }
