@@ -196,8 +196,9 @@ public partial class DocxReader : IDisposable
     {
       if (disposing)
       {
+
+        Debug.WriteLine("Dispose");
         WordprocessingDocument.Dispose();
-        GC.Collect();
       }
 
       // TODO: free unmanaged resources (unmanaged objects) and override finalizer

@@ -3,18 +3,20 @@
 namespace DocumentModel;
 
 /// <summary>
-/// Basic color type. Value stored as an RGB object or name or "auto" string.
+/// Basic color type. Contains name and RGB values.
 /// </summary>
 [TypeConverter(typeof(ColorTypeConverter))]
 public class Color
 {
   /// <summary>
-  /// Color value can be of various color types:
-  /// <list type="buller">
-  ///   <item>RGB - Red, Greed, Blue with byte values.</item>
-  /// </list>
+  ///   Name of the color.
   /// </summary>
-  private object? _Value;
+  public string? Name { get; set; }
+
+  /// <summary>
+  ///   RGB value of the color.
+  /// </summary>
+  public RGB? Value { get; set; }
 
   /// <summary>
   /// Initializing constructor for empty color.
@@ -28,9 +30,9 @@ public class Color
   public Color(string value)
   {
     if (value == "auto")
-      _Value = "auto";
+      Name = "auto";
     if (UInt32.TryParse(value, NumberStyles.HexNumber, null, out _))
-      _Value = new RGB(value);
+      Value = new RGB(value);
   }
 
   /// <summary>
@@ -39,18 +41,7 @@ public class Color
   /// <param name="value"></param>
   public Color(RGB value)
   {
-    _Value = value;
-  }
-
-  /// <summary>
-  /// Initialization constructor with theme color parameters.
-  /// </summary>
-  /// <param name="themeColor">Enumeration of theme color value.</param>
-  /// <param name="shade">Color shade value.</param>
-  /// <param name="tint">Color tinte value.</param>
-  public Color(ThemeColorIndex themeColor, Percent? shade, Percent? tint)
-  {
-    _Value = new ThemeColor(themeColor, shade, tint);
+    Value = value;
   }
 
   /// <summary>
@@ -58,7 +49,7 @@ public class Color
   /// </summary>
   public bool IsEmpty
   {
-    get => _Value == null;
+    get => Value == null;
   }
 
   /// <summary>
@@ -66,7 +57,7 @@ public class Color
   /// </summary>
   public bool IsAuto()
   {
-    return (_Value as string)== "auto";
+    return Name== "auto";
   }
 
   /// <summary>
@@ -74,14 +65,8 @@ public class Color
   /// </summary>
   public RGB? RGB
   {
-    get
-    {
-      if (_Value is RGB rgb) 
-        return rgb;
-      else
-        return null;
-    }
-    set { _Value = value; }
+    get => Value;
+    set => Value = value; 
   }
 
   /// <summary>
@@ -92,6 +77,24 @@ public class Color
   {
     if (IsAuto())
       return "auto";
-    return _Value?.ToString();
+    return Value?.ToString();
   }
+
+  /// <summary>
+  /// Conditional instance creation based on string.
+  /// </summary>
+  /// <param name="str"></param>
+  /// <param name="value"></param>
+  /// <returns></returns>
+  public static bool TryParse(string str, out Color? value)
+  {
+    value = null;
+    if (str=="auto")
+      value = new Color("auto");
+    else
+    if (UInt32.TryParse(str, NumberStyles.HexNumber, null, out var val))
+      value = new Color(new RGB(val));
+    return value != null;
+  }
+
 }

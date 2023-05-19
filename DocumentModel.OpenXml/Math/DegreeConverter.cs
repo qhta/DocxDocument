@@ -70,7 +70,7 @@ public static class DegreeConverter
   #endregion
 
   #region Degree content conversion
-  public static DMM.IMathArgumentContent? CreateDegreeContent(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMM.IMathArgumentContent? CreateDegreeContent(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXM.Run run)
       return DMXM.RunConverter.CreateModelElement(run);
@@ -101,7 +101,7 @@ public static class DegreeConverter
   }
 
   public static bool CompareDegreeContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -141,7 +141,7 @@ public static class DegreeConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlDegreeContent(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateOpenXmlDegreeContent(DM.IModelElement model)
   {
     if (model is DMM.Run run)
       return DMXM.RunConverter.CreateOpenXmlElement(run);
@@ -167,7 +167,7 @@ public static class DegreeConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in DegreeContentConverter.CreateOpenXmlDegreeContent method");
   }
 
-  public static bool UpdateOpenXmlDegreeContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
+  public static bool UpdateOpenXmlDegreeContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
   {
     if (openXmlElement != null && model != null)
     {

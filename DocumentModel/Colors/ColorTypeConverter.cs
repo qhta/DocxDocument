@@ -22,6 +22,8 @@ internal class ColorTypeConverter : TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
+    if (value is DMW.ThemeColor themeColor)
+      return themeColor.ToString();
     if (value is DM.Color color)
       return color.ToString();
     return base.ConvertTo(context, culture, value, destinationType);
@@ -31,9 +33,10 @@ internal class ColorTypeConverter : TypeConverter
   {
     if (value is string str)
     {
+      if (DM.Color.TryParse(str, out var color))
+        return color;
       if (DMW.ThemeColor.TryParse(str, out var themeColor))
         return themeColor;
-      return new DM.Color(str);
     }
     return base.ConvertFrom(context, culture, value);
   }

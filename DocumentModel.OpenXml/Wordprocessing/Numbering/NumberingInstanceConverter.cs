@@ -6,60 +6,72 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class NumberingInstanceConverter
 {
 
-  #region numId
+  #region NumId conversion.
   private static Int32? GetNumberID(DXW.NumberingInstance openXmlElement)
   {
     return openXmlElement?.NumberID?.Value;
   }
-  
+
   private static bool CmpNumberID(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.NumberID?.Value == value) return true;
     diffs?.Add(objName, "NumberID", openXmlElement?.NumberID?.Value, value);
     return false;
   }
-  
+
   private static void SetNumberID(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     openXmlElement.NumberID = value;
   }
-#endregion
+  #endregion
 
-  #region durableId
+  #region DurableId conversion.
   private static Int32? GetDurableId(DXW.NumberingInstance openXmlElement)
   {
-    return openXmlElement?.DurableId?.Value;
+    // This does not work. DurableId attribute is defined in other namespace.
+    //return openXmlElement?.DurableId?.Value;
+    return Int32ValueConverter.GetValue(openXmlElement?.GetAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid").Value);
+
   }
-  
+
   private static bool CmpDurableId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement?.DurableId?.Value == value) return true;
-    diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
-    return false;
+    //if (openXmlElement?.DurableId?.Value == value) return true;
+    //diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
+    //return false;
+    return Int32ValueConverter.CmpValue(
+      openXmlElement?.GetAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid").Value,
+      value, diffs, typeof(DXW.AbstractNum).Name, "durableId");
   }
-  
+
   private static void SetDurableId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
-    openXmlElement.DurableId = value;
+    //openXmlElement.DurableId = value;
+    if (value!=null)
+      openXmlElement?.SetAttribute(
+        new OpenXmlAttribute("durableId","http://schemas.microsoft.com/office/word/2016/wordml/cid", 
+        value.ToString()));
+    else
+      openXmlElement?.RemoveAttribute("durableId","http://schemas.microsoft.com/office/word/2016/wordml/cid");
   }
-#endregion
+  #endregion
 
-  #region AbstractNumId.
+  #region AbstractNumId conversion.
   private static Int32? GetAbstractNumId(DXW.NumberingInstance openXmlElement)
   {
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val);
   }
-  
+
   private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val, value, diffs, objName, "AbstractNumId");
   }
-  
+
   private static void SetAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
-    SimpleValueConverter.SetValue<DXW.AbstractNumId,System.Int32>(openXmlElement, value);
+    SimpleValueConverter.SetValue<DXW.AbstractNumId, System.Int32>(openXmlElement, value);
   }
-  
+
   private static DMW.NumLevelOverrides? GetLevelOverrides(DXW.NumberingInstance openXmlElement)
   {
     var collection = new DMW.NumLevelOverrides();
@@ -69,11 +81,11 @@ public static class NumberingInstanceConverter
       if (newItem != null)
         collection.Add(newItem);
     }
-    if (collection.Count>0)
+    if (collection.Count > 0)
       return collection;
     return null;
   }
-  
+
   private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.LevelOverride>();
@@ -83,7 +95,7 @@ public static class NumberingInstanceConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -101,7 +113,7 @@ public static class NumberingInstanceConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   private static void SetLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value)
   {
     openXmlElement.RemoveAllChildren<DXW.LevelOverride>();
@@ -115,7 +127,7 @@ public static class NumberingInstanceConverter
       }
     }
   }
-  
+
   public static DMW.NumberingInstance? CreateModelElement(DXW.NumberingInstance? openXmlElement)
   {
     if (openXmlElement != null)
@@ -129,7 +141,7 @@ public static class NumberingInstanceConverter
     }
     return null;
   }
-  
+
   public static bool CompareModelElement(DXW.NumberingInstance? openXmlElement, DMW.NumberingInstance? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
@@ -149,15 +161,15 @@ public static class NumberingInstanceConverter
     diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
-  
+
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.NumberingInstance value)
-    where OpenXmlElementType: DXW.NumberingInstance, new()
+    where OpenXmlElementType : DXW.NumberingInstance, new()
   {
     var openXmlElement = new OpenXmlElementType();
     UpdateOpenXmlElement(openXmlElement, value);
     return openXmlElement;
   }
-  
+
   public static void UpdateOpenXmlElement(DXW.NumberingInstance openXmlElement, DMW.NumberingInstance value)
   {
     SetNumberID(openXmlElement, value?.NumberID);
@@ -165,5 +177,5 @@ public static class NumberingInstanceConverter
     SetAbstractNumId(openXmlElement, value?.AbstractNumId);
     SetLevelOverrides(openXmlElement, value?.LevelOverrides);
   }
-#endregion
+  #endregion
 }

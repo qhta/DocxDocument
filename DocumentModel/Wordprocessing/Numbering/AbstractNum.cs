@@ -59,6 +59,11 @@ public class AbstractNum : ModelElement
   public string? NumberingStyleLink { get; set; }
 
   /// <summary>
+  ///   Specifies that numbering will restart in the next section.
+  /// </summary>
+  public bool? RestartNumberingAfterBreak { get;set; }
+
+  /// <summary>
   ///   Definitions of abstract numbering levels.
   /// </summary>
   public NumLevels? Levels { get; set; }

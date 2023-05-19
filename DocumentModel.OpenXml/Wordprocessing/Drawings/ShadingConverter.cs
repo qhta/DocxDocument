@@ -30,8 +30,8 @@ public static class ShadingConverter
     {
       var value = new DMW.Shading();
       value.Pattern = GetVal(openXmlElement);
-      var foregroundColor = ShadingColorConverter.CreateModelElement(openXmlElement);
-      var backgroundColor = ShadingFillColorConverter.CreateModelElement(openXmlElement);
+      value.ForegroundColor = ShadingColorConverter.CreateModelElement(openXmlElement);
+      value.BackgroundColor = ShadingFillColorConverter.CreateModelElement(openXmlElement);
       return value;
     }
     return null;

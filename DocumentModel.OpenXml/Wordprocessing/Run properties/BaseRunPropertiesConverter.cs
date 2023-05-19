@@ -54,8 +54,8 @@ public static class BaseRunPropertiesConverter
 
   public static void SetBold(DX.OpenXmlCompositeElement openXmlElement, DualBool? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value?.Val);
-    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value?.ValCS);
+    BooleanValueConverter.SetOnOffType<DXW.Bold>(openXmlElement, value?.Val, "0", null);
+    BooleanValueConverter.SetOnOffType<DXW.BoldComplexScript>(openXmlElement, value?.ValCS, "0", null);
   }
   #endregion
 
@@ -77,8 +77,8 @@ public static class BaseRunPropertiesConverter
 
   public static void SetItalic(DX.OpenXmlCompositeElement openXmlElement, DualBool? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value?.Val);
-    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value?.ValCS);
+    BooleanValueConverter.SetOnOffType<DXW.Italic>(openXmlElement, value?.Val, "0", null);
+    BooleanValueConverter.SetOnOffType<DXW.ItalicComplexScript>(openXmlElement, value?.ValCS, "0", null);
   }
   #endregion
 
