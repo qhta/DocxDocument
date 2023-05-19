@@ -56,7 +56,7 @@ public static class PageMarginsConverter
   private static bool CmpT(DXO16DCD.PageMargins openXmlElement, Double? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement?.T?.Value == value) return true;
-    diffs?.Add(objName, "T", openXmlElement?.T?.Value, value);
+    diffs?.Add(objName, "ModelType", openXmlElement?.T?.Value, value);
     return false;
   }
   

@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class BodyTypeConverter
 {
   #region BodyType content elements conversion
-  public static DMW.IStoryContent? CreateBodyTypeContentElement(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMW.IStoryContent? CreateBodyTypeContentElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.SectionProperties sectionProperties)
       return DMXW.SectionPropertiesConverter.CreateModelElement(sectionProperties);
@@ -14,13 +14,13 @@ public static class BodyTypeConverter
   }
 
   public static bool CompareBodyTypeContentElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement is DXW.SectionProperties sectionProperties && model is DMW.SectionProperties sectionPropertiesModel)
       return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName);
     return BlockLevelElementsConverter.CompareBlockLevelElement(openXmlElement, model, diffs, objName);
   }
-  public static OpenXmlElement CreateOpenXmlElement(DMW.IStoryContent model, object? data = null)
+  public static OpenXmlElement CreateOpenXmlElement(DMW.IStoryContent model)
   {
     if (model is DMW.SectionProperties sectionProperties)
       return DMXW.SectionPropertiesConverter.CreateOpenXmlElement(sectionProperties);

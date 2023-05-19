@@ -18,7 +18,7 @@ public static class SdtBlockConverter
   /// <param name="openXmlElement">Item element of SdtContentBlock element</param>
   /// <returns>Newly created model element (or <c>null</c> if openXml element is <c>null</c>).</returns>
   /// <exception cref="InvalidOperationException">Thrown if openXml element type is not recognized.</exception>
-  public static DMW.ISdtBlockContent? CreateSdtContentBlockModelElement(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMW.ISdtBlockContent? CreateSdtContentBlockModelElement(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -46,7 +46,7 @@ public static class SdtBlockConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to the openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareSdtContentBlockElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -79,7 +79,7 @@ public static class SdtBlockConverter
   /// <param name="model">A model element with valid content.</param>
   /// <returns>Newly created openXml element</returns>
   /// <exception cref="InvalidOperationException">Thrown if a model element type is not recognized.</exception>
-  public static OpenXmlElement CreateSdtContentBlockOpenXmlElement(IModelElement model, object? data = null)
+  public static OpenXmlElement CreateSdtContentBlockOpenXmlElement(IModelElement model)
   {
     if (model is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -101,7 +101,7 @@ public static class SdtBlockConverter
   /// <param name="openXmlElement">An openXml element to update.</param>
   /// <param name="model">A model element with valid content.</param>
   /// <returns><c>True</c> if the openXml element was updated succesfully, <c>false</c> otherwise</returns>
-  public static bool UpdateSdtContentBlockOpenXmlElement(DX.OpenXmlElement openXmlElement, IModelElement model, object? data = null)
+  public static bool UpdateSdtContentBlockOpenXmlElement(DX.OpenXmlElement openXmlElement, IModelElement model)
   {
     if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
       return DMXW.ParagraphConverter.UpdateOpenXmlElement(paragraph, paragraphModel);

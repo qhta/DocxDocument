@@ -215,6 +215,30 @@ public static class AbstractNumConverter
   }
   #endregion
 
+  #region RestartNumberingAfterBreak conversion.
+  private static bool? GetRestartNumberingAfterBreak(DXW.AbstractNum openXmlElement)
+  {
+    return BooleanValueConverter.GetValue(openXmlElement?.GetAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml").Value);
+  }
+
+  private static bool CmpRestartNumberingAfterBreak(DXW.AbstractNum openXmlElement, bool? value, DiffList? diffs, string? objName)
+  {
+    return BooleanValueConverter.CmpValue(
+      openXmlElement?.GetAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml").Value,
+      value, diffs, typeof(DXW.AbstractNum).Name, "restartNumberingAfterBreak");
+  }
+
+  private static void SetRestartNumberingAfterBreak(DXW.AbstractNum openXmlElement, bool? value)
+  {
+    if (value!=null)
+      openXmlElement?.SetAttribute(
+        new OpenXmlAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml", 
+        BooleanValueConverter.Create01String(value)));
+    else
+      openXmlElement?.RemoveAttribute("restartNumberingAfterBreak","http://schemas.microsoft.com/office/word/2012/wordml");
+  }
+  #endregion
+
   #region AbstractNum model conversion
   public static DMW.AbstractNum? CreateModelElement(DXW.AbstractNum? openXmlElement)
   {
@@ -228,6 +252,7 @@ public static class AbstractNumConverter
       model.AbstractNumDefinitionName = GetAbstractNumDefinitionName(openXmlElement);
       model.StyleLink = GetStyleLink(openXmlElement);
       model.NumberingStyleLink = GetNumberingStyleLink(openXmlElement);
+      model.RestartNumberingAfterBreak = GetRestartNumberingAfterBreak(openXmlElement);
       model.Levels = GetLevels(openXmlElement);
       return model;
     }
@@ -252,6 +277,8 @@ public static class AbstractNumConverter
       if (!CmpStyleLink(openXmlElement, model.StyleLink, diffs, objName))
         ok = false;
       if (!CmpNumberingStyleLink(openXmlElement, model.NumberingStyleLink, diffs, objName))
+        ok = false;
+      if (!CmpRestartNumberingAfterBreak(openXmlElement, model.RestartNumberingAfterBreak, diffs, objName))
         ok = false;
       if (!CmpLevels(openXmlElement, model.Levels, diffs, objName))
         ok = false;
@@ -279,6 +306,7 @@ public static class AbstractNumConverter
     SetAbstractNumDefinitionName(openXmlElement, model?.AbstractNumDefinitionName);
     SetStyleLink(openXmlElement, model?.StyleLink);
     SetNumberingStyleLink(openXmlElement, model?.NumberingStyleLink);
+    SetRestartNumberingAfterBreak(openXmlElement, model?.RestartNumberingAfterBreak);
     SetLevels(openXmlElement, model?.Levels);
   }
   #endregion

@@ -27,7 +27,14 @@ public static class ColorConverter
   #region ThemeColorIndex conversion.
   private static DMW.ThemeColorIndex? GetThemeColorIndex(DXW.Color openXmlElement)
   {
-    return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value);
+    if (openXmlElement == null)
+      return null;
+    if (openXmlElement.ThemeColor == null)
+      return null;
+    var themeColor = openXmlElement?.ThemeColor?.Value;
+    if (themeColor != null)
+      return EnumValueConverter.GetValue<DXW.ThemeColorValues, DMW.ThemeColorIndex>(openXmlElement?.ThemeColor?.Value);
+    return null;
   }
 
   private static bool CmpThemeColorIndex(DXW.Color openXmlElement, DMW.ThemeColorIndex? value, DiffList? diffs, string? objName)
@@ -80,17 +87,25 @@ public static class ColorConverter
   {
     if (openXmlElement != null)
     {
+
       var valModel = GetVal(openXmlElement);
-      if (valModel != null)
-        return valModel;
 
       var themeColor = GetThemeColorIndex(openXmlElement);
       if (themeColor != null)
       {
         var themeTint = GetThemeTint(openXmlElement);
         var themeShade = GetThemeShade(openXmlElement);
-        return new DMW.ThemeColor((ThemeColorIndex)themeColor, tint: themeTint, shade: themeShade);
+
+        var model = new DMW.ThemeColor((ThemeColorIndex)themeColor, tint: themeTint, shade: themeShade);
+        if (valModel != null)
+        {
+          model.Name = valModel.Name;
+          model.Value = valModel.Value;
+        }
+        return model;
       }
+      if (valModel != null)
+        return valModel;
     }
     return null;
   }

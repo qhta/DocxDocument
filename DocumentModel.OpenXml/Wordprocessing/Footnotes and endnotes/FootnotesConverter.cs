@@ -6,25 +6,25 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class FootnotesConverter
 {
   #region item conversion
-  private static DM.IModelElement? GetFootnote(DX.OpenXmlElement openXmlElement, object? data = null)
+  private static DM.IModelElement? GetFootnote(DX.OpenXmlElement openXmlElement)
   {
     return DMXW.FootnoteConverter.CreateModelElement(openXmlElement as DXW.Footnote);
   }
 
   private static bool CmpFootnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     return DMXW.FootnoteConverter.CompareModelElement(openXmlElement as DXW.Footnote, value as DMW.Footnote, diffs, objName);
   }
 
-  private static bool UpdateFootnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
+  private static bool UpdateFootnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
   {
     if (openXmlElement is DXW.Footnote endnoteElement && model is DMW.Footnote endnoteModel)
       return DMXW.FootnoteConverter.UpdateOpenXmlElement(endnoteElement, endnoteModel);
     return false;
   }
 
-  private static OpenXmlElement CreateFootnoteElement(DM.IModelElement model, object? data = null)
+  private static OpenXmlElement CreateFootnoteElement(DM.IModelElement model)
   {
     if (model is DMW.Footnote modelElement)
     {

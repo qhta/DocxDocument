@@ -17,10 +17,25 @@ public static class BooleanValueConverter
     return false;
   }
 
-  public static OnOffValue? CreateOnOffValue(Boolean? value)
+  /// <summary>
+  /// Sets OnOffValue using false string and true string representation.
+  /// </summary>
+  /// <param name="value">Boolean value</param>
+  /// <param name="falseString">False value string representation (default "0")</param>
+  /// <param name="trueString">True value string representation (default "1")</param>
+  /// <returns></returns>
+  public static OnOffValue? CreateOnOffValue(Boolean? value, string? falseString = null, string? trueString = null)
   {
     if (value == null) return null;
-    return new OnOffValue { InnerText = (Boolean)value ? "1" : "0" };
+    if (trueString == null)
+    {
+      falseString = "0";
+      trueString = "1";
+    }
+    var val = (Boolean)value ? trueString : falseString;
+    if (val == null)
+      return null;
+    return new OnOffValue { InnerText = val };
   }
   #endregion
 
@@ -79,8 +94,17 @@ public static class BooleanValueConverter
     return false;
   }
 
-  public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value, 
-    params string?[] boolStrings)
+  /// <summary>
+  /// Sets OnOffType value in OpenXmlElement using false string and true string representation.
+  /// </summary>
+  /// <param name="openXmlElement">Composite element to append OnOffType child.</param>
+  /// <param name="value">Boolean value</param>
+  /// <param name="falseString">False value string representation (default "0")</param>
+  /// <param name="trueString">True value string representation (default "1")</param>
+  /// <returns></returns>
+
+  public static void SetOnOffType<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value,
+    string? falseString = null, string? trueString = null)
     where ElementType : DXW.OnOffType, new()
   {
     if (openXmlElement != null)
@@ -93,26 +117,72 @@ public static class BooleanValueConverter
       }
       if (value != null)
       {
-        string? valStr = null;
-        if (boolStrings != null)
+        if (trueString == null && falseString == null)
         {
-          if (value == false && boolStrings.Length > 0)
-            valStr = boolStrings[0];
-          if (value == true && boolStrings.Length > 1)
-            valStr = boolStrings[1];
+          falseString = "0";
+          trueString = "1";
         }
-        if (valStr != null || value==true)
+        string? valStr = (bool)value ? trueString : falseString;
+        if (valStr != null || value == true)
         {
           var itemElement = new ElementType();
-          if (valStr!=null)
-            itemElement.SetAttribute(new OpenXmlAttribute{ 
-              NamespaceUri = openXmlElement.NamespaceUri, LocalName = "val", Value = valStr });
+          if (valStr != null)
+            itemElement.SetAttribute(new OpenXmlAttribute
+            {
+              NamespaceUri = openXmlElement.NamespaceUri,
+              LocalName = "val",
+              Value = valStr
+            });
           openXmlElement.AppendChild(itemElement);
         }
       }
     }
   }
 
+  ///// <summary>
+  ///// Sets OnOffType value in OpenXmlElement adding child OnOffType element if true and removing it when false.
+  ///// </summary>
+  ///// <param name="openXmlElement">Composite element to append OnOffType child.</param>
+  ///// <param name="falseString">False value string representation (default "0")</param>
+  ///// <param name="trueString">True value string representation (default null)</param>
+  ///// <param name="value">Boolean value</param>
+  ///// <returns></returns>
+
+  //public static void SetOnOffTypeToggle<ElementType>(OpenXmlCompositeElement openXmlElement, Boolean? value,
+  //  string? falseString = null, string? trueString = null)
+  //  where ElementType : DXW.OnOffType, new()
+  //{
+  //  if (openXmlElement != null)
+  //  {
+  //    if (value == false)
+  //    {
+  //      var itemElement = openXmlElement.GetFirstChild<ElementType>();
+  //      if (itemElement != null)
+  //        itemElement.Remove();
+  //    }
+  //    if (value != null)
+  //    {
+  //      if (trueString == null)
+  //      {
+  //        falseString = "0";
+  //        //trueString = "1";
+  //      }
+  //      string? valStr = (bool)value ? trueString : falseString;
+  //      if (valStr != null || value == true)
+  //      {
+  //        var itemElement = new ElementType();
+  //        if (valStr != null)
+  //          itemElement.SetAttribute(new OpenXmlAttribute
+  //          {
+  //            NamespaceUri = openXmlElement.NamespaceUri,
+  //            LocalName = "val",
+  //            Value = valStr
+  //          });
+  //        openXmlElement.AppendChild(itemElement);
+  //      }
+  //    }
+  //  }
+  //}
   #endregion
 
   #region Math OnOffType conversion.
@@ -441,6 +511,29 @@ public static class BooleanValueConverter
   }
   #endregion
 
+  #region String value conversion.
+  public static Boolean? GetValue(string? str)
+  {
+    if (str != null)
+      return str == "1";
+    else
+      return null;
+  }
+
+  public static Boolean CmpValue(string? str, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+  {
+    var val = GetValue(str);
+    if (val == value) return true;
+    diffs?.Add(objName, propName, val, value);
+    return false;
+  }
+
+  public static string? Create01String(Boolean? value)
+  {
+    if (value == null) return null;
+    return (Boolean)value ? "1" : "0";
+  }
+  #endregion
 
   #region Specific Boolean values element conversion.
   public static ElementType CreateWordOpenXmlElement<ElementType>(Boolean value)

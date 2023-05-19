@@ -97,7 +97,7 @@ public static class ShadingColorConverter
 
   public static bool CompareModelElement(DXW.Shading? openXmlElement, DM.Color? value, DiffList? diffs, string? objName)
   {
-    if (openXmlElement != null && value != null)
+    if (openXmlElement != null)
     {
       var ok = true;
 

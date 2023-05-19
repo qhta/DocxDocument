@@ -16,7 +16,7 @@ public class NumberingInstance: ModelElement
   /// <summary>
   ///   Associates a unique hexadecimal ID to the numbering definition instance.
   /// </summary>
-  public HexInt? DurableId { get; set; }
+  public Int32? DurableId { get; set; }
 
   /// <summary>
   ///   Specifies the abstract numbering definition information 

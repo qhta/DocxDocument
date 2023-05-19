@@ -37,7 +37,7 @@ public static class LevelTextConverter
 
   private static void SetNull(DXW.LevelText openXmlElement, Boolean? value)
   {
-    openXmlElement.Null = BooleanValueConverter.CreateOnOffValue(value);
+    openXmlElement.Null = BooleanValueConverter.CreateOnOffValue(value, null, "1");
   }
   #endregion
 

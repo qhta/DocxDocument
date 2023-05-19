@@ -14,32 +14,32 @@ public class Div: ModelElement
   /// <summary>
   ///   Data for HTML blockquote Element.
   /// </summary>
-  public bool? BlockQuote { get; set; }
+  public bool? IsBlockQuote { get; set; }
 
   /// <summary>
   ///   Data for HTML body Element.
   /// </summary>
-  public bool? BodyDiv { get; set; }
+  public bool? IsBody { get; set; }
 
   /// <summary>
   ///   Left Margin for HTML div.
   /// </summary>
-  public Twips? LeftMarginDiv { get; set; }
+  public Twips? LeftMargin { get; set; }
 
   /// <summary>
   ///   Right Margin for HTML div.
   /// </summary>
-  public Twips? RightMarginDiv { get; set; }
+  public Twips? RightMargin { get; set; }
 
   /// <summary>
   ///   Top Margin for HTML div.
   /// </summary>
-  public Twips? TopMarginDiv { get; set; }
+  public Twips? TopMargin { get; set; }
 
   /// <summary>
   ///   Bottom Margin for HTML div.
   /// </summary>
-  public Twips? BottomMarginDiv { get; set; }
+  public Twips? BottomMargin { get; set; }
 
   /// <summary>
   ///   Set of Borders for HTML div.

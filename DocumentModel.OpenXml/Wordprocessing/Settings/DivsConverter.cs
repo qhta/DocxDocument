@@ -6,7 +6,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 public static class DivsConverter
 {
   #region item conversion
-  public static DM.IModelElement? GetItem(DX.OpenXmlElement openXmlElement, object? data = null)
+  public static DM.IModelElement? GetItem(DX.OpenXmlElement openXmlElement)
   {
     if (openXmlElement is DXW.Div div)
       return DivConverter.CreateModelElement(div);
@@ -18,7 +18,7 @@ public static class DivsConverter
   }
 
   public static bool CmpItem(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model,
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -34,14 +34,14 @@ public static class DivsConverter
     return false;
   }
 
-  public static bool UpdateItem(DX.OpenXmlElement openXmlElement, DM.IModelElement model, object? data = null)
+  public static bool UpdateItem(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
   {
     if (openXmlElement is DXW.Div divElement && model is DMW.Div divModel)
       return DivConverter.UpdateOpenXmlElement(divElement, divModel);
     return false;
   }
 
-  public static OpenXmlElement CreateItemElement(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateItemElement(DM.IModelElement model)
   {
     if (model is DMW.Div divModel)
       return DivConverter.CreateOpenXmlElement(divModel);

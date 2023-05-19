@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Theme color class.
 /// </summary>
-public class ThemeColor: Color
+public class ThemeColor : Color
 {
   /// <summary>
   /// Default contructor.
@@ -31,9 +31,10 @@ public class ThemeColor: Color
   public Percent? Shade { get; set; }
 
   /// <summary>
-  /// Gets up to three string values separated by semicolons: Index, tint and shade.
+  /// Gets up to four string values separated by semicolons: index, tint, shade, and value
   /// Index is a <see cref="ThemeColorIndex"/> enumeration type string.
   /// Tint and shade are percent values (ended with percent mark) preceded with "t=" and "s=" clauses.
+  /// Value is "auto" or RGB value.
   /// </summary>
   /// <returns></returns>
   public override string ToString()
@@ -44,6 +45,10 @@ public class ThemeColor: Color
       list.Add($"t={Tint}");
     if (Shade is not null)
       list.Add($"s={Shade}");
+    if (Name is not null)
+      list.Add($"{Name}");
+    if (Value is not null)
+      list.Add($"{Value}");
     return String.Join(";", list);
   }
 
@@ -57,7 +62,9 @@ public class ThemeColor: Color
   {
     value = null;
     var ss = str.Split(';');
-    foreach (var s in ss) 
+    RGB? RGB = null;
+    string? name = null;
+    foreach (var s in ss)
     {
       if (s.StartsWith("t="))
       {
@@ -76,11 +83,20 @@ public class ThemeColor: Color
       }
       else
       {
+        if (s == "auto")
+          name = "auto";
+        else
+        if (UInt32.TryParse(s, NumberStyles.HexNumber, null, out var val))
+          RGB = new RGB(val);
+        else
         if (Enum.TryParse<ThemeColorIndex>(s, out var index))
-        {
           value = new ThemeColor(index, null, null);
-        }
       }
+    }
+    if (value != null)
+    {
+      value.Name = name;
+      value.RGB = RGB;
     }
     return value != null;
   }

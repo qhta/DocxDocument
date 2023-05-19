@@ -1,12 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <dc:title></dc:title>
   <dc:subject></dc:subject>
   <dc:creator>Agnieszka</dc:creator>
-  <keywords></keywords>
-  <lastModifiedBy>Jarosław Kuchta</lastModifiedBy>
-  <revision>11</revision>
-  <lastPrinted>2023-01-18T22:47:00.0000000Z</lastPrinted>
-  <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-18T22:48:00.0000000Z</dcterms:created>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-19T10:30:00.0000000Z</dcterms:modified>
-</coreProperties>
+  <cp:keywords></cp:keywords>
+  <cp:lastModifiedBy>Jarosław Kuchta</cp:lastModifiedBy>
+  <cp:revision>11</cp:revision>
+  <cp:lastPrinted>2023-01-18T22:47:00Z</cp:lastPrinted>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2023-01-18T22:48:00Z</dcterms:created>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-01-19T10:30:00Z</dcterms:modified>
+</cp:coreProperties>

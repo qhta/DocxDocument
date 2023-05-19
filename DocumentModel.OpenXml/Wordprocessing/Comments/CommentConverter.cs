@@ -76,7 +76,7 @@ public static class CommentConverter
   #endregion
 
   #region Comment content conversion
-  public static DMW.ICommentContent? CreateCommentContent(DX.OpenXmlElement? openXmlElement, object? data = null)
+  public static DMW.ICommentContent? CreateCommentContent(DX.OpenXmlElement? openXmlElement)
   {
     if (openXmlElement is DXW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateModelElement(paragraph);
@@ -99,7 +99,7 @@ public static class CommentConverter
   }
 
   public static bool CompareCommentContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null, object? data = null)
+    DiffList? diffs = null, string? objName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -129,7 +129,7 @@ public static class CommentConverter
     return false;
   }
 
-  public static OpenXmlElement CreateOpenXmlCommentContent(DM.IModelElement model, object? data = null)
+  public static OpenXmlElement CreateOpenXmlCommentContent(DM.IModelElement model)
   {
     if (model is DMW.Paragraph paragraph)
       return DMXW.ParagraphConverter.CreateOpenXmlElement(paragraph);
@@ -147,7 +147,7 @@ public static class CommentConverter
     throw new InvalidOperationException($"Type of type \"{model.GetType()}\" not supported in CommentConverter.CreateOpenXmlCommentElement method");
   }
 
-  public static bool UpdateOpenXmlCommentContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, object? data = null)
+  public static bool UpdateOpenXmlCommentContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model)
   {
     if (openXmlElement != null && model != null)
     {

@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestProperties();
+    RunTestNumbering();
   }
 
     private static void RunTestBackground()
@@ -47,9 +47,9 @@ internal class Program
   {
     var testInstance = new TestNumbering();
     testInstance.Setup();
-    //testInstance.TestReadNumbering();
-    testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
-    Console.WriteLine("\nTest passed");
+    var ok = testInstance.TestReadNumbering("Comments.docx", true, true);
+    //testInstance.TestReadNumberingXmlSerialization("_Jakość oprogramowania.docx", true);
+    Console.WriteLine($"Test {(ok ? "passed" : "failed")}");
   }
 
   private static void RunTestFonts()
@@ -86,9 +86,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    var ok = true; 
-    ok = ok && testInstance.TestReadProperties("Comments.docx", true, true);
-
+    var ok = testInstance.TestReadProperties();
     //testInstance.TestGenProperties("DocumentProperties.docx", true, true);
     Console.WriteLine($"Test {(ok ? "passed" : "failed")}");
   }
