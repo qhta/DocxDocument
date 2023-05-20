@@ -1,3 +1,5 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
 
 /// <summary>
@@ -296,5 +298,10 @@ public abstract class BaseRunProperties: ModelElement
   /// </summary>
   public bool? WebHidden { get; set; }
   #endregion
+
+  /// <summary>
+  /// Drawing properties collected from Run properties.
+  /// </summary>
+  public DrawingProperties? DrawingProperties { get; set; }
 
 }

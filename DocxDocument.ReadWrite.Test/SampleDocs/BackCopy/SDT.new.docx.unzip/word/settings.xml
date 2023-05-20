@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<w:settings xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:sl="http://schemas.openxmlformats.org/schemaLibrary/2006/main" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh">
   <w:zoom w:percent="150" />
   <w:proofState w:spelling="clean" />
   <w:formsDesign />
@@ -557,7 +557,7 @@
     <w:rsid w:val="00FF5B30" />
     <w:rsid w:val="00FF737F" />
   </w:rsids>
-  <m:mathPr xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math">
+  <m:mathPr>
     <m:mathFont m:val="Cambria Math" />
     <m:brkBin m:val="before" />
     <m:brkBinSub m:val="--" />
@@ -573,17 +573,17 @@
   <w:themeFontLang w:val="pl-PL" w:eastAsia="ja-JP" w:bidi="ar-SA" />
   <w:clrSchemeMapping w:bg1="light1" w:t1="dark1" w:bg2="light2" w:t2="dark2" w:accent1="accent1" w:accent2="accent2" w:accent3="accent3" w:accent4="accent4" w:accent5="accent5" w:accent6="accent6" w:hyperlink="hyperlink" w:followedHyperlink="followedHyperlink" />
   <w:shapeDefaults>
-    <o:shapedefaults v:ext="edit" spidmax="1026" fillcolor="white" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <o:shapedefaults v:ext="edit" spidmax="1026" fillcolor="white">
       <v:fill color="white" />
       <v:textbox inset="0,0,0,0" />
     </o:shapedefaults>
-    <o:shapelayout v:ext="edit" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+    <o:shapelayout v:ext="edit">
       <o:idmap v:ext="edit" data="1" />
     </o:shapelayout>
   </w:shapeDefaults>
   <w:decimalSymbol w:val="," />
   <w:listSeparator w:val=";" />
-  <w14:docId w14:val="232FF68B" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" />
-  <w15:chartTrackingRefBased xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" />
-  <w15:docId w15:val="{c2599d24-c268-4b7d-bca8-a93c7660e251}" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" />
+  <w14:docId w14:val="232FF68B" />
+  <w15:chartTrackingRefBased />
+  <w15:docId w15:val="{C2599D24-C268-4B7D-BCA8-A93C7660E251}" />
 </w:settings>

@@ -47,7 +47,7 @@ public abstract class ExtBaseRunProperties : BaseRunProperties
   /// <summary>
   ///   Specifies the shadow effect.
   /// </summary>
-  public Shadow2? Shadow14 { get; set; }
+  public Shadow? Shadow14 { get; set; }
 
   /// <summary>
   ///   Specifies the 3-D properties of text, including bevel, extrusion, contour, and material.

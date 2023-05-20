@@ -1,10 +1,11 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Reflection Class.
 /// </summary>
-public class Reflection: ModelElement
+public class Reflection: ModelElement, IDrawingProperty
 {
   /// <summary>
   ///   blurRad, this property is only available in Office 2010 and later.

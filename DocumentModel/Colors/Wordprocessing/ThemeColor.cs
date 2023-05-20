@@ -8,6 +8,14 @@ public class ThemeColor : Color
   /// <summary>
   /// Default contructor.
   /// </summary>
+  public ThemeColor(){ }
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
+  /// <param name="index"></param>
+  /// <param name="tint"></param>
+  /// <param name="shade"></param>
   public ThemeColor(ThemeColorIndex index, Percent? tint, Percent? shade)
   {
     Index = index;
@@ -21,12 +29,12 @@ public class ThemeColor : Color
   public ThemeColorIndex Index { get; set; } = ThemeColorIndex.None;
 
   /// <summary>
-  ///   Run Content Theme Color Tint
+  ///   Specifies a lighter version of its input color. A 10% tint is 10% of the input color combined with 90% white.
   /// </summary>
   public Percent? Tint { get; set; }
 
   /// <summary>
-  ///   Run Content Theme Color Shade
+  /// Specifies a darker version of its input color. A 10% shade is 10% of the input color combined with 90% black.
   /// </summary>
   public Percent? Shade { get; set; }
 
@@ -96,7 +104,7 @@ public class ThemeColor : Color
     if (value != null)
     {
       value.Name = name;
-      value.RGB = RGB;
+      value.Value = RGB;
     }
     return value != null;
   }

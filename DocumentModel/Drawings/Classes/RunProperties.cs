@@ -6,6 +6,7 @@ namespace DocumentModel.Drawings;
 /// </summary>
 public class RunProperties: ModelElement
 {
+
   public Outline? Outline { get; set; }
 
   public bool? NoFill { get; set; }
@@ -47,6 +48,11 @@ public class RunProperties: ModelElement
   public HyperlinkOnMouseOver? HyperlinkOnMouseOver { get; set; }
 
   public bool? RightToLeft { get; set; }
+
+  /// <summary>
+  /// Collected drawing properties for a text run.
+  /// </summary>
+  public DrawingProperties? DrawingProperties { get; set; }
 
   public ExtensionList? ExtensionList { get; set; }
 }

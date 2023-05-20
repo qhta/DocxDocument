@@ -16,7 +16,7 @@ public class TestNumbering : TestBase
   public bool TestReadNumbering()
   {
     foreach (var filename in GetTestFilenames(TestPath))
-      if (!TestReadNumbering(filename))
+      if (!TestReadNumbering(filename, false, true, false))
         return false;
     return true;
   }
@@ -105,7 +105,7 @@ public class TestNumbering : TestBase
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
       #endregion
       if (ok && copyBack)
-      {
+      {               
         #region copy back
         if (String.IsNullOrEmpty(Path.GetDirectoryName(filename)))
           filename = Path.Combine(TestPath, filename);

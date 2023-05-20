@@ -133,7 +133,7 @@ public static class ExtBaseRunPropertiesConverter
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.GlowConverter.CreateOpenXmlElement<DXO10W.Glow>(value);
+      itemElement = DMXW.GlowConverter.CreateOpenXmlElement(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }
@@ -141,27 +141,27 @@ public static class ExtBaseRunPropertiesConverter
   #endregion
 
   #region Shadow14 conversion.
-  public static DMW.Shadow2? GetShadow14(DX.OpenXmlCompositeElement openXmlElement)
+  public static DMW.Shadow? GetShadow14(DX.OpenXmlCompositeElement openXmlElement)
   {
     var element = openXmlElement?.GetFirstChild<DXO10W.Shadow>();
     if (element != null)
-      return DMXW.Shadow2Converter.CreateModelElement(element);
+      return DMXW.ShadowConverter.CreateModelElement(element);
     return null;
   }
 
-  public static bool CmpShadow14(DX.OpenXmlCompositeElement openXmlElement, DMW.Shadow2? value, DiffList? diffs, string? objName)
+  public static bool CmpShadow14(DX.OpenXmlCompositeElement openXmlElement, DMW.Shadow? value, DiffList? diffs, string? objName)
   {
-    return DMXW.Shadow2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.Shadow>(), value, diffs, objName);
+    return DMXW.ShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.Shadow>(), value, diffs, objName);
   }
 
-  public static void SetShadow14(DX.OpenXmlCompositeElement openXmlElement, DMW.Shadow2? value)
+  public static void SetShadow14(DX.OpenXmlCompositeElement openXmlElement, DMW.Shadow? value)
   {
     var itemElement = openXmlElement.GetFirstChild<DXO10W.Shadow>();
     if (itemElement != null)
       itemElement.Remove();
     if (value != null)
     {
-      itemElement = DMXW.Shadow2Converter.CreateOpenXmlElement<DXO10W.Shadow>(value);
+      itemElement = DMXW.ShadowConverter.CreateOpenXmlElement<DXO10W.Shadow>(value);
       if (itemElement != null)
         openXmlElement.AppendChild(itemElement);
     }

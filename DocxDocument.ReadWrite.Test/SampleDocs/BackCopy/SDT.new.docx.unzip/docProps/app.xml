@@ -1,19 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<ap:Properties xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes" xmlns:ap="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
-  <ap:Template>Normal.dotm</ap:Template>
-  <ap:TotalTime>37</ap:TotalTime>
-  <ap:Paragraphs>1</ap:Paragraphs>
-  <ap:Lines>2</ap:Lines>
-  <ap:CharactersWithSpaces>373</ap:CharactersWithSpaces>
-  <ap:Characters>321</ap:Characters>
-  <ap:Words>53</ap:Words>
-  <ap:Pages>1</ap:Pages>
-  <ap:DocSecurity>0</ap:DocSecurity>
-  <ap:HyperlinksChanged>0</ap:HyperlinksChanged>
-  <ap:SharedDoc>0</ap:SharedDoc>
-  <ap:LinksUpToDate>0</ap:LinksUpToDate>
-  <ap:HeadingPairs>
-    <vt:vector baseType="variant" size="2">
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+  <Template>Normal.dotm</Template>
+  <TotalTime>37</TotalTime>
+  <Pages>1</Pages>
+  <Words>53</Words>
+  <Characters>321</Characters>
+  <Application>Microsoft Office Word</Application>
+  <DocSecurity>0</DocSecurity>
+  <Lines>2</Lines>
+  <Paragraphs>1</Paragraphs>
+  <ScaleCrop>false</ScaleCrop>
+  <HeadingPairs>
+    <vt:vector size="2" baseType="variant">
       <vt:variant>
         <vt:lpstr>Tytuł</vt:lpstr>
       </vt:variant>
@@ -21,14 +19,16 @@
         <vt:i4>1</vt:i4>
       </vt:variant>
     </vt:vector>
-  </ap:HeadingPairs>
-  <ap:ScaleCrop>0</ap:ScaleCrop>
-  <ap:Application>Microsoft Office Word</ap:Application>
-  <ap:TitlesOfParts>
-    <vt:vector baseType="lpstr" size="1">
+  </HeadingPairs>
+  <TitlesOfParts>
+    <vt:vector size="1" baseType="lpstr">
       <vt:lpstr></vt:lpstr>
     </vt:vector>
-  </ap:TitlesOfParts>
-  <ap:Company></ap:Company>
-  <ap:AppVersion>16.0000</ap:AppVersion>
-</ap:Properties>
+  </TitlesOfParts>
+  <Company></Company>
+  <LinksUpToDate>false</LinksUpToDate>
+  <CharactersWithSpaces>373</CharactersWithSpaces>
+  <SharedDoc>false</SharedDoc>
+  <HyperlinksChanged>false</HyperlinksChanged>
+  <AppVersion>16.0000</AppVersion>
+</Properties>
