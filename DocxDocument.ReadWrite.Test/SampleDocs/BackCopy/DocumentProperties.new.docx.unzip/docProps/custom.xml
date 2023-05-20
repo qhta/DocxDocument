@@ -1,30 +1,30 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<op:Properties xmlns:op="http://schemas.openxmlformats.org/officeDocument/2006/custom-properties">
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="2" name="Cel">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">Opracowanie modelu</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="3" name="Język">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">PL-pl</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="4" name="Źródło">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">Własne</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="5" name="Temat">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">Właściwości dokumentu</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="6" name="Wydawca">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">Wydanie własne</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="7" name="Właściciel">
-    <vt:lpwstr xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">Jarosław Kuchta</vt:lpwstr>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="8" name="Data rejestracji">
-    <vt:filetime xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">2023-02-01T10:00:00</vt:filetime>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="9" name="Wartość">
-    <vt:r8 xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">123.45600128173828</vt:r8>
-  </op:property>
-  <op:property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="10" name="Zaakceptowany">
-    <vt:bool xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">true</vt:bool>
-  </op:property>
-</op:Properties>
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/custom-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes">
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="2" name="Cel">
+    <vt:lpwstr>Opracowanie modelu</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="3" name="Język">
+    <vt:lpwstr>PL-pl</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="4" name="Źródło">
+    <vt:lpwstr>Własne</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="5" name="Temat">
+    <vt:lpwstr>Właściwości dokumentu</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="6" name="Wydawca">
+    <vt:lpwstr>Wydanie własne</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="7" name="Właściciel">
+    <vt:lpwstr>Jarosław Kuchta</vt:lpwstr>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="8" name="Data rejestracji">
+    <vt:filetime>2023-02-01T10:00:00Z</vt:filetime>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="9" name="Wartość">
+    <vt:r8>123.456</vt:r8>
+  </property>
+  <property fmtid="{D5CDD505-2E9C-101B-9397-08002B2CF9AE}" pid="10" name="Zaakceptowany">
+    <vt:bool>true</vt:bool>
+  </property>
+</Properties>

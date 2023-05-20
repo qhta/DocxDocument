@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<coreProperties xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openxmlformats.org/package/2006/metadata/core-properties">
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dcmitype="http://purl.org/dc/dcmitype/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <dc:title>Document Properties</dc:title>
   <dc:subject>Properties</dc:subject>
   <dc:creator>Jarosław Kuchta;Krzyś</dc:creator>
-  <keywords>Document, Property, Properties</keywords>
+  <cp:keywords>Document, Property, Properties</cp:keywords>
   <dc:description>This document holds only document properties.</dc:description>
-  <lastModifiedBy>Jarosław Kuchta</lastModifiedBy>
-  <revision>4</revision>
-  <dcterms:created xsi:type="dcterms:W3CDTF">2022-08-04T08:16:00.0000000Z</dcterms:created>
-  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-05-05T10:24:00.0000000Z</dcterms:modified>
-  <category>Samples</category>
-  <contentStatus>Example</contentStatus>
-</coreProperties>
+  <cp:lastModifiedBy>Jarosław Kuchta</cp:lastModifiedBy>
+  <cp:revision>4</cp:revision>
+  <dcterms:created xsi:type="dcterms:W3CDTF">2022-08-04T08:16:00Z</dcterms:created>
+  <dcterms:modified xsi:type="dcterms:W3CDTF">2023-05-05T10:24:00Z</dcterms:modified>
+  <cp:category>Samples</cp:category>
+  <cp:contentStatus>Example</cp:contentStatus>
+</cp:coreProperties>

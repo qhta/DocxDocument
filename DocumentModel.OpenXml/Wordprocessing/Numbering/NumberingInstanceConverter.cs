@@ -30,7 +30,11 @@ public static class NumberingInstanceConverter
   {
     // This does not work. DurableId attribute is defined in other namespace.
     //return openXmlElement?.DurableId?.Value;
-    return Int32ValueConverter.GetValue(openXmlElement?.GetAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid").Value);
+    var attrib = openXmlElement?.GetAttributes().FirstOrDefault(item=>item.LocalName == "durableId"
+    && item.NamespaceUri=="http://schemas.microsoft.com/office/word/2016/wordml/cid");
+    if (attrib!=null)
+      return Int32ValueConverter.GetValue(attrib.Value.Value);
+    return null;
 
   }
 
@@ -39,20 +43,20 @@ public static class NumberingInstanceConverter
     //if (openXmlElement?.DurableId?.Value == value) return true;
     //diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
     //return false;
+    var val = GetDurableId(openXmlElement);
     return Int32ValueConverter.CmpValue(
-      openXmlElement?.GetAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid").Value,
-      value, diffs, typeof(DXW.AbstractNum).Name, "durableId");
+      val, value, diffs, typeof(DXW.AbstractNum).Name, "durableId");
   }
 
   private static void SetDurableId(DXW.NumberingInstance openXmlElement, Int32? value)
   {
     //openXmlElement.DurableId = value;
-    if (value!=null)
+    if (value != null)
       openXmlElement?.SetAttribute(
-        new OpenXmlAttribute("durableId","http://schemas.microsoft.com/office/word/2016/wordml/cid", 
+        new OpenXmlAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid",
         value.ToString()));
     else
-      openXmlElement?.RemoveAttribute("durableId","http://schemas.microsoft.com/office/word/2016/wordml/cid");
+      openXmlElement?.RemoveAttribute("durableId", "http://schemas.microsoft.com/office/word/2016/wordml/cid");
   }
   #endregion
 

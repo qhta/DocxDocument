@@ -1,10 +1,11 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Scene3D Class.
 /// </summary>
-public class Scene3D: ModelElement
+public class Scene3D: ModelElement, IDrawingProperty
 {
   /// <summary>
   ///   Camera.

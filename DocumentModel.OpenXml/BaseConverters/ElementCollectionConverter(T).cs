@@ -264,7 +264,7 @@ public static class ElementCollectionConverter<ModelType>
   /// <param name="data">Additional parameter passed to <see cref="CreateModelElementMethodExt"/> method.</param>
   /// <returns><c>True</c> if conversion was successful, <c>false</c> otherwise.</returns>
   public static bool FillModelElementCollection(IEnumerable<DX.OpenXmlElement>? elements, DM.ElementCollection<ModelType> modelElementCollection,
-    CreateModelElementMethodExt createElementMethod, object data)
+    CreateModelElementMethodExt createElementMethod, object? data)
   {
     if (elements != null)
     {

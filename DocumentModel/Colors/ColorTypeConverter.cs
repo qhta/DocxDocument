@@ -1,4 +1,6 @@
-﻿namespace DocumentModel;
+﻿using System.Xml;
+
+namespace DocumentModel;
 
 /// <summary>
 /// XML converter for Color type. Converts color to/from string.
@@ -6,8 +8,12 @@
 internal class ColorTypeConverter : TypeConverter
 {
 #pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
+
+  #region TypeConverter implementation.
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
+    if (context?.Instance as Type != typeof(DM.Color))
+      return false;
     if (destinationType == typeof(string))
       return true;
     return base.CanConvertTo(context, destinationType);
@@ -22,11 +28,9 @@ internal class ColorTypeConverter : TypeConverter
 
   public override object? ConvertTo(ITypeDescriptorContext? context, CultureInfo? culture, object? value, Type destinationType)
   {
-    if (value is DMW.ThemeColor themeColor)
-      return themeColor.ToString();
-    if (value is DM.Color color)
-      return color.ToString();
-    return base.ConvertTo(context, culture, value, destinationType);
+    if (value?.GetType() == typeof(DM.Color))
+      return ((DM.Color)value).ToString();
+    return null;
   }
 
   public override object? ConvertFrom(ITypeDescriptorContext? context, CultureInfo? culture, object value)
@@ -35,11 +39,9 @@ internal class ColorTypeConverter : TypeConverter
     {
       if (DM.Color.TryParse(str, out var color))
         return color;
-      if (DMW.ThemeColor.TryParse(str, out var themeColor))
-        return themeColor;
     }
     return base.ConvertFrom(context, culture, value);
   }
-
+  #endregion
 
 }

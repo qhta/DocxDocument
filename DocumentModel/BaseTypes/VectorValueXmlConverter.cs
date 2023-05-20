@@ -7,10 +7,7 @@ namespace DocumentModel;
 
 internal class VectorValueXmlConverter : TypeConverter, IXmlConverter
 {
-  public virtual bool CanRead => true;
-
-  public virtual bool CanWrite => true;
-
+  #region TypeConverter implementation.
   public override bool CanConvertTo(ITypeDescriptorContext? context, Type? destinationType)
   {
     if (destinationType == null)
@@ -43,19 +40,6 @@ internal class VectorValueXmlConverter : TypeConverter, IXmlConverter
         if (item is JValue jValue)
         {
           result.Add(jValue.Value);
-          //  string? str = null;
-          //  int? num = null;
-          //  var firstItem = jToken.FirstOrDefault();
-          //  if (firstItem is JProperty jProperty)
-          //  {
-          //    str = jProperty.Value.Value<string>();
-          //    var nextItem = jToken.Next;
-          //    if (nextItem is JProperty jProperty2)
-          //    {
-          //      num = jProperty.Value.Value<int>();
-          //    }
-          //    result.Add(new StringNum { Str = str, Num = num });
-          //  }
         }
       }
       return result;
@@ -64,6 +48,17 @@ internal class VectorValueXmlConverter : TypeConverter, IXmlConverter
       return variant;
     return base.ConvertFrom(context, culture, value);
   }
+  #endregion
+
+  #region IXmlConverter implementation.
+  public bool CanConvert(Type objectType)
+  {
+    return objectType == typeof(VectorVariant);
+  }
+
+  public virtual bool CanRead => true;
+
+  public virtual bool CanWrite => true;
 
   public void WriteXml(object? context, IXmlWriter writer, object? value, IXmlSerializer? xmlSerializer)
   {
@@ -164,8 +159,5 @@ internal class VectorValueXmlConverter : TypeConverter, IXmlConverter
     throw new InvalidOperationException($"\"Vector\" element name expected, but {reader.LocalName} found");
   }
 
-  public bool CanConvert(Type objectType)
-  {
-    return objectType == typeof(VectorVariant);
-  }
+  #endregion
 }

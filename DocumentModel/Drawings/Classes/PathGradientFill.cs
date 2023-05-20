@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Path Gradient.
 /// </summary>
-public class PathGradientFill: ModelElement
+public class PathGradientFill: GradientFill
 {
   /// <summary>
   ///   Gradient Fill Path

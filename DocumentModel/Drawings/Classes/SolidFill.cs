@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
-///   Defines the SolidFill Class.
+///   Specifies a solid color fill. The shape is filled entirely with the specified color. 
 /// </summary>
-public class SolidFill: ModelElement
+public class SolidFill: Fill
 {
   /// <summary>
   ///   RGB Color Model - Percentage Variant.

@@ -1,3 +1,5 @@
+using DocumentModel.OpenXml.Drawings;
+
 namespace DocumentModel.OpenXml.Wordprocessing;
 
 /// <summary>
@@ -747,6 +749,7 @@ public static class BaseRunPropertiesConverter
     model.Language = GetLanguages(openXmlElement);
     model.EastAsianLayout = GetEastAsianLayout(openXmlElement);
     model.SpecVanish = GetSpecVanish(openXmlElement);
+    DXO10WPropertiesConverter.UpdateRunProperties(model, openXmlElement);
   }
 
   public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseRunProperties? model, DiffList? diffs, string? objName)

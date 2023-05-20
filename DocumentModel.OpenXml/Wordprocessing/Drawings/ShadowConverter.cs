@@ -3,7 +3,7 @@ namespace DocumentModel.OpenXml.Wordprocessing;
 /// <summary>
 /// Defines the Shadow Class.
 /// </summary>
-public static class Shadow2Converter
+public static class ShadowConverter
 {
   /// <summary>
   /// blurRad, this property is only available in Office 2010 and later.
@@ -221,11 +221,11 @@ public static class Shadow2Converter
     }
   }
   
-  public static DMW.Shadow2? CreateModelElement(DXO10W.Shadow? openXmlElement)
+  public static DMW.Shadow? CreateModelElement(DXO10W.Shadow? openXmlElement)
   {
     if (openXmlElement != null)
     {
-      var value = new DMW.Shadow2();
+      var value = new DMW.Shadow();
       value.BlurRadius = GetBlurRadius(openXmlElement);
       value.DistanceFromText = GetDistanceFromText(openXmlElement);
       value.DirectionAngle = GetDirectionAngle(openXmlElement);
@@ -241,7 +241,7 @@ public static class Shadow2Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.Shadow? openXmlElement, DMW.Shadow2? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Shadow? openXmlElement, DMW.Shadow? value, DiffList? diffs, string? objName)
   {
     if (openXmlElement != null && value != null)
     {
@@ -273,7 +273,7 @@ public static class Shadow2Converter
     return false;
   }
   
-  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Shadow2 value)
+  public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.Shadow value)
     where OpenXmlElementType: DXO10W.Shadow, new()
   {
     var openXmlElement = new OpenXmlElementType();
@@ -281,7 +281,7 @@ public static class Shadow2Converter
     return openXmlElement;
   }
   
-  public static void UpdateOpenXmlElement(DXO10W.Shadow openXmlElement, DMW.Shadow2 value)
+  public static void UpdateOpenXmlElement(DXO10W.Shadow openXmlElement, DMW.Shadow value)
   {
     SetBlurRadius(openXmlElement, value?.BlurRadius);
     SetDistanceFromText(openXmlElement, value?.DistanceFromText);

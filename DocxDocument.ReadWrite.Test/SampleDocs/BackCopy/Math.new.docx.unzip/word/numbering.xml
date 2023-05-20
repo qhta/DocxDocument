@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<w:numbering xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16du="http://schemas.microsoft.com/office/word/2023/wordml/word16du" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
-  <w:abstractNum w:abstractNumId="0" w15:restartNumberingAfterBreak="0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:abstractNum w:abstractNumId="0" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="FFFFFF88" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="1D2A4790" />
@@ -18,7 +18,7 @@
       </w:pPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="1" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="1" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="FFFFFF89" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="01D6BCFE" />
@@ -34,11 +34,11 @@
         <w:ind w:left="360" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="2" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="2" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="055D72D2" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="8AC418CE" />
@@ -50,7 +50,7 @@
         <w:ind w:left="720" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -62,7 +62,7 @@
         <w:ind w:left="1440" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -74,7 +74,7 @@
         <w:ind w:left="2160" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -86,7 +86,7 @@
         <w:ind w:left="2880" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -98,7 +98,7 @@
         <w:ind w:left="3600" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -110,7 +110,7 @@
         <w:ind w:left="4320" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -122,7 +122,7 @@
         <w:ind w:left="5040" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -134,7 +134,7 @@
         <w:ind w:left="5760" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -146,11 +146,11 @@
         <w:ind w:left="6480" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="3" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="3" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="066204D8" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="141E3BEE" />
@@ -163,7 +163,7 @@
         <w:ind w:left="1090" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -175,7 +175,7 @@
         <w:ind w:left="1810" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -187,7 +187,7 @@
         <w:ind w:left="2530" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -199,7 +199,7 @@
         <w:ind w:left="3250" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -211,7 +211,7 @@
         <w:ind w:left="3970" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -223,7 +223,7 @@
         <w:ind w:left="4690" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -235,7 +235,7 @@
         <w:ind w:left="5410" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -247,7 +247,7 @@
         <w:ind w:left="6130" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -259,11 +259,11 @@
         <w:ind w:left="6850" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="4" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="4" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="0E656706" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="4DAAF2C2" />
@@ -276,16 +276,16 @@
         <w:ind w:left="720" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -299,16 +299,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -322,16 +322,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -345,16 +345,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -368,16 +368,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -391,16 +391,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -414,16 +414,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -437,16 +437,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -460,22 +460,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="5" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="5" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="12EE676D" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="18EC687A" />
@@ -488,16 +488,16 @@
         <w:ind w:left="720" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -511,16 +511,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -534,16 +534,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -557,16 +557,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -580,16 +580,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -603,16 +603,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -626,16 +626,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -649,16 +649,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -672,22 +672,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="6" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="6" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="1E7A5B45" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="0E064942" />
@@ -704,7 +704,7 @@
         <w:ind w:left="992" w:hanging="283" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003">
@@ -719,7 +719,7 @@
         <w:ind w:left="1298" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -734,7 +734,7 @@
         <w:ind w:left="2018" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -749,7 +749,7 @@
         <w:ind w:left="2738" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -764,7 +764,7 @@
         <w:ind w:left="3458" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -779,7 +779,7 @@
         <w:ind w:left="4178" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -794,7 +794,7 @@
         <w:ind w:left="4898" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -809,7 +809,7 @@
         <w:ind w:left="5618" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -824,11 +824,11 @@
         <w:ind w:left="6338" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="7" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="7" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="1F123670" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="7DB0504E" />
@@ -841,7 +841,7 @@
         <w:ind w:left="1057" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -853,7 +853,7 @@
         <w:ind w:left="1777" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -865,7 +865,7 @@
         <w:ind w:left="2497" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -877,7 +877,7 @@
         <w:ind w:left="3217" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -889,7 +889,7 @@
         <w:ind w:left="3937" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -901,7 +901,7 @@
         <w:ind w:left="4657" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -913,7 +913,7 @@
         <w:ind w:left="5377" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -925,7 +925,7 @@
         <w:ind w:left="6097" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -937,11 +937,11 @@
         <w:ind w:left="6817" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="8" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="8" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="265B26CD" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="91F04C60" />
@@ -954,16 +954,16 @@
         <w:ind w:left="720" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -977,16 +977,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1000,16 +1000,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1023,16 +1023,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1046,16 +1046,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1069,16 +1069,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1092,16 +1092,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1115,16 +1115,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1138,22 +1138,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="9" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="9" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="336C7F8C" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="3EFA51A8" />
@@ -1165,7 +1165,7 @@
         <w:ind w:left="720" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -1177,7 +1177,7 @@
         <w:ind w:left="1440" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -1189,7 +1189,7 @@
         <w:ind w:left="2160" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -1201,7 +1201,7 @@
         <w:ind w:left="2880" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -1213,7 +1213,7 @@
         <w:ind w:left="3600" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -1225,7 +1225,7 @@
         <w:ind w:left="4320" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -1237,7 +1237,7 @@
         <w:ind w:left="5040" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -1249,7 +1249,7 @@
         <w:ind w:left="5760" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -1261,11 +1261,11 @@
         <w:ind w:left="6480" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="10" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="10" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="39FA5CC0" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="08283F3C" />
@@ -1278,7 +1278,7 @@
         <w:ind w:left="1090" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -1290,7 +1290,7 @@
         <w:ind w:left="1810" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -1302,7 +1302,7 @@
         <w:ind w:left="2530" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -1314,7 +1314,7 @@
         <w:ind w:left="3250" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -1326,7 +1326,7 @@
         <w:ind w:left="3970" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -1338,7 +1338,7 @@
         <w:ind w:left="4690" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -1350,7 +1350,7 @@
         <w:ind w:left="5410" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -1362,7 +1362,7 @@
         <w:ind w:left="6130" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -1374,11 +1374,11 @@
         <w:ind w:left="6850" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="11" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="11" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="3B074048" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="5CC20872" />
@@ -1391,7 +1391,7 @@
         <w:ind w:left="1080" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -1403,7 +1403,7 @@
         <w:ind w:left="1800" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -1415,7 +1415,7 @@
         <w:ind w:left="2520" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -1427,7 +1427,7 @@
         <w:ind w:left="3240" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -1439,7 +1439,7 @@
         <w:ind w:left="3960" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -1451,7 +1451,7 @@
         <w:ind w:left="4680" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -1463,7 +1463,7 @@
         <w:ind w:left="5400" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -1475,7 +1475,7 @@
         <w:ind w:left="6120" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -1487,11 +1487,11 @@
         <w:ind w:left="6840" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="12" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="12" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="3DA05A57" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="01800802" />
@@ -1504,16 +1504,16 @@
         <w:ind w:left="533" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1527,16 +1527,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1550,16 +1550,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1573,16 +1573,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1596,16 +1596,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1619,16 +1619,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1642,16 +1642,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1665,16 +1665,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1688,22 +1688,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="13" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="13" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="4326568B" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="BE6CDD7E" />
@@ -1716,16 +1716,16 @@
         <w:ind w:left="170" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1739,16 +1739,16 @@
         <w:ind w:left="1080" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1762,16 +1762,16 @@
         <w:ind w:left="1800" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1785,16 +1785,16 @@
         <w:ind w:left="2520" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1808,16 +1808,16 @@
         <w:ind w:left="3240" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1831,16 +1831,16 @@
         <w:ind w:left="3960" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1854,16 +1854,16 @@
         <w:ind w:left="4680" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1877,16 +1877,16 @@
         <w:ind w:left="5400" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1900,22 +1900,22 @@
         <w:ind w:left="6120" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="14" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="14" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="43637BF5" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="891C7B3A" />
@@ -1928,16 +1928,16 @@
         <w:ind w:left="720" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1951,16 +1951,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1974,16 +1974,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -1997,16 +1997,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2020,16 +2020,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2043,16 +2043,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2066,16 +2066,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2089,16 +2089,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2112,22 +2112,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="15" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="15" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="46B304F4" />
     <w:multiLevelType w:val="multilevel" />
     <w:tmpl w:val="B8644C7E" />
@@ -2249,7 +2249,7 @@
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="16" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="16" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="477B6FDD" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="698466B2" />
@@ -2262,16 +2262,16 @@
         <w:ind w:left="595" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2285,16 +2285,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2308,16 +2308,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2331,16 +2331,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2354,16 +2354,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2377,16 +2377,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2400,16 +2400,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2423,16 +2423,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2446,22 +2446,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="17" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="17" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="47DB64A6" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="A9EE9366" />
@@ -2474,7 +2474,7 @@
         <w:ind w:left="720" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2486,7 +2486,7 @@
         <w:ind w:left="1440" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2498,7 +2498,7 @@
         <w:ind w:left="2160" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2510,7 +2510,7 @@
         <w:ind w:left="2880" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2522,7 +2522,7 @@
         <w:ind w:left="3600" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2534,7 +2534,7 @@
         <w:ind w:left="4320" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2546,7 +2546,7 @@
         <w:ind w:left="5040" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2558,7 +2558,7 @@
         <w:ind w:left="5760" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="FFFFFFFF" w:tentative="1">
@@ -2570,11 +2570,11 @@
         <w:ind w:left="6480" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="18" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="18" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="50103630" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="0CCADEEC" />
@@ -2587,16 +2587,16 @@
         <w:ind w:left="721" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2610,16 +2610,16 @@
         <w:ind w:left="1555" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2633,16 +2633,16 @@
         <w:ind w:left="2275" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2656,16 +2656,16 @@
         <w:ind w:left="2995" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2679,16 +2679,16 @@
         <w:ind w:left="3715" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2702,16 +2702,16 @@
         <w:ind w:left="4435" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2725,16 +2725,16 @@
         <w:ind w:left="5155" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2748,16 +2748,16 @@
         <w:ind w:left="5875" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2771,22 +2771,22 @@
         <w:ind w:left="6595" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="20" />
+        <w:szCs w:val="20" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="20" />
-        <w:szCs w:val="20" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="19" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="19" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="570805F1" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="26EA6472" />
@@ -2798,7 +2798,7 @@
         <w:ind w:left="720" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -2810,7 +2810,7 @@
         <w:ind w:left="1440" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -2822,7 +2822,7 @@
         <w:ind w:left="2160" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -2834,7 +2834,7 @@
         <w:ind w:left="2880" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -2846,7 +2846,7 @@
         <w:ind w:left="3600" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -2858,7 +2858,7 @@
         <w:ind w:left="4320" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -2870,7 +2870,7 @@
         <w:ind w:left="5040" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -2882,7 +2882,7 @@
         <w:ind w:left="5760" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -2894,11 +2894,11 @@
         <w:ind w:left="6480" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="20" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="20" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="571E748C" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="FDBA6E5A" />
@@ -2911,16 +2911,16 @@
         <w:ind w:left="720" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2934,16 +2934,16 @@
         <w:ind w:left="1440" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2957,16 +2957,16 @@
         <w:ind w:left="2160" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -2980,16 +2980,16 @@
         <w:ind w:left="2880" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3003,16 +3003,16 @@
         <w:ind w:left="3600" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3026,16 +3026,16 @@
         <w:ind w:left="4320" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3049,16 +3049,16 @@
         <w:ind w:left="5040" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Arial" w:eastAsia="Arial" w:hAnsi="Arial" w:cs="Arial" />
+        <w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:eastAsia="Arial" w:cs="Arial" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3072,16 +3072,16 @@
         <w:ind w:left="5760" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3095,22 +3095,22 @@
         <w:ind w:left="6480" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
+        <w:rFonts w:ascii="Segoe UI Symbol" w:hAnsi="Segoe UI Symbol" w:eastAsia="Segoe UI Symbol" w:cs="Segoe UI Symbol" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="21" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="21" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="63EB7664" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="6408EE98" />
@@ -3123,16 +3123,16 @@
         <w:ind w:left="170" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3146,16 +3146,16 @@
         <w:ind w:left="1080" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3169,16 +3169,16 @@
         <w:ind w:left="1800" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3192,16 +3192,16 @@
         <w:ind w:left="2520" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3215,16 +3215,16 @@
         <w:ind w:left="3240" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3238,16 +3238,16 @@
         <w:ind w:left="3960" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3261,16 +3261,16 @@
         <w:ind w:left="4680" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3284,16 +3284,16 @@
         <w:ind w:left="5400" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
@@ -3307,22 +3307,22 @@
         <w:ind w:left="6120" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Cambria Math" w:eastAsia="Cambria Math" w:hAnsi="Cambria Math" w:cs="Cambria Math" />
+        <w:rFonts w:ascii="Cambria Math" w:hAnsi="Cambria Math" w:eastAsia="Cambria Math" w:cs="Cambria Math" />
         <w:b w:val="0" />
         <w:i w:val="0" />
+        <w:sz w:val="22" />
+        <w:szCs w:val="22" />
         <w:strike w:val="0" />
         <w:dstrike w:val="0" />
         <w:color w:val="000000" />
-        <w:sz w:val="22" />
-        <w:szCs w:val="22" />
         <w:u w:val="none" w:color="000000" />
-        <w:bdr w:val="none" w:sz="0" w:space="0" w:color="auto" />
+        <w:bdr w:val="none" w:color="auto" w:sz="0" w:space="0" />
         <w:shd w:val="clear" w:color="auto" w:fill="auto" />
         <w:vertAlign w:val="baseline" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="22" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="22" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="6CB40C3F" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="FF2AA5B8" />
@@ -3335,7 +3335,7 @@
         <w:ind w:left="1080" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -3347,7 +3347,7 @@
         <w:ind w:left="1800" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -3359,7 +3359,7 @@
         <w:ind w:left="2520" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -3371,7 +3371,7 @@
         <w:ind w:left="3240" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -3383,7 +3383,7 @@
         <w:ind w:left="3960" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -3395,7 +3395,7 @@
         <w:ind w:left="4680" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -3407,7 +3407,7 @@
         <w:ind w:left="5400" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -3419,7 +3419,7 @@
         <w:ind w:left="6120" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -3431,11 +3431,11 @@
         <w:ind w:left="6840" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="23" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="23" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="6EE2116E" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="2476306A" />
@@ -3552,7 +3552,7 @@
       </w:pPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="24" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="24" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="7821563D" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="58AEA7DC" />
@@ -3565,7 +3565,7 @@
         <w:ind w:left="720" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -3577,7 +3577,7 @@
         <w:ind w:left="1440" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -3589,7 +3589,7 @@
         <w:ind w:left="2160" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -3601,7 +3601,7 @@
         <w:ind w:left="2880" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -3613,7 +3613,7 @@
         <w:ind w:left="3600" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -3625,7 +3625,7 @@
         <w:ind w:left="4320" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -3637,7 +3637,7 @@
         <w:ind w:left="5040" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -3649,7 +3649,7 @@
         <w:ind w:left="5760" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -3661,65 +3661,65 @@
         <w:ind w:left="6480" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:num w:numId="1" w16cid:durableId="1798142380">
+  <w:num w:numId="1" p2:durableId="1798142380" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="20" />
   </w:num>
-  <w:num w:numId="2" w16cid:durableId="287663485">
+  <w:num w:numId="2" p2:durableId="287663485" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="4" />
   </w:num>
-  <w:num w:numId="3" w16cid:durableId="749232629">
+  <w:num w:numId="3" p2:durableId="749232629" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="13" />
   </w:num>
-  <w:num w:numId="4" w16cid:durableId="1196190965">
+  <w:num w:numId="4" p2:durableId="1196190965" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="21" />
   </w:num>
-  <w:num w:numId="5" w16cid:durableId="891693828">
+  <w:num w:numId="5" p2:durableId="891693828" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="12" />
   </w:num>
-  <w:num w:numId="6" w16cid:durableId="3439337">
+  <w:num w:numId="6" p2:durableId="3439337" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="16" />
   </w:num>
-  <w:num w:numId="7" w16cid:durableId="115372374">
+  <w:num w:numId="7" p2:durableId="115372374" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="14" />
   </w:num>
-  <w:num w:numId="8" w16cid:durableId="795565628">
+  <w:num w:numId="8" p2:durableId="795565628" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="8" />
   </w:num>
-  <w:num w:numId="9" w16cid:durableId="1997144699">
+  <w:num w:numId="9" p2:durableId="1997144699" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="5" />
   </w:num>
-  <w:num w:numId="10" w16cid:durableId="1316446164">
+  <w:num w:numId="10" p2:durableId="1316446164" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="18" />
   </w:num>
-  <w:num w:numId="11" w16cid:durableId="96562083">
+  <w:num w:numId="11" p2:durableId="96562083" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="23" />
   </w:num>
-  <w:num w:numId="12" w16cid:durableId="243539905">
+  <w:num w:numId="12" p2:durableId="243539905" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="15" />
   </w:num>
-  <w:num w:numId="13" w16cid:durableId="1851406430">
+  <w:num w:numId="13" p2:durableId="1851406430" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="0" />
   </w:num>
-  <w:num w:numId="14" w16cid:durableId="604579790">
+  <w:num w:numId="14" p2:durableId="604579790" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="1" />
   </w:num>
-  <w:num w:numId="15" w16cid:durableId="1171263627">
+  <w:num w:numId="15" p2:durableId="1171263627" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="6" />
   </w:num>
-  <w:num w:numId="16" w16cid:durableId="1476027840">
+  <w:num w:numId="16" p2:durableId="1476027840" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="24" />
   </w:num>
-  <w:num w:numId="17" w16cid:durableId="1218280473">
+  <w:num w:numId="17" p2:durableId="1218280473" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="10" />
   </w:num>
-  <w:num w:numId="18" w16cid:durableId="657732394">
+  <w:num w:numId="18" p2:durableId="657732394" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="3" />
   </w:num>
-  <w:num w:numId="19" w16cid:durableId="1430274558">
+  <w:num w:numId="19" p2:durableId="1430274558" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="15" />
     <w:lvlOverride w:ilvl="0">
       <w:startOverride w:val="22" />
@@ -3749,19 +3749,19 @@
       <w:startOverride w:val="1" />
     </w:lvlOverride>
   </w:num>
-  <w:num w:numId="20" w16cid:durableId="2061509645">
+  <w:num w:numId="20" p2:durableId="2061509645" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="22" />
   </w:num>
-  <w:num w:numId="21" w16cid:durableId="920724888">
+  <w:num w:numId="21" p2:durableId="920724888" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="9" />
   </w:num>
-  <w:num w:numId="22" w16cid:durableId="1837451961">
+  <w:num w:numId="22" p2:durableId="1837451961" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="19" />
   </w:num>
-  <w:num w:numId="23" w16cid:durableId="1462844861">
+  <w:num w:numId="23" p2:durableId="1462844861" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="17" />
   </w:num>
-  <w:num w:numId="24" w16cid:durableId="524438426">
+  <w:num w:numId="24" p2:durableId="524438426" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="15" />
     <w:lvlOverride w:ilvl="0">
       <w:startOverride w:val="22" />
@@ -3791,13 +3791,13 @@
       <w:startOverride w:val="1" />
     </w:lvlOverride>
   </w:num>
-  <w:num w:numId="25" w16cid:durableId="1132207356">
+  <w:num w:numId="25" p2:durableId="1132207356" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="11" />
   </w:num>
-  <w:num w:numId="26" w16cid:durableId="907568656">
+  <w:num w:numId="26" p2:durableId="907568656" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="2" />
   </w:num>
-  <w:num w:numId="27" w16cid:durableId="1209489070">
+  <w:num w:numId="27" p2:durableId="1209489070" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="7" />
   </w:num>
 </w:numbering>

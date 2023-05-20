@@ -196,8 +196,6 @@ public partial class DocxReader : IDisposable
     {
       if (disposing)
       {
-
-        Debug.WriteLine("Dispose");
         WordprocessingDocument.Dispose();
       }
 
