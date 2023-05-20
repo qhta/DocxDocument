@@ -1,10 +1,11 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Shadow Class.
 /// </summary>
-public class Shadow2: ModelElement
+public class Shadow: ModelElement, IDrawingProperty
 {
   /// <summary>
   ///   blurRad, this property is only available in Office 2010 and later.

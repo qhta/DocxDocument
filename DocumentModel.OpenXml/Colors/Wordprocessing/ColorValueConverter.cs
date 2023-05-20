@@ -32,7 +32,7 @@ public static class ColorValueConverter
       }
       else
       if (UInt32.TryParse(openXmlElement.Value, NumberStyles.HexNumber, null, out var val)
-        && val.ToString("X6") == model.RGB?.ToString())
+        && val.ToString("X6") == model.Value?.ToString())
         return true;
     }
     if (openXmlElement?.Value == null && value == null) return true;
@@ -45,7 +45,7 @@ public static class ColorValueConverter
     if (value != null)
     {
       DM.Color model = (Color)value;
-      return new DX.StringValue(model.IsAuto() ? "auto" : model.RGB?.ToString());
+      return new DX.StringValue(model.IsAuto() ? "auto" : model.Value?.ToString());
     }
     else
       return null;

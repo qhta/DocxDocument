@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <w:footnotes xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid wp14">
   <w:footnote w:type="separator" w:id="-1">
-    <w:p w:rsidR="003F38B4" w:rsidP="00DC5A5D" w:rsidRDefault="003F38B4" w14:paraId="06DC1879" w14:textId="77777777">
+    <w:p w14:paraId="06DC1879" w14:textId="77777777" w:rsidR="003F38B4" w:rsidRDefault="003F38B4" w:rsidP="00DC5A5D">
       <w:r>
         <w:separator />
       </w:r>
     </w:p>
   </w:footnote>
   <w:footnote w:type="continuationSeparator" w:id="0">
-    <w:p w:rsidR="003F38B4" w:rsidP="00DC5A5D" w:rsidRDefault="003F38B4" w14:paraId="510B51C8" w14:textId="77777777">
+    <w:p w14:paraId="510B51C8" w14:textId="77777777" w:rsidR="003F38B4" w:rsidRDefault="003F38B4" w:rsidP="00DC5A5D">
       <w:r>
         <w:continuationSeparator />
       </w:r>
     </w:p>
   </w:footnote>
   <w:footnote w:id="1">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4F725E56" w14:textId="6BF3D36E">
+    <w:p w14:paraId="4F725E56" w14:textId="6BF3D36E" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -31,7 +31,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="2">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="30994621" w14:textId="267C1E0B">
+    <w:p w14:paraId="30994621" w14:textId="267C1E0B" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -74,7 +74,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="3">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="5FD74F8E" w14:textId="7A8BB8EF">
+    <w:p w14:paraId="5FD74F8E" w14:textId="7A8BB8EF" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -104,7 +104,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="4">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="6213F012" w14:textId="77777777">
+    <w:p w14:paraId="6213F012" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -124,7 +124,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="5">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="31EDDB8D" w14:textId="77777777">
+    <w:p w14:paraId="31EDDB8D" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -144,7 +144,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="6">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0D0C711D" w14:textId="77777777">
+    <w:p w14:paraId="0D0C711D" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -164,7 +164,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="7">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="315C248D" w14:textId="77777777">
+    <w:p w14:paraId="315C248D" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -184,7 +184,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="8">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="36F305D9" w14:textId="77777777">
+    <w:p w14:paraId="36F305D9" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -204,7 +204,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="9">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="24341A65" w14:textId="77777777">
+    <w:p w14:paraId="24341A65" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -224,7 +224,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="10">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7DE54FE2" w14:textId="77777777">
+    <w:p w14:paraId="7DE54FE2" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -244,7 +244,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="11">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="61367DF8" w14:textId="77777777">
+    <w:p w14:paraId="61367DF8" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -264,7 +264,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="12">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="028B9074" w14:textId="77777777">
+    <w:p w14:paraId="028B9074" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -284,7 +284,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="13">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3F316132" w14:textId="77777777">
+    <w:p w14:paraId="3F316132" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -304,7 +304,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="14">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="646A97B3" w14:textId="77777777">
+    <w:p w14:paraId="646A97B3" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -324,7 +324,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="15">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="684AAB61" w14:textId="77777777">
+    <w:p w14:paraId="684AAB61" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -344,7 +344,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="16">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="139DA406" w14:textId="77777777">
+    <w:p w14:paraId="139DA406" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -364,7 +364,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="17">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="21AA305B" w14:textId="77777777">
+    <w:p w14:paraId="21AA305B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -384,7 +384,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="18">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="190DD30D" w14:textId="77777777">
+    <w:p w14:paraId="190DD30D" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -404,7 +404,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="19">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="426651D8" w14:textId="77777777">
+    <w:p w14:paraId="426651D8" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -433,7 +433,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="20">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6A5EA72E" w14:textId="77777777">
+    <w:p w14:paraId="6A5EA72E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -453,7 +453,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="21">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4C407623" w14:textId="77777777">
+    <w:p w14:paraId="4C407623" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -473,7 +473,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="22">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6001022B" w14:textId="77777777">
+    <w:p w14:paraId="6001022B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -493,7 +493,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="23">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="21BD0337" w14:textId="77777777">
+    <w:p w14:paraId="21BD0337" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -513,7 +513,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="24">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6B31156B" w14:textId="77777777">
+    <w:p w14:paraId="6B31156B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -533,7 +533,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="25">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="550F8BCD" w14:textId="77777777">
+    <w:p w14:paraId="550F8BCD" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -553,7 +553,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="26">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="507320E5" w14:textId="77777777">
+    <w:p w14:paraId="507320E5" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -579,7 +579,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="27">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0C523388" w14:textId="26EA94C4">
+    <w:p w14:paraId="0C523388" w14:textId="26EA94C4" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -604,7 +604,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="28">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="07DB3DF3" w14:textId="77777777">
+    <w:p w14:paraId="07DB3DF3" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -624,7 +624,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="29">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="00E43C6B" w14:textId="77777777">
+    <w:p w14:paraId="00E43C6B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -644,7 +644,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="30">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="4EEE7DA2" w14:textId="77777777">
+    <w:p w14:paraId="4EEE7DA2" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -664,7 +664,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="31">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="2E568280" w14:textId="77777777">
+    <w:p w14:paraId="2E568280" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -684,7 +684,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="32">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="47D934DA" w14:textId="77777777">
+    <w:p w14:paraId="47D934DA" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -704,7 +704,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="33">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="72CD6C8E" w14:textId="77777777">
+    <w:p w14:paraId="72CD6C8E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -724,7 +724,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="34">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4DCA69DD" w14:textId="77777777">
+    <w:p w14:paraId="4DCA69DD" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -744,7 +744,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="35">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="694C1AE0" w14:textId="77777777">
+    <w:p w14:paraId="694C1AE0" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -764,7 +764,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="36">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="27AFEA2E" w14:textId="77777777">
+    <w:p w14:paraId="27AFEA2E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -811,7 +811,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="37">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidP="00DA26CC" w:rsidRDefault="0082527D" w14:paraId="22B7A248" w14:textId="12A4EF5F">
+    <w:p w14:paraId="22B7A248" w14:textId="12A4EF5F" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D" w:rsidP="00DA26CC">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -851,7 +851,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="38">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="2456B8C1" w14:textId="0264C9F9">
+    <w:p w14:paraId="2456B8C1" w14:textId="0264C9F9" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -884,7 +884,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="39">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="2DFA9483" w14:textId="6EE874D1">
+    <w:p w14:paraId="2DFA9483" w14:textId="6EE874D1" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -917,7 +917,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="40">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0DDE2865" w14:textId="2C16C45B">
+    <w:p w14:paraId="0DDE2865" w14:textId="2C16C45B" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -977,7 +977,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="41">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4C9B973A" w14:textId="68E0B518">
+    <w:p w14:paraId="4C9B973A" w14:textId="68E0B518" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1007,7 +1007,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="42">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="080577D2" w14:textId="70189EE3">
+    <w:p w14:paraId="080577D2" w14:textId="70189EE3" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1036,7 +1036,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="43">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="54D279DF" w14:textId="7EC4B762">
+    <w:p w14:paraId="54D279DF" w14:textId="7EC4B762" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1069,7 +1069,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="44">
-    <w:p w:rsidRPr="00F417F5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="299A3DE6" w14:textId="7927967A">
+    <w:p w14:paraId="299A3DE6" w14:textId="7927967A" w:rsidR="0082527D" w:rsidRPr="00F417F5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1112,7 +1112,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="45">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1D456AE3" w14:textId="77777777">
+    <w:p w14:paraId="1D456AE3" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1129,7 +1129,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="46">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidP="00646FFB" w:rsidRDefault="0082527D" w14:paraId="3F96A4E1" w14:textId="77777777">
+    <w:p w14:paraId="3F96A4E1" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D" w:rsidP="00646FFB">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1219,7 +1219,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="47">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4891646E" w14:textId="061EE9E8">
+    <w:p w14:paraId="4891646E" w14:textId="061EE9E8" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1235,7 +1235,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="48">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="5F3B8F9B" w14:textId="3DFA50B7">
+    <w:p w14:paraId="5F3B8F9B" w14:textId="3DFA50B7" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1274,7 +1274,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="49">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0B0125CC" w14:textId="4623FE3E">
+    <w:p w14:paraId="0B0125CC" w14:textId="4623FE3E" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1317,7 +1317,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="50">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4613B995" w14:textId="77777777">
+    <w:p w14:paraId="4613B995" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1334,7 +1334,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="51">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7DC364FD" w14:textId="02F8BB87">
+    <w:p w14:paraId="7DC364FD" w14:textId="02F8BB87" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1354,7 +1354,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="52">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4C063246" w14:textId="4D075E82">
+    <w:p w14:paraId="4C063246" w14:textId="4D075E82" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1428,7 +1428,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="53">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7BC73FC9" w14:textId="77777777">
+    <w:p w14:paraId="7BC73FC9" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1445,7 +1445,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="54">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="25E70406" w14:textId="77777777">
+    <w:p w14:paraId="25E70406" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1462,7 +1462,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="55">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="36C6F6AD" w14:textId="1DFC9473">
+    <w:p w14:paraId="36C6F6AD" w14:textId="1DFC9473" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1501,7 +1501,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="56">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4BD5BD78" w14:textId="77777777">
+    <w:p w14:paraId="4BD5BD78" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1518,7 +1518,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="57">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="61D28F4A" w14:textId="77777777">
+    <w:p w14:paraId="61D28F4A" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1535,7 +1535,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="58">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="65CFFCE5" w14:textId="2A0016EA">
+    <w:p w14:paraId="65CFFCE5" w14:textId="2A0016EA" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1574,7 +1574,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="59">
-    <w:p w:rsidRPr="003F2084" w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="7725D66C" w14:textId="77777777">
+    <w:p w14:paraId="7725D66C" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="003F2084" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -1600,7 +1600,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="60">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="019FE965" w14:textId="77777777">
+    <w:p w14:paraId="019FE965" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1631,7 +1631,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="61">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6EC97A6A" w14:textId="7AA09C12">
+    <w:p w14:paraId="6EC97A6A" w14:textId="7AA09C12" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1647,7 +1647,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="62">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="426A3396" w14:textId="77777777">
+    <w:p w14:paraId="426A3396" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1663,7 +1663,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="63">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7D7839FA" w14:textId="481A3367">
+    <w:p w14:paraId="7D7839FA" w14:textId="481A3367" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1728,7 +1728,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="64">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0A43C62A" w14:textId="062C89F6">
+    <w:p w14:paraId="0A43C62A" w14:textId="062C89F6" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1773,7 +1773,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="65">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4EB5E48C" w14:textId="6BD9C99B">
+    <w:p w14:paraId="4EB5E48C" w14:textId="6BD9C99B" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1789,7 +1789,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="66">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="467D1402" w14:textId="2C8BA1B9">
+    <w:p w14:paraId="467D1402" w14:textId="2C8BA1B9" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1823,7 +1823,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="67">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4E8AAE20" w14:textId="1B8E80E6">
+    <w:p w14:paraId="4E8AAE20" w14:textId="1B8E80E6" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1849,7 +1849,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="68">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7F49E944" w14:textId="0A0E5C20">
+    <w:p w14:paraId="7F49E944" w14:textId="0A0E5C20" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1884,7 +1884,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="69">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="5186C57F" w14:textId="77777777">
+    <w:p w14:paraId="5186C57F" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1912,7 +1912,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="70">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3A537347" w14:textId="77777777">
+    <w:p w14:paraId="3A537347" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1931,7 +1931,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="71">
-    <w:p w:rsidR="0082527D" w:rsidP="00832B28" w:rsidRDefault="0082527D" w14:paraId="1C0ECC27" w14:textId="6BC547D7">
+    <w:p w14:paraId="1C0ECC27" w14:textId="6BC547D7" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="00832B28">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1964,7 +1964,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="72">
-    <w:p w:rsidR="0082527D" w:rsidP="00832B28" w:rsidRDefault="0082527D" w14:paraId="7EBAC251" w14:textId="15CC0B73">
+    <w:p w14:paraId="7EBAC251" w14:textId="15CC0B73" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="00832B28">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -1983,7 +1983,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="73">
-    <w:p w:rsidR="0082527D" w:rsidP="00832B28" w:rsidRDefault="0082527D" w14:paraId="377982DE" w14:textId="2A8EA81F">
+    <w:p w14:paraId="377982DE" w14:textId="2A8EA81F" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="00832B28">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2026,7 +2026,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="74">
-    <w:p w:rsidRPr="00747C22" w:rsidR="0082527D" w:rsidP="00832B28" w:rsidRDefault="0082527D" w14:paraId="4B9E521E" w14:textId="44D96B26">
+    <w:p w14:paraId="4B9E521E" w14:textId="44D96B26" w:rsidR="0082527D" w:rsidRPr="00747C22" w:rsidRDefault="0082527D" w:rsidP="00832B28">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -2082,7 +2082,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="75">
-    <w:p w:rsidR="0082527D" w:rsidP="00832B28" w:rsidRDefault="0082527D" w14:paraId="13C13014" w14:textId="13F92DEA">
+    <w:p w14:paraId="13C13014" w14:textId="13F92DEA" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="00832B28">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2166,7 +2166,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="76">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1682759C" w14:textId="0CE30F22">
+    <w:p w14:paraId="1682759C" w14:textId="0CE30F22" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2222,7 +2222,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="77">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="25E69AD8" w14:textId="77777777">
+    <w:p w14:paraId="25E69AD8" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2241,7 +2241,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="78">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1ACF1AA6" w14:textId="77777777">
+    <w:p w14:paraId="1ACF1AA6" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2260,7 +2260,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="79">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="163E2567" w14:textId="64F6AB1E">
+    <w:p w14:paraId="163E2567" w14:textId="64F6AB1E" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2284,7 +2284,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="80">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="692DA4C0" w14:textId="5920D491">
+    <w:p w14:paraId="692DA4C0" w14:textId="5920D491" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2303,7 +2303,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="81">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="17164CC5" w14:textId="5E47925A">
+    <w:p w14:paraId="17164CC5" w14:textId="5E47925A" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2346,7 +2346,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="82">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="076D84B3" w14:textId="77777777">
+    <w:p w14:paraId="076D84B3" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2389,7 +2389,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="83">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0F8879AF" w14:textId="792F6F15">
+    <w:p w14:paraId="0F8879AF" w14:textId="792F6F15" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2405,7 +2405,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="84">
-    <w:p w:rsidRPr="002332D5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="78A66C5C" w14:textId="77777777">
+    <w:p w14:paraId="78A66C5C" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="002332D5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2437,7 +2437,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="85">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="2C7BBAA4" w14:textId="0AF385F2">
+    <w:p w14:paraId="2C7BBAA4" w14:textId="0AF385F2" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2456,7 +2456,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="86">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="2397F5E5" w14:textId="77777777">
+    <w:p w14:paraId="2397F5E5" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2472,7 +2472,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="87">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0D7D343B" w14:textId="3DE14C92">
+    <w:p w14:paraId="0D7D343B" w14:textId="3DE14C92" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -2537,7 +2537,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="88">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="17C10EF6" w14:textId="06A046D7">
+    <w:p w14:paraId="17C10EF6" w14:textId="06A046D7" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2581,7 +2581,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="89">
-    <w:p w:rsidR="0082527D" w:rsidP="00840C12" w:rsidRDefault="0082527D" w14:paraId="4FABCB2E" w14:textId="77777777">
+    <w:p w14:paraId="4FABCB2E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="00840C12">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2600,7 +2600,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="90">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="79418993" w14:textId="77777777">
+    <w:p w14:paraId="79418993" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2619,7 +2619,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="91">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6247C915" w14:textId="77777777">
+    <w:p w14:paraId="6247C915" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2638,7 +2638,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="92">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7C06F6DE" w14:textId="11CA4E1F">
+    <w:p w14:paraId="7C06F6DE" w14:textId="11CA4E1F" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2657,7 +2657,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="93">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="76FA0E0E" w14:textId="77777777">
+    <w:p w14:paraId="76FA0E0E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2676,7 +2676,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="94">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="71FA30B6" w14:textId="500D0878">
+    <w:p w14:paraId="71FA30B6" w14:textId="500D0878" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2692,7 +2692,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="95">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="262B9940" w14:textId="77777777">
+    <w:p w14:paraId="262B9940" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2711,7 +2711,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="96">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="71A2EBB6" w14:textId="77777777">
+    <w:p w14:paraId="71A2EBB6" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2730,7 +2730,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="97">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="12399F8E" w14:textId="77777777">
+    <w:p w14:paraId="12399F8E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2749,7 +2749,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="98">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="47AAB692" w14:textId="77777777">
+    <w:p w14:paraId="47AAB692" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2768,7 +2768,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="99">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7B2ACA6A" w14:textId="77777777">
+    <w:p w14:paraId="7B2ACA6A" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2787,7 +2787,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="100">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="33A43A5F" w14:textId="77777777">
+    <w:p w14:paraId="33A43A5F" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2806,7 +2806,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="101">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3E601DB6" w14:textId="77777777">
+    <w:p w14:paraId="3E601DB6" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2825,7 +2825,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="102">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="0860A8BC" w14:textId="77777777">
+    <w:p w14:paraId="0860A8BC" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2844,7 +2844,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="103">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7F35F10F" w14:textId="77777777">
+    <w:p w14:paraId="7F35F10F" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2863,7 +2863,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="104">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="536DD890" w14:textId="77777777">
+    <w:p w14:paraId="536DD890" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2882,7 +2882,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="105">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3819FFED" w14:textId="77777777">
+    <w:p w14:paraId="3819FFED" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2901,7 +2901,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="106">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="14478540" w14:textId="5D65FB7C">
+    <w:p w14:paraId="14478540" w14:textId="5D65FB7C" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2920,7 +2920,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="107">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="587C0B5A" w14:textId="77777777">
+    <w:p w14:paraId="587C0B5A" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2939,7 +2939,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="108">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="29CC56E2" w14:textId="77777777">
+    <w:p w14:paraId="29CC56E2" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2958,7 +2958,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="109">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1F2DF81E" w14:textId="77777777">
+    <w:p w14:paraId="1F2DF81E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2974,7 +2974,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="110">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="41944C79" w14:textId="54407EF6">
+    <w:p w14:paraId="41944C79" w14:textId="54407EF6" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -2993,7 +2993,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="111">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="714692EC" w14:textId="77777777">
+    <w:p w14:paraId="714692EC" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3018,7 +3018,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="112">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3B7F6730" w14:textId="77777777">
+    <w:p w14:paraId="3B7F6730" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3037,7 +3037,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="113">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="21A6753B" w14:textId="77777777">
+    <w:p w14:paraId="21A6753B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3056,7 +3056,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="114">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="09EC1547" w14:textId="7C202553">
+    <w:p w14:paraId="09EC1547" w14:textId="7C202553" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3078,7 +3078,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="115">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="40F90B27" w14:textId="1B9F472D">
+    <w:p w14:paraId="40F90B27" w14:textId="1B9F472D" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3097,7 +3097,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="116">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="2D2DA026" w14:textId="77777777">
+    <w:p w14:paraId="2D2DA026" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3116,7 +3116,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="117">
-    <w:p w:rsidRPr="00F71C58" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1EC6AD67" w14:textId="17528DFA">
+    <w:p w14:paraId="1EC6AD67" w14:textId="17528DFA" w:rsidR="0082527D" w:rsidRPr="00F71C58" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3148,7 +3148,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="118">
-    <w:p w:rsidRPr="00160547" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="212E28C7" w14:textId="162A0269">
+    <w:p w14:paraId="212E28C7" w14:textId="162A0269" w:rsidR="0082527D" w:rsidRPr="00160547" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3284,7 +3284,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="119">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="59B39853" w14:textId="2FCF77F4">
+    <w:p w14:paraId="59B39853" w14:textId="2FCF77F4" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3318,7 +3318,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="120">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3F53D259" w14:textId="111F648F">
+    <w:p w14:paraId="3F53D259" w14:textId="111F648F" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3334,7 +3334,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="121">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6964C8F7" w14:textId="2077B84A">
+    <w:p w14:paraId="6964C8F7" w14:textId="2077B84A" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3350,7 +3350,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="122">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1745D625" w14:textId="1C447A7D">
+    <w:p w14:paraId="1745D625" w14:textId="1C447A7D" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3366,7 +3366,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="123">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="38FDF00C" w14:textId="2B48E2C6">
+    <w:p w14:paraId="38FDF00C" w14:textId="2B48E2C6" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3382,7 +3382,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="124">
-    <w:p w:rsidRPr="0063238F" w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="00EEC305" w14:textId="5A13B70F">
+    <w:p w14:paraId="00EEC305" w14:textId="5A13B70F" w:rsidR="0082527D" w:rsidRPr="0063238F" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3421,7 +3421,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="125">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6E217DE8" w14:textId="6FD827C4">
+    <w:p w14:paraId="6E217DE8" w14:textId="6FD827C4" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3450,7 +3450,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="126">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="6E0DF775" w14:textId="4FF28AC8">
+    <w:p w14:paraId="6E0DF775" w14:textId="4FF28AC8" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3466,7 +3466,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="127">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="644FEE92" w14:textId="298EBBF9">
+    <w:p w14:paraId="644FEE92" w14:textId="298EBBF9" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3482,7 +3482,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="128">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="2B44F750" w14:textId="4D6CD4B5">
+    <w:p w14:paraId="2B44F750" w14:textId="4D6CD4B5" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3498,7 +3498,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="129">
-    <w:p w:rsidRPr="00001019" w:rsidR="0082527D" w:rsidP="009039A2" w:rsidRDefault="0082527D" w14:paraId="589FA531" w14:textId="77777777">
+    <w:p w14:paraId="589FA531" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="00001019" w:rsidRDefault="0082527D" w:rsidP="009039A2">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3515,14 +3515,14 @@
         <w:t xml:space="preserve">McCall rozważania swoje przeprowadzał w czasach, gdy kod źródłowy wprowadzano na kartach perforowanych, zatem zamiast „liczba linii kodu” posługiwał się „liczbą kart”, dzisiaj jednak liczba linii kodu jest bardziej zrozumiała. </w:t>
       </w:r>
     </w:p>
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="78333A92" w14:textId="7F913538">
+    <w:p w14:paraId="78333A92" w14:textId="7F913538" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
     </w:p>
   </w:footnote>
   <w:footnote w:id="130">
-    <w:p w:rsidRPr="001F40F5" w:rsidR="0082527D" w:rsidP="006C72A4" w:rsidRDefault="0082527D" w14:paraId="1A952B00" w14:textId="77777777">
+    <w:p w14:paraId="1A952B00" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="001F40F5" w:rsidRDefault="0082527D" w:rsidP="006C72A4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3552,7 +3552,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="131">
-    <w:p w:rsidRPr="001F40F5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4FE197EF" w14:textId="7096BA3F">
+    <w:p w14:paraId="4FE197EF" w14:textId="7096BA3F" w:rsidR="0082527D" w:rsidRPr="001F40F5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3582,7 +3582,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="132">
-    <w:p w:rsidRPr="00845F59" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1C8E8A50" w14:textId="096F8ED2">
+    <w:p w14:paraId="1C8E8A50" w14:textId="096F8ED2" w:rsidR="0082527D" w:rsidRPr="00845F59" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3608,7 +3608,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="133">
-    <w:p w:rsidRPr="00657DC8" w:rsidR="00657DC8" w:rsidP="00657DC8" w:rsidRDefault="00657DC8" w14:paraId="37B2A7E3" w14:textId="0AAE581E">
+    <w:p w14:paraId="37B2A7E3" w14:textId="0AAE581E" w:rsidR="00657DC8" w:rsidRPr="00657DC8" w:rsidRDefault="00657DC8" w:rsidP="00657DC8">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3640,7 +3640,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="134">
-    <w:p w:rsidR="005C4B9C" w:rsidP="005C4B9C" w:rsidRDefault="005C4B9C" w14:paraId="3AD57DAD" w14:textId="77777777">
+    <w:p w14:paraId="3AD57DAD" w14:textId="77777777" w:rsidR="005C4B9C" w:rsidRDefault="005C4B9C" w:rsidP="005C4B9C">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3659,7 +3659,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="135">
-    <w:p w:rsidR="005C4B9C" w:rsidRDefault="005C4B9C" w14:paraId="6E9C63A8" w14:textId="7E6B3925">
+    <w:p w14:paraId="6E9C63A8" w14:textId="7E6B3925" w:rsidR="005C4B9C" w:rsidRDefault="005C4B9C">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3678,7 +3678,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="136">
-    <w:p w:rsidR="005C4B9C" w:rsidRDefault="005C4B9C" w14:paraId="258EF742" w14:textId="260A1B31">
+    <w:p w14:paraId="258EF742" w14:textId="260A1B31" w:rsidR="005C4B9C" w:rsidRDefault="005C4B9C">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3697,7 +3697,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="137">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="235CD46A" w14:textId="77777777">
+    <w:p w14:paraId="235CD46A" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3713,7 +3713,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="138">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="3B4DA692" w14:textId="77777777">
+    <w:p w14:paraId="3B4DA692" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3729,7 +3729,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="139">
-    <w:p w:rsidRPr="001F40F5" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="2CFC147E" w14:textId="77777777">
+    <w:p w14:paraId="2CFC147E" w14:textId="77777777" w:rsidR="0082527D" w:rsidRPr="001F40F5" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3756,7 +3756,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="140">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="5DAAFD5D" w14:textId="77777777">
+    <w:p w14:paraId="5DAAFD5D" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3775,7 +3775,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="141">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="03C6BF97" w14:textId="77777777">
+    <w:p w14:paraId="03C6BF97" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3794,7 +3794,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="142">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7AB0BF6C" w14:textId="77777777">
+    <w:p w14:paraId="7AB0BF6C" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3813,7 +3813,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="143">
-    <w:p w:rsidRPr="006577A8" w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="1D147025" w14:textId="3E54F5C4">
+    <w:p w14:paraId="1D147025" w14:textId="3E54F5C4" w:rsidR="0082527D" w:rsidRPr="006577A8" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
         <w:rPr>
@@ -3865,7 +3865,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="144">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="69AC7B95" w14:textId="77777777">
+    <w:p w14:paraId="69AC7B95" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3881,7 +3881,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="145">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="14AE8C7B" w14:textId="77777777">
+    <w:p w14:paraId="14AE8C7B" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3900,7 +3900,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="146">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="07501132" w14:textId="77777777">
+    <w:p w14:paraId="07501132" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3919,7 +3919,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="147">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="25B05BB8" w14:textId="77777777">
+    <w:p w14:paraId="25B05BB8" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3945,7 +3945,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="148">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4C2DFF7A" w14:textId="257D6391">
+    <w:p w14:paraId="4C2DFF7A" w14:textId="257D6391" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3964,7 +3964,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="149">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4E6FC109" w14:textId="77777777">
+    <w:p w14:paraId="4E6FC109" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -3983,7 +3983,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="150">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="304D5D26" w14:textId="77777777">
+    <w:p w14:paraId="304D5D26" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4002,7 +4002,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="151">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="190DEBF5" w14:textId="7BC2C58D">
+    <w:p w14:paraId="190DEBF5" w14:textId="7BC2C58D" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4024,7 +4024,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="152">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="4621CDE6" w14:textId="77777777">
+    <w:p w14:paraId="4621CDE6" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4043,7 +4043,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="153">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="19E4DDBA" w14:textId="1247CD14">
+    <w:p w14:paraId="19E4DDBA" w14:textId="1247CD14" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4062,7 +4062,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="154">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="7C1AF4FE" w14:textId="77777777">
+    <w:p w14:paraId="7C1AF4FE" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4088,7 +4088,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="155">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="3135BEF8" w14:textId="77777777">
+    <w:p w14:paraId="3135BEF8" w14:textId="77777777" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4107,7 +4107,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="156">
-    <w:p w:rsidR="0082527D" w:rsidP="006201E4" w:rsidRDefault="0082527D" w14:paraId="75EBEBF5" w14:textId="68D78B8E">
+    <w:p w14:paraId="75EBEBF5" w14:textId="68D78B8E" w:rsidR="0082527D" w:rsidRDefault="0082527D" w:rsidP="006201E4">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4152,7 +4152,7 @@
     </w:p>
   </w:footnote>
   <w:footnote w:id="157">
-    <w:p w:rsidR="0082527D" w:rsidRDefault="0082527D" w14:paraId="4B32B087" w14:textId="7678CEF8">
+    <w:p w14:paraId="4B32B087" w14:textId="7678CEF8" w:rsidR="0082527D" w:rsidRDefault="0082527D">
       <w:pPr>
         <w:pStyle w:val="Tekstprzypisudolnego" />
       </w:pPr>
@@ -4179,7 +4179,7 @@
       <w:r w:rsidRPr="00001019">
         <w:t xml:space="preserve"> </w:t>
       </w:r>
-      <w:hyperlink w:history="1" r:id="rId1">
+      <w:hyperlink r:id="rId1" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4187,7 +4187,7 @@
           <w:t>ww</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId2">
+      <w:hyperlink r:id="rId2" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4195,7 +4195,7 @@
           <w:t>w</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId3">
+      <w:hyperlink r:id="rId3" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4203,7 +4203,7 @@
           <w:t>.</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId4">
+      <w:hyperlink r:id="rId4" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4211,7 +4211,7 @@
           <w:t>a</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId5">
+      <w:hyperlink r:id="rId5" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4219,7 +4219,7 @@
           <w:t>m</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId6">
+      <w:hyperlink r:id="rId6" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4227,7 +4227,7 @@
           <w:t>b</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId7">
+      <w:hyperlink r:id="rId7" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4235,7 +4235,7 @@
           <w:t>y</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId8">
+      <w:hyperlink r:id="rId8" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4243,7 +4243,7 @@
           <w:t>s</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId9">
+      <w:hyperlink r:id="rId9" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4251,7 +4251,7 @@
           <w:t>o</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId10">
+      <w:hyperlink r:id="rId10" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4259,7 +4259,7 @@
           <w:t>ft</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId11">
+      <w:hyperlink r:id="rId11" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4267,7 +4267,7 @@
           <w:t>.</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId12">
+      <w:hyperlink r:id="rId12" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4275,7 +4275,7 @@
           <w:t>c</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId13">
+      <w:hyperlink r:id="rId13" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4289,7 +4289,7 @@
         </w:rPr>
         <w:t>m</w:t>
       </w:r>
-      <w:hyperlink w:history="1" r:id="rId14">
+      <w:hyperlink r:id="rId14" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4297,7 +4297,7 @@
           <w:t>/</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId15">
+      <w:hyperlink r:id="rId15" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4305,7 +4305,7 @@
           <w:t>s</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId16">
+      <w:hyperlink r:id="rId16" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4313,7 +4313,7 @@
           <w:t>u</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId17">
+      <w:hyperlink r:id="rId17" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4321,7 +4321,7 @@
           <w:t>r</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId18">
+      <w:hyperlink r:id="rId18" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4329,7 +4329,7 @@
           <w:t>v</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId19">
+      <w:hyperlink r:id="rId19" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4337,7 +4337,7 @@
           <w:t>e</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId20">
+      <w:hyperlink r:id="rId20" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />
@@ -4345,7 +4345,7 @@
           <w:t>y</w:t>
         </w:r>
       </w:hyperlink>
-      <w:hyperlink w:history="1" r:id="rId21">
+      <w:hyperlink r:id="rId21" w:history="1">
         <w:r w:rsidRPr="00001019">
           <w:rPr>
             <w:rFonts w:eastAsiaTheme="minorEastAsia" />

@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<w:numbering xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:cx="http://schemas.microsoft.com/office/drawing/2014/chartex" xmlns:cx1="http://schemas.microsoft.com/office/drawing/2015/9/8/chartex" xmlns:cx2="http://schemas.microsoft.com/office/drawing/2015/10/21/chartex" xmlns:cx3="http://schemas.microsoft.com/office/drawing/2016/5/9/chartex" xmlns:cx4="http://schemas.microsoft.com/office/drawing/2016/5/10/chartex" xmlns:cx5="http://schemas.microsoft.com/office/drawing/2016/5/11/chartex" xmlns:cx6="http://schemas.microsoft.com/office/drawing/2016/5/12/chartex" xmlns:cx7="http://schemas.microsoft.com/office/drawing/2016/5/13/chartex" xmlns:cx8="http://schemas.microsoft.com/office/drawing/2016/5/14/chartex" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:aink="http://schemas.microsoft.com/office/drawing/2016/ink" xmlns:am3d="http://schemas.microsoft.com/office/drawing/2017/model3d" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:oel="http://schemas.microsoft.com/office/2019/extlst" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml" xmlns:w16cex="http://schemas.microsoft.com/office/word/2018/wordml/cex" xmlns:w16cid="http://schemas.microsoft.com/office/word/2016/wordml/cid" xmlns:w16="http://schemas.microsoft.com/office/word/2018/wordml" xmlns:w16sdtdh="http://schemas.microsoft.com/office/word/2020/wordml/sdtdatahash" xmlns:w16se="http://schemas.microsoft.com/office/word/2015/wordml/symex" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 w15 w16se w16cid w16 w16cex w16sdtdh wp14">
-  <w:abstractNum w:abstractNumId="0" w15:restartNumberingAfterBreak="0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+  <w:abstractNum w:abstractNumId="0" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="FFFFFF88" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="E264DAEE" />
@@ -17,7 +17,7 @@
       </w:pPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="1" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="1" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="FFFFFF89" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="08F609AE" />
@@ -33,11 +33,11 @@
         <w:ind w:left="360" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="2" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="2" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="13486048" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="8D4ADFE4" />
@@ -53,11 +53,11 @@
         <w:ind w:left="360" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="3" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="3" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="1E7A5B45" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="5C7ED856" />
@@ -74,7 +74,7 @@
         <w:ind w:left="992" w:hanging="283" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="1" w:tplc="04150003" w:tentative="1">
@@ -89,7 +89,7 @@
         <w:ind w:left="1298" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="2" w:tplc="04150005" w:tentative="1">
@@ -104,7 +104,7 @@
         <w:ind w:left="2018" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="3" w:tplc="04150001" w:tentative="1">
@@ -119,7 +119,7 @@
         <w:ind w:left="2738" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="4" w:tplc="04150003" w:tentative="1">
@@ -134,7 +134,7 @@
         <w:ind w:left="3458" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="5" w:tplc="04150005" w:tentative="1">
@@ -149,7 +149,7 @@
         <w:ind w:left="4178" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="6" w:tplc="04150001" w:tentative="1">
@@ -164,7 +164,7 @@
         <w:ind w:left="4898" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="7" w:tplc="04150003" w:tentative="1">
@@ -179,7 +179,7 @@
         <w:ind w:left="5618" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Courier New" w:hAnsi="Courier New" w:cs="Courier New" />
       </w:rPr>
     </w:lvl>
     <w:lvl w:ilvl="8" w:tplc="04150005" w:tentative="1">
@@ -194,11 +194,11 @@
         <w:ind w:left="6338" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Wingdings" w:hAnsi="Wingdings" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="4" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="4" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="1F425496" />
     <w:multiLevelType w:val="singleLevel" />
     <w:tmpl w:val="3CDE78D6" />
@@ -214,11 +214,11 @@
         <w:ind w:left="360" w:hanging="360" />
       </w:pPr>
       <w:rPr>
-        <w:rFonts w:ascii="Symbol" w:hAnsi="Symbol" w:hint="default" />
+        <w:rFonts w:hint="default" w:ascii="Symbol" w:hAnsi="Symbol" />
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="5" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="5" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="53890640" />
     <w:multiLevelType w:val="multilevel" />
     <w:tmpl w:val="0B82F128" />
@@ -364,7 +364,7 @@
       </w:rPr>
     </w:lvl>
   </w:abstractNum>
-  <w:abstractNum w:abstractNumId="6" w15:restartNumberingAfterBreak="0">
+  <w:abstractNum w:abstractNumId="6" p2:restartNumberingAfterBreak="0" xmlns:p2="http://schemas.microsoft.com/office/word/2012/wordml">
     <w:nsid w:val="6EE2116E" />
     <w:multiLevelType w:val="hybridMultilevel" />
     <w:tmpl w:val="4F0CE292" />
@@ -481,43 +481,43 @@
       </w:pPr>
     </w:lvl>
   </w:abstractNum>
-  <w:num w:numId="1" w16cid:durableId="2030452064">
+  <w:num w:numId="1" p2:durableId="2030452064" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="1" />
   </w:num>
-  <w:num w:numId="2" w16cid:durableId="1490248483">
+  <w:num w:numId="2" p2:durableId="1490248483" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="4" />
   </w:num>
-  <w:num w:numId="3" w16cid:durableId="1663463574">
+  <w:num w:numId="3" p2:durableId="1663463574" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="0" />
   </w:num>
-  <w:num w:numId="4" w16cid:durableId="1632246834">
+  <w:num w:numId="4" p2:durableId="1632246834" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="0" />
   </w:num>
-  <w:num w:numId="5" w16cid:durableId="260458383">
+  <w:num w:numId="5" p2:durableId="260458383" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="2" />
   </w:num>
-  <w:num w:numId="6" w16cid:durableId="2030137660">
+  <w:num w:numId="6" p2:durableId="2030137660" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="5" />
   </w:num>
-  <w:num w:numId="7" w16cid:durableId="1207336055">
+  <w:num w:numId="7" p2:durableId="1207336055" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="6" />
   </w:num>
-  <w:num w:numId="8" w16cid:durableId="69161927">
+  <w:num w:numId="8" p2:durableId="69161927" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="3" />
   </w:num>
-  <w:num w:numId="9" w16cid:durableId="157963055">
+  <w:num w:numId="9" p2:durableId="157963055" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="3" />
   </w:num>
-  <w:num w:numId="10" w16cid:durableId="2059544050">
+  <w:num w:numId="10" p2:durableId="2059544050" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="6" />
   </w:num>
-  <w:num w:numId="11" w16cid:durableId="1721517412">
+  <w:num w:numId="11" p2:durableId="1721517412" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="3" />
   </w:num>
-  <w:num w:numId="12" w16cid:durableId="1321273531">
+  <w:num w:numId="12" p2:durableId="1321273531" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="6" />
   </w:num>
-  <w:num w:numId="13" w16cid:durableId="1227372468">
+  <w:num w:numId="13" p2:durableId="1227372468" xmlns:p2="http://schemas.microsoft.com/office/word/2016/wordml/cid">
     <w:abstractNumId w:val="3" />
   </w:num>
 </w:numbering>

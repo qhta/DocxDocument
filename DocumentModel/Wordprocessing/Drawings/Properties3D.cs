@@ -1,10 +1,11 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Properties3D Class.
 /// </summary>
-public class Properties3D: ModelElement
+public class Properties3D: ModelElement, IDrawingProperty
 {
   /// <summary>
   ///   extrusionH, this property is only available in Office 2010 and later.

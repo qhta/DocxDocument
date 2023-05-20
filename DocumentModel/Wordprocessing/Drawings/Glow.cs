@@ -1,10 +1,11 @@
+using DocumentModel.Drawings;
+
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the Glow Class.
 /// </summary>
-public class Glow: ModelElement
+public class Glow: ModelElement, IDrawingProperty
 {
   /// <summary>
   ///   rad, this property is only available in Office 2010 and later.

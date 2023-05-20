@@ -1,10 +1,9 @@
 namespace DocumentModel.Drawings;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Linear Gradient Fill.
 /// </summary>
-public class LinearGradientFill: ModelElement
+public class LinearGradientFill: GradientFill
 {
   /// <summary>
   ///   Angle

@@ -1,4 +1,4 @@
-﻿using DocumentModel.Wordprocessing;
+﻿using System.Runtime.Serialization;
 
 namespace DocumentModel;
 
@@ -6,6 +6,7 @@ namespace DocumentModel;
 /// Basic color type. Contains name and RGB values.
 /// </summary>
 [TypeConverter(typeof(ColorTypeConverter))]
+[KnownType(typeof(DMW.ThemeColor))]
 public class Color
 {
   /// <summary>
@@ -58,15 +59,6 @@ public class Color
   public bool IsAuto()
   {
     return Name== "auto";
-  }
-
-  /// <summary>
-  /// Conversion from/to RGB
-  /// </summary>
-  public RGB? RGB
-  {
-    get => Value;
-    set => Value = value; 
   }
 
   /// <summary>

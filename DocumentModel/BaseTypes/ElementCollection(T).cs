@@ -6,7 +6,7 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
 
   public ElementCollection() { }
 
-  public ElementCollection(ElementCollection<T> other)
+  public ElementCollection(IEnumerable<T> other)
   {
     foreach (var item in other)
       Add(item);

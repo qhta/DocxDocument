@@ -613,6 +613,7 @@ public static class RunPropertiesConverter
       value.HyperlinkOnClick = GetHyperlinkOnClick(openXmlElement);
       value.HyperlinkOnMouseOver = GetHyperlinkOnMouseOver(openXmlElement);
       value.RightToLeft = GetRightToLeft(openXmlElement);
+      //value.DrawingProperties = DrawingPropertiesConverter.CreateModelElement(openXmlElement);
       value.ExtensionList = GetExtensionList(openXmlElement);
       return value;
     }

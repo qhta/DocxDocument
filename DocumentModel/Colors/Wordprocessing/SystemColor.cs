@@ -16,9 +16,9 @@ public class SystemColor: ModelElement
   /// </summary>
   public RGB? LastColor { get; set; }
 
-  public Int32? Tint { get; set; }
+  public Percent? Tint { get; set; }
 
-  public Int32? Shade { get; set; }
+  public Percent? Shade { get; set; }
 
   [DefaultValue(false)]
   public Boolean Complement { get; set; }
