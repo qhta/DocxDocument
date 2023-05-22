@@ -6,9 +6,9 @@ namespace DocumentModel.Wordprocessing;
 ///   Base class for all RunProperties classes.
 ///   Contains common properties.
 /// </summary>
-public abstract class BaseRunProperties: ModelElement
+public abstract class BaseRunProperties : ElementCollection<Type, IRunProperty>
 {
-    #region Common run properties
+  #region Common run properties
   /// <summary>
   ///   Specifies the fonts which shall be used to display the text contents of this run. 
   ///   Within a single run, there can be up to four types of font slot which shall each be allowed to use a unique font: 
@@ -27,7 +27,12 @@ public abstract class BaseRunProperties: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public RunFonts? RunFonts { get; set; }
+  [XmlIgnore]
+  public RunFonts? RunFonts
+  {
+    get => this[typeof(RunFonts)] as RunFonts;
+    set => this[typeof(RunFonts)] = value;
+  }
 
   /// <summary>
   ///   Specifies whether the bold property shall be applied to characters in the contents of this run when displayed in a document.
@@ -41,7 +46,7 @@ public abstract class BaseRunProperties: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public DualBool? Bold { get; set; }
+  public BoldFonts? Bold { get; set; }
 
   /// <summary>
   ///   Specifies whether the italic property shall be applied to characters in the contents of this run when displayed in a document.
@@ -55,7 +60,7 @@ public abstract class BaseRunProperties: ModelElement
   ///     </item>
   ///   </list>
   /// </summary>
-  public DualBool? Italic { get; set; }
+  public ItalicFonts? Italic { get; set; }
 
 
   /// <summary>

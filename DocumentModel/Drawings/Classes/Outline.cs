@@ -4,7 +4,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Defines the Outline Class.
 /// </summary>
-public class Outline: ModelElement, IDrawingProperty
+public class Outline: TypedModelElement, IDrawingProperty
 {
   [DefaultValue(false)]
   public Boolean NoFill { get; set; }

@@ -3,7 +3,7 @@ namespace DocumentModel.Drawings;
 /// <summary>
 ///   Fill.
 /// </summary>
-public class Fill: ModelElement, IDrawingProperty
+public class Fill: TypedModelElement, IDrawingProperty
 {
   /// <summary>
   ///   NoFill.

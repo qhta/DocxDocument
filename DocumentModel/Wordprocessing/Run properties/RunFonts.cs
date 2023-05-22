@@ -1,10 +1,9 @@
 namespace DocumentModel.Wordprocessing;
-#pragma warning disable CS1591 // Missing XML comment for publicly visible type or member
 
 /// <summary>
 ///   Defines the RunFonts Class.
 /// </summary>
-public class RunFonts: ModelElement
+public class RunFonts: TypedModelElement, IRunProperty
 {
   /// <summary>
   ///   Font Content Type
@@ -14,40 +13,40 @@ public class RunFonts: ModelElement
   /// <summary>
   ///   ASCII Font
   /// </summary>
-  public string? Ascii { get; set; }
+  public RunFont? Ascii { get; set; }
 
   /// <summary>
   ///   High ANSI Font
   /// </summary>
-  public string? HighAnsi { get; set; }
+  public RunFont? Ansi { get; set; }
 
   /// <summary>
   ///   East Asian Font
   /// </summary>
-  public string? EastAsia { get; set; }
+  public RunFont? EastAsia { get; set; }
 
   /// <summary>
   ///   Complex Script Font
   /// </summary>
-  public string? ComplexScript { get; set; }
+  public RunFont? ComplexScript { get; set; }
 
-  /// <summary>
-  ///   ASCII Theme Font
-  /// </summary>
-  public ThemeFontKind? AsciiTheme { get; set; }
+  ///// <summary>
+  /////   ASCII Theme Font
+  ///// </summary>
+  //public ThemeFontKind? AsciiTheme { get; set; }
 
-  /// <summary>
-  ///   High ANSI Theme Font
-  /// </summary>
-  public ThemeFontKind? HighAnsiTheme { get; set; }
+  ///// <summary>
+  /////   High ANSI Theme Font
+  ///// </summary>
+  //public ThemeFontKind? HighAnsiTheme { get; set; }
 
-  /// <summary>
-  ///   East Asian Theme Font
-  /// </summary>
-  public ThemeFontKind? EastAsiaTheme { get; set; }
+  ///// <summary>
+  /////   East Asian Theme Font
+  ///// </summary>
+  //public ThemeFontKind? EastAsiaTheme { get; set; }
 
-  /// <summary>
-  ///   Complex Script Theme Font
-  /// </summary>
-  public ThemeFontKind? ComplexScriptTheme { get; set; }
+  ///// <summary>
+  /////   Complex Script Theme Font
+  ///// </summary>
+  //public ThemeFontKind? ComplexScriptTheme { get; set; }
 }
