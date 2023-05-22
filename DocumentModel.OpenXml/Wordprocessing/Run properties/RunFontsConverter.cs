@@ -165,14 +165,22 @@ public static class RunFontsConverter
     {
       var model = new DMW.RunFonts();
       model.Hint = GetHint(openXmlElement);
-      model.Ascii = GetAscii(openXmlElement);
-      model.HighAnsi = GetHighAnsi(openXmlElement);
-      model.EastAsia = GetEastAsia(openXmlElement);
-      model.ComplexScript = GetComplexScript(openXmlElement);
-      model.AsciiTheme = GetAsciiTheme(openXmlElement);
-      model.HighAnsiTheme = GetHighAnsiTheme(openXmlElement);
-      model.EastAsiaTheme = GetEastAsiaTheme(openXmlElement);
-      model.ComplexScriptTheme = GetComplexScriptTheme(openXmlElement);
+      var ascii = GetAscii(openXmlElement);
+      var asciiTheme = GetAsciiTheme(openXmlElement);
+      if (ascii!=null || asciiTheme!=null)
+        model.Ascii = new DMW.RunFont { Name = ascii, Theme = asciiTheme };
+      var ansi = GetHighAnsi(openXmlElement);
+      var ansiTheme = GetHighAnsiTheme(openXmlElement);
+      if (ansi!=null || ansiTheme!=null)
+        model.Ansi = new DMW.RunFont { Name = ansi, Theme = ansiTheme };
+      var eastAsia = GetEastAsia(openXmlElement);
+      var eastAsiaTheme = GetEastAsiaTheme(openXmlElement);
+      if (eastAsia!=null || eastAsiaTheme!=null)
+        model.EastAsia = new DMW.RunFont { Name = eastAsia, Theme = eastAsiaTheme };
+      var complexScript = GetComplexScript(openXmlElement);
+      var complexScriptTheme = GetComplexScriptTheme(openXmlElement);
+      if (complexScript!=null || complexScriptTheme!=null)
+        model.ComplexScript = new DMW.RunFont { Name = complexScript, Theme = complexScriptTheme };
       return model;
     }
     return null;
@@ -185,21 +193,21 @@ public static class RunFontsConverter
       var ok = true;
       if (!CmpHint(openXmlElement, model.Hint, diffs, objName))
         ok = false;
-      if (!CmpAscii(openXmlElement, model.Ascii, diffs, objName))
+      if (!CmpAscii(openXmlElement, model.Ascii?.Name, diffs, objName))
         ok = false;
-      if (!CmpHighAnsi(openXmlElement, model.HighAnsi, diffs, objName))
+      if (!CmpHighAnsi(openXmlElement, model.Ansi?.Name, diffs, objName))
         ok = false;
-      if (!CmpEastAsia(openXmlElement, model.EastAsia, diffs, objName))
+      if (!CmpEastAsia(openXmlElement, model.EastAsia?.Name, diffs, objName))
         ok = false;
-      if (!CmpComplexScript(openXmlElement, model.ComplexScript, diffs, objName))
+      if (!CmpComplexScript(openXmlElement, model.ComplexScript?.Name, diffs, objName))
         ok = false;
-      if (!CmpAsciiTheme(openXmlElement, model.AsciiTheme, diffs, objName))
+      if (!CmpAsciiTheme(openXmlElement, model.Ascii?.Theme, diffs, objName))
         ok = false;
-      if (!CmpHighAnsiTheme(openXmlElement, model.HighAnsiTheme, diffs, objName))
+      if (!CmpHighAnsiTheme(openXmlElement, model.Ansi?.Theme, diffs, objName))
         ok = false;
-      if (!CmpEastAsiaTheme(openXmlElement, model.EastAsiaTheme, diffs, objName))
+      if (!CmpEastAsiaTheme(openXmlElement, model.EastAsia?.Theme, diffs, objName))
         ok = false;
-      if (!CmpComplexScriptTheme(openXmlElement, model.ComplexScriptTheme, diffs, objName))
+      if (!CmpComplexScriptTheme(openXmlElement, model.ComplexScript?.Theme, diffs, objName))
         ok = false;
       return ok;
     }
@@ -219,14 +227,14 @@ public static class RunFontsConverter
   public static void UpdateOpenXmlElement(DXW.RunFonts openXmlElement, DMW.RunFonts model)
   {
     SetHint(openXmlElement, model?.Hint);
-    SetAscii(openXmlElement, model?.Ascii);
-    SetHighAnsi(openXmlElement, model?.HighAnsi);
-    SetEastAsia(openXmlElement, model?.EastAsia);
-    SetComplexScript(openXmlElement, model?.ComplexScript);
-    SetAsciiTheme(openXmlElement, model?.AsciiTheme);
-    SetHighAnsiTheme(openXmlElement, model?.HighAnsiTheme);
-    SetEastAsiaTheme(openXmlElement, model?.EastAsiaTheme);
-    SetComplexScriptTheme(openXmlElement, model?.ComplexScriptTheme);
+    SetAscii(openXmlElement, model?.Ascii?.Name);
+    SetHighAnsi(openXmlElement, model?.Ansi?.Name);
+    SetEastAsia(openXmlElement, model?.EastAsia?.Name);
+    SetComplexScript(openXmlElement, model?.ComplexScript?.Name);
+    SetAsciiTheme(openXmlElement, model?.Ascii?.Theme);
+    SetHighAnsiTheme(openXmlElement, model?.Ansi?.Theme);
+    SetEastAsiaTheme(openXmlElement, model?.EastAsia?.Theme);
+    SetComplexScriptTheme(openXmlElement, model?.ComplexScript?.Theme);
   }
   #endregion
 }

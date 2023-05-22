@@ -3,7 +3,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Interface for Run property
 /// </summary>
-public interface IRunProperty: IModelElement 
+public interface IRunProperty: IModelElement, IUniqueModelElement<Type> 
 {
   /// <summary>
   /// Parent as a <see cref="RunProperties"/> element.
@@ -13,4 +13,5 @@ public interface IRunProperty: IModelElement
     get => (this as IModelElement).Parent as RunProperties;
     set => (this as IModelElement).Parent = value;
   }
+
 }

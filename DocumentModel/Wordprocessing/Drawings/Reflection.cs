@@ -5,7 +5,7 @@ namespace DocumentModel.Wordprocessing;
 /// <summary>
 ///   Defines the Reflection Class.
 /// </summary>
-public class Reflection: ModelElement, IDrawingProperty
+public class Reflection: TypedModelElement, IDrawingProperty
 {
   /// <summary>
   ///   blurRad, this property is only available in Office 2010 and later.

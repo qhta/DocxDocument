@@ -127,13 +127,13 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
   #endregion
 
   #region IEquatable implementation
-  //protected virtual Type EqualityContract => typeof(ElementCollection<T>);
 
   public override bool Equals(ModelElement? obj) => Equals(obj as ElementCollection<T>);
 
   public virtual bool Equals(ElementCollection<T>? other)
   {
-    if (other is null /*|| EqualityContract != other.EqualityContract*/) return false;
+    if (other is null /*|| EqualityContract != other.EqualityContract*/) 
+      return false;
     var thisEnumerator = other.GetEnumerator();
     var otherEnumerator = other.GetEnumerator();
     while (thisEnumerator.MoveNext() && otherEnumerator.MoveNext())
@@ -141,11 +141,14 @@ public class ElementCollection<T> : ModelElement, ICollection, ICollection<T>, I
       var thisItem = thisEnumerator.Current;
       var otherItem = otherEnumerator.Current;
       if (thisItem is ModelElement && otherItem is ModelElement)
-        if (!thisItem.Equals(otherItem)) return false;
+        if (!thisItem.Equals(otherItem)) 
+          return false;
         else
-        if (!EqualityComparer<T>.Default.Equals(thisItem, otherItem)) return false;
+        if (!EqualityComparer<T>.Default.Equals(thisItem, otherItem)) 
+          return false;
     }
-    if (this.Count != other.Count) return false;
+    if (this.Count != other.Count) 
+      return false;
     return true;
   }
 
