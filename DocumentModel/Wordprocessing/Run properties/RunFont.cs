@@ -3,8 +3,13 @@
 /// <summary>
 /// Font name, bold and italic specification to select a font.
 /// </summary>
-public class RunFont: ModelElement
+public struct RunFont
 {
+  /// <summary>
+  /// Default constructor. Needed for deserialization.
+  /// </summary>
+  public RunFont(){ }
+
   /// <summary>
   /// Typeface name.
   /// </summary>

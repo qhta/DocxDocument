@@ -41,8 +41,11 @@ internal class HexIntTypeXmlConverter : TypeConverter, IXmlConverter
 
   public object? ReadXml(object? context, IXmlReader reader, Type objectType, object? existingValue, IXmlSerializer? serializer)
   {
-    reader.Read(); // read pass start element;
+    if (reader.NodeType==System.Xml.XmlNodeType.Element)
+      reader.Read(); // read pass start element;
     var str = reader.Value;
+    if (str=="")
+      Debug.Assert(true);
     var val = new HexInt(str);
     reader.Read(); // read pass string value;
     reader.Read(); // read pass end element;
