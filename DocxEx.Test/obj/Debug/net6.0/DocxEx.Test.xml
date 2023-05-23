@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocxEx.Test</name>
+    </assembly>
+    <members>
+        <member name="T:DocxEx.Test.TestBase">
+            <summary>
+            Base class for all test.
+            </summary>
+        </member>
+        <member name="M:DocxEx.Test.TestBase.Setup">
+            <summary>
+            Setups the test path. Can be overriden in descendant classes.
+            </summary>
+        </member>
+        <member name="P:DocxEx.Test.TestBase.TestPath">
+            <summary>
+            Gets or sets the test path that is used to read/write test data files.
+            </summary>
+            <value>
+            The test path.
+            </value>
+        </member>
+        <member name="M:DocxEx.Test.TestBase.WriteLine(System.String)">
+            <summary>
+            Writes the line to debug output window and test explorer output window.
+            </summary>
+            <param name="str">Line of text. Can be empty</param>
+        </member>
+        <member name="M:DocxEx.Test.TestBase.ShowObject(System.String,System.Object,System.Int32)">
+            <summary>
+            Dumps the object to text explorer progress window.
+            </summary>
+            <param name="heading">A heading line to write.</param>
+            <param name="value">The object to dump.</param>
+            <param name="indent">The indent of text.</param>
+        </member>
+        <member name="M:DocxEx.Test.TestBase.ShowEnumerable(System.String,System.Collections.IEnumerable,System.Type,System.Int32)">
+            <summary>
+            Dumps the enumerable collection to test explorer output window.
+            </summary>
+            <param name="heading">A heading line to write.</param>
+            <param name="value">Collection to dump.</param>
+            <param name="itemType">Type of the collection item.</param>
+            <param name="indent">The indent of text</param>
+        </member>
+        <member name="M:DocxEx.Test.TestBase.ShowEnumerable(System.Collections.IEnumerable,System.Type,System.Int32)">
+            <summary>
+            Dumps the enumerable collection to test explorer output window.
+            </summary>
+            <param name="value">Collection to dump.</param>
+            <param name="itemType">Type of the collection item.</param>
+            <param name="indent">The indent of text</param>
+        </member>
+        <member name="T:DocxEx.Test.TestSections">
+            <summary>
+            Test class for document paragraphs.
+            </summary>
+        </member>
+        <member name="M:DocxEx.Test.TestSections.TestReadDocumentSections">
+            <summary>
+            Tests read sections from all docx files in folder specified by test path.
+            </summary>
+        </member>
+        <member name="M:DocxEx.Test.TestSections.TestReadDocumentSections(System.String,System.Boolean)">
+            <summary>
+            Tests read sections from the specified docx file.
+            </summary>
+            <param name="filename">The filename of the document to read.</param>
+            <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+        </member>
+        <member name="M:DocxEx.Test.TestSections.TestCleanDocumentSections(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Tests clean sections read from the specified docx file.
+            First, the file is copied with .new.docx extension.
+            </summary>
+            <param name="filename">The filename of the document to read.</param>
+            <param name="showDetails">Specifies whether the detailed information on test should be shown on test failure.</param>
+            <param name="openWord">Specifies whether a result document should be opened in MS Word program.</param>
+        </member>
+    </members>
+</doc>

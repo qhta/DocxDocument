@@ -1,0 +1,192 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qhta.DeepCompare</name>
+    </assembly>
+    <members>
+        <member name="T:Qhta.DeepCompare.PropertyInfoCount">
+            <summary>
+            Data structure to count how many times was each property compared
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.PropertyInfoCount.Property">
+            <summary>
+            Reflected property info
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.PropertyInfoCount.Count">
+            <summary>
+            Count of compare
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.PropertyInfoCount.#ctor(System.Reflection.PropertyInfo)">
+            <summary>
+            Simplifies instance creation
+            </summary>
+            <param name="property"></param>
+        </member>
+        <member name="T:Qhta.DeepCompare.DeepComparer">
+            <summary>
+            Comparer class
+            </summary>
+        </member>
+        <member name="F:Qhta.DeepCompare.DeepComparer.KnownCompareFunctions">
+            <summary>
+            Used to speed up finding of compare functions
+            </summary>
+        </member>
+        <member name="F:Qhta.DeepCompare.DeepComparer.KnownProperties">
+            <summary>
+            Used to speed up selection of properties to compare
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.DeepComparer.GetNotNullableType(System.Object)">
+            <summary>
+            Gets the type of the object and if the type is Nullable, returns its baseType
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.DeepComparer.IsEqual(System.Object,System.Object,Qhta.DeepCompare.DiffList,System.String,System.String,System.Nullable{System.Int32})">
+            <summary>
+            Determines whether the specified object is equal to other one.
+            </summary>
+            <param name="testObject">First object to compare (tested object)</param>
+            <param name="refObject">Second object to compare (referenced object)</param>
+            <param name="diffs">Optional differences list (to fill)</param>
+            <param name="objName">Optional tested object name</param>
+            <param name="propName">Optional tested property name</param>
+            <param name="index">Optional index of checked objects</param>
+        </member>
+        <member name="T:Qhta.DeepCompare.Diff">
+            <summary>
+            Class representing a single difference
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.Diff.ObjectName">
+            <summary>
+            The name of the checked object. Usually type name.
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.Diff.PropertyName">
+            <summary>
+            Property name.
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.Diff.Index">
+            <summary>
+            index of the checked item
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.Diff.ExpectedValue">
+            <summary>
+            Expected value.
+            </summary>
+        </member>
+        <member name="P:Qhta.DeepCompare.Diff.ReceivedValue">
+            <summary>
+            Received value.
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.#ctor(System.String,System.Object,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qhta.DeepCompare.Diff"/> class.
+            </summary>
+            <param name="objectName">Name of the checked object.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.#ctor(System.String,System.String,System.Object,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qhta.DeepCompare.Diff"/> class.
+            </summary>
+            <param name="objectName">Name of the checked object.</param>
+            <param name="propertyName">Name of the different property.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.#ctor(System.String,System.String,System.Object,System.Object,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Qhta.DeepCompare.Diff"/> class.
+            </summary>
+            <param name="objectName">Name of the checked object.</param>
+            <param name="propertyName">Name of the different property.</param>
+            <param name="index">Name of the different property.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.ToString">
+            <summary>
+            Converts to string (for debugging purpose).
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.Concat(System.String,System.String)">
+            <summary>
+            Concats the specified object name with property name with separating dot. 
+            If property name is indexing clause in bracket, dot is ommited.
+            </summary>
+            <param name="objectName">Name of the object.</param>
+            <param name="propertyName">Name of the property.</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qhta.DeepCompare.Diff.Concat(System.String,System.String,System.String)">
+            <summary>
+            Concats the specified object name with property name with separating dot. 
+            If property name is indexing clause in bracket, dot is ommited.
+            </summary>
+            <param name="objectName">Name of the object.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="indexStr">String of the index.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Qhta.DeepCompare.OnAddDiff">
+            <summary>
+            Delegate to event hander invoked on adding a diff.
+            </summary>
+            <param name="sender"></param>
+            <param name="diff"></param>
+        </member>
+        <member name="T:Qhta.DeepCompare.DiffList">
+            <summary>
+            List of compare differences.
+            </summary>
+        </member>
+        <member name="E:Qhta.DeepCompare.DiffList.AddDiff">
+            <summary>
+            Event invoked when a diff is added.
+            </summary>
+        </member>
+        <member name="M:Qhta.DeepCompare.DiffList.Add(System.String,System.Object,System.Object)">
+            <summary>
+              Helper method to add a difference.
+            </summary>
+            <param name="objectName">Name of the object.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="M:Qhta.DeepCompare.DiffList.Add(System.String,System.String,System.Object,System.Object)">
+            <summary>
+              Helper method to add a difference.
+            </summary>
+            <param name="objectName">Name of the object.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="M:Qhta.DeepCompare.DiffList.Add(System.String,System.String,System.Object,System.Object,System.Object)">
+            <summary>
+              Helper method to add a difference.
+            </summary>
+            <param name="objectName">Name of the object.</param>
+            <param name="propertyName">Name of the property.</param>
+            <param name="index">Index of the compared values.</param>
+            <param name="expValue">Expected value.</param>
+            <param name="recValue">Received value.</param>
+        </member>
+        <member name="P:Qhta.DeepCompare.DiffList.AssertMessage">
+            <summary>
+              Message build for assertions.
+              First difference is shown as full message.
+              If there are more, their count is shown.
+            </summary>
+        </member>
+    </members>
+</doc>

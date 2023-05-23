@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocxEx</name>
+    </assembly>
+    <members>
+        <member name="T:DocumentModel.ElementCollection`1">
+            <summary>
+            Collection of model elements. When Parent is set, then all items have same Parent set.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:DocumentModel.ElementCollection`1.#ctor">
+            <summary>
+            Default constructor. Does nothing.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.ElementCollection`1.#ctor(DocumentModel.ElementCollection{`0})">
+            <summary>
+            Copying constructor.
+            </summary>
+            <param name="other"></param>
+        </member>
+        <member name="P:DocumentModel.ElementCollection`1.Parent">
+            <summary>
+            Setting this Parent also set each item's parent.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.ModelElement">
+            <summary>
+            Base class for all model elements. 
+            Defines <see cref="P:DocumentModel.ModelElement.Parent"/> property and <see cref="M:DocumentModel.ModelElement.Equals(DocumentModel.ModelElement)"/> method.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.ModelElement.Parent">
+            <summary>
+            Parent of this model element.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.ModelElement.ParentDocument">
+            <summary>
+            Recurrent access to parent Document.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.Document">
+            <summary>
+            Model wrapper for WordprocessingDocument
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Document.WordprocessingDocument">
+            <summary>
+            Gets wrapped WordprocessingDocument.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Document.DocxDocument">
+            <summary>
+            Gets wrapped WordprocessingDocument document.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Document.DocxBody">
+            <summary>
+            Gets wrapped WordprocessingDocument document body.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Document.IsEditable">
+            <summary>
+            Specifies is WordprocessingDocument is editable;
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Document.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor based on a document filename. The file is staying opened.
+            </summary>
+            <param name="filename">Specifies the name of the Wordprocessing document file.</param>
+            <param name="isEditable">Specifies whether the wordprocessing document can be edited.</param>
+        </member>
+        <member name="M:DocumentModel.Document.#ctor(DocumentFormat.OpenXml.Packaging.WordprocessingDocument,System.Boolean)">
+            <summary>
+            Constructor based on existring wordprocessing document.
+            </summary>
+            <param name="wordprocessingDocument">Specifies the the Wordprocessing document.</param>
+            <param name="isEditable">Specifies whether the wordprocessing document can be edited.</param>
+        </member>
+        <member name="P:DocumentModel.Document.Sections">
+            <summary>
+            Collection of wordprocessing document body sections.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.IModelElement">
+            <summary>
+              Interface for all model elements.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.IModelElement.Parent">
+            <summary>
+            Parent element of this model element.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.Section">
+            <summary>
+            Model of section in the document.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Section.Range">
+            <summary>
+            Wrapped range of the section. Taken from OpenXmlTools.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Section.#ctor(Qhta.OpenXMLTools.SectionRange)">
+            <summary>
+            Constructor based on SectionRange
+            </summary>
+            <param name="range"></param>
+        </member>
+        <member name="P:DocumentModel.Section.SectionProperties">
+            <summary>
+            Wrapped section properties;
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Section.Elements">
+            <summary>
+            Wrapped section elements.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Section.CleanProperties(DocumentModel.SectionPropertyMask)">
+            <summary>
+            Clean Section Properties.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.SectionPropertyMask">
+            <summary>
+            Selector of section property.
+            </summary>
+        </member>
+        <member name="T:DocumentModel.Sections">
+            <summary>
+            Collection of <see cref="T:DocumentModel.Section"/> elements.
+            </summary>
+        </member>
+        <member name="M:DocumentModel.Sections.#ctor(DocumentFormat.OpenXml.Wordprocessing.Body)">
+            <summary>
+            Constructor based on wordprocessing document body.
+            </summary>
+            <param name="body"></param>
+        </member>
+        <member name="M:DocumentModel.Sections.CleanProperties(DocumentModel.SectionPropertyMask)">
+            <summary>
+            Cleans selected section properties.
+            </summary>
+            <param name="mask">Select properties to clean</param>
+        </member>
+    </members>
+</doc>
