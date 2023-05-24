@@ -67,7 +67,7 @@ public static class SdtContentDocPartObjectConverter
   
   private static void SetDocPartUnique(DXW.SdtContentDocPartObject openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DocPartUnique>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DocPartUnique>(openXmlElement, value, "0", null);
   }
   
   public static DMW.SdtContentDocPartObject? CreateModelElement(DXW.SdtContentDocPartObject? openXmlElement)

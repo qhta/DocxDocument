@@ -113,7 +113,7 @@ public static class RubyPropertiesConverter
 
   private static void SetDirty(DXW.RubyProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Dirty>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Dirty>(openXmlElement, value, "0", null);
   }
   #endregion
 

@@ -186,7 +186,7 @@ public static class ParagraphMarkRunPropertiesBaseConverter
   
   private static void SetOfficeMath(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.OfficeMath>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.OfficeMath>(openXmlElement, value, "0", null);
   }
   #endregion
 

@@ -19313,15 +19313,20 @@
               userId, this property is only available in Office 2013 and later.
             </summary>
         </member>
+        <member name="T:DocumentModel.Wordprocessing.Rsid">
+            <summary>
+              Revision id.
+            </summary>
+        </member>
+        <member name="P:DocumentModel.Wordprocessing.Rsid.Id">
+            <summary>
+            Identifier of the revision
+            </summary>
+        </member>
         <member name="T:DocumentModel.Wordprocessing.Rsids">
             <summary>
               Listing of All Revision Save ID Values.
             </summary>
-        </member>
-        <member name="P:DocumentModel.Wordprocessing.Rsids.RsidRoot">
-            <summary>
-              Original Document Revision Save ID.
-            </summary> 
         </member>
         <member name="T:DocumentModel.Wordprocessing.RunConflictDeletion">
             <summary>

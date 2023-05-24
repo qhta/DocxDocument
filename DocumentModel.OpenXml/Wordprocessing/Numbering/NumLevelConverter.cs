@@ -156,7 +156,7 @@ public static class LevelConverter
 
   private static void SetIsLegalNumberingStyle(DXW.Level openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.IsLegalNumberingStyle>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.IsLegalNumberingStyle>(openXmlElement, value, "0", null);
   }
   #endregion
 

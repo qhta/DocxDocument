@@ -496,7 +496,7 @@ public static class SectionPropertiesConverter
 
   private static void SetFormProtection(DXW.SectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -540,7 +540,7 @@ public static class SectionPropertiesConverter
 
   private static void SetNoEndnote(DXW.SectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -557,7 +557,7 @@ public static class SectionPropertiesConverter
 
   private static void SetTitlePage(DXW.SectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -601,7 +601,7 @@ public static class SectionPropertiesConverter
 
   private static void SetBiDi(DXW.SectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -618,7 +618,7 @@ public static class SectionPropertiesConverter
 
   private static void SetGutterOnRight(DXW.SectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value, "0", null);
   }
   #endregion
 

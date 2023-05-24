@@ -32,7 +32,7 @@ public static class FormFieldDataConverter
   
   private static void SetEnabled(DXW.FormFieldData openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Enabled>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Enabled>(openXmlElement, value, "0", null);
   }
   
   private static Boolean? GetCalculateOnExit(DXW.FormFieldData openXmlElement)
@@ -47,7 +47,7 @@ public static class FormFieldDataConverter
   
   private static void SetCalculateOnExit(DXW.FormFieldData openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.CalculateOnExit>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.CalculateOnExit>(openXmlElement, value, "0", null);
   }
   
   private static String? GetEntryMacro(DXW.FormFieldData openXmlElement)

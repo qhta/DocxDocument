@@ -151,7 +151,7 @@ public static class DataSourceObjectConverter
   
   private static void SetFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.FirstRowHeader>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.FirstRowHeader>(openXmlElement, value, "0", null);
   }
   
   private static Collection<DMW.FieldMapData>? GetFieldMapDatas(DXW.DataSourceObject openXmlElement)

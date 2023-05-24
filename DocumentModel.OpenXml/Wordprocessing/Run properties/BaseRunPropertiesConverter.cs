@@ -124,7 +124,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetCaps(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Caps>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Caps>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -141,7 +141,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetSmallCaps(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SmallCaps>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SmallCaps>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -158,7 +158,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetStrike(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Strike>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Strike>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -175,7 +175,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetDoubleStrike(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoubleStrike>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoubleStrike>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -192,7 +192,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetOutline(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Outline>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Outline>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -209,7 +209,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetShadow(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Shadow>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Shadow>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -226,7 +226,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetEmboss(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Emboss>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Emboss>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -243,7 +243,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetImprint(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Imprint>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Imprint>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -260,7 +260,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetNoProof(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoProof>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoProof>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -277,7 +277,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetSnapToGrid(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SnapToGrid>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SnapToGrid>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -294,7 +294,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetVanish(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Vanish>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Vanish>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -311,7 +311,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetWebHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WebHidden>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WebHidden>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -693,7 +693,7 @@ public static class BaseRunPropertiesConverter
 
   public static void SetSpecVanish(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SpecVanish>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SpecVanish>(openXmlElement, value, "0", null);
   }
   #endregion
 

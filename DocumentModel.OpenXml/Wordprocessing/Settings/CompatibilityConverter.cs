@@ -20,7 +20,7 @@ public static class CompatibilityConverter
   
   private static void SetUseSingleBorderForContiguousCells(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseSingleBorderForContiguousCells>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseSingleBorderForContiguousCells>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -38,7 +38,7 @@ public static class CompatibilityConverter
   
   private static void SetWordPerfectJustification(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WordPerfectJustification>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WordPerfectJustification>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -56,7 +56,7 @@ public static class CompatibilityConverter
   
   private static void SetNoTabHangIndent(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoTabHangIndent>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoTabHangIndent>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -74,7 +74,7 @@ public static class CompatibilityConverter
   
   private static void SetNoLeading(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoLeading>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoLeading>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -92,7 +92,7 @@ public static class CompatibilityConverter
   
   private static void SetSpaceForUnderline(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SpaceForUnderline>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SpaceForUnderline>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -110,7 +110,7 @@ public static class CompatibilityConverter
   
   private static void SetNoColumnBalance(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoColumnBalance>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoColumnBalance>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -128,7 +128,7 @@ public static class CompatibilityConverter
   
   private static void SetBalanceSingleByteDoubleByteWidth(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BalanceSingleByteDoubleByteWidth>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BalanceSingleByteDoubleByteWidth>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -146,7 +146,7 @@ public static class CompatibilityConverter
   
   private static void SetNoExtraLineSpacing(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoExtraLineSpacing>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoExtraLineSpacing>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -164,7 +164,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotLeaveBackslashAlone(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotLeaveBackslashAlone>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotLeaveBackslashAlone>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -182,7 +182,7 @@ public static class CompatibilityConverter
   
   private static void SetUnderlineTrailingSpaces(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UnderlineTrailingSpaces>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UnderlineTrailingSpaces>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -200,7 +200,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotExpandShiftReturn(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotExpandShiftReturn>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotExpandShiftReturn>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -218,7 +218,7 @@ public static class CompatibilityConverter
   
   private static void SetSpacingInWholePoints(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SpacingInWholePoints>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SpacingInWholePoints>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -236,7 +236,7 @@ public static class CompatibilityConverter
   
   private static void SetLineWrapLikeWord6(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.LineWrapLikeWord6>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.LineWrapLikeWord6>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -254,7 +254,7 @@ public static class CompatibilityConverter
   
   private static void SetPrintBodyTextBeforeHeader(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintBodyTextBeforeHeader>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintBodyTextBeforeHeader>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -272,7 +272,7 @@ public static class CompatibilityConverter
   
   private static void SetPrintColorBlackWhite(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintColorBlackWhite>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintColorBlackWhite>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -290,7 +290,7 @@ public static class CompatibilityConverter
   
   private static void SetWordPerfectSpaceWidth(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WordPerfectSpaceWidth>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WordPerfectSpaceWidth>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -308,7 +308,7 @@ public static class CompatibilityConverter
   
   private static void SetShowBreaksInFrames(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ShowBreaksInFrames>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ShowBreaksInFrames>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -326,7 +326,7 @@ public static class CompatibilityConverter
   
   private static void SetSubFontBySize(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SubFontBySize>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SubFontBySize>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -344,7 +344,7 @@ public static class CompatibilityConverter
   
   private static void SetSuppressBottomSpacing(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressBottomSpacing>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressBottomSpacing>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -362,7 +362,7 @@ public static class CompatibilityConverter
   
   private static void SetSuppressTopSpacing(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressTopSpacing>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressTopSpacing>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -380,7 +380,7 @@ public static class CompatibilityConverter
   
   private static void SetSuppressSpacingAtTopOfPage(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressSpacingAtTopOfPage>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressSpacingAtTopOfPage>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -398,7 +398,7 @@ public static class CompatibilityConverter
   
   private static void SetSuppressTopSpacingWordPerfect(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressTopSpacingWordPerfect>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressTopSpacingWordPerfect>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -416,7 +416,7 @@ public static class CompatibilityConverter
   
   private static void SetSuppressSpacingBeforeAfterPageBreak(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressSpacingBeforeAfterPageBreak>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressSpacingBeforeAfterPageBreak>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -434,7 +434,7 @@ public static class CompatibilityConverter
   
   private static void SetSwapBordersFacingPages(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SwapBordersFacingPages>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SwapBordersFacingPages>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -452,7 +452,7 @@ public static class CompatibilityConverter
   
   private static void SetConvertMailMergeEscape(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ConvertMailMergeEscape>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ConvertMailMergeEscape>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -470,7 +470,7 @@ public static class CompatibilityConverter
   
   private static void SetTruncateFontHeightsLikeWordPerfect(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TruncateFontHeightsLikeWordPerfect>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TruncateFontHeightsLikeWordPerfect>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -488,7 +488,7 @@ public static class CompatibilityConverter
   
   private static void SetMacWordSmallCaps(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.MacWordSmallCaps>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.MacWordSmallCaps>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -506,7 +506,7 @@ public static class CompatibilityConverter
   
   private static void SetUsePrinterMetrics(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UsePrinterMetrics>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UsePrinterMetrics>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -524,7 +524,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotSuppressParagraphBorders(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressParagraphBorders>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressParagraphBorders>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -542,7 +542,7 @@ public static class CompatibilityConverter
   
   private static void SetWrapTrailSpaces(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WrapTrailSpaces>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WrapTrailSpaces>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -560,7 +560,7 @@ public static class CompatibilityConverter
   
   private static void SetFootnoteLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.FootnoteLayoutLikeWord8>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.FootnoteLayoutLikeWord8>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -578,7 +578,7 @@ public static class CompatibilityConverter
   
   private static void SetShapeLayoutLikeWord8(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ShapeLayoutLikeWord8>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ShapeLayoutLikeWord8>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -596,7 +596,7 @@ public static class CompatibilityConverter
   
   private static void SetAlignTablesRowByRow(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AlignTablesRowByRow>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AlignTablesRowByRow>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -614,7 +614,7 @@ public static class CompatibilityConverter
   
   private static void SetForgetLastTabAlignment(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ForgetLastTabAlignment>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ForgetLastTabAlignment>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -632,7 +632,7 @@ public static class CompatibilityConverter
   
   private static void SetAdjustLineHeightInTable(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AdjustLineHeightInTable>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AdjustLineHeightInTable>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -650,7 +650,7 @@ public static class CompatibilityConverter
   
   private static void SetAutoSpaceLikeWord95(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceLikeWord95>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceLikeWord95>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -668,7 +668,7 @@ public static class CompatibilityConverter
   
   private static void SetNoSpaceRaiseLower(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoSpaceRaiseLower>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoSpaceRaiseLower>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -686,7 +686,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotUseHTMLParagraphAutoSpacing(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotUseHTMLParagraphAutoSpacing>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotUseHTMLParagraphAutoSpacing>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -704,7 +704,7 @@ public static class CompatibilityConverter
   
   private static void SetLayoutRawTableWidth(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.LayoutRawTableWidth>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.LayoutRawTableWidth>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -722,7 +722,7 @@ public static class CompatibilityConverter
   
   private static void SetLayoutTableRowsApart(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.LayoutTableRowsApart>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.LayoutTableRowsApart>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -740,7 +740,7 @@ public static class CompatibilityConverter
   
   private static void SetUseWord97LineBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseWord97LineBreakRules>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseWord97LineBreakRules>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -758,7 +758,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotBreakWrappedTables(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotBreakWrappedTables>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotBreakWrappedTables>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -776,7 +776,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotSnapToGridInCell(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotSnapToGridInCell>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotSnapToGridInCell>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -794,7 +794,7 @@ public static class CompatibilityConverter
   
   private static void SetSelectFieldWithFirstOrLastChar(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SelectFieldWithFirstOrLastChar>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SelectFieldWithFirstOrLastChar>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -812,7 +812,7 @@ public static class CompatibilityConverter
   
   private static void SetApplyBreakingRules(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ApplyBreakingRules>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ApplyBreakingRules>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -830,7 +830,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotWrapTextWithPunctuation(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotWrapTextWithPunctuation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotWrapTextWithPunctuation>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -848,7 +848,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotUseEastAsianBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotUseEastAsianBreakRules>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotUseEastAsianBreakRules>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -866,7 +866,7 @@ public static class CompatibilityConverter
   
   private static void SetUseWord2002TableStyleRules(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseWord2002TableStyleRules>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseWord2002TableStyleRules>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -884,7 +884,7 @@ public static class CompatibilityConverter
   
   private static void SetGrowAutofit(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.GrowAutofit>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.GrowAutofit>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -902,7 +902,7 @@ public static class CompatibilityConverter
   
   private static void SetUseFarEastLayout(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseFarEastLayout>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseFarEastLayout>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -920,7 +920,7 @@ public static class CompatibilityConverter
   
   private static void SetUseNormalStyleForList(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseNormalStyleForList>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseNormalStyleForList>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -938,7 +938,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotUseIndentAsNumberingTabStop(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotUseIndentAsNumberingTabStop>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotUseIndentAsNumberingTabStop>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -956,7 +956,7 @@ public static class CompatibilityConverter
   
   private static void SetUseAltKinsokuLineBreakRules(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseAltKinsokuLineBreakRules>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseAltKinsokuLineBreakRules>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -974,7 +974,7 @@ public static class CompatibilityConverter
   
   private static void SetAllowSpaceOfSameStyleInTable(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AllowSpaceOfSameStyleInTable>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AllowSpaceOfSameStyleInTable>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -992,7 +992,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotSuppressIndentation(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressIndentation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressIndentation>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1010,7 +1010,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotAutofitConstrainedTables(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotAutofitConstrainedTables>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotAutofitConstrainedTables>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1028,7 +1028,7 @@ public static class CompatibilityConverter
   
   private static void SetAutofitToFirstFixedWidthCell(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutofitToFirstFixedWidthCell>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutofitToFirstFixedWidthCell>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1046,7 +1046,7 @@ public static class CompatibilityConverter
   
   private static void SetUnderlineTabInNumberingList(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UnderlineTabInNumberingList>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UnderlineTabInNumberingList>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1064,7 +1064,7 @@ public static class CompatibilityConverter
   
   private static void SetDisplayHangulFixedWidth(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DisplayHangulFixedWidth>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DisplayHangulFixedWidth>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1082,7 +1082,7 @@ public static class CompatibilityConverter
   
   private static void SetSplitPageBreakAndParagraphMark(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SplitPageBreakAndParagraphMark>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SplitPageBreakAndParagraphMark>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1100,7 +1100,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotVerticallyAlignCellWithShape(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotVerticallyAlignCellWithShape>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotVerticallyAlignCellWithShape>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1118,7 +1118,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotBreakConstrainedForcedTable(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotBreakConstrainedForcedTable>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotBreakConstrainedForcedTable>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1136,7 +1136,7 @@ public static class CompatibilityConverter
   
   private static void SetDoNotVerticallyAlignInTextBox(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotVerticallyAlignInTextBox>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotVerticallyAlignInTextBox>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1154,7 +1154,7 @@ public static class CompatibilityConverter
   
   private static void SetUseAnsiKerningPairs(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseAnsiKerningPairs>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseAnsiKerningPairs>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -1172,7 +1172,7 @@ public static class CompatibilityConverter
   
   private static void SetCachedColumnBalance(DXW.Compatibility openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.CachedColumnBalance>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.CachedColumnBalance>(openXmlElement, value, "0", null);
   }
   
   private static DMW.CompatibilitySettings? GetCompatibilitySettings(DXW.Compatibility openXmlElement)

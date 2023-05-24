@@ -181,7 +181,7 @@ public static class BaseTableRowPropertiesConverter
 
   public static void SetHidden(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Hidden>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Hidden>(openXmlElement, value, "0", null);
   }
   #endregion
 

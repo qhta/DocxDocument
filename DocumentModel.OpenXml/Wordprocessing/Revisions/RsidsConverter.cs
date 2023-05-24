@@ -8,51 +8,60 @@ public static class RsidsConverter
   /// <summary>
   /// Original Document Revision Save ID.
   /// </summary>
-  private static DM.HexInt? GetRsidRoot(DXW.Rsids openXmlElement)
+  private static DMW.Rsid? GetRsidRoot(DXW.Rsids openXmlElement)
   {
-    return HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val);
+    var val = HexIntConverter.GetValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val);
+    if (val!=null)
+      return new DMW.Rsid{ Id = (HexInt)val };
+    return null;
   }
 
-  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, DMW.Rsid? value, DiffList? diffs, string? objName)
   {
-    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val, value, diffs, objName, "RsidRoot");
+    return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val, value?.Id, diffs, objName, "RsidRoot");
   }
 
-  private static void SetRsidRoot(DXW.Rsids openXmlElement, DM.HexInt? value)
+  private static void SetRsidRoot(DXW.Rsids openXmlElement, DMW.Rsid? value)
   {
-    HexIntConverter.SetValue<DXW.RsidRoot>(openXmlElement, value);
+    HexIntConverter.SetValue<DXW.RsidRoot>(openXmlElement, value?.Id);
   }
 
-  private static void GetItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt> collection)
+  private static void GetItems(DXW.Rsids openXmlElement, DMW.Rsids collection)
   {
+    var rootId = GetRsidRoot(openXmlElement);
+    if (rootId!=null)
+      collection.Add(rootId);
     foreach (var item in openXmlElement.Elements<DXW.Rsid>())
     {
       var newItem = UInt32ValueConverter.GetValue(item);
       if (newItem != null)
-        collection.Add((HexInt)newItem);
+        collection.Add(new DMW.Rsid{ Id = (HexInt)newItem });
     }
   }
 
-  private static bool CmpItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Rsids openXmlElement, DMW.Rsids? value, DiffList? diffs, string? objName)
   {
     var origElements = openXmlElement.Elements<DXW.Rsid>();
     var origElementsCount = origElements.Count();
-    var modelElementsCount = value?.Count() ?? 0;
+    var modelElementsCount = value?.Count() ?? 0 + 1;
     if (value != null)
     {
+      var ok = true;
+      var modelEnumerator = value.GetEnumerator();
+      modelEnumerator.MoveNext();
+      var modelItem = modelEnumerator.Current;
+      if (!CmpRsidRoot(openXmlElement, modelItem, diffs, objName))
+      foreach (var origItem in origElements)
+      {
+        modelEnumerator.MoveNext();
+        modelItem = modelEnumerator.Current;
+        if (!HexIntConverter.CmpValue(origItem, modelItem.Id, diffs, objName))
+          ok = false;
+      }
       if (origElementsCount != modelElementsCount)
       {
         diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
-      }
-      var ok = true;
-      var modelEnumerator = value.GetEnumerator();
-      foreach (var origItem in origElements)
-      {
-        modelEnumerator.MoveNext();
-        var modelItem = modelEnumerator.Current;
-        if (!HexIntConverter.CmpValue(origItem, modelItem, diffs, objName))
-          ok = false;
       }
       return ok;
     }
@@ -61,14 +70,19 @@ public static class RsidsConverter
     return false;
   }
 
-  private static void SetItems(DXW.Rsids openXmlElement, ICollection<DM.HexInt>? value)
+  private static void SetItems(DXW.Rsids openXmlElement, DMW.Rsids? value)
   {
     openXmlElement.RemoveAllChildren<DXW.Rsid>();
     if (value != null)
     {
-      foreach (var item in value)
+      var modelEnumerator = value.GetEnumerator();
+      modelEnumerator.MoveNext();
+      var modelItem = modelEnumerator.Current;
+      SetRsidRoot(openXmlElement, modelItem);
+      while (modelEnumerator.MoveNext())
       {
-        var newItem = HexIntConverter.CreateOpenXmlElement<DXW.Rsid>(item);
+        modelItem = modelEnumerator.Current;
+        var newItem = HexIntConverter.CreateOpenXmlElement<DXW.Rsid>(modelItem.Id);
         if (newItem != null)
           openXmlElement.AppendChild(newItem);
       }
@@ -80,7 +94,6 @@ public static class RsidsConverter
     if (openXmlElement != null)
     {
       var value = new DMW.Rsids();
-      value.RsidRoot = GetRsidRoot(openXmlElement);
       GetItems(openXmlElement, value);
       if (value.Count == 0)
         return null;
@@ -94,8 +107,6 @@ public static class RsidsConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRsidRoot(openXmlElement, value.RsidRoot, diffs, objName))
-        ok = false;
       if (!CmpItems(openXmlElement, value, diffs, objName))
         ok = false;
       return ok;
@@ -115,7 +126,6 @@ public static class RsidsConverter
 
   public static void UpdateOpenXmlElement(DXW.Rsids openXmlElement, DMW.Rsids value)
   {
-    SetRsidRoot(openXmlElement, value?.RsidRoot);
     SetItems(openXmlElement, value);
   }
 }
