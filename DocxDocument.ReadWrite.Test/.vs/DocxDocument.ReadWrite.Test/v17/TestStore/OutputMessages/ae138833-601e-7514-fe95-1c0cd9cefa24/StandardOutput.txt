@@ -1,0 +1,509 @@
+Found enum kind types = 205
+Missed enum kind types = 298
+--------------------
+Found:
+DocumentFormat.OpenXml.Drawing.BevelPresetValues --> DocumentModel.Drawings.BevelPresetKind
+DocumentFormat.OpenXml.Drawing.BlipCompressionValues --> DocumentModel.Drawings.BlipCompressionKind
+DocumentFormat.OpenXml.Drawing.ChartBuildStepValues --> DocumentModel.Drawings.ChartBuildStepKind
+DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues --> DocumentModel.Drawings.Charts.AxisPositionKind
+DocumentFormat.OpenXml.Drawing.Charts.BarDirectionValues --> DocumentModel.Drawings.Charts.BarDirectionKind
+DocumentFormat.OpenXml.Drawing.Charts.BarGroupingValues --> DocumentModel.Drawings.Charts.BarGroupingKind
+DocumentFormat.OpenXml.Drawing.Charts.BuiltInUnitValues --> DocumentModel.Drawings.Charts.BuiltInUnitKind
+DocumentFormat.OpenXml.Drawing.Charts.CrossBetweenValues --> DocumentModel.Drawings.Charts.CrossBetweenKind
+DocumentFormat.OpenXml.Drawing.Charts.CrossesValues --> DocumentModel.Drawings.Charts.CrossesKind
+DocumentFormat.OpenXml.Drawing.Charts.DataLabelPositionValues --> DocumentModel.Drawings.Charts.DataLabelPositionKind
+DocumentFormat.OpenXml.Drawing.Charts.DisplayBlanksAsValues --> DocumentModel.Drawings.Charts.DisplayBlanksAsKind
+DocumentFormat.OpenXml.Drawing.Charts.ErrorBarDirectionValues --> DocumentModel.Drawings.Charts.ErrorBarDirectionKind
+DocumentFormat.OpenXml.Drawing.Charts.ErrorBarValues --> DocumentModel.Drawings.Charts.ErrorBarKind
+DocumentFormat.OpenXml.Drawing.Charts.ErrorValues --> DocumentModel.Drawings.Charts.ErrorKind
+DocumentFormat.OpenXml.Drawing.Charts.GroupingValues --> DocumentModel.Drawings.Charts.GroupingKind
+DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues --> DocumentModel.Drawings.Charts.LabelAlignmentKind
+DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues --> DocumentModel.Drawings.Charts.LayoutTargetKind
+DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues --> DocumentModel.Drawings.Charts.LegendPositionKind
+DocumentFormat.OpenXml.Drawing.Charts.MarkerStyleValues --> DocumentModel.Drawings.Charts.MarkerStyleKind
+DocumentFormat.OpenXml.Drawing.Charts.OfPieValues --> DocumentModel.Drawings.Charts.OfPieKind
+DocumentFormat.OpenXml.Drawing.Charts.OrientationValues --> DocumentModel.Drawings.Charts.OrientationKind
+DocumentFormat.OpenXml.Drawing.Charts.PageSetupOrientationValues --> DocumentModel.Drawings.Charts.PageSetupOrientationKind
+DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues --> DocumentModel.Drawings.Charts.PictureFormatKind
+DocumentFormat.OpenXml.Drawing.Charts.RadarStyleValues --> DocumentModel.Drawings.Charts.RadarStyleKind
+DocumentFormat.OpenXml.Drawing.Charts.ScatterStyleValues --> DocumentModel.Drawings.Charts.ScatterStyleKind
+DocumentFormat.OpenXml.Drawing.Charts.ShapeValues --> DocumentModel.Drawings.Charts.ShapeKind
+DocumentFormat.OpenXml.Drawing.Charts.SizeRepresentsValues --> DocumentModel.Drawings.Charts.SizeRepresentsKind
+DocumentFormat.OpenXml.Drawing.Charts.SplitValues --> DocumentModel.Drawings.Charts.SplitKind
+DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues --> DocumentModel.Drawings.Charts.TickLabelPositionKind
+DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues --> DocumentModel.Drawings.Charts.TickMarkKind
+DocumentFormat.OpenXml.Drawing.Charts.TimeUnitValues --> DocumentModel.Drawings.Charts.TimeUnitKind
+DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues --> DocumentModel.Drawings.Charts.TrendlineKind
+DocumentFormat.OpenXml.Drawing.ColorSchemeIndexValues --> DocumentModel.Drawings.ColorSchemeIndexKind
+DocumentFormat.OpenXml.Drawing.CompoundLineValues --> DocumentModel.Drawings.CompoundLineKind
+DocumentFormat.OpenXml.Drawing.DiagramBuildStepValues --> DocumentModel.Drawings.DiagramBuildStepKind
+DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues --> DocumentModel.Drawings.Diagrams.AlgorithmKind
+DocumentFormat.OpenXml.Drawing.Diagrams.AnimateOneByOneValues --> DocumentModel.Drawings.Diagrams.AnimateOneByOneKind
+DocumentFormat.OpenXml.Drawing.Diagrams.AnimationLevelStringValues --> DocumentModel.Drawings.Diagrams.AnimationLevelStringKind
+DocumentFormat.OpenXml.Drawing.Diagrams.BoolOperatorValues --> DocumentModel.Drawings.Diagrams.BoolOperatorKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ChildOrderValues --> DocumentModel.Drawings.Diagrams.ChildOrderKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ColorApplicationMethodValues --> DocumentModel.Drawings.Diagrams.ColorApplicationMethodKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues --> DocumentModel.Drawings.Diagrams.ConnectionKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintRelationshipValues --> DocumentModel.Drawings.Diagrams.ConstraintRelationshipKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ConstraintValues --> DocumentModel.Drawings.Diagrams.ConstraintKind
+DocumentFormat.OpenXml.Drawing.Diagrams.DirectionValues --> DocumentModel.Drawings.Diagrams.DirectionKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ElementValues --> DocumentModel.Drawings.Diagrams.ElementKind
+DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues --> DocumentModel.Drawings.Diagrams.FunctionOperatorKind
+DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues --> DocumentModel.Drawings.Diagrams.FunctionKind
+DocumentFormat.OpenXml.Drawing.Diagrams.HierarchyBranchStyleValues --> DocumentModel.Drawings.Diagrams.HierarchyBranchStyleKind
+DocumentFormat.OpenXml.Drawing.Diagrams.HueDirectionValues --> DocumentModel.Drawings.Diagrams.HueDirectionKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues --> DocumentModel.Drawings.Diagrams.ParameterIdKind
+DocumentFormat.OpenXml.Drawing.Diagrams.PointValues --> DocumentModel.Drawings.Diagrams.PointKind
+DocumentFormat.OpenXml.Drawing.Diagrams.ResizeHandlesStringValues --> DocumentModel.Drawings.Diagrams.ResizeHandlesStringKind
+DocumentFormat.OpenXml.Drawing.EffectContainerValues --> DocumentModel.Drawings.EffectContainerKind
+DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues --> DocumentModel.Drawings.FontCollectionIndexKind
+DocumentFormat.OpenXml.Drawing.LightRigDirectionValues --> DocumentModel.Drawings.LightRigDirectionKind
+DocumentFormat.OpenXml.Drawing.LightRigValues --> DocumentModel.Drawings.LightRigKind
+DocumentFormat.OpenXml.Drawing.LineCapValues --> DocumentModel.Drawings.LineCapKind
+DocumentFormat.OpenXml.Drawing.LineEndLengthValues --> DocumentModel.Drawings.LineEndLengthKind
+DocumentFormat.OpenXml.Drawing.LineEndValues --> DocumentModel.Drawings.LineEndKind
+DocumentFormat.OpenXml.Drawing.LineEndWidthValues --> DocumentModel.Drawings.LineEndWidthKind
+DocumentFormat.OpenXml.Drawing.PathShadeValues --> DocumentModel.Drawings.PathShadeKind
+DocumentFormat.OpenXml.Drawing.PenAlignmentValues --> DocumentModel.Drawings.PenAlignmentKind
+DocumentFormat.OpenXml.Drawing.PresetCameraValues --> DocumentModel.Drawings.PresetCameraKind
+DocumentFormat.OpenXml.Drawing.PresetColorValues --> DocumentModel.Drawings.PresetColorKind
+DocumentFormat.OpenXml.Drawing.PresetLineDashValues --> DocumentModel.Drawings.PresetLineDashKind
+DocumentFormat.OpenXml.Drawing.PresetPatternValues --> DocumentModel.Drawings.PresetPatternKind
+DocumentFormat.OpenXml.Drawing.PresetShadowValues --> DocumentModel.Drawings.PresetShadowKind
+DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues --> DocumentModel.Drawings.RectangleAlignmentKind
+DocumentFormat.OpenXml.Drawing.SchemeColorValues --> DocumentModel.Drawings.SchemeColorKind
+DocumentFormat.OpenXml.Drawing.SystemColorValues --> DocumentModel.Drawings.SystemColorKind
+DocumentFormat.OpenXml.Drawing.TextAutoNumberSchemeValues --> DocumentModel.Drawings.TextAutoNumberSchemeKind
+DocumentFormat.OpenXml.Drawing.TextCapsValues --> DocumentModel.Drawings.TextCapsKind
+DocumentFormat.OpenXml.Drawing.TextFontAlignmentValues --> DocumentModel.Drawings.TextFontAlignmentKind
+DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues --> DocumentModel.Drawings.TextHorizontalOverflowKind
+DocumentFormat.OpenXml.Drawing.TextShapeValues --> DocumentModel.Drawings.TextShapeKind
+DocumentFormat.OpenXml.Drawing.TextStrikeValues --> DocumentModel.Drawings.TextStrikeKind
+DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues --> DocumentModel.Drawings.TextTabAlignmentKind
+DocumentFormat.OpenXml.Drawing.TextUnderlineValues --> DocumentModel.Drawings.TextUnderlineKind
+DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues --> DocumentModel.Drawings.TextVerticalOverflowKind
+DocumentFormat.OpenXml.Drawing.TextVerticalValues --> DocumentModel.Drawings.TextVerticalKind
+DocumentFormat.OpenXml.Drawing.TextWrappingValues --> DocumentModel.Drawings.TextWrappingKind
+DocumentFormat.OpenXml.Drawing.TileFlipValues --> DocumentModel.Drawings.TileFlipKind
+DocumentFormat.OpenXml.Drawing.Wordprocessing.HorizontalRelativePositionValues --> DocumentModel.Drawings.Wordprocessing.HorizontalRelativePositionKind
+DocumentFormat.OpenXml.Drawing.Wordprocessing.VerticalRelativePositionValues --> DocumentModel.Drawings.Wordprocessing.VerticalRelativePositionKind
+DocumentFormat.OpenXml.Drawing.Wordprocessing.WrapTextValues --> DocumentModel.Drawings.Wordprocessing.WrapTextKind
+DocumentFormat.OpenXml.Math.BreakBinaryOperatorValues --> DocumentModel.Math.BreakBinaryOperatorKind
+DocumentFormat.OpenXml.Math.BreakBinarySubtractionValues --> DocumentModel.Math.BreakBinarySubtractionKind
+DocumentFormat.OpenXml.Math.HorizontalAlignmentValues --> DocumentModel.Math.HorizontalAlignmentKind
+DocumentFormat.OpenXml.Math.JustificationValues --> DocumentModel.Math.JustificationKind
+DocumentFormat.OpenXml.Math.LimitLocationValues --> DocumentModel.Math.LimitLocationKind
+DocumentFormat.OpenXml.Math.ScriptValues --> DocumentModel.Math.ScriptKind
+DocumentFormat.OpenXml.Math.ShapeDelimiterValues --> DocumentModel.Math.ShapeDelimiterKind
+DocumentFormat.OpenXml.Math.StyleValues --> DocumentModel.Math.StyleKind
+DocumentFormat.OpenXml.Math.VerticalAlignmentValues --> DocumentModel.Math.VerticalAlignmentKind
+DocumentFormat.OpenXml.Math.VerticalJustificationValues --> DocumentModel.Math.VerticalJustificationKind
+DocumentFormat.OpenXml.VariantTypes.ArrayBaseValues --> DocumentModel.VariantTypes.ArrayBaseKind
+DocumentFormat.OpenXml.VariantTypes.VectorBaseValues --> DocumentModel.VariantTypes.VectorBaseKind
+DocumentFormat.OpenXml.Vml.EditAsValues --> DocumentModel.Vml.EditAsKind
+DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues --> DocumentModel.Vml.ExtensionHandlingBehaviorKind
+DocumentFormat.OpenXml.Vml.FillMethodValues --> DocumentModel.Vml.FillMethodKind
+DocumentFormat.OpenXml.Vml.FillTypeValues --> DocumentModel.Vml.FillTypeKind
+DocumentFormat.OpenXml.Vml.ImageAspectValues --> DocumentModel.Vml.ImageAspectKind
+DocumentFormat.OpenXml.Vml.ShadowValues --> DocumentModel.Vml.ShadowKind
+DocumentFormat.OpenXml.Vml.StrokeArrowLengthValues --> DocumentModel.Vml.StrokeArrowLengthKind
+DocumentFormat.OpenXml.Vml.StrokeArrowValues --> DocumentModel.Vml.StrokeArrowKind
+DocumentFormat.OpenXml.Vml.StrokeArrowWidthValues --> DocumentModel.Vml.StrokeArrowWidthKind
+DocumentFormat.OpenXml.Vml.StrokeEndCapValues --> DocumentModel.Vml.StrokeEndCapKind
+DocumentFormat.OpenXml.Vml.StrokeJoinStyleValues --> DocumentModel.Vml.StrokeJoinStyleKind
+DocumentFormat.OpenXml.Vml.StrokeLineStyleValues --> DocumentModel.Vml.StrokeLineStyleKind
+DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabAlignmentValues --> DocumentModel.Wordprocessing.AbsolutePositionTabAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabLeaderCharValues --> DocumentModel.Wordprocessing.AbsolutePositionTabLeaderCharKind
+DocumentFormat.OpenXml.Wordprocessing.AbsolutePositionTabPositioningBaseValues --> DocumentModel.Wordprocessing.AbsolutePositionTabPositioningBaseKind
+DocumentFormat.OpenXml.Wordprocessing.BorderValues --> DocumentModel.Wordprocessing.BorderKind
+DocumentFormat.OpenXml.Wordprocessing.BreakTextRestartLocationValues --> DocumentModel.Wordprocessing.BreakTextRestartLocationKind
+DocumentFormat.OpenXml.Wordprocessing.BreakValues --> DocumentModel.Wordprocessing.BreakKind
+DocumentFormat.OpenXml.Wordprocessing.CalendarValues --> DocumentModel.Wordprocessing.CalendarKind
+DocumentFormat.OpenXml.Wordprocessing.CaptionPositionValues --> DocumentModel.Wordprocessing.CaptionPositionKind
+DocumentFormat.OpenXml.Wordprocessing.ChapterSeparatorValues --> DocumentModel.Wordprocessing.ChapterSeparatorKind
+DocumentFormat.OpenXml.Wordprocessing.CharacterSpacingValues --> DocumentModel.Wordprocessing.CharacterSpacingKind
+DocumentFormat.OpenXml.Wordprocessing.ColorSchemeIndexValues --> DocumentModel.Wordprocessing.ColorSchemeIndexKind
+DocumentFormat.OpenXml.Wordprocessing.CombineBracketValues --> DocumentModel.Wordprocessing.CombineBracketKind
+DocumentFormat.OpenXml.Wordprocessing.CompatSettingNameValues --> DocumentModel.Wordprocessing.CompatSettingNameKind
+DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmClassValues --> DocumentModel.Wordprocessing.CryptAlgorithmClassKind
+DocumentFormat.OpenXml.Wordprocessing.CryptAlgorithmValues --> DocumentModel.Wordprocessing.CryptAlgorithmKind
+DocumentFormat.OpenXml.Wordprocessing.CryptProviderValues --> DocumentModel.Wordprocessing.CryptProviderKind
+DocumentFormat.OpenXml.Wordprocessing.DateFormatValues --> DocumentModel.Wordprocessing.DateFormatKind
+DocumentFormat.OpenXml.Wordprocessing.DirectionValues --> DocumentModel.Wordprocessing.DirectionKind
+DocumentFormat.OpenXml.Wordprocessing.DisplacedByCustomXmlValues --> DocumentModel.Wordprocessing.DisplacedByCustomXmlKind
+DocumentFormat.OpenXml.Wordprocessing.DocGridValues --> DocumentModel.Wordprocessing.DocGridKind
+DocumentFormat.OpenXml.Wordprocessing.DocPartBehaviorValues --> DocumentModel.Wordprocessing.DocPartBehaviorKind
+DocumentFormat.OpenXml.Wordprocessing.DocPartGalleryValues --> DocumentModel.Wordprocessing.DocPartGalleryKind
+DocumentFormat.OpenXml.Wordprocessing.DocPartValues --> DocumentModel.Wordprocessing.DocPartKind
+DocumentFormat.OpenXml.Wordprocessing.DocumentConformance --> DocumentModel.Wordprocessing.DocumentConformance
+DocumentFormat.OpenXml.Wordprocessing.DocumentProtectionValues --> DocumentModel.Wordprocessing.DocumentProtectionKind
+DocumentFormat.OpenXml.Wordprocessing.DropCapLocationValues --> DocumentModel.Wordprocessing.DropCapLocationKind
+DocumentFormat.OpenXml.Wordprocessing.EmphasisMarkValues --> DocumentModel.Wordprocessing.EmphasisMarkKind
+DocumentFormat.OpenXml.Wordprocessing.EndnotePositionValues --> DocumentModel.Wordprocessing.EndnotePositionKind
+DocumentFormat.OpenXml.Wordprocessing.FieldCharValues --> DocumentModel.Wordprocessing.FieldCharKind
+DocumentFormat.OpenXml.Wordprocessing.FontFamilyValues --> DocumentModel.Wordprocessing.FontFamilyKind
+DocumentFormat.OpenXml.Wordprocessing.FontPitchValues --> DocumentModel.Wordprocessing.FontPitchKind
+DocumentFormat.OpenXml.Wordprocessing.FontTypeHintValues --> DocumentModel.Wordprocessing.FontTypeHintKind
+DocumentFormat.OpenXml.Wordprocessing.FootnoteEndnoteValues --> DocumentModel.Wordprocessing.FootnoteEndnoteKind
+DocumentFormat.OpenXml.Wordprocessing.FootnotePositionValues --> DocumentModel.Wordprocessing.FootnotePositionKind
+DocumentFormat.OpenXml.Wordprocessing.FrameLayoutValues --> DocumentModel.Wordprocessing.FrameLayoutKind
+DocumentFormat.OpenXml.Wordprocessing.FrameScrollbarVisibilityValues --> DocumentModel.Wordprocessing.FrameScrollbarVisibilityKind
+DocumentFormat.OpenXml.Wordprocessing.HeaderFooterValues --> DocumentModel.Wordprocessing.HeaderFooterKind
+DocumentFormat.OpenXml.Wordprocessing.HeightRuleValues --> DocumentModel.Wordprocessing.HeightRuleKind
+DocumentFormat.OpenXml.Wordprocessing.HighlightColorValues --> DocumentModel.Wordprocessing.HighlightColorKind
+DocumentFormat.OpenXml.Wordprocessing.HorizontalAlignmentValues --> DocumentModel.Wordprocessing.HorizontalAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.HorizontalAnchorValues --> DocumentModel.Wordprocessing.HorizontalAnchorKind
+DocumentFormat.OpenXml.Wordprocessing.InfoTextValues --> DocumentModel.Wordprocessing.InfoTextKind
+DocumentFormat.OpenXml.Wordprocessing.JustificationValues --> DocumentModel.Wordprocessing.JustificationKind
+DocumentFormat.OpenXml.Wordprocessing.LevelJustificationValues --> DocumentModel.Wordprocessing.LevelJustificationKind
+DocumentFormat.OpenXml.Wordprocessing.LevelSuffixValues --> DocumentModel.Wordprocessing.LevelSuffixKind
+DocumentFormat.OpenXml.Wordprocessing.LineNumberRestartValues --> DocumentModel.Wordprocessing.LineNumberRestartKind
+DocumentFormat.OpenXml.Wordprocessing.LineSpacingRuleValues --> DocumentModel.Wordprocessing.LineSpacingRuleKind
+DocumentFormat.OpenXml.Wordprocessing.LockingValues --> DocumentModel.Wordprocessing.LockingKind
+DocumentFormat.OpenXml.Wordprocessing.MailMergeDataValues --> DocumentModel.Wordprocessing.MailMergeDataKind
+DocumentFormat.OpenXml.Wordprocessing.MailMergeDestinationValues --> DocumentModel.Wordprocessing.MailMergeDestinationKind
+DocumentFormat.OpenXml.Wordprocessing.MailMergeDocumentValues --> DocumentModel.Wordprocessing.MailMergeDocumentKind
+DocumentFormat.OpenXml.Wordprocessing.MailMergeOdsoFieldValues --> DocumentModel.Wordprocessing.MailMergeOdsoFieldKind
+DocumentFormat.OpenXml.Wordprocessing.MailMergeSourceValues --> DocumentModel.Wordprocessing.MailMergeSourceKind
+DocumentFormat.OpenXml.Wordprocessing.MergedCellValues --> DocumentModel.Wordprocessing.MergedCellKind
+DocumentFormat.OpenXml.Wordprocessing.MultiLevelValues --> DocumentModel.Wordprocessing.MultiLevelKind
+DocumentFormat.OpenXml.Wordprocessing.NumberFormatValues --> DocumentModel.Wordprocessing.NumberFormatKind
+DocumentFormat.OpenXml.Wordprocessing.ObjectDrawAspect --> DocumentModel.Wordprocessing.ObjectDrawAspect
+DocumentFormat.OpenXml.Wordprocessing.ObjectUpdateMode --> DocumentModel.Wordprocessing.ObjectUpdateMode
+DocumentFormat.OpenXml.Wordprocessing.OnOffOnlyValues --> DocumentModel.Wordprocessing.OnOffOnlyKind
+DocumentFormat.OpenXml.Wordprocessing.PageBorderDisplayValues --> DocumentModel.Wordprocessing.PageBorderDisplayKind
+DocumentFormat.OpenXml.Wordprocessing.PageBorderOffsetValues --> DocumentModel.Wordprocessing.PageBorderOffsetKind
+DocumentFormat.OpenXml.Wordprocessing.PageBorderZOrderValues --> DocumentModel.Wordprocessing.PageBorderZOrderKind
+DocumentFormat.OpenXml.Wordprocessing.PageOrientationValues --> DocumentModel.Wordprocessing.PageOrientationKind
+DocumentFormat.OpenXml.Wordprocessing.PresetZoomValues --> DocumentModel.Wordprocessing.PresetZoomKind
+DocumentFormat.OpenXml.Wordprocessing.ProofingErrorValues --> DocumentModel.Wordprocessing.ProofingErrorKind
+DocumentFormat.OpenXml.Wordprocessing.ProofingStateValues --> DocumentModel.Wordprocessing.ProofingStateKind
+DocumentFormat.OpenXml.Wordprocessing.RangePermissionEditingGroupValues --> DocumentModel.Wordprocessing.RangePermissionEditingGroupKind
+DocumentFormat.OpenXml.Wordprocessing.RestartNumberValues --> DocumentModel.Wordprocessing.RestartNumberKind
+DocumentFormat.OpenXml.Wordprocessing.RubyAlignValues --> DocumentModel.Wordprocessing.RubyAlignKind
+DocumentFormat.OpenXml.Wordprocessing.SectionMarkValues --> DocumentModel.Wordprocessing.SectionMarkKind
+DocumentFormat.OpenXml.Wordprocessing.ShadingPatternValues --> DocumentModel.Wordprocessing.ShadingPatternKind
+DocumentFormat.OpenXml.Wordprocessing.StyleValues --> DocumentModel.Wordprocessing.StyleKind
+DocumentFormat.OpenXml.Wordprocessing.TableLayoutValues --> DocumentModel.Wordprocessing.TableLayoutKind
+DocumentFormat.OpenXml.Wordprocessing.TableOverlapValues --> DocumentModel.Wordprocessing.TableOverlapKind
+DocumentFormat.OpenXml.Wordprocessing.TableRowAlignmentValues --> DocumentModel.Wordprocessing.TableRowAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.TableStyleOverrideValues --> DocumentModel.Wordprocessing.TableStyleOverrideKind
+DocumentFormat.OpenXml.Wordprocessing.TableVerticalAlignmentValues --> DocumentModel.Wordprocessing.TableVerticalAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.TableWidthValues --> DocumentModel.Wordprocessing.TableWidthKind
+DocumentFormat.OpenXml.Wordprocessing.TabStopLeaderCharValues --> DocumentModel.Wordprocessing.TabStopLeaderCharKind
+DocumentFormat.OpenXml.Wordprocessing.TabStopValues --> DocumentModel.Wordprocessing.TabStopKind
+DocumentFormat.OpenXml.Wordprocessing.TargetScreenSizeValues --> DocumentModel.Wordprocessing.TargetScreenSizeKind
+DocumentFormat.OpenXml.Wordprocessing.TextBoxFormFieldValues --> DocumentModel.Wordprocessing.TextBoxFormFieldKind
+DocumentFormat.OpenXml.Wordprocessing.TextBoxTightWrapValues --> DocumentModel.Wordprocessing.TextBoxTightWrapKind
+DocumentFormat.OpenXml.Wordprocessing.TextDirectionValues --> DocumentModel.Wordprocessing.TextDirectionKind
+DocumentFormat.OpenXml.Wordprocessing.TextEffectValues --> DocumentModel.Wordprocessing.TextEffectKind
+DocumentFormat.OpenXml.Wordprocessing.TextWrappingValues --> DocumentModel.Wordprocessing.TextWrappingKind
+DocumentFormat.OpenXml.Wordprocessing.ThemeFontValues --> DocumentModel.Wordprocessing.ThemeFontKind
+DocumentFormat.OpenXml.Wordprocessing.UnderlineValues --> DocumentModel.Wordprocessing.UnderlineKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalAlignmentValues --> DocumentModel.Wordprocessing.VerticalAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalAnchorValues --> DocumentModel.Wordprocessing.VerticalAnchorKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalJustificationValues --> DocumentModel.Wordprocessing.VerticalJustificationKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalMergeRevisionValues --> DocumentModel.Wordprocessing.VerticalMergeRevisionKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalPositionValues --> DocumentModel.Wordprocessing.VerticalPositionKind
+DocumentFormat.OpenXml.Wordprocessing.VerticalTextAlignmentValues --> DocumentModel.Wordprocessing.VerticalTextAlignmentKind
+DocumentFormat.OpenXml.Wordprocessing.ViewValues --> DocumentModel.Wordprocessing.ViewKind
+--------------------
+Missed:
+DocumentFormat.OpenXml.AdditionalCharacteristics.RelationValues
+DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues
+DocumentFormat.OpenXml.Drawing.BlendModeValues
+DocumentFormat.OpenXml.Drawing.BooleanStyleValues
+DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues
+DocumentFormat.OpenXml.Drawing.PathFillModeValues
+DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues
+DocumentFormat.OpenXml.Drawing.ShapeTypeValues
+DocumentFormat.OpenXml.Drawing.Spreadsheet.EditAsValues
+DocumentFormat.OpenXml.Drawing.TextAlignmentTypeValues
+DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues
+DocumentFormat.OpenXml.EMMA.AnchorPointValues
+DocumentFormat.OpenXml.EMMA.DisjunctionTypeValues
+DocumentFormat.OpenXml.EMMA.EndPointRoleValues
+DocumentFormat.OpenXml.InkML.ChannelDataTypeValues
+DocumentFormat.OpenXml.InkML.ChannelValueOrientationValues
+DocumentFormat.OpenXml.InkML.MappingTypeValues
+DocumentFormat.OpenXml.InkML.TableApplyValues
+DocumentFormat.OpenXml.InkML.TableInterpolationValues
+DocumentFormat.OpenXml.InkML.TraceContinuationValues
+DocumentFormat.OpenXml.InkML.TraceTypeValues
+DocumentFormat.OpenXml.Math.BooleanValues
+DocumentFormat.OpenXml.Math.FractionTypeValues
+DocumentFormat.OpenXml.Office.ActiveX.PersistenceValues
+DocumentFormat.OpenXml.Office.CustomUI.BoxStyleValues
+DocumentFormat.OpenXml.Office.CustomUI.ItemSizeValues
+DocumentFormat.OpenXml.Office.CustomUI.SizeValues
+DocumentFormat.OpenXml.Office.MetaAttributes.TrueOnlyValues
+DocumentFormat.OpenXml.Office2010.CustomUI.BoxStyleValues
+DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues
+DocumentFormat.OpenXml.Office2010.CustomUI.GalleryShowInRibbonValues
+DocumentFormat.OpenXml.Office2010.CustomUI.ItemSizeValues
+DocumentFormat.OpenXml.Office2010.CustomUI.LayoutChildrenValues
+DocumentFormat.OpenXml.Office2010.CustomUI.SizeValues
+DocumentFormat.OpenXml.Office2010.CustomUI.Style2Values
+DocumentFormat.OpenXml.Office2010.CustomUI.StyleValues
+DocumentFormat.OpenXml.Office2010.CustomUI.TaskSizesValues
+DocumentFormat.OpenXml.Office2010.Excel.AllocationMethodValues
+DocumentFormat.OpenXml.Office2010.Excel.CheckedValues
+DocumentFormat.OpenXml.Office2010.Excel.ConditionalFormattingValueObjectTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.DataBarAxisPositionValues
+DocumentFormat.OpenXml.Office2010.Excel.DataBarDirectionValues
+DocumentFormat.OpenXml.Office2010.Excel.DisplayBlanksAsValues
+DocumentFormat.OpenXml.Office2010.Excel.DropStyleValues
+DocumentFormat.OpenXml.Office2010.Excel.EditValidationValues
+DocumentFormat.OpenXml.Office2010.Excel.IconSetTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.ObjectTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.OlapSlicerCacheSortOrderValues
+DocumentFormat.OpenXml.Office2010.Excel.PivotEditValueTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.PivotShowAsValues
+DocumentFormat.OpenXml.Office2010.Excel.SelectionTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.SlicerCacheCrossFilterValues
+DocumentFormat.OpenXml.Office2010.Excel.SlicerStyleTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.SparklineAxisMinMaxValues
+DocumentFormat.OpenXml.Office2010.Excel.SparklineTypeValues
+DocumentFormat.OpenXml.Office2010.Excel.TabularSlicerCacheSortOrderValues
+DocumentFormat.OpenXml.Office2010.Excel.TextHorizontalAlignmentValues
+DocumentFormat.OpenXml.Office2010.Excel.TextVerticalAlignmentValues
+DocumentFormat.OpenXml.Office2010.Ink.LinkDirectionValues
+DocumentFormat.OpenXml.Office2010.PowerPoint.TransitionLeftRightDirectionTypeValues
+DocumentFormat.OpenXml.Office2010.PowerPoint.TransitionPatternValues
+DocumentFormat.OpenXml.Office2010.PowerPoint.TransitionShredPatternValues
+DocumentFormat.OpenXml.Office2010.Word.BevelPresetTypeValues
+DocumentFormat.OpenXml.Office2010.Word.CompoundLineValues
+DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues
+DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues
+DocumentFormat.OpenXml.Office2010.Word.LigaturesValues
+DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues
+DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues
+DocumentFormat.OpenXml.Office2010.Word.LineCapValues
+DocumentFormat.OpenXml.Office2010.Word.NumberFormValues
+DocumentFormat.OpenXml.Office2010.Word.NumberSpacingValues
+DocumentFormat.OpenXml.Office2010.Word.OnOffValues
+DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues
+DocumentFormat.OpenXml.Office2010.Word.PenAlignmentValues
+DocumentFormat.OpenXml.Office2010.Word.PresetCameraTypeValues
+DocumentFormat.OpenXml.Office2010.Word.PresetLineDashValues
+DocumentFormat.OpenXml.Office2010.Word.PresetMaterialTypeValues
+DocumentFormat.OpenXml.Office2010.Word.RectangleAlignmentValues
+DocumentFormat.OpenXml.Office2010.Word.SchemeColorValues
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.Boolean
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.DataLabelsPosition
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.LegendPosition
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.MarkerStyle
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TickLabelPositionNinch
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TickMarkNinch
+DocumentFormat.OpenXml.Office2013.Drawing.ChartStyle.TitlePosition
+DocumentFormat.OpenXml.Office2013.Drawing.TargetScreenSize
+DocumentFormat.OpenXml.Office2013.Excel.CalculatedMemberNumberFormat
+DocumentFormat.OpenXml.Office2013.Excel.MovingPeriodStep
+DocumentFormat.OpenXml.Office2013.Excel.QuestionFormat
+DocumentFormat.OpenXml.Office2013.Excel.QuestionType
+DocumentFormat.OpenXml.Office2013.Excel.SurveyPosition
+DocumentFormat.OpenXml.Office2013.Excel.SXVCellType
+DocumentFormat.OpenXml.Office2013.Excel.TimelineStyleType
+DocumentFormat.OpenXml.Office2013.Word.SdtAppearance
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.AxisUnit
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.DataLabelPos
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoMappingLevel
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.GeoProjectionType
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.IntervalClosedSide
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.NumericDimensionType
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.ParentLabelLayoutVal
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PosAlign
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.QuartileMethod
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SeriesLayout
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.SidePos
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType
+DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType
+DocumentFormat.OpenXml.Office2016.Drawing.Command.ResourceLinkage
+DocumentFormat.OpenXml.Office2016.Excel.AdjustType
+DocumentFormat.OpenXml.Office2016.Excel.AdjustTypeExt
+DocumentFormat.OpenXml.Office2016.Excel.ExtFeatureType
+DocumentFormat.OpenXml.Office2016.Excel.ExtSubFeatureType
+DocumentFormat.OpenXml.Office2016.Excel.FeatureType
+DocumentFormat.OpenXml.Office2016.Excel.FillType
+DocumentFormat.OpenXml.Office2016.Excel.FillTypeExt
+DocumentFormat.OpenXml.Office2016.Excel.OartAnchorType
+DocumentFormat.OpenXml.Office2016.Excel.RevisionContext
+DocumentFormat.OpenXml.Office2016.Excel.RowColVisualOp
+DocumentFormat.OpenXml.Office2016.Excel.RwColAction
+DocumentFormat.OpenXml.Office2016.Excel.SheetOp
+DocumentFormat.OpenXml.Office2016.Excel.SubFeatureType
+DocumentFormat.OpenXml.Office2016.ExcelAc.ModelTimeGroupingContentType
+DocumentFormat.OpenXml.Office2019.Drawing.Diagram11.STorageType
+DocumentFormat.OpenXml.Office2019.Drawing.HyperLinkColor.HyperlinkColorEnum
+DocumentFormat.OpenXml.Office2019.Excel.RichData.RichValueFallbackType
+DocumentFormat.OpenXml.Office2019.Excel.RichData.RichValueValueType
+DocumentFormat.OpenXml.Office2019.Excel.RichData2.ArrayValueType
+DocumentFormat.OpenXml.Office2019.Excel.RichData2.RichFormatPropertyType
+DocumentFormat.OpenXml.Office2019.Excel.RichData2.SupportingPropertyBagArrayValueType
+DocumentFormat.OpenXml.Office2019.Excel.RichData2.SupportingPropertyBagValueType
+DocumentFormat.OpenXml.Office2019.Presentation.ClassificationOutcomeType
+DocumentFormat.OpenXml.Office2019.Presentation.DisplayLocation
+DocumentFormat.OpenXml.Office2021.Drawing.DocumentClassification.ClassificationOutcomeType
+DocumentFormat.OpenXml.Office2021.PowerPoint.Comment.CommentStatus
+DocumentFormat.OpenXml.Presentation.AnimateBehaviorCalculateModeValues
+DocumentFormat.OpenXml.Presentation.AnimateBehaviorValues
+DocumentFormat.OpenXml.Presentation.AnimateColorDirectionValues
+DocumentFormat.OpenXml.Presentation.AnimateColorSpaceValues
+DocumentFormat.OpenXml.Presentation.AnimateEffectTransitionValues
+DocumentFormat.OpenXml.Presentation.AnimateMotionBehaviorOriginValues
+DocumentFormat.OpenXml.Presentation.AnimateMotionPathEditModeValues
+DocumentFormat.OpenXml.Presentation.BehaviorAccumulateValues
+DocumentFormat.OpenXml.Presentation.BehaviorAdditiveValues
+DocumentFormat.OpenXml.Presentation.BehaviorOverrideValues
+DocumentFormat.OpenXml.Presentation.BehaviorTransformValues
+DocumentFormat.OpenXml.Presentation.ChartSubElementValues
+DocumentFormat.OpenXml.Presentation.CommandValues
+DocumentFormat.OpenXml.Presentation.ConformanceClassValues
+DocumentFormat.OpenXml.Presentation.CryptAlgorithmClassValues
+DocumentFormat.OpenXml.Presentation.CryptAlgorithmValues
+DocumentFormat.OpenXml.Presentation.CryptProviderValues
+DocumentFormat.OpenXml.Presentation.DiagramBuildValues
+DocumentFormat.OpenXml.Presentation.DirectionValues
+DocumentFormat.OpenXml.Presentation.HtmlPublishWebBrowserSupportValues
+DocumentFormat.OpenXml.Presentation.IterateValues
+DocumentFormat.OpenXml.Presentation.NextActionValues
+DocumentFormat.OpenXml.Presentation.OleChartBuildValues
+DocumentFormat.OpenXml.Presentation.OleObjectFollowColorSchemeValues
+DocumentFormat.OpenXml.Presentation.ParagraphBuildValues
+DocumentFormat.OpenXml.Presentation.PhotoAlbumFrameShapeValues
+DocumentFormat.OpenXml.Presentation.PhotoAlbumLayoutValues
+DocumentFormat.OpenXml.Presentation.PlaceholderSizeValues
+DocumentFormat.OpenXml.Presentation.PlaceholderValues
+DocumentFormat.OpenXml.Presentation.PreviousActionValues
+DocumentFormat.OpenXml.Presentation.PrintColorModeValues
+DocumentFormat.OpenXml.Presentation.PrintOutputValues
+DocumentFormat.OpenXml.Presentation.SlideLayoutValues
+DocumentFormat.OpenXml.Presentation.SlideSizeValues
+DocumentFormat.OpenXml.Presentation.SplitterBarStateValues
+DocumentFormat.OpenXml.Presentation.TimeNodeFillValues
+DocumentFormat.OpenXml.Presentation.TimeNodeMasterRelationValues
+DocumentFormat.OpenXml.Presentation.TimeNodePresetClassValues
+DocumentFormat.OpenXml.Presentation.TimeNodeRestartValues
+DocumentFormat.OpenXml.Presentation.TimeNodeSyncValues
+DocumentFormat.OpenXml.Presentation.TimeNodeValues
+DocumentFormat.OpenXml.Presentation.TransitionCornerDirectionValues
+DocumentFormat.OpenXml.Presentation.TransitionInOutDirectionValues
+DocumentFormat.OpenXml.Presentation.TransitionSlideDirectionValues
+DocumentFormat.OpenXml.Presentation.TransitionSpeedValues
+DocumentFormat.OpenXml.Presentation.TriggerEventValues
+DocumentFormat.OpenXml.Presentation.TriggerRuntimeNodeValues
+DocumentFormat.OpenXml.Presentation.ViewValues
+DocumentFormat.OpenXml.Presentation.WebColorValues
+DocumentFormat.OpenXml.Presentation.WebScreenSizeValues
+DocumentFormat.OpenXml.SpaceProcessingModeValues
+DocumentFormat.OpenXml.Spreadsheet.BorderStyleValues
+DocumentFormat.OpenXml.Spreadsheet.CalculateModeValues
+DocumentFormat.OpenXml.Spreadsheet.CalendarValues
+DocumentFormat.OpenXml.Spreadsheet.CellCommentsValues
+DocumentFormat.OpenXml.Spreadsheet.CellFormulaValues
+DocumentFormat.OpenXml.Spreadsheet.CellValues
+DocumentFormat.OpenXml.Spreadsheet.CommentsValues
+DocumentFormat.OpenXml.Spreadsheet.ConditionalFormattingOperatorValues
+DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValueObjectValues
+DocumentFormat.OpenXml.Spreadsheet.ConditionalFormatValues
+DocumentFormat.OpenXml.Spreadsheet.ConformanceClass
+DocumentFormat.OpenXml.Spreadsheet.CredentialsMethodValues
+DocumentFormat.OpenXml.Spreadsheet.DataConsolidateFunctionValues
+DocumentFormat.OpenXml.Spreadsheet.DataValidationErrorStyleValues
+DocumentFormat.OpenXml.Spreadsheet.DataValidationImeModeValues
+DocumentFormat.OpenXml.Spreadsheet.DataValidationOperatorValues
+DocumentFormat.OpenXml.Spreadsheet.DataValidationValues
+DocumentFormat.OpenXml.Spreadsheet.DataViewAspectValues
+DocumentFormat.OpenXml.Spreadsheet.DateTimeGroupingValues
+DocumentFormat.OpenXml.Spreadsheet.DdeValues
+DocumentFormat.OpenXml.Spreadsheet.DynamicFilterValues
+DocumentFormat.OpenXml.Spreadsheet.ExternalConnectionValues
+DocumentFormat.OpenXml.Spreadsheet.FieldSortValues
+DocumentFormat.OpenXml.Spreadsheet.FileTypeValues
+DocumentFormat.OpenXml.Spreadsheet.FilterOperatorValues
+DocumentFormat.OpenXml.Spreadsheet.FontSchemeValues
+DocumentFormat.OpenXml.Spreadsheet.FormatActionValues
+DocumentFormat.OpenXml.Spreadsheet.FormulaExpressionValues
+DocumentFormat.OpenXml.Spreadsheet.GradientValues
+DocumentFormat.OpenXml.Spreadsheet.GroupByValues
+DocumentFormat.OpenXml.Spreadsheet.GrowShrinkValues
+DocumentFormat.OpenXml.Spreadsheet.HorizontalAlignmentValues
+DocumentFormat.OpenXml.Spreadsheet.HtmlFormattingValues
+DocumentFormat.OpenXml.Spreadsheet.IconSetValues
+DocumentFormat.OpenXml.Spreadsheet.ItemValues
+DocumentFormat.OpenXml.Spreadsheet.MdxFunctionValues
+DocumentFormat.OpenXml.Spreadsheet.MdxKPIPropertyValues
+DocumentFormat.OpenXml.Spreadsheet.MdxSetOrderValues
+DocumentFormat.OpenXml.Spreadsheet.ObjectDisplayValues
+DocumentFormat.OpenXml.Spreadsheet.OleUpdateValues
+DocumentFormat.OpenXml.Spreadsheet.OrientationValues
+DocumentFormat.OpenXml.Spreadsheet.PageOrderValues
+DocumentFormat.OpenXml.Spreadsheet.PaneStateValues
+DocumentFormat.OpenXml.Spreadsheet.PaneValues
+DocumentFormat.OpenXml.Spreadsheet.ParameterValues
+DocumentFormat.OpenXml.Spreadsheet.PatternValues
+DocumentFormat.OpenXml.Spreadsheet.PhoneticAlignmentValues
+DocumentFormat.OpenXml.Spreadsheet.PhoneticValues
+DocumentFormat.OpenXml.Spreadsheet.PivotAreaValues
+DocumentFormat.OpenXml.Spreadsheet.PivotFilterValues
+DocumentFormat.OpenXml.Spreadsheet.PivotTableAxisValues
+DocumentFormat.OpenXml.Spreadsheet.PrintErrorValues
+DocumentFormat.OpenXml.Spreadsheet.QualifierValues
+DocumentFormat.OpenXml.Spreadsheet.ReferenceModeValues
+DocumentFormat.OpenXml.Spreadsheet.RevisionActionValues
+DocumentFormat.OpenXml.Spreadsheet.RowColumnActionValues
+DocumentFormat.OpenXml.Spreadsheet.RuleValues
+DocumentFormat.OpenXml.Spreadsheet.ScopeValues
+DocumentFormat.OpenXml.Spreadsheet.SheetStateValues
+DocumentFormat.OpenXml.Spreadsheet.SheetViewValues
+DocumentFormat.OpenXml.Spreadsheet.ShowDataAsValues
+DocumentFormat.OpenXml.Spreadsheet.SortByValues
+DocumentFormat.OpenXml.Spreadsheet.SortMethodValues
+DocumentFormat.OpenXml.Spreadsheet.SortValues
+DocumentFormat.OpenXml.Spreadsheet.SourceValues
+DocumentFormat.OpenXml.Spreadsheet.TableStyleValues
+DocumentFormat.OpenXml.Spreadsheet.TableValues
+DocumentFormat.OpenXml.Spreadsheet.TargetScreenSizeValues
+DocumentFormat.OpenXml.Spreadsheet.TextHorizontalAlignmentValues
+DocumentFormat.OpenXml.Spreadsheet.TextVerticalAlignmentValues
+DocumentFormat.OpenXml.Spreadsheet.TimePeriodValues
+DocumentFormat.OpenXml.Spreadsheet.TotalsRowFunctionValues
+DocumentFormat.OpenXml.Spreadsheet.UnderlineValues
+DocumentFormat.OpenXml.Spreadsheet.UpdateLinksBehaviorValues
+DocumentFormat.OpenXml.Spreadsheet.VerticalAlignmentRunValues
+DocumentFormat.OpenXml.Spreadsheet.VerticalAlignmentValues
+DocumentFormat.OpenXml.Spreadsheet.VisibilityValues
+DocumentFormat.OpenXml.Spreadsheet.VolatileDependencyValues
+DocumentFormat.OpenXml.Spreadsheet.VolatileValues
+DocumentFormat.OpenXml.Spreadsheet.WebSourceValues
+DocumentFormat.OpenXml.Spreadsheet.XmlDataValues
+DocumentFormat.OpenXml.Vml.Office.AlignmentValues
+DocumentFormat.OpenXml.Vml.Office.AngleValues
+DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues
+DocumentFormat.OpenXml.Vml.Office.ConnectorValues
+DocumentFormat.OpenXml.Vml.Office.ConnectValues
+DocumentFormat.OpenXml.Vml.Office.ExtrusionRenderValues
+DocumentFormat.OpenXml.Vml.Office.ExtrusionValues
+DocumentFormat.OpenXml.Vml.Office.FillValues
+DocumentFormat.OpenXml.Vml.Office.HorizontalRuleAlignmentValues
+DocumentFormat.OpenXml.Vml.Office.InsetMarginValues
+DocumentFormat.OpenXml.Vml.Office.OleDrawAspectValues
+DocumentFormat.OpenXml.Vml.Office.OleUpdateModeValues
+DocumentFormat.OpenXml.Vml.Office.OleValues
+DocumentFormat.OpenXml.Vml.Office.RuleValues
+DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues
+DocumentFormat.OpenXml.Vml.Spreadsheet.ObjectValues
+DocumentFormat.OpenXml.Vml.StrokeFillTypeValues
+DocumentFormat.OpenXml.Vml.Wordprocessing.BorderValues
+DocumentFormat.OpenXml.Vml.Wordprocessing.HorizontalAnchorValues
+DocumentFormat.OpenXml.Vml.Wordprocessing.VerticalAnchorValues
+DocumentFormat.OpenXml.Vml.Wordprocessing.WrapSideValues
+DocumentFormat.OpenXml.Vml.Wordprocessing.WrapValues
+DocumentFormat.OpenXml.Wordprocessing.DocumentTypeValues
+DocumentFormat.OpenXml.Wordprocessing.StrictCharacterSet
+DocumentFormat.OpenXml.Wordprocessing.TableWidthUnitValues
+DocumentFormat.OpenXml.Wordprocessing.ThemeColorValues

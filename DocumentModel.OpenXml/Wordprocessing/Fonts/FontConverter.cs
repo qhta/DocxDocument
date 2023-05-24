@@ -145,7 +145,7 @@ public static class FontConverter
   
   private static void SetNotTrueType(DXW.Font openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NotTrueType>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NotTrueType>(openXmlElement, value, "0", null);
   }
   #endregion
 

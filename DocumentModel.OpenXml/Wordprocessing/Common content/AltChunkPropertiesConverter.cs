@@ -21,7 +21,7 @@ public static class AltChunkPropertiesConverter
   
   private static void SetMatchSource(DXW.AltChunkProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.MatchSource>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.MatchSource>(openXmlElement, value, "0", null);
   }
   
   public static DMW.AltChunkProperties? CreateModelElement(DXW.AltChunkProperties? openXmlElement)

@@ -119,7 +119,7 @@ public static class SdtPropertiesConverter
   
   private static void SetShowingPlaceholder(DXW.SdtProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ShowingPlaceholder>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ShowingPlaceholder>(openXmlElement, value, "0", null);
   }
   
   private static DMW.DataBinding? GetDataBinding(DXW.SdtProperties openXmlElement)
@@ -160,7 +160,7 @@ public static class SdtPropertiesConverter
   
   private static void SetTemporarySdt(DXW.SdtProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TemporarySdt>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TemporarySdt>(openXmlElement, value, "0", null);
   }
   
   private static HexInt? GetSdtId(DXW.SdtProperties openXmlElement)

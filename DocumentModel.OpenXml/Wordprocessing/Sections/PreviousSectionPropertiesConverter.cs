@@ -401,7 +401,7 @@ public static class PreviousSectionPropertiesConverter
   
   private static void SetFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.FormProtection>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -447,7 +447,7 @@ public static class PreviousSectionPropertiesConverter
   
   private static void SetNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoEndnote>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -465,7 +465,7 @@ public static class PreviousSectionPropertiesConverter
   
   private static void SetTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TitlePage>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -511,7 +511,7 @@ public static class PreviousSectionPropertiesConverter
   
   private static void SetBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -529,7 +529,7 @@ public static class PreviousSectionPropertiesConverter
   
   private static void SetGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.GutterOnRight>(openXmlElement, value, "0", null);
   }
   
   /// <summary>

@@ -32,7 +32,7 @@ public static class CheckBoxConverter
   
   private static void SetAutomaticallySizeFormField(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutomaticallySizeFormField>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutomaticallySizeFormField>(openXmlElement, value, "0", null);
   }
   
   private static Boolean? GetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement)
@@ -47,7 +47,7 @@ public static class CheckBoxConverter
   
   private static void SetDefaultCheckBoxFormFieldState(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DefaultCheckBoxFormFieldState>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DefaultCheckBoxFormFieldState>(openXmlElement, value, "0", null);
   }
   
   private static Boolean? GetChecked(DXW.CheckBox openXmlElement)
@@ -62,7 +62,7 @@ public static class CheckBoxConverter
   
   private static void SetChecked(DXW.CheckBox openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Checked>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Checked>(openXmlElement, value, "0", null);
   }
   
   public static DMW.CheckBox? CreateModelElement(DXW.CheckBox? openXmlElement)
