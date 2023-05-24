@@ -130,6 +130,7 @@ public class TestProperties : TestBase
       var newProperties = (DocumentProperties?)serializer.Deserialize(textReader);
       Assert.IsNotNull(newProperties, $"Deserialized properties are null");
       var diffs = new DiffList();
+      diffs.AddDiff += Diffs_AddDiff;
       ok = DeepComparer.IsEqual(oldProperties, newProperties, diffs);
       if (!ok)
         foreach (var diff in diffs)
@@ -163,6 +164,11 @@ public class TestProperties : TestBase
       }
     }
     return ok;
+  }
+
+  private void Diffs_AddDiff(DiffList sender, Diff diff)
+  {
+    Assert.Fail($"{diff}");
   }
 
   /// <summary>

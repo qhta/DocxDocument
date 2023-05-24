@@ -48,7 +48,7 @@ public static class MailMergeConverter
   
   private static void SetLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.LinkToQuery>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.LinkToQuery>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -208,7 +208,7 @@ public static class MailMergeConverter
   
   private static void SetDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressBlankLines>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotSuppressBlankLines>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -310,7 +310,7 @@ public static class MailMergeConverter
   
   private static void SetMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.MailAsAttachment>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.MailAsAttachment>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -328,7 +328,7 @@ public static class MailMergeConverter
   
   private static void SetViewMergedData(DXW.MailMerge openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ViewMergedData>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ViewMergedData>(openXmlElement, value, "0", null);
   }
   
   /// <summary>

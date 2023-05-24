@@ -140,7 +140,7 @@ public static class FieldMapDataConverter
   
   private static void SetDynamicAddress(DXW.FieldMapData openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DynamicAddress>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DynamicAddress>(openXmlElement, value, "0", null);
   }
   
   public static DMW.FieldMapData? CreateModelElement(DXW.FieldMapData? openXmlElement)

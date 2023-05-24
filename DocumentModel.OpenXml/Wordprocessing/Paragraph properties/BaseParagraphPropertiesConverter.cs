@@ -18,7 +18,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetKeepNext(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.KeepNext>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.KeepNext>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -35,7 +35,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetKeepLines(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.KeepLines>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.KeepLines>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -52,7 +52,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetPageBreakBefore(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PageBreakBefore>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PageBreakBefore>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -97,7 +97,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetWidowControl(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WidowControl>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WidowControl>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -142,7 +142,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetSuppressLineNumbers(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressLineNumbers>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressLineNumbers>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -243,7 +243,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetSuppressAutoHyphens(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressAutoHyphens>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressAutoHyphens>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -260,7 +260,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetKinsoku(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.Kinsoku>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.Kinsoku>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -277,7 +277,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetWordWrap(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.WordWrap>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.WordWrap>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -294,7 +294,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetOverflowPunctuation(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.OverflowPunctuation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.OverflowPunctuation>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -311,7 +311,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetTopLinePunctuation(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TopLinePunctuation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TopLinePunctuation>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -328,7 +328,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetAutoSpaceDE(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceDE>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceDE>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -345,7 +345,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetAutoSpaceDN(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceDN>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutoSpaceDN>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -362,7 +362,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetBiDi(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BiDi>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -379,7 +379,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetAdjustRightIndent(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AdjustRightIndent>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AdjustRightIndent>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -396,7 +396,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetSnapToGrid(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SnapToGrid>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SnapToGrid>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -469,7 +469,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetContextualSpacing(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ContextualSpacing>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ContextualSpacing>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -486,7 +486,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetMirrorIndents(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.MirrorIndents>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.MirrorIndents>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -503,7 +503,7 @@ public static class BaseParagraphPropertiesConverter
 
   private static void SetSuppressOverlap(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SuppressOverlap>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SuppressOverlap>(openXmlElement, value, "0", null);
   }
   #endregion
 

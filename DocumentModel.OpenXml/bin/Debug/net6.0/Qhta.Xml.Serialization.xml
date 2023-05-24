@@ -2050,14 +2050,6 @@
               If a property pointed out with <see cref="T:Qhta.Xml.Serialization.XmlContentPropertyAttribute" /> is not found.
             </exception>
         </member>
-        <member name="M:Qhta.Xml.Serialization.XmlSerializationInfoMapper.GetXmlConverter(System.Type)">
-            <summary>
-              Registers a converter to read/write using XmlReader/XmlWriter.
-              This converter is declared in the type header with <see cref="T:Qhta.Xml.XmlConverterAttribute" />.
-            </summary>
-            <param name="aType">Type to reflect</param>
-            <returns>An instance of <see cref="T:Qhta.Xml.Serialization.XmlConverter" /></returns>
-        </member>
         <member name="M:Qhta.Xml.Serialization.XmlSerializationInfoMapper.GetKnownTypes(System.Type)">
             <summary>
               Get types which are assigned to the class with KnownType attribute.
@@ -2090,6 +2082,14 @@
                 <item>Type converter can not convert to/from string type</item>
               </list>
             </exception>
+        </member>
+        <member name="M:Qhta.Xml.Serialization.XmlSerializationInfoMapper.GetXmlConverter(System.Type)">
+            <summary>
+              Registers a converter to read/write using XmlReader/XmlWriter.
+              This converter is declared in the type header with <see cref="T:Qhta.Xml.XmlConverterAttribute" />.
+            </summary>
+            <param name="aType">Type to reflect</param>
+            <returns>An instance of <see cref="T:Qhta.Xml.Serialization.XmlConverter" /></returns>
         </member>
         <member name="M:Qhta.Xml.Serialization.XmlSerializationInfoMapper.GetXmlTag(System.Type)">
             <summary>

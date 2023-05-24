@@ -35,7 +35,7 @@ public static class ExtBaseRunPropertiesConverter
 
   public static void SetRightToLeftText(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.RightToLeftText>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.RightToLeftText>(openXmlElement, value, "0", null);
   }
 
   #endregion
@@ -53,7 +53,7 @@ public static class ExtBaseRunPropertiesConverter
 
   public static void SetComplexScript(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ComplexScript>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ComplexScript>(openXmlElement, value, "0", null);
   }
 
   #endregion

@@ -106,7 +106,7 @@ public static class WebSettingsConverter
   
   private static void SetOptimizeForBrowser(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.OptimizeForBrowser>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.OptimizeForBrowser>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -124,7 +124,7 @@ public static class WebSettingsConverter
   
   private static void SetRelyOnVML(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.RelyOnVML>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.RelyOnVML>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -142,7 +142,7 @@ public static class WebSettingsConverter
   
   private static void SetAllowPNG(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AllowPNG>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AllowPNG>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -160,7 +160,7 @@ public static class WebSettingsConverter
   
   private static void SetDoNotRelyOnCSS(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotRelyOnCSS>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotRelyOnCSS>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -178,7 +178,7 @@ public static class WebSettingsConverter
   
   private static void SetDoNotSaveAsSingleFile(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotSaveAsSingleFile>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotSaveAsSingleFile>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -196,7 +196,7 @@ public static class WebSettingsConverter
   
   private static void SetDoNotOrganizeInFolder(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotOrganizeInFolder>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotOrganizeInFolder>(openXmlElement, value, "0", null);
   }
   
   /// <summary>
@@ -214,7 +214,7 @@ public static class WebSettingsConverter
   
   private static void SetDoNotUseLongFileNames(DXW.WebSettings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotUseLongFileNames>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotUseLongFileNames>(openXmlElement, value, "0", null);
   }
   
   /// <summary>

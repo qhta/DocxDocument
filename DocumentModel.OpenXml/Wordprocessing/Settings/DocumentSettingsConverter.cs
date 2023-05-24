@@ -103,7 +103,7 @@ public static class DocumentSettingsConverter
 
   private static void SetRemovePersonalInformation(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.RemovePersonalInformation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.RemovePersonalInformation>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -120,7 +120,7 @@ public static class DocumentSettingsConverter
 
   private static void SetRemoveDateAndTime(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.RemoveDateAndTime>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.RemoveDateAndTime>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -137,7 +137,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotDisplayPageBoundaries(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotDisplayPageBoundaries>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotDisplayPageBoundaries>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -154,7 +154,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDisplayBackgroundShape(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DisplayBackgroundShape>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DisplayBackgroundShape>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -171,7 +171,7 @@ public static class DocumentSettingsConverter
 
   private static void SetPrintPostScriptOverText(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintPostScriptOverText>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintPostScriptOverText>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -188,7 +188,7 @@ public static class DocumentSettingsConverter
 
   private static void SetPrintFractionalCharacterWidth(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintFractionalCharacterWidth>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintFractionalCharacterWidth>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -205,7 +205,7 @@ public static class DocumentSettingsConverter
 
   private static void SetPrintFormsData(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintFormsData>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintFormsData>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -222,7 +222,7 @@ public static class DocumentSettingsConverter
 
   private static void SetEmbedTrueTypeFonts(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.EmbedTrueTypeFonts>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.EmbedTrueTypeFonts>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -239,7 +239,7 @@ public static class DocumentSettingsConverter
 
   private static void SetEmbedSystemFonts(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.EmbedSystemFonts>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.EmbedSystemFonts>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -256,7 +256,7 @@ public static class DocumentSettingsConverter
 
   private static void SetSaveSubsetFonts(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SaveSubsetFonts>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SaveSubsetFonts>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -273,7 +273,7 @@ public static class DocumentSettingsConverter
 
   private static void SetSaveFormsData(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SaveFormsData>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SaveFormsData>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -290,7 +290,7 @@ public static class DocumentSettingsConverter
 
   private static void SetMirrorMargins(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.MirrorMargins>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.MirrorMargins>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -307,7 +307,7 @@ public static class DocumentSettingsConverter
 
   private static void SetAlignBorderAndEdges(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AlignBorderAndEdges>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AlignBorderAndEdges>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -324,7 +324,7 @@ public static class DocumentSettingsConverter
 
   private static void SetBordersDoNotSurroundHeader(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BordersDoNotSurroundHeader>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BordersDoNotSurroundHeader>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -341,7 +341,7 @@ public static class DocumentSettingsConverter
 
   private static void SetBordersDoNotSurroundFooter(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BordersDoNotSurroundFooter>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BordersDoNotSurroundFooter>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -358,7 +358,7 @@ public static class DocumentSettingsConverter
 
   private static void SetGutterAtTop(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.GutterAtTop>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.GutterAtTop>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -375,7 +375,7 @@ public static class DocumentSettingsConverter
 
   private static void SetHideSpellingErrors(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.HideSpellingErrors>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.HideSpellingErrors>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -392,7 +392,7 @@ public static class DocumentSettingsConverter
 
   private static void SetHideGrammaticalErrors(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.HideGrammaticalErrors>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.HideGrammaticalErrors>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -495,7 +495,7 @@ public static class DocumentSettingsConverter
 
   private static void SetFormsDesign(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.FormsDesign>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.FormsDesign>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -544,7 +544,7 @@ public static class DocumentSettingsConverter
 
   private static void SetLinkStyles(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.LinkStyles>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.LinkStyles>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -689,7 +689,7 @@ public static class DocumentSettingsConverter
 
   private static void SetTrackRevisions(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.TrackRevisions>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.TrackRevisions>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -706,7 +706,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotTrackMoves(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotTrackMoves>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotTrackMoves>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -723,7 +723,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotTrackFormatting(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotTrackFormatting>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotTrackFormatting>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -768,7 +768,7 @@ public static class DocumentSettingsConverter
 
   private static void SetAutoFormatOverride(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutoFormatOverride>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutoFormatOverride>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -805,7 +805,7 @@ public static class DocumentSettingsConverter
 
   private static void SetAutoHyphenation(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AutoHyphenation>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AutoHyphenation>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -859,7 +859,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotHyphenateCaps(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotHyphenateCaps>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotHyphenateCaps>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -876,7 +876,7 @@ public static class DocumentSettingsConverter
 
   private static void SetShowEnvelope(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ShowEnvelope>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ShowEnvelope>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -947,7 +947,7 @@ public static class DocumentSettingsConverter
 
   private static void SetEvenAndOddHeaders(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.EvenAndOddHeaders>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.EvenAndOddHeaders>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -964,7 +964,7 @@ public static class DocumentSettingsConverter
 
   private static void SetBookFoldReversePrinting(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BookFoldReversePrinting>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BookFoldReversePrinting>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -981,7 +981,7 @@ public static class DocumentSettingsConverter
 
   private static void SetBookFoldPrinting(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.BookFoldPrinting>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.BookFoldPrinting>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1091,7 +1091,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotUseMarginsForDrawingGridOrigin(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotUseMarginsForDrawingGridOrigin>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotUseMarginsForDrawingGridOrigin>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1142,7 +1142,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotShadeFormData(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotShadeFormData>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotShadeFormData>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1159,7 +1159,7 @@ public static class DocumentSettingsConverter
 
   private static void SetNoPunctuationKerning(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.NoPunctuationKerning>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.NoPunctuationKerning>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1203,7 +1203,7 @@ public static class DocumentSettingsConverter
 
   private static void SetPrintTwoOnOne(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.PrintTwoOnOne>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.PrintTwoOnOne>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1220,7 +1220,7 @@ public static class DocumentSettingsConverter
 
   private static void SetStrictFirstAndLastChars(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.StrictFirstAndLastChars>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.StrictFirstAndLastChars>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1293,7 +1293,7 @@ public static class DocumentSettingsConverter
 
   private static void SetSavePreviewPicture(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SavePreviewPicture>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SavePreviewPicture>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1310,7 +1310,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotValidateAgainstSchema(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotValidateAgainstSchema>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotValidateAgainstSchema>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1327,7 +1327,7 @@ public static class DocumentSettingsConverter
 
   private static void SetSaveInvalidXml(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SaveInvalidXml>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SaveInvalidXml>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1344,7 +1344,7 @@ public static class DocumentSettingsConverter
 
   private static void SetIgnoreMixedContent(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.IgnoreMixedContent>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.IgnoreMixedContent>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1361,7 +1361,7 @@ public static class DocumentSettingsConverter
 
   private static void SetAlwaysShowPlaceholderText(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AlwaysShowPlaceholderText>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AlwaysShowPlaceholderText>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1378,7 +1378,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotDemarcateInvalidXml(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotDemarcateInvalidXml>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotDemarcateInvalidXml>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1395,7 +1395,7 @@ public static class DocumentSettingsConverter
 
   private static void SetSaveXmlDataOnly(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.SaveXmlDataOnly>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.SaveXmlDataOnly>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1412,7 +1412,7 @@ public static class DocumentSettingsConverter
 
   private static void SetUseXsltWhenSaving(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UseXsltWhenSaving>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UseXsltWhenSaving>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1457,7 +1457,7 @@ public static class DocumentSettingsConverter
 
   private static void SetShowXmlTags(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.ShowXmlTags>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.ShowXmlTags>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1474,7 +1474,7 @@ public static class DocumentSettingsConverter
 
   private static void SetAlwaysMergeEmptyNamespace(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.AlwaysMergeEmptyNamespace>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.AlwaysMergeEmptyNamespace>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1491,7 +1491,7 @@ public static class DocumentSettingsConverter
 
   private static void SetUpdateFieldsOnOpen(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UpdateFieldsOnOpen>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UpdateFieldsOnOpen>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1706,7 +1706,7 @@ public static class DocumentSettingsConverter
 
   private static void SetUICompatibleWith97To2003(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.UICompatibleWith97To2003>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.UICompatibleWith97To2003>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1840,7 +1840,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotIncludeSubdocsInStats(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotIncludeSubdocsInStats>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotIncludeSubdocsInStats>(openXmlElement, value, "0", null);
   }
   #endregion
 
@@ -1857,7 +1857,7 @@ public static class DocumentSettingsConverter
 
   private static void SetDoNotAutoCompressPictures(DXW.Settings openXmlElement, Boolean? value)
   {
-    BooleanValueConverter.SetOnOffType<DXW.DoNotAutoCompressPictures>(openXmlElement, value);
+    BooleanValueConverter.SetOnOffType<DXW.DoNotAutoCompressPictures>(openXmlElement, value, "0", null);
   }
   #endregion
 

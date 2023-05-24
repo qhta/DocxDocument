@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestNumbering();
+    RunTestProperties();
   }
 
     private static void RunTestBackground()
@@ -85,7 +85,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    var ok = testInstance.TestReadProperties();
+    var ok = testInstance.TestReadProperties("BackgroundColor.docx", true, true);
     //testInstance.TestGenProperties("DocumentProperties.docx", true, true);
     Console.WriteLine($"Test {(ok ? "passed" : "failed")}");
   }
