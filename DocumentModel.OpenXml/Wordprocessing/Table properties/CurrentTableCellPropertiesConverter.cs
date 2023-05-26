@@ -14,9 +14,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
+  private static bool CmpConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName);
+    return DMXW.ConditionalFormatStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ConditionalFormatStyle>(), value, diffs, objName, propName);
   }
 
   private static void SetConditionalFormatStyle(DX.OpenXmlCompositeElement openXmlElement, DMW.ConditionalFormatFlags? value)
@@ -42,9 +42,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpTableCellWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellWidth>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellWidth>(), value, diffs, objName, propName);
   }
 
   private static void SetTableCellWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
@@ -67,7 +67,7 @@ public static class CurrentTableCellPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.GridSpan>()?.Val);
   }
 
-  private static bool CmpGridSpan(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGridSpan(DX.OpenXmlCompositeElement openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.GridSpan>()?.Val, value, diffs, objName, "GridSpan");
   }
@@ -84,9 +84,9 @@ public static class CurrentTableCellPropertiesConverter
     return EnumValueConverter.GetValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value);
   }
 
-  private static bool CmpHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.HorizontalMerge>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetHorizontalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value)
@@ -111,9 +111,9 @@ public static class CurrentTableCellPropertiesConverter
     return EnumValueConverter.GetValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value);
   }
 
-  private static bool CmpVerticalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MergedCellValues, DMW.MergedCellKind>(openXmlElement.GetFirstChild<DXW.VerticalMerge>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetVerticalMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.MergedCellKind? value)
@@ -141,9 +141,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpTableCellBorders(DX.OpenXmlCompositeElement openXmlElement, DMW.TableCellBorders? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellBorders(DX.OpenXmlCompositeElement openXmlElement, DMW.TableCellBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName);
+    return DMXW.TableCellBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellBorders>(), value, diffs, objName, propName);
   }
 
   private static void SetTableCellBorders(DX.OpenXmlCompositeElement openXmlElement, DMW.TableCellBorders? value)
@@ -166,9 +166,9 @@ public static class CurrentTableCellPropertiesConverter
     return EnumValueConverter.GetValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
   }
 
-  private static bool CmpTextDirection(DX.OpenXmlCompositeElement openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTextDirection(DX.OpenXmlCompositeElement openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetTextDirection(DX.OpenXmlCompositeElement openXmlElement, DMW.TextDirectionKind? value)
@@ -193,9 +193,9 @@ public static class CurrentTableCellPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TableCellFitText>());
   }
 
-  private static bool CmpTableCellFitText(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellFitText(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TableCellFitText>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TableCellFitText>(), value, diffs, objName, propName);
   }
 
   private static void SetTableCellFitText(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
@@ -210,9 +210,9 @@ public static class CurrentTableCellPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.HideMark>());
   }
 
-  private static bool CmpHideMark(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHideMark(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.HideMark>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.HideMark>(), value, diffs, objName, propName);
   }
 
   private static void SetHideMark(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
@@ -230,9 +230,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpCellInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpCellInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellInsertion>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellInsertion>(), value, diffs, objName, propName);
   }
 
   private static void SetCellInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -258,9 +258,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpCellDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpCellDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellDeletion>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellDeletion>(), value, diffs, objName, propName);
   }
 
   private static void SetCellDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -286,9 +286,9 @@ public static class CurrentTableCellPropertiesConverter
     return null;
   }
 
-  private static bool CmpCellMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.CellMerge? value, DiffList? diffs, string? objName)
+  private static bool CmpCellMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.CellMerge? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CellMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellMerge>(), value, diffs, objName);
+    return DMXW.CellMergeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.CellMerge>(), value, diffs, objName, propName);
   }
 
   private static void SetCellMerge(DX.OpenXmlCompositeElement openXmlElement, DMW.CellMerge? value)
@@ -323,41 +323,41 @@ public static class CurrentTableCellPropertiesConverter
     model.CellMerge = GetCellMerge(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.CurrentTableCellProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.CurrentTableCellProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpConditionalFormatStyle(openXmlElement, model.ConditionalFormatStyle, diffs, objName))
+      if (!CmpConditionalFormatStyle(openXmlElement, model.ConditionalFormatStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellWidth(openXmlElement, model.TableCellWidth, diffs, objName))
+      if (!CmpTableCellWidth(openXmlElement, model.TableCellWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpGridSpan(openXmlElement, model.GridSpan, diffs, objName))
+      if (!CmpGridSpan(openXmlElement, model.GridSpan, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalMerge(openXmlElement, model.HorizontalMerge, diffs, objName))
+      if (!CmpHorizontalMerge(openXmlElement, model.HorizontalMerge, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalMerge(openXmlElement, model.VerticalMerge, diffs, objName))
+      if (!CmpVerticalMerge(openXmlElement, model.VerticalMerge, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellBorders(openXmlElement, model.TableCellBorders, diffs, objName))
+      if (!CmpTableCellBorders(openXmlElement, model.TableCellBorders, diffs, objName, propName))
         ok = false;
-      if (!CmpTextDirection(openXmlElement, model.TextDirection, diffs, objName))
+      if (!CmpTextDirection(openXmlElement, model.TextDirection, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellFitText(openXmlElement, model.TableCellFitText, diffs, objName))
+      if (!CmpTableCellFitText(openXmlElement, model.TableCellFitText, diffs, objName, propName))
         ok = false;
-      if (!CmpHideMark(openXmlElement, model.HideMark, diffs, objName))
+      if (!CmpHideMark(openXmlElement, model.HideMark, diffs, objName, propName))
         ok = false;
-      if (!CmpCellInsertion(openXmlElement, model.CellInsertion, diffs, objName))
+      if (!CmpCellInsertion(openXmlElement, model.CellInsertion, diffs, objName, propName))
         ok = false;
-      if (!CmpCellDeletion(openXmlElement, model.CellDeletion, diffs, objName))
+      if (!CmpCellDeletion(openXmlElement, model.CellDeletion, diffs, objName, propName))
         ok = false;
-      if (!CmpCellMerge(openXmlElement, model.CellMerge, diffs, objName))
+      if (!CmpCellMerge(openXmlElement, model.CellMerge, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

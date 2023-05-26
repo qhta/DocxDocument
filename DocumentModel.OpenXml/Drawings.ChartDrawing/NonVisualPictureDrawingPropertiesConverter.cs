@@ -13,7 +13,7 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return openXmlElement?.PreferRelativeResize?.Value;
   }
   
-  private static bool CmpPreferRelativeResize(DXDCD.NonVisualPictureDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPreferRelativeResize(DXDCD.NonVisualPictureDrawingProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PreferRelativeResize?.Value == value) return true;
     diffs?.Add(objName, "PreferRelativeResize", openXmlElement?.PreferRelativeResize?.Value, value);
@@ -39,9 +39,9 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return null;
   }
   
-  private static bool CmpPictureLocks(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.PictureLocks? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureLocks(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.PictureLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PictureLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureLocks>(), value, diffs, objName);
+    return DMXD.PictureLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureLocks>(), value, diffs, objName, propName);
   }
   
   private static void SetPictureLocks(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.PictureLocks? value)
@@ -68,9 +68,9 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualPicturePropertiesExtensionList(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.NonVisualPicturePropertiesExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualPicturePropertiesExtensionList(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.NonVisualPicturePropertiesExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.NonVisualPicturePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NonVisualPicturePropertiesExtensionList>(), value, diffs, objName);
+    return DMXD.NonVisualPicturePropertiesExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NonVisualPicturePropertiesExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualPicturePropertiesExtensionList(DXDCD.NonVisualPictureDrawingProperties openXmlElement, DMD.NonVisualPicturePropertiesExtensionList? value)
@@ -99,21 +99,21 @@ public static class NonVisualPictureDrawingPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.NonVisualPictureDrawingProperties? openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.NonVisualPictureDrawingProperties? openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPreferRelativeResize(openXmlElement, value.PreferRelativeResize, diffs, objName))
+      if (!CmpPreferRelativeResize(openXmlElement, value.PreferRelativeResize, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureLocks(openXmlElement, value.PictureLocks, diffs, objName))
+      if (!CmpPictureLocks(openXmlElement, value.PictureLocks, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualPicturePropertiesExtensionList(openXmlElement, value.NonVisualPicturePropertiesExtensionList, diffs, objName))
+      if (!CmpNonVisualPicturePropertiesExtensionList(openXmlElement, value.NonVisualPicturePropertiesExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

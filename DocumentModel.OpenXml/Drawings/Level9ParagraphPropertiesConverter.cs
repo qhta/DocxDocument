@@ -13,9 +13,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpLineSpacing(DXD.Level9ParagraphProperties openXmlElement, DMD.LineSpacing? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSpacing(DXD.Level9ParagraphProperties openXmlElement, DMD.LineSpacing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineSpacing>(), value, diffs, objName);
+    return DMXD.LineSpacingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LineSpacing>(), value, diffs, objName, propName);
   }
   
   private static void SetLineSpacing(DXD.Level9ParagraphProperties openXmlElement, DMD.LineSpacing? value)
@@ -39,9 +39,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpSpaceBefore(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceBefore? value, DiffList? diffs, string? objName)
+  private static bool CmpSpaceBefore(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceBefore? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceBefore>(), value, diffs, objName);
+    return DMXD.SpaceBeforeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceBefore>(), value, diffs, objName, propName);
   }
   
   private static void SetSpaceBefore(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceBefore? value)
@@ -65,9 +65,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpSpaceAfter(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceAfter? value, DiffList? diffs, string? objName)
+  private static bool CmpSpaceAfter(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceAfter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceAfter>(), value, diffs, objName);
+    return DMXD.SpaceAfterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SpaceAfter>(), value, diffs, objName, propName);
   }
   
   private static void SetSpaceAfter(DXD.Level9ParagraphProperties openXmlElement, DMD.SpaceAfter? value)
@@ -88,7 +88,7 @@ public static class Level9ParagraphPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
   }
   
-  private static bool CmpBulletColorText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletColorText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.BulletColorText>() != null;
     if (val == value) return true;
@@ -119,9 +119,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpBulletColor(DXD.Level9ParagraphProperties openXmlElement, DMD.BulletColor? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletColor(DXD.Level9ParagraphProperties openXmlElement, DMD.BulletColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletColor>(), value, diffs, objName);
+    return DMXD.BulletColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletColor>(), value, diffs, objName, propName);
   }
   
   private static void SetBulletColor(DXD.Level9ParagraphProperties openXmlElement, DMD.BulletColor? value)
@@ -142,7 +142,7 @@ public static class Level9ParagraphPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
   }
   
-  private static bool CmpBulletSizeText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizeText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.BulletSizeText>() != null;
     if (val == value) return true;
@@ -170,7 +170,7 @@ public static class Level9ParagraphPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val);
   }
   
-  private static bool CmpBulletSizePercentage(DXD.Level9ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizePercentage(DXD.Level9ParagraphProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePercentage>()?.Val, value, diffs, objName, "BulletSizePercentage");
   }
@@ -185,7 +185,7 @@ public static class Level9ParagraphPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val);
   }
   
-  private static bool CmpBulletSizePoints(DXD.Level9ParagraphProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletSizePoints(DXD.Level9ParagraphProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BulletSizePoints>()?.Val, value, diffs, objName, "BulletSizePoints");
   }
@@ -200,7 +200,7 @@ public static class Level9ParagraphPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
   }
   
-  private static bool CmpBulletFontText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletFontText(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.BulletFontText>() != null;
     if (val == value) return true;
@@ -231,9 +231,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpBulletFont(DXD.Level9ParagraphProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpBulletFont(DXD.Level9ParagraphProperties openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BulletFont>(), value, diffs, objName, propName);
   }
   
   private static void SetBulletFont(DXD.Level9ParagraphProperties openXmlElement, DMD.TextFontType? value)
@@ -254,7 +254,7 @@ public static class Level9ParagraphPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
   }
   
-  private static bool CmpNoBullet(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBullet(DXD.Level9ParagraphProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoBullet>() != null;
     if (val == value) return true;
@@ -285,9 +285,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpAutoNumberedBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoNumberedBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName);
+    return DMXD.AutoNumberedBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AutoNumberedBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetAutoNumberedBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.AutoNumberedBullet? value)
@@ -311,9 +311,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpCharacterBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.CharacterBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName);
+    return DMXD.CharacterBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CharacterBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetCharacterBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.CharacterBullet? value)
@@ -337,9 +337,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpPictureBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.PictureBullet? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.PictureBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName);
+    return DMXD.PictureBulletConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PictureBullet>(), value, diffs, objName, propName);
   }
   
   private static void SetPictureBullet(DXD.Level9ParagraphProperties openXmlElement, DMD.PictureBullet? value)
@@ -363,9 +363,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpTabStopList(DXD.Level9ParagraphProperties openXmlElement, DMD.TabStopList? value, DiffList? diffs, string? objName)
+  private static bool CmpTabStopList(DXD.Level9ParagraphProperties openXmlElement, DMD.TabStopList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TabStopList>(), value, diffs, objName);
+    return DMXD.TabStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TabStopList>(), value, diffs, objName, propName);
   }
   
   private static void SetTabStopList(DXD.Level9ParagraphProperties openXmlElement, DMD.TabStopList? value)
@@ -389,9 +389,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpDefaultRunProperties(DXD.Level9ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultRunProperties(DXD.Level9ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultRunProperties>(), value, diffs, objName);
+    return DMXD.DefaultRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.DefaultRunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetDefaultRunProperties(DXD.Level9ParagraphProperties openXmlElement, DMD.DefaultRunProperties? value)
@@ -415,9 +415,9 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.Level9ParagraphProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.Level9ParagraphProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.Level9ParagraphProperties openXmlElement, DMD.ExtensionList? value)
@@ -460,49 +460,49 @@ public static class Level9ParagraphPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Level9ParagraphProperties? openXmlElement, DMD.Level9ParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Level9ParagraphProperties? openXmlElement, DMD.Level9ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLineSpacing(openXmlElement, value.LineSpacing, diffs, objName))
+      if (!CmpLineSpacing(openXmlElement, value.LineSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpSpaceBefore(openXmlElement, value.SpaceBefore, diffs, objName))
+      if (!CmpSpaceBefore(openXmlElement, value.SpaceBefore, diffs, objName, propName))
         ok = false;
-      if (!CmpSpaceAfter(openXmlElement, value.SpaceAfter, diffs, objName))
+      if (!CmpSpaceAfter(openXmlElement, value.SpaceAfter, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletColorText(openXmlElement, value.BulletColorText, diffs, objName))
+      if (!CmpBulletColorText(openXmlElement, value.BulletColorText, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletColor(openXmlElement, value.BulletColor, diffs, objName))
+      if (!CmpBulletColor(openXmlElement, value.BulletColor, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletSizeText(openXmlElement, value.BulletSizeText, diffs, objName))
+      if (!CmpBulletSizeText(openXmlElement, value.BulletSizeText, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletSizePercentage(openXmlElement, value.BulletSizePercentage, diffs, objName))
+      if (!CmpBulletSizePercentage(openXmlElement, value.BulletSizePercentage, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletSizePoints(openXmlElement, value.BulletSizePoints, diffs, objName))
+      if (!CmpBulletSizePoints(openXmlElement, value.BulletSizePoints, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletFontText(openXmlElement, value.BulletFontText, diffs, objName))
+      if (!CmpBulletFontText(openXmlElement, value.BulletFontText, diffs, objName, propName))
         ok = false;
-      if (!CmpBulletFont(openXmlElement, value.BulletFont, diffs, objName))
+      if (!CmpBulletFont(openXmlElement, value.BulletFont, diffs, objName, propName))
         ok = false;
-      if (!CmpNoBullet(openXmlElement, value.NoBullet, diffs, objName))
+      if (!CmpNoBullet(openXmlElement, value.NoBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoNumberedBullet(openXmlElement, value.AutoNumberedBullet, diffs, objName))
+      if (!CmpAutoNumberedBullet(openXmlElement, value.AutoNumberedBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpCharacterBullet(openXmlElement, value.CharacterBullet, diffs, objName))
+      if (!CmpCharacterBullet(openXmlElement, value.CharacterBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureBullet(openXmlElement, value.PictureBullet, diffs, objName))
+      if (!CmpPictureBullet(openXmlElement, value.PictureBullet, diffs, objName, propName))
         ok = false;
-      if (!CmpTabStopList(openXmlElement, value.TabStopList, diffs, objName))
+      if (!CmpTabStopList(openXmlElement, value.TabStopList, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultRunProperties(openXmlElement, value.DefaultRunProperties, diffs, objName))
+      if (!CmpDefaultRunProperties(openXmlElement, value.DefaultRunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

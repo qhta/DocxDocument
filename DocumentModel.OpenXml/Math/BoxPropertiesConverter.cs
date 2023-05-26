@@ -11,9 +11,9 @@ public static class BoxPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.OperatorEmulator>()?.Val?.Value);
   }
   
-  private static bool CmpOperatorEmulator(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpOperatorEmulator(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.OperatorEmulator>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.OperatorEmulator>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOperatorEmulator(DXM.BoxProperties openXmlElement, bool? value)
@@ -38,9 +38,9 @@ public static class BoxPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.NoBreak>()?.Val?.Value);
   }
   
-  private static bool CmpNoBreak(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBreak(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.NoBreak>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.NoBreak>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetNoBreak(DXM.BoxProperties openXmlElement, bool? value)
@@ -65,9 +65,9 @@ public static class BoxPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.Differential>()?.Val?.Value);
   }
   
-  private static bool CmpDifferential(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpDifferential(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Differential>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Differential>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDifferential(DXM.BoxProperties openXmlElement, bool? value)
@@ -95,9 +95,9 @@ public static class BoxPropertiesConverter
     return null;
   }
   
-  private static bool CmpBreak(DXM.BoxProperties openXmlElement, DMM.Break? value, DiffList? diffs, string? objName)
+  private static bool CmpBreak(DXM.BoxProperties openXmlElement, DMM.Break? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Break>(), value, diffs, objName);
+    return DMXM.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Break>(), value, diffs, objName, propName);
   }
   
   private static void SetBreak(DXM.BoxProperties openXmlElement, DMM.Break? value)
@@ -120,9 +120,9 @@ public static class BoxPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.Alignment>()?.Val?.Value);
   }
   
-  private static bool CmpAlignment(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXM.BoxProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Alignment>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.Alignment>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXM.BoxProperties openXmlElement, bool? value)
@@ -150,9 +150,9 @@ public static class BoxPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.BoxProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.BoxProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.BoxProperties openXmlElement, DMM.ControlProperties? value)
@@ -186,27 +186,27 @@ public static class BoxPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.BoxProperties? openXmlElement, DMM.BoxProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BoxProperties? openXmlElement, DMM.BoxProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpOperatorEmulator(openXmlElement, model.OperatorEmulator, diffs, objName))
+      if (!CmpOperatorEmulator(openXmlElement, model.OperatorEmulator, diffs, objName, propName))
         ok = false;
-      if (!CmpNoBreak(openXmlElement, model.NoBreak, diffs, objName))
+      if (!CmpNoBreak(openXmlElement, model.NoBreak, diffs, objName, propName))
         ok = false;
-      if (!CmpDifferential(openXmlElement, model.Differential, diffs, objName))
+      if (!CmpDifferential(openXmlElement, model.Differential, diffs, objName, propName))
         ok = false;
-      if (!CmpBreak(openXmlElement, model.Break, diffs, objName))
+      if (!CmpBreak(openXmlElement, model.Break, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, model.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, model.Alignment, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

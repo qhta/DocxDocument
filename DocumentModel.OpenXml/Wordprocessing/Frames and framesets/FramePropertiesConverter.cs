@@ -13,9 +13,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.DropCapLocationValues, DMW.DropCapLocationKind>(openXmlElement?.DropCap?.Value);
   }
   
-  private static bool CmpDropCap(DXW.FrameProperties openXmlElement, DMW.DropCapLocationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDropCap(DXW.FrameProperties openXmlElement, DMW.DropCapLocationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DropCapLocationValues, DMW.DropCapLocationKind>(openXmlElement?.DropCap?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DropCapLocationValues, DMW.DropCapLocationKind>(openXmlElement?.DropCap?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDropCap(DXW.FrameProperties openXmlElement, DMW.DropCapLocationKind? value)
@@ -31,7 +31,7 @@ public static class FramePropertiesConverter
     return openXmlElement?.Lines?.Value;
   }
   
-  private static bool CmpLines(DXW.FrameProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLines(DXW.FrameProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Lines?.Value == value) return true;
     diffs?.Add(objName, "Lines", openXmlElement?.Lines?.Value, value);
@@ -51,7 +51,7 @@ public static class FramePropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.Width);
   }
   
-  private static bool CmpWidth(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
@@ -69,7 +69,7 @@ public static class FramePropertiesConverter
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXW.FrameProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXW.FrameProperties openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
@@ -89,7 +89,7 @@ public static class FramePropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.VerticalSpace);
   }
   
-  private static bool CmpVerticalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.VerticalSpace, value, diffs, objName, "VerticalSpace");
   }
@@ -107,7 +107,7 @@ public static class FramePropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.HorizontalSpace);
   }
   
-  private static bool CmpHorizontalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalSpace(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.HorizontalSpace, value, diffs, objName, "HorizontalSpace");
   }
@@ -125,9 +125,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.TextWrappingValues, DMW.TextWrappingKind>(openXmlElement?.Wrap?.Value);
   }
   
-  private static bool CmpWrap(DXW.FrameProperties openXmlElement, DMW.TextWrappingKind? value, DiffList? diffs, string? objName)
+  private static bool CmpWrap(DXW.FrameProperties openXmlElement, DMW.TextWrappingKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TextWrappingValues, DMW.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextWrappingValues, DMW.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName, propName);
   }
   
   private static void SetWrap(DXW.FrameProperties openXmlElement, DMW.TextWrappingKind? value)
@@ -143,9 +143,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalPosition?.Value);
   }
   
-  private static bool CmpHorizontalPosition(DXW.FrameProperties openXmlElement, DMW.HorizontalAnchorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalPosition(DXW.FrameProperties openXmlElement, DMW.HorizontalAnchorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalPosition?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HorizontalAnchorValues, DMW.HorizontalAnchorKind>(openXmlElement?.HorizontalPosition?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHorizontalPosition(DXW.FrameProperties openXmlElement, DMW.HorizontalAnchorKind? value)
@@ -161,9 +161,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalPosition?.Value);
   }
   
-  private static bool CmpVerticalPosition(DXW.FrameProperties openXmlElement, DMW.VerticalAnchorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalPosition(DXW.FrameProperties openXmlElement, DMW.VerticalAnchorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalPosition?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalAnchorValues, DMW.VerticalAnchorKind>(openXmlElement?.VerticalPosition?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVerticalPosition(DXW.FrameProperties openXmlElement, DMW.VerticalAnchorKind? value)
@@ -179,7 +179,7 @@ public static class FramePropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.X);
   }
   
-  private static bool CmpX(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpX(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.X, value, diffs, objName, "Cx");
   }
@@ -197,9 +197,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.XAlign?.Value);
   }
   
-  private static bool CmpXAlign(DXW.FrameProperties openXmlElement, DMW.HorizontalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpXAlign(DXW.FrameProperties openXmlElement, DMW.HorizontalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.XAlign?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HorizontalAlignmentValues, DMW.HorizontalAlignmentKind>(openXmlElement?.XAlign?.Value, value, diffs, objName, propName);
   }
   
   private static void SetXAlign(DXW.FrameProperties openXmlElement, DMW.HorizontalAlignmentKind? value)
@@ -215,7 +215,7 @@ public static class FramePropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.Y);
   }
   
-  private static bool CmpY(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpY(DXW.FrameProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Y, value, diffs, objName, "Cy");
   }
@@ -233,9 +233,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.YAlign?.Value);
   }
   
-  private static bool CmpYAlign(DXW.FrameProperties openXmlElement, DMW.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpYAlign(DXW.FrameProperties openXmlElement, DMW.VerticalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.YAlign?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalAlignmentValues, DMW.VerticalAlignmentKind>(openXmlElement?.YAlign?.Value, value, diffs, objName, propName);
   }
   
   private static void SetYAlign(DXW.FrameProperties openXmlElement, DMW.VerticalAlignmentKind? value)
@@ -251,9 +251,9 @@ public static class FramePropertiesConverter
     return EnumValueConverter.GetValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
   }
   
-  private static bool CmpHeightType(DXW.FrameProperties openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightType(DXW.FrameProperties openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHeightType(DXW.FrameProperties openXmlElement, DMW.HeightRuleKind? value)
@@ -269,7 +269,7 @@ public static class FramePropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.AnchorLock);
   }
   
-  private static bool CmpAnchorLock(DXW.FrameProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorLock(DXW.FrameProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.AnchorLock, value, diffs, objName, "AnchorLock");
   }
@@ -304,45 +304,45 @@ public static class FramePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FrameProperties? openXmlElement, DMW.FrameProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FrameProperties? openXmlElement, DMW.FrameProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDropCap(openXmlElement, value.DropCap, diffs, objName))
+      if (!CmpDropCap(openXmlElement, value.DropCap, diffs, objName, propName))
         ok = false;
-      if (!CmpLines(openXmlElement, value.Lines, diffs, objName))
+      if (!CmpLines(openXmlElement, value.Lines, diffs, objName, propName))
         ok = false;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSpace(openXmlElement, value.VerticalSpace, diffs, objName))
+      if (!CmpVerticalSpace(openXmlElement, value.VerticalSpace, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalSpace(openXmlElement, value.HorizontalSpace, diffs, objName))
+      if (!CmpHorizontalSpace(openXmlElement, value.HorizontalSpace, diffs, objName, propName))
         ok = false;
-      if (!CmpWrap(openXmlElement, value.Wrap, diffs, objName))
+      if (!CmpWrap(openXmlElement, value.Wrap, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalPosition(openXmlElement, value.HorizontalPosition, diffs, objName))
+      if (!CmpHorizontalPosition(openXmlElement, value.HorizontalPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalPosition(openXmlElement, value.VerticalPosition, diffs, objName))
+      if (!CmpVerticalPosition(openXmlElement, value.VerticalPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpX(openXmlElement, value.X, diffs, objName))
+      if (!CmpX(openXmlElement, value.X, diffs, objName, propName))
         ok = false;
-      if (!CmpXAlign(openXmlElement, value.XAlign, diffs, objName))
+      if (!CmpXAlign(openXmlElement, value.XAlign, diffs, objName, propName))
         ok = false;
-      if (!CmpY(openXmlElement, value.Y, diffs, objName))
+      if (!CmpY(openXmlElement, value.Y, diffs, objName, propName))
         ok = false;
-      if (!CmpYAlign(openXmlElement, value.YAlign, diffs, objName))
+      if (!CmpYAlign(openXmlElement, value.YAlign, diffs, objName, propName))
         ok = false;
-      if (!CmpHeightType(openXmlElement, value.HeightType, diffs, objName))
+      if (!CmpHeightType(openXmlElement, value.HeightType, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchorLock(openXmlElement, value.AnchorLock, diffs, objName))
+      if (!CmpAnchorLock(openXmlElement, value.AnchorLock, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

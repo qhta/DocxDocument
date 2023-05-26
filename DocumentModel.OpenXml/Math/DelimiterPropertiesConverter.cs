@@ -11,7 +11,7 @@ public static class DelimiterPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.BeginChar>()?.Val);
   }
   
-  private static bool CmpBeginChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBeginChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.BeginChar>()?.Val, value, diffs, objName, "BeginChar");
   }
@@ -28,7 +28,7 @@ public static class DelimiterPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.SeparatorChar>()?.Val);
   }
   
-  private static bool CmpSeparatorChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparatorChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.SeparatorChar>()?.Val, value, diffs, objName, "SeparatorChar");
   }
@@ -45,7 +45,7 @@ public static class DelimiterPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.EndChar>()?.Val);
   }
   
-  private static bool CmpEndChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEndChar(DXM.DelimiterProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.EndChar>()?.Val, value, diffs, objName, "EndChar");
   }
@@ -62,9 +62,9 @@ public static class DelimiterPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value);
   }
   
-  private static bool CmpGrowOperators(DXM.DelimiterProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpGrowOperators(DXM.DelimiterProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.GrowOperators>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetGrowOperators(DXM.DelimiterProperties openXmlElement, bool? value)
@@ -89,9 +89,9 @@ public static class DelimiterPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXM.Shape>()?.Val?.Value);
   }
   
-  private static bool CmpShape(DXM.DelimiterProperties openXmlElement, DMM.ShapeDelimiterKind? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXM.DelimiterProperties openXmlElement, DMM.ShapeDelimiterKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXM.Shape>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.ShapeDelimiterValues, DMM.ShapeDelimiterKind>(openXmlElement.GetFirstChild<DXM.Shape>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetShape(DXM.DelimiterProperties openXmlElement, DMM.ShapeDelimiterKind? value)
@@ -119,9 +119,9 @@ public static class DelimiterPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.DelimiterProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.DelimiterProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.DelimiterProperties openXmlElement, DMM.ControlProperties? value)
@@ -155,27 +155,27 @@ public static class DelimiterPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.DelimiterProperties? openXmlElement, DMM.DelimiterProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.DelimiterProperties? openXmlElement, DMM.DelimiterProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBeginChar(openXmlElement, model.BeginChar, diffs, objName))
+      if (!CmpBeginChar(openXmlElement, model.BeginChar, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparatorChar(openXmlElement, model.SeparatorChar, diffs, objName))
+      if (!CmpSeparatorChar(openXmlElement, model.SeparatorChar, diffs, objName, propName))
         ok = false;
-      if (!CmpEndChar(openXmlElement, model.EndChar, diffs, objName))
+      if (!CmpEndChar(openXmlElement, model.EndChar, diffs, objName, propName))
         ok = false;
-      if (!CmpGrowOperators(openXmlElement, model.GrowOperators, diffs, objName))
+      if (!CmpGrowOperators(openXmlElement, model.GrowOperators, diffs, objName, propName))
         ok = false;
-      if (!CmpShape(openXmlElement, model.Shape, diffs, objName))
+      if (!CmpShape(openXmlElement, model.Shape, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

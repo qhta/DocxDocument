@@ -16,9 +16,9 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  private static bool CmpPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotSurface? value, DiffList? diffs, string? objName)
+  private static bool CmpPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotSurface? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PlotSurface>(), value, diffs, objName);
+    return DMXDCDs.PlotSurfaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PlotSurface>(), value, diffs, objName, propName);
   }
   
   private static void SetPlotSurface(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.PlotSurface? value)
@@ -48,7 +48,7 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  private static bool CmpSeries(DXO16DCD.PlotAreaRegion openXmlElement, Collection<DMDCDs.Series>? value, DiffList? diffs, string? objName)
+  private static bool CmpSeries(DXO16DCD.PlotAreaRegion openXmlElement, Collection<DMDCDs.Series>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.Series>();
     var origElementsCount = origElements.Count();
@@ -57,7 +57,7 @@ public static class PlotAreaRegionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -66,13 +66,13 @@ public static class PlotAreaRegionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.SeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.SeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -98,9 +98,9 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.PlotAreaRegion openXmlElement, DMDCDs.ExtensionList? value)
@@ -129,21 +129,21 @@ public static class PlotAreaRegionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.PlotAreaRegion? openXmlElement, DMDCDs.PlotAreaRegion? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.PlotAreaRegion? openXmlElement, DMDCDs.PlotAreaRegion? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPlotSurface(openXmlElement, value.PlotSurface, diffs, objName))
+      if (!CmpPlotSurface(openXmlElement, value.PlotSurface, diffs, objName, propName))
         ok = false;
-      if (!CmpSeries(openXmlElement, value.Series, diffs, objName))
+      if (!CmpSeries(openXmlElement, value.Series, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -14,9 +14,9 @@ public static class ParagraphPropertiesConverter
     return null;
   }
 
-  public static bool CmpParagraphMarkRunProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphMarkRunProperties? value, DiffList? diffs, string? objName)
+  public static bool CmpParagraphMarkRunProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphMarkRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ParagraphMarkRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphMarkRunProperties>(), value, diffs, objName);
+    return DMXW.ParagraphMarkRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphMarkRunProperties>(), value, diffs, objName, propName);
   }
 
   public static void SetParagraphMarkRunProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphMarkRunProperties? value)
@@ -42,9 +42,9 @@ public static class ParagraphPropertiesConverter
     return null;
   }
 
-  public static bool CmpSectionProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.SectionProperties? value, DiffList? diffs, string? objName)
+  public static bool CmpSectionProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.SectionProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SectionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SectionProperties>(), value, diffs, objName);
+    return DMXW.SectionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SectionProperties>(), value, diffs, objName, propName);
   }
 
   public static void SetSectionProperties(DX.OpenXmlCompositeElement openXmlElement, DMW.SectionProperties? value)
@@ -71,9 +71,9 @@ public static class ParagraphPropertiesConverter
     return null;
   }
 
-  public static bool CmpParagraphPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphPropertiesChange? value, DiffList? diffs, string? objName)
+  public static bool CmpParagraphPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphPropertiesChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ParagraphPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphPropertiesChange>(), value, diffs, objName);
+    return DMXW.ParagraphPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphPropertiesChange>(), value, diffs, objName, propName);
   }
 
   public static void SetParagraphPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.ParagraphPropertiesChange? value)
@@ -110,23 +110,23 @@ public static class ParagraphPropertiesConverter
     value.ParagraphPropertiesChange = GetParagraphPropertiesChange(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.ParagraphProperties? openXmlElement, DMW.ParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphProperties? openXmlElement, DMW.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName))
+      if (!ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphMarkRunProperties(openXmlElement, value.ParagraphMarkRunProperties, diffs, objName))
+      if (!CmpParagraphMarkRunProperties(openXmlElement, value.ParagraphMarkRunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpSectionProperties(openXmlElement, value.SectionProperties, diffs, objName))
+      if (!CmpSectionProperties(openXmlElement, value.SectionProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphPropertiesChange(openXmlElement, value.ParagraphPropertiesChange, diffs, objName))
+      if (!CmpParagraphPropertiesChange(openXmlElement, value.ParagraphPropertiesChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

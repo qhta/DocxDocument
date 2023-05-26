@@ -13,7 +13,7 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.NonVisualPicturePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.NonVisualPicturePropertiesExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  private static bool CmpCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.CameraTool? value, DiffList? diffs, string? objName)
+  private static bool CmpCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.CameraTool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CameraToolConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.CameraTool>(), value, diffs, objName);
+    return DMXD.CameraToolConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.CameraTool>(), value, diffs, objName, propName);
   }
   
   private static void SetCameraTool(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.CameraTool? value)
@@ -57,9 +57,9 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  private static bool CmpSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.SignatureLine? value, DiffList? diffs, string? objName)
+  private static bool CmpSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.SignatureLine? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.SignatureLine>(), value, diffs, objName);
+    return DMXD.SignatureLineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.SignatureLine>(), value, diffs, objName, propName);
   }
   
   private static void SetSignatureLine(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.SignatureLine? value)
@@ -83,9 +83,9 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  private static bool CmpObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.ObjectProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.ObjectProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ObjectPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.ObjectProperties>(), value, diffs, objName);
+    return DMXD.ObjectPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13D.ObjectProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetObjectProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.ObjectProperties? value)
@@ -109,9 +109,9 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  private static bool CmpLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.LiveFeedProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.LiveFeedProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LiveFeedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.LiveFeedProperties>(), value, diffs, objName);
+    return DMXD.LiveFeedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.LiveFeedProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLiveFeedProperties(DXD.NonVisualPicturePropertiesExtension openXmlElement, DMD.LiveFeedProperties? value)
@@ -142,25 +142,25 @@ public static class NonVisualPicturePropertiesExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement, DMD.NonVisualPicturePropertiesExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.NonVisualPicturePropertiesExtension? openXmlElement, DMD.NonVisualPicturePropertiesExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpCameraTool(openXmlElement, value.CameraTool, diffs, objName))
+      if (!CmpCameraTool(openXmlElement, value.CameraTool, diffs, objName, propName))
         ok = false;
-      if (!CmpSignatureLine(openXmlElement, value.SignatureLine, diffs, objName))
+      if (!CmpSignatureLine(openXmlElement, value.SignatureLine, diffs, objName, propName))
         ok = false;
-      if (!CmpObjectProperties(openXmlElement, value.ObjectProperties, diffs, objName))
+      if (!CmpObjectProperties(openXmlElement, value.ObjectProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpLiveFeedProperties(openXmlElement, value.LiveFeedProperties, diffs, objName))
+      if (!CmpLiveFeedProperties(openXmlElement, value.LiveFeedProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -14,9 +14,9 @@ public static class RunPropertiesConverter
     return null;
   }
 
-  public static bool CmpRunPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs, string? objName)
+  public static bool CmpRunPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.RunPropertiesChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesChange>(), value, diffs, objName);
+    return DMXW.RunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunPropertiesChange>(), value, diffs, objName, propName);
   }
 
   public static void SetRunPropertiesChange(DX.OpenXmlCompositeElement openXmlElement, DMW.RunPropertiesChange? value)
@@ -51,19 +51,19 @@ public static class RunPropertiesConverter
     model.RunPropertiesChange = GetRunPropertiesChange(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.RunProperties? openXmlElement, DMW.RunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunProperties? openXmlElement, DMW.RunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpRunPropertiesChange(openXmlElement, model.RunPropertiesChange, diffs, objName))
+      if (!CmpRunPropertiesChange(openXmlElement, model.RunPropertiesChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

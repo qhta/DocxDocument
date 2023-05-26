@@ -16,9 +16,9 @@ public static class ThemeColorConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXD.Color2Type openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.Color2Type openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelPercentage(DXD.Color2Type openXmlElement, DMD.RgbColorModelPercentage? value)
@@ -45,9 +45,9 @@ public static class ThemeColorConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXD.Color2Type openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.Color2Type openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXD.Color2Type openXmlElement, DMD.RgbColorModelHex? value)
@@ -74,9 +74,9 @@ public static class ThemeColorConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXD.Color2Type openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.Color2Type openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
   private static void SetHslColor(DXD.Color2Type openXmlElement, DMD.HslColor? value)
@@ -103,9 +103,9 @@ public static class ThemeColorConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXD.Color2Type openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.Color2Type openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSystemColor(DXD.Color2Type openXmlElement, DMD.SystemColor? value)
@@ -132,9 +132,9 @@ public static class ThemeColorConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXD.Color2Type openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.Color2Type openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetColor(DXD.Color2Type openXmlElement, DMD.PresetColor? value)
@@ -161,23 +161,23 @@ public static class ThemeColorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Color2Type? openXmlElement, DMD.ThemeColor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Color2Type? openXmlElement, DMD.ThemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      var propName = openXmlElement.GetType().Name;
-      if (value.Name!=null && !value.Name.Equals(propName))
+      var pName = openXmlElement.GetType().Name;
+      if (value.Name!=null && !value.Name.Equals(pName))
       {
-        diffs?.Add(objName, propName, value.Name, propName);
+        diffs?.Add(objName, pName, value.Name, pName);
         ok = false;
       }
-      if (!Color2TypeConverter.CompareModelElement(openXmlElement, value.Value, diffs, objName))
+      if (!Color2TypeConverter.CompareModelElement(openXmlElement, value.Value, diffs, objName, pName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

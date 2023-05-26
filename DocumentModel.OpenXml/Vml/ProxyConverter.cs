@@ -13,7 +13,7 @@ public static class ProxyConverter
     return openXmlElement?.Start?.Value;
   }
   
-  private static bool CmpStart(DXVO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXVO.Proxy openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Start?.Value == value) return true;
     diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
@@ -36,7 +36,7 @@ public static class ProxyConverter
     return openXmlElement?.End?.Value;
   }
   
-  private static bool CmpEnd(DXVO.Proxy openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnd(DXVO.Proxy openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.End?.Value == value) return true;
     diffs?.Add(objName, "End", openXmlElement?.End?.Value, value);
@@ -59,7 +59,7 @@ public static class ProxyConverter
     return StringValueConverter.GetValue(openXmlElement?.ShapeReference);
   }
   
-  private static bool CmpShapeReference(DXVO.Proxy openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeReference(DXVO.Proxy openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ShapeReference, value, diffs, objName, "ShapeReference");
   }
@@ -77,7 +77,7 @@ public static class ProxyConverter
     return openXmlElement?.ConnectionLocation?.Value;
   }
   
-  private static bool CmpConnectionLocation(DXVO.Proxy openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionLocation(DXVO.Proxy openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ConnectionLocation?.Value == value) return true;
     diffs?.Add(objName, "ConnectionLocation", openXmlElement?.ConnectionLocation?.Value, value);
@@ -103,23 +103,23 @@ public static class ProxyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Proxy? openXmlElement, DMV.Proxy? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Proxy? openXmlElement, DMV.Proxy? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName, propName))
         ok = false;
-      if (!CmpEnd(openXmlElement, value.End, diffs, objName))
+      if (!CmpEnd(openXmlElement, value.End, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeReference(openXmlElement, value.ShapeReference, diffs, objName))
+      if (!CmpShapeReference(openXmlElement, value.ShapeReference, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectionLocation(openXmlElement, value.ConnectionLocation, diffs, objName))
+      if (!CmpConnectionLocation(openXmlElement, value.ConnectionLocation, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

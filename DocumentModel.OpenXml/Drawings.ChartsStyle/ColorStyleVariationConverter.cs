@@ -10,7 +10,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Tint>()?.Val);
   }
   
-  private static bool CmpTint(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTint(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Tint>()?.Val, value, diffs, objName, "Tint");
   }
@@ -25,7 +25,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Shade>()?.Val);
   }
   
-  private static bool CmpShade(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpShade(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Shade>()?.Val, value, diffs, objName, "Shade");
   }
@@ -40,7 +40,7 @@ public static class ColorStyleVariationConverter
     return openXmlElement.GetFirstChild<DXD.Complement>() != null;
   }
   
-  private static bool CmpComplement(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpComplement(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Complement>() != null;
     if (val == value) return true;
@@ -68,7 +68,7 @@ public static class ColorStyleVariationConverter
     return openXmlElement.GetFirstChild<DXD.Inverse>() != null;
   }
   
-  private static bool CmpInverse(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverse(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Inverse>() != null;
     if (val == value) return true;
@@ -96,7 +96,7 @@ public static class ColorStyleVariationConverter
     return openXmlElement.GetFirstChild<DXD.Gray>() != null;
   }
   
-  private static bool CmpGray(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGray(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gray>() != null;
     if (val == value) return true;
@@ -124,7 +124,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val);
   }
   
-  private static bool CmpAlpha(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val, value, diffs, objName, "Alpha");
   }
@@ -139,7 +139,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val);
   }
   
-  private static bool CmpAlphaOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val, value, diffs, objName, "AlphaOffset");
   }
@@ -154,7 +154,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val);
   }
   
-  private static bool CmpAlphaModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val, value, diffs, objName, "AlphaModulation");
   }
@@ -169,7 +169,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Hue>()?.Val);
   }
   
-  private static bool CmpHue(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Hue>()?.Val, value, diffs, objName, "Hue");
   }
@@ -184,7 +184,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val);
   }
   
-  private static bool CmpHueOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val, value, diffs, objName, "HueOffset");
   }
@@ -199,7 +199,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val);
   }
   
-  private static bool CmpHueModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val, value, diffs, objName, "HueModulation");
   }
@@ -214,7 +214,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val);
   }
   
-  private static bool CmpSaturation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val, value, diffs, objName, "Saturation");
   }
@@ -229,7 +229,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val);
   }
   
-  private static bool CmpSaturationOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val, value, diffs, objName, "SaturationOffset");
   }
@@ -244,7 +244,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val);
   }
   
-  private static bool CmpSaturationModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val, value, diffs, objName, "SaturationModulation");
   }
@@ -259,7 +259,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val);
   }
   
-  private static bool CmpLuminance(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val, value, diffs, objName, "Luminance");
   }
@@ -274,7 +274,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val);
   }
   
-  private static bool CmpLuminanceOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val, value, diffs, objName, "LuminanceOffset");
   }
@@ -289,7 +289,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val);
   }
   
-  private static bool CmpLuminanceModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val, value, diffs, objName, "LuminanceModulation");
   }
@@ -304,7 +304,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Red>()?.Val);
   }
   
-  private static bool CmpRed(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRed(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Red>()?.Val, value, diffs, objName, "Red");
   }
@@ -319,7 +319,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val);
   }
   
-  private static bool CmpRedOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val, value, diffs, objName, "RedOffset");
   }
@@ -334,7 +334,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val);
   }
   
-  private static bool CmpRedModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val, value, diffs, objName, "RedModulation");
   }
@@ -349,7 +349,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Green>()?.Val);
   }
   
-  private static bool CmpGreen(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreen(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Green>()?.Val, value, diffs, objName, "Green");
   }
@@ -364,7 +364,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val);
   }
   
-  private static bool CmpGreenOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val, value, diffs, objName, "GreenOffset");
   }
@@ -379,7 +379,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val);
   }
   
-  private static bool CmpGreenModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val, value, diffs, objName, "GreenModulation");
   }
@@ -394,7 +394,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.Blue>()?.Val);
   }
   
-  private static bool CmpBlue(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlue(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.Blue>()?.Val, value, diffs, objName, "Blue");
   }
@@ -409,7 +409,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val);
   }
   
-  private static bool CmpBlueOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueOffset(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val, value, diffs, objName, "BlueOffset");
   }
@@ -424,7 +424,7 @@ public static class ColorStyleVariationConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val);
   }
   
-  private static bool CmpBlueModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueModulation(DXO13DCS.ColorStyleVariation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val, value, diffs, objName, "BlueModulation");
   }
@@ -439,7 +439,7 @@ public static class ColorStyleVariationConverter
     return openXmlElement.GetFirstChild<DXD.Gamma>() != null;
   }
   
-  private static bool CmpGamma(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGamma(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gamma>() != null;
     if (val == value) return true;
@@ -467,7 +467,7 @@ public static class ColorStyleVariationConverter
     return openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
   }
   
-  private static bool CmpInverseGamma(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverseGamma(DXO13DCS.ColorStyleVariation openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
     if (val == value) return true;
@@ -528,71 +528,71 @@ public static class ColorStyleVariationConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DCS.ColorStyleVariation? openXmlElement, DMDCS.ColorStyleVariation? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.ColorStyleVariation? openXmlElement, DMDCS.ColorStyleVariation? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTint(openXmlElement, value.Tint, diffs, objName))
+      if (!CmpTint(openXmlElement, value.Tint, diffs, objName, propName))
         ok = false;
-      if (!CmpShade(openXmlElement, value.Shade, diffs, objName))
+      if (!CmpShade(openXmlElement, value.Shade, diffs, objName, propName))
         ok = false;
-      if (!CmpComplement(openXmlElement, value.Complement, diffs, objName))
+      if (!CmpComplement(openXmlElement, value.Complement, diffs, objName, propName))
         ok = false;
-      if (!CmpInverse(openXmlElement, value.Inverse, diffs, objName))
+      if (!CmpInverse(openXmlElement, value.Inverse, diffs, objName, propName))
         ok = false;
-      if (!CmpGray(openXmlElement, value.Gray, diffs, objName))
+      if (!CmpGray(openXmlElement, value.Gray, diffs, objName, propName))
         ok = false;
-      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName))
+      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaOffset(openXmlElement, value.AlphaOffset, diffs, objName))
+      if (!CmpAlphaOffset(openXmlElement, value.AlphaOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaModulation(openXmlElement, value.AlphaModulation, diffs, objName))
+      if (!CmpAlphaModulation(openXmlElement, value.AlphaModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName, propName))
         ok = false;
-      if (!CmpHueOffset(openXmlElement, value.HueOffset, diffs, objName))
+      if (!CmpHueOffset(openXmlElement, value.HueOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName))
+      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName))
+      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName))
+      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName))
+      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName))
+      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName))
+      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName))
+      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpRed(openXmlElement, value.Red, diffs, objName))
+      if (!CmpRed(openXmlElement, value.Red, diffs, objName, propName))
         ok = false;
-      if (!CmpRedOffset(openXmlElement, value.RedOffset, diffs, objName))
+      if (!CmpRedOffset(openXmlElement, value.RedOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpRedModulation(openXmlElement, value.RedModulation, diffs, objName))
+      if (!CmpRedModulation(openXmlElement, value.RedModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpGreen(openXmlElement, value.Green, diffs, objName))
+      if (!CmpGreen(openXmlElement, value.Green, diffs, objName, propName))
         ok = false;
-      if (!CmpGreenOffset(openXmlElement, value.GreenOffset, diffs, objName))
+      if (!CmpGreenOffset(openXmlElement, value.GreenOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpGreenModulation(openXmlElement, value.GreenModulation, diffs, objName))
+      if (!CmpGreenModulation(openXmlElement, value.GreenModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpBlue(openXmlElement, value.Blue, diffs, objName))
+      if (!CmpBlue(openXmlElement, value.Blue, diffs, objName, propName))
         ok = false;
-      if (!CmpBlueOffset(openXmlElement, value.BlueOffset, diffs, objName))
+      if (!CmpBlueOffset(openXmlElement, value.BlueOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpBlueModulation(openXmlElement, value.BlueModulation, diffs, objName))
+      if (!CmpBlueModulation(openXmlElement, value.BlueModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpGamma(openXmlElement, value.Gamma, diffs, objName))
+      if (!CmpGamma(openXmlElement, value.Gamma, diffs, objName, propName))
         ok = false;
-      if (!CmpInverseGamma(openXmlElement, value.InverseGamma, diffs, objName))
+      if (!CmpInverseGamma(openXmlElement, value.InverseGamma, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

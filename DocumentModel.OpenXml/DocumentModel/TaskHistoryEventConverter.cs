@@ -13,7 +13,7 @@ public static class TaskHistoryEventConverter
     return openXmlElement?.Time?.Value;
   }
   
-  private static bool CmpTime(DXO21DT.TaskHistoryEvent openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpTime(DXO21DT.TaskHistoryEvent openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Time?.Value == value) return true;
     diffs?.Add(objName, "Time", openXmlElement?.Time?.Value, value);
@@ -33,7 +33,7 @@ public static class TaskHistoryEventConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO21DT.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO21DT.TaskHistoryEvent openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -54,9 +54,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AttributionTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AttributionTaskUser>(), value, diffs, objName, propName);
   }
   
   private static void SetAttributionTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
@@ -83,9 +83,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>(), value, diffs, objName);
+    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskAnchor(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskAnchor? value)
@@ -109,9 +109,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AssignTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.AssignTaskUser>(), value, diffs, objName, propName);
   }
   
   private static void SetAssignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
@@ -135,9 +135,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  private static bool CmpUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.UnassignTaskUser>(), value, diffs, objName);
+    return DMX.OpenXmlTaskUserElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.UnassignTaskUser>(), value, diffs, objName, propName);
   }
   
   private static void SetUnassignTaskUser(DXO21DT.TaskHistoryEvent openXmlElement, DM.OpenXmlTaskUserElement? value)
@@ -158,7 +158,7 @@ public static class TaskHistoryEventConverter
     return openXmlElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>() != null;
   }
   
-  private static bool CmpTaskCreateEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskCreateEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DT.TaskCreateEventInfo>() != null;
     if (val == value) return true;
@@ -189,9 +189,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskTitleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskTitleEventInfo>(), value, diffs, objName);
+    return DMX.TaskTitleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskTitleEventInfo>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskTitleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskTitleEventInfo? value)
@@ -215,9 +215,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskScheduleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskScheduleEventInfo>(), value, diffs, objName);
+    return DMX.TaskScheduleEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskScheduleEventInfo>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskScheduleEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskScheduleEventInfo? value)
@@ -241,9 +241,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskProgressEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskProgressEventInfo>(), value, diffs, objName);
+    return DMX.TaskProgressEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskProgressEventInfo>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskProgressEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskProgressEventInfo? value)
@@ -267,9 +267,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskPriorityEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskPriorityEventInfo>(), value, diffs, objName);
+    return DMX.TaskPriorityEventInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskPriorityEventInfo>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskPriorityEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskPriorityEventInfo? value)
@@ -290,7 +290,7 @@ public static class TaskHistoryEventConverter
     return openXmlElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>() != null;
   }
   
-  private static bool CmpTaskDeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskDeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DT.TaskDeleteEventInfo>() != null;
     if (val == value) return true;
@@ -318,7 +318,7 @@ public static class TaskHistoryEventConverter
     return openXmlElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>() != null;
   }
   
-  private static bool CmpTaskUndeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUndeleteEventInfo(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DT.TaskUndeleteEventInfo>() != null;
     if (val == value) return true;
@@ -346,7 +346,7 @@ public static class TaskHistoryEventConverter
     return openXmlElement.GetFirstChild<DXO21DT.TaskUnassignAll>() != null;
   }
   
-  private static bool CmpTaskUnassignAll(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUnassignAll(DXO21DT.TaskHistoryEvent openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DT.TaskUnassignAll>() != null;
     if (val == value) return true;
@@ -377,9 +377,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskUndo? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskUndo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskUndoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskUndo>(), value, diffs, objName);
+    return DMX.TaskUndoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskUndo>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskUndo(DXO21DT.TaskHistoryEvent openXmlElement, DM.TaskUndo? value)
@@ -403,9 +403,9 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO21DT.TaskHistoryEvent openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21DT.TaskHistoryEvent openXmlElement, DM.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName);
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO21DT.TaskHistoryEvent openXmlElement, DM.ExtensionList? value)
@@ -447,47 +447,47 @@ public static class TaskHistoryEventConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskHistoryEvent? openXmlElement, DM.TaskHistoryEvent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskHistoryEvent? openXmlElement, DM.TaskHistoryEvent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTime(openXmlElement, value.Time, diffs, objName))
+      if (!CmpTime(openXmlElement, value.Time, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpAttributionTaskUser(openXmlElement, value.AttributionTaskUser, diffs, objName))
+      if (!CmpAttributionTaskUser(openXmlElement, value.AttributionTaskUser, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskAnchor(openXmlElement, value.TaskAnchor, diffs, objName))
+      if (!CmpTaskAnchor(openXmlElement, value.TaskAnchor, diffs, objName, propName))
         ok = false;
-      if (!CmpAssignTaskUser(openXmlElement, value.AssignTaskUser, diffs, objName))
+      if (!CmpAssignTaskUser(openXmlElement, value.AssignTaskUser, diffs, objName, propName))
         ok = false;
-      if (!CmpUnassignTaskUser(openXmlElement, value.UnassignTaskUser, diffs, objName))
+      if (!CmpUnassignTaskUser(openXmlElement, value.UnassignTaskUser, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskCreateEventInfo(openXmlElement, value.TaskCreateEventInfo, diffs, objName))
+      if (!CmpTaskCreateEventInfo(openXmlElement, value.TaskCreateEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskTitleEventInfo(openXmlElement, value.TaskTitleEventInfo, diffs, objName))
+      if (!CmpTaskTitleEventInfo(openXmlElement, value.TaskTitleEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskScheduleEventInfo(openXmlElement, value.TaskScheduleEventInfo, diffs, objName))
+      if (!CmpTaskScheduleEventInfo(openXmlElement, value.TaskScheduleEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskProgressEventInfo(openXmlElement, value.TaskProgressEventInfo, diffs, objName))
+      if (!CmpTaskProgressEventInfo(openXmlElement, value.TaskProgressEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskPriorityEventInfo(openXmlElement, value.TaskPriorityEventInfo, diffs, objName))
+      if (!CmpTaskPriorityEventInfo(openXmlElement, value.TaskPriorityEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskDeleteEventInfo(openXmlElement, value.TaskDeleteEventInfo, diffs, objName))
+      if (!CmpTaskDeleteEventInfo(openXmlElement, value.TaskDeleteEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskUndeleteEventInfo(openXmlElement, value.TaskUndeleteEventInfo, diffs, objName))
+      if (!CmpTaskUndeleteEventInfo(openXmlElement, value.TaskUndeleteEventInfo, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskUnassignAll(openXmlElement, value.TaskUnassignAll, diffs, objName))
+      if (!CmpTaskUnassignAll(openXmlElement, value.TaskUnassignAll, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskUndo(openXmlElement, value.TaskUndo, diffs, objName))
+      if (!CmpTaskUndo(openXmlElement, value.TaskUndo, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

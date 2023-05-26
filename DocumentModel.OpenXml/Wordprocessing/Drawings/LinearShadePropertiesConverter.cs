@@ -13,7 +13,7 @@ public static class LinearShadePropertiesConverter
     return openXmlElement?.Angle?.Value;
   }
   
-  private static bool CmpAngle(DXO10W.LinearShadeProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXO10W.LinearShadeProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Angle?.Value == value) return true;
     diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
@@ -33,9 +33,9 @@ public static class LinearShadePropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value);
   }
   
-  private static bool CmpScaled(DXO10W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpScaled(DXO10W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Scaled?.Value, value, diffs, objName, propName);
   }
   
   private static void SetScaled(DXO10W.LinearShadeProperties openXmlElement, DMW.OnOffKind? value)
@@ -55,19 +55,19 @@ public static class LinearShadePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.LinearShadeProperties? openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.LinearShadeProperties? openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName))
+      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName, propName))
         ok = false;
-      if (!CmpScaled(openXmlElement, value.Scaled, diffs, objName))
+      if (!CmpScaled(openXmlElement, value.Scaled, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

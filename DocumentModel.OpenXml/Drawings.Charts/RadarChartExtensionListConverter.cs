@@ -19,7 +19,7 @@ public static class RadarChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpRadarChartExtensions(DXDC.RadarChartExtensionList openXmlElement, Collection<DMDC.RadarChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpRadarChartExtensions(DXDC.RadarChartExtensionList openXmlElement, Collection<DMDC.RadarChartExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.RadarChartExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class RadarChartExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class RadarChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.RadarChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.RadarChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class RadarChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.RadarChartExtensionList? openXmlElement, DMDC.RadarChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.RadarChartExtensionList? openXmlElement, DMDC.RadarChartExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRadarChartExtensions(openXmlElement, value.RadarChartExtensions, diffs, objName))
+      if (!CmpRadarChartExtensions(openXmlElement, value.RadarChartExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

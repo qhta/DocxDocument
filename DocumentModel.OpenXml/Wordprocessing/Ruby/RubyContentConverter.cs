@@ -43,28 +43,28 @@ public static class RubyContentConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to the openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareRubyContentElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Run run && model is DMW.Run runModel)
-        return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+        return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName, propName);
       if (model is DMW.IRubyContent rubyCuntentElement)
       {
-        var result = RubyContentElementsConverter.CompareModelElement(openXmlElement, rubyCuntentElement, diffs, objName);
+        var result = RubyContentElementsConverter.CompareModelElement(openXmlElement, rubyCuntentElement, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
       if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -72,7 +72,7 @@ public static class RubyContentConverter
       return false;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   /// <summary>
@@ -145,18 +145,18 @@ public static class RubyContentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RubyContent? openXmlElement, DMW.RubyContent? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RubyContent? openXmlElement, DMW.RubyContent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMW.IRubyContent>.CompareOpenXmlElementCollection(openXmlElement, model,
-        RubyContentConverter.CompareRubyContentElement, diffs, objName))
+        RubyContentConverter.CompareRubyContentElement, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

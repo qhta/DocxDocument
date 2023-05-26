@@ -13,7 +13,7 @@ public static class ShapeConverter
     return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
-  private static bool CmpModelId(DXOD.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpModelId(DXOD.Shape openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
@@ -34,9 +34,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpShapeNonVisualProperties(DXOD.Shape openXmlElement, DMDO.ShapeNonVisualProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeNonVisualProperties(DXOD.Shape openXmlElement, DMDO.ShapeNonVisualProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.ShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeNonVisualProperties>(), value, diffs, objName);
+    return DMXDO.ShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeNonVisualProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeNonVisualProperties(DXOD.Shape openXmlElement, DMDO.ShapeNonVisualProperties? value)
@@ -63,9 +63,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXOD.Shape openXmlElement, DMDO.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXOD.Shape openXmlElement, DMDO.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeProperties>(), value, diffs, objName);
+    return DMXDO.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXOD.Shape openXmlElement, DMDO.ShapeProperties? value)
@@ -92,9 +92,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpShapeStyle(DXOD.Shape openXmlElement, DMDO.ShapeStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeStyle(DXOD.Shape openXmlElement, DMDO.ShapeStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeStyle>(), value, diffs, objName);
+    return DMXDO.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.ShapeStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeStyle(DXOD.Shape openXmlElement, DMDO.ShapeStyle? value)
@@ -121,9 +121,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpTextBody(DXOD.Shape openXmlElement, DMDO.TextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBody(DXOD.Shape openXmlElement, DMDO.TextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.TextBody>(), value, diffs, objName);
+    return DMXDO.TextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.TextBody>(), value, diffs, objName, propName);
   }
   
   private static void SetTextBody(DXOD.Shape openXmlElement, DMDO.TextBody? value)
@@ -150,9 +150,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpTransform2D(DXOD.Shape openXmlElement, DMDO.Transform2D? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform2D(DXOD.Shape openXmlElement, DMDO.Transform2D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.Transform2D>(), value, diffs, objName);
+    return DMXDO.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.Transform2D>(), value, diffs, objName, propName);
   }
   
   private static void SetTransform2D(DXOD.Shape openXmlElement, DMDO.Transform2D? value)
@@ -179,9 +179,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXOD.Shape openXmlElement, DMDO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXOD.Shape openXmlElement, DMDO.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXOD.Shape openXmlElement, DMDO.OfficeArtExtensionList? value)
@@ -214,29 +214,29 @@ public static class ShapeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.Shape? openXmlElement, DMDO.Shape? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.Shape? openXmlElement, DMDO.Shape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName))
+      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeNonVisualProperties(openXmlElement, value.ShapeNonVisualProperties, diffs, objName))
+      if (!CmpShapeNonVisualProperties(openXmlElement, value.ShapeNonVisualProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeStyle(openXmlElement, value.ShapeStyle, diffs, objName))
+      if (!CmpShapeStyle(openXmlElement, value.ShapeStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpTextBody(openXmlElement, value.TextBody, diffs, objName))
+      if (!CmpTextBody(openXmlElement, value.TextBody, diffs, objName, propName))
         ok = false;
-      if (!CmpTransform2D(openXmlElement, value.Transform2D, diffs, objName))
+      if (!CmpTransform2D(openXmlElement, value.Transform2D, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
@@ -36,7 +36,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoUngrouping?.Value;
   }
   
-  private static bool CmpNoUngrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoUngrouping(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoUngrouping?.Value == value) return true;
     diffs?.Add(objName, "NoUngrouping", openXmlElement?.NoUngrouping?.Value, value);
@@ -59,7 +59,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
@@ -82,7 +82,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoRotation?.Value;
   }
   
-  private static bool CmpNoRotation(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoRotation(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoRotation?.Value == value) return true;
     diffs?.Add(objName, "NoRotation", openXmlElement?.NoRotation?.Value, value);
@@ -105,7 +105,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
@@ -128,7 +128,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
@@ -151,7 +151,7 @@ public static class GroupShapeLocksConverter
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.GroupShapeLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
@@ -177,9 +177,9 @@ public static class GroupShapeLocksConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.GroupShapeLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.GroupShapeLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.GroupShapeLocks openXmlElement, DMD.ExtensionList? value)
@@ -213,31 +213,31 @@ public static class GroupShapeLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.GroupShapeLocks? openXmlElement, DMD.GroupShapeLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.GroupShapeLocks? openXmlElement, DMD.GroupShapeLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName))
+      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName, propName))
         ok = false;
-      if (!CmpNoUngrouping(openXmlElement, value.NoUngrouping, diffs, objName))
+      if (!CmpNoUngrouping(openXmlElement, value.NoUngrouping, diffs, objName, propName))
         ok = false;
-      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName))
+      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName, propName))
         ok = false;
-      if (!CmpNoRotation(openXmlElement, value.NoRotation, diffs, objName))
+      if (!CmpNoRotation(openXmlElement, value.NoRotation, diffs, objName, propName))
         ok = false;
-      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName))
+      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName, propName))
         ok = false;
-      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName))
+      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName, propName))
         ok = false;
-      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName))
+      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

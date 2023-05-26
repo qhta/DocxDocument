@@ -13,7 +13,7 @@ public static class ObjectPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class ObjectPropertiesConverter
     return openXmlElement?.IsActiveX?.Value;
   }
   
-  private static bool CmpIsActiveX(DXO13D.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsActiveX(DXO13D.ObjectProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.IsActiveX?.Value == value) return true;
     diffs?.Add(objName, "IsActiveX", openXmlElement?.IsActiveX?.Value, value);
@@ -54,7 +54,7 @@ public static class ObjectPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.LinkType);
   }
   
-  private static bool CmpLinkType(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLinkType(DXO13D.ObjectProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LinkType, value, diffs, objName, "LinkType");
   }
@@ -77,21 +77,21 @@ public static class ObjectPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13D.ObjectProperties? openXmlElement, DMD.ObjectProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13D.ObjectProperties? openXmlElement, DMD.ObjectProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpIsActiveX(openXmlElement, value.IsActiveX, diffs, objName))
+      if (!CmpIsActiveX(openXmlElement, value.IsActiveX, diffs, objName, propName))
         ok = false;
-      if (!CmpLinkType(openXmlElement, value.LinkType, diffs, objName))
+      if (!CmpLinkType(openXmlElement, value.LinkType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

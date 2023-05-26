@@ -10,7 +10,7 @@ public static class WorksheetPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.WorksheetPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.WorksheetPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -32,7 +32,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpControlPropertiesParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.ControlPropertiesPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpControlPropertiesParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.ControlPropertiesPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -52,7 +52,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpCustomPropertyParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.CustomPropertyPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomPropertyParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.CustomPropertyPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -72,7 +72,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedControlPersistenceBinaryDataParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedControlPersistenceBinaryDataParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedControlPersistenceBinaryDataPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -92,7 +92,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedControlPersistenceParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedControlPersistenceParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -112,7 +112,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedObjectParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedObjectParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -132,7 +132,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedPackageParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedPackageParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -152,7 +152,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -172,7 +172,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpModel3DReferenceRelationshipParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -192,7 +192,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpNamedSheetViewsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.NamedSheetViewsPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpNamedSheetViewsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.NamedSheetViewsPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -212,7 +212,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpPivotTableParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.PivotTablePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpPivotTableParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.PivotTablePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -232,7 +232,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpQueryTableParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.QueryTablePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpQueryTableParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.QueryTablePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -242,7 +242,7 @@ public static class WorksheetPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.WorksheetPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.WorksheetPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -264,7 +264,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpSlicersParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.SlicersPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpSlicersParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.SlicersPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -284,7 +284,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpSpreadsheetPrinterSettingsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.SpreadsheetPrinterSettingsPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpSpreadsheetPrinterSettingsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.SpreadsheetPrinterSettingsPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -304,7 +304,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpTableDefinitionParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.TableDefinitionPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpTableDefinitionParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.TableDefinitionPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -324,7 +324,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpTimeLineParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.TimeLinePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpTimeLineParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.TimeLinePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -344,7 +344,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpVmlDrawingParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.VmlDrawingPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpVmlDrawingParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.VmlDrawingPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -364,7 +364,7 @@ public static class WorksheetPartConverter
     return collection;
   }
   
-  private static bool CmpWorksheetThreadedCommentsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.WorksheetThreadedCommentsPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpWorksheetThreadedCommentsParts(DXPack.WorksheetPart openXmlElement, Collection<DMPack.WorksheetThreadedCommentsPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -398,53 +398,53 @@ public static class WorksheetPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.WorksheetPart? openXmlElement, DMPack.WorksheetPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.WorksheetPart? openXmlElement, DMPack.WorksheetPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpControlPropertiesParts(openXmlElement, value.ControlPropertiesParts, diffs, objName))
+      if (!CmpControlPropertiesParts(openXmlElement, value.ControlPropertiesParts, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomPropertyParts(openXmlElement, value.CustomPropertyParts, diffs, objName))
+      if (!CmpCustomPropertyParts(openXmlElement, value.CustomPropertyParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value.EmbeddedControlPersistenceBinaryDataParts, diffs, objName))
+      if (!CmpEmbeddedControlPersistenceBinaryDataParts(openXmlElement, value.EmbeddedControlPersistenceBinaryDataParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName))
+      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName, propName))
         ok = false;
-      if (!CmpNamedSheetViewsParts(openXmlElement, value.NamedSheetViewsParts, diffs, objName))
+      if (!CmpNamedSheetViewsParts(openXmlElement, value.NamedSheetViewsParts, diffs, objName, propName))
         ok = false;
-      if (!CmpPivotTableParts(openXmlElement, value.PivotTableParts, diffs, objName))
+      if (!CmpPivotTableParts(openXmlElement, value.PivotTableParts, diffs, objName, propName))
         ok = false;
-      if (!CmpQueryTableParts(openXmlElement, value.QueryTableParts, diffs, objName))
+      if (!CmpQueryTableParts(openXmlElement, value.QueryTableParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpSlicersParts(openXmlElement, value.SlicersParts, diffs, objName))
+      if (!CmpSlicersParts(openXmlElement, value.SlicersParts, diffs, objName, propName))
         ok = false;
-      if (!CmpSpreadsheetPrinterSettingsParts(openXmlElement, value.SpreadsheetPrinterSettingsParts, diffs, objName))
+      if (!CmpSpreadsheetPrinterSettingsParts(openXmlElement, value.SpreadsheetPrinterSettingsParts, diffs, objName, propName))
         ok = false;
-      if (!CmpTableDefinitionParts(openXmlElement, value.TableDefinitionParts, diffs, objName))
+      if (!CmpTableDefinitionParts(openXmlElement, value.TableDefinitionParts, diffs, objName, propName))
         ok = false;
-      if (!CmpTimeLineParts(openXmlElement, value.TimeLineParts, diffs, objName))
+      if (!CmpTimeLineParts(openXmlElement, value.TimeLineParts, diffs, objName, propName))
         ok = false;
-      if (!CmpVmlDrawingParts(openXmlElement, value.VmlDrawingParts, diffs, objName))
+      if (!CmpVmlDrawingParts(openXmlElement, value.VmlDrawingParts, diffs, objName, propName))
         ok = false;
-      if (!CmpWorksheetThreadedCommentsParts(openXmlElement, value.WorksheetThreadedCommentsParts, diffs, objName))
+      if (!CmpWorksheetThreadedCommentsParts(openXmlElement, value.WorksheetThreadedCommentsParts, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

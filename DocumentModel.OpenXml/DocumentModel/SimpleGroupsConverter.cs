@@ -13,9 +13,9 @@ public static class SimpleGroupsConverter
     return null;
   }
   
-  private static bool CmpBackstageGroup(DXO10CUI.SimpleGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageGroup(DXO10CUI.SimpleGroups openXmlElement, DM.BackstageGroup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageGroup>(), value, diffs, objName);
+    return DMX.BackstageGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageGroup>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstageGroup(DXO10CUI.SimpleGroups openXmlElement, DM.BackstageGroup? value)
@@ -39,9 +39,9 @@ public static class SimpleGroupsConverter
     return null;
   }
   
-  private static bool CmpTaskGroup(DXO10CUI.SimpleGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskGroup(DXO10CUI.SimpleGroups openXmlElement, DM.TaskGroup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.TaskGroup>(), value, diffs, objName);
+    return DMX.TaskGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.TaskGroup>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskGroup(DXO10CUI.SimpleGroups openXmlElement, DM.TaskGroup? value)
@@ -69,19 +69,19 @@ public static class SimpleGroupsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.SimpleGroups? openXmlElement, DM.SimpleGroups? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.SimpleGroups? openXmlElement, DM.SimpleGroups? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBackstageGroup(openXmlElement, value.BackstageGroup, diffs, objName))
+      if (!CmpBackstageGroup(openXmlElement, value.BackstageGroup, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskGroup(openXmlElement, value.TaskGroup, diffs, objName))
+      if (!CmpTaskGroup(openXmlElement, value.TaskGroup, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

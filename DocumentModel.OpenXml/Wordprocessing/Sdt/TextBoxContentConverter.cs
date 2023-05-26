@@ -17,18 +17,18 @@ public static class TextBoxContentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TextBoxContent? openXmlElement, DMW.TextBoxContent? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TextBoxContent? openXmlElement, DMW.TextBoxContent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
          (openXmlElement, model,
-         BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName))
+         BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName, propName))
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

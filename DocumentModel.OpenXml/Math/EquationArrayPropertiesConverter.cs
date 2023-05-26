@@ -11,9 +11,9 @@ public static class EquationArrayPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value);
   }
 
-  private static bool CmpBaseJustification(DXM.EquationArrayProperties openXmlElement, DMM.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBaseJustification(DXM.EquationArrayProperties openXmlElement, DMM.VerticalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetBaseJustification(DXM.EquationArrayProperties openXmlElement, DMM.VerticalAlignmentKind? value)
@@ -38,9 +38,9 @@ public static class EquationArrayPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.MaxDistribution>()?.Val?.Value);
   }
 
-  private static bool CmpMaxDistribution(DXM.EquationArrayProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxDistribution(DXM.EquationArrayProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.MaxDistribution>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.MaxDistribution>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetMaxDistribution(DXM.EquationArrayProperties openXmlElement, bool? value)
@@ -65,9 +65,9 @@ public static class EquationArrayPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.ObjectDistribution>()?.Val?.Value);
   }
 
-  private static bool CmpObjectDistribution(DXM.EquationArrayProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpObjectDistribution(DXM.EquationArrayProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ObjectDistribution>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.ObjectDistribution>()?.Val?.Value, value, diffs, objName, propName);
   }
 
   private static void SetObjectDistribution(DXM.EquationArrayProperties openXmlElement, bool? value)
@@ -92,7 +92,7 @@ public static class EquationArrayPropertiesConverter
     return (DMM.RowSpacingRuleKind?)Int32ValueConverter.GetValue(openXmlElement.RowSpacingRule?.Val);
   }
 
-  private static bool CmpRowSpacingRule(DXM.EquationArrayProperties openXmlElement, DMM.RowSpacingRuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacingRule(DXM.EquationArrayProperties openXmlElement, DMM.RowSpacingRuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement.RowSpacingRule?.Val, (Int32?)value, diffs, objName, "RowSpacingRule");
   }
@@ -112,7 +112,7 @@ public static class EquationArrayPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.RowSpacing>()?.Val);
   }
 
-  private static bool CmpRowSpacingValue(DXM.EquationArrayProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacingValue(DXM.EquationArrayProperties openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.RowSpacing>()?.Val, value, diffs, objName, "RowSpacing");
   }
@@ -133,19 +133,19 @@ public static class EquationArrayPropertiesConverter
     return new DMM.RowSpacing(rule ?? DMM.RowSpacingRuleKind.Single, val);
   }
 
-  private static bool CmpRowSpacing(DXM.EquationArrayProperties openXmlElement, DMM.RowSpacing? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacing(DXM.EquationArrayProperties openXmlElement, DMM.RowSpacing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null)
     {
       var ok = true;
-      if (!CmpRowSpacingRule(openXmlElement, value?.Rule, diffs, objName))
+      if (!CmpRowSpacingRule(openXmlElement, value?.Rule, diffs, objName, propName))
         ok = false;
-      if (!CmpRowSpacingValue(openXmlElement, value?.Value, diffs, objName))
+      if (!CmpRowSpacingValue(openXmlElement, value?.Value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
 
   }
@@ -174,9 +174,9 @@ public static class EquationArrayPropertiesConverter
     return null;
   }
 
-  private static bool CmpControlProperties(DXM.EquationArrayProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.EquationArrayProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
 
   private static void SetControlProperties(DXM.EquationArrayProperties openXmlElement, DMM.ControlProperties? value)
@@ -209,25 +209,25 @@ public static class EquationArrayPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXM.EquationArrayProperties? openXmlElement, DMM.EquationArrayProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.EquationArrayProperties? openXmlElement, DMM.EquationArrayProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBaseJustification(openXmlElement, model.BaseJustification, diffs, objName))
+      if (!CmpBaseJustification(openXmlElement, model.BaseJustification, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxDistribution(openXmlElement, model.MaxDistribution, diffs, objName))
+      if (!CmpMaxDistribution(openXmlElement, model.MaxDistribution, diffs, objName, propName))
         ok = false;
-      if (!CmpObjectDistribution(openXmlElement, model.ObjectDistribution, diffs, objName))
+      if (!CmpObjectDistribution(openXmlElement, model.ObjectDistribution, diffs, objName, propName))
         ok = false;
-      if (!CmpRowSpacing(openXmlElement, model.RowSpacing, diffs, objName))
+      if (!CmpRowSpacing(openXmlElement, model.RowSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

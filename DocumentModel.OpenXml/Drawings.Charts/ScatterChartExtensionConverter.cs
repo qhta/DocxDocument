@@ -13,7 +13,7 @@ public static class ScatterChartExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.ScatterChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.ScatterChartExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class ScatterChartExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredScatterSeries(DXDC.ScatterChartExtension openXmlElement, DMDC.FilteredScatterSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredScatterSeries(DXDC.ScatterChartExtension openXmlElement, DMDC.FilteredScatterSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredScatterSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredScatterSeries>(), value, diffs, objName);
+    return DMXDC.FilteredScatterSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredScatterSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredScatterSeries(DXDC.ScatterChartExtension openXmlElement, DMDC.FilteredScatterSeries? value)
@@ -61,19 +61,19 @@ public static class ScatterChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.ScatterChartExtension? openXmlElement, DMDC.ScatterChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ScatterChartExtension? openXmlElement, DMDC.ScatterChartExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredScatterSeries(openXmlElement, value.FilteredScatterSeries, diffs, objName))
+      if (!CmpFilteredScatterSeries(openXmlElement, value.FilteredScatterSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class PaperSourceConverter
     return openXmlElement?.First?.Value;
   }
   
-  private static bool CmpFirst(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpFirst(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.First?.Value == value) return true;
     diffs?.Add(objName, "First", openXmlElement?.First?.Value, value);
@@ -33,7 +33,7 @@ public static class PaperSourceConverter
     return openXmlElement?.Other?.Value;
   }
   
-  private static bool CmpOther(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpOther(DXW.PaperSource openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Other?.Value == value) return true;
     diffs?.Add(objName, "Other", openXmlElement?.Other?.Value, value);
@@ -57,19 +57,19 @@ public static class PaperSourceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PaperSource? openXmlElement, DMW.PaperSource? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PaperSource? openXmlElement, DMW.PaperSource? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFirst(openXmlElement, value.First, diffs, objName))
+      if (!CmpFirst(openXmlElement, value.First, diffs, objName, propName))
         ok = false;
-      if (!CmpOther(openXmlElement, value.Other, diffs, objName))
+      if (!CmpOther(openXmlElement, value.Other, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

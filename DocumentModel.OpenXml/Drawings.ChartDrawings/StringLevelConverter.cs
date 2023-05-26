@@ -13,7 +13,7 @@ public static class StringLevelConverter
     return openXmlElement?.PtCount?.Value;
   }
   
-  private static bool CmpPtCount(DXO16DCD.StringLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPtCount(DXO16DCD.StringLevel openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PtCount?.Value == value) return true;
     diffs?.Add(objName, "PtCount", openXmlElement?.PtCount?.Value, value);
@@ -33,7 +33,7 @@ public static class StringLevelConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO16DCD.StringLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO16DCD.StringLevel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -57,7 +57,7 @@ public static class StringLevelConverter
     return null;
   }
   
-  private static bool CmpChartStringValues(DXO16DCD.StringLevel openXmlElement, Collection<DMDCDs.ChartStringValue>? value, DiffList? diffs, string? objName)
+  private static bool CmpChartStringValues(DXO16DCD.StringLevel openXmlElement, Collection<DMDCDs.ChartStringValue>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.ChartStringValue>();
     var origElementsCount = origElements.Count();
@@ -66,7 +66,7 @@ public static class StringLevelConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -75,13 +75,13 @@ public static class StringLevelConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.ChartStringValueConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.ChartStringValueConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -112,21 +112,21 @@ public static class StringLevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.StringLevel? openXmlElement, DMDCDs.StringLevel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.StringLevel? openXmlElement, DMDCDs.StringLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName))
+      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpChartStringValues(openXmlElement, value.ChartStringValues, diffs, objName))
+      if (!CmpChartStringValues(openXmlElement, value.ChartStringValues, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

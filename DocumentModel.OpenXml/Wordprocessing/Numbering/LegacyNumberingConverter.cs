@@ -11,7 +11,7 @@ public static class LegacyNumberingConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Legacy) ?? true;
   }
   
-  private static bool CmpLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacy(DXW.LegacyNumbering openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Legacy, value, diffs, objName, "Use");
   }
@@ -30,7 +30,7 @@ public static class LegacyNumberingConverter
     return 0;
   }
   
-  private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacySpace(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LegacySpace, value, diffs, objName, "Space");
   }
@@ -49,7 +49,7 @@ public static class LegacyNumberingConverter
     return 0;
   }
 
-  private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacyIndent(DXW.LegacyNumbering openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.LegacyIndent, value, diffs, objName, "Indent");
   }
@@ -74,21 +74,21 @@ public static class LegacyNumberingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LegacyNumbering? openXmlElement, DMW.LegacyNumbering? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LegacyNumbering? openXmlElement, DMW.LegacyNumbering? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpLegacy(openXmlElement, model.Use, diffs, objName))
+      if (!CmpLegacy(openXmlElement, model.Use, diffs, objName, propName))
         ok = false;
-      if (!CmpLegacySpace(openXmlElement, model.Space, diffs, objName))
+      if (!CmpLegacySpace(openXmlElement, model.Space, diffs, objName, propName))
         ok = false;
-      if (!CmpLegacyIndent(openXmlElement, model.Indent, diffs, objName))
+      if (!CmpLegacyIndent(openXmlElement, model.Indent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

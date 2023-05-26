@@ -30,7 +30,7 @@ public static class HexCharConverter
     return null;
   }
 
-    public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexChar? value, DiffList? diffs, string? objName)
+    public static bool CmpValue(DX.TypedOpenXmlLeafElement? element, HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var valProperty = element?.GetType().GetProperty("Value");
     if (valProperty != null && value is not null)
@@ -38,11 +38,11 @@ public static class HexCharConverter
       var valStr = (string?)valProperty.GetValue(element);
       var valueStr = value.ToString();
       if (valStr == valueStr) return true;
-      diffs?.Add(objName, element?.GetType().ToString(), valStr, valueStr);
+      diffs?.Add(objName, propName ?? element?.GetType().ToString(), valStr, valueStr);
       return false;
     }
     if (valProperty == null && value is null) return true;
-    diffs?.Add(objName, element?.GetType().ToString(), element, value);
+    diffs?.Add(objName, propName ?? element?.GetType().ToString(), element, value);
     return false;
   }
 

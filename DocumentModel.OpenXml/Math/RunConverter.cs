@@ -14,9 +14,9 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpMathRunProperties(DXM.Run openXmlElement, DMM.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMathRunProperties(DXM.Run openXmlElement, DMM.RunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.RunProperties>(), value, diffs, objName);
+    return DMXM.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.RunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetMathRunProperties(DXM.Run openXmlElement, DMM.RunProperties? value)
@@ -42,9 +42,9 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpRunProperties(DXM.Run openXmlElement, DMW.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXM.Run openXmlElement, DMW.RunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName);
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetRunProperties(DXM.Run openXmlElement, DMW.RunProperties? value)
@@ -70,14 +70,14 @@ public static class RunConverter
   }
 
   public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.Text text && model is DMM.Text textModel)
-        return DMXW.TextTypeConverter.CompareModelElement(text, textModel, diffs, objName);
+        return DMXW.TextTypeConverter.CompareModelElement(text, textModel, diffs, objName, propName);
     }
-    return DMXW.RunConverter.CompareRunContent(openXmlElement, model, diffs, objName);
+    return DMXW.RunConverter.CompareRunContent(openXmlElement, model, diffs, objName, propName);
   }
 
   public static OpenXmlElement CreateOpenXmlElement(DM.IModelElement model)
@@ -105,23 +105,23 @@ public static class RunConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Run? openXmlElement, DMM.Run? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Run? openXmlElement, DMM.Run? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpMathRunProperties(openXmlElement, model.MathRunProperties, diffs, objName))
+      if (!CmpMathRunProperties(openXmlElement, model.MathRunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName))
+      if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IRunContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.RunProperties && item is not DXM.RunProperties), model,
-        CompareRunContent, diffs, objName))
+        CompareRunContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

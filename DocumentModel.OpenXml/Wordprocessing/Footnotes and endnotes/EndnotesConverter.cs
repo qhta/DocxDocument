@@ -12,9 +12,9 @@ public static class EndnotesConverter
   }
 
   private static bool CmpEndnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement as DXW.Endnote, value as DMW.Endnote, diffs, objName);
+    return DMXW.EndnoteConverter.CompareModelElement(openXmlElement as DXW.Endnote, value as DMW.Endnote, diffs, objName, propName);
   }
 
   private static bool UpdateEndnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
@@ -47,18 +47,18 @@ public static class EndnotesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Endnotes? openXmlElement, DMW.Endnotes? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Endnotes? openXmlElement, DMW.Endnotes? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMW.Endnote>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CmpEndnote, diffs, objName))
+        CmpEndnote, diffs, objName, propName))
         return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

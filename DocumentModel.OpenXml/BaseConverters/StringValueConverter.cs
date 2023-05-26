@@ -34,10 +34,10 @@ public static class StringValueConverter
     return element?.Val?.Value ?? string.Empty;
   }
 
-  public static bool CmpValue(DXW.StringType element, string? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXW.StringType element, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
   #endregion
@@ -48,10 +48,10 @@ public static class StringValueConverter
     return element.Val?.Value ?? string.Empty;
   }
 
-  public static bool CmpValue(DXW.String255Type element, string? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DXW.String255Type element, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Val?.Value == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Val?.Value, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Val?.Value, value);
     return false;
   }
   #endregion
@@ -62,10 +62,10 @@ public static class StringValueConverter
     return element.Text;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, string? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafTextElement element, string? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (element.Text == value) return true;
-    diffs?.Add(objName, element.GetType().ToString(), element.Text, value);
+    diffs?.Add(objName, propName ?? element.GetType().ToString(), element.Text, value);
     return false;
   }
 

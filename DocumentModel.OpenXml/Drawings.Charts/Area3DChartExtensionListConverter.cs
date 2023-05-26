@@ -19,7 +19,7 @@ public static class Area3DChartExtensionListConverter
     return null;
   }
   
-  private static bool CmpArea3DChartExtensions(DXDC.Area3DChartExtensionList openXmlElement, Collection<DMDC.Area3DChartExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpArea3DChartExtensions(DXDC.Area3DChartExtensionList openXmlElement, Collection<DMDC.Area3DChartExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.Area3DChartExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class Area3DChartExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class Area3DChartExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.Area3DChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.Area3DChartExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class Area3DChartExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Area3DChartExtensionList? openXmlElement, DMDC.Area3DChartExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Area3DChartExtensionList? openXmlElement, DMDC.Area3DChartExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpArea3DChartExtensions(openXmlElement, value.Area3DChartExtensions, diffs, objName))
+      if (!CmpArea3DChartExtensions(openXmlElement, value.Area3DChartExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -19,7 +19,7 @@ public static class StrDataExtensionListConverter
     return null;
   }
   
-  private static bool CmpStrDataExtensions(DXDC.StrDataExtensionList openXmlElement, Collection<DMDC.StrDataExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpStrDataExtensions(DXDC.StrDataExtensionList openXmlElement, Collection<DMDC.StrDataExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.StrDataExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class StrDataExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class StrDataExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.StrDataExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.StrDataExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class StrDataExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.StrDataExtensionList? openXmlElement, DMDC.StrDataExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StrDataExtensionList? openXmlElement, DMDC.StrDataExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStrDataExtensions(openXmlElement, value.StrDataExtensions, diffs, objName))
+      if (!CmpStrDataExtensions(openXmlElement, value.StrDataExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

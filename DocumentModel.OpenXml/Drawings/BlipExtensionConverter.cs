@@ -13,7 +13,7 @@ public static class BlipExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.BlipExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.BlipExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpImageProperties(DXD.BlipExtension openXmlElement, DMD.ImageProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpImageProperties(DXD.BlipExtension openXmlElement, DMD.ImageProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ImagePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageProperties>(), value, diffs, objName);
+    return DMXD.ImagePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetImageProperties(DXD.BlipExtension openXmlElement, DMD.ImageProperties? value)
@@ -54,7 +54,7 @@ public static class BlipExtensionConverter
     return openXmlElement.GetFirstChild<DXO10D.UseLocalDpi>() != null;
   }
   
-  private static bool CmpUseLocalDpi(DXD.BlipExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseLocalDpi(DXD.BlipExtension openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10D.UseLocalDpi>() != null;
     if (val == value) return true;
@@ -85,9 +85,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpWebVideoProperty(DXD.BlipExtension openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs, string? objName)
+  private static bool CmpWebVideoProperty(DXD.BlipExtension openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.WebVideoPropertyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WD.WebVideoProperty>(), value, diffs, objName);
+    return DMXDW.WebVideoPropertyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WD.WebVideoProperty>(), value, diffs, objName, propName);
   }
   
   private static void SetWebVideoProperty(DXD.BlipExtension openXmlElement, DMDW.WebVideoProperty? value)
@@ -111,9 +111,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpSVGBlip(DXD.BlipExtension openXmlElement, DMDSVG.SVGBlip? value, DiffList? diffs, string? objName)
+  private static bool CmpSVGBlip(DXD.BlipExtension openXmlElement, DMDSVG.SVGBlip? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDSVG.SVGBlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DSVG.SVGBlip>(), value, diffs, objName);
+    return DMXDSVG.SVGBlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19DSVG.SVGBlip>(), value, diffs, objName, propName);
   }
   
   private static void SetSVGBlip(DXD.BlipExtension openXmlElement, DMDSVG.SVGBlip? value)
@@ -137,9 +137,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpPictureAttributionSourceURL(DXD.BlipExtension openXmlElement, DMD.PictureAttributionSourceURL? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureAttributionSourceURL(DXD.BlipExtension openXmlElement, DMD.PictureAttributionSourceURL? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19D.PictureAttributionSourceURL>(), value, diffs, objName);
+    return DMXD.PictureAttributionSourceURLConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO19D.PictureAttributionSourceURL>(), value, diffs, objName, propName);
   }
   
   private static void SetPictureAttributionSourceURL(DXD.BlipExtension openXmlElement, DMD.PictureAttributionSourceURL? value)
@@ -163,9 +163,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpOEmbed(DXD.BlipExtension openXmlElement, DMWOE.OEmbed? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbed(DXD.BlipExtension openXmlElement, DMWOE.OEmbed? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWOE.OEmbedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOSWY20OE.OEmbed>(), value, diffs, objName);
+    return DMXWOE.OEmbedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOSWY20OE.OEmbed>(), value, diffs, objName, propName);
   }
   
   private static void SetOEmbed(DXD.BlipExtension openXmlElement, DMWOE.OEmbed? value)
@@ -189,9 +189,9 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  private static bool CmpOEmbedShared(DXD.BlipExtension openXmlElement, DMDOOE.OEmbedShared? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbedShared(DXD.BlipExtension openXmlElement, DMDOOE.OEmbedShared? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21OE.OEmbedShared>(), value, diffs, objName);
+    return DMXDOOEmb.OEmbedSharedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21OE.OEmbedShared>(), value, diffs, objName, propName);
   }
   
   private static void SetOEmbedShared(DXD.BlipExtension openXmlElement, DMDOOE.OEmbedShared? value)
@@ -225,31 +225,31 @@ public static class BlipExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.BlipExtension? openXmlElement, DMD.BlipExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BlipExtension? openXmlElement, DMD.BlipExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpImageProperties(openXmlElement, value.ImageProperties, diffs, objName))
+      if (!CmpImageProperties(openXmlElement, value.ImageProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpUseLocalDpi(openXmlElement, value.UseLocalDpi, diffs, objName))
+      if (!CmpUseLocalDpi(openXmlElement, value.UseLocalDpi, diffs, objName, propName))
         ok = false;
-      if (!CmpWebVideoProperty(openXmlElement, value.WebVideoProperty, diffs, objName))
+      if (!CmpWebVideoProperty(openXmlElement, value.WebVideoProperty, diffs, objName, propName))
         ok = false;
-      if (!CmpSVGBlip(openXmlElement, value.SVGBlip, diffs, objName))
+      if (!CmpSVGBlip(openXmlElement, value.SVGBlip, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureAttributionSourceURL(openXmlElement, value.PictureAttributionSourceURL, diffs, objName))
+      if (!CmpPictureAttributionSourceURL(openXmlElement, value.PictureAttributionSourceURL, diffs, objName, propName))
         ok = false;
-      if (!CmpOEmbed(openXmlElement, value.OEmbed, diffs, objName))
+      if (!CmpOEmbed(openXmlElement, value.OEmbed, diffs, objName, propName))
         ok = false;
-      if (!CmpOEmbedShared(openXmlElement, value.OEmbedShared, diffs, objName))
+      if (!CmpOEmbedShared(openXmlElement, value.OEmbedShared, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

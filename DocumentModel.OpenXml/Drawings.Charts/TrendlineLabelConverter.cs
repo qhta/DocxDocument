@@ -16,9 +16,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpLayout(DXDC.TrendlineLabel openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.TrendlineLabel openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXDC.TrendlineLabel openXmlElement, DMDC.Layout? value)
@@ -45,9 +45,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpChartText(DXDC.TrendlineLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
+  private static bool CmpChartText(DXDC.TrendlineLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName);
+    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName, propName);
   }
   
   private static void SetChartText(DXDC.TrendlineLabel openXmlElement, DMDC.ChartText? value)
@@ -74,9 +74,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXDC.TrendlineLabel openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXDC.TrendlineLabel openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingFormat(DXDC.TrendlineLabel openXmlElement, DMDC.NumberingFormat? value)
@@ -103,9 +103,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.TrendlineLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.TrendlineLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.TrendlineLabel openXmlElement, DMDC.ChartShapeProperties? value)
@@ -132,9 +132,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpTextProperties(DXDC.TrendlineLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.TrendlineLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXDC.TrendlineLabel openXmlElement, DMDC.TextProperties? value)
@@ -161,9 +161,9 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.TrendlineLabel openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.TrendlineLabel openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.TrendlineLabel openXmlElement, DMDC.ExtensionList? value)
@@ -195,27 +195,27 @@ public static class TrendlineLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.TrendlineLabel? openXmlElement, DMDC.TrendlineLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.TrendlineLabel? openXmlElement, DMDC.TrendlineLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

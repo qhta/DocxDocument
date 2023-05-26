@@ -11,9 +11,9 @@ public static class FractionPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionKind>(openXmlElement.GetFirstChild<DXM.FractionType>()?.Val?.Value);
   }
   
-  private static bool CmpFractionType(DXM.FractionProperties openXmlElement, DMM.FractionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFractionType(DXM.FractionProperties openXmlElement, DMM.FractionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionKind>(openXmlElement.GetFirstChild<DXM.FractionType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.FractionTypeValues, DMM.FractionKind>(openXmlElement.GetFirstChild<DXM.FractionType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFractionType(DXM.FractionProperties openXmlElement, DMM.FractionKind? value)
@@ -41,9 +41,9 @@ public static class FractionPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.FractionProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.FractionProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.FractionProperties openXmlElement, DMM.ControlProperties? value)
@@ -73,19 +73,19 @@ public static class FractionPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.FractionProperties? openXmlElement, DMM.FractionProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.FractionProperties? openXmlElement, DMM.FractionProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFractionType(openXmlElement, model.FractionType, diffs, objName))
+      if (!CmpFractionType(openXmlElement, model.FractionType, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

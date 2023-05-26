@@ -13,9 +13,9 @@ public static class StringDimensionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DMDCDs.StringDimensionType>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringDimensionType? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringDimensionType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DMDCDs.StringDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.StringDimensionType, DMDCDs.StringDimensionType>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringDimensionType? value)
@@ -31,9 +31,9 @@ public static class StringDimensionConverter
     return null;
   }
   
-  private static bool CmpFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Formula>(), value, diffs, objName);
+    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Formula>(), value, diffs, objName, propName);
   }
   
   private static void SetFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value)
@@ -57,9 +57,9 @@ public static class StringDimensionConverter
     return null;
   }
   
-  private static bool CmpNfFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  private static bool CmpNfFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NfFormula>(), value, diffs, objName);
+    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NfFormula>(), value, diffs, objName, propName);
   }
   
   private static void SetNfFormula(DXO16DCD.StringDimension openXmlElement, DMDCDs.OpenXmlFormulaElement? value)
@@ -89,7 +89,7 @@ public static class StringDimensionConverter
     return null;
   }
   
-  private static bool CmpStringLevels(DXO16DCD.StringDimension openXmlElement, Collection<DMDCDs.StringLevel>? value, DiffList? diffs, string? objName)
+  private static bool CmpStringLevels(DXO16DCD.StringDimension openXmlElement, Collection<DMDCDs.StringLevel>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.StringLevel>();
     var origElementsCount = origElements.Count();
@@ -98,7 +98,7 @@ public static class StringDimensionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -107,13 +107,13 @@ public static class StringDimensionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.StringLevelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.StringLevelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -139,9 +139,9 @@ public static class StringDimensionConverter
     return null;
   }
   
-  private static bool CmpStringLevel(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpStringLevel(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.StringLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.StringLevel>(), value, diffs, objName);
+    return DMXDCDs.StringLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.StringLevel>(), value, diffs, objName, propName);
   }
   
   private static void SetStringLevel(DXO16DCD.StringDimension openXmlElement, DMDCDs.StringLevel? value)
@@ -172,25 +172,25 @@ public static class StringDimensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.StringDimension? openXmlElement, DMDCDs.StringDimension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.StringDimension? openXmlElement, DMDCDs.StringDimension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpNfFormula(openXmlElement, value.NfFormula, diffs, objName))
+      if (!CmpNfFormula(openXmlElement, value.NfFormula, diffs, objName, propName))
         ok = false;
-      if (!CmpStringLevels(openXmlElement, value.StringLevels, diffs, objName))
+      if (!CmpStringLevels(openXmlElement, value.StringLevels, diffs, objName, propName))
         ok = false;
-      if (!CmpStringLevel(openXmlElement, value.StringLevel, diffs, objName))
+      if (!CmpStringLevel(openXmlElement, value.StringLevel, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

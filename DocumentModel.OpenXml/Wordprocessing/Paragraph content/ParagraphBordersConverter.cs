@@ -16,9 +16,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpTopBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TopBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetTopBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -45,9 +45,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LeftBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetLeftBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -74,9 +74,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BottomBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetBottomBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -103,9 +103,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpRightBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RightBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetRightBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -132,9 +132,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BetweenBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BetweenBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetBetweenBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -161,9 +161,9 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  private static bool CmpBarBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BarBorder>(), value, diffs, objName);
+    return DMXW.BorderConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.BarBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetBarBorder(DXW.ParagraphBorders openXmlElement, DMW.Border? value)
@@ -195,27 +195,27 @@ public static class ParagraphBordersConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ParagraphBorders? openXmlElement, DMW.ParagraphBorders? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphBorders? openXmlElement, DMW.ParagraphBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName))
+      if (!CmpTopBorder(openXmlElement, value.TopBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName))
+      if (!CmpLeftBorder(openXmlElement, value.LeftBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName))
+      if (!CmpBottomBorder(openXmlElement, value.BottomBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName))
+      if (!CmpRightBorder(openXmlElement, value.RightBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpBetweenBorder(openXmlElement, value.BetweenBorder, diffs, objName))
+      if (!CmpBetweenBorder(openXmlElement, value.BetweenBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpBarBorder(openXmlElement, value.BarBorder, diffs, objName))
+      if (!CmpBarBorder(openXmlElement, value.BarBorder, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

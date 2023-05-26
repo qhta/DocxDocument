@@ -15,12 +15,12 @@ public static class OfficeMathConverter
   }
 
   public static bool CompareOfficeMathContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.Run run && model is DMM.Run runModel)
-        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName, propName);
     }
     return DMXW.ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs);
   }
@@ -56,19 +56,19 @@ public static class OfficeMathConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.OfficeMath? openXmlElement, DMM.OfficeMath? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.OfficeMath? openXmlElement, DMM.OfficeMath? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMM.IOfficeMathContent>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CompareOfficeMathContent, diffs, objName))
+        CompareOfficeMathContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

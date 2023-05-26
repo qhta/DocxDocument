@@ -16,9 +16,9 @@ public static class NonVisualShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value)
@@ -45,9 +45,9 @@ public static class NonVisualShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualShapeDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualShapeDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualShapeDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualShapeDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualShapeDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualShapeDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualShapeDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualShapeDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualShapeDrawingProperties(DXDCD.NonVisualShapeProperties openXmlElement, DMDCD.NonVisualShapeDrawingProperties? value)
@@ -75,19 +75,19 @@ public static class NonVisualShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.NonVisualShapeProperties? openXmlElement, DMDCD.NonVisualShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.NonVisualShapeProperties? openXmlElement, DMDCD.NonVisualShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName))
+      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualShapeDrawingProperties(openXmlElement, value.NonVisualShapeDrawingProperties, diffs, objName))
+      if (!CmpNonVisualShapeDrawingProperties(openXmlElement, value.NonVisualShapeDrawingProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

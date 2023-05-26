@@ -14,9 +14,9 @@ public static class MatrixConverter
     return null;
   }
   
-  private static bool CmpMatrixProperties(DXM.Matrix openXmlElement, DMM.MatrixProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrixProperties(DXM.Matrix openXmlElement, DMM.MatrixProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.MatrixPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.MatrixProperties>(), value, diffs, objName);
+    return DMXM.MatrixPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.MatrixProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetMatrixProperties(DXM.Matrix openXmlElement, DMM.MatrixProperties? value)
@@ -44,7 +44,7 @@ public static class MatrixConverter
     }
   }
   
-  private static bool CmpMatrixRows(DXM.Matrix openXmlElement, IEnumerable<DMM.MatrixRow>? collection, DiffList? diffs, string? objName)
+  private static bool CmpMatrixRows(DXM.Matrix openXmlElement, IEnumerable<DMM.MatrixRow>? collection, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXM.MatrixRow>();
     var origElementsCount = origElements.Count();
@@ -53,7 +53,7 @@ public static class MatrixConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -62,13 +62,13 @@ public static class MatrixConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXM.MatrixRowConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXM.MatrixRowConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && collection == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, collection);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, collection);
     return false;
   }
   
@@ -100,19 +100,19 @@ public static class MatrixConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Matrix? openXmlElement, DMM.Matrix? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Matrix? openXmlElement, DMM.Matrix? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpMatrixProperties(openXmlElement, model.MatrixProperties, diffs, objName))
+      if (!CmpMatrixProperties(openXmlElement, model.MatrixProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpMatrixRows(openXmlElement, model, diffs, objName))
+      if (!CmpMatrixRows(openXmlElement, model, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

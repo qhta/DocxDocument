@@ -17,9 +17,9 @@ public static class PreviousParagraphPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousParagraphProperties? openXmlElement, DMW.PreviousParagraphProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousParagraphProperties? openXmlElement, DMW.PreviousParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return ExtBaseParagraphPropertiesConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousParagraphProperties value)

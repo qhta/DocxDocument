@@ -16,9 +16,9 @@ public static class BreakConverter
     return null;
   }
   
-  private static bool CmpRunProperties(DXD.Break openXmlElement, DMD.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXD.Break openXmlElement, DMD.RunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName);
+    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetRunProperties(DXD.Break openXmlElement, DMD.RunProperties? value)
@@ -45,17 +45,17 @@ public static class BreakConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Break? openXmlElement, DMD.Break? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Break? openXmlElement, DMD.Break? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class BlendConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(openXmlElement?.BlendMode?.Value);
   }
   
-  private static bool CmpBlendMode(DXD.Blend openXmlElement, DMD.BlendMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlendMode(DXD.Blend openXmlElement, DMD.BlendMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlendModeValues, DMD.BlendMode>(openXmlElement?.BlendMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBlendMode(DXD.Blend openXmlElement, DMD.BlendMode? value)
@@ -34,9 +34,9 @@ public static class BlendConverter
     return null;
   }
   
-  private static bool CmpEffectContainer(DXD.Blend openXmlElement, DMD.EffectContainer? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectContainer(DXD.Blend openXmlElement, DMD.EffectContainer? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectContainer>(), value, diffs, objName);
+    return DMXD.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectContainer>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectContainer(DXD.Blend openXmlElement, DMD.EffectContainer? value)
@@ -64,19 +64,19 @@ public static class BlendConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Blend? openXmlElement, DMD.Blend? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Blend? openXmlElement, DMD.Blend? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlendMode(openXmlElement, value.BlendMode, diffs, objName))
+      if (!CmpBlendMode(openXmlElement, value.BlendMode, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectContainer(openXmlElement, value.EffectContainer, diffs, objName))
+      if (!CmpEffectContainer(openXmlElement, value.EffectContainer, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

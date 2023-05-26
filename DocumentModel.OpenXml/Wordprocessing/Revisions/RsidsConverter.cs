@@ -16,7 +16,7 @@ public static class RsidsConverter
     return null;
   }
 
-  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, DMW.Rsid? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRoot(DXW.Rsids openXmlElement, DMW.Rsid? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.RsidRoot>()?.Val, value?.Id, diffs, objName, "RsidRoot");
   }
@@ -39,7 +39,7 @@ public static class RsidsConverter
     }
   }
 
-  private static bool CmpItems(DXW.Rsids openXmlElement, DMW.Rsids? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Rsids openXmlElement, DMW.Rsids? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.Rsid>();
     var origElementsCount = origElements.Count();
@@ -50,23 +50,23 @@ public static class RsidsConverter
       var modelEnumerator = value.GetEnumerator();
       modelEnumerator.MoveNext();
       var modelItem = modelEnumerator.Current;
-      if (!CmpRsidRoot(openXmlElement, modelItem, diffs, objName))
+      if (!CmpRsidRoot(openXmlElement, modelItem, diffs, objName, propName))
       foreach (var origItem in origElements)
       {
         modelEnumerator.MoveNext();
         modelItem = modelEnumerator.Current;
-        if (!HexIntConverter.CmpValue(origItem, modelItem.Id, diffs, objName))
+        if (!HexIntConverter.CmpValue(origItem, modelItem.Id, diffs, objName, propName))
           ok = false;
       }
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -102,17 +102,17 @@ public static class RsidsConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Rsids? openXmlElement, DMW.Rsids? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Rsids? openXmlElement, DMW.Rsids? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value, diffs, objName))
+      if (!CmpItems(openXmlElement, value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

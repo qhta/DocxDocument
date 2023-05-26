@@ -20,7 +20,7 @@ public static class ColorValueConverter
     return null;
   }
 
-  public static bool CmpValue(DX.StringValue? openXmlElement, DM.Color? value, DiffList? diffs, string? objName, string? propName)
+  public static bool CmpValue(DX.StringValue? openXmlElement, DM.Color? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Value != null && value != null)
     {

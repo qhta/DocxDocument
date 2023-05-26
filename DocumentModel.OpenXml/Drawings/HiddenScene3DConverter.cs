@@ -16,9 +16,9 @@ public static class HiddenScene3DConverter
     return null;
   }
   
-  private static bool CmpCamera(DXO10D.HiddenScene3D openXmlElement, DMD.Camera? value, DiffList? diffs, string? objName)
+  private static bool CmpCamera(DXO10D.HiddenScene3D openXmlElement, DMD.Camera? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Camera>(), value, diffs, objName);
+    return DMXD.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Camera>(), value, diffs, objName, propName);
   }
   
   private static void SetCamera(DXO10D.HiddenScene3D openXmlElement, DMD.Camera? value)
@@ -45,9 +45,9 @@ public static class HiddenScene3DConverter
     return null;
   }
   
-  private static bool CmpLightRig(DXO10D.HiddenScene3D openXmlElement, DMD.LightRig? value, DiffList? diffs, string? objName)
+  private static bool CmpLightRig(DXO10D.HiddenScene3D openXmlElement, DMD.LightRig? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LightRig>(), value, diffs, objName);
+    return DMXD.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LightRig>(), value, diffs, objName, propName);
   }
   
   private static void SetLightRig(DXO10D.HiddenScene3D openXmlElement, DMD.LightRig? value)
@@ -74,9 +74,9 @@ public static class HiddenScene3DConverter
     return null;
   }
   
-  private static bool CmpBackdrop(DXO10D.HiddenScene3D openXmlElement, DMD.Backdrop? value, DiffList? diffs, string? objName)
+  private static bool CmpBackdrop(DXO10D.HiddenScene3D openXmlElement, DMD.Backdrop? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BackdropConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Backdrop>(), value, diffs, objName);
+    return DMXD.BackdropConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Backdrop>(), value, diffs, objName, propName);
   }
   
   private static void SetBackdrop(DXO10D.HiddenScene3D openXmlElement, DMD.Backdrop? value)
@@ -103,9 +103,9 @@ public static class HiddenScene3DConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO10D.HiddenScene3D openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO10D.HiddenScene3D openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO10D.HiddenScene3D openXmlElement, DMD.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class HiddenScene3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.HiddenScene3D? openXmlElement, DMD.HiddenScene3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.HiddenScene3D? openXmlElement, DMD.HiddenScene3D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName))
+      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName, propName))
         ok = false;
-      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName))
+      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName, propName))
         ok = false;
-      if (!CmpBackdrop(openXmlElement, value.Backdrop, diffs, objName))
+      if (!CmpBackdrop(openXmlElement, value.Backdrop, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

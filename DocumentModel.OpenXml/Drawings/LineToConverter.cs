@@ -16,9 +16,9 @@ public static class LineToConverter
     return null;
   }
   
-  private static bool CmpPoint(DXD.LineTo openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPoint(DXD.LineTo openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Point>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Point>(), value, diffs, objName, propName);
   }
   
   private static void SetPoint(DXD.LineTo openXmlElement, DMD.AdjustPoint2DType? value)
@@ -45,17 +45,17 @@ public static class LineToConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LineTo? openXmlElement, DMD.LineTo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LineTo? openXmlElement, DMD.LineTo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPoint(openXmlElement, value.Point, diffs, objName))
+      if (!CmpPoint(openXmlElement, value.Point, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

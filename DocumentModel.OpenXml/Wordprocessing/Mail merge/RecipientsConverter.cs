@@ -13,9 +13,9 @@ public static class RecipientsConverter
     return null;
   }
   
-  private static bool CmpRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
+  private static bool CmpRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientData>(), value, diffs, objName);
+    return DMXW.RecipientDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientData>(), value, diffs, objName, propName);
   }
   
   private static void SetRecipientData(DXW.Recipients openXmlElement, DMW.RecipientData? value)
@@ -42,17 +42,17 @@ public static class RecipientsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Recipients? openXmlElement, DMW.Recipients? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Recipients? openXmlElement, DMW.Recipients? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRecipientData(openXmlElement, value.RecipientData, diffs, objName))
+      if (!CmpRecipientData(openXmlElement, value.RecipientData, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

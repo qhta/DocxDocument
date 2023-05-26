@@ -44,7 +44,7 @@ public static class ModelElementConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to openXml element, <c>false</c> otherwise</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CompareModelElement method not found.</exception>
-  public static bool CompareModelElement(DX.OpenXmlElement? openXmlElement, DM.ModelElement? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlElement? openXmlElement, DM.ModelElement? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -65,7 +65,7 @@ public static class ModelElementConverter
       }
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

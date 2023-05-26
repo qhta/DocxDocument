@@ -13,7 +13,7 @@ public static class ConnectorLockingExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.ConnectorLockingExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.ConnectorLockingExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class ConnectorLockingExtensionConverter
     return null;
   }
   
-  private static bool CmpGraphic(DXD.ConnectorLockingExtension openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphic(DXD.ConnectorLockingExtension openXmlElement, DMD.Graphic? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName);
+    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName, propName);
   }
   
   private static void SetGraphic(DXD.ConnectorLockingExtension openXmlElement, DMD.Graphic? value)
@@ -61,19 +61,19 @@ public static class ConnectorLockingExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ConnectorLockingExtension? openXmlElement, DMD.ConnectorLockingExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectorLockingExtension? openXmlElement, DMD.ConnectorLockingExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName))
+      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

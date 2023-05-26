@@ -13,7 +13,7 @@ public static class NonVisualDrawingShapePropertiesConverter
     return openXmlElement?.TextBox?.Value;
   }
   
-  private static bool CmpTextBox(DXOD.NonVisualDrawingShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBox(DXOD.NonVisualDrawingShapeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TextBox?.Value == value) return true;
     diffs?.Add(objName, "TextBox", openXmlElement?.TextBox?.Value, value);
@@ -39,9 +39,9 @@ public static class NonVisualDrawingShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpShapeLocks(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ShapeLocks? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeLocks(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ShapeLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeLocks>(), value, diffs, objName);
+    return DMXD.ShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeLocks>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeLocks(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ShapeLocks? value)
@@ -68,9 +68,9 @@ public static class NonVisualDrawingShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXOD.NonVisualDrawingShapeProperties openXmlElement, DMD.ExtensionList? value)
@@ -99,21 +99,21 @@ public static class NonVisualDrawingShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.NonVisualDrawingShapeProperties? openXmlElement, DMDO.NonVisualDrawingShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.NonVisualDrawingShapeProperties? openXmlElement, DMDO.NonVisualDrawingShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTextBox(openXmlElement, value.TextBox, diffs, objName))
+      if (!CmpTextBox(openXmlElement, value.TextBox, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeLocks(openXmlElement, value.ShapeLocks, diffs, objName))
+      if (!CmpShapeLocks(openXmlElement, value.ShapeLocks, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

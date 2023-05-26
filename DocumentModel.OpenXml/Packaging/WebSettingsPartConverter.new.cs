@@ -10,7 +10,7 @@ public static class WebSettingsPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.WebSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.WebSettingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -22,7 +22,7 @@ public static class WebSettingsPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.WebSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.WebSettingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -37,7 +37,7 @@ public static class WebSettingsPartConverter
       return DMX.WebSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.WebSettings);
   }
   
-  private static bool CmpWebSettings(DXPack.WebSettingsPart openXmlElement, DM.WebSettings? value, DiffList? diffs, string? objName)
+  private static bool CmpWebSettings(DXPack.WebSettingsPart openXmlElement, DM.WebSettings? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -65,21 +65,21 @@ public static class WebSettingsPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.WebSettingsPart? openXmlElement, DMPack.WebSettingsPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.WebSettingsPart? openXmlElement, DMPack.WebSettingsPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpWebSettings(openXmlElement, value.WebSettings, diffs, objName))
+      if (!CmpWebSettings(openXmlElement, value.WebSettings, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class BarSerExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.BarSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.BarSerExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  private static bool CmpInvertSolidFillFormat(DXDC.BarSerExtension openXmlElement, DMDC.InvertSolidFillFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertSolidFillFormat(DXDC.BarSerExtension openXmlElement, DMDC.InvertSolidFillFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DC.InvertSolidFillFormat>(), value, diffs, objName);
+    return DMXDC.InvertSolidFillFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DC.InvertSolidFillFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetInvertSolidFillFormat(DXDC.BarSerExtension openXmlElement, DMDC.InvertSolidFillFormat? value)
@@ -57,9 +57,9 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredSeriesTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredSeriesTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>(), value, diffs, objName);
+    return DMXDC.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredSeriesTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value)
@@ -83,9 +83,9 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredCategoryTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredCategoryTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName);
+    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredCategoryTitle(DXDC.BarSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value)
@@ -109,9 +109,9 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  private static bool CmpDataLabelsRange(DXDC.BarSerExtension openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelsRange(DXDC.BarSerExtension openXmlElement, DMDC.DataLabelsRange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRange>(), value, diffs, objName);
+    return DMXDC.DataLabelsRangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelsRange>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabelsRange(DXDC.BarSerExtension openXmlElement, DMDC.DataLabelsRange? value)
@@ -135,9 +135,9 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  private static bool CmpCategoryFilterExceptions(DXDC.BarSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterExceptions(DXDC.BarSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName, propName);
   }
   
   private static void SetCategoryFilterExceptions(DXDC.BarSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value)
@@ -169,27 +169,27 @@ public static class BarSerExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.BarSerExtension? openXmlElement, DMDC.BarSerExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.BarSerExtension? openXmlElement, DMDC.BarSerExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpInvertSolidFillFormat(openXmlElement, value.InvertSolidFillFormat, diffs, objName))
+      if (!CmpInvertSolidFillFormat(openXmlElement, value.InvertSolidFillFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredSeriesTitle(openXmlElement, value.FilteredSeriesTitle, diffs, objName))
+      if (!CmpFilteredSeriesTitle(openXmlElement, value.FilteredSeriesTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredCategoryTitle(openXmlElement, value.FilteredCategoryTitle, diffs, objName))
+      if (!CmpFilteredCategoryTitle(openXmlElement, value.FilteredCategoryTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelsRange(openXmlElement, value.DataLabelsRange, diffs, objName))
+      if (!CmpDataLabelsRange(openXmlElement, value.DataLabelsRange, diffs, objName, propName))
         ok = false;
-      if (!CmpCategoryFilterExceptions(openXmlElement, value.CategoryFilterExceptions, diffs, objName))
+      if (!CmpCategoryFilterExceptions(openXmlElement, value.CategoryFilterExceptions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

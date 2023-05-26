@@ -15,7 +15,7 @@ public static class StylePaneFormatFilterConverter
     return null;
   }
   
-  private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.StylePaneFormatFilter openXmlElement, DM.HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null)
       if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(value))
@@ -41,7 +41,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.AllStyles);
   }
   
-  private static bool CmpAllStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAllStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.AllStyles, value, diffs, objName, "AllStyles");
   }
@@ -59,7 +59,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.CustomStyles);
   }
   
-  private static bool CmpCustomStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.CustomStyles, value, diffs, objName, "CustomStyles");
   }
@@ -77,7 +77,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LatentStyles);
   }
   
-  private static bool CmpLatentStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLatentStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LatentStyles, value, diffs, objName, "LatentStyles");
   }
@@ -95,7 +95,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.StylesInUse);
   }
   
-  private static bool CmpStylesInUse(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStylesInUse(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.StylesInUse, value, diffs, objName, "StylesInUse");
   }
@@ -113,7 +113,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.HeadingStyles);
   }
   
-  private static bool CmpHeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.HeadingStyles, value, diffs, objName, "HeadingStyles");
   }
@@ -131,7 +131,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NumberingStyles);
   }
   
-  private static bool CmpNumberingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NumberingStyles, value, diffs, objName, "NumberingStyles");
   }
@@ -149,7 +149,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.TableStyles);
   }
   
-  private static bool CmpTableStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTableStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.TableStyles, value, diffs, objName, "TableStyles");
   }
@@ -167,7 +167,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnRuns);
   }
   
-  private static bool CmpDirectFormattingOnRuns(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectFormattingOnRuns(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnRuns, value, diffs, objName, "DirectFormattingOnRuns");
   }
@@ -185,7 +185,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnParagraphs);
   }
   
-  private static bool CmpDirectFormattingOnParagraphs(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectFormattingOnParagraphs(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnParagraphs, value, diffs, objName, "DirectFormattingOnParagraphs");
   }
@@ -203,7 +203,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnNumbering);
   }
   
-  private static bool CmpDirectFormattingOnNumbering(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectFormattingOnNumbering(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnNumbering, value, diffs, objName, "DirectFormattingOnNumbering");
   }
@@ -221,7 +221,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.DirectFormattingOnTables);
   }
   
-  private static bool CmpDirectFormattingOnTables(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirectFormattingOnTables(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.DirectFormattingOnTables, value, diffs, objName, "DirectFormattingOnTables");
   }
@@ -239,7 +239,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.ClearFormatting);
   }
   
-  private static bool CmpClearFormatting(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpClearFormatting(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.ClearFormatting, value, diffs, objName, "ClearFormatting");
   }
@@ -257,7 +257,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Top3HeadingStyles);
   }
   
-  private static bool CmpTop3HeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTop3HeadingStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Top3HeadingStyles, value, diffs, objName, "Top3HeadingStyles");
   }
@@ -275,7 +275,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.VisibleStyles);
   }
   
-  private static bool CmpVisibleStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisibleStyles(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.VisibleStyles, value, diffs, objName, "VisibleStyles");
   }
@@ -293,7 +293,7 @@ public static class StylePaneFormatFilterConverter
     return BooleanValueConverter.GetValue(openXmlElement?.AlternateStyleNames);
   }
   
-  private static bool CmpAlternateStyleNames(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternateStyleNames(DXW.StylePaneFormatFilter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.AlternateStyleNames, value, diffs, objName, "AlternateStyleNames");
   }
@@ -329,47 +329,47 @@ public static class StylePaneFormatFilterConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.StylePaneFormatFilter? openXmlElement, DMW.StylePaneFormatFilter? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.StylePaneFormatFilter? openXmlElement, DMW.StylePaneFormatFilter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
-      if (!CmpAllStyles(openXmlElement, value.AllStyles, diffs, objName))
+      if (!CmpAllStyles(openXmlElement, value.AllStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomStyles(openXmlElement, value.CustomStyles, diffs, objName))
+      if (!CmpCustomStyles(openXmlElement, value.CustomStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpLatentStyles(openXmlElement, value.LatentStyles, diffs, objName))
+      if (!CmpLatentStyles(openXmlElement, value.LatentStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpStylesInUse(openXmlElement, value.StylesInUse, diffs, objName))
+      if (!CmpStylesInUse(openXmlElement, value.StylesInUse, diffs, objName, propName))
         ok = false;
-      if (!CmpHeadingStyles(openXmlElement, value.HeadingStyles, diffs, objName))
+      if (!CmpHeadingStyles(openXmlElement, value.HeadingStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingStyles(openXmlElement, value.NumberingStyles, diffs, objName))
+      if (!CmpNumberingStyles(openXmlElement, value.NumberingStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpTableStyles(openXmlElement, value.TableStyles, diffs, objName))
+      if (!CmpTableStyles(openXmlElement, value.TableStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectFormattingOnRuns(openXmlElement, value.DirectFormattingOnRuns, diffs, objName))
+      if (!CmpDirectFormattingOnRuns(openXmlElement, value.DirectFormattingOnRuns, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectFormattingOnParagraphs(openXmlElement, value.DirectFormattingOnParagraphs, diffs, objName))
+      if (!CmpDirectFormattingOnParagraphs(openXmlElement, value.DirectFormattingOnParagraphs, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectFormattingOnNumbering(openXmlElement, value.DirectFormattingOnNumbering, diffs, objName))
+      if (!CmpDirectFormattingOnNumbering(openXmlElement, value.DirectFormattingOnNumbering, diffs, objName, propName))
         ok = false;
-      if (!CmpDirectFormattingOnTables(openXmlElement, value.DirectFormattingOnTables, diffs, objName))
+      if (!CmpDirectFormattingOnTables(openXmlElement, value.DirectFormattingOnTables, diffs, objName, propName))
         ok = false;
-      if (!CmpClearFormatting(openXmlElement, value.ClearFormatting, diffs, objName))
+      if (!CmpClearFormatting(openXmlElement, value.ClearFormatting, diffs, objName, propName))
         ok = false;
-      if (!CmpTop3HeadingStyles(openXmlElement, value.Top3HeadingStyles, diffs, objName))
+      if (!CmpTop3HeadingStyles(openXmlElement, value.Top3HeadingStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpVisibleStyles(openXmlElement, value.VisibleStyles, diffs, objName))
+      if (!CmpVisibleStyles(openXmlElement, value.VisibleStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpAlternateStyleNames(openXmlElement, value.AlternateStyleNames, diffs, objName))
+      if (!CmpAlternateStyleNames(openXmlElement, value.AlternateStyleNames, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

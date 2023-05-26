@@ -15,10 +15,10 @@ public static class WordprocessingDocumentConverter
     return null;
   }
   
-  private static bool CmpDocumentType(DXPack.WordprocessingDocument openXmlElement, DM.WordprocessingDocumentType? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentType(DXPack.WordprocessingDocument openXmlElement, DM.WordprocessingDocumentType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DocumentType != null)
-      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType, value, diffs, objName);
+      return EnumValueConverter.CmpValue<DX.WordprocessingDocumentType, DM.WordprocessingDocumentType>(openXmlElement?.DocumentType, value, diffs, objName, propName);
     if (openXmlElement?.DocumentType == null && value == null) return true;
     diffs?.Add(objName, "DocumentType", openXmlElement?.DocumentType, value);
     return false;
@@ -35,17 +35,17 @@ public static class WordprocessingDocumentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.WordprocessingDocument? openXmlElement, DMPack.WordprocessingDocument? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.WordprocessingDocument? openXmlElement, DMPack.WordprocessingDocument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocumentType(openXmlElement, value.DocumentType, diffs, objName))
+      if (!CmpDocumentType(openXmlElement, value.DocumentType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

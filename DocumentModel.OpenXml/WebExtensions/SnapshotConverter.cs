@@ -13,7 +13,7 @@ public static class SnapshotConverter
     return StringValueConverter.GetValue(openXmlElement?.Embed);
   }
   
-  private static bool CmpEmbed(DXO13WE.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbed(DXO13WE.Snapshot openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Embed, value, diffs, objName, "Embed");
   }
@@ -31,7 +31,7 @@ public static class SnapshotConverter
     return StringValueConverter.GetValue(openXmlElement?.Link);
   }
   
-  private static bool CmpLink(DXO13WE.Snapshot openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLink(DXO13WE.Snapshot openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Link, value, diffs, objName, "Link");
   }
@@ -49,9 +49,9 @@ public static class SnapshotConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(openXmlElement?.CompressionState?.Value);
   }
   
-  private static bool CmpCompressionState(DXO13WE.Snapshot openXmlElement, DMD.BlipCompressionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCompressionState(DXO13WE.Snapshot openXmlElement, DMD.BlipCompressionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(openXmlElement?.CompressionState?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlipCompressionValues, DMD.BlipCompressionKind>(openXmlElement?.CompressionState?.Value, value, diffs, objName, propName);
   }
   
   private static void SetCompressionState(DXO13WE.Snapshot openXmlElement, DMD.BlipCompressionKind? value)
@@ -67,9 +67,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpAlphaBiLevel(DXO13WE.Snapshot openXmlElement, DMD.AlphaBiLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaBiLevel(DXO13WE.Snapshot openXmlElement, DMD.AlphaBiLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AlphaBiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaBiLevel>(), value, diffs, objName);
+    return DMXD.AlphaBiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaBiLevel>(), value, diffs, objName, propName);
   }
   
   private static void SetAlphaBiLevel(DXO13WE.Snapshot openXmlElement, DMD.AlphaBiLevel? value)
@@ -90,7 +90,7 @@ public static class SnapshotConverter
     return openXmlElement.GetFirstChild<DXD.AlphaCeiling>() != null;
   }
   
-  private static bool CmpAlphaCeiling(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaCeiling(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.AlphaCeiling>() != null;
     if (val == value) return true;
@@ -118,7 +118,7 @@ public static class SnapshotConverter
     return openXmlElement.GetFirstChild<DXD.AlphaFloor>() != null;
   }
   
-  private static bool CmpAlphaFloor(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaFloor(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.AlphaFloor>() != null;
     if (val == value) return true;
@@ -149,9 +149,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpAlphaInverse(DXO13WE.Snapshot openXmlElement, DMD.AlphaInverse? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaInverse(DXO13WE.Snapshot openXmlElement, DMD.AlphaInverse? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AlphaInverseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaInverse>(), value, diffs, objName);
+    return DMXD.AlphaInverseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaInverse>(), value, diffs, objName, propName);
   }
   
   private static void SetAlphaInverse(DXO13WE.Snapshot openXmlElement, DMD.AlphaInverse? value)
@@ -175,9 +175,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpAlphaModulationEffect(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulationEffect(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AlphaModulationEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationEffect>(), value, diffs, objName);
+    return DMXD.AlphaModulationEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationEffect>(), value, diffs, objName, propName);
   }
   
   private static void SetAlphaModulationEffect(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationEffect? value)
@@ -201,9 +201,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpAlphaModulationFixed(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationFixed? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulationFixed(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationFixed? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AlphaModulationFixedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationFixed>(), value, diffs, objName);
+    return DMXD.AlphaModulationFixedConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaModulationFixed>(), value, diffs, objName, propName);
   }
   
   private static void SetAlphaModulationFixed(DXO13WE.Snapshot openXmlElement, DMD.AlphaModulationFixed? value)
@@ -227,9 +227,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpAlphaReplace(DXO13WE.Snapshot openXmlElement, DMD.AlphaReplace? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaReplace(DXO13WE.Snapshot openXmlElement, DMD.AlphaReplace? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AlphaReplaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaReplace>(), value, diffs, objName);
+    return DMXD.AlphaReplaceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AlphaReplace>(), value, diffs, objName, propName);
   }
   
   private static void SetAlphaReplace(DXO13WE.Snapshot openXmlElement, DMD.AlphaReplace? value)
@@ -253,9 +253,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpBiLevel(DXO13WE.Snapshot openXmlElement, DMD.BiLevel? value, DiffList? diffs, string? objName)
+  private static bool CmpBiLevel(DXO13WE.Snapshot openXmlElement, DMD.BiLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BiLevel>(), value, diffs, objName);
+    return DMXD.BiLevelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BiLevel>(), value, diffs, objName, propName);
   }
   
   private static void SetBiLevel(DXO13WE.Snapshot openXmlElement, DMD.BiLevel? value)
@@ -279,9 +279,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpBlur(DXO13WE.Snapshot openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
+  private static bool CmpBlur(DXO13WE.Snapshot openXmlElement, DMD.Blur? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName);
+    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName, propName);
   }
   
   private static void SetBlur(DXO13WE.Snapshot openXmlElement, DMD.Blur? value)
@@ -305,9 +305,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpColorChange(DXO13WE.Snapshot openXmlElement, DMD.ColorChange? value, DiffList? diffs, string? objName)
+  private static bool CmpColorChange(DXO13WE.Snapshot openXmlElement, DMD.ColorChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorChange>(), value, diffs, objName);
+    return DMXD.ColorChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorChange>(), value, diffs, objName, propName);
   }
   
   private static void SetColorChange(DXO13WE.Snapshot openXmlElement, DMD.ColorChange? value)
@@ -331,9 +331,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpColorReplacement(DXO13WE.Snapshot openXmlElement, DMD.ColorReplacement? value, DiffList? diffs, string? objName)
+  private static bool CmpColorReplacement(DXO13WE.Snapshot openXmlElement, DMD.ColorReplacement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorReplacementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorReplacement>(), value, diffs, objName);
+    return DMXD.ColorReplacementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorReplacement>(), value, diffs, objName, propName);
   }
   
   private static void SetColorReplacement(DXO13WE.Snapshot openXmlElement, DMD.ColorReplacement? value)
@@ -357,9 +357,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpDuotone(DXO13WE.Snapshot openXmlElement, DMD.Duotone? value, DiffList? diffs, string? objName)
+  private static bool CmpDuotone(DXO13WE.Snapshot openXmlElement, DMD.Duotone? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.DuotoneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Duotone>(), value, diffs, objName);
+    return DMXD.DuotoneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Duotone>(), value, diffs, objName, propName);
   }
   
   private static void SetDuotone(DXO13WE.Snapshot openXmlElement, DMD.Duotone? value)
@@ -383,9 +383,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpFillOverlay(DXO13WE.Snapshot openXmlElement, DMD.FillOverlay? value, DiffList? diffs, string? objName)
+  private static bool CmpFillOverlay(DXO13WE.Snapshot openXmlElement, DMD.FillOverlay? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName);
+    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName, propName);
   }
   
   private static void SetFillOverlay(DXO13WE.Snapshot openXmlElement, DMD.FillOverlay? value)
@@ -406,7 +406,7 @@ public static class SnapshotConverter
     return openXmlElement.GetFirstChild<DXD.Grayscale>() != null;
   }
   
-  private static bool CmpGrayscale(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGrayscale(DXO13WE.Snapshot openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Grayscale>() != null;
     if (val == value) return true;
@@ -437,9 +437,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpHsl(DXO13WE.Snapshot openXmlElement, DMD.Hsl? value, DiffList? diffs, string? objName)
+  private static bool CmpHsl(DXO13WE.Snapshot openXmlElement, DMD.Hsl? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Hsl>(), value, diffs, objName);
+    return DMXD.HslConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Hsl>(), value, diffs, objName, propName);
   }
   
   private static void SetHsl(DXO13WE.Snapshot openXmlElement, DMD.Hsl? value)
@@ -463,9 +463,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpLuminanceEffect(DXO13WE.Snapshot openXmlElement, DMD.LuminanceEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceEffect(DXO13WE.Snapshot openXmlElement, DMD.LuminanceEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LuminanceEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LuminanceEffect>(), value, diffs, objName);
+    return DMXD.LuminanceEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LuminanceEffect>(), value, diffs, objName, propName);
   }
   
   private static void SetLuminanceEffect(DXO13WE.Snapshot openXmlElement, DMD.LuminanceEffect? value)
@@ -489,9 +489,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpTintEffect(DXO13WE.Snapshot openXmlElement, DMD.TintEffect? value, DiffList? diffs, string? objName)
+  private static bool CmpTintEffect(DXO13WE.Snapshot openXmlElement, DMD.TintEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TintEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TintEffect>(), value, diffs, objName);
+    return DMXD.TintEffectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TintEffect>(), value, diffs, objName, propName);
   }
   
   private static void SetTintEffect(DXO13WE.Snapshot openXmlElement, DMD.TintEffect? value)
@@ -515,9 +515,9 @@ public static class SnapshotConverter
     return null;
   }
   
-  private static bool CmpBlipExtensionList(DXO13WE.Snapshot openXmlElement, DMD.BlipExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipExtensionList(DXO13WE.Snapshot openXmlElement, DMD.BlipExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipExtensionList>(), value, diffs, objName);
+    return DMXD.BlipExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetBlipExtensionList(DXO13WE.Snapshot openXmlElement, DMD.BlipExtensionList? value)
@@ -564,57 +564,57 @@ public static class SnapshotConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13WE.Snapshot? openXmlElement, DMWE.Snapshot? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.Snapshot? openXmlElement, DMWE.Snapshot? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName))
+      if (!CmpEmbed(openXmlElement, value.Embed, diffs, objName, propName))
         ok = false;
-      if (!CmpLink(openXmlElement, value.Link, diffs, objName))
+      if (!CmpLink(openXmlElement, value.Link, diffs, objName, propName))
         ok = false;
-      if (!CmpCompressionState(openXmlElement, value.CompressionState, diffs, objName))
+      if (!CmpCompressionState(openXmlElement, value.CompressionState, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaBiLevel(openXmlElement, value.AlphaBiLevel, diffs, objName))
+      if (!CmpAlphaBiLevel(openXmlElement, value.AlphaBiLevel, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaCeiling(openXmlElement, value.AlphaCeiling, diffs, objName))
+      if (!CmpAlphaCeiling(openXmlElement, value.AlphaCeiling, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaFloor(openXmlElement, value.AlphaFloor, diffs, objName))
+      if (!CmpAlphaFloor(openXmlElement, value.AlphaFloor, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaInverse(openXmlElement, value.AlphaInverse, diffs, objName))
+      if (!CmpAlphaInverse(openXmlElement, value.AlphaInverse, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaModulationEffect(openXmlElement, value.AlphaModulationEffect, diffs, objName))
+      if (!CmpAlphaModulationEffect(openXmlElement, value.AlphaModulationEffect, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaModulationFixed(openXmlElement, value.AlphaModulationFixed, diffs, objName))
+      if (!CmpAlphaModulationFixed(openXmlElement, value.AlphaModulationFixed, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaReplace(openXmlElement, value.AlphaReplace, diffs, objName))
+      if (!CmpAlphaReplace(openXmlElement, value.AlphaReplace, diffs, objName, propName))
         ok = false;
-      if (!CmpBiLevel(openXmlElement, value.BiLevel, diffs, objName))
+      if (!CmpBiLevel(openXmlElement, value.BiLevel, diffs, objName, propName))
         ok = false;
-      if (!CmpBlur(openXmlElement, value.Blur, diffs, objName))
+      if (!CmpBlur(openXmlElement, value.Blur, diffs, objName, propName))
         ok = false;
-      if (!CmpColorChange(openXmlElement, value.ColorChange, diffs, objName))
+      if (!CmpColorChange(openXmlElement, value.ColorChange, diffs, objName, propName))
         ok = false;
-      if (!CmpColorReplacement(openXmlElement, value.ColorReplacement, diffs, objName))
+      if (!CmpColorReplacement(openXmlElement, value.ColorReplacement, diffs, objName, propName))
         ok = false;
-      if (!CmpDuotone(openXmlElement, value.Duotone, diffs, objName))
+      if (!CmpDuotone(openXmlElement, value.Duotone, diffs, objName, propName))
         ok = false;
-      if (!CmpFillOverlay(openXmlElement, value.FillOverlay, diffs, objName))
+      if (!CmpFillOverlay(openXmlElement, value.FillOverlay, diffs, objName, propName))
         ok = false;
-      if (!CmpGrayscale(openXmlElement, value.Grayscale, diffs, objName))
+      if (!CmpGrayscale(openXmlElement, value.Grayscale, diffs, objName, propName))
         ok = false;
-      if (!CmpHsl(openXmlElement, value.Hsl, diffs, objName))
+      if (!CmpHsl(openXmlElement, value.Hsl, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminanceEffect(openXmlElement, value.LuminanceEffect, diffs, objName))
+      if (!CmpLuminanceEffect(openXmlElement, value.LuminanceEffect, diffs, objName, propName))
         ok = false;
-      if (!CmpTintEffect(openXmlElement, value.TintEffect, diffs, objName))
+      if (!CmpTintEffect(openXmlElement, value.TintEffect, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipExtensionList(openXmlElement, value.BlipExtensionList, diffs, objName))
+      if (!CmpBlipExtensionList(openXmlElement, value.BlipExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

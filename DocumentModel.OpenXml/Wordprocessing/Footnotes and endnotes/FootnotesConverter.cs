@@ -12,9 +12,9 @@ public static class FootnotesConverter
   }
 
   private static bool CmpFootnote(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement as DXW.Footnote, value as DMW.Footnote, diffs, objName);
+    return DMXW.FootnoteConverter.CompareModelElement(openXmlElement as DXW.Footnote, value as DMW.Footnote, diffs, objName, propName);
   }
 
   private static bool UpdateFootnote(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
@@ -47,18 +47,18 @@ public static class FootnotesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Footnotes? openXmlElement, DMW.Footnotes? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Footnotes? openXmlElement, DMW.Footnotes? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMW.Footnote>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CmpFootnote, diffs, objName))
+        CmpFootnote, diffs, objName, propName))
         return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

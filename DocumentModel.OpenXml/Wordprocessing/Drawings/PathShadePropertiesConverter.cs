@@ -13,9 +13,9 @@ public static class PathShadePropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value);
   }
   
-  private static bool CmpPath(DXO10W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPath(DXO10W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.PathShadeTypeValues, DMW.PathShadeKind>(openXmlElement?.Path?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPath(DXO10W.PathShadeProperties openXmlElement, DMW.PathShadeKind? value)
@@ -34,9 +34,9 @@ public static class PathShadePropertiesConverter
     return null;
   }
   
-  private static bool CmpFillToRectangle(DXO10W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value, DiffList? diffs, string? objName)
+  private static bool CmpFillToRectangle(DXO10W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.FillToRectangle>(), value, diffs, objName);
+    return DMXW.FillToRectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.FillToRectangle>(), value, diffs, objName, propName);
   }
   
   private static void SetFillToRectangle(DXO10W.PathShadeProperties openXmlElement, DMW.FillToRectangle? value)
@@ -64,19 +64,19 @@ public static class PathShadePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.PathShadeProperties? openXmlElement, DMW.PathShadeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.PathShadeProperties? openXmlElement, DMW.PathShadeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPath(openXmlElement, value.Path, diffs, objName))
+      if (!CmpPath(openXmlElement, value.Path, diffs, objName, propName))
         ok = false;
-      if (!CmpFillToRectangle(openXmlElement, value.FillToRectangle, diffs, objName))
+      if (!CmpFillToRectangle(openXmlElement, value.FillToRectangle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

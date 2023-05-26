@@ -10,7 +10,7 @@ public static class DiagramPersistLayoutPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -25,7 +25,7 @@ public static class DiagramPersistLayoutPartConverter
       return DMXDO.DrawingConverter.CreateModelElement(openXmlElement?.RootElement as DXOD.Drawing);
   }
   
-  private static bool CmpDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDO.Drawing? value, DiffList? diffs, string? objName)
+  private static bool CmpDrawing(DXPack.DiagramPersistLayoutPart openXmlElement, DMDO.Drawing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -55,7 +55,7 @@ public static class DiagramPersistLayoutPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.DiagramPersistLayoutPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.DiagramPersistLayoutPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -65,7 +65,7 @@ public static class DiagramPersistLayoutPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.DiagramPersistLayoutPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -86,23 +86,23 @@ public static class DiagramPersistLayoutPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement, DMPack.DiagramPersistLayoutPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DiagramPersistLayoutPart? openXmlElement, DMPack.DiagramPersistLayoutPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpDrawing(openXmlElement, value.Drawing, diffs, objName))
+      if (!CmpDrawing(openXmlElement, value.Drawing, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class McdConverter
     return StringValueConverter.GetValue(openXmlElement?.MacroName);
   }
   
-  private static bool CmpMacroName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacroName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MacroName, value, diffs, objName, "MacroName");
   }
@@ -31,7 +31,7 @@ public static class McdConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXOW.Mcd openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -49,7 +49,7 @@ public static class McdConverter
     return StringValueConverter.GetValue(openXmlElement?.MenuHelp);
   }
   
-  private static bool CmpMenuHelp(DXOW.Mcd openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuHelp(DXOW.Mcd openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MenuHelp, value, diffs, objName, "MenuHelp");
   }
@@ -69,7 +69,7 @@ public static class McdConverter
     return null;
   }
   
-  private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpBEncrypt(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BEncrypt?.Value != null)
       if (HexCharConverter.GetValue(openXmlElement.BEncrypt.Value).Equals(value))
@@ -97,7 +97,7 @@ public static class McdConverter
     return null;
   }
   
-  private static bool CmpCmg(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpCmg(DXOW.Mcd openXmlElement, DM.HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Cmg?.Value != null)
       if (HexCharConverter.GetValue(openXmlElement.Cmg.Value).Equals(value))
@@ -130,25 +130,25 @@ public static class McdConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOW.Mcd? openXmlElement, DMW.Mcd? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOW.Mcd? openXmlElement, DMW.Mcd? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMacroName(openXmlElement, value.MacroName, diffs, objName))
+      if (!CmpMacroName(openXmlElement, value.MacroName, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpMenuHelp(openXmlElement, value.MenuHelp, diffs, objName))
+      if (!CmpMenuHelp(openXmlElement, value.MenuHelp, diffs, objName, propName))
         ok = false;
-      if (!CmpBEncrypt(openXmlElement, value.BEncrypt, diffs, objName))
+      if (!CmpBEncrypt(openXmlElement, value.BEncrypt, diffs, objName, propName))
         ok = false;
-      if (!CmpCmg(openXmlElement, value.Cmg, diffs, objName))
+      if (!CmpCmg(openXmlElement, value.Cmg, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

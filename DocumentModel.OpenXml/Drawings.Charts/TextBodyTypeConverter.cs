@@ -16,9 +16,9 @@ public static class TextBodyTypeConverter
     return null;
   }
   
-  private static bool CmpBodyProperties(DXDC.TextBodyType openXmlElement, DMD.BodyProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBodyProperties(DXDC.TextBodyType openXmlElement, DMD.BodyProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName);
+    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetBodyProperties(DXDC.TextBodyType openXmlElement, DMD.BodyProperties? value)
@@ -45,9 +45,9 @@ public static class TextBodyTypeConverter
     return null;
   }
   
-  private static bool CmpListStyle(DXDC.TextBodyType openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpListStyle(DXDC.TextBodyType openXmlElement, DMD.ListStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName);
+    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetListStyle(DXDC.TextBodyType openXmlElement, DMD.ListStyle? value)
@@ -75,19 +75,19 @@ public static class TextBodyTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.TextBodyType? openXmlElement, DMDC.TextBodyType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.TextBodyType? openXmlElement, DMDC.TextBodyType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName))
+      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName))
+      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

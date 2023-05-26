@@ -13,7 +13,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocNewXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocNewXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocNewXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocNewXsdString>()?.Text == value;
   }
@@ -38,7 +38,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocOpenXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocOpenXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocOpenXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocOpenXsdString>()?.Text == value;
   }
@@ -63,7 +63,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocCloseXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocCloseXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocCloseXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocCloseXsdString>()?.Text == value;
   }
@@ -88,7 +88,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocSyncXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocSyncXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocSyncXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocSyncXsdString>()?.Text == value;
   }
@@ -113,7 +113,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocXmlAfterInsertXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocXmlAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocXmlAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocXmlAfterInsertXsdString>()?.Text == value;
   }
@@ -138,7 +138,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocXmlBeforeDeleteXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocXmlBeforeDeleteXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocXmlBeforeDeleteXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocXmlBeforeDeleteXsdString>()?.Text == value;
   }
@@ -163,7 +163,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlAfterInsertXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocContentControlAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocContentControlAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlAfterInsertXsdString>()?.Text == value;
   }
@@ -188,7 +188,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlBeforeDeleteXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocContentControlBeforeDeleteXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocContentControlBeforeDeleteXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlBeforeDeleteXsdString>()?.Text == value;
   }
@@ -213,7 +213,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlOnExistXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocContentControlOnExistXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocContentControlOnExistXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlOnExistXsdString>()?.Text == value;
   }
@@ -238,7 +238,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlOnEnterXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocContentControlOnEnterXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocContentControlOnEnterXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlOnEnterXsdString>()?.Text == value;
   }
@@ -263,7 +263,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocStoreUpdateXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocStoreUpdateXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocStoreUpdateXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocStoreUpdateXsdString>()?.Text == value;
   }
@@ -288,7 +288,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlUpdateXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocContentControlUpdateXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocContentControlUpdateXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocContentControlUpdateXsdString>()?.Text == value;
   }
@@ -313,7 +313,7 @@ public static class DocEventsConverter
       return openXmlElement?.GetFirstChild<DXOW.EventDocBuildingBlockAfterInsertXsdString>()?.Text;
   }
   
-  private static bool CmpEventDocBuildingBlockAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEventDocBuildingBlockAfterInsertXsdString(DXOW.DocEvents openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXOW.EventDocBuildingBlockAfterInsertXsdString>()?.Text == value;
   }
@@ -353,41 +353,41 @@ public static class DocEventsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOW.DocEvents? openXmlElement, DMW.DocEvents? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOW.DocEvents? openXmlElement, DMW.DocEvents? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEventDocNewXsdString(openXmlElement, value.EventDocNewXsdString, diffs, objName))
+      if (!CmpEventDocNewXsdString(openXmlElement, value.EventDocNewXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocOpenXsdString(openXmlElement, value.EventDocOpenXsdString, diffs, objName))
+      if (!CmpEventDocOpenXsdString(openXmlElement, value.EventDocOpenXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocCloseXsdString(openXmlElement, value.EventDocCloseXsdString, diffs, objName))
+      if (!CmpEventDocCloseXsdString(openXmlElement, value.EventDocCloseXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocSyncXsdString(openXmlElement, value.EventDocSyncXsdString, diffs, objName))
+      if (!CmpEventDocSyncXsdString(openXmlElement, value.EventDocSyncXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocXmlAfterInsertXsdString(openXmlElement, value.EventDocXmlAfterInsertXsdString, diffs, objName))
+      if (!CmpEventDocXmlAfterInsertXsdString(openXmlElement, value.EventDocXmlAfterInsertXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocXmlBeforeDeleteXsdString(openXmlElement, value.EventDocXmlBeforeDeleteXsdString, diffs, objName))
+      if (!CmpEventDocXmlBeforeDeleteXsdString(openXmlElement, value.EventDocXmlBeforeDeleteXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocContentControlAfterInsertXsdString(openXmlElement, value.EventDocContentControlAfterInsertXsdString, diffs, objName))
+      if (!CmpEventDocContentControlAfterInsertXsdString(openXmlElement, value.EventDocContentControlAfterInsertXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocContentControlBeforeDeleteXsdString(openXmlElement, value.EventDocContentControlBeforeDeleteXsdString, diffs, objName))
+      if (!CmpEventDocContentControlBeforeDeleteXsdString(openXmlElement, value.EventDocContentControlBeforeDeleteXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocContentControlOnExistXsdString(openXmlElement, value.EventDocContentControlOnExistXsdString, diffs, objName))
+      if (!CmpEventDocContentControlOnExistXsdString(openXmlElement, value.EventDocContentControlOnExistXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocContentControlOnEnterXsdString(openXmlElement, value.EventDocContentControlOnEnterXsdString, diffs, objName))
+      if (!CmpEventDocContentControlOnEnterXsdString(openXmlElement, value.EventDocContentControlOnEnterXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocStoreUpdateXsdString(openXmlElement, value.EventDocStoreUpdateXsdString, diffs, objName))
+      if (!CmpEventDocStoreUpdateXsdString(openXmlElement, value.EventDocStoreUpdateXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocContentControlUpdateXsdString(openXmlElement, value.EventDocContentControlUpdateXsdString, diffs, objName))
+      if (!CmpEventDocContentControlUpdateXsdString(openXmlElement, value.EventDocContentControlUpdateXsdString, diffs, objName, propName))
         ok = false;
-      if (!CmpEventDocBuildingBlockAfterInsertXsdString(openXmlElement, value.EventDocBuildingBlockAfterInsertXsdString, diffs, objName))
+      if (!CmpEventDocBuildingBlockAfterInsertXsdString(openXmlElement, value.EventDocBuildingBlockAfterInsertXsdString, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

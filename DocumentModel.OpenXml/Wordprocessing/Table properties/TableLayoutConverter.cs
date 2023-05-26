@@ -11,9 +11,9 @@ public static class TableLayoutConverter
     return EnumValueConverter.GetValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableLayoutValues, DMW.TableLayoutKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXW.TableLayout openXmlElement, DMW.TableLayoutKind? value)
@@ -30,17 +30,17 @@ public static class TableLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableLayout? openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableLayout? openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value, diffs, objName))
+      if (!CmpType(openXmlElement, value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

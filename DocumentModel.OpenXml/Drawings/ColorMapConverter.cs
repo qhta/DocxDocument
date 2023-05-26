@@ -13,9 +13,9 @@ public static class ColorMapConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.ColorMap openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ColorMap openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.ColorMap openXmlElement, DMD.ExtensionList? value)
@@ -42,17 +42,17 @@ public static class ColorMapConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ColorMap? openXmlElement, DMD.ColorMap? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ColorMap? openXmlElement, DMD.ColorMap? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class RelativeHeightConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWD.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value);
   }
   
-  private static bool CmpRelativeFrom(DXO10WD.RelativeHeight openXmlElement, DMWD.SizeRelativeVerticallyKind? value, DiffList? diffs, string? objName)
+  private static bool CmpRelativeFrom(DXO10WD.RelativeHeight openXmlElement, DMWD.SizeRelativeVerticallyKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWD.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeVerticallyValues, DMWD.SizeRelativeVerticallyKind>(openXmlElement?.RelativeFrom?.Value, value, diffs, objName, propName);
   }
   
   private static void SetRelativeFrom(DXO10WD.RelativeHeight openXmlElement, DMWD.SizeRelativeVerticallyKind? value)
@@ -31,7 +31,7 @@ public static class RelativeHeightConverter
       return openXmlElement?.GetFirstChild<DXO10WD.PercentageHeight>()?.Text;
   }
   
-  private static bool CmpPercentageHeight(DXO10WD.RelativeHeight openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPercentageHeight(DXO10WD.RelativeHeight openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO10WD.PercentageHeight>()?.Text == value;
   }
@@ -60,19 +60,19 @@ public static class RelativeHeightConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10WD.RelativeHeight? openXmlElement, DMWD.RelativeHeight? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10WD.RelativeHeight? openXmlElement, DMWD.RelativeHeight? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRelativeFrom(openXmlElement, value.RelativeFrom, diffs, objName))
+      if (!CmpRelativeFrom(openXmlElement, value.RelativeFrom, diffs, objName, propName))
         ok = false;
-      if (!CmpPercentageHeight(openXmlElement, value.PercentageHeight, diffs, objName))
+      if (!CmpPercentageHeight(openXmlElement, value.PercentageHeight, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

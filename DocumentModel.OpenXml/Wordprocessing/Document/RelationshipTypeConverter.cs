@@ -11,7 +11,7 @@ public static class RelationshipTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  public static bool CmpId(DXW.RelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  public static bool CmpId(DXW.RelationshipType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
@@ -57,31 +57,31 @@ public static class RelationshipTypeConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.RelationshipType? openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RelationshipType? openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
-    public static bool CompareModelElement(DXW.SubDocumentReference? openXmlElement, DMW.SubDocumentReference? value, DiffList? diffs, string? objName)
+    public static bool CompareModelElement(DXW.SubDocumentReference? openXmlElement, DMW.SubDocumentReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

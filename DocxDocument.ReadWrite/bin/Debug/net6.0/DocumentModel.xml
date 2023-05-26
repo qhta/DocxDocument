@@ -7909,6 +7909,15 @@
             Default contructor.
             </summary>
         </member>
+        <member name="M:DocumentModel.Wordprocessing.ThemeColor.#ctor(DocumentModel.Color,DocumentModel.Wordprocessing.ThemeColorIndex,System.Nullable{DocumentModel.Percent},System.Nullable{DocumentModel.Percent})">
+            <summary>
+            Initializing constructor.
+            </summary>
+            <param name="baseColor">RGB color value</param>
+            <param name="index"></param>
+            <param name="tint"></param>
+            <param name="shade"></param>
+        </member>
         <member name="M:DocumentModel.Wordprocessing.ThemeColor.#ctor(DocumentModel.Wordprocessing.ThemeColorIndex,System.Nullable{DocumentModel.Percent},System.Nullable{DocumentModel.Percent})">
             <summary>
             Initializing constructor.

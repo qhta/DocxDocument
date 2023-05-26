@@ -11,9 +11,9 @@ public static class DocPartBodyConverter
     return BodyTypeConverter.CreateModelElement<DMW.DocPartBody>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.DocPartBody? openXmlElement, DMW.DocPartBody? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DocPartBody? openXmlElement, DMW.DocPartBody? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BodyTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return BodyTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.DocPartBody CreateOpenXmlElement(DMW.DocPartBody value)

@@ -26,9 +26,9 @@ public static class FrameSourceFileConverter
   }
 
   public static bool CompareModelElement(DXW.SourceFileReference? openXmlElement, DMW.FrameSourceFile? model, 
-    DiffList? diffs, string? objName, DXW.WebSettings? settings)
+    DiffList? diffs, string? objName, string? propName, DXW.WebSettings? settings)
   {
-    return RelationshipTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RelationshipTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
 
   public static DXW.SourceFileReference CreateOpenXmlElement(DMW.FrameSourceFile model, DXW.WebSettings? settings = null)

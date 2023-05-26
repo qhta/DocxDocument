@@ -16,7 +16,7 @@ public static class FontsConverter
     }
   }
   
-  private static bool CmpItems(DXW.Fonts openXmlElement, ICollection<DMW.Font>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Fonts openXmlElement, ICollection<DMW.Font>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.Font>();
     var origElementsCount = origElements.Count();
@@ -25,7 +25,7 @@ public static class FontsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -34,13 +34,13 @@ public static class FontsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.FontConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.FontConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class FontsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Fonts? openXmlElement, DMW.Fonts? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Fonts? openXmlElement, DMW.Fonts? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, model, diffs, objName))
+      if (!CmpItems(openXmlElement, model, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

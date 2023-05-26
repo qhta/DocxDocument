@@ -34,22 +34,22 @@ public static class SdtRunRubyConverter
   /// <param name="diffs">Differences list (defined in <see cref="Qhta.DeepCompare"/> assembly).</param>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to openXml element, <c>false</c> otherwise</returns>
-  public static bool CompareModelElement(DXW.SdtRunRuby? openXmlElement, DMW.SdtRunRuby? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtRunRuby? openXmlElement, DMW.SdtRunRuby? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName, propName))
         ok = false;
-      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IRubyContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentRunRuby, model,
-        RubyContentConverter.CompareRubyContentElement, diffs, objName))
+        RubyContentConverter.CompareRubyContentElement, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -16,9 +16,9 @@ public static class GeoDataEntityQueryResultConverter
     return null;
   }
   
-  private static bool CmpGeoDataEntityQuery(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoDataEntityQuery? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoDataEntityQuery(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoDataEntityQuery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoDataEntityQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoDataEntityQuery>(), value, diffs, objName);
+    return DMXDCDs.GeoDataEntityQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoDataEntityQuery>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoDataEntityQuery(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoDataEntityQuery? value)
@@ -45,9 +45,9 @@ public static class GeoDataEntityQueryResultConverter
     return null;
   }
   
-  private static bool CmpGeoData(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoData? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoData(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoData>(), value, diffs, objName);
+    return DMXDCDs.GeoDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoData>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoData(DXO16DCD.GeoDataEntityQueryResult openXmlElement, DMDCDs.GeoData? value)
@@ -75,19 +75,19 @@ public static class GeoDataEntityQueryResultConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoDataEntityQueryResult? openXmlElement, DMDCDs.GeoDataEntityQueryResult? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoDataEntityQueryResult? openXmlElement, DMDCDs.GeoDataEntityQueryResult? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGeoDataEntityQuery(openXmlElement, value.GeoDataEntityQuery, diffs, objName))
+      if (!CmpGeoDataEntityQuery(openXmlElement, value.GeoDataEntityQuery, diffs, objName, propName))
         ok = false;
-      if (!CmpGeoData(openXmlElement, value.GeoData, diffs, objName))
+      if (!CmpGeoData(openXmlElement, value.GeoData, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

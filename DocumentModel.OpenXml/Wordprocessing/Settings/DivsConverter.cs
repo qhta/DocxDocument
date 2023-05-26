@@ -18,19 +18,19 @@ public static class DivsConverter
   }
 
   public static bool CmpItem(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model,
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Div divElement && model is DMW.Div divModel)
-        return DivConverter.CompareModelElement(divElement, divModel, diffs, objName);
+        return DivConverter.CompareModelElement(divElement, divModel, diffs, objName, propName);
 
       diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
       return false;
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -65,19 +65,19 @@ public static class DivsConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.DivsType? openXmlElement, DMW.Divs? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DivsType? openXmlElement, DMW.Divs? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMW.Div>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CmpItem, diffs, objName))
+        CmpItem, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

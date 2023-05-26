@@ -13,7 +13,7 @@ public static class RuleConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXVO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXVO.Rule openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,9 +31,9 @@ public static class RuleConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMV.RuleKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXVO.Rule openXmlElement, DMV.RuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXVO.Rule openXmlElement, DMV.RuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMV.RuleKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.RuleValues, DMV.RuleKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXVO.Rule openXmlElement, DMV.RuleKind? value)
@@ -49,9 +49,9 @@ public static class RuleConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMV.AlignmentKind>(openXmlElement?.How?.Value);
   }
   
-  private static bool CmpHow(DXVO.Rule openXmlElement, DMV.AlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHow(DXVO.Rule openXmlElement, DMV.AlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMV.AlignmentKind>(openXmlElement?.How?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.AlignmentValues, DMV.AlignmentKind>(openXmlElement?.How?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHow(DXVO.Rule openXmlElement, DMV.AlignmentKind? value)
@@ -67,7 +67,7 @@ public static class RuleConverter
     return StringValueConverter.GetValue(openXmlElement?.ShapeReference);
   }
   
-  private static bool CmpShapeReference(DXVO.Rule openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeReference(DXVO.Rule openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ShapeReference, value, diffs, objName, "ShapeReference");
   }
@@ -91,7 +91,7 @@ public static class RuleConverter
     return null;
   }
   
-  private static bool CmpProxies(DXVO.Rule openXmlElement, Collection<DMV.Proxy>? value, DiffList? diffs, string? objName)
+  private static bool CmpProxies(DXVO.Rule openXmlElement, Collection<DMV.Proxy>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXVO.Proxy>();
     var origElementsCount = origElements.Count();
@@ -100,7 +100,7 @@ public static class RuleConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -109,13 +109,13 @@ public static class RuleConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXV.ProxyConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXV.ProxyConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -148,25 +148,25 @@ public static class RuleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Rule? openXmlElement, DMV.Rule? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Rule? openXmlElement, DMV.Rule? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpHow(openXmlElement, value.How, diffs, objName))
+      if (!CmpHow(openXmlElement, value.How, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeReference(openXmlElement, value.ShapeReference, diffs, objName))
+      if (!CmpShapeReference(openXmlElement, value.ShapeReference, diffs, objName, propName))
         ok = false;
-      if (!CmpProxies(openXmlElement, value.Proxies, diffs, objName))
+      if (!CmpProxies(openXmlElement, value.Proxies, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

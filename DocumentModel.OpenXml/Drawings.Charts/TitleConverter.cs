@@ -16,9 +16,9 @@ public static class TitleConverter
     return null;
   }
   
-  private static bool CmpChartText(DXDC.Title openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
+  private static bool CmpChartText(DXDC.Title openXmlElement, DMDC.ChartText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName);
+    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName, propName);
   }
   
   private static void SetChartText(DXDC.Title openXmlElement, DMDC.ChartText? value)
@@ -45,9 +45,9 @@ public static class TitleConverter
     return null;
   }
   
-  private static bool CmpLayout(DXDC.Title openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.Title openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXDC.Title openXmlElement, DMDC.Layout? value)
@@ -71,7 +71,7 @@ public static class TitleConverter
     return openXmlElement.GetFirstChild<DXDC.Overlay>() != null;
   }
   
-  private static bool CmpOverlay(DXDC.Title openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOverlay(DXDC.Title openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Overlay>() != null;
     if (val == value) return true;
@@ -105,9 +105,9 @@ public static class TitleConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.Title openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.Title openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.Title openXmlElement, DMDC.ChartShapeProperties? value)
@@ -134,9 +134,9 @@ public static class TitleConverter
     return null;
   }
   
-  private static bool CmpTextProperties(DXDC.Title openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.Title openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXDC.Title openXmlElement, DMDC.TextProperties? value)
@@ -163,9 +163,9 @@ public static class TitleConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.Title openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.Title openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.Title openXmlElement, DMDC.ExtensionList? value)
@@ -197,27 +197,27 @@ public static class TitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Title? openXmlElement, DMDC.Title? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Title? openXmlElement, DMDC.Title? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName, propName))
         ok = false;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName))
+      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

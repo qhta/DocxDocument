@@ -17,9 +17,9 @@ public static class TableStyleConditionalFormattingTablePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement, DMW.TableStyleConditionalTableProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableStyleConditionalFormattingTableProperties? openXmlElement, DMW.TableStyleConditionalTableProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.TableStyleConditionalTableProperties model)

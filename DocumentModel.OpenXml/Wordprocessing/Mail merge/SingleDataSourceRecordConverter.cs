@@ -13,7 +13,7 @@ public static class SingleDataSourceRecordConverter
     return openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null;
   }
   
-  private static bool CmpRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRecordIncluded(DXOW.SingleDataSourceRecord openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXOW.RecordIncluded>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class SingleDataSourceRecordConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val);
   }
   
-  private static bool CmpRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRecordHashCode(DXOW.SingleDataSourceRecord openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXOW.RecordHashCode>()?.Val, value, diffs, objName, "RecordHashCode");
   }
@@ -66,19 +66,19 @@ public static class SingleDataSourceRecordConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOW.SingleDataSourceRecord? openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOW.SingleDataSourceRecord? openXmlElement, DMW.SingleDataSourceRecord? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRecordIncluded(openXmlElement, value.RecordIncluded, diffs, objName))
+      if (!CmpRecordIncluded(openXmlElement, value.RecordIncluded, diffs, objName, propName))
         ok = false;
-      if (!CmpRecordHashCode(openXmlElement, value.RecordHashCode, diffs, objName))
+      if (!CmpRecordHashCode(openXmlElement, value.RecordHashCode, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

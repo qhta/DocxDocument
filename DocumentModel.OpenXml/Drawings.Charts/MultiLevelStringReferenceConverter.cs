@@ -13,7 +13,7 @@ public static class MultiLevelStringReferenceConverter
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXDC.MultiLevelStringReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXDC.MultiLevelStringReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class MultiLevelStringReferenceConverter
     return null;
   }
   
-  private static bool CmpMultiLevelStringCache(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLevelStringCache? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLevelStringCache(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLevelStringCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MultiLevelStringCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLevelStringCache>(), value, diffs, objName);
+    return DMXDC.MultiLevelStringCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLevelStringCache>(), value, diffs, objName, propName);
   }
   
   private static void SetMultiLevelStringCache(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLevelStringCache? value)
@@ -70,9 +70,9 @@ public static class MultiLevelStringReferenceConverter
     return null;
   }
   
-  private static bool CmpMultiLvlStrRefExtensionList(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLvlStrRefExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLvlStrRefExtensionList(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLvlStrRefExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MultiLvlStrRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLvlStrRefExtensionList>(), value, diffs, objName);
+    return DMXDC.MultiLvlStrRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLvlStrRefExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetMultiLvlStrRefExtensionList(DXDC.MultiLevelStringReference openXmlElement, DMDC.MultiLvlStrRefExtensionList? value)
@@ -101,21 +101,21 @@ public static class MultiLevelStringReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.MultiLevelStringReference? openXmlElement, DMDC.MultiLevelStringReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.MultiLevelStringReference? openXmlElement, DMDC.MultiLevelStringReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpMultiLevelStringCache(openXmlElement, value.MultiLevelStringCache, diffs, objName))
+      if (!CmpMultiLevelStringCache(openXmlElement, value.MultiLevelStringCache, diffs, objName, propName))
         ok = false;
-      if (!CmpMultiLvlStrRefExtensionList(openXmlElement, value.MultiLvlStrRefExtensionList, diffs, objName))
+      if (!CmpMultiLvlStrRefExtensionList(openXmlElement, value.MultiLvlStrRefExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

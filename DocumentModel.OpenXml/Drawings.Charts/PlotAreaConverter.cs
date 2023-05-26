@@ -16,9 +16,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpLayout(DXDC.PlotArea openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.PlotArea openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXDC.PlotArea openXmlElement, DMDC.Layout? value)
@@ -42,9 +42,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpAreaChart(DXDC.PlotArea openXmlElement, DMDC.AreaChart? value, DiffList? diffs, string? objName)
+  private static bool CmpAreaChart(DXDC.PlotArea openXmlElement, DMDC.AreaChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.AreaChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.AreaChart>(), value, diffs, objName);
+    return DMXDC.AreaChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.AreaChart>(), value, diffs, objName, propName);
   }
   
   private static void SetAreaChart(DXDC.PlotArea openXmlElement, DMDC.AreaChart? value)
@@ -68,9 +68,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpArea3DChart(DXDC.PlotArea openXmlElement, DMDC.Area3DChart? value, DiffList? diffs, string? objName)
+  private static bool CmpArea3DChart(DXDC.PlotArea openXmlElement, DMDC.Area3DChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Area3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Area3DChart>(), value, diffs, objName);
+    return DMXDC.Area3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Area3DChart>(), value, diffs, objName, propName);
   }
   
   private static void SetArea3DChart(DXDC.PlotArea openXmlElement, DMDC.Area3DChart? value)
@@ -94,9 +94,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpLineChart(DXDC.PlotArea openXmlElement, DMDC.LineChart? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChart(DXDC.PlotArea openXmlElement, DMDC.LineChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LineChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LineChart>(), value, diffs, objName);
+    return DMXDC.LineChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LineChart>(), value, diffs, objName, propName);
   }
   
   private static void SetLineChart(DXDC.PlotArea openXmlElement, DMDC.LineChart? value)
@@ -120,9 +120,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpLine3DChart(DXDC.PlotArea openXmlElement, DMDC.Line3DChart? value, DiffList? diffs, string? objName)
+  private static bool CmpLine3DChart(DXDC.PlotArea openXmlElement, DMDC.Line3DChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Line3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Line3DChart>(), value, diffs, objName);
+    return DMXDC.Line3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Line3DChart>(), value, diffs, objName, propName);
   }
   
   private static void SetLine3DChart(DXDC.PlotArea openXmlElement, DMDC.Line3DChart? value)
@@ -146,9 +146,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpStockChart(DXDC.PlotArea openXmlElement, DMDC.StockChart? value, DiffList? diffs, string? objName)
+  private static bool CmpStockChart(DXDC.PlotArea openXmlElement, DMDC.StockChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StockChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StockChart>(), value, diffs, objName);
+    return DMXDC.StockChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StockChart>(), value, diffs, objName, propName);
   }
   
   private static void SetStockChart(DXDC.PlotArea openXmlElement, DMDC.StockChart? value)
@@ -172,9 +172,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpRadarChart(DXDC.PlotArea openXmlElement, DMDC.RadarChart? value, DiffList? diffs, string? objName)
+  private static bool CmpRadarChart(DXDC.PlotArea openXmlElement, DMDC.RadarChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.RadarChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.RadarChart>(), value, diffs, objName);
+    return DMXDC.RadarChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.RadarChart>(), value, diffs, objName, propName);
   }
   
   private static void SetRadarChart(DXDC.PlotArea openXmlElement, DMDC.RadarChart? value)
@@ -198,9 +198,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpScatterChart(DXDC.PlotArea openXmlElement, DMDC.ScatterChart? value, DiffList? diffs, string? objName)
+  private static bool CmpScatterChart(DXDC.PlotArea openXmlElement, DMDC.ScatterChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ScatterChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ScatterChart>(), value, diffs, objName);
+    return DMXDC.ScatterChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ScatterChart>(), value, diffs, objName, propName);
   }
   
   private static void SetScatterChart(DXDC.PlotArea openXmlElement, DMDC.ScatterChart? value)
@@ -224,9 +224,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpPieChart(DXDC.PlotArea openXmlElement, DMDC.PieChart? value, DiffList? diffs, string? objName)
+  private static bool CmpPieChart(DXDC.PlotArea openXmlElement, DMDC.PieChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.PieChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PieChart>(), value, diffs, objName);
+    return DMXDC.PieChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PieChart>(), value, diffs, objName, propName);
   }
   
   private static void SetPieChart(DXDC.PlotArea openXmlElement, DMDC.PieChart? value)
@@ -250,9 +250,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpPie3DChart(DXDC.PlotArea openXmlElement, DMDC.Pie3DChart? value, DiffList? diffs, string? objName)
+  private static bool CmpPie3DChart(DXDC.PlotArea openXmlElement, DMDC.Pie3DChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Pie3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Pie3DChart>(), value, diffs, objName);
+    return DMXDC.Pie3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Pie3DChart>(), value, diffs, objName, propName);
   }
   
   private static void SetPie3DChart(DXDC.PlotArea openXmlElement, DMDC.Pie3DChart? value)
@@ -276,9 +276,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpDoughnutChart(DXDC.PlotArea openXmlElement, DMDC.DoughnutChart? value, DiffList? diffs, string? objName)
+  private static bool CmpDoughnutChart(DXDC.PlotArea openXmlElement, DMDC.DoughnutChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DoughnutChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DoughnutChart>(), value, diffs, objName);
+    return DMXDC.DoughnutChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DoughnutChart>(), value, diffs, objName, propName);
   }
   
   private static void SetDoughnutChart(DXDC.PlotArea openXmlElement, DMDC.DoughnutChart? value)
@@ -302,9 +302,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpBarChart(DXDC.PlotArea openXmlElement, DMDC.BarChart? value, DiffList? diffs, string? objName)
+  private static bool CmpBarChart(DXDC.PlotArea openXmlElement, DMDC.BarChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.BarChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BarChart>(), value, diffs, objName);
+    return DMXDC.BarChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BarChart>(), value, diffs, objName, propName);
   }
   
   private static void SetBarChart(DXDC.PlotArea openXmlElement, DMDC.BarChart? value)
@@ -328,9 +328,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpBar3DChart(DXDC.PlotArea openXmlElement, DMDC.Bar3DChart? value, DiffList? diffs, string? objName)
+  private static bool CmpBar3DChart(DXDC.PlotArea openXmlElement, DMDC.Bar3DChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Bar3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Bar3DChart>(), value, diffs, objName);
+    return DMXDC.Bar3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Bar3DChart>(), value, diffs, objName, propName);
   }
   
   private static void SetBar3DChart(DXDC.PlotArea openXmlElement, DMDC.Bar3DChart? value)
@@ -354,9 +354,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpOfPieChart(DXDC.PlotArea openXmlElement, DMDC.OfPieChart? value, DiffList? diffs, string? objName)
+  private static bool CmpOfPieChart(DXDC.PlotArea openXmlElement, DMDC.OfPieChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.OfPieChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.OfPieChart>(), value, diffs, objName);
+    return DMXDC.OfPieChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.OfPieChart>(), value, diffs, objName, propName);
   }
   
   private static void SetOfPieChart(DXDC.PlotArea openXmlElement, DMDC.OfPieChart? value)
@@ -380,9 +380,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpSurfaceChart(DXDC.PlotArea openXmlElement, DMDC.SurfaceChart? value, DiffList? diffs, string? objName)
+  private static bool CmpSurfaceChart(DXDC.PlotArea openXmlElement, DMDC.SurfaceChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.SurfaceChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SurfaceChart>(), value, diffs, objName);
+    return DMXDC.SurfaceChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SurfaceChart>(), value, diffs, objName, propName);
   }
   
   private static void SetSurfaceChart(DXDC.PlotArea openXmlElement, DMDC.SurfaceChart? value)
@@ -406,9 +406,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpSurface3DChart(DXDC.PlotArea openXmlElement, DMDC.Surface3DChart? value, DiffList? diffs, string? objName)
+  private static bool CmpSurface3DChart(DXDC.PlotArea openXmlElement, DMDC.Surface3DChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Surface3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Surface3DChart>(), value, diffs, objName);
+    return DMXDC.Surface3DChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Surface3DChart>(), value, diffs, objName, propName);
   }
   
   private static void SetSurface3DChart(DXDC.PlotArea openXmlElement, DMDC.Surface3DChart? value)
@@ -432,9 +432,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpBubbleChart(DXDC.PlotArea openXmlElement, DMDC.BubbleChart? value, DiffList? diffs, string? objName)
+  private static bool CmpBubbleChart(DXDC.PlotArea openXmlElement, DMDC.BubbleChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.BubbleChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BubbleChart>(), value, diffs, objName);
+    return DMXDC.BubbleChartConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.BubbleChart>(), value, diffs, objName, propName);
   }
   
   private static void SetBubbleChart(DXDC.PlotArea openXmlElement, DMDC.BubbleChart? value)
@@ -458,9 +458,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpValueAxis(DXDC.PlotArea openXmlElement, DMDC.ValueAxis? value, DiffList? diffs, string? objName)
+  private static bool CmpValueAxis(DXDC.PlotArea openXmlElement, DMDC.ValueAxis? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ValueAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ValueAxis>(), value, diffs, objName);
+    return DMXDC.ValueAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ValueAxis>(), value, diffs, objName, propName);
   }
   
   private static void SetValueAxis(DXDC.PlotArea openXmlElement, DMDC.ValueAxis? value)
@@ -484,9 +484,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpCategoryAxis(DXDC.PlotArea openXmlElement, DMDC.CategoryAxis? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryAxis(DXDC.PlotArea openXmlElement, DMDC.CategoryAxis? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.CategoryAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.CategoryAxis>(), value, diffs, objName);
+    return DMXDC.CategoryAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.CategoryAxis>(), value, diffs, objName, propName);
   }
   
   private static void SetCategoryAxis(DXDC.PlotArea openXmlElement, DMDC.CategoryAxis? value)
@@ -510,9 +510,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpDateAxis(DXDC.PlotArea openXmlElement, DMDC.DateAxis? value, DiffList? diffs, string? objName)
+  private static bool CmpDateAxis(DXDC.PlotArea openXmlElement, DMDC.DateAxis? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DateAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DateAxis>(), value, diffs, objName);
+    return DMXDC.DateAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DateAxis>(), value, diffs, objName, propName);
   }
   
   private static void SetDateAxis(DXDC.PlotArea openXmlElement, DMDC.DateAxis? value)
@@ -536,9 +536,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpSeriesAxis(DXDC.PlotArea openXmlElement, DMDC.SeriesAxis? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesAxis(DXDC.PlotArea openXmlElement, DMDC.SeriesAxis? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.SeriesAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SeriesAxis>(), value, diffs, objName);
+    return DMXDC.SeriesAxisConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.SeriesAxis>(), value, diffs, objName, propName);
   }
   
   private static void SetSeriesAxis(DXDC.PlotArea openXmlElement, DMDC.SeriesAxis? value)
@@ -562,9 +562,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpDataTable(DXDC.PlotArea openXmlElement, DMDC.DataTable? value, DiffList? diffs, string? objName)
+  private static bool CmpDataTable(DXDC.PlotArea openXmlElement, DMDC.DataTable? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataTable>(), value, diffs, objName);
+    return DMXDC.DataTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataTable>(), value, diffs, objName, propName);
   }
   
   private static void SetDataTable(DXDC.PlotArea openXmlElement, DMDC.DataTable? value)
@@ -588,9 +588,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDC.PlotArea openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDC.PlotArea openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXDC.PlotArea openXmlElement, DMDC.ShapeProperties? value)
@@ -614,9 +614,9 @@ public static class PlotAreaConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.PlotArea openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.PlotArea openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.PlotArea openXmlElement, DMDC.ExtensionList? value)
@@ -666,63 +666,63 @@ public static class PlotAreaConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.PlotArea? openXmlElement, DMDC.PlotArea? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PlotArea? openXmlElement, DMDC.PlotArea? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpAreaChart(openXmlElement, value.AreaChart, diffs, objName))
+      if (!CmpAreaChart(openXmlElement, value.AreaChart, diffs, objName, propName))
         ok = false;
-      if (!CmpArea3DChart(openXmlElement, value.Area3DChart, diffs, objName))
+      if (!CmpArea3DChart(openXmlElement, value.Area3DChart, diffs, objName, propName))
         ok = false;
-      if (!CmpLineChart(openXmlElement, value.LineChart, diffs, objName))
+      if (!CmpLineChart(openXmlElement, value.LineChart, diffs, objName, propName))
         ok = false;
-      if (!CmpLine3DChart(openXmlElement, value.Line3DChart, diffs, objName))
+      if (!CmpLine3DChart(openXmlElement, value.Line3DChart, diffs, objName, propName))
         ok = false;
-      if (!CmpStockChart(openXmlElement, value.StockChart, diffs, objName))
+      if (!CmpStockChart(openXmlElement, value.StockChart, diffs, objName, propName))
         ok = false;
-      if (!CmpRadarChart(openXmlElement, value.RadarChart, diffs, objName))
+      if (!CmpRadarChart(openXmlElement, value.RadarChart, diffs, objName, propName))
         ok = false;
-      if (!CmpScatterChart(openXmlElement, value.ScatterChart, diffs, objName))
+      if (!CmpScatterChart(openXmlElement, value.ScatterChart, diffs, objName, propName))
         ok = false;
-      if (!CmpPieChart(openXmlElement, value.PieChart, diffs, objName))
+      if (!CmpPieChart(openXmlElement, value.PieChart, diffs, objName, propName))
         ok = false;
-      if (!CmpPie3DChart(openXmlElement, value.Pie3DChart, diffs, objName))
+      if (!CmpPie3DChart(openXmlElement, value.Pie3DChart, diffs, objName, propName))
         ok = false;
-      if (!CmpDoughnutChart(openXmlElement, value.DoughnutChart, diffs, objName))
+      if (!CmpDoughnutChart(openXmlElement, value.DoughnutChart, diffs, objName, propName))
         ok = false;
-      if (!CmpBarChart(openXmlElement, value.BarChart, diffs, objName))
+      if (!CmpBarChart(openXmlElement, value.BarChart, diffs, objName, propName))
         ok = false;
-      if (!CmpBar3DChart(openXmlElement, value.Bar3DChart, diffs, objName))
+      if (!CmpBar3DChart(openXmlElement, value.Bar3DChart, diffs, objName, propName))
         ok = false;
-      if (!CmpOfPieChart(openXmlElement, value.OfPieChart, diffs, objName))
+      if (!CmpOfPieChart(openXmlElement, value.OfPieChart, diffs, objName, propName))
         ok = false;
-      if (!CmpSurfaceChart(openXmlElement, value.SurfaceChart, diffs, objName))
+      if (!CmpSurfaceChart(openXmlElement, value.SurfaceChart, diffs, objName, propName))
         ok = false;
-      if (!CmpSurface3DChart(openXmlElement, value.Surface3DChart, diffs, objName))
+      if (!CmpSurface3DChart(openXmlElement, value.Surface3DChart, diffs, objName, propName))
         ok = false;
-      if (!CmpBubbleChart(openXmlElement, value.BubbleChart, diffs, objName))
+      if (!CmpBubbleChart(openXmlElement, value.BubbleChart, diffs, objName, propName))
         ok = false;
-      if (!CmpValueAxis(openXmlElement, value.ValueAxis, diffs, objName))
+      if (!CmpValueAxis(openXmlElement, value.ValueAxis, diffs, objName, propName))
         ok = false;
-      if (!CmpCategoryAxis(openXmlElement, value.CategoryAxis, diffs, objName))
+      if (!CmpCategoryAxis(openXmlElement, value.CategoryAxis, diffs, objName, propName))
         ok = false;
-      if (!CmpDateAxis(openXmlElement, value.DateAxis, diffs, objName))
+      if (!CmpDateAxis(openXmlElement, value.DateAxis, diffs, objName, propName))
         ok = false;
-      if (!CmpSeriesAxis(openXmlElement, value.SeriesAxis, diffs, objName))
+      if (!CmpSeriesAxis(openXmlElement, value.SeriesAxis, diffs, objName, propName))
         ok = false;
-      if (!CmpDataTable(openXmlElement, value.DataTable, diffs, objName))
+      if (!CmpDataTable(openXmlElement, value.DataTable, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

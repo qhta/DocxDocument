@@ -13,9 +13,9 @@ public static class AlgorithmConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDD.Algorithm openXmlElement, DMDD.AlgorithmKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Algorithm openXmlElement, DMDD.AlgorithmKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.AlgorithmValues, DMDD.AlgorithmKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXDD.Algorithm openXmlElement, DMDD.AlgorithmKind? value)
@@ -31,7 +31,7 @@ public static class AlgorithmConverter
     return openXmlElement?.Revision?.Value;
   }
   
-  private static bool CmpRevision(DXDD.Algorithm openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRevision(DXDD.Algorithm openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Revision?.Value == value) return true;
     diffs?.Add(objName, "Revision", openXmlElement?.Revision?.Value, value);
@@ -57,7 +57,7 @@ public static class AlgorithmConverter
     return null;
   }
   
-  private static bool CmpParameters(DXDD.Algorithm openXmlElement, Collection<DMDD.Parameter>? value, DiffList? diffs, string? objName)
+  private static bool CmpParameters(DXDD.Algorithm openXmlElement, Collection<DMDD.Parameter>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.Parameter>();
     var origElementsCount = origElements.Count();
@@ -66,7 +66,7 @@ public static class AlgorithmConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -75,13 +75,13 @@ public static class AlgorithmConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.ParameterConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ParameterConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -107,9 +107,9 @@ public static class AlgorithmConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.Algorithm openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Algorithm openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.Algorithm openXmlElement, DMDD.ExtensionList? value)
@@ -139,23 +139,23 @@ public static class AlgorithmConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Algorithm? openXmlElement, DMDD.Algorithm? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Algorithm? openXmlElement, DMDD.Algorithm? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpRevision(openXmlElement, value.Revision, diffs, objName))
+      if (!CmpRevision(openXmlElement, value.Revision, diffs, objName, propName))
         ok = false;
-      if (!CmpParameters(openXmlElement, value.Parameters, diffs, objName))
+      if (!CmpParameters(openXmlElement, value.Parameters, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

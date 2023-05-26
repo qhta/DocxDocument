@@ -13,7 +13,7 @@ public static class DataStoreItemConverter
     return StringValueConverter.GetValue(openXmlElement?.ItemId);
   }
   
-  private static bool CmpItemId(DXCXDP.DataStoreItem openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpItemId(DXCXDP.DataStoreItem openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ItemId, value, diffs, objName, "ItemId");
   }
@@ -34,9 +34,9 @@ public static class DataStoreItemConverter
     return null;
   }
   
-  private static bool CmpSchemaReferences(DXCXDP.DataStoreItem openXmlElement, DMCX.SchemaReferences? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemaReferences(DXCXDP.DataStoreItem openXmlElement, DMCX.SchemaReferences? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXCX.SchemaReferencesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCXDP.SchemaReferences>(), value, diffs, objName);
+    return DMXCX.SchemaReferencesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXCXDP.SchemaReferences>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemaReferences(DXCXDP.DataStoreItem openXmlElement, DMCX.SchemaReferences? value)
@@ -64,19 +64,19 @@ public static class DataStoreItemConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXCXDP.DataStoreItem? openXmlElement, DMCX.DataStoreItem? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXCXDP.DataStoreItem? openXmlElement, DMCX.DataStoreItem? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItemId(openXmlElement, value.ItemId, diffs, objName))
+      if (!CmpItemId(openXmlElement, value.ItemId, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemaReferences(openXmlElement, value.SchemaReferences, diffs, objName))
+      if (!CmpSchemaReferences(openXmlElement, value.SchemaReferences, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

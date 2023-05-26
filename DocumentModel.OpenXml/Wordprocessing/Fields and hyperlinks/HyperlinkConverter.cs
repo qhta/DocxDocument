@@ -12,7 +12,7 @@ public static class HyperlinkConverter
     return StringValueConverter.GetValue(openXmlElement?.TargetFrame);
   }
   
-  private static bool CmpTargetFrame(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTargetFrame(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.TargetFrame, value, diffs, objName, "TargetFrame");
   }
@@ -29,7 +29,7 @@ public static class HyperlinkConverter
     return StringValueConverter.GetValue(openXmlElement?.Tooltip);
   }
   
-  private static bool CmpTooltip(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTooltip(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tooltip, value, diffs, objName, "Tooltip");
   }
@@ -46,7 +46,7 @@ public static class HyperlinkConverter
     return StringValueConverter.GetValue(openXmlElement?.DocLocation);
   }
   
-  private static bool CmpDocLocation(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDocLocation(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.DocLocation, value, diffs, objName, "DocLocation");
   }
@@ -63,7 +63,7 @@ public static class HyperlinkConverter
     return BooleanValueConverter.GetValue(openXmlElement?.History);
   }
   
-  private static bool CmpHistory(DXW.Hyperlink openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHistory(DXW.Hyperlink openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.History, value, diffs, objName, "History");
   }
@@ -80,7 +80,7 @@ public static class HyperlinkConverter
     return StringValueConverter.GetValue(openXmlElement?.Anchor);
   }
   
-  private static bool CmpAnchor(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchor(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Anchor, value, diffs, objName, "Anchor");
   }
@@ -97,7 +97,7 @@ public static class HyperlinkConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.Hyperlink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -128,31 +128,31 @@ public static class HyperlinkConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Hyperlink? openXmlElement, DMW.Hyperlink? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Hyperlink? openXmlElement, DMW.Hyperlink? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpTargetFrame(openXmlElement, model.TargetFrame, diffs, objName))
+      if (!CmpTargetFrame(openXmlElement, model.TargetFrame, diffs, objName, propName))
         ok = false;
-      if (!CmpTooltip(openXmlElement, model.Tooltip, diffs, objName))
+      if (!CmpTooltip(openXmlElement, model.Tooltip, diffs, objName, propName))
         ok = false;
-      if (!CmpDocLocation(openXmlElement, model.DocLocation, diffs, objName))
+      if (!CmpDocLocation(openXmlElement, model.DocLocation, diffs, objName, propName))
         ok = false;
-      if (!CmpHistory(openXmlElement, model.History, diffs, objName))
+      if (!CmpHistory(openXmlElement, model.History, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchor(openXmlElement, model.Anchor, diffs, objName))
+      if (!CmpAnchor(openXmlElement, model.Anchor, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        ParagraphContentConverter.CompareParagraphContent, diffs, objName))
+        ParagraphContentConverter.CompareParagraphContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

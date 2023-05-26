@@ -13,7 +13,7 @@ public static class ContentPartConverter
     return StringValueConverter.GetValue(openXmlElement?.RelationshipId);
   }
   
-  private static bool CmpRelationshipId(DXO10DCD.ContentPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipId(DXO10DCD.ContentPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RelationshipId, value, diffs, objName, "RelationshipId");
   }
@@ -31,9 +31,9 @@ public static class ContentPartConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXO10DCD.ContentPart openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXO10DCD.ContentPart openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBlackWhiteMode(DXO10DCD.ContentPart openXmlElement, DMD.BlackWhiteMode? value)
@@ -52,9 +52,9 @@ public static class ContentPartConverter
     return null;
   }
   
-  private static bool CmpNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.NonVisualContentPartProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.NonVisualContentPartProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>(), value, diffs, objName);
+    return DMXDCDs.NonVisualContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualContentPartProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualContentPartProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.NonVisualContentPartProperties? value)
@@ -81,9 +81,9 @@ public static class ContentPartConverter
     return null;
   }
   
-  private static bool CmpApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCDs.ApplicationNonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.ApplicationNonVisualDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetApplicationNonVisualDrawingProperties(DXO10DCD.ContentPart openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value)
@@ -110,9 +110,9 @@ public static class ContentPartConverter
     return null;
   }
   
-  private static bool CmpTransform2D(DXO10DCD.ContentPart openXmlElement, DMDCDs.Transform2D? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform2D(DXO10DCD.ContentPart openXmlElement, DMDCDs.Transform2D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.Transform2D>(), value, diffs, objName);
+    return DMXDCDs.Transform2DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.Transform2D>(), value, diffs, objName, propName);
   }
   
   private static void SetTransform2D(DXO10DCD.ContentPart openXmlElement, DMDCDs.Transform2D? value)
@@ -139,9 +139,9 @@ public static class ContentPartConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement, DMDCDs.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement, DMDCDs.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDCDs.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO10DCD.ContentPart openXmlElement, DMDCDs.OfficeArtExtensionList? value)
@@ -173,27 +173,27 @@ public static class ContentPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DCD.ContentPart? openXmlElement, DMDCDs.ContentPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.ContentPart? openXmlElement, DMDCDs.ContentPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRelationshipId(openXmlElement, value.RelationshipId, diffs, objName))
+      if (!CmpRelationshipId(openXmlElement, value.RelationshipId, diffs, objName, propName))
         ok = false;
-      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName))
+      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualContentPartProperties(openXmlElement, value.NonVisualContentPartProperties, diffs, objName))
+      if (!CmpNonVisualContentPartProperties(openXmlElement, value.NonVisualContentPartProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpApplicationNonVisualDrawingProperties(openXmlElement, value.ApplicationNonVisualDrawingProperties, diffs, objName))
+      if (!CmpApplicationNonVisualDrawingProperties(openXmlElement, value.ApplicationNonVisualDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTransform2D(openXmlElement, value.Transform2D, diffs, objName))
+      if (!CmpTransform2D(openXmlElement, value.Transform2D, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

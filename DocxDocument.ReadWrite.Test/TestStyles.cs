@@ -50,7 +50,7 @@ public class TestStyles : TestBase
     if (showDetails)
       WriteLine($"  Document Defined Styles: found {modelDefinedStylesCount}, expected {origDefinedStylesCount}");
     var diffs = new DiffList();
-    if (!DMXW.StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, "Styles"))
+    if (!DMXW.StylesConverter.CompareModelElement(origDefinedStyles, modelStyles, diffs, null, null))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     Assert.That(modelDefinedStylesCount, Is.EqualTo(origDefinedStylesCount), "Invalid defined styles count");
 
@@ -61,7 +61,7 @@ public class TestStyles : TestBase
     if (showDetails)
       WriteLine($"  Document Lantent Styles: found {modelLatentStylesCount}, expected {origLatentStylesCount}");
     diffs = new DiffList();
-    if (!DMXW.LatentStylesConverter.CompareModelElement(origLatentStyles, modelLatentStyles, diffs, null))
+    if (!DMXW.LatentStylesConverter.CompareModelElement(origLatentStyles, modelLatentStyles, diffs, null, null))
       Assert.Fail(diffs.FirstOrDefault()?.ToString());
     Assert.That(modelLatentStylesCount, Is.EqualTo(origLatentStylesCount), "Invalid latent styles count");
 
@@ -165,7 +165,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelParPropsDefaults, "ParagraphPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!DMXW.DefaultParagraphPropertiesConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null))
+      if (!DMXW.DefaultParagraphPropertiesConverter.CompareModelElement(origParPropsDefaults, modelParPropsDefaults, diffs, null, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }
@@ -182,7 +182,7 @@ public class TestStyles : TestBase
     {
       Assert.IsNotNull(modelRunPropsDefaults, "RunPropertiesDefault is null");
       var diffs = new DiffList();
-      if (!DMXW.DefaultRunPropertiesConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null))
+      if (!DMXW.DefaultRunPropertiesConverter.CompareModelElement(origRunPropsDefaults, modelRunPropsDefaults, diffs, null, null))
         Assert.Fail(diffs.FirstOrDefault()?.ToString());
     }
   }

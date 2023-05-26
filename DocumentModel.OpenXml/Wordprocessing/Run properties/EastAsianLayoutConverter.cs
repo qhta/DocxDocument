@@ -13,7 +13,7 @@ public static class EastAsianLayoutConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.EastAsianLayout openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.EastAsianLayout openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -33,7 +33,7 @@ public static class EastAsianLayoutConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Combine);
   }
   
-  private static bool CmpCombine(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCombine(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Combine, value, diffs, objName, "Combine");
   }
@@ -51,9 +51,9 @@ public static class EastAsianLayoutConverter
     return EnumValueConverter.GetValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value);
   }
   
-  private static bool CmpCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CombineBracketValues, DMW.CombineBracketKind>(openXmlElement?.CombineBrackets?.Value, value, diffs, objName, propName);
   }
   
   private static void SetCombineBrackets(DXW.EastAsianLayout openXmlElement, DMW.CombineBracketKind? value)
@@ -69,7 +69,7 @@ public static class EastAsianLayoutConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Vertical);
   }
   
-  private static bool CmpVertical(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVertical(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Vertical, value, diffs, objName, "Vertical");
   }
@@ -87,7 +87,7 @@ public static class EastAsianLayoutConverter
     return BooleanValueConverter.GetValue(openXmlElement?.VerticalCompress);
   }
   
-  private static bool CmpVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalCompress(DXW.EastAsianLayout openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.VerticalCompress, value, diffs, objName, "VerticalCompress");
   }
@@ -112,25 +112,25 @@ public static class EastAsianLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.EastAsianLayout? openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.EastAsianLayout? openXmlElement, DMW.EastAsianLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpCombine(openXmlElement, value.Combine, diffs, objName))
+      if (!CmpCombine(openXmlElement, value.Combine, diffs, objName, propName))
         ok = false;
-      if (!CmpCombineBrackets(openXmlElement, value.CombineBrackets, diffs, objName))
+      if (!CmpCombineBrackets(openXmlElement, value.CombineBrackets, diffs, objName, propName))
         ok = false;
-      if (!CmpVertical(openXmlElement, value.Vertical, diffs, objName))
+      if (!CmpVertical(openXmlElement, value.Vertical, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalCompress(openXmlElement, value.VerticalCompress, diffs, objName))
+      if (!CmpVerticalCompress(openXmlElement, value.VerticalCompress, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

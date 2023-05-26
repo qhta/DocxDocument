@@ -13,9 +13,9 @@ public static class LineChartConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>(openXmlElement.GetFirstChild<DXDC.Grouping>()?.Val?.Value);
   }
   
-  private static bool CmpGrouping(DXDC.LineChart openXmlElement, DMDC.GroupingKind? value, DiffList? diffs, string? objName)
+  private static bool CmpGrouping(DXDC.LineChart openXmlElement, DMDC.GroupingKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>(openXmlElement.GetFirstChild<DXDC.Grouping>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.GroupingValues, DMDC.GroupingKind>(openXmlElement.GetFirstChild<DXDC.Grouping>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetGrouping(DXDC.LineChart openXmlElement, DMDC.GroupingKind? value)
@@ -41,7 +41,7 @@ public static class LineChartConverter
     return openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
   }
   
-  private static bool CmpVaryColors(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVaryColors(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
     if (val == value) return true;
@@ -78,7 +78,7 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpLineChartSeries(DXDC.LineChart openXmlElement, Collection<DMDC.LineChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChartSeries(DXDC.LineChart openXmlElement, Collection<DMDC.LineChartSeries>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.LineChartSeries>();
     var origElementsCount = origElements.Count();
@@ -87,7 +87,7 @@ public static class LineChartConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -96,13 +96,13 @@ public static class LineChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.LineChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LineChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -128,9 +128,9 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpDataLabels(DXDC.LineChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXDC.LineChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabels(DXDC.LineChart openXmlElement, DMDC.DataLabels? value)
@@ -154,9 +154,9 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpDropLines(DXDC.LineChart openXmlElement, DMDC.DropLines? value, DiffList? diffs, string? objName)
+  private static bool CmpDropLines(DXDC.LineChart openXmlElement, DMDC.DropLines? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DropLines>(), value, diffs, objName);
+    return DMXDC.DropLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DropLines>(), value, diffs, objName, propName);
   }
   
   private static void SetDropLines(DXDC.LineChart openXmlElement, DMDC.DropLines? value)
@@ -180,9 +180,9 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpHighLowLines(DXDC.LineChart openXmlElement, DMDC.HighLowLines? value, DiffList? diffs, string? objName)
+  private static bool CmpHighLowLines(DXDC.LineChart openXmlElement, DMDC.HighLowLines? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HighLowLines>(), value, diffs, objName);
+    return DMXDC.HighLowLinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HighLowLines>(), value, diffs, objName, propName);
   }
   
   private static void SetHighLowLines(DXDC.LineChart openXmlElement, DMDC.HighLowLines? value)
@@ -206,9 +206,9 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpUpDownBars(DXDC.LineChart openXmlElement, DMDC.UpDownBars? value, DiffList? diffs, string? objName)
+  private static bool CmpUpDownBars(DXDC.LineChart openXmlElement, DMDC.UpDownBars? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpDownBars>(), value, diffs, objName);
+    return DMXDC.UpDownBarsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.UpDownBars>(), value, diffs, objName, propName);
   }
   
   private static void SetUpDownBars(DXDC.LineChart openXmlElement, DMDC.UpDownBars? value)
@@ -229,7 +229,7 @@ public static class LineChartConverter
     return openXmlElement.GetFirstChild<DXDC.ShowMarker>() != null;
   }
   
-  private static bool CmpShowMarker(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowMarker(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ShowMarker>() != null;
     if (val == value) return true;
@@ -257,7 +257,7 @@ public static class LineChartConverter
     return openXmlElement.GetFirstChild<DXDC.Smooth>() != null;
   }
   
-  private static bool CmpSmooth(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSmooth(DXDC.LineChart openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Smooth>() != null;
     if (val == value) return true;
@@ -294,7 +294,7 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpAxisIds(DXDC.LineChart openXmlElement, Collection<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisIds(DXDC.LineChart openXmlElement, Collection<UInt32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.AxisId>();
     var origElementsCount = origElements.Count();
@@ -303,7 +303,7 @@ public static class LineChartConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -312,13 +312,13 @@ public static class LineChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+        if (!UInt32ValueConverter.CmpValue(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -344,9 +344,9 @@ public static class LineChartConverter
     return null;
   }
   
-  private static bool CmpLineChartExtensionList(DXDC.LineChart openXmlElement, DMDC.LineChartExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpLineChartExtensionList(DXDC.LineChart openXmlElement, DMDC.LineChartExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LineChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LineChartExtensionList>(), value, diffs, objName);
+    return DMXDC.LineChartExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LineChartExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetLineChartExtensionList(DXDC.LineChart openXmlElement, DMDC.LineChartExtensionList? value)
@@ -383,37 +383,37 @@ public static class LineChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.LineChart? openXmlElement, DMDC.LineChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.LineChart? openXmlElement, DMDC.LineChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName))
+      if (!CmpGrouping(openXmlElement, value.Grouping, diffs, objName, propName))
         ok = false;
-      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName, propName))
         ok = false;
-      if (!CmpLineChartSeries(openXmlElement, value.LineChartSeries, diffs, objName))
+      if (!CmpLineChartSeries(openXmlElement, value.LineChartSeries, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName, propName))
         ok = false;
-      if (!CmpDropLines(openXmlElement, value.DropLines, diffs, objName))
+      if (!CmpDropLines(openXmlElement, value.DropLines, diffs, objName, propName))
         ok = false;
-      if (!CmpHighLowLines(openXmlElement, value.HighLowLines, diffs, objName))
+      if (!CmpHighLowLines(openXmlElement, value.HighLowLines, diffs, objName, propName))
         ok = false;
-      if (!CmpUpDownBars(openXmlElement, value.UpDownBars, diffs, objName))
+      if (!CmpUpDownBars(openXmlElement, value.UpDownBars, diffs, objName, propName))
         ok = false;
-      if (!CmpShowMarker(openXmlElement, value.ShowMarker, diffs, objName))
+      if (!CmpShowMarker(openXmlElement, value.ShowMarker, diffs, objName, propName))
         ok = false;
-      if (!CmpSmooth(openXmlElement, value.Smooth, diffs, objName))
+      if (!CmpSmooth(openXmlElement, value.Smooth, diffs, objName, propName))
         ok = false;
-      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName))
+      if (!CmpAxisIds(openXmlElement, value.AxisIds, diffs, objName, propName))
         ok = false;
-      if (!CmpLineChartExtensionList(openXmlElement, value.LineChartExtensionList, diffs, objName))
+      if (!CmpLineChartExtensionList(openXmlElement, value.LineChartExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

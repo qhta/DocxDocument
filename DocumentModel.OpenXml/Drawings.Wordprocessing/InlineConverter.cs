@@ -13,7 +13,7 @@ public static class InlineConverter
     return openXmlElement?.DistanceFromTop?.Value;
   }
   
-  private static bool CmpDistanceFromTop(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromTop(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromTop?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromTop", openXmlElement?.DistanceFromTop?.Value, value);
@@ -33,7 +33,7 @@ public static class InlineConverter
     return openXmlElement?.DistanceFromBottom?.Value;
   }
   
-  private static bool CmpDistanceFromBottom(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromBottom(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromBottom?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromBottom", openXmlElement?.DistanceFromBottom?.Value, value);
@@ -53,7 +53,7 @@ public static class InlineConverter
     return openXmlElement?.DistanceFromLeft?.Value;
   }
   
-  private static bool CmpDistanceFromLeft(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromLeft(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromLeft?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromLeft", openXmlElement?.DistanceFromLeft?.Value, value);
@@ -73,7 +73,7 @@ public static class InlineConverter
     return openXmlElement?.DistanceFromRight?.Value;
   }
   
-  private static bool CmpDistanceFromRight(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDistanceFromRight(DXDW.Inline openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DistanceFromRight?.Value == value) return true;
     diffs?.Add(objName, "DistanceFromRight", openXmlElement?.DistanceFromRight?.Value, value);
@@ -95,7 +95,7 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpAnchorId(DXDW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorId(DXDW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.AnchorId?.Value, value, diffs, objName, "AnchorId");
   }
@@ -118,7 +118,7 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpEditId(DXDW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpEditId(DXDW.Inline openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.EditId?.Value, value, diffs, objName, "EditId");
   }
@@ -142,9 +142,9 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpExtent(DXDW.Inline openXmlElement, DMD.Extent? value, DiffList? diffs, string? objName)
+  private static bool CmpExtent(DXDW.Inline openXmlElement, DMD.Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Extent>(), value, diffs, objName);
+    return DMXDW.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Extent>(), value, diffs, objName, propName);
   }
   
   private static void SetExtent(DXDW.Inline openXmlElement, DMD.Extent? value)
@@ -171,9 +171,9 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpEffectExtent(DXDW.Inline openXmlElement, DMDW.EffectExtent? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectExtent(DXDW.Inline openXmlElement, DMDW.EffectExtent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.EffectExtent>(), value, diffs, objName);
+    return DMXDW.EffectExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.EffectExtent>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectExtent(DXDW.Inline openXmlElement, DMDW.EffectExtent? value)
@@ -200,9 +200,9 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpDocProperties(DXDW.Inline openXmlElement, DMDW.DocProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpDocProperties(DXDW.Inline openXmlElement, DMDW.DocProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.DocPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.DocProperties>(), value, diffs, objName);
+    return DMXDW.DocPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.DocProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetDocProperties(DXDW.Inline openXmlElement, DMDW.DocProperties? value)
@@ -229,9 +229,9 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpNonVisualGraphicFrameDrawingProperties(DXDW.Inline openXmlElement, DMDW.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualGraphicFrameDrawingProperties(DXDW.Inline openXmlElement, DMDW.NonVisualGraphicFrameDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.NonVisualGraphicFrameDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>(), value, diffs, objName);
+    return DMXDW.NonVisualGraphicFrameDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.NonVisualGraphicFrameDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualGraphicFrameDrawingProperties(DXDW.Inline openXmlElement, DMDW.NonVisualGraphicFrameDrawingProperties? value)
@@ -258,9 +258,9 @@ public static class InlineConverter
     return null;
   }
   
-  private static bool CmpGraphic(DXDW.Inline openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphic(DXDW.Inline openXmlElement, DMD.Graphic? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName);
+    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName, propName);
   }
   
   private static void SetGraphic(DXDW.Inline openXmlElement, DMD.Graphic? value)
@@ -297,37 +297,37 @@ public static class InlineConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDW.Inline? openXmlElement, DMDW.Inline? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.Inline? openXmlElement, DMDW.Inline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDistanceFromTop(openXmlElement, value.DistanceFromTop, diffs, objName))
+      if (!CmpDistanceFromTop(openXmlElement, value.DistanceFromTop, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromBottom(openXmlElement, value.DistanceFromBottom, diffs, objName))
+      if (!CmpDistanceFromBottom(openXmlElement, value.DistanceFromBottom, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromLeft(openXmlElement, value.DistanceFromLeft, diffs, objName))
+      if (!CmpDistanceFromLeft(openXmlElement, value.DistanceFromLeft, diffs, objName, propName))
         ok = false;
-      if (!CmpDistanceFromRight(openXmlElement, value.DistanceFromRight, diffs, objName))
+      if (!CmpDistanceFromRight(openXmlElement, value.DistanceFromRight, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchorId(openXmlElement, value.AnchorId, diffs, objName))
+      if (!CmpAnchorId(openXmlElement, value.AnchorId, diffs, objName, propName))
         ok = false;
-      if (!CmpEditId(openXmlElement, value.EditId, diffs, objName))
+      if (!CmpEditId(openXmlElement, value.EditId, diffs, objName, propName))
         ok = false;
-      if (!CmpExtent(openXmlElement, value.Extent, diffs, objName))
+      if (!CmpExtent(openXmlElement, value.Extent, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectExtent(openXmlElement, value.EffectExtent, diffs, objName))
+      if (!CmpEffectExtent(openXmlElement, value.EffectExtent, diffs, objName, propName))
         ok = false;
-      if (!CmpDocProperties(openXmlElement, value.DocProperties, diffs, objName))
+      if (!CmpDocProperties(openXmlElement, value.DocProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualGraphicFrameDrawingProperties(openXmlElement, value.NonVisualGraphicFrameDrawingProperties, diffs, objName))
+      if (!CmpNonVisualGraphicFrameDrawingProperties(openXmlElement, value.NonVisualGraphicFrameDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName))
+      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

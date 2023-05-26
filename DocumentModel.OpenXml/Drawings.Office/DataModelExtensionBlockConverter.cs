@@ -13,7 +13,7 @@ public static class DataModelExtensionBlockConverter
     return StringValueConverter.GetValue(openXmlElement?.RelId);
   }
   
-  private static bool CmpRelId(DXOD.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelId(DXOD.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RelId, value, diffs, objName, "RelId");
   }
@@ -31,7 +31,7 @@ public static class DataModelExtensionBlockConverter
     return StringValueConverter.GetValue(openXmlElement?.MinVer);
   }
   
-  private static bool CmpMinVer(DXOD.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinVer(DXOD.DataModelExtensionBlock openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinVer, value, diffs, objName, "MinVer");
   }
@@ -53,19 +53,19 @@ public static class DataModelExtensionBlockConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.DataModelExtensionBlock? openXmlElement, DMDO.DataModelExtensionBlock? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.DataModelExtensionBlock? openXmlElement, DMDO.DataModelExtensionBlock? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRelId(openXmlElement, value.RelId, diffs, objName))
+      if (!CmpRelId(openXmlElement, value.RelId, diffs, objName, propName))
         ok = false;
-      if (!CmpMinVer(openXmlElement, value.MinVer, diffs, objName))
+      if (!CmpMinVer(openXmlElement, value.MinVer, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

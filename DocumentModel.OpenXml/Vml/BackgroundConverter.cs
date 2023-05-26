@@ -13,7 +13,7 @@ public static class BackgroundConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXV.Background openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXV.Background openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class BackgroundConverter
     return openXmlElement?.Filled?.Value;
   }
   
-  private static bool CmpFilled(DXV.Background openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFilled(DXV.Background openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Filled?.Value == value) return true;
     diffs?.Add(objName, "Filled", openXmlElement?.Filled?.Value, value);
@@ -54,7 +54,7 @@ public static class BackgroundConverter
     return StringValueConverter.GetValue(openXmlElement?.Fillcolor);
   }
   
-  private static bool CmpFillcolor(DXV.Background openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFillcolor(DXV.Background openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Fillcolor, value, diffs, objName, "Fillcolor");
   }
@@ -72,9 +72,9 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value)
@@ -90,9 +90,9 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value);
   }
   
-  private static bool CmpPureBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpPureBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.PureBlackWhiteMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPureBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value)
@@ -108,9 +108,9 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value);
   }
   
-  private static bool CmpNormalBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpNormalBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.BlackAndWhiteModeValues, DMV.BlackAndWhiteMode>(openXmlElement?.NormalBlackWhiteMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetNormalBlackWhiteMode(DXV.Background openXmlElement, DMV.BlackAndWhiteMode? value)
@@ -126,9 +126,9 @@ public static class BackgroundConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMV.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value);
   }
   
-  private static bool CmpTargetScreenSize(DXV.Background openXmlElement, DMV.ScreenSizeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTargetScreenSize(DXV.Background openXmlElement, DMV.ScreenSizeKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMV.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.Office.ScreenSizeValues, DMV.ScreenSizeKind>(openXmlElement?.TargetScreenSize?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTargetScreenSize(DXV.Background openXmlElement, DMV.ScreenSizeKind? value)
@@ -147,9 +147,9 @@ public static class BackgroundConverter
     return null;
   }
   
-  private static bool CmpFill(DXV.Background openXmlElement, DMV.Fill? value, DiffList? diffs, string? objName)
+  private static bool CmpFill(DXV.Background openXmlElement, DMV.Fill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Fill>(), value, diffs, objName);
+    return DMXV.FillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Fill>(), value, diffs, objName, propName);
   }
   
   private static void SetFill(DXV.Background openXmlElement, DMV.Fill? value)
@@ -183,31 +183,31 @@ public static class BackgroundConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXV.Background? openXmlElement, DMV.Background? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.Background? openXmlElement, DMV.Background? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpFilled(openXmlElement, value.Filled, diffs, objName))
+      if (!CmpFilled(openXmlElement, value.Filled, diffs, objName, propName))
         ok = false;
-      if (!CmpFillcolor(openXmlElement, value.Fillcolor, diffs, objName))
+      if (!CmpFillcolor(openXmlElement, value.Fillcolor, diffs, objName, propName))
         ok = false;
-      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName))
+      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpPureBlackWhiteMode(openXmlElement, value.PureBlackWhiteMode, diffs, objName))
+      if (!CmpPureBlackWhiteMode(openXmlElement, value.PureBlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpNormalBlackWhiteMode(openXmlElement, value.NormalBlackWhiteMode, diffs, objName))
+      if (!CmpNormalBlackWhiteMode(openXmlElement, value.NormalBlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpTargetScreenSize(openXmlElement, value.TargetScreenSize, diffs, objName))
+      if (!CmpTargetScreenSize(openXmlElement, value.TargetScreenSize, diffs, objName, propName))
         ok = false;
-      if (!CmpFill(openXmlElement, value.Fill, diffs, objName))
+      if (!CmpFill(openXmlElement, value.Fill, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

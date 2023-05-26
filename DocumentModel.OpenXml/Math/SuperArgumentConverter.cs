@@ -12,9 +12,9 @@ public static class SuperArgumentConverter
     return ArgumentConverter.CreateModelElement<DMM.SuperArgument>(openXmlElement);
   }
   
-  public static bool CompareModelElement(DXM.SuperArgument? openXmlElement, DMM.SuperArgument? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.SuperArgument? openXmlElement, DMM.SuperArgument? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ArgumentConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return ArgumentConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMM.SuperArgument model)

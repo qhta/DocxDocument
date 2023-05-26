@@ -13,7 +13,7 @@ public static class DataDisplayOptions16Converter
     return openXmlElement.GetFirstChild<DXO19DC.BooleanFalse>() != null;
   }
   
-  private static bool CmpBooleanFalse(DXDC.DataDisplayOptions16 openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBooleanFalse(DXDC.DataDisplayOptions16 openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO19DC.BooleanFalse>() != null;
     if (val == value) return true;
@@ -47,17 +47,17 @@ public static class DataDisplayOptions16Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DataDisplayOptions16? openXmlElement, DMDC.DataDisplayOptions16? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DataDisplayOptions16? openXmlElement, DMDC.DataDisplayOptions16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBooleanFalse(openXmlElement, value.BooleanFalse, diffs, objName))
+      if (!CmpBooleanFalse(openXmlElement, value.BooleanFalse, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

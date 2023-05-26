@@ -11,9 +11,9 @@ public static class BidirectionalEmbeddingConverter
     return EnumValueConverter.GetValue<DXW.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.BidirectionalEmbedding openXmlElement, DMW.DirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.BidirectionalEmbedding openXmlElement, DMW.DirectionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DirectionValues, DMW.DirectionKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.BidirectionalEmbedding openXmlElement, DMW.DirectionKind? value)
@@ -29,9 +29,9 @@ public static class BidirectionalEmbeddingConverter
   }
 
   public static bool CompareBidirectionalEmbeddingContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs, objName);
+    return ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs, objName, propName);
   }
 
   public static OpenXmlElement CreateOpenXmlBidirectionalEmbeddingContent(DM.IModelElement model)
@@ -59,21 +59,21 @@ public static class BidirectionalEmbeddingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.BidirectionalEmbedding? openXmlElement, DMW.BidirectionalEmbedding? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.BidirectionalEmbedding? openXmlElement, DMW.BidirectionalEmbedding? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, model.Type, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Type, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IBidirectionalContent>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CompareBidirectionalEmbeddingContent, diffs, objName))
+        CompareBidirectionalEmbeddingContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

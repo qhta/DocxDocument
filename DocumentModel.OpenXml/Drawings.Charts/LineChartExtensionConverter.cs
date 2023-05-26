@@ -13,7 +13,7 @@ public static class LineChartExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.LineChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.LineChartExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class LineChartExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredLineSeriesExtension(DXDC.LineChartExtension openXmlElement, DMDC.FilteredLineSeriesExtension? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredLineSeriesExtension(DXDC.LineChartExtension openXmlElement, DMDC.FilteredLineSeriesExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredLineSeriesExtensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredLineSeriesExtension>(), value, diffs, objName);
+    return DMXDC.FilteredLineSeriesExtensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredLineSeriesExtension>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredLineSeriesExtension(DXDC.LineChartExtension openXmlElement, DMDC.FilteredLineSeriesExtension? value)
@@ -61,19 +61,19 @@ public static class LineChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.LineChartExtension? openXmlElement, DMDC.LineChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.LineChartExtension? openXmlElement, DMDC.LineChartExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredLineSeriesExtension(openXmlElement, value.FilteredLineSeriesExtension, diffs, objName))
+      if (!CmpFilteredLineSeriesExtension(openXmlElement, value.FilteredLineSeriesExtension, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

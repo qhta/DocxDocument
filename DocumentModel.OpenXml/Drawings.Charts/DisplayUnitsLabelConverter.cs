@@ -16,9 +16,9 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  private static bool CmpLayout(DXDC.DisplayUnitsLabel openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.DisplayUnitsLabel openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXDC.DisplayUnitsLabel openXmlElement, DMDC.Layout? value)
@@ -45,9 +45,9 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  private static bool CmpChartText(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
+  private static bool CmpChartText(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName);
+    return DMXDC.ChartTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartText>(), value, diffs, objName, propName);
   }
   
   private static void SetChartText(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartText? value)
@@ -74,9 +74,9 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.ChartShapeProperties? value)
@@ -103,9 +103,9 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  private static bool CmpTextProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXDC.DisplayUnitsLabel openXmlElement, DMDC.TextProperties? value)
@@ -135,23 +135,23 @@ public static class DisplayUnitsLabelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DisplayUnitsLabel? openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DisplayUnitsLabel? openXmlElement, DMDC.DisplayUnitsLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName))
+      if (!CmpChartText(openXmlElement, value.ChartText, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

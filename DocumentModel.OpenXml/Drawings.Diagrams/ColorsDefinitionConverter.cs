@@ -13,7 +13,7 @@ public static class ColorsDefinitionConverter
     return StringValueConverter.GetValue(openXmlElement?.UniqueId);
   }
   
-  private static bool CmpUniqueId(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUniqueId(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UniqueId, value, diffs, objName, "UniqueId");
   }
@@ -31,7 +31,7 @@ public static class ColorsDefinitionConverter
     return StringValueConverter.GetValue(openXmlElement?.MinVersion);
   }
   
-  private static bool CmpMinVersion(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinVersion(DXDD.ColorsDefinition openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinVersion, value, diffs, objName, "MinVersion");
   }
@@ -55,7 +55,7 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorDefinitionTitles(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorDefinitionTitle>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorDefinitionTitles(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorDefinitionTitle>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.ColorDefinitionTitle>();
     var origElementsCount = origElements.Count();
@@ -64,7 +64,7 @@ public static class ColorsDefinitionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -73,13 +73,13 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.ColorDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -111,7 +111,7 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorTransformDescriptions(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformDescription>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformDescriptions(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformDescription>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.ColorTransformDescription>();
     var origElementsCount = origElements.Count();
@@ -120,7 +120,7 @@ public static class ColorsDefinitionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -129,13 +129,13 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.ColorTransformDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorTransformDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -161,9 +161,9 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorTransformCategories(DXDD.ColorsDefinition openXmlElement, DMDD.ColorTransformCategories? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformCategories(DXDD.ColorsDefinition openXmlElement, DMDD.ColorTransformCategories? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ColorTransformCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ColorTransformCategories>(), value, diffs, objName);
+    return DMXDD.ColorTransformCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ColorTransformCategories>(), value, diffs, objName, propName);
   }
   
   private static void SetColorTransformCategories(DXDD.ColorsDefinition openXmlElement, DMDD.ColorTransformCategories? value)
@@ -193,7 +193,7 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpColorTransformStyleLabels(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformStyleLabel>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTransformStyleLabels(DXDD.ColorsDefinition openXmlElement, Collection<DMDD.ColorTransformStyleLabel>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.ColorTransformStyleLabel>();
     var origElementsCount = origElements.Count();
@@ -202,7 +202,7 @@ public static class ColorsDefinitionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -211,13 +211,13 @@ public static class ColorsDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.ColorTransformStyleLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.ColorTransformStyleLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -243,9 +243,9 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.ColorsDefinition openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.ColorsDefinition openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.ColorsDefinition openXmlElement, DMDD.ExtensionList? value)
@@ -278,29 +278,29 @@ public static class ColorsDefinitionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.ColorsDefinition? openXmlElement, DMDD.ColorsDefinition? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.ColorsDefinition? openXmlElement, DMDD.ColorsDefinition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUniqueId(openXmlElement, value.UniqueId, diffs, objName))
+      if (!CmpUniqueId(openXmlElement, value.UniqueId, diffs, objName, propName))
         ok = false;
-      if (!CmpMinVersion(openXmlElement, value.MinVersion, diffs, objName))
+      if (!CmpMinVersion(openXmlElement, value.MinVersion, diffs, objName, propName))
         ok = false;
-      if (!CmpColorDefinitionTitles(openXmlElement, value.ColorDefinitionTitles, diffs, objName))
+      if (!CmpColorDefinitionTitles(openXmlElement, value.ColorDefinitionTitles, diffs, objName, propName))
         ok = false;
-      if (!CmpColorTransformDescriptions(openXmlElement, value.ColorTransformDescriptions, diffs, objName))
+      if (!CmpColorTransformDescriptions(openXmlElement, value.ColorTransformDescriptions, diffs, objName, propName))
         ok = false;
-      if (!CmpColorTransformCategories(openXmlElement, value.ColorTransformCategories, diffs, objName))
+      if (!CmpColorTransformCategories(openXmlElement, value.ColorTransformCategories, diffs, objName, propName))
         ok = false;
-      if (!CmpColorTransformStyleLabels(openXmlElement, value.ColorTransformStyleLabels, diffs, objName))
+      if (!CmpColorTransformStyleLabels(openXmlElement, value.ColorTransformStyleLabels, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

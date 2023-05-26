@@ -13,7 +13,7 @@ public static class SdtDocPartTypeConverter
     return openXmlElement.GetFirstChild<DXW.DocPartGallery>()?.Val?.Value;
   }
   
-  private static bool CmpDocPartGallery(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartGallery(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DocPartGallery>();
     if (itemElement?.Val?.Value == value) return true;
@@ -41,7 +41,7 @@ public static class SdtDocPartTypeConverter
     return openXmlElement.GetFirstChild<DXW.DocPartCategory>()?.Val?.Value;
   }
   
-  private static bool CmpDocPartCategory(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartCategory(DXW.SdtDocPartType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DocPartCategory>();
     if (itemElement?.Val?.Value == value) return true;
@@ -69,9 +69,9 @@ public static class SdtDocPartTypeConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>());
   }
   
-  private static bool CmpDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DocPartUnique>(), value, diffs, objName, propName);
   }
   
   private static void SetDocPartUnique(DXW.SdtDocPartType openXmlElement, Boolean? value)
@@ -92,21 +92,21 @@ public static class SdtDocPartTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SdtDocPartType? openXmlElement, DMW.SdtDocPartType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtDocPartType? openXmlElement, DMW.SdtDocPartType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocPartGallery(openXmlElement, value.DocPartGallery, diffs, objName))
+      if (!CmpDocPartGallery(openXmlElement, value.DocPartGallery, diffs, objName, propName))
         ok = false;
-      if (!CmpDocPartCategory(openXmlElement, value.DocPartCategory, diffs, objName))
+      if (!CmpDocPartCategory(openXmlElement, value.DocPartCategory, diffs, objName, propName))
         ok = false;
-      if (!CmpDocPartUnique(openXmlElement, value.DocPartUnique, diffs, objName))
+      if (!CmpDocPartUnique(openXmlElement, value.DocPartUnique, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

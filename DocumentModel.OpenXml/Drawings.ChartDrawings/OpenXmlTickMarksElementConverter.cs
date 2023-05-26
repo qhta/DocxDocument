@@ -13,9 +13,9 @@ public static class OpenXmlTickMarksElementConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDCDs.TickMarksType>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.TickMarksType? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.TickMarksType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDCDs.TickMarksType>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.TickMarksType, DMDCDs.TickMarksType>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.TickMarksType? value)
@@ -34,9 +34,9 @@ public static class OpenXmlTickMarksElementConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.OpenXmlTickMarksElement openXmlElement, DMDCDs.ExtensionList? value)
@@ -64,19 +64,19 @@ public static class OpenXmlTickMarksElementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.OpenXmlTickMarksElement? openXmlElement, DMDCDs.OpenXmlTickMarksElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.OpenXmlTickMarksElement? openXmlElement, DMDCDs.OpenXmlTickMarksElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

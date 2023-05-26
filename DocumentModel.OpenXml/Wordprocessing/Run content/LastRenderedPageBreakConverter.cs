@@ -18,7 +18,7 @@ public static class LastRenderedPageBreakConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.LastRenderedPageBreak? openXmlElement, DMW.LastRenderedPageBreak? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LastRenderedPageBreak? openXmlElement, DMW.LastRenderedPageBreak? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -26,7 +26,7 @@ public static class LastRenderedPageBreakConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

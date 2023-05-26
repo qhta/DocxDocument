@@ -13,7 +13,7 @@ public static class SupplementalFontConverter
     return StringValueConverter.GetValue(openXmlElement?.Script);
   }
   
-  private static bool CmpScript(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScript(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Script, value, diffs, objName, "Script");
   }
@@ -31,7 +31,7 @@ public static class SupplementalFontConverter
     return StringValueConverter.GetValue(openXmlElement?.Typeface);
   }
   
-  private static bool CmpTypeface(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTypeface(DXD.SupplementalFont openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Typeface, value, diffs, objName, "Typeface");
   }
@@ -53,19 +53,19 @@ public static class SupplementalFontConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.SupplementalFont? openXmlElement, DMD.SupplementalFont? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.SupplementalFont? openXmlElement, DMD.SupplementalFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpScript(openXmlElement, value.Script, diffs, objName))
+      if (!CmpScript(openXmlElement, value.Script, diffs, objName, propName))
         ok = false;
-      if (!CmpTypeface(openXmlElement, value.Typeface, diffs, objName))
+      if (!CmpTypeface(openXmlElement, value.Typeface, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

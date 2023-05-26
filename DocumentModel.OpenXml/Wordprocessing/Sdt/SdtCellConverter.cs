@@ -39,20 +39,20 @@ public static class SdtCellConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to the openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareSdtContentCellElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.TableCell tableCell && model is DMW.TableCell tableCellModel)
-        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName);
+        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtCell sdtCell && model is DMW.SdtCell sdtCellModel)
-        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName);
+        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlCell customXmlCell && model is DMW.CustomXmlCell customXmlCellModel)
-        return DMXW.CustomXmlCellConverter.CompareModelElement(customXmlCell, customXmlCellModel, diffs, objName);
+        return DMXW.CustomXmlCellConverter.CompareModelElement(customXmlCell, customXmlCellModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -60,7 +60,7 @@ public static class SdtCellConverter
       return false;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   /// <summary>
@@ -135,21 +135,21 @@ public static class SdtCellConverter
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element is equivalent to openXml element, <c>false</c> otherwise</returns>
   public static bool CompareModelElement(DXW.SdtCell? openXmlElement, DMW.SdtCell? model, 
-    DiffList? diffs, string? objName)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtProperties(openXmlElement, model.SdtProperties, diffs, objName, propName))
         ok = false;
-      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName))
+      if (!SdtElementConverter.CmpSdtEndCharProperties(openXmlElement, model.SdtEndCharProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.ISdtCellContent>.CompareOpenXmlElementCollection(openXmlElement.SdtContentCell, model,
-        CompareSdtContentCellElement, diffs, objName))
+        CompareSdtContentCellElement, diffs, objName, propName))
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

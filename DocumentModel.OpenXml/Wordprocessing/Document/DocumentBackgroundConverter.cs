@@ -15,9 +15,9 @@ public static class DocumentBackgroundConverter
     return null;
   }
   
-  private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMV.Background? value, DiffList? diffs, string? objName)
+  private static bool CmpBackground(DXW.DocumentBackground openXmlElement, DMV.Background? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Background>(), value, diffs, objName);
+    return DMXV.BackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXV.Background>(), value, diffs, objName, propName);
   }
   
   private static void SetBackground(DXW.DocumentBackground openXmlElement, DMV.Background? value)
@@ -46,19 +46,19 @@ public static class DocumentBackgroundConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DocumentBackground? openXmlElement, DMW.DocumentBackground? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DocumentBackground? openXmlElement, DMW.DocumentBackground? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!DocumentBackgroundColorConverter.CompareModelElement(openXmlElement, model.Color, diffs, objName))
+      if (!DocumentBackgroundColorConverter.CompareModelElement(openXmlElement, model.Color, diffs, objName, propName))
         ok = false;
-      if (!CmpBackground(openXmlElement, model.Background, diffs, objName))
+      if (!CmpBackground(openXmlElement, model.Background, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

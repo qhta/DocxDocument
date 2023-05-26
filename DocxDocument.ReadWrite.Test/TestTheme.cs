@@ -48,7 +48,7 @@ public class TestTheme : TestBase
     if (originTheme != null)
     {
       var diffs = new DiffList();
-      if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null))
+      if (!ThemeConverter.CompareModelElement(originTheme, modelTheme, diffs, null, null))
       {
         if (showDetails)
         {

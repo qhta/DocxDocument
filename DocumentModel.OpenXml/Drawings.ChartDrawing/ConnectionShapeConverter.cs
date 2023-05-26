@@ -13,7 +13,7 @@ public static class ConnectionShapeConverter
     return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
-  private static bool CmpMacro(DXDCD.ConnectionShape openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacro(DXDCD.ConnectionShape openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
@@ -31,7 +31,7 @@ public static class ConnectionShapeConverter
     return openXmlElement?.Published?.Value;
   }
   
-  private static bool CmpPublished(DXDCD.ConnectionShape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPublished(DXDCD.ConnectionShape openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Published?.Value == value) return true;
     diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
@@ -57,9 +57,9 @@ public static class ConnectionShapeConverter
     return null;
   }
   
-  private static bool CmpNonVisualConnectorShapeDrawingProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.NonVisualConnectorShapeDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualConnectorShapeDrawingProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.NonVisualConnectorShapeDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualConnectorShapeDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualConnectorShapeDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualConnectorShapeDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualConnectorShapeDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualConnectorShapeDrawingProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.NonVisualConnectorShapeDrawingProperties? value)
@@ -86,9 +86,9 @@ public static class ConnectionShapeConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ShapeProperties>(), value, diffs, objName);
+    return DMXDCD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXDCD.ConnectionShape openXmlElement, DMDCD.ShapeProperties? value)
@@ -115,9 +115,9 @@ public static class ConnectionShapeConverter
     return null;
   }
   
-  private static bool CmpStyle(DXDCD.ConnectionShape openXmlElement, DMDCD.Style? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXDCD.ConnectionShape openXmlElement, DMDCD.Style? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Style>(), value, diffs, objName);
+    return DMXDCD.StyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Style>(), value, diffs, objName, propName);
   }
   
   private static void SetStyle(DXDCD.ConnectionShape openXmlElement, DMDCD.Style? value)
@@ -148,25 +148,25 @@ public static class ConnectionShapeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.ConnectionShape? openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.ConnectionShape? openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName))
+      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName, propName))
         ok = false;
-      if (!CmpPublished(openXmlElement, value.Published, diffs, objName))
+      if (!CmpPublished(openXmlElement, value.Published, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualConnectorShapeDrawingProperties(openXmlElement, value.NonVisualConnectorShapeDrawingProperties, diffs, objName))
+      if (!CmpNonVisualConnectorShapeDrawingProperties(openXmlElement, value.NonVisualConnectorShapeDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

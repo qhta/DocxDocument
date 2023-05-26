@@ -16,9 +16,9 @@ public static class FilteredScatterSeriesConverter
     return null;
   }
   
-  private static bool CmpScatterChartSeries(DXO13DC.FilteredScatterSeries openXmlElement, DMDC.ScatterChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpScatterChartSeries(DXO13DC.FilteredScatterSeries openXmlElement, DMDC.ScatterChartSeries3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ScatterChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.ScatterChartSeries>(), value, diffs, objName);
+    return DMXDC.ScatterChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.ScatterChartSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetScatterChartSeries(DXO13DC.FilteredScatterSeries openXmlElement, DMDC.ScatterChartSeries3? value)
@@ -45,17 +45,17 @@ public static class FilteredScatterSeriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.FilteredScatterSeries? openXmlElement, DMDC.FilteredScatterSeries? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredScatterSeries? openXmlElement, DMDC.FilteredScatterSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpScatterChartSeries(openXmlElement, value.ScatterChartSeries, diffs, objName))
+      if (!CmpScatterChartSeries(openXmlElement, value.ScatterChartSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

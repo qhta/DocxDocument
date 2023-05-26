@@ -14,9 +14,9 @@ public static class ParagraphMarkRunPropertiesConverter
     return null;
   }
   
-  private static bool CmpParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ParagraphMarkRunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>(), value, diffs, objName);
+    return DMXW.ParagraphMarkRunPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.ParagraphMarkRunPropertiesChange>(), value, diffs, objName, propName);
   }
   
   private static void SetParagraphMarkRunPropertiesChange(DXW.ParagraphMarkRunProperties openXmlElement, DMW.ParagraphMarkRunPropertiesChange? value)
@@ -46,19 +46,19 @@ public static class ParagraphMarkRunPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ParagraphMarkRunProperties? openXmlElement, DMW.ParagraphMarkRunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ParagraphMarkRunProperties? openXmlElement, DMW.ParagraphMarkRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!ParagraphMarkRunPropertiesBaseConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!ParagraphMarkRunPropertiesBaseConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphMarkRunPropertiesChange(openXmlElement, model.ParagraphMarkRunPropertiesChange, diffs, objName))
+      if (!CmpParagraphMarkRunPropertiesChange(openXmlElement, model.ParagraphMarkRunPropertiesChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

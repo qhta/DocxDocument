@@ -11,7 +11,7 @@ public static class TableWidthDxaNilTypeConverter
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXW.TableWidthDxaNilType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.TableWidthDxaNilType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
@@ -30,11 +30,11 @@ public static class TableWidthDxaNilTypeConverter
     return EnumValueConverter.GetValue<DXW.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     DMW.TableWidthKind? kind = (value == DocumentModel.Wordprocessing.TableWidthUnitType.Nil) ? DocumentModel.Wordprocessing.TableWidthKind.Nil 
       : (value == DocumentModel.Wordprocessing.TableWidthUnitType.Twips) ? DocumentModel.Wordprocessing.TableWidthKind.Twips : null;
-    return EnumValueConverter.CmpValue<DXW.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value, kind, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableWidthValues, DMW.TableWidthKind>(openXmlElement?.Type?.Value, kind, diffs, objName, propName);
   }
   
   private static void SetType(DXW.TableWidthDxaNilType openXmlElement, DMW.TableWidthUnitType? value)
@@ -58,19 +58,19 @@ public static class TableWidthDxaNilTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableWidthDxaNilType? openXmlElement, DMW.TableWidth? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableWidthDxaNilType? openXmlElement, DMW.TableWidth? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, model.Value, diffs, objName))
+      if (!CmpWidth(openXmlElement, model.Value, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, model.Type, diffs, objName))
+      if (!CmpType(openXmlElement, model.Type, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

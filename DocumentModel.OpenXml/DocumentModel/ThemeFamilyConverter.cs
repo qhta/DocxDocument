@@ -13,7 +13,7 @@ public static class ThemeFamilyConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,7 +31,7 @@ public static class ThemeFamilyConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -49,7 +49,7 @@ public static class ThemeFamilyConverter
     return StringValueConverter.GetValue(openXmlElement?.Vid);
   }
   
-  private static bool CmpVid(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVid(DXO13T.ThemeFamily openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Vid, value, diffs, objName, "Vid");
   }
@@ -70,9 +70,9 @@ public static class ThemeFamilyConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13T.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMX.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13T.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO13T.ThemeFamily openXmlElement, DM.OfficeArtExtensionList? value)
@@ -102,23 +102,23 @@ public static class ThemeFamilyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13T.ThemeFamily? openXmlElement, DM.ThemeFamily? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13T.ThemeFamily? openXmlElement, DM.ThemeFamily? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpVid(openXmlElement, value.Vid, diffs, objName))
+      if (!CmpVid(openXmlElement, value.Vid, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

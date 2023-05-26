@@ -13,7 +13,7 @@ public static class StyleSetConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO10W.StyleSet openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10W.StyleSet openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -33,9 +33,9 @@ public static class StyleSetConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXO10W.StyleSet openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO10W.StyleSet openXmlElement, DMW.OnOffKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXO10W.StyleSet openXmlElement, DMW.OnOffKind? value)
@@ -55,19 +55,19 @@ public static class StyleSetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.StyleSet? openXmlElement, DMW.StyleSet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.StyleSet? openXmlElement, DMW.StyleSet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

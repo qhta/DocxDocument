@@ -16,9 +16,9 @@ public static class ValueColorsConverter
     return null;
   }
   
-  private static bool CmpMinColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MinColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMinColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MinColorSolidColorFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.MinColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MinColorSolidColorFillProperties>(), value, diffs, objName);
+    return DMXDCDs.MinColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MinColorSolidColorFillProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetMinColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MinColorSolidColorFillProperties? value)
@@ -45,9 +45,9 @@ public static class ValueColorsConverter
     return null;
   }
   
-  private static bool CmpMidColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MidColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMidColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MidColorSolidColorFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.MidColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MidColorSolidColorFillProperties>(), value, diffs, objName);
+    return DMXDCDs.MidColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MidColorSolidColorFillProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetMidColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MidColorSolidColorFillProperties? value)
@@ -74,9 +74,9 @@ public static class ValueColorsConverter
     return null;
   }
   
-  private static bool CmpMaxColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MaxColorSolidColorFillProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MaxColorSolidColorFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.MaxColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MaxColorSolidColorFillProperties>(), value, diffs, objName);
+    return DMXDCDs.MaxColorSolidColorFillPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.MaxColorSolidColorFillProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetMaxColorSolidColorFillProperties(DXO16DCD.ValueColors openXmlElement, DMDCDs.MaxColorSolidColorFillProperties? value)
@@ -105,21 +105,21 @@ public static class ValueColorsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ValueColors? openXmlElement, DMDCDs.ValueColors? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ValueColors? openXmlElement, DMDCDs.ValueColors? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMinColorSolidColorFillProperties(openXmlElement, value.MinColorSolidColorFillProperties, diffs, objName))
+      if (!CmpMinColorSolidColorFillProperties(openXmlElement, value.MinColorSolidColorFillProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpMidColorSolidColorFillProperties(openXmlElement, value.MidColorSolidColorFillProperties, diffs, objName))
+      if (!CmpMidColorSolidColorFillProperties(openXmlElement, value.MidColorSolidColorFillProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxColorSolidColorFillProperties(openXmlElement, value.MaxColorSolidColorFillProperties, diffs, objName))
+      if (!CmpMaxColorSolidColorFillProperties(openXmlElement, value.MaxColorSolidColorFillProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

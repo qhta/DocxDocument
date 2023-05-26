@@ -13,9 +13,9 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  private static bool CmpGroupShapeNonVisualProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeNonVisualProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeNonVisualProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShapeNonVisualProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeNonVisualProperties? value)
@@ -39,9 +39,9 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  private static bool CmpGroupShapeProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShapeProperties(DXOD.ShapeTree openXmlElement, DMDO.GroupShapeProperties? value)
@@ -65,9 +65,9 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  private static bool CmpShape(DXOD.ShapeTree openXmlElement, DMDO.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXOD.ShapeTree openXmlElement, DMDO.Shape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.Shape>(), value, diffs, objName);
+    return DMXDO.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.Shape>(), value, diffs, objName, propName);
   }
   
   private static void SetShape(DXOD.ShapeTree openXmlElement, DMDO.Shape? value)
@@ -91,9 +91,9 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  private static bool CmpGroupShape(DXOD.ShapeTree openXmlElement, DMDO.GroupShape? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShape(DXOD.ShapeTree openXmlElement, DMDO.GroupShape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShape>(), value, diffs, objName);
+    return DMXDO.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShape>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShape(DXOD.ShapeTree openXmlElement, DMDO.GroupShape? value)
@@ -117,9 +117,9 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXOD.ShapeTree openXmlElement, DMDO.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXOD.ShapeTree openXmlElement, DMDO.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDO.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXOD.ShapeTree openXmlElement, DMDO.OfficeArtExtensionList? value)
@@ -150,25 +150,25 @@ public static class ShapeTreeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.ShapeTree? openXmlElement, DMDO.ShapeTree? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.ShapeTree? openXmlElement, DMDO.ShapeTree? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGroupShapeNonVisualProperties(openXmlElement, value.GroupShapeNonVisualProperties, diffs, objName))
+      if (!CmpGroupShapeNonVisualProperties(openXmlElement, value.GroupShapeNonVisualProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupShapeProperties(openXmlElement, value.GroupShapeProperties, diffs, objName))
+      if (!CmpGroupShapeProperties(openXmlElement, value.GroupShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpShape(openXmlElement, value.Shape, diffs, objName))
+      if (!CmpShape(openXmlElement, value.Shape, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupShape(openXmlElement, value.GroupShape, diffs, objName))
+      if (!CmpGroupShape(openXmlElement, value.GroupShape, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

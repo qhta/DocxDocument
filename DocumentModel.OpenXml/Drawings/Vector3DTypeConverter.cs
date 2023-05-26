@@ -13,7 +13,7 @@ public static class Vector3DTypeConverter
     return openXmlElement?.Dx?.Value;
   }
   
-  private static bool CmpDx(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDx(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Dx?.Value == value) return true;
     diffs?.Add(objName, "Dx", openXmlElement?.Dx?.Value, value);
@@ -33,7 +33,7 @@ public static class Vector3DTypeConverter
     return openXmlElement?.Dy?.Value;
   }
   
-  private static bool CmpDy(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDy(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Dy?.Value == value) return true;
     diffs?.Add(objName, "Dy", openXmlElement?.Dy?.Value, value);
@@ -53,7 +53,7 @@ public static class Vector3DTypeConverter
     return openXmlElement?.Dz?.Value;
   }
   
-  private static bool CmpDz(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDz(DXD.Vector3DType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Dz?.Value == value) return true;
     diffs?.Add(objName, "Dz", openXmlElement?.Dz?.Value, value);
@@ -78,21 +78,21 @@ public static class Vector3DTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Vector3DType? openXmlElement, DMD.Vector3DType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Vector3DType? openXmlElement, DMD.Vector3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDx(openXmlElement, value.Dx, diffs, objName))
+      if (!CmpDx(openXmlElement, value.Dx, diffs, objName, propName))
         ok = false;
-      if (!CmpDy(openXmlElement, value.Dy, diffs, objName))
+      if (!CmpDy(openXmlElement, value.Dy, diffs, objName, propName))
         ok = false;
-      if (!CmpDz(openXmlElement, value.Dz, diffs, objName))
+      if (!CmpDz(openXmlElement, value.Dz, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

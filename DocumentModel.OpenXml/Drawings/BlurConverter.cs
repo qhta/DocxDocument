@@ -13,7 +13,7 @@ public static class BlurConverter
     return openXmlElement?.Radius?.Value;
   }
   
-  private static bool CmpRadius(DXD.Blur openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpRadius(DXD.Blur openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Radius?.Value == value) return true;
     diffs?.Add(objName, "Radius", openXmlElement?.Radius?.Value, value);
@@ -33,7 +33,7 @@ public static class BlurConverter
     return openXmlElement?.Grow?.Value;
   }
   
-  private static bool CmpGrow(DXD.Blur openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGrow(DXD.Blur openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Grow?.Value == value) return true;
     diffs?.Add(objName, "Grow", openXmlElement?.Grow?.Value, value);
@@ -60,19 +60,19 @@ public static class BlurConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Blur? openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Blur? openXmlElement, DMD.Blur? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRadius(openXmlElement, value.Radius, diffs, objName))
+      if (!CmpRadius(openXmlElement, value.Radius, diffs, objName, propName))
         ok = false;
-      if (!CmpGrow(openXmlElement, value.Grow, diffs, objName))
+      if (!CmpGrow(openXmlElement, value.Grow, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

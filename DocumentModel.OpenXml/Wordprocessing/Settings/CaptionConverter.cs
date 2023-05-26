@@ -13,7 +13,7 @@ public static class CaptionConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXW.Caption openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.Caption openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,9 +31,9 @@ public static class CaptionConverter
     return EnumValueConverter.GetValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value);
   }
   
-  private static bool CmpPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.CaptionPositionValues, DMW.CaptionPositionKind>(openXmlElement?.Position?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXW.Caption openXmlElement, DMW.CaptionPositionKind? value)
@@ -49,7 +49,7 @@ public static class CaptionConverter
     return BooleanValueConverter.GetValue(openXmlElement?.ChapterNumber);
   }
   
-  private static bool CmpChapterNumber(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpChapterNumber(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.ChapterNumber, value, diffs, objName, "ChapterNumber");
   }
@@ -67,7 +67,7 @@ public static class CaptionConverter
     return openXmlElement?.Heading?.Value;
   }
   
-  private static bool CmpHeading(DXW.Caption openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeading(DXW.Caption openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Heading?.Value == value) return true;
     diffs?.Add(objName, "Heading", openXmlElement?.Heading?.Value, value);
@@ -87,7 +87,7 @@ public static class CaptionConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NoLabel);
   }
   
-  private static bool CmpNoLabel(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoLabel(DXW.Caption openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NoLabel, value, diffs, objName, "NoLabel");
   }
@@ -105,9 +105,9 @@ public static class CaptionConverter
     return EnumValueConverter.GetValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value);
   }
   
-  private static bool CmpNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.NumberFormat?.Value, value, diffs, objName, propName);
   }
   
   private static void SetNumberFormat(DXW.Caption openXmlElement, DMW.NumberFormatKind? value)
@@ -123,9 +123,9 @@ public static class CaptionConverter
     return EnumValueConverter.GetValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value);
   }
   
-  private static bool CmpSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.Separator?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSeparator(DXW.Caption openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -150,29 +150,29 @@ public static class CaptionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Caption? openXmlElement, DMW.Caption? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Caption? openXmlElement, DMW.Caption? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpChapterNumber(openXmlElement, value.ChapterNumber, diffs, objName))
+      if (!CmpChapterNumber(openXmlElement, value.ChapterNumber, diffs, objName, propName))
         ok = false;
-      if (!CmpHeading(openXmlElement, value.Heading, diffs, objName))
+      if (!CmpHeading(openXmlElement, value.Heading, diffs, objName, propName))
         ok = false;
-      if (!CmpNoLabel(openXmlElement, value.NoLabel, diffs, objName))
+      if (!CmpNoLabel(openXmlElement, value.NoLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberFormat(openXmlElement, value.NumberFormat, diffs, objName))
+      if (!CmpNumberFormat(openXmlElement, value.NumberFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

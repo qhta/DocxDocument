@@ -13,7 +13,7 @@ public static class ValueAxisScalingConverter
     return StringValueConverter.GetValue(openXmlElement?.Max);
   }
   
-  private static bool CmpMax(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMax(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Max, value, diffs, objName, "Max");
   }
@@ -31,7 +31,7 @@ public static class ValueAxisScalingConverter
     return StringValueConverter.GetValue(openXmlElement?.Min);
   }
   
-  private static bool CmpMin(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMin(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Min, value, diffs, objName, "Min");
   }
@@ -49,7 +49,7 @@ public static class ValueAxisScalingConverter
     return StringValueConverter.GetValue(openXmlElement?.MajorUnit);
   }
   
-  private static bool CmpMajorUnit(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorUnit(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MajorUnit, value, diffs, objName, "MajorUnit");
   }
@@ -67,7 +67,7 @@ public static class ValueAxisScalingConverter
     return StringValueConverter.GetValue(openXmlElement?.MinorUnit);
   }
   
-  private static bool CmpMinorUnit(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorUnit(DXO16DCD.ValueAxisScaling openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinorUnit, value, diffs, objName, "MinorUnit");
   }
@@ -91,23 +91,23 @@ public static class ValueAxisScalingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ValueAxisScaling? openXmlElement, DMDCDs.ValueAxisScaling? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ValueAxisScaling? openXmlElement, DMDCDs.ValueAxisScaling? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMax(openXmlElement, value.Max, diffs, objName))
+      if (!CmpMax(openXmlElement, value.Max, diffs, objName, propName))
         ok = false;
-      if (!CmpMin(openXmlElement, value.Min, diffs, objName))
+      if (!CmpMin(openXmlElement, value.Min, diffs, objName, propName))
         ok = false;
-      if (!CmpMajorUnit(openXmlElement, value.MajorUnit, diffs, objName))
+      if (!CmpMajorUnit(openXmlElement, value.MajorUnit, diffs, objName, propName))
         ok = false;
-      if (!CmpMinorUnit(openXmlElement, value.MinorUnit, diffs, objName))
+      if (!CmpMinorUnit(openXmlElement, value.MinorUnit, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

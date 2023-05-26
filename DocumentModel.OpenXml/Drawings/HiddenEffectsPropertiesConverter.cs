@@ -16,9 +16,9 @@ public static class HiddenEffectsPropertiesConverter
     return null;
   }
   
-  private static bool CmpEffectList(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectList(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectList? value)
@@ -45,9 +45,9 @@ public static class HiddenEffectsPropertiesConverter
     return null;
   }
   
-  private static bool CmpEffectDag(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectDag(DXO10D.HiddenEffectsProperties openXmlElement, DMD.EffectDag? value)
@@ -75,19 +75,19 @@ public static class HiddenEffectsPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.HiddenEffectsProperties? openXmlElement, DMD.HiddenEffectsProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.HiddenEffectsProperties? openXmlElement, DMD.HiddenEffectsProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName))
+      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName))
+      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

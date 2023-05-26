@@ -13,7 +13,7 @@ public static class ShapeConverter
     return openXmlElement?.Rotation?.Value;
   }
   
-  private static bool CmpRotation(DXDD.Shape openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpRotation(DXDD.Shape openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Rotation?.Value == value) return true;
     diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
@@ -33,7 +33,7 @@ public static class ShapeConverter
     return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
-  private static bool CmpType(DXDD.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Shape openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
@@ -51,7 +51,7 @@ public static class ShapeConverter
     return StringValueConverter.GetValue(openXmlElement?.Blip);
   }
   
-  private static bool CmpBlip(DXDD.Shape openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBlip(DXDD.Shape openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Blip, value, diffs, objName, "Blip");
   }
@@ -69,7 +69,7 @@ public static class ShapeConverter
     return openXmlElement?.ZOrderOffset?.Value;
   }
   
-  private static bool CmpZOrderOffset(DXDD.Shape openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpZOrderOffset(DXDD.Shape openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ZOrderOffset?.Value == value) return true;
     diffs?.Add(objName, "ZOrderOffset", openXmlElement?.ZOrderOffset?.Value, value);
@@ -89,7 +89,7 @@ public static class ShapeConverter
     return openXmlElement?.HideGeometry?.Value;
   }
   
-  private static bool CmpHideGeometry(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpHideGeometry(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HideGeometry?.Value == value) return true;
     diffs?.Add(objName, "HideGeometry", openXmlElement?.HideGeometry?.Value, value);
@@ -112,7 +112,7 @@ public static class ShapeConverter
     return openXmlElement?.LockedText?.Value;
   }
   
-  private static bool CmpLockedText(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLockedText(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LockedText?.Value == value) return true;
     diffs?.Add(objName, "LockedText", openXmlElement?.LockedText?.Value, value);
@@ -135,7 +135,7 @@ public static class ShapeConverter
     return openXmlElement?.BlipPlaceholder?.Value;
   }
   
-  private static bool CmpBlipPlaceholder(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipPlaceholder(DXDD.Shape openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlipPlaceholder?.Value == value) return true;
     diffs?.Add(objName, "BlipPlaceholder", openXmlElement?.BlipPlaceholder?.Value, value);
@@ -161,9 +161,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpAdjustList(DXDD.Shape openXmlElement, DMDD.AdjustList? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustList(DXDD.Shape openXmlElement, DMDD.AdjustList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.AdjustListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.AdjustList>(), value, diffs, objName);
+    return DMXDD.AdjustListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.AdjustList>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustList(DXDD.Shape openXmlElement, DMDD.AdjustList? value)
@@ -190,9 +190,9 @@ public static class ShapeConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.Shape openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Shape openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.Shape openXmlElement, DMDD.ExtensionList? value)
@@ -227,33 +227,33 @@ public static class ShapeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Shape? openXmlElement, DMDD.Shape? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Shape? openXmlElement, DMDD.Shape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName, propName))
         ok = false;
-      if (!CmpZOrderOffset(openXmlElement, value.ZOrderOffset, diffs, objName))
+      if (!CmpZOrderOffset(openXmlElement, value.ZOrderOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpHideGeometry(openXmlElement, value.HideGeometry, diffs, objName))
+      if (!CmpHideGeometry(openXmlElement, value.HideGeometry, diffs, objName, propName))
         ok = false;
-      if (!CmpLockedText(openXmlElement, value.LockedText, diffs, objName))
+      if (!CmpLockedText(openXmlElement, value.LockedText, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipPlaceholder(openXmlElement, value.BlipPlaceholder, diffs, objName))
+      if (!CmpBlipPlaceholder(openXmlElement, value.BlipPlaceholder, diffs, objName, propName))
         ok = false;
-      if (!CmpAdjustList(openXmlElement, value.AdjustList, diffs, objName))
+      if (!CmpAdjustList(openXmlElement, value.AdjustList, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

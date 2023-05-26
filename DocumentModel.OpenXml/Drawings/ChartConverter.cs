@@ -13,7 +13,7 @@ public static class ChartConverter
     return openXmlElement?.SeriesIndex?.Value;
   }
   
-  private static bool CmpSeriesIndex(DXD.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesIndex(DXD.Chart openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SeriesIndex?.Value == value) return true;
     diffs?.Add(objName, "SeriesIndex", openXmlElement?.SeriesIndex?.Value, value);
@@ -33,7 +33,7 @@ public static class ChartConverter
     return openXmlElement?.CategoryIndex?.Value;
   }
   
-  private static bool CmpCategoryIndex(DXD.Chart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryIndex(DXD.Chart openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CategoryIndex?.Value == value) return true;
     diffs?.Add(objName, "CategoryIndex", openXmlElement?.CategoryIndex?.Value, value);
@@ -53,9 +53,9 @@ public static class ChartConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMD.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value);
   }
   
-  private static bool CmpBuildStep(DXD.Chart openXmlElement, DMD.ChartBuildStepKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBuildStep(DXD.Chart openXmlElement, DMD.ChartBuildStepKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMD.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.ChartBuildStepValues, DMD.ChartBuildStepKind>(openXmlElement?.BuildStep?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBuildStep(DXD.Chart openXmlElement, DMD.ChartBuildStepKind? value)
@@ -76,21 +76,21 @@ public static class ChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Chart? openXmlElement, DMD.Chart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Chart? openXmlElement, DMD.Chart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSeriesIndex(openXmlElement, value.SeriesIndex, diffs, objName))
+      if (!CmpSeriesIndex(openXmlElement, value.SeriesIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpCategoryIndex(openXmlElement, value.CategoryIndex, diffs, objName))
+      if (!CmpCategoryIndex(openXmlElement, value.CategoryIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpBuildStep(openXmlElement, value.BuildStep, diffs, objName))
+      if (!CmpBuildStep(openXmlElement, value.BuildStep, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

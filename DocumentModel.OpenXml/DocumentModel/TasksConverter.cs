@@ -19,7 +19,7 @@ public static class TasksConverter
     return null;
   }
   
-  private static bool CmpItems(DXO21DT.Tasks openXmlElement, Collection<DM.Task>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO21DT.Tasks openXmlElement, Collection<DM.Task>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO21DT.Task>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class TasksConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class TasksConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.TaskConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.TaskConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -69,9 +69,9 @@ public static class TasksConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO21DT.Tasks openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21DT.Tasks openXmlElement, DM.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName);
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO21DT.Tasks openXmlElement, DM.ExtensionList? value)
@@ -99,19 +99,19 @@ public static class TasksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.Tasks? openXmlElement, DM.Tasks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.Tasks? openXmlElement, DM.Tasks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

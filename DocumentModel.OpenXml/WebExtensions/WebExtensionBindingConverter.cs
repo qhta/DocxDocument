@@ -13,7 +13,7 @@ public static class WebExtensionBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class WebExtensionBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
-  private static bool CmpType(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
@@ -49,7 +49,7 @@ public static class WebExtensionBindingConverter
     return StringValueConverter.GetValue(openXmlElement?.AppReference);
   }
   
-  private static bool CmpAppReference(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAppReference(DXO13WE.WebExtensionBinding openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AppReference, value, diffs, objName, "AppReference");
   }
@@ -70,9 +70,9 @@ public static class WebExtensionBindingConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtensionBinding openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtensionBinding openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO13WE.WebExtensionBinding openXmlElement, DMWE.OfficeArtExtensionList? value)
@@ -102,23 +102,23 @@ public static class WebExtensionBindingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13WE.WebExtensionBinding? openXmlElement, DMWE.WebExtensionBinding? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.WebExtensionBinding? openXmlElement, DMWE.WebExtensionBinding? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpAppReference(openXmlElement, value.AppReference, diffs, objName))
+      if (!CmpAppReference(openXmlElement, value.AppReference, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

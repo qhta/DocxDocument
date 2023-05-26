@@ -13,7 +13,7 @@ public static class ColorChangeConverter
     return openXmlElement?.UseAlpha?.Value;
   }
   
-  private static bool CmpUseAlpha(DXD.ColorChange openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseAlpha(DXD.ColorChange openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UseAlpha?.Value == value) return true;
     diffs?.Add(objName, "UseAlpha", openXmlElement?.UseAlpha?.Value, value);
@@ -39,9 +39,9 @@ public static class ColorChangeConverter
     return null;
   }
   
-  private static bool CmpColorFrom(DXD.ColorChange openXmlElement, DMD.ColorFrom? value, DiffList? diffs, string? objName)
+  private static bool CmpColorFrom(DXD.ColorChange openXmlElement, DMD.ColorFrom? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorFromConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorFrom>(), value, diffs, objName);
+    return DMXD.ColorFromConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorFrom>(), value, diffs, objName, propName);
   }
   
   private static void SetColorFrom(DXD.ColorChange openXmlElement, DMD.ColorFrom? value)
@@ -68,9 +68,9 @@ public static class ColorChangeConverter
     return null;
   }
   
-  private static bool CmpColorTo(DXD.ColorChange openXmlElement, DMD.ColorTo? value, DiffList? diffs, string? objName)
+  private static bool CmpColorTo(DXD.ColorChange openXmlElement, DMD.ColorTo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorTo>(), value, diffs, objName);
+    return DMXD.ColorToConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorTo>(), value, diffs, objName, propName);
   }
   
   private static void SetColorTo(DXD.ColorChange openXmlElement, DMD.ColorTo? value)
@@ -99,21 +99,21 @@ public static class ColorChangeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ColorChange? openXmlElement, DMD.ColorChange? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ColorChange? openXmlElement, DMD.ColorChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUseAlpha(openXmlElement, value.UseAlpha, diffs, objName))
+      if (!CmpUseAlpha(openXmlElement, value.UseAlpha, diffs, objName, propName))
         ok = false;
-      if (!CmpColorFrom(openXmlElement, value.ColorFrom, diffs, objName))
+      if (!CmpColorFrom(openXmlElement, value.ColorFrom, diffs, objName, propName))
         ok = false;
-      if (!CmpColorTo(openXmlElement, value.ColorTo, diffs, objName))
+      if (!CmpColorTo(openXmlElement, value.ColorTo, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

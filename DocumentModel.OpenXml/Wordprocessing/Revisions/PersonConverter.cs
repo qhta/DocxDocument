@@ -13,7 +13,7 @@ public static class PersonConverter
     return StringValueConverter.GetValue(openXmlElement?.Contact);
   }
   
-  private static bool CmpContact(DXO13W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContact(DXO13W.Person openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Contact, value, diffs, objName, "Contact");
   }
@@ -31,7 +31,7 @@ public static class PersonConverter
     return StringValueConverter.GetValue(openXmlElement?.Author);
   }
   
-  private static bool CmpAuthor(DXO13W.Person openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAuthor(DXO13W.Person openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
@@ -52,9 +52,9 @@ public static class PersonConverter
     return null;
   }
   
-  private static bool CmpPresenceInfo(DXO13W.Person openXmlElement, DMW.PresenceInfo? value, DiffList? diffs, string? objName)
+  private static bool CmpPresenceInfo(DXO13W.Person openXmlElement, DMW.PresenceInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PresenceInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13W.PresenceInfo>(), value, diffs, objName);
+    return DMXW.PresenceInfoConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13W.PresenceInfo>(), value, diffs, objName, propName);
   }
   
   private static void SetPresenceInfo(DXO13W.Person openXmlElement, DMW.PresenceInfo? value)
@@ -83,21 +83,21 @@ public static class PersonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13W.Person? openXmlElement, DMW.Person? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.Person? openXmlElement, DMW.Person? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContact(openXmlElement, value.Contact, diffs, objName))
+      if (!CmpContact(openXmlElement, value.Contact, diffs, objName, propName))
         ok = false;
-      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, value.Author, diffs, objName, propName))
         ok = false;
-      if (!CmpPresenceInfo(openXmlElement, value.PresenceInfo, diffs, objName))
+      if (!CmpPresenceInfo(openXmlElement, value.PresenceInfo, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

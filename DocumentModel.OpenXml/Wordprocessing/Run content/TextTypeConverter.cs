@@ -12,7 +12,7 @@ public static class TextTypeConverter
     return openXmlElement.Text;
   }
 
-  private static bool CmpText(DXW.TextType openXmlElement, string value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXW.TextType openXmlElement, string value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement.Text.Equals(value)) return true;
     diffs?.Add(objName, "Text", openXmlElement.Text, value);
@@ -33,12 +33,12 @@ public static class TextTypeConverter
     value.Text = GetText(openXmlElement);
     return value;
   }
-  public static bool CompareModelElement(DXW.TextType? openXmlElement, DMW.TextualElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TextType? openXmlElement, DMW.TextualElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+      if (!CmpText(openXmlElement, value.Text, diffs, objName, propName))
         ok = false;
       bool isDeleted;
       if ((isDeleted = openXmlElement.GetType().Name.StartsWith("Deleted")) != value.IsDeleted)
@@ -49,7 +49,7 @@ public static class TextTypeConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -115,24 +115,24 @@ public static class TextTypeConverter
     return value;
   }
 
-  private static bool CmpText(DXM.Text openXmlElement, string value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXM.Text openXmlElement, string value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement.Text.Equals(value)) return true;
     diffs?.Add(objName, "Text", openXmlElement.Text, value);
     return false;
   }
 
-  public static bool CompareModelElement(DXM.Text? openXmlElement, DMM.Text? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Text? openXmlElement, DMM.Text? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+      if (!CmpText(openXmlElement, value.Text, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   public static DXM.Text CreateOpenXmlElement(DMM.Text value)

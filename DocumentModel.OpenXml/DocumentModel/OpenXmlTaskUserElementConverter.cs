@@ -13,7 +13,7 @@ public static class OpenXmlTaskUserElementConverter
     return StringValueConverter.GetValue(openXmlElement?.UserId);
   }
   
-  private static bool CmpUserId(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUserId(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UserId, value, diffs, objName, "UserId");
   }
@@ -31,7 +31,7 @@ public static class OpenXmlTaskUserElementConverter
     return StringValueConverter.GetValue(openXmlElement?.UserName);
   }
   
-  private static bool CmpUserName(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUserName(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UserName, value, diffs, objName, "UserName");
   }
@@ -49,7 +49,7 @@ public static class OpenXmlTaskUserElementConverter
     return StringValueConverter.GetValue(openXmlElement?.UserProvider);
   }
   
-  private static bool CmpUserProvider(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUserProvider(DXO21DT.OpenXmlTaskUserElement openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UserProvider, value, diffs, objName, "UserProvider");
   }
@@ -72,21 +72,21 @@ public static class OpenXmlTaskUserElementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.OpenXmlTaskUserElement? openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.OpenXmlTaskUserElement? openXmlElement, DM.OpenXmlTaskUserElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUserId(openXmlElement, value.UserId, diffs, objName))
+      if (!CmpUserId(openXmlElement, value.UserId, diffs, objName, propName))
         ok = false;
-      if (!CmpUserName(openXmlElement, value.UserName, diffs, objName))
+      if (!CmpUserName(openXmlElement, value.UserName, diffs, objName, propName))
         ok = false;
-      if (!CmpUserProvider(openXmlElement, value.UserProvider, diffs, objName))
+      if (!CmpUserProvider(openXmlElement, value.UserProvider, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

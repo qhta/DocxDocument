@@ -13,9 +13,9 @@ public static class GeoDataPointQueryConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value);
   }
   
-  private static bool CmpEntityType(DXO16DCD.GeoDataPointQuery openXmlElement, DMDCDs.EntityTypeEnum? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityType(DXO16DCD.GeoDataPointQuery openXmlElement, DMDCDs.EntityTypeEnum? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.EntityTypeEnum, DMDCDs.EntityTypeEnum>(openXmlElement?.EntityType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetEntityType(DXO16DCD.GeoDataPointQuery openXmlElement, DMDCDs.EntityTypeEnum? value)
@@ -31,7 +31,7 @@ public static class GeoDataPointQueryConverter
     return openXmlElement?.Latitude?.Value;
   }
   
-  private static bool CmpLatitude(DXO16DCD.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpLatitude(DXO16DCD.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Latitude?.Value == value) return true;
     diffs?.Add(objName, "Latitude", openXmlElement?.Latitude?.Value, value);
@@ -51,7 +51,7 @@ public static class GeoDataPointQueryConverter
     return openXmlElement?.Longitude?.Value;
   }
   
-  private static bool CmpLongitude(DXO16DCD.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpLongitude(DXO16DCD.GeoDataPointQuery openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Longitude?.Value == value) return true;
     diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
@@ -76,21 +76,21 @@ public static class GeoDataPointQueryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoDataPointQuery? openXmlElement, DMDCDs.GeoDataPointQuery? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoDataPointQuery? openXmlElement, DMDCDs.GeoDataPointQuery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName))
+      if (!CmpEntityType(openXmlElement, value.EntityType, diffs, objName, propName))
         ok = false;
-      if (!CmpLatitude(openXmlElement, value.Latitude, diffs, objName))
+      if (!CmpLatitude(openXmlElement, value.Latitude, diffs, objName, propName))
         ok = false;
-      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName))
+      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

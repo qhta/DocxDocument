@@ -13,7 +13,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -49,7 +49,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -67,7 +67,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
@@ -85,7 +85,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
@@ -103,7 +103,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
@@ -121,7 +121,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
@@ -139,7 +139,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
@@ -157,7 +157,7 @@ public static class BackstageTabConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO10CUI.BackstageTab openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.BackstageTab openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -180,7 +180,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
@@ -198,7 +198,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -216,7 +216,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -234,7 +234,7 @@ public static class BackstageTabConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.BackstageTab openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.BackstageTab openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -257,7 +257,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -275,7 +275,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
@@ -293,7 +293,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
@@ -311,7 +311,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
@@ -329,7 +329,7 @@ public static class BackstageTabConverter
     return StringValueConverter.GetValue(openXmlElement?.GetTitle);
   }
   
-  private static bool CmpGetTitle(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetTitle(DXO10CUI.BackstageTab openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetTitle, value, diffs, objName, "GetTitle");
   }
@@ -347,7 +347,7 @@ public static class BackstageTabConverter
     return openXmlElement?.ColumnWidthPercent?.Value;
   }
   
-  private static bool CmpColumnWidthPercent(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnWidthPercent(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnWidthPercent?.Value == value) return true;
     diffs?.Add(objName, "ColumnWidthPercent", openXmlElement?.ColumnWidthPercent?.Value, value);
@@ -367,7 +367,7 @@ public static class BackstageTabConverter
     return openXmlElement?.FirstColumnMinWidth?.Value;
   }
   
-  private static bool CmpFirstColumnMinWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstColumnMinWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstColumnMinWidth?.Value == value) return true;
     diffs?.Add(objName, "FirstColumnMinWidth", openXmlElement?.FirstColumnMinWidth?.Value, value);
@@ -387,7 +387,7 @@ public static class BackstageTabConverter
     return openXmlElement?.FirstColumnMaxWidth?.Value;
   }
   
-  private static bool CmpFirstColumnMaxWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstColumnMaxWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstColumnMaxWidth?.Value == value) return true;
     diffs?.Add(objName, "FirstColumnMaxWidth", openXmlElement?.FirstColumnMaxWidth?.Value, value);
@@ -407,7 +407,7 @@ public static class BackstageTabConverter
     return openXmlElement?.SecondColumnMinWidth?.Value;
   }
   
-  private static bool CmpSecondColumnMinWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondColumnMinWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SecondColumnMinWidth?.Value == value) return true;
     diffs?.Add(objName, "SecondColumnMinWidth", openXmlElement?.SecondColumnMinWidth?.Value, value);
@@ -427,7 +427,7 @@ public static class BackstageTabConverter
     return openXmlElement?.SecondColumnMaxWidth?.Value;
   }
   
-  private static bool CmpSecondColumnMaxWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondColumnMaxWidth(DXO10CUI.BackstageTab openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SecondColumnMaxWidth?.Value == value) return true;
     diffs?.Add(objName, "SecondColumnMaxWidth", openXmlElement?.SecondColumnMaxWidth?.Value, value);
@@ -450,9 +450,9 @@ public static class BackstageTabConverter
     return null;
   }
   
-  private static bool CmpBackstageGroups(DXO10CUI.BackstageTab openXmlElement, DM.BackstageGroups? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageGroups(DXO10CUI.BackstageTab openXmlElement, DM.BackstageGroups? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstageGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageGroups>(), value, diffs, objName);
+    return DMX.BackstageGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageGroups>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstageGroups(DXO10CUI.BackstageTab openXmlElement, DM.BackstageGroups? value)
@@ -479,9 +479,9 @@ public static class BackstageTabConverter
     return null;
   }
   
-  private static bool CmpSimpleGroups(DXO10CUI.BackstageTab openXmlElement, DM.SimpleGroups? value, DiffList? diffs, string? objName)
+  private static bool CmpSimpleGroups(DXO10CUI.BackstageTab openXmlElement, DM.SimpleGroups? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.SimpleGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SimpleGroups>(), value, diffs, objName);
+    return DMX.SimpleGroupsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SimpleGroups>(), value, diffs, objName, propName);
   }
   
   private static void SetSimpleGroups(DXO10CUI.BackstageTab openXmlElement, DM.SimpleGroups? value)
@@ -532,65 +532,65 @@ public static class BackstageTabConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.BackstageTab? openXmlElement, DM.BackstageTab? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.BackstageTab? openXmlElement, DM.BackstageTab? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName, propName))
         ok = false;
-      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName, propName))
         ok = false;
-      if (!CmpGetTitle(openXmlElement, value.GetTitle, diffs, objName))
+      if (!CmpGetTitle(openXmlElement, value.GetTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnWidthPercent(openXmlElement, value.ColumnWidthPercent, diffs, objName))
+      if (!CmpColumnWidthPercent(openXmlElement, value.ColumnWidthPercent, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstColumnMinWidth(openXmlElement, value.FirstColumnMinWidth, diffs, objName))
+      if (!CmpFirstColumnMinWidth(openXmlElement, value.FirstColumnMinWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstColumnMaxWidth(openXmlElement, value.FirstColumnMaxWidth, diffs, objName))
+      if (!CmpFirstColumnMaxWidth(openXmlElement, value.FirstColumnMaxWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpSecondColumnMinWidth(openXmlElement, value.SecondColumnMinWidth, diffs, objName))
+      if (!CmpSecondColumnMinWidth(openXmlElement, value.SecondColumnMinWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpSecondColumnMaxWidth(openXmlElement, value.SecondColumnMaxWidth, diffs, objName))
+      if (!CmpSecondColumnMaxWidth(openXmlElement, value.SecondColumnMaxWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpBackstageGroups(openXmlElement, value.BackstageGroups, diffs, objName))
+      if (!CmpBackstageGroups(openXmlElement, value.BackstageGroups, diffs, objName, propName))
         ok = false;
-      if (!CmpSimpleGroups(openXmlElement, value.SimpleGroups, diffs, objName))
+      if (!CmpSimpleGroups(openXmlElement, value.SimpleGroups, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

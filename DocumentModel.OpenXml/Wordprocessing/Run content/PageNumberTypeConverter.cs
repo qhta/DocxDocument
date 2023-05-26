@@ -13,9 +13,9 @@ public static class PageNumberTypeConverter
     return EnumValueConverter.GetValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value);
   }
   
-  private static bool CmpFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Format?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFormat(DXW.PageNumberType openXmlElement, DMW.NumberFormatKind? value)
@@ -31,7 +31,7 @@ public static class PageNumberTypeConverter
     return openXmlElement?.Start?.Value;
   }
   
-  private static bool CmpStart(DXW.PageNumberType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXW.PageNumberType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Start?.Value == value) return true;
     diffs?.Add(objName, "Start", openXmlElement?.Start?.Value, value);
@@ -51,7 +51,7 @@ public static class PageNumberTypeConverter
     return openXmlElement?.ChapterStyle?.Value;
   }
   
-  private static bool CmpChapterStyle(DXW.PageNumberType openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpChapterStyle(DXW.PageNumberType openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ChapterStyle?.Value == value) return true;
     diffs?.Add(objName, "ChapterStyle", openXmlElement?.ChapterStyle?.Value, value);
@@ -71,9 +71,9 @@ public static class PageNumberTypeConverter
     return EnumValueConverter.GetValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value);
   }
   
-  private static bool CmpChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ChapterSeparatorValues, DMW.ChapterSeparatorKind>(openXmlElement?.ChapterSeparator?.Value, value, diffs, objName, propName);
   }
   
   private static void SetChapterSeparator(DXW.PageNumberType openXmlElement, DMW.ChapterSeparatorKind? value)
@@ -95,23 +95,23 @@ public static class PageNumberTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PageNumberType? openXmlElement, DMW.PageNumberType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PageNumberType? openXmlElement, DMW.PageNumberType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName, propName))
         ok = false;
-      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName, propName))
         ok = false;
-      if (!CmpChapterStyle(openXmlElement, value.ChapterStyle, diffs, objName))
+      if (!CmpChapterStyle(openXmlElement, value.ChapterStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpChapterSeparator(openXmlElement, value.ChapterSeparator, diffs, objName))
+      if (!CmpChapterSeparator(openXmlElement, value.ChapterSeparator, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

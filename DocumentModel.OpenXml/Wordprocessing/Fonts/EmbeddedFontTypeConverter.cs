@@ -10,7 +10,7 @@ public static class EmbeddedFontConverter
     return StringValueConverter.GetValue(openXmlElement?.FontKey);
   }
   
-  private static bool CmpFontKey(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFontKey(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FontKey, value, diffs, objName, "FontKey");
   }
@@ -27,7 +27,7 @@ public static class EmbeddedFontConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Subsetted)/* ?? true*/;
   }
   
-  private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSubsetted(DXW.FontRelationshipType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Subsetted, value, diffs, objName, "Subsetted");
   }
@@ -44,7 +44,7 @@ public static class EmbeddedFontConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.FontRelationshipType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -69,21 +69,21 @@ public static class EmbeddedFontConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.EmbeddedFont? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontRelationshipType? openXmlElement, DMW.EmbeddedFont? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFontKey(openXmlElement, model.FontKey, diffs, objName))
+      if (!CmpFontKey(openXmlElement, model.FontKey, diffs, objName, propName))
         ok = false;
-      if (!CmpSubsetted(openXmlElement, model.Subsetted, diffs, objName))
+      if (!CmpSubsetted(openXmlElement, model.Subsetted, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

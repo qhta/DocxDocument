@@ -13,7 +13,7 @@ public static class InnerShadowConverter
     return openXmlElement?.BlurRadius?.Value;
   }
   
-  private static bool CmpBlurRadius(DXD.InnerShadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBlurRadius(DXD.InnerShadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlurRadius?.Value == value) return true;
     diffs?.Add(objName, "BlurRadius", openXmlElement?.BlurRadius?.Value, value);
@@ -33,7 +33,7 @@ public static class InnerShadowConverter
     return openXmlElement?.Distance?.Value;
   }
   
-  private static bool CmpDistance(DXD.InnerShadow openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpDistance(DXD.InnerShadow openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Distance?.Value == value) return true;
     diffs?.Add(objName, "Distance", openXmlElement?.Distance?.Value, value);
@@ -53,7 +53,7 @@ public static class InnerShadowConverter
     return openXmlElement?.Direction?.Value;
   }
   
-  private static bool CmpDirection(DXD.InnerShadow openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDirection(DXD.InnerShadow openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Direction?.Value == value) return true;
     diffs?.Add(objName, "Direction", openXmlElement?.Direction?.Value, value);
@@ -76,9 +76,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXD.InnerShadow openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.InnerShadow openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelPercentage(DXD.InnerShadow openXmlElement, DMD.RgbColorModelPercentage? value)
@@ -105,9 +105,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXD.InnerShadow openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.InnerShadow openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXD.InnerShadow openXmlElement, DMD.RgbColorModelHex? value)
@@ -134,9 +134,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXD.InnerShadow openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.InnerShadow openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
   private static void SetHslColor(DXD.InnerShadow openXmlElement, DMD.HslColor? value)
@@ -163,9 +163,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXD.InnerShadow openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.InnerShadow openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSystemColor(DXD.InnerShadow openXmlElement, DMD.SystemColor? value)
@@ -192,9 +192,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXD.InnerShadow openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXD.InnerShadow openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemeColor(DXD.InnerShadow openXmlElement, DMD.SchemeColor? value)
@@ -221,9 +221,9 @@ public static class InnerShadowConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXD.InnerShadow openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.InnerShadow openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetColor(DXD.InnerShadow openXmlElement, DMD.PresetColor? value)
@@ -258,33 +258,33 @@ public static class InnerShadowConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.InnerShadow? openXmlElement, DMD.InnerShadow? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.InnerShadow? openXmlElement, DMD.InnerShadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName))
+      if (!CmpBlurRadius(openXmlElement, value.BlurRadius, diffs, objName, propName))
         ok = false;
-      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName))
+      if (!CmpDistance(openXmlElement, value.Distance, diffs, objName, propName))
         ok = false;
-      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName))
+      if (!CmpDirection(openXmlElement, value.Direction, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName))
+      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName, propName))
         ok = false;
-      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName))
+      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName))
+      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName))
+      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

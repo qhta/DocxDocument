@@ -17,7 +17,7 @@ public static class RecipientDataConverter
     return null;
   }
   
-  private static bool CmpActive(DXW.RecipientData openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpActive(DXW.RecipientData openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = GetActive(openXmlElement);
     if (val == value) return true;
@@ -48,7 +48,7 @@ public static class RecipientDataConverter
     return openXmlElement?.GetFirstChild<DXW.ColumnIndex>()?.Val?.Value;
   }
   
-  private static bool CmpColumnIndex(DXW.RecipientData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnIndex(DXW.RecipientData openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXW.ColumnIndex>();
     if (itemElement?.Val?.Value == value) return true;
@@ -76,9 +76,9 @@ public static class RecipientDataConverter
     return DMX.HexBinaryConverter.GetValue(openXmlElement?.GetFirstChild<DXW.UniqueTag>());
   }
   
-  private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
+  private static bool CmpUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName);
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.UniqueTag>(), value, diffs, objName, propName);
   }
   
   private static void SetUniqueTag(DXW.RecipientData openXmlElement, HexBinary? value)
@@ -107,21 +107,21 @@ public static class RecipientDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RecipientData? openXmlElement, DMW.RecipientData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RecipientData? openXmlElement, DMW.RecipientData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpActive(openXmlElement, value.Active, diffs, objName))
+      if (!CmpActive(openXmlElement, value.Active, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnIndex(openXmlElement, value.ColumnIndex, diffs, objName))
+      if (!CmpColumnIndex(openXmlElement, value.ColumnIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpUniqueTag(openXmlElement, value.UniqueTag, diffs, objName))
+      if (!CmpUniqueTag(openXmlElement, value.UniqueTag, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

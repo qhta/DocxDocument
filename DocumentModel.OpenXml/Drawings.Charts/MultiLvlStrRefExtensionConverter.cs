@@ -13,7 +13,7 @@ public static class MultiLvlStrRefExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.MultiLvlStrRefExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.MultiLvlStrRefExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class MultiLvlStrRefExtensionConverter
     return null;
   }
   
-  private static bool CmpFullReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FullReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFullReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FullReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FullReference>(), value, diffs, objName);
+    return DMXDC.FullReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FullReference>(), value, diffs, objName, propName);
   }
   
   private static void SetFullReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FullReference? value)
@@ -57,9 +57,9 @@ public static class MultiLvlStrRefExtensionConverter
     return null;
   }
   
-  private static bool CmpLevelReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.LevelReference? value, DiffList? diffs, string? objName)
+  private static bool CmpLevelReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.LevelReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.LevelReference>(), value, diffs, objName);
+    return DMXDC.LevelReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.LevelReference>(), value, diffs, objName, propName);
   }
   
   private static void SetLevelReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.LevelReference? value)
@@ -83,9 +83,9 @@ public static class MultiLvlStrRefExtensionConverter
     return null;
   }
   
-  private static bool CmpFormulaReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FormulaReference? value, DiffList? diffs, string? objName)
+  private static bool CmpFormulaReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FormulaReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FormulaReference>(), value, diffs, objName);
+    return DMXDC.FormulaReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FormulaReference>(), value, diffs, objName, propName);
   }
   
   private static void SetFormulaReference(DXDC.MultiLvlStrRefExtension openXmlElement, DMDC.FormulaReference? value)
@@ -115,23 +115,23 @@ public static class MultiLvlStrRefExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.MultiLvlStrRefExtension? openXmlElement, DMDC.MultiLvlStrRefExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.MultiLvlStrRefExtension? openXmlElement, DMDC.MultiLvlStrRefExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFullReference(openXmlElement, value.FullReference, diffs, objName))
+      if (!CmpFullReference(openXmlElement, value.FullReference, diffs, objName, propName))
         ok = false;
-      if (!CmpLevelReference(openXmlElement, value.LevelReference, diffs, objName))
+      if (!CmpLevelReference(openXmlElement, value.LevelReference, diffs, objName, propName))
         ok = false;
-      if (!CmpFormulaReference(openXmlElement, value.FormulaReference, diffs, objName))
+      if (!CmpFormulaReference(openXmlElement, value.FormulaReference, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

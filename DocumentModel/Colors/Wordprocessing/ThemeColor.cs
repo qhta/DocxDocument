@@ -13,6 +13,22 @@ public class ThemeColor : Color
   /// <summary>
   /// Initializing constructor.
   /// </summary>
+  /// <param name="baseColor">RGB color value</param>
+  /// <param name="index"></param>
+  /// <param name="tint"></param>
+  /// <param name="shade"></param>
+  public ThemeColor(DM.Color? baseColor, ThemeColorIndex index, Percent? tint, Percent? shade)
+  {
+    Name = baseColor?.Name;
+    Value = baseColor?.Value;
+    Index = index;
+    Tint = tint;
+    Shade = shade;
+  }
+
+  /// <summary>
+  /// Initializing constructor.
+  /// </summary>
   /// <param name="index"></param>
   /// <param name="tint"></param>
   /// <param name="shade"></param>

@@ -13,7 +13,7 @@ public static class PivotFormatConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val);
   }
   
-  private static bool CmpIndex(DXDC.PivotFormat openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXDC.PivotFormat openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Index>()?.Val, value, diffs, objName, "Index");
   }
@@ -34,9 +34,9 @@ public static class PivotFormatConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXDC.PivotFormat openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXDC.PivotFormat openXmlElement, DMDC.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXDC.PivotFormat openXmlElement, DMDC.ShapeProperties? value)
@@ -63,9 +63,9 @@ public static class PivotFormatConverter
     return null;
   }
   
-  private static bool CmpMarker(DXDC.PivotFormat openXmlElement, DMDC.Marker? value, DiffList? diffs, string? objName)
+  private static bool CmpMarker(DXDC.PivotFormat openXmlElement, DMDC.Marker? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Marker>(), value, diffs, objName);
+    return DMXDC.MarkerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Marker>(), value, diffs, objName, propName);
   }
   
   private static void SetMarker(DXDC.PivotFormat openXmlElement, DMDC.Marker? value)
@@ -92,9 +92,9 @@ public static class PivotFormatConverter
     return null;
   }
   
-  private static bool CmpDataLabel(DXDC.PivotFormat openXmlElement, DMDC.DataLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabel(DXDC.PivotFormat openXmlElement, DMDC.DataLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabel>(), value, diffs, objName);
+    return DMXDC.DataLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabel(DXDC.PivotFormat openXmlElement, DMDC.DataLabel? value)
@@ -121,9 +121,9 @@ public static class PivotFormatConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.PivotFormat openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.PivotFormat openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.PivotFormat openXmlElement, DMDC.ExtensionList? value)
@@ -154,25 +154,25 @@ public static class PivotFormatConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.PivotFormat? openXmlElement, DMDC.PivotFormat? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PivotFormat? openXmlElement, DMDC.PivotFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName))
+      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabel(openXmlElement, value.DataLabel, diffs, objName))
+      if (!CmpDataLabel(openXmlElement, value.DataLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

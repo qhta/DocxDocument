@@ -13,7 +13,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -49,7 +49,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -67,9 +67,9 @@ public static class BackstageComboBoxConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value);
   }
   
-  private static bool CmpAlignLabel(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignLabel(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.AlignLabel?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignLabel(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value)
@@ -85,9 +85,9 @@ public static class BackstageComboBoxConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value);
   }
   
-  private static bool CmpExpand(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExpand(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.CustomUI.ExpandValues, DM.ExpandKind>(openXmlElement?.Expand?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExpand(DXO10CUI.BackstageComboBox openXmlElement, DM.ExpandKind? value)
@@ -103,7 +103,7 @@ public static class BackstageComboBoxConverter
     return openXmlElement?.Enabled?.Value;
   }
   
-  private static bool CmpEnabled(DXO10CUI.BackstageComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEnabled(DXO10CUI.BackstageComboBox openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Enabled?.Value == value) return true;
     diffs?.Add(objName, "Enabled", openXmlElement?.Enabled?.Value, value);
@@ -126,7 +126,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetEnabled);
   }
   
-  private static bool CmpGetEnabled(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetEnabled(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetEnabled, value, diffs, objName, "GetEnabled");
   }
@@ -144,7 +144,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -162,7 +162,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -180,7 +180,7 @@ public static class BackstageComboBoxConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.BackstageComboBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.BackstageComboBox openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -203,7 +203,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -221,7 +221,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
@@ -239,7 +239,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
@@ -257,7 +257,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetText);
   }
   
-  private static bool CmpGetText(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetText(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetText, value, diffs, objName, "GetText");
   }
@@ -275,7 +275,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.OnChange);
   }
   
-  private static bool CmpOnChange(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnChange(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnChange, value, diffs, objName, "OnChange");
   }
@@ -293,7 +293,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.SizeString);
   }
   
-  private static bool CmpSizeString(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSizeString(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SizeString, value, diffs, objName, "SizeString");
   }
@@ -311,7 +311,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetItemCount);
   }
   
-  private static bool CmpGetItemCount(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemCount(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemCount, value, diffs, objName, "GetItemCount");
   }
@@ -329,7 +329,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetItemLabel);
   }
   
-  private static bool CmpGetItemLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemLabel(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemLabel, value, diffs, objName, "GetItemLabel");
   }
@@ -347,7 +347,7 @@ public static class BackstageComboBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.GetItemID);
   }
   
-  private static bool CmpGetItemID(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetItemID(DXO10CUI.BackstageComboBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetItemID, value, diffs, objName, "GetItemID");
   }
@@ -371,7 +371,7 @@ public static class BackstageComboBoxConverter
     return null;
   }
   
-  private static bool CmpItemBackstageItems(DXO10CUI.BackstageComboBox openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs, string? objName)
+  private static bool CmpItemBackstageItems(DXO10CUI.BackstageComboBox openXmlElement, Collection<DM.BackstageItemType>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10CUI.ItemBackstageItem>();
     var origElementsCount = origElements.Count();
@@ -380,7 +380,7 @@ public static class BackstageComboBoxConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -389,13 +389,13 @@ public static class BackstageComboBoxConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.BackstageItemTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.BackstageItemTypeConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -443,55 +443,55 @@ public static class BackstageComboBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.BackstageComboBox? openXmlElement, DM.BackstageComboBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.BackstageComboBox? openXmlElement, DM.BackstageComboBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignLabel(openXmlElement, value.AlignLabel, diffs, objName))
+      if (!CmpAlignLabel(openXmlElement, value.AlignLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExpand(openXmlElement, value.Expand, diffs, objName))
+      if (!CmpExpand(openXmlElement, value.Expand, diffs, objName, propName))
         ok = false;
-      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName))
+      if (!CmpEnabled(openXmlElement, value.Enabled, diffs, objName, propName))
         ok = false;
-      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName))
+      if (!CmpGetEnabled(openXmlElement, value.GetEnabled, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetText(openXmlElement, value.GetText, diffs, objName))
+      if (!CmpGetText(openXmlElement, value.GetText, diffs, objName, propName))
         ok = false;
-      if (!CmpOnChange(openXmlElement, value.OnChange, diffs, objName))
+      if (!CmpOnChange(openXmlElement, value.OnChange, diffs, objName, propName))
         ok = false;
-      if (!CmpSizeString(openXmlElement, value.SizeString, diffs, objName))
+      if (!CmpSizeString(openXmlElement, value.SizeString, diffs, objName, propName))
         ok = false;
-      if (!CmpGetItemCount(openXmlElement, value.GetItemCount, diffs, objName))
+      if (!CmpGetItemCount(openXmlElement, value.GetItemCount, diffs, objName, propName))
         ok = false;
-      if (!CmpGetItemLabel(openXmlElement, value.GetItemLabel, diffs, objName))
+      if (!CmpGetItemLabel(openXmlElement, value.GetItemLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpGetItemID(openXmlElement, value.GetItemID, diffs, objName))
+      if (!CmpGetItemID(openXmlElement, value.GetItemID, diffs, objName, propName))
         ok = false;
-      if (!CmpItemBackstageItems(openXmlElement, value.ItemBackstageItems, diffs, objName))
+      if (!CmpItemBackstageItems(openXmlElement, value.ItemBackstageItems, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

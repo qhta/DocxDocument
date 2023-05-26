@@ -14,9 +14,9 @@ public static class MathFunctionConverter
     return null;
   }
   
-  private static bool CmpFunctionProperties(DXM.MathFunction openXmlElement, DMM.FunctionProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFunctionProperties(DXM.MathFunction openXmlElement, DMM.FunctionProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.FunctionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionProperties>(), value, diffs, objName);
+    return DMXM.FunctionPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetFunctionProperties(DXM.MathFunction openXmlElement, DMM.FunctionProperties? value)
@@ -42,9 +42,9 @@ public static class MathFunctionConverter
     return null;
   }
   
-  private static bool CmpFunctionName(DXM.MathFunction openXmlElement, DMM.FunctionName? value, DiffList? diffs, string? objName)
+  private static bool CmpFunctionName(DXM.MathFunction openXmlElement, DMM.FunctionName? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.FunctionNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionName>(), value, diffs, objName);
+    return DMXM.FunctionNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.FunctionName>(), value, diffs, objName, propName);
   }
   
   private static void SetFunctionName(DXM.MathFunction openXmlElement, DMM.FunctionName? value)
@@ -70,9 +70,9 @@ public static class MathFunctionConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.MathFunction openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.MathFunction openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.MathFunction openXmlElement, DMM.Argument? value)
@@ -103,21 +103,21 @@ public static class MathFunctionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.MathFunction? openXmlElement, DMM.Function? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MathFunction? openXmlElement, DMM.Function? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpFunctionProperties(openXmlElement, model.FunctionProperties, diffs, objName))
+      if (!CmpFunctionProperties(openXmlElement, model.FunctionProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpFunctionName(openXmlElement, model.FunctionName, diffs, objName))
+      if (!CmpFunctionName(openXmlElement, model.FunctionName, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

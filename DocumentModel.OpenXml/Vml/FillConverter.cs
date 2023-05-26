@@ -13,7 +13,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,9 +31,9 @@ public static class FillConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXV.Fill openXmlElement, DMV.FillTypeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXV.Fill openXmlElement, DMV.FillTypeKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillTypeValues, DMV.FillTypeKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXV.Fill openXmlElement, DMV.FillTypeKind? value)
@@ -49,7 +49,7 @@ public static class FillConverter
     return openXmlElement?.On?.Value;
   }
   
-  private static bool CmpOn(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOn(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.On?.Value == value) return true;
     diffs?.Add(objName, "On", openXmlElement?.On?.Value, value);
@@ -72,7 +72,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Color);
   }
   
-  private static bool CmpColor(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Color, value, diffs, objName, "Color");
   }
@@ -90,7 +90,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Opacity);
   }
   
-  private static bool CmpOpacity(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOpacity(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Opacity, value, diffs, objName, "Opacity");
   }
@@ -108,7 +108,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Color2);
   }
   
-  private static bool CmpColor2(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColor2(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Color2, value, diffs, objName, "Color2");
   }
@@ -126,7 +126,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Source);
   }
   
-  private static bool CmpSource(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSource(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Source, value, diffs, objName, "Source");
   }
@@ -144,7 +144,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Href);
   }
   
-  private static bool CmpHref(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHref(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Href, value, diffs, objName, "Href");
   }
@@ -162,7 +162,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.AlternateImageReference);
   }
   
-  private static bool CmpAlternateImageReference(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternateImageReference(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AlternateImageReference, value, diffs, objName, "AlternateImageReference");
   }
@@ -180,7 +180,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Size);
   }
   
-  private static bool CmpSize(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Size, value, diffs, objName, "Value");
   }
@@ -198,7 +198,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Origin);
   }
   
-  private static bool CmpOrigin(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOrigin(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Origin, value, diffs, objName, "Origin");
   }
@@ -216,7 +216,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Position);
   }
   
-  private static bool CmpPosition(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Position, value, diffs, objName, "Position");
   }
@@ -234,9 +234,9 @@ public static class FillConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMV.ImageAspectKind>(openXmlElement?.Aspect?.Value);
   }
   
-  private static bool CmpAspect(DXV.Fill openXmlElement, DMV.ImageAspectKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAspect(DXV.Fill openXmlElement, DMV.ImageAspectKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMV.ImageAspectKind>(openXmlElement?.Aspect?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ImageAspectValues, DMV.ImageAspectKind>(openXmlElement?.Aspect?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAspect(DXV.Fill openXmlElement, DMV.ImageAspectKind? value)
@@ -252,7 +252,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Colors);
   }
   
-  private static bool CmpColors(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpColors(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Colors, value, diffs, objName, "Colors");
   }
@@ -270,7 +270,7 @@ public static class FillConverter
     return openXmlElement?.Angle?.Value;
   }
   
-  private static bool CmpAngle(DXV.Fill openXmlElement, Decimal? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXV.Fill openXmlElement, Decimal? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Angle?.Value == value) return true;
     diffs?.Add(objName, "Angle", openXmlElement?.Angle?.Value, value);
@@ -290,7 +290,7 @@ public static class FillConverter
     return openXmlElement?.AlignShape?.Value;
   }
   
-  private static bool CmpAlignShape(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignShape(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AlignShape?.Value == value) return true;
     diffs?.Add(objName, "AlignShape", openXmlElement?.AlignShape?.Value, value);
@@ -313,7 +313,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Focus);
   }
   
-  private static bool CmpFocus(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFocus(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Focus, value, diffs, objName, "Focus");
   }
@@ -331,7 +331,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.FocusSize);
   }
   
-  private static bool CmpFocusSize(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFocusSize(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FocusSize, value, diffs, objName, "FocusSize");
   }
@@ -349,7 +349,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.FocusPosition);
   }
   
-  private static bool CmpFocusPosition(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFocusPosition(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FocusPosition, value, diffs, objName, "FocusPosition");
   }
@@ -367,9 +367,9 @@ public static class FillConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMV.FillMethodKind>(openXmlElement?.Method?.Value);
   }
   
-  private static bool CmpMethod(DXV.Fill openXmlElement, DMV.FillMethodKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXV.Fill openXmlElement, DMV.FillMethodKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMV.FillMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.FillMethodValues, DMV.FillMethodKind>(openXmlElement?.Method?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMethod(DXV.Fill openXmlElement, DMV.FillMethodKind? value)
@@ -385,7 +385,7 @@ public static class FillConverter
     return openXmlElement?.DetectMouseClick?.Value;
   }
   
-  private static bool CmpDetectMouseClick(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDetectMouseClick(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DetectMouseClick?.Value == value) return true;
     diffs?.Add(objName, "DetectMouseClick", openXmlElement?.DetectMouseClick?.Value, value);
@@ -408,7 +408,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
@@ -426,7 +426,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.Opacity2);
   }
   
-  private static bool CmpOpacity2(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOpacity2(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Opacity2, value, diffs, objName, "Opacity2");
   }
@@ -444,7 +444,7 @@ public static class FillConverter
     return openXmlElement?.Recolor?.Value;
   }
   
-  private static bool CmpRecolor(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRecolor(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Recolor?.Value == value) return true;
     diffs?.Add(objName, "Recolor", openXmlElement?.Recolor?.Value, value);
@@ -467,7 +467,7 @@ public static class FillConverter
     return openXmlElement?.Rotate?.Value;
   }
   
-  private static bool CmpRotate(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRotate(DXV.Fill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Rotate?.Value == value) return true;
     diffs?.Add(objName, "Rotate", openXmlElement?.Rotate?.Value, value);
@@ -490,7 +490,7 @@ public static class FillConverter
     return StringValueConverter.GetValue(openXmlElement?.RelationshipId);
   }
   
-  private static bool CmpRelationshipId(DXV.Fill openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipId(DXV.Fill openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RelationshipId, value, diffs, objName, "RelationshipId");
   }
@@ -511,9 +511,9 @@ public static class FillConverter
     return null;
   }
   
-  private static bool CmpFillExtendedProperties(DXV.Fill openXmlElement, DMV.FillExtendedProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFillExtendedProperties(DXV.Fill openXmlElement, DMV.FillExtendedProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.FillExtendedProperties>(), value, diffs, objName);
+    return DMXV.FillExtendedPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.FillExtendedProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetFillExtendedProperties(DXV.Fill openXmlElement, DMV.FillExtendedProperties? value)
@@ -566,69 +566,69 @@ public static class FillConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXV.Fill? openXmlElement, DMV.Fill? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.Fill? openXmlElement, DMV.Fill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpOn(openXmlElement, value.On, diffs, objName))
+      if (!CmpOn(openXmlElement, value.On, diffs, objName, propName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName, propName))
         ok = false;
-      if (!CmpOpacity(openXmlElement, value.Opacity, diffs, objName))
+      if (!CmpOpacity(openXmlElement, value.Opacity, diffs, objName, propName))
         ok = false;
-      if (!CmpColor2(openXmlElement, value.Color2, diffs, objName))
+      if (!CmpColor2(openXmlElement, value.Color2, diffs, objName, propName))
         ok = false;
-      if (!CmpSource(openXmlElement, value.Source, diffs, objName))
+      if (!CmpSource(openXmlElement, value.Source, diffs, objName, propName))
         ok = false;
-      if (!CmpHref(openXmlElement, value.Href, diffs, objName))
+      if (!CmpHref(openXmlElement, value.Href, diffs, objName, propName))
         ok = false;
-      if (!CmpAlternateImageReference(openXmlElement, value.AlternateImageReference, diffs, objName))
+      if (!CmpAlternateImageReference(openXmlElement, value.AlternateImageReference, diffs, objName, propName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName, propName))
         ok = false;
-      if (!CmpOrigin(openXmlElement, value.Origin, diffs, objName))
+      if (!CmpOrigin(openXmlElement, value.Origin, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpAspect(openXmlElement, value.Aspect, diffs, objName))
+      if (!CmpAspect(openXmlElement, value.Aspect, diffs, objName, propName))
         ok = false;
-      if (!CmpColors(openXmlElement, value.Colors, diffs, objName))
+      if (!CmpColors(openXmlElement, value.Colors, diffs, objName, propName))
         ok = false;
-      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName))
+      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignShape(openXmlElement, value.AlignShape, diffs, objName))
+      if (!CmpAlignShape(openXmlElement, value.AlignShape, diffs, objName, propName))
         ok = false;
-      if (!CmpFocus(openXmlElement, value.Focus, diffs, objName))
+      if (!CmpFocus(openXmlElement, value.Focus, diffs, objName, propName))
         ok = false;
-      if (!CmpFocusSize(openXmlElement, value.FocusSize, diffs, objName))
+      if (!CmpFocusSize(openXmlElement, value.FocusSize, diffs, objName, propName))
         ok = false;
-      if (!CmpFocusPosition(openXmlElement, value.FocusPosition, diffs, objName))
+      if (!CmpFocusPosition(openXmlElement, value.FocusPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpMethod(openXmlElement, value.Method, diffs, objName))
+      if (!CmpMethod(openXmlElement, value.Method, diffs, objName, propName))
         ok = false;
-      if (!CmpDetectMouseClick(openXmlElement, value.DetectMouseClick, diffs, objName))
+      if (!CmpDetectMouseClick(openXmlElement, value.DetectMouseClick, diffs, objName, propName))
         ok = false;
-      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName, propName))
         ok = false;
-      if (!CmpOpacity2(openXmlElement, value.Opacity2, diffs, objName))
+      if (!CmpOpacity2(openXmlElement, value.Opacity2, diffs, objName, propName))
         ok = false;
-      if (!CmpRecolor(openXmlElement, value.Recolor, diffs, objName))
+      if (!CmpRecolor(openXmlElement, value.Recolor, diffs, objName, propName))
         ok = false;
-      if (!CmpRotate(openXmlElement, value.Rotate, diffs, objName))
+      if (!CmpRotate(openXmlElement, value.Rotate, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipId(openXmlElement, value.RelationshipId, diffs, objName))
+      if (!CmpRelationshipId(openXmlElement, value.RelationshipId, diffs, objName, propName))
         ok = false;
-      if (!CmpFillExtendedProperties(openXmlElement, value.FillExtendedProperties, diffs, objName))
+      if (!CmpFillExtendedProperties(openXmlElement, value.FillExtendedProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

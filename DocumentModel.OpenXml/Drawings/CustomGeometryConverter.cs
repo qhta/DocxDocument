@@ -16,9 +16,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpAdjustValueList(DXD.CustomGeometry openXmlElement, DMD.AdjustValueList? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustValueList(DXD.CustomGeometry openXmlElement, DMD.AdjustValueList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustValueList>(), value, diffs, objName);
+    return DMXD.AdjustValueListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustValueList>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustValueList(DXD.CustomGeometry openXmlElement, DMD.AdjustValueList? value)
@@ -45,9 +45,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpShapeGuideList(DXD.CustomGeometry openXmlElement, DMD.ShapeGuideList? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeGuideList(DXD.CustomGeometry openXmlElement, DMD.ShapeGuideList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ShapeGuideListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeGuideList>(), value, diffs, objName);
+    return DMXD.ShapeGuideListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeGuideList>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeGuideList(DXD.CustomGeometry openXmlElement, DMD.ShapeGuideList? value)
@@ -74,9 +74,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpAdjustHandleList(DXD.CustomGeometry openXmlElement, DMD.AdjustHandleList? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustHandleList(DXD.CustomGeometry openXmlElement, DMD.AdjustHandleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustHandleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandleList>(), value, diffs, objName);
+    return DMXD.AdjustHandleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandleList>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustHandleList(DXD.CustomGeometry openXmlElement, DMD.AdjustHandleList? value)
@@ -103,9 +103,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpConnectionSiteList(DXD.CustomGeometry openXmlElement, DMD.ConnectionSiteList? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionSiteList(DXD.CustomGeometry openXmlElement, DMD.ConnectionSiteList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ConnectionSiteListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ConnectionSiteList>(), value, diffs, objName);
+    return DMXD.ConnectionSiteListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ConnectionSiteList>(), value, diffs, objName, propName);
   }
   
   private static void SetConnectionSiteList(DXD.CustomGeometry openXmlElement, DMD.ConnectionSiteList? value)
@@ -132,9 +132,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpRectangle(DXD.CustomGeometry openXmlElement, DMD.Rectangle? value, DiffList? diffs, string? objName)
+  private static bool CmpRectangle(DXD.CustomGeometry openXmlElement, DMD.Rectangle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Rectangle>(), value, diffs, objName);
+    return DMXD.RectangleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Rectangle>(), value, diffs, objName, propName);
   }
   
   private static void SetRectangle(DXD.CustomGeometry openXmlElement, DMD.Rectangle? value)
@@ -161,9 +161,9 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  private static bool CmpPathList(DXD.CustomGeometry openXmlElement, DMD.PathList? value, DiffList? diffs, string? objName)
+  private static bool CmpPathList(DXD.CustomGeometry openXmlElement, DMD.PathList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PathListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PathList>(), value, diffs, objName);
+    return DMXD.PathListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PathList>(), value, diffs, objName, propName);
   }
   
   private static void SetPathList(DXD.CustomGeometry openXmlElement, DMD.PathList? value)
@@ -195,27 +195,27 @@ public static class CustomGeometryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.CustomGeometry? openXmlElement, DMD.CustomGeometry? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CustomGeometry? openXmlElement, DMD.CustomGeometry? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAdjustValueList(openXmlElement, value.AdjustValueList, diffs, objName))
+      if (!CmpAdjustValueList(openXmlElement, value.AdjustValueList, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeGuideList(openXmlElement, value.ShapeGuideList, diffs, objName))
+      if (!CmpShapeGuideList(openXmlElement, value.ShapeGuideList, diffs, objName, propName))
         ok = false;
-      if (!CmpAdjustHandleList(openXmlElement, value.AdjustHandleList, diffs, objName))
+      if (!CmpAdjustHandleList(openXmlElement, value.AdjustHandleList, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectionSiteList(openXmlElement, value.ConnectionSiteList, diffs, objName))
+      if (!CmpConnectionSiteList(openXmlElement, value.ConnectionSiteList, diffs, objName, propName))
         ok = false;
-      if (!CmpRectangle(openXmlElement, value.Rectangle, diffs, objName))
+      if (!CmpRectangle(openXmlElement, value.Rectangle, diffs, objName, propName))
         ok = false;
-      if (!CmpPathList(openXmlElement, value.PathList, diffs, objName))
+      if (!CmpPathList(openXmlElement, value.PathList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

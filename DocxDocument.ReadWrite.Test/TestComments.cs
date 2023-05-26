@@ -60,12 +60,12 @@ public class TestComments : TestBase
     if (origComments==null && origCommentsEx==null && origCommentsIds==null && origCommentsExtensible==null)
       return;
     var diffs = new DiffList();
-    var ok = DMXW.CommentsConverter.CompareModelElement(origComments, modelComments?.Comments, diffs, null);
-    if (!DMXW.CommentsExConverter.CompareModelElement(origCommentsEx, modelComments?.CommentsEx, diffs, null))
+    var ok = DMXW.CommentsConverter.CompareModelElement(origComments, modelComments?.Comments, diffs, null, null);
+    if (!DMXW.CommentsExConverter.CompareModelElement(origCommentsEx, modelComments?.CommentsEx, diffs, null, null))
       ok = false;
-    if (!DMXW.CommentsIdsConverter.CompareModelElement(origCommentsIds, modelComments?.CommentsIds, diffs, null))
+    if (!DMXW.CommentsIdsConverter.CompareModelElement(origCommentsIds, modelComments?.CommentsIds, diffs, null, null))
       ok = false;
-    if (!DMXW.CommentsExtensibleConverter.CmpCommentsExtensibles(origCommentsExtensible, modelComments?.CommentsExtensible, diffs, null))
+    if (!DMXW.CommentsExtensibleConverter.CmpCommentsExtensibles(origCommentsExtensible, modelComments?.CommentsExtensible, diffs, null, null))
       ok = false;
     if (!ok && showDetails)
     {

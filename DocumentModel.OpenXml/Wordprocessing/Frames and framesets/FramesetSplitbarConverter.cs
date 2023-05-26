@@ -13,7 +13,7 @@ public static class FramesetSplitbarConverter
     return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value);
   }
   
-  private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, Twips? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.FramesetSplitbar openXmlElement, Twips? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Width>()?.Val?.Value, value, diffs, objName, "Value");
   }
@@ -34,9 +34,9 @@ public static class FramesetSplitbarConverter
     return null;
   }
   
-  private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DM.Color? value, DiffList? diffs, string? objName)
+  private static bool CmpColor(DXW.FramesetSplitbar openXmlElement, DM.Color? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName);
+    return DMXW.ColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Color>(), value, diffs, objName, propName);
   }
   
   private static void SetColor(DXW.FramesetSplitbar openXmlElement, DM.Color? value)
@@ -60,9 +60,9 @@ public static class FramesetSplitbarConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoBorder>());
   }
   
-  private static bool CmpNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoBorder>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoBorder>(), value, diffs, objName, propName);
   }
   
   private static void SetNoBorder(DXW.FramesetSplitbar openXmlElement, Boolean? value)
@@ -78,9 +78,9 @@ public static class FramesetSplitbarConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FlatBorders>());
   }
   
-  private static bool CmpFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FlatBorders>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FlatBorders>(), value, diffs, objName, propName);
   }
   
   private static void SetFlatBorders(DXW.FramesetSplitbar openXmlElement, Boolean? value)
@@ -102,23 +102,23 @@ public static class FramesetSplitbarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FramesetSplitbar? openXmlElement, DMW.FramesetSplitbar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FramesetSplitbar? openXmlElement, DMW.FramesetSplitbar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpColor(openXmlElement, value.Color, diffs, objName))
+      if (!CmpColor(openXmlElement, value.Color, diffs, objName, propName))
         ok = false;
-      if (!CmpNoBorder(openXmlElement, value.NoBorder, diffs, objName))
+      if (!CmpNoBorder(openXmlElement, value.NoBorder, diffs, objName, propName))
         ok = false;
-      if (!CmpFlatBorders(openXmlElement, value.FlatBorders, diffs, objName))
+      if (!CmpFlatBorders(openXmlElement, value.FlatBorders, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

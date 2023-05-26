@@ -14,9 +14,9 @@ public static class TableCellPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableCellPropertiesChange(DXW.TableCellProperties openXmlElement, DMW.TableCellPropertiesChange? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellPropertiesChange(DXW.TableCellProperties openXmlElement, DMW.TableCellPropertiesChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableCellPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellPropertiesChange>(), value, diffs, objName);
+    return DMXW.TableCellPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellPropertiesChange>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellPropertiesChange(DXW.TableCellProperties openXmlElement, DMW.TableCellPropertiesChange? value)
@@ -46,19 +46,19 @@ public static class TableCellPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCellProperties? openXmlElement, DMW.TableCellProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCellProperties? openXmlElement, DMW.TableCellProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (! CurrentTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (! CurrentTableCellPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpTableCellPropertiesChange(openXmlElement, model.TableCellPropertiesChange, diffs, objName))
+      if (!CmpTableCellPropertiesChange(openXmlElement, model.TableCellPropertiesChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

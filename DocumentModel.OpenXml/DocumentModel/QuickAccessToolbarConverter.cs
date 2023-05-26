@@ -16,9 +16,9 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  private static bool CmpSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs, string? objName)
+  private static bool CmpSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SharedControlsQatItems>(), value, diffs, objName);
+    return DMX.SharedControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SharedControlsQatItems>(), value, diffs, objName, propName);
   }
   
   private static void SetSharedControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.SharedControlsQatItems? value)
@@ -45,9 +45,9 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  private static bool CmpDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DocumentControlsQatItems>(), value, diffs, objName);
+    return DMX.DocumentControlsQatItemsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DocumentControlsQatItems>(), value, diffs, objName, propName);
   }
   
   private static void SetDocumentControlsQatItems(DXO10CUI.QuickAccessToolbar openXmlElement, DM.DocumentControlsQatItems? value)
@@ -75,19 +75,19 @@ public static class QuickAccessToolbarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.QuickAccessToolbar? openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.QuickAccessToolbar? openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSharedControlsQatItems(openXmlElement, value.SharedControlsQatItems, diffs, objName))
+      if (!CmpSharedControlsQatItems(openXmlElement, value.SharedControlsQatItems, diffs, objName, propName))
         ok = false;
-      if (!CmpDocumentControlsQatItems(openXmlElement, value.DocumentControlsQatItems, diffs, objName))
+      if (!CmpDocumentControlsQatItems(openXmlElement, value.DocumentControlsQatItems, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

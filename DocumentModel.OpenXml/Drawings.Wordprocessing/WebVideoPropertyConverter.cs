@@ -13,7 +13,7 @@ public static class WebVideoPropertyConverter
     return StringValueConverter.GetValue(openXmlElement?.EmbeddedHtml);
   }
   
-  private static bool CmpEmbeddedHtml(DXO13WD.WebVideoProperty openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedHtml(DXO13WD.WebVideoProperty openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EmbeddedHtml, value, diffs, objName, "EmbeddedHtml");
   }
@@ -31,7 +31,7 @@ public static class WebVideoPropertyConverter
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
@@ -51,7 +51,7 @@ public static class WebVideoPropertyConverter
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXO13WD.WebVideoProperty openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
@@ -76,21 +76,21 @@ public static class WebVideoPropertyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13WD.WebVideoProperty? openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WD.WebVideoProperty? openXmlElement, DMDW.WebVideoProperty? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEmbeddedHtml(openXmlElement, value.EmbeddedHtml, diffs, objName))
+      if (!CmpEmbeddedHtml(openXmlElement, value.EmbeddedHtml, diffs, objName, propName))
         ok = false;
-      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
         ok = false;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

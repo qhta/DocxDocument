@@ -19,7 +19,7 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  private static bool CmpClassificationLabels(DXO21MLMD.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs, string? objName)
+  private static bool CmpClassificationLabels(DXO21MLMD.ClassificationLabelList openXmlElement, Collection<DM.ClassificationLabel>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO21MLMD.ClassificationLabel>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class ClassificationLabelListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class ClassificationLabelListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.ClassificationLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.ClassificationLabelConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -69,9 +69,9 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  private static bool CmpClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21MLMD.ClassificationExtensionList>(), value, diffs, objName);
+    return DMX.ClassificationExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21MLMD.ClassificationExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetClassificationExtensionList(DXO21MLMD.ClassificationLabelList openXmlElement, DM.ClassificationExtensionList? value)
@@ -99,19 +99,19 @@ public static class ClassificationLabelListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21MLMD.ClassificationLabelList? openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21MLMD.ClassificationLabelList? openXmlElement, DM.ClassificationLabelList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpClassificationLabels(openXmlElement, value.ClassificationLabels, diffs, objName))
+      if (!CmpClassificationLabels(openXmlElement, value.ClassificationLabels, diffs, objName, propName))
         ok = false;
-      if (!CmpClassificationExtensionList(openXmlElement, value.ClassificationExtensionList, diffs, objName))
+      if (!CmpClassificationExtensionList(openXmlElement, value.ClassificationExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

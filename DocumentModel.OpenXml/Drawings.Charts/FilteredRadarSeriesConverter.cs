@@ -16,9 +16,9 @@ public static class FilteredRadarSeriesConverter
     return null;
   }
   
-  private static bool CmpRadarChartSeries(DXO13DC.FilteredRadarSeries openXmlElement, DMDC.RadarChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpRadarChartSeries(DXO13DC.FilteredRadarSeries openXmlElement, DMDC.RadarChartSeries3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.RadarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.RadarChartSeries>(), value, diffs, objName);
+    return DMXDC.RadarChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.RadarChartSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetRadarChartSeries(DXO13DC.FilteredRadarSeries openXmlElement, DMDC.RadarChartSeries3? value)
@@ -45,17 +45,17 @@ public static class FilteredRadarSeriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.FilteredRadarSeries? openXmlElement, DMDC.FilteredRadarSeries? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredRadarSeries? openXmlElement, DMDC.FilteredRadarSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRadarChartSeries(openXmlElement, value.RadarChartSeries, diffs, objName))
+      if (!CmpRadarChartSeries(openXmlElement, value.RadarChartSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -70,7 +70,7 @@ public static class CharsetConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.FontCharSet? openXmlElement, DMW.Charset? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontCharSet? openXmlElement, DMW.Charset? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -78,13 +78,13 @@ public static class CharsetConverter
       if (origCharset != null)
       {
         var ok = true;
-        if (!EnumValueConverter.CmpValue<DMW.Charset>((DMW.Charset)origCharset, value, diffs, objName))
+        if (!EnumValueConverter.CmpValue<DMW.Charset>((DMW.Charset)origCharset, value, diffs, objName, propName))
           ok = false;
         return ok;
       }
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

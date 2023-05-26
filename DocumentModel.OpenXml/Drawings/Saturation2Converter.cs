@@ -13,7 +13,7 @@ public static class Saturation2Converter
     return openXmlElement?.SaturationAmount?.Value;
   }
   
-  private static bool CmpSaturationAmount(DXO10D.Saturation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationAmount(DXO10D.Saturation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SaturationAmount?.Value == value) return true;
     diffs?.Add(objName, "SaturationAmount", openXmlElement?.SaturationAmount?.Value, value);
@@ -36,17 +36,17 @@ public static class Saturation2Converter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.Saturation? openXmlElement, DMD.Saturation2? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.Saturation? openXmlElement, DMD.Saturation2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSaturationAmount(openXmlElement, value.SaturationAmount, diffs, objName))
+      if (!CmpSaturationAmount(openXmlElement, value.SaturationAmount, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

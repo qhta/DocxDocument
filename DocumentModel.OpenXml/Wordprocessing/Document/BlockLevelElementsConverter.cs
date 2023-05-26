@@ -29,24 +29,24 @@ public static class BlockLevelElementsConverter
   }
 
   public static bool CompareBlockLevelElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXW.Table table && model is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName, propName);
       if (openXmlElement is DXW.AltChunk altChunk && model is DMW.AltChunk altChunkModel)
-        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
+        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtBlock stdBlock && model is DMW.SdtBlock stdBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(stdBlock, stdBlockModel, diffs, objName);
+        return DMXW.SdtBlockConverter.CompareModelElement(stdBlock, stdBlockModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -55,7 +55,7 @@ public static class BlockLevelElementsConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

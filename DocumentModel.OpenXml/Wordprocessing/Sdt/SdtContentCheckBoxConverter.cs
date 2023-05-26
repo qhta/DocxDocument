@@ -13,9 +13,9 @@ public static class SdtContentCheckBoxConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO10W.Checked>()?.Val?.Value);
   }
   
-  private static bool CmpChecked(DXO10W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value, DiffList? diffs, string? objName)
+  private static bool CmpChecked(DXO10W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO10W.Checked>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.OnOffValues, DMW.OnOffKind>(openXmlElement.GetFirstChild<DXO10W.Checked>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetChecked(DXO10W.SdtContentCheckBox openXmlElement, DMW.OnOffKind? value)
@@ -44,9 +44,9 @@ public static class SdtContentCheckBoxConverter
     return null;
   }
   
-  private static bool CmpCheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CheckedState>(), value, diffs, objName);
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.CheckedState>(), value, diffs, objName, propName);
   }
   
   private static void SetCheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
@@ -73,9 +73,9 @@ public static class SdtContentCheckBoxConverter
     return null;
   }
   
-  private static bool CmpUncheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  private static bool CmpUncheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.UncheckedState>(), value, diffs, objName);
+    return DMXW.CheckBoxSymbolTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.UncheckedState>(), value, diffs, objName, propName);
   }
   
   private static void SetUncheckedState(DXO10W.SdtContentCheckBox openXmlElement, DMW.CheckBoxSymbolType? value)
@@ -104,21 +104,21 @@ public static class SdtContentCheckBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.SdtContentCheckBox? openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.SdtContentCheckBox? openXmlElement, DMW.SdtContentCheckBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChecked(openXmlElement, value.Checked, diffs, objName))
+      if (!CmpChecked(openXmlElement, value.Checked, diffs, objName, propName))
         ok = false;
-      if (!CmpCheckedState(openXmlElement, value.CheckedState, diffs, objName))
+      if (!CmpCheckedState(openXmlElement, value.CheckedState, diffs, objName, propName))
         ok = false;
-      if (!CmpUncheckedState(openXmlElement, value.UncheckedState, diffs, objName))
+      if (!CmpUncheckedState(openXmlElement, value.UncheckedState, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

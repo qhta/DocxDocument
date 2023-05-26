@@ -13,7 +13,7 @@ public static class BackgroundRemovalConverter
     return openXmlElement?.MarqueeTop?.Value;
   }
   
-  private static bool CmpMarqueeTop(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarqueeTop(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MarqueeTop?.Value == value) return true;
     diffs?.Add(objName, "MarqueeTop", openXmlElement?.MarqueeTop?.Value, value);
@@ -33,7 +33,7 @@ public static class BackgroundRemovalConverter
     return openXmlElement?.MarqueeBottom?.Value;
   }
   
-  private static bool CmpMarqueeBottom(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarqueeBottom(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MarqueeBottom?.Value == value) return true;
     diffs?.Add(objName, "MarqueeBottom", openXmlElement?.MarqueeBottom?.Value, value);
@@ -53,7 +53,7 @@ public static class BackgroundRemovalConverter
     return openXmlElement?.MarqueeLeft?.Value;
   }
   
-  private static bool CmpMarqueeLeft(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarqueeLeft(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MarqueeLeft?.Value == value) return true;
     diffs?.Add(objName, "MarqueeLeft", openXmlElement?.MarqueeLeft?.Value, value);
@@ -73,7 +73,7 @@ public static class BackgroundRemovalConverter
     return openXmlElement?.MarqueeRight?.Value;
   }
   
-  private static bool CmpMarqueeRight(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpMarqueeRight(DXO10D.BackgroundRemoval openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MarqueeRight?.Value == value) return true;
     diffs?.Add(objName, "MarqueeRight", openXmlElement?.MarqueeRight?.Value, value);
@@ -99,7 +99,7 @@ public static class BackgroundRemovalConverter
     return null;
   }
   
-  private static bool CmpForegroundMarks(DXO10D.BackgroundRemoval openXmlElement, Collection<DMD.ForegroundMark>? value, DiffList? diffs, string? objName)
+  private static bool CmpForegroundMarks(DXO10D.BackgroundRemoval openXmlElement, Collection<DMD.ForegroundMark>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10D.ForegroundMark>();
     var origElementsCount = origElements.Count();
@@ -108,7 +108,7 @@ public static class BackgroundRemovalConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -117,13 +117,13 @@ public static class BackgroundRemovalConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.ForegroundMarkConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.ForegroundMarkConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -155,7 +155,7 @@ public static class BackgroundRemovalConverter
     return null;
   }
   
-  private static bool CmpBackgroundMarks(DXO10D.BackgroundRemoval openXmlElement, Collection<DMD.BackgroundMark>? value, DiffList? diffs, string? objName)
+  private static bool CmpBackgroundMarks(DXO10D.BackgroundRemoval openXmlElement, Collection<DMD.BackgroundMark>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10D.BackgroundMark>();
     var origElementsCount = origElements.Count();
@@ -164,7 +164,7 @@ public static class BackgroundRemovalConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -173,13 +173,13 @@ public static class BackgroundRemovalConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.BackgroundMarkConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.BackgroundMarkConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -213,27 +213,27 @@ public static class BackgroundRemovalConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.BackgroundRemoval? openXmlElement, DMD.BackgroundRemoval? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.BackgroundRemoval? openXmlElement, DMD.BackgroundRemoval? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMarqueeTop(openXmlElement, value.MarqueeTop, diffs, objName))
+      if (!CmpMarqueeTop(openXmlElement, value.MarqueeTop, diffs, objName, propName))
         ok = false;
-      if (!CmpMarqueeBottom(openXmlElement, value.MarqueeBottom, diffs, objName))
+      if (!CmpMarqueeBottom(openXmlElement, value.MarqueeBottom, diffs, objName, propName))
         ok = false;
-      if (!CmpMarqueeLeft(openXmlElement, value.MarqueeLeft, diffs, objName))
+      if (!CmpMarqueeLeft(openXmlElement, value.MarqueeLeft, diffs, objName, propName))
         ok = false;
-      if (!CmpMarqueeRight(openXmlElement, value.MarqueeRight, diffs, objName))
+      if (!CmpMarqueeRight(openXmlElement, value.MarqueeRight, diffs, objName, propName))
         ok = false;
-      if (!CmpForegroundMarks(openXmlElement, value.ForegroundMarks, diffs, objName))
+      if (!CmpForegroundMarks(openXmlElement, value.ForegroundMarks, diffs, objName, propName))
         ok = false;
-      if (!CmpBackgroundMarks(openXmlElement, value.BackgroundMarks, diffs, objName))
+      if (!CmpBackgroundMarks(openXmlElement, value.BackgroundMarks, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -14,9 +14,9 @@ public static class FunctionNameConverter
     return null;
   }
   
-  private static bool CmpArgumentProperties(DXM.FunctionName openXmlElement, DMM.ArgumentProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpArgumentProperties(DXM.FunctionName openXmlElement, DMM.ArgumentProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ArgumentProperties>(), value, diffs, objName);
+    return DMXM.ArgumentPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ArgumentProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetArgumentProperties(DXM.FunctionName openXmlElement, DMM.ArgumentProperties? value)
@@ -50,9 +50,9 @@ public static class FunctionNameConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.FunctionName openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.FunctionName openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.FunctionName openXmlElement, DMM.ControlProperties? value)
@@ -101,34 +101,34 @@ public static class FunctionNameConverter
   }
 
   public static bool CompareFunctionNameContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.Run run && model is DMM.Run runModel)
-        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName, propName);
       if (openXmlElement is DXM.Paragraph paragraph && model is DMM.Paragraph paragraphModel)
-        return DMXM.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXM.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXW.ContentPart contentPart && model is DMW.ContentPart contentPartModel)
-        return DMXW.ContentPartConverter.CompareModelElement(contentPart, contentPartModel, diffs, objName);
+        return DMXW.ContentPartConverter.CompareModelElement(contentPart, contentPartModel, diffs, objName, propName);
       if (openXmlElement is DXW.Hyperlink hyperlink && model is DMW.Hyperlink hyperlinkModel)
-        return DMXW.HyperlinkConverter.CompareModelElement(hyperlink, hyperlinkModel, diffs, objName);
+        return DMXW.HyperlinkConverter.CompareModelElement(hyperlink, hyperlinkModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlRun customXmlRun && model is DMW.CustomXmlRun customXmlRunModel)
-        return DMXW.CustomXmlRunConverter.CompareModelElement(customXmlRun, customXmlRunModel, diffs, objName);
+        return DMXW.CustomXmlRunConverter.CompareModelElement(customXmlRun, customXmlRunModel, diffs, objName, propName);
       if (openXmlElement is DXW.SimpleField simpleField && model is DMW.SimpleField simpleFieldModel)
-        return DMXW.SimpleFieldConverter.CompareModelElement(simpleField, simpleFieldModel, diffs, objName);
+        return DMXW.SimpleFieldConverter.CompareModelElement(simpleField, simpleFieldModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtRun sdtRun && model is DMW.SdtRun sdtRunModel)
-        return DMXW.SdtRunConverter.CompareModelElement(sdtRun, sdtRunModel, diffs, objName);
+        return DMXW.SdtRunConverter.CompareModelElement(sdtRun, sdtRunModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
       if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        var result = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -137,7 +137,7 @@ public static class FunctionNameConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -220,24 +220,24 @@ public static class FunctionNameConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.FunctionName? openXmlElement, DMM.FunctionName? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.FunctionName? openXmlElement, DMM.FunctionName? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpArgumentProperties(openXmlElement, model.ArgumentProperties, diffs, objName))
+      if (!CmpArgumentProperties(openXmlElement, model.ArgumentProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMM.IMathArgumentContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXM.ArgumentProperties && item is not DXM.ControlProperties), model,
-        CompareFunctionNameContent, diffs, objName))
+        CompareFunctionNameContent, diffs, objName, propName))
         ok = false;
 
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

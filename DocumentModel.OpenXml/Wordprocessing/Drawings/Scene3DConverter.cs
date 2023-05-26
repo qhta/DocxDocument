@@ -16,9 +16,9 @@ public static class Scene3DConverter
     return null;
   }
   
-  private static bool CmpCamera(DXO10W.Scene3D openXmlElement, DMW.Camera? value, DiffList? diffs, string? objName)
+  private static bool CmpCamera(DXO10W.Scene3D openXmlElement, DMW.Camera? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.Camera>(), value, diffs, objName);
+    return DMXW.CameraConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.Camera>(), value, diffs, objName, propName);
   }
   
   private static void SetCamera(DXO10W.Scene3D openXmlElement, DMW.Camera? value)
@@ -45,9 +45,9 @@ public static class Scene3DConverter
     return null;
   }
   
-  private static bool CmpLightRig(DXO10W.Scene3D openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
+  private static bool CmpLightRig(DXO10W.Scene3D openXmlElement, DMW.LightRig? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.LightRig>(), value, diffs, objName);
+    return DMXW.LightRigConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.LightRig>(), value, diffs, objName, propName);
   }
   
   private static void SetLightRig(DXO10W.Scene3D openXmlElement, DMW.LightRig? value)
@@ -75,19 +75,19 @@ public static class Scene3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.Scene3D? openXmlElement, DMW.Scene3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.Scene3D? openXmlElement, DMW.Scene3D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName))
+      if (!CmpCamera(openXmlElement, value.Camera, diffs, objName, propName))
         ok = false;
-      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName))
+      if (!CmpLightRig(openXmlElement, value.LightRig, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

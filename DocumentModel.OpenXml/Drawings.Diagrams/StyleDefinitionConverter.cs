@@ -13,7 +13,7 @@ public static class StyleDefinitionConverter
     return StringValueConverter.GetValue(openXmlElement?.UniqueId);
   }
   
-  private static bool CmpUniqueId(DXDD.StyleDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUniqueId(DXDD.StyleDefinition openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.UniqueId, value, diffs, objName, "UniqueId");
   }
@@ -31,7 +31,7 @@ public static class StyleDefinitionConverter
     return StringValueConverter.GetValue(openXmlElement?.MinVersion);
   }
   
-  private static bool CmpMinVersion(DXDD.StyleDefinition openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinVersion(DXDD.StyleDefinition openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinVersion, value, diffs, objName, "MinVersion");
   }
@@ -55,7 +55,7 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpStyleDefinitionTitles(DXDD.StyleDefinition openXmlElement, Collection<DMDD.StyleDefinitionTitle>? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleDefinitionTitles(DXDD.StyleDefinition openXmlElement, Collection<DMDD.StyleDefinitionTitle>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.StyleDefinitionTitle>();
     var origElementsCount = origElements.Count();
@@ -64,7 +64,7 @@ public static class StyleDefinitionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -73,13 +73,13 @@ public static class StyleDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.StyleDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.StyleDefinitionTitleConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -111,7 +111,7 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpStyleLabelDescriptions(DXDD.StyleDefinition openXmlElement, Collection<DMDD.StyleLabelDescription>? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleLabelDescriptions(DXDD.StyleDefinition openXmlElement, Collection<DMDD.StyleLabelDescription>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.StyleLabelDescription>();
     var origElementsCount = origElements.Count();
@@ -120,7 +120,7 @@ public static class StyleDefinitionConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -129,13 +129,13 @@ public static class StyleDefinitionConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.StyleLabelDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.StyleLabelDescriptionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -161,9 +161,9 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpStyleDisplayCategories(DXDD.StyleDefinition openXmlElement, DMDD.StyleDisplayCategories? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleDisplayCategories(DXDD.StyleDefinition openXmlElement, DMDD.StyleDisplayCategories? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.StyleDisplayCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.StyleDisplayCategories>(), value, diffs, objName);
+    return DMXDD.StyleDisplayCategoriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.StyleDisplayCategories>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleDisplayCategories(DXDD.StyleDefinition openXmlElement, DMDD.StyleDisplayCategories? value)
@@ -187,9 +187,9 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpScene3D(DXDD.StyleDefinition openXmlElement, DMDD.Scene3D? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3D(DXDD.StyleDefinition openXmlElement, DMDD.Scene3D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Scene3D>(), value, diffs, objName);
+    return DMXDD.Scene3DConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Scene3D>(), value, diffs, objName, propName);
   }
   
   private static void SetScene3D(DXDD.StyleDefinition openXmlElement, DMDD.Scene3D? value)
@@ -213,9 +213,9 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpStyleLabel(DXDD.StyleDefinition openXmlElement, DMDD.StyleLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleLabel(DXDD.StyleDefinition openXmlElement, DMDD.StyleLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.StyleLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.StyleLabel>(), value, diffs, objName);
+    return DMXDD.StyleLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.StyleLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetStyleLabel(DXDD.StyleDefinition openXmlElement, DMDD.StyleLabel? value)
@@ -239,9 +239,9 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.StyleDefinition openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.StyleDefinition openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.StyleDefinition openXmlElement, DMDD.ExtensionList? value)
@@ -275,31 +275,31 @@ public static class StyleDefinitionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.StyleDefinition? openXmlElement, DMDD.StyleDefinition? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.StyleDefinition? openXmlElement, DMDD.StyleDefinition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUniqueId(openXmlElement, value.UniqueId, diffs, objName))
+      if (!CmpUniqueId(openXmlElement, value.UniqueId, diffs, objName, propName))
         ok = false;
-      if (!CmpMinVersion(openXmlElement, value.MinVersion, diffs, objName))
+      if (!CmpMinVersion(openXmlElement, value.MinVersion, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleDefinitionTitles(openXmlElement, value.StyleDefinitionTitles, diffs, objName))
+      if (!CmpStyleDefinitionTitles(openXmlElement, value.StyleDefinitionTitles, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleLabelDescriptions(openXmlElement, value.StyleLabelDescriptions, diffs, objName))
+      if (!CmpStyleLabelDescriptions(openXmlElement, value.StyleLabelDescriptions, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleDisplayCategories(openXmlElement, value.StyleDisplayCategories, diffs, objName))
+      if (!CmpStyleDisplayCategories(openXmlElement, value.StyleDisplayCategories, diffs, objName, propName))
         ok = false;
-      if (!CmpScene3D(openXmlElement, value.Scene3D, diffs, objName))
+      if (!CmpScene3D(openXmlElement, value.Scene3D, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleLabel(openXmlElement, value.StyleLabel, diffs, objName))
+      if (!CmpStyleLabel(openXmlElement, value.StyleLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

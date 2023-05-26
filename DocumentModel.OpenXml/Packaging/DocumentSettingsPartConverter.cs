@@ -10,7 +10,7 @@ public static class DocumentSettingsPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -32,7 +32,7 @@ public static class DocumentSettingsPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.DocumentSettingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.DocumentSettingsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -42,7 +42,7 @@ public static class DocumentSettingsPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.DocumentSettingsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -57,7 +57,7 @@ public static class DocumentSettingsPartConverter
       return DMX.DocumentSettingsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Settings);
   }
   
-  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DM.DocumentSettings? value, DiffList? diffs, string? objName)
+  private static bool CmpSettings(DXPack.DocumentSettingsPart openXmlElement, DM.DocumentSettings? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -86,23 +86,23 @@ public static class DocumentSettingsPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DocumentSettingsPart? openXmlElement, DMPack.DocumentSettingsPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DocumentSettingsPart? openXmlElement, DMPack.DocumentSettingsPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpSettings(openXmlElement, value.Settings, diffs, objName))
+      if (!CmpSettings(openXmlElement, value.Settings, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

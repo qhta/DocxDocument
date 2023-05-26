@@ -13,7 +13,7 @@ public static class Shape3DConverter
     return openXmlElement?.Z?.Value;
   }
   
-  private static bool CmpZ(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpZ(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Z?.Value == value) return true;
     diffs?.Add(objName, "Z", openXmlElement?.Z?.Value, value);
@@ -33,7 +33,7 @@ public static class Shape3DConverter
     return openXmlElement?.ExtrusionHeight?.Value;
   }
   
-  private static bool CmpExtrusionHeight(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionHeight(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ExtrusionHeight?.Value == value) return true;
     diffs?.Add(objName, "ExtrusionHeight", openXmlElement?.ExtrusionHeight?.Value, value);
@@ -53,7 +53,7 @@ public static class Shape3DConverter
     return openXmlElement?.ContourWidth?.Value;
   }
   
-  private static bool CmpContourWidth(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpContourWidth(DXDD.Shape3D openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContourWidth?.Value == value) return true;
     diffs?.Add(objName, "ContourWidth", openXmlElement?.ContourWidth?.Value, value);
@@ -73,9 +73,9 @@ public static class Shape3DConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value);
   }
   
-  private static bool CmpPresetMaterial(DXDD.Shape3D openXmlElement, DMD.PresetMaterialKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetMaterial(DXDD.Shape3D openXmlElement, DMD.PresetMaterialKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.PresetMaterialTypeValues, DMD.PresetMaterialKind>(openXmlElement?.PresetMaterial?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPresetMaterial(DXDD.Shape3D openXmlElement, DMD.PresetMaterialKind? value)
@@ -94,9 +94,9 @@ public static class Shape3DConverter
     return null;
   }
   
-  private static bool CmpBevelTop(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs, string? objName)
+  private static bool CmpBevelTop(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelTop>(), value, diffs, objName);
+    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelTop>(), value, diffs, objName, propName);
   }
   
   private static void SetBevelTop(DXDD.Shape3D openXmlElement, DMD.BevelType? value)
@@ -123,9 +123,9 @@ public static class Shape3DConverter
     return null;
   }
   
-  private static bool CmpBevelBottom(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs, string? objName)
+  private static bool CmpBevelBottom(DXDD.Shape3D openXmlElement, DMD.BevelType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelBottom>(), value, diffs, objName);
+    return DMXD.BevelTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BevelBottom>(), value, diffs, objName, propName);
   }
   
   private static void SetBevelBottom(DXDD.Shape3D openXmlElement, DMD.BevelType? value)
@@ -152,9 +152,9 @@ public static class Shape3DConverter
     return null;
   }
   
-  private static bool CmpExtrusionColor(DXDD.Shape3D openXmlElement, DMD.ExtrusionColor? value, DiffList? diffs, string? objName)
+  private static bool CmpExtrusionColor(DXDD.Shape3D openXmlElement, DMD.ExtrusionColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtrusionColor>(), value, diffs, objName);
+    return DMXD.ExtrusionColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtrusionColor>(), value, diffs, objName, propName);
   }
   
   private static void SetExtrusionColor(DXDD.Shape3D openXmlElement, DMD.ExtrusionColor? value)
@@ -181,9 +181,9 @@ public static class Shape3DConverter
     return null;
   }
   
-  private static bool CmpContourColor(DXDD.Shape3D openXmlElement, DMD.ContourColor? value, DiffList? diffs, string? objName)
+  private static bool CmpContourColor(DXDD.Shape3D openXmlElement, DMD.ContourColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ContourColor>(), value, diffs, objName);
+    return DMXD.ContourColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ContourColor>(), value, diffs, objName, propName);
   }
   
   private static void SetContourColor(DXDD.Shape3D openXmlElement, DMD.ContourColor? value)
@@ -210,9 +210,9 @@ public static class Shape3DConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.Shape3D openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Shape3D openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.Shape3D openXmlElement, DMD.ExtensionList? value)
@@ -247,33 +247,33 @@ public static class Shape3DConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Shape3D? openXmlElement, DMDD.Shape3D? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Shape3D? openXmlElement, DMDD.Shape3D? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpZ(openXmlElement, value.Z, diffs, objName))
+      if (!CmpZ(openXmlElement, value.Z, diffs, objName, propName))
         ok = false;
-      if (!CmpExtrusionHeight(openXmlElement, value.ExtrusionHeight, diffs, objName))
+      if (!CmpExtrusionHeight(openXmlElement, value.ExtrusionHeight, diffs, objName, propName))
         ok = false;
-      if (!CmpContourWidth(openXmlElement, value.ContourWidth, diffs, objName))
+      if (!CmpContourWidth(openXmlElement, value.ContourWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetMaterial(openXmlElement, value.PresetMaterial, diffs, objName))
+      if (!CmpPresetMaterial(openXmlElement, value.PresetMaterial, diffs, objName, propName))
         ok = false;
-      if (!CmpBevelTop(openXmlElement, value.BevelTop, diffs, objName))
+      if (!CmpBevelTop(openXmlElement, value.BevelTop, diffs, objName, propName))
         ok = false;
-      if (!CmpBevelBottom(openXmlElement, value.BevelBottom, diffs, objName))
+      if (!CmpBevelBottom(openXmlElement, value.BevelBottom, diffs, objName, propName))
         ok = false;
-      if (!CmpExtrusionColor(openXmlElement, value.ExtrusionColor, diffs, objName))
+      if (!CmpExtrusionColor(openXmlElement, value.ExtrusionColor, diffs, objName, propName))
         ok = false;
-      if (!CmpContourColor(openXmlElement, value.ContourColor, diffs, objName))
+      if (!CmpContourColor(openXmlElement, value.ContourColor, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

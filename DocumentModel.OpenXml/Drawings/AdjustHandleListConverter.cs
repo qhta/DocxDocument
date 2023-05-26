@@ -13,9 +13,9 @@ public static class AdjustHandleListConverter
     return null;
   }
   
-  private static bool CmpAdjustHandleXY(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandleXY? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustHandleXY(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandleXY? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustHandleXYConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandleXY>(), value, diffs, objName);
+    return DMXD.AdjustHandleXYConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandleXY>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustHandleXY(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandleXY? value)
@@ -39,9 +39,9 @@ public static class AdjustHandleListConverter
     return null;
   }
   
-  private static bool CmpAdjustHandlePolar(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandlePolar? value, DiffList? diffs, string? objName)
+  private static bool CmpAdjustHandlePolar(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandlePolar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustHandlePolarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandlePolar>(), value, diffs, objName);
+    return DMXD.AdjustHandlePolarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.AdjustHandlePolar>(), value, diffs, objName, propName);
   }
   
   private static void SetAdjustHandlePolar(DXD.AdjustHandleList openXmlElement, DMD.AdjustHandlePolar? value)
@@ -69,19 +69,19 @@ public static class AdjustHandleListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AdjustHandleList? openXmlElement, DMD.AdjustHandleList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustHandleList? openXmlElement, DMD.AdjustHandleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAdjustHandleXY(openXmlElement, value.AdjustHandleXY, diffs, objName))
+      if (!CmpAdjustHandleXY(openXmlElement, value.AdjustHandleXY, diffs, objName, propName))
         ok = false;
-      if (!CmpAdjustHandlePolar(openXmlElement, value.AdjustHandlePolar, diffs, objName))
+      if (!CmpAdjustHandlePolar(openXmlElement, value.AdjustHandlePolar, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

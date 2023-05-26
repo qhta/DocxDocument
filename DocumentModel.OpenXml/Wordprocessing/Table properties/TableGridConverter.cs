@@ -14,9 +14,9 @@ public static class TableGridConverter
     return null;
   }
   
-  private static bool CmpTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value, DiffList? diffs, string? objName)
+  private static bool CmpTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableGridChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableGridChange>(), value, diffs, objName);
+    return DMXW.TableGridChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableGridChange>(), value, diffs, objName, propName);
   }
   
   private static void SetTableGridChange(DXW.TableGrid openXmlElement, DMW.TableGridChange? value)
@@ -46,19 +46,19 @@ public static class TableGridConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableGrid? openXmlElement, DMW.TableGrid? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableGrid? openXmlElement, DMW.TableGrid? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTableGridConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseTableGridConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpTableGridChange(openXmlElement, model.TableGridChange, diffs, objName))
+      if (!CmpTableGridChange(openXmlElement, model.TableGridChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

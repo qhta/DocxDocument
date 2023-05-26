@@ -19,7 +19,7 @@ public static class CopyrightsConverter
     return null;
   }
   
-  private static bool CmpCopyrightXsdstrings(DXO16DCD.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs, string? objName)
+  private static bool CmpCopyrightXsdstrings(DXO16DCD.Copyrights openXmlElement, Collection<String>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.CopyrightXsdstring>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class CopyrightsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class CopyrightsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!StringValueConverter.CmpValue(origItem, modelItem, diffs, objName))
+        if (!StringValueConverter.CmpValue(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class CopyrightsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Copyrights? openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Copyrights? openXmlElement, DMDCDs.Copyrights? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCopyrightXsdstrings(openXmlElement, value.CopyrightXsdstrings, diffs, objName))
+      if (!CmpCopyrightXsdstrings(openXmlElement, value.CopyrightXsdstrings, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

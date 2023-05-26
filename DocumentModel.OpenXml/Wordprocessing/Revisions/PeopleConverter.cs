@@ -19,7 +19,7 @@ public static class PeopleConverter
     return null;
   }
   
-  private static bool CmpPersons(DXO13W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs, string? objName)
+  private static bool CmpPersons(DXO13W.People openXmlElement, Collection<DMW.Person>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO13W.Person>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class PeopleConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class PeopleConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.PersonConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.PersonConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class PeopleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13W.People? openXmlElement, DMW.People? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.People? openXmlElement, DMW.People? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPersons(openXmlElement, value.Persons, diffs, objName))
+      if (!CmpPersons(openXmlElement, value.Persons, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

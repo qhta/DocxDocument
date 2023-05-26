@@ -13,7 +13,7 @@ public static class GeoParentEntitiesQueryConverter
     return StringValueConverter.GetValue(openXmlElement?.EntityId);
   }
   
-  private static bool CmpEntityId(DXO16DCD.GeoParentEntitiesQuery openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEntityId(DXO16DCD.GeoParentEntitiesQuery openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EntityId, value, diffs, objName, "EntityId");
   }
@@ -34,17 +34,17 @@ public static class GeoParentEntitiesQueryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoParentEntitiesQuery? openXmlElement, DMDCDs.GeoParentEntitiesQuery? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoParentEntitiesQuery? openXmlElement, DMDCDs.GeoParentEntitiesQuery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName))
+      if (!CmpEntityId(openXmlElement, value.EntityId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

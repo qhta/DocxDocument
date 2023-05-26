@@ -16,9 +16,9 @@ public static class TextPropertiesConverter
     return null;
   }
   
-  private static bool CmpShape3DType(DXDD.TextProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3DType(DXDD.TextProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName);
+    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetShape3DType(DXDD.TextProperties openXmlElement, DMD.Shape3DType? value)
@@ -45,9 +45,9 @@ public static class TextPropertiesConverter
     return null;
   }
   
-  private static bool CmpFlatText(DXDD.TextProperties openXmlElement, DMD.FlatText? value, DiffList? diffs, string? objName)
+  private static bool CmpFlatText(DXDD.TextProperties openXmlElement, DMD.FlatText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FlatText>(), value, diffs, objName);
+    return DMXD.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FlatText>(), value, diffs, objName, propName);
   }
   
   private static void SetFlatText(DXDD.TextProperties openXmlElement, DMD.FlatText? value)
@@ -75,19 +75,19 @@ public static class TextPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.TextProperties? openXmlElement, DMDD.TextProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.TextProperties? openXmlElement, DMDD.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName))
+      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpFlatText(openXmlElement, value.FlatText, diffs, objName))
+      if (!CmpFlatText(openXmlElement, value.FlatText, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

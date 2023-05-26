@@ -13,7 +13,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return BooleanValueConverter.GetValue(openXmlElement?.CustomMarkFollows);
   }
   
-  private static bool CmpCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomMarkFollows(DXW.FootnoteEndnoteReferenceType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.CustomMarkFollows, value, diffs, objName, "CustomMarkFollows");
   }
@@ -31,7 +31,7 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.FootnoteEndnoteReferenceType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.FootnoteEndnoteReferenceType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -55,19 +55,19 @@ public static class FootnoteEndnoteReferenceTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement, DMW.NoteReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteEndnoteReferenceType? openXmlElement, DMW.NoteReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCustomMarkFollows(openXmlElement, value.CustomMarkFollows, diffs, objName))
+      if (!CmpCustomMarkFollows(openXmlElement, value.CustomMarkFollows, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class GraphicFrameConverter
     return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
-  private static bool CmpMacro(DXDCD.GraphicFrame openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacro(DXDCD.GraphicFrame openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
@@ -31,7 +31,7 @@ public static class GraphicFrameConverter
     return openXmlElement?.Published?.Value;
   }
   
-  private static bool CmpPublished(DXDCD.GraphicFrame openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPublished(DXDCD.GraphicFrame openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Published?.Value == value) return true;
     diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
@@ -57,9 +57,9 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  private static bool CmpNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement, DMDCD.NonVisualGraphicFrameProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement, DMDCD.NonVisualGraphicFrameProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualGraphicFramePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualGraphicFrameProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualGraphicFrameProperties(DXDCD.GraphicFrame openXmlElement, DMDCD.NonVisualGraphicFrameProperties? value)
@@ -86,9 +86,9 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  private static bool CmpTransform(DXDCD.GraphicFrame openXmlElement, DMDCD.Transform? value, DiffList? diffs, string? objName)
+  private static bool CmpTransform(DXDCD.GraphicFrame openXmlElement, DMDCD.Transform? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Transform>(), value, diffs, objName);
+    return DMXDCD.TransformConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Transform>(), value, diffs, objName, propName);
   }
   
   private static void SetTransform(DXDCD.GraphicFrame openXmlElement, DMDCD.Transform? value)
@@ -115,9 +115,9 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  private static bool CmpGraphic(DXDCD.GraphicFrame openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphic(DXDCD.GraphicFrame openXmlElement, DMD.Graphic? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName);
+    return DMXD.GraphicConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Graphic>(), value, diffs, objName, propName);
   }
   
   private static void SetGraphic(DXDCD.GraphicFrame openXmlElement, DMD.Graphic? value)
@@ -148,25 +148,25 @@ public static class GraphicFrameConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.GraphicFrame? openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.GraphicFrame? openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName))
+      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName, propName))
         ok = false;
-      if (!CmpPublished(openXmlElement, value.Published, diffs, objName))
+      if (!CmpPublished(openXmlElement, value.Published, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualGraphicFrameProperties(openXmlElement, value.NonVisualGraphicFrameProperties, diffs, objName))
+      if (!CmpNonVisualGraphicFrameProperties(openXmlElement, value.NonVisualGraphicFrameProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTransform(openXmlElement, value.Transform, diffs, objName))
+      if (!CmpTransform(openXmlElement, value.Transform, diffs, objName, propName))
         ok = false;
-      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName))
+      if (!CmpGraphic(openXmlElement, value.Graphic, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

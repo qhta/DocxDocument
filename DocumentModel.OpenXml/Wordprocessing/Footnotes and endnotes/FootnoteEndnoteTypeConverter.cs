@@ -11,9 +11,9 @@ public static class FootnoteEndnoteTypeConverter
     return EnumValueConverter.GetValue<DXW.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value);
   }
 
-  private static bool CmpType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FootnoteEndnoteValues, DMW.FootnoteEndnoteKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
 
   private static void SetType(DXW.FootnoteEndnoteType openXmlElement, DMW.FootnoteEndnoteKind? value)
@@ -28,7 +28,7 @@ public static class FootnoteEndnoteTypeConverter
     return openXmlElement?.Id?.Value;
   }
 
-  private static bool CmpId(DXW.FootnoteEndnoteType openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.FootnoteEndnoteType openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -57,24 +57,24 @@ public static class FootnoteEndnoteTypeConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.FootnoteEndnoteType? openXmlElement, DMW.FootnoteEndnoteType? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FootnoteEndnoteType? openXmlElement, DMW.FootnoteEndnoteType? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, model.Type, diffs, objName))
+      if (!CmpType(openXmlElement, model.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
          (openXmlElement, model,
-         BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName))
+         BlockLevelElementsConverter.CompareBlockLevelElement, diffs, objName, propName))
         ok = false;
 
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

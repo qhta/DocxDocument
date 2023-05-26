@@ -13,7 +13,7 @@ public static class PageSetupConverter
     return openXmlElement?.PaperSize?.Value;
   }
   
-  private static bool CmpPaperSize(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPaperSize(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PaperSize?.Value == value) return true;
     diffs?.Add(objName, "PaperSize", openXmlElement?.PaperSize?.Value, value);
@@ -33,7 +33,7 @@ public static class PageSetupConverter
     return openXmlElement?.FirstPageNumber?.Value;
   }
   
-  private static bool CmpFirstPageNumber(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstPageNumber(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstPageNumber?.Value == value) return true;
     diffs?.Add(objName, "FirstPageNumber", openXmlElement?.FirstPageNumber?.Value, value);
@@ -53,9 +53,9 @@ public static class PageSetupConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDCDs.PageOrientation>(openXmlElement?.Orientation?.Value);
   }
   
-  private static bool CmpOrientation(DXO16DCD.PageSetup openXmlElement, DMDCDs.PageOrientation? value, DiffList? diffs, string? objName)
+  private static bool CmpOrientation(DXO16DCD.PageSetup openXmlElement, DMDCDs.PageOrientation? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDCDs.PageOrientation>(openXmlElement?.Orientation?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.PageOrientation, DMDCDs.PageOrientation>(openXmlElement?.Orientation?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOrientation(DXO16DCD.PageSetup openXmlElement, DMDCDs.PageOrientation? value)
@@ -71,7 +71,7 @@ public static class PageSetupConverter
     return openXmlElement?.BlackAndWhite?.Value;
   }
   
-  private static bool CmpBlackAndWhite(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackAndWhite(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BlackAndWhite?.Value == value) return true;
     diffs?.Add(objName, "BlackAndWhite", openXmlElement?.BlackAndWhite?.Value, value);
@@ -94,7 +94,7 @@ public static class PageSetupConverter
     return openXmlElement?.Draft?.Value;
   }
   
-  private static bool CmpDraft(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDraft(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Draft?.Value == value) return true;
     diffs?.Add(objName, "Draft", openXmlElement?.Draft?.Value, value);
@@ -117,7 +117,7 @@ public static class PageSetupConverter
     return openXmlElement?.UseFirstPageNumber?.Value;
   }
   
-  private static bool CmpUseFirstPageNumber(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseFirstPageNumber(DXO16DCD.PageSetup openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UseFirstPageNumber?.Value == value) return true;
     diffs?.Add(objName, "UseFirstPageNumber", openXmlElement?.UseFirstPageNumber?.Value, value);
@@ -140,7 +140,7 @@ public static class PageSetupConverter
     return openXmlElement?.HorizontalDpi?.Value;
   }
   
-  private static bool CmpHorizontalDpi(DXO16DCD.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalDpi(DXO16DCD.PageSetup openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalDpi?.Value == value) return true;
     diffs?.Add(objName, "HorizontalDpi", openXmlElement?.HorizontalDpi?.Value, value);
@@ -160,7 +160,7 @@ public static class PageSetupConverter
     return openXmlElement?.VerticalDpi?.Value;
   }
   
-  private static bool CmpVerticalDpi(DXO16DCD.PageSetup openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalDpi(DXO16DCD.PageSetup openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalDpi?.Value == value) return true;
     diffs?.Add(objName, "VerticalDpi", openXmlElement?.VerticalDpi?.Value, value);
@@ -180,7 +180,7 @@ public static class PageSetupConverter
     return openXmlElement?.Copies?.Value;
   }
   
-  private static bool CmpCopies(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpCopies(DXO16DCD.PageSetup openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Copies?.Value == value) return true;
     diffs?.Add(objName, "Copies", openXmlElement?.Copies?.Value, value);
@@ -211,33 +211,33 @@ public static class PageSetupConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.PageSetup? openXmlElement, DMDCDs.PageSetup? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.PageSetup? openXmlElement, DMDCDs.PageSetup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPaperSize(openXmlElement, value.PaperSize, diffs, objName))
+      if (!CmpPaperSize(openXmlElement, value.PaperSize, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstPageNumber(openXmlElement, value.FirstPageNumber, diffs, objName))
+      if (!CmpFirstPageNumber(openXmlElement, value.FirstPageNumber, diffs, objName, propName))
         ok = false;
-      if (!CmpOrientation(openXmlElement, value.Orientation, diffs, objName))
+      if (!CmpOrientation(openXmlElement, value.Orientation, diffs, objName, propName))
         ok = false;
-      if (!CmpBlackAndWhite(openXmlElement, value.BlackAndWhite, diffs, objName))
+      if (!CmpBlackAndWhite(openXmlElement, value.BlackAndWhite, diffs, objName, propName))
         ok = false;
-      if (!CmpDraft(openXmlElement, value.Draft, diffs, objName))
+      if (!CmpDraft(openXmlElement, value.Draft, diffs, objName, propName))
         ok = false;
-      if (!CmpUseFirstPageNumber(openXmlElement, value.UseFirstPageNumber, diffs, objName))
+      if (!CmpUseFirstPageNumber(openXmlElement, value.UseFirstPageNumber, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalDpi(openXmlElement, value.HorizontalDpi, diffs, objName))
+      if (!CmpHorizontalDpi(openXmlElement, value.HorizontalDpi, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalDpi(openXmlElement, value.VerticalDpi, diffs, objName))
+      if (!CmpVerticalDpi(openXmlElement, value.VerticalDpi, diffs, objName, propName))
         ok = false;
-      if (!CmpCopies(openXmlElement, value.Copies, diffs, objName))
+      if (!CmpCopies(openXmlElement, value.Copies, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class BreakConverter
     return EnumValueConverter.GetValue<DXW.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value);
   }
 
-  private static bool CmpType(DXW.Break openXmlElement, DMW.BreakKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.Break openXmlElement, DMW.BreakKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return EnumValueConverter.CmpValue<DXW.BreakValues, DMW.BreakKind>(openXmlElement?.Type?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
@@ -31,7 +31,7 @@ public static class BreakConverter
     return EnumValueConverter.GetValue<DXW.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value);
   }
 
-  private static bool CmpClear(DXW.Break openXmlElement, DMW.BreakTextRestartLocationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpClear(DXW.Break openXmlElement, DMW.BreakTextRestartLocationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return EnumValueConverter.CmpValue<DXW.BreakTextRestartLocationValues, DMW.BreakTextRestartLocationKind>(openXmlElement?.Clear?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
@@ -65,19 +65,19 @@ public static class BreakConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Break? openXmlElement, DMW.Break? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Break? openXmlElement, DMW.Break? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpClear(openXmlElement, value.Clear, diffs, objName))
+      if (!CmpClear(openXmlElement, value.Clear, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

@@ -13,9 +13,9 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXD.ShapeDefault openXmlElement, DMD.ShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXD.ShapeDefault openXmlElement, DMD.ShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeProperties>(), value, diffs, objName);
+    return DMXD.ShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXD.ShapeDefault openXmlElement, DMD.ShapeProperties? value)
@@ -39,9 +39,9 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  private static bool CmpBodyProperties(DXD.ShapeDefault openXmlElement, DMD.BodyProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBodyProperties(DXD.ShapeDefault openXmlElement, DMD.BodyProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName);
+    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetBodyProperties(DXD.ShapeDefault openXmlElement, DMD.BodyProperties? value)
@@ -65,9 +65,9 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  private static bool CmpListStyle(DXD.ShapeDefault openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpListStyle(DXD.ShapeDefault openXmlElement, DMD.ListStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName);
+    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetListStyle(DXD.ShapeDefault openXmlElement, DMD.ListStyle? value)
@@ -91,9 +91,9 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  private static bool CmpShapeStyle(DXD.ShapeDefault openXmlElement, DMD.ShapeStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeStyle(DXD.ShapeDefault openXmlElement, DMD.ShapeStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeStyle>(), value, diffs, objName);
+    return DMXD.ShapeStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ShapeStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeStyle(DXD.ShapeDefault openXmlElement, DMD.ShapeStyle? value)
@@ -117,9 +117,9 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.ShapeDefault openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ShapeDefault openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.ShapeDefault openXmlElement, DMD.ExtensionList? value)
@@ -150,25 +150,25 @@ public static class ShapeDefaultConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ShapeDefault? openXmlElement, DMD.ShapeDefault? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ShapeDefault? openXmlElement, DMD.ShapeDefault? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName))
+      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName))
+      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeStyle(openXmlElement, value.ShapeStyle, diffs, objName))
+      if (!CmpShapeStyle(openXmlElement, value.ShapeStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

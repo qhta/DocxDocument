@@ -35,32 +35,32 @@ public static class CommonMarkersConverter
     return RangeMarkersConverter.CreateModelElement(openXmlElement);
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? model, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.ProofError proofError && model is DMW.ProofError proofErrorModel)
-        return DMXW.ProofErrorConverter.CompareModelElement(proofError, proofErrorModel, diffs, objName);
+        return DMXW.ProofErrorConverter.CompareModelElement(proofError, proofErrorModel, diffs, objName, propName);
       if (openXmlElement is DXW.PermStart permStart && model is DMW.PermStart permStartModel)
-        return DMXW.PermStartConverter.CompareModelElement(permStart, permStartModel, diffs, objName);
+        return DMXW.PermStartConverter.CompareModelElement(permStart, permStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.PermEnd permEnd && model is DMW.PermEnd permEndModel)
-        return DMXW.PermEndConverter.CompareModelElement(permEnd, permEndModel, diffs, objName);
+        return DMXW.PermEndConverter.CompareModelElement(permEnd, permEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.InsertedRun insertedRun && model is DMW.InsertedRun insertedRunModel)
-        return DMXW.InsertedRunConverter.CompareModelElement(insertedRun, insertedRunModel, diffs, objName);
+        return DMXW.InsertedRunConverter.CompareModelElement(insertedRun, insertedRunModel, diffs, objName, propName);
       if (openXmlElement is DXW.DeletedRun deletedRun && model is DMW.DeletedRun deletedRunModel)
-        return DMXW.DeletedRunConverter.CompareModelElement(deletedRun, deletedRunModel, diffs, objName);
+        return DMXW.DeletedRunConverter.CompareModelElement(deletedRun, deletedRunModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveFromRun moveFromRun && model is DMW.MoveFromRun moveFromRunModel)
-        return DMXW.MoveFromRunConverter.CompareModelElement(moveFromRun, moveFromRunModel, diffs, objName);
+        return DMXW.MoveFromRunConverter.CompareModelElement(moveFromRun, moveFromRunModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveToRun moveToRun && model is DMW.MoveToRun moveToRunModel)
-        return DMXW.MoveToRunConverter.CompareModelElement(moveToRun, moveToRunModel, diffs, objName);
+        return DMXW.MoveToRunConverter.CompareModelElement(moveToRun, moveToRunModel, diffs, objName, propName);
       if (openXmlElement is DXO10W.RunConflictInsertion runConflictInsertion && model is DMW.RunConflictInsertion runConflictInsertionModel)
-        return DMXW.RunConflictInsertionConverter.CompareModelElement(runConflictInsertion, model as DMW.RunConflictInsertion, diffs, objName);
+        return DMXW.RunConflictInsertionConverter.CompareModelElement(runConflictInsertion, model as DMW.RunConflictInsertion, diffs, objName, propName);
       if (openXmlElement is DXO10W.RunConflictDeletion runConflictDeletion && model is DMW.RunConflictDeletion runConflictDeletionModel)
-        return DMXW.RunConflictDeletionConverter.CompareModelElement(runConflictDeletion, model as DMW.RunConflictDeletion, diffs, objName);
-      return RangeMarkersConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+        return DMXW.RunConflictDeletionConverter.CompareModelElement(runConflictDeletion, model as DMW.RunConflictDeletion, diffs, objName, propName);
+      return RangeMarkersConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

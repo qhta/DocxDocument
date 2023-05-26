@@ -19,7 +19,7 @@ public static class LineSerExtensionListConverter
     return null;
   }
   
-  private static bool CmpLineSerExtensions(DXDC.LineSerExtensionList openXmlElement, Collection<DMDC.LineSerExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSerExtensions(DXDC.LineSerExtensionList openXmlElement, Collection<DMDC.LineSerExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.LineSerExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class LineSerExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class LineSerExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.LineSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LineSerExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class LineSerExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.LineSerExtensionList? openXmlElement, DMDC.LineSerExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.LineSerExtensionList? openXmlElement, DMDC.LineSerExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLineSerExtensions(openXmlElement, value.LineSerExtensions, diffs, objName))
+      if (!CmpLineSerExtensions(openXmlElement, value.LineSerExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpUnsizedControlClone(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedControlClone(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedControlClone? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedControlClone>(), value, diffs, objName);
+    return DMXUI.UnsizedControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedControlClone>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedControlClone(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedControlClone? value)
@@ -39,9 +39,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpUnsizedButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName);
+    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedButton? value)
@@ -65,9 +65,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpCheckBox(DXOCUI.OfficeMenu openXmlElement, DMUI.CheckBox? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckBox(DXOCUI.OfficeMenu openXmlElement, DMUI.CheckBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.CheckBox>(), value, diffs, objName);
+    return DMXUI.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.CheckBox>(), value, diffs, objName, propName);
   }
   
   private static void SetCheckBox(DXOCUI.OfficeMenu openXmlElement, DMUI.CheckBox? value)
@@ -91,9 +91,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpUnsizedGallery(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedGallery(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedGallery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedGalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedGallery>(), value, diffs, objName);
+    return DMXUI.UnsizedGalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedGallery>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedGallery(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedGallery? value)
@@ -117,9 +117,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpUnsizedToggleButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedToggleButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedToggleButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedToggleButton>(), value, diffs, objName);
+    return DMXUI.UnsizedToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedToggleButton>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedToggleButton(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedToggleButton? value)
@@ -143,9 +143,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpMenuSeparator(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuSeparator(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuSeparator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.MenuSeparator>(), value, diffs, objName);
+    return DMXUI.MenuSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.MenuSeparator>(), value, diffs, objName, propName);
   }
   
   private static void SetMenuSeparator(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuSeparator? value)
@@ -169,9 +169,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpSplitButtonWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.SplitButtonWithTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpSplitButtonWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.SplitButtonWithTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.SplitButtonWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.SplitButtonWithTitle>(), value, diffs, objName);
+    return DMXUI.SplitButtonWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.SplitButtonWithTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetSplitButtonWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.SplitButtonWithTitle? value)
@@ -195,9 +195,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpMenuWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpMenuWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuWithTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.MenuWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.MenuWithTitle>(), value, diffs, objName);
+    return DMXUI.MenuWithTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.MenuWithTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetMenuWithTitle(DXOCUI.OfficeMenu openXmlElement, DMUI.MenuWithTitle? value)
@@ -221,9 +221,9 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  private static bool CmpUnsizedDynamicMenu(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedDynamicMenu(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedDynamicMenu? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedDynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedDynamicMenu>(), value, diffs, objName);
+    return DMXUI.UnsizedDynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedDynamicMenu>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedDynamicMenu(DXOCUI.OfficeMenu openXmlElement, DMUI.UnsizedDynamicMenu? value)
@@ -258,33 +258,33 @@ public static class OfficeMenuConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCUI.OfficeMenu? openXmlElement, DMUI.OfficeMenu? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.OfficeMenu? openXmlElement, DMUI.OfficeMenu? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUnsizedControlClone(openXmlElement, value.UnsizedControlClone, diffs, objName))
+      if (!CmpUnsizedControlClone(openXmlElement, value.UnsizedControlClone, diffs, objName, propName))
         ok = false;
-      if (!CmpUnsizedButton(openXmlElement, value.UnsizedButton, diffs, objName))
+      if (!CmpUnsizedButton(openXmlElement, value.UnsizedButton, diffs, objName, propName))
         ok = false;
-      if (!CmpCheckBox(openXmlElement, value.CheckBox, diffs, objName))
+      if (!CmpCheckBox(openXmlElement, value.CheckBox, diffs, objName, propName))
         ok = false;
-      if (!CmpUnsizedGallery(openXmlElement, value.UnsizedGallery, diffs, objName))
+      if (!CmpUnsizedGallery(openXmlElement, value.UnsizedGallery, diffs, objName, propName))
         ok = false;
-      if (!CmpUnsizedToggleButton(openXmlElement, value.UnsizedToggleButton, diffs, objName))
+      if (!CmpUnsizedToggleButton(openXmlElement, value.UnsizedToggleButton, diffs, objName, propName))
         ok = false;
-      if (!CmpMenuSeparator(openXmlElement, value.MenuSeparator, diffs, objName))
+      if (!CmpMenuSeparator(openXmlElement, value.MenuSeparator, diffs, objName, propName))
         ok = false;
-      if (!CmpSplitButtonWithTitle(openXmlElement, value.SplitButtonWithTitle, diffs, objName))
+      if (!CmpSplitButtonWithTitle(openXmlElement, value.SplitButtonWithTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpMenuWithTitle(openXmlElement, value.MenuWithTitle, diffs, objName))
+      if (!CmpMenuWithTitle(openXmlElement, value.MenuWithTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpUnsizedDynamicMenu(openXmlElement, value.UnsizedDynamicMenu, diffs, objName))
+      if (!CmpUnsizedDynamicMenu(openXmlElement, value.UnsizedDynamicMenu, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

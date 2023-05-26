@@ -13,9 +13,9 @@ public static class EffectContainerTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXD.EffectContainerType openXmlElement, DMD.EffectContainerKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXD.EffectContainerType openXmlElement, DMD.EffectContainerKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.EffectContainerValues, DMD.EffectContainerKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXD.EffectContainerType openXmlElement, DMD.EffectContainerKind? value)
@@ -31,7 +31,7 @@ public static class EffectContainerTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.EffectContainerType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.EffectContainerType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -53,19 +53,19 @@ public static class EffectContainerTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.EffectContainerType? openXmlElement, DMD.EffectContainerType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectContainerType? openXmlElement, DMD.EffectContainerType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

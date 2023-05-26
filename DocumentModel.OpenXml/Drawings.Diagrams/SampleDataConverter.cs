@@ -13,9 +13,9 @@ public static class SampleDataConverter
     return null;
   }
   
-  private static bool CmpDataModel(DXDD.SampleData openXmlElement, DMDD.DataModel? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModel(DXDD.SampleData openXmlElement, DMDD.DataModel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName);
+    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName, propName);
   }
   
   private static void SetDataModel(DXDD.SampleData openXmlElement, DMDD.DataModel? value)
@@ -42,17 +42,17 @@ public static class SampleDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.SampleData? openXmlElement, DMDD.SampleData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.SampleData? openXmlElement, DMDD.SampleData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDataModel(openXmlElement, value.DataModel, diffs, objName))
+      if (!CmpDataModel(openXmlElement, value.DataModel, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

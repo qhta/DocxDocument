@@ -13,7 +13,7 @@ public static class NumericLevelConverter
     return openXmlElement?.PtCount?.Value;
   }
   
-  private static bool CmpPtCount(DXO16DCD.NumericLevel openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPtCount(DXO16DCD.NumericLevel openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PtCount?.Value == value) return true;
     diffs?.Add(objName, "PtCount", openXmlElement?.PtCount?.Value, value);
@@ -33,7 +33,7 @@ public static class NumericLevelConverter
     return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
-  private static bool CmpFormatCode(DXO16DCD.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXO16DCD.NumericLevel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
@@ -51,7 +51,7 @@ public static class NumericLevelConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXO16DCD.NumericLevel openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXO16DCD.NumericLevel openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -75,7 +75,7 @@ public static class NumericLevelConverter
     return null;
   }
   
-  private static bool CmpNumericValues(DXO16DCD.NumericLevel openXmlElement, Collection<DMDCDs.NumericValue>? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericValues(DXO16DCD.NumericLevel openXmlElement, Collection<DMDCDs.NumericValue>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO16DCD.NumericValue>();
     var origElementsCount = origElements.Count();
@@ -84,7 +84,7 @@ public static class NumericLevelConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -93,13 +93,13 @@ public static class NumericLevelConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCDs.NumericValueConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCDs.NumericValueConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -131,23 +131,23 @@ public static class NumericLevelConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.NumericLevel? openXmlElement, DMDCDs.NumericLevel? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.NumericLevel? openXmlElement, DMDCDs.NumericLevel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName))
+      if (!CmpPtCount(openXmlElement, value.PtCount, diffs, objName, propName))
         ok = false;
-      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName, propName))
         ok = false;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpNumericValues(openXmlElement, value.NumericValues, diffs, objName))
+      if (!CmpNumericValues(openXmlElement, value.NumericValues, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

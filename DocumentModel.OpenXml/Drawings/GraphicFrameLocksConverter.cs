@@ -13,7 +13,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
@@ -36,7 +36,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoDrilldown?.Value;
   }
   
-  private static bool CmpNoDrilldown(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoDrilldown(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoDrilldown?.Value == value) return true;
     diffs?.Add(objName, "NoDrilldown", openXmlElement?.NoDrilldown?.Value, value);
@@ -59,7 +59,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
@@ -82,7 +82,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
@@ -105,7 +105,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
@@ -128,7 +128,7 @@ public static class GraphicFrameLocksConverter
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.GraphicFrameLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
@@ -154,9 +154,9 @@ public static class GraphicFrameLocksConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.GraphicFrameLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.GraphicFrameLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.GraphicFrameLocks openXmlElement, DMD.ExtensionList? value)
@@ -189,29 +189,29 @@ public static class GraphicFrameLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.GraphicFrameLocks? openXmlElement, DMD.GraphicFrameLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.GraphicFrameLocks? openXmlElement, DMD.GraphicFrameLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName))
+      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName, propName))
         ok = false;
-      if (!CmpNoDrilldown(openXmlElement, value.NoDrilldown, diffs, objName))
+      if (!CmpNoDrilldown(openXmlElement, value.NoDrilldown, diffs, objName, propName))
         ok = false;
-      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName))
+      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName, propName))
         ok = false;
-      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName))
+      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName, propName))
         ok = false;
-      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName))
+      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName, propName))
         ok = false;
-      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName))
+      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

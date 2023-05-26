@@ -11,9 +11,9 @@ public static class MatrixPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value);
   }
   
-  private static bool CmpBaseJustification(DXM.MatrixProperties openXmlElement, DMM.VerticalAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpBaseJustification(DXM.MatrixProperties openXmlElement, DMM.VerticalAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalAlignmentValues, DMM.VerticalAlignmentKind>(openXmlElement.GetFirstChild<DXM.BaseJustification>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBaseJustification(DXM.MatrixProperties openXmlElement, DMM.VerticalAlignmentKind? value)
@@ -38,9 +38,9 @@ public static class MatrixPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXM.HidePlaceholder>()?.Val?.Value);
   }
   
-  private static bool CmpHidePlaceholder(DXM.MatrixProperties openXmlElement, bool? value, DiffList? diffs, string? objName)
+  private static bool CmpHidePlaceholder(DXM.MatrixProperties openXmlElement, bool? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.HidePlaceholder>()?.Val?.Value, value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXM.HidePlaceholder>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHidePlaceholder(DXM.MatrixProperties openXmlElement, bool? value)
@@ -65,7 +65,7 @@ public static class MatrixPropertiesConverter
     return (DMM.RowSpacingRuleKind?)Int32ValueConverter.GetValue(openXmlElement.RowSpacingRule?.Val);
   }
 
-  private static bool CmpRowSpacingRule(DXM.MatrixProperties openXmlElement, DMM.RowSpacingRuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacingRule(DXM.MatrixProperties openXmlElement, DMM.RowSpacingRuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement.RowSpacingRule?.Val, (Int32?)value, diffs, objName, "RowSpacingRule");
   }
@@ -85,7 +85,7 @@ public static class MatrixPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.RowSpacing>()?.Val);
   }
   
-  private static bool CmpRowSpacingValue(DXM.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacingValue(DXM.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.RowSpacing>()?.Val, value, diffs, objName, "RowSpacing");
   }
@@ -106,19 +106,19 @@ public static class MatrixPropertiesConverter
     return new DMM.RowSpacing(rule ?? DMM.RowSpacingRuleKind.Single, val);
   }
 
-  private static bool CmpRowSpacing(DXM.MatrixProperties openXmlElement, DMM.RowSpacing? value, DiffList? diffs, string? objName)
+  private static bool CmpRowSpacing(DXM.MatrixProperties openXmlElement, DMM.RowSpacing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null)
     {
       var ok = true;
-      if (!CmpRowSpacingRule(openXmlElement, value?.Rule, diffs, objName))
+      if (!CmpRowSpacingRule(openXmlElement, value?.Rule, diffs, objName, propName))
         ok = false;
-      if (!CmpRowSpacingValue(openXmlElement, value?.Value, diffs, objName))
+      if (!CmpRowSpacingValue(openXmlElement, value?.Value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
 
   }
@@ -144,7 +144,7 @@ public static class MatrixPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.ColumnGapRule>()?.Val);
   }
   
-  private static bool CmpColumnGapRule(DXM.MatrixProperties openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnGapRule(DXM.MatrixProperties openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.ColumnGapRule>()?.Val, value, diffs, objName, "ColumnGapRule");
   }
@@ -161,7 +161,7 @@ public static class MatrixPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.ColumnSpacing>()?.Val);
   }
   
-  private static bool CmpColumnSpacing(DXM.MatrixProperties openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnSpacing(DXM.MatrixProperties openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.ColumnSpacing>()?.Val, value, diffs, objName, "ColumnSpacing");
   }
@@ -178,7 +178,7 @@ public static class MatrixPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.ColumnGap>()?.Val);
   }
   
-  private static bool CmpColumnGap(DXM.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnGap(DXM.MatrixProperties openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.ColumnGap>()?.Val, value, diffs, objName, "ColumnGap");
   }
@@ -198,9 +198,9 @@ public static class MatrixPropertiesConverter
     return null;
   }
   
-  private static bool CmpMatrixColumns(DXM.MatrixProperties openXmlElement, DMM.MatrixColumns? value, DiffList? diffs, string? objName)
+  private static bool CmpMatrixColumns(DXM.MatrixProperties openXmlElement, DMM.MatrixColumns? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.MatrixColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.MatrixColumns>(), value, diffs, objName);
+    return DMXM.MatrixColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.MatrixColumns>(), value, diffs, objName, propName);
   }
   
   private static void SetMatrixColumns(DXM.MatrixProperties openXmlElement, DMM.MatrixColumns? value)
@@ -226,9 +226,9 @@ public static class MatrixPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.MatrixProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.MatrixProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.MatrixProperties openXmlElement, DMM.ControlProperties? value)
@@ -264,31 +264,31 @@ public static class MatrixPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.MatrixProperties? openXmlElement, DMM.MatrixProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.MatrixProperties? openXmlElement, DMM.MatrixProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpBaseJustification(openXmlElement, model.BaseJustification, diffs, objName))
+      if (!CmpBaseJustification(openXmlElement, model.BaseJustification, diffs, objName, propName))
         ok = false;
-      if (!CmpHidePlaceholder(openXmlElement, model.HidePlaceholder, diffs, objName))
+      if (!CmpHidePlaceholder(openXmlElement, model.HidePlaceholder, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnGapRule(openXmlElement, model.ColumnGapRule, diffs, objName))
+      if (!CmpColumnGapRule(openXmlElement, model.ColumnGapRule, diffs, objName, propName))
         ok = false;
-      if (!CmpRowSpacing(openXmlElement, model.RowSpacing, diffs, objName))
+      if (!CmpRowSpacing(openXmlElement, model.RowSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnSpacing(openXmlElement, model.ColumnSpacing, diffs, objName))
+      if (!CmpColumnSpacing(openXmlElement, model.ColumnSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnGap(openXmlElement, model.ColumnGap, diffs, objName))
+      if (!CmpColumnGap(openXmlElement, model.ColumnGap, diffs, objName, propName))
         ok = false;
-      if (!CmpMatrixColumns(openXmlElement, model.MatrixColumns, diffs, objName))
+      if (!CmpMatrixColumns(openXmlElement, model.MatrixColumns, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

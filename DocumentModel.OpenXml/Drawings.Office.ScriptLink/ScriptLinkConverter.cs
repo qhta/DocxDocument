@@ -13,7 +13,7 @@ public static class ScriptLinkConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXODY21SL.ScriptLink openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXODY21SL.ScriptLink openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
@@ -34,9 +34,9 @@ public static class ScriptLinkConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement, DMDOSL.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement, DMDOSL.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21SL.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDOScptLnk.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXODY21SL.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXODY21SL.ScriptLink openXmlElement, DMDOSL.OfficeArtExtensionList? value)
@@ -64,19 +64,19 @@ public static class ScriptLinkConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXODY21SL.ScriptLink? openXmlElement, DMDOSL.ScriptLink? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXODY21SL.ScriptLink? openXmlElement, DMDOSL.ScriptLink? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

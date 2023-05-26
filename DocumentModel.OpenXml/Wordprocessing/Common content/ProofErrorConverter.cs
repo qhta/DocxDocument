@@ -13,9 +13,9 @@ public static class ProofErrorConverter
     return EnumValueConverter.GetValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingErrorValues, DMW.ProofingErrorKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXW.ProofError openXmlElement, DMW.ProofingErrorKind? value)
@@ -34,17 +34,17 @@ public static class ProofErrorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ProofError? openXmlElement, DMW.ProofError? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ProofError? openXmlElement, DMW.ProofError? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

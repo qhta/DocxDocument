@@ -13,7 +13,7 @@ public static class PageSizeConverter
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
@@ -33,7 +33,7 @@ public static class PageSizeConverter
     return openXmlElement?.Height?.Value;
   }
   
-  private static bool CmpHeight(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXW.PageSize openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Height?.Value == value) return true;
     diffs?.Add(objName, "Height", openXmlElement?.Height?.Value, value);
@@ -53,9 +53,9 @@ public static class PageSizeConverter
     return EnumValueConverter.GetValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value);
   }
   
-  private static bool CmpOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.PageOrientationValues, DMW.PageOrientationKind>(openXmlElement?.Orient?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOrient(DXW.PageSize openXmlElement, DMW.PageOrientationKind? value)
@@ -71,7 +71,7 @@ public static class PageSizeConverter
     return openXmlElement?.Code?.Value;
   }
   
-  private static bool CmpCode(DXW.PageSize openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpCode(DXW.PageSize openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Code?.Value == value) return true;
     diffs?.Add(objName, "Code", openXmlElement?.Code?.Value, value);
@@ -97,23 +97,23 @@ public static class PageSizeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PageSize? openXmlElement, DMW.PageSize? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PageSize? openXmlElement, DMW.PageSize? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
         ok = false;
-      if (!CmpOrient(openXmlElement, value.Orient, diffs, objName))
+      if (!CmpOrient(openXmlElement, value.Orient, diffs, objName, propName))
         ok = false;
-      if (!CmpCode(openXmlElement, value.Code, diffs, objName))
+      if (!CmpCode(openXmlElement, value.Code, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

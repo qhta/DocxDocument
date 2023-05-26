@@ -16,9 +16,9 @@ public static class FilteredCategoryTitleConverter
     return null;
   }
   
-  private static bool CmpAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.AxisDataSourceType3? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.AxisDataSourceType3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.AxisDataSourceType>(), value, diffs, objName);
+    return DMXDC.AxisDataSourceType3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.AxisDataSourceType>(), value, diffs, objName, propName);
   }
   
   private static void SetAxisDataSourceType(DXO13DC.FilteredCategoryTitle openXmlElement, DMDC.AxisDataSourceType3? value)
@@ -45,17 +45,17 @@ public static class FilteredCategoryTitleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredCategoryTitle? openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAxisDataSourceType(openXmlElement, value.AxisDataSourceType, diffs, objName))
+      if (!CmpAxisDataSourceType(openXmlElement, value.AxisDataSourceType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

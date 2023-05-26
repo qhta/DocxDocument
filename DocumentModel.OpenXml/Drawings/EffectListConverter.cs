@@ -16,9 +16,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpBlur(DXD.EffectList openXmlElement, DMD.Blur? value, DiffList? diffs, string? objName)
+  private static bool CmpBlur(DXD.EffectList openXmlElement, DMD.Blur? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName);
+    return DMXD.BlurConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blur>(), value, diffs, objName, propName);
   }
   
   private static void SetBlur(DXD.EffectList openXmlElement, DMD.Blur? value)
@@ -45,9 +45,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpFillOverlay(DXD.EffectList openXmlElement, DMD.FillOverlay? value, DiffList? diffs, string? objName)
+  private static bool CmpFillOverlay(DXD.EffectList openXmlElement, DMD.FillOverlay? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName);
+    return DMXD.FillOverlayConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FillOverlay>(), value, diffs, objName, propName);
   }
   
   private static void SetFillOverlay(DXD.EffectList openXmlElement, DMD.FillOverlay? value)
@@ -74,9 +74,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpGlow(DXD.EffectList openXmlElement, DMD.Glow? value, DiffList? diffs, string? objName)
+  private static bool CmpGlow(DXD.EffectList openXmlElement, DMD.Glow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Glow>(), value, diffs, objName);
+    return DMXD.GlowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Glow>(), value, diffs, objName, propName);
   }
   
   private static void SetGlow(DXD.EffectList openXmlElement, DMD.Glow? value)
@@ -103,9 +103,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpInnerShadow(DXD.EffectList openXmlElement, DMD.InnerShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpInnerShadow(DXD.EffectList openXmlElement, DMD.InnerShadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.InnerShadow>(), value, diffs, objName);
+    return DMXD.InnerShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.InnerShadow>(), value, diffs, objName, propName);
   }
   
   private static void SetInnerShadow(DXD.EffectList openXmlElement, DMD.InnerShadow? value)
@@ -132,9 +132,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpOuterShadow(DXD.EffectList openXmlElement, DMD.OuterShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpOuterShadow(DXD.EffectList openXmlElement, DMD.OuterShadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.OuterShadow>(), value, diffs, objName);
+    return DMXD.OuterShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.OuterShadow>(), value, diffs, objName, propName);
   }
   
   private static void SetOuterShadow(DXD.EffectList openXmlElement, DMD.OuterShadow? value)
@@ -161,9 +161,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpPresetShadow(DXD.EffectList openXmlElement, DMD.PresetShadow? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetShadow(DXD.EffectList openXmlElement, DMD.PresetShadow? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetShadow>(), value, diffs, objName);
+    return DMXD.PresetShadowConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetShadow>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetShadow(DXD.EffectList openXmlElement, DMD.PresetShadow? value)
@@ -190,9 +190,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpReflection(DXD.EffectList openXmlElement, DMD.Reflection? value, DiffList? diffs, string? objName)
+  private static bool CmpReflection(DXD.EffectList openXmlElement, DMD.Reflection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Reflection>(), value, diffs, objName);
+    return DMXD.ReflectionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Reflection>(), value, diffs, objName, propName);
   }
   
   private static void SetReflection(DXD.EffectList openXmlElement, DMD.Reflection? value)
@@ -219,9 +219,9 @@ public static class EffectListConverter
     return null;
   }
   
-  private static bool CmpSoftEdge(DXD.EffectList openXmlElement, DMD.SoftEdge? value, DiffList? diffs, string? objName)
+  private static bool CmpSoftEdge(DXD.EffectList openXmlElement, DMD.SoftEdge? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SoftEdge>(), value, diffs, objName);
+    return DMXD.SoftEdgeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SoftEdge>(), value, diffs, objName, propName);
   }
   
   private static void SetSoftEdge(DXD.EffectList openXmlElement, DMD.SoftEdge? value)
@@ -255,31 +255,31 @@ public static class EffectListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.EffectList? openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectList? openXmlElement, DMD.EffectList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlur(openXmlElement, value.Blur, diffs, objName))
+      if (!CmpBlur(openXmlElement, value.Blur, diffs, objName, propName))
         ok = false;
-      if (!CmpFillOverlay(openXmlElement, value.FillOverlay, diffs, objName))
+      if (!CmpFillOverlay(openXmlElement, value.FillOverlay, diffs, objName, propName))
         ok = false;
-      if (!CmpGlow(openXmlElement, value.Glow, diffs, objName))
+      if (!CmpGlow(openXmlElement, value.Glow, diffs, objName, propName))
         ok = false;
-      if (!CmpInnerShadow(openXmlElement, value.InnerShadow, diffs, objName))
+      if (!CmpInnerShadow(openXmlElement, value.InnerShadow, diffs, objName, propName))
         ok = false;
-      if (!CmpOuterShadow(openXmlElement, value.OuterShadow, diffs, objName))
+      if (!CmpOuterShadow(openXmlElement, value.OuterShadow, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetShadow(openXmlElement, value.PresetShadow, diffs, objName))
+      if (!CmpPresetShadow(openXmlElement, value.PresetShadow, diffs, objName, propName))
         ok = false;
-      if (!CmpReflection(openXmlElement, value.Reflection, diffs, objName))
+      if (!CmpReflection(openXmlElement, value.Reflection, diffs, objName, propName))
         ok = false;
-      if (!CmpSoftEdge(openXmlElement, value.SoftEdge, diffs, objName))
+      if (!CmpSoftEdge(openXmlElement, value.SoftEdge, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

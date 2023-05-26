@@ -29,7 +29,7 @@ public delegate DM.IModelElement? CreateModelElementMethodExt(DX.OpenXmlElement 
 /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
 /// <returns><c>True</c> if the model element is equivalent to openXmlElement, <c>false</c> otherwise</returns>
 public delegate bool CompareOpenXmlElementMethod(DX.OpenXmlElement openXmlElement, DM.IModelElement model,
-  DiffList? diffs = null, string? objName = null);
+  DiffList? diffs = null, string? objName = null, string? propName = null);
 
 /// <summary>
 /// Used in collection object conversion methods to pass a specific method to compare an openXml element 
@@ -42,7 +42,7 @@ public delegate bool CompareOpenXmlElementMethod(DX.OpenXmlElement openXmlElemen
 /// <param name="data">Additional parameter</param>
 /// <returns><c>True</c> if the model element is equivalent to openXmlElement, <c>false</c> otherwise</returns>
 public delegate bool CompareOpenXmlElementMethodExt(DX.OpenXmlElement openXmlElement, DM.IModelElement model,
-  DiffList? diffs = null, string? objName = null, object? data = null);
+  DiffList? diffs = null, string? objName = null, string? propName = null, object? data = null);
 #endregion
 
 #region CreateOpenXmlElement method delegates
@@ -143,7 +143,7 @@ public static class ElementCollectionConverter<ModelType>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   /// <exception cref="InvalidOperationException">Thrown if a specific converter or its CompareModelElement method not found.</exception>
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? compositeElement, ElementCollection<ModelType>? modelElementCollection, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? compositeElement, ElementCollection<ModelType>? modelElementCollection, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (compositeElement != null && modelElementCollection != null)
     {
@@ -292,12 +292,12 @@ public static class ElementCollectionConverter<ModelType>
   /// <param name="objName">Name of the compared object (to pass to <see cref="diffs"/> collection).</param>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareOpenXmlElementCollection(DX.OpenXmlCompositeElement? compositeElement, DM.ElementCollection<ModelType>? collection,
-  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (compositeElement != null && collection != null)
     {
       var elements = compositeElement.Elements();
-      return CompareOpenXmlElementCollection(elements, collection, compareElementMethod, diffs, objName);
+      return CompareOpenXmlElementCollection(elements, collection, compareElementMethod, diffs, objName, propName);
     }
     if (compositeElement == null && collection == null)
       return true;
@@ -316,7 +316,7 @@ public static class ElementCollectionConverter<ModelType>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareOpenXmlElementCollection(IEnumerable<DX.OpenXmlElement>? elements, 
     DM.ElementCollection<ModelType> models,
-  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs, string? objName)
+  CompareOpenXmlElementMethod compareElementMethod, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (elements != null)
     {
@@ -361,7 +361,7 @@ public static class ElementCollectionConverter<ModelType>
   /// <returns><c>True</c> if the model element collection is equivalent to composite openXmlElement, <c>false</c> otherwise</returns>
   public static bool CompareOpenXmlElementCollection(IEnumerable<DX.OpenXmlElement>? elements, 
     DM.ElementCollection<ModelType> models,
-  CompareOpenXmlElementMethodExt compareElementMethod, DiffList? diffs, string? objName, object? data = null)
+  CompareOpenXmlElementMethodExt compareElementMethod, DiffList? diffs, string? objName, string? propName, object? data = null)
   {
     if (elements != null)
     {
@@ -377,7 +377,7 @@ public static class ElementCollectionConverter<ModelType>
           OpenXmlElement? openXmlElement = elementsEnumerator.Current;
           if (openXmlElement != null && modelElement != null)
           {
-            if (!compareElementMethod(openXmlElement, modelElement, diffs, (objName != null) ? $"{objName}[{i}]" : $"Item[{i}]", 
+            if (!compareElementMethod(openXmlElement, modelElement, diffs, (objName != null) ? $"{objName}[{i}]" : $"Item[{i}]", propName,
               data))
               ok = false;
           }
@@ -507,7 +507,7 @@ public static class ElementCollectionConverter<ModelType>
     {
       var openXmlElement = qualifiedElements[i];
       var modelElement = modelElements[i];
-      if (!compareElementMethod(openXmlElement, modelElement, null, null, data)
+      if (!compareElementMethod(openXmlElement, modelElement, null, null, null, data)
         && !updateElementMethod(openXmlElement, modelElement, data))
         break;
       else

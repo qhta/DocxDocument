@@ -13,7 +13,7 @@ public static class SampleDataTypeConverter
     return openXmlElement?.UseDefault?.Value;
   }
   
-  private static bool CmpUseDefault(DXDD.SampleDataType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseDefault(DXDD.SampleDataType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UseDefault?.Value == value) return true;
     diffs?.Add(objName, "UseDefault", openXmlElement?.UseDefault?.Value, value);
@@ -39,9 +39,9 @@ public static class SampleDataTypeConverter
     return null;
   }
   
-  private static bool CmpDataModel(DXDD.SampleDataType openXmlElement, DMDD.DataModel? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModel(DXDD.SampleDataType openXmlElement, DMDD.DataModel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName);
+    return DMXDD.DataModelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.DataModel>(), value, diffs, objName, propName);
   }
   
   private static void SetDataModel(DXDD.SampleDataType openXmlElement, DMDD.DataModel? value)
@@ -69,19 +69,19 @@ public static class SampleDataTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.SampleDataType? openXmlElement, DMDD.SampleDataType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.SampleDataType? openXmlElement, DMDD.SampleDataType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUseDefault(openXmlElement, value.UseDefault, diffs, objName))
+      if (!CmpUseDefault(openXmlElement, value.UseDefault, diffs, objName, propName))
         ok = false;
-      if (!CmpDataModel(openXmlElement, value.DataModel, diffs, objName))
+      if (!CmpDataModel(openXmlElement, value.DataModel, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class CharacterBulletConverter
     return StringValueConverter.GetValue(openXmlElement?.Char);
   }
   
-  private static bool CmpChar(DXD.CharacterBullet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpChar(DXD.CharacterBullet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Char, value, diffs, objName, "Char");
   }
@@ -34,17 +34,17 @@ public static class CharacterBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.CharacterBullet? openXmlElement, DMD.CharacterBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CharacterBullet? openXmlElement, DMD.CharacterBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChar(openXmlElement, value.Char, diffs, objName))
+      if (!CmpChar(openXmlElement, value.Char, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

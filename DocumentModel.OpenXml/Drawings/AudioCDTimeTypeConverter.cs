@@ -13,7 +13,7 @@ public static class AudioCDTimeTypeConverter
     return openXmlElement?.Track?.Value;
   }
   
-  private static bool CmpTrack(DXD.AudioCDTimeType openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpTrack(DXD.AudioCDTimeType openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Track?.Value == value) return true;
     diffs?.Add(objName, "Track", openXmlElement?.Track?.Value, value);
@@ -33,7 +33,7 @@ public static class AudioCDTimeTypeConverter
     return openXmlElement?.Time?.Value;
   }
   
-  private static bool CmpTime(DXD.AudioCDTimeType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpTime(DXD.AudioCDTimeType openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Time?.Value == value) return true;
     diffs?.Add(objName, "Time", openXmlElement?.Time?.Value, value);
@@ -57,19 +57,19 @@ public static class AudioCDTimeTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AudioCDTimeType? openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AudioCDTimeType? openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTrack(openXmlElement, value.Track, diffs, objName))
+      if (!CmpTrack(openXmlElement, value.Track, diffs, objName, propName))
         ok = false;
-      if (!CmpTime(openXmlElement, value.Time, diffs, objName))
+      if (!CmpTime(openXmlElement, value.Time, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

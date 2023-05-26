@@ -45,7 +45,7 @@ public class TestFonts : TestBase
     if (origFonts != null)
     {
       var diffs = new DiffList();
-      var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null);
+      var ok = DMXW.FontsConverter.CompareModelElement(origFonts, modelFonts, diffs, null, null);
       if (!ok && showDetails)
       {
         WriteLine("Read fonts differences found:");
@@ -83,7 +83,7 @@ public class TestFonts : TestBase
     var modelFonts = document.EmbeddedFonts;
     var origFonts = reader.WordprocessingDocument.MainDocumentPart?.FontTablePart?.Parts;
     var diffs = new DiffList();
-    var ok = DMX.Int32ValueConverter.CmpValue(origFonts?.Count() ?? 0, modelFonts?.Count() ?? 0, diffs, null);
+    var ok = DMX.Int32ValueConverter.CmpValue(origFonts?.Count() ?? 0, modelFonts?.Count() ?? 0, diffs, null, null);
     if (!ok && showDetails)
     {
       WriteLine("Read fonts differences found:");

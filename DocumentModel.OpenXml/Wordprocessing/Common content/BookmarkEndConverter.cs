@@ -8,8 +8,8 @@ public static class BookmarkEndConverter
   public static DMW.BookmarkEnd? CreateModelElement(DXW.BookmarkEnd? openXmlElement)
     => MarkupRangeElementConverter.CreateModelElement<DMW.BookmarkEnd>(openXmlElement);
   
-  public static bool CompareModelElement(DXW.BookmarkEnd? openXmlElement, DMW.BookmarkEnd? value, DiffList? diffs, string? objName)
-    => MarkupRangeElementConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+  public static bool CompareModelElement(DXW.BookmarkEnd? openXmlElement, DMW.BookmarkEnd? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => MarkupRangeElementConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName);
   
   public static DXW.BookmarkEnd CreateOpenXmlElement(DMW.BookmarkEnd value)
     => MarkupRangeElementConverter.CreateOpenXmlElement<DXW.BookmarkEnd>(value);

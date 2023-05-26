@@ -13,7 +13,7 @@ public static class DataLabelFieldTableEntryConverter
       return openXmlElement?.GetFirstChild<DXO13DC.TextFieldGuid>()?.Text;
   }
   
-  private static bool CmpTextFieldGuid(DXO13DC.DataLabelFieldTableEntry openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTextFieldGuid(DXO13DC.DataLabelFieldTableEntry openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO13DC.TextFieldGuid>()?.Text == value;
   }
@@ -38,7 +38,7 @@ public static class DataLabelFieldTableEntryConverter
       return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXO13DC.DataLabelFieldTableEntry openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO13DC.DataLabelFieldTableEntry openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO13DC.Formula>()?.Text == value;
   }
@@ -66,9 +66,9 @@ public static class DataLabelFieldTableEntryConverter
     return null;
   }
   
-  private static bool CmpDataLabelFieldTableCache(DXO13DC.DataLabelFieldTableEntry openXmlElement, DMDC.DataLabelFieldTableCache? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabelFieldTableCache(DXO13DC.DataLabelFieldTableEntry openXmlElement, DMDC.DataLabelFieldTableCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelFieldTableCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelFieldTableCache>(), value, diffs, objName);
+    return DMXDC.DataLabelFieldTableCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabelFieldTableCache>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabelFieldTableCache(DXO13DC.DataLabelFieldTableEntry openXmlElement, DMDC.DataLabelFieldTableCache? value)
@@ -97,21 +97,21 @@ public static class DataLabelFieldTableEntryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.DataLabelFieldTableEntry? openXmlElement, DMDC.DataLabelFieldTableEntry? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.DataLabelFieldTableEntry? openXmlElement, DMDC.DataLabelFieldTableEntry? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTextFieldGuid(openXmlElement, value.TextFieldGuid, diffs, objName))
+      if (!CmpTextFieldGuid(openXmlElement, value.TextFieldGuid, diffs, objName, propName))
         ok = false;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabelFieldTableCache(openXmlElement, value.DataLabelFieldTableCache, diffs, objName))
+      if (!CmpDataLabelFieldTableCache(openXmlElement, value.DataLabelFieldTableCache, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

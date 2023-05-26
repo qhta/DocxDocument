@@ -13,7 +13,7 @@ public static class BackgroundMarkConverter
     return openXmlElement?.FirstXCoordinate?.Value;
   }
   
-  private static bool CmpFirstXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstXCoordinate?.Value == value) return true;
     diffs?.Add(objName, "FirstXCoordinate", openXmlElement?.FirstXCoordinate?.Value, value);
@@ -33,7 +33,7 @@ public static class BackgroundMarkConverter
     return openXmlElement?.FirstYCoordinate?.Value;
   }
   
-  private static bool CmpFirstYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstYCoordinate?.Value == value) return true;
     diffs?.Add(objName, "FirstYCoordinate", openXmlElement?.FirstYCoordinate?.Value, value);
@@ -53,7 +53,7 @@ public static class BackgroundMarkConverter
     return openXmlElement?.SecondXCoordinate?.Value;
   }
   
-  private static bool CmpSecondXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondXCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SecondXCoordinate?.Value == value) return true;
     diffs?.Add(objName, "SecondXCoordinate", openXmlElement?.SecondXCoordinate?.Value, value);
@@ -73,7 +73,7 @@ public static class BackgroundMarkConverter
     return openXmlElement?.SecondYCoordinate?.Value;
   }
   
-  private static bool CmpSecondYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSecondYCoordinate(DXO10D.BackgroundMark openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SecondYCoordinate?.Value == value) return true;
     diffs?.Add(objName, "SecondYCoordinate", openXmlElement?.SecondYCoordinate?.Value, value);
@@ -99,23 +99,23 @@ public static class BackgroundMarkConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.BackgroundMark? openXmlElement, DMD.BackgroundMark? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.BackgroundMark? openXmlElement, DMD.BackgroundMark? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFirstXCoordinate(openXmlElement, value.FirstXCoordinate, diffs, objName))
+      if (!CmpFirstXCoordinate(openXmlElement, value.FirstXCoordinate, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstYCoordinate(openXmlElement, value.FirstYCoordinate, diffs, objName))
+      if (!CmpFirstYCoordinate(openXmlElement, value.FirstYCoordinate, diffs, objName, propName))
         ok = false;
-      if (!CmpSecondXCoordinate(openXmlElement, value.SecondXCoordinate, diffs, objName))
+      if (!CmpSecondXCoordinate(openXmlElement, value.SecondXCoordinate, diffs, objName, propName))
         ok = false;
-      if (!CmpSecondYCoordinate(openXmlElement, value.SecondYCoordinate, diffs, objName))
+      if (!CmpSecondYCoordinate(openXmlElement, value.SecondYCoordinate, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

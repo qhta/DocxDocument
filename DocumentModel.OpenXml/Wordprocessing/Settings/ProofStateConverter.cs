@@ -13,9 +13,9 @@ public static class ProofStateConverter
     return EnumValueConverter.GetValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value);
   }
   
-  private static bool CmpSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Spelling?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSpelling(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
@@ -31,9 +31,9 @@ public static class ProofStateConverter
     return EnumValueConverter.GetValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value);
   }
   
-  private static bool CmpGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs, string? objName)
+  private static bool CmpGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ProofingStateValues, DMW.ProofingStateKind>(openXmlElement?.Grammar?.Value, value, diffs, objName, propName);
   }
   
   private static void SetGrammar(DXW.ProofState openXmlElement, DMW.ProofingStateKind? value)
@@ -53,19 +53,19 @@ public static class ProofStateConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ProofState? openXmlElement, DMW.ProofState? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ProofState? openXmlElement, DMW.ProofState? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSpelling(openXmlElement, value.Spelling, diffs, objName))
+      if (!CmpSpelling(openXmlElement, value.Spelling, diffs, objName, propName))
         ok = false;
-      if (!CmpGrammar(openXmlElement, value.Grammar, diffs, objName))
+      if (!CmpGrammar(openXmlElement, value.Grammar, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

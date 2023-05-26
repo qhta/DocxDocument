@@ -16,9 +16,9 @@ public static class VbaSuppDataConverter
     return null;
   }
   
-  private static bool CmpDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value, DiffList? diffs, string? objName)
+  private static bool CmpDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocEventsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.DocEvents>(), value, diffs, objName);
+    return DMXW.DocEventsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.DocEvents>(), value, diffs, objName, propName);
   }
   
   private static void SetDocEvents(DXOW.VbaSuppData openXmlElement, DMW.DocEvents? value)
@@ -45,9 +45,9 @@ public static class VbaSuppDataConverter
     return null;
   }
   
-  private static bool CmpMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value, DiffList? diffs, string? objName)
+  private static bool CmpMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.McdsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.Mcds>(), value, diffs, objName);
+    return DMXW.McdsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOW.Mcds>(), value, diffs, objName, propName);
   }
   
   private static void SetMcds(DXOW.VbaSuppData openXmlElement, DMW.Mcds? value)
@@ -75,19 +75,19 @@ public static class VbaSuppDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOW.VbaSuppData? openXmlElement, DMW.VbaSuppData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOW.VbaSuppData? openXmlElement, DMW.VbaSuppData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocEvents(openXmlElement, value.DocEvents, diffs, objName))
+      if (!CmpDocEvents(openXmlElement, value.DocEvents, diffs, objName, propName))
         ok = false;
-      if (!CmpMcds(openXmlElement, value.Mcds, diffs, objName))
+      if (!CmpMcds(openXmlElement, value.Mcds, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

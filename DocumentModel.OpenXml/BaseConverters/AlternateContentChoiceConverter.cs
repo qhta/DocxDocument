@@ -19,17 +19,17 @@ public static class AlternateContentChoiceConverter
     return null;
   }
 
-  public static bool CompareModelElement(DX.AlternateContentChoice? openXmlElement, AlternateContentChoice? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.AlternateContentChoice? openXmlElement, AlternateContentChoice? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
-      var ok = ElementCollectionConverter<ModelElement>.CompareModelElement(openXmlElement, value, diffs, objName);
-      if (!StringValueConverter.CmpValue(openXmlElement.Requires, value.Requires, diffs, objName))
+      var ok = ElementCollectionConverter<ModelElement>.CompareModelElement(openXmlElement, value, diffs, objName, propName);
+      if (!StringValueConverter.CmpValue(openXmlElement.Requires, value.Requires, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

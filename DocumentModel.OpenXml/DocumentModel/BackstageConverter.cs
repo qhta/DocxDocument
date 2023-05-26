@@ -13,7 +13,7 @@ public static class BackstageConverter
     return StringValueConverter.GetValue(openXmlElement?.OnShow);
   }
   
-  private static bool CmpOnShow(DXO10CUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnShow(DXO10CUI.Backstage openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnShow, value, diffs, objName, "OnShow");
   }
@@ -31,7 +31,7 @@ public static class BackstageConverter
     return StringValueConverter.GetValue(openXmlElement?.OnHide);
   }
   
-  private static bool CmpOnHide(DXO10CUI.Backstage openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOnHide(DXO10CUI.Backstage openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OnHide, value, diffs, objName, "OnHide");
   }
@@ -49,9 +49,9 @@ public static class BackstageConverter
     return null;
   }
   
-  private static bool CmpBackstageTab(DXO10CUI.Backstage openXmlElement, DM.BackstageTab? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageTab(DXO10CUI.Backstage openXmlElement, DM.BackstageTab? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstageTabConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageTab>(), value, diffs, objName);
+    return DMX.BackstageTabConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageTab>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstageTab(DXO10CUI.Backstage openXmlElement, DM.BackstageTab? value)
@@ -75,9 +75,9 @@ public static class BackstageConverter
     return null;
   }
   
-  private static bool CmpBackstageFastCommandButton(DXO10CUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value, DiffList? diffs, string? objName)
+  private static bool CmpBackstageFastCommandButton(DXO10CUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BackstageFastCommandButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageFastCommandButton>(), value, diffs, objName);
+    return DMX.BackstageFastCommandButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.BackstageFastCommandButton>(), value, diffs, objName, propName);
   }
   
   private static void SetBackstageFastCommandButton(DXO10CUI.Backstage openXmlElement, DM.BackstageFastCommandButton? value)
@@ -107,23 +107,23 @@ public static class BackstageConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.Backstage? openXmlElement, DM.Backstage? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Backstage? openXmlElement, DM.Backstage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpOnShow(openXmlElement, value.OnShow, diffs, objName))
+      if (!CmpOnShow(openXmlElement, value.OnShow, diffs, objName, propName))
         ok = false;
-      if (!CmpOnHide(openXmlElement, value.OnHide, diffs, objName))
+      if (!CmpOnHide(openXmlElement, value.OnHide, diffs, objName, propName))
         ok = false;
-      if (!CmpBackstageTab(openXmlElement, value.BackstageTab, diffs, objName))
+      if (!CmpBackstageTab(openXmlElement, value.BackstageTab, diffs, objName, propName))
         ok = false;
-      if (!CmpBackstageFastCommandButton(openXmlElement, value.BackstageFastCommandButton, diffs, objName))
+      if (!CmpBackstageFastCommandButton(openXmlElement, value.BackstageFastCommandButton, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

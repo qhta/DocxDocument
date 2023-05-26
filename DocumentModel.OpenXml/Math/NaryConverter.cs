@@ -14,9 +14,9 @@ public static class NaryConverter
     return null;
   }
   
-  private static bool CmpNaryProperties(DXM.Nary openXmlElement, DMM.NaryProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNaryProperties(DXM.Nary openXmlElement, DMM.NaryProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.NaryPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.NaryProperties>(), value, diffs, objName);
+    return DMXM.NaryPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.NaryProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNaryProperties(DXM.Nary openXmlElement, DMM.NaryProperties? value)
@@ -42,9 +42,9 @@ public static class NaryConverter
     return null;
   }
   
-  private static bool CmpSubArgument(DXM.Nary openXmlElement, DMM.SubArgument? value, DiffList? diffs, string? objName)
+  private static bool CmpSubArgument(DXM.Nary openXmlElement, DMM.SubArgument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.SubArgument>(), value, diffs, objName);
+    return DMXM.SubArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.SubArgument>(), value, diffs, objName, propName);
   }
   
   private static void SetSubArgument(DXM.Nary openXmlElement, DMM.SubArgument? value)
@@ -70,9 +70,9 @@ public static class NaryConverter
     return null;
   }
   
-  private static bool CmpSuperArgument(DXM.Nary openXmlElement, DMM.SuperArgument? value, DiffList? diffs, string? objName)
+  private static bool CmpSuperArgument(DXM.Nary openXmlElement, DMM.SuperArgument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.SuperArgument>(), value, diffs, objName);
+    return DMXM.SuperArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.SuperArgument>(), value, diffs, objName, propName);
   }
   
   private static void SetSuperArgument(DXM.Nary openXmlElement, DMM.SuperArgument? value)
@@ -98,9 +98,9 @@ public static class NaryConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.Nary openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.Nary openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.Nary openXmlElement, DMM.Argument? value)
@@ -132,23 +132,23 @@ public static class NaryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Nary? openXmlElement, DMM.Nary? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Nary? openXmlElement, DMM.Nary? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpNaryProperties(openXmlElement, model.NaryProperties, diffs, objName))
+      if (!CmpNaryProperties(openXmlElement, model.NaryProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpSubArgument(openXmlElement, model.SubArgument, diffs, objName))
+      if (!CmpSubArgument(openXmlElement, model.SubArgument, diffs, objName, propName))
         ok = false;
-      if (!CmpSuperArgument(openXmlElement, model.SuperArgument, diffs, objName))
+      if (!CmpSuperArgument(openXmlElement, model.SuperArgument, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

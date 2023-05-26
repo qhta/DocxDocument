@@ -10,7 +10,7 @@ public static class ThemeOverridePartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -32,7 +32,7 @@ public static class ThemeOverridePartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.ThemeOverridePart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.ThemeOverridePart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -42,7 +42,7 @@ public static class ThemeOverridePartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.ThemeOverridePart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -57,7 +57,7 @@ public static class ThemeOverridePartConverter
       return DMXD.ThemeOverrideConverter.CreateModelElement(openXmlElement?.RootElement as DXD.ThemeOverride);
   }
   
-  private static bool CmpThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMD.ThemeOverride? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeOverride(DXPack.ThemeOverridePart openXmlElement, DMD.ThemeOverride? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -86,23 +86,23 @@ public static class ThemeOverridePartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.ThemeOverridePart? openXmlElement, DMPack.ThemeOverridePart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.ThemeOverridePart? openXmlElement, DMPack.ThemeOverridePart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeOverride(openXmlElement, value.ThemeOverride, diffs, objName))
+      if (!CmpThemeOverride(openXmlElement, value.ThemeOverride, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

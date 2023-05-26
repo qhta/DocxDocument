@@ -13,9 +13,9 @@ public static class OpenXmlFormulaElementConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDCDs.FormulaDirection>(openXmlElement?.Dir?.Value);
   }
   
-  private static bool CmpDir(DXO16DCD.OpenXmlFormulaElement openXmlElement, DMDCDs.FormulaDirection? value, DiffList? diffs, string? objName)
+  private static bool CmpDir(DXO16DCD.OpenXmlFormulaElement openXmlElement, DMDCDs.FormulaDirection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDCDs.FormulaDirection>(openXmlElement?.Dir?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.FormulaDirection, DMDCDs.FormulaDirection>(openXmlElement?.Dir?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDir(DXO16DCD.OpenXmlFormulaElement openXmlElement, DMDCDs.FormulaDirection? value)
@@ -34,17 +34,17 @@ public static class OpenXmlFormulaElementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.OpenXmlFormulaElement? openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.OpenXmlFormulaElement? openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDir(openXmlElement, value.Dir, diffs, objName))
+      if (!CmpDir(openXmlElement, value.Dir, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

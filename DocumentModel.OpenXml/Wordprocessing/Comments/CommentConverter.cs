@@ -11,7 +11,7 @@ public static class CommentConverter
     return StringValueConverter.GetValue(openXmlElement?.Initials);
   }
 
-  private static bool CmpInitials(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInitials(DXW.Comment openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Initials, value, diffs, objName, "Initials");
   }
@@ -28,7 +28,7 @@ public static class CommentConverter
     return StringValueConverter.GetValue(openXmlElement?.Author);
   }
 
-  private static bool CmpAuthor(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAuthor(DXW.Comment openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Author, value, diffs, objName, "Author");
   }
@@ -45,7 +45,7 @@ public static class CommentConverter
     return openXmlElement?.Date?.Value;
   }
 
-  private static bool CmpDate(DXW.Comment openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpDate(DXW.Comment openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Date?.Value == value) return true;
     diffs?.Add(objName, "Date", openXmlElement?.Date?.Value, value);
@@ -64,7 +64,7 @@ public static class CommentConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
 
-  private static bool CmpId(DXW.Comment openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.Comment openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -99,24 +99,24 @@ public static class CommentConverter
   }
 
   public static bool CompareCommentContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Paragraph paragraph && model is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXW.Table table && model is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName, propName);
       if (openXmlElement is DXW.AltChunk altChunk && model is DMW.AltChunk altChunkModel)
-        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
+        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && model is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtBlock stdBlock && model is DMW.SdtBlock stdBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(stdBlock, stdBlockModel, diffs, objName);
+        return DMXW.SdtBlockConverter.CompareModelElement(stdBlock, stdBlockModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -125,7 +125,7 @@ public static class CommentConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -182,27 +182,27 @@ public static class CommentConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Comment? openXmlElement, DMW.Comment? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Comment? openXmlElement, DMW.Comment? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpInitials(openXmlElement, model.Initials, diffs, objName))
+      if (!CmpInitials(openXmlElement, model.Initials, diffs, objName, propName))
         ok = false;
-      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName))
+      if (!CmpAuthor(openXmlElement, model.Author, diffs, objName, propName))
         ok = false;
-      if (!CmpDate(openXmlElement, model.Date, diffs, objName))
+      if (!CmpDate(openXmlElement, model.Date, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMW.ICommentContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.ParagraphProperties), model,
-        CompareCommentContent, diffs, objName))
+        CompareCommentContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

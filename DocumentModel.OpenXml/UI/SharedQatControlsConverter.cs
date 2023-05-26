@@ -13,9 +13,9 @@ public static class SharedQatControlsConverter
     return null;
   }
   
-  private static bool CmpQuickAccessToolbarControlClone(DXOCUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickAccessToolbarControlClone(DXOCUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.QuickAccessToolbarControlClone>(), value, diffs, objName);
+    return DMXUI.QuickAccessToolbarControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.QuickAccessToolbarControlClone>(), value, diffs, objName, propName);
   }
   
   private static void SetQuickAccessToolbarControlClone(DXOCUI.SharedQatControls openXmlElement, DMUI.QuickAccessToolbarControlClone? value)
@@ -39,9 +39,9 @@ public static class SharedQatControlsConverter
     return null;
   }
   
-  private static bool CmpUnsizedButton(DXOCUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs, string? objName)
+  private static bool CmpUnsizedButton(DXOCUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName);
+    return DMXUI.UnsizedButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.UnsizedButton>(), value, diffs, objName, propName);
   }
   
   private static void SetUnsizedButton(DXOCUI.SharedQatControls openXmlElement, DMUI.UnsizedButton? value)
@@ -65,9 +65,9 @@ public static class SharedQatControlsConverter
     return null;
   }
   
-  private static bool CmpVerticalSeparator(DXOCUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalSeparator(DXOCUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.VerticalSeparator>(), value, diffs, objName);
+    return DMXUI.VerticalSeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOCUI.VerticalSeparator>(), value, diffs, objName, propName);
   }
   
   private static void SetVerticalSeparator(DXOCUI.SharedQatControls openXmlElement, DMUI.VerticalSeparator? value)
@@ -96,21 +96,21 @@ public static class SharedQatControlsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCUI.SharedQatControls? openXmlElement, DMUI.SharedQatControls? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.SharedQatControls? openXmlElement, DMUI.SharedQatControls? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpQuickAccessToolbarControlClone(openXmlElement, value.QuickAccessToolbarControlClone, diffs, objName))
+      if (!CmpQuickAccessToolbarControlClone(openXmlElement, value.QuickAccessToolbarControlClone, diffs, objName, propName))
         ok = false;
-      if (!CmpUnsizedButton(openXmlElement, value.UnsizedButton, diffs, objName))
+      if (!CmpUnsizedButton(openXmlElement, value.UnsizedButton, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalSeparator(openXmlElement, value.VerticalSeparator, diffs, objName))
+      if (!CmpVerticalSeparator(openXmlElement, value.VerticalSeparator, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

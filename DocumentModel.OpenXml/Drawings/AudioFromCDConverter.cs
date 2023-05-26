@@ -16,9 +16,9 @@ public static class AudioFromCDConverter
     return null;
   }
   
-  private static bool CmpStartTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  private static bool CmpStartTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.StartTime>(), value, diffs, objName);
+    return DMXD.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.StartTime>(), value, diffs, objName, propName);
   }
   
   private static void SetStartTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value)
@@ -45,9 +45,9 @@ public static class AudioFromCDConverter
     return null;
   }
   
-  private static bool CmpEndTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs, string? objName)
+  private static bool CmpEndTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndTime>(), value, diffs, objName);
+    return DMXD.AudioCDTimeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndTime>(), value, diffs, objName, propName);
   }
   
   private static void SetEndTime(DXD.AudioFromCD openXmlElement, DMD.AudioCDTimeType? value)
@@ -74,9 +74,9 @@ public static class AudioFromCDConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.AudioFromCD openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.AudioFromCD openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.AudioFromCD openXmlElement, DMD.ExtensionList? value)
@@ -105,21 +105,21 @@ public static class AudioFromCDConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AudioFromCD? openXmlElement, DMD.AudioFromCD? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AudioFromCD? openXmlElement, DMD.AudioFromCD? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStartTime(openXmlElement, value.StartTime, diffs, objName))
+      if (!CmpStartTime(openXmlElement, value.StartTime, diffs, objName, propName))
         ok = false;
-      if (!CmpEndTime(openXmlElement, value.EndTime, diffs, objName))
+      if (!CmpEndTime(openXmlElement, value.EndTime, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

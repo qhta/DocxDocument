@@ -19,7 +19,7 @@ public static class RgbColorModelHexConverter
     return null;
   }
   
-  private static bool CmpVal(DXD.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXD.RgbColorModelHex openXmlElement, DM.RGB? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null)
       if (UInt32.Parse(openXmlElement.Val.Value, NumberStyles.HexNumber) == (UInt32?)value)
@@ -45,7 +45,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.LegacySpreadsheetColorIndex?.Value;
   }
   
-  private static bool CmpLegacySpreadsheetColorIndex(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacySpreadsheetColorIndex(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LegacySpreadsheetColorIndex?.Value == value) return true;
     diffs?.Add(objName, "LegacySpreadsheetColorIndex", openXmlElement?.LegacySpreadsheetColorIndex?.Value, value);
@@ -62,7 +62,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Tint>()?.Val?.Value;
   }
   
-  private static bool CmpTint(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTint(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Tint>();
     if (itemElement?.Val?.Value == value) return true;
@@ -87,7 +87,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Shade>()?.Val?.Value;
   }
   
-  private static bool CmpShade(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpShade(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Shade>();
     if (itemElement?.Val?.Value == value) return true;
@@ -112,7 +112,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement.GetFirstChild<DXD.Complement>() != null;
   }
   
-  private static bool CmpComplement(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpComplement(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Complement>() != null;
     if (val == value) return true;
@@ -140,7 +140,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement.GetFirstChild<DXD.Inverse>() != null;
   }
   
-  private static bool CmpInverse(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverse(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Inverse>() != null;
     if (val == value) return true;
@@ -168,7 +168,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement.GetFirstChild<DXD.Gray>() != null;
   }
   
-  private static bool CmpGray(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGray(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gray>() != null;
     if (val == value) return true;
@@ -196,7 +196,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Alpha>()?.Val?.Value;
   }
   
-  private static bool CmpAlpha(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Alpha>();
     if (itemElement?.Val?.Value == value) return true;
@@ -221,7 +221,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.AlphaOffset>()?.Val?.Value;
   }
   
-  private static bool CmpAlphaOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -246,7 +246,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.AlphaModulation>()?.Val?.Value;
   }
   
-  private static bool CmpAlphaModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlphaModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.AlphaModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -271,7 +271,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Hue>()?.Val?.Value;
   }
   
-  private static bool CmpHue(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Hue>();
     if (itemElement?.Val?.Value == value) return true;
@@ -296,7 +296,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.HueOffset>()?.Val?.Value;
   }
   
-  private static bool CmpHueOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.HueOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -321,7 +321,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.HueModulation>()?.Val?.Value;
   }
   
-  private static bool CmpHueModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHueModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.HueModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -346,7 +346,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Saturation>()?.Val?.Value;
   }
   
-  private static bool CmpSaturation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Saturation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -371,7 +371,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.SaturationOffset>()?.Val?.Value;
   }
   
-  private static bool CmpSaturationOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -396,7 +396,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.SaturationModulation>()?.Val?.Value;
   }
   
-  private static bool CmpSaturationModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturationModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.SaturationModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -421,7 +421,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Luminance>()?.Val?.Value;
   }
   
-  private static bool CmpLuminance(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Luminance>();
     if (itemElement?.Val?.Value == value) return true;
@@ -446,7 +446,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.LuminanceOffset>()?.Val?.Value;
   }
   
-  private static bool CmpLuminanceOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -471,7 +471,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.LuminanceModulation>()?.Val?.Value;
   }
   
-  private static bool CmpLuminanceModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminanceModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.LuminanceModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -496,7 +496,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Red>()?.Val?.Value;
   }
   
-  private static bool CmpRed(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRed(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Red>();
     if (itemElement?.Val?.Value == value) return true;
@@ -521,7 +521,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.RedOffset>()?.Val?.Value;
   }
   
-  private static bool CmpRedOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.RedOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -546,7 +546,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.RedModulation>()?.Val?.Value;
   }
   
-  private static bool CmpRedModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRedModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.RedModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -571,7 +571,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Green>()?.Val?.Value;
   }
   
-  private static bool CmpGreen(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreen(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Green>();
     if (itemElement?.Val?.Value == value) return true;
@@ -596,7 +596,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.GreenOffset>()?.Val?.Value;
   }
   
-  private static bool CmpGreenOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.GreenOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -621,7 +621,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.GreenModulation>()?.Val?.Value;
   }
   
-  private static bool CmpGreenModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpGreenModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.GreenModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -646,7 +646,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.Blue>()?.Val?.Value;
   }
   
-  private static bool CmpBlue(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlue(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.Blue>();
     if (itemElement?.Val?.Value == value) return true;
@@ -671,7 +671,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.BlueOffset>()?.Val?.Value;
   }
   
-  private static bool CmpBlueOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueOffset(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.BlueOffset>();
     if (itemElement?.Val?.Value == value) return true;
@@ -696,7 +696,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement?.GetFirstChild<DXD.BlueModulation>()?.Val?.Value;
   }
   
-  private static bool CmpBlueModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBlueModulation(DXD.RgbColorModelHex openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement?.GetFirstChild<DXD.BlueModulation>();
     if (itemElement?.Val?.Value == value) return true;
@@ -721,7 +721,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement.GetFirstChild<DXD.Gamma>() != null;
   }
   
-  private static bool CmpGamma(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGamma(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.Gamma>() != null;
     if (val == value) return true;
@@ -749,7 +749,7 @@ public static class RgbColorModelHexConverter
     return openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
   }
   
-  private static bool CmpInverseGamma(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInverseGamma(DXD.RgbColorModelHex openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.InverseGamma>() != null;
     if (val == value) return true;
@@ -812,75 +812,75 @@ public static class RgbColorModelHexConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.RgbColorModelHex? openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.RgbColorModelHex? openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
-      if (!CmpLegacySpreadsheetColorIndex(openXmlElement, value.LegacySpreadsheetColorIndex, diffs, objName))
+      if (!CmpLegacySpreadsheetColorIndex(openXmlElement, value.LegacySpreadsheetColorIndex, diffs, objName, propName))
         ok = false;
-      if (!CmpTint(openXmlElement, value.Tint, diffs, objName))
+      if (!CmpTint(openXmlElement, value.Tint, diffs, objName, propName))
         ok = false;
-      if (!CmpShade(openXmlElement, value.Shade, diffs, objName))
+      if (!CmpShade(openXmlElement, value.Shade, diffs, objName, propName))
         ok = false;
-      if (!CmpComplement(openXmlElement, value.Complement, diffs, objName))
+      if (!CmpComplement(openXmlElement, value.Complement, diffs, objName, propName))
         ok = false;
-      if (!CmpInverse(openXmlElement, value.Inverse, diffs, objName))
+      if (!CmpInverse(openXmlElement, value.Inverse, diffs, objName, propName))
         ok = false;
-      if (!CmpGray(openXmlElement, value.Gray, diffs, objName))
+      if (!CmpGray(openXmlElement, value.Gray, diffs, objName, propName))
         ok = false;
-      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName))
+      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaOffset(openXmlElement, value.AlphaOffset, diffs, objName))
+      if (!CmpAlphaOffset(openXmlElement, value.AlphaOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpAlphaModulation(openXmlElement, value.AlphaModulation, diffs, objName))
+      if (!CmpAlphaModulation(openXmlElement, value.AlphaModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName, propName))
         ok = false;
-      if (!CmpHueOffset(openXmlElement, value.HueOffset, diffs, objName))
+      if (!CmpHueOffset(openXmlElement, value.HueOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName))
+      if (!CmpHueModulation(openXmlElement, value.HueModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName))
+      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName))
+      if (!CmpSaturationOffset(openXmlElement, value.SaturationOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName))
+      if (!CmpSaturationModulation(openXmlElement, value.SaturationModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName))
+      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName))
+      if (!CmpLuminanceOffset(openXmlElement, value.LuminanceOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName))
+      if (!CmpLuminanceModulation(openXmlElement, value.LuminanceModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpRed(openXmlElement, value.Red, diffs, objName))
+      if (!CmpRed(openXmlElement, value.Red, diffs, objName, propName))
         ok = false;
-      if (!CmpRedOffset(openXmlElement, value.RedOffset, diffs, objName))
+      if (!CmpRedOffset(openXmlElement, value.RedOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpRedModulation(openXmlElement, value.RedModulation, diffs, objName))
+      if (!CmpRedModulation(openXmlElement, value.RedModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpGreen(openXmlElement, value.Green, diffs, objName))
+      if (!CmpGreen(openXmlElement, value.Green, diffs, objName, propName))
         ok = false;
-      if (!CmpGreenOffset(openXmlElement, value.GreenOffset, diffs, objName))
+      if (!CmpGreenOffset(openXmlElement, value.GreenOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpGreenModulation(openXmlElement, value.GreenModulation, diffs, objName))
+      if (!CmpGreenModulation(openXmlElement, value.GreenModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpBlue(openXmlElement, value.Blue, diffs, objName))
+      if (!CmpBlue(openXmlElement, value.Blue, diffs, objName, propName))
         ok = false;
-      if (!CmpBlueOffset(openXmlElement, value.BlueOffset, diffs, objName))
+      if (!CmpBlueOffset(openXmlElement, value.BlueOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpBlueModulation(openXmlElement, value.BlueModulation, diffs, objName))
+      if (!CmpBlueModulation(openXmlElement, value.BlueModulation, diffs, objName, propName))
         ok = false;
-      if (!CmpGamma(openXmlElement, value.Gamma, diffs, objName))
+      if (!CmpGamma(openXmlElement, value.Gamma, diffs, objName, propName))
         ok = false;
-      if (!CmpInverseGamma(openXmlElement, value.InverseGamma, diffs, objName))
+      if (!CmpInverseGamma(openXmlElement, value.InverseGamma, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

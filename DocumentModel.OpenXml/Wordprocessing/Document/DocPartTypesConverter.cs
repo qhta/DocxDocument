@@ -13,7 +13,7 @@ public static class DocPartTypesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.All);
   }
   
-  private static bool CmpAll(DXW.DocPartTypes openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAll(DXW.DocPartTypes openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.All, value, diffs, objName, "All");
   }
@@ -28,9 +28,9 @@ public static class DocPartTypesConverter
     return EnumValueConverter.GetValue<DXW.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value);
   }
   
-  private static bool CmpDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocPartValues, DMW.DocPartKind>(openXmlElement.GetFirstChild<DXW.DocPartType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDocPartType(DXW.DocPartTypes openXmlElement, DMW.DocPartKind? value)
@@ -60,19 +60,19 @@ public static class DocPartTypesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DocPartTypes? openXmlElement, DMW.DocPartTypes? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DocPartTypes? openXmlElement, DMW.DocPartTypes? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAll(openXmlElement, value.All, diffs, objName))
+      if (!CmpAll(openXmlElement, value.All, diffs, objName, propName))
         ok = false;
-      if (!CmpDocPartType(openXmlElement, value.DocPartType, diffs, objName))
+      if (!CmpDocPartType(openXmlElement, value.DocPartType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

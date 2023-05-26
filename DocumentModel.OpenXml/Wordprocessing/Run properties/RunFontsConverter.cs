@@ -11,9 +11,9 @@ public static class RunFontsConverter
     return EnumValueConverter.GetValue<DXW.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value);
   }
   
-  private static bool CmpHint(DXW.RunFonts openXmlElement, DMW.FontTypeHintKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHint(DXW.RunFonts openXmlElement, DMW.FontTypeHintKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FontTypeHintValues, DMW.FontTypeHintKind>(openXmlElement?.Hint?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHint(DXW.RunFonts openXmlElement, DMW.FontTypeHintKind? value)
@@ -28,7 +28,7 @@ public static class RunFontsConverter
     return StringValueConverter.GetValue(openXmlElement?.Ascii);
   }
   
-  private static bool CmpAscii(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAscii(DXW.RunFonts openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Ascii, value, diffs, objName, "Ascii");
   }
@@ -45,7 +45,7 @@ public static class RunFontsConverter
     return StringValueConverter.GetValue(openXmlElement?.HighAnsi);
   }
   
-  private static bool CmpHighAnsi(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHighAnsi(DXW.RunFonts openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.HighAnsi, value, diffs, objName, "HighAnsi");
   }
@@ -62,7 +62,7 @@ public static class RunFontsConverter
     return StringValueConverter.GetValue(openXmlElement?.EastAsia);
   }
   
-  private static bool CmpEastAsia(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsia(DXW.RunFonts openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.EastAsia, value, diffs, objName, "EastAsia");
   }
@@ -79,7 +79,7 @@ public static class RunFontsConverter
     return StringValueConverter.GetValue(openXmlElement?.ComplexScript);
   }
   
-  private static bool CmpComplexScript(DXW.RunFonts openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpComplexScript(DXW.RunFonts openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ComplexScript, value, diffs, objName, "ComplexScript");
   }
@@ -96,9 +96,9 @@ public static class RunFontsConverter
     return EnumValueConverter.GetValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value);
   }
   
-  private static bool CmpAsciiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAsciiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.AsciiTheme?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAsciiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -113,9 +113,9 @@ public static class RunFontsConverter
     return EnumValueConverter.GetValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value);
   }
   
-  private static bool CmpHighAnsiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHighAnsiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.HighAnsiTheme?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHighAnsiTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -130,9 +130,9 @@ public static class RunFontsConverter
     return EnumValueConverter.GetValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value);
   }
   
-  private static bool CmpEastAsiaTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsiaTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.EastAsiaTheme?.Value, value, diffs, objName, propName);
   }
   
   private static void SetEastAsiaTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -147,9 +147,9 @@ public static class RunFontsConverter
     return EnumValueConverter.GetValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value);
   }
   
-  private static bool CmpComplexScriptTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs, string? objName)
+  private static bool CmpComplexScriptTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ThemeFontValues, DMW.ThemeFontKind>(openXmlElement?.ComplexScriptTheme?.Value, value, diffs, objName, propName);
   }
   
   private static void SetComplexScriptTheme(DXW.RunFonts openXmlElement, DMW.ThemeFontKind? value)
@@ -186,33 +186,33 @@ public static class RunFontsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.RunFonts? openXmlElement, DMW.RunFonts? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.RunFonts? openXmlElement, DMW.RunFonts? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpHint(openXmlElement, model.Hint, diffs, objName))
+      if (!CmpHint(openXmlElement, model.Hint, diffs, objName, propName))
         ok = false;
-      if (!CmpAscii(openXmlElement, model.Ascii?.Name, diffs, objName))
+      if (!CmpAscii(openXmlElement, model.Ascii?.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpHighAnsi(openXmlElement, model.Ansi?.Name, diffs, objName))
+      if (!CmpHighAnsi(openXmlElement, model.Ansi?.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpEastAsia(openXmlElement, model.EastAsia?.Name, diffs, objName))
+      if (!CmpEastAsia(openXmlElement, model.EastAsia?.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpComplexScript(openXmlElement, model.ComplexScript?.Name, diffs, objName))
+      if (!CmpComplexScript(openXmlElement, model.ComplexScript?.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpAsciiTheme(openXmlElement, model.Ascii?.Theme, diffs, objName))
+      if (!CmpAsciiTheme(openXmlElement, model.Ascii?.Theme, diffs, objName, propName))
         ok = false;
-      if (!CmpHighAnsiTheme(openXmlElement, model.Ansi?.Theme, diffs, objName))
+      if (!CmpHighAnsiTheme(openXmlElement, model.Ansi?.Theme, diffs, objName, propName))
         ok = false;
-      if (!CmpEastAsiaTheme(openXmlElement, model.EastAsia?.Theme, diffs, objName))
+      if (!CmpEastAsiaTheme(openXmlElement, model.EastAsia?.Theme, diffs, objName, propName))
         ok = false;
-      if (!CmpComplexScriptTheme(openXmlElement, model.ComplexScript?.Theme, diffs, objName))
+      if (!CmpComplexScriptTheme(openXmlElement, model.ComplexScript?.Theme, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

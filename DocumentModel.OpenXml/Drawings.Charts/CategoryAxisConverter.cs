@@ -13,7 +13,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.AxisId>()?.Val);
   }
   
-  private static bool CmpAxisId(DXDC.CategoryAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisId(DXDC.CategoryAxis openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.AxisId>()?.Val, value, diffs, objName, "AxisId");
   }
@@ -34,9 +34,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpScaling(DXDC.CategoryAxis openXmlElement, DMDC.Scaling? value, DiffList? diffs, string? objName)
+  private static bool CmpScaling(DXDC.CategoryAxis openXmlElement, DMDC.Scaling? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ScalingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Scaling>(), value, diffs, objName);
+    return DMXDC.ScalingConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Scaling>(), value, diffs, objName, propName);
   }
   
   private static void SetScaling(DXDC.CategoryAxis openXmlElement, DMDC.Scaling? value)
@@ -60,7 +60,7 @@ public static class CategoryAxisConverter
     return openXmlElement.GetFirstChild<DXDC.Delete>() != null;
   }
   
-  private static bool CmpDelete(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDelete(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Delete>() != null;
     if (val == value) return true;
@@ -91,9 +91,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(openXmlElement.GetFirstChild<DXDC.AxisPosition>()?.Val?.Value);
   }
   
-  private static bool CmpAxisPosition(DXDC.CategoryAxis openXmlElement, DMDC.AxisPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAxisPosition(DXDC.CategoryAxis openXmlElement, DMDC.AxisPositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(openXmlElement.GetFirstChild<DXDC.AxisPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.AxisPositionValues, DMDC.AxisPositionKind>(openXmlElement.GetFirstChild<DXDC.AxisPosition>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAxisPosition(DXDC.CategoryAxis openXmlElement, DMDC.AxisPositionKind? value)
@@ -122,9 +122,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpMajorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MajorGridlines? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MajorGridlines? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MajorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MajorGridlines>(), value, diffs, objName);
+    return DMXDC.MajorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MajorGridlines>(), value, diffs, objName, propName);
   }
   
   private static void SetMajorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MajorGridlines? value)
@@ -151,9 +151,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpMinorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MinorGridlines? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MinorGridlines? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MinorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MinorGridlines>(), value, diffs, objName);
+    return DMXDC.MinorGridlinesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MinorGridlines>(), value, diffs, objName, propName);
   }
   
   private static void SetMinorGridlines(DXDC.CategoryAxis openXmlElement, DMDC.MinorGridlines? value)
@@ -180,9 +180,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpTitle(DXDC.CategoryAxis openXmlElement, DMDC.Title? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXDC.CategoryAxis openXmlElement, DMDC.Title? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Title>(), value, diffs, objName);
+    return DMXDC.TitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Title>(), value, diffs, objName, propName);
   }
   
   private static void SetTitle(DXDC.CategoryAxis openXmlElement, DMDC.Title? value)
@@ -209,9 +209,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXDC.CategoryAxis openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXDC.CategoryAxis openXmlElement, DMDC.NumberingFormat? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormatConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingFormat(DXDC.CategoryAxis openXmlElement, DMDC.NumberingFormat? value)
@@ -235,9 +235,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MajorTickMark>()?.Val?.Value);
   }
   
-  private static bool CmpMajorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MajorTickMark>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MajorTickMark>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMajorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value)
@@ -263,9 +263,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MinorTickMark>()?.Val?.Value);
   }
   
-  private static bool CmpMinorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MinorTickMark>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickMarkValues, DMDC.TickMarkKind>(openXmlElement.GetFirstChild<DXDC.MinorTickMark>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMinorTickMark(DXDC.CategoryAxis openXmlElement, DMDC.TickMarkKind? value)
@@ -291,9 +291,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.TickLabelPosition>()?.Val?.Value);
   }
   
-  private static bool CmpTickLabelPosition(DXDC.CategoryAxis openXmlElement, DMDC.TickLabelPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTickLabelPosition(DXDC.CategoryAxis openXmlElement, DMDC.TickLabelPositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.TickLabelPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TickLabelPositionValues, DMDC.TickLabelPositionKind>(openXmlElement.GetFirstChild<DXDC.TickLabelPosition>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTickLabelPosition(DXDC.CategoryAxis openXmlElement, DMDC.TickLabelPositionKind? value)
@@ -322,9 +322,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.CategoryAxis openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.CategoryAxis openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.CategoryAxis openXmlElement, DMDC.ChartShapeProperties? value)
@@ -351,9 +351,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpTextProperties(DXDC.CategoryAxis openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.CategoryAxis openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXDC.CategoryAxis openXmlElement, DMDC.TextProperties? value)
@@ -377,7 +377,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CrossingAxis>()?.Val);
   }
   
-  private static bool CmpCrossingAxis(DXDC.CategoryAxis openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpCrossingAxis(DXDC.CategoryAxis openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CrossingAxis>()?.Val, value, diffs, objName, "CrossingAxis");
   }
@@ -392,9 +392,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(openXmlElement.GetFirstChild<DXDC.Crosses>()?.Val?.Value);
   }
   
-  private static bool CmpCrosses(DXDC.CategoryAxis openXmlElement, DMDC.CrossesKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCrosses(DXDC.CategoryAxis openXmlElement, DMDC.CrossesKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(openXmlElement.GetFirstChild<DXDC.Crosses>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.CrossesValues, DMDC.CrossesKind>(openXmlElement.GetFirstChild<DXDC.Crosses>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetCrosses(DXDC.CategoryAxis openXmlElement, DMDC.CrossesKind? value)
@@ -417,7 +417,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.CrossesAt>()?.Val);
   }
   
-  private static bool CmpCrossesAt(DXDC.CategoryAxis openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpCrossesAt(DXDC.CategoryAxis openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.CrossesAt>()?.Val, value, diffs, objName, "CrossesAt");
   }
@@ -432,7 +432,7 @@ public static class CategoryAxisConverter
     return openXmlElement.GetFirstChild<DXDC.AutoLabeled>() != null;
   }
   
-  private static bool CmpAutoLabeled(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoLabeled(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.AutoLabeled>() != null;
     if (val == value) return true;
@@ -460,9 +460,9 @@ public static class CategoryAxisConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues, DMDC.LabelAlignmentKind>(openXmlElement.GetFirstChild<DXDC.LabelAlignment>()?.Val?.Value);
   }
   
-  private static bool CmpLabelAlignment(DXDC.CategoryAxis openXmlElement, DMDC.LabelAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLabelAlignment(DXDC.CategoryAxis openXmlElement, DMDC.LabelAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues, DMDC.LabelAlignmentKind>(openXmlElement.GetFirstChild<DXDC.LabelAlignment>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LabelAlignmentValues, DMDC.LabelAlignmentKind>(openXmlElement.GetFirstChild<DXDC.LabelAlignment>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLabelAlignment(DXDC.CategoryAxis openXmlElement, DMDC.LabelAlignmentKind? value)
@@ -485,7 +485,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.LabelOffset>()?.Val);
   }
   
-  private static bool CmpLabelOffset(DXDC.CategoryAxis openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpLabelOffset(DXDC.CategoryAxis openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.LabelOffset>()?.Val, value, diffs, objName, "LabelOffset");
   }
@@ -500,7 +500,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.TickLabelSkip>()?.Val);
   }
   
-  private static bool CmpTickLabelSkip(DXDC.CategoryAxis openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTickLabelSkip(DXDC.CategoryAxis openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.TickLabelSkip>()?.Val, value, diffs, objName, "TickLabelSkip");
   }
@@ -515,7 +515,7 @@ public static class CategoryAxisConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.TickMarkSkip>()?.Val);
   }
   
-  private static bool CmpTickMarkSkip(DXDC.CategoryAxis openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTickMarkSkip(DXDC.CategoryAxis openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.TickMarkSkip>()?.Val, value, diffs, objName, "TickMarkSkip");
   }
@@ -530,7 +530,7 @@ public static class CategoryAxisConverter
     return openXmlElement.GetFirstChild<DXDC.NoMultiLevelLabels>() != null;
   }
   
-  private static bool CmpNoMultiLevelLabels(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMultiLevelLabels(DXDC.CategoryAxis openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.NoMultiLevelLabels>() != null;
     if (val == value) return true;
@@ -561,9 +561,9 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  private static bool CmpCatAxExtensionList(DXDC.CategoryAxis openXmlElement, DMDC.CatAxExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpCatAxExtensionList(DXDC.CategoryAxis openXmlElement, DMDC.CatAxExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.CatAxExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.CatAxExtensionList>(), value, diffs, objName);
+    return DMXDC.CatAxExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.CatAxExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetCatAxExtensionList(DXDC.CategoryAxis openXmlElement, DMDC.CatAxExtensionList? value)
@@ -612,61 +612,61 @@ public static class CategoryAxisConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.CategoryAxis? openXmlElement, DMDC.CategoryAxis? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.CategoryAxis? openXmlElement, DMDC.CategoryAxis? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAxisId(openXmlElement, value.AxisId, diffs, objName))
+      if (!CmpAxisId(openXmlElement, value.AxisId, diffs, objName, propName))
         ok = false;
-      if (!CmpScaling(openXmlElement, value.Scaling, diffs, objName))
+      if (!CmpScaling(openXmlElement, value.Scaling, diffs, objName, propName))
         ok = false;
-      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName))
+      if (!CmpDelete(openXmlElement, value.Delete, diffs, objName, propName))
         ok = false;
-      if (!CmpAxisPosition(openXmlElement, value.AxisPosition, diffs, objName))
+      if (!CmpAxisPosition(openXmlElement, value.AxisPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpMajorGridlines(openXmlElement, value.MajorGridlines, diffs, objName))
+      if (!CmpMajorGridlines(openXmlElement, value.MajorGridlines, diffs, objName, propName))
         ok = false;
-      if (!CmpMinorGridlines(openXmlElement, value.MinorGridlines, diffs, objName))
+      if (!CmpMinorGridlines(openXmlElement, value.MinorGridlines, diffs, objName, propName))
         ok = false;
-      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpMajorTickMark(openXmlElement, value.MajorTickMark, diffs, objName))
+      if (!CmpMajorTickMark(openXmlElement, value.MajorTickMark, diffs, objName, propName))
         ok = false;
-      if (!CmpMinorTickMark(openXmlElement, value.MinorTickMark, diffs, objName))
+      if (!CmpMinorTickMark(openXmlElement, value.MinorTickMark, diffs, objName, propName))
         ok = false;
-      if (!CmpTickLabelPosition(openXmlElement, value.TickLabelPosition, diffs, objName))
+      if (!CmpTickLabelPosition(openXmlElement, value.TickLabelPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpCrossingAxis(openXmlElement, value.CrossingAxis, diffs, objName))
+      if (!CmpCrossingAxis(openXmlElement, value.CrossingAxis, diffs, objName, propName))
         ok = false;
-      if (!CmpCrosses(openXmlElement, value.Crosses, diffs, objName))
+      if (!CmpCrosses(openXmlElement, value.Crosses, diffs, objName, propName))
         ok = false;
-      if (!CmpCrossesAt(openXmlElement, value.CrossesAt, diffs, objName))
+      if (!CmpCrossesAt(openXmlElement, value.CrossesAt, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoLabeled(openXmlElement, value.AutoLabeled, diffs, objName))
+      if (!CmpAutoLabeled(openXmlElement, value.AutoLabeled, diffs, objName, propName))
         ok = false;
-      if (!CmpLabelAlignment(openXmlElement, value.LabelAlignment, diffs, objName))
+      if (!CmpLabelAlignment(openXmlElement, value.LabelAlignment, diffs, objName, propName))
         ok = false;
-      if (!CmpLabelOffset(openXmlElement, value.LabelOffset, diffs, objName))
+      if (!CmpLabelOffset(openXmlElement, value.LabelOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpTickLabelSkip(openXmlElement, value.TickLabelSkip, diffs, objName))
+      if (!CmpTickLabelSkip(openXmlElement, value.TickLabelSkip, diffs, objName, propName))
         ok = false;
-      if (!CmpTickMarkSkip(openXmlElement, value.TickMarkSkip, diffs, objName))
+      if (!CmpTickMarkSkip(openXmlElement, value.TickMarkSkip, diffs, objName, propName))
         ok = false;
-      if (!CmpNoMultiLevelLabels(openXmlElement, value.NoMultiLevelLabels, diffs, objName))
+      if (!CmpNoMultiLevelLabels(openXmlElement, value.NoMultiLevelLabels, diffs, objName, propName))
         ok = false;
-      if (!CmpCatAxExtensionList(openXmlElement, value.CatAxExtensionList, diffs, objName))
+      if (!CmpCatAxExtensionList(openXmlElement, value.CatAxExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

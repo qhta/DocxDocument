@@ -28,22 +28,22 @@ public static class CustomXmlRowConverter
   }
 
   public static bool CompareCustomXmlRowContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.CustomXmlRow CustomXmlRow && model is DMW.CustomXmlRow CustomXmlRowModel)
-        return DMXW.CustomXmlRowConverter.CompareModelElement(CustomXmlRow, CustomXmlRowModel, diffs, objName);
+        return DMXW.CustomXmlRowConverter.CompareModelElement(CustomXmlRow, CustomXmlRowModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.SdtRow sdtRow && model is DMW.SdtRow sdtRowModel)
-        return DMXW.SdtRowConverter.CompareModelElement(sdtRow, sdtRowModel, diffs, objName);
+        return DMXW.SdtRowConverter.CompareModelElement(sdtRow, sdtRowModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.TableRow tableRow && model is DMW.TableRow tableRowModel)
-        return DMXW.TableRowConverter.CompareModelElement(tableRow, tableRowModel, diffs, objName);
+        return DMXW.TableRowConverter.CompareModelElement(tableRow, tableRowModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result2 != null)
           return (bool)result2;
       }
@@ -53,7 +53,7 @@ public static class CustomXmlRowConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -117,21 +117,21 @@ public static class CustomXmlRowConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.CustomXmlRow? openXmlElement, DMW.CustomXmlRow? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlRow? openXmlElement, DMW.CustomXmlRow? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CompareCustomXmlRowContent, diffs, objName))
+        CompareCustomXmlRowContent, diffs, objName, propName))
         return ok;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

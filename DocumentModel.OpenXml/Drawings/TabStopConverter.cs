@@ -13,7 +13,7 @@ public static class TabStopConverter
     return openXmlElement?.Position?.Value;
   }
   
-  private static bool CmpPosition(DXD.TabStop openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.TabStop openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Position?.Value == value) return true;
     diffs?.Add(objName, "Position", openXmlElement?.Position?.Value, value);
@@ -33,9 +33,9 @@ public static class TabStopConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXD.TabStop openXmlElement, DMD.TextTabAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.TabStop openXmlElement, DMD.TextTabAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextTabAlignmentValues, DMD.TextTabAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXD.TabStop openXmlElement, DMD.TextTabAlignmentKind? value)
@@ -55,19 +55,19 @@ public static class TabStopConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.TabStop? openXmlElement, DMD.TabStop? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TabStop? openXmlElement, DMD.TabStop? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

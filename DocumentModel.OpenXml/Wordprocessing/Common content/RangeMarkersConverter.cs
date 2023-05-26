@@ -55,54 +55,54 @@ public static class RangeMarkersConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? model, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMW.ICommonContent? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.BookmarkStart bookmarkStart && model is DMW.BookmarkStart bookmarkStartModel)
-        return DMXW.BookmarkStartConverter.CompareModelElement(bookmarkStart, bookmarkStartModel, diffs, objName);
+        return DMXW.BookmarkStartConverter.CompareModelElement(bookmarkStart, bookmarkStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.BookmarkEnd bookmarkEnd && model is DMW.BookmarkEnd bookmarkEndModel)
-        return DMXW.BookmarkEndConverter.CompareModelElement(bookmarkEnd, bookmarkEndModel, diffs, objName);
+        return DMXW.BookmarkEndConverter.CompareModelElement(bookmarkEnd, bookmarkEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.CommentRangeStart commentRangeStart && model is DMW.CommentRangeStart commentRangeStartModel)
-        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeStart, commentRangeStartModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeStart, commentRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.CommentRangeEnd commentRangeEnd && model is DMW.CommentRangeEnd commentRangeEndModel)
-        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeEnd, commentRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(commentRangeEnd, commentRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveFromRangeStart moveFromRangeStart && model is DMW.MoveFromRangeStart moveFromRangeStartModel)
-        return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveFromRangeStart, moveFromRangeStartModel, diffs, objName);
+        return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveFromRangeStart, moveFromRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveFromRangeEnd moveFromRangeEnd && model is DMW.MoveFromRangeEnd moveFromRangeEndModel)
-        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveFromRangeEnd, moveFromRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveFromRangeEnd, moveFromRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveToRangeStart moveToRangeStart && model is DMW.MoveToRangeStart moveToRangeStartModel)
-        return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveToRangeStart, moveToRangeStartModel, diffs, objName);
+        return DMXW.MoveBookmarkTypeConverter.CompareModelElement(moveToRangeStart, moveToRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.MoveToRangeEnd moveToRangeEnd && model is DMW.MoveToRangeEnd moveToRangeEndModel)
-        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveToRangeEnd, moveToRangeEndModel, diffs, objName);
+        return DMXW.MarkupRangeElementConverter.CompareModelElement(moveToRangeEnd, moveToRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlInsRangeStart customXmlInsRangeStart && model is DMW.CustomXmlInsRangeStart customXmlInsRangeStartModel)
-        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlInsRangeStart, customXmlInsRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlInsRangeStart, customXmlInsRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlInsRangeEnd customXmlInsRangeEnd && model is DMW.CustomXmlInsRangeEnd customXmlInsRangeEndModel)
-        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlInsRangeEnd, customXmlInsRangeEndModel, diffs, objName);
+        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlInsRangeEnd, customXmlInsRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlDelRangeStart customXmlDelRangeStart && model is DMW.CustomXmlDelRangeStart customXmlDelRangeStartModel)
-        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlDelRangeStart, customXmlDelRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlDelRangeStart, customXmlDelRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlDelRangeEnd customXmlDelRangeEnd && model is DMW.CustomXmlDelRangeEnd customXmlDelRangeEndModel)
-        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlDelRangeEnd, customXmlDelRangeEndModel, diffs, objName);
+        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlDelRangeEnd, customXmlDelRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlMoveFromRangeStart customXmlMoveFromRangeStart && model is DMW.CustomXmlMoveFromRangeStart customXmlMoveFromRangeStartModel)
-        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlMoveFromRangeStart, customXmlMoveFromRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlMoveFromRangeStart, customXmlMoveFromRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlMoveFromRangeEnd customXmlMoveFromRangeEnd && model is DMW.CustomXmlMoveFromRangeEnd customXmlMoveFromRangeEndModel)
-        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlMoveFromRangeEnd, customXmlMoveFromRangeEndModel, diffs, objName);
+        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlMoveFromRangeEnd, customXmlMoveFromRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlMoveToRangeStart customXmlMoveToRangeStart && model is DMW.CustomXmlMoveToRangeStart customXmlMoveToRangeStartModel)
-        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlMoveToRangeStart, customXmlMoveToRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeTypeConverter.CompareModelElement(customXmlMoveToRangeStart, customXmlMoveToRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEnd && model is DMW.CustomXmlMoveToRangeEnd customXmlMoveToRangeEndModel)
-        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlMoveToRangeEnd, customXmlMoveToRangeEndModel, diffs, objName);
+        return DMXW.MarkupTypeConverter.CompareModelElement(customXmlMoveToRangeEnd, customXmlMoveToRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStart && model is DMW.CustomXmlConflictInsertionRangeStart customXmlConflictInsertionRangeStartModel)
-        return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictInsertionRangeStart, customXmlConflictInsertionRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictInsertionRangeStart, customXmlConflictInsertionRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXO10W.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEnd && model is DMW.CustomXmlConflictInsertionRangeEnd customXmlConflictInsertionRangeEndModel)
-        return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictInsertionRangeEnd, customXmlConflictInsertionRangeEndModel, diffs, objName);
+        return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictInsertionRangeEnd, customXmlConflictInsertionRangeEndModel, diffs, objName, propName);
       if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStart && model is DMW.CustomXmlConflictDeletionRangeStart customXmlConflictDeletionRangeStartModel)
-        return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictDeletionRangeStart, customXmlConflictDeletionRangeStartModel, diffs, objName);
+        return DMXW.TrackChangeType2Converter.CompareModelElement(customXmlConflictDeletionRangeStart, customXmlConflictDeletionRangeStartModel, diffs, objName, propName);
       if (openXmlElement is DXO10W.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEnd && model is DMW.CustomXmlConflictDeletionRangeEnd customXmlConflictDeletionRangeEndModel)
-        return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictDeletionRangeEnd, customXmlConflictDeletionRangeEndModel, diffs, objName);
+        return DMXW.MarkupType2Converter.CompareModelElement(customXmlConflictDeletionRangeEnd, customXmlConflictDeletionRangeEndModel, diffs, objName, propName);
       return null;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -13,7 +13,7 @@ public static class DataSourceObjectConverter
     return openXmlElement.GetFirstChild<DXW.UdlConnectionString>()?.Val?.Value;
   }
   
-  private static bool CmpUdlConnectionString(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUdlConnectionString(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.UdlConnectionString>();
     if (itemElement?.Val?.Value == value) return true;
@@ -41,7 +41,7 @@ public static class DataSourceObjectConverter
     return openXmlElement.GetFirstChild<DXW.DataSourceTableName>()?.Val?.Value;
   }
   
-  private static bool CmpDataSourceTableName(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDataSourceTableName(DXW.DataSourceObject openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DataSourceTableName>();
     if (itemElement?.Val?.Value == value) return true;
@@ -72,9 +72,9 @@ public static class DataSourceObjectConverter
     return null;
   }
   
-  private static bool CmpSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceReference>(), value, diffs, objName);
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SourceReference>(), value, diffs, objName, propName);
   }
   
   private static void SetSourceReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -98,7 +98,7 @@ public static class DataSourceObjectConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val);
   }
   
-  private static bool CmpColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnDelimiter(DXW.DataSourceObject openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.ColumnDelimiter>()?.Val, value, diffs, objName, "ColumnDelimiter");
   }
@@ -116,9 +116,9 @@ public static class DataSourceObjectConverter
     return EnumValueConverter.GetValue<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value);
   }
   
-  private static bool CmpMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeSourceValues, DMW.MailMergeSourceKind>(openXmlElement.GetFirstChild<DXW.MailMergeSource>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMailMergeSource(DXW.DataSourceObject openXmlElement, DMW.MailMergeSourceKind? value)
@@ -144,9 +144,9 @@ public static class DataSourceObjectConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FirstRowHeader>());
   }
   
-  private static bool CmpFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FirstRowHeader>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FirstRowHeader>(), value, diffs, objName, propName);
   }
   
   private static void SetFirstRowHeader(DXW.DataSourceObject openXmlElement, Boolean? value)
@@ -168,7 +168,7 @@ public static class DataSourceObjectConverter
     return null;
   }
   
-  private static bool CmpFieldMapDatas(DXW.DataSourceObject openXmlElement, Collection<DMW.FieldMapData>? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldMapDatas(DXW.DataSourceObject openXmlElement, Collection<DMW.FieldMapData>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.FieldMapData>();
     var origElementsCount = origElements.Count();
@@ -177,7 +177,7 @@ public static class DataSourceObjectConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -186,13 +186,13 @@ public static class DataSourceObjectConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.FieldMapDataConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.FieldMapDataConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -218,9 +218,9 @@ public static class DataSourceObjectConverter
     return null;
   }
   
-  private static bool CmpRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  private static bool CmpRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName);
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RecipientDataReference>(), value, diffs, objName, propName);
   }
   
   private static void SetRecipientDataReference(DXW.DataSourceObject openXmlElement, DMW.RelationshipType? value)
@@ -254,31 +254,31 @@ public static class DataSourceObjectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DataSourceObject? openXmlElement, DMW.DataSourceObject? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DataSourceObject? openXmlElement, DMW.DataSourceObject? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUdlConnectionString(openXmlElement, value.UdlConnectionString, diffs, objName))
+      if (!CmpUdlConnectionString(openXmlElement, value.UdlConnectionString, diffs, objName, propName))
         ok = false;
-      if (!CmpDataSourceTableName(openXmlElement, value.DataSourceTableName, diffs, objName))
+      if (!CmpDataSourceTableName(openXmlElement, value.DataSourceTableName, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceReference(openXmlElement, value.SourceReference, diffs, objName))
+      if (!CmpSourceReference(openXmlElement, value.SourceReference, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnDelimiter(openXmlElement, value.ColumnDelimiter, diffs, objName))
+      if (!CmpColumnDelimiter(openXmlElement, value.ColumnDelimiter, diffs, objName, propName))
         ok = false;
-      if (!CmpMailMergeSource(openXmlElement, value.MailMergeSource, diffs, objName))
+      if (!CmpMailMergeSource(openXmlElement, value.MailMergeSource, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstRowHeader(openXmlElement, value.FirstRowHeader, diffs, objName))
+      if (!CmpFirstRowHeader(openXmlElement, value.FirstRowHeader, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldMapDatas(openXmlElement, value.FieldMapDatas, diffs, objName))
+      if (!CmpFieldMapDatas(openXmlElement, value.FieldMapDatas, diffs, objName, propName))
         ok = false;
-      if (!CmpRecipientDataReference(openXmlElement, value.RecipientDataReference, diffs, objName))
+      if (!CmpRecipientDataReference(openXmlElement, value.RecipientDataReference, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

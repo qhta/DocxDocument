@@ -13,7 +13,7 @@ public static class LineSketchTypePropertiesConverter
     return openXmlElement.GetFirstChild<DXO21DSS.LineSketchNoneEmpty>() != null;
   }
   
-  private static bool CmpLineSketchNoneEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchNoneEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DSS.LineSketchNoneEmpty>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class LineSketchTypePropertiesConverter
     return openXmlElement.GetFirstChild<DXO21DSS.LineSketchCurvedEmpty>() != null;
   }
   
-  private static bool CmpLineSketchCurvedEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchCurvedEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DSS.LineSketchCurvedEmpty>() != null;
     if (val == value) return true;
@@ -75,7 +75,7 @@ public static class LineSketchTypePropertiesConverter
     return openXmlElement.GetFirstChild<DXO21DSS.LineSketchFreehandEmpty>() != null;
   }
   
-  private static bool CmpLineSketchFreehandEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchFreehandEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DSS.LineSketchFreehandEmpty>() != null;
     if (val == value) return true;
@@ -106,7 +106,7 @@ public static class LineSketchTypePropertiesConverter
     return openXmlElement.GetFirstChild<DXO21DSS.LineSketchScribbleEmpty>() != null;
   }
   
-  private static bool CmpLineSketchScribbleEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchScribbleEmpty(DXO21DSS.LineSketchTypeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO21DSS.LineSketchScribbleEmpty>() != null;
     if (val == value) return true;
@@ -143,23 +143,23 @@ public static class LineSketchTypePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DSS.LineSketchTypeProperties? openXmlElement, DMD.LineSketchTypeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DSS.LineSketchTypeProperties? openXmlElement, DMD.LineSketchTypeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLineSketchNoneEmpty(openXmlElement, value.LineSketchNoneEmpty, diffs, objName))
+      if (!CmpLineSketchNoneEmpty(openXmlElement, value.LineSketchNoneEmpty, diffs, objName, propName))
         ok = false;
-      if (!CmpLineSketchCurvedEmpty(openXmlElement, value.LineSketchCurvedEmpty, diffs, objName))
+      if (!CmpLineSketchCurvedEmpty(openXmlElement, value.LineSketchCurvedEmpty, diffs, objName, propName))
         ok = false;
-      if (!CmpLineSketchFreehandEmpty(openXmlElement, value.LineSketchFreehandEmpty, diffs, objName))
+      if (!CmpLineSketchFreehandEmpty(openXmlElement, value.LineSketchFreehandEmpty, diffs, objName, propName))
         ok = false;
-      if (!CmpLineSketchScribbleEmpty(openXmlElement, value.LineSketchScribbleEmpty, diffs, objName))
+      if (!CmpLineSketchScribbleEmpty(openXmlElement, value.LineSketchScribbleEmpty, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

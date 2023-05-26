@@ -13,7 +13,7 @@ public static class PredecessorDrawingElementReferenceConverter
     return StringValueConverter.GetValue(openXmlElement?.Pred);
   }
   
-  private static bool CmpPred(DXO16D.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPred(DXO16D.PredecessorDrawingElementReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Pred, value, diffs, objName, "Pred");
   }
@@ -34,17 +34,17 @@ public static class PredecessorDrawingElementReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16D.PredecessorDrawingElementReference? openXmlElement, DMD.PredecessorDrawingElementReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16D.PredecessorDrawingElementReference? openXmlElement, DMD.PredecessorDrawingElementReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPred(openXmlElement, value.Pred, diffs, objName))
+      if (!CmpPred(openXmlElement, value.Pred, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

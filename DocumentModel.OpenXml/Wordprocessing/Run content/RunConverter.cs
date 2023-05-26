@@ -15,7 +15,7 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunProperties(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunProperties?.Value, model, diffs, objName, "RsidRunProperties");
   }
@@ -37,7 +37,7 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunDeletion(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunDeletion?.Value, model, diffs, objName, "RsidRunDeletion");
   }
@@ -59,7 +59,7 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs, string? objName)
+  public static bool CmpRsidRunAddition(DXW.Run openXmlElement, DM.HexInt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRunAddition?.Value, model, diffs, objName, "RsidRunAddition");
   }
@@ -82,9 +82,9 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CmpRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model, DiffList? diffs, string? objName)
+  public static bool CmpRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), model, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
+    return DMXW.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.RunProperties>(), model, diffs, objName, propName);
   }
 
   public static void SetRunProperties(DXW.Run openXmlElement, DMW.RunProperties? model)
@@ -179,82 +179,82 @@ public static class RunConverter
   }
 
   public static bool CompareRunContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Text text && model is DMW.Text textModel)
-        return DMXW.TextTypeConverter.CompareModelElement(text, textModel, diffs, objName);
+        return DMXW.TextTypeConverter.CompareModelElement(text, textModel, diffs, objName, propName);
       if (openXmlElement is DXW.DeletedText deletedText && model is DMW.Text deletedTextModel)
-        return DMXW.TextTypeConverter.CompareModelElement(deletedText, deletedTextModel, diffs, objName);
+        return DMXW.TextTypeConverter.CompareModelElement(deletedText, deletedTextModel, diffs, objName, propName);
       if (openXmlElement is DXW.FieldCode fieldCode && model is DMW.FieldCode fieldCodeModel)
-        return DMXW.TextTypeConverter.CompareModelElement(fieldCode, fieldCodeModel, diffs, objName);
+        return DMXW.TextTypeConverter.CompareModelElement(fieldCode, fieldCodeModel, diffs, objName, propName);
       if (openXmlElement is DXW.DeletedFieldCode deletedFieldCode && model is DMW.FieldCode deletedFieldCodeModel)
-        return DMXW.TextTypeConverter.CompareModelElement(deletedFieldCode, deletedFieldCodeModel, diffs, objName);
+        return DMXW.TextTypeConverter.CompareModelElement(deletedFieldCode, deletedFieldCodeModel, diffs, objName, propName);
       if (openXmlElement is DXW.FieldChar fieldChar && model is DMW.FieldChar fieldCharModel)
-        return DMXW.FieldCharConverter.CompareModelElement(fieldChar, fieldCharModel, diffs, objName);
+        return DMXW.FieldCharConverter.CompareModelElement(fieldChar, fieldCharModel, diffs, objName, propName);
       if (openXmlElement is DXW.Break brk && model is DMW.Break brkModel)
-        return DMXW.BreakConverter.CompareModelElement(brk, brkModel, diffs, objName);
+        return DMXW.BreakConverter.CompareModelElement(brk, brkModel, diffs, objName, propName);
       if (openXmlElement is DXW.LastRenderedPageBreak lastRenderedPageBreak && model is DMW.LastRenderedPageBreak lastRenderedPageBreakModel)
-        return DMXW.LastRenderedPageBreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName);
+        return DMXW.LastRenderedPageBreakConverter.CompareModelElement(lastRenderedPageBreak, lastRenderedPageBreakModel, diffs, objName, propName);
       if (openXmlElement is DXW.NoBreakHyphen noBreakHyphen && model is Hyphen noBreakHyphenModel)
-        return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, noBreakHyphenModel, diffs, objName);
+        return DMXW.HyphenConverter.CompareModelElement(noBreakHyphen, noBreakHyphenModel, diffs, objName, propName);
       if (openXmlElement is DXW.FootnoteReference footnoteReference && model is NoteReference footnoteReferenceModel)
-        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(footnoteReference, footnoteReferenceModel, diffs, objName);
+        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(footnoteReference, footnoteReferenceModel, diffs, objName, propName);
       if (openXmlElement is DXW.EndnoteReference endnoteReference && model is NoteReference endnoteReferenceModel)
-        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(endnoteReference, endnoteReferenceModel, diffs, objName);
+        return DMXW.FootnoteEndnoteReferenceTypeConverter.CompareModelElement(endnoteReference, endnoteReferenceModel, diffs, objName, propName);
       if (openXmlElement is DXW.CommentReference commentReference && model is DMW.CommentReference commentReferenceModel)
-        return DMXW.MarkupTypeConverter.CompareModelElement(commentReference, commentReferenceModel, diffs, objName);
+        return DMXW.MarkupTypeConverter.CompareModelElement(commentReference, commentReferenceModel, diffs, objName, propName);
       if (openXmlElement is DXW.FootnoteReferenceMark footnoteReferenceMark && model is NoteReferenceMark footnoteReferenceMarkModel)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(footnoteReferenceMark, footnoteReferenceMarkModel, diffs, objName);
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(footnoteReferenceMark, footnoteReferenceMarkModel, diffs, objName, propName);
       if (openXmlElement is DXW.EndnoteReferenceMark endnoteReferenceMark && model is NoteReferenceMark endnoteReferenceMarkModel)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(endnoteReferenceMark, endnoteReferenceMarkModel, diffs, objName);
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(endnoteReferenceMark, endnoteReferenceMarkModel, diffs, objName, propName);
       if (openXmlElement is DXW.AnnotationReferenceMark annotationReferenceMark && model is NoteReferenceMark annotationReferenceMarkModel)
-        return DMXW.NoteReferenceMarkConverter.CompareModelElement(annotationReferenceMark, annotationReferenceMarkModel, diffs, objName);
+        return DMXW.NoteReferenceMarkConverter.CompareModelElement(annotationReferenceMark, annotationReferenceMarkModel, diffs, objName, propName);
       if (openXmlElement is DXW.SeparatorMark separatorMark && model is DMW.SeparatorMark separatorMarkModel)
-        return DMXW.SeparatorMarkConverter.CompareModelElement(separatorMark, separatorMarkModel, diffs, objName);
+        return DMXW.SeparatorMarkConverter.CompareModelElement(separatorMark, separatorMarkModel, diffs, objName, propName);
       if (openXmlElement is DXW.ContinuationSeparatorMark continuationSeparatorMark && model is DMW.SeparatorMark continuationSeparatorMarkModel)
-        return DMXW.SeparatorMarkConverter.CompareModelElement(continuationSeparatorMark, continuationSeparatorMarkModel, diffs, objName);
+        return DMXW.SeparatorMarkConverter.CompareModelElement(continuationSeparatorMark, continuationSeparatorMarkModel, diffs, objName, propName);
       if (openXmlElement is DXW.SymbolChar symbolChar && model is DMW.SymbolChar symbolCharModel)
-        return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, symbolCharModel, diffs, objName);
+        return DMXW.SymbolCharConverter.CompareModelElement(symbolChar, symbolCharModel, diffs, objName, propName);
       if (openXmlElement is DXW.PageNumber pageNumber && model is DMW.PageNumber pageNumberModel)
-        return DMXW.PageNumberConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName);
+        return DMXW.PageNumberConverter.CompareModelElement(pageNumber, pageNumberModel, diffs, objName, propName);
       if (openXmlElement is DXW.CarriageReturn carriageReturn && model is CarriageReturn carriageReturnModel)
-        return DMXW.CarriageReturnConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName);
+        return DMXW.CarriageReturnConverter.CompareModelElement(carriageReturn, carriageReturnModel, diffs, objName, propName);
       if (openXmlElement is DXW.TabChar tabChar && model is DMW.TabChar tabCharModel)
-        return DMXW.TabCharConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName);
+        return DMXW.TabCharConverter.CompareModelElement(tabChar, tabCharModel, diffs, objName, propName);
       if (openXmlElement is DXW.PositionalTab positionalTab && model is DMW.PositionalTab positionalTabModel)
-        return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, positionalTabModel, diffs, objName);
+        return DMXW.PositionalTabConverter.CompareModelElement(positionalTab, positionalTabModel, diffs, objName, propName);
       if (openXmlElement is DXW.SoftHyphen softHyphen && model is Hyphen softHyphenModel)
-        return DMXW.HyphenConverter.CompareModelElement(softHyphen, softHyphenModel, diffs, objName);
+        return DMXW.HyphenConverter.CompareModelElement(softHyphen, softHyphenModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort dayShort && model is DMW.RunDate dayShortModel)
-        return DMXW.RunDateConverter.CompareModelElement(dayShort, dayShortModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(dayShort, dayShortModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort dayLong && model is DMW.RunDate dayLongModel)
-        return DMXW.RunDateConverter.CompareModelElement(dayLong, dayLongModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(dayLong, dayLongModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort monthShort && model is DMW.RunDate monthShortModel)
-        return DMXW.RunDateConverter.CompareModelElement(monthShort, monthShortModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(monthShort, monthShortModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort monthLong && model is DMW.RunDate monthLongModel)
-        return DMXW.RunDateConverter.CompareModelElement(monthLong, monthLongModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(monthLong, monthLongModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort yearShort && model is DMW.RunDate yearShortModel)
-        return DMXW.RunDateConverter.CompareModelElement(yearShort, yearShortModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(yearShort, yearShortModel, diffs, objName, propName);
       if (openXmlElement is DXW.DayShort yearLong && model is DMW.RunDate yearLongModel)
-        return DMXW.RunDateConverter.CompareModelElement(yearLong, yearLongModel, diffs, objName);
+        return DMXW.RunDateConverter.CompareModelElement(yearLong, yearLongModel, diffs, objName, propName);
       if (openXmlElement is DXW.EmbeddedObject embeddedObject && model is DMW.EmbeddedObject embeddedObjectModel)
-        return DMXW.EmbeddedObjectConverter.CompareModelElement(embeddedObject, embeddedObjectModel, diffs, objName);
+        return DMXW.EmbeddedObjectConverter.CompareModelElement(embeddedObject, embeddedObjectModel, diffs, objName, propName);
       if (openXmlElement is DXW.Picture picture && model is DMW.Picture pictureModel)
-        return DMXW.PictureConverter.CompareModelElement(picture, pictureModel, diffs, objName);
+        return DMXW.PictureConverter.CompareModelElement(picture, pictureModel, diffs, objName, propName);
       if (openXmlElement is DXW.Drawing drawing && model is DMW.Drawing drawingModel)
-        return DMXW.DrawingConverter.CompareModelElement(drawing, drawingModel, diffs, objName);
+        return DMXW.DrawingConverter.CompareModelElement(drawing, drawingModel, diffs, objName, propName);
       if (openXmlElement is DXW.Ruby ruby && model is DMW.Ruby rubyModel)
-        return DMXW.RubyConverter.CompareModelElement(ruby, rubyModel, diffs, objName);
+        return DMXW.RubyConverter.CompareModelElement(ruby, rubyModel, diffs, objName, propName);
       if (openXmlElement is DXW.ContentPart contentPart && model is DMW.ContentPart contentPartModel)
-        return DMXW.ContentPartConverter.CompareModelElement(contentPart, contentPartModel, diffs, objName);
+        return DMXW.ContentPartConverter.CompareModelElement(contentPart, contentPartModel, diffs, objName, propName);
       if (openXmlElement is DX.AlternateContent alternateContent && model is DM.AlternateContent alternateContentModel)
-        return AlternateContentConverter.CompareModelElement(alternateContent, alternateContentModel, diffs, objName);
+        return AlternateContentConverter.CompareModelElement(alternateContent, alternateContentModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -262,7 +262,7 @@ public static class RunConverter
       return false;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -420,27 +420,27 @@ public static class RunConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Run? openXmlElement, DMW.Run? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Run? openXmlElement, DMW.Run? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpRsidRunProperties(openXmlElement, model.RsidRunProperties, diffs, objName))
+      if (!CmpRsidRunProperties(openXmlElement, model.RsidRunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidRunDeletion(openXmlElement, model.RsidRunDeletion, diffs, objName))
+      if (!CmpRsidRunDeletion(openXmlElement, model.RsidRunDeletion, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidRunAddition(openXmlElement, model.RsidRunAddition, diffs, objName))
+      if (!CmpRsidRunAddition(openXmlElement, model.RsidRunAddition, diffs, objName, propName))
         ok = false;
-      if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName))
+      if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<IRunContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item => item is not DXW.RunProperties), model,
-        CompareRunContent, diffs, objName))
+        CompareRunContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -13,7 +13,7 @@ public static class CategoryFilterExceptionConverter
       return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text;
   }
   
-  private static bool CmpSequenceOfReferences(DXO13DC.CategoryFilterException openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSequenceOfReferences(DXO13DC.CategoryFilterException openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO13DC.SequenceOfReferences>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class CategoryFilterExceptionConverter
     return null;
   }
   
-  private static bool CmpShapeProperties(DXO13DC.CategoryFilterException openXmlElement, DMDC.ShapeProperties3? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeProperties(DXO13DC.CategoryFilterException openXmlElement, DMDC.ShapeProperties3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.ShapeProperties>(), value, diffs, objName);
+    return DMXDC.ShapeProperties3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.ShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetShapeProperties(DXO13DC.CategoryFilterException openXmlElement, DMDC.ShapeProperties3? value)
@@ -67,7 +67,7 @@ public static class CategoryFilterExceptionConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13DC.Explosion>()?.Val);
   }
   
-  private static bool CmpExplosion(DXO13DC.CategoryFilterException openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpExplosion(DXO13DC.CategoryFilterException openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13DC.Explosion>()?.Val, value, diffs, objName, "Explosion3");
   }
@@ -85,7 +85,7 @@ public static class CategoryFilterExceptionConverter
     return openXmlElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>() != null;
   }
   
-  private static bool CmpInvertIfNegativeBoolean(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInvertIfNegativeBoolean(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO13DC.InvertIfNegativeBoolean>() != null;
     if (val == value) return true;
@@ -116,7 +116,7 @@ public static class CategoryFilterExceptionConverter
     return openXmlElement.GetFirstChild<DXO13DC.Bubble3D>() != null;
   }
   
-  private static bool CmpBubble3D(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBubble3D(DXO13DC.CategoryFilterException openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO13DC.Bubble3D>() != null;
     if (val == value) return true;
@@ -150,9 +150,9 @@ public static class CategoryFilterExceptionConverter
     return null;
   }
   
-  private static bool CmpMarker(DXO13DC.CategoryFilterException openXmlElement, DMDC.Marker3? value, DiffList? diffs, string? objName)
+  private static bool CmpMarker(DXO13DC.CategoryFilterException openXmlElement, DMDC.Marker3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.Marker>(), value, diffs, objName);
+    return DMXDC.Marker3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.Marker>(), value, diffs, objName, propName);
   }
   
   private static void SetMarker(DXO13DC.CategoryFilterException openXmlElement, DMDC.Marker3? value)
@@ -179,9 +179,9 @@ public static class CategoryFilterExceptionConverter
     return null;
   }
   
-  private static bool CmpDataLabel(DXO13DC.CategoryFilterException openXmlElement, DMDC.DataLabel3? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabel(DXO13DC.CategoryFilterException openXmlElement, DMDC.DataLabel3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabel>(), value, diffs, objName);
+    return DMXDC.DataLabel3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.DataLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabel(DXO13DC.CategoryFilterException openXmlElement, DMDC.DataLabel3? value)
@@ -214,29 +214,29 @@ public static class CategoryFilterExceptionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.CategoryFilterException? openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.CategoryFilterException? openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSequenceOfReferences(openXmlElement, value.SequenceOfReferences, diffs, objName))
+      if (!CmpSequenceOfReferences(openXmlElement, value.SequenceOfReferences, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName))
+      if (!CmpShapeProperties(openXmlElement, value.ShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExplosion(openXmlElement, value.Explosion, diffs, objName))
+      if (!CmpExplosion(openXmlElement, value.Explosion, diffs, objName, propName))
         ok = false;
-      if (!CmpInvertIfNegativeBoolean(openXmlElement, value.InvertIfNegativeBoolean, diffs, objName))
+      if (!CmpInvertIfNegativeBoolean(openXmlElement, value.InvertIfNegativeBoolean, diffs, objName, propName))
         ok = false;
-      if (!CmpBubble3D(openXmlElement, value.Bubble3D, diffs, objName))
+      if (!CmpBubble3D(openXmlElement, value.Bubble3D, diffs, objName, propName))
         ok = false;
-      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName))
+      if (!CmpMarker(openXmlElement, value.Marker, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabel(openXmlElement, value.DataLabel, diffs, objName))
+      if (!CmpDataLabel(openXmlElement, value.DataLabel, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

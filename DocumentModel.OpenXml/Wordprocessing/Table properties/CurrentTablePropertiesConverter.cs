@@ -16,9 +16,9 @@ public static class CurrentTablePropertiesConverter
     return null;
   }
 
-  public static bool CmpTableWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CmpTableWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName);
+    return DMXW.TableWidthTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableWidth>(), value, diffs, objName, propName);
   }
 
   public static void SetTableWidth(DX.OpenXmlCompositeElement openXmlElement, DMW.TableWidth? value)
@@ -44,9 +44,9 @@ public static class CurrentTablePropertiesConverter
     return null;
   }
 
-  public static bool CmpTableLayout(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs, string? objName)
+  public static bool CmpTableLayout(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLayoutKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLayout>(), value, diffs, objName);
+    return DMXW.TableLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLayout>(), value, diffs, objName, propName);
   }
 
   public static void SetTableLayout(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLayoutKind? value)
@@ -72,9 +72,9 @@ public static class CurrentTablePropertiesConverter
     return null;
   }
 
-  public static bool CmpTableLook(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLookFlags? value, DiffList? diffs, string? objName)
+  public static bool CmpTableLook(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLookFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableLookConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLook>(), value, diffs, objName);
+    return DMXW.TableLookConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableLook>(), value, diffs, objName, propName);
   }
 
   public static void SetTableLook(DX.OpenXmlCompositeElement openXmlElement, DMW.TableLookFlags? value)
@@ -100,23 +100,23 @@ public static class CurrentTablePropertiesConverter
     model.TableLook = GetTableLook(openXmlElement);
   }
 
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.CurrentTableProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.CurrentTableProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseTablePropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
          ok = false;
-      if (!CmpTableWidth(openXmlElement, model.TableWidth, diffs, objName))
+      if (!CmpTableWidth(openXmlElement, model.TableWidth, diffs, objName, propName))
         ok = false;
-      if (!CmpTableLayout(openXmlElement, model.TableLayout, diffs, objName))
+      if (!CmpTableLayout(openXmlElement, model.TableLayout, diffs, objName, propName))
         ok = false;
-      if (!CmpTableLook(openXmlElement, model.TableLook, diffs, objName))
+      if (!CmpTableLook(openXmlElement, model.TableLook, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -13,7 +13,7 @@ public static class ActiveWritingStyleConverter
     return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
-  private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguage(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
@@ -31,7 +31,7 @@ public static class ActiveWritingStyleConverter
     return openXmlElement?.VendorID?.Value;
   }
   
-  private static bool CmpVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpVendorID(DXW.ActiveWritingStyle openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VendorID?.Value == value) return true;
     diffs?.Add(objName, "VendorID", openXmlElement?.VendorID?.Value, value);
@@ -51,7 +51,7 @@ public static class ActiveWritingStyleConverter
     return openXmlElement?.DllVersion?.Value;
   }
   
-  private static bool CmpDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDllVersion(DXW.ActiveWritingStyle openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DllVersion?.Value == value) return true;
     diffs?.Add(objName, "DllVersion", openXmlElement?.DllVersion?.Value, value);
@@ -71,7 +71,7 @@ public static class ActiveWritingStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NaturalLanguageGrammarCheck);
   }
   
-  private static bool CmpNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNaturalLanguageGrammarCheck(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NaturalLanguageGrammarCheck, value, diffs, objName, "NaturalLanguageGrammarCheck");
   }
@@ -89,7 +89,7 @@ public static class ActiveWritingStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.CheckStyle);
   }
   
-  private static bool CmpCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckStyle(DXW.ActiveWritingStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.CheckStyle, value, diffs, objName, "CheckStyle");
   }
@@ -107,7 +107,7 @@ public static class ActiveWritingStyleConverter
     return StringValueConverter.GetValue(openXmlElement?.ApplicationName);
   }
   
-  private static bool CmpApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpApplicationName(DXW.ActiveWritingStyle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ApplicationName, value, diffs, objName, "ApplicationName");
   }
@@ -133,27 +133,27 @@ public static class ActiveWritingStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ActiveWritingStyle? openXmlElement, DMW.ActiveWritingStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ActiveWritingStyle? openXmlElement, DMW.ActiveWritingStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName, propName))
         ok = false;
-      if (!CmpVendorID(openXmlElement, value.VendorID, diffs, objName))
+      if (!CmpVendorID(openXmlElement, value.VendorID, diffs, objName, propName))
         ok = false;
-      if (!CmpDllVersion(openXmlElement, value.DllVersion, diffs, objName))
+      if (!CmpDllVersion(openXmlElement, value.DllVersion, diffs, objName, propName))
         ok = false;
-      if (!CmpNaturalLanguageGrammarCheck(openXmlElement, value.NaturalLanguageGrammarCheck, diffs, objName))
+      if (!CmpNaturalLanguageGrammarCheck(openXmlElement, value.NaturalLanguageGrammarCheck, diffs, objName, propName))
         ok = false;
-      if (!CmpCheckStyle(openXmlElement, value.CheckStyle, diffs, objName))
+      if (!CmpCheckStyle(openXmlElement, value.CheckStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpApplicationName(openXmlElement, value.ApplicationName, diffs, objName))
+      if (!CmpApplicationName(openXmlElement, value.ApplicationName, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class DataConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO16DCD.Data openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO16DCD.Data openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -33,9 +33,9 @@ public static class DataConverter
     return null;
   }
   
-  private static bool CmpNumericDimension(DXO16DCD.Data openXmlElement, DMDCDs.NumericDimension? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericDimension(DXO16DCD.Data openXmlElement, DMDCDs.NumericDimension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumericDimension>(), value, diffs, objName);
+    return DMXDCDs.NumericDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.NumericDimension>(), value, diffs, objName, propName);
   }
   
   private static void SetNumericDimension(DXO16DCD.Data openXmlElement, DMDCDs.NumericDimension? value)
@@ -59,9 +59,9 @@ public static class DataConverter
     return null;
   }
   
-  private static bool CmpStringDimension(DXO16DCD.Data openXmlElement, DMDCDs.StringDimension? value, DiffList? diffs, string? objName)
+  private static bool CmpStringDimension(DXO16DCD.Data openXmlElement, DMDCDs.StringDimension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.StringDimension>(), value, diffs, objName);
+    return DMXDCDs.StringDimensionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.StringDimension>(), value, diffs, objName, propName);
   }
   
   private static void SetStringDimension(DXO16DCD.Data openXmlElement, DMDCDs.StringDimension? value)
@@ -85,9 +85,9 @@ public static class DataConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.Data openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.Data openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.Data openXmlElement, DMDCDs.ExtensionList? value)
@@ -117,23 +117,23 @@ public static class DataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Data? openXmlElement, DMDCDs.Data? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Data? openXmlElement, DMDCDs.Data? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpNumericDimension(openXmlElement, value.NumericDimension, diffs, objName))
+      if (!CmpNumericDimension(openXmlElement, value.NumericDimension, diffs, objName, propName))
         ok = false;
-      if (!CmpStringDimension(openXmlElement, value.StringDimension, diffs, objName))
+      if (!CmpStringDimension(openXmlElement, value.StringDimension, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

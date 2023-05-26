@@ -19,7 +19,7 @@ public static class DLblsExtensionListConverter
     return null;
   }
   
-  private static bool CmpDLblsExtensions(DXDC.DLblsExtensionList openXmlElement, Collection<DMDC.DLblsExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpDLblsExtensions(DXDC.DLblsExtensionList openXmlElement, Collection<DMDC.DLblsExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.DLblsExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class DLblsExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class DLblsExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.DLblsExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DLblsExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class DLblsExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DLblsExtensionList? openXmlElement, DMDC.DLblsExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DLblsExtensionList? openXmlElement, DMDC.DLblsExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDLblsExtensions(openXmlElement, value.DLblsExtensions, diffs, objName))
+      if (!CmpDLblsExtensions(openXmlElement, value.DLblsExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class ScalingConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.LogBase>()?.Val);
   }
   
-  private static bool CmpLogBase(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpLogBase(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.LogBase>()?.Val, value, diffs, objName, "LogBase");
   }
@@ -31,9 +31,9 @@ public static class ScalingConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDC.OrientationKind>(openXmlElement.GetFirstChild<DXDC.Orientation>()?.Val?.Value);
   }
   
-  private static bool CmpOrientation(DXDC.Scaling openXmlElement, DMDC.OrientationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOrientation(DXDC.Scaling openXmlElement, DMDC.OrientationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDC.OrientationKind>(openXmlElement.GetFirstChild<DXDC.Orientation>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.OrientationValues, DMDC.OrientationKind>(openXmlElement.GetFirstChild<DXDC.Orientation>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOrientation(DXDC.Scaling openXmlElement, DMDC.OrientationKind? value)
@@ -59,7 +59,7 @@ public static class ScalingConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.MaxAxisValue>()?.Val);
   }
   
-  private static bool CmpMaxAxisValue(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxAxisValue(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.MaxAxisValue>()?.Val, value, diffs, objName, "MaxAxisValue");
   }
@@ -77,7 +77,7 @@ public static class ScalingConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.MinAxisValue>()?.Val);
   }
   
-  private static bool CmpMinAxisValue(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpMinAxisValue(DXDC.Scaling openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.MinAxisValue>()?.Val, value, diffs, objName, "MinAxisValue");
   }
@@ -98,9 +98,9 @@ public static class ScalingConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.Scaling openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.Scaling openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.Scaling openXmlElement, DMDC.ExtensionList? value)
@@ -131,25 +131,25 @@ public static class ScalingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Scaling? openXmlElement, DMDC.Scaling? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Scaling? openXmlElement, DMDC.Scaling? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLogBase(openXmlElement, value.LogBase, diffs, objName))
+      if (!CmpLogBase(openXmlElement, value.LogBase, diffs, objName, propName))
         ok = false;
-      if (!CmpOrientation(openXmlElement, value.Orientation, diffs, objName))
+      if (!CmpOrientation(openXmlElement, value.Orientation, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxAxisValue(openXmlElement, value.MaxAxisValue, diffs, objName))
+      if (!CmpMaxAxisValue(openXmlElement, value.MaxAxisValue, diffs, objName, propName))
         ok = false;
-      if (!CmpMinAxisValue(openXmlElement, value.MinAxisValue, diffs, objName))
+      if (!CmpMinAxisValue(openXmlElement, value.MinAxisValue, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

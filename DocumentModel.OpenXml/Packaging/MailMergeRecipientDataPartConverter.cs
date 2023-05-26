@@ -13,7 +13,7 @@ public static class MailMergeRecipientDataPartConverter
       return DMXW.RecipientsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Recipients);
   }
   
-  private static bool CmpRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.Recipients? value, DiffList? diffs, string? objName)
+  private static bool CmpRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.Recipients? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -36,7 +36,7 @@ public static class MailMergeRecipientDataPartConverter
       return DMXW.MailMergeRecipientsConverter.CreateModelElement(openXmlElement?.RootElement as DXOW.MailMergeRecipients);
   }
   
-  private static bool CmpMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.MailMergeRecipients? value, DiffList? diffs, string? objName)
+  private static bool CmpMailMergeRecipients(DXPack.MailMergeRecipientDataPart openXmlElement, DMW.MailMergeRecipients? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -56,7 +56,7 @@ public static class MailMergeRecipientDataPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.MailMergeRecipientDataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.MailMergeRecipientDataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -76,21 +76,21 @@ public static class MailMergeRecipientDataPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement, DMPack.MailMergeRecipientDataPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.MailMergeRecipientDataPart? openXmlElement, DMPack.MailMergeRecipientDataPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRecipients(openXmlElement, value.Recipients, diffs, objName))
+      if (!CmpRecipients(openXmlElement, value.Recipients, diffs, objName, propName))
         ok = false;
-      if (!CmpMailMergeRecipients(openXmlElement, value.MailMergeRecipients, diffs, objName))
+      if (!CmpMailMergeRecipients(openXmlElement, value.MailMergeRecipients, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

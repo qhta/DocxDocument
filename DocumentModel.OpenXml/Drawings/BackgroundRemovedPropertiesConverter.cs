@@ -16,9 +16,9 @@ public static class BackgroundRemovedPropertiesConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO21DL.BackgroundRemovedProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO21DL.BackgroundRemovedProperties openXmlElement, DMD.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DL.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO21DL.BackgroundRemovedProperties openXmlElement, DMD.OfficeArtExtensionList? value)
@@ -45,17 +45,17 @@ public static class BackgroundRemovedPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DL.BackgroundRemovedProperties? openXmlElement, DMD.BackgroundRemovedProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DL.BackgroundRemovedProperties? openXmlElement, DMD.BackgroundRemovedProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

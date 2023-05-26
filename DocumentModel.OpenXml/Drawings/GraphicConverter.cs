@@ -16,9 +16,9 @@ public static class GraphicConverter
     return null;
   }
   
-  private static bool CmpGraphicData(DXD.Graphic openXmlElement, DMD.GraphicData? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphicData(DXD.Graphic openXmlElement, DMD.GraphicData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GraphicDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GraphicData>(), value, diffs, objName);
+    return DMXD.GraphicDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GraphicData>(), value, diffs, objName, propName);
   }
   
   private static void SetGraphicData(DXD.Graphic openXmlElement, DMD.GraphicData? value)
@@ -45,17 +45,17 @@ public static class GraphicConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Graphic? openXmlElement, DMD.Graphic? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Graphic? openXmlElement, DMD.Graphic? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGraphicData(openXmlElement, value.GraphicData, diffs, objName))
+      if (!CmpGraphicData(openXmlElement, value.GraphicData, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

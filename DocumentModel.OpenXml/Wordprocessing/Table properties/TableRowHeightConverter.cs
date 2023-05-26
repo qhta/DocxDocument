@@ -11,7 +11,7 @@ public static class TableRowHeightConverter
     return openXmlElement?.Val?.Value;
   }
   
-  private static bool CmpVal(DXW.TableRowHeight openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.TableRowHeight openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Val?.Value, value);
@@ -30,9 +30,9 @@ public static class TableRowHeightConverter
     return EnumValueConverter.GetValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value);
   }
   
-  private static bool CmpHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.HeightRuleValues, DMW.HeightRuleKind>(openXmlElement?.HeightType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHeightType(DXW.TableRowHeight openXmlElement, DMW.HeightRuleKind? value)
@@ -54,19 +54,19 @@ public static class TableRowHeightConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableRowHeight? openXmlElement, DMW.TableRowHeight? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRowHeight? openXmlElement, DMW.TableRowHeight? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, model.Value, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Value, diffs, objName, propName))
         ok = false;
-      if (!CmpHeightType(openXmlElement, model.Type, diffs, objName))
+      if (!CmpHeightType(openXmlElement, model.Type, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class HslConverter
     return openXmlElement?.Hue?.Value;
   }
   
-  private static bool CmpHue(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Hue?.Value == value) return true;
     diffs?.Add(objName, "Hue", openXmlElement?.Hue?.Value, value);
@@ -33,7 +33,7 @@ public static class HslConverter
     return openXmlElement?.Saturation?.Value;
   }
   
-  private static bool CmpSaturation(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSaturation(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Saturation?.Value == value) return true;
     diffs?.Add(objName, "Saturation", openXmlElement?.Saturation?.Value, value);
@@ -53,7 +53,7 @@ public static class HslConverter
     return openXmlElement?.Luminance?.Value;
   }
   
-  private static bool CmpLuminance(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLuminance(DXD.Hsl openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Luminance?.Value == value) return true;
     diffs?.Add(objName, "Luminance", openXmlElement?.Luminance?.Value, value);
@@ -78,21 +78,21 @@ public static class HslConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Hsl? openXmlElement, DMD.Hsl? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Hsl? openXmlElement, DMD.Hsl? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName, propName))
         ok = false;
-      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName))
+      if (!CmpSaturation(openXmlElement, value.Saturation, diffs, objName, propName))
         ok = false;
-      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName))
+      if (!CmpLuminance(openXmlElement, value.Luminance, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

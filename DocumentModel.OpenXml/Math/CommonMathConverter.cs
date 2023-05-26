@@ -59,56 +59,56 @@ public static class CommonMathConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMM.ICommonMathContent? value, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DMM.ICommonMathContent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       if (openXmlElement is DXM.Paragraph paragraph && value is DMM.Paragraph paragraphModel)
-        return DMXM.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXM.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXM.OfficeMath officeMath && value is DMM.OfficeMath officeMathModel)
-        return DMXM.OfficeMathConverter.CompareModelElement(officeMath, officeMathModel, diffs, objName);
+        return DMXM.OfficeMathConverter.CompareModelElement(officeMath, officeMathModel, diffs, objName, propName);
       if (openXmlElement is DXM.Accent accent && value is DMM.Accent accentModel)
-        return DMXM.AccentConverter.CompareModelElement(accent, accentModel, diffs, objName);
+        return DMXM.AccentConverter.CompareModelElement(accent, accentModel, diffs, objName, propName);
       if (openXmlElement is DXM.Bar bar && value is DMM.Bar barModel)
-        return DMXM.BarConverter.CompareModelElement(bar, barModel, diffs, objName);
+        return DMXM.BarConverter.CompareModelElement(bar, barModel, diffs, objName, propName);
       if (openXmlElement is DXM.Box box && value is DMM.Box boxModel)
-        return DMXM.BoxConverter.CompareModelElement(box, boxModel, diffs, objName);
+        return DMXM.BoxConverter.CompareModelElement(box, boxModel, diffs, objName, propName);
       if (openXmlElement is DXM.BorderBox borderBox && value is DMM.BorderBox borderBoxModel)
-        return DMXM.BorderBoxConverter.CompareModelElement(borderBox, borderBoxModel, diffs, objName);
+        return DMXM.BorderBoxConverter.CompareModelElement(borderBox, borderBoxModel, diffs, objName, propName);
       if (openXmlElement is DXM.Delimiter delimiter && value is DMM.Delimiter delimiterModel)
-        return DMXM.DelimiterConverter.CompareModelElement(delimiter, delimiterModel, diffs, objName);
+        return DMXM.DelimiterConverter.CompareModelElement(delimiter, delimiterModel, diffs, objName, propName);
       if (openXmlElement is DXM.EquationArray equationArray && value is DMM.EquationArray equationArrayModel)
-        return DMXM.EquationArrayConverter.CompareModelElement(equationArray, equationArrayModel, diffs, objName);
+        return DMXM.EquationArrayConverter.CompareModelElement(equationArray, equationArrayModel, diffs, objName, propName);
       if (openXmlElement is DXM.Fraction fraction && value is DMM.Fraction fractionModel)
-        return DMXM.FractionConverter.CompareModelElement(fraction, fractionModel, diffs, objName);
+        return DMXM.FractionConverter.CompareModelElement(fraction, fractionModel, diffs, objName, propName);
       if (openXmlElement is DXM.MathFunction mathFunction && value is DMM.Function mathFunctionModel)
-        return DMXM.MathFunctionConverter.CompareModelElement(mathFunction, mathFunctionModel, diffs, objName);
+        return DMXM.MathFunctionConverter.CompareModelElement(mathFunction, mathFunctionModel, diffs, objName, propName);
       if (openXmlElement is DXM.GroupChar groupChar && value is DMM.GroupChar groupCharModel)
-        return DMXM.GroupCharConverter.CompareModelElement(groupChar, groupCharModel, diffs, objName);
+        return DMXM.GroupCharConverter.CompareModelElement(groupChar, groupCharModel, diffs, objName, propName);
       if (openXmlElement is DXM.LimitLower limitLower && value is DMM.LimitLower limitLowerModel)
-        return DMXM.LimitLowerConverter.CompareModelElement(limitLower, limitLowerModel, diffs, objName);
+        return DMXM.LimitLowerConverter.CompareModelElement(limitLower, limitLowerModel, diffs, objName, propName);
       if (openXmlElement is DXM.LimitUpper limitUpper && value is DMM.LimitUpper limitUpperModel)
-        return DMXM.LimitUpperConverter.CompareModelElement(limitUpper, limitUpperModel, diffs, objName);
+        return DMXM.LimitUpperConverter.CompareModelElement(limitUpper, limitUpperModel, diffs, objName, propName);
       if (openXmlElement is DXM.Matrix matrix && value is DMM.Matrix matrixModel)
-        return DMXM.MatrixConverter.CompareModelElement(matrix, matrixModel, diffs, objName);
+        return DMXM.MatrixConverter.CompareModelElement(matrix, matrixModel, diffs, objName, propName);
       if (openXmlElement is DXM.Nary nary && value is DMM.Nary naryModel)
-        return DMXM.NaryConverter.CompareModelElement(nary, naryModel, diffs, objName);
+        return DMXM.NaryConverter.CompareModelElement(nary, naryModel, diffs, objName, propName);
       if (openXmlElement is DXM.Phantom phantom && value is DMM.Phantom phantomModel)
-        return DMXM.PhantomConverter.CompareModelElement(phantom, phantomModel, diffs, objName);
+        return DMXM.PhantomConverter.CompareModelElement(phantom, phantomModel, diffs, objName, propName);
       if (openXmlElement is DXM.Radical radical && value is DMM.Radical radicalModel)
-        return DMXM.RadicalConverter.CompareModelElement(radical, radicalModel, diffs, objName);
+        return DMXM.RadicalConverter.CompareModelElement(radical, radicalModel, diffs, objName, propName);
       if (openXmlElement is DXM.PreSubSuper preSubSuper && value is DMM.PreSubSuper preSubSuperModel)
-        return DMXM.PreSubSuperConverter.CompareModelElement(preSubSuper, preSubSuperModel, diffs, objName);
+        return DMXM.PreSubSuperConverter.CompareModelElement(preSubSuper, preSubSuperModel, diffs, objName, propName);
       if (openXmlElement is DXM.Subscript subscript && value is DMM.Subscript subscriptModel)
-        return DMXM.SubscriptConverter.CompareModelElement(subscript, subscriptModel, diffs, objName);
+        return DMXM.SubscriptConverter.CompareModelElement(subscript, subscriptModel, diffs, objName, propName);
       if (openXmlElement is DXM.SubSuperscript subSuperscript && value is DMM.SubSuperscript subSuperscriptModel)
-        return DMXM.SubSuperscriptConverter.CompareModelElement(subSuperscript, subSuperscriptModel, diffs, objName);
+        return DMXM.SubSuperscriptConverter.CompareModelElement(subSuperscript, subSuperscriptModel, diffs, objName, propName);
       if (openXmlElement is DXM.Superscript superscript && value is DMM.Superscript superscriptModel)
-        return DMXM.SuperscriptConverter.CompareModelElement(superscript, superscriptModel, diffs, objName);
+        return DMXM.SuperscriptConverter.CompareModelElement(superscript, superscriptModel, diffs, objName, propName);
       return null;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

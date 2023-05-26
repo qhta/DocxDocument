@@ -13,7 +13,7 @@ public static class HeaderFooterConverter
     return openXmlElement?.AlignWithMargins?.Value;
   }
   
-  private static bool CmpAlignWithMargins(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignWithMargins(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AlignWithMargins?.Value == value) return true;
     diffs?.Add(objName, "AlignWithMargins", openXmlElement?.AlignWithMargins?.Value, value);
@@ -36,7 +36,7 @@ public static class HeaderFooterConverter
     return openXmlElement?.DifferentOddEven?.Value;
   }
   
-  private static bool CmpDifferentOddEven(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDifferentOddEven(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DifferentOddEven?.Value == value) return true;
     diffs?.Add(objName, "DifferentOddEven", openXmlElement?.DifferentOddEven?.Value, value);
@@ -59,7 +59,7 @@ public static class HeaderFooterConverter
     return openXmlElement?.DifferentFirst?.Value;
   }
   
-  private static bool CmpDifferentFirst(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDifferentFirst(DXO16DCD.HeaderFooter openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DifferentFirst?.Value == value) return true;
     diffs?.Add(objName, "DifferentFirst", openXmlElement?.DifferentFirst?.Value, value);
@@ -82,7 +82,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.OddHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpOddHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOddHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.OddHeaderXsdstring>()?.Text == value;
   }
@@ -107,7 +107,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.OddFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpOddFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOddFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.OddFooterXsdstring>()?.Text == value;
   }
@@ -132,7 +132,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpEvenHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.EvenHeaderXsdstring>()?.Text == value;
   }
@@ -157,7 +157,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.EvenFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpEvenFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.EvenFooterXsdstring>()?.Text == value;
   }
@@ -182,7 +182,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>()?.Text;
   }
   
-  private static bool CmpFirstHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstHeaderXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.FirstHeaderXsdstring>()?.Text == value;
   }
@@ -207,7 +207,7 @@ public static class HeaderFooterConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.FirstFooterXsdstring>()?.Text;
   }
   
-  private static bool CmpFirstFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstFooterXsdstring(DXO16DCD.HeaderFooter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.FirstFooterXsdstring>()?.Text == value;
   }
@@ -243,33 +243,33 @@ public static class HeaderFooterConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.HeaderFooter? openXmlElement, DMDCDs.HeaderFooter? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.HeaderFooter? openXmlElement, DMDCDs.HeaderFooter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAlignWithMargins(openXmlElement, value.AlignWithMargins, diffs, objName))
+      if (!CmpAlignWithMargins(openXmlElement, value.AlignWithMargins, diffs, objName, propName))
         ok = false;
-      if (!CmpDifferentOddEven(openXmlElement, value.DifferentOddEven, diffs, objName))
+      if (!CmpDifferentOddEven(openXmlElement, value.DifferentOddEven, diffs, objName, propName))
         ok = false;
-      if (!CmpDifferentFirst(openXmlElement, value.DifferentFirst, diffs, objName))
+      if (!CmpDifferentFirst(openXmlElement, value.DifferentFirst, diffs, objName, propName))
         ok = false;
-      if (!CmpOddHeaderXsdstring(openXmlElement, value.OddHeaderXsdstring, diffs, objName))
+      if (!CmpOddHeaderXsdstring(openXmlElement, value.OddHeaderXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpOddFooterXsdstring(openXmlElement, value.OddFooterXsdstring, diffs, objName))
+      if (!CmpOddFooterXsdstring(openXmlElement, value.OddFooterXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpEvenHeaderXsdstring(openXmlElement, value.EvenHeaderXsdstring, diffs, objName))
+      if (!CmpEvenHeaderXsdstring(openXmlElement, value.EvenHeaderXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpEvenFooterXsdstring(openXmlElement, value.EvenFooterXsdstring, diffs, objName))
+      if (!CmpEvenFooterXsdstring(openXmlElement, value.EvenFooterXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstHeaderXsdstring(openXmlElement, value.FirstHeaderXsdstring, diffs, objName))
+      if (!CmpFirstHeaderXsdstring(openXmlElement, value.FirstHeaderXsdstring, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstFooterXsdstring(openXmlElement, value.FirstFooterXsdstring, diffs, objName))
+      if (!CmpFirstFooterXsdstring(openXmlElement, value.FirstFooterXsdstring, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

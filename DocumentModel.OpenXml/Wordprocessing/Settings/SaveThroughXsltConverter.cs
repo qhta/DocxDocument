@@ -13,7 +13,7 @@ public static class SaveThroughXsltConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  public static bool CmpId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
+  public static bool CmpId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "Id");
   }
@@ -30,7 +30,7 @@ public static class SaveThroughXsltConverter
     return StringValueConverter.GetValue(openXmlElement?.SolutionId);
   }
   
-  private static bool CmpSolutionId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSolutionId(DXW.SaveThroughXslt openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SolutionId, value, diffs, objName, "SolutionId");
   }
@@ -62,17 +62,17 @@ public static class SaveThroughXsltConverter
   }
 
 
-  public static bool CompareModelElement(DXW.SaveThroughXslt? openXmlElement, DMW.SaveThroughXslt? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SaveThroughXslt? openXmlElement, DMW.SaveThroughXslt? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, model.Id, diffs, objName))
+      if (!CmpId(openXmlElement, model.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

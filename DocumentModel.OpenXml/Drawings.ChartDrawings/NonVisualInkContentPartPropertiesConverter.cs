@@ -13,7 +13,7 @@ public static class NonVisualInkContentPartPropertiesConverter
     return openXmlElement?.IsComment?.Value;
   }
   
-  private static bool CmpIsComment(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpIsComment(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.IsComment?.Value == value) return true;
     diffs?.Add(objName, "IsComment", openXmlElement?.IsComment?.Value, value);
@@ -39,9 +39,9 @@ public static class NonVisualInkContentPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpContentPartLocks(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.ContentPartLocks? value, DiffList? diffs, string? objName)
+  private static bool CmpContentPartLocks(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.ContentPartLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ContentPartLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ContentPartLocks>(), value, diffs, objName);
+    return DMXD.ContentPartLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ContentPartLocks>(), value, diffs, objName, propName);
   }
   
   private static void SetContentPartLocks(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.ContentPartLocks? value)
@@ -68,9 +68,9 @@ public static class NonVisualInkContentPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.OfficeArtExtensionList2? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.OfficeArtExtensionList2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OfficeArtExtensionList2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeArtExtensionList2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO10DCD.NonVisualInkContentPartProperties openXmlElement, DMD.OfficeArtExtensionList2? value)
@@ -99,21 +99,21 @@ public static class NonVisualInkContentPartPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DCD.NonVisualInkContentPartProperties? openXmlElement, DMDCDs.NonVisualInkContentPartProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.NonVisualInkContentPartProperties? openXmlElement, DMDCDs.NonVisualInkContentPartProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIsComment(openXmlElement, value.IsComment, diffs, objName))
+      if (!CmpIsComment(openXmlElement, value.IsComment, diffs, objName, propName))
         ok = false;
-      if (!CmpContentPartLocks(openXmlElement, value.ContentPartLocks, diffs, objName))
+      if (!CmpContentPartLocks(openXmlElement, value.ContentPartLocks, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

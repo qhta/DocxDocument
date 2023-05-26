@@ -16,9 +16,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpHeaderFooter(DXO16DCD.PrintSettings openXmlElement, DMDCDs.HeaderFooter? value, DiffList? diffs, string? objName)
+  private static bool CmpHeaderFooter(DXO16DCD.PrintSettings openXmlElement, DMDCDs.HeaderFooter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.HeaderFooter>(), value, diffs, objName);
+    return DMXDCDs.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.HeaderFooter>(), value, diffs, objName, propName);
   }
   
   private static void SetHeaderFooter(DXO16DCD.PrintSettings openXmlElement, DMDCDs.HeaderFooter? value)
@@ -45,9 +45,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpPageMargins(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageMargins? value, DiffList? diffs, string? objName)
+  private static bool CmpPageMargins(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageMargins? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PageMargins>(), value, diffs, objName);
+    return DMXDCDs.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PageMargins>(), value, diffs, objName, propName);
   }
   
   private static void SetPageMargins(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageMargins? value)
@@ -74,9 +74,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpPageSetup(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageSetup? value, DiffList? diffs, string? objName)
+  private static bool CmpPageSetup(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageSetup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PageSetup>(), value, diffs, objName);
+    return DMXDCDs.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.PageSetup>(), value, diffs, objName, propName);
   }
   
   private static void SetPageSetup(DXO16DCD.PrintSettings openXmlElement, DMDCDs.PageSetup? value)
@@ -105,21 +105,21 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.PrintSettings? openXmlElement, DMDCDs.PrintSettings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.PrintSettings? openXmlElement, DMDCDs.PrintSettings? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHeaderFooter(openXmlElement, value.HeaderFooter, diffs, objName))
+      if (!CmpHeaderFooter(openXmlElement, value.HeaderFooter, diffs, objName, propName))
         ok = false;
-      if (!CmpPageMargins(openXmlElement, value.PageMargins, diffs, objName))
+      if (!CmpPageMargins(openXmlElement, value.PageMargins, diffs, objName, propName))
         ok = false;
-      if (!CmpPageSetup(openXmlElement, value.PageSetup, diffs, objName))
+      if (!CmpPageSetup(openXmlElement, value.PageSetup, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

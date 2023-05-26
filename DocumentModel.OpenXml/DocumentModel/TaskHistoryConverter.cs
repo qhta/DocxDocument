@@ -19,7 +19,7 @@ public static class TaskHistoryConverter
     return null;
   }
   
-  private static bool CmpTaskHistoryEvents(DXO21DT.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskHistoryEvents(DXO21DT.TaskHistory openXmlElement, Collection<DM.TaskHistoryEvent>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO21DT.TaskHistoryEvent>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class TaskHistoryConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class TaskHistoryConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.TaskHistoryEventConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.TaskHistoryEventConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class TaskHistoryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskHistory? openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskHistory? openXmlElement, DM.TaskHistory? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTaskHistoryEvents(openXmlElement, value.TaskHistoryEvents, diffs, objName))
+      if (!CmpTaskHistoryEvents(openXmlElement, value.TaskHistoryEvents, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

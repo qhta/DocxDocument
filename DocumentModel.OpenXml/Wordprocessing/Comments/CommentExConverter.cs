@@ -13,7 +13,7 @@ public static class CommentExConverter
     return null;
   }
   
-  private static bool CmpParaId(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
@@ -35,7 +35,7 @@ public static class CommentExConverter
     return null;
   }
   
-  private static bool CmpParaIdParent(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaIdParent(DXO13W.CommentEx openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaIdParent?.Value, value, diffs, objName, "ParaIdParent");
   }
@@ -55,7 +55,7 @@ public static class CommentExConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Done);
   }
   
-  private static bool CmpDone(DXO13W.CommentEx openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDone(DXO13W.CommentEx openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Done, value, diffs, objName, "Done");
   }
@@ -80,21 +80,21 @@ public static class CommentExConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13W.CommentEx? openXmlElement, DMW.CommentEx? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.CommentEx? openXmlElement, DMW.CommentEx? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName))
+      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName, propName))
         ok = false;
-      if (!CmpParaIdParent(openXmlElement, value.ParaIdParent, diffs, objName))
+      if (!CmpParaIdParent(openXmlElement, value.ParaIdParent, diffs, objName, propName))
         ok = false;
-      if (!CmpDone(openXmlElement, value.Done, diffs, objName))
+      if (!CmpDone(openXmlElement, value.Done, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

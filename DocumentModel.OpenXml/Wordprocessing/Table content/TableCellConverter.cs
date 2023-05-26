@@ -14,9 +14,9 @@ public static class TableCellConverter
     return null;
   }
   
-  private static bool CmpTableCellProperties(DXW.TableCell openXmlElement, DMW.TableCellProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTableCellProperties(DXW.TableCell openXmlElement, DMW.TableCellProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellProperties>(), value, diffs, objName);
+    return DMXW.TableCellPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableCellProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTableCellProperties(DXW.TableCell openXmlElement, DMW.TableCellProperties? value)
@@ -55,24 +55,24 @@ public static class TableCellConverter
     return null;
   }
 
-  public static bool CompareTableCellElement(DX.OpenXmlElement? openXmlElement, DMW.ITableCellContent? value, DiffList? diffs = null, string? objName = null)
+  public static bool CompareTableCellElement(DX.OpenXmlElement? openXmlElement, DMW.ITableCellContent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       if (openXmlElement is DXW.Paragraph paragraph && value is DMW.Paragraph paragraphModel)
-        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName);
+        return DMXW.ParagraphConverter.CompareModelElement(paragraph, paragraphModel, diffs, objName, propName);
       if (openXmlElement is DXW.Table table && value is DMW.Table tableModel)
-        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName);
+        return DMXW.TableConverter.CompareModelElement(table, tableModel, diffs, objName, propName);
       if (openXmlElement is DXW.SdtBlock sdtBlock && value is DMW.SdtBlock sdtBlockModel)
-        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName);
+        return DMXW.SdtBlockConverter.CompareModelElement(sdtBlock, sdtBlockModel, diffs, objName, propName);
       if (openXmlElement is DXW.CustomXmlBlock customXmlBlock && value is DMW.CustomXmlBlock customXmlBlockModel)
-        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName);
+        return DMXW.CustomXmlBlockConverter.CompareModelElement(customXmlBlock, customXmlBlockModel, diffs, objName, propName);
       if (openXmlElement is DXW.AltChunk altChunk && value is DMW.AltChunk altChunkModel)
-        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName);
+        return DMXW.AltChunkConverter.CompareModelElement(altChunk, altChunkModel, diffs, objName, propName);
 
       if (value is DMW.ICommonContent commonElementModel)
       {
-        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result = CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result != null)
           return (bool)result;
       }
@@ -80,7 +80,7 @@ public static class TableCellConverter
       return false;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -122,12 +122,12 @@ public static class TableCellConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableCell? openXmlElement, DMW.TableCell? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableCell? openXmlElement, DMW.TableCell? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTableCellProperties(openXmlElement, value.TableCellProperties, diffs, objName))
+      if (!CmpTableCellProperties(openXmlElement, value.TableCellProperties, diffs, objName, propName))
         ok = false;
       var tableRowItems = value.ToArray();
       var elements = openXmlElement.Elements().Where(item => !(item is DXW.TableCellProperties)).ToArray();
@@ -135,7 +135,7 @@ public static class TableCellConverter
       {
         var element = elements[i];
         var item = tableRowItems[i];
-        if (!CompareTableCellElement(element, item, diffs, objName))
+        if (!CompareTableCellElement(element, item, diffs, objName, propName))
           ok = false;
       }
       if (!Int32ValueConverter.CmpValue(elements.Count(), tableRowItems.Count(), diffs, objName, "TableRow.Items.Count"))
@@ -143,7 +143,7 @@ public static class TableCellConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

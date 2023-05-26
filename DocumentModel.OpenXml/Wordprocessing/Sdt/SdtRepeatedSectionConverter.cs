@@ -13,7 +13,7 @@ public static class SdtRepeatedSectionConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13W.SectionTitle>()?.Val);
   }
   
-  private static bool CmpSectionTitle(DXO13W.SdtRepeatedSection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSectionTitle(DXO13W.SdtRepeatedSection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13W.SectionTitle>()?.Val, value, diffs, objName, "SectionTitle");
   }
@@ -31,7 +31,7 @@ public static class SdtRepeatedSectionConverter
     return openXmlElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>() != null;
   }
   
-  private static bool CmpDoNotAllowInsertDeleteSection(DXO13W.SdtRepeatedSection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDoNotAllowInsertDeleteSection(DXO13W.SdtRepeatedSection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO13W.DoNotAllowInsertDeleteSection>() != null;
     if (val == value) return true;
@@ -66,19 +66,19 @@ public static class SdtRepeatedSectionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13W.SdtRepeatedSection? openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13W.SdtRepeatedSection? openXmlElement, DMW.SdtRepeatedSection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSectionTitle(openXmlElement, value.SectionTitle, diffs, objName))
+      if (!CmpSectionTitle(openXmlElement, value.SectionTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpDoNotAllowInsertDeleteSection(openXmlElement, value.DoNotAllowInsertDeleteSection, diffs, objName))
+      if (!CmpDoNotAllowInsertDeleteSection(openXmlElement, value.DoNotAllowInsertDeleteSection, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

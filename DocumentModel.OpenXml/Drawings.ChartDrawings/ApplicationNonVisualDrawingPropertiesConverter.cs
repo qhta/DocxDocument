@@ -13,7 +13,7 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.Macro);
   }
   
-  private static bool CmpMacro(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMacro(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Macro, value, diffs, objName, "Macro");
   }
@@ -31,7 +31,7 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return openXmlElement?.Published?.Value;
   }
   
-  private static bool CmpPublished(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPublished(DXO10DCD.ApplicationNonVisualDrawingProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Published?.Value == value) return true;
     diffs?.Add(objName, "Published", openXmlElement?.Published?.Value, value);
@@ -58,19 +58,19 @@ public static class ApplicationNonVisualDrawingPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DCD.ApplicationNonVisualDrawingProperties? openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.ApplicationNonVisualDrawingProperties? openXmlElement, DMDCDs.ApplicationNonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName))
+      if (!CmpMacro(openXmlElement, value.Macro, diffs, objName, propName))
         ok = false;
-      if (!CmpPublished(openXmlElement, value.Published, diffs, objName))
+      if (!CmpPublished(openXmlElement, value.Published, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

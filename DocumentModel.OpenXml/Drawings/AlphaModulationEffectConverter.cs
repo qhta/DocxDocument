@@ -16,9 +16,9 @@ public static class AlphaModulationEffectConverter
     return null;
   }
   
-  private static bool CmpEffectContainer(DXD.AlphaModulationEffect openXmlElement, DMD.EffectContainer? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectContainer(DXD.AlphaModulationEffect openXmlElement, DMD.EffectContainer? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectContainer>(), value, diffs, objName);
+    return DMXD.EffectContainerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectContainer>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectContainer(DXD.AlphaModulationEffect openXmlElement, DMD.EffectContainer? value)
@@ -45,17 +45,17 @@ public static class AlphaModulationEffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AlphaModulationEffect? openXmlElement, DMD.AlphaModulationEffect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaModulationEffect? openXmlElement, DMD.AlphaModulationEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEffectContainer(openXmlElement, value.EffectContainer, diffs, objName))
+      if (!CmpEffectContainer(openXmlElement, value.EffectContainer, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

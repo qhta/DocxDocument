@@ -13,9 +13,9 @@ public static class GroupShapePropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value);
   }
   
-  private static bool CmpBlackWhiteMode(DXDCD.GroupShapeProperties openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs, string? objName)
+  private static bool CmpBlackWhiteMode(DXDCD.GroupShapeProperties openXmlElement, DMD.BlackWhiteMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.BlackWhiteModeValues, DMD.BlackWhiteMode>(openXmlElement?.BlackWhiteMode?.Value, value, diffs, objName, propName);
   }
   
   private static void SetBlackWhiteMode(DXDCD.GroupShapeProperties openXmlElement, DMD.BlackWhiteMode? value)
@@ -34,9 +34,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpTransformGroup(DXDCD.GroupShapeProperties openXmlElement, DMD.TransformGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpTransformGroup(DXDCD.GroupShapeProperties openXmlElement, DMD.TransformGroup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TransformGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TransformGroup>(), value, diffs, objName);
+    return DMXD.TransformGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.TransformGroup>(), value, diffs, objName, propName);
   }
   
   private static void SetTransformGroup(DXDCD.GroupShapeProperties openXmlElement, DMD.TransformGroup? value)
@@ -57,7 +57,7 @@ public static class GroupShapePropertiesConverter
     return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXDCD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXDCD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
@@ -88,9 +88,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpSolidFill(DXDCD.GroupShapeProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXDCD.GroupShapeProperties openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
   }
   
   private static void SetSolidFill(DXDCD.GroupShapeProperties openXmlElement, DMD.SolidFill? value)
@@ -114,9 +114,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpGradientFill(DXDCD.GroupShapeProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXDCD.GroupShapeProperties openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
   }
   
   private static void SetGradientFill(DXDCD.GroupShapeProperties openXmlElement, DMD.GradientFill? value)
@@ -140,9 +140,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpBlipFill(DXDCD.GroupShapeProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXDCD.GroupShapeProperties openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
   }
   
   private static void SetBlipFill(DXDCD.GroupShapeProperties openXmlElement, DMD.BlipFill? value)
@@ -166,9 +166,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpPatternFill(DXDCD.GroupShapeProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXDCD.GroupShapeProperties openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
   }
   
   private static void SetPatternFill(DXDCD.GroupShapeProperties openXmlElement, DMD.PatternFill? value)
@@ -189,7 +189,7 @@ public static class GroupShapePropertiesConverter
     return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXDCD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXDCD.GroupShapeProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
@@ -220,9 +220,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpEffectList(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectList(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectList? value)
@@ -246,9 +246,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpEffectDag(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectDag? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectDag(DXDCD.GroupShapeProperties openXmlElement, DMD.EffectDag? value)
@@ -272,9 +272,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpScene3DType(DXDCD.GroupShapeProperties openXmlElement, DMD.Scene3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3DType(DXDCD.GroupShapeProperties openXmlElement, DMD.Scene3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName);
+    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetScene3DType(DXDCD.GroupShapeProperties openXmlElement, DMD.Scene3DType? value)
@@ -298,9 +298,9 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDCD.GroupShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDCD.GroupShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDCD.GroupShapeProperties openXmlElement, DMD.ExtensionList? value)
@@ -338,39 +338,39 @@ public static class GroupShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.GroupShapeProperties? openXmlElement, DMDCD.GroupShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.GroupShapeProperties? openXmlElement, DMDCD.GroupShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName))
+      if (!CmpBlackWhiteMode(openXmlElement, value.BlackWhiteMode, diffs, objName, propName))
         ok = false;
-      if (!CmpTransformGroup(openXmlElement, value.TransformGroup, diffs, objName))
+      if (!CmpTransformGroup(openXmlElement, value.TransformGroup, diffs, objName, propName))
         ok = false;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName))
+      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName))
+      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName))
+      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName))
+      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName))
+      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName))
+      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName))
+      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName))
+      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
         ok = false;
-      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName))
+      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

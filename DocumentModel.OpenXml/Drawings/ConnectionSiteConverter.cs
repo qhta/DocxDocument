@@ -13,7 +13,7 @@ public static class ConnectionSiteConverter
     return StringValueConverter.GetValue(openXmlElement?.Angle);
   }
   
-  private static bool CmpAngle(DXD.ConnectionSite openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAngle(DXD.ConnectionSite openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Angle, value, diffs, objName, "Angle");
   }
@@ -34,9 +34,9 @@ public static class ConnectionSiteConverter
     return null;
   }
   
-  private static bool CmpPosition(DXD.ConnectionSite openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.ConnectionSite openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXD.ConnectionSite openXmlElement, DMD.AdjustPoint2DType? value)
@@ -64,19 +64,19 @@ public static class ConnectionSiteConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ConnectionSite? openXmlElement, DMD.ConnectionSite? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ConnectionSite? openXmlElement, DMD.ConnectionSite? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName))
+      if (!CmpAngle(openXmlElement, value.Angle, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -10,9 +10,9 @@ public static class MoveFromRunConverter
     return RunTrackChangeTypeConverter.CreateModelElement<DMW.MoveFromRun>(openXmlElement);
   }
   
-  public static bool CompareModelElement(DXW.MoveFromRun? openXmlElement, DMW.MoveFromRun? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.MoveFromRun? openXmlElement, DMW.MoveFromRun? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return RunTrackChangeTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RunTrackChangeTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.MoveFromRun model)

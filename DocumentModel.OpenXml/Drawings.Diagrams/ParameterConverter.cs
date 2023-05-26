@@ -13,9 +13,9 @@ public static class ParameterConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDD.ParameterIdKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDD.Parameter openXmlElement, DMDD.ParameterIdKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Parameter openXmlElement, DMDD.ParameterIdKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDD.ParameterIdKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ParameterIdValues, DMDD.ParameterIdKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXDD.Parameter openXmlElement, DMDD.ParameterIdKind? value)
@@ -31,7 +31,7 @@ public static class ParameterConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXDD.Parameter openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXDD.Parameter openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
@@ -53,19 +53,19 @@ public static class ParameterConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Parameter? openXmlElement, DMDD.Parameter? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Parameter? openXmlElement, DMDD.Parameter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

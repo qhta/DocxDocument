@@ -13,9 +13,9 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  private static bool CmpMultiLevelStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.MultiLevelStringReference? value, DiffList? diffs, string? objName)
+  private static bool CmpMultiLevelStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.MultiLevelStringReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.MultiLevelStringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLevelStringReference>(), value, diffs, objName);
+    return DMXDC.MultiLevelStringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.MultiLevelStringReference>(), value, diffs, objName, propName);
   }
   
   private static void SetMultiLevelStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.MultiLevelStringReference? value)
@@ -39,9 +39,9 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  private static bool CmpNumberReference(DXDC.CategoryAxisData openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberReference(DXDC.CategoryAxisData openXmlElement, DMDC.NumberReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName);
+    return DMXDC.NumberReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberReference>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberReference(DXDC.CategoryAxisData openXmlElement, DMDC.NumberReference? value)
@@ -65,9 +65,9 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  private static bool CmpNumberLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.NumberLiteral? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName);
+    return DMXDC.NumberLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberLiteral>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.NumberLiteral? value)
@@ -91,9 +91,9 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  private static bool CmpStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.StringReference? value, DiffList? diffs, string? objName)
+  private static bool CmpStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.StringReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringReference>(), value, diffs, objName);
+    return DMXDC.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringReference>(), value, diffs, objName, propName);
   }
   
   private static void SetStringReference(DXDC.CategoryAxisData openXmlElement, DMDC.StringReference? value)
@@ -117,9 +117,9 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  private static bool CmpStringLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.StringLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpStringLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.StringLiteral? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringLiteral>(), value, diffs, objName);
+    return DMXDC.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringLiteral>(), value, diffs, objName, propName);
   }
   
   private static void SetStringLiteral(DXDC.CategoryAxisData openXmlElement, DMDC.StringLiteral? value)
@@ -150,25 +150,25 @@ public static class CategoryAxisDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.CategoryAxisData? openXmlElement, DMDC.CategoryAxisData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.CategoryAxisData? openXmlElement, DMDC.CategoryAxisData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMultiLevelStringReference(openXmlElement, value.MultiLevelStringReference, diffs, objName))
+      if (!CmpMultiLevelStringReference(openXmlElement, value.MultiLevelStringReference, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName))
+      if (!CmpNumberReference(openXmlElement, value.NumberReference, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName))
+      if (!CmpNumberLiteral(openXmlElement, value.NumberLiteral, diffs, objName, propName))
         ok = false;
-      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName))
+      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName, propName))
         ok = false;
-      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName))
+      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

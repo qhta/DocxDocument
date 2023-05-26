@@ -11,7 +11,7 @@ public static class TableIndentationConverter
     return openXmlElement?.Width?.Value;
   }
   
-  private static bool CmpWidth(DXW.TableIndentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.TableIndentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Width?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Width?.Value, value);
@@ -30,9 +30,9 @@ public static class TableIndentationConverter
     return EnumValueConverter.GetValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TableWidthUnitValues, DMW.TableWidthUnitType>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXW.TableIndentation openXmlElement, DMW.TableWidthUnitType? value)
@@ -52,19 +52,19 @@ public static class TableIndentationConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableIndentation? openXmlElement, DMW.TableWidth? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableIndentation? openXmlElement, DMW.TableWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, (Int32)value.Value, diffs, objName))
+      if (!CmpWidth(openXmlElement, (Int32)value.Value, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

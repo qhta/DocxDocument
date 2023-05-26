@@ -13,7 +13,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.Rotation?.Value;
   }
   
-  private static bool CmpRotation(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRotation(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Rotation?.Value == value) return true;
     diffs?.Add(objName, "Rotation", openXmlElement?.Rotation?.Value, value);
@@ -33,7 +33,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.UseParagraphSpacing?.Value;
   }
   
-  private static bool CmpUseParagraphSpacing(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUseParagraphSpacing(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UseParagraphSpacing?.Value == value) return true;
     diffs?.Add(objName, "UseParagraphSpacing", openXmlElement?.UseParagraphSpacing?.Value, value);
@@ -56,9 +56,9 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMD.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value);
   }
   
-  private static bool CmpVerticalOverflow(DXD.BodyProperties openXmlElement, DMD.TextVerticalOverflowKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalOverflow(DXD.BodyProperties openXmlElement, DMD.TextVerticalOverflowKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMD.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalOverflowValues, DMD.TextVerticalOverflowKind>(openXmlElement?.VerticalOverflow?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVerticalOverflow(DXD.BodyProperties openXmlElement, DMD.TextVerticalOverflowKind? value)
@@ -74,9 +74,9 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMD.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value);
   }
   
-  private static bool CmpHorizontalOverflow(DXD.BodyProperties openXmlElement, DMD.TextHorizontalOverflowKind? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalOverflow(DXD.BodyProperties openXmlElement, DMD.TextHorizontalOverflowKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMD.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextHorizontalOverflowValues, DMD.TextHorizontalOverflowKind>(openXmlElement?.HorizontalOverflow?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHorizontalOverflow(DXD.BodyProperties openXmlElement, DMD.TextHorizontalOverflowKind? value)
@@ -92,9 +92,9 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMD.TextVerticalKind>(openXmlElement?.Vertical?.Value);
   }
   
-  private static bool CmpVertical(DXD.BodyProperties openXmlElement, DMD.TextVerticalKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVertical(DXD.BodyProperties openXmlElement, DMD.TextVerticalKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMD.TextVerticalKind>(openXmlElement?.Vertical?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextVerticalValues, DMD.TextVerticalKind>(openXmlElement?.Vertical?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVertical(DXD.BodyProperties openXmlElement, DMD.TextVerticalKind? value)
@@ -110,9 +110,9 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMD.TextWrappingKind>(openXmlElement?.Wrap?.Value);
   }
   
-  private static bool CmpWrap(DXD.BodyProperties openXmlElement, DMD.TextWrappingKind? value, DiffList? diffs, string? objName)
+  private static bool CmpWrap(DXD.BodyProperties openXmlElement, DMD.TextWrappingKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMD.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextWrappingValues, DMD.TextWrappingKind>(openXmlElement?.Wrap?.Value, value, diffs, objName, propName);
   }
   
   private static void SetWrap(DXD.BodyProperties openXmlElement, DMD.TextWrappingKind? value)
@@ -128,7 +128,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.LeftInset?.Value;
   }
   
-  private static bool CmpLeftInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LeftInset?.Value == value) return true;
     diffs?.Add(objName, "LeftInset", openXmlElement?.LeftInset?.Value, value);
@@ -148,7 +148,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.TopInset?.Value;
   }
   
-  private static bool CmpTopInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTopInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.TopInset?.Value == value) return true;
     diffs?.Add(objName, "TopInset", openXmlElement?.TopInset?.Value, value);
@@ -168,7 +168,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.RightInset?.Value;
   }
   
-  private static bool CmpRightInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRightInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RightInset?.Value == value) return true;
     diffs?.Add(objName, "RightInset", openXmlElement?.RightInset?.Value, value);
@@ -188,7 +188,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.BottomInset?.Value;
   }
   
-  private static bool CmpBottomInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBottomInset(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BottomInset?.Value == value) return true;
     diffs?.Add(objName, "BottomInset", openXmlElement?.BottomInset?.Value, value);
@@ -208,7 +208,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.ColumnCount?.Value;
   }
   
-  private static bool CmpColumnCount(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnCount(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnCount?.Value == value) return true;
     diffs?.Add(objName, "ColumnCount", openXmlElement?.ColumnCount?.Value, value);
@@ -228,7 +228,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.ColumnSpacing?.Value;
   }
   
-  private static bool CmpColumnSpacing(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnSpacing(DXD.BodyProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnSpacing?.Value == value) return true;
     diffs?.Add(objName, "ColumnSpacing", openXmlElement?.ColumnSpacing?.Value, value);
@@ -248,7 +248,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.RightToLeftColumns?.Value;
   }
   
-  private static bool CmpRightToLeftColumns(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRightToLeftColumns(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RightToLeftColumns?.Value == value) return true;
     diffs?.Add(objName, "RightToLeftColumns", openXmlElement?.RightToLeftColumns?.Value, value);
@@ -271,7 +271,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.FromWordArt?.Value;
   }
   
-  private static bool CmpFromWordArt(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFromWordArt(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FromWordArt?.Value == value) return true;
     diffs?.Add(objName, "FromWordArt", openXmlElement?.FromWordArt?.Value, value);
@@ -294,9 +294,9 @@ public static class BodyPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMD.TextAnchoringKind>(openXmlElement?.Anchor?.Value);
   }
   
-  private static bool CmpAnchor(DXD.BodyProperties openXmlElement, DMD.TextAnchoringKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchor(DXD.BodyProperties openXmlElement, DMD.TextAnchoringKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMD.TextAnchoringKind>(openXmlElement?.Anchor?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextAnchoringTypeValues, DMD.TextAnchoringKind>(openXmlElement?.Anchor?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAnchor(DXD.BodyProperties openXmlElement, DMD.TextAnchoringKind? value)
@@ -312,7 +312,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.AnchorCenter?.Value;
   }
   
-  private static bool CmpAnchorCenter(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchorCenter(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AnchorCenter?.Value == value) return true;
     diffs?.Add(objName, "AnchorCenter", openXmlElement?.AnchorCenter?.Value, value);
@@ -335,7 +335,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.ForceAntiAlias?.Value;
   }
   
-  private static bool CmpForceAntiAlias(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpForceAntiAlias(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ForceAntiAlias?.Value == value) return true;
     diffs?.Add(objName, "ForceAntiAlias", openXmlElement?.ForceAntiAlias?.Value, value);
@@ -358,7 +358,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.UpRight?.Value;
   }
   
-  private static bool CmpUpRight(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUpRight(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UpRight?.Value == value) return true;
     diffs?.Add(objName, "UpRight", openXmlElement?.UpRight?.Value, value);
@@ -381,7 +381,7 @@ public static class BodyPropertiesConverter
     return openXmlElement?.CompatibleLineSpacing?.Value;
   }
   
-  private static bool CmpCompatibleLineSpacing(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCompatibleLineSpacing(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CompatibleLineSpacing?.Value == value) return true;
     diffs?.Add(objName, "CompatibleLineSpacing", openXmlElement?.CompatibleLineSpacing?.Value, value);
@@ -407,9 +407,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpPresetTextWrap(DXD.BodyProperties openXmlElement, DMD.PresetTextWrap? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetTextWrap(DXD.BodyProperties openXmlElement, DMD.PresetTextWrap? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetTextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetTextWrap>(), value, diffs, objName);
+    return DMXD.PresetTextWrapConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetTextWrap>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetTextWrap(DXD.BodyProperties openXmlElement, DMD.PresetTextWrap? value)
@@ -430,7 +430,7 @@ public static class BodyPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.NoAutoFit>() != null;
   }
   
-  private static bool CmpNoAutoFit(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoAutoFit(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoAutoFit>() != null;
     if (val == value) return true;
@@ -461,9 +461,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpNormalAutoFit(DXD.BodyProperties openXmlElement, DMD.NormalAutoFit? value, DiffList? diffs, string? objName)
+  private static bool CmpNormalAutoFit(DXD.BodyProperties openXmlElement, DMD.NormalAutoFit? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.NormalAutoFitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NormalAutoFit>(), value, diffs, objName);
+    return DMXD.NormalAutoFitConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.NormalAutoFit>(), value, diffs, objName, propName);
   }
   
   private static void SetNormalAutoFit(DXD.BodyProperties openXmlElement, DMD.NormalAutoFit? value)
@@ -484,7 +484,7 @@ public static class BodyPropertiesConverter
     return openXmlElement.GetFirstChild<DXD.ShapeAutoFit>() != null;
   }
   
-  private static bool CmpShapeAutoFit(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShapeAutoFit(DXD.BodyProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.ShapeAutoFit>() != null;
     if (val == value) return true;
@@ -515,9 +515,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpScene3DType(DXD.BodyProperties openXmlElement, DMD.Scene3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpScene3DType(DXD.BodyProperties openXmlElement, DMD.Scene3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName);
+    return DMXD.Scene3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Scene3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetScene3DType(DXD.BodyProperties openXmlElement, DMD.Scene3DType? value)
@@ -541,9 +541,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpShape3DType(DXD.BodyProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs, string? objName)
+  private static bool CmpShape3DType(DXD.BodyProperties openXmlElement, DMD.Shape3DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName);
+    return DMXD.Shape3DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Shape3DType>(), value, diffs, objName, propName);
   }
   
   private static void SetShape3DType(DXD.BodyProperties openXmlElement, DMD.Shape3DType? value)
@@ -567,9 +567,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpFlatText(DXD.BodyProperties openXmlElement, DMD.FlatText? value, DiffList? diffs, string? objName)
+  private static bool CmpFlatText(DXD.BodyProperties openXmlElement, DMD.FlatText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FlatText>(), value, diffs, objName);
+    return DMXD.FlatTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FlatText>(), value, diffs, objName, propName);
   }
   
   private static void SetFlatText(DXD.BodyProperties openXmlElement, DMD.FlatText? value)
@@ -593,9 +593,9 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.BodyProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.BodyProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.BodyProperties openXmlElement, DMD.ExtensionList? value)
@@ -648,69 +648,69 @@ public static class BodyPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.BodyProperties? openXmlElement, DMD.BodyProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.BodyProperties? openXmlElement, DMD.BodyProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName))
+      if (!CmpRotation(openXmlElement, value.Rotation, diffs, objName, propName))
         ok = false;
-      if (!CmpUseParagraphSpacing(openXmlElement, value.UseParagraphSpacing, diffs, objName))
+      if (!CmpUseParagraphSpacing(openXmlElement, value.UseParagraphSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalOverflow(openXmlElement, value.VerticalOverflow, diffs, objName))
+      if (!CmpVerticalOverflow(openXmlElement, value.VerticalOverflow, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalOverflow(openXmlElement, value.HorizontalOverflow, diffs, objName))
+      if (!CmpHorizontalOverflow(openXmlElement, value.HorizontalOverflow, diffs, objName, propName))
         ok = false;
-      if (!CmpVertical(openXmlElement, value.Vertical, diffs, objName))
+      if (!CmpVertical(openXmlElement, value.Vertical, diffs, objName, propName))
         ok = false;
-      if (!CmpWrap(openXmlElement, value.Wrap, diffs, objName))
+      if (!CmpWrap(openXmlElement, value.Wrap, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftInset(openXmlElement, value.LeftInset, diffs, objName))
+      if (!CmpLeftInset(openXmlElement, value.LeftInset, diffs, objName, propName))
         ok = false;
-      if (!CmpTopInset(openXmlElement, value.TopInset, diffs, objName))
+      if (!CmpTopInset(openXmlElement, value.TopInset, diffs, objName, propName))
         ok = false;
-      if (!CmpRightInset(openXmlElement, value.RightInset, diffs, objName))
+      if (!CmpRightInset(openXmlElement, value.RightInset, diffs, objName, propName))
         ok = false;
-      if (!CmpBottomInset(openXmlElement, value.BottomInset, diffs, objName))
+      if (!CmpBottomInset(openXmlElement, value.BottomInset, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName))
+      if (!CmpColumnCount(openXmlElement, value.ColumnCount, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnSpacing(openXmlElement, value.ColumnSpacing, diffs, objName))
+      if (!CmpColumnSpacing(openXmlElement, value.ColumnSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpRightToLeftColumns(openXmlElement, value.RightToLeftColumns, diffs, objName))
+      if (!CmpRightToLeftColumns(openXmlElement, value.RightToLeftColumns, diffs, objName, propName))
         ok = false;
-      if (!CmpFromWordArt(openXmlElement, value.FromWordArt, diffs, objName))
+      if (!CmpFromWordArt(openXmlElement, value.FromWordArt, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName))
+      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName, propName))
         ok = false;
-      if (!CmpAnchorCenter(openXmlElement, value.AnchorCenter, diffs, objName))
+      if (!CmpAnchorCenter(openXmlElement, value.AnchorCenter, diffs, objName, propName))
         ok = false;
-      if (!CmpForceAntiAlias(openXmlElement, value.ForceAntiAlias, diffs, objName))
+      if (!CmpForceAntiAlias(openXmlElement, value.ForceAntiAlias, diffs, objName, propName))
         ok = false;
-      if (!CmpUpRight(openXmlElement, value.UpRight, diffs, objName))
+      if (!CmpUpRight(openXmlElement, value.UpRight, diffs, objName, propName))
         ok = false;
-      if (!CmpCompatibleLineSpacing(openXmlElement, value.CompatibleLineSpacing, diffs, objName))
+      if (!CmpCompatibleLineSpacing(openXmlElement, value.CompatibleLineSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetTextWrap(openXmlElement, value.PresetTextWrap, diffs, objName))
+      if (!CmpPresetTextWrap(openXmlElement, value.PresetTextWrap, diffs, objName, propName))
         ok = false;
-      if (!CmpNoAutoFit(openXmlElement, value.NoAutoFit, diffs, objName))
+      if (!CmpNoAutoFit(openXmlElement, value.NoAutoFit, diffs, objName, propName))
         ok = false;
-      if (!CmpNormalAutoFit(openXmlElement, value.NormalAutoFit, diffs, objName))
+      if (!CmpNormalAutoFit(openXmlElement, value.NormalAutoFit, diffs, objName, propName))
         ok = false;
-      if (!CmpShapeAutoFit(openXmlElement, value.ShapeAutoFit, diffs, objName))
+      if (!CmpShapeAutoFit(openXmlElement, value.ShapeAutoFit, diffs, objName, propName))
         ok = false;
-      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName))
+      if (!CmpScene3DType(openXmlElement, value.Scene3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName))
+      if (!CmpShape3DType(openXmlElement, value.Shape3DType, diffs, objName, propName))
         ok = false;
-      if (!CmpFlatText(openXmlElement, value.FlatText, diffs, objName))
+      if (!CmpFlatText(openXmlElement, value.FlatText, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

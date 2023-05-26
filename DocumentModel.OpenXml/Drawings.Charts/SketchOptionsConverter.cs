@@ -13,7 +13,7 @@ public static class SketchOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.InSketchMode>() != null;
   }
   
-  private static bool CmpInSketchMode(DXO10DC.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpInSketchMode(DXO10DC.SketchOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.InSketchMode>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class SketchOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.ShowSketchButton>() != null;
   }
   
-  private static bool CmpShowSketchButton(DXO10DC.SketchOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShowSketchButton(DXO10DC.SketchOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.ShowSketchButton>() != null;
     if (val == value) return true;
@@ -79,19 +79,19 @@ public static class SketchOptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DC.SketchOptions? openXmlElement, DMDC.SketchOptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DC.SketchOptions? openXmlElement, DMDC.SketchOptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpInSketchMode(openXmlElement, value.InSketchMode, diffs, objName))
+      if (!CmpInSketchMode(openXmlElement, value.InSketchMode, diffs, objName, propName))
         ok = false;
-      if (!CmpShowSketchButton(openXmlElement, value.ShowSketchButton, diffs, objName))
+      if (!CmpShowSketchButton(openXmlElement, value.ShowSketchButton, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

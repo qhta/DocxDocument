@@ -13,7 +13,7 @@ public static class SpacingBetweenLinesConverter
     return StringValueConverter.GetValue(openXmlElement?.Before);
   }
   
-  private static bool CmpBefore(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBefore(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Before, value, diffs, objName, "Before");
   }
@@ -31,7 +31,7 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement?.BeforeLines?.Value;
   }
   
-  private static bool CmpBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBeforeLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BeforeLines?.Value == value) return true;
     diffs?.Add(objName, "BeforeLines", openXmlElement?.BeforeLines?.Value, value);
@@ -51,7 +51,7 @@ public static class SpacingBetweenLinesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.BeforeAutoSpacing);
   }
   
-  private static bool CmpBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBeforeAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.BeforeAutoSpacing, value, diffs, objName, "BeforeAutoSpacing");
   }
@@ -69,7 +69,7 @@ public static class SpacingBetweenLinesConverter
     return StringValueConverter.GetValue(openXmlElement?.After);
   }
   
-  private static bool CmpAfter(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAfter(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.After, value, diffs, objName, "After");
   }
@@ -87,7 +87,7 @@ public static class SpacingBetweenLinesConverter
     return openXmlElement?.AfterLines?.Value;
   }
   
-  private static bool CmpAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAfterLines(DXW.SpacingBetweenLines openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AfterLines?.Value == value) return true;
     diffs?.Add(objName, "AfterLines", openXmlElement?.AfterLines?.Value, value);
@@ -107,7 +107,7 @@ public static class SpacingBetweenLinesConverter
     return BooleanValueConverter.GetValue(openXmlElement?.AfterAutoSpacing);
   }
   
-  private static bool CmpAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAfterAutoSpacing(DXW.SpacingBetweenLines openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.AfterAutoSpacing, value, diffs, objName, "AfterAutoSpacing");
   }
@@ -125,7 +125,7 @@ public static class SpacingBetweenLinesConverter
     return StringValueConverter.GetValue(openXmlElement?.Line);
   }
   
-  private static bool CmpLine(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLine(DXW.SpacingBetweenLines openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Line, value, diffs, objName, "Line");
   }
@@ -143,9 +143,9 @@ public static class SpacingBetweenLinesConverter
     return EnumValueConverter.GetValue<DXW.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value);
   }
   
-  private static bool CmpLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.LineSpacingRuleValues, DMW.LineSpacingRuleKind>(openXmlElement?.LineRule?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLineRule(DXW.SpacingBetweenLines openXmlElement, DMW.LineSpacingRuleKind? value)
@@ -171,31 +171,31 @@ public static class SpacingBetweenLinesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SpacingBetweenLines? openXmlElement, DMW.SpacingBetweenLines? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SpacingBetweenLines? openXmlElement, DMW.SpacingBetweenLines? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBefore(openXmlElement, value.Before, diffs, objName))
+      if (!CmpBefore(openXmlElement, value.Before, diffs, objName, propName))
         ok = false;
-      if (!CmpBeforeLines(openXmlElement, value.BeforeLines, diffs, objName))
+      if (!CmpBeforeLines(openXmlElement, value.BeforeLines, diffs, objName, propName))
         ok = false;
-      if (!CmpBeforeAutoSpacing(openXmlElement, value.BeforeAutoSpacing, diffs, objName))
+      if (!CmpBeforeAutoSpacing(openXmlElement, value.BeforeAutoSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpAfter(openXmlElement, value.After, diffs, objName))
+      if (!CmpAfter(openXmlElement, value.After, diffs, objName, propName))
         ok = false;
-      if (!CmpAfterLines(openXmlElement, value.AfterLines, diffs, objName))
+      if (!CmpAfterLines(openXmlElement, value.AfterLines, diffs, objName, propName))
         ok = false;
-      if (!CmpAfterAutoSpacing(openXmlElement, value.AfterAutoSpacing, diffs, objName))
+      if (!CmpAfterAutoSpacing(openXmlElement, value.AfterAutoSpacing, diffs, objName, propName))
         ok = false;
-      if (!CmpLine(openXmlElement, value.Line, diffs, objName))
+      if (!CmpLine(openXmlElement, value.Line, diffs, objName, propName))
         ok = false;
-      if (!CmpLineRule(openXmlElement, value.LineRule, diffs, objName))
+      if (!CmpLineRule(openXmlElement, value.LineRule, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

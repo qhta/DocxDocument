@@ -13,9 +13,9 @@ public static class FontReferenceConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(openXmlElement?.Index?.Value);
   }
   
-  private static bool CmpIndex(DXD.FontReference openXmlElement, DMD.FontCollectionIndexKind? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXD.FontReference openXmlElement, DMD.FontCollectionIndexKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(openXmlElement?.Index?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.FontCollectionIndexValues, DMD.FontCollectionIndexKind>(openXmlElement?.Index?.Value, value, diffs, objName, propName);
   }
   
   private static void SetIndex(DXD.FontReference openXmlElement, DMD.FontCollectionIndexKind? value)
@@ -34,9 +34,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXD.FontReference openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXD.FontReference openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelPercentage(DXD.FontReference openXmlElement, DMD.RgbColorModelPercentage? value)
@@ -63,9 +63,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXD.FontReference openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXD.FontReference openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXD.FontReference openXmlElement, DMD.RgbColorModelHex? value)
@@ -92,9 +92,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXD.FontReference openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXD.FontReference openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
   private static void SetHslColor(DXD.FontReference openXmlElement, DMD.HslColor? value)
@@ -121,9 +121,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXD.FontReference openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXD.FontReference openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSystemColor(DXD.FontReference openXmlElement, DMD.SystemColor? value)
@@ -150,9 +150,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXD.FontReference openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXD.FontReference openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemeColor(DXD.FontReference openXmlElement, DMD.SchemeColor? value)
@@ -179,9 +179,9 @@ public static class FontReferenceConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXD.FontReference openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXD.FontReference openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetColor(DXD.FontReference openXmlElement, DMD.PresetColor? value)
@@ -214,29 +214,29 @@ public static class FontReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.FontReference? openXmlElement, DMD.FontReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FontReference? openXmlElement, DMD.FontReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName))
+      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName, propName))
         ok = false;
-      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName))
+      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName))
+      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName))
+      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

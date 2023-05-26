@@ -11,7 +11,7 @@ public static class BreakConverter
     return Int32ValueConverter.GetValue(openXmlElement?.AlignAt?.Value);
   }
   
-  private static bool CmpAlignAt(DXM.Break openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignAt(DXM.Break openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AlignAt?.Value == value) return true;
     diffs?.Add(objName, "AlignAt", openXmlElement?.AlignAt?.Value, value);
@@ -36,17 +36,17 @@ public static class BreakConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Break? openXmlElement, DMM.Break? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Break? openXmlElement, DMM.Break? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAlignAt(openXmlElement, value.AlignAt, diffs, objName))
+      if (!CmpAlignAt(openXmlElement, value.AlignAt, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

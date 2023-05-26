@@ -16,9 +16,9 @@ public static class GeoLocationQueryResultConverter
     return null;
   }
   
-  private static bool CmpGeoLocationQuery(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocationQuery? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoLocationQuery(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocationQuery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoLocationQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocationQuery>(), value, diffs, objName);
+    return DMXDCDs.GeoLocationQueryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocationQuery>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoLocationQuery(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocationQuery? value)
@@ -45,9 +45,9 @@ public static class GeoLocationQueryResultConverter
     return null;
   }
   
-  private static bool CmpGeoLocations(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocations? value, DiffList? diffs, string? objName)
+  private static bool CmpGeoLocations(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocations? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeoLocationsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocations>(), value, diffs, objName);
+    return DMXDCDs.GeoLocationsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.GeoLocations>(), value, diffs, objName, propName);
   }
   
   private static void SetGeoLocations(DXO16DCD.GeoLocationQueryResult openXmlElement, DMDCDs.GeoLocations? value)
@@ -75,19 +75,19 @@ public static class GeoLocationQueryResultConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.GeoLocationQueryResult? openXmlElement, DMDCDs.GeoLocationQueryResult? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.GeoLocationQueryResult? openXmlElement, DMDCDs.GeoLocationQueryResult? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGeoLocationQuery(openXmlElement, value.GeoLocationQuery, diffs, objName))
+      if (!CmpGeoLocationQuery(openXmlElement, value.GeoLocationQuery, diffs, objName, propName))
         ok = false;
-      if (!CmpGeoLocations(openXmlElement, value.GeoLocations, diffs, objName))
+      if (!CmpGeoLocations(openXmlElement, value.GeoLocations, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

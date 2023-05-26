@@ -13,7 +13,7 @@ public static class RibbonConverter
     return openXmlElement?.StartFromScratch?.Value;
   }
   
-  private static bool CmpStartFromScratch(DXO10CUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpStartFromScratch(DXO10CUI.Ribbon openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.StartFromScratch?.Value == value) return true;
     diffs?.Add(objName, "StartFromScratch", openXmlElement?.StartFromScratch?.Value, value);
@@ -39,9 +39,9 @@ public static class RibbonConverter
     return null;
   }
   
-  private static bool CmpQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs, string? objName)
+  private static bool CmpQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.QuickAccessToolbar>(), value, diffs, objName);
+    return DMX.QuickAccessToolbarConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.QuickAccessToolbar>(), value, diffs, objName, propName);
   }
   
   private static void SetQuickAccessToolbar(DXO10CUI.Ribbon openXmlElement, DM.QuickAccessToolbar? value)
@@ -68,9 +68,9 @@ public static class RibbonConverter
     return null;
   }
   
-  private static bool CmpTabs(DXO10CUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs, string? objName)
+  private static bool CmpTabs(DXO10CUI.Ribbon openXmlElement, DM.Tabs? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Tabs>(), value, diffs, objName);
+    return DMX.TabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Tabs>(), value, diffs, objName, propName);
   }
   
   private static void SetTabs(DXO10CUI.Ribbon openXmlElement, DM.Tabs? value)
@@ -97,9 +97,9 @@ public static class RibbonConverter
     return null;
   }
   
-  private static bool CmpContextualTabs(DXO10CUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs, string? objName)
+  private static bool CmpContextualTabs(DXO10CUI.Ribbon openXmlElement, DM.ContextualTabs? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ContextualTabs>(), value, diffs, objName);
+    return DMX.ContextualTabsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ContextualTabs>(), value, diffs, objName, propName);
   }
   
   private static void SetContextualTabs(DXO10CUI.Ribbon openXmlElement, DM.ContextualTabs? value)
@@ -129,23 +129,23 @@ public static class RibbonConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.Ribbon? openXmlElement, DM.Ribbon? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Ribbon? openXmlElement, DM.Ribbon? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStartFromScratch(openXmlElement, value.StartFromScratch, diffs, objName))
+      if (!CmpStartFromScratch(openXmlElement, value.StartFromScratch, diffs, objName, propName))
         ok = false;
-      if (!CmpQuickAccessToolbar(openXmlElement, value.QuickAccessToolbar, diffs, objName))
+      if (!CmpQuickAccessToolbar(openXmlElement, value.QuickAccessToolbar, diffs, objName, propName))
         ok = false;
-      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName))
+      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName, propName))
         ok = false;
-      if (!CmpContextualTabs(openXmlElement, value.ContextualTabs, diffs, objName))
+      if (!CmpContextualTabs(openXmlElement, value.ContextualTabs, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

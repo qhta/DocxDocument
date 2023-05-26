@@ -13,7 +13,7 @@ public static class DateAxExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.DateAxExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.DateAxExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class DateAxExtensionConverter
     return null;
   }
   
-  private static bool CmpNumberingFormat(DXDC.DateAxExtension openXmlElement, DMDC.NumberingFormat3? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingFormat(DXDC.DateAxExtension openXmlElement, DMDC.NumberingFormat3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.NumberingFormat>(), value, diffs, objName);
+    return DMXDC.NumberingFormat3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.NumberingFormat>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingFormat(DXDC.DateAxExtension openXmlElement, DMDC.NumberingFormat3? value)
@@ -61,19 +61,19 @@ public static class DateAxExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DateAxExtension? openXmlElement, DMDC.DateAxExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DateAxExtension? openXmlElement, DMDC.DateAxExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName))
+      if (!CmpNumberingFormat(openXmlElement, value.NumberingFormat, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -11,7 +11,7 @@ public static class GroupCharPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val);
   }
   
-  private static bool CmpAccentChar(DXM.GroupCharProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAccentChar(DXM.GroupCharProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.AccentChar>()?.Val, value, diffs, objName, "Operator");
   }
@@ -28,9 +28,9 @@ public static class GroupCharPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value);
   }
   
-  private static bool CmpPosition(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value)
@@ -55,9 +55,9 @@ public static class GroupCharPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.VerticalJustification>()?.Val?.Value);
   }
   
-  private static bool CmpVerticalJustification(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalJustification(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.VerticalJustification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.VerticalJustification>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVerticalJustification(DXM.GroupCharProperties openXmlElement, DMM.VerticalJustificationKind? value)
@@ -85,9 +85,9 @@ public static class GroupCharPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.GroupCharProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.GroupCharProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.GroupCharProperties openXmlElement, DMM.ControlProperties? value)
@@ -119,23 +119,23 @@ public static class GroupCharPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.GroupCharProperties? openXmlElement, DMM.GroupCharProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.GroupCharProperties? openXmlElement, DMM.GroupCharProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpAccentChar(openXmlElement, model.AccentChar, diffs, objName))
+      if (!CmpAccentChar(openXmlElement, model.AccentChar, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, model.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, model.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalJustification(openXmlElement, model.VerticalJustification, diffs, objName))
+      if (!CmpVerticalJustification(openXmlElement, model.VerticalJustification, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

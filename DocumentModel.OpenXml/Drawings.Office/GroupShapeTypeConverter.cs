@@ -16,9 +16,9 @@ public static class GroupShapeTypeConverter
     return null;
   }
   
-  private static bool CmpGroupShapeNonVisualProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeNonVisualProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeNonVisualProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeNonVisualProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapeNonVisualPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeNonVisualProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShapeNonVisualProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeNonVisualProperties? value)
@@ -45,9 +45,9 @@ public static class GroupShapeTypeConverter
     return null;
   }
   
-  private static bool CmpGroupShapeProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShapeProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>(), value, diffs, objName);
+    return DMXDO.GroupShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.GroupShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShapeProperties(DXOD.GroupShapeType openXmlElement, DMDO.GroupShapeProperties? value)
@@ -75,19 +75,19 @@ public static class GroupShapeTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOD.GroupShapeType? openXmlElement, DMDO.GroupShapeType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOD.GroupShapeType? openXmlElement, DMDO.GroupShapeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGroupShapeNonVisualProperties(openXmlElement, value.GroupShapeNonVisualProperties, diffs, objName))
+      if (!CmpGroupShapeNonVisualProperties(openXmlElement, value.GroupShapeNonVisualProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupShapeProperties(openXmlElement, value.GroupShapeProperties, diffs, objName))
+      if (!CmpGroupShapeProperties(openXmlElement, value.GroupShapeProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

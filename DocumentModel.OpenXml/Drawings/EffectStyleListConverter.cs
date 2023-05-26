@@ -13,9 +13,9 @@ public static class EffectStyleListConverter
     return null;
   }
   
-  private static bool CmpEffectStyle(DXD.EffectStyleList openXmlElement, DMD.EffectStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectStyle(DXD.EffectStyleList openXmlElement, DMD.EffectStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyle>(), value, diffs, objName);
+    return DMXD.EffectStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectStyle(DXD.EffectStyleList openXmlElement, DMD.EffectStyle? value)
@@ -42,17 +42,17 @@ public static class EffectStyleListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.EffectStyleList? openXmlElement, DMD.EffectStyleList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.EffectStyleList? openXmlElement, DMD.EffectStyleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpEffectStyle(openXmlElement, value.EffectStyle, diffs, objName))
+      if (!CmpEffectStyle(openXmlElement, value.EffectStyle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

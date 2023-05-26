@@ -13,9 +13,9 @@ public static class ManualLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value);
   }
   
-  private static bool CmpLayoutTarget(DXDC.ManualLayout openXmlElement, DMDC.LayoutTargetKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutTarget(DXDC.ManualLayout openXmlElement, DMDC.LayoutTargetKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutTargetValues, DMDC.LayoutTargetKind>(openXmlElement.GetFirstChild<DXDC.LayoutTarget>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLayoutTarget(DXDC.ManualLayout openXmlElement, DMDC.LayoutTargetKind? value)
@@ -41,9 +41,9 @@ public static class ManualLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.LeftMode>()?.Val?.Value);
   }
   
-  private static bool CmpLeftMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.LeftMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.LeftMode>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLeftMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
@@ -69,9 +69,9 @@ public static class ManualLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.TopMode>()?.Val?.Value);
   }
   
-  private static bool CmpTopMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpTopMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.TopMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.TopMode>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTopMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
@@ -97,9 +97,9 @@ public static class ManualLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.WidthMode>()?.Val?.Value);
   }
   
-  private static bool CmpWidthMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpWidthMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.WidthMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.WidthMode>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetWidthMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
@@ -125,9 +125,9 @@ public static class ManualLayoutConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.HeightMode>()?.Val?.Value);
   }
   
-  private static bool CmpHeightMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs, string? objName)
+  private static bool CmpHeightMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.HeightMode>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LayoutModeValues, DMDC.LayoutMode>(openXmlElement.GetFirstChild<DXDC.HeightMode>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetHeightMode(DXDC.ManualLayout openXmlElement, DMDC.LayoutMode? value)
@@ -153,7 +153,7 @@ public static class ManualLayoutConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Left>()?.Val);
   }
   
-  private static bool CmpLeft(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpLeft(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Left>()?.Val, value, diffs, objName, "Left");
   }
@@ -171,7 +171,7 @@ public static class ManualLayoutConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Top>()?.Val);
   }
   
-  private static bool CmpTop(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpTop(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Top>()?.Val, value, diffs, objName, "Top");
   }
@@ -189,7 +189,7 @@ public static class ManualLayoutConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Width>()?.Val);
   }
   
-  private static bool CmpWidth(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Width>()?.Val, value, diffs, objName, "Value");
   }
@@ -207,7 +207,7 @@ public static class ManualLayoutConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Height>()?.Val);
   }
   
-  private static bool CmpHeight(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpHeight(DXDC.ManualLayout openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Height>()?.Val, value, diffs, objName, "Height");
   }
@@ -228,9 +228,9 @@ public static class ManualLayoutConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.ManualLayout openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.ManualLayout openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.ManualLayout openXmlElement, DMDC.ExtensionList? value)
@@ -266,35 +266,35 @@ public static class ManualLayoutConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.ManualLayout? openXmlElement, DMDC.ManualLayout? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ManualLayout? openXmlElement, DMDC.ManualLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLayoutTarget(openXmlElement, value.LayoutTarget, diffs, objName))
+      if (!CmpLayoutTarget(openXmlElement, value.LayoutTarget, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftMode(openXmlElement, value.LeftMode, diffs, objName))
+      if (!CmpLeftMode(openXmlElement, value.LeftMode, diffs, objName, propName))
         ok = false;
-      if (!CmpTopMode(openXmlElement, value.TopMode, diffs, objName))
+      if (!CmpTopMode(openXmlElement, value.TopMode, diffs, objName, propName))
         ok = false;
-      if (!CmpWidthMode(openXmlElement, value.WidthMode, diffs, objName))
+      if (!CmpWidthMode(openXmlElement, value.WidthMode, diffs, objName, propName))
         ok = false;
-      if (!CmpHeightMode(openXmlElement, value.HeightMode, diffs, objName))
+      if (!CmpHeightMode(openXmlElement, value.HeightMode, diffs, objName, propName))
         ok = false;
-      if (!CmpLeft(openXmlElement, value.Left, diffs, objName))
+      if (!CmpLeft(openXmlElement, value.Left, diffs, objName, propName))
         ok = false;
-      if (!CmpTop(openXmlElement, value.Top, diffs, objName))
+      if (!CmpTop(openXmlElement, value.Top, diffs, objName, propName))
         ok = false;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpHeight(openXmlElement, value.Height, diffs, objName))
+      if (!CmpHeight(openXmlElement, value.Height, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

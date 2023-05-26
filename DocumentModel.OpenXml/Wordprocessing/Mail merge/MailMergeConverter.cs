@@ -13,9 +13,9 @@ public static class MailMergeConverter
     return EnumValueConverter.GetValue<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value);
   }
   
-  private static bool CmpMainDocumentType(DXW.MailMerge openXmlElement, DMW.MailMergeDocumentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpMainDocumentType(DXW.MailMerge openXmlElement, DMW.MailMergeDocumentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDocumentValues, DMW.MailMergeDocumentKind>(openXmlElement.GetFirstChild<DXW.MainDocumentType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetMainDocumentType(DXW.MailMerge openXmlElement, DMW.MailMergeDocumentKind? value)
@@ -41,9 +41,9 @@ public static class MailMergeConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.LinkToQuery>());
   }
   
-  private static bool CmpLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.LinkToQuery>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.LinkToQuery>(), value, diffs, objName, propName);
   }
   
   private static void SetLinkToQuery(DXW.MailMerge openXmlElement, Boolean? value)
@@ -59,9 +59,9 @@ public static class MailMergeConverter
     return EnumValueConverter.GetValue<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value);
   }
   
-  private static bool CmpDataType(DXW.MailMerge openXmlElement, DMW.MailMergeDataKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDataType(DXW.MailMerge openXmlElement, DMW.MailMergeDataKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDataValues, DMW.MailMergeDataKind>(openXmlElement.GetFirstChild<DXW.DataType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDataType(DXW.MailMerge openXmlElement, DMW.MailMergeDataKind? value)
@@ -87,7 +87,7 @@ public static class MailMergeConverter
     return openXmlElement.GetFirstChild<DXW.ConnectString>()?.Val?.Value;
   }
   
-  private static bool CmpConnectString(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectString(DXW.MailMerge openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.ConnectString>();
     if (itemElement?.Val?.Value == value) return true;
@@ -115,7 +115,7 @@ public static class MailMergeConverter
     return openXmlElement.GetFirstChild<DXW.Query>()?.Val?.Value;
   }
   
-  private static bool CmpQuery(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQuery(DXW.MailMerge openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Query>();
     if (itemElement?.Val?.Value == value) return true;
@@ -146,9 +146,9 @@ public static class MailMergeConverter
     return null;
   }
   
-  private static bool CmpDataSourceReference(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  private static bool CmpDataSourceReference(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DataSourceReference>(), value, diffs, objName);
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DataSourceReference>(), value, diffs, objName, propName);
   }
   
   private static void SetDataSourceReference(DXW.MailMerge openXmlElement, DMW.RelationshipType? value)
@@ -175,9 +175,9 @@ public static class MailMergeConverter
     return null;
   }
   
-  private static bool CmpHeaderSource(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  private static bool CmpHeaderSource(DXW.MailMerge openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderSource>(), value, diffs, objName);
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.HeaderSource>(), value, diffs, objName, propName);
   }
   
   private static void SetHeaderSource(DXW.MailMerge openXmlElement, DMW.RelationshipType? value)
@@ -201,9 +201,9 @@ public static class MailMergeConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>());
   }
   
-  private static bool CmpDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.DoNotSuppressBlankLines>(), value, diffs, objName, propName);
   }
   
   private static void SetDoNotSuppressBlankLines(DXW.MailMerge openXmlElement, Boolean? value)
@@ -219,9 +219,9 @@ public static class MailMergeConverter
     return EnumValueConverter.GetValue<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value);
   }
   
-  private static bool CmpDestination(DXW.MailMerge openXmlElement, DMW.MailMergeDestinationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDestination(DXW.MailMerge openXmlElement, DMW.MailMergeDestinationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.MailMergeDestinationValues, DMW.MailMergeDestinationKind>(openXmlElement.GetFirstChild<DXW.Destination>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDestination(DXW.MailMerge openXmlElement, DMW.MailMergeDestinationKind? value)
@@ -247,7 +247,7 @@ public static class MailMergeConverter
     return openXmlElement.GetFirstChild<DXW.AddressFieldName>()?.Val?.Value;
   }
   
-  private static bool CmpAddressFieldName(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAddressFieldName(DXW.MailMerge openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.AddressFieldName>();
     if (itemElement?.Val?.Value == value) return true;
@@ -275,7 +275,7 @@ public static class MailMergeConverter
     return openXmlElement.GetFirstChild<DXW.MailSubject>()?.Val?.Value;
   }
   
-  private static bool CmpMailSubject(DXW.MailMerge openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMailSubject(DXW.MailMerge openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.MailSubject>();
     if (itemElement?.Val?.Value == value) return true;
@@ -303,9 +303,9 @@ public static class MailMergeConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.MailAsAttachment>());
   }
   
-  private static bool CmpMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.MailAsAttachment>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.MailAsAttachment>(), value, diffs, objName, propName);
   }
   
   private static void SetMailAsAttachment(DXW.MailMerge openXmlElement, Boolean? value)
@@ -321,9 +321,9 @@ public static class MailMergeConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.ViewMergedData>());
   }
   
-  private static bool CmpViewMergedData(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpViewMergedData(DXW.MailMerge openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ViewMergedData>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.ViewMergedData>(), value, diffs, objName, propName);
   }
   
   private static void SetViewMergedData(DXW.MailMerge openXmlElement, Boolean? value)
@@ -339,7 +339,7 @@ public static class MailMergeConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.ActiveRecord>()?.Val);
   }
   
-  private static bool CmpActiveRecord(DXW.MailMerge openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpActiveRecord(DXW.MailMerge openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.ActiveRecord>()?.Val, value, diffs, objName, "ActiveRecord");
   }
@@ -357,7 +357,7 @@ public static class MailMergeConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.CheckErrors>()?.Val);
   }
   
-  private static bool CmpCheckErrors(DXW.MailMerge openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckErrors(DXW.MailMerge openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.CheckErrors>()?.Val, value, diffs, objName, "CheckErrors");
   }
@@ -378,9 +378,9 @@ public static class MailMergeConverter
     return null;
   }
   
-  private static bool CmpDataSourceObject(DXW.MailMerge openXmlElement, DMW.DataSourceObject? value, DiffList? diffs, string? objName)
+  private static bool CmpDataSourceObject(DXW.MailMerge openXmlElement, DMW.DataSourceObject? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DataSourceObjectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DataSourceObject>(), value, diffs, objName);
+    return DMXW.DataSourceObjectConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DataSourceObject>(), value, diffs, objName, propName);
   }
   
   private static void SetDataSourceObject(DXW.MailMerge openXmlElement, DMW.DataSourceObject? value)
@@ -422,47 +422,47 @@ public static class MailMergeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.MailMerge? openXmlElement, DMW.MailMerge? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.MailMerge? openXmlElement, DMW.MailMerge? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMainDocumentType(openXmlElement, value.MainDocumentType, diffs, objName))
+      if (!CmpMainDocumentType(openXmlElement, value.MainDocumentType, diffs, objName, propName))
         ok = false;
-      if (!CmpLinkToQuery(openXmlElement, value.LinkToQuery, diffs, objName))
+      if (!CmpLinkToQuery(openXmlElement, value.LinkToQuery, diffs, objName, propName))
         ok = false;
-      if (!CmpDataType(openXmlElement, value.DataType, diffs, objName))
+      if (!CmpDataType(openXmlElement, value.DataType, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectString(openXmlElement, value.ConnectString, diffs, objName))
+      if (!CmpConnectString(openXmlElement, value.ConnectString, diffs, objName, propName))
         ok = false;
-      if (!CmpQuery(openXmlElement, value.Query, diffs, objName))
+      if (!CmpQuery(openXmlElement, value.Query, diffs, objName, propName))
         ok = false;
-      if (!CmpDataSourceReference(openXmlElement, value.DataSourceReference, diffs, objName))
+      if (!CmpDataSourceReference(openXmlElement, value.DataSourceReference, diffs, objName, propName))
         ok = false;
-      if (!CmpHeaderSource(openXmlElement, value.HeaderSource, diffs, objName))
+      if (!CmpHeaderSource(openXmlElement, value.HeaderSource, diffs, objName, propName))
         ok = false;
-      if (!CmpDoNotSuppressBlankLines(openXmlElement, value.DoNotSuppressBlankLines, diffs, objName))
+      if (!CmpDoNotSuppressBlankLines(openXmlElement, value.DoNotSuppressBlankLines, diffs, objName, propName))
         ok = false;
-      if (!CmpDestination(openXmlElement, value.Destination, diffs, objName))
+      if (!CmpDestination(openXmlElement, value.Destination, diffs, objName, propName))
         ok = false;
-      if (!CmpAddressFieldName(openXmlElement, value.AddressFieldName, diffs, objName))
+      if (!CmpAddressFieldName(openXmlElement, value.AddressFieldName, diffs, objName, propName))
         ok = false;
-      if (!CmpMailSubject(openXmlElement, value.MailSubject, diffs, objName))
+      if (!CmpMailSubject(openXmlElement, value.MailSubject, diffs, objName, propName))
         ok = false;
-      if (!CmpMailAsAttachment(openXmlElement, value.MailAsAttachment, diffs, objName))
+      if (!CmpMailAsAttachment(openXmlElement, value.MailAsAttachment, diffs, objName, propName))
         ok = false;
-      if (!CmpViewMergedData(openXmlElement, value.ViewMergedData, diffs, objName))
+      if (!CmpViewMergedData(openXmlElement, value.ViewMergedData, diffs, objName, propName))
         ok = false;
-      if (!CmpActiveRecord(openXmlElement, value.ActiveRecord, diffs, objName))
+      if (!CmpActiveRecord(openXmlElement, value.ActiveRecord, diffs, objName, propName))
         ok = false;
-      if (!CmpCheckErrors(openXmlElement, value.CheckErrors, diffs, objName))
+      if (!CmpCheckErrors(openXmlElement, value.CheckErrors, diffs, objName, propName))
         ok = false;
-      if (!CmpDataSourceObject(openXmlElement, value.DataSourceObject, diffs, objName))
+      if (!CmpDataSourceObject(openXmlElement, value.DataSourceObject, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

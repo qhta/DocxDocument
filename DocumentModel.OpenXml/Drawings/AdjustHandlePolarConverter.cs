@@ -13,7 +13,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.RadialAdjustmentGuide);
   }
   
-  private static bool CmpRadialAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRadialAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.RadialAdjustmentGuide, value, diffs, objName, "RadialAdjustmentGuide");
   }
@@ -31,7 +31,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.MinRadial);
   }
   
-  private static bool CmpMinRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinRadial, value, diffs, objName, "MinRadial");
   }
@@ -49,7 +49,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.MaxRadial);
   }
   
-  private static bool CmpMaxRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxRadial(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxRadial, value, diffs, objName, "MaxRadial");
   }
@@ -67,7 +67,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.AngleAdjustmentGuide);
   }
   
-  private static bool CmpAngleAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAngleAdjustmentGuide(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AngleAdjustmentGuide, value, diffs, objName, "AngleAdjustmentGuide");
   }
@@ -85,7 +85,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.MinAngle);
   }
   
-  private static bool CmpMinAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinAngle, value, diffs, objName, "MinAngle");
   }
@@ -103,7 +103,7 @@ public static class AdjustHandlePolarConverter
     return StringValueConverter.GetValue(openXmlElement?.MaxAngle);
   }
   
-  private static bool CmpMaxAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxAngle(DXD.AdjustHandlePolar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxAngle, value, diffs, objName, "MaxAngle");
   }
@@ -124,9 +124,9 @@ public static class AdjustHandlePolarConverter
     return null;
   }
   
-  private static bool CmpPosition(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXD.AdjustHandlePolar openXmlElement, DMD.AdjustPoint2DType? value)
@@ -159,29 +159,29 @@ public static class AdjustHandlePolarConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AdjustHandlePolar? openXmlElement, DMD.AdjustHandlePolar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustHandlePolar? openXmlElement, DMD.AdjustHandlePolar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRadialAdjustmentGuide(openXmlElement, value.RadialAdjustmentGuide, diffs, objName))
+      if (!CmpRadialAdjustmentGuide(openXmlElement, value.RadialAdjustmentGuide, diffs, objName, propName))
         ok = false;
-      if (!CmpMinRadial(openXmlElement, value.MinRadial, diffs, objName))
+      if (!CmpMinRadial(openXmlElement, value.MinRadial, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxRadial(openXmlElement, value.MaxRadial, diffs, objName))
+      if (!CmpMaxRadial(openXmlElement, value.MaxRadial, diffs, objName, propName))
         ok = false;
-      if (!CmpAngleAdjustmentGuide(openXmlElement, value.AngleAdjustmentGuide, diffs, objName))
+      if (!CmpAngleAdjustmentGuide(openXmlElement, value.AngleAdjustmentGuide, diffs, objName, propName))
         ok = false;
-      if (!CmpMinAngle(openXmlElement, value.MinAngle, diffs, objName))
+      if (!CmpMinAngle(openXmlElement, value.MinAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxAngle(openXmlElement, value.MaxAngle, diffs, objName))
+      if (!CmpMaxAngle(openXmlElement, value.MaxAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

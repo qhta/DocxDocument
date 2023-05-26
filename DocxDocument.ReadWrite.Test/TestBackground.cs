@@ -37,7 +37,7 @@ public class TestBackground : TestBase
     var originBackground = reader.WordprocessingDocument.MainDocumentPart?.Document?.DocumentBackground;
 
     var diffs = new DiffList();
-    if (!DMXW.DocumentBackgroundConverter.CompareModelElement(originBackground, modelBackground, diffs, null))
+    if (!DMXW.DocumentBackgroundConverter.CompareModelElement(originBackground, modelBackground, diffs, null, null))
     {
       if (showDetails)
       {

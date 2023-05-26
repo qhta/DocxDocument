@@ -16,9 +16,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.HeaderFooter? value, DiffList? diffs, string? objName)
+  private static bool CmpHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.HeaderFooter? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HeaderFooter>(), value, diffs, objName);
+    return DMXDC.HeaderFooterConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.HeaderFooter>(), value, diffs, objName, propName);
   }
   
   private static void SetHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.HeaderFooter? value)
@@ -45,9 +45,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpPageMargins(DXDC.PrintSettings openXmlElement, DMDC.PageMargins? value, DiffList? diffs, string? objName)
+  private static bool CmpPageMargins(DXDC.PrintSettings openXmlElement, DMDC.PageMargins? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageMargins>(), value, diffs, objName);
+    return DMXDC.PageMarginsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageMargins>(), value, diffs, objName, propName);
   }
   
   private static void SetPageMargins(DXDC.PrintSettings openXmlElement, DMDC.PageMargins? value)
@@ -74,9 +74,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpPageSetup(DXDC.PrintSettings openXmlElement, DMDC.PageSetup? value, DiffList? diffs, string? objName)
+  private static bool CmpPageSetup(DXDC.PrintSettings openXmlElement, DMDC.PageSetup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageSetup>(), value, diffs, objName);
+    return DMXDC.PageSetupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.PageSetup>(), value, diffs, objName, propName);
   }
   
   private static void SetPageSetup(DXDC.PrintSettings openXmlElement, DMDC.PageSetup? value)
@@ -103,9 +103,9 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  private static bool CmpLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.RelationshipIdType? value, DiffList? diffs, string? objName)
+  private static bool CmpLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.RelationshipIdType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>(), value, diffs, objName);
+    return DMXDC.RelationshipIdTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.LegacyDrawingHeaderFooter>(), value, diffs, objName, propName);
   }
   
   private static void SetLegacyDrawingHeaderFooter(DXDC.PrintSettings openXmlElement, DMDC.RelationshipIdType? value)
@@ -135,23 +135,23 @@ public static class PrintSettingsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.PrintSettings? openXmlElement, DMDC.PrintSettings? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PrintSettings? openXmlElement, DMDC.PrintSettings? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHeaderFooter(openXmlElement, value.HeaderFooter, diffs, objName))
+      if (!CmpHeaderFooter(openXmlElement, value.HeaderFooter, diffs, objName, propName))
         ok = false;
-      if (!CmpPageMargins(openXmlElement, value.PageMargins, diffs, objName))
+      if (!CmpPageMargins(openXmlElement, value.PageMargins, diffs, objName, propName))
         ok = false;
-      if (!CmpPageSetup(openXmlElement, value.PageSetup, diffs, objName))
+      if (!CmpPageSetup(openXmlElement, value.PageSetup, diffs, objName, propName))
         ok = false;
-      if (!CmpLegacyDrawingHeaderFooter(openXmlElement, value.LegacyDrawingHeaderFooter, diffs, objName))
+      if (!CmpLegacyDrawingHeaderFooter(openXmlElement, value.LegacyDrawingHeaderFooter, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

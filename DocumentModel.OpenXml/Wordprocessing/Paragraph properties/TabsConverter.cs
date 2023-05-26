@@ -12,9 +12,9 @@ public static class TabsConverter
     return null;
   }
 
-  private static bool CmpTabStop(DXW.TabStop openXmlElement, DMW.TabStop value, DiffList? diffs, string? objName)
+  private static bool CmpTabStop(DXW.TabStop openXmlElement, DMW.TabStop value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TabStopConverter.CompareModelElement(openXmlElement, value, diffs, objName);
+    return DMXW.TabStopConverter.CompareModelElement(openXmlElement, value, diffs, objName, propName);
   }
 
   private static DXW.TabStop CreateTabStop(DMW.TabStop value)
@@ -40,7 +40,7 @@ public static class TabsConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.Tabs? openXmlElement, DMW.Tabs? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Tabs? openXmlElement, DMW.Tabs? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -49,12 +49,12 @@ public static class TabsConverter
         openXmlElement.Elements<DXW.TabStop>(),
         model,
         CmpTabStop,
-        diffs, objName))
+        diffs, objName, propName))
          ok = false; 
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

@@ -16,9 +16,9 @@ public static class NonVisualPicturePropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualDrawingProperties? value)
@@ -45,9 +45,9 @@ public static class NonVisualPicturePropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>(), value, diffs, objName);
+    return DMXDCD.NonVisualPictureDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.NonVisualPictureDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualPictureDrawingProperties(DXDCD.NonVisualPictureProperties openXmlElement, DMDCD.NonVisualPictureDrawingProperties? value)
@@ -75,19 +75,19 @@ public static class NonVisualPicturePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.NonVisualPictureProperties? openXmlElement, DMDCD.NonVisualPictureProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.NonVisualPictureProperties? openXmlElement, DMDCD.NonVisualPictureProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName))
+      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualPictureDrawingProperties(openXmlElement, value.NonVisualPictureDrawingProperties, diffs, objName))
+      if (!CmpNonVisualPictureDrawingProperties(openXmlElement, value.NonVisualPictureDrawingProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

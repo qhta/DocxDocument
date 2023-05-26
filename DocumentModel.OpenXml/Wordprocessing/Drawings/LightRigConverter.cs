@@ -13,9 +13,9 @@ public static class LightRigConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(openXmlElement?.LightRigType?.Value);
   }
   
-  private static bool CmpLightRigType(DXO10W.LightRig openXmlElement, DMW.LightRigKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLightRigType(DXO10W.LightRig openXmlElement, DMW.LightRigKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(openXmlElement?.LightRigType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigTypeValues, DMW.LightRigKind>(openXmlElement?.LightRigType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLightRigType(DXO10W.LightRig openXmlElement, DMW.LightRigKind? value)
@@ -31,9 +31,9 @@ public static class LightRigConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value);
   }
   
-  private static bool CmpLightDirectionType(DXO10W.LightRig openXmlElement, DMW.LightRigDirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLightDirectionType(DXO10W.LightRig openXmlElement, DMW.LightRigDirectionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.LightRigDirectionValues, DMW.LightRigDirectionKind>(openXmlElement?.LightDirectionType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLightDirectionType(DXO10W.LightRig openXmlElement, DMW.LightRigDirectionKind? value)
@@ -52,9 +52,9 @@ public static class LightRigConverter
     return null;
   }
   
-  private static bool CmpSphereCoordinates(DXO10W.LightRig openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
+  private static bool CmpSphereCoordinates(DXO10W.LightRig openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SphereCoordinatesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.SphereCoordinates>(), value, diffs, objName);
+    return DMXW.SphereCoordinatesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.SphereCoordinates>(), value, diffs, objName, propName);
   }
   
   private static void SetSphereCoordinates(DXO10W.LightRig openXmlElement, DMW.SphereCoordinates? value)
@@ -83,21 +83,21 @@ public static class LightRigConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.LightRig? openXmlElement, DMW.LightRig? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.LightRig? openXmlElement, DMW.LightRig? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLightRigType(openXmlElement, value.LightRigType, diffs, objName))
+      if (!CmpLightRigType(openXmlElement, value.LightRigType, diffs, objName, propName))
         ok = false;
-      if (!CmpLightDirectionType(openXmlElement, value.LightDirectionType, diffs, objName))
+      if (!CmpLightDirectionType(openXmlElement, value.LightDirectionType, diffs, objName, propName))
         ok = false;
-      if (!CmpSphereCoordinates(openXmlElement, value.SphereCoordinates, diffs, objName))
+      if (!CmpSphereCoordinates(openXmlElement, value.SphereCoordinates, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

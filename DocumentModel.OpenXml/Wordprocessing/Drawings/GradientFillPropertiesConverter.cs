@@ -16,9 +16,9 @@ public static class GradientFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpGradientStopList(DXO10W.GradientFillProperties openXmlElement, DMW.GradientStopList? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientStopList(DXO10W.GradientFillProperties openXmlElement, DMW.GradientStopList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.GradientStopList>(), value, diffs, objName);
+    return DMXW.GradientStopListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.GradientStopList>(), value, diffs, objName, propName);
   }
   
   private static void SetGradientStopList(DXO10W.GradientFillProperties openXmlElement, DMW.GradientStopList? value)
@@ -42,9 +42,9 @@ public static class GradientFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpLinearShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLinearShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.LinearShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.LinearShadeProperties>(), value, diffs, objName);
+    return DMXW.LinearShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.LinearShadeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLinearShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.LinearShadeProperties? value)
@@ -68,9 +68,9 @@ public static class GradientFillPropertiesConverter
     return null;
   }
   
-  private static bool CmpPathShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpPathShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PathShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.PathShadeProperties>(), value, diffs, objName);
+    return DMXW.PathShadePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.PathShadeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetPathShadeProperties(DXO10W.GradientFillProperties openXmlElement, DMW.PathShadeProperties? value)
@@ -99,21 +99,21 @@ public static class GradientFillPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.GradientFillProperties? openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.GradientFillProperties? openXmlElement, DMW.GradientFillProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGradientStopList(openXmlElement, value.GradientStopList, diffs, objName))
+      if (!CmpGradientStopList(openXmlElement, value.GradientStopList, diffs, objName, propName))
         ok = false;
-      if (!CmpLinearShadeProperties(openXmlElement, value.LinearShadeProperties, diffs, objName))
+      if (!CmpLinearShadeProperties(openXmlElement, value.LinearShadeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpPathShadeProperties(openXmlElement, value.PathShadeProperties, diffs, objName))
+      if (!CmpPathShadeProperties(openXmlElement, value.PathShadeProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

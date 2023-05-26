@@ -14,11 +14,11 @@ public static class BodyTypeConverter
   }
 
   public static bool CompareBodyTypeContentElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement is DXW.SectionProperties sectionProperties && model is DMW.SectionProperties sectionPropertiesModel)
-      return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName);
-    return BlockLevelElementsConverter.CompareBlockLevelElement(openXmlElement, model, diffs, objName);
+      return DMXW.SectionPropertiesConverter.CompareModelElement(sectionProperties, sectionPropertiesModel, diffs, objName, propName);
+    return BlockLevelElementsConverter.CompareBlockLevelElement(openXmlElement, model, diffs, objName, propName);
   }
   public static OpenXmlElement CreateOpenXmlElement(DMW.IStoryContent model)
   {
@@ -42,10 +42,10 @@ public static class BodyTypeConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.BodyType? openXmlElement, DMW.BodyType? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.BodyType? openXmlElement, DMW.BodyType? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
      return ElementCollectionConverter<DMW.IStoryContent>.CompareOpenXmlElementCollection
-        (openXmlElement, model, CompareBodyTypeContentElement, diffs, objName);
+        (openXmlElement, model, CompareBodyTypeContentElement, diffs, objName, propName);
   }
 
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.BodyType model)

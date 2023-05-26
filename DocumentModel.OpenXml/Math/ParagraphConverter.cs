@@ -14,9 +14,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpParagraphProperties(DXM.Paragraph openXmlElement, DMM.ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphProperties(DXM.Paragraph openXmlElement, DMM.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ParagraphProperties>(), value, diffs, objName);
+    return DMXM.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetParagraphProperties(DXM.Paragraph openXmlElement, DMM.ParagraphProperties? value)
@@ -44,14 +44,14 @@ public static class ParagraphConverter
   }
 
   public static bool CompareMathParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.OfficeMath oMath && model is DMM.OfficeMath oMathModel)
-        return DMXM.OfficeMathConverter.CompareModelElement(oMath, oMathModel, diffs, objName);
+        return DMXM.OfficeMathConverter.CompareModelElement(oMath, oMathModel, diffs, objName, propName);
       if (openXmlElement is DXM.Run run && model is DMM.Run runModel)
-        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+        return DMXM.RunConverter.CompareModelElement(run, runModel, diffs, objName, propName);
     }
     return DMXW.ParagraphContentConverter.CompareParagraphContent(openXmlElement, model, diffs);
   }
@@ -93,21 +93,21 @@ public static class ParagraphConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.Paragraph? openXmlElement, DMM.Paragraph? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.Paragraph? openXmlElement, DMM.Paragraph? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName))
+      if (!CmpParagraphProperties(openXmlElement, model.ParagraphProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMM.IMathParagraphContent>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXM.ParagraphProperties), model,
-        CompareMathParagraphContent, diffs, objName))
+        CompareMathParagraphContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -13,9 +13,9 @@ public static class RelationConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVO.Relation openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Relation openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExtension(DXVO.Relation openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
@@ -31,7 +31,7 @@ public static class RelationConverter
     return StringValueConverter.GetValue(openXmlElement?.SourceId);
   }
   
-  private static bool CmpSourceId(DXVO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceId(DXVO.Relation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SourceId, value, diffs, objName, "SourceId");
   }
@@ -49,7 +49,7 @@ public static class RelationConverter
     return StringValueConverter.GetValue(openXmlElement?.DestinationId);
   }
   
-  private static bool CmpDestinationId(DXVO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDestinationId(DXVO.Relation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.DestinationId, value, diffs, objName, "DestinationId");
   }
@@ -67,7 +67,7 @@ public static class RelationConverter
     return StringValueConverter.GetValue(openXmlElement?.CenterShapeId);
   }
   
-  private static bool CmpCenterShapeId(DXVO.Relation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCenterShapeId(DXVO.Relation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CenterShapeId, value, diffs, objName, "CenterShapeId");
   }
@@ -91,23 +91,23 @@ public static class RelationConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Relation? openXmlElement, DMV.Relation? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Relation? openXmlElement, DMV.Relation? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName))
+      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName, propName))
         ok = false;
-      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName))
+      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName, propName))
         ok = false;
-      if (!CmpCenterShapeId(openXmlElement, value.CenterShapeId, diffs, objName))
+      if (!CmpCenterShapeId(openXmlElement, value.CenterShapeId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class RunConverter
     return null;
   }
   
-  private static bool CmpRunProperties(DXD.Run openXmlElement, DMD.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXD.Run openXmlElement, DMD.RunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName);
+    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetRunProperties(DXD.Run openXmlElement, DMD.RunProperties? value)
@@ -42,7 +42,7 @@ public static class RunConverter
     return openXmlElement?.Text?.Text;
   }
   
-  private static bool CmpText(DXD.Run openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXD.Run openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Text?.Text == value) return true;
     diffs?.Add(objName, "Text", openXmlElement?.Text?.Text, value);
@@ -69,19 +69,19 @@ public static class RunConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Run? openXmlElement, DMD.Run? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Run? openXmlElement, DMD.Run? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+      if (!CmpText(openXmlElement, value.Text, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

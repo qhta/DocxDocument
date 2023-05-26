@@ -17,9 +17,9 @@ public static class PreviousTableGridConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousTableGrid? openXmlElement, DMW.PreviousTableGrid? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousTableGrid? openXmlElement, DMW.PreviousTableGrid? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BaseTableGridConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return BaseTableGridConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.PreviousTableGrid model)

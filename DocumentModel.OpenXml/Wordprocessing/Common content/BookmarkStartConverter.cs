@@ -13,7 +13,7 @@ public static class BookmarkStartConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.BookmarkStart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,7 +31,7 @@ public static class BookmarkStartConverter
     return openXmlElement?.ColumnFirst?.Value;
   }
   
-  private static bool CmpColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnFirst(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnFirst?.Value == value) return true;
     diffs?.Add(objName, "ColumnFirst", openXmlElement?.ColumnFirst?.Value, value);
@@ -51,7 +51,7 @@ public static class BookmarkStartConverter
     return openXmlElement?.ColumnLast?.Value;
   }
   
-  private static bool CmpColumnLast(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpColumnLast(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ColumnLast?.Value == value) return true;
     diffs?.Add(objName, "ColumnLast", openXmlElement?.ColumnLast?.Value, value);
@@ -71,9 +71,9 @@ public static class BookmarkStartConverter
     return EnumValueConverter.GetValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
   
-  private static bool CmpDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.BookmarkStart openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -89,7 +89,7 @@ public static class BookmarkStartConverter
     return Int32ValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.BookmarkStart openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -114,25 +114,25 @@ public static class BookmarkStartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.BookmarkStart? openXmlElement, DMW.BookmarkStart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.BookmarkStart? openXmlElement, DMW.BookmarkStart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnFirst(openXmlElement, value.ColumnFirst, diffs, objName))
+      if (!CmpColumnFirst(openXmlElement, value.ColumnFirst, diffs, objName, propName))
         ok = false;
-      if (!CmpColumnLast(openXmlElement, value.ColumnLast, diffs, objName))
+      if (!CmpColumnLast(openXmlElement, value.ColumnLast, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

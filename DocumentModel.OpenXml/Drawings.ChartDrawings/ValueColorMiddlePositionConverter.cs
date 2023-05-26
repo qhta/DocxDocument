@@ -13,7 +13,7 @@ public static class ValueColorMiddlePositionConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO16DCD.NumberColorPosition>()?.Val);
   }
   
-  private static bool CmpNumberColorPosition(DXO16DCD.ValueColorMiddlePosition openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberColorPosition(DXO16DCD.ValueColorMiddlePosition openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO16DCD.NumberColorPosition>()?.Val, value, diffs, objName, "NumberColorPosition");
   }
@@ -31,7 +31,7 @@ public static class ValueColorMiddlePositionConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO16DCD.PercentageColorPosition>()?.Val);
   }
   
-  private static bool CmpPercentageColorPosition(DXO16DCD.ValueColorMiddlePosition openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpPercentageColorPosition(DXO16DCD.ValueColorMiddlePosition openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO16DCD.PercentageColorPosition>()?.Val, value, diffs, objName, "PercentageColorPosition");
   }
@@ -53,19 +53,19 @@ public static class ValueColorMiddlePositionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ValueColorMiddlePosition? openXmlElement, DMDCDs.ValueColorMiddlePosition? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ValueColorMiddlePosition? openXmlElement, DMDCDs.ValueColorMiddlePosition? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNumberColorPosition(openXmlElement, value.NumberColorPosition, diffs, objName))
+      if (!CmpNumberColorPosition(openXmlElement, value.NumberColorPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpPercentageColorPosition(openXmlElement, value.PercentageColorPosition, diffs, objName))
+      if (!CmpPercentageColorPosition(openXmlElement, value.PercentageColorPosition, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

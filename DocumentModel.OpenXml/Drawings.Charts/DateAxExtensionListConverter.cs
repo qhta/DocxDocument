@@ -19,7 +19,7 @@ public static class DateAxExtensionListConverter
     return null;
   }
   
-  private static bool CmpDateAxExtensions(DXDC.DateAxExtensionList openXmlElement, Collection<DMDC.DateAxExtension>? value, DiffList? diffs, string? objName)
+  private static bool CmpDateAxExtensions(DXDC.DateAxExtensionList openXmlElement, Collection<DMDC.DateAxExtension>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.DateAxExtension>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class DateAxExtensionListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class DateAxExtensionListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.DateAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.DateAxExtensionConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class DateAxExtensionListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DateAxExtensionList? openXmlElement, DMDC.DateAxExtensionList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DateAxExtensionList? openXmlElement, DMDC.DateAxExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDateAxExtensions(openXmlElement, value.DateAxExtensions, diffs, objName))
+      if (!CmpDateAxExtensions(openXmlElement, value.DateAxExtensions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

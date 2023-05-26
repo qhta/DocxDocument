@@ -13,7 +13,7 @@ public static class ColorStyleConverter
     return StringValueConverter.GetValue(openXmlElement?.Method);
   }
   
-  private static bool CmpMethod(DXO13DCS.ColorStyle openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMethod(DXO13DCS.ColorStyle openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Method, value, diffs, objName, "Method");
   }
@@ -31,7 +31,7 @@ public static class ColorStyleConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXO13DCS.ColorStyle openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13DCS.ColorStyle openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -51,9 +51,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelPercentage? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName);
+    return DMXD.RgbColorModelPercentageConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelPercentage>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelPercentage(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelPercentage? value)
@@ -77,9 +77,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs, string? objName)
+  private static bool CmpRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelHex? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName);
+    return DMXD.RgbColorModelHexConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RgbColorModelHex>(), value, diffs, objName, propName);
   }
   
   private static void SetRgbColorModelHex(DXO13DCS.ColorStyle openXmlElement, DMD.RgbColorModelHex? value)
@@ -103,9 +103,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpHslColor(DXO13DCS.ColorStyle openXmlElement, DMD.HslColor? value, DiffList? diffs, string? objName)
+  private static bool CmpHslColor(DXO13DCS.ColorStyle openXmlElement, DMD.HslColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName);
+    return DMXD.HslColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HslColor>(), value, diffs, objName, propName);
   }
   
   private static void SetHslColor(DXO13DCS.ColorStyle openXmlElement, DMD.HslColor? value)
@@ -129,9 +129,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpSystemColor(DXO13DCS.ColorStyle openXmlElement, DMD.SystemColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSystemColor(DXO13DCS.ColorStyle openXmlElement, DMD.SystemColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName);
+    return DMXD.SystemColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SystemColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSystemColor(DXO13DCS.ColorStyle openXmlElement, DMD.SystemColor? value)
@@ -155,9 +155,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpSchemeColor(DXO13DCS.ColorStyle openXmlElement, DMD.SchemeColor? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemeColor(DXO13DCS.ColorStyle openXmlElement, DMD.SchemeColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName);
+    return DMXD.SchemeColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SchemeColor>(), value, diffs, objName, propName);
   }
   
   private static void SetSchemeColor(DXO13DCS.ColorStyle openXmlElement, DMD.SchemeColor? value)
@@ -181,9 +181,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpPresetColor(DXO13DCS.ColorStyle openXmlElement, DMD.PresetColor? value, DiffList? diffs, string? objName)
+  private static bool CmpPresetColor(DXO13DCS.ColorStyle openXmlElement, DMD.PresetColor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName);
+    return DMXD.PresetColorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PresetColor>(), value, diffs, objName, propName);
   }
   
   private static void SetPresetColor(DXO13DCS.ColorStyle openXmlElement, DMD.PresetColor? value)
@@ -213,7 +213,7 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpColorStyleVariations(DXO13DCS.ColorStyle openXmlElement, Collection<DMDCS.ColorStyleVariation>? value, DiffList? diffs, string? objName)
+  private static bool CmpColorStyleVariations(DXO13DCS.ColorStyle openXmlElement, Collection<DMDCS.ColorStyleVariation>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO13DCS.ColorStyleVariation>();
     var origElementsCount = origElements.Count();
@@ -222,7 +222,7 @@ public static class ColorStyleConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -231,13 +231,13 @@ public static class ColorStyleConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDCS.ColorStyleVariationConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDCS.ColorStyleVariationConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -263,9 +263,9 @@ public static class ColorStyleConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement, DMDCS.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement, DMDCS.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCS.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXDCS.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DCS.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO13DCS.ColorStyle openXmlElement, DMDCS.OfficeArtExtensionList? value)
@@ -301,35 +301,35 @@ public static class ColorStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DCS.ColorStyle? openXmlElement, DMDCS.ColorStyle? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.ColorStyle? openXmlElement, DMDCS.ColorStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpMethod(openXmlElement, value.Method, diffs, objName))
+      if (!CmpMethod(openXmlElement, value.Method, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName))
+      if (!CmpRgbColorModelPercentage(openXmlElement, value.RgbColorModelPercentage, diffs, objName, propName))
         ok = false;
-      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName))
+      if (!CmpRgbColorModelHex(openXmlElement, value.RgbColorModelHex, diffs, objName, propName))
         ok = false;
-      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName))
+      if (!CmpHslColor(openXmlElement, value.HslColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName))
+      if (!CmpSystemColor(openXmlElement, value.SystemColor, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName))
+      if (!CmpSchemeColor(openXmlElement, value.SchemeColor, diffs, objName, propName))
         ok = false;
-      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName))
+      if (!CmpPresetColor(openXmlElement, value.PresetColor, diffs, objName, propName))
         ok = false;
-      if (!CmpColorStyleVariations(openXmlElement, value.ColorStyleVariations, diffs, objName))
+      if (!CmpColorStyleVariations(openXmlElement, value.ColorStyleVariations, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

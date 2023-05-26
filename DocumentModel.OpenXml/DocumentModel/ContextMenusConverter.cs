@@ -19,7 +19,7 @@ public static class ContextMenusConverter
     return null;
   }
   
-  private static bool CmpItems(DXO10CUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXO10CUI.ContextMenus openXmlElement, Collection<DM.ContextMenu>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10CUI.ContextMenu>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class ContextMenusConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class ContextMenusConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMX.ContextMenuConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMX.ContextMenuConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class ContextMenusConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.ContextMenus? openXmlElement, DM.ContextMenus? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.ContextMenus? openXmlElement, DM.ContextMenus? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpItems(openXmlElement, value.Items, diffs, objName))
+      if (!CmpItems(openXmlElement, value.Items, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class OEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.OEmbedUrl);
   }
   
-  private static bool CmpOEmbedUrl(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpOEmbedUrl(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.OEmbedUrl, value, diffs, objName, "OEmbedUrl");
   }
@@ -31,7 +31,7 @@ public static class OEmbedConverter
     return StringValueConverter.GetValue(openXmlElement?.MediaType);
   }
   
-  private static bool CmpMediaType(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMediaType(DXOSWY20OE.OEmbed openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MediaType, value, diffs, objName, "MediaType");
   }
@@ -49,7 +49,7 @@ public static class OEmbedConverter
     return openXmlElement?.PicLocksAutoForOEmbed?.Value;
   }
   
-  private static bool CmpPicLocksAutoForOEmbed(DXOSWY20OE.OEmbed openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPicLocksAutoForOEmbed(DXOSWY20OE.OEmbed openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PicLocksAutoForOEmbed?.Value == value) return true;
     diffs?.Add(objName, "PicLocksAutoForOEmbed", openXmlElement?.PicLocksAutoForOEmbed?.Value, value);
@@ -77,21 +77,21 @@ public static class OEmbedConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOSWY20OE.OEmbed? openXmlElement, DMWOE.OEmbed? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOSWY20OE.OEmbed? openXmlElement, DMWOE.OEmbed? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpOEmbedUrl(openXmlElement, value.OEmbedUrl, diffs, objName))
+      if (!CmpOEmbedUrl(openXmlElement, value.OEmbedUrl, diffs, objName, propName))
         ok = false;
-      if (!CmpMediaType(openXmlElement, value.MediaType, diffs, objName))
+      if (!CmpMediaType(openXmlElement, value.MediaType, diffs, objName, propName))
         ok = false;
-      if (!CmpPicLocksAutoForOEmbed(openXmlElement, value.PicLocksAutoForOEmbed, diffs, objName))
+      if (!CmpPicLocksAutoForOEmbed(openXmlElement, value.PicLocksAutoForOEmbed, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

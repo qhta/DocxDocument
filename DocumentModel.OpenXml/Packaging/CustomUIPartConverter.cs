@@ -13,7 +13,7 @@ public static class CustomUIPartConverter
       return DMXUI.CustomUIConverter.CreateModelElement(openXmlElement?.RootElement as DXOCUI.CustomUI);
   }
   
-  private static bool CmpCustomUI(DXPack.CustomUIPart openXmlElement, DMUI.CustomUI? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomUI(DXPack.CustomUIPart openXmlElement, DMUI.CustomUI? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -39,17 +39,17 @@ public static class CustomUIPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.CustomUIPart? openXmlElement, DMPack.CustomUIPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.CustomUIPart? openXmlElement, DMPack.CustomUIPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCustomUI(openXmlElement, value.CustomUI, diffs, objName))
+      if (!CmpCustomUI(openXmlElement, value.CustomUI, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

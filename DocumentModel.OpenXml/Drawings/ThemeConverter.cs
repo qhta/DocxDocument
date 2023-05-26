@@ -13,7 +13,7 @@ public static class ThemeConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.Theme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.Theme openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,7 +31,7 @@ public static class ThemeConverter
     return StringValueConverter.GetValue(openXmlElement?.ThemeId);
   }
   
-  private static bool CmpThemeId(DXD.Theme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeId(DXD.Theme openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ThemeId, value, diffs, objName, "ThemeId");
   }
@@ -52,9 +52,9 @@ public static class ThemeConverter
     return null;
   }
   
-  private static bool CmpThemeElements(DXD.Theme openXmlElement, DMD.ThemeElements? value, DiffList? diffs, string? objName)
+  private static bool CmpThemeElements(DXD.Theme openXmlElement, DMD.ThemeElements? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ThemeElementsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ThemeElements>(), value, diffs, objName);
+    return DMXD.ThemeElementsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ThemeElements>(), value, diffs, objName, propName);
   }
   
   private static void SetThemeElements(DXD.Theme openXmlElement, DMD.ThemeElements? value)
@@ -81,9 +81,9 @@ public static class ThemeConverter
     return null;
   }
   
-  private static bool CmpObjectDefaults(DXD.Theme openXmlElement, DMD.ObjectDefaults? value, DiffList? diffs, string? objName)
+  private static bool CmpObjectDefaults(DXD.Theme openXmlElement, DMD.ObjectDefaults? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ObjectDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ObjectDefaults>(), value, diffs, objName);
+    return DMXD.ObjectDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ObjectDefaults>(), value, diffs, objName, propName);
   }
   
   private static void SetObjectDefaults(DXD.Theme openXmlElement, DMD.ObjectDefaults? value)
@@ -110,9 +110,9 @@ public static class ThemeConverter
     return null;
   }
   
-  private static bool CmpExtraColorSchemeList(DXD.Theme openXmlElement, DMD.ExtraColorSchemeList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtraColorSchemeList(DXD.Theme openXmlElement, DMD.ExtraColorSchemeList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtraColorSchemeListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtraColorSchemeList>(), value, diffs, objName);
+    return DMXD.ExtraColorSchemeListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtraColorSchemeList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtraColorSchemeList(DXD.Theme openXmlElement, DMD.ExtraColorSchemeList? value)
@@ -139,9 +139,9 @@ public static class ThemeConverter
     return null;
   }
   
-  private static bool CmpCustomColorList(DXD.Theme openXmlElement, DMD.CustomColorList? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomColorList(DXD.Theme openXmlElement, DMD.CustomColorList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.CustomColorListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomColorList>(), value, diffs, objName);
+    return DMXD.CustomColorListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.CustomColorList>(), value, diffs, objName, propName);
   }
   
   private static void SetCustomColorList(DXD.Theme openXmlElement, DMD.CustomColorList? value)
@@ -168,9 +168,9 @@ public static class ThemeConverter
     return null;
   }
   
-  private static bool CmpOfficeStyleSheetExtensionList(DXD.Theme openXmlElement, DMD.OfficeStyleSheetExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeStyleSheetExtensionList(DXD.Theme openXmlElement, DMD.OfficeStyleSheetExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OfficeStyleSheetExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.OfficeStyleSheetExtensionList>(), value, diffs, objName);
+    return DMXD.OfficeStyleSheetExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.OfficeStyleSheetExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeStyleSheetExtensionList(DXD.Theme openXmlElement, DMD.OfficeStyleSheetExtensionList? value)
@@ -203,29 +203,29 @@ public static class ThemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Theme? openXmlElement, DMD.Theme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Theme? openXmlElement, DMD.Theme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeId(openXmlElement, value.ThemeId, diffs, objName))
+      if (!CmpThemeId(openXmlElement, value.ThemeId, diffs, objName, propName))
         ok = false;
-      if (!CmpThemeElements(openXmlElement, value.ThemeElements, diffs, objName))
+      if (!CmpThemeElements(openXmlElement, value.ThemeElements, diffs, objName, propName))
         ok = false;
-      if (!CmpObjectDefaults(openXmlElement, value.ObjectDefaults, diffs, objName))
+      if (!CmpObjectDefaults(openXmlElement, value.ObjectDefaults, diffs, objName, propName))
         ok = false;
-      if (!CmpExtraColorSchemeList(openXmlElement, value.ExtraColorSchemeList, diffs, objName))
+      if (!CmpExtraColorSchemeList(openXmlElement, value.ExtraColorSchemeList, diffs, objName, propName))
         ok = false;
-      if (!CmpCustomColorList(openXmlElement, value.CustomColorList, diffs, objName))
+      if (!CmpCustomColorList(openXmlElement, value.CustomColorList, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeStyleSheetExtensionList(openXmlElement, value.OfficeStyleSheetExtensionList, diffs, objName))
+      if (!CmpOfficeStyleSheetExtensionList(openXmlElement, value.OfficeStyleSheetExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

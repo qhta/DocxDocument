@@ -13,7 +13,7 @@ public static class SphereCoordinatesConverter
     return openXmlElement?.Lattitude?.Value;
   }
   
-  private static bool CmpLattitude(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLattitude(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Lattitude?.Value == value) return true;
     diffs?.Add(objName, "Lattitude", openXmlElement?.Lattitude?.Value, value);
@@ -33,7 +33,7 @@ public static class SphereCoordinatesConverter
     return openXmlElement?.Longitude?.Value;
   }
   
-  private static bool CmpLongitude(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLongitude(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Longitude?.Value == value) return true;
     diffs?.Add(objName, "Longitude", openXmlElement?.Longitude?.Value, value);
@@ -53,7 +53,7 @@ public static class SphereCoordinatesConverter
     return openXmlElement?.Revolution?.Value;
   }
   
-  private static bool CmpRevolution(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRevolution(DXO10W.SphereCoordinates openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Revolution?.Value == value) return true;
     diffs?.Add(objName, "Revolution", openXmlElement?.Revolution?.Value, value);
@@ -78,21 +78,21 @@ public static class SphereCoordinatesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.SphereCoordinates? openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.SphereCoordinates? openXmlElement, DMW.SphereCoordinates? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLattitude(openXmlElement, value.Lattitude, diffs, objName))
+      if (!CmpLattitude(openXmlElement, value.Lattitude, diffs, objName, propName))
         ok = false;
-      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName))
+      if (!CmpLongitude(openXmlElement, value.Longitude, diffs, objName, propName))
         ok = false;
-      if (!CmpRevolution(openXmlElement, value.Revolution, diffs, objName))
+      if (!CmpRevolution(openXmlElement, value.Revolution, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

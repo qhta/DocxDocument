@@ -13,9 +13,9 @@ public static class TextInputConverter
     return EnumValueConverter.GetValue<DXW.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value);
   }
   
-  private static bool CmpTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextBoxFormFieldValues, DMW.TextBoxFormFieldKind>(openXmlElement.GetFirstChild<DXW.TextBoxFormFieldType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTextBoxFormFieldType(DXW.TextInput openXmlElement, DMW.TextBoxFormFieldKind? value)
@@ -41,7 +41,7 @@ public static class TextInputConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val);
   }
   
-  private static bool CmpDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDefaultTextBoxFormFieldString(DXW.TextInput openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DefaultTextBoxFormFieldString>()?.Val, value, diffs, objName, "DefaultTextBoxFormFieldString");
   }
@@ -59,7 +59,7 @@ public static class TextInputConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val);
   }
   
-  private static bool CmpMaxLength(DXW.TextInput openXmlElement, Int16? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxLength(DXW.TextInput openXmlElement, Int16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.MaxLength>()?.Val, value, diffs, objName, "MaxLength");
   }
@@ -77,7 +77,7 @@ public static class TextInputConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val);
   }
   
-  private static bool CmpFormat(DXW.TextInput openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormat(DXW.TextInput openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.Format>()?.Val, value, diffs, objName, "Custom");
   }
@@ -101,23 +101,23 @@ public static class TextInputConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TextInput? openXmlElement, DMW.TextInput? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TextInput? openXmlElement, DMW.TextInput? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTextBoxFormFieldType(openXmlElement, value.TextBoxFormFieldType, diffs, objName))
+      if (!CmpTextBoxFormFieldType(openXmlElement, value.TextBoxFormFieldType, diffs, objName, propName))
         ok = false;
-      if (!CmpDefaultTextBoxFormFieldString(openXmlElement, value.DefaultTextBoxFormFieldString, diffs, objName))
+      if (!CmpDefaultTextBoxFormFieldString(openXmlElement, value.DefaultTextBoxFormFieldString, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxLength(openXmlElement, value.MaxLength, diffs, objName))
+      if (!CmpMaxLength(openXmlElement, value.MaxLength, diffs, objName, propName))
         ok = false;
-      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

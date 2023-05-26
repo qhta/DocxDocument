@@ -15,7 +15,7 @@ public static class SchemaConverter
     return null;
   }
   
-  private static bool CmpUri(DXCXSR.Schema openXmlElement, Uri? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXCXSR.Schema openXmlElement, Uri? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value?.ToString(), diffs, objName, "Uri");
   }
@@ -33,7 +33,7 @@ public static class SchemaConverter
     return StringValueConverter.GetValue(openXmlElement?.ManifestLocation);
   }
   
-  private static bool CmpManifestLocation(DXCXSR.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpManifestLocation(DXCXSR.Schema openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ManifestLocation, value, diffs, objName, "ManifestLocation");
   }
@@ -51,7 +51,7 @@ public static class SchemaConverter
     return StringValueConverter.GetValue(openXmlElement?.SchemaLocation);
   }
   
-  private static bool CmpSchemaLocation(DXCXSR.Schema openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSchemaLocation(DXCXSR.Schema openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SchemaLocation, value, diffs, objName, "SchemaLocation");
   }
@@ -74,21 +74,21 @@ public static class SchemaConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXCXSR.Schema? openXmlElement, DMCX.Schema? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXCXSR.Schema? openXmlElement, DMCX.Schema? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpManifestLocation(openXmlElement, value.ManifestLocation, diffs, objName))
+      if (!CmpManifestLocation(openXmlElement, value.ManifestLocation, diffs, objName, propName))
         ok = false;
-      if (!CmpSchemaLocation(openXmlElement, value.SchemaLocation, diffs, objName))
+      if (!CmpSchemaLocation(openXmlElement, value.SchemaLocation, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

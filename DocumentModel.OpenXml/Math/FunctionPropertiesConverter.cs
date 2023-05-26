@@ -14,9 +14,9 @@ public static class FunctionPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.FunctionProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.FunctionProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.FunctionProperties openXmlElement, DMM.ControlProperties? value)
@@ -45,17 +45,17 @@ public static class FunctionPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.FunctionProperties? openXmlElement, DMM.FunctionProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.FunctionProperties? openXmlElement, DMM.FunctionProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, model.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

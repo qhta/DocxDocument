@@ -13,7 +13,7 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.ConnectorLines?.Value;
   }
   
-  private static bool CmpConnectorLines(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectorLines(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ConnectorLines?.Value == value) return true;
     diffs?.Add(objName, "ConnectorLines", openXmlElement?.ConnectorLines?.Value, value);
@@ -36,7 +36,7 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.MeanLine?.Value;
   }
   
-  private static bool CmpMeanLine(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpMeanLine(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MeanLine?.Value == value) return true;
     diffs?.Add(objName, "MeanLine", openXmlElement?.MeanLine?.Value, value);
@@ -59,7 +59,7 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.MeanMarker?.Value;
   }
   
-  private static bool CmpMeanMarker(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpMeanMarker(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.MeanMarker?.Value == value) return true;
     diffs?.Add(objName, "MeanMarker", openXmlElement?.MeanMarker?.Value, value);
@@ -82,7 +82,7 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.Nonoutliers?.Value;
   }
   
-  private static bool CmpNonoutliers(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNonoutliers(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Nonoutliers?.Value == value) return true;
     diffs?.Add(objName, "Nonoutliers", openXmlElement?.Nonoutliers?.Value, value);
@@ -105,7 +105,7 @@ public static class SeriesElementVisibilitiesConverter
     return openXmlElement?.Outliers?.Value;
   }
   
-  private static bool CmpOutliers(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOutliers(DXO16DCD.SeriesElementVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Outliers?.Value == value) return true;
     diffs?.Add(objName, "Outliers", openXmlElement?.Outliers?.Value, value);
@@ -135,25 +135,25 @@ public static class SeriesElementVisibilitiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.SeriesElementVisibilities? openXmlElement, DMDCDs.SeriesElementVisibilities? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.SeriesElementVisibilities? openXmlElement, DMDCDs.SeriesElementVisibilities? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpConnectorLines(openXmlElement, value.ConnectorLines, diffs, objName))
+      if (!CmpConnectorLines(openXmlElement, value.ConnectorLines, diffs, objName, propName))
         ok = false;
-      if (!CmpMeanLine(openXmlElement, value.MeanLine, diffs, objName))
+      if (!CmpMeanLine(openXmlElement, value.MeanLine, diffs, objName, propName))
         ok = false;
-      if (!CmpMeanMarker(openXmlElement, value.MeanMarker, diffs, objName))
+      if (!CmpMeanMarker(openXmlElement, value.MeanMarker, diffs, objName, propName))
         ok = false;
-      if (!CmpNonoutliers(openXmlElement, value.Nonoutliers, diffs, objName))
+      if (!CmpNonoutliers(openXmlElement, value.Nonoutliers, diffs, objName, propName))
         ok = false;
-      if (!CmpOutliers(openXmlElement, value.Outliers, diffs, objName))
+      if (!CmpOutliers(openXmlElement, value.Outliers, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

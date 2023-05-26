@@ -14,9 +14,9 @@ public static class EquationArrayConverter
     return null;
   }
 
-  private static bool CmpEquationArrayProperties(DXM.EquationArray openXmlElement, DMM.EquationArrayProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpEquationArrayProperties(DXM.EquationArray openXmlElement, DMM.EquationArrayProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.EquationArrayProperties>(), value, diffs, objName);
+    return DMXM.EquationArrayPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.EquationArrayProperties>(), value, diffs, objName, propName);
   }
 
   private static void SetEquationArrayProperties(DXM.EquationArray openXmlElement, DMM.EquationArrayProperties? value)
@@ -45,18 +45,18 @@ public static class EquationArrayConverter
   }
 
   public static bool CompareBaseElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXM.Base baseElement && model is DMM.Argument baseModel)
-        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName);
+        return DMXM.ArgumentConverter.CompareModelElement(baseElement, baseModel, diffs, objName, propName);
       diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
       return false;
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -95,22 +95,22 @@ public static class EquationArrayConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXM.EquationArray? openXmlElement, DMM.EquationArray? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.EquationArray? openXmlElement, DMM.EquationArray? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpEquationArrayProperties(openXmlElement, model.EquationArrayProperties, diffs, objName))
+      if (!CmpEquationArrayProperties(openXmlElement, model.EquationArrayProperties, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DMM.Argument>.CompareOpenXmlElementCollection(
         openXmlElement.Where(item=>item is not DXM.EquationArrayProperties), model,
-        CompareBaseElement, diffs, objName))
+        CompareBaseElement, diffs, objName, propName))
         ok = false;
 
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
