@@ -4,7 +4,7 @@ internal class Program
 {
   private static void Main(string[] args)
   {
-    RunTestBody();
+    RunTestTheme();
   }
 
     private static void RunTestBackground()
@@ -102,8 +102,8 @@ internal class Program
   {
     var testInstance = new TestVariants();
     testInstance.Setup();
-    //testInstance.TestEnumVariantType();
-    //testInstance.TestVariantXmlSerialization(null, true);
+    testInstance.TestEnumVariantType();
+    testInstance.TestVariantXmlSerialization(null, true);
     testInstance.TestVectorXmlSerialization(null,true);
     Console.WriteLine("Test passed");
   }
