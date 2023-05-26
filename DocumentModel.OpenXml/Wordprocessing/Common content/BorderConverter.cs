@@ -132,19 +132,17 @@ public static class BorderConverter
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Type, diffs, objName, propName))
+      if (!CmpVal(openXmlElement, value.Type, diffs, objName, "Type"))
         ok = false;
-      if (value.Color==null)
-        Debug.Assert(true);
-      if (!BorderTypeColorConverter.CompareModelElement(openXmlElement, value.Color, diffs, objName, propName))
+      if (!BorderTypeColorConverter.CompareModelElement(openXmlElement, value.Color, diffs, objName, "Color"))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Width, diffs, objName, propName))
+      if (!CmpSize(openXmlElement, value.Width, diffs, objName, "Width"))
         ok = false;
-      if (!CmpSpace(openXmlElement, value.Space, diffs, objName, propName))
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName, "Space"))
         ok = false;
-      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName, propName))
+      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName, "Shadow"))
         ok = false;
-      if (!CmpFrame(openXmlElement, value.Frame, diffs, objName, propName))
+      if (!CmpFrame(openXmlElement, value.Frame, diffs, objName, "Frame"))
         ok = false;
       return ok;
     }

@@ -514,15 +514,14 @@
             The second case is when the instance is a collection. In this case <see cref="M:Qhta.Xml.Serialization.QXmlSerializer.ReadElementAsCollectionItem(System.Object,Qhta.Xml.Reflection.SerializationTypeInfo,Qhta.Xml.Reflection.ContentItemInfo)"/> is called.
             </remarks>
         </member>
-        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.TryReadElementAsProperty(System.Object,Qhta.Xml.Reflection.SerializationTypeInfo,Qhta.Xml.Reflection.SerializationMemberInfo,System.Object@)">
+        <member name="M:Qhta.Xml.Serialization.QXmlSerializer.ReadElementAsProperty(System.Object,Qhta.Xml.Reflection.SerializationTypeInfo,Qhta.Xml.Reflection.SerializationMemberInfo)">
             <summary>
             Tries to read an XmlElement which has a property syntax as an instance Property.
             </summary>
             <param name="instance"></param>
             <param name="instanceTypeInfo"></param>
             <param name="memberInfo"></param>
-            <param name="value"></param>
-            <returns></returns>
+            <returns>Object read (or null)</returns>
         </member>
         <member name="M:Qhta.Xml.Serialization.QXmlSerializer.ReadElementAsInstanceMember(System.Object,Qhta.Xml.Reflection.SerializationMemberInfo,Qhta.Xml.Reflection.SerializationTypeInfo)">
             <summary>
