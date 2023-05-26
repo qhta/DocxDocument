@@ -11,9 +11,9 @@ public static class NumberingFormatConverter
     return EnumValueConverter.GetValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.NumberFormatValues, DMW.NumberFormatKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.NumberingFormat openXmlElement, DMW.NumberFormatKind? value)
@@ -28,7 +28,7 @@ public static class NumberingFormatConverter
     return StringValueConverter.GetValue(openXmlElement?.Format);
   }
   
-  private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormat(DXW.NumberingFormat openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Format, value, diffs, objName, "Custom");
   }
@@ -52,19 +52,19 @@ public static class NumberingFormatConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.NumberingFormat? openXmlElement, DMW.NumberingFormat? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingFormat? openXmlElement, DMW.NumberingFormat? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, model.Type, diffs, objName))
+      if (!CmpVal(openXmlElement, model.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpFormat(openXmlElement, model.Custom, diffs, objName))
+      if (!CmpFormat(openXmlElement, model.Custom, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

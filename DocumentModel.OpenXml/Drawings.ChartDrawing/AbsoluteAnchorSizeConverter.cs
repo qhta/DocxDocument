@@ -18,9 +18,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpFromAnchor(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.FromAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpFromAnchor(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.FromAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.FromAnchor>(), value, diffs, objName);
+    return DMXDCD.FromAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.FromAnchor>(), value, diffs, objName, propName);
   }
   
   private static void SetFromAnchor(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.FromAnchor? value)
@@ -47,9 +47,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpExtent(DXDCD.AbsoluteAnchorSize openXmlElement, Extent? value, DiffList? diffs, string? objName)
+  private static bool CmpExtent(DXDCD.AbsoluteAnchorSize openXmlElement, Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Extent>(), value, diffs, objName);
+    return DMXDCD.ExtentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Extent>(), value, diffs, objName, propName);
   }
   
   private static void SetExtent(DXDCD.AbsoluteAnchorSize openXmlElement, Extent? value)
@@ -73,9 +73,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Shape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Shape>(), value, diffs, objName);
+    return DMXDCD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Shape>(), value, diffs, objName, propName);
   }
   
   private static void SetShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Shape? value)
@@ -99,9 +99,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpGroupShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GroupShape? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GroupShape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GroupShape>(), value, diffs, objName);
+    return DMXDCD.GroupShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GroupShape>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GroupShape? value)
@@ -125,9 +125,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpGraphicFrame(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs, string? objName)
+  private static bool CmpGraphicFrame(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GraphicFrame? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GraphicFrame>(), value, diffs, objName);
+    return DMXDCD.GraphicFrameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.GraphicFrame>(), value, diffs, objName, propName);
   }
   
   private static void SetGraphicFrame(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.GraphicFrame? value)
@@ -151,9 +151,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpConnectionShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.ConnectionShape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ConnectionShape>(), value, diffs, objName);
+    return DMXDCD.ConnectionShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.ConnectionShape>(), value, diffs, objName, propName);
   }
   
   private static void SetConnectionShape(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.ConnectionShape? value)
@@ -177,9 +177,9 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  private static bool CmpPicture(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Picture? value, DiffList? diffs, string? objName)
+  private static bool CmpPicture(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Picture? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCD.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Picture>(), value, diffs, objName);
+    return DMXDCD.PictureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDCD.Picture>(), value, diffs, objName, propName);
   }
   
   private static void SetPicture(DXDCD.AbsoluteAnchorSize openXmlElement, DMDCD.Picture? value)
@@ -212,29 +212,29 @@ public static class AbsoluteAnchorSizeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.AbsoluteAnchorSize? openXmlElement, DMDCD.AbsoluteAnchorSize? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.AbsoluteAnchorSize? openXmlElement, DMDCD.AbsoluteAnchorSize? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFromAnchor(openXmlElement, value.FromAnchor, diffs, objName))
+      if (!CmpFromAnchor(openXmlElement, value.FromAnchor, diffs, objName, propName))
         ok = false;
-      if (!CmpExtent(openXmlElement, value.Extent, diffs, objName))
+      if (!CmpExtent(openXmlElement, value.Extent, diffs, objName, propName))
         ok = false;
-      if (!CmpShape(openXmlElement, value.Shape, diffs, objName))
+      if (!CmpShape(openXmlElement, value.Shape, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupShape(openXmlElement, value.GroupShape, diffs, objName))
+      if (!CmpGroupShape(openXmlElement, value.GroupShape, diffs, objName, propName))
         ok = false;
-      if (!CmpGraphicFrame(openXmlElement, value.GraphicFrame, diffs, objName))
+      if (!CmpGraphicFrame(openXmlElement, value.GraphicFrame, diffs, objName, propName))
         ok = false;
-      if (!CmpConnectionShape(openXmlElement, value.ConnectionShape, diffs, objName))
+      if (!CmpConnectionShape(openXmlElement, value.ConnectionShape, diffs, objName, propName))
         ok = false;
-      if (!CmpPicture(openXmlElement, value.Picture, diffs, objName))
+      if (!CmpPicture(openXmlElement, value.Picture, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

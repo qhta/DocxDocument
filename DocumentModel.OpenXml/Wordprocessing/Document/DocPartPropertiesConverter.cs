@@ -16,9 +16,9 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocPartNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartName>(), value, diffs, objName);
+    return DMXW.DocPartNameConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartName>(), value, diffs, objName, propName);
   }
   
   private static void SetDocPartName(DXW.DocPartProperties openXmlElement, DMW.DocPartName? value)
@@ -42,7 +42,7 @@ public static class DocPartPropertiesConverter
     return openXmlElement.GetFirstChild<DXW.StyleId>()?.Val?.Value;
   }
   
-  private static bool CmpStyleId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.StyleId>();
     if (itemElement?.Val?.Value == value) return true;
@@ -73,9 +73,9 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value, DiffList? diffs, string? objName)
+  private static bool CmpCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CategoryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Category>(), value, diffs, objName);
+    return DMXW.CategoryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Category>(), value, diffs, objName, propName);
   }
   
   private static void SetCategory(DXW.DocPartProperties openXmlElement, DMW.Category? value)
@@ -102,9 +102,9 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocPartTypesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartTypes>(), value, diffs, objName);
+    return DMXW.DocPartTypesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocPartTypes>(), value, diffs, objName, propName);
   }
   
   private static void SetDocPartTypes(DXW.DocPartProperties openXmlElement, DMW.DocPartTypes? value)
@@ -131,9 +131,9 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value, DiffList? diffs, string? objName)
+  private static bool CmpBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BehaviorsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Behaviors>(), value, diffs, objName);
+    return DMXW.BehaviorsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Behaviors>(), value, diffs, objName, propName);
   }
   
   private static void SetBehaviors(DXW.DocPartProperties openXmlElement, DMW.Behaviors? value)
@@ -157,7 +157,7 @@ public static class DocPartPropertiesConverter
     return openXmlElement.GetFirstChild<DXW.Description>()?.Val?.Value;
   }
   
-  private static bool CmpDescription(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDescription(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Description>();
     if (itemElement?.Val?.Value == value) return true;
@@ -185,7 +185,7 @@ public static class DocPartPropertiesConverter
     return StringValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.DocPartId>()?.Val);
   }
   
-  private static bool CmpDocPartId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartId(DXW.DocPartProperties openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.DocPartId>()?.Val, value, diffs, objName, "DocPartId");
   }
@@ -212,29 +212,29 @@ public static class DocPartPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DocPartProperties? openXmlElement, DMW.DocPartProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DocPartProperties? openXmlElement, DMW.DocPartProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocPartName(openXmlElement, value.DocPartName, diffs, objName))
+      if (!CmpDocPartName(openXmlElement, value.DocPartName, diffs, objName, propName))
         ok = false;
-      if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName))
+      if (!CmpStyleId(openXmlElement, value.StyleId, diffs, objName, propName))
         ok = false;
-      if (!CmpCategory(openXmlElement, value.Category, diffs, objName))
+      if (!CmpCategory(openXmlElement, value.Category, diffs, objName, propName))
         ok = false;
-      if (!CmpDocPartTypes(openXmlElement, value.DocPartTypes, diffs, objName))
+      if (!CmpDocPartTypes(openXmlElement, value.DocPartTypes, diffs, objName, propName))
         ok = false;
-      if (!CmpBehaviors(openXmlElement, value.Behaviors, diffs, objName))
+      if (!CmpBehaviors(openXmlElement, value.Behaviors, diffs, objName, propName))
         ok = false;
-      if (!CmpDescription(openXmlElement, value.Description, diffs, objName))
+      if (!CmpDescription(openXmlElement, value.Description, diffs, objName, propName))
         ok = false;
-      if (!CmpDocPartId(openXmlElement, value.DocPartId, diffs, objName))
+      if (!CmpDocPartId(openXmlElement, value.DocPartId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

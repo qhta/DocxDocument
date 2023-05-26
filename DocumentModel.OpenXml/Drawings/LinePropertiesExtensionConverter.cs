@@ -13,7 +13,7 @@ public static class LinePropertiesExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.LinePropertiesExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.LinePropertiesExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class LinePropertiesExtensionConverter
     return null;
   }
   
-  private static bool CmpLineSketchStyleProperties(DXD.LinePropertiesExtension openXmlElement, DMD.LineSketchStyleProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpLineSketchStyleProperties(DXD.LinePropertiesExtension openXmlElement, DMD.LineSketchStyleProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.LineSketchStylePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DSS.LineSketchStyleProperties>(), value, diffs, objName);
+    return DMXD.LineSketchStylePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DSS.LineSketchStyleProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetLineSketchStyleProperties(DXD.LinePropertiesExtension openXmlElement, DMD.LineSketchStyleProperties? value)
@@ -61,19 +61,19 @@ public static class LinePropertiesExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LinePropertiesExtension? openXmlElement, DMD.LinePropertiesExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LinePropertiesExtension? openXmlElement, DMD.LinePropertiesExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpLineSketchStyleProperties(openXmlElement, value.LineSketchStyleProperties, diffs, objName))
+      if (!CmpLineSketchStyleProperties(openXmlElement, value.LineSketchStyleProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

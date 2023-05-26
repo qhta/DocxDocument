@@ -11,7 +11,7 @@ public static class ArgumentPropertiesConverter
     return Int32ValueConverter.GetValue(openXmlElement?.GetFirstChild<DXM.ArgumentSize>()?.Val);
   }
   
-  private static bool CmpArgumentSize(DXM.ArgumentProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpArgumentSize(DXM.ArgumentProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXM.ArgumentSize>()?.Val, value, diffs, objName, "ArgumentSize");
   }
@@ -34,17 +34,17 @@ public static class ArgumentPropertiesConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXM.ArgumentProperties? openXmlElement, DMM.ArgumentProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.ArgumentProperties? openXmlElement, DMM.ArgumentProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpArgumentSize(openXmlElement, model.ArgumentSize, diffs, objName))
+      if (!CmpArgumentSize(openXmlElement, model.ArgumentSize, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

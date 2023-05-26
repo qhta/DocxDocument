@@ -13,7 +13,7 @@ public static class ShapeGuideConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.ShapeGuide openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,7 +31,7 @@ public static class ShapeGuideConverter
     return StringValueConverter.GetValue(openXmlElement?.Formula);
   }
   
-  private static bool CmpFormula(DXD.ShapeGuide openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXD.ShapeGuide openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Formula, value, diffs, objName, "Formula");
   }
@@ -53,19 +53,19 @@ public static class ShapeGuideConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ShapeGuide? openXmlElement, DMD.ShapeGuide? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ShapeGuide? openXmlElement, DMD.ShapeGuide? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

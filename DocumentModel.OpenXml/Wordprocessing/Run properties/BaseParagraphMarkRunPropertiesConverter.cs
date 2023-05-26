@@ -14,9 +14,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpInserted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpInserted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName, propName);
   }
   
   private static void SetInserted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -42,9 +42,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpDeleted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpDeleted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName, propName);
   }
   
   private static void SetDeleted(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -70,9 +70,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpMoveFrom(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveFrom(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFrom>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveFrom>(), value, diffs, objName, propName);
   }
   
   private static void SetMoveFrom(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -98,9 +98,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpMoveTo(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpMoveTo(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveTo>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.MoveTo>(), value, diffs, objName, propName);
   }
   
   private static void SetMoveTo(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType? value)
@@ -126,9 +126,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpConflictInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  private static bool CmpConflictInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>(), value, diffs, objName, propName);
   }
   
   private static void SetConflictInsertion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value)
@@ -154,9 +154,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return null;
   }
   
-  private static bool CmpConflictDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  private static bool CmpConflictDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>(), value, diffs, objName, propName);
   }
   
   private static void SetConflictDeletion(DX.OpenXmlCompositeElement openXmlElement, DMW.TrackChangeType2? value)
@@ -179,9 +179,9 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.OfficeMath>());
   }
   
-  private static bool CmpOfficeMath(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeMath(DX.OpenXmlCompositeElement openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.OfficeMath>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.OfficeMath>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeMath(DX.OpenXmlCompositeElement openXmlElement, Boolean? value)
@@ -206,31 +206,31 @@ public static class ParagraphMarkRunPropertiesBaseConverter
     }
   }
   
-  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseParagraphMarkRunProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.OpenXmlCompositeElement? openXmlElement, DMW.BaseParagraphMarkRunProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName))
+      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName, propName))
         ok = false;
-      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName))
+      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName, propName))
         ok = false;
-      if (!CmpMoveFrom(openXmlElement, model.MoveFrom, diffs, objName))
+      if (!CmpMoveFrom(openXmlElement, model.MoveFrom, diffs, objName, propName))
         ok = false;
-      if (!CmpMoveTo(openXmlElement, model.MoveTo, diffs, objName))
+      if (!CmpMoveTo(openXmlElement, model.MoveTo, diffs, objName, propName))
         ok = false;
-      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName))
+      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName, propName))
         ok = false;
-      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName))
+      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName, propName))
         ok = false;
-      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!ExtBaseRunPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeMath(openXmlElement, model.OfficeMath, diffs, objName))
+      if (!CmpOfficeMath(openXmlElement, model.OfficeMath, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
  

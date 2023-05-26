@@ -13,9 +13,9 @@ public static class RelativeWidthConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWD.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value);
   }
   
-  private static bool CmpObjectId(DXO10WD.RelativeWidth openXmlElement, DMWD.SizeRelativeHorizontallyKind? value, DiffList? diffs, string? objName)
+  private static bool CmpObjectId(DXO10WD.RelativeWidth openXmlElement, DMWD.SizeRelativeHorizontallyKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWD.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2010.Word.Drawing.SizeRelativeHorizontallyValues, DMWD.SizeRelativeHorizontallyKind>(openXmlElement?.ObjectId?.Value, value, diffs, objName, propName);
   }
   
   private static void SetObjectId(DXO10WD.RelativeWidth openXmlElement, DMWD.SizeRelativeHorizontallyKind? value)
@@ -31,7 +31,7 @@ public static class RelativeWidthConverter
       return openXmlElement?.GetFirstChild<DXO10WD.PercentageWidth>()?.Text;
   }
   
-  private static bool CmpPercentageWidth(DXO10WD.RelativeWidth openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPercentageWidth(DXO10WD.RelativeWidth openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO10WD.PercentageWidth>()?.Text == value;
   }
@@ -60,19 +60,19 @@ public static class RelativeWidthConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10WD.RelativeWidth? openXmlElement, DMWD.RelativeWidth? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10WD.RelativeWidth? openXmlElement, DMWD.RelativeWidth? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpObjectId(openXmlElement, value.ObjectId, diffs, objName))
+      if (!CmpObjectId(openXmlElement, value.ObjectId, diffs, objName, propName))
         ok = false;
-      if (!CmpPercentageWidth(openXmlElement, value.PercentageWidth, diffs, objName))
+      if (!CmpPercentageWidth(openXmlElement, value.PercentageWidth, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

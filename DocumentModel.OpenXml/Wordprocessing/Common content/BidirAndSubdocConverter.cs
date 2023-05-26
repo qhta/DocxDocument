@@ -17,20 +17,20 @@ public static class BidirAndSubdocConverter
     return null;
   }
 
-  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null)
+  public static bool? CompareModelElement(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.BidirectionalOverride bidirectionalOverride && model is DMW.BidirectionalOverride bidirectionalOverrideModel)
-        return DMXW.BidirectionalOverrideConverter.CompareModelElement(bidirectionalOverride, bidirectionalOverrideModel, diffs, objName);
+        return DMXW.BidirectionalOverrideConverter.CompareModelElement(bidirectionalOverride, bidirectionalOverrideModel, diffs, objName, propName);
       if (openXmlElement is DXW.BidirectionalEmbedding bidirectionalEmbedding && model is DMW.BidirectionalEmbedding bidirectionalEmbeddingModel)
-        return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(bidirectionalEmbedding, bidirectionalEmbeddingModel, diffs, objName);
+        return DMXW.BidirectionalEmbeddingConverter.CompareModelElement(bidirectionalEmbedding, bidirectionalEmbeddingModel, diffs, objName, propName);
       if (openXmlElement is DXW.SubDocumentReference subDocumentReference && model is DMW.SubDocumentReference subDocumentReferenceModel)
-        return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, subDocumentReferenceModel, diffs, objName);
+        return DMXW.RelationshipTypeConverter.CompareModelElement(subDocumentReference, subDocumentReferenceModel, diffs, objName, propName);
       return null;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

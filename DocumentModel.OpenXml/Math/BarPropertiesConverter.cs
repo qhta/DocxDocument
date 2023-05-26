@@ -11,9 +11,9 @@ public static class BarPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value);
   }
   
-  private static bool CmpPosition(DXM.BarProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXM.BarProperties openXmlElement, DMM.VerticalJustificationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.VerticalJustificationValues, DMM.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXM.Position>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXM.BarProperties openXmlElement, DMM.VerticalJustificationKind? value)
@@ -41,9 +41,9 @@ public static class BarPropertiesConverter
     return null;
   }
   
-  private static bool CmpControlProperties(DXM.BarProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpControlProperties(DXM.BarProperties openXmlElement, DMM.ControlProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName);
+    return DMXM.ControlPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.ControlProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetControlProperties(DXM.BarProperties openXmlElement, DMM.ControlProperties? value)
@@ -73,19 +73,19 @@ public static class BarPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.BarProperties? openXmlElement, DMM.BarProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.BarProperties? openXmlElement, DMM.BarProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
-      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName))
+      if (!CmpControlProperties(openXmlElement, value.ControlProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class SurfaceSerExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.SurfaceSerExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.SurfaceSerExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class SurfaceSerExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>(), value, diffs, objName);
+    return DMXDC.FilteredSeriesTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredSeriesTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredSeriesTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredSeriesTitle? value)
@@ -57,9 +57,9 @@ public static class SurfaceSerExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName);
+    return DMXDC.FilteredCategoryTitleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredCategoryTitle>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredCategoryTitle(DXDC.SurfaceSerExtension openXmlElement, DMDC.FilteredCategoryTitle? value)
@@ -83,9 +83,9 @@ public static class SurfaceSerExtensionConverter
     return null;
   }
   
-  private static bool CmpCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterExceptions>(), value, diffs, objName, propName);
   }
   
   private static void SetCategoryFilterExceptions(DXDC.SurfaceSerExtension openXmlElement, DMDC.CategoryFilterExceptions? value)
@@ -115,23 +115,23 @@ public static class SurfaceSerExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.SurfaceSerExtension? openXmlElement, DMDC.SurfaceSerExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.SurfaceSerExtension? openXmlElement, DMDC.SurfaceSerExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredSeriesTitle(openXmlElement, value.FilteredSeriesTitle, diffs, objName))
+      if (!CmpFilteredSeriesTitle(openXmlElement, value.FilteredSeriesTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredCategoryTitle(openXmlElement, value.FilteredCategoryTitle, diffs, objName))
+      if (!CmpFilteredCategoryTitle(openXmlElement, value.FilteredCategoryTitle, diffs, objName, propName))
         ok = false;
-      if (!CmpCategoryFilterExceptions(openXmlElement, value.CategoryFilterExceptions, diffs, objName))
+      if (!CmpCategoryFilterExceptions(openXmlElement, value.CategoryFilterExceptions, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

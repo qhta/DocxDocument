@@ -13,7 +13,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.SmtClean?.Value;
   }
   
-  private static bool CmpSmtClean(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSmtClean(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SmtClean?.Value == value) return true;
     diffs?.Add(objName, "SmtClean", openXmlElement?.SmtClean?.Value, value);
@@ -36,7 +36,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.SmtId?.Value;
   }
   
-  private static bool CmpSmtId(DXO13DCS.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSmtId(DXO13DCS.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SmtId?.Value == value) return true;
     diffs?.Add(objName, "SmtId", openXmlElement?.SmtId?.Value, value);
@@ -56,7 +56,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Kumimoji?.Value;
   }
   
-  private static bool CmpKumimoji(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpKumimoji(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Kumimoji?.Value == value) return true;
     diffs?.Add(objName, "Kumimoji", openXmlElement?.Kumimoji?.Value, value);
@@ -79,7 +79,7 @@ public static class TextCharacterPropertiesTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Language);
   }
   
-  private static bool CmpLanguage(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLanguage(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Language, value, diffs, objName, "Languages");
   }
@@ -97,7 +97,7 @@ public static class TextCharacterPropertiesTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.AlternativeLanguage);
   }
   
-  private static bool CmpAlternativeLanguage(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternativeLanguage(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AlternativeLanguage, value, diffs, objName, "AlternativeLanguage");
   }
@@ -115,7 +115,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.FontSize?.Value;
   }
   
-  private static bool CmpFontSize(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFontSize(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FontSize?.Value == value) return true;
     diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
@@ -135,7 +135,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Bold?.Value;
   }
   
-  private static bool CmpBold(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBold(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Bold?.Value == value) return true;
     diffs?.Add(objName, "Bold", openXmlElement?.Bold?.Value, value);
@@ -158,7 +158,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Italic?.Value;
   }
   
-  private static bool CmpItalic(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpItalic(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Italic?.Value == value) return true;
     diffs?.Add(objName, "Italic", openXmlElement?.Italic?.Value, value);
@@ -181,9 +181,9 @@ public static class TextCharacterPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMD.TextUnderlineKind>(openXmlElement?.Underline?.Value);
   }
   
-  private static bool CmpUnderline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextUnderlineKind? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextUnderlineKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMD.TextUnderlineKind>(openXmlElement?.Underline?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextUnderlineValues, DMD.TextUnderlineKind>(openXmlElement?.Underline?.Value, value, diffs, objName, propName);
   }
   
   private static void SetUnderline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextUnderlineKind? value)
@@ -199,9 +199,9 @@ public static class TextCharacterPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMD.TextStrikeKind>(openXmlElement?.Strike?.Value);
   }
   
-  private static bool CmpStrike(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextStrikeKind? value, DiffList? diffs, string? objName)
+  private static bool CmpStrike(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextStrikeKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMD.TextStrikeKind>(openXmlElement?.Strike?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextStrikeValues, DMD.TextStrikeKind>(openXmlElement?.Strike?.Value, value, diffs, objName, propName);
   }
   
   private static void SetStrike(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextStrikeKind? value)
@@ -217,7 +217,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Kerning?.Value;
   }
   
-  private static bool CmpKerning(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpKerning(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Kerning?.Value == value) return true;
     diffs?.Add(objName, "Kerning", openXmlElement?.Kerning?.Value, value);
@@ -237,9 +237,9 @@ public static class TextCharacterPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMD.TextCapsKind>(openXmlElement?.Capital?.Value);
   }
   
-  private static bool CmpCapital(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextCapsKind? value, DiffList? diffs, string? objName)
+  private static bool CmpCapital(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextCapsKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMD.TextCapsKind>(openXmlElement?.Capital?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TextCapsValues, DMD.TextCapsKind>(openXmlElement?.Capital?.Value, value, diffs, objName, propName);
   }
   
   private static void SetCapital(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextCapsKind? value)
@@ -255,7 +255,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Spacing?.Value;
   }
   
-  private static bool CmpSpacing(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacing(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Spacing?.Value == value) return true;
     diffs?.Add(objName, "Spacing", openXmlElement?.Spacing?.Value, value);
@@ -275,7 +275,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.NormalizeHeight?.Value;
   }
   
-  private static bool CmpNormalizeHeight(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNormalizeHeight(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NormalizeHeight?.Value == value) return true;
     diffs?.Add(objName, "NormalizeHeight", openXmlElement?.NormalizeHeight?.Value, value);
@@ -298,7 +298,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Baseline?.Value;
   }
   
-  private static bool CmpBaseline(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBaseline(DXO13DCS.TextCharacterPropertiesType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Baseline?.Value == value) return true;
     diffs?.Add(objName, "Baseline", openXmlElement?.Baseline?.Value, value);
@@ -318,7 +318,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.NoProof?.Value;
   }
   
-  private static bool CmpNoProof(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoProof(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoProof?.Value == value) return true;
     diffs?.Add(objName, "NoProof", openXmlElement?.NoProof?.Value, value);
@@ -341,7 +341,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.Dirty?.Value;
   }
   
-  private static bool CmpDirty(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirty(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Dirty?.Value == value) return true;
     diffs?.Add(objName, "Dirty", openXmlElement?.Dirty?.Value, value);
@@ -364,7 +364,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.SpellingError?.Value;
   }
   
-  private static bool CmpSpellingError(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSpellingError(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SpellingError?.Value == value) return true;
     diffs?.Add(objName, "SpellingError", openXmlElement?.SpellingError?.Value, value);
@@ -387,7 +387,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.SmartTagClean?.Value;
   }
   
-  private static bool CmpSmartTagClean(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSmartTagClean(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SmartTagClean?.Value == value) return true;
     diffs?.Add(objName, "SmartTagClean", openXmlElement?.SmartTagClean?.Value, value);
@@ -410,7 +410,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement?.SmartTagId?.Value;
   }
   
-  private static bool CmpSmartTagId(DXO13DCS.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSmartTagId(DXO13DCS.TextCharacterPropertiesType openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SmartTagId?.Value == value) return true;
     diffs?.Add(objName, "SmartTagId", openXmlElement?.SmartTagId?.Value, value);
@@ -430,7 +430,7 @@ public static class TextCharacterPropertiesTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Bookmark);
   }
   
-  private static bool CmpBookmark(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpBookmark(DXO13DCS.TextCharacterPropertiesType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Bookmark, value, diffs, objName, "Bookmark");
   }
@@ -451,9 +451,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Outline? value, DiffList? diffs, string? objName)
+  private static bool CmpOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Outline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName);
+    return DMXD.OutlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Outline>(), value, diffs, objName, propName);
   }
   
   private static void SetOutline(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Outline? value)
@@ -474,7 +474,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement.GetFirstChild<DXD.NoFill>() != null;
   }
   
-  private static bool CmpNoFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.NoFill>() != null;
     if (val == value) return true;
@@ -505,9 +505,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpSolidFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.SolidFill? value, DiffList? diffs, string? objName)
+  private static bool CmpSolidFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.SolidFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName);
+    return DMXD.SolidFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SolidFill>(), value, diffs, objName, propName);
   }
   
   private static void SetSolidFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.SolidFill? value)
@@ -531,9 +531,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpGradientFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.GradientFill? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.GradientFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName);
+    return DMXD.GradientFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientFill>(), value, diffs, objName, propName);
   }
   
   private static void SetGradientFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.GradientFill? value)
@@ -557,9 +557,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpBlipFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.BlipFill? value, DiffList? diffs, string? objName)
+  private static bool CmpBlipFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName);
+    return DMXD.BlipFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BlipFill>(), value, diffs, objName, propName);
   }
   
   private static void SetBlipFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.BlipFill? value)
@@ -583,9 +583,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpPatternFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.PatternFill? value, DiffList? diffs, string? objName)
+  private static bool CmpPatternFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.PatternFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName);
+    return DMXD.PatternFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.PatternFill>(), value, diffs, objName, propName);
   }
   
   private static void SetPatternFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.PatternFill? value)
@@ -606,7 +606,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
   }
   
-  private static bool CmpGroupFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.GroupFill>() != null;
     if (val == value) return true;
@@ -637,9 +637,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpEffectList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectList? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName);
+    return DMXD.EffectListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectList>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectList? value)
@@ -663,9 +663,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpEffectDag(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectDag? value, DiffList? diffs, string? objName)
+  private static bool CmpEffectDag(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectDag? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName);
+    return DMXD.EffectDagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EffectDag>(), value, diffs, objName, propName);
   }
   
   private static void SetEffectDag(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.EffectDag? value)
@@ -689,9 +689,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpHighlight(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Highlight? value, DiffList? diffs, string? objName)
+  private static bool CmpHighlight(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Highlight? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HighlightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Highlight>(), value, diffs, objName);
+    return DMXD.HighlightConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Highlight>(), value, diffs, objName, propName);
   }
   
   private static void SetHighlight(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.Highlight? value)
@@ -712,7 +712,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement.GetFirstChild<DXD.UnderlineFollowsText>() != null;
   }
   
-  private static bool CmpUnderlineFollowsText(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFollowsText(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.UnderlineFollowsText>() != null;
     if (val == value) return true;
@@ -740,7 +740,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement.GetFirstChild<DXD.UnderlineFillText>() != null;
   }
   
-  private static bool CmpUnderlineFillText(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFillText(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.UnderlineFillText>() != null;
     if (val == value) return true;
@@ -771,9 +771,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpUnderlineFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.UnderlineFill? value, DiffList? diffs, string? objName)
+  private static bool CmpUnderlineFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.UnderlineFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UnderlineFill>(), value, diffs, objName);
+    return DMXD.UnderlineFillConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.UnderlineFill>(), value, diffs, objName, propName);
   }
   
   private static void SetUnderlineFill(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.UnderlineFill? value)
@@ -797,9 +797,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpLatinFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpLatinFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LatinFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.LatinFont>(), value, diffs, objName, propName);
   }
   
   private static void SetLatinFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value)
@@ -823,9 +823,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpEastAsianFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpEastAsianFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EastAsianFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EastAsianFont>(), value, diffs, objName, propName);
   }
   
   private static void SetEastAsianFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value)
@@ -849,9 +849,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpComplexScriptFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpComplexScriptFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ComplexScriptFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ComplexScriptFont>(), value, diffs, objName, propName);
   }
   
   private static void SetComplexScriptFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value)
@@ -875,9 +875,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpSymbolFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  private static bool CmpSymbolFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SymbolFont>(), value, diffs, objName);
+    return DMXD.TextFontTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SymbolFont>(), value, diffs, objName, propName);
   }
   
   private static void SetSymbolFont(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.TextFontType? value)
@@ -901,9 +901,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpHyperlinkOnClick(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnClick? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnClick(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnClick? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>(), value, diffs, objName);
+    return DMXD.HyperlinkOnClickConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnClick>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkOnClick(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnClick? value)
@@ -927,9 +927,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpHyperlinkOnMouseOver(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnMouseOver? value, DiffList? diffs, string? objName)
+  private static bool CmpHyperlinkOnMouseOver(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnMouseOver? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnMouseOver>(), value, diffs, objName);
+    return DMXD.HyperlinkOnMouseOverConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.HyperlinkOnMouseOver>(), value, diffs, objName, propName);
   }
   
   private static void SetHyperlinkOnMouseOver(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.HyperlinkOnMouseOver? value)
@@ -950,7 +950,7 @@ public static class TextCharacterPropertiesTypeConverter
     return openXmlElement.GetFirstChild<DXD.RightToLeft>() != null;
   }
   
-  private static bool CmpRightToLeft(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRightToLeft(DXO13DCS.TextCharacterPropertiesType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXD.RightToLeft>() != null;
     if (val == value) return true;
@@ -981,9 +981,9 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO13DCS.TextCharacterPropertiesType openXmlElement, DMD.ExtensionList? value)
@@ -1051,99 +1051,99 @@ public static class TextCharacterPropertiesTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DCS.TextCharacterPropertiesType? openXmlElement, DMDCS.TextCharacterPropertiesType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.TextCharacterPropertiesType? openXmlElement, DMDCS.TextCharacterPropertiesType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSmtClean(openXmlElement, value.SmtClean, diffs, objName))
+      if (!CmpSmtClean(openXmlElement, value.SmtClean, diffs, objName, propName))
         ok = false;
-      if (!CmpSmtId(openXmlElement, value.SmtId, diffs, objName))
+      if (!CmpSmtId(openXmlElement, value.SmtId, diffs, objName, propName))
         ok = false;
-      if (!CmpKumimoji(openXmlElement, value.Kumimoji, diffs, objName))
+      if (!CmpKumimoji(openXmlElement, value.Kumimoji, diffs, objName, propName))
         ok = false;
-      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName))
+      if (!CmpLanguage(openXmlElement, value.Language, diffs, objName, propName))
         ok = false;
-      if (!CmpAlternativeLanguage(openXmlElement, value.AlternativeLanguage, diffs, objName))
+      if (!CmpAlternativeLanguage(openXmlElement, value.AlternativeLanguage, diffs, objName, propName))
         ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName, propName))
         ok = false;
-      if (!CmpBold(openXmlElement, value.Bold, diffs, objName))
+      if (!CmpBold(openXmlElement, value.Bold, diffs, objName, propName))
         ok = false;
-      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName))
+      if (!CmpItalic(openXmlElement, value.Italic, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName))
+      if (!CmpUnderline(openXmlElement, value.Underline, diffs, objName, propName))
         ok = false;
-      if (!CmpStrike(openXmlElement, value.Strike, diffs, objName))
+      if (!CmpStrike(openXmlElement, value.Strike, diffs, objName, propName))
         ok = false;
-      if (!CmpKerning(openXmlElement, value.Kerning, diffs, objName))
+      if (!CmpKerning(openXmlElement, value.Kerning, diffs, objName, propName))
         ok = false;
-      if (!CmpCapital(openXmlElement, value.Capital, diffs, objName))
+      if (!CmpCapital(openXmlElement, value.Capital, diffs, objName, propName))
         ok = false;
-      if (!CmpSpacing(openXmlElement, value.Spacing, diffs, objName))
+      if (!CmpSpacing(openXmlElement, value.Spacing, diffs, objName, propName))
         ok = false;
-      if (!CmpNormalizeHeight(openXmlElement, value.NormalizeHeight, diffs, objName))
+      if (!CmpNormalizeHeight(openXmlElement, value.NormalizeHeight, diffs, objName, propName))
         ok = false;
-      if (!CmpBaseline(openXmlElement, value.Baseline, diffs, objName))
+      if (!CmpBaseline(openXmlElement, value.Baseline, diffs, objName, propName))
         ok = false;
-      if (!CmpNoProof(openXmlElement, value.NoProof, diffs, objName))
+      if (!CmpNoProof(openXmlElement, value.NoProof, diffs, objName, propName))
         ok = false;
-      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName))
+      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName, propName))
         ok = false;
-      if (!CmpSpellingError(openXmlElement, value.SpellingError, diffs, objName))
+      if (!CmpSpellingError(openXmlElement, value.SpellingError, diffs, objName, propName))
         ok = false;
-      if (!CmpSmartTagClean(openXmlElement, value.SmartTagClean, diffs, objName))
+      if (!CmpSmartTagClean(openXmlElement, value.SmartTagClean, diffs, objName, propName))
         ok = false;
-      if (!CmpSmartTagId(openXmlElement, value.SmartTagId, diffs, objName))
+      if (!CmpSmartTagId(openXmlElement, value.SmartTagId, diffs, objName, propName))
         ok = false;
-      if (!CmpBookmark(openXmlElement, value.Bookmark, diffs, objName))
+      if (!CmpBookmark(openXmlElement, value.Bookmark, diffs, objName, propName))
         ok = false;
-      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName))
+      if (!CmpOutline(openXmlElement, value.Outline, diffs, objName, propName))
         ok = false;
-      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName))
+      if (!CmpNoFill(openXmlElement, value.NoFill, diffs, objName, propName))
         ok = false;
-      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName))
+      if (!CmpSolidFill(openXmlElement, value.SolidFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName))
+      if (!CmpGradientFill(openXmlElement, value.GradientFill, diffs, objName, propName))
         ok = false;
-      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName))
+      if (!CmpBlipFill(openXmlElement, value.BlipFill, diffs, objName, propName))
         ok = false;
-      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName))
+      if (!CmpPatternFill(openXmlElement, value.PatternFill, diffs, objName, propName))
         ok = false;
-      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName))
+      if (!CmpGroupFill(openXmlElement, value.GroupFill, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName))
+      if (!CmpEffectList(openXmlElement, value.EffectList, diffs, objName, propName))
         ok = false;
-      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName))
+      if (!CmpEffectDag(openXmlElement, value.EffectDag, diffs, objName, propName))
         ok = false;
-      if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName))
+      if (!CmpHighlight(openXmlElement, value.Highlight, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFollowsText(openXmlElement, value.UnderlineFollowsText, diffs, objName))
+      if (!CmpUnderlineFollowsText(openXmlElement, value.UnderlineFollowsText, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFillText(openXmlElement, value.UnderlineFillText, diffs, objName))
+      if (!CmpUnderlineFillText(openXmlElement, value.UnderlineFillText, diffs, objName, propName))
         ok = false;
-      if (!CmpUnderlineFill(openXmlElement, value.UnderlineFill, diffs, objName))
+      if (!CmpUnderlineFill(openXmlElement, value.UnderlineFill, diffs, objName, propName))
         ok = false;
-      if (!CmpLatinFont(openXmlElement, value.LatinFont, diffs, objName))
+      if (!CmpLatinFont(openXmlElement, value.LatinFont, diffs, objName, propName))
         ok = false;
-      if (!CmpEastAsianFont(openXmlElement, value.EastAsianFont, diffs, objName))
+      if (!CmpEastAsianFont(openXmlElement, value.EastAsianFont, diffs, objName, propName))
         ok = false;
-      if (!CmpComplexScriptFont(openXmlElement, value.ComplexScriptFont, diffs, objName))
+      if (!CmpComplexScriptFont(openXmlElement, value.ComplexScriptFont, diffs, objName, propName))
         ok = false;
-      if (!CmpSymbolFont(openXmlElement, value.SymbolFont, diffs, objName))
+      if (!CmpSymbolFont(openXmlElement, value.SymbolFont, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkOnClick(openXmlElement, value.HyperlinkOnClick, diffs, objName))
+      if (!CmpHyperlinkOnClick(openXmlElement, value.HyperlinkOnClick, diffs, objName, propName))
         ok = false;
-      if (!CmpHyperlinkOnMouseOver(openXmlElement, value.HyperlinkOnMouseOver, diffs, objName))
+      if (!CmpHyperlinkOnMouseOver(openXmlElement, value.HyperlinkOnMouseOver, diffs, objName, propName))
         ok = false;
-      if (!CmpRightToLeft(openXmlElement, value.RightToLeft, diffs, objName))
+      if (!CmpRightToLeft(openXmlElement, value.RightToLeft, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

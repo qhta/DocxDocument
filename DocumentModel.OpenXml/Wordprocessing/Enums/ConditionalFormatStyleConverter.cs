@@ -21,7 +21,7 @@ public static class ConditionalFormatStyleConverter
     return 0;
   }
   
-  private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, ConditionalFormatFlags? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.ConditionalFormatStyle openXmlElement, ConditionalFormatFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     string? str = null;
     if (value!=null)
@@ -51,7 +51,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstRow);
   }
   
-  private static bool CmpFirstRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstRow, value, diffs, objName, "FirstRow");
   }
@@ -69,7 +69,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastRow);
   }
   
-  private static bool CmpLastRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastRow(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastRow, value, diffs, objName, "LastRow");
   }
@@ -87,7 +87,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstColumn);
   }
   
-  private static bool CmpFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstColumn, value, diffs, objName, "FirstColumn");
   }
@@ -105,7 +105,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastColumn);
   }
   
-  private static bool CmpLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastColumn, value, diffs, objName, "LastColumn");
   }
@@ -123,7 +123,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.OddVerticalBand);
   }
   
-  private static bool CmpOddVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOddVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.OddVerticalBand, value, diffs, objName, "OddVerticalBand");
   }
@@ -141,7 +141,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.EvenVerticalBand);
   }
   
-  private static bool CmpEvenVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenVerticalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.EvenVerticalBand, value, diffs, objName, "EvenVerticalBand");
   }
@@ -159,7 +159,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.OddHorizontalBand);
   }
   
-  private static bool CmpOddHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOddHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.OddHorizontalBand, value, diffs, objName, "OddHorizontalBand");
   }
@@ -177,7 +177,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.EvenHorizontalBand);
   }
   
-  private static bool CmpEvenHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpEvenHorizontalBand(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.EvenHorizontalBand, value, diffs, objName, "EvenHorizontalBand");
   }
@@ -195,7 +195,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstRowFirstColumn);
   }
   
-  private static bool CmpFirstRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstRowFirstColumn, value, diffs, objName, "FirstRowFirstColumn");
   }
@@ -213,7 +213,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstRowLastColumn);
   }
   
-  private static bool CmpFirstRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstRowLastColumn, value, diffs, objName, "FirstRowLastColumn");
   }
@@ -231,7 +231,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastRowFirstColumn);
   }
   
-  private static bool CmpLastRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastRowFirstColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastRowFirstColumn, value, diffs, objName, "LastRowFirstColumn");
   }
@@ -249,7 +249,7 @@ public static class ConditionalFormatStyleConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastRowLastColumn);
   }
   
-  private static bool CmpLastRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastRowLastColumn(DXW.ConditionalFormatStyle openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastRowLastColumn, value, diffs, objName, "LastRowLastColumn");
   }
@@ -283,41 +283,41 @@ public static class ConditionalFormatStyleConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.ConditionalFormatStyle? openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.ConditionalFormatStyle? openXmlElement, DMW.ConditionalFormatFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value, diffs, objName))
+      if (!CmpVal(openXmlElement, value, diffs, objName, propName))
         ok = false;
-      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
+      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
+      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
+      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
+      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpOddVerticalBand(openXmlElement, value.OddVerticalBand, diffs, objName))
+      //if (!CmpOddVerticalBand(openXmlElement, value.OddVerticalBand, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpEvenVerticalBand(openXmlElement, value.EvenVerticalBand, diffs, objName))
+      //if (!CmpEvenVerticalBand(openXmlElement, value.EvenVerticalBand, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpOddHorizontalBand(openXmlElement, value.OddHorizontalBand, diffs, objName))
+      //if (!CmpOddHorizontalBand(openXmlElement, value.OddHorizontalBand, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpEvenHorizontalBand(openXmlElement, value.EvenHorizontalBand, diffs, objName))
+      //if (!CmpEvenHorizontalBand(openXmlElement, value.EvenHorizontalBand, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpFirstRowFirstColumn(openXmlElement, value.FirstRowFirstColumn, diffs, objName))
+      //if (!CmpFirstRowFirstColumn(openXmlElement, value.FirstRowFirstColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpFirstRowLastColumn(openXmlElement, value.FirstRowLastColumn, diffs, objName))
+      //if (!CmpFirstRowLastColumn(openXmlElement, value.FirstRowLastColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastRowFirstColumn(openXmlElement, value.LastRowFirstColumn, diffs, objName))
+      //if (!CmpLastRowFirstColumn(openXmlElement, value.LastRowFirstColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastRowLastColumn(openXmlElement, value.LastRowLastColumn, diffs, objName))
+      //if (!CmpLastRowLastColumn(openXmlElement, value.LastRowLastColumn, diffs, objName, propName))
       //  ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

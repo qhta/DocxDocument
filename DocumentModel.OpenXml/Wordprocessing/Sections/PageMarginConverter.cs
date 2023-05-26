@@ -13,7 +13,7 @@ public static class PageMarginConverter
     return openXmlElement?.Top?.Value;
   }
   
-  private static bool CmpTop(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTop(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Top?.Value == value) return true;
     diffs?.Add(objName, "Top", openXmlElement?.Top?.Value, value);
@@ -33,7 +33,7 @@ public static class PageMarginConverter
     return openXmlElement?.Right?.Value;
   }
   
-  private static bool CmpRight(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpRight(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Right?.Value == value) return true;
     diffs?.Add(objName, "Right", openXmlElement?.Right?.Value, value);
@@ -53,7 +53,7 @@ public static class PageMarginConverter
     return openXmlElement?.Bottom?.Value;
   }
   
-  private static bool CmpBottom(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBottom(DXW.PageMargin openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Bottom?.Value == value) return true;
     diffs?.Add(objName, "Bottom", openXmlElement?.Bottom?.Value, value);
@@ -73,7 +73,7 @@ public static class PageMarginConverter
     return openXmlElement?.Left?.Value;
   }
   
-  private static bool CmpLeft(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpLeft(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Left?.Value == value) return true;
     diffs?.Add(objName, "Left", openXmlElement?.Left?.Value, value);
@@ -93,7 +93,7 @@ public static class PageMarginConverter
     return openXmlElement?.Header?.Value;
   }
   
-  private static bool CmpHeader(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpHeader(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Header?.Value == value) return true;
     diffs?.Add(objName, "Header", openXmlElement?.Header?.Value, value);
@@ -113,7 +113,7 @@ public static class PageMarginConverter
     return openXmlElement?.Footer?.Value;
   }
   
-  private static bool CmpFooter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpFooter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Footer?.Value == value) return true;
     diffs?.Add(objName, "Footer", openXmlElement?.Footer?.Value, value);
@@ -133,7 +133,7 @@ public static class PageMarginConverter
     return openXmlElement?.Gutter?.Value;
   }
   
-  private static bool CmpGutter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpGutter(DXW.PageMargin openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Gutter?.Value == value) return true;
     diffs?.Add(objName, "Gutter", openXmlElement?.Gutter?.Value, value);
@@ -162,29 +162,29 @@ public static class PageMarginConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PageMargin? openXmlElement, DMW.PageMargin? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PageMargin? openXmlElement, DMW.PageMargin? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTop(openXmlElement, value.Top, diffs, objName))
+      if (!CmpTop(openXmlElement, value.Top, diffs, objName, propName))
         ok = false;
-      if (!CmpRight(openXmlElement, value.Right, diffs, objName))
+      if (!CmpRight(openXmlElement, value.Right, diffs, objName, propName))
         ok = false;
-      if (!CmpBottom(openXmlElement, value.Bottom, diffs, objName))
+      if (!CmpBottom(openXmlElement, value.Bottom, diffs, objName, propName))
         ok = false;
-      if (!CmpLeft(openXmlElement, value.Left, diffs, objName))
+      if (!CmpLeft(openXmlElement, value.Left, diffs, objName, propName))
         ok = false;
-      if (!CmpHeader(openXmlElement, value.Header, diffs, objName))
+      if (!CmpHeader(openXmlElement, value.Header, diffs, objName, propName))
         ok = false;
-      if (!CmpFooter(openXmlElement, value.Footer, diffs, objName))
+      if (!CmpFooter(openXmlElement, value.Footer, diffs, objName, propName))
         ok = false;
-      if (!CmpGutter(openXmlElement, value.Gutter, diffs, objName))
+      if (!CmpGutter(openXmlElement, value.Gutter, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

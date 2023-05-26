@@ -15,7 +15,7 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpRsidRPr(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidRPr(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidRPr?.Value, value, diffs, objName, "RsidRPr");
   }
@@ -38,7 +38,7 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpRsidDel(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidDel(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidDel?.Value, value, diffs, objName, "RsidDel");
   }
@@ -61,7 +61,7 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpRsidR(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidR(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidR?.Value, value, diffs, objName, "RsidR");
   }
@@ -84,7 +84,7 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpRsidSect(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpRsidSect(DXW.PreviousSectionProperties openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.RsidSect?.Value, value, diffs, objName, "RsidSect");
   }
@@ -108,9 +108,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpFootnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.FootnoteProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpFootnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.FootnoteProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.FootnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FootnoteProperties>(), value, diffs, objName);
+    return DMXW.FootnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FootnoteProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetFootnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.FootnoteProperties? value)
@@ -137,9 +137,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpEndnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.EndnoteProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpEndnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.EndnoteProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EndnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndnoteProperties>(), value, diffs, objName);
+    return DMXW.EndnotePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EndnoteProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetEndnoteProperties(DXW.PreviousSectionProperties openXmlElement, DMW.EndnoteProperties? value)
@@ -163,9 +163,9 @@ public static class PreviousSectionPropertiesConverter
     return EnumValueConverter.GetValue<DXW.SectionMarkValues, DMW.SectionMarkKind>(openXmlElement.GetFirstChild<DXW.SectionType>()?.Val?.Value);
   }
   
-  private static bool CmpSectionType(DXW.PreviousSectionProperties openXmlElement, DMW.SectionMarkKind? value, DiffList? diffs, string? objName)
+  private static bool CmpSectionType(DXW.PreviousSectionProperties openXmlElement, DMW.SectionMarkKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.SectionMarkValues, DMW.SectionMarkKind>(openXmlElement.GetFirstChild<DXW.SectionType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.SectionMarkValues, DMW.SectionMarkKind>(openXmlElement.GetFirstChild<DXW.SectionType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetSectionType(DXW.PreviousSectionProperties openXmlElement, DMW.SectionMarkKind? value)
@@ -194,9 +194,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPageSize(DXW.PreviousSectionProperties openXmlElement, DMW.PageSize? value, DiffList? diffs, string? objName)
+  private static bool CmpPageSize(DXW.PreviousSectionProperties openXmlElement, DMW.PageSize? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PageSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageSize>(), value, diffs, objName);
+    return DMXW.PageSizeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageSize>(), value, diffs, objName, propName);
   }
   
   private static void SetPageSize(DXW.PreviousSectionProperties openXmlElement, DMW.PageSize? value)
@@ -223,9 +223,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPageMargin(DXW.PreviousSectionProperties openXmlElement, DMW.PageMargin? value, DiffList? diffs, string? objName)
+  private static bool CmpPageMargin(DXW.PreviousSectionProperties openXmlElement, DMW.PageMargin? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PageMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageMargin>(), value, diffs, objName);
+    return DMXW.PageMarginConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageMargin>(), value, diffs, objName, propName);
   }
   
   private static void SetPageMargin(DXW.PreviousSectionProperties openXmlElement, DMW.PageMargin? value)
@@ -252,9 +252,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPaperSource(DXW.PreviousSectionProperties openXmlElement, DMW.PaperSource? value, DiffList? diffs, string? objName)
+  private static bool CmpPaperSource(DXW.PreviousSectionProperties openXmlElement, DMW.PaperSource? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PaperSourceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PaperSource>(), value, diffs, objName);
+    return DMXW.PaperSourceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PaperSource>(), value, diffs, objName, propName);
   }
   
   private static void SetPaperSource(DXW.PreviousSectionProperties openXmlElement, DMW.PaperSource? value)
@@ -281,9 +281,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPageBorders(DXW.PreviousSectionProperties openXmlElement, DMW.PageBorders? value, DiffList? diffs, string? objName)
+  private static bool CmpPageBorders(DXW.PreviousSectionProperties openXmlElement, DMW.PageBorders? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PageBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageBorders>(), value, diffs, objName);
+    return DMXW.PageBordersConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageBorders>(), value, diffs, objName, propName);
   }
   
   private static void SetPageBorders(DXW.PreviousSectionProperties openXmlElement, DMW.PageBorders? value)
@@ -310,9 +310,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpLineNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.LineNumberType? value, DiffList? diffs, string? objName)
+  private static bool CmpLineNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.LineNumberType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.LineNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LineNumberType>(), value, diffs, objName);
+    return DMXW.LineNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LineNumberType>(), value, diffs, objName, propName);
   }
   
   private static void SetLineNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.LineNumberType? value)
@@ -339,9 +339,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPageNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.PageNumberType? value, DiffList? diffs, string? objName)
+  private static bool CmpPageNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.PageNumberType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.PageNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageNumberType>(), value, diffs, objName);
+    return DMXW.PageNumberTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PageNumberType>(), value, diffs, objName, propName);
   }
   
   private static void SetPageNumberType(DXW.PreviousSectionProperties openXmlElement, DMW.PageNumberType? value)
@@ -368,9 +368,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpColumns(DXW.PreviousSectionProperties openXmlElement, DMW.Columns? value, DiffList? diffs, string? objName)
+  private static bool CmpColumns(DXW.PreviousSectionProperties openXmlElement, DMW.Columns? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.ColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Columns>(), value, diffs, objName);
+    return DMXW.ColumnsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Columns>(), value, diffs, objName, propName);
   }
   
   private static void SetColumns(DXW.PreviousSectionProperties openXmlElement, DMW.Columns? value)
@@ -394,9 +394,9 @@ public static class PreviousSectionPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.FormProtection>());
   }
   
-  private static bool CmpFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FormProtection>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.FormProtection>(), value, diffs, objName, propName);
   }
   
   private static void SetFormProtection(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -412,9 +412,9 @@ public static class PreviousSectionPropertiesConverter
     return EnumValueConverter.GetValue<DXW.VerticalJustificationValues, DMW.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>()?.Val?.Value);
   }
   
-  private static bool CmpVerticalTextAlignmentOnPage(DXW.PreviousSectionProperties openXmlElement, DMW.VerticalJustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalTextAlignmentOnPage(DXW.PreviousSectionProperties openXmlElement, DMW.VerticalJustificationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.VerticalJustificationValues, DMW.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.VerticalJustificationValues, DMW.VerticalJustificationKind>(openXmlElement.GetFirstChild<DXW.VerticalTextAlignmentOnPage>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVerticalTextAlignmentOnPage(DXW.PreviousSectionProperties openXmlElement, DMW.VerticalJustificationKind? value)
@@ -440,9 +440,9 @@ public static class PreviousSectionPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NoEndnote>());
   }
   
-  private static bool CmpNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoEndnote>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NoEndnote>(), value, diffs, objName, propName);
   }
   
   private static void SetNoEndnote(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -458,9 +458,9 @@ public static class PreviousSectionPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.TitlePage>());
   }
   
-  private static bool CmpTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TitlePage>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.TitlePage>(), value, diffs, objName, propName);
   }
   
   private static void SetTitlePage(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -476,9 +476,9 @@ public static class PreviousSectionPropertiesConverter
     return EnumValueConverter.GetValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value);
   }
   
-  private static bool CmpTextDirection(DXW.PreviousSectionProperties openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTextDirection(DXW.PreviousSectionProperties openXmlElement, DMW.TextDirectionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.TextDirectionValues, DMW.TextDirectionKind>(openXmlElement.GetFirstChild<DXW.TextDirection>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTextDirection(DXW.PreviousSectionProperties openXmlElement, DMW.TextDirectionKind? value)
@@ -504,9 +504,9 @@ public static class PreviousSectionPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.BiDi>());
   }
   
-  private static bool CmpBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BiDi>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.BiDi>(), value, diffs, objName, propName);
   }
   
   private static void SetBiDi(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -522,9 +522,9 @@ public static class PreviousSectionPropertiesConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>());
   }
   
-  private static bool CmpGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.GutterOnRight>(), value, diffs, objName, propName);
   }
   
   private static void SetGutterOnRight(DXW.PreviousSectionProperties openXmlElement, Boolean? value)
@@ -543,9 +543,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpDocGrid(DXW.PreviousSectionProperties openXmlElement, DMW.DocGrid? value, DiffList? diffs, string? objName)
+  private static bool CmpDocGrid(DXW.PreviousSectionProperties openXmlElement, DMW.DocGrid? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocGridConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocGrid>(), value, diffs, objName);
+    return DMXW.DocGridConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocGrid>(), value, diffs, objName, propName);
   }
   
   private static void SetDocGrid(DXW.PreviousSectionProperties openXmlElement, DMW.DocGrid? value)
@@ -572,9 +572,9 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  private static bool CmpPrinterSettingsReference(DXW.PreviousSectionProperties openXmlElement, DMW.RelationshipType? value, DiffList? diffs, string? objName)
+  private static bool CmpPrinterSettingsReference(DXW.PreviousSectionProperties openXmlElement, DMW.RelationshipType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PrinterSettingsReference>(), value, diffs, objName);
+    return DMXW.RelationshipTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.PrinterSettingsReference>(), value, diffs, objName, propName);
   }
   
   private static void SetPrinterSettingsReference(DXW.PreviousSectionProperties openXmlElement, DMW.RelationshipType? value)
@@ -598,7 +598,7 @@ public static class PreviousSectionPropertiesConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXO13W.FootnoteColumns>()?.Val);
   }
   
-  private static bool CmpFootnoteColumns(DXW.PreviousSectionProperties openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFootnoteColumns(DXW.PreviousSectionProperties openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXO13W.FootnoteColumns>()?.Val, value, diffs, objName, "FootnoteColumns");
   }
@@ -642,63 +642,63 @@ public static class PreviousSectionPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PreviousSectionProperties? openXmlElement, DMW.PreviousSectionProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PreviousSectionProperties? openXmlElement, DMW.PreviousSectionProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpRsidRPr(openXmlElement, value.RsidRPr, diffs, objName))
+      if (!CmpRsidRPr(openXmlElement, value.RsidRPr, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidDel(openXmlElement, value.RsidDel, diffs, objName))
+      if (!CmpRsidDel(openXmlElement, value.RsidDel, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidR(openXmlElement, value.RsidR, diffs, objName))
+      if (!CmpRsidR(openXmlElement, value.RsidR, diffs, objName, propName))
         ok = false;
-      if (!CmpRsidSect(openXmlElement, value.RsidSect, diffs, objName))
+      if (!CmpRsidSect(openXmlElement, value.RsidSect, diffs, objName, propName))
         ok = false;
-      if (!CmpFootnoteProperties(openXmlElement, value.FootnoteProperties, diffs, objName))
+      if (!CmpFootnoteProperties(openXmlElement, value.FootnoteProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpEndnoteProperties(openXmlElement, value.EndnoteProperties, diffs, objName))
+      if (!CmpEndnoteProperties(openXmlElement, value.EndnoteProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpSectionType(openXmlElement, value.SectionType, diffs, objName))
+      if (!CmpSectionType(openXmlElement, value.SectionType, diffs, objName, propName))
         ok = false;
-      if (!CmpPageSize(openXmlElement, value.PageSize, diffs, objName))
+      if (!CmpPageSize(openXmlElement, value.PageSize, diffs, objName, propName))
         ok = false;
-      if (!CmpPageMargin(openXmlElement, value.PageMargin, diffs, objName))
+      if (!CmpPageMargin(openXmlElement, value.PageMargin, diffs, objName, propName))
         ok = false;
-      if (!CmpPaperSource(openXmlElement, value.PaperSource, diffs, objName))
+      if (!CmpPaperSource(openXmlElement, value.PaperSource, diffs, objName, propName))
         ok = false;
-      if (!CmpPageBorders(openXmlElement, value.PageBorders, diffs, objName))
+      if (!CmpPageBorders(openXmlElement, value.PageBorders, diffs, objName, propName))
         ok = false;
-      if (!CmpLineNumberType(openXmlElement, value.LineNumberType, diffs, objName))
+      if (!CmpLineNumberType(openXmlElement, value.LineNumberType, diffs, objName, propName))
         ok = false;
-      if (!CmpPageNumberType(openXmlElement, value.PageNumberType, diffs, objName))
+      if (!CmpPageNumberType(openXmlElement, value.PageNumberType, diffs, objName, propName))
         ok = false;
-      if (!CmpColumns(openXmlElement, value.Columns, diffs, objName))
+      if (!CmpColumns(openXmlElement, value.Columns, diffs, objName, propName))
         ok = false;
-      if (!CmpFormProtection(openXmlElement, value.FormProtection, diffs, objName))
+      if (!CmpFormProtection(openXmlElement, value.FormProtection, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalTextAlignmentOnPage(openXmlElement, value.VerticalTextAlignmentOnPage, diffs, objName))
+      if (!CmpVerticalTextAlignmentOnPage(openXmlElement, value.VerticalTextAlignmentOnPage, diffs, objName, propName))
         ok = false;
-      if (!CmpNoEndnote(openXmlElement, value.NoEndnote, diffs, objName))
+      if (!CmpNoEndnote(openXmlElement, value.NoEndnote, diffs, objName, propName))
         ok = false;
-      if (!CmpTitlePage(openXmlElement, value.TitlePage, diffs, objName))
+      if (!CmpTitlePage(openXmlElement, value.TitlePage, diffs, objName, propName))
         ok = false;
-      if (!CmpTextDirection(openXmlElement, value.TextDirection, diffs, objName))
+      if (!CmpTextDirection(openXmlElement, value.TextDirection, diffs, objName, propName))
         ok = false;
-      if (!CmpBiDi(openXmlElement, value.BiDi, diffs, objName))
+      if (!CmpBiDi(openXmlElement, value.BiDi, diffs, objName, propName))
         ok = false;
-      if (!CmpGutterOnRight(openXmlElement, value.GutterOnRight, diffs, objName))
+      if (!CmpGutterOnRight(openXmlElement, value.GutterOnRight, diffs, objName, propName))
         ok = false;
-      if (!CmpDocGrid(openXmlElement, value.DocGrid, diffs, objName))
+      if (!CmpDocGrid(openXmlElement, value.DocGrid, diffs, objName, propName))
         ok = false;
-      if (!CmpPrinterSettingsReference(openXmlElement, value.PrinterSettingsReference, diffs, objName))
+      if (!CmpPrinterSettingsReference(openXmlElement, value.PrinterSettingsReference, diffs, objName, propName))
         ok = false;
-      if (!CmpFootnoteColumns(openXmlElement, value.FootnoteColumns, diffs, objName))
+      if (!CmpFootnoteColumns(openXmlElement, value.FootnoteColumns, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

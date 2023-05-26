@@ -13,7 +13,7 @@ public static class Area3DChartExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.Area3DChartExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.Area3DChartExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class Area3DChartExtensionConverter
     return null;
   }
   
-  private static bool CmpFilteredAreaSeries(DXDC.Area3DChartExtension openXmlElement, DMDC.FilteredAreaSeries? value, DiffList? diffs, string? objName)
+  private static bool CmpFilteredAreaSeries(DXDC.Area3DChartExtension openXmlElement, DMDC.FilteredAreaSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredAreaSeries>(), value, diffs, objName);
+    return DMXDC.FilteredAreaSeriesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.FilteredAreaSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetFilteredAreaSeries(DXDC.Area3DChartExtension openXmlElement, DMDC.FilteredAreaSeries? value)
@@ -61,19 +61,19 @@ public static class Area3DChartExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Area3DChartExtension? openXmlElement, DMDC.Area3DChartExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Area3DChartExtension? openXmlElement, DMDC.Area3DChartExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpFilteredAreaSeries(openXmlElement, value.FilteredAreaSeries, diffs, objName))
+      if (!CmpFilteredAreaSeries(openXmlElement, value.FilteredAreaSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

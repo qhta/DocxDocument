@@ -13,7 +13,7 @@ public static class TaskConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO21DT.Task openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO21DT.Task openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -34,9 +34,9 @@ public static class TaskConverter
     return null;
   }
   
-  private static bool CmpTaskAnchor(DXO21DT.Task openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskAnchor(DXO21DT.Task openXmlElement, DM.TaskAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>(), value, diffs, objName);
+    return DMX.TaskAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskAnchor>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskAnchor(DXO21DT.Task openXmlElement, DM.TaskAnchor? value)
@@ -63,9 +63,9 @@ public static class TaskConverter
     return null;
   }
   
-  private static bool CmpTaskHistory(DXO21DT.Task openXmlElement, DM.TaskHistory? value, DiffList? diffs, string? objName)
+  private static bool CmpTaskHistory(DXO21DT.Task openXmlElement, DM.TaskHistory? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.TaskHistoryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskHistory>(), value, diffs, objName);
+    return DMX.TaskHistoryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.TaskHistory>(), value, diffs, objName, propName);
   }
   
   private static void SetTaskHistory(DXO21DT.Task openXmlElement, DM.TaskHistory? value)
@@ -92,9 +92,9 @@ public static class TaskConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO21DT.Task openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21DT.Task openXmlElement, DM.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName);
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO21DT.Task openXmlElement, DM.ExtensionList? value)
@@ -124,23 +124,23 @@ public static class TaskConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.Task? openXmlElement, DM.Task? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.Task? openXmlElement, DM.Task? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskAnchor(openXmlElement, value.TaskAnchor, diffs, objName))
+      if (!CmpTaskAnchor(openXmlElement, value.TaskAnchor, diffs, objName, propName))
         ok = false;
-      if (!CmpTaskHistory(openXmlElement, value.TaskHistory, diffs, objName))
+      if (!CmpTaskHistory(openXmlElement, value.TaskHistory, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

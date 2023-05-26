@@ -16,9 +16,9 @@ public static class PictureBulletConverter
     return null;
   }
   
-  private static bool CmpBlip(DXD.PictureBullet openXmlElement, DMD.Blip? value, DiffList? diffs, string? objName)
+  private static bool CmpBlip(DXD.PictureBullet openXmlElement, DMD.Blip? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blip>(), value, diffs, objName);
+    return DMXD.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blip>(), value, diffs, objName, propName);
   }
   
   private static void SetBlip(DXD.PictureBullet openXmlElement, DMD.Blip? value)
@@ -45,17 +45,17 @@ public static class PictureBulletConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.PictureBullet? openXmlElement, DMD.PictureBullet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PictureBullet? openXmlElement, DMD.PictureBullet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

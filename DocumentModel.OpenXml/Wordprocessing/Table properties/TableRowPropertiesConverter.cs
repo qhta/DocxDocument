@@ -14,9 +14,9 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpInserted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpInserted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Inserted>(), value, diffs, objName, propName);
   }
   
   private static void SetInserted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value)
@@ -42,9 +42,9 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpDeleted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs, string? objName)
+  private static bool CmpDeleted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName);
+    return DMXW.TrackChangeTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Deleted>(), value, diffs, objName, propName);
   }
   
   private static void SetDeleted(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType? value)
@@ -70,9 +70,9 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpTableRowPropertiesChange(DXW.TableRowProperties openXmlElement, DMW.TableRowPropertiesChange? value, DiffList? diffs, string? objName)
+  private static bool CmpTableRowPropertiesChange(DXW.TableRowProperties openXmlElement, DMW.TableRowPropertiesChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TableRowPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableRowPropertiesChange>(), value, diffs, objName);
+    return DMXW.TableRowPropertiesChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TableRowPropertiesChange>(), value, diffs, objName, propName);
   }
   
   private static void SetTableRowPropertiesChange(DXW.TableRowProperties openXmlElement, DMW.TableRowPropertiesChange? value)
@@ -98,9 +98,9 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpConflictInsertion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  private static bool CmpConflictInsertion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictInsertion>(), value, diffs, objName, propName);
   }
   
   private static void SetConflictInsertion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -126,9 +126,9 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  private static bool CmpConflictDeletion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs, string? objName)
+  private static bool CmpConflictDeletion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>(), value, diffs, objName);
+    return DMXW.TrackChangeType2Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO10W.ConflictDeletion>(), value, diffs, objName, propName);
   }
   
   private static void SetConflictDeletion(DXW.TableRowProperties openXmlElement, DMW.TrackChangeType2? value)
@@ -162,27 +162,27 @@ public static class TableRowPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableRowProperties? openXmlElement, DMW.TableRowProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableRowProperties? openXmlElement, DMW.TableRowProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!BaseTableRowPropertiesConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
-      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName))
+      if (!CmpInserted(openXmlElement, model.Inserted, diffs, objName, propName))
         ok = false;
-      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName))
+      if (!CmpDeleted(openXmlElement, model.Deleted, diffs, objName, propName))
         ok = false;
-      if (!CmpTableRowPropertiesChange(openXmlElement, model.TableRowPropertiesChange, diffs, objName))
+      if (!CmpTableRowPropertiesChange(openXmlElement, model.TableRowPropertiesChange, diffs, objName, propName))
         ok = false;
-      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName))
+      if (!CmpConflictInsertion(openXmlElement, model.ConflictInsertion, diffs, objName, propName))
         ok = false;
-      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName))
+      if (!CmpConflictDeletion(openXmlElement, model.ConflictDeletion, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

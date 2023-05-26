@@ -14,9 +14,9 @@ public static class GroupCharConverter
     return null;
   }
   
-  private static bool CmpGroupCharProperties(DXM.GroupChar openXmlElement, DMM.GroupCharProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpGroupCharProperties(DXM.GroupChar openXmlElement, DMM.GroupCharProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.GroupCharProperties>(), value, diffs, objName);
+    return DMXM.GroupCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.GroupCharProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetGroupCharProperties(DXM.GroupChar openXmlElement, DMM.GroupCharProperties? value)
@@ -42,9 +42,9 @@ public static class GroupCharConverter
     return null;
   }
   
-  private static bool CmpArgument(DXM.GroupChar openXmlElement, DMM.Argument? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXM.GroupChar openXmlElement, DMM.Argument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName);
+    return DMXM.ArgumentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXM.Base>(), value, diffs, objName, propName);
   }
   
   private static void SetArgument(DXM.GroupChar openXmlElement, DMM.Argument? value)
@@ -74,19 +74,19 @@ public static class GroupCharConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.GroupChar? openXmlElement, DMM.GroupChar? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.GroupChar? openXmlElement, DMM.GroupChar? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpGroupCharProperties(openXmlElement, model.GroupCharProperties, diffs, objName))
+      if (!CmpGroupCharProperties(openXmlElement, model.GroupCharProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, model.Argument, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class DataModelExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXD.DataModelExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXD.DataModelExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -31,9 +31,9 @@ public static class DataModelExtensionConverter
     return null;
   }
   
-  private static bool CmpDataModelExtensionBlock(DXD.DataModelExtension openXmlElement, DMDO.DataModelExtensionBlock? value, DiffList? diffs, string? objName)
+  private static bool CmpDataModelExtensionBlock(DXD.DataModelExtension openXmlElement, DMDO.DataModelExtensionBlock? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDO.DataModelExtensionBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.DataModelExtensionBlock>(), value, diffs, objName);
+    return DMXDO.DataModelExtensionBlockConverter.CompareModelElement(openXmlElement.GetFirstChild<DXOD.DataModelExtensionBlock>(), value, diffs, objName, propName);
   }
   
   private static void SetDataModelExtensionBlock(DXD.DataModelExtension openXmlElement, DMDO.DataModelExtensionBlock? value)
@@ -54,7 +54,7 @@ public static class DataModelExtensionConverter
     return openXmlElement.GetFirstChild<DXO10DD.RecolorImages>() != null;
   }
   
-  private static bool CmpRecolorImages(DXD.DataModelExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRecolorImages(DXD.DataModelExtension openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DD.RecolorImages>() != null;
     if (val == value) return true;
@@ -90,21 +90,21 @@ public static class DataModelExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.DataModelExtension? openXmlElement, DMD.DataModelExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.DataModelExtension? openXmlElement, DMD.DataModelExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpDataModelExtensionBlock(openXmlElement, value.DataModelExtensionBlock, diffs, objName))
+      if (!CmpDataModelExtensionBlock(openXmlElement, value.DataModelExtensionBlock, diffs, objName, propName))
         ok = false;
-      if (!CmpRecolorImages(openXmlElement, value.RecolorImages, diffs, objName))
+      if (!CmpRecolorImages(openXmlElement, value.RecolorImages, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

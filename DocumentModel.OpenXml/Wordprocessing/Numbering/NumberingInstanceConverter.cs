@@ -12,7 +12,7 @@ public static class NumberingInstanceConverter
     return openXmlElement?.NumberID?.Value;
   }
 
-  private static bool CmpNumberID(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberID(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NumberID?.Value == value) return true;
     diffs?.Add(objName, "NumberID", openXmlElement?.NumberID?.Value, value);
@@ -38,7 +38,7 @@ public static class NumberingInstanceConverter
 
   }
 
-  private static bool CmpDurableId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     //if (openXmlElement?.DurableId?.Value == value) return true;
     //diffs?.Add(objName, "DurableId", openXmlElement?.DurableId?.Value, value);
@@ -66,7 +66,7 @@ public static class NumberingInstanceConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val);
   }
 
-  private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAbstractNumId(DXW.NumberingInstance openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXW.AbstractNumId>()?.Val, value, diffs, objName, "AbstractNumId");
   }
@@ -90,7 +90,7 @@ public static class NumberingInstanceConverter
     return null;
   }
 
-  private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value, DiffList? diffs, string? objName)
+  private static bool CmpLevelOverrides(DXW.NumberingInstance openXmlElement, Collection<DMW.NumLevelOverride>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.LevelOverride>();
     var origElementsCount = origElements.Count();
@@ -99,7 +99,7 @@ public static class NumberingInstanceConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name + ".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -108,13 +108,13 @@ public static class NumberingInstanceConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.LevelOverrideConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.LevelOverrideConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
@@ -146,23 +146,23 @@ public static class NumberingInstanceConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.NumberingInstance? openXmlElement, DMW.NumberingInstance? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.NumberingInstance? openXmlElement, DMW.NumberingInstance? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNumberID(openXmlElement, value.NumberID, diffs, objName))
+      if (!CmpNumberID(openXmlElement, value.NumberID, diffs, objName, propName))
         ok = false;
-      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName, propName))
         ok = false;
-      if (!CmpAbstractNumId(openXmlElement, value.AbstractNumId, diffs, objName))
+      if (!CmpAbstractNumId(openXmlElement, value.AbstractNumId, diffs, objName, propName))
         ok = false;
-      if (!CmpLevelOverrides(openXmlElement, value.LevelOverrides, diffs, objName))
+      if (!CmpLevelOverrides(openXmlElement, value.LevelOverrides, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

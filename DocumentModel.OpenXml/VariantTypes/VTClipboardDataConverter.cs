@@ -13,7 +13,7 @@ public static class VTClipboardDataConverter
     return openXmlElement?.Format?.Value;
   }
   
-  private static bool CmpFormat(DXVT.VTClipboardData openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFormat(DXVT.VTClipboardData openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Format?.Value == value) return true;
     diffs?.Add(objName, "Custom", openXmlElement?.Format?.Value, value);
@@ -33,7 +33,7 @@ public static class VTClipboardDataConverter
     return openXmlElement?.Size?.Value;
   }
   
-  private static bool CmpSize(DXVT.VTClipboardData openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXVT.VTClipboardData openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Size?.Value == value) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Size?.Value, value);
@@ -57,19 +57,19 @@ public static class VTClipboardDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVT.VTClipboardData? openXmlElement, DMVT.VTClipboardData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVT.VTClipboardData? openXmlElement, DMVT.VTClipboardData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormat(openXmlElement, value.Format, diffs, objName))
+      if (!CmpFormat(openXmlElement, value.Format, diffs, objName, propName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Size, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Size, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

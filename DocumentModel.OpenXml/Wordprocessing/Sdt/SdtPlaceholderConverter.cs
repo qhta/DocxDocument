@@ -13,7 +13,7 @@ public static class SdtPlaceholderConverter
     return openXmlElement.GetFirstChild<DXW.DocPartReference>()?.Val?.Value;
   }
   
-  private static bool CmpDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDocPartReference(DXW.SdtPlaceholder openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.DocPartReference>();
     if (itemElement?.Val?.Value == value) return true;
@@ -44,17 +44,17 @@ public static class SdtPlaceholderConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SdtPlaceholder? openXmlElement, DMW.SdtPlaceholder? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtPlaceholder? openXmlElement, DMW.SdtPlaceholder? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocPartReference(openXmlElement, value.DocPartReference, diffs, objName))
+      if (!CmpDocPartReference(openXmlElement, value.DocPartReference, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

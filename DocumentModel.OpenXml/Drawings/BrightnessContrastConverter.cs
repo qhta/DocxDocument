@@ -13,7 +13,7 @@ public static class BrightnessContrastConverter
     return openXmlElement?.Bright?.Value;
   }
   
-  private static bool CmpBright(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpBright(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Bright?.Value == value) return true;
     diffs?.Add(objName, "Bright", openXmlElement?.Bright?.Value, value);
@@ -33,7 +33,7 @@ public static class BrightnessContrastConverter
     return openXmlElement?.Contrast?.Value;
   }
   
-  private static bool CmpContrast(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpContrast(DXO10D.BrightnessContrast openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Contrast?.Value == value) return true;
     diffs?.Add(objName, "Contrast", openXmlElement?.Contrast?.Value, value);
@@ -57,19 +57,19 @@ public static class BrightnessContrastConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.BrightnessContrast? openXmlElement, DMD.BrightnessContrast? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.BrightnessContrast? openXmlElement, DMD.BrightnessContrast? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBright(openXmlElement, value.Bright, diffs, objName))
+      if (!CmpBright(openXmlElement, value.Bright, diffs, objName, propName))
         ok = false;
-      if (!CmpContrast(openXmlElement, value.Contrast, diffs, objName))
+      if (!CmpContrast(openXmlElement, value.Contrast, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

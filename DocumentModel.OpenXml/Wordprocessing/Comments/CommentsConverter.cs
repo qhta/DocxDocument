@@ -16,7 +16,7 @@ public static class CommentsConverter
     }
   }
   
-  private static bool CmpComments(DXW.Comments openXmlElement, DMW.Comments? collection, DiffList? diffs, string? objName)
+  private static bool CmpComments(DXW.Comments openXmlElement, DMW.Comments? collection, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXW.Comment>();
     var origElementsCount = origElements.Count();
@@ -25,7 +25,7 @@ public static class CommentsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -34,13 +34,13 @@ public static class CommentsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.CommentConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.CommentConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && collection == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, collection);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, collection);
     return false;
   }
 
@@ -71,17 +71,17 @@ public static class CommentsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Comments? openXmlElement, DMW.Comments? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Comments? openXmlElement, DMW.Comments? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpComments(openXmlElement, model, diffs, objName))
+      if (!CmpComments(openXmlElement, model, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

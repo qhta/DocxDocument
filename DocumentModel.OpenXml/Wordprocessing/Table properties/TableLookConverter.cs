@@ -17,7 +17,7 @@ public static class TableLookConverter
     return null;
   }
   
-  private static bool CmpVal(DXW.TableLook openXmlElement, DMW.TableLookFlags? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.TableLook openXmlElement, DMW.TableLookFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null && value!=null)
     {
@@ -50,7 +50,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstRow);
   }
   
-  private static bool CmpFirstRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstRow, value, diffs, objName, "FirstRow");
   }
@@ -67,7 +67,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastRow);
   }
   
-  private static bool CmpLastRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastRow(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastRow, value, diffs, objName, "LastRow");
   }
@@ -84,7 +84,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FirstColumn);
   }
   
-  private static bool CmpFirstColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FirstColumn, value, diffs, objName, "FirstColumn");
   }
@@ -101,7 +101,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.LastColumn);
   }
   
-  private static bool CmpLastColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLastColumn(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.LastColumn, value, diffs, objName, "LastColumn");
   }
@@ -118,7 +118,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NoHorizontalBand);
   }
   
-  private static bool CmpNoHorizontalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoHorizontalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NoHorizontalBand, value, diffs, objName, "NoHorizontalBand");
   }
@@ -135,7 +135,7 @@ public static class TableLookConverter
     return BooleanValueConverter.GetValue(openXmlElement?.NoVerticalBand);
   }
   
-  private static bool CmpNoVerticalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoVerticalBand(DXW.TableLook openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.NoVerticalBand, value, diffs, objName, "NoVerticalBand");
   }
@@ -163,29 +163,29 @@ public static class TableLookConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.TableLook? openXmlElement, DMW.TableLookFlags? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.TableLook? openXmlElement, DMW.TableLookFlags? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value, diffs, objName))
+      if (!CmpVal(openXmlElement, value, diffs, objName, propName))
         ok = false;
-      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName))
+      //if (!CmpFirstRow(openXmlElement, value.FirstRow, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName))
+      //if (!CmpLastRow(openXmlElement, value.LastRow, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName))
+      //if (!CmpFirstColumn(openXmlElement, value.FirstColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName))
+      //if (!CmpLastColumn(openXmlElement, value.LastColumn, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpNoHorizontalBand(openXmlElement, value.NoHorizontalBand, diffs, objName))
+      //if (!CmpNoHorizontalBand(openXmlElement, value.NoHorizontalBand, diffs, objName, propName))
       //  ok = false;
-      //if (!CmpNoVerticalBand(openXmlElement, value.NoVerticalBand, diffs, objName))
+      //if (!CmpNoVerticalBand(openXmlElement, value.NoVerticalBand, diffs, objName, propName))
       //  ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

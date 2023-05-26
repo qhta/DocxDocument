@@ -13,9 +13,9 @@ public static class AutoCaptionsConverter
     return null;
   }
   
-  private static bool CmpAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName);
+    return DMXW.AutoCaptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.AutoCaption>(), value, diffs, objName, propName);
   }
   
   private static void SetAutoCaption(DXW.AutoCaptions openXmlElement, DMW.AutoCaption? value)
@@ -42,17 +42,17 @@ public static class AutoCaptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.AutoCaptions? openXmlElement, DMW.AutoCaptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.AutoCaptions? openXmlElement, DMW.AutoCaptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAutoCaption(openXmlElement, value.AutoCaption, diffs, objName))
+      if (!CmpAutoCaption(openXmlElement, value.AutoCaption, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

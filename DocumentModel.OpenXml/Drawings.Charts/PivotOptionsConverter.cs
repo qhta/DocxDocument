@@ -13,7 +13,7 @@ public static class PivotOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.DropZoneFilter>() != null;
   }
   
-  private static bool CmpDropZoneFilter(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDropZoneFilter(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.DropZoneFilter>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class PivotOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.DropZoneCategories>() != null;
   }
   
-  private static bool CmpDropZoneCategories(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDropZoneCategories(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.DropZoneCategories>() != null;
     if (val == value) return true;
@@ -75,7 +75,7 @@ public static class PivotOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.DropZoneData>() != null;
   }
   
-  private static bool CmpDropZoneData(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDropZoneData(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.DropZoneData>() != null;
     if (val == value) return true;
@@ -106,7 +106,7 @@ public static class PivotOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.DropZoneSeries>() != null;
   }
   
-  private static bool CmpDropZoneSeries(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDropZoneSeries(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.DropZoneSeries>() != null;
     if (val == value) return true;
@@ -137,7 +137,7 @@ public static class PivotOptionsConverter
     return openXmlElement.GetFirstChild<DXO10DC.DropZonesVisible>() != null;
   }
   
-  private static bool CmpDropZonesVisible(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDropZonesVisible(DXO10DC.PivotOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10DC.DropZonesVisible>() != null;
     if (val == value) return true;
@@ -175,25 +175,25 @@ public static class PivotOptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DC.PivotOptions? openXmlElement, DMDC.PivotOptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DC.PivotOptions? openXmlElement, DMDC.PivotOptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDropZoneFilter(openXmlElement, value.DropZoneFilter, diffs, objName))
+      if (!CmpDropZoneFilter(openXmlElement, value.DropZoneFilter, diffs, objName, propName))
         ok = false;
-      if (!CmpDropZoneCategories(openXmlElement, value.DropZoneCategories, diffs, objName))
+      if (!CmpDropZoneCategories(openXmlElement, value.DropZoneCategories, diffs, objName, propName))
         ok = false;
-      if (!CmpDropZoneData(openXmlElement, value.DropZoneData, diffs, objName))
+      if (!CmpDropZoneData(openXmlElement, value.DropZoneData, diffs, objName, propName))
         ok = false;
-      if (!CmpDropZoneSeries(openXmlElement, value.DropZoneSeries, diffs, objName))
+      if (!CmpDropZoneSeries(openXmlElement, value.DropZoneSeries, diffs, objName, propName))
         ok = false;
-      if (!CmpDropZonesVisible(openXmlElement, value.DropZonesVisible, diffs, objName))
+      if (!CmpDropZonesVisible(openXmlElement, value.DropZonesVisible, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

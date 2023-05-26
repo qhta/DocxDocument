@@ -13,7 +13,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.XAdjustmentGuide);
   }
   
-  private static bool CmpXAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.XAdjustmentGuide, value, diffs, objName, "XAdjustmentGuide");
   }
@@ -31,7 +31,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.MinX);
   }
   
-  private static bool CmpMinX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinX, value, diffs, objName, "MinX");
   }
@@ -49,7 +49,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.MaxX);
   }
   
-  private static bool CmpMaxX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxX(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxX, value, diffs, objName, "MaxX");
   }
@@ -67,7 +67,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.YAdjustmentGuide);
   }
   
-  private static bool CmpYAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYAdjustmentGuide(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.YAdjustmentGuide, value, diffs, objName, "YAdjustmentGuide");
   }
@@ -85,7 +85,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.MinY);
   }
   
-  private static bool CmpMinY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMinY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MinY, value, diffs, objName, "MinY");
   }
@@ -103,7 +103,7 @@ public static class AdjustHandleXYConverter
     return StringValueConverter.GetValue(openXmlElement?.MaxY);
   }
   
-  private static bool CmpMaxY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpMaxY(DXD.AdjustHandleXY openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.MaxY, value, diffs, objName, "MaxY");
   }
@@ -124,9 +124,9 @@ public static class AdjustHandleXYConverter
     return null;
   }
   
-  private static bool CmpPosition(DXD.AdjustHandleXY openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs, string? objName)
+  private static bool CmpPosition(DXD.AdjustHandleXY openXmlElement, DMD.AdjustPoint2DType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName);
+    return DMXD.AdjustPoint2DTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Position>(), value, diffs, objName, propName);
   }
   
   private static void SetPosition(DXD.AdjustHandleXY openXmlElement, DMD.AdjustPoint2DType? value)
@@ -159,29 +159,29 @@ public static class AdjustHandleXYConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AdjustHandleXY? openXmlElement, DMD.AdjustHandleXY? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AdjustHandleXY? openXmlElement, DMD.AdjustHandleXY? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpXAdjustmentGuide(openXmlElement, value.XAdjustmentGuide, diffs, objName))
+      if (!CmpXAdjustmentGuide(openXmlElement, value.XAdjustmentGuide, diffs, objName, propName))
         ok = false;
-      if (!CmpMinX(openXmlElement, value.MinX, diffs, objName))
+      if (!CmpMinX(openXmlElement, value.MinX, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxX(openXmlElement, value.MaxX, diffs, objName))
+      if (!CmpMaxX(openXmlElement, value.MaxX, diffs, objName, propName))
         ok = false;
-      if (!CmpYAdjustmentGuide(openXmlElement, value.YAdjustmentGuide, diffs, objName))
+      if (!CmpYAdjustmentGuide(openXmlElement, value.YAdjustmentGuide, diffs, objName, propName))
         ok = false;
-      if (!CmpMinY(openXmlElement, value.MinY, diffs, objName))
+      if (!CmpMinY(openXmlElement, value.MinY, diffs, objName, propName))
         ok = false;
-      if (!CmpMaxY(openXmlElement, value.MaxY, diffs, objName))
+      if (!CmpMaxY(openXmlElement, value.MaxY, diffs, objName, propName))
         ok = false;
-      if (!CmpPosition(openXmlElement, value.Position, diffs, objName))
+      if (!CmpPosition(openXmlElement, value.Position, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

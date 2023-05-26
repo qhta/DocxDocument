@@ -13,9 +13,9 @@ public static class GradientStopListConverter
     return null;
   }
   
-  private static bool CmpGradientStop(DXD.GradientStopList openXmlElement, DMD.GradientStop? value, DiffList? diffs, string? objName)
+  private static bool CmpGradientStop(DXD.GradientStopList openXmlElement, DMD.GradientStop? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.GradientStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientStop>(), value, diffs, objName);
+    return DMXD.GradientStopConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.GradientStop>(), value, diffs, objName, propName);
   }
   
   private static void SetGradientStop(DXD.GradientStopList openXmlElement, DMD.GradientStop? value)
@@ -42,17 +42,17 @@ public static class GradientStopListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.GradientStopList? openXmlElement, DMD.GradientStopList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.GradientStopList? openXmlElement, DMD.GradientStopList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGradientStop(openXmlElement, value.GradientStop, diffs, objName))
+      if (!CmpGradientStop(openXmlElement, value.GradientStop, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

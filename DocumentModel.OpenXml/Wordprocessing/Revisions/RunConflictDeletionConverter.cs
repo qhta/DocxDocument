@@ -10,9 +10,9 @@ public static class RunConflictDeletionConverter
     return RunTrackChangeTypeO10WConverter.CreateModelElement<DMW.RunConflictDeletion>(openXmlElement);
   }
   
-  public static bool CompareModelElement(DXO10W.RunConflictDeletion? openXmlElement, DMW.RunConflictDeletion? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.RunConflictDeletion? openXmlElement, DMW.RunConflictDeletion? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return RunTrackChangeTypeO10WConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RunTrackChangeTypeO10WConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunConflictDeletion model)

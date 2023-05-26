@@ -13,7 +13,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.Address1);
   }
   
-  private static bool CmpAddress1(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAddress1(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Address1, value, diffs, objName, "Address1");
   }
@@ -31,7 +31,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.CountryRegion);
   }
   
-  private static bool CmpCountryRegion(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpCountryRegion(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.CountryRegion, value, diffs, objName, "CountryRegion");
   }
@@ -49,7 +49,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.AdminDistrict1);
   }
   
-  private static bool CmpAdminDistrict1(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAdminDistrict1(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AdminDistrict1, value, diffs, objName, "AdminDistrict1");
   }
@@ -67,7 +67,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.AdminDistrict2);
   }
   
-  private static bool CmpAdminDistrict2(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAdminDistrict2(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.AdminDistrict2, value, diffs, objName, "AdminDistrict2");
   }
@@ -85,7 +85,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.PostalCode);
   }
   
-  private static bool CmpPostalCode(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPostalCode(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PostalCode, value, diffs, objName, "PostalCode");
   }
@@ -103,7 +103,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.Locality);
   }
   
-  private static bool CmpLocality(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLocality(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Locality, value, diffs, objName, "Locality");
   }
@@ -121,7 +121,7 @@ public static class AddressConverter
     return StringValueConverter.GetValue(openXmlElement?.IsoCountryCode);
   }
   
-  private static bool CmpIsoCountryCode(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIsoCountryCode(DXO16DCD.Address openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IsoCountryCode, value, diffs, objName, "IsoCountryCode");
   }
@@ -148,29 +148,29 @@ public static class AddressConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Address? openXmlElement, DMDCDs.Address? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Address? openXmlElement, DMDCDs.Address? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAddress1(openXmlElement, value.Address1, diffs, objName))
+      if (!CmpAddress1(openXmlElement, value.Address1, diffs, objName, propName))
         ok = false;
-      if (!CmpCountryRegion(openXmlElement, value.CountryRegion, diffs, objName))
+      if (!CmpCountryRegion(openXmlElement, value.CountryRegion, diffs, objName, propName))
         ok = false;
-      if (!CmpAdminDistrict1(openXmlElement, value.AdminDistrict1, diffs, objName))
+      if (!CmpAdminDistrict1(openXmlElement, value.AdminDistrict1, diffs, objName, propName))
         ok = false;
-      if (!CmpAdminDistrict2(openXmlElement, value.AdminDistrict2, diffs, objName))
+      if (!CmpAdminDistrict2(openXmlElement, value.AdminDistrict2, diffs, objName, propName))
         ok = false;
-      if (!CmpPostalCode(openXmlElement, value.PostalCode, diffs, objName))
+      if (!CmpPostalCode(openXmlElement, value.PostalCode, diffs, objName, propName))
         ok = false;
-      if (!CmpLocality(openXmlElement, value.Locality, diffs, objName))
+      if (!CmpLocality(openXmlElement, value.Locality, diffs, objName, propName))
         ok = false;
-      if (!CmpIsoCountryCode(openXmlElement, value.IsoCountryCode, diffs, objName))
+      if (!CmpIsoCountryCode(openXmlElement, value.IsoCountryCode, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

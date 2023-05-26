@@ -13,7 +13,7 @@ public static class WebExtensionStoreReferenceConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class WebExtensionStoreReferenceConverter
     return StringValueConverter.GetValue(openXmlElement?.Version);
   }
   
-  private static bool CmpVersion(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVersion(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Version, value, diffs, objName, "Version");
   }
@@ -49,7 +49,7 @@ public static class WebExtensionStoreReferenceConverter
     return StringValueConverter.GetValue(openXmlElement?.Store);
   }
   
-  private static bool CmpStore(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStore(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Store, value, diffs, objName, "Store");
   }
@@ -67,7 +67,7 @@ public static class WebExtensionStoreReferenceConverter
     return StringValueConverter.GetValue(openXmlElement?.StoreType);
   }
   
-  private static bool CmpStoreType(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStoreType(DXO13WE.WebExtensionStoreReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.StoreType, value, diffs, objName, "StoreType");
   }
@@ -88,9 +88,9 @@ public static class WebExtensionStoreReferenceConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtensionStoreReference openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtensionStoreReference openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO13WE.WebExtensionStoreReference openXmlElement, DMWE.OfficeArtExtensionList? value)
@@ -121,25 +121,25 @@ public static class WebExtensionStoreReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13WE.WebExtensionStoreReference? openXmlElement, DMWE.WebExtensionStoreReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.WebExtensionStoreReference? openXmlElement, DMWE.WebExtensionStoreReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpVersion(openXmlElement, value.Version, diffs, objName))
+      if (!CmpVersion(openXmlElement, value.Version, diffs, objName, propName))
         ok = false;
-      if (!CmpStore(openXmlElement, value.Store, diffs, objName))
+      if (!CmpStore(openXmlElement, value.Store, diffs, objName, propName))
         ok = false;
-      if (!CmpStoreType(openXmlElement, value.StoreType, diffs, objName))
+      if (!CmpStoreType(openXmlElement, value.StoreType, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

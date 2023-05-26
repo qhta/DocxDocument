@@ -22,21 +22,21 @@ public static class CustomXmlRubyConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.CustomXmlRuby? openXmlElement, DMW.CustomXmlRuby? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlRuby? openXmlElement, DMW.CustomXmlRuby? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        RubyContentConverter.CompareRubyContentElement, diffs, objName))
+        RubyContentConverter.CompareRubyContentElement, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

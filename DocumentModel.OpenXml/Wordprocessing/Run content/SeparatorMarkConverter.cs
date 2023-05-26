@@ -25,7 +25,7 @@ public static class SeparatorMarkConverter
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.SeparatorMark? value, bool IsContinuation, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.SeparatorMark? value, bool IsContinuation, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -35,15 +35,15 @@ public static class SeparatorMarkConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 
-  public static bool CompareModelElement(DXW.SeparatorMark? openXmlElement, DMW.SeparatorMark? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, false, diffs, objName);
+  public static bool CompareModelElement(DXW.SeparatorMark? openXmlElement, DMW.SeparatorMark? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, value, false, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.ContinuationSeparatorMark? openXmlElement, DMW.SeparatorMark? value, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, value, true, diffs, objName);
+  public static bool CompareModelElement(DXW.ContinuationSeparatorMark? openXmlElement, DMW.SeparatorMark? value, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, value, true, diffs, objName, propName);
 
   public static DX.OpenXmlElement CreateOpenXmlElement(DMW.SeparatorMark value)
   {

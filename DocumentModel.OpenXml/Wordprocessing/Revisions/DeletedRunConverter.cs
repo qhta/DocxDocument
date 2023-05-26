@@ -10,9 +10,9 @@ public static class DeletedRunConverter
     return RunTrackChangeTypeConverter.CreateModelElement<DMW.DeletedRun>(openXmlElement);
   }
   
-  public static bool CompareModelElement(DXW.DeletedRun? openXmlElement, DMW.DeletedRun? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DeletedRun? openXmlElement, DMW.DeletedRun? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return RunTrackChangeTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RunTrackChangeTypeConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.DeletedRun model)

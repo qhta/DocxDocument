@@ -13,7 +13,7 @@ public static class TaskScheduleEventInfoConverter
     return openXmlElement?.StartDate?.Value;
   }
   
-  private static bool CmpStartDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpStartDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.StartDate?.Value == value) return true;
     diffs?.Add(objName, "StartDate", openXmlElement?.StartDate?.Value, value);
@@ -33,7 +33,7 @@ public static class TaskScheduleEventInfoConverter
     return openXmlElement?.DueDate?.Value;
   }
   
-  private static bool CmpDueDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs, string? objName)
+  private static bool CmpDueDate(DXO21DT.TaskScheduleEventInfo openXmlElement, DateTime? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DueDate?.Value == value) return true;
     diffs?.Add(objName, "DueDate", openXmlElement?.DueDate?.Value, value);
@@ -57,19 +57,19 @@ public static class TaskScheduleEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskScheduleEventInfo? openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskScheduleEventInfo? openXmlElement, DM.TaskScheduleEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStartDate(openXmlElement, value.StartDate, diffs, objName))
+      if (!CmpStartDate(openXmlElement, value.StartDate, diffs, objName, propName))
         ok = false;
-      if (!CmpDueDate(openXmlElement, value.DueDate, diffs, objName))
+      if (!CmpDueDate(openXmlElement, value.DueDate, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

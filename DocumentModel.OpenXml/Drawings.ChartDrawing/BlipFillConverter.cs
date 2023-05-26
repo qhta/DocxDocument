@@ -13,7 +13,7 @@ public static class BlipFillConverter
     return openXmlElement?.Dpi?.Value;
   }
   
-  private static bool CmpDpi(DXDCD.BlipFill openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDpi(DXDCD.BlipFill openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Dpi?.Value == value) return true;
     diffs?.Add(objName, "Dpi", openXmlElement?.Dpi?.Value, value);
@@ -33,7 +33,7 @@ public static class BlipFillConverter
     return openXmlElement?.RotateWithShape?.Value;
   }
   
-  private static bool CmpRotateWithShape(DXDCD.BlipFill openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpRotateWithShape(DXDCD.BlipFill openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RotateWithShape?.Value == value) return true;
     diffs?.Add(objName, "RotateWithShape", openXmlElement?.RotateWithShape?.Value, value);
@@ -59,9 +59,9 @@ public static class BlipFillConverter
     return null;
   }
   
-  private static bool CmpBlip(DXDCD.BlipFill openXmlElement, DMD.Blip? value, DiffList? diffs, string? objName)
+  private static bool CmpBlip(DXDCD.BlipFill openXmlElement, DMD.Blip? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blip>(), value, diffs, objName);
+    return DMXD.BlipConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Blip>(), value, diffs, objName, propName);
   }
   
   private static void SetBlip(DXDCD.BlipFill openXmlElement, DMD.Blip? value)
@@ -88,9 +88,9 @@ public static class BlipFillConverter
     return null;
   }
   
-  private static bool CmpSourceRectangle(DXDCD.BlipFill openXmlElement, DMD.RelativeRectangleType? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceRectangle(DXDCD.BlipFill openXmlElement, DMD.RelativeRectangleType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SourceRectangle>(), value, diffs, objName);
+    return DMXD.RelativeRectangleTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.SourceRectangle>(), value, diffs, objName, propName);
   }
   
   private static void SetSourceRectangle(DXDCD.BlipFill openXmlElement, DMD.RelativeRectangleType? value)
@@ -114,9 +114,9 @@ public static class BlipFillConverter
     return null;
   }
   
-  private static bool CmpTile(DXDCD.BlipFill openXmlElement, DMD.Tile? value, DiffList? diffs, string? objName)
+  private static bool CmpTile(DXDCD.BlipFill openXmlElement, DMD.Tile? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.TileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Tile>(), value, diffs, objName);
+    return DMXD.TileConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Tile>(), value, diffs, objName, propName);
   }
   
   private static void SetTile(DXDCD.BlipFill openXmlElement, DMD.Tile? value)
@@ -140,9 +140,9 @@ public static class BlipFillConverter
     return null;
   }
   
-  private static bool CmpStretch(DXDCD.BlipFill openXmlElement, DMD.Stretch? value, DiffList? diffs, string? objName)
+  private static bool CmpStretch(DXDCD.BlipFill openXmlElement, DMD.Stretch? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.StretchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Stretch>(), value, diffs, objName);
+    return DMXD.StretchConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Stretch>(), value, diffs, objName, propName);
   }
   
   private static void SetStretch(DXDCD.BlipFill openXmlElement, DMD.Stretch? value)
@@ -174,27 +174,27 @@ public static class BlipFillConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.BlipFill? openXmlElement, DMDCD.BlipFill? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.BlipFill? openXmlElement, DMDCD.BlipFill? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDpi(openXmlElement, value.Dpi, diffs, objName))
+      if (!CmpDpi(openXmlElement, value.Dpi, diffs, objName, propName))
         ok = false;
-      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName))
+      if (!CmpRotateWithShape(openXmlElement, value.RotateWithShape, diffs, objName, propName))
         ok = false;
-      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName))
+      if (!CmpBlip(openXmlElement, value.Blip, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceRectangle(openXmlElement, value.SourceRectangle, diffs, objName))
+      if (!CmpSourceRectangle(openXmlElement, value.SourceRectangle, diffs, objName, propName))
         ok = false;
-      if (!CmpTile(openXmlElement, value.Tile, diffs, objName))
+      if (!CmpTile(openXmlElement, value.Tile, diffs, objName, propName))
         ok = false;
-      if (!CmpStretch(openXmlElement, value.Stretch, diffs, objName))
+      if (!CmpStretch(openXmlElement, value.Stretch, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

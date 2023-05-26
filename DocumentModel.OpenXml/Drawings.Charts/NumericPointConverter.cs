@@ -13,7 +13,7 @@ public static class NumericPointConverter
     return openXmlElement?.Index?.Value;
   }
   
-  private static bool CmpIndex(DXDC.NumericPoint openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXDC.NumericPoint openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Index?.Value == value) return true;
     diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
@@ -33,7 +33,7 @@ public static class NumericPointConverter
     return StringValueConverter.GetValue(openXmlElement?.FormatCode);
   }
   
-  private static bool CmpFormatCode(DXDC.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatCode(DXDC.NumericPoint openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FormatCode, value, diffs, objName, "FormatCode");
   }
@@ -51,7 +51,7 @@ public static class NumericPointConverter
       return openXmlElement?.GetFirstChild<DXDC.NumericValue>()?.Text;
   }
   
-  private static bool CmpNumericValue(DXDC.NumericPoint openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpNumericValue(DXDC.NumericPoint openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.NumericValue>()?.Text == value;
   }
@@ -81,21 +81,21 @@ public static class NumericPointConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.NumericPoint? openXmlElement, DMDC.NumericPoint? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumericPoint? openXmlElement, DMDC.NumericPoint? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName))
+      if (!CmpFormatCode(openXmlElement, value.FormatCode, diffs, objName, propName))
         ok = false;
-      if (!CmpNumericValue(openXmlElement, value.NumericValue, diffs, objName))
+      if (!CmpNumericValue(openXmlElement, value.NumericValue, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

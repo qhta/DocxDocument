@@ -16,9 +16,9 @@ public static class TextBodyConverter
     return null;
   }
   
-  private static bool CmpBodyProperties(DXDD.TextBody openXmlElement, DMD.BodyProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpBodyProperties(DXDD.TextBody openXmlElement, DMD.BodyProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName);
+    return DMXD.BodyPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.BodyProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetBodyProperties(DXDD.TextBody openXmlElement, DMD.BodyProperties? value)
@@ -45,9 +45,9 @@ public static class TextBodyConverter
     return null;
   }
   
-  private static bool CmpListStyle(DXDD.TextBody openXmlElement, DMD.ListStyle? value, DiffList? diffs, string? objName)
+  private static bool CmpListStyle(DXDD.TextBody openXmlElement, DMD.ListStyle? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName);
+    return DMXD.ListStyleConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ListStyle>(), value, diffs, objName, propName);
   }
   
   private static void SetListStyle(DXDD.TextBody openXmlElement, DMD.ListStyle? value)
@@ -71,9 +71,9 @@ public static class TextBodyConverter
     return null;
   }
   
-  private static bool CmpParagraph(DXDD.TextBody openXmlElement, DMD.Paragraph? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraph(DXDD.TextBody openXmlElement, DMD.Paragraph? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Paragraph>(), value, diffs, objName);
+    return DMXD.ParagraphConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Paragraph>(), value, diffs, objName, propName);
   }
   
   private static void SetParagraph(DXDD.TextBody openXmlElement, DMD.Paragraph? value)
@@ -102,21 +102,21 @@ public static class TextBodyConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.TextBody? openXmlElement, DMDD.TextBody? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.TextBody? openXmlElement, DMDD.TextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName))
+      if (!CmpBodyProperties(openXmlElement, value.BodyProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName))
+      if (!CmpListStyle(openXmlElement, value.ListStyle, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraph(openXmlElement, value.Paragraph, diffs, objName))
+      if (!CmpParagraph(openXmlElement, value.Paragraph, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class DrawingConverter
     return null;
   }
   
-  private static bool CmpAnchor(DXW.Drawing openXmlElement, DMDW.Anchor? value, DiffList? diffs, string? objName)
+  private static bool CmpAnchor(DXW.Drawing openXmlElement, DMDW.Anchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Anchor>(), value, diffs, objName);
+    return DMXDW.AnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Anchor>(), value, diffs, objName, propName);
   }
   
   private static void SetAnchor(DXW.Drawing openXmlElement, DMDW.Anchor? value)
@@ -45,9 +45,9 @@ public static class DrawingConverter
     return null;
   }
   
-  private static bool CmpInline(DXW.Drawing openXmlElement, DMDW.Inline? value, DiffList? diffs, string? objName)
+  private static bool CmpInline(DXW.Drawing openXmlElement, DMDW.Inline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDW.InlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Inline>(), value, diffs, objName);
+    return DMXDW.InlineConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDW.Inline>(), value, diffs, objName, propName);
   }
   
   private static void SetInline(DXW.Drawing openXmlElement, DMDW.Inline? value)
@@ -75,19 +75,19 @@ public static class DrawingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Drawing? openXmlElement, DMW.Drawing? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Drawing? openXmlElement, DMW.Drawing? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName))
+      if (!CmpAnchor(openXmlElement, value.Anchor, diffs, objName, propName))
         ok = false;
-      if (!CmpInline(openXmlElement, value.Inline, diffs, objName))
+      if (!CmpInline(openXmlElement, value.Inline, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

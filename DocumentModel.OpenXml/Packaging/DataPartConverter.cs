@@ -13,7 +13,7 @@ public static class DataPartConverter
     return openXmlElement?.Uri;
   }
   
-  private static bool CmpUri(DXPack.DataPart openXmlElement, Uri? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXPack.DataPart openXmlElement, Uri? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Uri == value) return true;
     diffs?.Add(objName, "Uri", openXmlElement?.Uri, value);
@@ -28,7 +28,7 @@ public static class DataPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.DataPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.DataPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -47,19 +47,19 @@ public static class DataPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DataPart? openXmlElement, DMPack.DataPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DataPart? openXmlElement, DMPack.DataPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.QualifiedId);
   }
   
-  private static bool CmpQualifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpQualifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.QualifiedId, value, diffs, objName, "QualifiedId");
   }
@@ -49,7 +49,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Tag);
   }
   
-  private static bool CmpTag(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTag(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Tag, value, diffs, objName, "Tag");
   }
@@ -67,7 +67,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
@@ -85,7 +85,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Label);
   }
   
-  private static bool CmpLabel(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLabel(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Label, value, diffs, objName, "Label");
   }
@@ -103,7 +103,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetLabel);
   }
   
-  private static bool CmpGetLabel(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetLabel(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetLabel, value, diffs, objName, "GetLabel");
   }
@@ -121,7 +121,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Image);
   }
   
-  private static bool CmpImage(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImage(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Image, value, diffs, objName, "Image");
   }
@@ -139,7 +139,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.ImageMso);
   }
   
-  private static bool CmpImageMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpImageMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ImageMso, value, diffs, objName, "ImageMso");
   }
@@ -157,7 +157,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetImage);
   }
   
-  private static bool CmpGetImage(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetImage(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetImage, value, diffs, objName, "GetImage");
   }
@@ -175,7 +175,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterMso);
   }
   
-  private static bool CmpInsertAfterMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterMso, value, diffs, objName, "InsertAfterMso");
   }
@@ -193,7 +193,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeMso);
   }
   
-  private static bool CmpInsertBeforeMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeMso(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeMso, value, diffs, objName, "InsertBeforeMso");
   }
@@ -211,7 +211,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertAfterQulifiedId);
   }
   
-  private static bool CmpInsertAfterQulifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertAfterQulifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertAfterQulifiedId, value, diffs, objName, "InsertAfterQulifiedId");
   }
@@ -229,7 +229,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.InsertBeforeQulifiedId);
   }
   
-  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInsertBeforeQulifiedId(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.InsertBeforeQulifiedId, value, diffs, objName, "InsertBeforeQulifiedId");
   }
@@ -247,7 +247,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Screentip);
   }
   
-  private static bool CmpScreentip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpScreentip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Screentip, value, diffs, objName, "Screentip");
   }
@@ -265,7 +265,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetScreentip);
   }
   
-  private static bool CmpGetScreentip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetScreentip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetScreentip, value, diffs, objName, "GetScreentip");
   }
@@ -283,7 +283,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Supertip);
   }
   
-  private static bool CmpSupertip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSupertip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Supertip, value, diffs, objName, "Supertip");
   }
@@ -301,7 +301,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetSupertip);
   }
   
-  private static bool CmpGetSupertip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetSupertip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetSupertip, value, diffs, objName, "GetSupertip");
   }
@@ -319,7 +319,7 @@ public static class GroupConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -342,7 +342,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -360,7 +360,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.Keytip);
   }
   
-  private static bool CmpKeytip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpKeytip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Keytip, value, diffs, objName, "Keytip");
   }
@@ -378,7 +378,7 @@ public static class GroupConverter
     return StringValueConverter.GetValue(openXmlElement?.GetKeytip);
   }
   
-  private static bool CmpGetKeytip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetKeytip(DXO10CUI.Group openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetKeytip, value, diffs, objName, "GetKeytip");
   }
@@ -396,7 +396,7 @@ public static class GroupConverter
     return openXmlElement?.AutoScale?.Value;
   }
   
-  private static bool CmpAutoScale(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoScale(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AutoScale?.Value == value) return true;
     diffs?.Add(objName, "AutoScale", openXmlElement?.AutoScale?.Value, value);
@@ -419,7 +419,7 @@ public static class GroupConverter
     return openXmlElement?.CenterVertically?.Value;
   }
   
-  private static bool CmpCenterVertically(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCenterVertically(DXO10CUI.Group openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CenterVertically?.Value == value) return true;
     diffs?.Add(objName, "CenterVertically", openXmlElement?.CenterVertically?.Value, value);
@@ -442,9 +442,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpControlClone(DXO10CUI.Group openXmlElement, DM.ControlClone? value, DiffList? diffs, string? objName)
+  private static bool CmpControlClone(DXO10CUI.Group openXmlElement, DM.ControlClone? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ControlClone>(), value, diffs, objName);
+    return DMX.ControlCloneConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ControlClone>(), value, diffs, objName, propName);
   }
   
   private static void SetControlClone(DXO10CUI.Group openXmlElement, DM.ControlClone? value)
@@ -468,9 +468,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpLabelControl(DXO10CUI.Group openXmlElement, DM.LabelControl? value, DiffList? diffs, string? objName)
+  private static bool CmpLabelControl(DXO10CUI.Group openXmlElement, DM.LabelControl? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.LabelControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.LabelControl>(), value, diffs, objName);
+    return DMX.LabelControlConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.LabelControl>(), value, diffs, objName, propName);
   }
   
   private static void SetLabelControl(DXO10CUI.Group openXmlElement, DM.LabelControl? value)
@@ -494,9 +494,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpButton(DXO10CUI.Group openXmlElement, DM.Button? value, DiffList? diffs, string? objName)
+  private static bool CmpButton(DXO10CUI.Group openXmlElement, DM.Button? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Button>(), value, diffs, objName);
+    return DMX.ButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Button>(), value, diffs, objName, propName);
   }
   
   private static void SetButton(DXO10CUI.Group openXmlElement, DM.Button? value)
@@ -520,9 +520,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpToggleButton(DXO10CUI.Group openXmlElement, DM.ToggleButton? value, DiffList? diffs, string? objName)
+  private static bool CmpToggleButton(DXO10CUI.Group openXmlElement, DM.ToggleButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ToggleButton>(), value, diffs, objName);
+    return DMX.ToggleButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ToggleButton>(), value, diffs, objName, propName);
   }
   
   private static void SetToggleButton(DXO10CUI.Group openXmlElement, DM.ToggleButton? value)
@@ -546,9 +546,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpCheckBox(DXO10CUI.Group openXmlElement, DM.CheckBox? value, DiffList? diffs, string? objName)
+  private static bool CmpCheckBox(DXO10CUI.Group openXmlElement, DM.CheckBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.CheckBox>(), value, diffs, objName);
+    return DMX.CheckBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.CheckBox>(), value, diffs, objName, propName);
   }
   
   private static void SetCheckBox(DXO10CUI.Group openXmlElement, DM.CheckBox? value)
@@ -572,9 +572,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpEditBox(DXO10CUI.Group openXmlElement, DM.EditBox? value, DiffList? diffs, string? objName)
+  private static bool CmpEditBox(DXO10CUI.Group openXmlElement, DM.EditBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.EditBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.EditBox>(), value, diffs, objName);
+    return DMX.EditBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.EditBox>(), value, diffs, objName, propName);
   }
   
   private static void SetEditBox(DXO10CUI.Group openXmlElement, DM.EditBox? value)
@@ -598,9 +598,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpComboBox(DXO10CUI.Group openXmlElement, DM.ComboBox? value, DiffList? diffs, string? objName)
+  private static bool CmpComboBox(DXO10CUI.Group openXmlElement, DM.ComboBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ComboBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ComboBox>(), value, diffs, objName);
+    return DMX.ComboBoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ComboBox>(), value, diffs, objName, propName);
   }
   
   private static void SetComboBox(DXO10CUI.Group openXmlElement, DM.ComboBox? value)
@@ -624,9 +624,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpDropDownRegular(DXO10CUI.Group openXmlElement, DM.DropDownRegular? value, DiffList? diffs, string? objName)
+  private static bool CmpDropDownRegular(DXO10CUI.Group openXmlElement, DM.DropDownRegular? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.DropDownRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DropDownRegular>(), value, diffs, objName);
+    return DMX.DropDownRegularConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DropDownRegular>(), value, diffs, objName, propName);
   }
   
   private static void SetDropDownRegular(DXO10CUI.Group openXmlElement, DM.DropDownRegular? value)
@@ -650,9 +650,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpGallery(DXO10CUI.Group openXmlElement, DM.Gallery? value, DiffList? diffs, string? objName)
+  private static bool CmpGallery(DXO10CUI.Group openXmlElement, DM.Gallery? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.GalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Gallery>(), value, diffs, objName);
+    return DMX.GalleryConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Gallery>(), value, diffs, objName, propName);
   }
   
   private static void SetGallery(DXO10CUI.Group openXmlElement, DM.Gallery? value)
@@ -676,9 +676,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpMenu(DXO10CUI.Group openXmlElement, DM.Menu? value, DiffList? diffs, string? objName)
+  private static bool CmpMenu(DXO10CUI.Group openXmlElement, DM.Menu? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.MenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Menu>(), value, diffs, objName);
+    return DMX.MenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Menu>(), value, diffs, objName, propName);
   }
   
   private static void SetMenu(DXO10CUI.Group openXmlElement, DM.Menu? value)
@@ -702,9 +702,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpDynamicMenu(DXO10CUI.Group openXmlElement, DM.DynamicMenu? value, DiffList? diffs, string? objName)
+  private static bool CmpDynamicMenu(DXO10CUI.Group openXmlElement, DM.DynamicMenu? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.DynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DynamicMenu>(), value, diffs, objName);
+    return DMX.DynamicMenuConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DynamicMenu>(), value, diffs, objName, propName);
   }
   
   private static void SetDynamicMenu(DXO10CUI.Group openXmlElement, DM.DynamicMenu? value)
@@ -728,9 +728,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpSplitButton(DXO10CUI.Group openXmlElement, DM.SplitButton? value, DiffList? diffs, string? objName)
+  private static bool CmpSplitButton(DXO10CUI.Group openXmlElement, DM.SplitButton? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.SplitButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SplitButton>(), value, diffs, objName);
+    return DMX.SplitButtonConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.SplitButton>(), value, diffs, objName, propName);
   }
   
   private static void SetSplitButton(DXO10CUI.Group openXmlElement, DM.SplitButton? value)
@@ -754,9 +754,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpBox(DXO10CUI.Group openXmlElement, DM.Box? value, DiffList? diffs, string? objName)
+  private static bool CmpBox(DXO10CUI.Group openXmlElement, DM.Box? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.BoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Box>(), value, diffs, objName);
+    return DMX.BoxConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Box>(), value, diffs, objName, propName);
   }
   
   private static void SetBox(DXO10CUI.Group openXmlElement, DM.Box? value)
@@ -780,9 +780,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpButtonGroup(DXO10CUI.Group openXmlElement, DM.ButtonGroup? value, DiffList? diffs, string? objName)
+  private static bool CmpButtonGroup(DXO10CUI.Group openXmlElement, DM.ButtonGroup? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ButtonGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonGroup>(), value, diffs, objName);
+    return DMX.ButtonGroupConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.ButtonGroup>(), value, diffs, objName, propName);
   }
   
   private static void SetButtonGroup(DXO10CUI.Group openXmlElement, DM.ButtonGroup? value)
@@ -806,9 +806,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpSeparator(DXO10CUI.Group openXmlElement, DM.Separator? value, DiffList? diffs, string? objName)
+  private static bool CmpSeparator(DXO10CUI.Group openXmlElement, DM.Separator? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Separator>(), value, diffs, objName);
+    return DMX.SeparatorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.Separator>(), value, diffs, objName, propName);
   }
   
   private static void SetSeparator(DXO10CUI.Group openXmlElement, DM.Separator? value)
@@ -832,9 +832,9 @@ public static class GroupConverter
     return null;
   }
   
-  private static bool CmpDialogBoxLauncher(DXO10CUI.Group openXmlElement, DM.DialogBoxLauncher? value, DiffList? diffs, string? objName)
+  private static bool CmpDialogBoxLauncher(DXO10CUI.Group openXmlElement, DM.DialogBoxLauncher? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.DialogBoxLauncherConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DialogBoxLauncher>(), value, diffs, objName);
+    return DMX.DialogBoxLauncherConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10CUI.DialogBoxLauncher>(), value, diffs, objName, propName);
   }
   
   private static void SetDialogBoxLauncher(DXO10CUI.Group openXmlElement, DM.DialogBoxLauncher? value)
@@ -899,93 +899,93 @@ public static class GroupConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10CUI.Group? openXmlElement, DM.Group? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10CUI.Group? openXmlElement, DM.Group? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName))
+      if (!CmpQualifiedId(openXmlElement, value.QualifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpTag(openXmlElement, value.Tag, diffs, objName))
+      if (!CmpTag(openXmlElement, value.Tag, diffs, objName, propName))
         ok = false;
-      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName, propName))
         ok = false;
-      if (!CmpLabel(openXmlElement, value.Label, diffs, objName))
+      if (!CmpLabel(openXmlElement, value.Label, diffs, objName, propName))
         ok = false;
-      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName))
+      if (!CmpGetLabel(openXmlElement, value.GetLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpImage(openXmlElement, value.Image, diffs, objName))
+      if (!CmpImage(openXmlElement, value.Image, diffs, objName, propName))
         ok = false;
-      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName))
+      if (!CmpImageMso(openXmlElement, value.ImageMso, diffs, objName, propName))
         ok = false;
-      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName))
+      if (!CmpGetImage(openXmlElement, value.GetImage, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName))
+      if (!CmpInsertAfterMso(openXmlElement, value.InsertAfterMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName))
+      if (!CmpInsertBeforeMso(openXmlElement, value.InsertBeforeMso, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName))
+      if (!CmpInsertAfterQulifiedId(openXmlElement, value.InsertAfterQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName))
+      if (!CmpInsertBeforeQulifiedId(openXmlElement, value.InsertBeforeQulifiedId, diffs, objName, propName))
         ok = false;
-      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName))
+      if (!CmpScreentip(openXmlElement, value.Screentip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName))
+      if (!CmpGetScreentip(openXmlElement, value.GetScreentip, diffs, objName, propName))
         ok = false;
-      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName))
+      if (!CmpSupertip(openXmlElement, value.Supertip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName))
+      if (!CmpGetSupertip(openXmlElement, value.GetSupertip, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName))
+      if (!CmpKeytip(openXmlElement, value.Keytip, diffs, objName, propName))
         ok = false;
-      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName))
+      if (!CmpGetKeytip(openXmlElement, value.GetKeytip, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoScale(openXmlElement, value.AutoScale, diffs, objName))
+      if (!CmpAutoScale(openXmlElement, value.AutoScale, diffs, objName, propName))
         ok = false;
-      if (!CmpCenterVertically(openXmlElement, value.CenterVertically, diffs, objName))
+      if (!CmpCenterVertically(openXmlElement, value.CenterVertically, diffs, objName, propName))
         ok = false;
-      if (!CmpControlClone(openXmlElement, value.ControlClone, diffs, objName))
+      if (!CmpControlClone(openXmlElement, value.ControlClone, diffs, objName, propName))
         ok = false;
-      if (!CmpLabelControl(openXmlElement, value.LabelControl, diffs, objName))
+      if (!CmpLabelControl(openXmlElement, value.LabelControl, diffs, objName, propName))
         ok = false;
-      if (!CmpButton(openXmlElement, value.Button, diffs, objName))
+      if (!CmpButton(openXmlElement, value.Button, diffs, objName, propName))
         ok = false;
-      if (!CmpToggleButton(openXmlElement, value.ToggleButton, diffs, objName))
+      if (!CmpToggleButton(openXmlElement, value.ToggleButton, diffs, objName, propName))
         ok = false;
-      if (!CmpCheckBox(openXmlElement, value.CheckBox, diffs, objName))
+      if (!CmpCheckBox(openXmlElement, value.CheckBox, diffs, objName, propName))
         ok = false;
-      if (!CmpEditBox(openXmlElement, value.EditBox, diffs, objName))
+      if (!CmpEditBox(openXmlElement, value.EditBox, diffs, objName, propName))
         ok = false;
-      if (!CmpComboBox(openXmlElement, value.ComboBox, diffs, objName))
+      if (!CmpComboBox(openXmlElement, value.ComboBox, diffs, objName, propName))
         ok = false;
-      if (!CmpDropDownRegular(openXmlElement, value.DropDownRegular, diffs, objName))
+      if (!CmpDropDownRegular(openXmlElement, value.DropDownRegular, diffs, objName, propName))
         ok = false;
-      if (!CmpGallery(openXmlElement, value.Gallery, diffs, objName))
+      if (!CmpGallery(openXmlElement, value.Gallery, diffs, objName, propName))
         ok = false;
-      if (!CmpMenu(openXmlElement, value.Menu, diffs, objName))
+      if (!CmpMenu(openXmlElement, value.Menu, diffs, objName, propName))
         ok = false;
-      if (!CmpDynamicMenu(openXmlElement, value.DynamicMenu, diffs, objName))
+      if (!CmpDynamicMenu(openXmlElement, value.DynamicMenu, diffs, objName, propName))
         ok = false;
-      if (!CmpSplitButton(openXmlElement, value.SplitButton, diffs, objName))
+      if (!CmpSplitButton(openXmlElement, value.SplitButton, diffs, objName, propName))
         ok = false;
-      if (!CmpBox(openXmlElement, value.Box, diffs, objName))
+      if (!CmpBox(openXmlElement, value.Box, diffs, objName, propName))
         ok = false;
-      if (!CmpButtonGroup(openXmlElement, value.ButtonGroup, diffs, objName))
+      if (!CmpButtonGroup(openXmlElement, value.ButtonGroup, diffs, objName, propName))
         ok = false;
-      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName))
+      if (!CmpSeparator(openXmlElement, value.Separator, diffs, objName, propName))
         ok = false;
-      if (!CmpDialogBoxLauncher(openXmlElement, value.DialogBoxLauncher, diffs, objName))
+      if (!CmpDialogBoxLauncher(openXmlElement, value.DialogBoxLauncher, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

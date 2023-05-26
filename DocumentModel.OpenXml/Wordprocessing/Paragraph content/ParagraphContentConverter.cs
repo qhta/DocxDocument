@@ -36,30 +36,30 @@ public static class ParagraphContentConverter
   }
 
   public static bool CompareParagraphContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.Run run && model is DMW.Run runModel)
-        return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName);
+        return DMXW.RunConverter.CompareModelElement(run, runModel, diffs, objName, propName);
 
-      var result1 = DMXW.HyperlinkGroupConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+      var result1 = DMXW.HyperlinkGroupConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
       if (result1 != null)
         return (bool)result1;
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result2 != null)
           return (bool)result2;
       }
       if (model is DMM.ICommonMathContent commonMathModel)
       {
-        var result3 = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName);
+        var result3 = DMXM.CommonMathConverter.CompareModelElement(openXmlElement, commonMathModel, diffs, objName, propName);
         if (result3 != null)
           return (bool)result3;
       }
-      var result4 = DMXW.BidirAndSubdocConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+      var result4 = DMXW.BidirAndSubdocConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
       if (result4 != null)
         return (bool)result4;
 
@@ -68,7 +68,7 @@ public static class ParagraphContentConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

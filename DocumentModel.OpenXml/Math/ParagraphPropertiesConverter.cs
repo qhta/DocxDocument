@@ -11,9 +11,9 @@ public static class ParagraphPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.Justification>()?.Val?.Value);
   }
   
-  private static bool CmpJustification(DXM.ParagraphProperties openXmlElement, DMM.JustificationKind? value, DiffList? diffs, string? objName)
+  private static bool CmpJustification(DXM.ParagraphProperties openXmlElement, DMM.JustificationKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.Justification>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Math.JustificationValues, DMM.JustificationKind>(openXmlElement.GetFirstChild<DXM.Justification>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetJustification(DXM.ParagraphProperties openXmlElement, DMM.JustificationKind? value)
@@ -44,17 +44,17 @@ public static class ParagraphPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXM.ParagraphProperties? openXmlElement, DMM.ParagraphProperties? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXM.ParagraphProperties? openXmlElement, DMM.ParagraphProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpJustification(openXmlElement, model.Justification, diffs, objName))
+      if (!CmpJustification(openXmlElement, model.Justification, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

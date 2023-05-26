@@ -13,7 +13,7 @@ public static class AlphaReplaceConverter
     return openXmlElement?.Alpha?.Value;
   }
   
-  private static bool CmpAlpha(DXD.AlphaReplace openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAlpha(DXD.AlphaReplace openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Alpha?.Value == value) return true;
     diffs?.Add(objName, "Alpha", openXmlElement?.Alpha?.Value, value);
@@ -36,17 +36,17 @@ public static class AlphaReplaceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.AlphaReplace? openXmlElement, DMD.AlphaReplace? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.AlphaReplace? openXmlElement, DMD.AlphaReplace? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName))
+      if (!CmpAlpha(openXmlElement, value.Alpha, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

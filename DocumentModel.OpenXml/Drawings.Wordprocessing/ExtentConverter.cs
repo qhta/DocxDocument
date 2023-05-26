@@ -13,7 +13,7 @@ public static class ExtentConverter
     return openXmlElement?.Cx?.Value ?? 0;
   }
   
-  private static bool CmpCx(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpCx(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Cx?.Value == value) return true;
     diffs?.Add(objName, "Cx", openXmlElement?.Cx?.Value, value);
@@ -33,7 +33,7 @@ public static class ExtentConverter
     return openXmlElement?.Cy?.Value ?? 0;
   }
   
-  private static bool CmpCy(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpCy(DXDW.Extent openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Cy?.Value == value) return true;
     diffs?.Add(objName, "Cy", openXmlElement?.Cy?.Value, value);
@@ -57,19 +57,19 @@ public static class ExtentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDW.Extent? openXmlElement, DMD.Extent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDW.Extent? openXmlElement, DMD.Extent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCx(openXmlElement, value.Cx, diffs, objName))
+      if (!CmpCx(openXmlElement, value.Cx, diffs, objName, propName))
         ok = false;
-      if (!CmpCy(openXmlElement, value.Cy, diffs, objName))
+      if (!CmpCy(openXmlElement, value.Cy, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

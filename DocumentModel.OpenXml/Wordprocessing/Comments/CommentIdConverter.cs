@@ -13,7 +13,7 @@ public static class CommentIdConverter
     return null;
   }
   
-  private static bool CmpParaId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpParaId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.ParaId?.Value, value, diffs, objName, "ParaId");
   }
@@ -35,7 +35,7 @@ public static class CommentIdConverter
     return null;
   }
   
-  private static bool CmpDurableId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpDurableId(DXO19WCid.CommentId openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.DurableId?.Value, value, diffs, objName, "DurableId");
   }
@@ -60,19 +60,19 @@ public static class CommentIdConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXO19WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO19WCid.CommentId? openXmlElement, DMW.CommentId? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName))
+      if (!CmpParaId(openXmlElement, value.ParaId, diffs, objName, propName))
         ok = false;
-      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName))
+      if (!CmpDurableId(openXmlElement, value.DurableId, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

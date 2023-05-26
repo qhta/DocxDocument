@@ -13,7 +13,7 @@ public static class TextBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXV.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXV.TextBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class TextBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Style);
   }
   
-  private static bool CmpStyle(DXV.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXV.TextBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Style, value, diffs, objName, "Style");
   }
@@ -49,7 +49,7 @@ public static class TextBoxConverter
     return StringValueConverter.GetValue(openXmlElement?.Inset);
   }
   
-  private static bool CmpInset(DXV.TextBox openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpInset(DXV.TextBox openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Inset, value, diffs, objName, "Inset");
   }
@@ -67,7 +67,7 @@ public static class TextBoxConverter
     return openXmlElement?.SingleClick?.Value;
   }
   
-  private static bool CmpSingleClick(DXV.TextBox openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSingleClick(DXV.TextBox openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SingleClick?.Value == value) return true;
     diffs?.Add(objName, "SingleClick", openXmlElement?.SingleClick?.Value, value);
@@ -90,9 +90,9 @@ public static class TextBoxConverter
     return null;
   }
   
-  private static bool CmpTextBoxContent(DXV.TextBox openXmlElement, DMW.TextBoxContent? value, DiffList? diffs, string? objName)
+  private static bool CmpTextBoxContent(DXV.TextBox openXmlElement, DMW.TextBoxContent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.TextBoxContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TextBoxContent>(), value, diffs, objName);
+    return DMXW.TextBoxContentConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.TextBoxContent>(), value, diffs, objName, propName);
   }
   
   private static void SetTextBoxContent(DXV.TextBox openXmlElement, DMW.TextBoxContent? value)
@@ -123,25 +123,25 @@ public static class TextBoxConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXV.TextBox? openXmlElement, DMV.TextBox? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXV.TextBox? openXmlElement, DMV.TextBox? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName, propName))
         ok = false;
-      if (!CmpInset(openXmlElement, value.Inset, diffs, objName))
+      if (!CmpInset(openXmlElement, value.Inset, diffs, objName, propName))
         ok = false;
-      if (!CmpSingleClick(openXmlElement, value.SingleClick, diffs, objName))
+      if (!CmpSingleClick(openXmlElement, value.SingleClick, diffs, objName, propName))
         ok = false;
-      if (!CmpTextBoxContent(openXmlElement, value.TextBoxContent, diffs, objName))
+      if (!CmpTextBoxContent(openXmlElement, value.TextBoxContent, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

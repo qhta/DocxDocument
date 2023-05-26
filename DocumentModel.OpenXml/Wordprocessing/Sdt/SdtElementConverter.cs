@@ -14,9 +14,9 @@ public static class SdtElementConverter
     return null;
   }
   
-  public static bool CmpSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value, DiffList? diffs, string? objName)
+  public static bool CmpSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName);
+    return DMXW.SdtPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtProperties>(), value, diffs, objName, propName);
   }
   
   public static void SetSdtProperties(DXW.SdtElement openXmlElement, DMW.SdtProperties? value)
@@ -45,9 +45,9 @@ public static class SdtElementConverter
     return null;
   }
   
-  public static bool CmpSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs, string? objName)
+  public static bool CmpSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName);
+    return DMXW.SdtEndCharPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.SdtEndCharProperties>(), value, diffs, objName, propName);
   }
   
   public static void SetSdtEndCharProperties(DXW.SdtElement openXmlElement, DMW.SdtEndCharProperties? value)
@@ -77,19 +77,19 @@ public static class SdtElementConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.SdtElement? openXmlElement, DMW.SdtElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.SdtElement? openXmlElement, DMW.SdtElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSdtProperties(openXmlElement, value.SdtProperties, diffs, objName))
+      if (!CmpSdtProperties(openXmlElement, value.SdtProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties, diffs, objName))
+      if (!CmpSdtEndCharProperties(openXmlElement, value.SdtEndCharProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

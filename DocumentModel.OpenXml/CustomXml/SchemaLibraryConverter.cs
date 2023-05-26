@@ -11,9 +11,9 @@ public static class SchemaLibraryConverter
     return DMXCX.SchemaConverter.CreateModelElement(openXmlElement as DXCXSR.Schema);
   }
 
-  private static bool CmpSchema(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null)
+  private static bool CmpSchema(DX.OpenXmlElement? openXmlElement, DM.IModelElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXCX.SchemaConverter.CompareModelElement(openXmlElement as DXCXSR.Schema, value as DMCX.Schema, diffs, objName);
+    return DMXCX.SchemaConverter.CompareModelElement(openXmlElement as DXCXSR.Schema, value as DMCX.Schema, diffs, objName, propName);
   }
 
   private static bool UpdateSchema(DX.OpenXmlElement openXmlElement, DM.IModelElement model)
@@ -46,18 +46,18 @@ public static class SchemaLibraryConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXCXSR.SchemaLibrary? openXmlElement, DMCX.SchemaLibrary? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXCXSR.SchemaLibrary? openXmlElement, DMCX.SchemaLibrary? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
       if (!ElementCollectionConverter<DMCX.Schema>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CmpSchema, diffs, objName))
+        CmpSchema, diffs, objName, propName))
         return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

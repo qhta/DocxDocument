@@ -16,9 +16,9 @@ public static class FilteredBubbleSeriesConverter
     return null;
   }
   
-  private static bool CmpBubbleChartSeries(DXO13DC.FilteredBubbleSeries openXmlElement, DMDC.BubbleChartSeries3? value, DiffList? diffs, string? objName)
+  private static bool CmpBubbleChartSeries(DXO13DC.FilteredBubbleSeries openXmlElement, DMDC.BubbleChartSeries3? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.BubbleChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.BubbleChartSeries>(), value, diffs, objName);
+    return DMXDC.BubbleChartSeries3Converter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.BubbleChartSeries>(), value, diffs, objName, propName);
   }
   
   private static void SetBubbleChartSeries(DXO13DC.FilteredBubbleSeries openXmlElement, DMDC.BubbleChartSeries3? value)
@@ -45,17 +45,17 @@ public static class FilteredBubbleSeriesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.FilteredBubbleSeries? openXmlElement, DMDC.FilteredBubbleSeries? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.FilteredBubbleSeries? openXmlElement, DMDC.FilteredBubbleSeries? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpBubbleChartSeries(openXmlElement, value.BubbleChartSeries, diffs, objName))
+      if (!CmpBubbleChartSeries(openXmlElement, value.BubbleChartSeries, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

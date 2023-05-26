@@ -13,7 +13,7 @@ public static class ContextualTabSetConverter
     return StringValueConverter.GetValue(openXmlElement?.IdMso);
   }
   
-  private static bool CmpIdMso(DXOCUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpIdMso(DXOCUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.IdMso, value, diffs, objName, "IdMso");
   }
@@ -31,7 +31,7 @@ public static class ContextualTabSetConverter
     return openXmlElement?.Visible?.Value;
   }
   
-  private static bool CmpVisible(DXOCUI.ContextualTabSet openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVisible(DXOCUI.ContextualTabSet openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Visible?.Value == value) return true;
     diffs?.Add(objName, "Visible", openXmlElement?.Visible?.Value, value);
@@ -54,7 +54,7 @@ public static class ContextualTabSetConverter
     return StringValueConverter.GetValue(openXmlElement?.GetVisible);
   }
   
-  private static bool CmpGetVisible(DXOCUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGetVisible(DXOCUI.ContextualTabSet openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GetVisible, value, diffs, objName, "GetVisible");
   }
@@ -78,7 +78,7 @@ public static class ContextualTabSetConverter
     return null;
   }
   
-  private static bool CmpTabs(DXOCUI.ContextualTabSet openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs, string? objName)
+  private static bool CmpTabs(DXOCUI.ContextualTabSet openXmlElement, Collection<DMUI.Tab>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXOCUI.Tab>();
     var origElementsCount = origElements.Count();
@@ -87,7 +87,7 @@ public static class ContextualTabSetConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -96,13 +96,13 @@ public static class ContextualTabSetConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXUI.TabConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXUI.TabConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -134,23 +134,23 @@ public static class ContextualTabSetConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXOCUI.ContextualTabSet? openXmlElement, DMUI.ContextualTabSet? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXOCUI.ContextualTabSet? openXmlElement, DMUI.ContextualTabSet? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName))
+      if (!CmpIdMso(openXmlElement, value.IdMso, diffs, objName, propName))
         ok = false;
-      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName))
+      if (!CmpVisible(openXmlElement, value.Visible, diffs, objName, propName))
         ok = false;
-      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName))
+      if (!CmpGetVisible(openXmlElement, value.GetVisible, diffs, objName, propName))
         ok = false;
-      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName))
+      if (!CmpTabs(openXmlElement, value.Tabs, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

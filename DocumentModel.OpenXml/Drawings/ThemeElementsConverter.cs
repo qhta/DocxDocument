@@ -16,9 +16,9 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  private static bool CmpColorScheme(DXD.ThemeElements openXmlElement, DMD.ColorScheme? value, DiffList? diffs, string? objName)
+  private static bool CmpColorScheme(DXD.ThemeElements openXmlElement, DMD.ColorScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorScheme>(), value, diffs, objName);
+    return DMXD.ColorSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ColorScheme>(), value, diffs, objName, propName);
   }
   
   private static void SetColorScheme(DXD.ThemeElements openXmlElement, DMD.ColorScheme? value)
@@ -45,9 +45,9 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  private static bool CmpFontScheme(DXD.ThemeElements openXmlElement, DMD.FontScheme? value, DiffList? diffs, string? objName)
+  private static bool CmpFontScheme(DXD.ThemeElements openXmlElement, DMD.FontScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FontSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FontScheme>(), value, diffs, objName);
+    return DMXD.FontSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FontScheme>(), value, diffs, objName, propName);
   }
   
   private static void SetFontScheme(DXD.ThemeElements openXmlElement, DMD.FontScheme? value)
@@ -74,9 +74,9 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  private static bool CmpFormatScheme(DXD.ThemeElements openXmlElement, DMD.FormatScheme? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatScheme(DXD.ThemeElements openXmlElement, DMD.FormatScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FormatSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FormatScheme>(), value, diffs, objName);
+    return DMXD.FormatSchemeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.FormatScheme>(), value, diffs, objName, propName);
   }
   
   private static void SetFormatScheme(DXD.ThemeElements openXmlElement, DMD.FormatScheme? value)
@@ -103,9 +103,9 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.ThemeElements openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.ThemeElements openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.ThemeElements openXmlElement, DMD.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class ThemeElementsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.ThemeElements? openXmlElement, DMD.ThemeElements? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.ThemeElements? openXmlElement, DMD.ThemeElements? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName))
+      if (!CmpColorScheme(openXmlElement, value.ColorScheme, diffs, objName, propName))
         ok = false;
-      if (!CmpFontScheme(openXmlElement, value.FontScheme, diffs, objName))
+      if (!CmpFontScheme(openXmlElement, value.FontScheme, diffs, objName, propName))
         ok = false;
-      if (!CmpFormatScheme(openXmlElement, value.FormatScheme, diffs, objName))
+      if (!CmpFormatScheme(openXmlElement, value.FormatScheme, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

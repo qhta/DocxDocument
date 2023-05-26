@@ -13,7 +13,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.ModelId);
   }
   
-  private static bool CmpModelId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpModelId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ModelId, value, diffs, objName, "ModelId");
   }
@@ -31,9 +31,9 @@ public static class ConnectionConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDD.ConnectionKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXDD.Connection openXmlElement, DMDD.ConnectionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXDD.Connection openXmlElement, DMDD.ConnectionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDD.ConnectionKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.ConnectionValues, DMDD.ConnectionKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXDD.Connection openXmlElement, DMDD.ConnectionKind? value)
@@ -49,7 +49,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.SourceId);
   }
   
-  private static bool CmpSourceId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSourceId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SourceId, value, diffs, objName, "SourceId");
   }
@@ -67,7 +67,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.DestinationId);
   }
   
-  private static bool CmpDestinationId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpDestinationId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.DestinationId, value, diffs, objName, "DestinationId");
   }
@@ -85,7 +85,7 @@ public static class ConnectionConverter
     return openXmlElement?.SourcePosition?.Value;
   }
   
-  private static bool CmpSourcePosition(DXDD.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSourcePosition(DXDD.Connection openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SourcePosition?.Value == value) return true;
     diffs?.Add(objName, "SourcePosition", openXmlElement?.SourcePosition?.Value, value);
@@ -105,7 +105,7 @@ public static class ConnectionConverter
     return openXmlElement?.DestinationPosition?.Value;
   }
   
-  private static bool CmpDestinationPosition(DXDD.Connection openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpDestinationPosition(DXDD.Connection openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.DestinationPosition?.Value == value) return true;
     diffs?.Add(objName, "DestinationPosition", openXmlElement?.DestinationPosition?.Value, value);
@@ -125,7 +125,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.ParentTransitionId);
   }
   
-  private static bool CmpParentTransitionId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpParentTransitionId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ParentTransitionId, value, diffs, objName, "ParentTransitionId");
   }
@@ -143,7 +143,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.SiblingTransitionId);
   }
   
-  private static bool CmpSiblingTransitionId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSiblingTransitionId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.SiblingTransitionId, value, diffs, objName, "SiblingTransitionId");
   }
@@ -161,7 +161,7 @@ public static class ConnectionConverter
     return StringValueConverter.GetValue(openXmlElement?.PresentationId);
   }
   
-  private static bool CmpPresentationId(DXDD.Connection openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationId(DXDD.Connection openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.PresentationId, value, diffs, objName, "PresentationId");
   }
@@ -182,9 +182,9 @@ public static class ConnectionConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.Connection openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.Connection openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.Connection openXmlElement, DMDD.ExtensionList? value)
@@ -220,35 +220,35 @@ public static class ConnectionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.Connection? openXmlElement, DMDD.Connection? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.Connection? openXmlElement, DMDD.Connection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName))
+      if (!CmpModelId(openXmlElement, value.ModelId, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName))
+      if (!CmpSourceId(openXmlElement, value.SourceId, diffs, objName, propName))
         ok = false;
-      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName))
+      if (!CmpDestinationId(openXmlElement, value.DestinationId, diffs, objName, propName))
         ok = false;
-      if (!CmpSourcePosition(openXmlElement, value.SourcePosition, diffs, objName))
+      if (!CmpSourcePosition(openXmlElement, value.SourcePosition, diffs, objName, propName))
         ok = false;
-      if (!CmpDestinationPosition(openXmlElement, value.DestinationPosition, diffs, objName))
+      if (!CmpDestinationPosition(openXmlElement, value.DestinationPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpParentTransitionId(openXmlElement, value.ParentTransitionId, diffs, objName))
+      if (!CmpParentTransitionId(openXmlElement, value.ParentTransitionId, diffs, objName, propName))
         ok = false;
-      if (!CmpSiblingTransitionId(openXmlElement, value.SiblingTransitionId, diffs, objName))
+      if (!CmpSiblingTransitionId(openXmlElement, value.SiblingTransitionId, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationId(openXmlElement, value.PresentationId, diffs, objName))
+      if (!CmpPresentationId(openXmlElement, value.PresentationId, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

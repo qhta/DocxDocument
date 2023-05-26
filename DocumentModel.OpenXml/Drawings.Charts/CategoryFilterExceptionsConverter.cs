@@ -13,9 +13,9 @@ public static class CategoryFilterExceptionsConverter
     return null;
   }
   
-  private static bool CmpCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterException? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterException>(), value, diffs, objName);
+    return DMXDC.CategoryFilterExceptionConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13DC.CategoryFilterException>(), value, diffs, objName, propName);
   }
   
   private static void SetCategoryFilterException(DXO13DC.CategoryFilterExceptions openXmlElement, DMDC.CategoryFilterException? value)
@@ -42,17 +42,17 @@ public static class CategoryFilterExceptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DC.CategoryFilterExceptions? openXmlElement, DMDC.CategoryFilterExceptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCategoryFilterException(openXmlElement, value.CategoryFilterException, diffs, objName))
+      if (!CmpCategoryFilterException(openXmlElement, value.CategoryFilterException, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

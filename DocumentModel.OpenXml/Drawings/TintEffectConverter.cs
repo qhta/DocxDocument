@@ -13,7 +13,7 @@ public static class TintEffectConverter
     return openXmlElement?.Hue?.Value;
   }
   
-  private static bool CmpHue(DXD.TintEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHue(DXD.TintEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Hue?.Value == value) return true;
     diffs?.Add(objName, "Hue", openXmlElement?.Hue?.Value, value);
@@ -33,7 +33,7 @@ public static class TintEffectConverter
     return openXmlElement?.Amount?.Value;
   }
   
-  private static bool CmpAmount(DXD.TintEffect openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpAmount(DXD.TintEffect openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Amount?.Value == value) return true;
     diffs?.Add(objName, "Amount", openXmlElement?.Amount?.Value, value);
@@ -57,19 +57,19 @@ public static class TintEffectConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.TintEffect? openXmlElement, DMD.TintEffect? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TintEffect? openXmlElement, DMD.TintEffect? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHue(openXmlElement, value.Hue, diffs, objName))
+      if (!CmpHue(openXmlElement, value.Hue, diffs, objName, propName))
         ok = false;
-      if (!CmpAmount(openXmlElement, value.Amount, diffs, objName))
+      if (!CmpAmount(openXmlElement, value.Amount, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

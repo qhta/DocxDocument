@@ -11,7 +11,7 @@ public static class FontConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXW.Font openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.Font openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -28,7 +28,7 @@ public static class FontConverter
     return openXmlElement.GetFirstChild<DXW.AltName>()?.Val?.Value;
   }
   
-  private static bool CmpAltName(DXW.Font openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpAltName(DXW.Font openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.AltName>();
     if (itemElement?.Val?.Value == value) return true;
@@ -58,9 +58,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpPanose(DXW.Font openXmlElement, DM.HexBinary? value, DiffList? diffs, string? objName)
+  private static bool CmpPanose(DXW.Font openXmlElement, DM.HexBinary? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Panose1Number>(), value, diffs, objName);
+    return DMX.HexBinaryConverter.CmpValue(openXmlElement.GetFirstChild<DXW.Panose1Number>(), value, diffs, objName, propName);
   }
   
   private static void SetPanose(DXW.Font openXmlElement, DM.HexBinary? value)
@@ -86,9 +86,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpFontCharSet(DXW.Font openXmlElement, DMW.Charset? value, DiffList? diffs, string? objName)
+  private static bool CmpFontCharSet(DXW.Font openXmlElement, DMW.Charset? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.CharsetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FontCharSet>(), value, diffs, objName);
+    return DMXW.CharsetConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FontCharSet>(), value, diffs, objName, propName);
   }
   
   private static void SetFontCharSet(DXW.Font openXmlElement, DMW.Charset? value)
@@ -111,9 +111,9 @@ public static class FontConverter
     return EnumValueConverter.GetValue<DXW.FontFamilyValues, DMW.FontFamilyKind>(openXmlElement.GetFirstChild<DXW.FontFamily>()?.Val?.Value);
   }
   
-  private static bool CmpFontFamily(DXW.Font openXmlElement, DMW.FontFamilyKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFontFamily(DXW.Font openXmlElement, DMW.FontFamilyKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FontFamilyValues, DMW.FontFamilyKind>(openXmlElement.GetFirstChild<DXW.FontFamily>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FontFamilyValues, DMW.FontFamilyKind>(openXmlElement.GetFirstChild<DXW.FontFamily>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFontFamily(DXW.Font openXmlElement, DMW.FontFamilyKind? value)
@@ -138,9 +138,9 @@ public static class FontConverter
     return BooleanValueConverter.GetValue(openXmlElement.GetFirstChild<DXW.NotTrueType>());
   }
   
-  private static bool CmpNotTrueType(DXW.Font openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNotTrueType(DXW.Font openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NotTrueType>(), value, diffs, objName);
+    return BooleanValueConverter.CmpValue(openXmlElement.GetFirstChild<DXW.NotTrueType>(), value, diffs, objName, propName);
   }
   
   private static void SetNotTrueType(DXW.Font openXmlElement, Boolean? value)
@@ -155,9 +155,9 @@ public static class FontConverter
     return EnumValueConverter.GetValue<DXW.FontPitchValues, DMW.FontPitchKind>(openXmlElement.GetFirstChild<DXW.Pitch>()?.Val?.Value);
   }
   
-  private static bool CmpPitch(DXW.Font openXmlElement, DMW.FontPitchKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPitch(DXW.Font openXmlElement, DMW.FontPitchKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FontPitchValues, DMW.FontPitchKind>(openXmlElement.GetFirstChild<DXW.Pitch>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FontPitchValues, DMW.FontPitchKind>(openXmlElement.GetFirstChild<DXW.Pitch>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPitch(DXW.Font openXmlElement, DMW.FontPitchKind? value)
@@ -185,9 +185,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpFontSignature(DXW.Font openXmlElement, DMW.FontSignature? value, DiffList? diffs, string? objName)
+  private static bool CmpFontSignature(DXW.Font openXmlElement, DMW.FontSignature? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.FontSignatureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FontSignature>(), value, diffs, objName);
+    return DMXW.FontSignatureConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FontSignature>(), value, diffs, objName, propName);
   }
   
   private static void SetFontSignature(DXW.Font openXmlElement, DMW.FontSignature? value)
@@ -213,9 +213,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpEmbedRegularFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbedRegularFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedRegularFont>(), value, diffs, objName);
+    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedRegularFont>(), value, diffs, objName, propName);
   }
   
   private static void SetEmbedRegularFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value)
@@ -241,9 +241,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpEmbedBoldFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbedBoldFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedBoldFont>(), value, diffs, objName);
+    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedBoldFont>(), value, diffs, objName, propName);
   }
   
   private static void SetEmbedBoldFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value)
@@ -269,9 +269,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpEmbedItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbedItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedItalicFont>(), value, diffs, objName);
+    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedItalicFont>(), value, diffs, objName, propName);
   }
   
   private static void SetEmbedItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value)
@@ -297,9 +297,9 @@ public static class FontConverter
     return null;
   }
   
-  private static bool CmpEmbedBoldItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbedBoldItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedBoldItalicFont>(), value, diffs, objName);
+    return DMXW.EmbeddedFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.EmbedBoldItalicFont>(), value, diffs, objName, propName);
   }
   
   private static void SetEmbedBoldItalicFont(DXW.Font openXmlElement, DMW.EmbeddedFont? value)
@@ -339,39 +339,39 @@ public static class FontConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Font? openXmlElement, DMW.Font? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Font? openXmlElement, DMW.Font? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, model.Name, diffs, objName))
+      if (!CmpName(openXmlElement, model.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpAltName(openXmlElement, model.Aliases, diffs, objName))
+      if (!CmpAltName(openXmlElement, model.Aliases, diffs, objName, propName))
         ok = false;
-      if (!CmpPanose(openXmlElement, model.Panose, diffs, objName))
+      if (!CmpPanose(openXmlElement, model.Panose, diffs, objName, propName))
         ok = false;
-      if (!CmpFontCharSet(openXmlElement, model.FontCharSet, diffs, objName))
+      if (!CmpFontCharSet(openXmlElement, model.FontCharSet, diffs, objName, propName))
         ok = false;
-      if (!CmpFontFamily(openXmlElement, model.FontFamily, diffs, objName))
+      if (!CmpFontFamily(openXmlElement, model.FontFamily, diffs, objName, propName))
         ok = false;
-      if (!CmpNotTrueType(openXmlElement, model.NotTrueType, diffs, objName))
+      if (!CmpNotTrueType(openXmlElement, model.NotTrueType, diffs, objName, propName))
         ok = false;
-      if (!CmpPitch(openXmlElement, model.Pitch, diffs, objName))
+      if (!CmpPitch(openXmlElement, model.Pitch, diffs, objName, propName))
         ok = false;
-      if (!CmpFontSignature(openXmlElement, model.FontSignature, diffs, objName))
+      if (!CmpFontSignature(openXmlElement, model.FontSignature, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbedRegularFont(openXmlElement, model.EmbedRegularFont, diffs, objName))
+      if (!CmpEmbedRegularFont(openXmlElement, model.EmbedRegularFont, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbedBoldFont(openXmlElement, model.EmbedBoldFont, diffs, objName))
+      if (!CmpEmbedBoldFont(openXmlElement, model.EmbedBoldFont, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbedItalicFont(openXmlElement, model.EmbedItalicFont, diffs, objName))
+      if (!CmpEmbedItalicFont(openXmlElement, model.EmbedItalicFont, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbedBoldItalicFont(openXmlElement, model.EmbedBoldItalicFont, diffs, objName))
+      if (!CmpEmbedBoldItalicFont(openXmlElement, model.EmbedBoldItalicFont, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

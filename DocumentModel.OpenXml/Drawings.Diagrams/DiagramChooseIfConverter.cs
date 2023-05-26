@@ -13,7 +13,7 @@ public static class DiagramChooseIfConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,9 +31,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue<DXDD.AxisValues, DMDD.AxisKind>(openXmlElement?.Axis);
   }
   
-  private static bool CmpAxis(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.AxisKind>? value, DiffList? diffs, string? objName)
+  private static bool CmpAxis(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.AxisKind>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue<DXDD.AxisValues, DMDD.AxisKind>(openXmlElement?.Axis, value, diffs, objName);
+    return ListValueConverter.CmpValue<DXDD.AxisValues, DMDD.AxisKind>(openXmlElement?.Axis, value, diffs, objName, propName);
   }
   
   private static void SetAxis(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.AxisKind>? value)
@@ -52,9 +52,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue<DXDD.ElementValues, DMDD.ElementKind>(openXmlElement?.PointType);
   }
   
-  private static bool CmpPointType(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.ElementKind>? value, DiffList? diffs, string? objName)
+  private static bool CmpPointType(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.ElementKind>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue<DXDD.ElementValues, DMDD.ElementKind>(openXmlElement?.PointType, value, diffs, objName);
+    return ListValueConverter.CmpValue<DXDD.ElementValues, DMDD.ElementKind>(openXmlElement?.PointType, value, diffs, objName, propName);
   }
   
   private static void SetPointType(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<DMDD.ElementKind>? value)
@@ -73,9 +73,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue(openXmlElement?.HideLastTrans);
   }
   
-  private static bool CmpHideLastTrans(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Boolean>? value, DiffList? diffs, string? objName)
+  private static bool CmpHideLastTrans(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Boolean>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue(openXmlElement?.HideLastTrans, value, diffs, objName);
+    return ListValueConverter.CmpValue(openXmlElement?.HideLastTrans, value, diffs, objName, propName);
   }
   
   private static void SetHideLastTrans(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Boolean>? value)
@@ -94,9 +94,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue(openXmlElement?.Start);
   }
   
-  private static bool CmpStart(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName);
+    return ListValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName, propName);
   }
   
   private static void SetStart(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value)
@@ -115,9 +115,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue(openXmlElement?.Count);
   }
   
-  private static bool CmpCount(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<UInt32>? value, DiffList? diffs, string? objName)
+  private static bool CmpCount(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<UInt32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue(openXmlElement?.Count, value, diffs, objName);
+    return ListValueConverter.CmpValue(openXmlElement?.Count, value, diffs, objName, propName);
   }
   
   private static void SetCount(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<UInt32>? value)
@@ -136,9 +136,9 @@ public static class DiagramChooseIfConverter
     return ListValueConverter.GetValue(openXmlElement?.Step);
   }
   
-  private static bool CmpStep(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs, string? objName)
+  private static bool CmpStep(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue(openXmlElement?.Step, value, diffs, objName);
+    return ListValueConverter.CmpValue(openXmlElement?.Step, value, diffs, objName, propName);
   }
   
   private static void SetStep(DXDD.DiagramChooseIf openXmlElement, DM.ListOf<Int32>? value)
@@ -157,9 +157,9 @@ public static class DiagramChooseIfConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues, DMDD.FunctionKind>(openXmlElement?.Function?.Value);
   }
   
-  private static bool CmpFunction(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFunction(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues, DMDD.FunctionKind>(openXmlElement?.Function?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionValues, DMDD.FunctionKind>(openXmlElement?.Function?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFunction(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionKind? value)
@@ -175,7 +175,7 @@ public static class DiagramChooseIfConverter
     return StringValueConverter.GetValue(openXmlElement?.Argument);
   }
   
-  private static bool CmpArgument(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpArgument(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Argument, value, diffs, objName, "Argument");
   }
@@ -193,9 +193,9 @@ public static class DiagramChooseIfConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues, DMDD.FunctionOperatorKind>(openXmlElement?.Operator?.Value);
   }
   
-  private static bool CmpOperator(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionOperatorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpOperator(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionOperatorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues, DMDD.FunctionOperatorKind>(openXmlElement?.Operator?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Diagrams.FunctionOperatorValues, DMDD.FunctionOperatorKind>(openXmlElement?.Operator?.Value, value, diffs, objName, propName);
   }
   
   private static void SetOperator(DXDD.DiagramChooseIf openXmlElement, DMDD.FunctionOperatorKind? value)
@@ -211,7 +211,7 @@ public static class DiagramChooseIfConverter
     return StringValueConverter.GetValue(openXmlElement?.Val);
   }
   
-  private static bool CmpVal(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXDD.DiagramChooseIf openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Val, value, diffs, objName, "Value");
   }
@@ -229,9 +229,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpAlgorithm(DXDD.DiagramChooseIf openXmlElement, DMDD.Algorithm? value, DiffList? diffs, string? objName)
+  private static bool CmpAlgorithm(DXDD.DiagramChooseIf openXmlElement, DMDD.Algorithm? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Algorithm>(), value, diffs, objName);
+    return DMXDD.AlgorithmConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Algorithm>(), value, diffs, objName, propName);
   }
   
   private static void SetAlgorithm(DXDD.DiagramChooseIf openXmlElement, DMDD.Algorithm? value)
@@ -255,9 +255,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpShape(DXDD.DiagramChooseIf openXmlElement, DMDD.Shape? value, DiffList? diffs, string? objName)
+  private static bool CmpShape(DXDD.DiagramChooseIf openXmlElement, DMDD.Shape? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Shape>(), value, diffs, objName);
+    return DMXDD.ShapeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Shape>(), value, diffs, objName, propName);
   }
   
   private static void SetShape(DXDD.DiagramChooseIf openXmlElement, DMDD.Shape? value)
@@ -281,9 +281,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpPresentationOf(DXDD.DiagramChooseIf openXmlElement, DMDD.PresentationOf? value, DiffList? diffs, string? objName)
+  private static bool CmpPresentationOf(DXDD.DiagramChooseIf openXmlElement, DMDD.PresentationOf? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationOf>(), value, diffs, objName);
+    return DMXDD.PresentationOfConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.PresentationOf>(), value, diffs, objName, propName);
   }
   
   private static void SetPresentationOf(DXDD.DiagramChooseIf openXmlElement, DMDD.PresentationOf? value)
@@ -307,9 +307,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpConstraints(DXDD.DiagramChooseIf openXmlElement, DMDD.Constraints? value, DiffList? diffs, string? objName)
+  private static bool CmpConstraints(DXDD.DiagramChooseIf openXmlElement, DMDD.Constraints? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Constraints>(), value, diffs, objName);
+    return DMXDD.ConstraintsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Constraints>(), value, diffs, objName, propName);
   }
   
   private static void SetConstraints(DXDD.DiagramChooseIf openXmlElement, DMDD.Constraints? value)
@@ -333,9 +333,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpRuleList(DXDD.DiagramChooseIf openXmlElement, DMDD.RuleList? value, DiffList? diffs, string? objName)
+  private static bool CmpRuleList(DXDD.DiagramChooseIf openXmlElement, DMDD.RuleList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.RuleList>(), value, diffs, objName);
+    return DMXDD.RuleListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.RuleList>(), value, diffs, objName, propName);
   }
   
   private static void SetRuleList(DXDD.DiagramChooseIf openXmlElement, DMDD.RuleList? value)
@@ -359,9 +359,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpForEach(DXDD.DiagramChooseIf openXmlElement, DMDD.ForEach? value, DiffList? diffs, string? objName)
+  private static bool CmpForEach(DXDD.DiagramChooseIf openXmlElement, DMDD.ForEach? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ForEach>(), value, diffs, objName);
+    return DMXDD.ForEachConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ForEach>(), value, diffs, objName, propName);
   }
   
   private static void SetForEach(DXDD.DiagramChooseIf openXmlElement, DMDD.ForEach? value)
@@ -385,9 +385,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpLayoutNode(DXDD.DiagramChooseIf openXmlElement, DMDD.LayoutNode? value, DiffList? diffs, string? objName)
+  private static bool CmpLayoutNode(DXDD.DiagramChooseIf openXmlElement, DMDD.LayoutNode? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.LayoutNode>(), value, diffs, objName);
+    return DMXDD.LayoutNodeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.LayoutNode>(), value, diffs, objName, propName);
   }
   
   private static void SetLayoutNode(DXDD.DiagramChooseIf openXmlElement, DMDD.LayoutNode? value)
@@ -411,9 +411,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpChoose(DXDD.DiagramChooseIf openXmlElement, DMDD.Choose? value, DiffList? diffs, string? objName)
+  private static bool CmpChoose(DXDD.DiagramChooseIf openXmlElement, DMDD.Choose? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Choose>(), value, diffs, objName);
+    return DMXDD.ChooseConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.Choose>(), value, diffs, objName, propName);
   }
   
   private static void SetChoose(DXDD.DiagramChooseIf openXmlElement, DMDD.Choose? value)
@@ -437,9 +437,9 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDD.DiagramChooseIf openXmlElement, DMDD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDD.DiagramChooseIf openXmlElement, DMDD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName);
+    return DMXDD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDD.DiagramChooseIf openXmlElement, DMDD.ExtensionList? value)
@@ -485,55 +485,55 @@ public static class DiagramChooseIfConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.DiagramChooseIf? openXmlElement, DMDD.DiagramChooseIf? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.DiagramChooseIf? openXmlElement, DMDD.DiagramChooseIf? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpAxis(openXmlElement, value.Axis, diffs, objName))
+      if (!CmpAxis(openXmlElement, value.Axis, diffs, objName, propName))
         ok = false;
-      if (!CmpPointType(openXmlElement, value.PointType, diffs, objName))
+      if (!CmpPointType(openXmlElement, value.PointType, diffs, objName, propName))
         ok = false;
-      if (!CmpHideLastTrans(openXmlElement, value.HideLastTrans, diffs, objName))
+      if (!CmpHideLastTrans(openXmlElement, value.HideLastTrans, diffs, objName, propName))
         ok = false;
-      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName, propName))
         ok = false;
-      if (!CmpCount(openXmlElement, value.Count, diffs, objName))
+      if (!CmpCount(openXmlElement, value.Count, diffs, objName, propName))
         ok = false;
-      if (!CmpStep(openXmlElement, value.Step, diffs, objName))
+      if (!CmpStep(openXmlElement, value.Step, diffs, objName, propName))
         ok = false;
-      if (!CmpFunction(openXmlElement, value.Function, diffs, objName))
+      if (!CmpFunction(openXmlElement, value.Function, diffs, objName, propName))
         ok = false;
-      if (!CmpArgument(openXmlElement, value.Argument, diffs, objName))
+      if (!CmpArgument(openXmlElement, value.Argument, diffs, objName, propName))
         ok = false;
-      if (!CmpOperator(openXmlElement, value.Operator, diffs, objName))
+      if (!CmpOperator(openXmlElement, value.Operator, diffs, objName, propName))
         ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
-      if (!CmpAlgorithm(openXmlElement, value.Algorithm, diffs, objName))
+      if (!CmpAlgorithm(openXmlElement, value.Algorithm, diffs, objName, propName))
         ok = false;
-      if (!CmpShape(openXmlElement, value.Shape, diffs, objName))
+      if (!CmpShape(openXmlElement, value.Shape, diffs, objName, propName))
         ok = false;
-      if (!CmpPresentationOf(openXmlElement, value.PresentationOf, diffs, objName))
+      if (!CmpPresentationOf(openXmlElement, value.PresentationOf, diffs, objName, propName))
         ok = false;
-      if (!CmpConstraints(openXmlElement, value.Constraints, diffs, objName))
+      if (!CmpConstraints(openXmlElement, value.Constraints, diffs, objName, propName))
         ok = false;
-      if (!CmpRuleList(openXmlElement, value.RuleList, diffs, objName))
+      if (!CmpRuleList(openXmlElement, value.RuleList, diffs, objName, propName))
         ok = false;
-      if (!CmpForEach(openXmlElement, value.ForEach, diffs, objName))
+      if (!CmpForEach(openXmlElement, value.ForEach, diffs, objName, propName))
         ok = false;
-      if (!CmpLayoutNode(openXmlElement, value.LayoutNode, diffs, objName))
+      if (!CmpLayoutNode(openXmlElement, value.LayoutNode, diffs, objName, propName))
         ok = false;
-      if (!CmpChoose(openXmlElement, value.Choose, diffs, objName))
+      if (!CmpChoose(openXmlElement, value.Choose, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

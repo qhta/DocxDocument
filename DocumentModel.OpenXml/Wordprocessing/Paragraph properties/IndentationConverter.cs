@@ -13,7 +13,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.Left);
   }
   
-  private static bool CmpLeft(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpLeft(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Left, value, diffs, objName, "Left");
   }
@@ -31,7 +31,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.Start);
   }
   
-  private static bool CmpStart(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpStart(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Start, value, diffs, objName, "Start");
   }
@@ -49,7 +49,7 @@ public static class IndentationConverter
     return openXmlElement?.LeftChars?.Value;
   }
   
-  private static bool CmpLeftChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLeftChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LeftChars?.Value == value) return true;
     diffs?.Add(objName, "LeftChars", openXmlElement?.LeftChars?.Value, value);
@@ -69,7 +69,7 @@ public static class IndentationConverter
     return openXmlElement?.StartCharacters?.Value;
   }
   
-  private static bool CmpStartCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpStartCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.StartCharacters?.Value == value) return true;
     diffs?.Add(objName, "StartCharacters", openXmlElement?.StartCharacters?.Value, value);
@@ -89,7 +89,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.Right);
   }
   
-  private static bool CmpRight(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRight(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Right, value, diffs, objName, "Right");
   }
@@ -107,7 +107,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.End);
   }
   
-  private static bool CmpEnd(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpEnd(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.End, value, diffs, objName, "End");
   }
@@ -125,7 +125,7 @@ public static class IndentationConverter
     return openXmlElement?.RightChars?.Value;
   }
   
-  private static bool CmpRightChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpRightChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RightChars?.Value == value) return true;
     diffs?.Add(objName, "RightChars", openXmlElement?.RightChars?.Value, value);
@@ -145,7 +145,7 @@ public static class IndentationConverter
     return openXmlElement?.EndCharacters?.Value;
   }
   
-  private static bool CmpEndCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpEndCharacters(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.EndCharacters?.Value == value) return true;
     diffs?.Add(objName, "EndCharacters", openXmlElement?.EndCharacters?.Value, value);
@@ -165,7 +165,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.Hanging);
   }
   
-  private static bool CmpHanging(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpHanging(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Hanging, value, diffs, objName, "Hanging");
   }
@@ -183,7 +183,7 @@ public static class IndentationConverter
     return openXmlElement?.HangingChars?.Value;
   }
   
-  private static bool CmpHangingChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHangingChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HangingChars?.Value == value) return true;
     diffs?.Add(objName, "HangingChars", openXmlElement?.HangingChars?.Value, value);
@@ -203,7 +203,7 @@ public static class IndentationConverter
     return StringValueConverter.GetValue(openXmlElement?.FirstLine);
   }
   
-  private static bool CmpFirstLine(DXW.Indentation openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstLine(DXW.Indentation openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.FirstLine, value, diffs, objName, "FirstLine");
   }
@@ -221,7 +221,7 @@ public static class IndentationConverter
     return openXmlElement?.FirstLineChars?.Value;
   }
   
-  private static bool CmpFirstLineChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstLineChars(DXW.Indentation openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FirstLineChars?.Value == value) return true;
     diffs?.Add(objName, "FirstLineChars", openXmlElement?.FirstLineChars?.Value, value);
@@ -255,39 +255,39 @@ public static class IndentationConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Indentation? openXmlElement, DMW.Indentation? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Indentation? openXmlElement, DMW.Indentation? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLeft(openXmlElement, value.Left, diffs, objName))
+      if (!CmpLeft(openXmlElement, value.Left, diffs, objName, propName))
         ok = false;
-      if (!CmpStart(openXmlElement, value.Start, diffs, objName))
+      if (!CmpStart(openXmlElement, value.Start, diffs, objName, propName))
         ok = false;
-      if (!CmpLeftChars(openXmlElement, value.LeftChars, diffs, objName))
+      if (!CmpLeftChars(openXmlElement, value.LeftChars, diffs, objName, propName))
         ok = false;
-      if (!CmpStartCharacters(openXmlElement, value.StartCharacters, diffs, objName))
+      if (!CmpStartCharacters(openXmlElement, value.StartCharacters, diffs, objName, propName))
         ok = false;
-      if (!CmpRight(openXmlElement, value.Right, diffs, objName))
+      if (!CmpRight(openXmlElement, value.Right, diffs, objName, propName))
         ok = false;
-      if (!CmpEnd(openXmlElement, value.End, diffs, objName))
+      if (!CmpEnd(openXmlElement, value.End, diffs, objName, propName))
         ok = false;
-      if (!CmpRightChars(openXmlElement, value.RightChars, diffs, objName))
+      if (!CmpRightChars(openXmlElement, value.RightChars, diffs, objName, propName))
         ok = false;
-      if (!CmpEndCharacters(openXmlElement, value.EndCharacters, diffs, objName))
+      if (!CmpEndCharacters(openXmlElement, value.EndCharacters, diffs, objName, propName))
         ok = false;
-      if (!CmpHanging(openXmlElement, value.Hanging, diffs, objName))
+      if (!CmpHanging(openXmlElement, value.Hanging, diffs, objName, propName))
         ok = false;
-      if (!CmpHangingChars(openXmlElement, value.HangingChars, diffs, objName))
+      if (!CmpHangingChars(openXmlElement, value.HangingChars, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstLine(openXmlElement, value.FirstLine, diffs, objName))
+      if (!CmpFirstLine(openXmlElement, value.FirstLine, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstLineChars(openXmlElement, value.FirstLineChars, diffs, objName))
+      if (!CmpFirstLineChars(openXmlElement, value.FirstLineChars, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

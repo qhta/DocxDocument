@@ -13,7 +13,7 @@ public static class DataLabelHiddenConverter
     return openXmlElement?.Idx?.Value;
   }
   
-  private static bool CmpIdx(DXO16DCD.DataLabelHidden openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIdx(DXO16DCD.DataLabelHidden openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Idx?.Value == value) return true;
     diffs?.Add(objName, "Idx", openXmlElement?.Idx?.Value, value);
@@ -36,17 +36,17 @@ public static class DataLabelHiddenConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.DataLabelHidden? openXmlElement, DMDCDs.DataLabelHidden? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.DataLabelHidden? openXmlElement, DMDCDs.DataLabelHidden? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIdx(openXmlElement, value.Idx, diffs, objName))
+      if (!CmpIdx(openXmlElement, value.Idx, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

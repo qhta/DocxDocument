@@ -13,7 +13,7 @@ public static class CategoryConverter
     return openXmlElement.GetFirstChild<DXW.Name>()?.Val?.Value;
   }
   
-  private static bool CmpName(DXW.Category openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.Category openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var itemElement = openXmlElement.GetFirstChild<DXW.Name>();
     if (itemElement?.Val?.Value == value) return true;
@@ -41,9 +41,9 @@ public static class CategoryConverter
     return EnumValueConverter.GetValue<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value);
   }
   
-  private static bool CmpGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value, DiffList? diffs, string? objName)
+  private static bool CmpGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocPartGalleryValues, DMW.DocPartGalleryKind>(openXmlElement.GetFirstChild<DXW.Gallery>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetGallery(DXW.Category openXmlElement, DMW.DocPartGalleryKind? value)
@@ -73,19 +73,19 @@ public static class CategoryConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Category? openXmlElement, DMW.Category? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Category? openXmlElement, DMW.Category? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpGallery(openXmlElement, value.Gallery, diffs, objName))
+      if (!CmpGallery(openXmlElement, value.Gallery, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class StrDataExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Uri);
   }
   
-  private static bool CmpUri(DXDC.StrDataExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpUri(DXDC.StrDataExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Uri, value, diffs, objName, "Uri");
   }
@@ -28,7 +28,7 @@ public static class StrDataExtensionConverter
     return openXmlElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>() != null;
   }
   
-  private static bool CmpAutoGeneneratedCategories(DXDC.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoGeneneratedCategories(DXDC.StrDataExtension openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO13DC.AutoGeneneratedCategories>() != null;
     if (val == value) return true;
@@ -63,19 +63,19 @@ public static class StrDataExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.StrDataExtension? openXmlElement, DMDC.StrDataExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StrDataExtension? openXmlElement, DMDC.StrDataExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpUri(openXmlElement, value.Uri, diffs, objName))
+      if (!CmpUri(openXmlElement, value.Uri, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoGeneneratedCategories(openXmlElement, value.AutoGeneneratedCategories, diffs, objName))
+      if (!CmpAutoGeneneratedCategories(openXmlElement, value.AutoGeneneratedCategories, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

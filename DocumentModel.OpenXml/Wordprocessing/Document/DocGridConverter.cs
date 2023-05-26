@@ -13,9 +13,9 @@ public static class DocGridConverter
     return EnumValueConverter.GetValue<DXW.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocGridValues, DMW.DocGridKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXW.DocGrid openXmlElement, DMW.DocGridKind? value)
@@ -31,7 +31,7 @@ public static class DocGridConverter
     return openXmlElement?.LinePitch?.Value;
   }
   
-  private static bool CmpLinePitch(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpLinePitch(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.LinePitch?.Value == value) return true;
     diffs?.Add(objName, "LinePitch", openXmlElement?.LinePitch?.Value, value);
@@ -51,7 +51,7 @@ public static class DocGridConverter
     return openXmlElement?.CharacterSpace?.Value;
   }
   
-  private static bool CmpCharacterSpace(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterSpace(DXW.DocGrid openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CharacterSpace?.Value == value) return true;
     diffs?.Add(objName, "CharacterSpace", openXmlElement?.CharacterSpace?.Value, value);
@@ -76,21 +76,21 @@ public static class DocGridConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.DocGrid? openXmlElement, DMW.DocGrid? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.DocGrid? openXmlElement, DMW.DocGrid? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpLinePitch(openXmlElement, value.LinePitch, diffs, objName))
+      if (!CmpLinePitch(openXmlElement, value.LinePitch, diffs, objName, propName))
         ok = false;
-      if (!CmpCharacterSpace(openXmlElement, value.CharacterSpace, diffs, objName))
+      if (!CmpCharacterSpace(openXmlElement, value.CharacterSpace, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

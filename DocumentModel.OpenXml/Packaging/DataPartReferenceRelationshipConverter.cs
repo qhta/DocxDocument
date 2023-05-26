@@ -15,7 +15,7 @@ public static class DataPartReferenceRelationshipConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.DataPartReferenceRelationship? openXmlElement, DMPack.DataPartReferenceRelationship? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.DataPartReferenceRelationship? openXmlElement, DMPack.DataPartReferenceRelationship? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
@@ -23,7 +23,7 @@ public static class DataPartReferenceRelationshipConverter
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

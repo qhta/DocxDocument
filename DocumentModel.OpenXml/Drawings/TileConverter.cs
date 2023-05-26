@@ -13,7 +13,7 @@ public static class TileConverter
     return openXmlElement?.HorizontalOffset?.Value;
   }
   
-  private static bool CmpHorizontalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalOffset?.Value == value) return true;
     diffs?.Add(objName, "HorizontalOffset", openXmlElement?.HorizontalOffset?.Value, value);
@@ -33,7 +33,7 @@ public static class TileConverter
     return openXmlElement?.VerticalOffset?.Value;
   }
   
-  private static bool CmpVerticalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalOffset(DXD.Tile openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalOffset?.Value == value) return true;
     diffs?.Add(objName, "VerticalOffset", openXmlElement?.VerticalOffset?.Value, value);
@@ -53,7 +53,7 @@ public static class TileConverter
     return openXmlElement?.HorizontalRatio?.Value;
   }
   
-  private static bool CmpHorizontalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpHorizontalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.HorizontalRatio?.Value == value) return true;
     diffs?.Add(objName, "HorizontalRatio", openXmlElement?.HorizontalRatio?.Value, value);
@@ -73,7 +73,7 @@ public static class TileConverter
     return openXmlElement?.VerticalRatio?.Value;
   }
   
-  private static bool CmpVerticalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpVerticalRatio(DXD.Tile openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.VerticalRatio?.Value == value) return true;
     diffs?.Add(objName, "VerticalRatio", openXmlElement?.VerticalRatio?.Value, value);
@@ -93,9 +93,9 @@ public static class TileConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(openXmlElement?.Flip?.Value);
   }
   
-  private static bool CmpFlip(DXD.Tile openXmlElement, DMD.TileFlipKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFlip(DXD.Tile openXmlElement, DMD.TileFlipKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.TileFlipValues, DMD.TileFlipKind>(openXmlElement?.Flip?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFlip(DXD.Tile openXmlElement, DMD.TileFlipKind? value)
@@ -111,9 +111,9 @@ public static class TileConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value);
   }
   
-  private static bool CmpAlignment(DXD.Tile openXmlElement, DMD.RectangleAlignmentKind? value, DiffList? diffs, string? objName)
+  private static bool CmpAlignment(DXD.Tile openXmlElement, DMD.RectangleAlignmentKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.RectangleAlignmentValues, DMD.RectangleAlignmentKind>(openXmlElement?.Alignment?.Value, value, diffs, objName, propName);
   }
   
   private static void SetAlignment(DXD.Tile openXmlElement, DMD.RectangleAlignmentKind? value)
@@ -137,27 +137,27 @@ public static class TileConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Tile? openXmlElement, DMD.Tile? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Tile? openXmlElement, DMD.Tile? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpHorizontalOffset(openXmlElement, value.HorizontalOffset, diffs, objName))
+      if (!CmpHorizontalOffset(openXmlElement, value.HorizontalOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalOffset(openXmlElement, value.VerticalOffset, diffs, objName))
+      if (!CmpVerticalOffset(openXmlElement, value.VerticalOffset, diffs, objName, propName))
         ok = false;
-      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName))
+      if (!CmpHorizontalRatio(openXmlElement, value.HorizontalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName))
+      if (!CmpVerticalRatio(openXmlElement, value.VerticalRatio, diffs, objName, propName))
         ok = false;
-      if (!CmpFlip(openXmlElement, value.Flip, diffs, objName))
+      if (!CmpFlip(openXmlElement, value.Flip, diffs, objName, propName))
         ok = false;
-      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName))
+      if (!CmpAlignment(openXmlElement, value.Alignment, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

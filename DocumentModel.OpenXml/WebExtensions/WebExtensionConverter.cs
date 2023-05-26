@@ -13,7 +13,7 @@ public static class WebExtensionConverter
     return openXmlElement?.Fronzen?.Value;
   }
   
-  private static bool CmpFronzen(DXO13WE.WebExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFronzen(DXO13WE.WebExtension openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Fronzen?.Value == value) return true;
     diffs?.Add(objName, "Fronzen", openXmlElement?.Fronzen?.Value, value);
@@ -36,7 +36,7 @@ public static class WebExtensionConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXO13WE.WebExtension openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXO13WE.WebExtension openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -54,7 +54,7 @@ public static class WebExtensionConverter
     return openXmlElement?.Frozen?.Value;
   }
   
-  private static bool CmpFrozen(DXO13WE.WebExtension openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFrozen(DXO13WE.WebExtension openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Frozen?.Value == value) return true;
     diffs?.Add(objName, "Frozen", openXmlElement?.Frozen?.Value, value);
@@ -80,9 +80,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpWebExtensionStoreReference(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionStoreReference? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionStoreReference(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionStoreReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.WebExtensionStoreReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionStoreReference>(), value, diffs, objName);
+    return DMXWE.WebExtensionStoreReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionStoreReference>(), value, diffs, objName, propName);
   }
   
   private static void SetWebExtensionStoreReference(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionStoreReference? value)
@@ -109,9 +109,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpWebExtensionReferenceList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionReferenceList? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionReferenceList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionReferenceList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.WebExtensionReferenceListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionReferenceList>(), value, diffs, objName);
+    return DMXWE.WebExtensionReferenceListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionReferenceList>(), value, diffs, objName, propName);
   }
   
   private static void SetWebExtensionReferenceList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionReferenceList? value)
@@ -138,9 +138,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpWebExtensionPropertyBag(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionPropertyBag? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionPropertyBag(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionPropertyBag? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.WebExtensionPropertyBagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionPropertyBag>(), value, diffs, objName);
+    return DMXWE.WebExtensionPropertyBagConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionPropertyBag>(), value, diffs, objName, propName);
   }
   
   private static void SetWebExtensionPropertyBag(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionPropertyBag? value)
@@ -167,9 +167,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpWebExtensionBindingList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionBindingList? value, DiffList? diffs, string? objName)
+  private static bool CmpWebExtensionBindingList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionBindingList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.WebExtensionBindingListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionBindingList>(), value, diffs, objName);
+    return DMXWE.WebExtensionBindingListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.WebExtensionBindingList>(), value, diffs, objName, propName);
   }
   
   private static void SetWebExtensionBindingList(DXO13WE.WebExtension openXmlElement, DMWE.WebExtensionBindingList? value)
@@ -196,9 +196,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpSnapshot(DXO13WE.WebExtension openXmlElement, DMWE.Snapshot? value, DiffList? diffs, string? objName)
+  private static bool CmpSnapshot(DXO13WE.WebExtension openXmlElement, DMWE.Snapshot? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.SnapshotConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.Snapshot>(), value, diffs, objName);
+    return DMXWE.SnapshotConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.Snapshot>(), value, diffs, objName, propName);
   }
   
   private static void SetSnapshot(DXO13WE.WebExtension openXmlElement, DMWE.Snapshot? value)
@@ -225,9 +225,9 @@ public static class WebExtensionConverter
     return null;
   }
   
-  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtension openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpOfficeArtExtensionList(DXO13WE.WebExtension openXmlElement, DMWE.OfficeArtExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName);
+    return DMXWE.OfficeArtExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO13WE.OfficeArtExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetOfficeArtExtensionList(DXO13WE.WebExtension openXmlElement, DMWE.OfficeArtExtensionList? value)
@@ -262,33 +262,33 @@ public static class WebExtensionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13WE.WebExtension? openXmlElement, DMWE.WebExtension? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13WE.WebExtension? openXmlElement, DMWE.WebExtension? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFronzen(openXmlElement, value.Fronzen, diffs, objName))
+      if (!CmpFronzen(openXmlElement, value.Fronzen, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpFrozen(openXmlElement, value.Frozen, diffs, objName))
+      if (!CmpFrozen(openXmlElement, value.Frozen, diffs, objName, propName))
         ok = false;
-      if (!CmpWebExtensionStoreReference(openXmlElement, value.WebExtensionStoreReference, diffs, objName))
+      if (!CmpWebExtensionStoreReference(openXmlElement, value.WebExtensionStoreReference, diffs, objName, propName))
         ok = false;
-      if (!CmpWebExtensionReferenceList(openXmlElement, value.WebExtensionReferenceList, diffs, objName))
+      if (!CmpWebExtensionReferenceList(openXmlElement, value.WebExtensionReferenceList, diffs, objName, propName))
         ok = false;
-      if (!CmpWebExtensionPropertyBag(openXmlElement, value.WebExtensionPropertyBag, diffs, objName))
+      if (!CmpWebExtensionPropertyBag(openXmlElement, value.WebExtensionPropertyBag, diffs, objName, propName))
         ok = false;
-      if (!CmpWebExtensionBindingList(openXmlElement, value.WebExtensionBindingList, diffs, objName))
+      if (!CmpWebExtensionBindingList(openXmlElement, value.WebExtensionBindingList, diffs, objName, propName))
         ok = false;
-      if (!CmpSnapshot(openXmlElement, value.Snapshot, diffs, objName))
+      if (!CmpSnapshot(openXmlElement, value.Snapshot, diffs, objName, propName))
         ok = false;
-      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName))
+      if (!CmpOfficeArtExtensionList(openXmlElement, value.OfficeArtExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

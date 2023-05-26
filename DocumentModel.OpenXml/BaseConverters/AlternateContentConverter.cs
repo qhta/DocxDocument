@@ -13,9 +13,9 @@ public static class AlternateContentConverter
     return AlternateContentChoiceConverter.CreateModelElement(openXmlElement.GetFirstChild<DX.AlternateContentChoice>());
   }
 
-  private static bool CmpAlternateContentChoice(DX.AlternateContent openXmlElement, DM.AlternateContentChoice? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternateContentChoice(DX.AlternateContent openXmlElement, DM.AlternateContentChoice? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return AlternateContentChoiceConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentChoice>(), value, diffs, objName);
+    return AlternateContentChoiceConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentChoice>(), value, diffs, objName, propName);
   }
 
   private static void SetAlternateContentChoice(DX.AlternateContent openXmlElement, AlternateContentChoice? value)
@@ -43,9 +43,9 @@ public static class AlternateContentConverter
     return AlternateContentFallbackConverter.CreateModelElement(openXmlElement.GetFirstChild<DX.AlternateContentFallback>());
   }
 
-  private static bool CmpAlternateContentFallback(DX.AlternateContent openXmlElement, AlternateContentFallback? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternateContentFallback(DX.AlternateContent openXmlElement, AlternateContentFallback? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return AlternateContentFallbackConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentFallback>(), value, diffs, objName);
+    return AlternateContentFallbackConverter.CompareModelElement(openXmlElement.GetFirstChild<DX.AlternateContentFallback>(), value, diffs, objName, propName);
   }
 
   private static void SetAlternateContentFallback(DX.AlternateContent openXmlElement, AlternateContentFallback? value)
@@ -80,17 +80,17 @@ public static class AlternateContentConverter
     return null;
   }
 
-  public static bool CompareModelElement(DX.AlternateContent? openXmlElement, AlternateContent? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DX.AlternateContent? openXmlElement, AlternateContent? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAlternateContentChoice(openXmlElement, value.Choice, diffs, objName))
+      if (!CmpAlternateContentChoice(openXmlElement, value.Choice, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

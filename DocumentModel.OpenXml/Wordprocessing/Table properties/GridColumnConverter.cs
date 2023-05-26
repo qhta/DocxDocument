@@ -11,7 +11,7 @@ public static class GridColumnConverter
     return Int64ValueConverter.GetValue(openXmlElement?.Width);
   }
   
-  private static bool CmpWidth(DXW.GridColumn openXmlElement, DM.Twips? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.GridColumn openXmlElement, DM.Twips? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int64ValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
@@ -34,17 +34,17 @@ public static class GridColumnConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.GridColumn? openXmlElement, DMW.GridColumn? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.GridColumn? openXmlElement, DMW.GridColumn? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, model.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, model.Width, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

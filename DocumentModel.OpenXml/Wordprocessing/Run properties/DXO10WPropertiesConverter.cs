@@ -81,17 +81,17 @@ public static class DXO10WPropertiesConverter
   }
 
   public static bool CompareDrawingProperty(DX.OpenXmlElement? openXmlElement, DMD.IDrawingProperty? model,
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXO10W.Glow glowElement && model is DMW.Glow glowModel)
-        return DMXW.GlowConverter.CompareModelElement(glowElement, glowModel, diffs, objName);
+        return DMXW.GlowConverter.CompareModelElement(glowElement, glowModel, diffs, objName, propName);
       diffs?.Add(objName, "Type", openXmlElement.GetType().Name, model.GetType().Name);
       return false;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -148,27 +148,27 @@ public static class DXO10WPropertiesConverter
     return false;
   }
 
-  //public static bool CompareModelElement(DXW.RunProperties openXmlElement, DMD.DrawingProperties? model, DiffList? diffs, string? objName)
+  //public static bool CompareModelElement(DXW.RunProperties openXmlElement, DMD.DrawingProperties? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   //{
   //  if (openXmlElement != null && model != null)
   //  {
   //    var ok = true;
-  //    if (!CompareDrawingProperty(openXmlElement, model.Glow, diffs, objName))
+  //    if (!CompareDrawingProperty(openXmlElement, model.Glow, diffs, objName, propName))
   //      ok = false;
-  //    if (!CmpRsidRunDeletion(openXmlElement, model.RsidRunDeletion, diffs, objName))
+  //    if (!CmpRsidRunDeletion(openXmlElement, model.RsidRunDeletion, diffs, objName, propName))
   //      ok = false;
-  //    if (!CmpRsidRunAddition(openXmlElement, model.RsidRunAddition, diffs, objName))
+  //    if (!CmpRsidRunAddition(openXmlElement, model.RsidRunAddition, diffs, objName, propName))
   //      ok = false;
-  //    if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName))
+  //    if (!CmpRunProperties(openXmlElement, model.RunProperties, diffs, objName, propName))
   //      ok = false;
   //    if (!ElementCollectionConverter<IRunContent>.CompareOpenXmlElementCollection(
   //      openXmlElement.Where(item => item is not DXW.RunProperties), model,
-  //      CompareRunContent, diffs, objName))
+  //      CompareRunContent, diffs, objName, propName))
   //      ok = false;
   //    return ok;
   //  }
   //  if (openXmlElement == null && model == null) return true;
-  //  diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+  //  diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
   //  return false;
   //}
 

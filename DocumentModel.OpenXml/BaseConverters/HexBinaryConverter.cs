@@ -16,7 +16,7 @@ public static class HexBinaryConverter
     return null;
   }
 
-  public static bool CmpValue(DX.TypedOpenXmlLeafElement? openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
+  public static bool CmpValue(DX.TypedOpenXmlLeafElement? openXmlElement, HexBinary? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var valProperty = openXmlElement?.GetType().GetProperties().FirstOrDefault(item=>item.PropertyType==typeof(HexBinaryValue));
     if (valProperty != null && value != null)
@@ -29,11 +29,11 @@ public static class HexBinaryConverter
         origStr = hexBinaryValue.Value;
       var valueStr = value.ToString();
       if (origStr!=null && origStr.Equals(valueStr)) return true;
-      diffs?.Add(objName, openXmlElement?.GetType().ToString(), origStr, valueStr);
+      diffs?.Add(objName, propName ?? openXmlElement?.GetType().ToString(), origStr, valueStr);
       return false;
     }
     if (valProperty == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().ToString(), openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().ToString(), openXmlElement, value);
     return false;
   }
 

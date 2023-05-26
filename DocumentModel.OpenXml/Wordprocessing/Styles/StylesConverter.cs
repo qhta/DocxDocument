@@ -13,9 +13,9 @@ public static class StylesConverter
     return DMXW.DocDefaultsConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.DocDefaults>());
   }
   
-  private static bool CmpDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value, DiffList? diffs, string? objName)
+  private static bool CmpDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocDefaults>(), value, diffs, objName);
+    return DMXW.DocDefaultsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocDefaults>(), value, diffs, objName, propName);
   }
   
   private static void SetDocDefaults(DXW.Styles openXmlElement, DMW.DocDefaults? value)
@@ -39,9 +39,9 @@ public static class StylesConverter
     return DMXW.LatentStylesConverter.CreateModelElement(openXmlElement?.GetFirstChild<DXW.LatentStyles>());
   }
   
-  private static bool CmpLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value, DiffList? diffs, string? objName)
+  private static bool CmpLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.LatentStylesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LatentStyles>(), value, diffs, objName);
+    return DMXW.LatentStylesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.LatentStyles>(), value, diffs, objName, propName);
   }
   
   private static void SetLatentStyles(DXW.Styles openXmlElement, DMW.LatentStyles? value)
@@ -69,7 +69,7 @@ public static class StylesConverter
     return collection;
   }
   
-  private static bool CmpItems(DXW.Styles openXmlElement, DMW.DefinedStyles? value, DiffList? diffs, string? objName)
+  private static bool CmpItems(DXW.Styles openXmlElement, DMW.DefinedStyles? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (value != null)
     {
@@ -78,7 +78,7 @@ public static class StylesConverter
       var modelElementsCount = value.Count;
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -88,13 +88,13 @@ public static class StylesConverter
       {
         var modelStyle = modelStyles[i];
         var origStyle = origStyles[i];
-        if (!DMXW.StyleConverter.CompareModelElement(origStyle, modelStyle, diffs, $"Style[{i}]"))
+        if (!DMXW.StyleConverter.CompareModelElement(origStyle, modelStyle, diffs, $"Style[{i}]", propName))
           ok = false;
       }
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -125,21 +125,21 @@ public static class StylesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Styles? openXmlElement, DMW.Styles? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Styles? openXmlElement, DMW.Styles? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocDefaults(openXmlElement, value.DocDefaults, diffs, objName))
+      if (!CmpDocDefaults(openXmlElement, value.DocDefaults, diffs, objName, propName))
         ok = false;
-      if (!CmpLatentStyles(openXmlElement, value.LatentStyles, diffs, objName))
+      if (!CmpLatentStyles(openXmlElement, value.LatentStyles, diffs, objName, propName))
         ok = false;
-      if (!CmpItems(openXmlElement, value.DefinedStyles, diffs, objName))
+      if (!CmpItems(openXmlElement, value.DefinedStyles, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

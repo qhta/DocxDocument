@@ -15,9 +15,9 @@ public static class BorderConverter
     return EnumValueConverter.GetValue<DXW.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.BorderType openXmlElement, DMW.BorderKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.BorderType openXmlElement, DMW.BorderKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.BorderValues, DMW.BorderKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.BorderType openXmlElement, DMW.BorderKind? value)
@@ -35,7 +35,7 @@ public static class BorderConverter
     return null;
   }
   
-  private static bool CmpSize(DXW.BorderType openXmlElement, Twips? value, DiffList? diffs, string? objName)
+  private static bool CmpSize(DXW.BorderType openXmlElement, Twips? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Size?.Value == value/5) return true;
     diffs?.Add(objName, "Value", openXmlElement?.Size?.Value, value);
@@ -60,7 +60,7 @@ public static class BorderConverter
     return null;
   }
   
-  private static bool CmpSpace(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpace(DXW.BorderType openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Space?.Value == value/5) return true;
     diffs?.Add(objName, "Space", openXmlElement?.Space?.Value, value);
@@ -83,7 +83,7 @@ public static class BorderConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Shadow);
   }
   
-  private static bool CmpShadow(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpShadow(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Shadow, value, diffs, objName, "Shadow");
   }
@@ -101,7 +101,7 @@ public static class BorderConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Frame);
   }
   
-  private static bool CmpFrame(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFrame(DXW.BorderType openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Frame, value, diffs, objName, "Frame");
   }
@@ -127,27 +127,29 @@ public static class BorderConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.BorderType? openXmlElement, DMW.Border? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.BorderType? openXmlElement, DMW.Border? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Type, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!BorderTypeColorConverter.CompareModelElement(openXmlElement, value.Color, diffs, objName))
+      if (value.Color==null)
+        Debug.Assert(true);
+      if (!BorderTypeColorConverter.CompareModelElement(openXmlElement, value.Color, diffs, objName, propName))
         ok = false;
-      if (!CmpSize(openXmlElement, value.Width, diffs, objName))
+      if (!CmpSize(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName, propName))
         ok = false;
-      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName))
+      if (!CmpShadow(openXmlElement, value.Shadow, diffs, objName, propName))
         ok = false;
-      if (!CmpFrame(openXmlElement, value.Frame, diffs, objName))
+      if (!CmpFrame(openXmlElement, value.Frame, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -28,22 +28,22 @@ public static class CustomXmlCellConverter
   }
 
   public static bool CompareCustomXmlCellContent(DX.OpenXmlElement? openXmlElement, DM.IModelElement? model, 
-    DiffList? diffs = null, string? objName = null)
+    DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       if (openXmlElement is DXW.CustomXmlCell CustomXmlCell && model is DMW.CustomXmlCell CustomXmlCellModel)
-        return DMXW.CustomXmlCellConverter.CompareModelElement(CustomXmlCell, CustomXmlCellModel, diffs, objName);
+        return DMXW.CustomXmlCellConverter.CompareModelElement(CustomXmlCell, CustomXmlCellModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.SdtCell sdtCell && model is DMW.SdtCell sdtCellModel)
-        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName);
+        return DMXW.SdtCellConverter.CompareModelElement(sdtCell, sdtCellModel, diffs, objName, propName);
 
       if (openXmlElement is DXW.TableCell tableCell && model is DMW.TableCell tableCellModel)
-        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName);
+        return DMXW.TableCellConverter.CompareModelElement(tableCell, tableCellModel, diffs, objName, propName);
 
       if (model is DMW.ICommonContent commonElementModel)
       {
-        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName);
+        var result2 = DMXW.CommonMarkersConverter.CompareModelElement(openXmlElement, commonElementModel, diffs, objName, propName);
         if (result2 != null)
           return (bool)result2;
       }
@@ -53,7 +53,7 @@ public static class CustomXmlCellConverter
 
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
@@ -117,21 +117,21 @@ public static class CustomXmlCellConverter
     return null;
   }
 
-  public static bool CompareModelElement(DXW.CustomXmlCell? openXmlElement, DMW.CustomXmlCell? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.CustomXmlCell? openXmlElement, DMW.CustomXmlCell? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName))
+      if (!CustomXmlElementConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName))
         ok = false;
       if (!ElementCollectionConverter<DM.IModelElement>.CompareOpenXmlElementCollection(
         openXmlElement, model,
-        CompareCustomXmlCellContent, diffs, objName))
+        CompareCustomXmlCellContent, diffs, objName, propName))
         return ok;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 

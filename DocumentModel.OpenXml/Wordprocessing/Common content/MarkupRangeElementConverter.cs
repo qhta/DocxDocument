@@ -11,7 +11,7 @@ public static class MarkupRangeElementConverter
     return Int32ValueConverter.GetValue(openXmlElement?.Id);
   }
 
-  private static bool CmpId(DXW.MarkupRangeType openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.MarkupRangeType openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return Int32ValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -28,7 +28,7 @@ public static class MarkupRangeElementConverter
     return EnumValueConverter.GetValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
 
-  private static bool CmpDisplacedByCustomXml(DXW.MarkupRangeType openXmlElement,DMW. DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplacedByCustomXml(DXW.MarkupRangeType openXmlElement,DMW. DisplacedByCustomXmlKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return EnumValueConverter.CmpValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName?.Concat2(".", openXmlElement?.GetType().Name));
   }
@@ -77,19 +77,19 @@ public static class MarkupRangeElementConverter
     return CreateModelElement<DMW.MoveFromRangeEnd>(openXmlElement);
   }
 
-  public static bool CompareModelElement(DXW.MarkupRangeType? openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.MarkupRangeType? openXmlElement, DMW.MarkupRangeElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName, propName))
         ok = false;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
 

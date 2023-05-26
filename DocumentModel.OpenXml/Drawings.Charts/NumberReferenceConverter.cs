@@ -13,7 +13,7 @@ public static class NumberReferenceConverter
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXDC.NumberReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXDC.NumberReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class NumberReferenceConverter
     return null;
   }
   
-  private static bool CmpNumberingCache(DXDC.NumberReference openXmlElement, DMDC.NumberingCache? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingCache(DXDC.NumberReference openXmlElement, DMDC.NumberingCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumberingCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingCache>(), value, diffs, objName);
+    return DMXDC.NumberingCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumberingCache>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingCache(DXDC.NumberReference openXmlElement, DMDC.NumberingCache? value)
@@ -70,9 +70,9 @@ public static class NumberReferenceConverter
     return null;
   }
   
-  private static bool CmpNumRefExtensionList(DXDC.NumberReference openXmlElement, DMDC.NumRefExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpNumRefExtensionList(DXDC.NumberReference openXmlElement, DMDC.NumRefExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.NumRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumRefExtensionList>(), value, diffs, objName);
+    return DMXDC.NumRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.NumRefExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetNumRefExtensionList(DXDC.NumberReference openXmlElement, DMDC.NumRefExtensionList? value)
@@ -101,21 +101,21 @@ public static class NumberReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.NumberReference? openXmlElement, DMDC.NumberReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.NumberReference? openXmlElement, DMDC.NumberReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingCache(openXmlElement, value.NumberingCache, diffs, objName))
+      if (!CmpNumberingCache(openXmlElement, value.NumberingCache, diffs, objName, propName))
         ok = false;
-      if (!CmpNumRefExtensionList(openXmlElement, value.NumRefExtensionList, diffs, objName))
+      if (!CmpNumRefExtensionList(openXmlElement, value.NumRefExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

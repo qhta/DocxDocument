@@ -13,7 +13,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoGrouping?.Value;
   }
   
-  private static bool CmpNoGrouping(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoGrouping(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoGrouping?.Value == value) return true;
     diffs?.Add(objName, "NoGrouping", openXmlElement?.NoGrouping?.Value, value);
@@ -36,7 +36,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoSelection?.Value;
   }
   
-  private static bool CmpNoSelection(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoSelection(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoSelection?.Value == value) return true;
     diffs?.Add(objName, "NoSelection", openXmlElement?.NoSelection?.Value, value);
@@ -59,7 +59,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoRotation?.Value;
   }
   
-  private static bool CmpNoRotation(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoRotation(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoRotation?.Value == value) return true;
     diffs?.Add(objName, "NoRotation", openXmlElement?.NoRotation?.Value, value);
@@ -82,7 +82,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoChangeAspect?.Value;
   }
   
-  private static bool CmpNoChangeAspect(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeAspect(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoChangeAspect?.Value == value) return true;
     diffs?.Add(objName, "NoChangeAspect", openXmlElement?.NoChangeAspect?.Value, value);
@@ -105,7 +105,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoMove?.Value;
   }
   
-  private static bool CmpNoMove(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoMove(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoMove?.Value == value) return true;
     diffs?.Add(objName, "NoMove", openXmlElement?.NoMove?.Value, value);
@@ -128,7 +128,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoResize?.Value;
   }
   
-  private static bool CmpNoResize(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoResize(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoResize?.Value == value) return true;
     diffs?.Add(objName, "NoResize", openXmlElement?.NoResize?.Value, value);
@@ -151,7 +151,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoEditPoints?.Value;
   }
   
-  private static bool CmpNoEditPoints(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoEditPoints(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoEditPoints?.Value == value) return true;
     diffs?.Add(objName, "NoEditPoints", openXmlElement?.NoEditPoints?.Value, value);
@@ -174,7 +174,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoAdjustHandles?.Value;
   }
   
-  private static bool CmpNoAdjustHandles(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoAdjustHandles(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoAdjustHandles?.Value == value) return true;
     diffs?.Add(objName, "NoAdjustHandles", openXmlElement?.NoAdjustHandles?.Value, value);
@@ -197,7 +197,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoChangeArrowheads?.Value;
   }
   
-  private static bool CmpNoChangeArrowheads(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeArrowheads(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoChangeArrowheads?.Value == value) return true;
     diffs?.Add(objName, "NoChangeArrowheads", openXmlElement?.NoChangeArrowheads?.Value, value);
@@ -220,7 +220,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoChangeShapeType?.Value;
   }
   
-  private static bool CmpNoChangeShapeType(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoChangeShapeType(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoChangeShapeType?.Value == value) return true;
     diffs?.Add(objName, "NoChangeShapeType", openXmlElement?.NoChangeShapeType?.Value, value);
@@ -243,7 +243,7 @@ public static class PictureLocksConverter
     return openXmlElement?.NoCrop?.Value;
   }
   
-  private static bool CmpNoCrop(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpNoCrop(DXD.PictureLocks openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.NoCrop?.Value == value) return true;
     diffs?.Add(objName, "NoCrop", openXmlElement?.NoCrop?.Value, value);
@@ -269,9 +269,9 @@ public static class PictureLocksConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.PictureLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.PictureLocks openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.PictureLocks openXmlElement, DMD.ExtensionList? value)
@@ -309,39 +309,39 @@ public static class PictureLocksConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.PictureLocks? openXmlElement, DMD.PictureLocks? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.PictureLocks? openXmlElement, DMD.PictureLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName))
+      if (!CmpNoGrouping(openXmlElement, value.NoGrouping, diffs, objName, propName))
         ok = false;
-      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName))
+      if (!CmpNoSelection(openXmlElement, value.NoSelection, diffs, objName, propName))
         ok = false;
-      if (!CmpNoRotation(openXmlElement, value.NoRotation, diffs, objName))
+      if (!CmpNoRotation(openXmlElement, value.NoRotation, diffs, objName, propName))
         ok = false;
-      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName))
+      if (!CmpNoChangeAspect(openXmlElement, value.NoChangeAspect, diffs, objName, propName))
         ok = false;
-      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName))
+      if (!CmpNoMove(openXmlElement, value.NoMove, diffs, objName, propName))
         ok = false;
-      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName))
+      if (!CmpNoResize(openXmlElement, value.NoResize, diffs, objName, propName))
         ok = false;
-      if (!CmpNoEditPoints(openXmlElement, value.NoEditPoints, diffs, objName))
+      if (!CmpNoEditPoints(openXmlElement, value.NoEditPoints, diffs, objName, propName))
         ok = false;
-      if (!CmpNoAdjustHandles(openXmlElement, value.NoAdjustHandles, diffs, objName))
+      if (!CmpNoAdjustHandles(openXmlElement, value.NoAdjustHandles, diffs, objName, propName))
         ok = false;
-      if (!CmpNoChangeArrowheads(openXmlElement, value.NoChangeArrowheads, diffs, objName))
+      if (!CmpNoChangeArrowheads(openXmlElement, value.NoChangeArrowheads, diffs, objName, propName))
         ok = false;
-      if (!CmpNoChangeShapeType(openXmlElement, value.NoChangeShapeType, diffs, objName))
+      if (!CmpNoChangeShapeType(openXmlElement, value.NoChangeShapeType, diffs, objName, propName))
         ok = false;
-      if (!CmpNoCrop(openXmlElement, value.NoCrop, diffs, objName))
+      if (!CmpNoCrop(openXmlElement, value.NoCrop, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

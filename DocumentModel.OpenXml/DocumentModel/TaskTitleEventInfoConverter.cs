@@ -13,7 +13,7 @@ public static class TaskTitleEventInfoConverter
     return StringValueConverter.GetValue(openXmlElement?.Title);
   }
   
-  private static bool CmpTitle(DXO21DT.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTitle(DXO21DT.TaskTitleEventInfo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Title, value, diffs, objName, "Title");
   }
@@ -34,17 +34,17 @@ public static class TaskTitleEventInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskTitleEventInfo? openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskTitleEventInfo? openXmlElement, DM.TaskTitleEventInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTitle(openXmlElement, value.Title, diffs, objName))
+      if (!CmpTitle(openXmlElement, value.Title, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

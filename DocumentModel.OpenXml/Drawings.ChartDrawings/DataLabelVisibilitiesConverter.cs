@@ -13,7 +13,7 @@ public static class DataLabelVisibilitiesConverter
     return openXmlElement?.SeriesName?.Value;
   }
   
-  private static bool CmpSeriesName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.SeriesName?.Value == value) return true;
     diffs?.Add(objName, "SeriesName", openXmlElement?.SeriesName?.Value, value);
@@ -36,7 +36,7 @@ public static class DataLabelVisibilitiesConverter
     return openXmlElement?.CategoryName?.Value;
   }
   
-  private static bool CmpCategoryName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpCategoryName(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CategoryName?.Value == value) return true;
     diffs?.Add(objName, "CategoryName", openXmlElement?.CategoryName?.Value, value);
@@ -59,7 +59,7 @@ public static class DataLabelVisibilitiesConverter
     return openXmlElement?.Value?.Value;
   }
   
-  private static bool CmpValue(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpValue(DXO16DCD.DataLabelVisibilities openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Value?.Value == value) return true;
     diffs?.Add(objName, "Type", openXmlElement?.Value?.Value, value);
@@ -87,21 +87,21 @@ public static class DataLabelVisibilitiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.DataLabelVisibilities? openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.DataLabelVisibilities? openXmlElement, DMDCDs.DataLabelVisibilities? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSeriesName(openXmlElement, value.SeriesName, diffs, objName))
+      if (!CmpSeriesName(openXmlElement, value.SeriesName, diffs, objName, propName))
         ok = false;
-      if (!CmpCategoryName(openXmlElement, value.CategoryName, diffs, objName))
+      if (!CmpCategoryName(openXmlElement, value.CategoryName, diffs, objName, propName))
         ok = false;
-      if (!CmpValue(openXmlElement, value.Value, diffs, objName))
+      if (!CmpValue(openXmlElement, value.Value, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

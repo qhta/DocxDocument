@@ -13,7 +13,7 @@ public static class CategoryAxisScalingConverter
     return StringValueConverter.GetValue(openXmlElement?.GapWidth);
   }
   
-  private static bool CmpGapWidth(DXO16DCD.CategoryAxisScaling openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpGapWidth(DXO16DCD.CategoryAxisScaling openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.GapWidth, value, diffs, objName, "GapWidth");
   }
@@ -34,17 +34,17 @@ public static class CategoryAxisScalingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.CategoryAxisScaling? openXmlElement, DMDCDs.CategoryAxisScaling? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.CategoryAxisScaling? openXmlElement, DMDCDs.CategoryAxisScaling? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName))
+      if (!CmpGapWidth(openXmlElement, value.GapWidth, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

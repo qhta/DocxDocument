@@ -13,7 +13,7 @@ public static class TextFontTypeConverter
     return openXmlElement?.Typeface?.Value;
   }
   
-  private static bool CmpTypeface(DXD.TextFontType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTypeface(DXD.TextFontType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Typeface?.Value == value) return true;
     diffs?.Add(objName, "Typeface", openXmlElement?.Typeface?.Value, value);
@@ -38,7 +38,7 @@ public static class TextFontTypeConverter
     return null;
   }
   
-  private static bool CmpPanose(DXD.TextFontType openXmlElement, HexBinary? value, DiffList? diffs, string? objName)
+  private static bool CmpPanose(DXD.TextFontType openXmlElement, HexBinary? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Panose?.Value != null && value!=null)
       if (Convert.FromHexString(openXmlElement.Panose.Value).SequenceEqual((byte[])value))
@@ -64,7 +64,7 @@ public static class TextFontTypeConverter
     return openXmlElement?.PitchFamily?.Value;
   }
   
-  private static bool CmpPitchFamily(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpPitchFamily(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.PitchFamily?.Value == value) return true;
     diffs?.Add(objName, "PitchFamily", openXmlElement?.PitchFamily?.Value, value);
@@ -84,7 +84,7 @@ public static class TextFontTypeConverter
     return openXmlElement?.CharacterSet?.Value;
   }
   
-  private static bool CmpCharacterSet(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs, string? objName)
+  private static bool CmpCharacterSet(DXD.TextFontType openXmlElement, SByte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.CharacterSet?.Value == value) return true;
     diffs?.Add(objName, "CharacterSet", openXmlElement?.CharacterSet?.Value, value);
@@ -110,23 +110,23 @@ public static class TextFontTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.TextFontType? openXmlElement, DMD.TextFontType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.TextFontType? openXmlElement, DMD.TextFontType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTypeface(openXmlElement, value.Typeface, diffs, objName))
+      if (!CmpTypeface(openXmlElement, value.Typeface, diffs, objName, propName))
         ok = false;
-      if (!CmpPanose(openXmlElement, value.Panose, diffs, objName))
+      if (!CmpPanose(openXmlElement, value.Panose, diffs, objName, propName))
         ok = false;
-      if (!CmpPitchFamily(openXmlElement, value.PitchFamily, diffs, objName))
+      if (!CmpPitchFamily(openXmlElement, value.PitchFamily, diffs, objName, propName))
         ok = false;
-      if (!CmpCharacterSet(openXmlElement, value.CharacterSet, diffs, objName))
+      if (!CmpCharacterSet(openXmlElement, value.CharacterSet, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

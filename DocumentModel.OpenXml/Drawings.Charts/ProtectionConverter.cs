@@ -13,7 +13,7 @@ public static class ProtectionConverter
     return openXmlElement.GetFirstChild<DXDC.ChartObject>() != null;
   }
   
-  private static bool CmpChartObject(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpChartObject(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ChartObject>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class ProtectionConverter
     return openXmlElement.GetFirstChild<DXDC.Data>() != null;
   }
   
-  private static bool CmpData(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpData(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Data>() != null;
     if (val == value) return true;
@@ -75,7 +75,7 @@ public static class ProtectionConverter
     return openXmlElement.GetFirstChild<DXDC.Formatting>() != null;
   }
   
-  private static bool CmpFormatting(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFormatting(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Formatting>() != null;
     if (val == value) return true;
@@ -106,7 +106,7 @@ public static class ProtectionConverter
     return openXmlElement.GetFirstChild<DXDC.Selection>() != null;
   }
   
-  private static bool CmpSelection(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSelection(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Selection>() != null;
     if (val == value) return true;
@@ -137,7 +137,7 @@ public static class ProtectionConverter
     return openXmlElement.GetFirstChild<DXDC.UserInterface>() != null;
   }
   
-  private static bool CmpUserInterface(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUserInterface(DXDC.Protection openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.UserInterface>() != null;
     if (val == value) return true;
@@ -175,25 +175,25 @@ public static class ProtectionConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Protection? openXmlElement, DMDC.Protection? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Protection? openXmlElement, DMDC.Protection? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpChartObject(openXmlElement, value.ChartObject, diffs, objName))
+      if (!CmpChartObject(openXmlElement, value.ChartObject, diffs, objName, propName))
         ok = false;
-      if (!CmpData(openXmlElement, value.Data, diffs, objName))
+      if (!CmpData(openXmlElement, value.Data, diffs, objName, propName))
         ok = false;
-      if (!CmpFormatting(openXmlElement, value.Formatting, diffs, objName))
+      if (!CmpFormatting(openXmlElement, value.Formatting, diffs, objName, propName))
         ok = false;
-      if (!CmpSelection(openXmlElement, value.Selection, diffs, objName))
+      if (!CmpSelection(openXmlElement, value.Selection, diffs, objName, propName))
         ok = false;
-      if (!CmpUserInterface(openXmlElement, value.UserInterface, diffs, objName))
+      if (!CmpUserInterface(openXmlElement, value.UserInterface, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

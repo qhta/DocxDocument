@@ -13,7 +13,7 @@ public static class FontSchemeConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXD.FontScheme openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXD.FontScheme openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -34,9 +34,9 @@ public static class FontSchemeConverter
     return null;
   }
   
-  private static bool CmpMajorFont(DXD.FontScheme openXmlElement, DMD.MajorFont? value, DiffList? diffs, string? objName)
+  private static bool CmpMajorFont(DXD.FontScheme openXmlElement, DMD.MajorFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.MajorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MajorFont>(), value, diffs, objName);
+    return DMXD.MajorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MajorFont>(), value, diffs, objName, propName);
   }
   
   private static void SetMajorFont(DXD.FontScheme openXmlElement, DMD.MajorFont? value)
@@ -63,9 +63,9 @@ public static class FontSchemeConverter
     return null;
   }
   
-  private static bool CmpMinorFont(DXD.FontScheme openXmlElement, DMD.MinorFont? value, DiffList? diffs, string? objName)
+  private static bool CmpMinorFont(DXD.FontScheme openXmlElement, DMD.MinorFont? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.MinorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MinorFont>(), value, diffs, objName);
+    return DMXD.MinorFontConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.MinorFont>(), value, diffs, objName, propName);
   }
   
   private static void SetMinorFont(DXD.FontScheme openXmlElement, DMD.MinorFont? value)
@@ -92,9 +92,9 @@ public static class FontSchemeConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXD.FontScheme openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXD.FontScheme openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXD.FontScheme openXmlElement, DMD.ExtensionList? value)
@@ -124,23 +124,23 @@ public static class FontSchemeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.FontScheme? openXmlElement, DMD.FontScheme? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.FontScheme? openXmlElement, DMD.FontScheme? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpMajorFont(openXmlElement, value.MajorFont, diffs, objName))
+      if (!CmpMajorFont(openXmlElement, value.MajorFont, diffs, objName, propName))
         ok = false;
-      if (!CmpMinorFont(openXmlElement, value.MinorFont, diffs, objName))
+      if (!CmpMinorFont(openXmlElement, value.MinorFont, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -19,7 +19,7 @@ public static class CategoryListConverter
     return null;
   }
   
-  private static bool CmpCategories(DXDD.CategoryList openXmlElement, Collection<DMDD.Category>? value, DiffList? diffs, string? objName)
+  private static bool CmpCategories(DXDD.CategoryList openXmlElement, Collection<DMDD.Category>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDD.Category>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class CategoryListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class CategoryListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDD.CategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDD.CategoryConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class CategoryListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDD.CategoryList? openXmlElement, DMDD.CategoryList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDD.CategoryList? openXmlElement, DMDD.CategoryList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCategories(openXmlElement, value.Categories, diffs, objName))
+      if (!CmpCategories(openXmlElement, value.Categories, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

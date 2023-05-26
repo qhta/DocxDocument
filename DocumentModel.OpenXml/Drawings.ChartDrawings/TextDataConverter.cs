@@ -13,9 +13,9 @@ public static class TextDataConverter
     return null;
   }
   
-  private static bool CmpFormula(DXO16DCD.TextData openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXO16DCD.TextData openXmlElement, DMDCDs.OpenXmlFormulaElement? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Formula>(), value, diffs, objName);
+    return DMXDCDs.OpenXmlFormulaElementConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Formula>(), value, diffs, objName, propName);
   }
   
   private static void SetFormula(DXO16DCD.TextData openXmlElement, DMDCDs.OpenXmlFormulaElement? value)
@@ -36,7 +36,7 @@ public static class TextDataConverter
       return openXmlElement?.GetFirstChild<DXO16DCD.VXsdstring>()?.Text;
   }
   
-  private static bool CmpVXsdstring(DXO16DCD.TextData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVXsdstring(DXO16DCD.TextData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXO16DCD.VXsdstring>()?.Text == value;
   }
@@ -65,19 +65,19 @@ public static class TextDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.TextData? openXmlElement, DMDCDs.TextData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.TextData? openXmlElement, DMDCDs.TextData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpVXsdstring(openXmlElement, value.VXsdstring, diffs, objName))
+      if (!CmpVXsdstring(openXmlElement, value.VXsdstring, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

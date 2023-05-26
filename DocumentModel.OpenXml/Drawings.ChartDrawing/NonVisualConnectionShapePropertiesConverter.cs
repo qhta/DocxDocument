@@ -16,9 +16,9 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpConnectionShapeLocks(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionShapeLocks? value, DiffList? diffs, string? objName)
+  private static bool CmpConnectionShapeLocks(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionShapeLocks? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ConnectionShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ConnectionShapeLocks>(), value, diffs, objName);
+    return DMXD.ConnectionShapeLocksConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ConnectionShapeLocks>(), value, diffs, objName, propName);
   }
   
   private static void SetConnectionShapeLocks(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionShapeLocks? value)
@@ -45,9 +45,9 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpStartConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value, DiffList? diffs, string? objName)
+  private static bool CmpStartConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ConnectionTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.StartConnection>(), value, diffs, objName);
+    return DMXD.ConnectionTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.StartConnection>(), value, diffs, objName, propName);
   }
   
   private static void SetStartConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value)
@@ -74,9 +74,9 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpEndConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value, DiffList? diffs, string? objName)
+  private static bool CmpEndConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ConnectionTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndConnection>(), value, diffs, objName);
+    return DMXD.ConnectionTypeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndConnection>(), value, diffs, objName, propName);
   }
   
   private static void SetEndConnection(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ConnectionType? value)
@@ -103,9 +103,9 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName);
+    return DMXD.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDCD.NonVisualConnectionShapeProperties openXmlElement, DMD.ExtensionList? value)
@@ -135,23 +135,23 @@ public static class NonVisualConnectionShapePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.NonVisualConnectionShapeProperties? openXmlElement, DMDCD.NonVisualConnectionShapeProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.NonVisualConnectionShapeProperties? openXmlElement, DMDCD.NonVisualConnectionShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpConnectionShapeLocks(openXmlElement, value.ConnectionShapeLocks, diffs, objName))
+      if (!CmpConnectionShapeLocks(openXmlElement, value.ConnectionShapeLocks, diffs, objName, propName))
         ok = false;
-      if (!CmpStartConnection(openXmlElement, value.StartConnection, diffs, objName))
+      if (!CmpStartConnection(openXmlElement, value.StartConnection, diffs, objName, propName))
         ok = false;
-      if (!CmpEndConnection(openXmlElement, value.EndConnection, diffs, objName))
+      if (!CmpEndConnection(openXmlElement, value.EndConnection, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class TaskAnchorConverter
     return null;
   }
   
-  private static bool CmpCommentAnchor(DXO21DT.TaskAnchor openXmlElement, DM.CommentAnchor? value, DiffList? diffs, string? objName)
+  private static bool CmpCommentAnchor(DXO21DT.TaskAnchor openXmlElement, DM.CommentAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.CommentAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.CommentAnchor>(), value, diffs, objName);
+    return DMX.CommentAnchorConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.CommentAnchor>(), value, diffs, objName, propName);
   }
   
   private static void SetCommentAnchor(DXO21DT.TaskAnchor openXmlElement, DM.CommentAnchor? value)
@@ -45,9 +45,9 @@ public static class TaskAnchorConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO21DT.TaskAnchor openXmlElement, DM.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO21DT.TaskAnchor openXmlElement, DM.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName);
+    return DMX.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO21DT.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO21DT.TaskAnchor openXmlElement, DM.ExtensionList? value)
@@ -75,19 +75,19 @@ public static class TaskAnchorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO21DT.TaskAnchor? openXmlElement, DM.TaskAnchor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO21DT.TaskAnchor? openXmlElement, DM.TaskAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCommentAnchor(openXmlElement, value.CommentAnchor, diffs, objName))
+      if (!CmpCommentAnchor(openXmlElement, value.CommentAnchor, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

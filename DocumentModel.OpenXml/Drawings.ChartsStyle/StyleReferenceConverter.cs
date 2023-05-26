@@ -13,7 +13,7 @@ public static class StyleReferenceConverter
     return openXmlElement?.Index?.Value;
   }
   
-  private static bool CmpIndex(DXO13DCS.StyleReference openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpIndex(DXO13DCS.StyleReference openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Index?.Value == value) return true;
     diffs?.Add(objName, "Index", openXmlElement?.Index?.Value, value);
@@ -33,9 +33,9 @@ public static class StyleReferenceConverter
     return ListValueConverter.GetValue(openXmlElement?.Modifiers);
   }
   
-  private static bool CmpModifiers(DXO13DCS.StyleReference openXmlElement, DM.ListOf<String>? value, DiffList? diffs, string? objName)
+  private static bool CmpModifiers(DXO13DCS.StyleReference openXmlElement, DM.ListOf<String>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return ListValueConverter.CmpValue(openXmlElement?.Modifiers, value, diffs, objName);
+    return ListValueConverter.CmpValue(openXmlElement?.Modifiers, value, diffs, objName, propName);
   }
   
   private static void SetModifiers(DXO13DCS.StyleReference openXmlElement, DM.ListOf<String>? value)
@@ -58,19 +58,19 @@ public static class StyleReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO13DCS.StyleReference? openXmlElement, DMDCS.StyleReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO13DCS.StyleReference? openXmlElement, DMDCS.StyleReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpIndex(openXmlElement, value.Index, diffs, objName))
+      if (!CmpIndex(openXmlElement, value.Index, diffs, objName, propName))
         ok = false;
-      if (!CmpModifiers(openXmlElement, value.Modifiers, diffs, objName))
+      if (!CmpModifiers(openXmlElement, value.Modifiers, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpParentLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ParentLabelLayout? value, DiffList? diffs, string? objName)
+  private static bool CmpParentLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ParentLabelLayout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ParentLabelLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ParentLabelLayout>(), value, diffs, objName);
+    return DMXDCDs.ParentLabelLayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ParentLabelLayout>(), value, diffs, objName, propName);
   }
   
   private static void SetParentLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ParentLabelLayout? value)
@@ -42,9 +42,9 @@ public static class SeriesLayoutPropertiesConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDCDs.RegionLabelLayoutEnum>(openXmlElement.GetFirstChild<DXO16DCD.RegionLabelLayout>()?.Val?.Value);
   }
   
-  private static bool CmpRegionLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.RegionLabelLayoutEnum? value, DiffList? diffs, string? objName)
+  private static bool CmpRegionLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.RegionLabelLayoutEnum? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDCDs.RegionLabelLayoutEnum>(openXmlElement.GetFirstChild<DXO16DCD.RegionLabelLayout>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Office2016.Drawing.ChartDrawing.RegionLabelLayoutEnum, DMDCDs.RegionLabelLayoutEnum>(openXmlElement.GetFirstChild<DXO16DCD.RegionLabelLayout>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetRegionLabelLayout(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.RegionLabelLayoutEnum? value)
@@ -73,9 +73,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpSeriesElementVisibilities(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.SeriesElementVisibilities? value, DiffList? diffs, string? objName)
+  private static bool CmpSeriesElementVisibilities(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.SeriesElementVisibilities? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.SeriesElementVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.SeriesElementVisibilities>(), value, diffs, objName);
+    return DMXDCDs.SeriesElementVisibilitiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.SeriesElementVisibilities>(), value, diffs, objName, propName);
   }
   
   private static void SetSeriesElementVisibilities(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.SeriesElementVisibilities? value)
@@ -96,7 +96,7 @@ public static class SeriesLayoutPropertiesConverter
     return openXmlElement.GetFirstChild<DXO16DCD.Aggregation>() != null;
   }
   
-  private static bool CmpAggregation(DXO16DCD.SeriesLayoutProperties openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAggregation(DXO16DCD.SeriesLayoutProperties openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO16DCD.Aggregation>() != null;
     if (val == value) return true;
@@ -127,9 +127,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpBinning(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Binning? value, DiffList? diffs, string? objName)
+  private static bool CmpBinning(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Binning? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.BinningConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Binning>(), value, diffs, objName);
+    return DMXDCDs.BinningConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Binning>(), value, diffs, objName, propName);
   }
   
   private static void SetBinning(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Binning? value)
@@ -153,9 +153,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpGeography(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Geography? value, DiffList? diffs, string? objName)
+  private static bool CmpGeography(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Geography? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.GeographyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Geography>(), value, diffs, objName);
+    return DMXDCDs.GeographyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Geography>(), value, diffs, objName, propName);
   }
   
   private static void SetGeography(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Geography? value)
@@ -179,9 +179,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpStatistics(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Statistics? value, DiffList? diffs, string? objName)
+  private static bool CmpStatistics(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Statistics? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.StatisticsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Statistics>(), value, diffs, objName);
+    return DMXDCDs.StatisticsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Statistics>(), value, diffs, objName, propName);
   }
   
   private static void SetStatistics(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Statistics? value)
@@ -205,9 +205,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpSubtotals(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Subtotals? value, DiffList? diffs, string? objName)
+  private static bool CmpSubtotals(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Subtotals? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.SubtotalsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Subtotals>(), value, diffs, objName);
+    return DMXDCDs.SubtotalsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Subtotals>(), value, diffs, objName, propName);
   }
   
   private static void SetSubtotals(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.Subtotals? value)
@@ -231,9 +231,9 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.SeriesLayoutProperties openXmlElement, DMDCDs.ExtensionList? value)
@@ -268,33 +268,33 @@ public static class SeriesLayoutPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.SeriesLayoutProperties? openXmlElement, DMDCDs.SeriesLayoutProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.SeriesLayoutProperties? openXmlElement, DMDCDs.SeriesLayoutProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpParentLabelLayout(openXmlElement, value.ParentLabelLayout, diffs, objName))
+      if (!CmpParentLabelLayout(openXmlElement, value.ParentLabelLayout, diffs, objName, propName))
         ok = false;
-      if (!CmpRegionLabelLayout(openXmlElement, value.RegionLabelLayout, diffs, objName))
+      if (!CmpRegionLabelLayout(openXmlElement, value.RegionLabelLayout, diffs, objName, propName))
         ok = false;
-      if (!CmpSeriesElementVisibilities(openXmlElement, value.SeriesElementVisibilities, diffs, objName))
+      if (!CmpSeriesElementVisibilities(openXmlElement, value.SeriesElementVisibilities, diffs, objName, propName))
         ok = false;
-      if (!CmpAggregation(openXmlElement, value.Aggregation, diffs, objName))
+      if (!CmpAggregation(openXmlElement, value.Aggregation, diffs, objName, propName))
         ok = false;
-      if (!CmpBinning(openXmlElement, value.Binning, diffs, objName))
+      if (!CmpBinning(openXmlElement, value.Binning, diffs, objName, propName))
         ok = false;
-      if (!CmpGeography(openXmlElement, value.Geography, diffs, objName))
+      if (!CmpGeography(openXmlElement, value.Geography, diffs, objName, propName))
         ok = false;
-      if (!CmpStatistics(openXmlElement, value.Statistics, diffs, objName))
+      if (!CmpStatistics(openXmlElement, value.Statistics, diffs, objName, propName))
         ok = false;
-      if (!CmpSubtotals(openXmlElement, value.Subtotals, diffs, objName))
+      if (!CmpSubtotals(openXmlElement, value.Subtotals, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

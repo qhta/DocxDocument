@@ -13,7 +13,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpUnicodeSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpUnicodeSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.UnicodeSignature0?.Value, value, diffs, objName, "UnicodeSignature0");
   }
@@ -35,7 +35,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpUnicodeSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpUnicodeSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.UnicodeSignature1?.Value, value, diffs, objName, "UnicodeSignature1");
   }
@@ -57,7 +57,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpUnicodeSignature2(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpUnicodeSignature2(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.UnicodeSignature2?.Value, value, diffs, objName, "UnicodeSignature2");
   }
@@ -79,7 +79,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpUnicodeSignature3(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpUnicodeSignature3(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.UnicodeSignature3?.Value, value, diffs, objName, "UnicodeSignature3");
   }
@@ -101,7 +101,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpCodePageSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpCodePageSignature0(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.CodePageSignature0?.Value, value, diffs, objName, "CodePageSignature0");
   }
@@ -123,7 +123,7 @@ public static class FontSignatureConverter
     return 0;
   }
   
-  private static bool CmpCodePageSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs, string? objName)
+  private static bool CmpCodePageSignature1(DXW.FontSignature openXmlElement, DM.HexInt? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return HexIntConverter.CmpValue(openXmlElement?.CodePageSignature1?.Value, value, diffs, objName, "CodePageSignature1");
   }
@@ -154,27 +154,27 @@ public static class FontSignatureConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FontSignature? openXmlElement, DMW.FontSignature? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FontSignature? openXmlElement, DMW.FontSignature? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
       var ok = true;
-      if (!CmpUnicodeSignature0(openXmlElement, model.UnicodeSignature0, diffs, objName))
+      if (!CmpUnicodeSignature0(openXmlElement, model.UnicodeSignature0, diffs, objName, propName))
         ok = false;
-      if (!CmpUnicodeSignature1(openXmlElement, model.UnicodeSignature1, diffs, objName))
+      if (!CmpUnicodeSignature1(openXmlElement, model.UnicodeSignature1, diffs, objName, propName))
         ok = false;
-      if (!CmpUnicodeSignature2(openXmlElement, model.UnicodeSignature2, diffs, objName))
+      if (!CmpUnicodeSignature2(openXmlElement, model.UnicodeSignature2, diffs, objName, propName))
         ok = false;
-      if (!CmpUnicodeSignature3(openXmlElement, model.UnicodeSignature3, diffs, objName))
+      if (!CmpUnicodeSignature3(openXmlElement, model.UnicodeSignature3, diffs, objName, propName))
         ok = false;
-      if (!CmpCodePageSignature0(openXmlElement, model.CodePageSignature0, diffs, objName))
+      if (!CmpCodePageSignature0(openXmlElement, model.CodePageSignature0, diffs, objName, propName))
         ok = false;
-      if (!CmpCodePageSignature1(openXmlElement, model.CodePageSignature1, diffs, objName))
+      if (!CmpCodePageSignature1(openXmlElement, model.CodePageSignature1, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class FieldConverter
     return StringValueConverter.GetValue(openXmlElement?.Id);
   }
   
-  private static bool CmpId(DXD.Field openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXD.Field openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Id, value, diffs, objName, "AnnotationId");
   }
@@ -31,7 +31,7 @@ public static class FieldConverter
     return StringValueConverter.GetValue(openXmlElement?.Type);
   }
   
-  private static bool CmpType(DXD.Field openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXD.Field openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Type, value, diffs, objName, "Type");
   }
@@ -52,9 +52,9 @@ public static class FieldConverter
     return null;
   }
   
-  private static bool CmpRunProperties(DXD.Field openXmlElement, DMD.RunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpRunProperties(DXD.Field openXmlElement, DMD.RunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName);
+    return DMXD.RunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.RunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetRunProperties(DXD.Field openXmlElement, DMD.RunProperties? value)
@@ -81,9 +81,9 @@ public static class FieldConverter
     return null;
   }
   
-  private static bool CmpParagraphProperties(DXD.Field openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphProperties(DXD.Field openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ParagraphProperties>(), value, diffs, objName);
+    return DMXD.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetParagraphProperties(DXD.Field openXmlElement, DMD.ParagraphProperties? value)
@@ -107,7 +107,7 @@ public static class FieldConverter
     return openXmlElement?.Text?.Text;
   }
   
-  private static bool CmpText(DXD.Field openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpText(DXD.Field openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Text?.Text == value) return true;
     diffs?.Add(objName, "Text", openXmlElement?.Text?.Text, value);
@@ -137,25 +137,25 @@ public static class FieldConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Field? openXmlElement, DMD.Field? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Field? openXmlElement, DMD.Field? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName))
+      if (!CmpRunProperties(openXmlElement, value.RunProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName))
+      if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpText(openXmlElement, value.Text, diffs, objName))
+      if (!CmpText(openXmlElement, value.Text, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

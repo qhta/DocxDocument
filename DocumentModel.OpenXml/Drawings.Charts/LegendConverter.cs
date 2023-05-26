@@ -13,9 +13,9 @@ public static class LegendConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDC.LegendPositionKind>(openXmlElement.GetFirstChild<DXDC.LegendPosition>()?.Val?.Value);
   }
   
-  private static bool CmpLegendPosition(DXDC.Legend openXmlElement, DMDC.LegendPositionKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLegendPosition(DXDC.Legend openXmlElement, DMDC.LegendPositionKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDC.LegendPositionKind>(openXmlElement.GetFirstChild<DXDC.LegendPosition>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.LegendPositionValues, DMDC.LegendPositionKind>(openXmlElement.GetFirstChild<DXDC.LegendPosition>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLegendPosition(DXDC.Legend openXmlElement, DMDC.LegendPositionKind? value)
@@ -47,7 +47,7 @@ public static class LegendConverter
     return null;
   }
   
-  private static bool CmpLegendEntries(DXDC.Legend openXmlElement, Collection<DMDC.LegendEntry>? value, DiffList? diffs, string? objName)
+  private static bool CmpLegendEntries(DXDC.Legend openXmlElement, Collection<DMDC.LegendEntry>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.LegendEntry>();
     var origElementsCount = origElements.Count();
@@ -56,7 +56,7 @@ public static class LegendConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -65,13 +65,13 @@ public static class LegendConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.LegendEntryConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.LegendEntryConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -97,9 +97,9 @@ public static class LegendConverter
     return null;
   }
   
-  private static bool CmpLayout(DXDC.Legend openXmlElement, DMDC.Layout? value, DiffList? diffs, string? objName)
+  private static bool CmpLayout(DXDC.Legend openXmlElement, DMDC.Layout? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName);
+    return DMXDC.LayoutConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.Layout>(), value, diffs, objName, propName);
   }
   
   private static void SetLayout(DXDC.Legend openXmlElement, DMDC.Layout? value)
@@ -120,7 +120,7 @@ public static class LegendConverter
     return openXmlElement.GetFirstChild<DXDC.Overlay>() != null;
   }
   
-  private static bool CmpOverlay(DXDC.Legend openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpOverlay(DXDC.Legend openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.Overlay>() != null;
     if (val == value) return true;
@@ -151,9 +151,9 @@ public static class LegendConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.Legend openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.Legend openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.Legend openXmlElement, DMDC.ChartShapeProperties? value)
@@ -177,9 +177,9 @@ public static class LegendConverter
     return null;
   }
   
-  private static bool CmpTextProperties(DXDC.Legend openXmlElement, DMDC.TextProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpTextProperties(DXDC.Legend openXmlElement, DMDC.TextProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName);
+    return DMXDC.TextPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TextProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetTextProperties(DXDC.Legend openXmlElement, DMDC.TextProperties? value)
@@ -203,9 +203,9 @@ public static class LegendConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.Legend openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.Legend openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.Legend openXmlElement, DMDC.ExtensionList? value)
@@ -238,29 +238,29 @@ public static class LegendConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Legend? openXmlElement, DMDC.Legend? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Legend? openXmlElement, DMDC.Legend? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpLegendPosition(openXmlElement, value.LegendPosition, diffs, objName))
+      if (!CmpLegendPosition(openXmlElement, value.LegendPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpLegendEntries(openXmlElement, value.LegendEntries, diffs, objName))
+      if (!CmpLegendEntries(openXmlElement, value.LegendEntries, diffs, objName, propName))
         ok = false;
-      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName))
+      if (!CmpLayout(openXmlElement, value.Layout, diffs, objName, propName))
         ok = false;
-      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName))
+      if (!CmpOverlay(openXmlElement, value.Overlay, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName))
+      if (!CmpTextProperties(openXmlElement, value.TextProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class LatentStyleExceptionInfoConverter
     return StringValueConverter.GetValue(openXmlElement?.Name);
   }
   
-  private static bool CmpName(DXW.LatentStyleExceptionInfo openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpName(DXW.LatentStyleExceptionInfo openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Name, value, diffs, objName, "Name");
   }
@@ -31,7 +31,7 @@ public static class LatentStyleExceptionInfoConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Locked);
   }
   
-  private static bool CmpLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpLocked(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Locked, value, diffs, objName, "Locked");
   }
@@ -49,7 +49,7 @@ public static class LatentStyleExceptionInfoConverter
     return openXmlElement?.UiPriority?.Value;
   }
   
-  private static bool CmpUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpUiPriority(DXW.LatentStyleExceptionInfo openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.UiPriority?.Value == value) return true;
     diffs?.Add(objName, "UiPriority", openXmlElement?.UiPriority?.Value, value);
@@ -69,7 +69,7 @@ public static class LatentStyleExceptionInfoConverter
     return BooleanValueConverter.GetValue(openXmlElement?.SemiHidden);
   }
   
-  private static bool CmpSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpSemiHidden(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.SemiHidden, value, diffs, objName, "SemiHidden");
   }
@@ -87,7 +87,7 @@ public static class LatentStyleExceptionInfoConverter
     return BooleanValueConverter.GetValue(openXmlElement?.UnhideWhenUsed);
   }
   
-  private static bool CmpUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpUnhideWhenUsed(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.UnhideWhenUsed, value, diffs, objName, "UnhideWhenUsed");
   }
@@ -105,7 +105,7 @@ public static class LatentStyleExceptionInfoConverter
     return BooleanValueConverter.GetValue(openXmlElement?.PrimaryStyle);
   }
   
-  private static bool CmpPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpPrimaryStyle(DXW.LatentStyleExceptionInfo openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.PrimaryStyle, value, diffs, objName, "PrimaryStyle");
   }
@@ -131,27 +131,27 @@ public static class LatentStyleExceptionInfoConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.LatentStyleExceptionInfo? openXmlElement, DMW.LatentStyleExceptionInfo? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.LatentStyleExceptionInfo? openXmlElement, DMW.LatentStyleExceptionInfo? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpName(openXmlElement, value.Name, diffs, objName))
+      if (!CmpName(openXmlElement, value.Name, diffs, objName, propName))
         ok = false;
-      if (!CmpLocked(openXmlElement, value.Locked, diffs, objName))
+      if (!CmpLocked(openXmlElement, value.Locked, diffs, objName, propName))
         ok = false;
-      if (!CmpUiPriority(openXmlElement, value.UiPriority, diffs, objName))
+      if (!CmpUiPriority(openXmlElement, value.UiPriority, diffs, objName, propName))
         ok = false;
-      if (!CmpSemiHidden(openXmlElement, value.SemiHidden, diffs, objName))
+      if (!CmpSemiHidden(openXmlElement, value.SemiHidden, diffs, objName, propName))
         ok = false;
-      if (!CmpUnhideWhenUsed(openXmlElement, value.UnhideWhenUsed, diffs, objName))
+      if (!CmpUnhideWhenUsed(openXmlElement, value.UnhideWhenUsed, diffs, objName, propName))
         ok = false;
-      if (!CmpPrimaryStyle(openXmlElement, value.PrimaryStyle, diffs, objName))
+      if (!CmpPrimaryStyle(openXmlElement, value.PrimaryStyle, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

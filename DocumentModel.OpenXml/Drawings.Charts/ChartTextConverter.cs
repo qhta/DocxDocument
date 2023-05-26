@@ -16,9 +16,9 @@ public static class ChartTextConverter
     return null;
   }
   
-  private static bool CmpStringReference(DXDC.ChartText openXmlElement, DMDC.StringReference? value, DiffList? diffs, string? objName)
+  private static bool CmpStringReference(DXDC.ChartText openXmlElement, DMDC.StringReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringReference>(), value, diffs, objName);
+    return DMXDC.StringReferenceConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringReference>(), value, diffs, objName, propName);
   }
   
   private static void SetStringReference(DXDC.ChartText openXmlElement, DMDC.StringReference? value)
@@ -45,9 +45,9 @@ public static class ChartTextConverter
     return null;
   }
   
-  private static bool CmpRichText(DXDC.ChartText openXmlElement, DMDC.RichText? value, DiffList? diffs, string? objName)
+  private static bool CmpRichText(DXDC.ChartText openXmlElement, DMDC.RichText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.RichTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.RichText>(), value, diffs, objName);
+    return DMXDC.RichTextConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.RichText>(), value, diffs, objName, propName);
   }
   
   private static void SetRichText(DXDC.ChartText openXmlElement, DMDC.RichText? value)
@@ -74,9 +74,9 @@ public static class ChartTextConverter
     return null;
   }
   
-  private static bool CmpStringLiteral(DXDC.ChartText openXmlElement, DMDC.StringLiteral? value, DiffList? diffs, string? objName)
+  private static bool CmpStringLiteral(DXDC.ChartText openXmlElement, DMDC.StringLiteral? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringLiteral>(), value, diffs, objName);
+    return DMXDC.StringLiteralConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringLiteral>(), value, diffs, objName, propName);
   }
   
   private static void SetStringLiteral(DXDC.ChartText openXmlElement, DMDC.StringLiteral? value)
@@ -105,21 +105,21 @@ public static class ChartTextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.ChartText? openXmlElement, DMDC.ChartText? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.ChartText? openXmlElement, DMDC.ChartText? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName))
+      if (!CmpStringReference(openXmlElement, value.StringReference, diffs, objName, propName))
         ok = false;
-      if (!CmpRichText(openXmlElement, value.RichText, diffs, objName))
+      if (!CmpRichText(openXmlElement, value.RichText, diffs, objName, propName))
         ok = false;
-      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName))
+      if (!CmpStringLiteral(openXmlElement, value.StringLiteral, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class ChartDataConverter
     return null;
   }
   
-  private static bool CmpExternalData(DXO16DCD.ChartData openXmlElement, DMDCDs.ExternalData? value, DiffList? diffs, string? objName)
+  private static bool CmpExternalData(DXO16DCD.ChartData openXmlElement, DMDCDs.ExternalData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExternalDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExternalData>(), value, diffs, objName);
+    return DMXDCDs.ExternalDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExternalData>(), value, diffs, objName, propName);
   }
   
   private static void SetExternalData(DXO16DCD.ChartData openXmlElement, DMDCDs.ExternalData? value)
@@ -42,9 +42,9 @@ public static class ChartDataConverter
     return null;
   }
   
-  private static bool CmpData(DXO16DCD.ChartData openXmlElement, DMDCDs.Data? value, DiffList? diffs, string? objName)
+  private static bool CmpData(DXO16DCD.ChartData openXmlElement, DMDCDs.Data? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.DataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Data>(), value, diffs, objName);
+    return DMXDCDs.DataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.Data>(), value, diffs, objName, propName);
   }
   
   private static void SetData(DXO16DCD.ChartData openXmlElement, DMDCDs.Data? value)
@@ -68,9 +68,9 @@ public static class ChartDataConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXO16DCD.ChartData openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXO16DCD.ChartData openXmlElement, DMDCDs.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName);
+    return DMXDCDs.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXO16DCD.ChartData openXmlElement, DMDCDs.ExtensionList? value)
@@ -99,21 +99,21 @@ public static class ChartDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.ChartData? openXmlElement, DMDCDs.ChartData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.ChartData? openXmlElement, DMDCDs.ChartData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExternalData(openXmlElement, value.ExternalData, diffs, objName))
+      if (!CmpExternalData(openXmlElement, value.ExternalData, diffs, objName, propName))
         ok = false;
-      if (!CmpData(openXmlElement, value.Data, diffs, objName))
+      if (!CmpData(openXmlElement, value.Data, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

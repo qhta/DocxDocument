@@ -13,9 +13,9 @@ public static class DocumentConverter
     return EnumValueConverter.GetValue<DXW.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value);
   }
   
-  private static bool CmpConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value, DiffList? diffs, string? objName)
+  private static bool CmpConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DocumentConformance, DMW.DocumentConformance>(openXmlElement?.Conformance?.Value, value, diffs, objName, propName);
   }
   
   private static void SetConformance(DXW.Document openXmlElement, DMW.DocumentConformance? value)
@@ -34,9 +34,9 @@ public static class DocumentConverter
     return null;
   }
   
-  private static bool CmpDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName);
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName, propName);
   }
   
   private static void SetDocumentBackground(DXW.Document openXmlElement, DMW.DocumentBackground? value)
@@ -63,9 +63,9 @@ public static class DocumentConverter
     return null;
   }
   
-  private static bool CmpBody(DXW.Document openXmlElement, DMW.Body? value, DiffList? diffs, string? objName)
+  private static bool CmpBody(DXW.Document openXmlElement, DMW.Body? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.BodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Body>(), value, diffs, objName);
+    return DMXW.BodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.Body>(), value, diffs, objName, propName);
   }
   
   private static void SetBody(DXW.Document openXmlElement, DMW.Body? value)
@@ -94,21 +94,21 @@ public static class DocumentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Document? openXmlElement, DMW.Document? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Document? openXmlElement, DMW.Document? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpConformance(openXmlElement, value.Conformance, diffs, objName))
+      if (!CmpConformance(openXmlElement, value.Conformance, diffs, objName, propName))
         ok = false;
-      if (!CmpDocumentBackground(openXmlElement, value.DocumentBackground, diffs, objName))
+      if (!CmpDocumentBackground(openXmlElement, value.DocumentBackground, diffs, objName, propName))
         ok = false;
-      if (!CmpBody(openXmlElement, value.Body, diffs, objName))
+      if (!CmpBody(openXmlElement, value.Body, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

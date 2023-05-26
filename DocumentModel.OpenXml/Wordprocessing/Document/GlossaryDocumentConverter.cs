@@ -16,9 +16,9 @@ public static class GlossaryDocumentConverter
     return null;
   }
   
-  private static bool CmpDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value, DiffList? diffs, string? objName)
+  private static bool CmpDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName);
+    return DMXW.DocumentBackgroundConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocumentBackground>(), value, diffs, objName, propName);
   }
   
   private static void SetDocumentBackground(DXW.GlossaryDocument openXmlElement, DMW.DocumentBackground? value)
@@ -45,9 +45,9 @@ public static class GlossaryDocumentConverter
     return null;
   }
   
-  private static bool CmpDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value, DiffList? diffs, string? objName)
+  private static bool CmpDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.DocPartsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocParts>(), value, diffs, objName);
+    return DMXW.DocPartsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.DocParts>(), value, diffs, objName, propName);
   }
   
   private static void SetDocParts(DXW.GlossaryDocument openXmlElement, DMW.DocParts? value)
@@ -75,19 +75,19 @@ public static class GlossaryDocumentConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.GlossaryDocument? openXmlElement, DMW.GlossaryDocument? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.GlossaryDocument? openXmlElement, DMW.GlossaryDocument? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpDocumentBackground(openXmlElement, value.DocumentBackground, diffs, objName))
+      if (!CmpDocumentBackground(openXmlElement, value.DocumentBackground, diffs, objName, propName))
         ok = false;
-      if (!CmpDocParts(openXmlElement, value.DocParts, diffs, objName))
+      if (!CmpDocParts(openXmlElement, value.DocParts, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

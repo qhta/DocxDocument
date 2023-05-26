@@ -10,7 +10,7 @@ public static class ToAnchorConverter
       return openXmlElement?.GetFirstChild<DXDCD.XPosition>()?.Text;
   }
   
-  private static bool CmpXPosition(DXDCD.ToAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpXPosition(DXDCD.ToAnchor openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDCD.XPosition>()?.Text == value;
   }
@@ -32,7 +32,7 @@ public static class ToAnchorConverter
       return openXmlElement?.GetFirstChild<DXDCD.YPosition>()?.Text;
   }
   
-  private static bool CmpYPosition(DXDCD.ToAnchor openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpYPosition(DXDCD.ToAnchor openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDCD.YPosition>()?.Text == value;
   }
@@ -61,19 +61,19 @@ public static class ToAnchorConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDCD.ToAnchor? openXmlElement, DMDCD.ToAnchor? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDCD.ToAnchor? openXmlElement, DMDCD.ToAnchor? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpXPosition(openXmlElement, value.XPosition, diffs, objName))
+      if (!CmpXPosition(openXmlElement, value.XPosition, diffs, objName, propName))
         ok = false;
-      if (!CmpYPosition(openXmlElement, value.YPosition, diffs, objName))
+      if (!CmpYPosition(openXmlElement, value.YPosition, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

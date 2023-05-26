@@ -10,7 +10,7 @@ public static class SpaceBeforeConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val);
   }
   
-  private static bool CmpSpacingPercent(DXD.SpaceBefore openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPercent(DXD.SpaceBefore openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPercent>()?.Val, value, diffs, objName, "SpacingPercent");
   }
@@ -25,7 +25,7 @@ public static class SpaceBeforeConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val);
   }
   
-  private static bool CmpSpacingPoints(DXD.SpaceBefore openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpSpacingPoints(DXD.SpaceBefore openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXD.SpacingPoints>()?.Val, value, diffs, objName, "SpacingPoints");
   }
@@ -47,19 +47,19 @@ public static class SpaceBeforeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.SpaceBefore? openXmlElement, DMD.SpaceBefore? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.SpaceBefore? openXmlElement, DMD.SpaceBefore? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpSpacingPercent(openXmlElement, value.SpacingPercent, diffs, objName))
+      if (!CmpSpacingPercent(openXmlElement, value.SpacingPercent, diffs, objName, propName))
         ok = false;
-      if (!CmpSpacingPoints(openXmlElement, value.SpacingPoints, diffs, objName))
+      if (!CmpSpacingPoints(openXmlElement, value.SpacingPoints, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

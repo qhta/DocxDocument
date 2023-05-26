@@ -13,7 +13,7 @@ public static class PermEndConverter
     return openXmlElement?.Id?.Value;
   }
   
-  private static bool CmpId(DXW.PermEnd openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpId(DXW.PermEnd openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Id?.Value == value) return true;
     diffs?.Add(objName, "AnnotationId", openXmlElement?.Id?.Value, value);
@@ -33,9 +33,9 @@ public static class PermEndConverter
     return EnumValueConverter.GetValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value);
   }
   
-  private static bool CmpDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.DisplacedByCustomXmlValues, DMW.DisplacedByCustomXmlKind>(openXmlElement?.DisplacedByCustomXml?.Value, value, diffs, objName, propName);
   }
   
   private static void SetDisplacedByCustomXml(DXW.PermEnd openXmlElement, DMW.DisplacedByCustomXmlKind? value)
@@ -55,19 +55,19 @@ public static class PermEndConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.PermEnd? openXmlElement, DMW.PermEnd? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.PermEnd? openXmlElement, DMW.PermEnd? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpId(openXmlElement, value.Id, diffs, objName))
+      if (!CmpId(openXmlElement, value.Id, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName))
+      if (!CmpDisplacedByCustomXml(openXmlElement, value.DisplacedByCustomXml, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

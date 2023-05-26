@@ -16,9 +16,9 @@ public static class NonVisualContentPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualDrawingProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualDrawingProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualDrawingProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualDrawingProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualDrawingProperties>(), value, diffs, objName);
+    return DMXDCDs.NonVisualDrawingPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualDrawingProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualDrawingProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualDrawingProperties? value)
@@ -45,9 +45,9 @@ public static class NonVisualContentPartPropertiesConverter
     return null;
   }
   
-  private static bool CmpNonVisualInkContentPartProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualInkContentPartProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpNonVisualInkContentPartProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualInkContentPartProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.NonVisualInkContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualInkContentPartProperties>(), value, diffs, objName);
+    return DMXDCDs.NonVisualInkContentPartPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10DCD.NonVisualInkContentPartProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetNonVisualInkContentPartProperties(DXO10DCD.NonVisualContentPartProperties openXmlElement, DMDCDs.NonVisualInkContentPartProperties? value)
@@ -75,19 +75,19 @@ public static class NonVisualContentPartPropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10DCD.NonVisualContentPartProperties? openXmlElement, DMDCDs.NonVisualContentPartProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10DCD.NonVisualContentPartProperties? openXmlElement, DMDCDs.NonVisualContentPartProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName))
+      if (!CmpNonVisualDrawingProperties(openXmlElement, value.NonVisualDrawingProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpNonVisualInkContentPartProperties(openXmlElement, value.NonVisualInkContentPartProperties, diffs, objName))
+      if (!CmpNonVisualInkContentPartProperties(openXmlElement, value.NonVisualInkContentPartProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

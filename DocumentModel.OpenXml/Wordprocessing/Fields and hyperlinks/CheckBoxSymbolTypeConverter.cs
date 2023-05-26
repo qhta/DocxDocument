@@ -13,7 +13,7 @@ public static class CheckBoxSymbolTypeConverter
     return StringValueConverter.GetValue(openXmlElement?.Font);
   }
   
-  private static bool CmpFont(DXO10W.CheckBoxSymbolType openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFont(DXO10W.CheckBoxSymbolType openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Font, value, diffs, objName, "Font");
   }
@@ -33,7 +33,7 @@ public static class CheckBoxSymbolTypeConverter
     return null;
   }
   
-  private static bool CmpVal(DXO10W.CheckBoxSymbolType openXmlElement, DM.HexChar? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXO10W.CheckBoxSymbolType openXmlElement, DM.HexChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Val?.Value != null)
       if (HexCharConverter.GetValue(openXmlElement.Val.Value).Equals(value))
@@ -63,19 +63,19 @@ public static class CheckBoxSymbolTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.CheckBoxSymbolType? openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.CheckBoxSymbolType? openXmlElement, DMW.CheckBoxSymbolType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFont(openXmlElement, value.Font, diffs, objName))
+      if (!CmpFont(openXmlElement, value.Font, diffs, objName, propName))
         ok = false;
-      if (!CmpVal(openXmlElement, value.Val, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Val, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

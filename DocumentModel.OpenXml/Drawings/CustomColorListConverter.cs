@@ -19,7 +19,7 @@ public static class CustomColorListConverter
     return null;
   }
   
-  private static bool CmpCustomColors(DXD.CustomColorList openXmlElement, Collection<DMD.CustomColor>? value, DiffList? diffs, string? objName)
+  private static bool CmpCustomColors(DXD.CustomColorList openXmlElement, Collection<DMD.CustomColor>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXD.CustomColor>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class CustomColorListConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class CustomColorListConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXD.CustomColorConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXD.CustomColorConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class CustomColorListConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.CustomColorList? openXmlElement, DMD.CustomColorList? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.CustomColorList? openXmlElement, DMD.CustomColorList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpCustomColors(openXmlElement, value.CustomColors, diffs, objName))
+      if (!CmpCustomColors(openXmlElement, value.CustomColors, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

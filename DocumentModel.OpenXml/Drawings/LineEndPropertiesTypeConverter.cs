@@ -13,9 +13,9 @@ public static class LineEndPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMD.LineEndKind>(openXmlElement?.Type?.Value);
   }
   
-  private static bool CmpType(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndKind? value, DiffList? diffs, string? objName)
+  private static bool CmpType(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMD.LineEndKind>(openXmlElement?.Type?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndValues, DMD.LineEndKind>(openXmlElement?.Type?.Value, value, diffs, objName, propName);
   }
   
   private static void SetType(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndKind? value)
@@ -31,9 +31,9 @@ public static class LineEndPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMD.LineEndWidthKind>(openXmlElement?.Width?.Value);
   }
   
-  private static bool CmpWidth(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndWidthKind? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndWidthKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMD.LineEndWidthKind>(openXmlElement?.Width?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndWidthValues, DMD.LineEndWidthKind>(openXmlElement?.Width?.Value, value, diffs, objName, propName);
   }
   
   private static void SetWidth(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndWidthKind? value)
@@ -49,9 +49,9 @@ public static class LineEndPropertiesTypeConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMD.LineEndLengthKind>(openXmlElement?.Length?.Value);
   }
   
-  private static bool CmpLength(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndLengthKind? value, DiffList? diffs, string? objName)
+  private static bool CmpLength(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndLengthKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMD.LineEndLengthKind>(openXmlElement?.Length?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.LineEndLengthValues, DMD.LineEndLengthKind>(openXmlElement?.Length?.Value, value, diffs, objName, propName);
   }
   
   private static void SetLength(DXD.LineEndPropertiesType openXmlElement, DMD.LineEndLengthKind? value)
@@ -72,21 +72,21 @@ public static class LineEndPropertiesTypeConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.LineEndPropertiesType? openXmlElement, DMD.LineEndPropertiesType? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.LineEndPropertiesType? openXmlElement, DMD.LineEndPropertiesType? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpType(openXmlElement, value.Type, diffs, objName))
+      if (!CmpType(openXmlElement, value.Type, diffs, objName, propName))
         ok = false;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpLength(openXmlElement, value.Length, diffs, objName))
+      if (!CmpLength(openXmlElement, value.Length, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

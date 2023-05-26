@@ -13,7 +13,7 @@ public static class StringReferenceConverter
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text;
   }
   
-  private static bool CmpFormula(DXDC.StringReference openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFormula(DXDC.StringReference openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.Formula>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class StringReferenceConverter
     return null;
   }
   
-  private static bool CmpStringCache(DXDC.StringReference openXmlElement, DMDC.StringCache? value, DiffList? diffs, string? objName)
+  private static bool CmpStringCache(DXDC.StringReference openXmlElement, DMDC.StringCache? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StringCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringCache>(), value, diffs, objName);
+    return DMXDC.StringCacheConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StringCache>(), value, diffs, objName, propName);
   }
   
   private static void SetStringCache(DXDC.StringReference openXmlElement, DMDC.StringCache? value)
@@ -70,9 +70,9 @@ public static class StringReferenceConverter
     return null;
   }
   
-  private static bool CmpStrRefExtensionList(DXDC.StringReference openXmlElement, DMDC.StrRefExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpStrRefExtensionList(DXDC.StringReference openXmlElement, DMDC.StrRefExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.StrRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StrRefExtensionList>(), value, diffs, objName);
+    return DMXDC.StrRefExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.StrRefExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetStrRefExtensionList(DXDC.StringReference openXmlElement, DMDC.StrRefExtensionList? value)
@@ -101,21 +101,21 @@ public static class StringReferenceConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.StringReference? openXmlElement, DMDC.StringReference? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.StringReference? openXmlElement, DMDC.StringReference? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName))
+      if (!CmpFormula(openXmlElement, value.Formula, diffs, objName, propName))
         ok = false;
-      if (!CmpStringCache(openXmlElement, value.StringCache, diffs, objName))
+      if (!CmpStringCache(openXmlElement, value.StringCache, diffs, objName, propName))
         ok = false;
-      if (!CmpStrRefExtensionList(openXmlElement, value.StrRefExtensionList, diffs, objName))
+      if (!CmpStrRefExtensionList(openXmlElement, value.StrRefExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

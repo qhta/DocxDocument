@@ -13,9 +13,9 @@ public static class DiagramConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value);
   }
   
-  private static bool CmpExtension(DXVO.Diagram openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs, string? objName)
+  private static bool CmpExtension(DXVO.Diagram openXmlElement, DMV.ExtensionHandlingBehaviorKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Vml.ExtensionHandlingBehaviorValues, DMV.ExtensionHandlingBehaviorKind>(openXmlElement?.Extension?.Value, value, diffs, objName, propName);
   }
   
   private static void SetExtension(DXVO.Diagram openXmlElement, DMV.ExtensionHandlingBehaviorKind? value)
@@ -31,7 +31,7 @@ public static class DiagramConverter
     return openXmlElement?.Style?.Value;
   }
   
-  private static bool CmpStyle(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpStyle(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Style?.Value == value) return true;
     diffs?.Add(objName, "Style", openXmlElement?.Style?.Value, value);
@@ -51,7 +51,7 @@ public static class DiagramConverter
     return openXmlElement?.AutoFormat?.Value;
   }
   
-  private static bool CmpAutoFormat(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoFormat(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AutoFormat?.Value == value) return true;
     diffs?.Add(objName, "AutoFormat", openXmlElement?.AutoFormat?.Value, value);
@@ -74,7 +74,7 @@ public static class DiagramConverter
     return openXmlElement?.Reverse?.Value;
   }
   
-  private static bool CmpReverse(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpReverse(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Reverse?.Value == value) return true;
     diffs?.Add(objName, "Reverse", openXmlElement?.Reverse?.Value, value);
@@ -97,7 +97,7 @@ public static class DiagramConverter
     return openXmlElement?.AutoLayout?.Value;
   }
   
-  private static bool CmpAutoLayout(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpAutoLayout(DXVO.Diagram openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.AutoLayout?.Value == value) return true;
     diffs?.Add(objName, "AutoLayout", openXmlElement?.AutoLayout?.Value, value);
@@ -120,7 +120,7 @@ public static class DiagramConverter
     return openXmlElement?.ScaleX?.Value;
   }
   
-  private static bool CmpScaleX(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpScaleX(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ScaleX?.Value == value) return true;
     diffs?.Add(objName, "ScaleX", openXmlElement?.ScaleX?.Value, value);
@@ -140,7 +140,7 @@ public static class DiagramConverter
     return openXmlElement?.ScaleY?.Value;
   }
   
-  private static bool CmpScaleY(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpScaleY(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ScaleY?.Value == value) return true;
     diffs?.Add(objName, "ScaleY", openXmlElement?.ScaleY?.Value, value);
@@ -160,7 +160,7 @@ public static class DiagramConverter
     return openXmlElement?.FontSize?.Value;
   }
   
-  private static bool CmpFontSize(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpFontSize(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.FontSize?.Value == value) return true;
     diffs?.Add(objName, "FontSize", openXmlElement?.FontSize?.Value, value);
@@ -180,7 +180,7 @@ public static class DiagramConverter
     return StringValueConverter.GetValue(openXmlElement?.ConstrainBounds);
   }
   
-  private static bool CmpConstrainBounds(DXVO.Diagram openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpConstrainBounds(DXVO.Diagram openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.ConstrainBounds, value, diffs, objName, "ConstrainBounds");
   }
@@ -198,7 +198,7 @@ public static class DiagramConverter
     return openXmlElement?.BaseTextScale?.Value;
   }
   
-  private static bool CmpBaseTextScale(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs, string? objName)
+  private static bool CmpBaseTextScale(DXVO.Diagram openXmlElement, Int64? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.BaseTextScale?.Value == value) return true;
     diffs?.Add(objName, "BaseTextScale", openXmlElement?.BaseTextScale?.Value, value);
@@ -221,9 +221,9 @@ public static class DiagramConverter
     return null;
   }
   
-  private static bool CmpRelationTable(DXVO.Diagram openXmlElement, DMV.RelationTable? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationTable(DXVO.Diagram openXmlElement, DMV.RelationTable? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXV.RelationTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.RelationTable>(), value, diffs, objName);
+    return DMXV.RelationTableConverter.CompareModelElement(openXmlElement.GetFirstChild<DXVO.RelationTable>(), value, diffs, objName, propName);
   }
   
   private static void SetRelationTable(DXVO.Diagram openXmlElement, DMV.RelationTable? value)
@@ -260,37 +260,37 @@ public static class DiagramConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVO.Diagram? openXmlElement, DMV.Diagram? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVO.Diagram? openXmlElement, DMV.Diagram? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName))
+      if (!CmpExtension(openXmlElement, value.Extension, diffs, objName, propName))
         ok = false;
-      if (!CmpStyle(openXmlElement, value.Style, diffs, objName))
+      if (!CmpStyle(openXmlElement, value.Style, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoFormat(openXmlElement, value.AutoFormat, diffs, objName))
+      if (!CmpAutoFormat(openXmlElement, value.AutoFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpReverse(openXmlElement, value.Reverse, diffs, objName))
+      if (!CmpReverse(openXmlElement, value.Reverse, diffs, objName, propName))
         ok = false;
-      if (!CmpAutoLayout(openXmlElement, value.AutoLayout, diffs, objName))
+      if (!CmpAutoLayout(openXmlElement, value.AutoLayout, diffs, objName, propName))
         ok = false;
-      if (!CmpScaleX(openXmlElement, value.ScaleX, diffs, objName))
+      if (!CmpScaleX(openXmlElement, value.ScaleX, diffs, objName, propName))
         ok = false;
-      if (!CmpScaleY(openXmlElement, value.ScaleY, diffs, objName))
+      if (!CmpScaleY(openXmlElement, value.ScaleY, diffs, objName, propName))
         ok = false;
-      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName))
+      if (!CmpFontSize(openXmlElement, value.FontSize, diffs, objName, propName))
         ok = false;
-      if (!CmpConstrainBounds(openXmlElement, value.ConstrainBounds, diffs, objName))
+      if (!CmpConstrainBounds(openXmlElement, value.ConstrainBounds, diffs, objName, propName))
         ok = false;
-      if (!CmpBaseTextScale(openXmlElement, value.BaseTextScale, diffs, objName))
+      if (!CmpBaseTextScale(openXmlElement, value.BaseTextScale, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationTable(openXmlElement, value.RelationTable, diffs, objName))
+      if (!CmpRelationTable(openXmlElement, value.RelationTable, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

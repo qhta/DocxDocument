@@ -10,9 +10,9 @@ public static class RunConflictInsertionConverter
     return RunTrackChangeTypeO10WConverter.CreateModelElement<DMW.RunConflictInsertion>(openXmlElement);
   }
   
-  public static bool CompareModelElement(DXO10W.RunConflictInsertion? openXmlElement, DMW.RunConflictInsertion? model, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.RunConflictInsertion? openXmlElement, DMW.RunConflictInsertion? model, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return RunTrackChangeTypeO10WConverter.CompareModelElement(openXmlElement, model, diffs, objName);
+    return RunTrackChangeTypeO10WConverter.CompareModelElement(openXmlElement, model, diffs, objName, propName);
   }
   
   public static OpenXmlElementType CreateOpenXmlElement<OpenXmlElementType>(DMW.RunConflictInsertion model)

@@ -13,7 +13,7 @@ public static class TrendlineConverter
       return openXmlElement?.GetFirstChild<DXDC.TrendlineName>()?.Text;
   }
   
-  private static bool CmpTrendlineName(DXDC.Trendline openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpTrendlineName(DXDC.Trendline openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXDC.TrendlineName>()?.Text == value;
   }
@@ -41,9 +41,9 @@ public static class TrendlineConverter
     return null;
   }
   
-  private static bool CmpChartShapeProperties(DXDC.Trendline openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpChartShapeProperties(DXDC.Trendline openXmlElement, DMDC.ChartShapeProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName);
+    return DMXDC.ChartShapePropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ChartShapeProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetChartShapeProperties(DXDC.Trendline openXmlElement, DMDC.ChartShapeProperties? value)
@@ -67,9 +67,9 @@ public static class TrendlineConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>(openXmlElement.GetFirstChild<DXDC.TrendlineType>()?.Val?.Value);
   }
   
-  private static bool CmpTrendlineType(DXDC.Trendline openXmlElement, DMDC.TrendlineKind? value, DiffList? diffs, string? objName)
+  private static bool CmpTrendlineType(DXDC.Trendline openXmlElement, DMDC.TrendlineKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>(openXmlElement.GetFirstChild<DXDC.TrendlineType>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.TrendlineValues, DMDC.TrendlineKind>(openXmlElement.GetFirstChild<DXDC.TrendlineType>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetTrendlineType(DXDC.Trendline openXmlElement, DMDC.TrendlineKind? value)
@@ -95,7 +95,7 @@ public static class TrendlineConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PolynomialOrder>()?.Val);
   }
   
-  private static bool CmpPolynomialOrder(DXDC.Trendline openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpPolynomialOrder(DXDC.Trendline openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PolynomialOrder>()?.Val, value, diffs, objName, "PolynomialOrder");
   }
@@ -113,7 +113,7 @@ public static class TrendlineConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Period>()?.Val);
   }
   
-  private static bool CmpPeriod(DXDC.Trendline openXmlElement, UInt32? value, DiffList? diffs, string? objName)
+  private static bool CmpPeriod(DXDC.Trendline openXmlElement, UInt32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Period>()?.Val, value, diffs, objName, "Period");
   }
@@ -131,7 +131,7 @@ public static class TrendlineConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Forward>()?.Val);
   }
   
-  private static bool CmpForward(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpForward(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Forward>()?.Val, value, diffs, objName, "Forward");
   }
@@ -149,7 +149,7 @@ public static class TrendlineConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Backward>()?.Val);
   }
   
-  private static bool CmpBackward(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpBackward(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Backward>()?.Val, value, diffs, objName, "Backward");
   }
@@ -167,7 +167,7 @@ public static class TrendlineConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.Intercept>()?.Val);
   }
   
-  private static bool CmpIntercept(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpIntercept(DXDC.Trendline openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.Intercept>()?.Val, value, diffs, objName, "Intercept");
   }
@@ -185,7 +185,7 @@ public static class TrendlineConverter
     return openXmlElement.GetFirstChild<DXDC.DisplayRSquaredValue>() != null;
   }
   
-  private static bool CmpDisplayRSquaredValue(DXDC.Trendline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayRSquaredValue(DXDC.Trendline openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.DisplayRSquaredValue>() != null;
     if (val == value) return true;
@@ -216,7 +216,7 @@ public static class TrendlineConverter
     return openXmlElement.GetFirstChild<DXDC.DisplayEquation>() != null;
   }
   
-  private static bool CmpDisplayEquation(DXDC.Trendline openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDisplayEquation(DXDC.Trendline openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.DisplayEquation>() != null;
     if (val == value) return true;
@@ -250,9 +250,9 @@ public static class TrendlineConverter
     return null;
   }
   
-  private static bool CmpTrendlineLabel(DXDC.Trendline openXmlElement, DMDC.TrendlineLabel? value, DiffList? diffs, string? objName)
+  private static bool CmpTrendlineLabel(DXDC.Trendline openXmlElement, DMDC.TrendlineLabel? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TrendlineLabel>(), value, diffs, objName);
+    return DMXDC.TrendlineLabelConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.TrendlineLabel>(), value, diffs, objName, propName);
   }
   
   private static void SetTrendlineLabel(DXDC.Trendline openXmlElement, DMDC.TrendlineLabel? value)
@@ -279,9 +279,9 @@ public static class TrendlineConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.Trendline openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.Trendline openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.Trendline openXmlElement, DMDC.ExtensionList? value)
@@ -319,39 +319,39 @@ public static class TrendlineConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.Trendline? openXmlElement, DMDC.Trendline? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.Trendline? openXmlElement, DMDC.Trendline? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTrendlineName(openXmlElement, value.TrendlineName, diffs, objName))
+      if (!CmpTrendlineName(openXmlElement, value.TrendlineName, diffs, objName, propName))
         ok = false;
-      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName))
+      if (!CmpChartShapeProperties(openXmlElement, value.ChartShapeProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpTrendlineType(openXmlElement, value.TrendlineType, diffs, objName))
+      if (!CmpTrendlineType(openXmlElement, value.TrendlineType, diffs, objName, propName))
         ok = false;
-      if (!CmpPolynomialOrder(openXmlElement, value.PolynomialOrder, diffs, objName))
+      if (!CmpPolynomialOrder(openXmlElement, value.PolynomialOrder, diffs, objName, propName))
         ok = false;
-      if (!CmpPeriod(openXmlElement, value.Period, diffs, objName))
+      if (!CmpPeriod(openXmlElement, value.Period, diffs, objName, propName))
         ok = false;
-      if (!CmpForward(openXmlElement, value.Forward, diffs, objName))
+      if (!CmpForward(openXmlElement, value.Forward, diffs, objName, propName))
         ok = false;
-      if (!CmpBackward(openXmlElement, value.Backward, diffs, objName))
+      if (!CmpBackward(openXmlElement, value.Backward, diffs, objName, propName))
         ok = false;
-      if (!CmpIntercept(openXmlElement, value.Intercept, diffs, objName))
+      if (!CmpIntercept(openXmlElement, value.Intercept, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplayRSquaredValue(openXmlElement, value.DisplayRSquaredValue, diffs, objName))
+      if (!CmpDisplayRSquaredValue(openXmlElement, value.DisplayRSquaredValue, diffs, objName, propName))
         ok = false;
-      if (!CmpDisplayEquation(openXmlElement, value.DisplayEquation, diffs, objName))
+      if (!CmpDisplayEquation(openXmlElement, value.DisplayEquation, diffs, objName, propName))
         ok = false;
-      if (!CmpTrendlineLabel(openXmlElement, value.TrendlineLabel, diffs, objName))
+      if (!CmpTrendlineLabel(openXmlElement, value.TrendlineLabel, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -16,9 +16,9 @@ public static class ImagePropertiesConverter
     return null;
   }
   
-  private static bool CmpImageLayer(DXO10D.ImageProperties openXmlElement, DMD.ImageLayer? value, DiffList? diffs, string? objName)
+  private static bool CmpImageLayer(DXO10D.ImageProperties openXmlElement, DMD.ImageLayer? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ImageLayerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageLayer>(), value, diffs, objName);
+    return DMXD.ImageLayerConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO10D.ImageLayer>(), value, diffs, objName, propName);
   }
   
   private static void SetImageLayer(DXO10D.ImageProperties openXmlElement, DMD.ImageLayer? value)
@@ -45,17 +45,17 @@ public static class ImagePropertiesConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.ImageProperties? openXmlElement, DMD.ImageProperties? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ImageProperties? openXmlElement, DMD.ImageProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpImageLayer(openXmlElement, value.ImageLayer, diffs, objName))
+      if (!CmpImageLayer(openXmlElement, value.ImageLayer, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

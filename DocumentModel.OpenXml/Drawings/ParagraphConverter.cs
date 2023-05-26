@@ -16,9 +16,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpParagraphProperties(DXD.Paragraph openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpParagraphProperties(DXD.Paragraph openXmlElement, DMD.ParagraphProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ParagraphProperties>(), value, diffs, objName);
+    return DMXD.ParagraphPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.ParagraphProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetParagraphProperties(DXD.Paragraph openXmlElement, DMD.ParagraphProperties? value)
@@ -42,9 +42,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpRun(DXD.Paragraph openXmlElement, DMD.Run? value, DiffList? diffs, string? objName)
+  private static bool CmpRun(DXD.Paragraph openXmlElement, DMD.Run? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Run>(), value, diffs, objName);
+    return DMXD.RunConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Run>(), value, diffs, objName, propName);
   }
   
   private static void SetRun(DXD.Paragraph openXmlElement, DMD.Run? value)
@@ -68,9 +68,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpBreak(DXD.Paragraph openXmlElement, DMD.Break? value, DiffList? diffs, string? objName)
+  private static bool CmpBreak(DXD.Paragraph openXmlElement, DMD.Break? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Break>(), value, diffs, objName);
+    return DMXD.BreakConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Break>(), value, diffs, objName, propName);
   }
   
   private static void SetBreak(DXD.Paragraph openXmlElement, DMD.Break? value)
@@ -94,9 +94,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpField(DXD.Paragraph openXmlElement, DMD.Field? value, DiffList? diffs, string? objName)
+  private static bool CmpField(DXD.Paragraph openXmlElement, DMD.Field? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.FieldConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Field>(), value, diffs, objName);
+    return DMXD.FieldConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.Field>(), value, diffs, objName, propName);
   }
   
   private static void SetField(DXD.Paragraph openXmlElement, DMD.Field? value)
@@ -117,7 +117,7 @@ public static class ParagraphConverter
     return openXmlElement.GetFirstChild<DXO10D.TextMath>() != null;
   }
   
-  private static bool CmpTextMath(DXD.Paragraph openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpTextMath(DXD.Paragraph openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXO10D.TextMath>() != null;
     if (val == value) return true;
@@ -148,9 +148,9 @@ public static class ParagraphConverter
     return null;
   }
   
-  private static bool CmpEndParagraphRunProperties(DXD.Paragraph openXmlElement, DMD.EndParagraphRunProperties? value, DiffList? diffs, string? objName)
+  private static bool CmpEndParagraphRunProperties(DXD.Paragraph openXmlElement, DMD.EndParagraphRunProperties? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXD.EndParagraphRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndParagraphRunProperties>(), value, diffs, objName);
+    return DMXD.EndParagraphRunPropertiesConverter.CompareModelElement(openXmlElement.GetFirstChild<DXD.EndParagraphRunProperties>(), value, diffs, objName, propName);
   }
   
   private static void SetEndParagraphRunProperties(DXD.Paragraph openXmlElement, DMD.EndParagraphRunProperties? value)
@@ -182,27 +182,27 @@ public static class ParagraphConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXD.Paragraph? openXmlElement, DMD.Paragraph? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXD.Paragraph? openXmlElement, DMD.Paragraph? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName))
+      if (!CmpParagraphProperties(openXmlElement, value.ParagraphProperties, diffs, objName, propName))
         ok = false;
-      if (!CmpRun(openXmlElement, value.Run, diffs, objName))
+      if (!CmpRun(openXmlElement, value.Run, diffs, objName, propName))
         ok = false;
-      if (!CmpBreak(openXmlElement, value.Break, diffs, objName))
+      if (!CmpBreak(openXmlElement, value.Break, diffs, objName, propName))
         ok = false;
-      if (!CmpField(openXmlElement, value.Field, diffs, objName))
+      if (!CmpField(openXmlElement, value.Field, diffs, objName, propName))
         ok = false;
-      if (!CmpTextMath(openXmlElement, value.TextMath, diffs, objName))
+      if (!CmpTextMath(openXmlElement, value.TextMath, diffs, objName, propName))
         ok = false;
-      if (!CmpEndParagraphRunProperties(openXmlElement, value.EndParagraphRunProperties, diffs, objName))
+      if (!CmpEndParagraphRunProperties(openXmlElement, value.EndParagraphRunProperties, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

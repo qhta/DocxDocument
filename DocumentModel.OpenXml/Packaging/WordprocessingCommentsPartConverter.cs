@@ -20,7 +20,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpAlternativeFormatImportParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.AlternativeFormatImportPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpAlternativeFormatImportParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.AlternativeFormatImportPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -40,7 +40,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ChartPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -53,7 +53,7 @@ public static class WordprocessingCommentsPartConverter
       return DMXW.CommentsConverter.CreateModelElement(openXmlElement?.RootElement as DXW.Comments);
   }
   
-  private static bool CmpComments(DXPack.WordprocessingCommentsPart openXmlElement, DMW.Comments? value, DiffList? diffs, string? objName)
+  private static bool CmpComments(DXPack.WordprocessingCommentsPart openXmlElement, DMW.Comments? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return true;
   }
@@ -73,7 +73,7 @@ public static class WordprocessingCommentsPartConverter
     return openXmlElement?.ContentType;
   }
   
-  private static bool CmpContentType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpContentType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.ContentType == value) return true;
     diffs?.Add(objName, "ContentType", openXmlElement?.ContentType, value);
@@ -95,7 +95,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramColorsParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramColorsParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramColorsPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -115,7 +115,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramDataParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramDataParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramDataPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -135,7 +135,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramLayoutDefinitionParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramLayoutDefinitionParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramLayoutDefinitionPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -155,7 +155,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramPersistLayoutParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramPersistLayoutParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramPersistLayoutPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -175,7 +175,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpDiagramStyleParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpDiagramStyleParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.DiagramStylePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -195,7 +195,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedControlPersistenceParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedControlPersistenceParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedControlPersistencePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -215,7 +215,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedObjectParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedObjectParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedObjectPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -235,7 +235,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpEmbeddedPackageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpEmbeddedPackageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.EmbeddedPackagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -255,7 +255,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpExtendedChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpExtendedChartParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ExtendedChartPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -275,7 +275,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpImageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs, string? objName)
+  private static bool CmpImageParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.ImagePart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -295,7 +295,7 @@ public static class WordprocessingCommentsPartConverter
     return collection;
   }
   
-  private static bool CmpModel3DReferenceRelationshipParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs, string? objName)
+  private static bool CmpModel3DReferenceRelationshipParts(DXPack.WordprocessingCommentsPart openXmlElement, Collection<DMPack.Model3DReferenceRelationshipPart>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return true;
   }
@@ -305,7 +305,7 @@ public static class WordprocessingCommentsPartConverter
     return openXmlElement?.RelationshipType;
   }
   
-  private static bool CmpRelationshipType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpRelationshipType(DXPack.WordprocessingCommentsPart openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.RelationshipType == value) return true;
     diffs?.Add(objName, "RelationshipType", openXmlElement?.RelationshipType, value);
@@ -338,47 +338,47 @@ public static class WordprocessingCommentsPartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXPack.WordprocessingCommentsPart? openXmlElement, DMPack.WordprocessingCommentsPart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXPack.WordprocessingCommentsPart? openXmlElement, DMPack.WordprocessingCommentsPart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpAlternativeFormatImportParts(openXmlElement, value.AlternativeFormatImportParts, diffs, objName))
+      if (!CmpAlternativeFormatImportParts(openXmlElement, value.AlternativeFormatImportParts, diffs, objName, propName))
         ok = false;
-      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName))
+      if (!CmpChartParts(openXmlElement, value.ChartParts, diffs, objName, propName))
         ok = false;
-      if (!CmpComments(openXmlElement, value.Comments, diffs, objName))
+      if (!CmpComments(openXmlElement, value.Comments, diffs, objName, propName))
         ok = false;
-      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName))
+      if (!CmpContentType(openXmlElement, value.ContentType, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName))
+      if (!CmpDiagramColorsParts(openXmlElement, value.DiagramColorsParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName))
+      if (!CmpDiagramDataParts(openXmlElement, value.DiagramDataParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName))
+      if (!CmpDiagramLayoutDefinitionParts(openXmlElement, value.DiagramLayoutDefinitionParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName))
+      if (!CmpDiagramPersistLayoutParts(openXmlElement, value.DiagramPersistLayoutParts, diffs, objName, propName))
         ok = false;
-      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName))
+      if (!CmpDiagramStyleParts(openXmlElement, value.DiagramStyleParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName))
+      if (!CmpEmbeddedControlPersistenceParts(openXmlElement, value.EmbeddedControlPersistenceParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName))
+      if (!CmpEmbeddedObjectParts(openXmlElement, value.EmbeddedObjectParts, diffs, objName, propName))
         ok = false;
-      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName))
+      if (!CmpEmbeddedPackageParts(openXmlElement, value.EmbeddedPackageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName))
+      if (!CmpExtendedChartParts(openXmlElement, value.ExtendedChartParts, diffs, objName, propName))
         ok = false;
-      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName))
+      if (!CmpImageParts(openXmlElement, value.ImageParts, diffs, objName, propName))
         ok = false;
-      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName))
+      if (!CmpModel3DReferenceRelationshipParts(openXmlElement, value.Model3DReferenceRelationshipParts, diffs, objName, propName))
         ok = false;
-      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName))
+      if (!CmpRelationshipType(openXmlElement, value.RelationshipType, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

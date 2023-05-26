@@ -13,7 +13,7 @@ public static class PictureOptionsConverter
     return openXmlElement.GetFirstChild<DXDC.ApplyToFront>() != null;
   }
   
-  private static bool CmpApplyToFront(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToFront(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ApplyToFront>() != null;
     if (val == value) return true;
@@ -44,7 +44,7 @@ public static class PictureOptionsConverter
     return openXmlElement.GetFirstChild<DXDC.ApplyToSides>() != null;
   }
   
-  private static bool CmpApplyToSides(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToSides(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ApplyToSides>() != null;
     if (val == value) return true;
@@ -75,7 +75,7 @@ public static class PictureOptionsConverter
     return openXmlElement.GetFirstChild<DXDC.ApplyToEnd>() != null;
   }
   
-  private static bool CmpApplyToEnd(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpApplyToEnd(DXDC.PictureOptions openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.ApplyToEnd>() != null;
     if (val == value) return true;
@@ -106,9 +106,9 @@ public static class PictureOptionsConverter
     return EnumValueConverter.GetValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(openXmlElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value);
   }
   
-  private static bool CmpPictureFormat(DXDC.PictureOptions openXmlElement, DMDC.PictureFormatKind? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureFormat(DXDC.PictureOptions openXmlElement, DMDC.PictureFormatKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(openXmlElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DocumentFormat.OpenXml.Drawing.Charts.PictureFormatValues, DMDC.PictureFormatKind>(openXmlElement.GetFirstChild<DXDC.PictureFormat>()?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetPictureFormat(DXDC.PictureOptions openXmlElement, DMDC.PictureFormatKind? value)
@@ -134,7 +134,7 @@ public static class PictureOptionsConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.PictureStackUnit>()?.Val);
   }
   
-  private static bool CmpPictureStackUnit(DXDC.PictureOptions openXmlElement, Double? value, DiffList? diffs, string? objName)
+  private static bool CmpPictureStackUnit(DXDC.PictureOptions openXmlElement, Double? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.PictureStackUnit>()?.Val, value, diffs, objName, "PictureStackUnit");
   }
@@ -159,25 +159,25 @@ public static class PictureOptionsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.PictureOptions? openXmlElement, DMDC.PictureOptions? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.PictureOptions? openXmlElement, DMDC.PictureOptions? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpApplyToFront(openXmlElement, value.ApplyToFront, diffs, objName))
+      if (!CmpApplyToFront(openXmlElement, value.ApplyToFront, diffs, objName, propName))
         ok = false;
-      if (!CmpApplyToSides(openXmlElement, value.ApplyToSides, diffs, objName))
+      if (!CmpApplyToSides(openXmlElement, value.ApplyToSides, diffs, objName, propName))
         ok = false;
-      if (!CmpApplyToEnd(openXmlElement, value.ApplyToEnd, diffs, objName))
+      if (!CmpApplyToEnd(openXmlElement, value.ApplyToEnd, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureFormat(openXmlElement, value.PictureFormat, diffs, objName))
+      if (!CmpPictureFormat(openXmlElement, value.PictureFormat, diffs, objName, propName))
         ok = false;
-      if (!CmpPictureStackUnit(openXmlElement, value.PictureStackUnit, diffs, objName))
+      if (!CmpPictureStackUnit(openXmlElement, value.PictureStackUnit, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

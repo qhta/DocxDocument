@@ -13,9 +13,9 @@ public static class FieldCharConverter
     return EnumValueConverter.GetValue<DXW.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value);
   }
   
-  private static bool CmpFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.FieldCharValues, DMW.FieldCharKind>(openXmlElement?.FieldCharType?.Value, value, diffs, objName, propName);
   }
   
   private static void SetFieldCharType(DXW.FieldChar openXmlElement, DMW.FieldCharKind? value)
@@ -31,7 +31,7 @@ public static class FieldCharConverter
     return BooleanValueConverter.GetValue(openXmlElement?.FieldLock);
   }
   
-  private static bool CmpFieldLock(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldLock(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.FieldLock, value, diffs, objName, "FieldLock");
   }
@@ -49,7 +49,7 @@ public static class FieldCharConverter
     return BooleanValueConverter.GetValue(openXmlElement?.Dirty);
   }
   
-  private static bool CmpDirty(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpDirty(DXW.FieldChar openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return BooleanValueConverter.CmpValue(openXmlElement?.Dirty, value, diffs, objName, "Dirty");
   }
@@ -67,7 +67,7 @@ public static class FieldCharConverter
       return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text;
   }
   
-  private static bool CmpFieldData(DXW.FieldChar openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpFieldData(DXW.FieldChar openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
       return openXmlElement?.GetFirstChild<DXW.FieldData>()?.Text == value;
   }
@@ -95,9 +95,9 @@ public static class FieldCharConverter
     return null;
   }
   
-  private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs, string? objName)
+  private static bool CmpFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName);
+    return DMXW.FormFieldDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.FormFieldData>(), value, diffs, objName, propName);
   }
   
   private static void SetFormFieldData(DXW.FieldChar openXmlElement, DMW.FormFieldData? value)
@@ -124,9 +124,9 @@ public static class FieldCharConverter
     return null;
   }
   
-  private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs, string? objName)
+  private static bool CmpNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName);
+    return DMXW.NumberingChangeConverter.CompareModelElement(openXmlElement.GetFirstChild<DXW.NumberingChange>(), value, diffs, objName, propName);
   }
   
   private static void SetNumberingChange(DXW.FieldChar openXmlElement, DMW.NumberingChange? value)
@@ -158,27 +158,27 @@ public static class FieldCharConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.FieldChar? openXmlElement, DMW.FieldChar? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.FieldChar? openXmlElement, DMW.FieldChar? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpFieldCharType(openXmlElement, value.FieldCharType, diffs, objName))
+      if (!CmpFieldCharType(openXmlElement, value.FieldCharType, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldLock(openXmlElement, value.FieldLock, diffs, objName))
+      if (!CmpFieldLock(openXmlElement, value.FieldLock, diffs, objName, propName))
         ok = false;
-      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName))
+      if (!CmpDirty(openXmlElement, value.Dirty, diffs, objName, propName))
         ok = false;
-      if (!CmpFieldData(openXmlElement, value.FieldData, diffs, objName))
+      if (!CmpFieldData(openXmlElement, value.FieldData, diffs, objName, propName))
         ok = false;
-      if (!CmpFormFieldData(openXmlElement, value.FormFieldData, diffs, objName))
+      if (!CmpFormFieldData(openXmlElement, value.FormFieldData, diffs, objName, propName))
         ok = false;
-      if (!CmpNumberingChange(openXmlElement, value.NumberingChange, diffs, objName))
+      if (!CmpNumberingChange(openXmlElement, value.NumberingChange, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

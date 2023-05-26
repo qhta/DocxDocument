@@ -16,9 +16,9 @@ public static class TextConverter
     return null;
   }
   
-  private static bool CmpTextData(DXO16DCD.Text openXmlElement, DMDCDs.TextData? value, DiffList? diffs, string? objName)
+  private static bool CmpTextData(DXO16DCD.Text openXmlElement, DMDCDs.TextData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TextData>(), value, diffs, objName);
+    return DMXDCDs.TextDataConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.TextData>(), value, diffs, objName, propName);
   }
   
   private static void SetTextData(DXO16DCD.Text openXmlElement, DMDCDs.TextData? value)
@@ -45,9 +45,9 @@ public static class TextConverter
     return null;
   }
   
-  private static bool CmpRichTextBody(DXO16DCD.Text openXmlElement, DMDCDs.RichTextBody? value, DiffList? diffs, string? objName)
+  private static bool CmpRichTextBody(DXO16DCD.Text openXmlElement, DMDCDs.RichTextBody? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDCDs.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.RichTextBody>(), value, diffs, objName);
+    return DMXDCDs.RichTextBodyConverter.CompareModelElement(openXmlElement.GetFirstChild<DXO16DCD.RichTextBody>(), value, diffs, objName, propName);
   }
   
   private static void SetRichTextBody(DXO16DCD.Text openXmlElement, DMDCDs.RichTextBody? value)
@@ -75,19 +75,19 @@ public static class TextConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO16DCD.Text? openXmlElement, DMDCDs.Text? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO16DCD.Text? openXmlElement, DMDCDs.Text? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTextData(openXmlElement, value.TextData, diffs, objName))
+      if (!CmpTextData(openXmlElement, value.TextData, diffs, objName, propName))
         ok = false;
-      if (!CmpRichTextBody(openXmlElement, value.RichTextBody, diffs, objName))
+      if (!CmpRichTextBody(openXmlElement, value.RichTextBody, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

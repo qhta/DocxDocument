@@ -11,9 +11,9 @@ public static class ShadingConverter
     return EnumValueConverter.GetValue<DXW.ShadingPatternValues, DMW.ShadingPatternKind>(openXmlElement?.Val?.Value);
   }
   
-  private static bool CmpVal(DXW.Shading openXmlElement, DMW.ShadingPatternKind? value, DiffList? diffs, string? objName)
+  private static bool CmpVal(DXW.Shading openXmlElement, DMW.ShadingPatternKind? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return EnumValueConverter.CmpValue<DXW.ShadingPatternValues, DMW.ShadingPatternKind>(openXmlElement?.Val?.Value, value, diffs, objName);
+    return EnumValueConverter.CmpValue<DXW.ShadingPatternValues, DMW.ShadingPatternKind>(openXmlElement?.Val?.Value, value, diffs, objName, propName);
   }
   
   private static void SetVal(DXW.Shading openXmlElement, DMW.ShadingPatternKind? value)
@@ -37,21 +37,21 @@ public static class ShadingConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Shading? openXmlElement, DMW.Shading? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Shading? openXmlElement, DMW.Shading? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVal(openXmlElement, value.Pattern, diffs, objName))
+      if (!CmpVal(openXmlElement, value.Pattern, diffs, objName, propName))
         ok = false;
-      if (!ShadingColorConverter.CompareModelElement(openXmlElement, value.ForegroundColor, diffs, objName))
+      if (!ShadingColorConverter.CompareModelElement(openXmlElement, value.ForegroundColor, diffs, objName, propName))
         ok = false;
-      if (!ShadingFillColorConverter.CompareModelElement(openXmlElement, value.BackgroundColor, diffs, objName))
+      if (!ShadingFillColorConverter.CompareModelElement(openXmlElement, value.BackgroundColor, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

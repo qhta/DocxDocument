@@ -13,7 +13,7 @@ public static class ArtisticChalkSketchConverter
     return openXmlElement?.Transparancy?.Value;
   }
   
-  private static bool CmpTransparancy(DXO10D.ArtisticChalkSketch openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpTransparancy(DXO10D.ArtisticChalkSketch openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Transparancy?.Value == value) return true;
     diffs?.Add(objName, "Transparancy", openXmlElement?.Transparancy?.Value, value);
@@ -33,7 +33,7 @@ public static class ArtisticChalkSketchConverter
     return openXmlElement?.Pressure?.Value;
   }
   
-  private static bool CmpPressure(DXO10D.ArtisticChalkSketch openXmlElement, Int32? value, DiffList? diffs, string? objName)
+  private static bool CmpPressure(DXO10D.ArtisticChalkSketch openXmlElement, Int32? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement?.Pressure?.Value == value) return true;
     diffs?.Add(objName, "Pressure", openXmlElement?.Pressure?.Value, value);
@@ -57,19 +57,19 @@ public static class ArtisticChalkSketchConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10D.ArtisticChalkSketch? openXmlElement, DMD.ArtisticChalkSketch? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10D.ArtisticChalkSketch? openXmlElement, DMD.ArtisticChalkSketch? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName))
+      if (!CmpTransparancy(openXmlElement, value.Transparancy, diffs, objName, propName))
         ok = false;
-      if (!CmpPressure(openXmlElement, value.Pressure, diffs, objName))
+      if (!CmpPressure(openXmlElement, value.Pressure, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class DoughnutChartConverter
     return openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
   }
   
-  private static bool CmpVaryColors(DXDC.DoughnutChart openXmlElement, Boolean? value, DiffList? diffs, string? objName)
+  private static bool CmpVaryColors(DXDC.DoughnutChart openXmlElement, Boolean? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var val = openXmlElement.GetFirstChild<DXDC.VaryColors>() != null;
     if (val == value) return true;
@@ -50,7 +50,7 @@ public static class DoughnutChartConverter
     return null;
   }
   
-  private static bool CmpPieChartSeries(DXDC.DoughnutChart openXmlElement, Collection<DMDC.PieChartSeries>? value, DiffList? diffs, string? objName)
+  private static bool CmpPieChartSeries(DXDC.DoughnutChart openXmlElement, Collection<DMDC.PieChartSeries>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXDC.PieChartSeries>();
     var origElementsCount = origElements.Count();
@@ -59,7 +59,7 @@ public static class DoughnutChartConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -68,13 +68,13 @@ public static class DoughnutChartConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXDC.PieChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXDC.PieChartSeriesConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -100,9 +100,9 @@ public static class DoughnutChartConverter
     return null;
   }
   
-  private static bool CmpDataLabels(DXDC.DoughnutChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs, string? objName)
+  private static bool CmpDataLabels(DXDC.DoughnutChart openXmlElement, DMDC.DataLabels? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName);
+    return DMXDC.DataLabelsConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.DataLabels>(), value, diffs, objName, propName);
   }
   
   private static void SetDataLabels(DXDC.DoughnutChart openXmlElement, DMDC.DataLabels? value)
@@ -123,7 +123,7 @@ public static class DoughnutChartConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.FirstSliceAngle>()?.Val);
   }
   
-  private static bool CmpFirstSliceAngle(DXDC.DoughnutChart openXmlElement, UInt16? value, DiffList? diffs, string? objName)
+  private static bool CmpFirstSliceAngle(DXDC.DoughnutChart openXmlElement, UInt16? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.FirstSliceAngle>()?.Val, value, diffs, objName, "FirstSliceAngle");
   }
@@ -138,7 +138,7 @@ public static class DoughnutChartConverter
     return SimpleValueConverter.GetValue(openXmlElement?.GetFirstChild<DXDC.HoleSize>()?.Val);
   }
   
-  private static bool CmpHoleSize(DXDC.DoughnutChart openXmlElement, Byte? value, DiffList? diffs, string? objName)
+  private static bool CmpHoleSize(DXDC.DoughnutChart openXmlElement, Byte? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return SimpleValueConverter.CmpValue(openXmlElement?.GetFirstChild<DXDC.HoleSize>()?.Val, value, diffs, objName, "HoleSize");
   }
@@ -156,9 +156,9 @@ public static class DoughnutChartConverter
     return null;
   }
   
-  private static bool CmpExtensionList(DXDC.DoughnutChart openXmlElement, DMDC.ExtensionList? value, DiffList? diffs, string? objName)
+  private static bool CmpExtensionList(DXDC.DoughnutChart openXmlElement, DMDC.ExtensionList? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
-    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName);
+    return DMXDC.ExtensionListConverter.CompareModelElement(openXmlElement.GetFirstChild<DXDC.ExtensionList>(), value, diffs, objName, propName);
   }
   
   private static void SetExtensionList(DXDC.DoughnutChart openXmlElement, DMDC.ExtensionList? value)
@@ -190,27 +190,27 @@ public static class DoughnutChartConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXDC.DoughnutChart? openXmlElement, DMDC.DoughnutChart? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXDC.DoughnutChart? openXmlElement, DMDC.DoughnutChart? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName))
+      if (!CmpVaryColors(openXmlElement, value.VaryColors, diffs, objName, propName))
         ok = false;
-      if (!CmpPieChartSeries(openXmlElement, value.PieChartSeries, diffs, objName))
+      if (!CmpPieChartSeries(openXmlElement, value.PieChartSeries, diffs, objName, propName))
         ok = false;
-      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName))
+      if (!CmpDataLabels(openXmlElement, value.DataLabels, diffs, objName, propName))
         ok = false;
-      if (!CmpFirstSliceAngle(openXmlElement, value.FirstSliceAngle, diffs, objName))
+      if (!CmpFirstSliceAngle(openXmlElement, value.FirstSliceAngle, diffs, objName, propName))
         ok = false;
-      if (!CmpHoleSize(openXmlElement, value.HoleSize, diffs, objName))
+      if (!CmpHoleSize(openXmlElement, value.HoleSize, diffs, objName, propName))
         ok = false;
-      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName))
+      if (!CmpExtensionList(openXmlElement, value.ExtensionList, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

@@ -13,7 +13,7 @@ public static class VTVStreamDataConverter
     return StringValueConverter.GetValue(openXmlElement?.Version);
   }
   
-  private static bool CmpVersion(DXVT.VTVStreamData openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpVersion(DXVT.VTVStreamData openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Version, value, diffs, objName, "Version");
   }
@@ -34,17 +34,17 @@ public static class VTVStreamDataConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXVT.VTVStreamData? openXmlElement, DMVT.VTVStreamData? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXVT.VTVStreamData? openXmlElement, DMVT.VTVStreamData? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpVersion(openXmlElement, value.Version, diffs, objName))
+      if (!CmpVersion(openXmlElement, value.Version, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

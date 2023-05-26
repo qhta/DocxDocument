@@ -19,7 +19,7 @@ public static class StylisticSetsConverter
     return null;
   }
   
-  private static bool CmpStyleSets(DXO10W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs, string? objName)
+  private static bool CmpStyleSets(DXO10W.StylisticSets openXmlElement, Collection<DMW.StyleSet>? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     var origElements = openXmlElement.Elements<DXO10W.StyleSet>();
     var origElementsCount = origElements.Count();
@@ -28,7 +28,7 @@ public static class StylisticSetsConverter
     {
       if (origElementsCount != modelElementsCount)
       {
-        diffs?.Add(objName, openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
+        diffs?.Add(objName, propName ?? openXmlElement.GetType().Name+".Count", origElementsCount, modelElementsCount);
         return false;
       }
       var ok = true;
@@ -37,13 +37,13 @@ public static class StylisticSetsConverter
       {
         modelEnumerator.MoveNext();
         var modelItem = modelEnumerator.Current;
-        if (!DMXW.StyleSetConverter.CompareModelElement(origItem, modelItem, diffs, objName))
+        if (!DMXW.StyleSetConverter.CompareModelElement(origItem, modelItem, diffs, objName, propName))
           ok = false;
       }
       return ok;
     }
     if (origElementsCount == 0 && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
@@ -72,17 +72,17 @@ public static class StylisticSetsConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXO10W.StylisticSets? openXmlElement, DMW.StylisticSets? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXO10W.StylisticSets? openXmlElement, DMW.StylisticSets? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpStyleSets(openXmlElement, value.StyleSets, diffs, objName))
+      if (!CmpStyleSets(openXmlElement, value.StyleSets, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   

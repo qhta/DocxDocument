@@ -35,7 +35,7 @@ public static class NoteReferenceMarkConverter
     return null;
   }
 
-  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.NoteReferenceMark? model, DMW.NoteReferenceKind kind, DiffList? diffs, string? objName)
+  private static bool CheckModelElement(DX.OpenXmlElement? openXmlElement, DMW.NoteReferenceMark? model, DMW.NoteReferenceKind kind, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && model != null)
     {
@@ -45,18 +45,18 @@ public static class NoteReferenceMarkConverter
       return ok;
     }
     if (openXmlElement == null && model == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, model);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, model);
     return false;
   }
 
-  public static bool CompareModelElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Footnote, diffs, objName);
+  public static bool CompareModelElement(DXW.FootnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Footnote, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.EndnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Endnote, diffs, objName);
+  public static bool CompareModelElement(DXW.EndnoteReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Endnote, diffs, objName, propName);
 
-  public static bool CompareModelElement(DXW.AnnotationReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs, string? objName)
-    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Annotation, diffs, objName);
+  public static bool CompareModelElement(DXW.AnnotationReferenceMark? openXmlElement, DMW.NoteReferenceMark? model, DiffList? diffs = null, string? objName = null, string? propName = null)
+    => CheckModelElement(openXmlElement, model, DMW.NoteReferenceKind.Annotation, diffs, objName, propName);
 
   public static DX.OpenXmlElement CreateOpenXmlElement(DMW.NoteReferenceMark model)
   {

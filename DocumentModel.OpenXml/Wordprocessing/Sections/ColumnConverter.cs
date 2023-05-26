@@ -13,7 +13,7 @@ public static class ColumnConverter
     return StringValueConverter.GetValue(openXmlElement?.Width);
   }
   
-  private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpWidth(DXW.Column openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Width, value, diffs, objName, "Value");
   }
@@ -31,7 +31,7 @@ public static class ColumnConverter
     return StringValueConverter.GetValue(openXmlElement?.Space);
   }
   
-  private static bool CmpSpace(DXW.Column openXmlElement, String? value, DiffList? diffs, string? objName)
+  private static bool CmpSpace(DXW.Column openXmlElement, String? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     return StringValueConverter.CmpValue(openXmlElement?.Space, value, diffs, objName, "Space");
   }
@@ -53,19 +53,19 @@ public static class ColumnConverter
     return null;
   }
   
-  public static bool CompareModelElement(DXW.Column? openXmlElement, DMW.Column? value, DiffList? diffs, string? objName)
+  public static bool CompareModelElement(DXW.Column? openXmlElement, DMW.Column? value, DiffList? diffs = null, string? objName = null, string? propName = null)
   {
     if (openXmlElement != null && value != null)
     {
       var ok = true;
-      if (!CmpWidth(openXmlElement, value.Width, diffs, objName))
+      if (!CmpWidth(openXmlElement, value.Width, diffs, objName, propName))
         ok = false;
-      if (!CmpSpace(openXmlElement, value.Space, diffs, objName))
+      if (!CmpSpace(openXmlElement, value.Space, diffs, objName, propName))
         ok = false;
       return ok;
     }
     if (openXmlElement == null && value == null) return true;
-    diffs?.Add(objName, openXmlElement?.GetType().Name, openXmlElement, value);
+    diffs?.Add(objName, propName ?? openXmlElement?.GetType().Name, openXmlElement, value);
     return false;
   }
   
