@@ -85,7 +85,7 @@ internal class Program
   {
     var testInstance = new TestProperties();
     testInstance.Setup();
-    var ok = testInstance.TestReadProperties("BackgroundColor.docx", true, true);
+    var ok = testInstance.TestReadProperties(/*"Comments.docx", true, true*/);
     //testInstance.TestGenProperties("DocumentProperties.docx", true, true);
     Console.WriteLine($"Test {(ok ? "passed" : "failed")}");
   }
